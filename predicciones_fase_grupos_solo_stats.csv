@@ -1,0 +1,73 @@
+grupo,equipo_1,equipo_2,cancha,P(gana 1),P(empate),P(gana 2),goles_esp_1,goles_esp_2
+A,Mexico,Czech Republic,anfitrión,0.387,0.29,0.323,1.08,1.36
+A,Czech Republic,South Africa,neutral,0.363,0.289,0.348,1.22,1.2
+A,Czech Republic,South Korea,neutral,0.557,0.26,0.183,1.95,0.75
+A,Mexico,South Africa,anfitrión,0.393,0.294,0.313,1.08,1.35
+A,Mexico,South Korea,anfitrión,0.593,0.252,0.156,1.74,0.84
+A,South Africa,South Korea,neutral,0.549,0.262,0.188,1.94,0.76
+B,Canada,Bosnia and Herzegovina,anfitrión,0.357,0.281,0.362,1.02,1.44
+B,Bosnia and Herzegovina,Qatar,neutral,0.609,0.242,0.149,2.1,0.7
+B,Bosnia and Herzegovina,Switzerland,neutral,0.365,0.289,0.346,1.24,1.18
+B,Canada,Qatar,anfitrión,0.602,0.259,0.139,1.77,0.83
+B,Canada,Switzerland,anfitrión,0.367,0.28,0.353,1.04,1.4
+B,Qatar,Switzerland,neutral,0.155,0.245,0.6,0.72,2.05
+C,Brazil,Haiti,neutral,0.563,0.257,0.18,1.91,0.77
+C,Brazil,Morocco,neutral,0.358,0.289,0.353,1.2,1.23
+C,Brazil,Scotland,neutral,0.324,0.288,0.387,1.13,1.3
+C,Haiti,Morocco,neutral,0.181,0.258,0.56,0.76,1.94
+C,Haiti,Scotland,neutral,0.158,0.247,0.594,0.72,2.05
+C,Morocco,Scotland,neutral,0.322,0.288,0.39,1.14,1.28
+D,Australia,Paraguay,neutral,0.356,0.289,0.354,1.22,1.2
+D,Australia,Turkey,neutral,0.24,0.276,0.483,0.95,1.55
+D,United States,Australia,anfitrión,0.477,0.291,0.232,1.31,1.12
+D,Paraguay,Turkey,neutral,0.239,0.276,0.484,0.94,1.56
+D,United States,Paraguay,anfitrión,0.479,0.289,0.232,1.31,1.12
+D,United States,Turkey,anfitrión,0.357,0.278,0.365,1.02,1.43
+E,Curaçao,Ecuador,neutral,0.234,0.276,0.49,0.86,1.71
+E,Curaçao,Germany,neutral,0.148,0.242,0.61,0.68,2.16
+E,Curaçao,Ivory Coast,neutral,0.111,0.22,0.669,0.59,2.5
+E,Ecuador,Germany,neutral,0.244,0.277,0.479,0.96,1.53
+E,Ecuador,Ivory Coast,neutral,0.192,0.262,0.546,0.83,1.78
+E,Germany,Ivory Coast,neutral,0.292,0.286,0.422,1.04,1.4
+F,Japan,Netherlands,neutral,0.252,0.279,0.469,0.95,1.55
+F,Japan,Sweden,neutral,0.498,0.273,0.229,1.64,0.89
+F,Japan,Tunisia,neutral,0.385,0.288,0.326,1.3,1.12
+F,Netherlands,Sweden,neutral,0.608,0.243,0.149,2.1,0.7
+F,Netherlands,Tunisia,neutral,0.499,0.273,0.227,1.67,0.88
+F,Sweden,Tunisia,neutral,0.253,0.279,0.467,0.96,1.52
+G,Belgium,Egypt,neutral,0.659,0.223,0.118,2.3,0.64
+G,Belgium,Iran,neutral,0.647,0.228,0.125,2.27,0.65
+G,Belgium,New Zealand,neutral,0.682,0.214,0.105,2.45,0.6
+G,Egypt,Iran,neutral,0.343,0.289,0.368,1.2,1.23
+G,Egypt,New Zealand,neutral,0.382,0.289,0.33,1.29,1.14
+G,Iran,New Zealand,neutral,0.395,0.288,0.317,1.31,1.12
+H,Cape Verde,Saudi Arabia,neutral,0.349,0.289,0.362,1.18,1.24
+H,Cape Verde,Spain,neutral,0.131,0.233,0.636,0.65,2.25
+H,Cape Verde,Uruguay,neutral,0.414,0.286,0.3,1.37,1.07
+H,Saudi Arabia,Spain,neutral,0.135,0.235,0.63,0.67,2.2
+H,Saudi Arabia,Uruguay,neutral,0.421,0.286,0.293,1.41,1.04
+H,Spain,Uruguay,neutral,0.686,0.212,0.102,2.56,0.57
+I,France,Iraq,neutral,0.618,0.239,0.143,2.13,0.69
+I,France,Norway,neutral,0.255,0.28,0.466,0.97,1.52
+I,France,Senegal,neutral,0.369,0.289,0.341,1.29,1.14
+I,Iraq,Norway,neutral,0.089,0.201,0.711,0.55,2.66
+I,Iraq,Senegal,neutral,0.152,0.244,0.605,0.74,1.99
+I,Norway,Senegal,neutral,0.48,0.277,0.243,1.62,0.91
+J,Algeria,Argentina,neutral,0.384,0.288,0.328,1.28,1.15
+J,Algeria,Austria,neutral,0.342,0.289,0.369,1.18,1.24
+J,Algeria,Jordan,neutral,0.63,0.235,0.135,2.25,0.65
+J,Argentina,Austria,neutral,0.315,0.288,0.397,1.12,1.31
+J,Argentina,Jordan,neutral,0.603,0.245,0.152,2.14,0.69
+J,Austria,Jordan,neutral,0.642,0.23,0.128,2.32,0.63
+K,Colombia,DR Congo,neutral,0.484,0.276,0.24,1.59,0.92
+K,Colombia,Portugal,neutral,0.181,0.257,0.561,0.79,1.85
+K,Colombia,Uzbekistan,neutral,0.426,0.285,0.289,1.41,1.04
+K,DR Congo,Portugal,neutral,0.107,0.215,0.678,0.6,2.43
+K,DR Congo,Uzbekistan,neutral,0.301,0.287,0.412,1.07,1.37
+K,Portugal,Uzbekistan,neutral,0.628,0.235,0.137,2.16,0.68
+L,Croatia,England,neutral,0.311,0.288,0.401,1.08,1.35
+L,Croatia,Ghana,neutral,0.588,0.249,0.162,2.01,0.73
+L,Croatia,Panama,neutral,0.51,0.271,0.219,1.69,0.87
+L,England,Ghana,neutral,0.631,0.235,0.135,2.25,0.65
+L,England,Panama,neutral,0.555,0.26,0.185,1.89,0.78
+L,Ghana,Panama,neutral,0.28,0.284,0.436,1.02,1.44
