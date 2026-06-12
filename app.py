@@ -144,9 +144,9 @@ ANFITRIONES = {'United States', 'Canada', 'Mexico'}
 @st.cache_resource
 def load_data_and_train():
     # 1. Carga de datos base
-    df = pd.read_csv('modelado_espn.csv', parse_dates=['fecha']).sort_values('fecha').reset_index(drop=True)
-    states = pd.read_csv('team_states.csv').set_index('team')
-    hist = pd.read_csv('results.csv', parse_dates=['date']).dropna(subset=['home_score', 'away_score'])
+    df = pd.read_csv('data/modelado_espn.csv', parse_dates=['fecha']).sort_values('fecha').reset_index(drop=True)
+    states = pd.read_csv('data/team_states.csv').set_index('team')
+    hist = pd.read_csv('data/results.csv', parse_dates=['date']).dropna(subset=['home_score', 'away_score'])
 
     # Calcular H2H
     m48 = set(MUNDIALISTAS)
@@ -176,7 +176,7 @@ def load_data_and_train():
     pipe_hybrid.fit(data_hybrid[HYBRID_VARS], data_hybrid['resultado'])
 
     # Entrenar Poisson A (Base - basado solo en Elo)
-    espn = pd.read_csv('espn_stats.csv', parse_dates=['fecha'])
+    espn = pd.read_csv('data/espn_stats.csv', parse_dates=['fecha'])
     espn = espn[(espn.fecha >= '2019-01-01') & espn.goles_local.notna()]
     largo_base = pd.concat([
         pd.DataFrame({'g': espn.goles_local.values, 'd': (espn.elo_local - espn.elo_visita).values}),
@@ -186,7 +186,7 @@ def load_data_and_train():
     gb0, gb1 = gp.params['const'], gp.params['d']
 
     # Entrenar Poisson B (Híbrido - basado en las 6 variables híbridas)
-    goles = pd.read_csv('espn_stats.csv', parse_dates=['fecha'])[['fecha', 'local', 'visita', 'goles_local', 'goles_visita']]
+    goles = pd.read_csv('data/espn_stats.csv', parse_dates=['fecha'])[['fecha', 'local', 'visita', 'goles_local', 'goles_visita']]
     datag = data_hybrid.merge(goles, on=['fecha', 'local', 'visita'], how='left')
     largo_hybrid = pd.concat([
         datag[HYBRID_VARS].assign(g=datag.goles_local.values),
@@ -226,7 +226,8 @@ with col_in2:
 
 cancha_sel = st.radio(
     "Tipo de Cancha / Localía",
-    ["Cancha Neutral", f"Localía para {flag_a} {es_name_a}", f"Localía para {flag_b} {es_name_b}"],
+    ["Automática (regla del Mundial: anfitriones de local)", "Cancha Neutral",
+     f"Localía para {flag_a} {es_name_a}", f"Localía para {flag_b} {es_name_b}"],
     horizontal=True
 )
 
@@ -235,7 +236,9 @@ if en_name_a == en_name_b:
     st.stop()
 
 # Reconstruir Cancha
-if cancha_sel == "Cancha Neutral":
+if cancha_sel.startswith("Automática"):
+    cancha_mode = 'auto'
+elif cancha_sel == "Cancha Neutral":
     cancha_mode = 'neutral'
 elif cancha_sel.startswith("Localía para " + flag_a):
     cancha_mode = '1'
@@ -270,9 +273,9 @@ def predecir_duelo(a, b, cancha):
     va_base = np.array([pa_base[2], pa_base[1], pa_base[0]])
     vb_base = np.array([pb_base[0], pb_base[1], pb_base[2]])
     
-    if cancha == '1' or (cancha == 'neutral' and a in ANFITRIONES and b not in ANFITRIONES):
+    if cancha == '1' or (cancha == 'auto' and a in ANFITRIONES and b not in ANFITRIONES):
         p_base = va_base
-    elif cancha == '2' or (cancha == 'neutral' and b in ANFITRIONES and a not in ANFITRIONES):
+    elif cancha == '2' or (cancha == 'auto' and b in ANFITRIONES and a not in ANFITRIONES):
         p_base = vb_base
     else:
         p_base = (va_base + vb_base) / 2
@@ -284,17 +287,16 @@ def predecir_duelo(a, b, cancha):
         'h2h_diff': H2H.get((b, a), 0.0),
         'squad_value_diff': np.log(sb.squad_value) - np.log(sa.squad_value),
         'goles_anotados_diff': sb.goles_anotados_avg - sa.goles_anotados_avg,
-        'goles_recibidos_avg': sb.goles_recibidos_avg - sa.goles_recibidos_avg, # wait, let's keep goles_recibidos_diff
         'goles_recibidos_diff': sb.goles_recibidos_avg - sa.goles_recibidos_avg,
         'tiros_arco_diff': sb.tiros_arco_avg - sa.tiros_arco_avg
     }])[HYBRID_VARS])[0]
-    
+
     va_hybrid = np.array([pa_hybrid[2], pa_hybrid[1], pa_hybrid[0]])
     vb_hybrid = np.array([pb_hybrid[0], pb_hybrid[1], pb_hybrid[2]])
-    
-    if cancha == '1' or (cancha == 'neutral' and a in ANFITRIONES and b not in ANFITRIONES):
+
+    if cancha == '1' or (cancha == 'auto' and a in ANFITRIONES and b not in ANFITRIONES):
         p_hybrid = va_hybrid
-    elif cancha == '2' or (cancha == 'neutral' and b in ANFITRIONES and a not in ANFITRIONES):
+    elif cancha == '2' or (cancha == 'auto' and b in ANFITRIONES and a not in ANFITRIONES):
         p_hybrid = vb_hybrid
     else:
         p_hybrid = (va_hybrid + vb_hybrid) / 2
@@ -452,14 +454,19 @@ with tab3:
     Este panel interactivo permite enfrentar las predicciones de dos metodologías desarrolladas para el Mundial 2026:
 
     1. **Modelo Completo Base (Original)**:
-       - **Variables**: `elo_diff`, `h2h_diff`, y `squad_value_diff`.
+       - **Variables**: `elo_diff`, `h2h_diff`, y `squad_value_diff` (elegidas por selección forward + VIF con validación temporal).
        - **Filosofía**: Se enfoca puramente en la jerarquía, poder financiero de la plantilla y el historial histórico de enfrentamientos de las selecciones a largo plazo.
-       - **Rendimiento General (Log-Loss en Test)**: `0.8517`
+       - **Rendimiento**: Log-Loss `0.8517` en test (2025–26) · `0.9064` en CV temporal walk-forward.
 
     2. **Modelo Híbrido (Stats + Prior)**:
        - **Variables**: Prior de calidad (`elo_diff`, `h2h_diff`, `squad_value_diff`) + Modificadores de forma reciente (`goles_anotados_diff`, `goles_recibidos_diff`, `tiros_arco_diff`).
        - **Filosofía**: Incorpora la inercia reciente del equipo (promedios móviles de los últimos 8 partidos) para ajustar la probabilidad, de modo que equipos en racha positiva o negativa sean penalizados/premiados en sus opciones del Mundial.
-       - **Rendimiento General (Log-Loss en Test)**: **`0.8507`** (El mejor de todo el proyecto)
+       - **Rendimiento**: Log-Loss `0.8507` en test (2025–26) · `0.9096` en CV temporal walk-forward.
+
+    > **¿Cuál es mejor?** Estadísticamente están **empatados**: el híbrido gana por 0.001 en test pero
+    > el base gana en validación cruzada — ambas diferencias quedan muy por debajo del ruido (±0.04
+    > entre cortes de la CV). Por eso esta app los muestra **lado a lado** en vez de declarar un
+    > ganador: cuando dos modelos honestos discrepan, la discrepancia es información.
 
     > **Nota sobre el Empate en Eliminatorias**: En caso de empate en tiempo regular, el porcentaje para clasificar (avanzar ronda) se calcula distribuyendo la probabilidad del empate de forma proporcional a las chances de victoria regular de cada equipo, simulando la prórroga y penaltis.
     """)

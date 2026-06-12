@@ -18,14 +18,42 @@ Hemos desplegado una aplicación interactiva en la nube de Streamlit para que pu
 
 ---
 
-## 📂 Contenido del Directorio
+## 📂 Estructura del Repositorio
 
-1. **`espn_stats.csv`**: Base de datos de partidos internacionales masculinos (2018–2026) recopilada de ESPN. Ha sido ordenada cronológicamente y enriquecida con las columnas `elo_local` y `elo_visita` calculadas pre-partido.
-2. **`modelado_espn.csv`**: Dataset de entrenamiento final filtrado desde el **1 de enero de 2019**. Contiene las diferencias relativas (deltas) de las variables móviles y el target listo para alimentar el modelo de Machine Learning.
-3. **`team_states.csv`**: El estado absoluto final de cada selección (al corte de junio de 2026). Contiene su Elo y el promedio móvil de goles, tiros, posesión, córners y faltas. **Este archivo es indispensable para inicializar el simulador de Monte Carlo del Mundial 2026**, ya que permite calcular las diferencias en tiempo real para cualquier partido nuevo (ej. Francia vs. Senegal).
-4. **`results.csv`**: Histórico completo de partidos internacionales (1872–2026, fuente martj42/international_results). Base del cálculo de Elo y del head-to-head (`h2h_diff`) para cruces nuevos.
-5. **`Mundial_2026_Metodologia.ipynb`**: El notebook metodológico completo (v5). Sigue el camino EDA → selección de variables data-driven (VIF + forward + significancia, **solo con train y CV temporal**) → entrenamiento con split temporal (test = 2025–26) → matriz de confusión → tratamiento del empate (RPS) → ROC/calibración → comparación de 14 modelos con hiperparámetros por CV (lineales, Lasso/Ridge/Elastic Net, ordinal logit y probit, SVM, red neuronal, RF/GB/XGBoost) → simulación Monte Carlo (10,000 torneos, bracket oficial FIFA 48, simetrización de localía para cancha neutral) → **un Mundial de muestra por dentro** (tablas de grupo con Pts/GF/GC/DG, terceros y bracket ronda a ronda) → **simulador manual `versus()`** (cualquier par de las 336 selecciones, con detalle del pronóstico) → modelo Poisson de goles y ensamble como contraste.
-6. **`predicciones_fase_grupos.csv`** / **`probabilidades_torneo.csv`** / **`probabilidades_torneo_poisson.csv`**: Salidas del notebook — probabilidades V/E/D y goles esperados de cada partido de grupos, y probabilidades de cada selección de llegar a octavos/semis/final/título según los dos motores de simulación (clasificador logístico y Poisson de goles), comparados entre sí en §10.2.
+```
+├── app.py                 # Aplicación Streamlit (Base vs Híbrido)
+├── requirements.txt
+├── data/                  # Datasets fuente
+│   ├── espn_stats.csv         # 5,659 partidos 2018–2026 con Elo pre-partido (100% cobertura)
+│   ├── modelado_espn.csv      # Dataset de entrenamiento: 5,023 partidos, 11 variables delta + target
+│   ├── team_states.csv        # Estado actual de las 336 selecciones (corte jun-2026) — inicializa el simulador
+│   └── results.csv            # Histórico 1872–2026 (martj42) — base del Elo y del head-to-head
+├── notebooks/             # Análisis y modelado
+│   ├── Mundial_2026_Metodologia.ipynb        # Entregable principal (v5): metodología completa
+│   ├── Mundial_2026_Metodologia_Limpio.ipynb # Misma metodología con redacción condensada
+│   ├── Mundial_2026_Hibrido.ipynb            # Modelo Híbrido: prior de calidad + forma reciente (6 vars)
+│   └── mundial_solo_stats.ipynb              # Experimento: ¿cuánto predice SOLO el box score? (7 vars)
+├── outputs/               # Salidas de los notebooks (CSV)
+│   ├── predicciones_fase_grupos*.csv         # Los 72 partidos de grupos: P(V/E/D) + goles esperados
+│   └── probabilidades_torneo*.csv            # P(octavos/semis/final/campeón) por modelo y motor
+└── archivo/               # Notebooks de versiones anteriores (referencia histórica)
+```
+
+### Los modelos del proyecto
+
+| Modelo | Variables | Log-Loss test 2025–26 | Log-Loss CV temporal | Notebook |
+|---|---|---|---|---|
+| **Base (principal)** | `elo_diff`, `h2h_diff`, `squad_value_diff` | 0.8517 | **0.9064** | `Mundial_2026_Metodologia.ipynb` |
+| **Híbrido** | Base + `goles_anotados/recibidos_diff`, `tiros_arco_diff` | **0.8507** | 0.9096 | `Mundial_2026_Hibrido.ipynb` |
+| Solo juego (experimento) | Las 7 variables de box score | 1.0041 | 1.0281 | `mundial_solo_stats.ipynb` |
+
+> Base e Híbrido están **estadísticamente empatados** (el híbrido gana por 0.001 en test, el base gana
+> en CV; ambas diferencias muy por debajo del ruido) — por eso la app los muestra lado a lado. El
+> experimento "solo juego" cuantifica el valor de la fuerza acumulada: sin Elo/plantilla/H2H se pierde
+> ~0.15 de log-loss y el pronóstico del torneo se distorsiona (las stats crudas no ajustan por la
+> calidad del rival).
+
+**El notebook principal** sigue el camino: EDA → selección de variables data-driven (VIF + forward + significancia, **solo con train y CV temporal**) → entrenamiento con split temporal (test = 2025–26) → matriz de confusión → tratamiento del empate (RPS) → ROC/calibración → comparación de 14 modelos con hiperparámetros por CV (lineales, Lasso/Ridge/Elastic Net, ordinal logit y probit, SVM, red neuronal, RF/GB/XGBoost) → simulación Monte Carlo (10,000 torneos, bracket oficial FIFA 48 con letras verificadas contra el calendario, simetrización de localía para cancha neutral) → **un Mundial de muestra por dentro** (tablas de grupo, terceros y bracket ronda a ronda con probabilidades) → **simulador manual `versus()`** (cualquier par de las 336 selecciones, con matriz de marcadores) → modelo Poisson de goles, ensamble y torneo re-simulado con motor Poisson como contraste.
 
 ---
 
