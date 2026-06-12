@@ -4,6 +4,20 @@ Este directorio contiene los datasets finales preparados para el entrenamiento y
 
 ---
 
+## 🖥️ Aplicación Interactiva en Vivo (Streamlit)
+
+Hemos desplegado una aplicación interactiva en la nube de Streamlit para que puedas simular cualquier partido del Mundial de forma interactiva y comparar los modelos en tiempo real:
+
+👉 **[Simulador Web del Mundial 2026](https://pacortes2021-fifa-2026-hybrid-forecast-app-anrhbf.streamlit.app/)**
+
+### ¿Qué puedes hacer en la aplicación?
+* **Búsqueda Amigable en Español**: Selecciona las selecciones en tu idioma con banderas emoji (se mapean automáticamente a los nombres en inglés en el backend).
+* **Comparación Directa de Modelos**: Compara el **Modelo Base** (jerarquía, finanzas e historial de largo plazo) frente al **Modelo Híbrido** (que incorpora la forma y volumen de juego recientes).
+* **Pronósticos y Métricas**: Visualiza probabilidades de ganar/empatar/perder, el porcentaje para avanzar ronda si es eliminatoria, goles esperados (Poisson) y los 5 marcadores más probables.
+* **Matrices de Goles**: Analiza la matriz cruzada de probabilidad de marcadores (del 0-0 al 5-5) mediante mapas de calor interactivos.
+
+---
+
 ## 📂 Contenido del Directorio
 
 1. **`espn_stats.csv`**: Base de datos de partidos internacionales masculinos (2018–2026) recopilada de ESPN. Ha sido ordenada cronológicamente y enriquecida con las columnas `elo_local` y `elo_visita` calculadas pre-partido.
