@@ -213,6 +213,34 @@ with tab1:
         st.markdown("**Marcadores más probables:** " + " · ".join(
             f"`{i}-{j} ({pr:.0%}, cuota {mo.cuota(pr):.1f})`" for i, j, pr in mk["_top_marcadores"][:4]))
 
+        # Estadísticas esperadas del partido (córners, tiros al arco, faltas, posesión)
+        st.markdown('<div class="sec-title">Estadísticas esperadas del partido</div>', unsafe_allow_html=True)
+        st.caption("Modelo *ataque × defensa*: lo que cada equipo genera × lo que el rival concede, "
+                   "normalizado. Basado en el box score de ESPN (cobertura ≈48%), así que tómalo como "
+                   "estimación de tendencia, no exacta.")
+        se = mo.stats_esperadas(M, a, b)
+        se1, se2 = st.columns([1, 1])
+        with se1:
+            df_se = pd.DataFrame({
+                "Estadística": ["⛳ Córners", "🎯 Tiros al arco", "🟨 Faltas", "📊 Posesión %"],
+                na: [f"{se['corners'][0]:.1f}", f"{se['tiros_arco'][0]:.1f}",
+                     f"{se['faltas'][0]:.1f}", f"{se['posesion'][0]:.0f}%"],
+                nb: [f"{se['corners'][1]:.1f}", f"{se['tiros_arco'][1]:.1f}",
+                     f"{se['faltas'][1]:.1f}", f"{se['posesion'][1]:.0f}%"]})
+            st.dataframe(df_se, hide_index=True, width='stretch')
+        with se2:
+            filas_ou = []
+            for nm_st, lineas in (("Córners", [8.5, 9.5, 10.5]), ("Tiros al arco", [6.5, 7.5, 8.5])):
+                key = "corners" if nm_st == "Córners" else "tiros_arco"
+                ou = mo.over_under_total(*se[key], lineas)
+                tot = sum(se[key])
+                for ln, (po, pu) in ou.items():
+                    filas_ou.append({"Mercado": f"{nm_st} Over {ln}", "Prob.": f"{po:.0%}",
+                                     "Cuota justa": f"{mo.cuota(po):.2f}"})
+            st.dataframe(pd.DataFrame(filas_ou), hide_index=True, width='stretch')
+            st.caption(f"Totales esperados — córners: **{sum(se['corners']):.1f}**  ·  "
+                       f"tiros al arco: **{sum(se['tiros_arco']):.1f}**  ·  faltas: **{sum(se['faltas']):.1f}**")
+
         # Matrices de marcadores lado a lado
         st.markdown('<div class="sec-title">Matrices de marcadores</div>', unsafe_allow_html=True)
         gx1, gx2 = st.columns(2)

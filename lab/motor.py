@@ -106,10 +106,28 @@ def cargar():
         pd.DataFrame({"g": espn.goles_visita.values, "d": (espn.elo_visita - espn.elo_local).values})])
     gp = sm.GLM(largo["g"], sm.add_constant(largo[["d"]]), family=sm.families.Poisson()).fit()
 
+    # Estadísticas CONCEDIDAS / PROVOCADAS por equipo (lo que falta en team_states) y medias globales,
+    # para el modelo de stats del partido (córners/tiros al arco/faltas) estilo ataque × defensa.
+    filas = []
+    for r in espn.itertuples(index=False):
+        filas.append({"equipo": r.local, "corners_conc": r.corners_visita, "tiros_arco_conc": r.tiros_arco_visita,
+                      "faltas_prov": r.faltas_visita})
+        filas.append({"equipo": r.visita, "corners_conc": r.corners_local, "tiros_arco_conc": r.tiros_arco_local,
+                      "faltas_prov": r.faltas_local})
+    conc = pd.DataFrame(filas).groupby("equipo").mean(numeric_only=True)
+    stat_global = {"corners": float(np.nanmean(pd.concat([espn.corners_local, espn.corners_visita]))),
+                   "tiros_arco": float(np.nanmean(pd.concat([espn.tiros_arco_local, espn.tiros_arco_visita]))),
+                   "faltas": float(np.nanmean(pd.concat([espn.faltas_local, espn.faltas_visita])))}
+    # rellenar equipos sin datos con la media global de lo concedido
+    conc["corners_conc"] = conc["corners_conc"].fillna(stat_global["corners"])
+    conc["tiros_arco_conc"] = conc["tiros_arco_conc"].fillna(stat_global["tiros_arco"])
+    conc["faltas_prov"] = conc["faltas_prov"].fillna(stat_global["faltas"])
+
     return {
         "df": df, "states": states, "hist": hist, "H2H": H2H,
         "pipe_base": pipe_base, "pipe_hyb": pipe_hyb,
         "gb0": float(gp.params["const"]), "gb1": float(gp.params["d"]),
+        "conc": conc, "stat_global": stat_global,
         "CORTE_TEST": "2025-01-01",
     }
 
@@ -230,6 +248,44 @@ def handicap_asiatico(mix, linea_a):
     return {"A cubre": float(mix[margen > 0].sum()),
             "push": float(mix[margen == 0].sum()),
             "B cubre": float(mix[margen < 0].sum())}
+
+
+# --------------------------------------------------------------------------- #
+#  FRENTE 1b · estadísticas esperadas del partido (córners, tiros al arco, faltas, posesión)
+# --------------------------------------------------------------------------- #
+def stats_esperadas(M, a, b):
+    """Estadísticas esperadas de cada equipo con el modelo ataque × defensa:
+       λ = (lo que A genera) × (lo que B concede) / media global.
+       Posesión por renormalización (suma 100). Devuelve dict por estadística."""
+    st, conc, g = M["states"], M["conc"], M["stat_global"]
+    res = {}
+    for nombre_st, col_avg, col_conc in (("corners", "corners_avg", "corners_conc"),
+                                         ("tiros_arco", "tiros_arco_avg", "tiros_arco_conc")):
+        media = g[nombre_st]
+        ca = conc.loc[b, col_conc] if b in conc.index else media
+        cb = conc.loc[a, col_conc] if a in conc.index else media
+        la = float(st.loc[a, col_avg] * ca / media)
+        lb = float(st.loc[b, col_avg] * cb / media)
+        res[nombre_st] = (la, lb)
+    # faltas: las comete A, moduladas por cuánto las provoca B (y viceversa)
+    mf = g["faltas"]
+    fa = (st.loc[a, "faltas_avg"] + (conc.loc[b, "faltas_prov"] if b in conc.index else mf)) / 2
+    fb = (st.loc[b, "faltas_avg"] + (conc.loc[a, "faltas_prov"] if a in conc.index else mf)) / 2
+    res["faltas"] = (float(fa), float(fb))
+    # posesión: renormalizada para que sume 100
+    pa, pb = st.loc[a, "posesion_avg"], st.loc[b, "posesion_avg"]
+    res["posesion"] = (float(pa / (pa + pb) * 100), float(pb / (pa + pb) * 100))
+    return res
+
+
+def over_under_total(la, lb, lineas):
+    """Over/Under del total (A+B) modelado como Poisson(la+lb). Devuelve {linea: (P_over, P_under)}."""
+    lam = la + lb
+    out = {}
+    for ln in lineas:
+        p_under = float(poisson.cdf(int(np.floor(ln)), lam))
+        out[ln] = (1 - p_under, p_under)
+    return out
 
 
 def tablas_grupos(resultados=None):
