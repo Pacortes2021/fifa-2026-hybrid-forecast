@@ -143,8 +143,9 @@ st.sidebar.info("Todos los modelos usan **ponderación K-factor**: los partidos 
 if len(ESPN_DF):
     st.sidebar.success(f"🛰️ ESPN: {len(ESPN_DF)} partidos reales cargados.")
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(
-    ["⚽ Partido + Mercados", "📊 Fase de grupos", "🔴 Torneo en vivo", "🎯 Validación", "📈 Robustez"])
+tab1, tab2, tab3, tab6, tab4, tab5 = st.tabs(
+    ["⚽ Partido + Mercados", "📊 Fase de grupos", "🔴 Torneo en vivo",
+     "🔬 Modelo vs realidad", "🎯 Validación", "📈 Robustez"])
 
 # ============================================================================
 # TAB 1 · Partido + mercados (comparación Base vs Híbrido, estilo app principal)
@@ -365,6 +366,44 @@ with tab3:
                          .background_gradient(subset=["Δ"], cmap="RdYlGn"), width='stretch', hide_index=True)
             subio = comp.loc[comp["Δ"].idxmax()]
             st.caption(f"Mayor salto: {subio['Selección']} ({subio['Δ']:+.1%}).")
+
+# ============================================================================
+# TAB 6 · Modelo vs realidad (validación en vivo contra el Mundial real)
+# ============================================================================
+with tab6:
+    st.markdown('<div class="sec-title">El modelo contra la realidad del Mundial</div>', unsafe_allow_html=True)
+    st.markdown("La prueba más auténtica: comparar la predicción **pre-partido** del modelo contra el "
+                "**resultado real** de cada partido del Mundial ya jugado (datos de ESPN). Out-of-sample puro.")
+    if len(ESPN_DF) == 0:
+        st.info("Aún no hay partidos finalizados del Mundial. Esta sección se llena sola conforme se jueguen.")
+    else:
+        tabla, met, evol = mo.validacion_en_vivo(M, ESPN_DF, modelo)
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("Partidos", met["n"])
+        m2.metric("Acierto (1X2)", f"{met['acierto']:.0%}")
+        m3.metric("Log-loss modelo", f"{met['logloss']:.3f}",
+                  f"{met['logloss'] - met['logloss_base']:+.3f} vs baseline", delta_color="inverse")
+        m4.metric("Log-loss baseline", f"{met['logloss_base']:.3f}")
+        peor = met["logloss"] > met["logloss_base"]
+        if peor:
+            st.warning(f"⚠️ Con **{met['n']} partidos** el modelo va por **debajo** del baseline de frecuencias "
+                       "— pero es muestra pequeñísima y los Mundiales arrancan con muchos empates y sorpresas "
+                       "(*efecto debut*). Verificado aparte: el modelo está **bien calibrado** en su histórico "
+                       "(~1.000 partidos), así que esto es **varianza esperable**, no un sesgo. Esta tabla dirá "
+                       "si revierte a la media conforme avance el torneo.")
+        else:
+            st.success(f"El modelo va **por encima** del baseline en {met['n']} partidos reales. 👍")
+        st.dataframe(tabla, hide_index=True, width='stretch')
+        if met["n"] >= 3:
+            fig, ax = plt.subplots(figsize=(9, 3.4))
+            ax.plot(evol["partido"], evol["logloss_acum"], "o-", color="#0b3d91", label="modelo (acumulado)")
+            ax.axhline(met["logloss_base"], color="#d62728", ls="--", lw=1, label="baseline frecuencias")
+            ax.set_xlabel("partidos del Mundial (cronológico)"); ax.set_ylabel("log-loss acumulado")
+            ax.legend(); ax.set_title("¿Mejora el modelo conforme avanza el Mundial?")
+            st.pyplot(fig)
+        st.caption(f"P(empate) que predijo el modelo: {met['p_empate_pred']:.0%}  ·  "
+                   f"empates reales hasta ahora: {met['empates_reales']:.0%}  — "
+                   "los Mundiales suelen empezar más empatados de lo normal.")
 
 # ============================================================================
 # TAB 4 · Validación

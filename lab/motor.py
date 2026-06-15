@@ -670,6 +670,45 @@ def backtest_stats(M):
 
 
 # --------------------------------------------------------------------------- #
+#  Validación EN VIVO: el modelo contra los resultados reales del Mundial
+# --------------------------------------------------------------------------- #
+def validacion_en_vivo(M, resultados, modelo="base"):
+    """Compara la predicción pre-partido del modelo contra el resultado real de cada partido del
+       Mundial ya jugado. Devuelve (tabla detalle, métricas, evolución log-loss acumulado)."""
+    from sklearn.metrics import log_loss
+    st = M["states"]
+    filas, P, y = [], [], []
+    for r in resultados.itertuples(index=False):
+        a, b = r.local, r.visita
+        if a not in st.index or b not in st.index:
+            continue
+        p = prob_partido(M, a, b, "auto", modelo)   # [P(gana local a), empate, P(gana visita b)]
+        ga, gb = int(r.goles_local), int(r.goles_visita)
+        real = 2 if ga > gb else (1 if ga == gb else 0)   # 2=gana local, 1=empate, 0=gana visita
+        P.append([p[2], p[1], p[0]]); y.append(real)      # orden de clases [0,1,2] para log_loss
+        pred = 2 if (p[0] >= p[1] and p[0] >= p[2]) else (1 if p[1] >= p[2] else 0)
+        filas.append({"Fecha": pd.to_datetime(r.fecha).date(), "Local": a, "Marcador": f"{ga}-{gb}", "Visita": b,
+                      "P(local)": f"{p[0]:.0%}", "P(empate)": f"{p[1]:.0%}", "P(visita)": f"{p[2]:.0%}",
+                      "Real": ["Gana visita", "Empate", "Gana local"][real],
+                      "Acierto": "✅" if pred == real else "❌"})
+    P, y = np.array(P), np.array(y)
+    n = len(y)
+    if n == 0:
+        return pd.DataFrame(), {}, pd.DataFrame()
+    base = np.tile([0.279, 0.275, 0.446], (n, 1))   # frecuencias históricas [visita, empate, local]
+    aciertos = sum(1 for i in range(n) if np.argmax(P[i]) == y[i])
+    met = {"n": n, "acierto": aciertos / n,
+           "logloss": log_loss(y, P, labels=[0, 1, 2]),
+           "logloss_base": log_loss(y, base, labels=[0, 1, 2]),
+           "p_empate_pred": float(P[:, 1].mean()), "empates_reales": float((y == 1).mean())}
+    # evolución del log-loss acumulado (para ver si mejora conforme avanza el torneo)
+    evol = [log_loss(y[:i + 1], P[:i + 1], labels=[0, 1, 2]) for i in range(n)]
+    evolucion = pd.DataFrame({"partido": range(1, n + 1), "logloss_acum": evol,
+                              "baseline": [met["logloss_base"]] * n})
+    return pd.DataFrame(filas), met, evolucion
+
+
+# --------------------------------------------------------------------------- #
 #  FRENTE 4 · robustez (IC del Monte Carlo)
 # --------------------------------------------------------------------------- #
 def ic_montecarlo(p, n_sims):
