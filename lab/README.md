@@ -15,20 +15,22 @@ streamlit run lab/app_lab.py        # desde la raíz del repo
 
 | Pestaña | Qué hace |
 |---|---|
-| **⚽ Partido + Mercados** | Probabilidades V/E/D de cualquier cruce + mercados de apuestas derivados de la grilla Poisson: Over/Under (1.5/2.5/3.5), *ambos marcan* (BTTS), marcadores más probables, hándicap de líneas enteras, y la matriz de marcadores. |
-| **🔴 Torneo en vivo** | Carga resultados reales del Mundial conforme se juegan: el modelo **actualiza el Elo y la forma** de cada selección, **fija** los partidos de grupo ya jugados y **re-simula el torneo restante**, mostrando cómo cambian las probabilidades de campeón. |
+| **⚽ Partido + Mercados** | Probabilidades V/E/D + **cuota justa** (1/prob) de cada resultado y mercado, para comparar a mano contra una casa y detectar *value*. Mercados: Over/Under (1.5/2.5/3.5), *ambos marcan* (BTTS), marcadores más probables, hándicap, matriz de marcadores. Además muestra los **últimos 6 partidos** de cada selección (historial + Mundial en curso). |
+| **🔴 Torneo en vivo** | Trae los resultados **reales** del Mundial desde la **API de ESPN** (modo automático) o por carga manual: **actualiza el Elo y la forma**, **fija** los partidos de grupo jugados y **re-simula el torneo restante**, mostrando cómo cambian las probabilidades de campeón. |
 | **🎯 Validación** | (1) **Calibración** en el hold-out temporal 2025–26 (curvas de confiabilidad + ECE por clase). (2) **Backtesting económico** de *value betting* contra un mercado sintético, con curva de ganancia. |
 | **📊 Robustez** | (1) **Intervalos de confianza** del Monte Carlo (error binomial sobre 8.000 simulaciones). (2) **Análisis de sensibilidad**: mueve el Elo de una selección y mira el efecto inmediato en un cruce. |
 
 ## Archivos
 
-- `motor.py` — toda la lógica (carga, modelos, Poisson, mercados, modo vivo, simulación, validación). Importable y testeable.
+- `motor.py` — toda la lógica (carga, modelos, Poisson, mercados, cuotas, modo vivo, simulación, validación). Importable y testeable.
+- `espn_live.py` — conector con la API pública de ESPN (resultados reales del Mundial, sin API key).
 - `app_lab.py` — la interfaz Streamlit (4 pestañas).
 
 ## Notas de honestidad
 
-- **Torneo en vivo**: al corte de junio 2026 el Mundial aún no se jugaba (0 resultados reales en los datos), así que esta pestaña ofrece el **mecanismo** listo para usarse — ingresas los resultados a mano y re-simula. La actualización de Elo usa K=60 (Mundial) y multiplicador de goleada; la forma se actualiza con media móvil de ventana ≈8.
-- **Backtesting económico**: el proyecto **no tiene cuotas reales** de casas de apuestas. El "mercado" es **sintético** (un modelo simple de solo-Elo + margen). Un ROI positivo prueba que la información extra del modelo completo (H2H, valor de plantilla) **aporta valor sobre el Elo solo** — no que le ganarías a una casa real. Con cuotas reales el número cambiaría.
+- **Cuotas**: el proyecto **no tiene acceso a cuotas reales** (Bet365, etc.). Lo que mostramos es la **cuota justa del modelo** (1 ÷ probabilidad). Tú la comparas contra la cuota real de la casa: si la casa paga más, hay *value*.
+- **Torneo en vivo**: trae resultados reales vía API de ESPN (`fifa.world`, sin key). La actualización de Elo usa K=60 (Mundial) y multiplicador de goleada; la forma se actualiza con media móvil de ventana ≈8. Si ESPN no responde, la pestaña cae a carga manual.
+- **Backtesting económico**: como no hay cuotas reales, el "mercado" es **sintético** (un modelo simple de solo-Elo + margen). Un ROI positivo prueba que la información extra del modelo completo (H2H, valor de plantilla) **aporta valor sobre el Elo solo** — no que le ganarías a una casa real.
 
 ## Despliegue alternativo (opcional)
 

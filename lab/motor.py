@@ -160,6 +160,35 @@ def lambdas(M, a, b, states=None):
     return float(np.exp(M["gb0"] + M["gb1"] * d)), float(np.exp(M["gb0"] - M["gb1"] * d))
 
 
+def cuota(p, margen=0.0):
+    """Cuota decimal (odds) de una probabilidad. margen=0 -> cuota justa; >0 -> cuota de bookmaker."""
+    p = float(np.clip(p, 1e-6, 1.0))
+    return 1.0 / (p * (1.0 + margen))
+
+
+def ultimos_partidos(M, equipo, n=6, extra=None):
+    """Últimos n partidos del equipo (historial + resultados extra ya jugados, p. ej. ESPN del Mundial).
+       Devuelve DataFrame: fecha, rival, resultado (texto), gf, gc, signo (G/E/P)."""
+    h = M["hist"][["date", "home_team", "away_team", "home_score", "away_score"]].rename(
+        columns={"date": "fecha", "home_team": "local", "away_team": "visita",
+                 "home_score": "goles_local", "away_score": "goles_visita"})
+    if extra is not None and len(extra):
+        e = extra[["fecha", "local", "visita", "goles_local", "goles_visita"]].copy()
+        e["fecha"] = pd.to_datetime(e["fecha"])
+        h = pd.concat([h, e], ignore_index=True)
+    h = h[(h.local == equipo) | (h.visita == equipo)].sort_values("fecha").tail(n).iloc[::-1]
+    filas = []
+    for r in h.itertuples(index=False):
+        local = r.local == equipo
+        gf = int(r.goles_local if local else r.goles_visita)
+        gc = int(r.goles_visita if local else r.goles_local)
+        rival = r.visita if local else r.local
+        signo = "🟢" if gf > gc else ("⚪" if gf == gc else "🔴")
+        filas.append({"fecha": pd.to_datetime(r.fecha).date(), "rival": rival,
+                      "marcador": f"{gf}-{gc}", "loc": "vs" if local else "@", "res": signo})
+    return pd.DataFrame(filas)
+
+
 # --------------------------------------------------------------------------- #
 #  FRENTE 1 · grilla de marcadores y mercados de apuestas
 # --------------------------------------------------------------------------- #

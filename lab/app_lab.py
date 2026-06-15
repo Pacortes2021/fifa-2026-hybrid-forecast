@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 import motor as mo
+import espn_live
 
 st.set_page_config(page_title="🧪 Lab Mundial 2026", page_icon="🧪", layout="wide")
 
@@ -64,7 +65,25 @@ def mc_base(modelo):
     return mo.monte_carlo(get_motor(), n_sims=8000, modelo=modelo)
 
 
+@st.cache_data(ttl=900, show_spinner=False)
+def cargar_espn():
+    """Resultados reales del Mundial desde ESPN (cacheados 15 min). Vacío si la API falla."""
+    try:
+        return espn_live.traer_resultados(), None
+    except Exception as e:  # red caída, formato cambiado, etc. — la app sigue funcionando
+        return pd.DataFrame(), str(e)
+
+
+@st.cache_data(ttl=120, show_spinner=False)
+def cargar_envivo():
+    try:
+        return espn_live.partidos_en_vivo()
+    except Exception:
+        return pd.DataFrame()
+
+
 M = get_motor()
+ESPN_DF, ESPN_ERR = cargar_espn()
 
 st.title("🧪 Laboratorio — Mundial 2026")
 st.caption("Versión avanzada y **provisoria**. No reemplaza a la app principal; explora cuatro extensiones "
@@ -95,35 +114,54 @@ with tab1:
     cmode = {"Automática (anfitrión de local)": "auto", "Neutral": "neutral",
              "Local equipo 1": "1", "Local equipo 2": "2"}[cancha]
 
+    na, nb = EN2ES.get(a, (a,))[0], EN2ES.get(b, (b,))[0]
     if a == b:
         st.error("Elige dos selecciones distintas.")
     else:
+        # Últimos partidos de cada selección (historial + Mundial en curso desde ESPN)
+        lc1, lc2 = st.columns(2)
+        for col, eq, nm in ((lc1, a, na), (lc2, b, nb)):
+            with col:
+                up = mo.ultimos_partidos(M, eq, n=6, extra=ESPN_DF)
+                with st.expander(f"📋 Últimos 6 de {nm}", expanded=True):
+                    if len(up):
+                        st.dataframe(up[["res", "loc", "rival", "marcador", "fecha"]],
+                                     hide_index=True, width='stretch')
+                    else:
+                        st.caption("Sin partidos en el historial.")
+
         mix, p, (la, lb) = mo.grilla(M, a, b, cmode, modelo)
         mk = mo.mercados(mix)
+        st.markdown("#### Resultado (1X2) — probabilidad y cuota justa")
+        st.caption("La **cuota justa** es 1 ÷ probabilidad. Si la casa paga MÁS que esta cuota, hay *value* "
+                   "(infravalorado); si paga menos, está sobrevalorado.")
         k1, k2, k3 = st.columns(3)
-        k1.metric(f"Gana {EN2ES.get(a,(a,))[0]}", f"{p[0]:.1%}")
-        k2.metric("Empate", f"{p[1]:.1%}")
-        k3.metric(f"Gana {EN2ES.get(b,(b,))[0]}", f"{p[2]:.1%}")
+        k1.metric(f"Gana {na}", f"{p[0]:.1%}", f"cuota {mo.cuota(p[0]):.2f}", delta_color="off")
+        k2.metric("Empate", f"{p[1]:.1%}", f"cuota {mo.cuota(p[1]):.2f}", delta_color="off")
+        k3.metric(f"Gana {nb}", f"{p[2]:.1%}", f"cuota {mo.cuota(p[2]):.2f}", delta_color="off")
         st.caption(f"Goles esperados (Poisson): {la:.2f} — {lb:.2f}")
 
-        st.markdown("#### Mercados")
-        mc1, mc2, mc3 = st.columns(3)
-        with mc1:
-            st.markdown("**Totales (Over/Under)**")
-            for ln in (1.5, 2.5, 3.5):
-                st.write(f"Over {ln}: **{mk[f'Over {ln}']:.1%}**  ·  Under {ln}: {mk[f'Under {ln}']:.1%}")
-        with mc2:
-            st.markdown("**Ambos marcan (BTTS)**")
-            st.write(f"Sí: **{mk['Ambos marcan (BTTS sí)']:.1%}**")
-            st.write(f"No: {mk['BTTS no']:.1%}")
+        st.markdown("#### Mercados — probabilidad y cuota justa")
+        filas = []
+        for ln in (1.5, 2.5, 3.5):
+            for lado in ("Over", "Under"):
+                pr = mk[f"{lado} {ln}"]
+                filas.append({"Mercado": f"{lado} {ln} goles", "Prob.": f"{pr:.1%}", "Cuota justa": f"{mo.cuota(pr):.2f}"})
+        for lado, key in (("Ambos marcan (sí)", "Ambos marcan (BTTS sí)"), ("Ambos marcan (no)", "BTTS no")):
+            filas.append({"Mercado": lado, "Prob.": f"{mk[key]:.1%}", "Cuota justa": f"{mo.cuota(mk[key]):.2f}"})
+        for ln in (-2, -1, 1):
+            hc = mo.handicap_asiatico(mix, ln)
+            sg = f"+{ln}" if ln > 0 else str(ln)
+            filas.append({"Mercado": f"Hándicap {na} {sg}", "Prob.": f"{hc['A cubre']:.1%}",
+                          "Cuota justa": f"{mo.cuota(hc['A cubre']):.2f}"})
+        mcols = st.columns([2, 2])
+        with mcols[0]:
+            st.dataframe(pd.DataFrame(filas[:8]), hide_index=True, width='stretch')
+        with mcols[1]:
+            st.dataframe(pd.DataFrame(filas[8:]), hide_index=True, width='stretch')
             st.markdown("**Marcadores más probables**")
-            st.write(" · ".join(f"`{i}-{j} ({pr:.0%})`" for i, j, pr in mk["_top_marcadores"][:3]))
-        with mc3:
-            st.markdown("**Hándicap (líneas enteras)**")
-            for ln in (-2, -1, 1):
-                hc = mo.handicap_asiatico(mix, ln)
-                signo = f"+{ln}" if ln > 0 else str(ln)
-                st.write(f"Eq.1 {signo}: cubre **{hc['A cubre']:.0%}** / push {hc['push']:.0%} / no {hc['B cubre']:.0%}")
+            st.write(" · ".join(f"`{i}-{j} ({pr:.0%}, cuota {mo.cuota(pr):.1f})`"
+                                for i, j, pr in mk["_top_marcadores"][:3]))
 
         st.markdown("#### Matriz de marcadores")
         fig, ax = plt.subplots(figsize=(7, 5.5))
@@ -146,29 +184,48 @@ with tab1:
 # FRENTE 2 · Torneo en vivo
 # ============================================================================
 with tab2:
-    st.subheader("Modelo vivo: actualiza con resultados reales y re-simula lo que falta")
+    st.subheader("Modelo vivo: resultados reales del Mundial → re-simulación")
     st.markdown(
-        "El estado de los equipos está congelado al **corte de junio 2026**. A medida que se juega el "
-        "Mundial, ingresa los resultados reales abajo: el modelo **actualiza el Elo y la forma** de cada "
-        "selección, **fija** los partidos de grupo ya jugados y **re-simula el torneo restante**.")
+        "El estado de los equipos está congelado al **corte de junio 2026**. Esta pestaña trae los "
+        "resultados **reales** del Mundial desde la **API de ESPN**, **actualiza el Elo y la forma** de "
+        "cada selección, **fija** los partidos de grupo ya jugados y **re-simula el torneo restante**.")
 
-    plantilla = pd.DataFrame({"local": pd.Series(dtype="str"), "visita": pd.Series(dtype="str"),
-                              "goles_local": pd.Series(dtype="int"), "goles_visita": pd.Series(dtype="int")})
-    edit = st.data_editor(
-        plantilla, num_rows="dynamic", width='stretch', key="vivo",
-        column_config={
-            "local": st.column_config.SelectboxColumn("Local", options=mo.MUNDIALISTAS, required=True),
-            "visita": st.column_config.SelectboxColumn("Visita", options=mo.MUNDIALISTAS, required=True),
-            "goles_local": st.column_config.NumberColumn("Goles local", min_value=0, max_value=15, step=1),
-            "goles_visita": st.column_config.NumberColumn("Goles visita", min_value=0, max_value=15, step=1)})
+    fuente = st.radio("Fuente de resultados", ["🛰️ Automática (ESPN, en vivo)", "✍️ Manual"], horizontal=True)
 
-    res = edit.dropna(subset=["local", "visita", "goles_local", "goles_visita"])
-    res = res[res.local != res.visita]
-    if len(res):
-        st.success(f"{len(res)} resultado(s) cargado(s).")
+    if fuente.startswith("🛰️"):
+        if ESPN_ERR:
+            st.error(f"No se pudo contactar a ESPN ({ESPN_ERR}). Usa el modo manual.")
+            res = pd.DataFrame()
+        elif len(ESPN_DF) == 0:
+            st.info("ESPN aún no reporta partidos finalizados del Mundial. Vuelve cuando empiece.")
+            res = pd.DataFrame()
+        else:
+            res = ESPN_DF.copy()
+            st.success(f"{len(res)} partidos finalizados traídos de ESPN (cache 15 min).")
+            envivo = cargar_envivo()
+            if len(envivo):
+                st.caption("🔴 En juego ahora: " + " · ".join(
+                    f"{r.local} {r.marcador} {r.visita} ({r.minuto})" for r in envivo.itertuples(index=False)))
+            st.dataframe(res[["fecha", "local", "goles_local", "goles_visita", "visita"]],
+                         hide_index=True, width='stretch', height=240)
+    else:
+        plantilla = pd.DataFrame({"local": pd.Series(dtype="str"), "visita": pd.Series(dtype="str"),
+                                  "goles_local": pd.Series(dtype="int"), "goles_visita": pd.Series(dtype="int")})
+        edit = st.data_editor(
+            plantilla, num_rows="dynamic", width='stretch', key="vivo",
+            column_config={
+                "local": st.column_config.SelectboxColumn("Local", options=mo.MUNDIALISTAS, required=True),
+                "visita": st.column_config.SelectboxColumn("Visita", options=mo.MUNDIALISTAS, required=True),
+                "goles_local": st.column_config.NumberColumn("Goles local", min_value=0, max_value=15, step=1),
+                "goles_visita": st.column_config.NumberColumn("Goles visita", min_value=0, max_value=15, step=1)})
+        res = edit.dropna(subset=["local", "visita", "goles_local", "goles_visita"])
+        res = res[res.local != res.visita]
+        if len(res):
+            st.success(f"{len(res)} resultado(s) cargado(s).")
+
     if st.button("🔄 Actualizar y re-simular (4.000 mundiales)", type="primary"):
         if len(res) == 0:
-            st.warning("Ingresa al menos un resultado.")
+            st.warning("No hay resultados para incorporar.")
         else:
             st2 = mo.actualizar_estados(M, res)
             fijos = {(r.local, r.visita): (int(r.goles_local), int(r.goles_visita))
