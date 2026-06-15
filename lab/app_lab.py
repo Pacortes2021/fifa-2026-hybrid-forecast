@@ -123,6 +123,11 @@ def cargar_envivo():
         return pd.DataFrame()
 
 
+@st.cache_data(show_spinner="Validando el panel de stats…")
+def mc_backtest_stats():
+    return mo.backtest_stats(get_motor())
+
+
 M = get_motor()
 ESPN_DF, ESPN_ERR = cargar_espn()
 ESPN_KEY = "" if len(ESPN_DF) == 0 else f"{len(ESPN_DF)}-{ESPN_DF.fecha.max()}"
@@ -399,6 +404,17 @@ with tab4:
                "(un modelo simple de solo Elo + margen). Un ROI positivo prueba que la información extra del "
                "modelo completo (H2H, valor de plantilla) **aporta valor sobre el Elo solo**, no que le "
                "ganarías a Bet365. Con cuotas reales el número cambiaría.")
+
+    st.markdown("##### 3. ¿Sirve el panel de estadísticas del partido?")
+    st.caption("Backtest walk-forward (cada predicción usa solo promedios previos al partido). MAE = error "
+               "absoluto medio; comparado contra el baseline de predecir siempre la media global.")
+    bs = mc_backtest_stats()
+    st.dataframe(bs, hide_index=True, width='stretch')
+    st.info("**Lectura honesta:** las cifras puntuales son **ruidosas** (córners ±2.4 sobre 4, posesión "
+            "±14pp) — sirven como *tendencia* (quién domina), no como número exacto; predecir córners "
+            "exactos es casi imposible por el azar. Donde sí hay **señal aprovechable** es en los **Over/Under "
+            "de tiros al arco (~60%) y faltas (~61%)**, que baten al baseline por 8–10 puntos. Es un "
+            "complemento útil, pero **mucho menos fiable que el modelo de resultado/goles** (que es el central).")
 
 # ============================================================================
 # TAB 5 · Robustez

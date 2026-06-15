@@ -259,13 +259,16 @@ def stats_esperadas(M, a, b):
        Posesión por renormalización (suma 100). Devuelve dict por estadística."""
     st, conc, g = M["states"], M["conc"], M["stat_global"]
     res = {}
+    # El backtest walk-forward mostró que el ataque×defensa PURO predice peor que el promedio
+    # propio del equipo (mete ruido). Usamos un blend 50/50: medio promedio propio, medio ajuste
+    # por lo que concede el rival. Es lo que mejor MAE dio (sobre todo en tiros al arco).
     for nombre_st, col_avg, col_conc in (("corners", "corners_avg", "corners_conc"),
                                          ("tiros_arco", "tiros_arco_avg", "tiros_arco_conc")):
         media = g[nombre_st]
         ca = conc.loc[b, col_conc] if b in conc.index else media
         cb = conc.loc[a, col_conc] if a in conc.index else media
-        la = float(st.loc[a, col_avg] * ca / media)
-        lb = float(st.loc[b, col_avg] * cb / media)
+        la = float(st.loc[a, col_avg] * (0.5 + 0.5 * ca / media))
+        lb = float(st.loc[b, col_avg] * (0.5 + 0.5 * cb / media))
         res[nombre_st] = (la, lb)
     # faltas: las comete A, moduladas por cuánto las provoca B (y viceversa)
     mf = g["faltas"]
@@ -539,6 +542,56 @@ def value_betting(M, modelo="base", margen=0.05, umbral=0.0):
     curva["acumulado"] = curva["pl"].cumsum()
     return {"n_apuestas": n, "roi": ganancia / apuestas.sum(),
             "ganancia": float(ganancia), "acierto": float((retornos > 0).mean())}, curva
+
+
+# --------------------------------------------------------------------------- #
+#  Validación del panel de stats (backtest walk-forward, sin fuga)
+# --------------------------------------------------------------------------- #
+def backtest_stats(M, ventana=8):
+    """Backtest walk-forward de las stats del partido: cada predicción usa solo promedios móviles
+       de partidos PREVIOS. Compara el promedio propio del equipo contra la media global, y mide
+       el acierto de las líneas Over/Under. Devuelve un DataFrame de métricas."""
+    from collections import defaultdict, deque
+    e = M["df"][["fecha", "local", "visita"]].copy()  # marco; las stats vienen de espn
+    espn = pd.read_csv(DATA / "espn_stats.csv", parse_dates=["fecha"]).sort_values("fecha")
+    cfg = {"Córners": ("corners_local", "corners_visita"),
+           "Tiros al arco": ("tiros_arco_local", "tiros_arco_visita"),
+           "Faltas": ("faltas_local", "faltas_visita"),
+           "Posesión %": ("posesion_local", "posesion_visita")}
+    filas = []
+    for nombre_st, (cl, cv) in cfg.items():
+        favor = defaultdict(lambda: deque(maxlen=ventana))
+        sub = espn.dropna(subset=[cl, cv])
+        mg = float(pd.concat([sub[cl], sub[cv]]).mean())
+        linea = float(np.median((sub[cl] + sub[cv]).dropna()))
+        pm, pg, real, ou_m, ou_real = [], [], [], [], []
+        for r in espn.itertuples(index=False):
+            vl, vv = getattr(r, cl), getattr(r, cv)
+            a, b = r.local, r.visita
+            if not (pd.isna(vl) or pd.isna(vv)):
+                if len(favor[a]) >= 3 and len(favor[b]) >= 3:
+                    fa, fb = np.mean(favor[a]), np.mean(favor[b])
+                    if nombre_st == "Posesión %" and fa + fb > 0:
+                        la, lb = fa / (fa + fb) * 100, fb / (fa + fb) * 100
+                    else:
+                        la, lb = fa, fb
+                    pm += [la, lb]; pg += [mg, mg]; real += [vl, vv]
+                    if nombre_st != "Posesión %":
+                        ou_m.append(1 if fa + fb > linea else 0)
+                        ou_real.append(1 if vl + vv > linea else 0)
+                favor[a].append(vl); favor[b].append(vv)
+        real, pm, pg = map(np.array, (real, pm, pg))
+        fila = {"Estadística": nombre_st, "media": round(real.mean(), 1),
+                "MAE modelo": round(np.mean(np.abs(pm - real)), 2),
+                "MAE baseline": round(np.mean(np.abs(pg - real)), 2)}
+        if ou_real:
+            ou_real = np.array(ou_real)
+            fila["O/U acierto"] = f"{(np.array(ou_m) == ou_real).mean():.0%}"
+            fila["O/U baseline"] = f"{max(ou_real.mean(), 1 - ou_real.mean()):.0%}"
+        else:
+            fila["O/U acierto"] = fila["O/U baseline"] = "—"
+        filas.append(fila)
+    return pd.DataFrame(filas)
 
 
 # --------------------------------------------------------------------------- #
