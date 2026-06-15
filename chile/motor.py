@@ -94,6 +94,74 @@ def cargar():
 
 
 # --------------------------------------------------------------------------- #
+#  Análisis riguroso de variables (VIF + forward + significancia + comparación)
+# --------------------------------------------------------------------------- #
+def analisis_variables(M, corte="2025-07-01"):
+    """Justifica la elección de variables: construye un conjunto amplio de candidatas point-in-time
+       y reporta VIF (multicolinealidad), correlación, qué elige el forward y cómo rinden distintos
+       modelos en el hold-out temporal. Devuelve (df_candidatas, set_final, df_modelos)."""
+    import statsmodels.api as sm
+    from statsmodels.stats.outliers_influence import variance_inflation_factor
+    from sklearn.ensemble import RandomForestClassifier, HistGradientBoostingClassifier
+    from sklearn.model_selection import cross_val_score, TimeSeriesSplit
+    from sklearn.metrics import log_loss, accuracy_score
+
+    part = M["part"]
+    elo = defaultdict(lambda: ELO_INIT)
+    ppg5, gf, gc = defaultdict(lambda: deque(maxlen=5)), defaultdict(lambda: deque(maxlen=5)), defaultdict(lambda: deque(maxlen=5))
+    h2h = defaultdict(list); rows = []
+    for r in part.itertuples(index=False):
+        a, b, gl, gv = r.local, r.visita, r.goles_local, r.goles_visita
+        par = tuple(sorted((a, b))); prev = h2h[par]
+        hh = (np.mean([x if a == par[0] else -x for x in prev]) if prev else 0.0)
+        rows.append({
+            "elo_diff": elo[a] + HOME_ADV - elo[b],
+            "ppg5_diff": (np.mean(ppg5[a]) if ppg5[a] else 1.0) - (np.mean(ppg5[b]) if ppg5[b] else 1.0),
+            "gf_diff": (np.mean(gf[a]) if gf[a] else 1.2) - (np.mean(gf[b]) if gf[b] else 1.2),
+            "gc_diff": (np.mean(gc[a]) if gc[a] else 1.2) - (np.mean(gc[b]) if gc[b] else 1.2),
+            "h2h_diff": hh if a == par[0] else -hh, "fecha": r.fecha,
+            "resultado": 2 if gl > gv else (1 if gl == gv else 0)})
+        we = 1 / (1 + 10 ** (-((elo[a] + HOME_ADV) - elo[b]) / 400)); w = 1.0 if gl > gv else (0.5 if gl == gv else 0.0)
+        delta = K_LIGA * _mult_goles(gl - gv) * (w - we); elo[a] += delta; elo[b] -= delta
+        rl, rv = (3, 0) if gl > gv else ((1, 1) if gl == gv else (0, 3))
+        ppg5[a].append(rl); ppg5[b].append(rv); gf[a].append(gl); gc[a].append(gv); gf[b].append(gv); gc[b].append(gl)
+        h2h[par].append(gl - gv)
+    D = pd.DataFrame(rows)
+    CAND = ["elo_diff", "ppg5_diff", "gf_diff", "gc_diff", "h2h_diff"]
+    tr, te = D[D.fecha < corte], D[D.fecha >= corte]; y = tr.resultado; cv = TimeSeriesSplit(5)
+
+    Xv = sm.add_constant(tr[CAND])
+    vif = {f: variance_inflation_factor(Xv.values, i + 1) for i, f in enumerate(CAND)}
+
+    def ll(cols):
+        p = Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))])
+        return -cross_val_score(p, tr[cols], y, cv=cv, scoring="neg_log_loss").mean()
+    sel, rem, best = [], CAND[:], 99
+    while rem:
+        sc = {f: ll(sel + [f]) for f in rem}; bf = min(sc, key=sc.get)
+        if sc[bf] < best - 0.001:
+            sel.append(bf); rem.remove(bf); best = sc[bf]
+        else:
+            break
+
+    df_cand = pd.DataFrame([{"variable": f, "corr_resultado": round(tr[[f, "resultado"]].corr().iloc[0, 1], 2),
+                             "VIF": round(vif[f], 1), "elegida": "✅" if f in sel else "—"} for f in CAND])
+
+    modelos = [("Logística (elo+forma+h2h)", Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))]), ["elo_diff", "ppg5_diff", "h2h_diff"]),
+               ("Logística (solo Elo)", Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))]), ["elo_diff"]),
+               ("Random Forest", RandomForestClassifier(n_estimators=300, max_depth=6, random_state=42), CAND),
+               ("Gradient Boosting", HistGradientBoostingClassifier(max_iter=300, learning_rate=0.05, random_state=42), CAND)]
+    filas = []
+    for nom, mod, cols in modelos:
+        mod.fit(tr[cols], y); P = mod.predict_proba(te[cols])
+        filas.append({"Modelo": nom, "LogLoss": round(log_loss(te.resultado, P, labels=[0, 1, 2]), 4),
+                      "Acierto": f"{accuracy_score(te.resultado, P.argmax(1)):.0%}"})
+    base = np.tile(np.bincount(y) / len(y), (len(te), 1))
+    filas.append({"Modelo": "Baseline frecuencias", "LogLoss": round(log_loss(te.resultado, base, labels=[0, 1, 2]), 4), "Acierto": "—"})
+    return df_cand, sel, pd.DataFrame(filas)
+
+
+# --------------------------------------------------------------------------- #
 #  Predicción de un partido
 # --------------------------------------------------------------------------- #
 def _h2h(M, a, b):

@@ -41,6 +41,11 @@ def get_sim():
     return mo.simular_campeonato(get_motor(), 10000)
 
 
+@st.cache_data(show_spinner="Analizando variables…")
+def get_analisis():
+    return mo.analisis_variables(get_motor())
+
+
 M = get_motor()
 EQUIPOS = M["equipos_2026"]
 
@@ -170,6 +175,23 @@ with tab3:
     st.caption(f"Validación temporal (entrena hasta jun-2025, evalúa jul-2025 en adelante). El fútbol de clubes "
                f"es más impredecible que las selecciones (el local gana solo el {(part.resultado==2).mean():.0%}), "
                "pero el modelo le gana al baseline.")
+
+    st.markdown('<div class="sec-title">Selección de variables (con rigor, no a ojo)</div>', unsafe_allow_html=True)
+    st.caption("Mismo protocolo que el modelo del Mundial: candidatas point-in-time → VIF (multicolinealidad) "
+               "→ selección forward con CV temporal → comparación de modelos en el hold-out.")
+    df_cand, sel, df_mod = get_analisis()
+    ca1, ca2 = st.columns(2)
+    with ca1:
+        st.markdown("**Variables candidatas**")
+        st.dataframe(df_cand, hide_index=True, width='stretch')
+        st.caption(f"El forward elige: **{', '.join(sel)}**. El Elo concentra casi toda la señal; la forma y "
+                   "el head-to-head aportan dentro del ruido (no superan el umbral) — igual que en el Mundial.")
+    with ca2:
+        st.markdown("**Comparación de modelos (hold-out temporal)**")
+        st.dataframe(df_mod, hide_index=True, width='stretch')
+        st.caption("Las logísticas lineales ganan; Random Forest y Gradient Boosting quedan **peores** — con "
+                   "poca señal, la flexibilidad extra solo memoriza ruido. Por eso el modelo es una logística.")
+
     st.markdown('<div class="sec-title">Ranking Elo actual</div>', unsafe_allow_html=True)
     elo_df = pd.DataFrame([{"Equipo": t, "Elo": round(e)} for t, e in
                           sorted(M["elo"].items(), key=lambda x: -x[1]) if t in EQUIPOS])
