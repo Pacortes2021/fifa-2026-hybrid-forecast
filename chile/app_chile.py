@@ -176,6 +176,36 @@ with tab3:
                f"es más impredecible que las selecciones (el local gana solo el {(part.resultado==2).mean():.0%}), "
                "pero el modelo le gana al baseline.")
 
+    st.markdown('<div class="sec-title">Matriz de confusión (test temporal)</div>', unsafe_allow_html=True)
+    from sklearn.metrics import confusion_matrix
+    cmcol1, cmcol2 = st.columns([1, 1])
+    with cmcol1:
+        et = ["Victoria local", "Empate", "Gana visita"]
+        cm = confusion_matrix(te.resultado, P.argmax(1), labels=[2, 1, 0])
+        fig, ax = plt.subplots(figsize=(5.2, 4.4)); ax.imshow(cm, cmap="Reds")
+        ax.set_xticks(range(3)); ax.set_xticklabels(et, rotation=15, fontsize=8)
+        ax.set_yticks(range(3)); ax.set_yticklabels(et, fontsize=8)
+        ax.set_xlabel("Predicho"); ax.set_ylabel("Real")
+        for i in range(3):
+            for j in range(3):
+                ax.text(j, i, cm[i, j], ha="center", va="center", fontsize=14,
+                        color="white" if cm[i, j] > cm.max() * 0.5 else "black",
+                        fontweight="bold" if i == j else "normal")
+        plt.tight_layout(); st.pyplot(fig)
+    with cmcol2:
+        n_emp = int((P.argmax(1) == 1).sum())
+        st.markdown(f"""
+        **El modelo casi nunca predice empate por argmax** ({n_emp} de {len(te)} partidos).
+        No es un error: el empate es la clase *del medio*, así que rara vez es la **más probable** —
+        siempre hay una de las otras dos un poco por encima.
+
+        Pero el modelo **sí estima bien la probabilidad** de empate (está calibrada), que es lo que
+        usan las simulaciones. Por eso un modelo de fútbol **no se evalúa con accuracy** sino con
+        **log-loss / RPS**, y se usan las probabilidades, no el resultado más probable.
+
+        El modelo acierta sobre todo las **victorias locales** (la localía es la señal más fuerte).
+        """)
+
     st.markdown('<div class="sec-title">Selección de variables (con rigor, no a ojo)</div>', unsafe_allow_html=True)
     st.caption("Mismo protocolo que el modelo del Mundial: candidatas point-in-time → VIF (multicolinealidad) "
                "→ selección forward con CV temporal → comparación de modelos en el hold-out.")
