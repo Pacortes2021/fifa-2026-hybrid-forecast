@@ -232,6 +232,35 @@ def handicap_asiatico(mix, linea_a):
             "B cubre": float(mix[margen < 0].sum())}
 
 
+def tablas_grupos(resultados=None):
+    """Tabla de posiciones de cada grupo a partir de los resultados ya jugados.
+       Devuelve dict {letra: DataFrame con Pos, Equipo, PJ, G, E, P, GF, GC, DG, Pts}."""
+    res = resultados if resultados is not None else pd.DataFrame(
+        columns=["local", "visita", "goles_local", "goles_visita"])
+    out = {}
+    for g, eqs in GRUPOS.items():
+        st = {t: dict(PJ=0, G=0, E=0, P=0, GF=0, GC=0) for t in eqs}
+        for r in res.itertuples(index=False):
+            if r.local not in eqs or r.visita not in eqs:
+                continue
+            a, b = r.local, r.visita
+            ga, gb = int(r.goles_local), int(r.goles_visita)
+            st[a]["PJ"] += 1; st[b]["PJ"] += 1
+            st[a]["GF"] += ga; st[a]["GC"] += gb
+            st[b]["GF"] += gb; st[b]["GC"] += ga
+            if ga > gb: st[a]["G"] += 1; st[b]["P"] += 1
+            elif gb > ga: st[b]["G"] += 1; st[a]["P"] += 1
+            else: st[a]["E"] += 1; st[b]["E"] += 1
+        filas = []
+        for t in eqs:
+            s = st[t]
+            filas.append({"Equipo": t, **s, "DG": s["GF"] - s["GC"], "Pts": 3 * s["G"] + s["E"]})
+        d = pd.DataFrame(filas).sort_values(["Pts", "DG", "GF"], ascending=False).reset_index(drop=True)
+        d.insert(0, "Pos", d.index + 1)
+        out[g] = d
+    return out
+
+
 # --------------------------------------------------------------------------- #
 #  FRENTE 2 · modelo vivo: actualizar Elo + forma con resultados reales
 # --------------------------------------------------------------------------- #
