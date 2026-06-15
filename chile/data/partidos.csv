@@ -1,0 +1,1434 @@
+fecha,temporada,local,visita,goles_local,goles_visita,estado
+2021-01-02 13:30:00,2021,O'Higgins,La Serena,1,1,post
+2021-01-02 20:00:00,2021,Everton CD,Deportes Iquique,1,0,post
+2021-01-02 22:15:00,2021,Unión La Calera,Unión Wanderers,3,0,post
+2021-01-03 13:30:00,2021,Antofagasta,Colo Colo,0,1,post
+2021-01-03 22:15:00,2021,Universidad de Chile,Universidad de Concepción,2,0,post
+2021-01-04 13:30:00,2021,Palestino,Curicó Unido,4,2,post
+2021-01-04 22:15:00,2021,Universidad Católica,Huachipato,3,0,post
+2021-01-05 00:30:00,2021,Audax Italiano,Unión Española,2,2,post
+2021-01-06 13:30:00,2021,Unión Wanderers,Colo Colo,3,0,post
+2021-01-06 20:00:00,2021,La Serena,Everton CD,1,1,post
+2021-01-06 22:15:00,2021,Universidad de Chile,O'Higgins,0,1,post
+2021-01-07 13:30:00,2021,Curicó Unido,Antofagasta,2,0,post
+2021-01-07 20:00:00,2021,Universidad de Concepción,Palestino,1,1,post
+2021-01-07 22:15:00,2021,Huachipato,Unión La Calera,4,3,post
+2021-01-08 00:30:00,2021,Deportes Iquique,Universidad Católica,0,1,post
+2021-01-08 13:30:00,2021,Cobresal,Audax Italiano,1,2,post
+2021-01-10 13:30:00,2021,Universidad Católica,Curicó Unido,1,1,post
+2021-01-10 21:30:00,2021,Colo Colo,Everton CD,1,0,post
+2021-01-11 00:00:00,2021,Unión La Calera,Universidad de Concepción,1,2,post
+2021-01-11 13:30:00,2021,Palestino,Unión Española,2,2,post
+2021-01-11 20:00:00,2021,Antofagasta,La Serena,2,2,post
+2021-01-11 22:15:00,2021,Unión Wanderers,Cobresal,1,0,post
+2021-01-12 00:30:00,2021,Audax Italiano,Huachipato,2,0,post
+2021-01-12 13:30:00,2021,O'Higgins,Deportes Iquique,2,2,post
+2021-01-13 20:00:00,2021,Universidad de Concepción,Colo Colo,1,1,post
+2021-01-14 20:00:00,2021,Everton CD,Audax Italiano,2,1,post
+2021-01-14 22:15:00,2021,Universidad de Chile,Palestino,1,1,post
+2021-01-15 00:30:00,2021,Unión Española,Universidad Católica,1,1,post
+2021-01-15 13:30:00,2021,Cobresal,Antofagasta,3,1,post
+2021-01-15 20:00:00,2021,La Serena,Unión La Calera,0,3,post
+2021-01-15 22:15:00,2021,Curicó Unido,O'Higgins,1,3,post
+2021-01-16 00:30:00,2021,Huachipato,Unión Wanderers,4,0,post
+2021-01-17 21:00:00,2021,Colo Colo,Universidad de Chile,0,0,post
+2021-01-18 13:30:00,2021,Palestino,Cobresal,3,2,post
+2021-01-18 20:00:00,2021,Unión Wanderers,La Serena,0,0,post
+2021-01-18 22:15:00,2021,Audax Italiano,Unión La Calera,1,3,post
+2021-01-19 13:30:00,2021,Antofagasta,Deportes Iquique,3,1,post
+2021-01-19 20:00:00,2021,Huachipato,Unión Española,4,1,post
+2021-01-19 22:15:00,2021,Universidad Católica,Everton CD,1,1,post
+2021-01-20 00:30:00,2021,O'Higgins,Universidad de Concepción,0,0,post
+2021-01-21 00:30:00,2021,Coquimbo Unido,Curicó Unido,0,0,post
+2021-01-23 21:00:00,2021,Colo Colo,Coquimbo Unido,2,1,post
+2021-01-23 23:30:00,2021,Cobresal,Unión La Calera,1,1,post
+2021-01-24 20:00:00,2021,La Serena,Curicó Unido,2,0,post
+2021-01-24 22:15:00,2021,Universidad de Chile,Deportes Iquique,2,2,post
+2021-01-25 23:00:00,2021,Universidad Católica,Palestino,2,3,post
+2021-01-26 23:00:00,2021,Unión Española,Coquimbo Unido,0,1,post
+2021-01-28 23:00:00,2021,Unión La Calera,Deportes Iquique,1,2,post
+2021-01-29 22:00:00,2021,Coquimbo Unido,Universidad de Chile,0,1,post
+2021-01-30 22:00:00,2021,O'Higgins,Universidad Católica,2,0,post
+2021-01-31 21:30:00,2021,Colo Colo,Unión La Calera,2,1,post
+2021-02-01 00:00:00,2021,Curicó Unido,Unión Española,2,4,post
+2021-02-02 00:00:00,2021,Deportes Iquique,Coquimbo Unido,2,2,post
+2021-02-04 23:00:00,2021,Coquimbo Unido,Cobresal,0,1,post
+2021-02-05 20:00:00,2021,La Serena,Universidad Católica,1,2,post
+2021-02-05 22:15:00,2021,Unión La Calera,Antofagasta,1,1,post
+2021-02-06 00:30:00,2021,Curicó Unido,Unión Wanderers,1,3,post
+2021-02-06 13:30:00,2021,O'Higgins,Audax Italiano,0,0,post
+2021-02-06 20:00:00,2021,Everton CD,Palestino,1,3,post
+2021-02-06 22:15:00,2021,Universidad de Chile,Unión Española,3,0,post
+2021-02-07 00:30:00,2021,Deportes Iquique,Colo Colo,0,0,post
+2021-02-07 20:00:00,2021,Universidad de Concepción,Coquimbo Unido,2,1,post
+2021-02-08 00:45:00,2021,Cobresal,Huachipato,2,1,post
+2021-02-10 13:30:00,2021,Antofagasta,O'Higgins,1,0,post
+2021-02-10 21:30:00,2021,Curicó Unido,Universidad de Chile,0,0,post
+2021-02-10 21:30:00,2021,Unión Española,La Serena,1,1,post
+2021-02-11 00:30:00,2021,Universidad Católica,Unión La Calera,0,0,post
+2021-02-11 21:30:00,2021,Audax Italiano,Deportes Iquique,1,1,post
+2021-02-11 21:30:00,2021,Colo Colo,Cobresal,0,0,post
+2021-02-11 21:30:00,2021,Coquimbo Unido,Everton CD,3,0,post
+2021-02-11 21:30:00,2021,Unión Wanderers,Universidad de Concepción,1,1,post
+2021-02-12 00:00:00,2021,Huachipato,Palestino,1,0,post
+2021-02-13 21:30:00,2021,Unión La Calera,Curicó Unido,2,3,post
+2021-02-13 21:30:00,2021,Universidad de Chile,Antofagasta,3,1,post
+2021-02-14 13:30:00,2021,Everton CD,Huachipato,1,0,post
+2021-02-14 13:30:00,2021,Universidad de Concepción,Universidad Católica,1,2,post
+2021-02-14 21:00:00,2021,Deportes Iquique,Unión Wanderers,2,0,post
+2021-02-14 21:00:00,2021,La Serena,Audax Italiano,0,2,post
+2021-02-14 21:00:00,2021,O'Higgins,Colo Colo,1,1,post
+2021-02-14 21:00:00,2021,Palestino,Coquimbo Unido,2,2,post
+2021-02-15 13:30:00,2021,Cobresal,Unión Española,4,1,post
+2021-02-17 21:00:00,2021,Colo Colo,Universidad de Concepción,1,0,post
+2021-03-27 14:00:00,2021,Curicó Unido,Melipilla,2,0,post
+2021-03-27 19:00:00,2021,Everton CD,O'Higgins,1,1,post
+2021-03-27 21:30:00,2021,Colo Colo,Unión La Calera,0,0,post
+2021-03-28 00:00:00,2021,Unión Española,Santiago Wanderers,3,1,post
+2021-03-28 13:45:00,2021,Palestino,Antofagasta,2,4,post
+2021-03-28 20:00:00,2021,Huachipato,Cobresal,0,0,post
+2021-03-28 22:30:00,2021,Ñublense,Universidad Católica,0,1,post
+2021-03-30 23:00:00,2021,Audax Italiano,La Serena,2,1,post
+2021-04-02 19:00:00,2021,Antofagasta,Everton CD,1,2,post
+2021-04-02 22:00:00,2021,Unión La Calera,Unión Española,1,0,post
+2021-04-03 14:00:00,2021,Melipilla,Ñublense,1,1,post
+2021-04-03 21:00:00,2021,Universidad de Chile,Huachipato,1,1,post
+2021-04-03 23:30:00,2021,Cobresal,Colo Colo,1,2,post
+2021-04-04 21:00:00,2021,La Serena,Curicó Unido,2,0,post
+2021-04-04 23:15:00,2021,Universidad Católica,Palestino,2,1,post
+2021-04-05 01:30:00,2021,O'Higgins,Audax Italiano,0,0,post
+2021-04-10 20:00:00,2021,Unión Española,Melipilla,0,2,post
+2021-04-10 22:30:00,2021,Audax Italiano,Universidad Católica,1,0,post
+2021-04-11 19:00:00,2021,La Serena,Universidad de Chile,0,0,post
+2021-04-11 21:30:00,2021,Santiago Wanderers,Unión La Calera,1,2,post
+2021-04-12 00:00:00,2021,Colo Colo,O'Higgins,1,2,post
+2021-04-12 16:00:00,2021,Ñublense,Cobresal,3,1,post
+2021-04-12 19:00:00,2021,Palestino,Everton CD,1,1,post
+2021-04-12 21:15:00,2021,Curicó Unido,Antofagasta,1,1,post
+2021-04-16 19:30:00,2021,Melipilla,Palestino,0,1,post
+2021-04-16 22:00:00,2021,Huachipato,Ñublense,5,3,post
+2021-04-17 00:30:00,2021,Universidad Católica,Curicó Unido,2,1,post
+2021-04-17 22:00:00,2021,O'Higgins,La Serena,0,0,post
+2021-04-18 00:30:00,2021,Unión La Calera,Audax Italiano,1,1,post
+2021-04-18 15:00:00,2021,Cobresal,Santiago Wanderers,2,1,post
+2021-04-18 19:00:00,2021,Everton CD,Colo Colo,0,2,post
+2021-04-20 00:30:00,2021,Universidad de Chile,Unión Española,2,1,post
+2021-04-24 00:00:00,2021,Curicó Unido,Everton CD,1,1,post
+2021-04-24 16:00:00,2021,Antofagasta,Cobresal,2,1,post
+2021-04-24 19:30:00,2021,La Serena,Unión Española,0,0,post
+2021-04-24 22:00:00,2021,O'Higgins,Unión La Calera,1,0,post
+2021-04-25 00:30:00,2021,Santiago Wanderers,Ñublense,1,2,post
+2021-04-25 20:00:00,2021,Colo Colo,Universidad de Chile,1,0,post
+2021-04-27 00:30:00,2021,Audax Italiano,Melipilla,1,0,post
+2021-05-01 00:00:00,2021,Everton CD,La Serena,0,4,post
+2021-05-01 16:30:00,2021,Unión La Calera,Antofagasta,2,1,post
+2021-05-01 19:30:00,2021,Unión Española,Audax Italiano,1,1,post
+2021-05-01 22:00:00,2021,Ñublense,Colo Colo,5,1,post
+2021-05-02 15:00:00,2021,Cobresal,Curicó Unido,2,0,post
+2021-05-02 19:30:00,2021,Huachipato,O'Higgins,0,1,post
+2021-05-02 22:00:00,2021,Melipilla,Universidad Católica,2,0,post
+2021-05-04 00:30:00,2021,Universidad de Chile,Santiago Wanderers,1,0,post
+2021-05-08 00:00:00,2021,O'Higgins,Unión Española,1,4,post
+2021-05-08 16:00:00,2021,Universidad Católica,Unión La Calera,3,0,post
+2021-05-08 19:30:00,2021,La Serena,Ñublense,1,0,post
+2021-05-08 22:00:00,2021,Santiago Wanderers,Melipilla,0,3,post
+2021-05-09 00:30:00,2021,Colo Colo,Palestino,1,2,post
+2021-05-09 16:00:00,2021,Curicó Unido,Huachipato,2,2,post
+2021-05-09 19:30:00,2021,Antofagasta,Universidad de Chile,1,2,post
+2021-05-09 22:00:00,2021,Audax Italiano,Cobresal,0,0,post
+2021-05-22 15:00:00,2021,Cobresal,La Serena,2,0,post
+2021-05-22 19:30:00,2021,Ñublense,Curicó Unido,2,0,post
+2021-05-22 22:00:00,2021,Santiago Wanderers,O'Higgins,0,0,post
+2021-05-23 00:30:00,2021,Unión Española,Universidad Católica,3,2,post
+2021-05-23 16:30:00,2021,Melipilla,Antofagasta,1,1,post
+2021-05-23 19:00:00,2021,Huachipato,Colo Colo,0,2,post
+2021-05-24 00:30:00,2021,Universidad de Chile,Everton CD,0,1,post
+2021-05-29 00:00:00,2021,Curicó Unido,Unión Española,1,2,post
+2021-05-29 19:00:00,2021,La Serena,Melipilla,5,1,post
+2021-05-29 21:30:00,2021,O'Higgins,Palestino,1,0,post
+2021-05-30 20:00:00,2021,Everton CD,Santiago Wanderers,1,0,post
+2021-05-30 23:00:00,2021,Universidad Católica,Cobresal,2,1,post
+2021-05-31 19:30:00,2021,Antofagasta,Huachipato,1,0,post
+2021-05-31 22:00:00,2021,Unión La Calera,Ñublense,1,0,post
+2021-06-01 00:30:00,2021,Audax Italiano,Universidad de Chile,2,1,post
+2021-06-05 14:30:00,2021,Cobresal,Unión La Calera,0,1,post
+2021-06-05 17:00:00,2021,Santiago Wanderers,Universidad Católica,0,1,post
+2021-06-05 19:30:00,2021,Palestino,Universidad de Chile,0,0,post
+2021-06-06 00:30:00,2021,Huachipato,Everton CD,0,0,post
+2021-06-06 15:30:00,2021,Unión Española,Antofagasta,1,1,post
+2021-06-06 22:00:00,2021,Colo Colo,La Serena,2,0,post
+2021-06-07 00:30:00,2021,Melipilla,O'Higgins,3,1,post
+2021-06-08 00:30:00,2021,Ñublense,Audax Italiano,1,0,post
+2021-06-15 16:30:00,2021,Palestino,Audax Italiano,0,2,post
+2021-07-15 16:30:00,2021,Palestino,Huachipato,2,0,post
+2021-07-16 00:00:00,2021,O'Higgins,Cobresal,1,1,post
+2021-07-16 16:30:00,2021,Antofagasta,Santiago Wanderers,1,0,post
+2021-07-17 00:30:00,2021,Unión La Calera,Curicó Unido,1,0,post
+2021-07-17 20:00:00,2021,Universidad Católica,Colo Colo,0,0,post
+2021-07-19 22:00:00,2021,Audax Italiano,Huachipato,3,3,post
+2021-07-20 00:30:00,2021,Everton CD,Ñublense,0,0,post
+2021-07-20 19:00:00,2021,La Serena,Palestino,4,3,post
+2021-07-21 00:30:00,2021,Universidad de Chile,Melipilla,2,0,post
+2021-07-24 00:30:00,2021,Everton CD,Unión Española,2,0,post
+2021-07-24 19:00:00,2021,Ñublense,Antofagasta,0,0,post
+2021-07-24 21:30:00,2021,Melipilla,Unión La Calera,3,3,post
+2021-07-25 00:00:00,2021,Colo Colo,Audax Italiano,1,1,post
+2021-07-25 16:30:00,2021,Huachipato,La Serena,0,0,post
+2021-07-25 19:00:00,2021,Palestino,Santiago Wanderers,2,0,post
+2021-07-25 21:30:00,2021,Curicó Unido,Universidad de Chile,1,2,post
+2021-07-26 00:00:00,2021,Universidad Católica,O'Higgins,3,0,post
+2021-07-27 23:00:00,2021,Audax Italiano,Everton CD,0,2,post
+2021-07-28 15:00:00,2021,Cobresal,Melipilla,1,1,post
+2021-07-28 19:30:00,2021,Unión Española,Huachipato,3,1,post
+2021-07-28 22:00:00,2021,O'Higgins,Curicó Unido,2,2,post
+2021-07-29 00:30:00,2021,Unión La Calera,Palestino,2,1,post
+2021-07-29 16:30:00,2021,Antofagasta,Universidad Católica,3,2,post
+2021-07-29 19:00:00,2021,Santiago Wanderers,Colo Colo,0,4,post
+2021-07-29 23:00:00,2021,Universidad de Chile,Ñublense,1,1,post
+2021-08-01 15:00:00,2021,Huachipato,Unión La Calera,0,0,post
+2021-08-01 17:30:00,2021,Palestino,Unión Española,3,2,post
+2021-08-01 20:00:00,2021,Universidad de Chile,Universidad Católica,2,1,post
+2021-08-02 00:00:00,2021,Melipilla,Colo Colo,2,4,post
+2021-08-02 18:30:00,2021,La Serena,Antofagasta,1,1,post
+2021-08-02 22:00:00,2021,Ñublense,O'Higgins,0,0,post
+2021-08-03 00:30:00,2021,Curicó Unido,Santiago Wanderers,2,1,post
+2021-08-04 00:30:00,2021,Everton CD,Cobresal,3,0,post
+2021-08-07 19:00:00,2021,O'Higgins,Universidad de Chile,1,3,post
+2021-08-07 21:30:00,2021,Unión Española,Ñublense,3,2,post
+2021-08-08 00:00:00,2021,Universidad Católica,La Serena,4,3,post
+2021-08-08 16:30:00,2021,Santiago Wanderers,Huachipato,1,4,post
+2021-08-08 19:00:00,2021,Antofagasta,Audax Italiano,0,1,post
+2021-08-08 21:30:00,2021,Colo Colo,Curicó Unido,2,0,post
+2021-08-09 00:00:00,2021,Unión La Calera,Everton CD,1,0,post
+2021-08-09 15:00:00,2021,Cobresal,Palestino,3,1,post
+2021-08-13 23:00:00,2021,Audax Italiano,Santiago Wanderers,1,0,post
+2021-08-14 15:30:00,2021,Antofagasta,O'Higgins,2,1,post
+2021-08-14 18:00:00,2021,La Serena,Unión La Calera,1,2,post
+2021-08-14 20:30:00,2021,Unión Española,Colo Colo,0,1,post
+2021-08-14 23:00:00,2021,Everton CD,Melipilla,1,2,post
+2021-08-15 18:00:00,2021,Palestino,Curicó Unido,0,2,post
+2021-08-15 20:30:00,2021,Universidad de Chile,Cobresal,0,2,post
+2021-08-15 23:00:00,2021,Huachipato,Universidad Católica,2,1,post
+2021-08-21 15:30:00,2021,Santiago Wanderers,La Serena,2,2,post
+2021-08-21 18:00:00,2021,Ñublense,Palestino,2,2,post
+2021-08-21 20:30:00,2021,Colo Colo,Antofagasta,2,0,post
+2021-08-21 23:00:00,2021,Curicó Unido,Audax Italiano,2,2,post
+2021-08-22 15:00:00,2021,Cobresal,Unión Española,2,0,post
+2021-08-22 18:00:00,2021,Melipilla,Huachipato,1,2,post
+2021-08-22 20:30:00,2021,Unión La Calera,Universidad de Chile,1,4,post
+2021-08-22 23:00:00,2021,Universidad Católica,Everton CD,2,0,post
+2021-08-25 15:30:00,2021,Melipilla,Curicó Unido,1,1,post
+2021-08-25 18:00:00,2021,Antofagasta,Palestino,2,1,post
+2021-08-25 20:30:00,2021,Unión La Calera,Colo Colo,1,1,post
+2021-08-25 23:00:00,2021,Universidad Católica,Ñublense,2,2,post
+2021-08-26 18:00:00,2021,La Serena,Audax Italiano,0,2,post
+2021-08-26 20:30:00,2021,Santiago Wanderers,Unión Española,1,2,post
+2021-08-26 23:00:00,2021,O'Higgins,Everton CD,1,0,post
+2021-08-28 19:00:00,2021,Palestino,Universidad Católica,3,0,post
+2021-08-29 00:00:00,2021,Ñublense,Melipilla,3,0,post
+2021-08-29 15:30:00,2021,Everton CD,Antofagasta,1,1,post
+2021-08-29 18:00:00,2021,Huachipato,Universidad de Chile,1,1,post
+2021-08-29 20:30:00,2021,Colo Colo,Cobresal,0,1,post
+2021-08-29 23:00:00,2021,Unión Española,Unión La Calera,2,1,post
+2021-08-30 22:30:00,2021,Audax Italiano,O'Higgins,1,0,post
+2021-08-31 01:00:00,2021,Curicó Unido,La Serena,2,0,post
+2021-09-06 14:00:00,2021,Cobresal,Ñublense,4,1,post
+2021-09-06 23:00:00,2021,Universidad de Chile,La Serena,1,1,post
+2021-09-07 18:00:00,2021,Melipilla,Unión Española,0,3,post
+2021-09-07 20:30:00,2021,Antofagasta,Curicó Unido,1,1,post
+2021-09-07 23:00:00,2021,Universidad Católica,Audax Italiano,3,1,post
+2021-09-08 18:30:00,2021,Unión La Calera,Santiago Wanderers,0,1,post
+2021-09-08 21:00:00,2021,O'Higgins,Colo Colo,2,3,post
+2021-09-08 23:30:00,2021,Everton CD,Palestino,1,0,post
+2021-09-12 18:00:00,2021,Santiago Wanderers,Cobresal,2,1,post
+2021-09-12 20:30:00,2021,Audax Italiano,Unión La Calera,2,3,post
+2021-09-12 23:00:00,2021,Curicó Unido,Universidad Católica,2,4,post
+2021-09-13 19:30:00,2021,Ñublense,Huachipato,2,2,post
+2021-09-13 22:00:00,2021,Unión Española,Universidad de Chile,2,3,post
+2021-09-14 17:00:00,2021,La Serena,O'Higgins,2,0,post
+2021-09-14 22:00:00,2021,Colo Colo,Everton CD,2,0,post
+2021-09-15 19:00:00,2021,Palestino,Melipilla,3,1,post
+2021-09-17 14:00:00,2021,Cobresal,Huachipato,1,1,post
+2021-09-24 21:30:00,2021,Huachipato,Palestino,1,1,post
+2021-09-25 00:00:00,2021,Unión La Calera,O'Higgins,2,0,post
+2021-09-25 15:00:00,2021,Cobresal,Antofagasta,2,0,post
+2021-09-25 18:00:00,2021,Unión Española,La Serena,2,1,post
+2021-09-25 20:30:00,2021,Melipilla,Audax Italiano,1,1,post
+2021-09-25 23:00:00,2021,Everton CD,Curicó Unido,0,0,post
+2021-09-26 15:00:00,2021,Ñublense,Santiago Wanderers,1,2,post
+2021-09-26 19:30:00,2021,Universidad de Chile,Colo Colo,1,3,post
+2021-09-28 19:00:00,2021,La Serena,Everton CD,0,2,post
+2021-09-29 00:00:00,2021,O'Higgins,Huachipato,2,0,post
+2021-09-29 19:00:00,2021,Santiago Wanderers,Universidad de Chile,2,1,post
+2021-09-29 21:30:00,2021,Antofagasta,Unión La Calera,1,3,post
+2021-09-30 00:00:00,2021,Universidad Católica,Melipilla,4,0,post
+2021-09-30 19:00:00,2021,Curicó Unido,Cobresal,1,0,post
+2021-09-30 21:30:00,2021,Colo Colo,Ñublense,0,1,post
+2021-10-01 00:00:00,2021,Audax Italiano,Unión Española,2,0,post
+2021-10-02 23:30:00,2021,Unión La Calera,Universidad Católica,0,2,post
+2021-10-03 18:30:00,2021,Palestino,Colo Colo,1,2,post
+2021-10-03 21:00:00,2021,Universidad de Chile,Antofagasta,2,2,post
+2021-10-03 23:30:00,2021,Unión Española,O'Higgins,3,2,post
+2021-10-04 14:00:00,2021,Cobresal,Audax Italiano,1,2,post
+2021-10-04 21:30:00,2021,Melipilla,Santiago Wanderers,1,1,post
+2021-10-05 00:00:00,2021,Huachipato,Curicó Unido,1,4,post
+2021-10-05 23:30:00,2021,Ñublense,La Serena,0,1,post
+2021-10-06 23:30:00,2021,Universidad Católica,Unión Española,2,1,post
+2021-10-09 15:30:00,2021,Audax Italiano,Palestino,2,3,post
+2021-10-09 18:30:00,2021,Everton CD,Universidad de Chile,1,0,post
+2021-10-09 21:00:00,2021,Antofagasta,Melipilla,1,0,post
+2021-10-09 23:30:00,2021,Colo Colo,Huachipato,2,0,post
+2021-10-10 17:00:00,2021,La Serena,Cobresal,2,1,post
+2021-10-11 19:00:00,2021,O'Higgins,Santiago Wanderers,1,0,post
+2021-10-11 23:30:00,2021,Curicó Unido,Ñublense,0,0,post
+2021-10-15 15:30:00,2021,Huachipato,Antofagasta,0,1,post
+2021-10-15 19:00:00,2021,Palestino,O'Higgins,2,2,post
+2021-10-15 21:30:00,2021,Universidad de Chile,Audax Italiano,0,1,post
+2021-10-16 00:00:00,2021,Ñublense,Unión La Calera,0,2,post
+2021-10-16 14:00:00,2021,Cobresal,Universidad Católica,1,3,post
+2021-10-16 18:00:00,2021,Santiago Wanderers,Everton CD,2,1,post
+2021-10-16 20:30:00,2021,Unión Española,Curicó Unido,2,1,post
+2021-10-16 23:00:00,2021,Melipilla,La Serena,1,1,post
+2021-10-19 21:30:00,2021,Audax Italiano,Ñublense,0,3,post
+2021-10-20 00:00:00,2021,O'Higgins,Melipilla,1,2,post
+2021-10-20 17:00:00,2021,La Serena,Colo Colo,1,4,post
+2021-10-20 21:30:00,2021,Universidad Católica,Santiago Wanderers,3,2,post
+2021-10-21 00:00:00,2021,Everton CD,Huachipato,1,0,post
+2021-10-21 19:00:00,2021,Antofagasta,Unión Española,1,2,post
+2021-10-21 21:30:00,2021,Universidad de Chile,Palestino,0,1,post
+2021-10-22 00:00:00,2021,Unión La Calera,Cobresal,1,2,post
+2021-10-23 21:00:00,2021,Ñublense,Everton CD,1,1,post
+2021-10-24 15:00:00,2021,Melipilla,Universidad de Chile,3,0,post
+2021-10-24 19:30:00,2021,Colo Colo,Universidad Católica,2,1,post
+2021-10-24 23:00:00,2021,Huachipato,Audax Italiano,0,0,post
+2021-10-25 15:30:00,2021,Santiago Wanderers,Antofagasta,0,1,post
+2021-10-25 19:00:00,2021,Palestino,La Serena,3,3,post
+2021-10-26 00:00:00,2021,Curicó Unido,Unión La Calera,1,1,post
+2021-10-26 14:00:00,2021,Cobresal,O'Higgins,2,3,post
+2021-10-28 21:00:00,2021,Audax Italiano,Colo Colo,2,0,post
+2021-10-29 18:30:00,2021,Santiago Wanderers,Palestino,1,1,post
+2021-10-29 20:50:00,2021,La Serena,Huachipato,2,2,post
+2021-10-30 19:00:00,2021,Universidad de Chile,Curicó Unido,1,2,post
+2021-10-30 21:30:00,2021,Unión Española,Everton CD,3,2,post
+2021-10-31 15:30:00,2021,Antofagasta,Ñublense,2,1,post
+2021-10-31 21:00:00,2021,O'Higgins,Universidad Católica,1,3,post
+2021-10-31 23:30:00,2021,Unión La Calera,Melipilla,2,3,post
+2021-11-03 00:00:00,2021,Everton CD,Audax Italiano,1,2,post
+2021-11-03 19:00:00,2021,Melipilla,Cobresal,2,1,post
+2021-11-03 21:30:00,2021,Huachipato,Unión Española,1,0,post
+2021-11-04 00:00:00,2021,Curicó Unido,O'Higgins,0,2,post
+2021-11-04 18:30:00,2021,Palestino,Unión La Calera,1,2,post
+2021-11-04 21:00:00,2021,Universidad Católica,Antofagasta,4,0,post
+2021-11-04 23:30:00,2021,Ñublense,Universidad de Chile,1,0,post
+2021-11-06 21:00:00,2021,Colo Colo,Santiago Wanderers,3,0,post
+2021-11-07 15:00:00,2021,Universidad Católica,Universidad de Chile,1,0,post
+2021-11-07 19:00:00,2021,O'Higgins,Ñublense,1,1,post
+2021-11-07 21:30:00,2021,Cobresal,Everton CD,2,2,post
+2021-11-08 00:00:00,2021,Unión La Calera,Huachipato,0,2,post
+2021-11-08 21:00:00,2021,Antofagasta,La Serena,0,0,post
+2021-11-08 23:30:00,2021,Unión Española,Palestino,1,3,post
+2021-11-09 22:00:00,2021,Santiago Wanderers,Curicó Unido,0,3,post
+2021-11-10 22:00:00,2021,Colo Colo,Melipilla,1,0,post
+2021-11-13 15:30:00,2021,Ñublense,Unión Española,6,1,post
+2021-11-13 18:30:00,2021,La Serena,Universidad Católica,0,2,post
+2021-11-14 00:00:00,2021,Everton CD,Unión La Calera,1,2,post
+2021-11-14 15:30:00,2021,Audax Italiano,Antofagasta,0,0,post
+2021-11-14 19:00:00,2021,Palestino,Cobresal,2,1,post
+2021-11-14 21:30:00,2021,Curicó Unido,Colo Colo,0,0,post
+2021-11-15 20:30:00,2021,Huachipato,Santiago Wanderers,2,0,post
+2021-11-15 23:00:00,2021,Universidad de Chile,O'Higgins,0,0,post
+2021-11-27 21:00:00,2021,O'Higgins,Antofagasta,0,0,post
+2021-11-27 21:00:00,2021,Cobresal,Universidad de Chile,0,0,post
+2021-11-27 21:00:00,2021,Melipilla,Everton CD,1,0,post
+2021-11-28 15:00:00,2021,Santiago Wanderers,Audax Italiano,2,2,post
+2021-11-28 21:00:00,2021,Colo Colo,Unión Española,0,1,post
+2021-11-28 21:00:00,2021,Curicó Unido,Palestino,1,1,post
+2021-11-28 21:00:00,2021,Unión La Calera,La Serena,1,2,post
+2021-11-28 21:00:00,2021,Universidad Católica,Huachipato,2,0,post
+2021-12-04 21:00:00,2021,Antofagasta,Colo Colo,1,0,post
+2021-12-04 21:00:00,2021,Everton CD,Universidad Católica,0,3,post
+2021-12-04 21:00:00,2021,La Serena,Santiago Wanderers,0,0,post
+2021-12-04 21:00:00,2021,Palestino,Ñublense,1,4,post
+2021-12-05 21:00:00,2021,Universidad de Chile,Unión La Calera,3,2,post
+2021-12-05 21:00:00,2021,Unión Española,Cobresal,0,1,post
+2021-12-05 21:00:00,2021,Huachipato,Melipilla,3,1,post
+2021-12-05 21:00:00,2021,Audax Italiano,Curicó Unido,1,1,post
+2022-02-04 23:00:00,2022,O'Higgins,La Serena,3,0,post
+2022-02-05 21:00:00,2022,Unión Española,Palestino,1,1,post
+2022-02-05 23:30:00,2022,Coquimbo Unido,Universidad Católica,2,3,post
+2022-02-06 15:00:00,2022,Antofagasta,Cobresal,0,1,post
+2022-02-06 21:00:00,2022,Unión La Calera,Universidad de Chile,2,4,post
+2022-02-06 23:30:00,2022,Colo Colo,Everton CD,2,0,post
+2022-02-07 21:00:00,2022,Audax Italiano,Ñublense,1,2,post
+2022-02-07 23:30:00,2022,Curicó Unido,Huachipato,4,0,post
+2022-02-11 21:00:00,2022,Palestino,O'Higgins,1,0,post
+2022-02-11 23:30:00,2022,Everton CD,Coquimbo Unido,2,0,post
+2022-02-12 21:00:00,2022,Huachipato,Audax Italiano,2,1,post
+2022-02-12 23:30:00,2022,Universidad de Chile,Antofagasta,2,1,post
+2022-02-13 21:00:00,2022,La Serena,Colo Colo,1,1,post
+2022-02-13 23:30:00,2022,Universidad Católica,Unión Española,2,1,post
+2022-02-14 21:00:00,2022,Ñublense,Unión La Calera,0,0,post
+2022-02-14 23:30:00,2022,Cobresal,Curicó Unido,2,3,post
+2022-02-18 21:00:00,2022,O'Higgins,Huachipato,1,1,post
+2022-02-18 23:30:00,2022,Unión Española,Everton CD,1,1,post
+2022-02-19 21:00:00,2022,Colo Colo,Audax Italiano,1,1,post
+2022-02-19 23:30:00,2022,Antofagasta,La Serena,2,2,post
+2022-02-20 15:00:00,2022,Coquimbo Unido,Palestino,2,2,post
+2022-02-20 21:00:00,2022,Unión La Calera,Cobresal,0,2,post
+2022-02-20 23:30:00,2022,Universidad Católica,Curicó Unido,1,0,post
+2022-02-21 21:00:00,2022,Ñublense,Universidad de Chile,3,2,post
+2022-02-25 23:00:00,2022,Unión La Calera,Everton CD,1,1,post
+2022-02-26 15:00:00,2022,La Serena,Coquimbo Unido,1,1,post
+2022-02-26 21:00:00,2022,Cobresal,Ñublense,1,1,post
+2022-02-26 23:30:00,2022,Audax Italiano,Antofagasta,0,3,post
+2022-02-27 15:00:00,2022,Huachipato,Colo Colo,1,0,post
+2022-02-27 21:00:00,2022,Palestino,Universidad Católica,3,2,post
+2022-02-28 21:00:00,2022,Curicó Unido,Unión Española,0,1,post
+2022-02-28 23:30:00,2022,Universidad de Chile,O'Higgins,0,1,post
+2022-03-04 21:00:00,2022,Palestino,Unión La Calera,0,0,post
+2022-03-04 23:30:00,2022,Ñublense,La Serena,3,1,post
+2022-03-05 15:00:00,2022,Coquimbo Unido,Antofagasta,3,2,post
+2022-03-05 21:00:00,2022,Unión Española,Huachipato,1,0,post
+2022-03-05 23:30:00,2022,Everton CD,Curicó Unido,1,1,post
+2022-03-06 15:00:00,2022,Colo Colo,Universidad de Chile,4,1,post
+2022-03-06 21:00:00,2022,O'Higgins,Audax Italiano,2,2,post
+2022-03-06 23:30:00,2022,Cobresal,Universidad Católica,3,1,post
+2022-03-11 21:00:00,2022,La Serena,Cobresal,2,3,post
+2022-03-12 15:00:00,2022,Coquimbo Unido,Ñublense,0,1,post
+2022-03-12 21:00:00,2022,Universidad Católica,Everton CD,0,1,post
+2022-03-12 23:30:00,2022,Unión La Calera,Huachipato,1,0,post
+2022-03-13 21:00:00,2022,Curicó Unido,O'Higgins,5,0,post
+2022-03-13 23:30:00,2022,Audax Italiano,Palestino,3,1,post
+2022-03-14 21:00:00,2022,Antofagasta,Colo Colo,0,1,post
+2022-03-17 23:30:00,2022,Universidad de Chile,Curicó Unido,1,1,post
+2022-03-19 21:00:00,2022,O'Higgins,Universidad Católica,2,1,post
+2022-03-19 23:30:00,2022,Cobresal,Coquimbo Unido,2,1,post
+2022-03-20 15:00:00,2022,Huachipato,La Serena,2,3,post
+2022-03-20 20:30:00,2022,Palestino,Colo Colo,0,5,post
+2022-03-20 23:30:00,2022,Everton CD,Audax Italiano,0,0,post
+2022-03-21 21:00:00,2022,Antofagasta,Unión La Calera,0,0,post
+2022-03-21 23:30:00,2022,Unión Española,Ñublense,1,0,post
+2022-03-27 19:00:00,2022,Universidad de Chile,Unión Española,2,0,post
+2022-03-31 22:00:00,2022,Colo Colo,Unión La Calera,4,0,post
+2022-04-01 20:30:00,2022,La Serena,Everton CD,1,3,post
+2022-04-01 23:30:00,2022,O'Higgins,Coquimbo Unido,2,1,post
+2022-04-02 18:00:00,2022,Ñublense,Antofagasta,1,1,post
+2022-04-02 21:00:00,2022,Universidad Católica,Universidad de Chile,2,1,post
+2022-04-03 19:00:00,2022,Huachipato,Cobresal,1,0,post
+2022-04-03 21:30:00,2022,Audax Italiano,Unión Española,0,1,post
+2022-04-05 00:30:00,2022,Curicó Unido,Palestino,0,0,post
+2022-04-09 19:00:00,2022,Everton CD,Huachipato,0,1,post
+2022-04-09 21:30:00,2022,Coquimbo Unido,Universidad de Chile,1,0,post
+2022-04-10 00:00:00,2022,Universidad Católica,La Serena,0,2,post
+2022-04-10 16:30:00,2022,Cobresal,Audax Italiano,0,1,post
+2022-04-10 19:00:00,2022,Palestino,Ñublense,1,1,post
+2022-04-10 21:30:00,2022,Unión Española,Colo Colo,2,1,post
+2022-04-11 00:00:00,2022,Unión La Calera,Curicó Unido,0,0,post
+2022-04-15 20:30:00,2022,La Serena,Unión Española,1,2,post
+2022-04-16 19:00:00,2022,Audax Italiano,Coquimbo Unido,1,1,post
+2022-04-16 21:30:00,2022,Universidad de Chile,Palestino,0,0,post
+2022-04-17 16:30:00,2022,Curicó Unido,Antofagasta,2,0,post
+2022-04-17 19:30:00,2022,Huachipato,Universidad Católica,1,0,post
+2022-04-17 22:00:00,2022,Colo Colo,Cobresal,2,1,post
+2022-04-18 22:00:00,2022,Ñublense,Everton CD,2,1,post
+2022-04-19 00:30:00,2022,Unión La Calera,O'Higgins,0,0,post
+2022-04-23 00:00:00,2022,Everton CD,Palestino,0,0,post
+2022-04-23 16:30:00,2022,Antofagasta,Huachipato,0,0,post
+2022-04-23 19:00:00,2022,La Serena,Curicó Unido,1,3,post
+2022-04-24 16:30:00,2022,Universidad Católica,Colo Colo,1,1,post
+2022-04-24 21:30:00,2022,O'Higgins,Ñublense,1,0,post
+2022-04-25 00:00:00,2022,Coquimbo Unido,Unión La Calera,3,2,post
+2022-04-27 00:00:00,2022,Unión Española,Cobresal,2,2,post
+2022-04-29 18:00:00,2022,Audax Italiano,Universidad de Chile,2,0,post
+2022-04-30 16:00:00,2022,Antofagasta,O'Higgins,1,0,post
+2022-05-07 19:00:00,2022,O'Higgins,Unión Española,2,2,post
+2022-05-07 21:30:00,2022,Universidad de Chile,La Serena,2,0,post
+2022-05-08 16:00:00,2022,Palestino,Antofagasta,1,0,post
+2022-05-08 21:30:00,2022,Ñublense,Universidad Católica,4,0,post
+2022-05-09 00:00:00,2022,Coquimbo Unido,Huachipato,1,2,post
+2022-05-09 19:00:00,2022,Cobresal,Everton CD,0,0,post
+2022-05-09 22:00:00,2022,Curicó Unido,Colo Colo,1,2,post
+2022-05-10 00:30:00,2022,Unión La Calera,Audax Italiano,1,0,post
+2022-05-13 22:00:00,2022,Universidad Católica,Unión La Calera,3,0,post
+2022-05-14 00:30:00,2022,Unión Española,Antofagasta,2,0,post
+2022-05-14 16:30:00,2022,La Serena,Palestino,0,0,post
+2022-05-14 19:30:00,2022,Everton CD,Universidad de Chile,2,1,post
+2022-05-14 22:00:00,2022,Colo Colo,Coquimbo Unido,4,0,post
+2022-05-15 18:45:00,2022,Cobresal,O'Higgins,2,0,post
+2022-05-15 21:30:00,2022,Huachipato,Ñublense,1,3,post
+2022-05-17 00:30:00,2022,Curicó Unido,Audax Italiano,4,1,post
+2022-05-20 23:00:00,2022,Coquimbo Unido,Unión Española,2,4,post
+2022-05-21 19:00:00,2022,Audax Italiano,Universidad Católica,3,2,post
+2022-05-21 19:00:00,2022,Antofagasta,Everton CD,2,2,post
+2022-05-21 21:30:00,2022,Universidad de Chile,Huachipato,3,2,post
+2022-05-22 00:00:00,2022,Unión La Calera,La Serena,1,1,post
+2022-05-22 16:00:00,2022,Palestino,Cobresal,3,1,post
+2022-05-22 19:00:00,2022,O'Higgins,Colo Colo,1,1,post
+2022-05-23 00:00:00,2022,Ñublense,Curicó Unido,3,1,post
+2022-05-28 00:30:00,2022,Curicó Unido,Coquimbo Unido,3,0,post
+2022-05-28 19:00:00,2022,La Serena,Audax Italiano,3,2,post
+2022-05-28 21:30:00,2022,Cobresal,Universidad de Chile,1,0,post
+2022-05-29 00:00:00,2022,Huachipato,Palestino,2,1,post
+2022-05-29 21:30:00,2022,Universidad Católica,Antofagasta,1,0,post
+2022-05-30 00:00:00,2022,Unión Española,Unión La Calera,1,1,post
+2022-05-30 22:00:00,2022,Colo Colo,Ñublense,0,0,post
+2022-05-31 00:30:00,2022,Everton CD,O'Higgins,0,0,post
+2022-06-30 23:00:00,2022,Ñublense,Audax Italiano,1,2,post
+2022-07-01 22:30:00,2022,Everton CD,Colo Colo,1,1,post
+2022-07-02 19:00:00,2022,Palestino,Unión Española,1,0,post
+2022-07-02 21:30:00,2022,Universidad de Chile,Unión La Calera,2,1,post
+2022-07-03 00:00:00,2022,Huachipato,Curicó Unido,2,2,post
+2022-07-03 19:00:00,2022,La Serena,O'Higgins,1,0,post
+2022-07-03 21:30:00,2022,Universidad Católica,Coquimbo Unido,2,0,post
+2022-07-04 00:00:00,2022,Cobresal,Antofagasta,2,1,post
+2022-07-09 00:30:00,2022,O'Higgins,Palestino,1,2,post
+2022-07-09 19:00:00,2022,Curicó Unido,Cobresal,1,0,post
+2022-07-09 21:30:00,2022,Audax Italiano,Huachipato,1,1,post
+2022-07-10 00:00:00,2022,Coquimbo Unido,Everton CD,1,1,post
+2022-07-10 19:00:00,2022,Antofagasta,Universidad de Chile,1,1,post
+2022-07-10 22:00:00,2022,Colo Colo,La Serena,3,0,post
+2022-07-11 00:30:00,2022,Unión La Calera,Ñublense,2,2,post
+2022-07-16 17:15:00,2022,Palestino,Coquimbo Unido,5,1,post
+2022-07-16 19:45:00,2022,Audax Italiano,Colo Colo,1,2,post
+2022-07-16 22:15:00,2022,Cobresal,Unión La Calera,3,1,post
+2022-07-17 00:45:00,2022,Everton CD,Unión Española,2,1,post
+2022-07-17 16:30:00,2022,La Serena,Antofagasta,0,1,post
+2022-07-17 19:00:00,2022,Universidad de Chile,Ñublense,0,1,post
+2022-07-17 21:30:00,2022,Curicó Unido,Universidad Católica,3,2,post
+2022-07-18 00:00:00,2022,Huachipato,O'Higgins,1,2,post
+2022-07-22 23:00:00,2022,Ñublense,Cobresal,3,2,post
+2022-07-23 16:30:00,2022,Antofagasta,Audax Italiano,2,3,post
+2022-07-23 19:00:00,2022,Coquimbo Unido,La Serena,2,0,post
+2022-07-23 21:30:00,2022,Colo Colo,Huachipato,1,0,post
+2022-07-24 00:00:00,2022,Everton CD,Unión La Calera,0,1,post
+2022-07-24 19:00:00,2022,O'Higgins,Universidad de Chile,1,0,post
+2022-07-24 21:30:00,2022,Universidad Católica,Palestino,0,1,post
+2022-07-25 22:00:00,2022,Unión Española,Curicó Unido,1,3,post
+2022-07-29 22:00:00,2022,Huachipato,Unión Española,2,5,post
+2022-07-30 00:30:00,2022,Unión La Calera,Palestino,2,2,post
+2022-07-30 16:30:00,2022,Antofagasta,Coquimbo Unido,2,1,post
+2022-07-30 19:00:00,2022,La Serena,Ñublense,3,0,post
+2022-07-30 22:00:00,2022,Universidad Católica,Cobresal,1,0,post
+2022-07-31 00:30:00,2022,Curicó Unido,Everton CD,0,4,post
+2022-07-31 17:30:00,2022,Universidad de Chile,Colo Colo,1,3,post
+2022-07-31 22:00:00,2022,Audax Italiano,O'Higgins,2,1,post
+2022-08-06 16:30:00,2022,O'Higgins,Curicó Unido,0,0,post
+2022-08-06 19:00:00,2022,Cobresal,La Serena,1,1,post
+2022-08-06 21:30:00,2022,Everton CD,Universidad Católica,1,1,post
+2022-08-07 17:15:00,2022,Palestino,Audax Italiano,3,3,post
+2022-08-07 19:45:00,2022,Unión Española,Universidad de Chile,1,1,post
+2022-08-07 22:15:00,2022,Colo Colo,Antofagasta,1,0,post
+2022-08-08 00:45:00,2022,Ñublense,Coquimbo Unido,2,1,post
+2022-08-08 21:30:00,2022,Huachipato,Unión La Calera,3,4,post
+2022-08-12 00:15:00,2022,Universidad Católica,O'Higgins,2,2,post
+2022-08-13 00:30:00,2022,Coquimbo Unido,Cobresal,3,1,post
+2022-08-13 17:15:00,2022,Audax Italiano,Everton CD,1,0,post
+2022-08-13 19:45:00,2022,Curicó Unido,Universidad de Chile,3,1,post
+2022-08-14 00:30:00,2022,Unión La Calera,Antofagasta,1,1,post
+2022-08-14 19:00:00,2022,La Serena,Huachipato,0,1,post
+2022-08-14 21:30:00,2022,Colo Colo,Palestino,1,0,post
+2022-08-15 00:00:00,2022,Ñublense,Unión Española,1,2,post
+2022-08-27 00:00:00,2022,Everton CD,La Serena,4,0,post
+2022-08-27 16:00:00,2022,Palestino,Curicó Unido,2,1,post
+2022-08-27 19:00:00,2022,Universidad de Chile,Universidad Católica,0,3,post
+2022-08-27 22:00:00,2022,Coquimbo Unido,O'Higgins,0,1,post
+2022-08-28 16:30:00,2022,Antofagasta,Ñublense,1,0,post
+2022-08-28 19:00:00,2022,Cobresal,Huachipato,2,0,post
+2022-08-28 21:30:00,2022,Unión La Calera,Colo Colo,2,1,post
+2022-08-29 00:00:00,2022,Unión Española,Audax Italiano,2,3,post
+2022-09-07 19:30:00,2022,Universidad de Chile,Coquimbo Unido,0,0,post
+2022-09-08 00:30:00,2022,Audax Italiano,Cobresal,2,2,post
+2022-09-08 22:00:00,2022,Colo Colo,Unión Española,4,0,post
+2022-09-09 00:30:00,2022,Curicó Unido,Unión La Calera,2,0,post
+2022-09-09 22:00:00,2022,O'Higgins,Antofagasta,1,0,post
+2022-09-10 00:30:00,2022,Huachipato,Everton CD,1,1,post
+2022-09-10 19:00:00,2022,La Serena,Universidad Católica,0,4,post
+2022-09-10 21:30:00,2022,Ñublense,Palestino,2,0,post
+2022-09-13 21:00:00,2022,Coquimbo Unido,Audax Italiano,0,1,post
+2022-09-13 23:30:00,2022,O'Higgins,Unión La Calera,2,2,post
+2022-09-14 18:30:00,2022,Unión Española,La Serena,0,1,post
+2022-09-14 20:00:00,2022,Cobresal,Colo Colo,0,2,post
+2022-09-14 21:00:00,2022,Everton CD,Ñublense,1,1,post
+2022-09-14 23:30:00,2022,Universidad Católica,Huachipato,1,0,post
+2022-09-15 18:30:00,2022,Palestino,Universidad de Chile,1,2,post
+2022-09-15 21:00:00,2022,Antofagasta,Curicó Unido,0,0,post
+2022-09-30 23:00:00,2022,Unión La Calera,Coquimbo Unido,2,0,post
+2022-10-01 15:00:00,2022,Huachipato,Antofagasta,1,0,post
+2022-10-01 18:00:00,2022,Palestino,Everton CD,1,4,post
+2022-10-01 23:00:00,2022,Curicó Unido,La Serena,1,0,post
+2022-10-02 15:00:00,2022,Ñublense,O'Higgins,2,2,post
+2022-10-02 21:00:00,2022,Cobresal,Unión Española,2,0,post
+2022-10-03 21:00:00,2022,Universidad de Chile,Audax Italiano,2,3,post
+2022-10-04 22:00:00,2022,Colo Colo,Universidad Católica,0,0,post
+2022-10-07 22:00:00,2022,Huachipato,Coquimbo Unido,0,1,post
+2022-10-08 18:00:00,2022,Universidad Católica,Ñublense,2,2,post
+2022-10-08 23:00:00,2022,Unión Española,O'Higgins,0,0,post
+2022-10-09 15:30:00,2022,La Serena,Universidad de Chile,1,2,post
+2022-10-09 20:30:00,2022,Colo Colo,Curicó Unido,1,1,post
+2022-10-09 23:15:00,2022,Everton CD,Cobresal,3,3,post
+2022-10-10 20:30:00,2022,Audax Italiano,Unión La Calera,0,2,post
+2022-10-15 21:00:00,2022,Antofagasta,Palestino,0,3,post
+2022-10-19 22:00:00,2022,Unión Española,Universidad Católica,1,2,post
+2022-10-21 22:30:00,2022,O'Higgins,Cobresal,1,0,post
+2022-10-22 20:30:00,2022,Ñublense,Huachipato,2,0,post
+2022-10-22 23:00:00,2022,Universidad de Chile,Everton CD,1,1,post
+2022-10-23 18:00:00,2022,Antofagasta,Unión Española,2,0,post
+2022-10-23 18:00:00,2022,Coquimbo Unido,Colo Colo,0,2,post
+2022-10-23 18:00:00,2022,Palestino,La Serena,5,0,post
+2022-10-23 22:00:00,2022,Unión La Calera,Universidad Católica,4,0,post
+2022-10-24 23:30:00,2022,Audax Italiano,Curicó Unido,1,1,post
+2022-10-29 23:00:00,2022,Cobresal,Palestino,1,0,post
+2022-10-30 15:30:00,2022,Huachipato,Universidad de Chile,4,0,post
+2022-10-30 18:00:00,2022,Unión Española,Coquimbo Unido,1,3,post
+2022-10-30 18:00:00,2022,La Serena,Unión La Calera,2,1,post
+2022-10-30 18:00:00,2022,Everton CD,Antofagasta,3,0,post
+2022-10-30 20:30:00,2022,Colo Colo,O'Higgins,2,0,post
+2022-10-31 20:30:00,2022,Curicó Unido,Ñublense,1,2,post
+2022-10-31 23:00:00,2022,Universidad Católica,Audax Italiano,0,0,post
+2022-11-05 15:30:00,2022,O'Higgins,Everton CD,2,0,post
+2022-11-05 15:30:00,2022,Palestino,Huachipato,5,0,post
+2022-11-05 15:30:00,2022,Universidad de Chile,Cobresal,3,4,post
+2022-11-06 19:00:00,2022,Antofagasta,Universidad Católica,0,2,post
+2022-11-06 19:00:00,2022,Audax Italiano,La Serena,3,0,post
+2022-11-06 19:00:00,2022,Coquimbo Unido,Curicó Unido,1,1,post
+2022-11-06 19:00:00,2022,Ñublense,Colo Colo,1,1,post
+2022-11-06 22:00:00,2022,Unión La Calera,Unión Española,2,1,post
+2023-01-20 21:00:00,2023,Magallanes,O'Higgins,0,1,post
+2023-01-20 23:30:00,2023,Unión Española,Ñublense,0,1,post
+2023-01-21 21:00:00,2023,Palestino,Audax Italiano,1,1,post
+2023-01-21 23:30:00,2023,Cobresal,Unión La Calera,3,1,post
+2023-01-22 15:00:00,2023,Everton CD,Universidad Católica,0,3,post
+2023-01-22 21:30:00,2023,Copiapó,Colo Colo,2,5,post
+2023-01-23 00:00:00,2023,Curicó Unido,Coquimbo Unido,1,0,post
+2023-01-23 22:00:00,2023,Universidad de Chile,Huachipato,1,3,post
+2023-01-27 21:30:00,2023,Ñublense,Magallanes,3,2,post
+2023-01-28 00:00:00,2023,Unión La Calera,Everton CD,3,2,post
+2023-01-28 15:00:00,2023,Coquimbo Unido,Palestino,1,1,post
+2023-01-28 21:00:00,2023,Universidad de Chile,Unión Española,1,0,post
+2023-01-28 23:30:00,2023,Universidad Católica,Curicó Unido,3,1,post
+2023-01-29 15:00:00,2023,Huachipato,Cobresal,2,1,post
+2023-01-29 21:00:00,2023,O'Higgins,Colo Colo,5,1,post
+2023-01-29 23:30:00,2023,Audax Italiano,Copiapó,3,0,post
+2023-02-03 21:30:00,2023,Coquimbo Unido,Universidad Católica,2,1,post
+2023-02-04 00:00:00,2023,Curicó Unido,Audax Italiano,2,1,post
+2023-02-04 21:00:00,2023,Magallanes,Unión La Calera,1,1,post
+2023-02-04 23:30:00,2023,Unión Española,Everton CD,1,1,post
+2023-02-05 21:00:00,2023,Palestino,Universidad de Chile,2,0,post
+2023-02-05 23:30:00,2023,Cobresal,Copiapó,1,0,post
+2023-02-06 23:00:00,2023,O'Higgins,Huachipato,0,1,post
+2023-02-10 00:00:00,2023,Audax Italiano,Unión Española,1,1,post
+2023-02-11 00:00:00,2023,Copiapó,Palestino,1,3,post
+2023-02-11 00:00:00,2023,Unión La Calera,Curicó Unido,3,2,post
+2023-02-11 15:00:00,2023,Universidad de Chile,Magallanes,2,1,post
+2023-02-11 23:30:00,2023,Everton CD,Coquimbo Unido,2,0,post
+2023-02-12 22:00:00,2023,Universidad Católica,Cobresal,3,3,post
+2023-02-13 23:00:00,2023,Colo Colo,Ñublense,1,0,post
+2023-02-16 23:30:00,2023,Curicó Unido,Copiapó,1,2,post
+2023-02-17 21:00:00,2023,Unión Española,Magallanes,1,2,post
+2023-02-18 14:00:00,2023,Coquimbo Unido,Huachipato,1,2,post
+2023-02-18 21:00:00,2023,Cobresal,Ñublense,1,1,post
+2023-02-18 23:30:00,2023,Audax Italiano,Universidad Católica,1,2,post
+2023-02-19 21:00:00,2023,O'Higgins,Universidad de Chile,0,1,post
+2023-02-19 23:30:00,2023,Colo Colo,Everton CD,1,1,post
+2023-02-20 21:00:00,2023,Palestino,Unión La Calera,1,1,post
+2023-02-24 23:00:00,2023,Curicó Unido,Universidad de Chile,1,3,post
+2023-02-25 23:15:00,2023,Universidad Católica,Palestino,5,2,post
+2023-02-26 21:00:00,2023,Magallanes,Cobresal,2,1,post
+2023-02-26 21:00:00,2023,Unión La Calera,Ñublense,1,1,post
+2023-02-26 23:30:00,2023,Colo Colo,Coquimbo Unido,2,3,post
+2023-02-27 23:30:00,2023,Copiapó,O'Higgins,2,2,post
+2023-02-27 23:30:00,2023,Everton CD,Audax Italiano,3,1,post
+2023-03-02 23:30:00,2023,Universidad de Chile,Unión La Calera,1,1,post
+2023-03-03 21:00:00,2023,Palestino,Huachipato,2,1,post
+2023-03-03 21:00:00,2023,Coquimbo Unido,Audax Italiano,3,1,post
+2023-03-03 23:30:00,2023,Ñublense,Universidad Católica,1,2,post
+2023-03-04 21:00:00,2023,O'Higgins,Curicó Unido,2,2,post
+2023-03-04 23:30:00,2023,Unión Española,Copiapó,3,0,post
+2023-03-05 21:00:00,2023,Colo Colo,Magallanes,2,0,post
+2023-03-05 23:30:00,2023,Cobresal,Everton CD,3,2,post
+2023-03-10 23:30:00,2023,Copiapó,Unión La Calera,0,0,post
+2023-03-11 15:00:00,2023,Everton CD,Ñublense,1,0,post
+2023-03-11 23:30:00,2023,Curicó Unido,Huachipato,1,3,post
+2023-03-12 15:00:00,2023,Universidad Católica,Unión Española,2,2,post
+2023-03-12 21:00:00,2023,Colo Colo,Universidad de Chile,0,0,post
+2023-03-13 23:30:00,2023,Coquimbo Unido,Cobresal,0,3,post
+2023-03-13 23:30:00,2023,Audax Italiano,O'Higgins,2,2,post
+2023-03-17 22:00:00,2023,Ñublense,Curicó Unido,1,2,post
+2023-03-18 15:00:00,2023,Huachipato,Everton CD,3,0,post
+2023-03-18 21:00:00,2023,Cobresal,Colo Colo,3,1,post
+2023-03-18 21:00:00,2023,O'Higgins,Coquimbo Unido,0,2,post
+2023-03-18 23:30:00,2023,Unión La Calera,Audax Italiano,0,0,post
+2023-03-19 21:00:00,2023,Universidad de Chile,Copiapó,0,0,post
+2023-03-19 23:30:00,2023,Magallanes,Universidad Católica,1,1,post
+2023-03-19 23:30:00,2023,Unión Española,Palestino,2,0,post
+2023-03-31 22:00:00,2023,Ñublense,O'Higgins,2,1,post
+2023-04-01 15:00:00,2023,Huachipato,Colo Colo,0,1,post
+2023-04-01 20:30:00,2023,Palestino,Magallanes,3,2,post
+2023-04-05 23:00:00,2023,Huachipato,Unión Española,1,0,post
+2023-04-14 19:30:00,2023,Palestino,Cobresal,1,5,post
+2023-04-14 22:00:00,2023,Ñublense,Coquimbo Unido,1,3,post
+2023-04-15 00:30:00,2023,Everton CD,Magallanes,2,0,post
+2023-04-15 19:00:00,2023,Universidad Católica,Colo Colo,0,0,post
+2023-04-16 00:30:00,2023,Copiapó,Huachipato,1,1,post
+2023-04-16 19:30:00,2023,Audax Italiano,Universidad de Chile,1,2,post
+2023-04-17 00:30:00,2023,Unión La Calera,O'Higgins,0,1,post
+2023-04-18 00:30:00,2023,Curicó Unido,Unión Española,0,1,post
+2023-04-22 19:00:00,2023,Huachipato,Unión La Calera,2,3,post
+2023-04-22 21:30:00,2023,Everton CD,Universidad de Chile,1,2,post
+2023-04-23 00:00:00,2023,Universidad Católica,O'Higgins,0,1,post
+2023-04-23 19:00:00,2023,Magallanes,Copiapó,0,2,post
+2023-04-23 19:00:00,2023,Cobresal,Curicó Unido,2,0,post
+2023-04-23 21:30:00,2023,Colo Colo,Palestino,3,1,post
+2023-04-24 00:00:00,2023,Unión Española,Coquimbo Unido,2,0,post
+2023-04-25 00:30:00,2023,Ñublense,Audax Italiano,2,5,post
+2023-04-28 22:00:00,2023,Unión La Calera,Colo Colo,0,0,post
+2023-04-29 16:30:00,2023,Palestino,Ñublense,1,2,post
+2023-04-29 21:30:00,2023,Curicó Unido,Everton CD,2,3,post
+2023-04-30 00:00:00,2023,Audax Italiano,Cobresal,1,0,post
+2023-04-30 22:00:00,2023,O'Higgins,Unión Española,1,1,post
+2023-05-01 00:30:00,2023,Copiapó,Coquimbo Unido,1,0,post
+2023-05-09 19:30:00,2023,Magallanes,Curicó Unido,1,2,post
+2023-05-09 22:00:00,2023,Unión Española,Unión La Calera,3,2,post
+2023-05-09 22:00:00,2023,Ñublense,Copiapó,1,0,post
+2023-05-10 00:30:00,2023,Colo Colo,Audax Italiano,2,1,post
+2023-05-10 22:00:00,2023,Cobresal,O'Higgins,1,0,post
+2023-05-10 22:00:00,2023,Coquimbo Unido,Universidad de Chile,2,1,post
+2023-05-11 00:30:00,2023,Universidad Católica,Huachipato,1,2,post
+2023-05-12 00:30:00,2023,Everton CD,Palestino,2,2,post
+2023-05-13 19:30:00,2023,Magallanes,Audax Italiano,1,2,post
+2023-05-13 22:00:00,2023,Unión Española,Colo Colo,1,1,post
+2023-05-14 16:30:00,2023,Huachipato,Ñublense,2,0,post
+2023-05-14 19:00:00,2023,Unión La Calera,Coquimbo Unido,1,2,post
+2023-05-14 21:30:00,2023,Copiapó,Universidad Católica,1,4,post
+2023-05-15 00:00:00,2023,Curicó Unido,Palestino,0,1,post
+2023-05-15 22:00:00,2023,Universidad de Chile,Cobresal,0,0,post
+2023-05-16 00:30:00,2023,O'Higgins,Everton CD,1,1,post
+2023-05-19 00:00:00,2023,Colo Colo,Curicó Unido,0,1,post
+2023-05-19 19:30:00,2023,Palestino,O'Higgins,0,1,post
+2023-05-19 22:00:00,2023,Audax Italiano,Huachipato,1,0,post
+2023-05-20 00:30:00,2023,Coquimbo Unido,Magallanes,1,0,post
+2023-05-20 19:00:00,2023,Ñublense,Universidad de Chile,1,1,post
+2023-05-20 21:30:00,2023,Everton CD,Copiapó,2,1,post
+2023-05-21 00:00:00,2023,Universidad Católica,Unión La Calera,1,1,post
+2023-05-21 21:30:00,2023,Cobresal,Unión Española,0,0,post
+2023-06-28 22:00:00,2023,Universidad de Chile,Universidad Católica,3,0,post
+2023-07-03 16:00:00,2023,Huachipato,Magallanes,1,1,post
+2023-07-06 23:00:00,2023,Ñublense,Unión Española,0,1,post
+2023-07-07 22:00:00,2023,Audax Italiano,Palestino,0,3,post
+2023-07-08 16:30:00,2023,Huachipato,Universidad de Chile,1,2,post
+2023-07-08 21:30:00,2023,Universidad Católica,Everton CD,0,1,post
+2023-07-09 00:00:00,2023,Unión La Calera,Cobresal,1,1,post
+2023-07-09 22:00:00,2023,O'Higgins,Magallanes,1,2,post
+2023-07-12 23:00:00,2023,Coquimbo Unido,Curicó Unido,1,0,post
+2023-07-14 21:00:00,2023,Cobresal,Huachipato,2,0,post
+2023-07-15 16:30:00,2023,Colo Colo,O'Higgins,2,0,post
+2023-07-16 16:30:00,2023,Copiapó,Audax Italiano,1,0,post
+2023-07-16 19:00:00,2023,Magallanes,Ñublense,1,1,post
+2023-07-16 21:30:00,2023,Everton CD,Unión La Calera,1,2,post
+2023-07-17 00:00:00,2023,Curicó Unido,Universidad Católica,2,0,post
+2023-07-17 19:00:00,2023,Palestino,Coquimbo Unido,1,1,post
+2023-07-17 22:30:00,2023,Unión Española,Universidad de Chile,3,0,post
+2023-07-21 22:00:00,2023,Unión La Calera,Magallanes,2,1,post
+2023-07-22 19:00:00,2023,Copiapó,Cobresal,0,3,post
+2023-07-22 21:30:00,2023,Huachipato,O'Higgins,2,0,post
+2023-07-23 00:00:00,2023,Universidad de Chile,Palestino,0,1,post
+2023-07-23 19:00:00,2023,Everton CD,Unión Española,1,0,post
+2023-07-23 22:00:00,2023,Universidad Católica,Coquimbo Unido,2,1,post
+2023-07-25 00:30:00,2023,Audax Italiano,Curicó Unido,3,0,post
+2023-07-25 22:00:00,2023,Ñublense,Colo Colo,0,0,post
+2023-07-28 22:00:00,2023,O'Higgins,Ñublense,1,2,post
+2023-07-29 19:00:00,2023,Cobresal,Universidad Católica,2,2,post
+2023-07-29 21:30:00,2023,Colo Colo,Huachipato,3,1,post
+2023-07-30 00:00:00,2023,Unión Española,Audax Italiano,3,0,post
+2023-07-30 16:30:00,2023,Magallanes,Universidad de Chile,2,1,post
+2023-07-30 19:00:00,2023,Palestino,Copiapó,2,0,post
+2023-07-30 21:30:00,2023,Curicó Unido,Unión La Calera,0,3,post
+2023-07-31 00:00:00,2023,Coquimbo Unido,Everton CD,0,2,post
+2023-08-05 16:30:00,2023,Magallanes,Unión Española,1,0,post
+2023-08-05 19:00:00,2023,Huachipato,Coquimbo Unido,2,2,post
+2023-08-05 21:30:00,2023,Universidad Católica,Audax Italiano,0,2,post
+2023-08-06 16:30:00,2023,Ñublense,Cobresal,1,2,post
+2023-08-06 19:00:00,2023,Everton CD,Colo Colo,1,2,post
+2023-08-06 21:30:00,2023,Copiapó,Curicó Unido,1,1,post
+2023-08-07 00:00:00,2023,Unión La Calera,Palestino,2,3,post
+2023-08-08 00:00:00,2023,Universidad de Chile,O'Higgins,2,5,post
+2023-08-11 21:00:00,2023,Cobresal,Magallanes,3,1,post
+2023-08-12 19:00:00,2023,Coquimbo Unido,Colo Colo,2,2,post
+2023-08-12 21:30:00,2023,O'Higgins,Copiapó,1,1,post
+2023-08-13 00:00:00,2023,Unión Española,Huachipato,0,1,post
+2023-08-13 19:00:00,2023,Palestino,Universidad Católica,3,0,post
+2023-08-13 22:00:00,2023,Audax Italiano,Everton CD,0,1,post
+2023-08-15 00:00:00,2023,Universidad de Chile,Curicó Unido,1,1,post
+2023-08-15 16:30:00,2023,Ñublense,Unión La Calera,1,1,post
+2023-08-25 19:30:00,2023,Audax Italiano,Coquimbo Unido,1,1,post
+2023-08-25 22:00:00,2023,Unión La Calera,Universidad de Chile,2,1,post
+2023-08-26 19:00:00,2023,Copiapó,Unión Española,4,3,post
+2023-08-26 21:30:00,2023,Universidad Católica,Ñublense,2,1,post
+2023-08-28 23:00:00,2023,Everton CD,Cobresal,2,2,post
+2023-09-01 00:00:00,2023,Unión Española,Universidad Católica,2,2,post
+2023-09-01 23:00:00,2023,Unión La Calera,Copiapó,1,1,post
+2023-09-02 19:00:00,2023,Universidad de Chile,Colo Colo,1,1,post
+2023-09-02 22:00:00,2023,Huachipato,Curicó Unido,3,0,post
+2023-09-03 15:30:00,2023,Magallanes,Palestino,2,0,post
+2023-09-03 18:00:00,2023,Cobresal,Coquimbo Unido,3,2,post
+2023-09-03 20:30:00,2023,O'Higgins,Audax Italiano,2,1,post
+2023-09-03 23:00:00,2023,Ñublense,Everton CD,1,0,post
+2023-09-13 21:30:00,2023,Curicó Unido,O'Higgins,1,3,post
+2023-09-14 22:00:00,2023,Huachipato,Palestino,2,2,post
+2023-09-14 22:00:00,2023,Colo Colo,Copiapó,1,1,post
+2023-09-22 23:30:00,2023,Coquimbo Unido,O'Higgins,2,1,post
+2023-09-23 15:30:00,2023,Palestino,Unión Española,2,1,post
+2023-09-23 18:00:00,2023,Curicó Unido,Ñublense,0,3,post
+2023-09-23 20:30:00,2023,Colo Colo,Cobresal,6,0,post
+2023-09-23 23:00:00,2023,Everton CD,Huachipato,1,2,post
+2023-09-24 18:00:00,2023,Copiapó,Universidad de Chile,3,1,post
+2023-09-24 20:30:00,2023,Universidad Católica,Magallanes,1,0,post
+2023-09-24 23:00:00,2023,Audax Italiano,Unión La Calera,2,1,post
+2023-09-30 15:30:00,2023,Coquimbo Unido,Ñublense,1,3,post
+2023-09-30 18:00:00,2023,Magallanes,Everton CD,1,4,post
+2023-09-30 20:30:00,2023,Huachipato,Copiapó,1,0,post
+2023-09-30 23:00:00,2023,Unión Española,Curicó Unido,2,2,post
+2023-10-01 14:15:00,2023,O'Higgins,Unión La Calera,0,1,post
+2023-10-01 18:00:00,2023,Colo Colo,Universidad Católica,2,1,post
+2023-10-01 21:00:00,2023,Cobresal,Palestino,2,1,post
+2023-10-02 22:00:00,2023,Universidad de Chile,Audax Italiano,2,0,post
+2023-10-06 22:00:00,2023,Unión La Calera,Huachipato,2,4,post
+2023-10-07 15:30:00,2023,Curicó Unido,Cobresal,1,2,post
+2023-10-07 18:00:00,2023,O'Higgins,Universidad Católica,0,3,post
+2023-10-07 23:00:00,2023,Coquimbo Unido,Unión Española,3,1,post
+2023-10-08 15:30:00,2023,Copiapó,Magallanes,2,1,post
+2023-10-08 18:00:00,2023,Palestino,Colo Colo,1,0,post
+2023-10-08 23:00:00,2023,Audax Italiano,Ñublense,1,0,post
+2023-11-06 22:00:00,2023,Universidad de Chile,Everton CD,1,2,post
+2023-11-07 21:00:00,2023,Magallanes,Colo Colo,1,2,post
+2023-11-11 18:00:00,2023,Universidad Católica,Universidad de Chile,1,3,post
+2023-11-11 21:30:00,2023,Cobresal,Audax Italiano,3,4,post
+2023-11-12 00:00:00,2023,Ñublense,Palestino,1,1,post
+2023-11-12 15:30:00,2023,Magallanes,Huachipato,1,1,post
+2023-11-12 18:00:00,2023,Everton CD,Curicó Unido,1,1,post
+2023-11-12 20:30:00,2023,Colo Colo,Unión La Calera,2,0,post
+2023-11-12 23:00:00,2023,Coquimbo Unido,Copiapó,1,0,post
+2023-11-12 23:00:00,2023,Unión Española,O'Higgins,3,3,post
+2023-11-23 21:00:00,2023,Palestino,Everton CD,0,2,post
+2023-11-24 21:00:00,2023,Universidad de Chile,Coquimbo Unido,1,2,post
+2023-11-24 23:30:00,2023,Unión La Calera,Unión Española,4,0,post
+2023-11-25 21:00:00,2023,Huachipato,Universidad Católica,1,1,post
+2023-11-25 21:00:00,2023,O'Higgins,Cobresal,0,0,post
+2023-11-26 21:00:00,2023,Audax Italiano,Colo Colo,0,1,post
+2023-11-26 23:30:00,2023,Copiapó,Ñublense,1,1,post
+2023-11-26 23:30:00,2023,Curicó Unido,Magallanes,3,4,post
+2023-12-01 23:00:00,2023,Coquimbo Unido,Unión La Calera,1,2,post
+2023-12-02 21:00:00,2023,Audax Italiano,Magallanes,0,2,post
+2023-12-02 21:00:00,2023,Palestino,Curicó Unido,4,0,post
+2023-12-02 21:00:00,2023,Universidad Católica,Copiapó,2,2,post
+2023-12-02 23:30:00,2023,Everton CD,O'Higgins,0,2,post
+2023-12-03 21:00:00,2023,Ñublense,Huachipato,0,1,post
+2023-12-03 21:00:00,2023,Cobresal,Universidad de Chile,4,3,post
+2023-12-03 21:00:00,2023,Colo Colo,Unión Española,0,2,post
+2023-12-08 21:00:00,2023,Curicó Unido,Colo Colo,0,1,post
+2023-12-08 21:00:00,2023,Huachipato,Audax Italiano,2,0,post
+2023-12-08 21:00:00,2023,Unión Española,Cobresal,1,0,post
+2023-12-09 21:00:00,2023,Copiapó,Everton CD,2,0,post
+2023-12-09 21:00:00,2023,Magallanes,Coquimbo Unido,2,3,post
+2023-12-09 21:00:00,2023,O'Higgins,Palestino,0,1,post
+2023-12-09 21:00:00,2023,Unión La Calera,Universidad Católica,0,3,post
+2023-12-09 21:00:00,2023,Universidad de Chile,Ñublense,3,1,post
+2024-02-17 00:30:00,2024,Ñublense,Coquimbo Unido,0,0,post
+2024-02-17 21:00:00,2024,Unión Española,Colo Colo,0,3,post
+2024-02-17 23:30:00,2024,Copiapó,O'Higgins,1,3,post
+2024-02-18 23:30:00,2024,Cobreloa,Huachipato,1,1,post
+2024-02-19 23:00:00,2024,Audax Italiano,Deportes Iquique,2,3,post
+2024-02-23 22:00:00,2024,Universidad Católica,Ñublense,0,1,post
+2024-02-24 00:30:00,2024,Coquimbo Unido,Copiapó,3,1,post
+2024-02-24 21:00:00,2024,Palestino,Cobreloa,5,0,post
+2024-02-24 21:00:00,2024,Universidad de Chile,Audax Italiano,1,0,post
+2024-02-25 15:00:00,2024,Deportes Iquique,Everton CD,1,1,post
+2024-02-25 15:00:00,2024,Huachipato,Unión La Calera,0,1,post
+2024-02-25 21:00:00,2024,O'Higgins,Colo Colo,1,0,post
+2024-02-25 23:30:00,2024,Cobresal,Unión Española,2,2,post
+2024-03-01 23:30:00,2024,Cobreloa,Cobresal,2,1,post
+2024-03-02 21:00:00,2024,Palestino,Universidad Católica,0,2,post
+2024-03-02 21:00:00,2024,O'Higgins,Everton CD,2,1,post
+2024-03-02 23:30:00,2024,Ñublense,Audax Italiano,1,2,post
+2024-03-02 23:30:00,2024,Unión Española,Coquimbo Unido,1,0,post
+2024-03-03 21:00:00,2024,Colo Colo,Huachipato,2,0,post
+2024-03-03 23:45:00,2024,Unión La Calera,Deportes Iquique,1,3,post
+2024-03-04 22:00:00,2024,Copiapó,Universidad de Chile,1,3,post
+2024-03-09 21:00:00,2024,Cobresal,Huachipato,1,2,post
+2024-03-09 23:30:00,2024,O'Higgins,Palestino,0,1,post
+2024-03-09 23:30:00,2024,Unión Española,Audax Italiano,3,0,post
+2024-03-10 15:00:00,2024,Deportes Iquique,Coquimbo Unido,4,2,post
+2024-03-10 21:00:00,2024,Colo Colo,Universidad de Chile,0,1,post
+2024-03-11 00:00:00,2024,Ñublense,Copiapó,1,0,post
+2024-03-11 22:00:00,2024,Universidad Católica,Everton CD,2,4,post
+2024-03-12 00:30:00,2024,Unión La Calera,Cobreloa,0,2,post
+2024-03-15 23:30:00,2024,Deportes Iquique,Cobresal,1,0,post
+2024-03-16 15:00:00,2024,Everton CD,Ñublense,3,2,post
+2024-03-16 21:00:00,2024,Universidad de Chile,O'Higgins,1,0,post
+2024-03-16 23:30:00,2024,Cobreloa,Unión Española,1,0,post
+2024-03-17 15:00:00,2024,Coquimbo Unido,Colo Colo,0,0,post
+2024-03-17 15:00:00,2024,Huachipato,Copiapó,2,1,post
+2024-03-17 21:00:00,2024,Palestino,Unión La Calera,0,0,post
+2024-03-17 23:30:00,2024,Universidad Católica,Audax Italiano,0,0,post
+2024-03-22 22:00:00,2024,Unión La Calera,Universidad Católica,0,0,post
+2024-03-23 21:00:00,2024,Everton CD,Palestino,0,0,post
+2024-03-25 22:00:00,2024,Universidad de Chile,Cobresal,2,2,post
+2024-03-28 21:00:00,2024,Audax Italiano,Coquimbo Unido,0,1,post
+2024-03-28 23:30:00,2024,O'Higgins,Deportes Iquique,0,3,post
+2024-03-29 23:30:00,2024,Cobresal,Palestino,0,2,post
+2024-03-30 15:00:00,2024,Huachipato,Universidad Católica,0,0,post
+2024-03-30 21:00:00,2024,Colo Colo,Everton CD,4,1,post
+2024-03-30 23:30:00,2024,Copiapó,Unión La Calera,2,0,post
+2024-03-31 21:00:00,2024,Cobreloa,Universidad de Chile,1,3,post
+2024-03-31 23:30:00,2024,Unión Española,Ñublense,5,3,post
+2024-04-06 15:30:00,2024,Copiapó,Deportes Iquique,3,0,post
+2024-04-06 18:00:00,2024,Ñublense,Colo Colo,3,0,post
+2024-04-06 20:30:00,2024,Universidad Católica,Cobresal,2,0,post
+2024-04-06 23:00:00,2024,Everton CD,Audax Italiano,2,0,post
+2024-04-07 19:00:00,2024,Unión La Calera,O'Higgins,2,3,post
+2024-04-07 21:30:00,2024,Coquimbo Unido,Cobreloa,2,1,post
+2024-04-08 00:00:00,2024,Unión Española,Universidad de Chile,0,1,post
+2024-04-13 21:30:00,2024,Unión Española,Everton CD,4,2,post
+2024-04-14 00:00:00,2024,Deportes Iquique,Universidad Católica,2,3,post
+2024-04-14 16:30:00,2024,O'Higgins,Huachipato,0,0,post
+2024-04-14 16:30:00,2024,Universidad de Chile,Coquimbo Unido,1,1,post
+2024-04-14 19:00:00,2024,Ñublense,Palestino,0,2,post
+2024-04-15 00:00:00,2024,Audax Italiano,Unión La Calera,2,2,post
+2024-04-15 22:00:00,2024,Cobresal,Copiapó,3,0,post
+2024-04-16 00:30:00,2024,Colo Colo,Cobreloa,0,2,post
+2024-04-17 19:30:00,2024,Palestino,Huachipato,2,0,post
+2024-04-20 00:30:00,2024,Unión La Calera,Everton CD,0,1,post
+2024-04-20 19:00:00,2024,Cobresal,Ñublense,2,2,post
+2024-04-20 21:30:00,2024,Universidad Católica,Colo Colo,0,1,post
+2024-04-21 00:30:00,2024,Coquimbo Unido,O'Higgins,2,0,post
+2024-04-21 16:30:00,2024,Huachipato,Deportes Iquique,2,1,post
+2024-04-21 19:00:00,2024,Palestino,Universidad de Chile,2,2,post
+2024-04-21 21:30:00,2024,Unión Española,Copiapó,5,3,post
+2024-04-22 00:00:00,2024,Cobreloa,Audax Italiano,0,3,post
+2024-04-26 23:00:00,2024,O'Higgins,Unión Española,2,2,post
+2024-04-27 19:00:00,2024,Copiapó,Universidad Católica,0,1,post
+2024-04-27 21:30:00,2024,Ñublense,Cobreloa,6,0,post
+2024-04-28 16:30:00,2024,Everton CD,Coquimbo Unido,1,2,post
+2024-04-28 19:00:00,2024,Huachipato,Universidad de Chile,0,4,post
+2024-04-28 22:00:00,2024,Colo Colo,Unión La Calera,3,1,post
+2024-04-29 00:30:00,2024,Deportes Iquique,Palestino,2,1,post
+2024-04-30 00:30:00,2024,Audax Italiano,Cobresal,0,1,post
+2024-05-03 19:30:00,2024,Palestino,Copiapó,3,1,post
+2024-05-03 23:00:00,2024,Coquimbo Unido,Huachipato,3,1,post
+2024-05-04 19:00:00,2024,Cobresal,Colo Colo,2,2,post
+2024-05-05 00:00:00,2024,Unión Española,Universidad Católica,1,2,post
+2024-05-05 16:30:00,2024,Unión La Calera,Ñublense,2,1,post
+2024-05-05 19:00:00,2024,Universidad de Chile,Deportes Iquique,2,2,post
+2024-05-05 21:30:00,2024,Cobreloa,Everton CD,1,2,post
+2024-05-06 00:00:00,2024,O'Higgins,Audax Italiano,0,5,post
+2024-05-11 16:30:00,2024,Huachipato,Unión Española,2,2,post
+2024-05-11 21:30:00,2024,Universidad Católica,O'Higgins,3,2,post
+2024-05-12 00:00:00,2024,Everton CD,Cobresal,3,3,post
+2024-05-12 16:30:00,2024,Copiapó,Cobreloa,4,0,post
+2024-05-12 19:00:00,2024,Audax Italiano,Colo Colo,1,4,post
+2024-05-13 00:00:00,2024,Deportes Iquique,Ñublense,2,1,post
+2024-05-13 23:00:00,2024,Unión La Calera,Universidad de Chile,1,3,post
+2024-05-18 16:30:00,2024,Everton CD,Copiapó,1,0,post
+2024-05-18 19:00:00,2024,Cobreloa,Deportes Iquique,2,2,post
+2024-05-18 21:30:00,2024,Universidad de Chile,Universidad Católica,1,2,post
+2024-05-19 16:30:00,2024,Ñublense,O'Higgins,2,2,post
+2024-05-19 21:30:00,2024,Colo Colo,Palestino,2,0,post
+2024-05-20 22:00:00,2024,Cobresal,Coquimbo Unido,2,3,post
+2024-05-21 00:30:00,2024,Huachipato,Audax Italiano,0,1,post
+2024-05-24 19:30:00,2024,Palestino,Unión Española,0,1,post
+2024-05-24 23:00:00,2024,Unión La Calera,Coquimbo Unido,1,2,post
+2024-05-25 16:30:00,2024,Huachipato,Everton CD,1,0,post
+2024-05-25 19:00:00,2024,Deportes Iquique,Colo Colo,0,3,post
+2024-05-25 21:30:00,2024,Universidad Católica,Cobreloa,4,1,post
+2024-05-26 00:00:00,2024,O'Higgins,Cobresal,2,2,post
+2024-05-26 19:00:00,2024,Copiapó,Audax Italiano,2,1,post
+2024-05-26 21:30:00,2024,Universidad de Chile,Ñublense,0,0,post
+2024-06-01 00:30:00,2024,Cobreloa,O'Higgins,0,4,post
+2024-06-01 21:30:00,2024,Unión Española,Deportes Iquique,4,3,post
+2024-06-02 00:00:00,2024,Audax Italiano,Palestino,1,2,post
+2024-06-02 16:30:00,2024,Everton CD,Universidad de Chile,1,2,post
+2024-06-02 19:00:00,2024,Cobresal,Unión La Calera,2,1,post
+2024-06-02 21:30:00,2024,Colo Colo,Copiapó,0,1,post
+2024-06-03 00:00:00,2024,Coquimbo Unido,Universidad Católica,2,0,post
+2024-06-06 21:30:00,2024,Coquimbo Unido,Palestino,0,0,post
+2024-06-07 23:00:00,2024,Unión Española,Unión La Calera,0,1,post
+2024-06-20 19:00:00,2024,Ñublense,Huachipato,3,0,post
+2024-07-19 23:00:00,2024,Huachipato,Cobreloa,1,1,post
+2024-07-20 16:30:00,2024,Coquimbo Unido,Ñublense,1,0,post
+2024-07-20 19:00:00,2024,O'Higgins,Copiapó,2,0,post
+2024-07-20 21:30:00,2024,Universidad Católica,Unión La Calera,2,0,post
+2024-07-21 00:00:00,2024,Deportes Iquique,Audax Italiano,2,1,post
+2024-07-21 16:30:00,2024,Palestino,Everton CD,1,4,post
+2024-07-21 19:00:00,2024,Cobresal,Universidad de Chile,3,3,post
+2024-07-21 21:30:00,2024,Colo Colo,Unión Española,2,1,post
+2024-07-26 23:00:00,2024,Everton CD,Deportes Iquique,1,1,post
+2024-07-27 16:30:00,2024,Copiapó,Coquimbo Unido,3,0,post
+2024-07-27 19:00:00,2024,Unión Española,Cobresal,2,1,post
+2024-07-27 21:30:00,2024,Colo Colo,O'Higgins,2,1,post
+2024-07-28 19:00:00,2024,Ñublense,Universidad Católica,1,2,post
+2024-07-28 21:30:00,2024,Audax Italiano,Universidad de Chile,1,0,post
+2024-07-29 00:00:00,2024,Unión La Calera,Huachipato,2,1,post
+2024-07-30 00:00:00,2024,Cobreloa,Palestino,3,1,post
+2024-08-03 00:00:00,2024,Coquimbo Unido,Unión Española,2,2,post
+2024-08-03 16:30:00,2024,Everton CD,O'Higgins,1,1,post
+2024-08-03 21:30:00,2024,Universidad Católica,Palestino,1,1,post
+2024-08-04 00:00:00,2024,Deportes Iquique,Unión La Calera,1,1,post
+2024-08-04 16:30:00,2024,Audax Italiano,Ñublense,0,1,post
+2024-08-04 19:00:00,2024,Cobresal,Cobreloa,3,2,post
+2024-08-04 21:30:00,2024,Universidad de Chile,Copiapó,1,0,post
+2024-08-09 19:00:00,2024,Palestino,O'Higgins,4,1,post
+2024-08-09 22:00:00,2024,Huachipato,Cobresal,0,0,post
+2024-08-10 00:30:00,2024,Cobreloa,Unión La Calera,2,0,post
+2024-08-10 16:00:00,2024,Copiapó,Ñublense,0,1,post
+2024-08-10 19:00:00,2024,Universidad de Chile,Colo Colo,0,0,post
+2024-08-10 23:00:00,2024,Coquimbo Unido,Deportes Iquique,1,2,post
+2024-08-11 16:30:00,2024,Audax Italiano,Unión Española,1,1,post
+2024-08-11 19:00:00,2024,Everton CD,Universidad Católica,0,0,post
+2024-08-16 23:00:00,2024,Colo Colo,Coquimbo Unido,2,0,post
+2024-08-17 16:30:00,2024,Unión Española,Cobreloa,3,0,post
+2024-08-17 19:00:00,2024,Copiapó,Huachipato,0,2,post
+2024-08-17 21:30:00,2024,O'Higgins,Universidad de Chile,0,4,post
+2024-08-18 00:00:00,2024,Ñublense,Everton CD,1,1,post
+2024-08-18 16:00:00,2024,Unión La Calera,Palestino,2,1,post
+2024-08-18 19:00:00,2024,Cobresal,Deportes Iquique,2,1,post
+2024-08-18 19:00:00,2024,Audax Italiano,Universidad Católica,2,1,post
+2024-08-22 23:00:00,2024,Ñublense,Unión Española,0,0,post
+2024-08-23 23:00:00,2024,Unión La Calera,Copiapó,3,3,post
+2024-08-23 23:00:00,2024,Universidad de Chile,Cobreloa,4,0,post
+2024-08-24 19:00:00,2024,Coquimbo Unido,Audax Italiano,1,1,post
+2024-08-24 21:30:00,2024,Deportes Iquique,O'Higgins,1,3,post
+2024-08-25 16:30:00,2024,Palestino,Cobresal,3,0,post
+2024-08-25 19:00:00,2024,Everton CD,Colo Colo,0,1,post
+2024-08-25 21:30:00,2024,Universidad Católica,Huachipato,4,0,post
+2024-08-27 22:00:00,2024,Universidad de Chile,Unión Española,2,0,post
+2024-08-28 00:30:00,2024,Deportes Iquique,Copiapó,2,1,post
+2024-08-28 00:30:00,2024,Cobreloa,Coquimbo Unido,1,0,post
+2024-08-28 19:00:00,2024,Cobresal,Universidad Católica,3,1,post
+2024-08-28 22:00:00,2024,O'Higgins,Unión La Calera,1,1,post
+2024-08-29 00:30:00,2024,Audax Italiano,Everton CD,1,2,post
+2024-08-29 22:00:00,2024,Colo Colo,Ñublense,2,1,post
+2024-08-30 00:30:00,2024,Huachipato,Palestino,2,2,post
+2024-08-31 19:00:00,2024,Coquimbo Unido,Universidad de Chile,0,1,post
+2024-08-31 21:30:00,2024,Universidad Católica,Deportes Iquique,2,2,post
+2024-09-01 00:00:00,2024,Everton CD,Unión Española,3,2,post
+2024-09-01 16:30:00,2024,Palestino,Ñublense,1,1,post
+2024-09-01 19:00:00,2024,Cobreloa,Colo Colo,0,1,post
+2024-09-01 21:30:00,2024,Copiapó,Cobresal,2,2,post
+2024-09-02 00:00:00,2024,Unión La Calera,Audax Italiano,2,1,post
+2024-09-08 15:00:00,2024,Huachipato,O'Higgins,1,0,post
+2024-09-14 18:00:00,2024,Ñublense,Cobresal,1,0,post
+2024-09-14 20:30:00,2024,O'Higgins,Coquimbo Unido,1,1,post
+2024-09-14 23:00:00,2024,Audax Italiano,Cobreloa,2,0,post
+2024-09-15 15:30:00,2024,Copiapó,Unión Española,2,3,post
+2024-09-15 18:00:00,2024,Deportes Iquique,Huachipato,3,1,post
+2024-09-15 20:30:00,2024,Universidad de Chile,Palestino,1,0,post
+2024-09-24 18:00:00,2024,Palestino,Deportes Iquique,2,0,post
+2024-09-24 20:30:00,2024,Cobreloa,Ñublense,0,1,post
+2024-09-24 23:00:00,2024,Coquimbo Unido,Everton CD,2,2,post
+2024-09-24 23:00:00,2024,Universidad de Chile,Huachipato,2,1,post
+2024-09-25 18:00:00,2024,Cobresal,Audax Italiano,0,1,post
+2024-09-25 21:00:00,2024,Unión Española,O'Higgins,0,1,post
+2024-09-25 23:30:00,2024,Universidad Católica,Copiapó,4,1,post
+2024-09-28 20:30:00,2024,Everton CD,Cobreloa,2,0,post
+2024-09-28 23:00:00,2024,Colo Colo,Cobresal,2,0,post
+2024-09-29 15:30:00,2024,Ñublense,Unión La Calera,0,1,post
+2024-09-29 18:00:00,2024,Copiapó,Palestino,2,1,post
+2024-09-29 20:30:00,2024,Deportes Iquique,Universidad de Chile,3,0,post
+2024-09-29 23:00:00,2024,Universidad Católica,Unión Española,0,2,post
+2024-09-30 21:00:00,2024,Huachipato,Coquimbo Unido,3,2,post
+2024-09-30 23:30:00,2024,Audax Italiano,O'Higgins,2,0,post
+2024-10-03 23:00:00,2024,Colo Colo,Universidad Católica,1,0,post
+2024-10-05 18:00:00,2024,Cobresal,Everton CD,2,1,post
+2024-10-05 23:00:00,2024,Ñublense,Deportes Iquique,2,0,post
+2024-10-06 00:00:00,2024,Universidad de Chile,Unión La Calera,1,0,post
+2024-10-06 15:30:00,2024,Palestino,Coquimbo Unido,2,0,post
+2024-10-06 18:00:00,2024,O'Higgins,Universidad Católica,0,2,post
+2024-10-06 20:30:00,2024,Unión Española,Huachipato,3,1,post
+2024-10-06 23:00:00,2024,Colo Colo,Audax Italiano,2,1,post
+2024-10-07 23:00:00,2024,Cobreloa,Copiapó,4,1,post
+2024-10-12 23:00:00,2024,Everton CD,Unión La Calera,0,1,post
+2024-10-13 15:00:00,2024,Huachipato,Colo Colo,1,2,post
+2024-10-16 22:00:00,2024,Unión La Calera,Colo Colo,0,1,post
+2024-10-19 18:00:00,2024,O'Higgins,Ñublense,1,3,post
+2024-10-19 21:00:00,2024,Universidad Católica,Universidad de Chile,1,2,post
+2024-10-20 18:00:00,2024,Palestino,Colo Colo,2,3,post
+2024-10-20 20:30:00,2024,Audax Italiano,Huachipato,0,2,post
+2024-10-20 20:30:00,2024,Copiapó,Everton CD,3,5,post
+2024-10-20 20:30:00,2024,Coquimbo Unido,Cobresal,2,0,post
+2024-10-20 20:30:00,2024,Deportes Iquique,Cobreloa,4,1,post
+2024-10-20 20:30:00,2024,Unión La Calera,Unión Española,0,2,post
+2024-11-02 21:00:00,2024,Audax Italiano,Copiapó,4,1,post
+2024-11-02 21:00:00,2024,Cobreloa,Universidad Católica,2,2,post
+2024-11-02 21:00:00,2024,Cobresal,O'Higgins,3,1,post
+2024-11-02 21:00:00,2024,Coquimbo Unido,Unión La Calera,0,0,post
+2024-11-02 21:00:00,2024,Everton CD,Huachipato,1,0,post
+2024-11-02 21:00:00,2024,Unión Española,Palestino,2,3,post
+2024-11-03 21:00:00,2024,Ñublense,Universidad de Chile,1,4,post
+2024-11-03 21:00:00,2024,Colo Colo,Deportes Iquique,3,0,post
+2024-11-09 21:00:00,2024,Deportes Iquique,Unión Española,2,0,post
+2024-11-09 21:00:00,2024,Universidad Católica,Coquimbo Unido,1,2,post
+2024-11-10 15:00:00,2024,Huachipato,Ñublense,1,0,post
+2024-11-10 15:00:00,2024,O'Higgins,Cobreloa,0,3,post
+2024-11-10 15:00:00,2024,Palestino,Audax Italiano,2,0,post
+2024-11-10 15:00:00,2024,Unión La Calera,Cobresal,3,0,post
+2024-11-10 19:00:00,2024,Copiapó,Colo Colo,1,1,post
+2024-11-10 19:00:00,2024,Universidad de Chile,Everton CD,1,1,post
+2025-02-15 00:00:00,2025,Deportes Iquique,Coquimbo Unido,0,3,post
+2025-02-15 21:00:00,2025,Palestino,Cobresal,2,1,post
+2025-02-15 21:00:00,2025,O'Higgins,Huachipato,0,0,post
+2025-02-15 23:30:00,2025,Universidad de Chile,Ñublense,5,0,post
+2025-02-16 15:00:00,2025,La Serena,Colo Colo,1,3,post
+2025-02-16 23:30:00,2025,Deportes Limache,Everton CD,1,1,post
+2025-02-17 21:00:00,2025,Universidad Católica,Audax Italiano,3,1,post
+2025-02-17 23:30:00,2025,Unión La Calera,Unión Española,4,0,post
+2025-02-21 21:00:00,2025,Audax Italiano,Deportes Iquique,4,2,post
+2025-02-21 21:00:00,2025,Unión Española,Palestino,0,3,post
+2025-02-22 21:00:00,2025,Coquimbo Unido,Universidad Católica,1,0,post
+2025-02-22 23:30:00,2025,Ñublense,Deportes Limache,1,1,post
+2025-02-23 15:00:00,2025,Huachipato,Everton CD,4,0,post
+2025-02-23 21:00:00,2025,Cobresal,La Serena,3,1,post
+2025-02-23 23:30:00,2025,Universidad de Chile,Unión La Calera,1,0,post
+2025-02-24 23:00:00,2025,Colo Colo,O'Higgins,0,1,post
+2025-02-28 23:00:00,2025,Deportes Limache,Coquimbo Unido,1,2,post
+2025-03-01 15:00:00,2025,La Serena,Unión Española,1,0,post
+2025-03-01 21:00:00,2025,Palestino,Audax Italiano,0,2,post
+2025-03-01 21:00:00,2025,Universidad Católica,Deportes Iquique,1,0,post
+2025-03-01 23:30:00,2025,Everton CD,Ñublense,1,2,post
+2025-03-02 15:00:00,2025,Huachipato,Colo Colo,2,1,post
+2025-03-02 21:00:00,2025,Cobresal,Universidad de Chile,2,1,post
+2025-03-02 23:30:00,2025,Unión La Calera,O'Higgins,2,2,post
+2025-03-07 23:00:00,2025,Unión La Calera,Huachipato,1,0,post
+2025-03-08 21:00:00,2025,Ñublense,Universidad Católica,1,1,post
+2025-03-08 23:30:00,2025,Deportes Iquique,Palestino,1,3,post
+2025-03-08 23:30:00,2025,Audax Italiano,Deportes Limache,3,1,post
+2025-03-09 15:00:00,2025,Coquimbo Unido,Cobresal,1,1,post
+2025-03-09 21:00:00,2025,O'Higgins,La Serena,1,1,post
+2025-03-09 23:30:00,2025,Colo Colo,Everton CD,2,0,post
+2025-03-14 21:00:00,2025,Audax Italiano,Universidad de Chile,1,1,post
+2025-03-14 23:30:00,2025,Deportes Limache,Huachipato,2,3,post
+2025-03-15 23:30:00,2025,Everton CD,Coquimbo Unido,0,0,post
+2025-03-16 15:00:00,2025,La Serena,Unión La Calera,1,0,post
+2025-03-16 21:00:00,2025,Cobresal,O'Higgins,0,0,post
+2025-03-16 21:00:00,2025,Palestino,Ñublense,2,0,post
+2025-03-16 23:30:00,2025,Deportes Iquique,Unión Española,0,4,post
+2025-03-27 21:15:00,2025,Colo Colo,Palestino,1,1,post
+2025-03-27 23:30:00,2025,Everton CD,Universidad de Chile,2,0,post
+2025-03-28 21:15:00,2025,Unión Española,Universidad Católica,1,2,post
+2025-03-28 23:30:00,2025,Ñublense,Deportes Iquique,1,1,post
+2025-03-29 21:00:00,2025,O'Higgins,Deportes Limache,3,1,post
+2025-03-30 15:00:00,2025,Huachipato,La Serena,3,1,post
+2025-03-30 21:00:00,2025,Coquimbo Unido,Audax Italiano,2,1,post
+2025-03-30 23:30:00,2025,Unión La Calera,Cobresal,2,1,post
+2025-04-12 16:30:00,2025,Coquimbo Unido,Huachipato,0,0,post
+2025-04-12 19:00:00,2025,Cobresal,Universidad Católica,1,1,post
+2025-04-13 00:00:00,2025,Audax Italiano,O'Higgins,1,0,post
+2025-04-13 16:30:00,2025,La Serena,Everton CD,2,1,post
+2025-04-14 19:00:00,2025,Palestino,Unión La Calera,1,0,post
+2025-04-14 22:00:00,2025,Unión Española,Ñublense,3,0,post
+2025-04-15 00:30:00,2025,Deportes Limache,Deportes Iquique,2,0,post
+2025-04-17 22:00:00,2025,Universidad de Chile,La Serena,3,1,post
+2025-04-18 22:00:00,2025,Audax Italiano,Unión Española,2,0,post
+2025-04-19 19:00:00,2025,Huachipato,Cobresal,0,1,post
+2025-04-19 21:30:00,2025,Universidad Católica,Deportes Limache,2,1,post
+2025-04-20 16:30:00,2025,Everton CD,Unión La Calera,1,1,post
+2025-04-20 19:00:00,2025,O'Higgins,Palestino,1,0,post
+2025-04-21 00:00:00,2025,Ñublense,Coquimbo Unido,0,0,post
+2025-04-25 22:00:00,2025,Ñublense,La Serena,2,0,post
+2025-04-25 22:00:00,2025,Unión La Calera,Audax Italiano,1,0,post
+2025-04-26 00:30:00,2025,Universidad Católica,Everton CD,6,0,post
+2025-04-26 18:00:00,2025,Cobresal,Deportes Limache,3,1,post
+2025-04-26 20:00:00,2025,Colo Colo,Coquimbo Unido,2,0,post
+2025-04-27 16:30:00,2025,O'Higgins,Deportes Iquique,2,2,post
+2025-04-27 19:00:00,2025,Palestino,Universidad de Chile,2,3,post
+2025-04-27 21:30:00,2025,Huachipato,Unión Española,2,1,post
+2025-05-02 20:00:00,2025,Deportes Limache,Colo Colo,1,0,post
+2025-05-03 00:30:00,2025,Unión Española,Cobresal,0,1,post
+2025-05-03 16:30:00,2025,Everton CD,Palestino,1,2,post
+2025-05-03 20:00:00,2025,Universidad de Chile,Universidad Católica,1,0,post
+2025-05-03 22:30:00,2025,Coquimbo Unido,O'Higgins,2,0,post
+2025-05-04 19:00:00,2025,Deportes Iquique,Huachipato,3,0,post
+2025-05-04 21:30:00,2025,Audax Italiano,La Serena,2,1,post
+2025-05-05 00:00:00,2025,Ñublense,Unión La Calera,1,1,post
+2025-05-17 00:00:00,2025,Unión La Calera,Coquimbo Unido,0,1,post
+2025-05-17 19:00:00,2025,Cobresal,Audax Italiano,0,1,post
+2025-05-17 21:30:00,2025,O'Higgins,Universidad Católica,2,0,post
+2025-05-18 19:00:00,2025,Deportes Limache,Palestino,0,1,post
+2025-05-18 22:30:00,2025,Universidad de Chile,Huachipato,5,1,post
+2025-05-19 19:00:00,2025,Unión Española,Everton CD,0,3,post
+2025-05-19 22:00:00,2025,Colo Colo,Ñublense,2,2,post
+2025-05-20 00:30:00,2025,La Serena,Deportes Iquique,2,1,post
+2025-05-23 22:00:00,2025,Deportes Limache,Universidad de Chile,2,0,post
+2025-05-24 19:00:00,2025,Everton CD,Cobresal,2,2,post
+2025-05-24 21:30:00,2025,Colo Colo,Unión Española,4,1,post
+2025-05-25 00:00:00,2025,Coquimbo Unido,Palestino,0,0,post
+2025-05-25 16:30:00,2025,Ñublense,O'Higgins,0,1,post
+2025-05-25 19:00:00,2025,Universidad Católica,La Serena,1,3,post
+2025-05-26 00:00:00,2025,Deportes Iquique,Unión La Calera,0,1,post
+2025-05-26 23:30:00,2025,Audax Italiano,Huachipato,4,3,post
+2025-05-31 16:30:00,2025,Huachipato,Ñublense,0,1,post
+2025-05-31 16:30:00,2025,La Serena,Coquimbo Unido,2,4,post
+2025-05-31 19:00:00,2025,Universidad de Chile,O'Higgins,6,0,post
+2025-06-01 00:00:00,2025,Everton CD,Audax Italiano,1,1,post
+2025-06-01 19:00:00,2025,Palestino,Universidad Católica,1,1,post
+2025-06-01 21:30:00,2025,Unión La Calera,Colo Colo,0,1,post
+2025-06-02 22:00:00,2025,Cobresal,Deportes Iquique,2,1,post
+2025-06-03 19:00:00,2025,Unión Española,Deportes Limache,2,2,post
+2025-06-13 00:00:00,2025,Deportes Iquique,Colo Colo,2,2,post
+2025-06-14 00:00:00,2025,Deportes Limache,Unión La Calera,0,1,post
+2025-06-14 16:30:00,2025,Palestino,La Serena,2,1,post
+2025-06-14 19:00:00,2025,Universidad Católica,Huachipato,1,0,post
+2025-06-15 16:30:00,2025,O'Higgins,Unión Española,1,0,post
+2025-06-15 19:00:00,2025,Coquimbo Unido,Universidad de Chile,1,0,post
+2025-06-16 00:00:00,2025,Ñublense,Audax Italiano,2,3,post
+2025-06-17 00:00:00,2025,Deportes Iquique,Everton CD,1,2,post
+2025-06-17 22:00:00,2025,Colo Colo,Cobresal,4,0,post
+2025-06-20 21:30:00,2025,Unión La Calera,Universidad Católica,1,1,post
+2025-06-21 16:30:00,2025,Unión Española,Coquimbo Unido,0,2,post
+2025-06-21 19:00:00,2025,Universidad de Chile,Deportes Iquique,3,1,post
+2025-06-21 21:30:00,2025,Huachipato,Palestino,2,2,post
+2025-06-22 16:30:00,2025,La Serena,Deportes Limache,1,1,post
+2025-06-22 19:00:00,2025,Audax Italiano,Colo Colo,2,1,post
+2025-06-22 21:30:00,2025,Cobresal,Ñublense,1,1,post
+2025-06-23 00:00:00,2025,Everton CD,O'Higgins,0,1,post
+2025-07-05 19:00:00,2025,Unión Española,Universidad de Chile,0,2,post
+2025-07-06 19:00:00,2025,Universidad Católica,Colo Colo,2,0,post
+2025-07-12 19:00:00,2025,Universidad de Chile,Colo Colo,2,1,post
+2025-07-18 23:00:00,2025,Everton CD,Deportes Limache,0,0,post
+2025-07-19 16:30:00,2025,Unión Española,Unión La Calera,3,1,post
+2025-07-19 19:00:00,2025,Colo Colo,La Serena,2,1,post
+2025-07-19 21:30:00,2025,Coquimbo Unido,Deportes Iquique,4,1,post
+2025-07-20 16:30:00,2025,Audax Italiano,Universidad Católica,1,1,post
+2025-07-20 19:00:00,2025,Ñublense,Universidad de Chile,2,2,post
+2025-07-21 23:00:00,2025,Huachipato,O'Higgins,2,1,post
+2025-07-25 23:00:00,2025,Deportes Limache,Ñublense,0,1,post
+2025-07-26 19:00:00,2025,La Serena,Cobresal,0,2,post
+2025-07-26 21:30:00,2025,Everton CD,Huachipato,4,1,post
+2025-07-27 16:30:00,2025,O'Higgins,Colo Colo,1,1,post
+2025-07-27 19:00:00,2025,Palestino,Unión Española,1,0,post
+2025-07-27 19:00:00,2025,Universidad Católica,Coquimbo Unido,0,3,post
+2025-07-27 22:00:00,2025,Deportes Iquique,Audax Italiano,1,0,post
+2025-07-28 22:00:00,2025,Unión La Calera,Universidad de Chile,0,4,post
+2025-08-01 23:00:00,2025,Audax Italiano,Palestino,1,1,post
+2025-08-02 16:30:00,2025,Unión Española,La Serena,1,0,post
+2025-08-02 19:00:00,2025,Coquimbo Unido,Deportes Limache,2,1,post
+2025-08-02 21:30:00,2025,Deportes Iquique,Universidad Católica,2,2,post
+2025-08-03 16:30:00,2025,O'Higgins,Unión La Calera,1,0,post
+2025-08-03 19:00:00,2025,Colo Colo,Huachipato,2,2,post
+2025-08-03 21:30:00,2025,Ñublense,Everton CD,1,0,post
+2025-08-04 22:00:00,2025,Universidad de Chile,Cobresal,0,1,post
+2025-08-08 19:00:00,2025,Palestino,Deportes Iquique,2,0,post
+2025-08-09 16:30:00,2025,Huachipato,Unión La Calera,1,0,post
+2025-08-09 19:00:00,2025,Universidad de Chile,Unión Española,4,1,post
+2025-08-09 21:30:00,2025,La Serena,O'Higgins,3,3,post
+2025-08-10 16:30:00,2025,Everton CD,Colo Colo,1,1,post
+2025-08-10 19:00:00,2025,Cobresal,Coquimbo Unido,1,2,post
+2025-08-11 23:00:00,2025,Deportes Limache,Audax Italiano,4,0,post
+2025-08-15 19:00:00,2025,Unión Española,Deportes Iquique,2,2,post
+2025-08-16 00:00:00,2025,Unión La Calera,La Serena,1,1,post
+2025-08-16 16:00:00,2025,Ñublense,Palestino,1,0,post
+2025-08-16 19:00:00,2025,Colo Colo,Universidad Católica,1,4,post
+2025-08-16 22:30:00,2025,O'Higgins,Cobresal,1,0,post
+2025-08-17 16:30:00,2025,Universidad de Chile,Audax Italiano,1,3,post
+2025-08-17 19:00:00,2025,Huachipato,Deportes Limache,4,0,post
+2025-08-17 21:30:00,2025,Coquimbo Unido,Everton CD,2,1,post
+2025-08-22 19:00:00,2025,Palestino,Colo Colo,0,0,post
+2025-08-23 00:30:00,2025,Deportes Limache,O'Higgins,2,2,post
+2025-08-23 19:00:00,2025,Cobresal,Unión La Calera,1,0,post
+2025-08-23 21:30:00,2025,Audax Italiano,Coquimbo Unido,0,1,post
+2025-08-24 00:00:00,2025,Universidad Católica,Unión Española,2,0,post
+2025-08-24 16:30:00,2025,La Serena,Huachipato,0,2,post
+2025-08-24 21:30:00,2025,Deportes Iquique,Ñublense,0,2,post
+2025-08-28 23:00:00,2025,Everton CD,La Serena,3,1,post
+2025-08-29 23:00:00,2025,Unión La Calera,Palestino,1,2,post
+2025-08-30 16:30:00,2025,Huachipato,Coquimbo Unido,0,1,post
+2025-08-30 19:00:00,2025,O'Higgins,Audax Italiano,3,2,post
+2025-08-30 21:30:00,2025,Universidad Católica,Cobresal,2,1,post
+2025-08-31 00:00:00,2025,Deportes Iquique,Deportes Limache,2,1,post
+2025-08-31 19:00:00,2025,Colo Colo,Universidad de Chile,1,0,post
+2025-08-31 22:30:00,2025,Ñublense,Unión Española,1,2,post
+2025-09-07 18:00:00,2025,Cobresal,Palestino,2,1,post
+2025-09-12 21:00:00,2025,Coquimbo Unido,Ñublense,2,1,post
+2025-09-12 23:30:00,2025,Unión La Calera,Everton CD,1,0,post
+2025-09-13 15:30:00,2025,Unión Española,Audax Italiano,3,4,post
+2025-09-13 18:00:00,2025,Palestino,O'Higgins,1,2,post
+2025-09-13 20:30:00,2025,Cobresal,Huachipato,3,2,post
+2025-09-13 23:00:00,2025,Deportes Limache,Universidad Católica,0,1,post
+2025-09-26 22:00:00,2025,Colo Colo,Deportes Iquique,4,0,post
+2025-09-28 18:00:00,2025,La Serena,Universidad de Chile,1,1,post
+2025-10-09 23:30:00,2025,Universidad Católica,Ñublense,1,0,post
+2025-10-12 15:00:00,2025,Unión Española,Huachipato,4,2,post
+2025-10-13 19:00:00,2025,Universidad de Chile,Palestino,2,1,post
+2025-10-17 21:00:00,2025,Audax Italiano,Unión La Calera,4,3,post
+2025-10-17 23:30:00,2025,Deportes Iquique,O'Higgins,2,3,post
+2025-10-18 18:00:00,2025,La Serena,Ñublense,1,1,post
+2025-10-18 20:30:00,2025,Deportes Limache,Cobresal,2,0,post
+2025-10-19 15:30:00,2025,Coquimbo Unido,Colo Colo,1,0,post
+2025-10-19 18:00:00,2025,Everton CD,Universidad Católica,0,3,post
+2025-10-24 20:00:00,2025,Palestino,Everton CD,2,1,post
+2025-10-25 18:00:00,2025,La Serena,Audax Italiano,2,1,post
+2025-10-25 20:30:00,2025,Huachipato,Deportes Iquique,1,1,post
+2025-10-26 15:30:00,2025,Universidad Católica,Universidad de Chile,1,0,post
+2025-10-26 19:00:00,2025,Cobresal,Unión Española,1,0,post
+2025-10-26 21:30:00,2025,O'Higgins,Coquimbo Unido,0,1,post
+2025-10-26 21:30:00,2025,Unión La Calera,Ñublense,3,0,post
+2025-10-27 21:00:00,2025,Colo Colo,Deportes Limache,2,2,post
+2025-10-31 18:00:00,2025,Audax Italiano,Cobresal,1,2,post
+2025-10-31 20:30:00,2025,Deportes Iquique,La Serena,1,2,post
+2025-11-01 21:00:00,2025,Ñublense,Colo Colo,0,1,post
+2025-11-02 15:30:00,2025,Huachipato,Universidad de Chile,1,0,post
+2025-11-02 20:30:00,2025,Coquimbo Unido,Unión La Calera,2,0,post
+2025-11-02 20:30:00,2025,Universidad Católica,O'Higgins,0,2,post
+2025-11-02 23:30:00,2025,Everton CD,Unión Española,0,0,post
+2025-11-03 22:00:00,2025,Palestino,Deportes Limache,2,1,post
+2025-11-05 20:30:00,2025,Universidad de Chile,Everton CD,2,0,post
+2025-11-07 23:00:00,2025,Unión La Calera,Deportes Iquique,1,2,post
+2025-11-08 15:30:00,2025,La Serena,Universidad Católica,0,1,post
+2025-11-08 18:00:00,2025,Unión Española,Colo Colo,1,2,post
+2025-11-08 20:30:00,2025,Palestino,Coquimbo Unido,1,2,post
+2025-11-08 23:30:00,2025,O'Higgins,Ñublense,4,2,post
+2025-11-09 18:00:00,2025,Huachipato,Audax Italiano,2,1,post
+2025-11-09 20:30:00,2025,Universidad de Chile,Deportes Limache,4,3,post
+2025-11-09 23:00:00,2025,Cobresal,Everton CD,1,2,post
+2025-11-21 23:00:00,2025,Audax Italiano,Everton CD,2,0,post
+2025-11-21 23:00:00,2025,Deportes Iquique,Cobresal,2,1,post
+2025-11-21 23:00:00,2025,Deportes Limache,Unión Española,1,0,post
+2025-11-22 21:00:00,2025,Coquimbo Unido,La Serena,2,1,post
+2025-11-22 23:30:00,2025,Universidad Católica,Palestino,2,1,post
+2025-11-23 21:00:00,2025,O'Higgins,Universidad de Chile,0,1,post
+2025-11-23 23:30:00,2025,Colo Colo,Unión La Calera,4,1,post
+2025-11-24 23:00:00,2025,Ñublense,Huachipato,0,1,post
+2025-11-28 21:30:00,2025,Cobresal,Colo Colo,3,0,post
+2025-11-29 15:00:00,2025,Huachipato,Universidad Católica,0,0,post
+2025-11-29 21:00:00,2025,La Serena,Palestino,0,3,post
+2025-11-30 21:00:00,2025,Everton CD,Deportes Iquique,0,1,post
+2025-11-30 21:00:00,2025,Unión Española,O'Higgins,2,4,post
+2025-11-30 21:00:00,2025,Unión La Calera,Deportes Limache,0,1,post
+2025-12-01 23:00:00,2025,Audax Italiano,Ñublense,1,0,post
+2025-12-02 21:00:00,2025,Universidad de Chile,Coquimbo Unido,1,1,post
+2025-12-05 23:00:00,2025,Palestino,Huachipato,2,2,post
+2025-12-06 21:00:00,2025,Universidad Católica,Unión La Calera,2,1,post
+2025-12-06 21:00:00,2025,O'Higgins,Everton CD,1,0,post
+2025-12-06 21:00:00,2025,Deportes Iquique,Universidad de Chile,2,3,post
+2025-12-06 21:00:00,2025,Deportes Limache,La Serena,1,0,post
+2025-12-06 21:00:00,2025,Coquimbo Unido,Unión Española,4,2,post
+2025-12-07 21:00:00,2025,Colo Colo,Audax Italiano,1,2,post
+2025-12-07 21:00:00,2025,Ñublense,Cobresal,5,0,post
+2026-01-30 23:00:00,2026,Universidad de Chile,Audax Italiano,0,0,post
+2026-01-31 15:00:00,2026,Deportes Limache,Colo Colo,3,1,post
+2026-01-31 18:30:00,2026,Universidad de Concepción,Coquimbo Unido,1,0,post
+2026-01-31 21:00:00,2026,Cobresal,Huachipato,1,0,post
+2026-02-01 21:00:00,2026,La Serena,Universidad Católica,2,2,post
+2026-02-01 23:30:00,2026,Palestino,Ñublense,1,1,post
+2026-02-02 21:00:00,2026,Everton CD,Unión La Calera,3,0,post
+2026-02-02 23:30:00,2026,O'Higgins,Deportes Concepcion,2,1,post
+2026-02-06 23:00:00,2026,Audax Italiano,Universidad de Concepción,3,0,post
+2026-02-07 15:00:00,2026,Coquimbo Unido,Palestino,3,1,post
+2026-02-07 21:00:00,2026,O'Higgins,La Serena,1,0,post
+2026-02-07 23:30:00,2026,Colo Colo,Everton CD,2,0,post
+2026-02-08 15:00:00,2026,Huachipato,Universidad de Chile,2,1,post
+2026-02-08 21:00:00,2026,Ñublense,Deportes Limache,1,1,post
+2026-02-08 23:30:00,2026,Universidad Católica,Deportes Concepcion,2,0,post
+2026-02-09 23:00:00,2026,Unión La Calera,Cobresal,0,3,post
+2026-02-13 21:00:00,2026,Everton CD,Huachipato,0,3,post
+2026-02-13 23:30:00,2026,Palestino,Universidad de Chile,0,0,post
+2026-02-14 15:00:00,2026,La Serena,Coquimbo Unido,0,1,post
+2026-02-14 21:00:00,2026,Deportes Limache,O'Higgins,2,1,post
+2026-02-14 23:30:00,2026,Cobresal,Universidad Católica,3,2,post
+2026-02-15 15:00:00,2026,Universidad de Concepción,Deportes Concepcion,2,1,post
+2026-02-15 21:00:00,2026,Ñublense,Audax Italiano,1,0,post
+2026-02-15 23:30:00,2026,Colo Colo,Unión La Calera,1,0,post
+2026-02-20 21:00:00,2026,Unión La Calera,Ñublense,0,1,post
+2026-02-20 23:30:00,2026,Deportes Concepcion,Cobresal,1,1,post
+2026-02-21 15:00:00,2026,Huachipato,Palestino,2,1,post
+2026-02-21 21:00:00,2026,O'Higgins,Colo Colo,0,1,post
+2026-02-21 23:30:00,2026,Universidad Católica,Coquimbo Unido,3,1,post
+2026-02-22 15:00:00,2026,La Serena,Universidad de Concepción,1,1,post
+2026-02-22 21:00:00,2026,Audax Italiano,Everton CD,1,0,post
+2026-02-22 23:30:00,2026,Universidad de Chile,Deportes Limache,2,2,post
+2026-02-27 21:00:00,2026,Cobresal,La Serena,0,1,post
+2026-02-27 23:30:00,2026,Unión La Calera,Audax Italiano,3,0,post
+2026-02-28 15:00:00,2026,Coquimbo Unido,Deportes Concepcion,0,1,post
+2026-02-28 21:00:00,2026,Deportes Limache,Huachipato,3,0,post
+2026-02-28 23:30:00,2026,Palestino,O'Higgins,4,2,post
+2026-03-01 15:00:00,2026,Universidad de Concepción,Everton CD,0,3,post
+2026-03-01 21:00:00,2026,Colo Colo,Universidad de Chile,0,1,post
+2026-03-01 23:30:00,2026,Ñublense,Universidad Católica,1,2,post
+2026-03-06 21:00:00,2026,La Serena,Unión La Calera,3,0,post
+2026-03-06 23:30:00,2026,Deportes Concepcion,Ñublense,0,2,post
+2026-03-07 15:00:00,2026,Huachipato,Coquimbo Unido,1,3,post
+2026-03-07 15:00:00,2026,Everton CD,Deportes Limache,1,0,post
+2026-03-07 21:00:00,2026,Audax Italiano,Colo Colo,0,1,post
+2026-03-07 23:30:00,2026,O'Higgins,Universidad Católica,1,0,post
+2026-03-08 23:30:00,2026,Palestino,Cobresal,4,2,post
+2026-03-09 23:00:00,2026,Universidad de Chile,Universidad de Concepción,1,1,post
+2026-03-13 23:00:00,2026,Audax Italiano,Deportes Concepcion,3,0,post
+2026-03-14 21:00:00,2026,Coquimbo Unido,Universidad de Chile,0,1,post
+2026-03-14 23:30:00,2026,Universidad Católica,Everton CD,2,2,post
+2026-03-15 15:00:00,2026,Universidad de Concepción,Palestino,1,0,post
+2026-03-15 21:00:00,2026,Cobresal,Deportes Limache,2,5,post
+2026-03-15 23:30:00,2026,Ñublense,La Serena,2,2,post
+2026-03-16 21:00:00,2026,Unión La Calera,O'Higgins,3,3,post
+2026-03-16 23:30:00,2026,Colo Colo,Huachipato,2,0,post
+2026-04-02 21:00:00,2026,Universidad Católica,Palestino,6,1,post
+2026-04-03 20:30:00,2026,Coquimbo Unido,Cobresal,3,2,post
+2026-04-03 23:00:00,2026,O'Higgins,Audax Italiano,2,1,post
+2026-04-04 20:30:00,2026,Deportes Limache,Unión La Calera,4,0,post
+2026-04-04 23:00:00,2026,Everton CD,Ñublense,0,0,post
+2026-04-05 19:30:00,2026,Deportes Concepcion,Colo Colo,0,1,post
+2026-04-05 22:00:00,2026,Universidad de Chile,La Serena,4,0,post
+2026-04-07 00:00:00,2026,Huachipato,Universidad de Concepción,5,1,post
+2026-04-11 00:00:00,2026,O'Higgins,Huachipato,0,2,post
+2026-04-11 19:00:00,2026,La Serena,Everton CD,1,0,post
+2026-04-11 21:30:00,2026,Audax Italiano,Universidad Católica,3,4,post
+2026-04-12 00:00:00,2026,Palestino,Deportes Limache,1,0,post
+2026-04-12 21:30:00,2026,Ñublense,Universidad de Chile,1,0,post
+2026-04-13 00:00:00,2026,Universidad de Concepción,Cobresal,1,0,post
+2026-04-14 00:00:00,2026,Unión La Calera,Deportes Concepcion,1,0,post
+2026-04-18 00:00:00,2026,Deportes Limache,Universidad de Concepción,3,0,post
+2026-04-18 21:30:00,2026,Everton CD,Universidad de Chile,0,0,post
+2026-04-19 00:00:00,2026,Deportes Concepcion,La Serena,3,3,post
+2026-04-19 16:30:00,2026,Coquimbo Unido,Ñublense,1,1,post
+2026-04-19 19:30:00,2026,Cobresal,O'Higgins,2,3,post
+2026-04-19 22:30:00,2026,Colo Colo,Palestino,0,1,post
+2026-04-20 00:45:00,2026,Huachipato,Audax Italiano,3,2,post
+2026-04-21 00:30:00,2026,Universidad Católica,Unión La Calera,1,2,post
+2026-04-24 00:00:00,2026,Palestino,Deportes Concepcion,0,1,post
+2026-04-24 22:00:00,2026,Unión La Calera,Coquimbo Unido,1,2,post
+2026-04-25 00:30:00,2026,Audax Italiano,Deportes Limache,2,2,post
+2026-04-25 19:00:00,2026,Ñublense,O'Higgins,0,2,post
+2026-04-25 22:00:00,2026,Universidad de Chile,Universidad Católica,1,0,post
+2026-04-26 16:30:00,2026,La Serena,Huachipato,0,0,post
+2026-04-26 19:00:00,2026,Universidad de Concepción,Colo Colo,1,2,post
+2026-04-26 21:30:00,2026,Everton CD,Cobresal,3,1,post
+2026-05-03 21:30:00,2026,Colo Colo,Coquimbo Unido,3,1,post
+2026-05-16 00:00:00,2026,Coquimbo Unido,Audax Italiano,3,0,post
+2026-05-16 00:00:00,2026,Palestino,La Serena,5,1,post
+2026-05-16 21:30:00,2026,O'Higgins,Universidad de Concepción,0,1,post
+2026-05-17 00:00:00,2026,Deportes Limache,Universidad Católica,0,2,post
+2026-05-17 16:30:00,2026,Huachipato,Unión La Calera,3,1,post
+2026-05-17 19:00:00,2026,Cobresal,Universidad de Chile,1,0,post
+2026-05-17 21:30:00,2026,Colo Colo,Ñublense,6,2,post
+2026-05-18 00:00:00,2026,Deportes Concepcion,Everton CD,0,2,post
+2026-05-22 19:00:00,2026,Everton CD,Coquimbo Unido,1,1,post
+2026-05-23 16:30:00,2026,Audax Italiano,Cobresal,2,1,post
+2026-05-23 19:00:00,2026,Ñublense,Universidad de Concepción,2,2,post
+2026-05-24 00:00:00,2026,Unión La Calera,Palestino,1,2,post
+2026-05-24 16:30:00,2026,Deportes Concepcion,Huachipato,2,0,post
+2026-05-24 19:00:00,2026,La Serena,Deportes Limache,4,1,post
+2026-05-24 22:00:00,2026,Universidad Católica,Colo Colo,1,2,post
+2026-05-29 22:00:00,2026,Cobresal,Ñublense,0,1,post
+2026-05-30 00:30:00,2026,Universidad de Concepción,Unión La Calera,0,0,post
+2026-05-30 19:00:00,2026,La Serena,Colo Colo,2,4,post
+2026-05-30 21:30:00,2026,Universidad de Chile,Deportes Concepcion,2,1,post
+2026-05-31 16:30:00,2026,Deportes Limache,Coquimbo Unido,2,3,post
+2026-05-31 19:00:00,2026,Huachipato,Universidad Católica,0,3,post
+2026-05-31 21:30:00,2026,O'Higgins,Everton CD,2,3,post
+2026-06-01 00:00:00,2026,Palestino,Audax Italiano,0,0,post
+2026-06-13 00:00:00,2026,Audax Italiano,La Serena,1,1,post
+2026-06-13 16:30:00,2026,Coquimbo Unido,O'Higgins,0,0,post
+2026-06-13 19:00:00,2026,Everton CD,Palestino,1,2,post
+2026-06-13 21:30:00,2026,Colo Colo,Cobresal,3,0,post
+2026-06-14 00:00:00,2026,Ñublense,Huachipato,2,2,post
+2026-06-14 16:30:00,2026,Deportes Concepcion,Deportes Limache,3,2,post
+2026-06-14 19:00:00,2026,Unión La Calera,Universidad de Chile,2,2,post
+2026-06-14 21:30:00,2026,Universidad Católica,Universidad de Concepción,5,1,post
