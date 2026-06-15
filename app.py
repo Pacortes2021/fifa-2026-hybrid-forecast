@@ -167,13 +167,25 @@ def load_data_and_train():
     data_base = df.dropna(subset=BASE_VARS + ['ea_overall_diff']).reset_index(drop=True)
     data_hybrid = df.dropna(subset=ALL_VARS).reset_index(drop=True)
 
+    # Ponderación por K-factor: los partidos en serio pesan más que los amistosos (Mundial 3x un amistoso)
+    def tipo_competicion(c):
+        c = str(c).lower()
+        if 'amistoso' in c: return 'amistoso'
+        if 'clasif' in c: return 'clasificatoria'
+        if 'nations league' in c: return 'nations_league'
+        if 'mundial' in c: return 'mundial'
+        return 'continental'
+    K_FACTOR = {'amistoso': 1.0, 'clasificatoria': 2.0, 'nations_league': 2.0, 'continental': 2.5, 'mundial': 3.0}
+    w_base = data_base.competicion.map(tipo_competicion).map(K_FACTOR).values
+    w_hybrid = data_hybrid.competicion.map(tipo_competicion).map(K_FACTOR).values
+
     # Entrenar Clasificador A (Base)
     pipe_base = Pipeline([('sc', StandardScaler()), ('m', LogisticRegression(max_iter=2000))])
-    pipe_base.fit(data_base[BASE_VARS], data_base['resultado'])
+    pipe_base.fit(data_base[BASE_VARS], data_base['resultado'], m__sample_weight=w_base)
 
     # Entrenar Clasificador B (Híbrido)
     pipe_hybrid = Pipeline([('sc', StandardScaler()), ('m', LogisticRegression(max_iter=2000))])
-    pipe_hybrid.fit(data_hybrid[HYBRID_VARS], data_hybrid['resultado'])
+    pipe_hybrid.fit(data_hybrid[HYBRID_VARS], data_hybrid['resultado'], m__sample_weight=w_hybrid)
 
     # Entrenar Poisson A (Base - basado solo en Elo)
     espn = pd.read_csv('data/espn_stats.csv', parse_dates=['fecha'])

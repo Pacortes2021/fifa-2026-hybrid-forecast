@@ -53,6 +53,14 @@ Hemos desplegado una aplicación interactiva en la nube de Streamlit para que pu
 > ~0.15 de log-loss y el pronóstico del torneo se distorsiona (las stats crudas no ajustan por la
 > calidad del rival).
 
+**Tipo de competición (§6c del notebook principal):** los amistosos son intrínsecamente menos
+predecibles (log-loss ~0.92 vs ~0.78 en partidos competitivos). Corolario importante: **el pronóstico
+del Mundial es mejor que la métrica titular** — el 0.85 global está arrastrado por amistosos; en
+partidos en serio (lo que es el Mundial) el modelo rinde ~0.78. Por eso todos los modelos de simulación
+se entrenan con **ponderación por K-factor** (Mundial 3× un amistoso), alineados con la filosofía del
+Elo. El efecto en el pronóstico es marginal (España pasa de 28.4% a 29.2%) pero la metodología es más
+coherente.
+
 **El notebook principal** sigue el camino: EDA → selección de variables data-driven (VIF + forward + significancia, **solo con train y CV temporal**) → entrenamiento con split temporal (test = 2025–26) → matriz de confusión → tratamiento del empate (RPS) → ROC/calibración → comparación de 14 modelos con hiperparámetros por CV (lineales, Lasso/Ridge/Elastic Net, ordinal logit y probit, SVM, red neuronal, RF/GB/XGBoost) → simulación Monte Carlo (10,000 torneos, bracket oficial FIFA 48 con letras verificadas contra el calendario, simetrización de localía para cancha neutral) → **un Mundial de muestra por dentro** (tablas de grupo, terceros y bracket ronda a ronda con probabilidades) → **simulador manual `versus()`** (cualquier par de las 336 selecciones, con matriz de marcadores) → modelo Poisson de goles, ensamble y torneo re-simulado con motor Poisson como contraste.
 
 ---
