@@ -220,10 +220,11 @@ with tab1:
 
         # Estadísticas esperadas del partido (córners, tiros al arco, faltas, posesión)
         st.markdown('<div class="sec-title">Estadísticas esperadas del partido</div>', unsafe_allow_html=True)
-        st.caption("Modelo *ataque × defensa*: lo que cada equipo genera × lo que el rival concede, "
-                   "normalizado. Basado en el box score de ESPN (cobertura ≈48%), así que tómalo como "
-                   "estimación de tendencia, no exacta.")
-        se = mo.stats_esperadas(M, a, b)
+        st.caption("Un modelo por estadística, construido con **selección de variables + validación "
+                   "temporal** (no a ojo): los córners y tiros al arco los predicen sobre todo el "
+                   "**dominio (Elo)** y los **tiros**, las faltas las que **provoca el rival**. Box score "
+                   "de ESPN (cobertura ≈48%) → tómalo como tendencia, no número exacto.")
+        se = mo.stats_esperadas(M, a, b, cmode)
         se1, se2 = st.columns([1, 1])
         with se1:
             df_se = pd.DataFrame({
@@ -406,15 +407,18 @@ with tab4:
                "ganarías a Bet365. Con cuotas reales el número cambiaría.")
 
     st.markdown("##### 3. ¿Sirve el panel de estadísticas del partido?")
-    st.caption("Backtest walk-forward (cada predicción usa solo promedios previos al partido). MAE = error "
-               "absoluto medio; comparado contra el baseline de predecir siempre la media global.")
+    st.caption("Cada estadística tiene su propio modelo, con **selección de variables + validación "
+               "temporal** (igual que el modelo de resultado). MAE = error absoluto medio en el hold-out "
+               "2025-26, comparado contra dos baselines: el **promedio propio del equipo** y la **media global**.")
     bs = mc_backtest_stats()
     st.dataframe(bs, hide_index=True, width='stretch')
-    st.info("**Lectura honesta:** las cifras puntuales son **ruidosas** (córners ±2.4 sobre 4, posesión "
-            "±14pp) — sirven como *tendencia* (quién domina), no como número exacto; predecir córners "
-            "exactos es casi imposible por el azar. Donde sí hay **señal aprovechable** es en los **Over/Under "
-            "de tiros al arco (~60%) y faltas (~61%)**, que baten al baseline por 8–10 puntos. Es un "
-            "complemento útil, pero **mucho menos fiable que el modelo de resultado/goles** (que es el central).")
+    st.info("**Lectura honesta:** el modelo con selección de variables **le gana a ambos baselines** en las "
+            "cuatro estadísticas — hacerlo con rigor (no a ojo) sí mejora. Aun así, las cifras puntuales "
+            "son **ruidosas** (córners ±2.2 sobre 4, posesión ±12pp): sirven como *tendencia* (quién "
+            "domina), no como número exacto — predecir córners exactos es casi imposible por el azar. "
+            "Hallazgo: córners y tiros al arco se predicen mejor con el **dominio (Elo) y los tiros** que "
+            "con los córners históricos. Es un complemento útil, pero **menos fiable que el modelo de "
+            "resultado/goles**, que es el central.")
 
 # ============================================================================
 # TAB 5 · Robustez

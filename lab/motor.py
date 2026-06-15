@@ -18,7 +18,7 @@ import statsmodels.api as sm
 from scipy.stats import poisson
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression, LinearRegression
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 
@@ -106,30 +106,102 @@ def cargar():
         pd.DataFrame({"g": espn.goles_visita.values, "d": (espn.elo_visita - espn.elo_local).values})])
     gp = sm.GLM(largo["g"], sm.add_constant(largo[["d"]]), family=sm.families.Poisson()).fit()
 
-    # Estadísticas CONCEDIDAS / PROVOCADAS por equipo (lo que falta en team_states) y medias globales,
-    # para el modelo de stats del partido (córners/tiros al arco/faltas) estilo ataque × defensa.
-    filas = []
-    for r in espn.itertuples(index=False):
-        filas.append({"equipo": r.local, "corners_conc": r.corners_visita, "tiros_arco_conc": r.tiros_arco_visita,
-                      "faltas_prov": r.faltas_visita})
-        filas.append({"equipo": r.visita, "corners_conc": r.corners_local, "tiros_arco_conc": r.tiros_arco_local,
-                      "faltas_prov": r.faltas_local})
-    conc = pd.DataFrame(filas).groupby("equipo").mean(numeric_only=True)
-    stat_global = {"corners": float(np.nanmean(pd.concat([espn.corners_local, espn.corners_visita]))),
-                   "tiros_arco": float(np.nanmean(pd.concat([espn.tiros_arco_local, espn.tiros_arco_visita]))),
-                   "faltas": float(np.nanmean(pd.concat([espn.faltas_local, espn.faltas_visita])))}
-    # rellenar equipos sin datos con la media global de lo concedido
-    conc["corners_conc"] = conc["corners_conc"].fillna(stat_global["corners"])
-    conc["tiros_arco_conc"] = conc["tiros_arco_conc"].fillna(stat_global["tiros_arco"])
-    conc["faltas_prov"] = conc["faltas_prov"].fillna(stat_global["faltas"])
+    # Modelo de stats del partido construido RIGUROSAMENTE (selección de variables + validación
+    # temporal): dataset point-in-time, medias 'concedidas' por equipo y un modelo por estadística.
+    espn_full = pd.read_csv(DATA / "espn_stats.csv", parse_dates=["fecha"]).sort_values("fecha")
+    Dstats, conc, glob = _features_stats(espn_full)
+    modelos_stats = _entrenar_stats(Dstats)
 
     return {
         "df": df, "states": states, "hist": hist, "H2H": H2H,
         "pipe_base": pipe_base, "pipe_hyb": pipe_hyb,
         "gb0": float(gp.params["const"]), "gb1": float(gp.params["d"]),
-        "conc": conc, "stat_global": stat_global,
+        "conc": conc, "stat_global": glob, "stats_data": Dstats, "modelos_stats": modelos_stats,
         "CORTE_TEST": "2025-01-01",
     }
+
+
+# --------------------------------------------------------------------------- #
+#  Modelo de stats del partido (córners / tiros al arco / faltas / posesión)
+#  Construido de cero: features point-in-time + selección de variables + validación temporal.
+# --------------------------------------------------------------------------- #
+STATS_BASE = ["goles", "tiros", "tiros_arco", "corners", "faltas"]
+# Sets de variables elegidos por selección forward con CV temporal (ver análisis):
+SETS_STATS = {
+    "corners": ["elo_diff", "prop_tiros_f", "riv_tiros_c", "es_local", "prop_corners_f"],
+    "tiros_arco": ["elo_diff", "prop_tiros_f", "riv_tiros_c", "es_local"],
+    "faltas": ["riv_faltas_c", "prop_faltas_f", "riv_goles_c"],
+    "posesion": ["elo_diff", "prop_pos", "riv_tiros_c", "es_local", "prop_tiros_arco_c", "prop_corners_c"],
+}
+
+
+def _features_stats(espn, ventana=8):
+    """Construye el dataset point-in-time (2 obs/partido) con promedios móviles walk-forward de las
+       stats propias y del rival (favor y concedidas) + Elo. Devuelve (dataset, conc_actual, medias)."""
+    from collections import defaultdict, deque
+    favor = {s: defaultdict(lambda: deque(maxlen=ventana)) for s in STATS_BASE}
+    contra = {s: defaultdict(lambda: deque(maxlen=ventana)) for s in STATS_BASE}
+    posq = defaultdict(lambda: deque(maxlen=ventana))
+    filas = []
+
+    def perfil(eq):
+        d = {f"{s}_f": (np.mean(favor[s][eq]) if favor[s][eq] else np.nan) for s in STATS_BASE}
+        d.update({f"{s}_c": (np.mean(contra[s][eq]) if contra[s][eq] else np.nan) for s in STATS_BASE})
+        d["pos"] = np.mean(posq[eq]) if posq[eq] else np.nan
+        return d
+
+    for r in espn.itertuples(index=False):
+        a, b = r.local, r.visita
+        vals = {s: (getattr(r, f"{s}_local"), getattr(r, f"{s}_visita")) for s in STATS_BASE}
+        pl, pv = r.posesion_local, r.posesion_visita
+        if all(len(favor["corners"][x]) >= 4 for x in (a, b)):
+            pa, pb = perfil(a), perfil(b)
+            for eq, pe, riv, ea, eb, es_loc, idx in (
+                    (a, pa, pb, r.elo_local, r.elo_visita, 1, 0),
+                    (b, pb, pa, r.elo_visita, r.elo_local, 0, 1)):
+                fila = {f"prop_{k}": v for k, v in pe.items()}
+                fila.update({f"riv_{k}": v for k, v in riv.items()})
+                fila.update({"elo_prop": ea, "elo_riv": eb, "elo_diff": ea - eb, "es_local": es_loc,
+                             "fecha": r.fecha, "t_corners": vals["corners"][idx],
+                             "t_tiros_arco": vals["tiros_arco"][idx], "t_faltas": vals["faltas"][idx],
+                             "t_posesion": (pl if idx == 0 else pv)})
+                filas.append(fila)
+        for s in STATS_BASE:
+            vl, vv = vals[s]
+            if not (pd.isna(vl) or pd.isna(vv)):
+                favor[s][a].append(vl); contra[s][a].append(vv)
+                favor[s][b].append(vv); contra[s][b].append(vl)
+        if not (pd.isna(pl) or pd.isna(pv)):
+            posq[a].append(pl); posq[b].append(pv)
+
+    D = pd.DataFrame(filas)
+    # estado 'concedido' actual de cada equipo (media de lo que concede) + posesión, para predecir
+    conc_rows = {}
+    for eq in set(list(favor["corners"].keys())):
+        row = {f"{s}_c": (np.mean(contra[s][eq]) if contra[s][eq] else np.nan) for s in STATS_BASE}
+        row["pos"] = np.mean(posq[eq]) if posq[eq] else np.nan
+        conc_rows[eq] = row
+    conc = pd.DataFrame(conc_rows).T
+    glob = {f"{s}_c": float(np.nanmean(conc[f"{s}_c"])) for s in STATS_BASE}
+    conc = conc.fillna(pd.Series(glob))
+    return D, conc, glob
+
+
+def _entrenar_stats(D):
+    """Entrena un modelo por estadística con su set de variables: Poisson para conteos
+       (córners/tiros al arco/faltas), lineal para posesión. Devuelve {stat: (modelo, cols, tipo)}."""
+    modelos = {}
+    for stat, cols in SETS_STATS.items():
+        tgt = f"t_{stat}"
+        d = D.dropna(subset=cols + [tgt])
+        if stat == "posesion":
+            m = Pipeline([("sc", StandardScaler()), ("m", LinearRegression())]).fit(d[cols], d[tgt])
+            modelos[stat] = (m, cols, "lineal")
+        else:
+            m = sm.GLM(d[tgt], sm.add_constant(d[cols], has_constant="add"),
+                       family=sm.families.Poisson()).fit()
+            modelos[stat] = (m, cols, "poisson")
+    return modelos
 
 
 # --------------------------------------------------------------------------- #
@@ -253,31 +325,50 @@ def handicap_asiatico(mix, linea_a):
 # --------------------------------------------------------------------------- #
 #  FRENTE 1b · estadísticas esperadas del partido (córners, tiros al arco, faltas, posesión)
 # --------------------------------------------------------------------------- #
-def stats_esperadas(M, a, b):
-    """Estadísticas esperadas de cada equipo con el modelo ataque × defensa:
-       λ = (lo que A genera) × (lo que B concede) / media global.
-       Posesión por renormalización (suma 100). Devuelve dict por estadística."""
+def _fila_stats(M, eq, riv, es_local):
+    """Reconstruye las features point-in-time de un equipo vs su rival, desde team_states + conc."""
     st, conc, g = M["states"], M["conc"], M["stat_global"]
+    cget = lambda team, col: float(conc.loc[team, col]) if team in conc.index else g.get(col, 0.0)
+    return {
+        "prop_tiros_f": float(st.loc[eq, "tiros_avg"]),
+        "prop_corners_f": float(st.loc[eq, "corners_avg"]),
+        "prop_faltas_f": float(st.loc[eq, "faltas_avg"]),
+        "prop_pos": float(st.loc[eq, "posesion_avg"]),
+        "prop_tiros_arco_c": cget(eq, "tiros_arco_c"),
+        "prop_corners_c": cget(eq, "corners_c"),
+        "riv_tiros_c": cget(riv, "tiros_c"),
+        "riv_faltas_c": cget(riv, "faltas_c"),
+        "riv_goles_c": cget(riv, "goles_c"),
+        "elo_diff": float(st.loc[eq, "elo"] - st.loc[riv, "elo"]),
+        "es_local": es_local,
+    }
+
+
+def _predecir_stat(M, stat, fila):
+    m, cols, tipo = M["modelos_stats"][stat]
+    X = pd.DataFrame([fila])[cols]
+    if tipo == "poisson":
+        return float(m.predict(sm.add_constant(X, has_constant="add"))[0])
+    return float(m.predict(X)[0])
+
+
+def stats_esperadas(M, a, b, cancha="neutral"):
+    """Estadísticas esperadas de cada equipo con los modelos entrenados (selección de variables +
+       validación temporal). Posesión renormalizada a 100. Devuelve dict por estadística."""
+    if cancha == "1":
+        la_loc, lb_loc = 1, 0
+    elif cancha == "2":
+        la_loc, lb_loc = 0, 1
+    else:  # neutral / auto: sin ventaja de localía en las stats
+        la_loc, lb_loc = 0.5, 0.5
+    fa = _fila_stats(M, a, b, la_loc)
+    fb = _fila_stats(M, b, a, lb_loc)
     res = {}
-    # El backtest walk-forward mostró que el ataque×defensa PURO predice peor que el promedio
-    # propio del equipo (mete ruido). Usamos un blend 50/50: medio promedio propio, medio ajuste
-    # por lo que concede el rival. Es lo que mejor MAE dio (sobre todo en tiros al arco).
-    for nombre_st, col_avg, col_conc in (("corners", "corners_avg", "corners_conc"),
-                                         ("tiros_arco", "tiros_arco_avg", "tiros_arco_conc")):
-        media = g[nombre_st]
-        ca = conc.loc[b, col_conc] if b in conc.index else media
-        cb = conc.loc[a, col_conc] if a in conc.index else media
-        la = float(st.loc[a, col_avg] * (0.5 + 0.5 * ca / media))
-        lb = float(st.loc[b, col_avg] * (0.5 + 0.5 * cb / media))
-        res[nombre_st] = (la, lb)
-    # faltas: las comete A, moduladas por cuánto las provoca B (y viceversa)
-    mf = g["faltas"]
-    fa = (st.loc[a, "faltas_avg"] + (conc.loc[b, "faltas_prov"] if b in conc.index else mf)) / 2
-    fb = (st.loc[b, "faltas_avg"] + (conc.loc[a, "faltas_prov"] if a in conc.index else mf)) / 2
-    res["faltas"] = (float(fa), float(fb))
-    # posesión: renormalizada para que sume 100
-    pa, pb = st.loc[a, "posesion_avg"], st.loc[b, "posesion_avg"]
-    res["posesion"] = (float(pa / (pa + pb) * 100), float(pb / (pa + pb) * 100))
+    for stat in ("corners", "tiros_arco", "faltas"):
+        res[stat] = (_predecir_stat(M, stat, fa), _predecir_stat(M, stat, fb))
+    pa = _predecir_stat(M, "posesion", fa)
+    pb = _predecir_stat(M, "posesion", fb)
+    res["posesion"] = (pa / (pa + pb) * 100, pb / (pa + pb) * 100)  # renormalizada a 100
     return res
 
 
@@ -547,50 +638,34 @@ def value_betting(M, modelo="base", margen=0.05, umbral=0.0):
 # --------------------------------------------------------------------------- #
 #  Validación del panel de stats (backtest walk-forward, sin fuga)
 # --------------------------------------------------------------------------- #
-def backtest_stats(M, ventana=8):
-    """Backtest walk-forward de las stats del partido: cada predicción usa solo promedios móviles
-       de partidos PREVIOS. Compara el promedio propio del equipo contra la media global, y mide
-       el acierto de las líneas Over/Under. Devuelve un DataFrame de métricas."""
-    from collections import defaultdict, deque
-    e = M["df"][["fecha", "local", "visita"]].copy()  # marco; las stats vienen de espn
-    espn = pd.read_csv(DATA / "espn_stats.csv", parse_dates=["fecha"]).sort_values("fecha")
-    cfg = {"Córners": ("corners_local", "corners_visita"),
-           "Tiros al arco": ("tiros_arco_local", "tiros_arco_visita"),
-           "Faltas": ("faltas_local", "faltas_visita"),
-           "Posesión %": ("posesion_local", "posesion_visita")}
+def backtest_stats(M):
+    """Valida el modelo de stats con split temporal: entrena en <2025, mide en 2025-26 (hold-out).
+       Compara el modelo (selección de variables) contra el baseline 'promedio propio del equipo'
+       y 'media global'. Devuelve un DataFrame de métricas. Usa el dataset point-in-time de cargar()."""
+    D = M["stats_data"]
+    nombres = {"corners": "Córners", "tiros_arco": "Tiros al arco", "faltas": "Faltas", "posesion": "Posesión %"}
+    propio_col = {"corners": "prop_corners_f", "tiros_arco": "prop_tiros_arco_f",
+                  "faltas": "prop_faltas_f", "posesion": "prop_pos"}
     filas = []
-    for nombre_st, (cl, cv) in cfg.items():
-        favor = defaultdict(lambda: deque(maxlen=ventana))
-        sub = espn.dropna(subset=[cl, cv])
-        mg = float(pd.concat([sub[cl], sub[cv]]).mean())
-        linea = float(np.median((sub[cl] + sub[cv]).dropna()))
-        pm, pg, real, ou_m, ou_real = [], [], [], [], []
-        for r in espn.itertuples(index=False):
-            vl, vv = getattr(r, cl), getattr(r, cv)
-            a, b = r.local, r.visita
-            if not (pd.isna(vl) or pd.isna(vv)):
-                if len(favor[a]) >= 3 and len(favor[b]) >= 3:
-                    fa, fb = np.mean(favor[a]), np.mean(favor[b])
-                    if nombre_st == "Posesión %" and fa + fb > 0:
-                        la, lb = fa / (fa + fb) * 100, fb / (fa + fb) * 100
-                    else:
-                        la, lb = fa, fb
-                    pm += [la, lb]; pg += [mg, mg]; real += [vl, vv]
-                    if nombre_st != "Posesión %":
-                        ou_m.append(1 if fa + fb > linea else 0)
-                        ou_real.append(1 if vl + vv > linea else 0)
-                favor[a].append(vl); favor[b].append(vv)
-        real, pm, pg = map(np.array, (real, pm, pg))
-        fila = {"Estadística": nombre_st, "media": round(real.mean(), 1),
-                "MAE modelo": round(np.mean(np.abs(pm - real)), 2),
-                "MAE baseline": round(np.mean(np.abs(pg - real)), 2)}
-        if ou_real:
-            ou_real = np.array(ou_real)
-            fila["O/U acierto"] = f"{(np.array(ou_m) == ou_real).mean():.0%}"
-            fila["O/U baseline"] = f"{max(ou_real.mean(), 1 - ou_real.mean()):.0%}"
+    for stat, cols in SETS_STATS.items():
+        tgt = f"t_{stat}"
+        d = D.dropna(subset=cols + [tgt, propio_col[stat]]).sort_values("fecha")
+        tr, te = d[d.fecha < "2025-01-01"], d[d.fecha >= "2025-01-01"]
+        if len(te) == 0:
+            continue
+        if stat == "posesion":
+            m = Pipeline([("sc", StandardScaler()), ("m", LinearRegression())]).fit(tr[cols], tr[tgt])
+            pred = m.predict(te[cols])
         else:
-            fila["O/U acierto"] = fila["O/U baseline"] = "—"
-        filas.append(fila)
+            m = sm.GLM(tr[tgt], sm.add_constant(tr[cols], has_constant="add"),
+                       family=sm.families.Poisson()).fit()
+            pred = m.predict(sm.add_constant(te[cols], has_constant="add"))
+        mae_mod = float(np.mean(np.abs(pred - te[tgt])))
+        mae_prop = float(np.mean(np.abs(te[propio_col[stat]] - te[tgt])))
+        mae_glob = float(np.mean(np.abs(tr[tgt].mean() - te[tgt])))
+        filas.append({"Estadística": nombres[stat], "media": round(te[tgt].mean(), 1),
+                      "MAE modelo": round(mae_mod, 2), "MAE prom. propio": round(mae_prop, 2),
+                      "MAE media global": round(mae_glob, 2)})
     return pd.DataFrame(filas)
 
 
