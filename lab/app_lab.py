@@ -250,6 +250,10 @@ with tab1:
 
         # Matrices de marcadores lado a lado
         st.markdown('<div class="sec-title">Matrices de marcadores</div>', unsafe_allow_html=True)
+        st.caption(f"Con **corrección Dixon-Coles** (ρ={M.get('rho_dc', 0):+.2f}) — el estándar de las casas de "
+                   "apuestas: ajusta los marcadores de bajo score (0-0, 1-1…) que el Poisson simple subestima. "
+                   "El 1X2 lo fija el clasificador (que ya predice mejor); Dixon-Coles afina la *distribución* de "
+                   "marcadores dentro de cada resultado.")
         gx1, gx2 = st.columns(2)
         for col, mix_x, tit, cmap in ((gx1, mix_b, "Base", "Blues"), (gx2, mix_h, "Híbrido", "Purples")):
             with col:

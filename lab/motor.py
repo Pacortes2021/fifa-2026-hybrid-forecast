@@ -105,6 +105,11 @@ def cargar():
         pd.DataFrame({"g": espn.goles_local.values, "d": (espn.elo_local - espn.elo_visita).values}),
         pd.DataFrame({"g": espn.goles_visita.values, "d": (espn.elo_visita - espn.elo_local).values})])
     gp = sm.GLM(largo["g"], sm.add_constant(largo[["d"]]), family=sm.families.Poisson()).fit()
+    gb0_, gb1_ = float(gp.params["const"]), float(gp.params["d"])
+    # Parámetro rho de Dixon-Coles (corrige la subestimación de empates de bajo score), estimado por
+    # máxima verosimilitud del 1X2 sobre los partidos. El Poisson simple subestima los empates; este
+    # ajuste sube 0-0 y 1-1 y baja 1-0/0-1. (En ligas con pocos empates, rho≈0 y no cambia nada.)
+    rho_dc = _estimar_rho(espn, gb0_, gb1_)
 
     # Modelo de stats del partido construido RIGUROSAMENTE (selección de variables + validación
     # temporal): dataset point-in-time, medias 'concedidas' por equipo y un modelo por estadística.
@@ -115,10 +120,45 @@ def cargar():
     return {
         "df": df, "states": states, "hist": hist, "H2H": H2H,
         "pipe_base": pipe_base, "pipe_hyb": pipe_hyb,
-        "gb0": float(gp.params["const"]), "gb1": float(gp.params["d"]),
+        "gb0": gb0_, "gb1": gb1_, "rho_dc": rho_dc,
         "conc": conc, "stat_global": glob, "stats_data": Dstats, "modelos_stats": modelos_stats,
         "CORTE_TEST": "2025-01-01",
     }
+
+
+def _dc_ajuste(grid, la, lb, rho):
+    """Aplica la corrección Dixon-Coles a las 4 celdas de bajo score de una grilla de marcadores."""
+    if rho == 0:
+        return grid
+    g = grid.copy()
+    g[0, 0] *= 1 - la * lb * rho; g[0, 1] *= 1 + la * rho
+    g[1, 0] *= 1 + lb * rho;       g[1, 1] *= 1 - rho
+    return np.clip(g, 1e-12, None)
+
+
+def _estimar_rho(espn, gb0, gb1):
+    """Estima rho (Dixon-Coles) por mínimo log-loss del 1X2 sobre los partidos. Devuelve rho en [-0.25, 0]."""
+    from sklearn.metrics import log_loss
+    la = np.exp(gb0 + gb1 * (espn.elo_local - espn.elo_visita).values)
+    lb = np.exp(gb0 + gb1 * (espn.elo_visita - espn.elo_local).values)
+    y = np.where(espn.goles_local.values > espn.goles_visita.values, 2,
+                 np.where(espn.goles_local.values == espn.goles_visita.values, 1, 0))
+    gmax = 8; g = np.arange(gmax + 1)
+    pml = poisson.pmf(g, la[:, None]); pmv = poisson.pmf(g, lb[:, None])   # (n, gmax+1)
+    best_rho, best_ll = 0.0, np.inf
+    for rho in np.linspace(-0.25, 0.0, 26):
+        grids = pml[:, :, None] * pmv[:, None, :]                         # (n, G, G)
+        grids[:, 0, 0] *= 1 - la * lb * rho; grids[:, 0, 1] *= 1 + la * rho
+        grids[:, 1, 0] *= 1 + lb * rho;       grids[:, 1, 1] *= 1 - rho
+        grids = np.clip(grids, 1e-12, None); grids /= grids.sum((1, 2), keepdims=True)
+        gi, gj = np.indices((gmax + 1, gmax + 1))
+        P = np.stack([(grids * (gi < gj)).sum((1, 2)),          # gana visita
+                      np.trace(grids, axis1=1, axis2=2),         # empate (diagonal)
+                      (grids * (gi > gj)).sum((1, 2))], axis=1)  # gana local
+        ll = log_loss(y, P / P.sum(1, keepdims=True), labels=[0, 1, 2])
+        if ll < best_ll:
+            best_ll, best_rho = ll, float(rho)
+    return best_rho
 
 
 # --------------------------------------------------------------------------- #
@@ -283,11 +323,14 @@ def ultimos_partidos(M, equipo, n=6, extra=None):
 #  FRENTE 1 · grilla de marcadores y mercados de apuestas
 # --------------------------------------------------------------------------- #
 def grilla(M, a, b, cancha="auto", modelo="base", states=None):
-    """Matriz de probabilidad de cada marcador (reponderada por las prob. V/E/D del clasificador)."""
+    """Matriz de probabilidad de cada marcador (reponderada por las prob. V/E/D del clasificador).
+       La grilla base de goles lleva la corrección Dixon-Coles (más realista en marcadores de bajo
+       score: 0-0, 1-1...). El 1X2 lo sigue fijando el clasificador (que ya lo predice mejor)."""
     p = prob_partido(M, a, b, cancha, modelo, states)
     la, lb = lambdas(M, a, b, states)
     g = np.arange(GRID_MAX + 1)
-    grid = np.outer(poisson.pmf(g, la), poisson.pmf(g, lb)); grid /= grid.sum()
+    grid = np.outer(poisson.pmf(g, la), poisson.pmf(g, lb))
+    grid = _dc_ajuste(grid, la, lb, M.get("rho_dc", 0.0)); grid /= grid.sum()
     gi, gj = np.indices(grid.shape)
     masks = (gi > gj, gi == gj, gi < gj)
     mix = sum(p[k] * (grid * mk) / (grid * mk).sum() for k, mk in enumerate(masks))
