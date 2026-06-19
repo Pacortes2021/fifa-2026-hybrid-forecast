@@ -147,6 +147,33 @@ with tab2:
             ax.add_patch(plt.Rectangle((jm-.5, im-.5), 1, 1, fill=False, edgecolor="#0039a6", lw=2))
             st.pyplot(fig)
 
+        # Panel de estadísticas esperadas del partido (box score de ESPN)
+        se = mo.stats_esperadas(M, local, visita)
+        if se:
+            st.markdown('<div class="sec-title">Estadísticas esperadas del partido</div>', unsafe_allow_html=True)
+            st.caption("Un modelo por estadística (Poisson/lineal con dominio + forma reciente del box score "
+                       "de ESPN). Incluye **tarjetas**, que en clubes sí tenemos. Tómalo como tendencia.")
+            from scipy.stats import poisson as _pois
+            sc1, sc2 = st.columns([1, 1])
+            with sc1:
+                tab = pd.DataFrame({
+                    "Estadística": ["⛳ Córners", "🎯 Tiros al arco", "🟨 Faltas", "🟨 T. amarillas", "📊 Posesión %"],
+                    local: [f"{se['wonCorners'][0]:.1f}", f"{se['shotsOnTarget'][0]:.1f}",
+                            f"{se['foulsCommitted'][0]:.1f}", f"{se['yellowCards'][0]:.1f}", f"{se['possessionPct'][0]:.0f}%"],
+                    visita: [f"{se['wonCorners'][1]:.1f}", f"{se['shotsOnTarget'][1]:.1f}",
+                             f"{se['foulsCommitted'][1]:.1f}", f"{se['yellowCards'][1]:.1f}", f"{se['possessionPct'][1]:.0f}%"]})
+                st.dataframe(tab, hide_index=True, width='stretch')
+            with sc2:
+                filas = []
+                for nm, key, lineas in [("Córners", "wonCorners", [8.5, 9.5, 10.5]),
+                                        ("T. amarillas", "yellowCards", [3.5, 4.5, 5.5])]:
+                    tot = sum(se[key]);
+                    for ln in lineas:
+                        po = 1 - _pois.cdf(int(ln), tot)
+                        filas.append({"Mercado": f"{nm} Over {ln}", "Prob.": f"{po:.0%}", "Cuota": f"{1/max(po,1e-6):.2f}"})
+                st.dataframe(pd.DataFrame(filas), hide_index=True, width='stretch')
+                st.caption(f"Totales esperados — córners {sum(se['wonCorners']):.1f} · amarillas {sum(se['yellowCards']):.1f}")
+
 # ============================================================================
 # TAB 3 · El modelo
 # ============================================================================

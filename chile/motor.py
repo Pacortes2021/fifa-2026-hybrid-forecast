@@ -88,9 +88,104 @@ def cargar():
     estado = {}
     for t in elo:
         estado[t] = {"elo": elo[t], "ppg": np.mean(ppg[t]) if ppg[t] else 1.0}
+
+    # Panel de stats del partido (córners, tiros al arco, faltas, tarjetas, posesión) desde el box score
+    stats_modelos, stats_estado = _entrenar_stats_chile(part)
+
     return {"part": part, "fixture": fixture, "elo": elo, "estado": estado, "h2h": h2h,
             "pipe": pipe, "FEATS": FEATS, "gp_params": dict(gp.params),
+            "stats_modelos": stats_modelos, "stats_estado": stats_estado,
             "equipos_2026": sorted(set(part[part.temporada == 2026].local) | set(part[part.temporada == 2026].visita))}
+
+
+# Stats del box score a modelar (objetivo -> conteo/posesión)
+STATS_OBJ = ["wonCorners", "shotsOnTarget", "foulsCommitted", "yellowCards", "possessionPct"]
+STATS_NOMBRE = {"wonCorners": "Córners", "shotsOnTarget": "Tiros al arco", "foulsCommitted": "Faltas",
+                "yellowCards": "Tarjetas amarillas", "possessionPct": "Posesión %"}
+
+
+def _entrenar_stats_chile(part):
+    """Construye features point-in-time del box score y entrena un modelo por stat (Poisson para
+       conteos, lineal para posesión). Devuelve (modelos, estado actual favor/concedido por equipo)."""
+    bs_path = DATA / "box_score.csv"
+    if not bs_path.exists():
+        return {}, {}
+    bs = pd.read_csv(bs_path, parse_dates=["fecha"])
+    key = lambda d, a, b: (pd.Timestamp(d).normalize(), a, b)
+    bsi = {key(r.fecha, r.local_equipo, r.visita_equipo): r for r in bs.itertuples(index=False)}
+    V = 6
+    favor = {s: defaultdict(lambda: deque(maxlen=V)) for s in STATS_OBJ}
+    contra = {s: defaultdict(lambda: deque(maxlen=V)) for s in STATS_OBJ}
+    rows = []
+    for r in part.itertuples(index=False):
+        a, b = r.local, r.visita
+        rec = bsi.get(key(r.fecha, a, b))
+        if rec is not None:
+            fila = {"elo_diff": r.elo_local + HOME_ADV - r.elo_visita}
+            ok = True
+            for s in STATS_OBJ:
+                fa = np.mean(favor[s][a]) if favor[s][a] else np.nan
+                cb = np.mean(contra[s][b]) if contra[s][b] else np.nan
+                fila[f"prop_{s}_f"], fila[f"riv_{s}_c"] = fa, cb
+                vl = getattr(rec, f"local_{s}", np.nan)
+                fila[f"t_{s}"] = vl
+            rows.append(fila)
+        if rec is not None:
+            for s in STATS_OBJ:
+                vl, vv = getattr(rec, f"local_{s}", np.nan), getattr(rec, f"visita_{s}", np.nan)
+                if not (pd.isna(vl) or pd.isna(vv)):
+                    favor[s][a].append(vl); contra[s][a].append(vv)
+                    favor[s][b].append(vv); contra[s][b].append(vl)
+    D = pd.DataFrame(rows)
+    import statsmodels.api as sm
+    from sklearn.linear_model import LinearRegression
+    modelos = {}
+    for s in STATS_OBJ:
+        cols = ["elo_diff", f"prop_{s}_f", f"riv_{s}_c"]; tgt = f"t_{s}"
+        d = D.dropna(subset=cols + [tgt])
+        if s == "possessionPct":
+            m = Pipeline([("sc", StandardScaler()), ("m", LinearRegression())]).fit(d[cols], d[tgt])
+            modelos[s] = (m, cols, "lineal")
+        else:
+            m = sm.GLM(d[tgt], sm.add_constant(d[cols], has_constant="add"), family=sm.families.Poisson()).fit()
+            modelos[s] = (m, cols, "poisson")
+    estado = {}
+    for s in STATS_OBJ:
+        for t in set(list(favor[s].keys()) + list(contra[s].keys())):
+            estado.setdefault(t, {})
+            estado[t][f"{s}_f"] = float(np.mean(favor[s][t])) if favor[s][t] else np.nan
+            estado[t][f"{s}_c"] = float(np.mean(contra[s][t])) if contra[s][t] else np.nan
+    glob = {f"{s}_{d}": float(np.nanmean([estado[t].get(f"{s}_{d}", np.nan) for t in estado]))
+            for s in STATS_OBJ for d in ("f", "c")}
+    return modelos, {"equipo": estado, "glob": glob}
+
+
+def stats_esperadas(M, local, visita):
+    """Estadísticas esperadas del local y la visita (córners, tiros al arco, faltas, tarjetas, posesión)."""
+    import statsmodels.api as sm
+    mods, est = M.get("stats_modelos", {}), M.get("stats_estado", {})
+    if not mods:
+        return {}
+    eq, glob = est["equipo"], est["glob"]
+
+    def pred(s, a, b):
+        m, cols, tipo = mods[s]
+        ea = eq.get(a, {}).get(f"{s}_f", glob[f"{s}_f"])
+        cb = eq.get(b, {}).get(f"{s}_c", glob[f"{s}_c"])
+        ea = glob[f"{s}_f"] if (ea != ea) else ea; cb = glob[f"{s}_c"] if (cb != cb) else cb
+        X = pd.DataFrame([{"elo_diff": M["estado"][a]["elo"] + HOME_ADV - M["estado"][b]["elo"],
+                           f"prop_{s}_f": ea, f"riv_{s}_c": cb}])[cols]
+        if tipo == "poisson":
+            return float(m.predict(sm.add_constant(X, has_constant="add"))[0])
+        return float(m.predict(X)[0])
+
+    res = {}
+    for s in STATS_OBJ:
+        res[s] = (pred(s, local, visita), pred(s, visita, local))
+    # posesión renormalizada a 100
+    pa, pb = res["possessionPct"]
+    res["possessionPct"] = (pa / (pa + pb) * 100, pb / (pa + pb) * 100)
+    return res
 
 
 # --------------------------------------------------------------------------- #
