@@ -22,6 +22,7 @@ NORM = {
     "Côte d'Ivoire": "Ivory Coast",
     "Cabo Verde": "Cape Verde",
     "USA": "United States",
+    "Congo DR": "DR Congo",     # ESPN invierte el orden; el modelo usa "DR Congo"
 }
 
 
