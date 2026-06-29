@@ -5,6 +5,7 @@ día a día. Alimenta el modo "torneo en vivo" de app_lab.py.
 Endpoint: site.api.espn.com (scoreboard del torneo 'fifa.world'). No requiere API key.
 """
 from datetime import date
+import re
 import requests
 import pandas as pd
 
@@ -67,6 +68,75 @@ def traer_resultados(desde=INICIO_MUNDIAL, hasta=None, solo_finalizados=True):
     if len(df):
         df = df.sort_values("fecha").reset_index(drop=True)
     return df
+
+
+_KO_RE = re.compile(r"(Round of 32|Round of 16|Quarterfinal|Semifinal) (\d+) (Winner|Loser)")
+_RONDA_KEY = {"Round of 32": "R32", "Round of 16": "R16", "Quarterfinal": "QF", "Semifinal": "SF"}
+_ORDEN_RONDAS = ["R32", "R16", "QF", "SF", "3RD", "FINAL"]
+_TAM_RONDA = {"R32": 16, "R16": 8, "QF": 4, "SF": 2, "3RD": 1, "FINAL": 1}
+
+
+def _ko_evento(e):
+    comp = e["competitions"][0]
+    cs = comp["competitors"]
+    h = next(x for x in cs if x["homeAway"] == "home")
+    a = next(x for x in cs if x["homeAway"] == "away")
+
+    def sc(x):
+        try:
+            return int(x.get("score"))
+        except (TypeError, ValueError):
+            return None
+    return {"id": int(e["id"]), "dt": pd.to_datetime(e["date"]),
+            "home": _norm(h["team"]["displayName"]), "away": _norm(a["team"]["displayName"]),
+            "state": e["status"]["type"]["state"], "gh": sc(h), "ga": sc(a)}
+
+
+def _ronda_placeholder(m):
+    """Ronda a la que pertenece un partido a partir de su placeholder (la de ARRIBA de la
+       referencia): 'Round of 32 N' -> R16, etc. 'Semifinal N Loser' -> 3er puesto."""
+    for nombre in (m["home"], m["away"]):
+        mt = _KO_RE.match(nombre)
+        if mt:
+            ref = _RONDA_KEY[mt.group(1)]
+            sube = {"R32": "R16", "R16": "QF", "QF": "SF", "SF": None}[ref]
+            if sube is None:
+                return "3RD" if mt.group(3) == "Loser" else "FINAL"
+            return sube
+    return None
+
+
+def bracket_eliminatorias(desde="20260628", hasta="20260720"):
+    """Los 16 CRUCES REALES de dieciseisavos (R32) del Mundial 2026 según ESPN.
+
+    Devuelve {'R32': {n: {home, away, state, gh, ga}}} con los emparejamientos verdaderos
+    (incluida la asignación de terceros, que ESPN ya resolvió). Estos cruces son HECHOS y son lo
+    único fiable que se necesita de ESPN: el ÁRBOL (qué llave alimenta a cuál) lo arma
+    `motor.bracket_real`, colocando cada cruce en la plantilla FIFA por el equipo 1°/2° conocido.
+
+    OJO: la numeración interna de ESPN para R32 NO es cronológica (es por posición de llave:
+    N de ESPN = nº de partido FIFA − 72), así que aquí solo se exponen los emparejamientos, sin
+    intentar reconstruir el árbol desde esa numeración."""
+    evs = requests.get(f"{SCOREBOARD}?dates={desde}-{hasta}", timeout=20).json().get("events", [])
+    E = sorted((_ko_evento(e) for e in evs), key=lambda x: (x["dt"], x["id"]))
+
+    por_ronda = {r: [] for r in _ORDEN_RONDAS}
+    sin_ph = []
+    for m in E:
+        r = _ronda_placeholder(m)
+        (por_ronda[r].append if r else sin_ph.append)(m)
+    # partidos con ambos equipos reales (R32 o rondas ya jugadas) rellenan las rondas tempranas
+    sin_ph.sort(key=lambda x: (x["dt"], x["id"]))
+    i = 0
+    for r in _ORDEN_RONDAS:
+        for _ in range(max(0, _TAM_RONDA[r] - len(por_ronda[r]))):
+            if i < len(sin_ph):
+                por_ronda[r].append(sin_ph[i]); i += 1
+    por_ronda["R32"].sort(key=lambda x: (x["dt"], x["id"]))
+
+    R32 = {n: {"home": m["home"], "away": m["away"], "state": m["state"], "gh": m["gh"], "ga": m["ga"]}
+           for n, m in enumerate(por_ronda["R32"], 1)}
+    return {"R32": R32}
 
 
 def partidos_en_vivo(desde=INICIO_MUNDIAL, hasta=None):

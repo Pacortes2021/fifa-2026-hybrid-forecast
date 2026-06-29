@@ -12,6 +12,7 @@ No toca ni app.py ni los datos: solo LEE de ../data/.
 """
 from pathlib import Path
 from itertools import permutations
+from collections import Counter
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -758,3 +759,145 @@ def ic_montecarlo(p, n_sims):
     """Error estándar e IC 95% de una probabilidad estimada por Monte Carlo (proporción binomial)."""
     se = np.sqrt(p * (1 - p) / n_sims)
     return max(0.0, p - 1.96 * se), min(1.0, p + 1.96 * se)
+
+
+# --------------------------------------------------------------------------- #
+#  Cuadro de eliminatorias REAL (ya definido) — simulación del campeón
+# --------------------------------------------------------------------------- #
+def prob_eliminatoria(M, a, b, states=None, modelo="base"):
+    """P(a avanza sobre b) en un partido de eliminatoria: no hay empate, así que se reparte
+       la probabilidad de empate del clasificador proporcional a la fuerza de cada lado."""
+    st = M["states"] if states is None else states
+    if a is None or b is None:
+        return 1.0 if b is None else 0.0
+    if a not in st.index or b not in st.index:
+        return 1.0 if a in st.index else 0.0
+    pa, pe, pb = prob_partido(M, a, b, "auto", modelo, st)
+    s = pa + pb
+    return float(pa + pe * pa / s) if s > 0 else 0.5
+
+
+def _feed(g):
+    """Traduce un nº de partido FIFA al casillero (ronda, idx) que lo alimenta."""
+    if 73 <= g <= 88:
+        return ("R32", g - 72)
+    if 89 <= g <= 96:
+        return ("R16", g - 88)
+    if 97 <= g <= 100:
+        return ("QF", g - 96)
+    return ("SF", g - 100)
+
+
+def bracket_real(res, r32_espn):
+    """Construye el cuadro REAL de eliminatorias combinando dos fuentes fiables:
+       - los 16 CRUCES REALES de ESPN (`r32_espn`: lista de {home,away,state,gh,ga}) — hechos;
+       - el ÁRBOL OFICIAL FIFA (R32/R16/QF/SF/FINAL_M de este módulo) — fijo y verificado:
+         N de ESPN = nº de partido FIFA − 72, así que la plantilla reproduce el árbol exacto.
+       Cada cruce de ESPN se coloca en su llave por el equipo 1°/2° YA conocido (de las posiciones
+       reales de grupo); el rival (a veces un tercero) viene tal cual de ESPN. Esto evita depender
+       de la numeración interna de ESPN (que no es cronológica) y de adivinar la asignación de
+       terceros (que la regla FIFA hace por una tabla específica)."""
+    grupos = res.iloc[:72]
+    tablas = tablas_grupos(grupos)
+    primeros = {g: t.iloc[0]["Equipo"] for g, t in tablas.items()}
+    segundos = {g: t.iloc[1]["Equipo"] for g, t in tablas.items()}
+    matchups = list(r32_espn)
+
+    def conocido(slot):
+        if isinstance(slot, tuple):   # ranura de tercero -> equipo aún no determinable por nosotros
+            return None
+        return primeros[slot[1]] if slot[0] == "1" else segundos[slot[1]]
+
+    R32d, usados = {}, set()
+    for g, (sa, sb) in R32.items():
+        known = [k for k in (conocido(sa), conocido(sb)) if k is not None]
+        idx = next(i for i, m in enumerate(matchups)
+                   if i not in usados and all(k in (m["home"], m["away"]) for k in known))
+        usados.add(idx)
+        m = matchups[idx]
+        R32d[g - 72] = {"home": m["home"], "away": m["away"],
+                        "state": m["state"], "gh": m["gh"], "ga": m["ga"]}
+    R16d = {g - 88: {"home": _feed(a), "away": _feed(b)} for g, (a, b) in R16.items()}
+    QFd = {g - 96: {"home": _feed(a), "away": _feed(b)} for g, (a, b) in QF.items()}
+    SFd = {g - 100: {"home": _feed(a), "away": _feed(b)} for g, (a, b) in SF.items()}
+    FINd = {"home": _feed(FINAL_M[0]), "away": _feed(FINAL_M[1])}
+    return {"R32": R32d, "R16": R16d, "QF": QFd, "SF": SFd, "FINAL": FINd}
+
+
+def ko_fijos(res):
+    """Ganadores reales de los partidos de ELIMINATORIAS ya jugados (los que van después de los 72
+       de grupos), indexados por el par de equipos. Permite fijar cualquier ronda, no solo R32."""
+    out = {}
+    for r in res.iloc[72:].itertuples(index=False):
+        gl, gv = int(r.goles_local), int(r.goles_visita)
+        if gl != gv:
+            out[frozenset({r.local, r.visita})] = r.local if gl > gv else r.visita
+    return out
+
+
+def simular_bracket(M, bracket, states=None, n_sims=15000, modelo="base", seed=42, fijos_ko=None):
+    """Monte Carlo de SOLO las eliminatorias, desde el cuadro real ya definido.
+       `fijos_ko`: dict {frozenset({a,b}): ganador} de cruces de KO ya jugados (cualquier ronda).
+       Devuelve {'tabla': DataFrame por equipo (P de llegar a cada ronda + P_campeon),
+                 'reach': {(ronda, num): {equipo: prob de GANAR ese partido}}, 'n_sims'}."""
+    st = M["states"] if states is None else states
+    rng = np.random.default_rng(seed)
+    R32, R16, QF, SF, FINAL = bracket["R32"], bracket["R16"], bracket["QF"], bracket["SF"], bracket["FINAL"]
+    fijos_ko = fijos_ko or {}
+
+    cache = {}
+    def p_adv(a, b):
+        key = (a, b)
+        if key not in cache:
+            v = prob_eliminatoria(M, a, b, st, modelo)
+            cache[key] = v
+            cache[(b, a)] = 1.0 - v
+        return cache[key]
+
+    def jugar(a, b):
+        if a is None or b is None:
+            return a if b is None else b
+        fij = fijos_ko.get(frozenset({a, b}))   # ¿ya se jugó este cruce?
+        if fij is not None:
+            return fij
+        return a if rng.random() < p_adv(a, b) else b
+
+    win = {("R32", n): Counter() for n in R32}
+    for rk, rd in (("R16", R16), ("QF", QF), ("SF", SF)):
+        win.update({(rk, n): Counter() for n in rd})
+    win[("FINAL", 1)] = Counter()
+
+    for _ in range(n_sims):
+        W = {"R32": {}, "R16": {}, "QF": {}, "SF": {}}
+        for n, m in R32.items():
+            w = jugar(m["home"], m["away"])
+            W["R32"][n] = w
+            win[("R32", n)][w] += 1
+        for rk, rd in (("R16", R16), ("QF", QF), ("SF", SF)):
+            for n, m in rd.items():
+                a = W[m["home"][0]][m["home"][1]]
+                b = W[m["away"][0]][m["away"][1]]
+                w = jugar(a, b)
+                W[rk][n] = w
+                win[(rk, n)][w] += 1
+        a = W[FINAL["home"][0]][FINAL["home"][1]]
+        b = W[FINAL["away"][0]][FINAL["away"][1]]
+        win[("FINAL", 1)][jugar(a, b)] += 1
+
+    reach = {k: {t: c / n_sims for t, c in cnt.items()} for k, cnt in win.items()}
+    r32_de = {}
+    for n, m in R32.items():
+        r32_de[m["home"]] = n
+        r32_de[m["away"]] = n
+
+    def suma(rk, rd, t):
+        return sum(reach[(rk, n)].get(t, 0.0) for n in rd)
+
+    teams = sorted(r32_de)
+    filas = [{"Selección": t,
+              "P_R16": reach[("R32", r32_de[t])].get(t, 0.0),
+              "P_QF": suma("R16", R16, t), "P_SF": suma("QF", QF, t),
+              "P_final": suma("SF", SF, t), "P_campeon": reach[("FINAL", 1)].get(t, 0.0)}
+             for t in teams]
+    tabla = pd.DataFrame(filas).sort_values("P_campeon", ascending=False).reset_index(drop=True)
+    return {"tabla": tabla, "reach": reach, "n_sims": n_sims}

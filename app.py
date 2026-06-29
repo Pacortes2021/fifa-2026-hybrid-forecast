@@ -1,13 +1,22 @@
+import os
+import sys
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import statsmodels.api as sm
+from collections import Counter
 from scipy.stats import poisson
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
+
+# La API de ESPN (cuadro real) y el armado del bracket (plantilla FIFA) viven en lab/ — sin entrenar modelo.
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lab'))
+import espn_live
+import motor as _motor  # solo se usan bracket_real / ko_fijos / tablas_grupos (nada que entrene)
 
 # Configuración de página con título y layout
 st.set_page_config(
@@ -140,6 +149,18 @@ COUNTRIES_ES = {
 # Inverso del mapa para decodificar selección
 MUNDIALISTAS = [v['en'] for v in COUNTRIES_ES.values()]
 ANFITRIONES = {'United States', 'Canada', 'Mexico'}
+BASE_VARS_G = ['elo_diff', 'h2h_diff', 'squad_value_diff']
+
+# Inverso inglés -> (español, bandera) para el cuadro de eliminatorias
+EN2ES = {v['en']: (k, v['flag']) for k, v in COUNTRIES_ES.items()}
+
+
+def _nombre(en):
+    return EN2ES.get(en, (en, ''))[0]
+
+
+def _bandera(en):
+    return EN2ES.get(en, ('', '🏳️'))[1]
 
 @st.cache_resource
 def load_data_and_train():
@@ -388,8 +409,280 @@ with col2:
     st.markdown('</div>', unsafe_allow_html=True)
 
 
+# ===========================================================================
+#  CUADRO DE ELIMINATORIAS (en vivo desde ESPN) + simulación del campeón
+#  Usa el MODELO BASE de esta misma app, con el Elo actualizado por los
+#  resultados reales del Mundial. El cuadro real se lee de la API de ESPN.
+# ===========================================================================
+def _prob_base_st(a, b, cancha, st_df):
+    """[P(gana a), empate, P(gana b)] del modelo Base con states arbitrarios (Elo ya actualizado)."""
+    sa, sb = st_df.loc[a], st_df.loc[b]
+    fa = pd.DataFrame([{'elo_diff': sa.elo - sb.elo, 'h2h_diff': H2H.get((a, b), 0.0),
+                        'squad_value_diff': np.log(sa.squad_value) - np.log(sb.squad_value)}])
+    fb = pd.DataFrame([{'elo_diff': sb.elo - sa.elo, 'h2h_diff': H2H.get((b, a), 0.0),
+                        'squad_value_diff': np.log(sb.squad_value) - np.log(sa.squad_value)}])
+    pa = pipe_base.predict_proba(fa[BASE_VARS_G])[0]
+    pb = pipe_base.predict_proba(fb[BASE_VARS_G])[0]
+    va = np.array([pa[2], pa[1], pa[0]]); vb = np.array([pb[0], pb[1], pb[2]])
+    if cancha == '1' or (cancha == 'auto' and a in ANFITRIONES and b not in ANFITRIONES): return va
+    if cancha == '2' or (cancha == 'auto' and b in ANFITRIONES and a not in ANFITRIONES): return vb
+    return (va + vb) / 2
+
+
+def _elo_update(ea, eb, ga, gb, k=60.0):
+    we = 1.0 / (1.0 + 10 ** (-(ea - eb) / 400.0))
+    w = 1.0 if ga > gb else (0.0 if ga < gb else 0.5)
+    gd = abs(ga - gb)
+    mult = 1.0 if gd <= 1 else (1.5 if gd == 2 else (1.75 if gd == 3 else 1.75 + (gd - 3) / 8.0))
+    delta = k * mult * (w - we)
+    return ea + delta, eb - delta
+
+
+def _actualizar_estados(res):
+    """Copia de states con el Elo actualizado por los resultados reales (el Base solo usa Elo+h2h+valor,
+       y h2h/valor no cambian → basta con mover el Elo)."""
+    st_df = states.copy()
+    for r in res.itertuples(index=False):
+        a, b = r.local, r.visita
+        if a not in st_df.index or b not in st_df.index:
+            continue
+        ga, gb = int(r.goles_local), int(r.goles_visita)
+        ea, eb = _elo_update(st_df.loc[a, 'elo'], st_df.loc[b, 'elo'], ga, gb)
+        st_df.loc[a, 'elo'], st_df.loc[b, 'elo'] = ea, eb
+    return st_df
+
+
+def _p_adv(a, b, st_df):
+    p = _prob_base_st(a, b, 'auto', st_df)
+    s = p[0] + p[2]
+    return p[0] + p[1] * p[0] / s if s > 0 else 0.5
+
+
+def _simular_bracket(bracket, st_df, n_sims=8000, seed=42, fijos_ko=None):
+    rng = np.random.default_rng(seed)
+    R32, R16, QF, SF, FINAL = bracket['R32'], bracket['R16'], bracket['QF'], bracket['SF'], bracket['FINAL']
+    fijos_ko = fijos_ko or {}
+    cache = {}
+
+    def padv(a, b):
+        if (a, b) not in cache:
+            v = _p_adv(a, b, st_df); cache[(a, b)] = v; cache[(b, a)] = 1.0 - v
+        return cache[(a, b)]
+
+    def jugar(a, b):
+        if a is None or b is None:
+            return a if b is None else b
+        fij = fijos_ko.get(frozenset({a, b}))
+        if fij is not None:
+            return fij
+        return a if rng.random() < padv(a, b) else b
+
+    win = {('R32', n): Counter() for n in R32}
+    for rk, rd in (('R16', R16), ('QF', QF), ('SF', SF)):
+        win.update({(rk, n): Counter() for n in rd})
+    win[('FINAL', 1)] = Counter()
+    for _ in range(n_sims):
+        W = {'R32': {}, 'R16': {}, 'QF': {}, 'SF': {}}
+        for n, m in R32.items():
+            w = jugar(m['home'], m['away'])
+            W['R32'][n] = w; win[('R32', n)][w] += 1
+        for rk, rd in (('R16', R16), ('QF', QF), ('SF', SF)):
+            for n, m in rd.items():
+                a = W[m['home'][0]][m['home'][1]]; b = W[m['away'][0]][m['away'][1]]
+                w = jugar(a, b); W[rk][n] = w; win[(rk, n)][w] += 1
+        a = W[FINAL['home'][0]][FINAL['home'][1]]; b = W[FINAL['away'][0]][FINAL['away'][1]]
+        win[('FINAL', 1)][jugar(a, b)] += 1
+    reach = {k: {t: c / n_sims for t, c in cnt.items()} for k, cnt in win.items()}
+    r32_de = {}
+    for n, m in R32.items():
+        r32_de[m['home']] = n; r32_de[m['away']] = n
+
+    def suma(rk, rd, t):
+        return sum(reach[(rk, n)].get(t, 0.0) for n in rd)
+
+    teams = sorted(r32_de)
+    filas = [{'Selección': t, 'P_R16': reach[('R32', r32_de[t])].get(t, 0.0),
+              'P_QF': suma('R16', R16, t), 'P_SF': suma('QF', QF, t),
+              'P_final': suma('SF', SF, t), 'P_campeon': reach[('FINAL', 1)].get(t, 0.0)} for t in teams]
+    tabla = pd.DataFrame(filas).sort_values('P_campeon', ascending=False).reset_index(drop=True)
+    return {'tabla': tabla, 'reach': reach}
+
+
+# ---- Render del cuadro estilo portal deportivo ----
+_BRACKET_CSS = """
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Inter',sans-serif;background:transparent;}
+.half{margin-bottom:4px;}
+.htitle{font-size:.82rem;font-weight:700;color:#0b3d91;text-transform:uppercase;letter-spacing:.04em;margin:4px 0 2px 6px;}
+.bracket{display:flex;align-items:stretch;height:420px;}
+.round{display:flex;flex-direction:column;flex:1;min-width:150px;padding:0 7px;}
+.rbody{display:flex;flex-direction:column;justify-content:space-around;flex:1;}
+.rhead{text-align:center;font-size:.6rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px;}
+.match{background:#fff;border:1px solid #e2e8f0;border-radius:7px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.06);margin:3px 0;}
+.match.played{border-color:#86efac;}
+.tm{display:flex;align-items:center;gap:5px;padding:3px 7px;font-size:.74rem;color:#475569;border-bottom:1px solid #f1f5f9;}
+.tm:last-child{border-bottom:none;}
+.tm .fl{font-size:.9rem;line-height:1;}
+.tm .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tm .pr{font-variant-numeric:tabular-nums;font-size:.68rem;color:#a3acba;font-weight:600;}
+.tm.win{background:#eef3fc;color:#0b3d91;font-weight:700;}
+.tm.win .pr{color:#2a5db0;}
+.match.played .tm.win{background:#e7f6ec;color:#15803d;}
+.match.played .tm.win .pr{color:#15803d;}
+.match.played .tm.lose{color:#cbd5e1;}
+.finalwrap{display:flex;flex-direction:column;align-items:center;margin:6px 0;}
+.fhdr{font-size:.7rem;font-weight:700;color:#7a3b91;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.finalists{display:flex;gap:10px;margin-bottom:8px;}
+.finalists .match{min-width:158px;}
+.champ{background:linear-gradient(135deg,#0b3d91,#7a3b91);color:#fff;border-radius:11px;padding:9px 26px;text-align:center;box-shadow:0 5px 14px rgba(11,61,145,.28);}
+.champ .lbl{font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;opacity:.85;}
+.champ .nm{font-size:1.2rem;font-weight:700;margin:1px 0;}
+.champ .pr{font-size:.72rem;opacity:.92;}
+</style>
+"""
+_HEAD = {'R32': 'Dieciseisavos', 'R16': 'Octavos', 'QF': 'Cuartos', 'SF': 'Semifinal'}
+
+
+def _argmax_reach(reach, key):
+    d = reach.get(key, {})
+    if not d:
+        return None, 0.0
+    t = max(d, key=d.get)
+    return t, d[t]
+
+
+def _box_info(bracket, reach, rnd, num):
+    m = bracket['FINAL'] if rnd == 'FINAL' else bracket[rnd][num]
+    key = ('FINAL', 1) if rnd == 'FINAL' else (rnd, num)
+    if rnd == 'R32':
+        home, away = m['home'], m['away']
+        slots = [(home, reach[key].get(home, 0.0)), (away, reach[key].get(away, 0.0))]
+        played = m['state'] == 'post' and m['gh'] is not None and m['ga'] is not None
+        winner = (home if m['gh'] > m['ga'] else away) if played else _argmax_reach(reach, key)[0]
+        return {'slots': slots, 'played': played, 'score': (m['gh'], m['ga']) if played else None, 'winner': winner}
+    th, ph = _argmax_reach(reach, m['home'])
+    ta, pa = _argmax_reach(reach, m['away'])
+    return {'slots': [(th, ph), (ta, pa)], 'played': False, 'score': None, 'winner': _argmax_reach(reach, key)[0]}
+
+
+def _box_html(info):
+    rows = ''
+    for idx, (team, p) in enumerate(info['slots']):
+        es = _nombre(team) if team else '—'
+        fl = _bandera(team) if team else '·'
+        val = str(info['score'][idx]) if info['played'] else f'{p:.0%}'
+        if info['played']:
+            cls = 'tm win' if team == info['winner'] else 'tm lose'
+        else:
+            cls = 'tm win' if team and team == info['winner'] else 'tm'
+        rows += (f'<div class="{cls}"><span class="fl">{fl}</span>'
+                 f'<span class="nm" title="{es}">{es}</span><span class="pr">{val}</span></div>')
+    return f'<div class="match{" played" if info["played"] else ""}">{rows}</div>'
+
+
+def _collect_orden(bracket, side, acc):
+    rnd, num = side
+    if rnd != 'R32':
+        m = bracket[rnd][num]
+        _collect_orden(bracket, m['home'], acc)
+        _collect_orden(bracket, m['away'], acc)
+    acc.setdefault(rnd, []).append(num)
+    return acc
+
+
+def _half_html(bracket, sim, sf_num):
+    reach = sim['reach']
+    acc = _collect_orden(bracket, ('SF', sf_num), {})
+    teams = [bracket['R32'][n][s] for n in acc['R32'] for s in ('home', 'away')]
+    pcamp = sim['tabla'].set_index('Selección')['P_campeon']
+    fuerte = max(teams, key=lambda t: pcamp.get(t, 0))
+    cols = ''
+    for rnd in ('R32', 'R16', 'QF', 'SF'):
+        boxes = ''.join(_box_html(_box_info(bracket, reach, rnd, n)) for n in acc[rnd])
+        cols += f'<div class="round"><div class="rhead">{_HEAD[rnd]}</div><div class="rbody">{boxes}</div></div>'
+    return (f'<div class="half"><div class="htitle">Lado de {_nombre(fuerte)} {_bandera(fuerte)}</div>'
+            f'<div class="bracket">{cols}</div></div>')
+
+
+def _final_html(bracket, sim):
+    fi = _box_info(bracket, sim['reach'], 'FINAL', 1)
+    champ = sim['tabla'].iloc[0]
+    return (f'<div class="finalwrap"><div class="fhdr">★ Final ★</div>'
+            f'<div class="finalists">{_box_html(fi)}</div>'
+            f'<div class="champ"><div class="lbl">Campeón más probable</div>'
+            f'<div class="nm">{_bandera(champ["Selección"])} {_nombre(champ["Selección"])}</div>'
+            f'<div class="pr">campeón en el {champ["P_campeon"]:.1%} de los torneos simulados</div></div></div>')
+
+
+def _bracket_completo_html(bracket, sim):
+    return (_BRACKET_CSS + _half_html(bracket, sim, 1) + _final_html(bracket, sim)
+            + _half_html(bracket, sim, 2))
+
+
+@st.cache_data(ttl=900, show_spinner=False)
+def cargar_espn_app():
+    try:
+        res = espn_live.traer_resultados()
+        r32 = list(espn_live.bracket_eliminatorias()['R32'].values())  # los 16 cruces reales
+        return res, r32, None
+    except Exception as e:
+        return pd.DataFrame(), None, str(e)
+
+
+@st.cache_data(show_spinner='Simulando las eliminatorias (8.000 torneos)…')
+def sim_campeon(key):
+    res, r32, err = cargar_espn_app()
+    if not r32 or len(res) < 72:
+        return None
+    # cuadro real = cruces de ESPN colocados en la plantilla FIFA (árbol oficial)
+    br = _motor.bracket_real(res, r32)
+    st_df = _actualizar_estados(res)
+    fk = _motor.ko_fijos(res)            # fija los KO ya jugados (cualquier ronda)
+    return {'bracket': br, 'sim': _simular_bracket(br, st_df, n_sims=8000, fijos_ko=fk)}
+
+
+ESPN_RES, ESPN_BR, ESPN_ERR = cargar_espn_app()
+ESPN_KEY = '' if len(ESPN_RES) == 0 else f'{len(ESPN_RES)}-{ESPN_RES.fecha.max()}'
+
 # Pestañas de detalle
-tab1, tab2, tab3 = st.tabs(["📊 Comparativa de Atributos", "🔲 Matrices de Marcadores", "ℹ️ Metodología y Métricas"])
+tab0, tab1, tab2, tab3 = st.tabs(["🗺️ Cuadro de eliminatorias", "📊 Comparativa de Atributos",
+                                  "🔲 Matrices de Marcadores", "ℹ️ Metodología y Métricas"])
+
+with tab0:
+    st.markdown("### 🗺️ Cuadro de eliminatorias — camino al título")
+    st.markdown("Cuadro **real, ya definido** (los 16 cruces de dieciseisavos vienen de la API de ESPN) "
+                "y la **simulación del campeón** sobre él: 8.000 torneos jugando solo las eliminatorias, "
+                "con el **modelo Base** y el Elo de cada selección ya actualizado por sus resultados "
+                "reales en el Mundial.")
+    if ESPN_ERR:
+        st.warning(f"No se pudo contactar a ESPN ({ESPN_ERR}). El cuadro se mostrará cuando vuelva la conexión.")
+    payload = sim_campeon(ESPN_KEY) if not ESPN_ERR else None
+    if payload is None:
+        st.info("El cuadro de eliminatorias aún no está publicado en ESPN. Se llena solo cuando termine "
+                "la fase de grupos y se definan los cruces.")
+    else:
+        br_e, sim_e = payload['bracket'], payload['sim']
+        tabla_e = sim_e['tabla']
+        st.markdown("##### 🏆 Campeón según la simulación")
+        cc = st.columns(3)
+        for col, (_, r), md in zip(cc, tabla_e.head(3).iterrows(), ["🥇", "🥈", "🥉"]):
+            col.metric(f"{md} {_bandera(r['Selección'])} {_nombre(r['Selección'])}", f"{r['P_campeon']:.1%}")
+        components.html(_bracket_completo_html(br_e, sim_e), height=1010, scrolling=True)
+        st.caption("En **dieciseisavos** se ven los cruces reales con la probabilidad de avanzar de cada "
+                   "selección (verde = partido ya jugado, con su marcador). De **octavos en adelante**, "
+                   "cada casillero muestra el equipo **más probable** de ocuparlo según la simulación "
+                   "(proyección — el cruce exacto aún no está definido). El borde azul marca al favorito.")
+        with st.expander("📋 Probabilidades completas por ronda (las 32 selecciones)"):
+            show = tabla_e.copy()
+            show['Selección'] = [f"{_bandera(t)} {_nombre(t)}" for t in show['Selección']]
+            show = show.rename(columns={'P_R16': 'P(8vos)', 'P_QF': 'P(4tos)', 'P_SF': 'P(semis)',
+                                        'P_final': 'P(final)', 'P_campeon': 'P(campeón)'})
+            pct = ['P(8vos)', 'P(4tos)', 'P(semis)', 'P(final)', 'P(campeón)']
+            st.dataframe(show.style.format({c: '{:.1%}' for c in pct})
+                         .background_gradient(subset=['P(campeón)'], cmap='Blues'),
+                         hide_index=True, width='stretch')
 
 with tab1:
     sa, sb = states.loc[en_name_a], states.loc[en_name_b]
