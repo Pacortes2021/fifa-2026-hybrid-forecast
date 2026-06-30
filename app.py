@@ -560,11 +560,14 @@ def _box_info(bracket, reach, rnd, num):
         home, away = m['home'], m['away']
         slots = [(home, reach[key].get(home, 0.0)), (away, reach[key].get(away, 0.0))]
         played = m['state'] == 'post' and m['gh'] is not None and m['ga'] is not None
-        winner = (home if m['gh'] > m['ga'] else away) if played else _argmax_reach(reach, key)[0]
-        return {'slots': slots, 'played': played, 'score': (m['gh'], m['ga']) if played else None, 'winner': winner}
+        # ganador real (penales incluidos: ESPN marca 'winner'); si no, el favorito de la sim
+        winner = (m.get('winner') or (home if m['gh'] > m['ga'] else away)) if played else _argmax_reach(reach, key)[0]
+        return {'slots': slots, 'played': played, 'score': (m['gh'], m['ga']) if played else None,
+                'pens': m.get('pens') if played else None, 'winner': winner}
     th, ph = _argmax_reach(reach, m['home'])
     ta, pa = _argmax_reach(reach, m['away'])
-    return {'slots': [(th, ph), (ta, pa)], 'played': False, 'score': None, 'winner': _argmax_reach(reach, key)[0]}
+    return {'slots': [(th, ph), (ta, pa)], 'played': False, 'score': None, 'pens': None,
+            'winner': _argmax_reach(reach, key)[0]}
 
 
 def _box_html(info):
@@ -572,10 +575,13 @@ def _box_html(info):
     for idx, (team, p) in enumerate(info['slots']):
         es = _nombre(team) if team else '—'
         fl = _bandera(team) if team else '·'
-        val = str(info['score'][idx]) if info['played'] else f'{p:.0%}'
         if info['played']:
+            val = str(info['score'][idx])
+            if info.get('pens'):
+                val = f'{val} <small>({info["pens"][idx]})</small>'   # marcador (penales)
             cls = 'tm win' if team == info['winner'] else 'tm lose'
         else:
+            val = f'{p:.0%}'
             cls = 'tm win' if team and team == info['winner'] else 'tm'
         rows += (f'<div class="{cls}"><span class="fl">{fl}</span>'
                  f'<span class="nm" title="{es}">{es}</span><span class="pr">{val}</span></div>')
@@ -621,7 +627,7 @@ def _bracket_completo_html(bracket, sim):
             + _half_html(bracket, sim, 2))
 
 
-@st.cache_data(ttl=900, show_spinner=False)
+@st.cache_data(ttl=120, show_spinner=False)
 def cargar_espn_app():
     try:
         res = espn_live.traer_resultados()
@@ -639,7 +645,7 @@ def sim_campeon(key):
     # cuadro real = cruces de ESPN colocados en la plantilla FIFA (árbol oficial)
     br = _motor.bracket_real(res, r32)
     st_df = _actualizar_estados(res)
-    fk = _motor.ko_fijos(res)            # fija los KO ya jugados (cualquier ronda)
+    fk = espn_live.ganadores_ko()        # ganadores reales de KO (penales incluidos)
     return {'bracket': br, 'sim': _simular_bracket(br, st_df, n_sims=8000, fijos_ko=fk)}
 
 
@@ -655,7 +661,10 @@ with tab0:
     st.markdown("Cuadro **real, ya definido** (los 16 cruces de dieciseisavos vienen de la API de ESPN) "
                 "y la **simulación del campeón** sobre él: 8.000 torneos jugando solo las eliminatorias, "
                 "con el **modelo Base** y el Elo de cada selección ya actualizado por sus resultados "
-                "reales en el Mundial.")
+                "reales en el Mundial. Los cruces ya jugados (penales incluidos) quedan **fijados**.")
+    if st.button("🔄 Actualizar resultados (ESPN)", key="refresh_bracket"):
+        st.cache_data.clear()
+        st.rerun()
     if ESPN_ERR:
         st.warning(f"No se pudo contactar a ESPN ({ESPN_ERR}). El cuadro se mostrará cuando vuelva la conexión.")
     payload = sim_campeon(ESPN_KEY) if not ESPN_ERR else None

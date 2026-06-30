@@ -815,24 +815,14 @@ def bracket_real(res, r32_espn):
                    if i not in usados and all(k in (m["home"], m["away"]) for k in known))
         usados.add(idx)
         m = matchups[idx]
-        R32d[g - 72] = {"home": m["home"], "away": m["away"],
-                        "state": m["state"], "gh": m["gh"], "ga": m["ga"]}
+        R32d[g - 72] = {"home": m["home"], "away": m["away"], "state": m["state"],
+                        "gh": m["gh"], "ga": m["ga"],
+                        "winner": m.get("winner"), "pens": m.get("pens")}
     R16d = {g - 88: {"home": _feed(a), "away": _feed(b)} for g, (a, b) in R16.items()}
     QFd = {g - 96: {"home": _feed(a), "away": _feed(b)} for g, (a, b) in QF.items()}
     SFd = {g - 100: {"home": _feed(a), "away": _feed(b)} for g, (a, b) in SF.items()}
     FINd = {"home": _feed(FINAL_M[0]), "away": _feed(FINAL_M[1])}
     return {"R32": R32d, "R16": R16d, "QF": QFd, "SF": SFd, "FINAL": FINd}
-
-
-def ko_fijos(res):
-    """Ganadores reales de los partidos de ELIMINATORIAS ya jugados (los que van después de los 72
-       de grupos), indexados por el par de equipos. Permite fijar cualquier ronda, no solo R32."""
-    out = {}
-    for r in res.iloc[72:].itertuples(index=False):
-        gl, gv = int(r.goles_local), int(r.goles_visita)
-        if gl != gv:
-            out[frozenset({r.local, r.visita})] = r.local if gl > gv else r.visita
-    return out
 
 
 def simular_bracket(M, bracket, states=None, n_sims=15000, modelo="base", seed=42, fijos_ko=None):

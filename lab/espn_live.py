@@ -82,14 +82,24 @@ def _ko_evento(e):
     h = next(x for x in cs if x["homeAway"] == "home")
     a = next(x for x in cs if x["homeAway"] == "away")
 
-    def sc(x):
+    def num(x, campo):
         try:
-            return int(x.get("score"))
+            return int(x.get(campo))
         except (TypeError, ValueError):
             return None
+    # ganador REAL (incluye penales): ESPN marca winner=True en el competidor que avanza
+    if h.get("winner"):
+        ganador = _norm(h["team"]["displayName"])
+    elif a.get("winner"):
+        ganador = _norm(a["team"]["displayName"])
+    else:
+        ganador = None
+    soh, soa = num(h, "shootoutScore"), num(a, "shootoutScore")
+    pens = (soh, soa) if (soh is not None and soa is not None) else None
     return {"id": int(e["id"]), "dt": pd.to_datetime(e["date"]),
             "home": _norm(h["team"]["displayName"]), "away": _norm(a["team"]["displayName"]),
-            "state": e["status"]["type"]["state"], "gh": sc(h), "ga": sc(a)}
+            "state": e["status"]["type"]["state"], "gh": num(h, "score"), "ga": num(a, "score"),
+            "winner": ganador, "pens": pens}
 
 
 def _ronda_placeholder(m):
@@ -134,9 +144,24 @@ def bracket_eliminatorias(desde="20260628", hasta="20260720"):
                 por_ronda[r].append(sin_ph[i]); i += 1
     por_ronda["R32"].sort(key=lambda x: (x["dt"], x["id"]))
 
-    R32 = {n: {"home": m["home"], "away": m["away"], "state": m["state"], "gh": m["gh"], "ga": m["ga"]}
+    R32 = {n: {"home": m["home"], "away": m["away"], "state": m["state"], "gh": m["gh"], "ga": m["ga"],
+               "winner": m["winner"], "pens": m["pens"]}
            for n, m in enumerate(por_ronda["R32"], 1)}
     return {"R32": R32}
+
+
+def ganadores_ko(desde="20260628", hasta="20260720"):
+    """{frozenset({local, visita}): equipo que AVANZÓ} para cada partido de eliminatorias ya
+       resuelto. Usa el flag `winner` de ESPN, así que **respeta los penales** (un 1-1 que se define
+       en la tanda queda fijado al que realmente pasó, no al marcador). La ventana arranca el 28-jun,
+       cuando empiezan las eliminatorias (la fase de grupos terminó el 27-jun)."""
+    evs = requests.get(f"{SCOREBOARD}?dates={desde}-{hasta}", timeout=20).json().get("events", [])
+    out = {}
+    for e in evs:
+        m = _ko_evento(e)
+        if m["state"] == "post" and m["winner"]:
+            out[frozenset({m["home"], m["away"]})] = m["winner"]
+    return out
 
 
 def partidos_en_vivo(desde=INICIO_MUNDIAL, hasta=None):

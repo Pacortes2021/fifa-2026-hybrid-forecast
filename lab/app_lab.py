@@ -112,7 +112,7 @@ def mc_vivo(modelo, key):
     return mo.monte_carlo(M, 6000, modelo, states=st2, fijos=fijos)
 
 
-@st.cache_data(ttl=900, show_spinner=False)
+@st.cache_data(ttl=120, show_spinner=False)
 def cargar_espn():
     try:
         return espn_live.traer_resultados(), None
@@ -128,7 +128,7 @@ def cargar_envivo():
         return pd.DataFrame()
 
 
-@st.cache_data(ttl=900, show_spinner=False)
+@st.cache_data(ttl=120, show_spinner=False)
 def cargar_bracket(key):
     try:
         return list(espn_live.bracket_eliminatorias()["R32"].values()), None  # los 16 cruces reales
@@ -146,7 +146,7 @@ def sim_bracket(key, modelo):
     M = get_motor()
     br = mo.bracket_real(ESPN_DF, r32)
     st2 = mo.actualizar_estados(M, ESPN_DF)
-    fk = mo.ko_fijos(ESPN_DF)
+    fk = espn_live.ganadores_ko()        # ganadores reales de KO (penales incluidos)
     return {"bracket": br, "sim": mo.simular_bracket(M, br, states=st2, n_sims=15000, modelo=modelo, fijos_ko=fk)}
 
 
@@ -215,11 +215,14 @@ def _box_info(bracket, reach, rnd, num):
         home, away = m["home"], m["away"]
         slots = [(home, reach[key].get(home, 0.0)), (away, reach[key].get(away, 0.0))]
         played = m["state"] == "post" and m["gh"] is not None and m["ga"] is not None
-        winner = (home if m["gh"] > m["ga"] else away) if played else _argmax_reach(reach, key)[0]
-        return {"slots": slots, "played": played, "score": (m["gh"], m["ga"]) if played else None, "winner": winner}
+        # ganador real (penales incluidos: ESPN marca 'winner'); si no, el favorito de la sim
+        winner = (m.get("winner") or (home if m["gh"] > m["ga"] else away)) if played else _argmax_reach(reach, key)[0]
+        return {"slots": slots, "played": played, "score": (m["gh"], m["ga"]) if played else None,
+                "pens": m.get("pens") if played else None, "winner": winner}
     th, ph = _argmax_reach(reach, m["home"])
     ta, pa = _argmax_reach(reach, m["away"])
-    return {"slots": [(th, ph), (ta, pa)], "played": False, "score": None, "winner": _argmax_reach(reach, key)[0]}
+    return {"slots": [(th, ph), (ta, pa)], "played": False, "score": None, "pens": None,
+            "winner": _argmax_reach(reach, key)[0]}
 
 
 def _box_html(info):
@@ -227,10 +230,13 @@ def _box_html(info):
     for idx, (team, p) in enumerate(info["slots"]):
         es = nombre(team) if team else "—"
         fl = bandera(team) if team else "·"
-        val = str(info["score"][idx]) if info["played"] else f"{p:.0%}"
         if info["played"]:
+            val = str(info["score"][idx])
+            if info.get("pens"):
+                val = f'{val} <small>({info["pens"][idx]})</small>'   # marcador (penales)
             cls = "tm win" if team == info["winner"] else "tm lose"
         else:
+            val = f"{p:.0%}"
             cls = "tm win" if team and team == info["winner"] else "tm"
         rows += (f'<div class="{cls}"><span class="fl">{fl}</span>'
                  f'<span class="nm" title="{es}">{es}</span><span class="pr">{val}</span></div>')
@@ -291,8 +297,8 @@ st.sidebar.info("Todos los modelos usan **ponderación K-factor**: los partidos 
 if len(ESPN_DF):
     st.sidebar.success(f"🛰️ ESPN: {len(ESPN_DF)} partidos reales cargados.")
 
-tab1, tab2, tabB, tab3, tab6, tab4, tab5 = st.tabs(
-    ["⚽ Partido + Mercados", "📊 Fase de grupos", "🗺️ Cuadro eliminatorias", "🔴 Torneo en vivo",
+tab1, tabB, tab3, tab6, tab4, tab5 = st.tabs(
+    ["⚽ Partido + Mercados", "🗺️ Cuadro eliminatorias", "🔴 Torneo en vivo",
      "🔬 Modelo vs realidad", "🎯 Validación", "📈 Robustez"])
 
 # ============================================================================
@@ -422,42 +428,6 @@ with tab1:
                 st.pyplot(fig)
 
 # ============================================================================
-# TAB 2 · Fase de grupos (tabla de posiciones real + prob. de clasificar)
-# ============================================================================
-with tab2:
-    st.markdown('<div class="sec-title">Fase de grupos — tabla de posiciones</div>', unsafe_allow_html=True)
-    if len(ESPN_DF):
-        st.caption(f"Posiciones reales según los **{len(ESPN_DF)} partidos ya jugados** (ESPN). La columna "
-                   "**P(clasif.)** es la probabilidad de avanzar a octavos según el modelo, ya actualizado "
-                   "con estos resultados. Verde = puestos de clasificación directa (1° y 2°).")
-    else:
-        st.caption("El Mundial aún no reporta partidos. Las tablas arrancan en cero; cuando se jueguen, se "
-                   "llenan solas desde ESPN.")
-    tablas = mo.tablas_grupos(ESPN_DF)
-    res_v = mc_vivo(modelo, ESPN_KEY)
-    pclasif = res_v.set_index("Selección")["P_octavos"].to_dict()
-
-    def pinta(row):
-        if row["Pos"] <= 2:
-            return ["background-color:#e7f6ec"] * len(row)
-        if row["Pos"] == 3:
-            return ["background-color:#fdf6e3"] * len(row)
-        return [""] * len(row)
-
-    letras = list(tablas.keys())
-    for fila in range(0, 12, 3):
-        cols = st.columns(3)
-        for k, g in enumerate(letras[fila:fila + 3]):
-            with cols[k]:
-                with st.container(border=True):
-                    st.markdown(f'<div class="card-title-base">Grupo {g}</div>', unsafe_allow_html=True)
-                    d = tablas[g].copy()
-                    d["Equipo"] = d["Equipo"].map(etiqueta)
-                    d["P(clasif.)"] = [f"{pclasif.get(t, 0):.0%}" for t in tablas[g]["Equipo"]]
-                    d = d[["Pos", "Equipo", "PJ", "G", "E", "P", "GF", "GC", "DG", "Pts", "P(clasif.)"]]
-                    st.dataframe(d.style.apply(pinta, axis=1), hide_index=True, width='stretch')
-
-# ============================================================================
 # TAB B · Cuadro de eliminatorias (bracket real + simulación del campeón)
 # ============================================================================
 with tabB:
@@ -466,7 +436,10 @@ with tabB:
     st.markdown("Cuadro **real, ya definido**: los 16 cruces de dieciseisavos vienen de la API de ESPN. "
                 "Encima va la **simulación del campeón** corrida sobre ese cuadro — 15.000 torneos jugando "
                 "solo las eliminatorias, con el Elo de cada selección ya actualizado por sus resultados "
-                "reales en el Mundial.")
+                "reales en el Mundial. Los cruces ya jugados (penales incluidos) quedan **fijados**.")
+    if st.button("🔄 Actualizar resultados (ESPN)", key="refresh_bracket"):
+        st.cache_data.clear()
+        st.rerun()
     payload = sim_bracket(ESPN_KEY, modelo)
     if payload is None:
         st.info("El cuadro de eliminatorias aún no está publicado en ESPN. Se llena solo en cuanto "
