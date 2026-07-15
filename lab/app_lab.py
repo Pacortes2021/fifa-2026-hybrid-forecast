@@ -773,29 +773,36 @@ with tab_tda:
                     tabla_comp, metricas_comp, _, _, _ = tda.comparar_en_mundial(M, ESPN_DF, modelo)
 
                     if metricas_comp:
-                        c1, c2, c3, c4, c5 = st.columns(5)
-                        c1.metric("Partidos", metricas_comp["n"])
-                        c2.metric("Log-Loss ML", f"{metricas_comp['logloss_ml']:.3f}",
-                                  f"{metricas_comp['logloss_ml']-metricas_comp['logloss_base']:+.3f} vs base",
-                                  delta_color="inverse")
-                        c3.metric("Log-Loss TDA", f"{metricas_comp['logloss_tda']:.3f}",
-                                  f"{metricas_comp['logloss_tda']-metricas_comp['logloss_base']:+.3f} vs base",
-                                  delta_color="inverse")
-                        c4.metric("Acierto ML", f"{metricas_comp['acierto_ml']:.0%}")
-                        c5.metric("Acierto TDA", f"{metricas_comp['acierto_tda']:.0%}")
+                        # Fila 1: Log-Loss
+                        col1, col2, col3, col4 = st.columns(4)
+                        col1.metric("Partidos evaluados", metricas_comp["n"])
+                        col2.metric("Log-Loss ML Híbrido", f"{metricas_comp['logloss_ml']:.3f}",
+                                    delta=f"{metricas_comp['logloss_ml']-metricas_comp['logloss_base']:+.3f} vs base",
+                                    delta_color="inverse")
+                        col3.metric("Log-Loss ML+TDA (Combinado)", f"{metricas_comp['logloss_comb']:.3f}",
+                                    delta=f"{metricas_comp['logloss_comb']-metricas_comp['logloss_base']:+.3f} vs base",
+                                    delta_color="inverse")
+                        col4.metric("Log-Loss TDA Puro", f"{metricas_comp['logloss_tda']:.3f}",
+                                    delta=f"{metricas_comp['logloss_tda']-metricas_comp['logloss_base']:+.3f} vs base",
+                                    delta_color="inverse")
+
+                        # Fila 2: Tasa de acierto
+                        col1_2, col2_2, col3_2, col4_2 = st.columns(4)
+                        col1_2.markdown("<small>Métrica de calibración (menor es mejor)</small>", unsafe_allow_html=True)
+                        col2_2.metric("Acierto (1X2) ML", f"{metricas_comp['acierto_ml']:.1%}")
+                        col3_2.metric("Acierto (1X2) ML+TDA", f"{metricas_comp['acierto_comb']:.1%}")
+                        col4_2.metric("Acierto (1X2) TDA", f"{metricas_comp['acierto_tda']:.1%}")
 
                         st.pyplot(tda.fig_comparacion_logloss(metricas_comp))
 
-                        diff = metricas_comp["logloss_ml"] - metricas_comp["logloss_tda"]
-                        if abs(diff) < 0.01:
-                            st.info(f"📊 **Empate técnico** (Δ={abs(diff):.4f}). Con {metricas_comp['n']} partidos, "
-                                    "ambos modelos tienen desempeño estadísticamente indistinguible.")
-                        elif diff < 0:
-                            st.success(f"✅ **El ML Híbrido gana** por {abs(diff):.3f} de log-loss. "
-                                       "Las variables calibradas superan a la geometría pura.")
+                        # Comparación directa
+                        diff_comb_ml = metricas_comp["logloss_comb"] - metricas_comp["logloss_ml"]
+                        if diff_comb_ml < 0:
+                            st.success(f"🚀 **¡Éxito! El modelo Combinado (ML+TDA) le gana a tu modelo ML Híbrido** solo (Δ = {abs(diff_comb_ml):.4f} de log-loss). "
+                                       "La geometría topológica (posición relativa en el espacio de variables) sí aporta información útil sobre el rendimiento de las selecciones.")
                         else:
-                            st.warning(f"⚠️ **El TDA supera al ML** por {diff:.3f} en esta muestra. "
-                                       "Puede ser varianza de muestra pequeña — monitorear en fases siguientes.")
+                            st.warning(f"💡 **Tu modelo ML Híbrido sigue siendo el rey** (Log-loss de {metricas_comp['logloss_ml']:.3f} vs {metricas_comp['logloss_comb']:.3f} del combinado). "
+                                       "Añadir TDA mete un poco de ruido. Esto sugiere que las distancias topológicas globales en R⁵ no aportan información predictiva extra sobre la diferencia directa de Elo y estadísticas.")
 
                         st.markdown("##### Partido a partido")
                         st.dataframe(tabla_comp, hide_index=True, use_container_width=True)

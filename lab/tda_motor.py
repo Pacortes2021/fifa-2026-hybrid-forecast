@@ -212,26 +212,62 @@ def entrenar_modelo_tda(M, resultado_global, X_norm, equipos):
     return pipe, df
 
 
+def entrenar_modelo_combinado(M, resultado_global, X_norm, equipos, modelo_ml="base"):
+    """Entrena un clasificador logístico combinado que usa las variables de ML tradicional
+    (BASE_VARS o HYBRID_VARS) y les suma los features topológicos del TDA.
+    """
+    from motor import MUNDIALISTAS, tipo_competicion, K_FACTOR
+    from motor import BASE_VARS, HYBRID_VARS
+
+    cols_ml = HYBRID_VARS if modelo_ml == "hyb" else BASE_VARS
+    df = M["df"].copy()
+    m48 = set(MUNDIALISTAS)
+    df = df[df.local.isin(m48) & df.visita.isin(m48)].dropna(subset=cols_ml + ["resultado"])
+
+    filas_X, filas_y, pesos = [], [], []
+    for r in df.itertuples(index=False):
+        feats_tda = features_tda_partido(X_norm, equipos, r.local, r.visita, resultado_global)
+        if feats_tda is None:
+            continue
+        vars_ml = [getattr(r, col) for col in cols_ml]
+        vars_tda = [feats_tda[col] for col in FEATURES_TDA_COLS]
+        filas_X.append(vars_ml + vars_tda)
+        filas_y.append(int(r.resultado))
+        w = K_FACTOR.get(tipo_competicion(r.competicion), 1.0)
+        pesos.append(w)
+
+    X_tr = np.array(filas_X)
+    y_tr = np.array(filas_y)
+    w_tr = np.array(pesos)
+
+    pipe = Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))])
+    pipe.fit(X_tr, y_tr, m__sample_weight=w_tr)
+    return pipe
+
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 #  E) COMPARACIÓN RIGUROSA: TDA vs Híbrido en partidos reales del Mundial
 # ─────────────────────────────────────────────────────────────────────────────
 
 def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
-    """Compara TDA vs ML en los partidos reales del Mundial ya jugados.
+    """Compara TDA, ML y el modelo Combinado (ML + TDA) en los partidos reales del Mundial ya jugados.
     Devuelve tabla de resultados partido-a-partido + métricas globales.
     """
-    from motor import prob_partido
+    from motor import prob_partido, BASE_VARS, HYBRID_VARS
 
     # 1. Construir nube TDA
     df_raw, X_norm, equipos, scaler = cargar_nube(M["states"])
     resultado_global = calcular_persistencia(X_norm)
 
-    # 2. Entrenar modelo TDA (en datos históricos, no en el Mundial)
+    # 2. Entrenar modelos (en datos históricos, no en el Mundial)
     pipe_tda, _ = entrenar_modelo_tda(M, resultado_global, X_norm, equipos)
+    pipe_comb = entrenar_modelo_combinado(M, resultado_global, X_norm, equipos, modelo_ml)
 
     st = M["states"]
     filas = []
-    P_ml, P_tda, y_real = [], [], []
+    P_ml, P_tda, P_comb, y_real = [], [], [], []
+    cols_ml = HYBRID_VARS if modelo_ml == "hyb" else BASE_VARS
 
     for r in resultados_espn.itertuples(index=False):
         a, b = r.local, r.visita
@@ -248,21 +284,39 @@ def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
         feats_tda = features_tda_partido(X_norm, equipos, a, b, resultado_global)
         if feats_tda is None:
             continue
-        X_pred = np.array([[feats_tda[c] for c in FEATURES_TDA_COLS]])
-        clases = pipe_tda.classes_
-        p_raw = pipe_tda.predict_proba(X_pred)[0]
-        # Ordenar en [0, 1, 2]
+        
+        # Calcular TDA puro
+        X_pred_tda = np.array([[feats_tda[c] for c in FEATURES_TDA_COLS]])
+        clases_t = pipe_tda.classes_
+        p_raw_t = pipe_tda.predict_proba(X_pred_tda)[0]
         p_tda_ord = np.zeros(3)
-        for i, cls in enumerate(clases):
-            p_tda_ord[int(cls)] = p_raw[i]
+        for i, cls in enumerate(clases_t):
+            p_tda_ord[int(cls)] = p_raw_t[i]
 
-        # Predicción "naive" del TDA (solo distancia euclidiana al centroide)
-        dc_a = np.linalg.norm(X_norm[equipos.index(a)] - X_norm.mean(axis=0)) if a in equipos else 0
-        dc_b = np.linalg.norm(X_norm[equipos.index(b)] - X_norm.mean(axis=0)) if b in equipos else 0
-        dist_ab = np.linalg.norm(X_norm[equipos.index(a)] - X_norm[equipos.index(b)]) if (a in equipos and b in equipos) else 1
+        # Calcular Combinado (ML + TDA)
+        sa, sb = st.loc[a], st.loc[b]
+        
+        vals_ml_dict = {
+            "elo_diff": sa.elo - sb.elo,
+            "h2h_diff": M["H2H"].get((a, b), 0.0),
+            "squad_value_diff": np.log(sa.squad_value) - np.log(sb.squad_value) if sa.squad_value > 0 and sb.squad_value > 0 else 0.0,
+            "goles_anotados_diff": sa.goles_anotados_avg - sb.goles_anotados_avg,
+            "goles_recibidos_diff": sa.goles_recibidos_avg - sb.goles_recibidos_avg,
+            "tiros_arco_diff": sa.tiros_arco_avg - sb.tiros_arco_avg
+        }
+        vars_ml = [vals_ml_dict[col] for col in cols_ml]
+        vars_tda = [feats_tda[col] for col in FEATURES_TDA_COLS]
+        
+        X_pred_comb = np.array([vars_ml + vars_tda])
+        clases_c = pipe_comb.classes_
+        p_raw_c = pipe_comb.predict_proba(X_pred_comb)[0]
+        p_comb_ord = np.zeros(3)
+        for i, cls in enumerate(clases_c):
+            p_comb_ord[int(cls)] = p_raw_c[i]
 
         pred_ml = int(np.argmax([p_ml[2], p_ml[1], p_ml[0]]))  # 0=visita gana, 1=empate, 2=local
         pred_tda = int(np.argmax(p_tda_ord))
+        pred_comb = int(np.argmax(p_comb_ord))
 
         filas.append({
             "Partido": f"{a} vs {b}",
@@ -274,15 +328,21 @@ def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
             "TDA P(local)": f"{p_tda_ord[2]:.0%}",
             "TDA P(empate)": f"{p_tda_ord[1]:.0%}",
             "TDA P(visita)": f"{p_tda_ord[0]:.0%}",
+            "Comb P(local)": f"{p_comb_ord[2]:.0%}",
+            "Comb P(empate)": f"{p_comb_ord[1]:.0%}",
+            "Comb P(visita)": f"{p_comb_ord[0]:.0%}",
             "✅ ML": "✅" if pred_ml == real else "❌",
             "✅ TDA": "✅" if pred_tda == real else "❌",
+            "✅ Comb": "✅" if pred_comb == real else "❌",
             "_real": real,
             "_p_ml": [p_ml[2], p_ml[1], p_ml[0]],
             "_p_tda": p_tda_ord.tolist(),
+            "_p_comb": p_comb_ord.tolist(),
         })
 
         P_ml.append([p_ml[2], p_ml[1], p_ml[0]])
         P_tda.append(p_tda_ord.tolist())
+        P_comb.append(p_comb_ord.tolist())
         y_real.append(real)
 
     tabla = pd.DataFrame(filas)
@@ -292,6 +352,7 @@ def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
 
     P_ml_arr = np.array(P_ml)
     P_tda_arr = np.array(P_tda)
+    P_comb_arr = np.array(P_comb)
     y_arr = np.array(y_real)
     base = np.tile([0.279, 0.275, 0.446], (len(y_arr), 1))
 
@@ -299,18 +360,22 @@ def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
         "n": len(y_arr),
         "logloss_ml": log_loss(y_arr, P_ml_arr, labels=[0, 1, 2]),
         "logloss_tda": log_loss(y_arr, P_tda_arr, labels=[0, 1, 2]),
+        "logloss_comb": log_loss(y_arr, P_comb_arr, labels=[0, 1, 2]),
         "logloss_base": log_loss(y_arr, base, labels=[0, 1, 2]),
         "acierto_ml":  sum(1 for r, p in zip(y_arr, P_ml_arr) if np.argmax(p) == r) / len(y_arr),
         "acierto_tda": sum(1 for r, p in zip(y_arr, P_tda_arr) if np.argmax(p) == r) / len(y_arr),
+        "acierto_comb": sum(1 for r, p in zip(y_arr, P_comb_arr) if np.argmax(p) == r) / len(y_arr),
     }
 
     # Columnas limpias para mostrar
     cols_show = ["Partido", "Resultado", "Real",
                  "ML P(local)", "ML P(empate)", "ML P(visita)", "✅ ML",
+                 "Comb P(local)", "Comb P(empate)", "Comb P(visita)", "✅ Comb",
                  "TDA P(local)", "TDA P(empate)", "TDA P(visita)", "✅ TDA"]
     tabla_limpia = tabla[cols_show].copy()
 
     return tabla_limpia, metricas, resultado_global, X_norm, equipos
+
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -436,15 +501,14 @@ def fig_betti_vs_epsilon(resultado, n_eps=80):
 
 
 def fig_comparacion_logloss(metricas):
-    """Gráfico de barras: log-loss TDA vs ML vs Baseline."""
+    """Gráfico de barras: log-loss TDA vs ML vs Combinado vs Baseline."""
     import matplotlib.pyplot as plt
 
-    modelos = ["Baseline\n(frecuencias)", "Modelo TDA\n(topología)", "Modelo ML\n(Híbrido)"]
-    valores = [metricas["logloss_base"], metricas["logloss_tda"], metricas["logloss_ml"]]
-    aciertos = [None, metricas["acierto_tda"], metricas["acierto_ml"]]
-    colores = ["#94a3b8", "#e63946", "#0b3d91"]
+    modelos = ["Baseline\n(frecuencias)", "TDA\n(topología)", "ML\n(Híbrido)", "ML + TDA\n(Combinado)"]
+    valores = [metricas["logloss_base"], metricas["logloss_tda"], metricas["logloss_ml"], metricas["logloss_comb"]]
+    colores = ["#94a3b8", "#e63946", "#0b3d91", "#7a3b91"]
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4.5))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.8))
 
     bars = ax1.bar(modelos, valores, color=colores, width=0.5, edgecolor="white", linewidth=1.5)
     ax1.set_ylabel("Log-Loss (menor = mejor)", fontsize=10)
@@ -452,13 +516,13 @@ def fig_comparacion_logloss(metricas):
     for bar, val in zip(bars, valores):
         ax1.text(bar.get_x() + bar.get_width() / 2, val + 0.005,
                  f"{val:.3f}", ha="center", va="bottom", fontsize=10, fontweight="bold")
-    ax1.set_ylim(0, max(valores) * 1.2)
+    ax1.set_ylim(0, max(valores) * 1.25)
     ax1.grid(axis="y", alpha=0.3)
 
     # Acierto
-    ac_vals = [metricas["acierto_tda"], metricas["acierto_ml"]]
-    ac_cols = ["#e63946", "#0b3d91"]
-    ac_labs = ["TDA", "ML Híbrido"]
+    ac_vals = [metricas["acierto_tda"], metricas["acierto_ml"], metricas["acierto_comb"]]
+    ac_cols = ["#e63946", "#0b3d91", "#7a3b91"]
+    ac_labs = ["TDA", "ML Híbrido", "ML + TDA"]
     bars2 = ax2.bar(ac_labs, [v * 100 for v in ac_vals], color=ac_cols,
                     width=0.4, edgecolor="white", linewidth=1.5)
     ax2.set_ylabel("% Acierto (1X2)", fontsize=10)
@@ -469,7 +533,7 @@ def fig_comparacion_logloss(metricas):
     ax2.set_ylim(0, 105)
     ax2.grid(axis="y", alpha=0.3)
 
-    fig.suptitle("TDA vs ML Híbrido — Comparación directa en partidos reales", fontsize=12)
+    fig.suptitle("TDA vs ML vs ML+TDA — Comparación en partidos reales", fontsize=12, fontweight="bold")
     fig.tight_layout()
     return fig
 
