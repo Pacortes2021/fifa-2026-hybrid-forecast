@@ -24,6 +24,8 @@ from sklearn.metrics import log_loss
 import warnings
 warnings.filterwarnings("ignore")
 
+import pickle
+
 TDA_ERR_MSG = ""
 try:
     import ripser
@@ -39,6 +41,37 @@ DATA = Path(__file__).resolve().parent.parent / "data"
 # Las 5 variables del espacio de fases (igual que el análisis viral, pero con las nuestras)
 VARS_TDA = ["elo", "squad_value_log", "goles_anotados_avg", "goles_recibidos_avg", "tiros_arco_avg"]
 MUNDIALISTAS_48 = None   # se carga con cargar_nube()
+
+TODOS_EQUIPOS_GLOBAL = None
+
+def get_paises_global():
+    global TODOS_EQUIPOS_GLOBAL
+    if TODOS_EQUIPOS_GLOBAL is not None:
+        return TODOS_EQUIPOS_GLOBAL
+    try:
+        df_stats = pd.read_csv(DATA / "espn_stats.csv", usecols=["local", "visita"])
+        TODOS_EQUIPOS_GLOBAL = sorted(list(set(df_stats.local.dropna().unique()).union(set(df_stats.visita.dropna().unique()))))
+    except Exception:
+        from motor import MUNDIALISTAS
+        TODOS_EQUIPOS_GLOBAL = MUNDIALISTAS
+    return TODOS_EQUIPOS_GLOBAL
+
+
+def cargar_nube_global(M):
+    """Construye la nube de puntos global de los 220 países en R^5 normalizado."""
+    df_raw = M["states"].copy()
+    paises = get_paises_global()
+    paises_global = [p for p in df_raw.index if p in paises]
+    
+    df = df_raw.loc[paises_global].copy()
+    df["squad_value_log"] = np.log(df["squad_value"].clip(1e5))
+    
+    X_raw = df[VARS_TDA].values.astype(float)
+    scaler = MinMaxScaler()
+    X_norm = scaler.fit_transform(X_raw)
+    
+    return df, X_norm, paises_global, scaler
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 #  A) NUBE DE PUNTOS EN R^5
@@ -280,22 +313,39 @@ def entrenar_modelo_combinado(M, resultado_global, X_norm, equipos, modelo_ml="b
 # ─────────────────────────────────────────────────────────────────────────────
 
 def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
-    """Compara TDA, ML y el modelo Combinado (ML + TDA) en los partidos reales del Mundial ya jugados.
+    """Compara TDA, ML, el modelo Combinado Local (ML + TDA Local) y el modelo
+    Combinado Global (ML + TDA Dinámico Global pre-entrenado) en los partidos reales del Mundial ya jugados.
     Devuelve tabla de resultados partido-a-partido + métricas globales.
     """
     from motor import prob_partido, BASE_VARS, HYBRID_VARS
+    import pickle
 
-    # 1. Construir nube TDA
+    # 1. Construir nube TDA Local (48 mundialistas)
     df_raw, X_norm, equipos, scaler = cargar_nube(M["states"])
     resultado_global = calcular_persistencia(X_norm)
 
-    # 2. Entrenar modelos (en datos históricos, no en el Mundial)
+    # 2. Construir nube TDA Global (220 países)
+    df_raw_g, X_norm_g, equipos_g, scaler_g = cargar_nube_global(M)
+    resultado_global_g = calcular_persistencia(X_norm_g)
+
+    # 3. Cargar el modelo dinámico global pre-entrenado
+    suffix = "hyb" if modelo_ml == "hyb" else "base"
+    path_global = Path(__file__).resolve().parent.parent / f"outputs/pipe_dyn_global_{suffix}.pkl"
+    pipe_dyn_global = None
+    if path_global.exists():
+        try:
+            with open(path_global, "rb") as f:
+                pipe_dyn_global = pickle.load(f)
+        except Exception:
+            pass
+
+    # 4. Entrenar modelos locales
     pipe_tda, _ = entrenar_modelo_tda(M, resultado_global, X_norm, equipos)
     pipe_comb = entrenar_modelo_combinado(M, resultado_global, X_norm, equipos, modelo_ml)
 
     st = M["states"]
     filas = []
-    P_ml, P_tda, P_comb, y_real = [], [], [], []
+    P_ml, P_tda, P_comb, P_dg, y_real = [], [], [], [], []
     cols_ml = HYBRID_VARS if modelo_ml == "hyb" else BASE_VARS
 
     for r in resultados_espn.itertuples(index=False):
@@ -309,7 +359,7 @@ def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
         # Predicción ML tradicional
         p_ml = prob_partido(M, a, b, "auto", modelo_ml)  # [P(a), P(empate), P(b)]
 
-        # Predicción TDA
+        # Predicción TDA Local
         feats_tda = features_tda_partido(X_norm, equipos, a, b, resultado_global, M)
         if feats_tda is None:
             continue
@@ -322,9 +372,8 @@ def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
         for i, cls in enumerate(clases_t):
             p_tda_ord[int(cls)] = p_raw_t[i]
 
-        # Calcular Combinado (ML + TDA)
+        # Calcular Combinado Local (ML + TDA)
         sa, sb = st.loc[a], st.loc[b]
-        
         vals_ml_dict = {
             "elo_diff": sa.elo - sb.elo,
             "h2h_diff": M["H2H"].get((a, b), 0.0),
@@ -343,6 +392,20 @@ def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
         for i, cls in enumerate(clases_c):
             p_comb_ord[int(cls)] = p_raw_c[i]
 
+        # Calcular Combinado Global (TDA Dinámico Global + ML)
+        p_dg_ord = np.zeros(3)
+        pred_dg = -1
+        feats_tda_g = features_tda_partido(X_norm_g, equipos_g, a, b, resultado_global_g, M)
+        
+        if pipe_dyn_global is not None and feats_tda_g is not None:
+            vars_tda_g = [feats_tda_g[col] for col in FEATURES_TDA_COLS]
+            X_pred_dg = np.array([vars_ml + vars_tda_g])
+            clases_dg = pipe_dyn_global.classes_
+            p_raw_dg = pipe_dyn_global.predict_proba(X_pred_dg)[0]
+            for i, cls in enumerate(clases_dg):
+                p_dg_ord[int(cls)] = p_raw_dg[i]
+            pred_dg = int(np.argmax(p_dg_ord))
+
         pred_ml = int(np.argmax([p_ml[2], p_ml[1], p_ml[0]]))  # 0=visita gana, 1=empate, 2=local
         pred_tda = int(np.argmax(p_tda_ord))
         pred_comb = int(np.argmax(p_comb_ord))
@@ -360,18 +423,25 @@ def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
             "Comb P(local)": f"{p_comb_ord[2]:.0%}",
             "Comb P(empate)": f"{p_comb_ord[1]:.0%}",
             "Comb P(visita)": f"{p_comb_ord[0]:.0%}",
+            "DG P(local)": f"{p_dg_ord[2]:.0%}" if pred_dg != -1 else "N/A",
+            "DG P(empate)": f"{p_dg_ord[1]:.0%}" if pred_dg != -1 else "N/A",
+            "DG P(visita)": f"{p_dg_ord[0]:.0%}" if pred_dg != -1 else "N/A",
             "✅ ML": "✅" if pred_ml == real else "❌",
             "✅ TDA": "✅" if pred_tda == real else "❌",
             "✅ Comb": "✅" if pred_comb == real else "❌",
+            "✅ DG": ("✅" if pred_dg == real else "❌") if pred_dg != -1 else "—",
             "_real": real,
             "_p_ml": [p_ml[2], p_ml[1], p_ml[0]],
             "_p_tda": p_tda_ord.tolist(),
             "_p_comb": p_comb_ord.tolist(),
+            "_p_dg": p_dg_ord.tolist() if pred_dg != -1 else None,
         })
 
         P_ml.append([p_ml[2], p_ml[1], p_ml[0]])
         P_tda.append(p_tda_ord.tolist())
         P_comb.append(p_comb_ord.tolist())
+        if pred_dg != -1:
+            P_dg.append(p_dg_ord.tolist())
         y_real.append(real)
 
     tabla = pd.DataFrame(filas)
@@ -394,16 +464,24 @@ def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
         "acierto_ml":  sum(1 for r, p in zip(y_arr, P_ml_arr) if np.argmax(p) == r) / len(y_arr),
         "acierto_tda": sum(1 for r, p in zip(y_arr, P_tda_arr) if np.argmax(p) == r) / len(y_arr),
         "acierto_comb": sum(1 for r, p in zip(y_arr, P_comb_arr) if np.argmax(p) == r) / len(y_arr),
+        "has_dyn_global": len(P_dg) > 0
     }
+
+    if len(P_dg) > 0:
+        P_dg_arr = np.array(P_dg)
+        metricas["logloss_dg"] = log_loss(y_arr, P_dg_arr, labels=[0, 1, 2])
+        metricas["acierto_dg"] = sum(1 for r, p in zip(y_arr, P_dg_arr) if np.argmax(p) == r) / len(y_arr)
 
     # Columnas limpias para mostrar
     cols_show = ["Partido", "Resultado", "Real",
                  "ML P(local)", "ML P(empate)", "ML P(visita)", "✅ ML",
                  "Comb P(local)", "Comb P(empate)", "Comb P(visita)", "✅ Comb",
+                 "DG P(local)", "DG P(empate)", "DG P(visita)", "✅ DG",
                  "TDA P(local)", "TDA P(empate)", "TDA P(visita)", "✅ TDA"]
     tabla_limpia = tabla[cols_show].copy()
 
     return tabla_limpia, metricas, resultado_global, X_norm, equipos
+
 
 
 
@@ -530,14 +608,27 @@ def fig_betti_vs_epsilon(resultado, n_eps=80):
 
 
 def fig_comparacion_logloss(metricas):
-    """Gráfico de barras: log-loss TDA vs ML vs Combinado vs Baseline."""
+    """Gráfico de barras: log-loss TDA vs ML vs Combinado vs Dinámico Global vs Baseline."""
     import matplotlib.pyplot as plt
 
-    modelos = ["Baseline\n(frecuencias)", "TDA\n(topología)", "ML\n(Híbrido)", "ML + TDA\n(Combinado)"]
+    modelos = ["Baseline\n(frecuencias)", "TDA\n(Local)", "ML\n(Híbrido)", "ML+TDA\n(Local)"]
     valores = [metricas["logloss_base"], metricas["logloss_tda"], metricas["logloss_ml"], metricas["logloss_comb"]]
     colores = ["#94a3b8", "#e63946", "#0b3d91", "#7a3b91"]
+    
+    ac_vals = [metricas["acierto_tda"], metricas["acierto_ml"], metricas["acierto_comb"]]
+    ac_cols = ["#e63946", "#0b3d91", "#7a3b91"]
+    ac_labs = ["TDA", "ML Híbrido", "ML+TDA"]
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.8))
+    if metricas.get("has_dyn_global"):
+        modelos.append("ML+TDA\n(Global Dyn)")
+        valores.append(metricas["logloss_dg"])
+        colores.append("#2a9d5c")
+        
+        ac_vals.append(metricas["acierto_dg"])
+        ac_cols.append("#2a9d5c")
+        ac_labs.append("ML+TDA (Global)")
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5.0))
 
     bars = ax1.bar(modelos, valores, color=colores, width=0.5, edgecolor="white", linewidth=1.5)
     ax1.set_ylabel("Log-Loss (menor = mejor)", fontsize=10)
@@ -549,9 +640,6 @@ def fig_comparacion_logloss(metricas):
     ax1.grid(axis="y", alpha=0.3)
 
     # Acierto
-    ac_vals = [metricas["acierto_tda"], metricas["acierto_ml"], metricas["acierto_comb"]]
-    ac_cols = ["#e63946", "#0b3d91", "#7a3b91"]
-    ac_labs = ["TDA", "ML Híbrido", "ML + TDA"]
     bars2 = ax2.bar(ac_labs, [v * 100 for v in ac_vals], color=ac_cols,
                     width=0.4, edgecolor="white", linewidth=1.5)
     ax2.set_ylabel("% Acierto (1X2)", fontsize=10)
