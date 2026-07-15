@@ -20,6 +20,7 @@ import streamlit.components.v1 as components
 
 import motor as mo
 import espn_live
+import tda_motor as tda
 
 st.set_page_config(page_title="🧪 Lab Mundial 2026", page_icon="🏆", layout="wide",
                    initial_sidebar_state="collapsed")
@@ -297,9 +298,10 @@ st.sidebar.info("Todos los modelos usan **ponderación K-factor**: los partidos 
 if len(ESPN_DF):
     st.sidebar.success(f"🛰️ ESPN: {len(ESPN_DF)} partidos reales cargados.")
 
-tab1, tabB, tab3, tab6, tab4, tab5 = st.tabs(
+tab1, tabB, tab3, tab6, tab4, tab5, tab_tda = st.tabs(
     ["⚽ Partido + Mercados", "🗺️ Cuadro eliminatorias", "🔴 Torneo en vivo",
-     "🔬 Modelo vs realidad", "🎯 Validación", "📈 Robustez"])
+     "🔬 Modelo vs realidad", "🎯 Validación", "📈 Robustez", "🔷 TDA vs ML"])
+
 
 # ============================================================================
 # TAB 1 · Partido + mercados (comparación Base vs Híbrido, estilo app principal)
@@ -658,3 +660,186 @@ with tab5:
         d2.metric("Empate", f"{p1[1]:.1%}", f"{(p1[1]-p0[1])*100:+.1f} pts")
         d3.metric(f"Gana {nombre(rival)}", f"{p1[2]:.1%}", f"{(p1[2]-p0[2])*100:+.1f} pts")
         st.caption(f"Elo {nombre(eq)}: {M['states'].loc[eq,'elo']:.0f} → {M['states'].loc[eq,'elo']+delta:.0f}")
+
+# ============================================================================
+# TAB 7 · TDA vs ML  — Análisis Topológico de Datos comparado con el modelo
+# ============================================================================
+with tab_tda:
+    st.markdown('<div class="sec-title">🔷 TDA vs ML — ¿Puede la Topología predecir fútbol?</div>',
+                unsafe_allow_html=True)
+
+    with st.expander("ℹ️ ¿Qué es el TDA y cómo funciona aquí?", expanded=False):
+        st.markdown("""
+        **TDA (Análisis Topológico de Datos)** estudia la *forma* de los datos, no solo sus valores.
+
+        Colocamos cada una de las **48 selecciones como un punto en R⁵**
+        (Elo, valor de plantilla, goles anotados, goles recibidos, tiros al arco —
+        las mismas variables de tu modelo híbrido). Luego "inflamos bolas" alrededor de cada punto
+        y observamos qué estructuras aparecen/desaparecen conforme el radio ε crece
+        (**filtración de Vietoris-Rips**).
+
+        Lo que se mide:
+        - **β₀** = cuántas "islas" de equipos hay (¿todos conectados?)
+        - **β₁** = cuántos "loops" hay (¿grupos de paridad competitiva?)
+        - **β₂** = cuántas "burbujas" hay (¿núcleos cerrados de élite?)
+
+        Luego entrenamos un clasificador con features topológicos y comparamos su log-loss
+        contra el modelo híbrido en los partidos reales del Mundial.
+        """)
+
+    if not tda.TDA_OK:
+        st.error("❌ Instala las librerías TDA: `pip install ripser persim`")
+    else:
+        import numpy as np
+
+        # ── 1) Nube de puntos ─────────────────────────────────────────────
+        st.markdown("### 1️⃣ Las 48 selecciones en el espacio R⁵")
+        st.caption("Proyección 3D de un espacio de 5 dimensiones. ⭐ dorado = semifinalistas actuales.")
+
+        with st.spinner("Construyendo nube de puntos en R⁵…"):
+            df_raw_tda, X_norm_tda, equipos_tda, _ = tda.cargar_nube(M["states"])
+
+        col_nube, col_info = st.columns([3, 2])
+        with col_nube:
+            fig_n = tda.fig_nube_3d(X_norm_tda, equipos_tda, M["states"])
+            st.pyplot(fig_n)
+
+        with col_info:
+            centroide = X_norm_tda.mean(axis=0)
+            distancias_c = {eq: float(np.linalg.norm(X_norm_tda[i] - centroide))
+                            for i, eq in enumerate(equipos_tda)}
+            top_nucleo = sorted(distancias_c.items(), key=lambda x: x[1])[:6]
+            top_peri = sorted(distancias_c.items(), key=lambda x: -x[1])[:6]
+
+            st.markdown("**🎯 Equipos en el núcleo** *(más similares al promedio)*")
+            for eq, d in top_nucleo:
+                st.markdown(f"- {bandera(eq)} {nombre(eq)}: `ε={d:.3f}`")
+            st.markdown("**🏝️ Equipos en la periferia** *(outliers en el espacio)*")
+            for eq, d in top_peri:
+                st.markdown(f"- {bandera(eq)} {nombre(eq)}: `ε={d:.3f}`")
+            st.caption("💡 Periférico ≠ débil. Un equipo puede ser outlier por localía, valor de plantilla, etc.")
+
+        st.markdown("---")
+
+        # ── 2) Homología persistente ───────────────────────────────────────
+        st.markdown("### 2️⃣ Homología Persistente — la 'huella topológica' del torneo")
+        st.caption("El diagrama de persistencia muestra estructuras topológicas. "
+                   "Puntos lejos de la diagonal = estructuras importantes y duraderas.")
+
+        with st.spinner("Calculando homología persistente (puede tardar 5-10s)…"):
+            resultado_tda = tda.calcular_persistencia(X_norm_tda, max_dim=2)
+        resumen_top = tda.tabla_rasgos_topologicos_descripcion(resultado_tda, equipos_tda, X_norm_tda)
+
+        col_p, col_b = st.columns(2)
+        with col_p:
+            st.pyplot(tda.fig_diagrama_persistencia(resultado_tda))
+        with col_b:
+            st.pyplot(tda.fig_betti_vs_epsilon(resultado_tda))
+
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("ε para conectar todo", f"{resumen_top['radio_conexion_total']:.3f}"
+                  if resumen_top['radio_conexion_total'] else "—",
+                  help="A este radio ε todas las selecciones forman una sola componente (β₀ = 1)")
+        m2.metric("Ciclos H₁ persistentes", resumen_top["n_ciclos_persistentes"],
+                  help="Grupos de equipos con 'paridad' en sus variables")
+        m3.metric("Entropía H₀", resumen_top["entropia_h0"],
+                  help="Diversidad entre grupos. Mayor = más heterogéneo")
+        m4.metric("Entropía H₁", resumen_top["entropia_h1"],
+                  help="Complejidad de ciclos. Mayor = más imprevisible")
+
+        # Tabla de Betti a diferentes radios
+        eps_vals = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5]
+        dgms_d = resultado_tda["dgms"]
+        betti_rows = []
+        for eps in eps_vals:
+            b0, b1, b2 = tda.numeros_betti(dgms_d, eps)
+            betti_rows.append({"ε (radio)": eps, "β₀ islas": b0, "β₁ ciclos": b1, "β₂ cavidades": b2})
+        with st.expander("Ver tabla de Betti a diferentes radios ε"):
+            st.dataframe(tda.pd.DataFrame(betti_rows), hide_index=True, use_container_width=True)
+            st.caption("Cuando β₀=1 → todos conectados | β₁>0 → hay loops de paridad | β₂>0 → hay 'élite cerrada'")
+
+        st.markdown("---")
+
+        # ── 3) Comparación directa TDA vs ML ──────────────────────────────
+        st.markdown("### 3️⃣ La prueba de fuego: TDA vs ML en los partidos REALES del Mundial")
+        st.caption("Out-of-sample puro. Ambos modelos entrenados en datos históricos, evaluados en el Mundial.")
+
+        if len(ESPN_DF) == 0:
+            st.info("⏳ Esta sección se activa cuando haya partidos reales del Mundial registrados.")
+        else:
+            with st.spinner(f"Entrenando clasificador TDA y comparando en {len(ESPN_DF)} partidos…"):
+                try:
+                    tabla_comp, metricas_comp, _, _, _ = tda.comparar_en_mundial(M, ESPN_DF, modelo)
+
+                    if metricas_comp:
+                        c1, c2, c3, c4, c5 = st.columns(5)
+                        c1.metric("Partidos", metricas_comp["n"])
+                        c2.metric("Log-Loss ML", f"{metricas_comp['logloss_ml']:.3f}",
+                                  f"{metricas_comp['logloss_ml']-metricas_comp['logloss_base']:+.3f} vs base",
+                                  delta_color="inverse")
+                        c3.metric("Log-Loss TDA", f"{metricas_comp['logloss_tda']:.3f}",
+                                  f"{metricas_comp['logloss_tda']-metricas_comp['logloss_base']:+.3f} vs base",
+                                  delta_color="inverse")
+                        c4.metric("Acierto ML", f"{metricas_comp['acierto_ml']:.0%}")
+                        c5.metric("Acierto TDA", f"{metricas_comp['acierto_tda']:.0%}")
+
+                        st.pyplot(tda.fig_comparacion_logloss(metricas_comp))
+
+                        diff = metricas_comp["logloss_ml"] - metricas_comp["logloss_tda"]
+                        if abs(diff) < 0.01:
+                            st.info(f"📊 **Empate técnico** (Δ={abs(diff):.4f}). Con {metricas_comp['n']} partidos, "
+                                    "ambos modelos tienen desempeño estadísticamente indistinguible.")
+                        elif diff < 0:
+                            st.success(f"✅ **El ML Híbrido gana** por {abs(diff):.3f} de log-loss. "
+                                       "Las variables calibradas superan a la geometría pura.")
+                        else:
+                            st.warning(f"⚠️ **El TDA supera al ML** por {diff:.3f} en esta muestra. "
+                                       "Puede ser varianza de muestra pequeña — monitorear en fases siguientes.")
+
+                        st.markdown("##### Partido a partido")
+                        st.dataframe(tabla_comp, hide_index=True, use_container_width=True)
+                    else:
+                        st.warning("No se pudieron calcular métricas comparativas.")
+                except Exception as e:
+                    st.error(f"Error al calcular TDA vs ML: {e}")
+
+        st.markdown("---")
+
+        # ── 4) Interpretación honesta ──────────────────────────────────────
+        st.markdown("### 4️⃣ Diagnóstico topológico — ¿Qué dice la geometría del torneo?")
+        with st.container(border=True):
+            st.markdown("""
+| Lo que mide el TDA | Qué significa | ¿Predice resultados? |
+|---|---|---|
+| **β₀ > 1** a ε pequeño | Hay grupos bien diferenciados de equipos | No directamente |
+| **β₁ > 0** | Hay "zonas de paridad" circular entre equipos | Sugiere, no garantiza |
+| **Equipo periférico** | Outlier en alguna variable (p.ej. localía alta) | No implica victoria |
+| **ε alto para conectar** | El torneo es diverso / hay una jerarquía clara | Compatible con el Elo |
+
+**Conclusión honesta:** El TDA es una herramienta poderosa de *exploración*, no de *predicción pura*.
+Describe la forma de los datos. Para predecir partidos con probabilidades calibradas, el modelo
+Elo+H2H+valor gana porque tiene un historico de 5.000+ partidos ajustando sus parámetros.
+El TDA puede aportar como **feature adicional**, no como reemplazo.
+            """)
+
+        # Botón para descargar reporte
+        resumen_txt = (
+            f"REPORTE TOPOLÓGICO — MUNDIAL 2026\n"
+            f"Radio ε conexión total: {resumen_top['radio_conexion_total']:.4f}\n"
+            f"Ciclos H₁ persistentes: {resumen_top['n_ciclos_persistentes']}\n"
+            f"Entropía H₀: {resumen_top['entropia_h0']}\n\n"
+            f"Núcleo:\n" + "\n".join(f"  {nombre(eq)}: {d:.3f}"
+                                      for eq, d in resumen_top["top_centrales"])
+            + f"\n\nPeriferia:\n" + "\n".join(f"  {nombre(eq)}: {d:.3f}"
+                                               for eq, d in resumen_top["top_aislados"])
+        )
+        if len(ESPN_DF) > 0 and "metricas_comp" in dir() and metricas_comp:
+            resumen_txt += (
+                f"\n\nComparación ({metricas_comp['n']} partidos):\n"
+                f"  Log-loss ML:  {metricas_comp['logloss_ml']:.4f}\n"
+                f"  Log-loss TDA: {metricas_comp['logloss_tda']:.4f}\n"
+                f"  Acierto ML:   {metricas_comp['acierto_ml']:.1%}\n"
+                f"  Acierto TDA:  {metricas_comp['acierto_tda']:.1%}\n"
+            )
+        st.download_button("📄 Descargar reporte topológico (.txt)",
+                           resumen_txt, file_name="reporte_tda_mundial2026.txt", mime="text/plain")
