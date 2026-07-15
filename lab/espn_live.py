@@ -11,6 +11,8 @@ import pandas as pd
 
 SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
 INICIO_MUNDIAL = "20260611"
+INICIO_KO      = "20260628"   # inicio fase eliminatoria (fin grupos = 27-jun)
+FIN_GRUPOS     = "20260627"   # último día de la fase de grupos
 
 # ESPN usa algunos nombres distintos a team_states.csv -> normalización
 NORM = {
@@ -37,10 +39,27 @@ def traer_resultados(desde=INICIO_MUNDIAL, hasta=None, solo_finalizados=True):
        Nombres ya normalizados a los de team_states.csv."""
     if hasta is None:
         hasta = date.today().strftime("%Y%m%d")
-    url = f"{SCOREBOARD}?dates={desde}-{hasta}"
-    r = requests.get(url, timeout=20)
-    r.raise_for_status()
-    eventos = r.json().get("events", [])
+    
+    # La API de ESPN limita a 100 eventos por llamada. El Mundial 2026 tiene 104 partidos
+    # (72 grupos + 32 eliminatorias), así que se divide en dos rangos para no truncar.
+    rangos = []
+    if desde <= FIN_GRUPOS:
+        rangos.append((desde, min(hasta, FIN_GRUPOS)))
+    if hasta >= INICIO_KO:
+        rangos.append((max(desde, INICIO_KO), hasta))
+
+    seen = set()
+    eventos = []
+    for d_inicio, d_fin in rangos:
+        if d_inicio > d_fin:
+            continue
+        url = f"{SCOREBOARD}?dates={d_inicio}-{d_fin}"
+        r = requests.get(url, timeout=20)
+        r.raise_for_status()
+        for ev in r.json().get("events", []):
+            if ev["id"] not in seen:   # evitar duplicados si los rangos se solapan
+                seen.add(ev["id"])
+                eventos.append(ev)
 
     filas = []
     for e in eventos:
