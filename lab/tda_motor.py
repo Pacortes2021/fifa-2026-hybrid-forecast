@@ -24,12 +24,15 @@ from sklearn.metrics import log_loss
 import warnings
 warnings.filterwarnings("ignore")
 
+TDA_ERR_MSG = ""
 try:
     import ripser
     from persim import plot_diagrams as _plot_diagrams
     TDA_OK = True
-except ImportError:
+except Exception as e:
+    import traceback
     TDA_OK = False
+    TDA_ERR_MSG = f"{str(e)}\n{traceback.format_exc()}"
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 

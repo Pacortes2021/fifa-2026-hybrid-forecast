@@ -689,6 +689,7 @@ with tab_tda:
 
     if not tda.TDA_OK:
         st.error("❌ Instala las librerías TDA: `pip install ripser persim`")
+        st.code(tda.TDA_ERR_MSG, language="text")
     else:
         import numpy as np
 
