@@ -141,12 +141,24 @@ def resumen_topologico(resultado):
 #  C) FEATURES TOPOLÓGICOS POR PAR DE EQUIPOS (para predecir partidos)
 # ─────────────────────────────────────────────────────────────────────────────
 
-def features_tda_partido(X_norm, equipos, a, b, resultado_global):
+DOMINANCIA_EDGES = None
+
+def inicializar_dominancia(M, equipos):
+    global DOMINANCIA_EDGES
+    if DOMINANCIA_EDGES is not None:
+        return
+    DOMINANCIA_EDGES = set()
+    for (a, b), diff in M["H2H"].items():
+        if diff > 0 and a in equipos and b in equipos:
+            DOMINANCIA_EDGES.add((a, b))
+
+def features_tda_partido(X_norm, equipos, a, b, resultado_global, M=None):
     """Features TDA para un partido concreto a vs b:
       - Diferencia de distancias al centroide (¿quién está más cerca del "núcleo duro"?)
       - Distancia euclidiana entre a y b en R^5 normalizado
       - Posición relativa en el espacio topológico (percentil de ε de conexión)
       - Entropías del diagrama global como contexto
+      - Directed Cycle Score (TDA Dirigido): Homología en grafos dirigidos
     """
     idx_a = equipos.index(a) if a in equipos else None
     idx_b = equipos.index(b) if b in equipos else None
@@ -162,6 +174,21 @@ def features_tda_partido(X_norm, equipos, a, b, resultado_global):
     ent_h0 = entropia_persistencia(dgms[0])
     ent_h1 = entropia_persistencia(dgms[1]) if len(dgms) > 1 else 0.0
 
+    # Calcular score de ciclos dirigidos (TDA Dirigido)
+    directed_cycle_score = 0.0
+    if M is not None:
+        inicializar_dominancia(M, equipos)
+        paths_ab = 0
+        paths_ba = 0
+        for c in equipos:
+            if c == a or c == b:
+                continue
+            if (a, c) in DOMINANCIA_EDGES and (c, b) in DOMINANCIA_EDGES:
+                paths_ab += 1
+            if (b, c) in DOMINANCIA_EDGES and (c, a) in DOMINANCIA_EDGES:
+                paths_ba += 1
+        directed_cycle_score = float(paths_ab - paths_ba)
+
     return {
         "dist_centroide_diff": dist_a - dist_b,   # + → a más periférico
         "dist_eucl_ab": dist_ab,
@@ -169,6 +196,7 @@ def features_tda_partido(X_norm, equipos, a, b, resultado_global):
         "dist_centroide_b": dist_b,
         "entropia_h0": ent_h0,
         "entropia_h1": ent_h1,
+        "directed_cycle_score": directed_cycle_score
     }
 
 
@@ -178,7 +206,8 @@ def features_tda_partido(X_norm, equipos, a, b, resultado_global):
 
 FEATURES_TDA_COLS = ["dist_centroide_diff", "dist_eucl_ab",
                      "dist_centroide_a", "dist_centroide_b",
-                     "entropia_h0", "entropia_h1"]
+                     "entropia_h0", "entropia_h1", "directed_cycle_score"]
+
 
 
 def entrenar_modelo_tda(M, resultado_global, X_norm, equipos):
@@ -195,7 +224,7 @@ def entrenar_modelo_tda(M, resultado_global, X_norm, equipos):
 
     filas_X, filas_y, pesos = [], [], []
     for r in df.itertuples(index=False):
-        feats = features_tda_partido(X_norm, equipos, r.local, r.visita, resultado_global)
+        feats = features_tda_partido(X_norm, equipos, r.local, r.visita, resultado_global, M)
         if feats is None:
             continue
         filas_X.append([feats[c] for c in FEATURES_TDA_COLS])
@@ -226,7 +255,7 @@ def entrenar_modelo_combinado(M, resultado_global, X_norm, equipos, modelo_ml="b
 
     filas_X, filas_y, pesos = [], [], []
     for r in df.itertuples(index=False):
-        feats_tda = features_tda_partido(X_norm, equipos, r.local, r.visita, resultado_global)
+        feats_tda = features_tda_partido(X_norm, equipos, r.local, r.visita, resultado_global, M)
         if feats_tda is None:
             continue
         vars_ml = [getattr(r, col) for col in cols_ml]
@@ -281,7 +310,7 @@ def comparar_en_mundial(M, resultados_espn, modelo_ml="base"):
         p_ml = prob_partido(M, a, b, "auto", modelo_ml)  # [P(a), P(empate), P(b)]
 
         # Predicción TDA
-        feats_tda = features_tda_partido(X_norm, equipos, a, b, resultado_global)
+        feats_tda = features_tda_partido(X_norm, equipos, a, b, resultado_global, M)
         if feats_tda is None:
             continue
         

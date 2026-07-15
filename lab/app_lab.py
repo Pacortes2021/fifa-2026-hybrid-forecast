@@ -668,23 +668,29 @@ with tab_tda:
     st.markdown('<div class="sec-title">🔷 TDA vs ML — ¿Puede la Topología predecir fútbol?</div>',
                 unsafe_allow_html=True)
 
-    with st.expander("ℹ️ ¿Qué es el TDA y cómo funciona aquí?", expanded=False):
+    with st.expander("ℹ️ ¿Qué es el TDA y cómo funciona aquí? (click para expandir)", expanded=False):
         st.markdown("""
         **TDA (Análisis Topológico de Datos)** estudia la *forma* de los datos, no solo sus valores.
-
-        Colocamos cada una de las **48 selecciones como un punto en R⁵**
-        (Elo, valor de plantilla, goles anotados, goles recibidos, tiros al arco —
-        las mismas variables de tu modelo híbrido). Luego "inflamos bolas" alrededor de cada punto
-        y observamos qué estructuras aparecen/desaparecen conforme el radio ε crece
-        (**filtración de Vietoris-Rips**).
-
-        Lo que se mide:
-        - **β₀** = cuántas "islas" de equipos hay (¿todos conectados?)
-        - **β₁** = cuántos "loops" hay (¿grupos de paridad competitiva?)
-        - **β₂** = cuántas "burbujas" hay (¿núcleos cerrados de élite?)
-
-        Luego entrenamos un clasificador con features topológicos y comparamos su log-loss
-        contra el modelo híbrido en los partidos reales del Mundial.
+        
+        Aquí implementamos **dos soluciones topológicas**:
+        
+        #### 1️⃣ Solución 1: TDA Geométrico (Undirected)
+        Colocamos cada una de las **48 selecciones como un punto en R⁵** (Elo, valor de plantilla, goles anotados/recibidos, tiros al arco). 
+        Usando la **filtración de Vietoris-Rips**, medimos:
+        - **β₀** = ¿Cuántas "islas" de equipos hay? (Componentes conexas)
+        - **β₁** = ¿Cuántos bucles o grupos circulares de paridad competitiva hay?
+        - **β₂** = ¿Hay cavidades tridimensionales? ( Blindajes de elite cerrada)
+        
+        *Limitación:* Al ser simétrico, no sabe quién domina a quién (España vs Marruecos se ve igual a Marruecos vs España en distancia euclidiana pura).
+        
+        #### 2️⃣ Solución 2: TDA Dirigido (Directed Cycle Homology)
+        Para corregir el azar, construimos un **grafo dirigido** $A \\to B$ si el equipo $A$ tiene récord H2H positivo contra $B$. 
+        El algoritmo busca **ciclos dirigidos** de longitud 3 ($A \\to B \\to C \\to A$), que representan el efecto **intransitivo (Piedra, Papel o Tijera)** en el fútbol:
+        - *Marruecos* vence a *Brasil* (defensa y contra)
+        - *Brasil* vence a *España* (pegada física)
+        - *España* vence a *Marruecos* (posesión absoluta)
+        
+        Calculamos el **Directed Cycle Score ($D_{AB}$)** como el número de caminos de longitud 2 transitivos ($A \\to C \\to B$) vs contrarios ($B \\to C \\to A$). Esto permite capturar neutralizaciones tácticas que el Elo lineal tradicional ignora.
         """)
 
     if not tda.TDA_OK:
