@@ -256,26 +256,35 @@ def h2h_par(hist, a, b):
     return float(d.mean())
 
 
-def features_cruce(M, a, b, states=None):
+def features_cruce(M, a, b, states=None, two_stage=False):
     """Las variables del cruce. `states` permite inyectar un estado modificado (sensibilidad / vivo)."""
     st = M["states"] if states is None else states
     sa, sb = st.loc[a], st.loc[b]
+    
+    if two_stage:
+        sots = stats_esperadas(M, a, b, cancha="neutral", states=states)
+        sot_diff = sots["tiros_arco"][0] - sots["tiros_arco"][1]
+    else:
+        sot_diff = sa.tiros_arco_avg - sb.tiros_arco_avg
+        
     return {
         "elo_diff": sa.elo - sb.elo,
         "squad_value_diff": np.log(sa.squad_value) - np.log(sb.squad_value),
         "h2h_diff": M["H2H"].get((a, b), 0.0),
         "goles_anotados_diff": sa.goles_anotados_avg - sb.goles_anotados_avg,
         "goles_recibidos_diff": sa.goles_recibidos_avg - sb.goles_recibidos_avg,
-        "tiros_arco_diff": sa.tiros_arco_avg - sb.tiros_arco_avg,
+        "tiros_arco_diff": sot_diff,
     }
 
 
 def prob_partido(M, a, b, cancha="auto", modelo="base", states=None):
     """[P(gana a), P(empate), P(gana b)] con simetrización / localía de anfitrión."""
+    is_two_stage = (modelo == "two_stage")
     pipe = M["pipe_base"] if modelo == "base" else M["pipe_hyb"]
     cols = BASE_VARS if modelo == "base" else HYBRID_VARS
-    fa = pd.DataFrame([features_cruce(M, a, b, states)])[cols]
-    fb = pd.DataFrame([features_cruce(M, b, a, states)])[cols]
+    
+    fa = pd.DataFrame([features_cruce(M, a, b, states, two_stage=is_two_stage)])[cols]
+    fb = pd.DataFrame([features_cruce(M, b, a, states, two_stage=is_two_stage)])[cols]
     pa = pipe.predict_proba(fa)[0]; pb = pipe.predict_proba(fb)[0]
     va = np.array([pa[2], pa[1], pa[0]]); vb = np.array([pb[0], pb[1], pb[2]])
     if cancha == "1": return va
@@ -369,9 +378,10 @@ def handicap_asiatico(mix, linea_a):
 # --------------------------------------------------------------------------- #
 #  FRENTE 1b · estadísticas esperadas del partido (córners, tiros al arco, faltas, posesión)
 # --------------------------------------------------------------------------- #
-def _fila_stats(M, eq, riv, es_local):
+def _fila_stats(M, eq, riv, es_local, states=None):
     """Reconstruye las features point-in-time de un equipo vs su rival, desde team_states + conc."""
-    st, conc, g = M["states"], M["conc"], M["stat_global"]
+    st = M["states"] if states is None else states
+    conc, g = M["conc"], M["stat_global"]
     cget = lambda team, col: float(conc.loc[team, col]) if team in conc.index else g.get(col, 0.0)
     return {
         "prop_tiros_f": float(st.loc[eq, "tiros_avg"]),
@@ -396,7 +406,7 @@ def _predecir_stat(M, stat, fila):
     return float(m.predict(X)[0])
 
 
-def stats_esperadas(M, a, b, cancha="neutral"):
+def stats_esperadas(M, a, b, cancha="neutral", states=None):
     """Estadísticas esperadas de cada equipo con los modelos entrenados (selección de variables +
        validación temporal). Posesión renormalizada a 100. Devuelve dict por estadística."""
     if cancha == "1":
@@ -405,8 +415,8 @@ def stats_esperadas(M, a, b, cancha="neutral"):
         la_loc, lb_loc = 0, 1
     else:  # neutral / auto: sin ventaja de localía en las stats
         la_loc, lb_loc = 0.5, 0.5
-    fa = _fila_stats(M, a, b, la_loc)
-    fb = _fila_stats(M, b, a, lb_loc)
+    fa = _fila_stats(M, a, b, la_loc, states)
+    fb = _fila_stats(M, b, a, lb_loc, states)
     res = {}
     for stat in ("corners", "tiros_arco", "faltas"):
         res[stat] = (_predecir_stat(M, stat, fa), _predecir_stat(M, stat, fb))

@@ -40,6 +40,8 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     border-bottom:2px solid #e2e8f0; padding-bottom:0.4rem; margin-bottom:0.8rem; }
 .card-title-hybrid { font-size:1.25rem; font-weight:600; color:#7a3b91;
     border-bottom:2px solid #e2e8f0; padding-bottom:0.4rem; margin-bottom:0.8rem; }
+.card-title-two-stage { font-size:1.25rem; font-weight:600; color:#2a9d5c;
+    border-bottom:2px solid #e2e8f0; padding-bottom:0.4rem; margin-bottom:0.8rem; }
 .sec-title { font-size:1.5rem; font-weight:700; color:#0b3d91; margin:0.4rem 0 0.6rem 0; }
 .vs-text { text-align:center; font-size:2rem; font-weight:800; color:#cbd5e1; margin-top:1.6rem; }
 /* sombra premium a los contenedores con borde */
@@ -291,8 +293,8 @@ st.markdown('<div class="main-title">🏆 Laboratorio — Copa Mundial 2026</div
 st.markdown('<div class="main-subtitle">Mercados y cuotas · Fase de grupos en vivo · Re-simulación con '
             'resultados reales · Validación · Robustez</div>', unsafe_allow_html=True)
 
-modelo = st.sidebar.radio("Modelo (para Grupos / En vivo / Validación / Robustez)", ["base", "hyb"],
-                          format_func=lambda x: "Base (Elo+H2H+valor)" if x == "base" else "Híbrido (+ forma)")
+modelo = st.sidebar.radio("Modelo (para Grupos / En vivo / Validación / Robustez)", ["base", "hyb", "two_stage"],
+                          format_func=lambda x: "Base (Elo+H2H+valor)" if x == "base" else ("Híbrido (+ forma)" if x == "hyb" else "Híbrido 2 Etapas (Táctico)"))
 st.sidebar.info("Todos los modelos usan **ponderación K-factor**: los partidos en serio (Mundial, "
                 "clasificatorias) pesan más que los amistosos.")
 if len(ESPN_DF):
@@ -344,18 +346,21 @@ with tab1:
                 st.caption(f"Goles esperados (Poisson): {na} {la:.2f} — {lb:.2f} {nb}")
                 return mix, p
 
-        col_b, col_h = st.columns(2)
+        col_b, col_h, col_ts = st.columns(3)
         with col_b:
             mix_b, _ = tarjeta("base", "🔵 Modelo Base (Elo + H2H + valor)", "card-title-base")
         with col_h:
-            mix_h, _ = tarjeta("hyb", "🟣 Modelo Híbrido (Base + forma reciente)", "card-title-hybrid")
+            mix_h, _ = tarjeta("hyb", "🟣 Modelo Híbrido (Base + forma)", "card-title-hybrid")
+        with col_ts:
+            mix_ts, _ = tarjeta("two_stage", "🟢 Híbrido 2 Etapas (Táctico)", "card-title-two-stage")
 
         # Mercados (del modelo del sidebar) + cuotas
-        st.markdown(f'<div class="sec-title">Mercados — modelo {"Base" if modelo=="base" else "Híbrido"} '
+        lbl_mod = "Base" if modelo == "base" else ("Híbrido" if modelo == "hyb" else "Híbrido 2 Etapas")
+        st.markdown(f'<div class="sec-title">Mercados — modelo {lbl_mod} '
                     f'(probabilidad y cuota justa)</div>', unsafe_allow_html=True)
         st.caption("Compara la **cuota justa** (1 ÷ probabilidad) con la de tu casa de apuestas: si la casa "
                    "paga más, el resultado está *infravalorado* (hay value); si paga menos, sobrevalorado.")
-        mix = mix_b if modelo == "base" else mix_h
+        mix = mix_b if modelo == "base" else (mix_h if modelo == "hyb" else mix_ts)
         mk = mo.mercados(mix)
         filas = []
         for ln in (1.5, 2.5, 3.5):
