@@ -225,12 +225,26 @@ def cargar(en_vivo=True):
     pipe = Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))])
     pipe.fit(part[FEATS], part.resultado)
 
-    # Poisson de goles (con localía): dos obs por partido. Usamos Elo limpio para evitar redundancia
+    # Poisson de goles (con localía por equipo): dos obs por partido. Usamos Elo limpio para evitar redundancia.
     largo = pd.concat([
-        pd.DataFrame({"g": part.goles_local, "d": part.elo_local - part.elo_visita, "loc": 1}),
-        pd.DataFrame({"g": part.goles_visita, "d": part.elo_visita - part.elo_local, "loc": 0})])
+        pd.DataFrame({"g": part.goles_local, "d": part.elo_local - part.elo_visita, "equipo": part.local, "es_local": 1}),
+        pd.DataFrame({"g": part.goles_visita, "d": part.elo_visita - part.elo_local, "equipo": part.visita, "es_local": 0})
+    ]).reset_index(drop=True)
     import statsmodels.api as sm
-    gp = sm.GLM(largo["g"], sm.add_constant(largo[["d", "loc"]]), family=sm.families.Poisson()).fit()
+    import statsmodels.formula.api as smf
+    gp = smf.glm("g ~ d + es_local:C(equipo)", data=largo, family=sm.families.Poisson()).fit()
+    
+    # Extraer parámetros de localía para predicción ultra rápida libre de overhead de formulas
+    gp_params = {
+        "const": float(gp.params["Intercept"]),
+        "d": float(gp.params["d"])
+    }
+    coefs_localia = {}
+    for k, v in gp.params.items():
+        if "es_local:C(equipo)" in k:
+            team_name = k.split("[")[1].split("]")[0]
+            coefs_localia[team_name] = float(v)
+    gp_params["avg_loc"] = float(np.mean(list(coefs_localia.values()))) if coefs_localia else 0.20
 
     # estado actual de cada equipo (Elo + forma + h2h base)
     estado = {}
@@ -241,15 +255,15 @@ def cargar(en_vivo=True):
     stats_modelos, stats_estado = _entrenar_stats_chile(part)
 
     return {"part": part, "fixture": fixture, "elo": elo, "estado": estado, "h2h": h2h,
-            "pipe": pipe, "FEATS": FEATS, "gp_params": dict(gp.params),
+            "pipe": pipe, "FEATS": FEATS, "gp_params": gp_params, "coefs_localia": coefs_localia,
             "stats_modelos": stats_modelos, "stats_estado": stats_estado,
             "equipos_2026": sorted(set(part[part.temporada == 2026].local) | set(part[part.temporada == 2026].visita))}
 
 
 # Stats del box score a modelar (objetivo -> conteo/posesión)
-STATS_OBJ = ["wonCorners", "shotsOnTarget", "foulsCommitted", "yellowCards", "possessionPct"]
+STATS_OBJ = ["wonCorners", "shotsOnTarget", "foulsCommitted", "yellowCards", "possessionPct", "xg"]
 STATS_NOMBRE = {"wonCorners": "Córners", "shotsOnTarget": "Tiros al arco", "foulsCommitted": "Faltas",
-                "yellowCards": "Tarjetas amarillas", "possessionPct": "Posesión %"}
+                "yellowCards": "Tarjetas amarillas", "possessionPct": "Posesión %", "xg": "Goles esperados (xG Proxy)"}
 
 
 def _entrenar_stats_chile(part):
@@ -268,19 +282,41 @@ def _entrenar_stats_chile(part):
     for r in part.itertuples(index=False):
         a, b = r.local, r.visita
         rec = bsi.get(key(r.fecha, a, b))
+        
+        # Calcular xG sintético si el registro existe
+        xg_l, xg_v = np.nan, np.nan
+        if rec is not None:
+            sot_l = getattr(rec, "local_shotsOnTarget", np.nan)
+            tot_l = getattr(rec, "local_totalShots", np.nan)
+            sot_v = getattr(rec, "visita_shotsOnTarget", np.nan)
+            tot_v = getattr(rec, "visita_totalShots", np.nan)
+            
+            if not (pd.isna(sot_l) or pd.isna(tot_l)):
+                xg_l = 0.30 * sot_l + 0.05 * max(0.0, tot_l - sot_l)
+            if not (pd.isna(sot_v) or pd.isna(tot_v)):
+                xg_v = 0.30 * sot_v + 0.05 * max(0.0, tot_v - sot_v)
+
         if rec is not None:
             fila = {"elo_diff": r.elo_local + HOME_ADV - r.elo_visita}
-            ok = True
             for s in STATS_OBJ:
                 fa = np.mean(favor[s][a]) if favor[s][a] else np.nan
                 cb = np.mean(contra[s][b]) if contra[s][b] else np.nan
                 fila[f"prop_{s}_f"], fila[f"riv_{s}_c"] = fa, cb
-                vl = getattr(rec, f"local_{s}", np.nan)
+                
+                if s == "xg":
+                    vl = xg_l
+                else:
+                    vl = getattr(rec, f"local_{s}", np.nan)
                 fila[f"t_{s}"] = vl
             rows.append(fila)
+            
         if rec is not None:
             for s in STATS_OBJ:
-                vl, vv = getattr(rec, f"local_{s}", np.nan), getattr(rec, f"visita_{s}", np.nan)
+                if s == "xg":
+                    vl, vv = xg_l, xg_v
+                else:
+                    vl = getattr(rec, f"local_{s}", np.nan)
+                    vv = getattr(rec, f"visita_{s}", np.nan)
                 if not (pd.isna(vl) or pd.isna(vv)):
                     favor[s][a].append(vl); contra[s][a].append(vv)
                     favor[s][b].append(vv); contra[s][b].append(vl)
@@ -309,7 +345,7 @@ def _entrenar_stats_chile(part):
 
 
 def stats_esperadas(M, local, visita):
-    """Estadísticas esperadas del local y la visita (córners, tiros al arco, faltas, tarjetas, posesión)."""
+    """Estadísticas esperadas del local y la visita (córners, tiros al arco, faltas, tarjetas, posesión, xG)."""
     import statsmodels.api as sm
     mods, est = M.get("stats_modelos", {}), M.get("stats_estado", {})
     if not mods:
@@ -461,9 +497,15 @@ def prob_partido(M, local, visita):
 
 def lambdas(M, local, visita):
     b = M["gp_params"]
+    coefs = M.get("coefs_localia", {})
     dl = M["estado"][local]["elo"] - M["estado"][visita]["elo"]
     dv = M["estado"][visita]["elo"] - M["estado"][local]["elo"]
-    return float(np.exp(b["const"] + b["d"] * dl + b["loc"])), float(np.exp(b["const"] + b["d"] * dv))
+    
+    loc_l = coefs.get(local, b.get("avg_loc", 0.20))
+    
+    la = float(np.exp(b["const"] + b["d"] * dl + loc_l))
+    lb = float(np.exp(b["const"] + b["d"] * dv))
+    return la, lb
 
 
 def dixon_coles_adj(la, lb, rho, gmax=8):

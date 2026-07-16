@@ -163,10 +163,10 @@ with tab2:
             sc1, sc2 = st.columns([1, 1])
             with sc1:
                 tab = pd.DataFrame({
-                    "Estadística": ["⛳ Córners", "🎯 Tiros al arco", "🟨 Faltas", "🟨 T. amarillas", "📊 Posesión %"],
-                    local: [f"{se['wonCorners'][0]:.1f}", f"{se['shotsOnTarget'][0]:.1f}",
+                    "Estadística": ["⚽ Goles esperados (xG)", "⛳ Córners", "🎯 Tiros al arco", "🟨 Faltas", "🟨 T. amarillas", "📊 Posesión %"],
+                    local: [f"{se['xg'][0]:.2f}", f"{se['wonCorners'][0]:.1f}", f"{se['shotsOnTarget'][0]:.1f}",
                             f"{se['foulsCommitted'][0]:.1f}", f"{se['yellowCards'][0]:.1f}", f"{se['possessionPct'][0]:.0f}%"],
-                    visita: [f"{se['wonCorners'][1]:.1f}", f"{se['shotsOnTarget'][1]:.1f}",
+                    visita: [f"{se['xg'][1]:.2f}", f"{se['wonCorners'][1]:.1f}", f"{se['shotsOnTarget'][1]:.1f}",
                              f"{se['foulsCommitted'][1]:.1f}", f"{se['yellowCards'][1]:.1f}", f"{se['possessionPct'][1]:.0f}%"]})
                 st.dataframe(tab, hide_index=True, width='stretch')
             with sc2:
