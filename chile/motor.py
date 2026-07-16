@@ -23,16 +23,79 @@ DESCIENDEN = 2          # nº de equipos que descienden (último y penúltimo)
 CUPOS_COPA = 4          # aprox. clasificación a torneos continentales (top-4)
 
 
+SQUAD_VALUES = {
+    "Colo Colo": 25.0,
+    "Universidad de Chile": 18.0,
+    "Universidad Católica": 16.0,
+    "Unión Española": 10.0,
+    "Everton CD": 9.5,
+    "Coquimbo Unido": 8.5,
+    "Palestino": 8.0,
+    "Huachipato": 8.0,
+    "Audax Italiano": 7.5,
+    "Ñublense": 7.5,
+    "O'Higgins": 7.0,
+    "Cobresal": 6.5,
+    "Unión La Calera": 6.5,
+    "Deportes Iquique": 6.0,
+    "Cobreloa": 5.5,
+    "Antofagasta": 5.5,
+    "La Serena": 5.0,
+    "Deportes Concepcion": 4.5,
+    "Deportes Limache": 4.5,
+    "Universidad de Concepción": 4.5,
+    "Copiapó": 4.5,
+    "Magallanes": 4.5,
+    "Curicó Unido": 4.0,
+    "Melipilla": 3.5,
+    "Santiago Wanderers": 3.5,
+    "Unión Wanderers": 3.5
+}
+
+
 def _mult_goles(gd):
     gd = abs(gd)
     return 1.0 if gd <= 1 else (1.5 if gd == 2 else (1.75 if gd == 3 else 1.75 + (gd - 3) / 8))
 
 
 def calcular_elo(part):
-    """Elo cronológico. Devuelve dict de Elo final + columnas pre-partido para entrenar."""
-    elo = defaultdict(lambda: ELO_INIT)
+    """Elo cronológico con regresión a la media inter-temporada e inicialización
+       de ascendidos a 1420."""
+    seasons = sorted(part.temporada.unique())
+    teams_by_season = {}
+    for s in seasons:
+        df_s = part[part.temporada == s]
+        teams_by_season[s] = set(df_s.local.unique()) | set(df_s.visita.unique())
+    
+    elo = {}
+    first_season = seasons[0]
+    for t in teams_by_season[first_season]:
+        elo[t] = ELO_INIT
+
     pl, pv = [], []
+    last_season = first_season
+
     for r in part.itertuples(index=False):
+        # Detectar cambio de temporada
+        if r.temporada != last_season:
+            # 1. Regresión inter-temporada (25% a la media)
+            for t in elo:
+                elo[t] = 0.75 * elo[t] + 0.25 * ELO_INIT
+            
+            # 2. Inicializar ascendidos (no jugaron en la temporada anterior) a 1420
+            s_idx = seasons.index(r.temporada)
+            prev_s = seasons[s_idx - 1]
+            for t in teams_by_season[r.temporada]:
+                if t not in elo or t not in teams_by_season[prev_s]:
+                    elo[t] = 1420.0
+            
+            last_season = r.temporada
+
+        if r.local not in elo:
+            elo[r.local] = 1500.0
+        if r.visita not in elo:
+            elo[r.visita] = 1500.0
+
         el, ev = elo[r.local], elo[r.visita]
         pl.append(el); pv.append(ev)
         we = 1.0 / (1.0 + 10 ** (-((el + HOME_ADV) - ev) / 400.0))
@@ -40,6 +103,7 @@ def calcular_elo(part):
         w = 1.0 if gl > gv else (0.5 if gl == gv else 0.0)
         delta = K_LIGA * _mult_goles(gl - gv) * (w - we)
         elo[r.local] = el + delta; elo[r.visita] = ev - delta
+
     return dict(elo), pl, pv
 
 
@@ -70,17 +134,18 @@ def cargar():
     part["ppg_local"], part["ppg_visita"], part["h2h_diff"] = f_ppg_l, f_ppg_v, f_h2h
     part["elo_diff"] = part.elo_local + HOME_ADV - part.elo_visita
     part["ppg_diff"] = part.ppg_local - part.ppg_visita
+    part["squad_value_diff"] = part.apply(lambda r: np.log(SQUAD_VALUES.get(r.local, 5.0)) - np.log(SQUAD_VALUES.get(r.visita, 5.0)), axis=1)
     part["resultado"] = np.where(part.goles_local > part.goles_visita, 2,
                                  np.where(part.goles_local == part.goles_visita, 1, 0))
 
-    FEATS = ["elo_diff", "ppg_diff", "h2h_diff"]
+    FEATS = ["elo_diff", "ppg_diff", "h2h_diff", "squad_value_diff"]
     pipe = Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))])
     pipe.fit(part[FEATS], part.resultado)
 
-    # Poisson de goles (con localía): dos obs por partido
+    # Poisson de goles (con localía): dos obs por partido. Usamos Elo limpio para evitar redundancia
     largo = pd.concat([
-        pd.DataFrame({"g": part.goles_local, "d": part.elo_local + HOME_ADV - part.elo_visita, "loc": 1}),
-        pd.DataFrame({"g": part.goles_visita, "d": part.elo_visita - HOME_ADV - part.elo_local, "loc": 0})])
+        pd.DataFrame({"g": part.goles_local, "d": part.elo_local - part.elo_visita, "loc": 1}),
+        pd.DataFrame({"g": part.goles_visita, "d": part.elo_visita - part.elo_local, "loc": 0})])
     import statsmodels.api as sm
     gp = sm.GLM(largo["g"], sm.add_constant(largo[["d", "loc"]]), family=sm.families.Poisson()).fit()
 
@@ -202,11 +267,36 @@ def analisis_variables(M, corte="2025-07-01"):
     from sklearn.metrics import log_loss, accuracy_score
 
     part = M["part"]
-    elo = defaultdict(lambda: ELO_INIT)
+    elo = {}
+    first_season = sorted(part.temporada.unique())[0]
+    # Recrear la misma inicialización que calcular_elo
+    seasons = sorted(part.temporada.unique())
+    teams_by_season = {}
+    for s in seasons:
+        df_s = part[part.temporada == s]
+        teams_by_season[s] = set(df_s.local.unique()) | set(df_s.visita.unique())
+    for t in teams_by_season[first_season]:
+        elo[t] = ELO_INIT
+
     ppg5, gf, gc = defaultdict(lambda: deque(maxlen=5)), defaultdict(lambda: deque(maxlen=5)), defaultdict(lambda: deque(maxlen=5))
     h2h = defaultdict(list); rows = []
+    last_season = first_season
+
     for r in part.itertuples(index=False):
         a, b, gl, gv = r.local, r.visita, r.goles_local, r.goles_visita
+        if r.temporada != last_season:
+            for t in elo:
+                elo[t] = 0.75 * elo[t] + 0.25 * ELO_INIT
+            s_idx = seasons.index(r.temporada)
+            prev_s = seasons[s_idx - 1]
+            for t in teams_by_season[r.temporada]:
+                if t not in elo or t not in teams_by_season[prev_s]:
+                    elo[t] = 1420.0
+            last_season = r.temporada
+
+        if a not in elo: elo[a] = 1500.0
+        if b not in elo: elo[b] = 1500.0
+
         par = tuple(sorted((a, b))); prev = h2h[par]
         hh = (np.mean([x if a == par[0] else -x for x in prev]) if prev else 0.0)
         rows.append({
@@ -214,15 +304,18 @@ def analisis_variables(M, corte="2025-07-01"):
             "ppg5_diff": (np.mean(ppg5[a]) if ppg5[a] else 1.0) - (np.mean(ppg5[b]) if ppg5[b] else 1.0),
             "gf_diff": (np.mean(gf[a]) if gf[a] else 1.2) - (np.mean(gf[b]) if gf[b] else 1.2),
             "gc_diff": (np.mean(gc[a]) if gc[a] else 1.2) - (np.mean(gc[b]) if gc[b] else 1.2),
-            "h2h_diff": hh if a == par[0] else -hh, "fecha": r.fecha,
+            "h2h_diff": hh if a == par[0] else -hh,
+            "squad_value_diff": np.log(SQUAD_VALUES.get(a, 5.0)) - np.log(SQUAD_VALUES.get(b, 5.0)),
+            "fecha": r.fecha,
             "resultado": 2 if gl > gv else (1 if gl == gv else 0)})
         we = 1 / (1 + 10 ** (-((elo[a] + HOME_ADV) - elo[b]) / 400)); w = 1.0 if gl > gv else (0.5 if gl == gv else 0.0)
         delta = K_LIGA * _mult_goles(gl - gv) * (w - we); elo[a] += delta; elo[b] -= delta
         rl, rv = (3, 0) if gl > gv else ((1, 1) if gl == gv else (0, 3))
         ppg5[a].append(rl); ppg5[b].append(rv); gf[a].append(gl); gc[a].append(gv); gf[b].append(gv); gc[b].append(gl)
         h2h[par].append(gl - gv)
+
     D = pd.DataFrame(rows)
-    CAND = ["elo_diff", "ppg5_diff", "gf_diff", "gc_diff", "h2h_diff"]
+    CAND = ["elo_diff", "ppg5_diff", "gf_diff", "gc_diff", "h2h_diff", "squad_value_diff"]
     tr, te = D[D.fecha < corte], D[D.fecha >= corte]; y = tr.resultado; cv = TimeSeriesSplit(5)
 
     Xv = sm.add_constant(tr[CAND])
@@ -242,7 +335,8 @@ def analisis_variables(M, corte="2025-07-01"):
     df_cand = pd.DataFrame([{"variable": f, "corr_resultado": round(tr[[f, "resultado"]].corr().iloc[0, 1], 2),
                              "VIF": round(vif[f], 1), "elegida": "✅" if f in sel else "—"} for f in CAND])
 
-    modelos = [("Logística (elo+forma+h2h)", Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))]), ["elo_diff", "ppg5_diff", "h2h_diff"]),
+    modelos = [("Logística (completa)", Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))]), ["elo_diff", "ppg5_diff", "h2h_diff", "squad_value_diff"]),
+               ("Logística (elo+forma+h2h)", Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))]), ["elo_diff", "ppg5_diff", "h2h_diff"]),
                ("Logística (solo Elo)", Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))]), ["elo_diff"]),
                ("Random Forest", RandomForestClassifier(n_estimators=300, max_depth=6, random_state=42), CAND),
                ("Gradient Boosting", HistGradientBoostingClassifier(max_iter=300, learning_rate=0.05, random_state=42), CAND)]
@@ -272,7 +366,8 @@ def features(M, local, visita):
     e = M["estado"]
     return {"elo_diff": e[local]["elo"] + HOME_ADV - e[visita]["elo"],
             "ppg_diff": e[local]["ppg"] - e[visita]["ppg"],
-            "h2h_diff": _h2h(M, local, visita)}
+            "h2h_diff": _h2h(M, local, visita),
+            "squad_value_diff": np.log(SQUAD_VALUES.get(local, 5.0)) - np.log(SQUAD_VALUES.get(visita, 5.0))}
 
 
 def prob_partido(M, local, visita):
@@ -283,16 +378,30 @@ def prob_partido(M, local, visita):
 
 def lambdas(M, local, visita):
     b = M["gp_params"]
-    dl = M["estado"][local]["elo"] + HOME_ADV - M["estado"][visita]["elo"]
-    dv = M["estado"][visita]["elo"] - HOME_ADV - M["estado"][local]["elo"]
+    dl = M["estado"][local]["elo"] - M["estado"][visita]["elo"]
+    dv = M["estado"][visita]["elo"] - M["estado"][local]["elo"]
     return float(np.exp(b["const"] + b["d"] * dl + b["loc"])), float(np.exp(b["const"] + b["d"] * dv))
+
+
+def dixon_coles_adj(la, lb, rho, gmax=8):
+    tau = np.ones((gmax + 1, gmax + 1))
+    if la > 0 and lb > 0:
+        tau[0, 0] = 1.0 - la * lb * rho
+        tau[1, 0] = 1.0 + la * rho
+        tau[0, 1] = 1.0 + lb * rho
+        tau[1, 1] = 1.0 - rho
+    return tau
 
 
 def grilla(M, local, visita, gmax=8):
     p = prob_partido(M, local, visita)
     la, lb = lambdas(M, local, visita)
     g = np.arange(gmax + 1)
-    grid = np.outer(poisson.pmf(g, la), poisson.pmf(g, lb)); grid /= grid.sum()
+    grid = np.outer(poisson.pmf(g, la), poisson.pmf(g, lb))
+    # Aplicar ajuste de Dixon-Coles (rho = -0.12 para la liga chilena)
+    tau = dixon_coles_adj(la, lb, -0.12, gmax)
+    grid *= tau
+    grid /= grid.sum()
     gi, gj = np.indices(grid.shape)
     mix = sum(p[k] * (grid * mk) / (grid * mk).sum() for k, mk in enumerate((gi > gj, gi == gj, gi < gj)))
     return mix, p, (la, lb)
@@ -327,10 +436,12 @@ def simular_campeonato(M, n_sims=10000, seed=42):
     eq = list(tabla.index)
     fix = [(r.local, r.visita) for r in M["fixture"].itertuples(index=False)
            if r.local in pts0 and r.visita in pts0]
-    # precalcular prob y goles esperados de cada partido del fixture
-    P, LAM = {}, {}
+    
+    # Precalcular la grilla mixta de goles de cada partido para muestreo consistente
+    MIX = {}
     for a, b in set(fix):
-        P[(a, b)] = prob_partido(M, a, b); LAM[(a, b)] = lambdas(M, a, b)
+        mix_grid, _, _ = grilla(M, a, b)
+        MIX[(a, b)] = mix_grid
 
     pos_count = {t: np.zeros(len(eq) + 1) for t in eq}     # histograma de posiciones
     campeon = defaultdict(int); copa = defaultdict(int); desc = defaultdict(int)
@@ -338,13 +449,12 @@ def simular_campeonato(M, n_sims=10000, seed=42):
     for _ in range(n_sims):
         pts = dict(pts0); gd = dict(gd0)
         for a, b in fix:
-            p = P[(a, b)]; u = rng.random()
-            res = 0 if u < p[0] else (1 if u < p[0] + p[1] else 2)   # 0 gana local
-            la, lb = LAM[(a, b)]
-            ga, gb = rng.poisson(la), rng.poisson(lb)
-            if res == 0 and ga <= gb: ga = gb + 1
-            if res == 2 and gb <= ga: gb = ga + 1
-            if res == 1: gb = ga
+            mix_grid = MIX[(a, b)]
+            flat_grid = mix_grid.flatten()
+            idx = rng.choice(len(flat_grid), p=flat_grid)
+            dim = mix_grid.shape[1]
+            ga, gb = idx // dim, idx % dim
+            
             gd[a] += ga - gb; gd[b] += gb - ga
             if ga > gb: pts[a] += 3
             elif ga == gb: pts[a] += 1; pts[b] += 1
