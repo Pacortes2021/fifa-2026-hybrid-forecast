@@ -225,26 +225,13 @@ def cargar(en_vivo=True):
     pipe = Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))])
     pipe.fit(part[FEATS], part.resultado)
 
-    # Poisson de goles (con localía por equipo): dos obs por partido. Usamos Elo limpio para evitar redundancia.
+    # Poisson de goles (con localía): dos obs por partido. Usamos Elo limpio para evitar redundancia
     largo = pd.concat([
-        pd.DataFrame({"g": part.goles_local, "d": part.elo_local - part.elo_visita, "equipo": part.local, "es_local": 1}),
-        pd.DataFrame({"g": part.goles_visita, "d": part.elo_visita - part.elo_local, "equipo": part.visita, "es_local": 0})
-    ]).reset_index(drop=True)
+        pd.DataFrame({"g": part.goles_local, "d": part.elo_local - part.elo_visita, "loc": 1}),
+        pd.DataFrame({"g": part.goles_visita, "d": part.elo_visita - part.elo_local, "loc": 0})])
     import statsmodels.api as sm
-    import statsmodels.formula.api as smf
-    gp = smf.glm("g ~ d + es_local:C(equipo)", data=largo, family=sm.families.Poisson()).fit()
-    
-    # Extraer parámetros de localía para predicción ultra rápida libre de overhead de formulas
-    gp_params = {
-        "const": float(gp.params["Intercept"]),
-        "d": float(gp.params["d"])
-    }
-    coefs_localia = {}
-    for k, v in gp.params.items():
-        if "es_local:C(equipo)" in k:
-            team_name = k.split("[")[1].split("]")[0]
-            coefs_localia[team_name] = float(v)
-    gp_params["avg_loc"] = float(np.mean(list(coefs_localia.values()))) if coefs_localia else 0.20
+    gp = sm.GLM(largo["g"], sm.add_constant(largo[["d", "loc"]]), family=sm.families.Poisson()).fit()
+    gp_params = dict(gp.params)
 
     # estado actual de cada equipo (Elo + forma + h2h base)
     estado = {}
@@ -255,7 +242,7 @@ def cargar(en_vivo=True):
     stats_modelos, stats_estado = _entrenar_stats_chile(part)
 
     return {"part": part, "fixture": fixture, "elo": elo, "estado": estado, "h2h": h2h,
-            "pipe": pipe, "FEATS": FEATS, "gp_params": gp_params, "coefs_localia": coefs_localia,
+            "pipe": pipe, "FEATS": FEATS, "gp_params": gp_params,
             "stats_modelos": stats_modelos, "stats_estado": stats_estado,
             "equipos_2026": sorted(set(part[part.temporada == 2026].local) | set(part[part.temporada == 2026].visita))}
 
@@ -497,15 +484,9 @@ def prob_partido(M, local, visita):
 
 def lambdas(M, local, visita):
     b = M["gp_params"]
-    coefs = M.get("coefs_localia", {})
     dl = M["estado"][local]["elo"] - M["estado"][visita]["elo"]
     dv = M["estado"][visita]["elo"] - M["estado"][local]["elo"]
-    
-    loc_l = coefs.get(local, b.get("avg_loc", 0.20))
-    
-    la = float(np.exp(b["const"] + b["d"] * dl + loc_l))
-    lb = float(np.exp(b["const"] + b["d"] * dv))
-    return la, lb
+    return float(np.exp(b["const"] + b["d"] * dl + b["loc"])), float(np.exp(b["const"] + b["d"] * dv))
 
 
 def dixon_coles_adj(la, lb, rho, gmax=8):
