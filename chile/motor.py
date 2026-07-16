@@ -225,13 +225,48 @@ def cargar(en_vivo=True):
     pipe = Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))])
     pipe.fit(part[FEATS], part.resultado)
 
-    # Poisson de goles (con localía): dos obs por partido. Usamos Elo limpio para evitar redundancia
+    # Calcular el boost de goles anotados de local vs de visita para cada equipo
+    boosts = {}
+    for t in set(part.local.unique()) | set(part.visita.unique()):
+        h_matches = part[part.local == t]
+        a_matches = part[part.visita == t]
+        if len(h_matches) > 3 and len(a_matches) > 3:
+            boosts[t] = float(h_matches.goles_local.mean() - a_matches.goles_visita.mean())
+        else:
+            boosts[t] = 0.20  # valor por defecto
+
+    # Asignar nivel basado en umbrales fijos
+    levels_dict = {}
+    for eq, b in boosts.items():
+        if b < 0.10:
+            levels_dict[eq] = 0
+        elif b >= 0.40:
+            levels_dict[eq] = 2
+        else:
+            levels_dict[eq] = 1
+
+    # Poisson de goles (con Niveles de Localía): dos obs por partido. Usamos Elo limpio para evitar redundancia
     largo = pd.concat([
-        pd.DataFrame({"g": part.goles_local, "d": part.elo_local - part.elo_visita, "loc": 1}),
-        pd.DataFrame({"g": part.goles_visita, "d": part.elo_visita - part.elo_local, "loc": 0})])
+        pd.DataFrame({
+            "g": part.goles_local, "d": part.elo_local - part.elo_visita, "es_local": 1,
+            "level": [levels_dict.get(x, 1) for x in part.local]
+        }),
+        pd.DataFrame({
+            "g": part.goles_visita, "d": part.elo_visita - part.elo_local, "es_local": 0,
+            "level": 0
+        })
+    ]).reset_index(drop=True)
     import statsmodels.api as sm
-    gp = sm.GLM(largo["g"], sm.add_constant(largo[["d", "loc"]]), family=sm.families.Poisson()).fit()
-    gp_params = dict(gp.params)
+    import statsmodels.formula.api as smf
+    gp = smf.glm("g ~ d + es_local:C(level)", data=largo, family=sm.families.Poisson()).fit()
+    
+    gp_params = {
+        "const": float(gp.params["Intercept"]),
+        "d": float(gp.params["d"]),
+        "loc_0": float(gp.params.get("es_local:C(level)[T.0]", 0.10)),
+        "loc_1": float(gp.params.get("es_local:C(level)[T.1]", 0.20)),
+        "loc_2": float(gp.params.get("es_local:C(level)[T.2]", 0.35))
+    }
 
     # estado actual de cada equipo (Elo + forma + h2h base)
     estado = {}
@@ -242,7 +277,7 @@ def cargar(en_vivo=True):
     stats_modelos, stats_estado = _entrenar_stats_chile(part)
 
     return {"part": part, "fixture": fixture, "elo": elo, "estado": estado, "h2h": h2h,
-            "pipe": pipe, "FEATS": FEATS, "gp_params": gp_params,
+            "pipe": pipe, "FEATS": FEATS, "gp_params": gp_params, "levels_dict": levels_dict,
             "stats_modelos": stats_modelos, "stats_estado": stats_estado,
             "equipos_2026": sorted(set(part[part.temporada == 2026].local) | set(part[part.temporada == 2026].visita))}
 
@@ -484,9 +519,20 @@ def prob_partido(M, local, visita):
 
 def lambdas(M, local, visita):
     b = M["gp_params"]
+    lvls = M.get("levels_dict", {})
     dl = M["estado"][local]["elo"] - M["estado"][visita]["elo"]
     dv = M["estado"][visita]["elo"] - M["estado"][local]["elo"]
-    return float(np.exp(b["const"] + b["d"] * dl + b["loc"])), float(np.exp(b["const"] + b["d"] * dv))
+    
+    lvl = lvls.get(local, 1)
+    loc_l = b["loc_1"]
+    if lvl == 0:
+        loc_l = b["loc_0"]
+    elif lvl == 2:
+        loc_l = b["loc_2"]
+        
+    la = float(np.exp(b["const"] + b["d"] * dl + loc_l))
+    lb = float(np.exp(b["const"] + b["d"] * dv))
+    return la, lb
 
 
 def dixon_coles_adj(la, lb, rho, gmax=8):
