@@ -235,21 +235,15 @@ def cargar(en_vivo=True):
         else:
             boosts[t] = 0.20  # valor por defecto
 
-    # Asignar nivel basado en umbrales fijos
-    levels_dict = {}
-    for eq, b in boosts.items():
-        if b < 0.10:
-            levels_dict[eq] = 0
-        elif b >= 0.40:
-            levels_dict[eq] = 2
-        else:
-            levels_dict[eq] = 1
+    # Determinar la mediana del boost para hacer un split binario óptimo (K=2 Quantiles)
+    median_boost = float(np.median(list(boosts.values())))
+    levels_dict = {eq: (1 if v >= median_boost else 0) for eq, v in boosts.items()}
 
-    # Poisson de goles (con Niveles de Localía): dos obs por partido. Usamos Elo limpio para evitar redundancia
+    # Poisson de goles (con Niveles Binarios de Localía): dos obs por partido.
     largo = pd.concat([
         pd.DataFrame({
             "g": part.goles_local, "d": part.elo_local - part.elo_visita, "es_local": 1,
-            "level": [levels_dict.get(x, 1) for x in part.local]
+            "level": [levels_dict.get(x, 0) for x in part.local]
         }),
         pd.DataFrame({
             "g": part.goles_visita, "d": part.elo_visita - part.elo_local, "es_local": 0,
@@ -258,14 +252,13 @@ def cargar(en_vivo=True):
     ]).reset_index(drop=True)
     import statsmodels.api as sm
     import statsmodels.formula.api as smf
-    gp = smf.glm("g ~ d + es_local:C(level)", data=largo, family=sm.families.Poisson()).fit()
+    gp = smf.glm("g ~ d + es_local + es_local:level", data=largo, family=sm.families.Poisson()).fit()
     
     gp_params = {
         "const": float(gp.params["Intercept"]),
         "d": float(gp.params["d"]),
-        "loc_0": float(gp.params.get("es_local:C(level)[T.0]", 0.10)),
-        "loc_1": float(gp.params.get("es_local:C(level)[T.1]", 0.20)),
-        "loc_2": float(gp.params.get("es_local:C(level)[T.2]", 0.35))
+        "loc_0": float(gp.params["es_local"]),
+        "loc_1": float(gp.params["es_local"] + gp.params["es_local:level"])
     }
 
     # estado actual de cada equipo (Elo + forma + h2h base)
@@ -523,12 +516,8 @@ def lambdas(M, local, visita):
     dl = M["estado"][local]["elo"] - M["estado"][visita]["elo"]
     dv = M["estado"][visita]["elo"] - M["estado"][local]["elo"]
     
-    lvl = lvls.get(local, 1)
-    loc_l = b["loc_1"]
-    if lvl == 0:
-        loc_l = b["loc_0"]
-    elif lvl == 2:
-        loc_l = b["loc_2"]
+    lvl = lvls.get(local, 0)
+    loc_l = b["loc_1"] if lvl == 1 else b["loc_0"]
         
     la = float(np.exp(b["const"] + b["d"] * dl + loc_l))
     lb = float(np.exp(b["const"] + b["d"] * dv))
