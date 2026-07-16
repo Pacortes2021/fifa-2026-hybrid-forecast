@@ -147,9 +147,52 @@ def calcular_elo(part):
     return dict(elo), pl, pv
 
 
-def cargar():
-    part = pd.read_csv(DATA / "partidos.csv", parse_dates=["fecha"]).sort_values("fecha").reset_index(drop=True)
-    fixture = pd.read_csv(DATA / "fixture.csv", parse_dates=["fecha"]).sort_values("fecha").reset_index(drop=True)
+def cargar(en_vivo=True):
+    part_path = DATA / "partidos.csv"
+    fix_path = DATA / "fixture.csv"
+    
+    part = pd.read_csv(part_path, parse_dates=["fecha"])
+    fixture = pd.read_csv(fix_path, parse_dates=["fecha"])
+    
+    if en_vivo:
+        try:
+            import requests
+            url = "https://site.api.espn.com/apis/site/v2/sports/soccer/chi.1/scoreboard?dates=20260101-20261231&limit=400"
+            r = requests.get(url, timeout=8)
+            if r.status_code == 200:
+                eventos = r.json().get("events", [])
+                filas_2026 = []
+                for e in eventos:
+                    try:
+                        comp = e["competitions"][0]; cs = comp["competitors"]
+                        h = next(x for x in cs if x["homeAway"] == "home")
+                        a = next(x for x in cs if x["homeAway"] == "away")
+                        estado = e["status"]["type"]["state"]
+                        try:
+                            gl = int(h["score"]) if h.get("score") not in (None, "") else None
+                            gv = int(a["score"]) if a.get("score") not in (None, "") else None
+                        except (TypeError, ValueError):
+                            gl = gv = None
+                        filas_2026.append({
+                            "fecha": pd.to_datetime(e["date"]).tz_localize(None),
+                            "temporada": 2026, "local": h["team"]["displayName"], "visita": a["team"]["displayName"],
+                            "goles_local": gl, "goles_visita": gv, "estado": estado,
+                        })
+                    except Exception:
+                        continue
+                if filas_2026:
+                    df_2026 = pd.DataFrame(filas_2026).drop_duplicates(subset=["fecha", "local", "visita"])
+                    jugados_2026 = df_2026[df_2026.estado == "post"].dropna(subset=["goles_local", "goles_visita"])
+                    fixture_2026 = df_2026[df_2026.estado == "pre"]
+                    
+                    part_hist = part[part.temporada < 2026]
+                    part = pd.concat([part_hist, jugados_2026], ignore_index=True)
+                    fixture = fixture_2026
+        except Exception:
+            pass # Usar cache de disco silenciosamente si hay fallas de red
+            
+    part = part.sort_values("fecha").reset_index(drop=True)
+    fixture = fixture.sort_values("fecha").reset_index(drop=True)
     part["goles_local"] = part.goles_local.astype(int)
     part["goles_visita"] = part.goles_visita.astype(int)
 

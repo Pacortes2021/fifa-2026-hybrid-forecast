@@ -33,7 +33,7 @@ div[data-testid="stVerticalBlockBorderWrapper"] { box-shadow:0 4px 6px -1px rgb(
 
 @st.cache_resource
 def get_motor():
-    return mo.cargar()
+    return mo.cargar(en_vivo=True)
 
 
 @st.cache_data(show_spinner="Simulando 10.000 campeonatos…")
@@ -45,6 +45,12 @@ def get_sim():
 def get_analisis():
     return mo.analisis_variables(get_motor())
 
+
+# Botón de refresco en la barra lateral
+if st.sidebar.button("🔄 Actualizar Resultados (ESPN)", key="refresh_chile"):
+    st.cache_resource.clear()
+    st.cache_data.clear()
+    st.rerun()
 
 M = get_motor()
 EQUIPOS = M["equipos_2026"]
