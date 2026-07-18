@@ -1,0 +1,2201 @@
+event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
+569710,2021-01-06 22:15:00,2021,Botafogo,Athletico-PR,0,2,post
+569715,2021-01-06 23:30:00,2021,Coritiba,Goiás,1,2,post
+569711,2021-01-06 23:30:00,2021,Grêmio,Bahia,2,1,post
+569714,2021-01-06 23:30:00,2021,Sport,Fortaleza,1,0,post
+569713,2021-01-07 00:30:00,2021,Flamengo,Fluminense,1,2,post
+569718,2021-01-07 00:30:00,2021,Red Bull Bragantino,São Paulo,4,2,post
+569716,2021-01-07 22:00:00,2021,Ceará,Internacional,0,2,post
+569719,2021-01-08 00:00:00,2021,Atlético Goianiense,Vasco da Gama,0,0,post
+569708,2021-01-09 22:00:00,2021,Sport,Palmeiras,0,1,post
+569701,2021-01-09 22:00:00,2021,Coritiba,Athletico-PR,0,0,post
+569707,2021-01-10 00:00:00,2021,Fortaleza,Grêmio,0,0,post
+569704,2021-01-10 19:00:00,2021,Flamengo,Ceará,0,2,post
+569709,2021-01-10 19:00:00,2021,São Paulo,Santos,0,1,post
+569702,2021-01-10 21:15:00,2021,Atlético Goianiense,Bahia,1,1,post
+569706,2021-01-10 21:15:00,2021,Internacional,Goiás,1,0,post
+569703,2021-01-10 23:30:00,2021,Vasco da Gama,Botafogo,3,0,post
+569700,2021-01-11 23:00:00,2021,Red Bull Bragantino,Atlético-MG,2,2,post
+569705,2021-01-14 00:30:00,2021,Corinthians,Fluminense,5,0,post
+569697,2021-01-16 00:30:00,2021,Palmeiras,Grêmio,1,1,post
+569698,2021-01-16 22:00:00,2021,Fluminense,Sport,1,0,post
+569694,2021-01-17 00:00:00,2021,Vasco da Gama,Coritiba,0,1,post
+569699,2021-01-17 19:00:00,2021,Athletico-PR,São Paulo,1,1,post
+569691,2021-01-17 19:00:00,2021,Santos,Botafogo,2,1,post
+569690,2021-01-17 21:15:00,2021,Atlético-MG,Atlético Goianiense,3,1,post
+569692,2021-01-17 23:30:00,2021,Ceará,Red Bull Bragantino,1,2,post
+569696,2021-01-17 23:30:00,2021,Internacional,Fortaleza,4,2,post
+569712,2021-01-18 22:00:00,2021,Palmeiras,Corinthians,4,0,post
+569695,2021-01-18 23:00:00,2021,Goiás,Flamengo,0,3,post
+569681,2021-01-20 20:00:00,2021,Botafogo,Atlético Goianiense,1,3,post
+569682,2021-01-20 21:00:00,2021,Bahia,Athletico-PR,1,0,post
+569680,2021-01-20 22:15:00,2021,Grêmio,Atlético-MG,1,1,post
+569684,2021-01-20 23:30:00,2021,Coritiba,Fluminense,3,3,post
+569689,2021-01-21 00:30:00,2021,Red Bull Bragantino,Vasco da Gama,4,1,post
+569685,2021-01-21 00:30:00,2021,São Paulo,Internacional,1,5,post
+569687,2021-01-21 22:00:00,2021,Fortaleza,Santos,2,0,post
+569683,2021-01-21 22:00:00,2021,Goiás,Ceará,0,4,post
+569686,2021-01-21 22:00:00,2021,Flamengo,Palmeiras,2,0,post
+569688,2021-01-22 00:00:00,2021,Corinthians,Sport,3,0,post
+569674,2021-01-23 22:00:00,2021,São Paulo,Coritiba,1,1,post
+569670,2021-01-24 00:00:00,2021,Vasco da Gama,Atlético-MG,3,2,post
+569675,2021-01-24 19:00:00,2021,Athletico-PR,Flamengo,2,1,post
+569679,2021-01-24 19:00:00,2021,Ceará,Palmeiras,2,1,post
+569678,2021-01-24 19:00:00,2021,Internacional,Grêmio,2,1,post
+569671,2021-01-24 21:15:00,2021,Sport,Bahia,2,0,post
+569677,2021-01-24 21:15:00,2021,Santos,Goiás,3,4,post
+569676,2021-01-24 21:15:00,2021,Atlético Goianiense,Fortaleza,2,0,post
+569672,2021-01-24 23:30:00,2021,Fluminense,Botafogo,2,0,post
+569673,2021-01-25 23:00:00,2021,Corinthians,Red Bull Bragantino,0,2,post
+569717,2021-01-26 23:00:00,2021,Atlético-MG,Santos,2,0,post
+569989,2021-01-26 23:00:00,2021,Palmeiras,Vasco da Gama,1,1,post
+569693,2021-01-28 22:00:00,2021,Bahia,Corinthians,2,1,post
+569765,2021-01-28 23:00:00,2021,Grêmio,Flamengo,2,4,post
+569661,2021-01-31 19:00:00,2021,Vasco da Gama,Bahia,0,0,post
+569668,2021-01-31 19:00:00,2021,Coritiba,Grêmio,1,1,post
+569660,2021-01-31 19:00:00,2021,Ceará,Athletico-PR,0,2,post
+569669,2021-01-31 19:00:00,2021,Atlético Goianiense,São Paulo,2,1,post
+569666,2021-01-31 20:00:00,2021,Atlético-MG,Fortaleza,2,0,post
+569663,2021-01-31 21:15:00,2021,Internacional,Red Bull Bragantino,2,1,post
+569667,2021-01-31 23:30:00,2021,Fluminense,Goiás,3,0,post
+569665,2021-02-01 23:00:00,2021,Sport,Flamengo,0,3,post
+569662,2021-02-02 19:00:00,2021,Palmeiras,Botafogo,1,1,post
+569657,2021-02-03 19:00:00,2021,Grêmio,Santos,3,3,post
+569651,2021-02-03 22:15:00,2021,Red Bull Bragantino,Atlético Goianiense,2,0,post
+569654,2021-02-04 00:30:00,2021,Bahia,Fluminense,0,1,post
+569652,2021-02-04 00:30:00,2021,Corinthians,Ceará,2,1,post
+569650,2021-02-04 00:30:00,2021,Goiás,Atlético-MG,1,0,post
+569653,2021-02-04 21:30:00,2021,Fortaleza,Coritiba,3,1,post
+569655,2021-02-05 00:00:00,2021,Athletico-PR,Internacional,0,0,post
+569659,2021-02-05 00:00:00,2021,Flamengo,Vasco da Gama,2,0,post
+569658,2021-02-05 23:00:00,2021,Botafogo,Sport,0,1,post
+569644,2021-02-06 22:00:00,2021,Bahia,Goiás,3,3,post
+569647,2021-02-07 00:00:00,2021,Atlético Goianiense,Santos,1,1,post
+569643,2021-02-07 23:30:00,2021,Red Bull Bragantino,Flamengo,1,1,post
+569645,2021-02-08 23:00:00,2021,Botafogo,Grêmio,2,5,post
+569648,2021-02-10 22:00:00,2021,Internacional,Sport,1,2,post
+569649,2021-02-10 22:15:00,2021,Fortaleza,Vasco da Gama,3,0,post
+569642,2021-02-11 00:00:00,2021,São Paulo,Ceará,1,1,post
+569641,2021-02-11 00:30:00,2021,Corinthians,Athletico-PR,3,3,post
+569640,2021-02-11 00:30:00,2021,Fluminense,Atlético-MG,0,0,post
+569632,2021-02-13 20:00:00,2021,Goiás,Botafogo,2,0,post
+569631,2021-02-13 22:00:00,2021,Atlético-MG,Bahia,1,1,post
+569635,2021-02-13 22:00:00,2021,Santos,Coritiba,2,0,post
+569634,2021-02-14 19:00:00,2021,Flamengo,Corinthians,2,1,post
+569638,2021-02-14 19:00:00,2021,Vasco da Gama,Internacional,0,2,post
+569630,2021-02-14 21:15:00,2021,Athletico-PR,Atlético Goianiense,2,1,post
+569637,2021-02-14 21:15:00,2021,Palmeiras,Fortaleza,3,0,post
+569639,2021-02-14 23:30:00,2021,Grêmio,São Paulo,1,2,post
+569636,2021-02-15 21:00:00,2021,Ceará,Fluminense,1,3,post
+569633,2021-02-15 23:00:00,2021,Sport,Red Bull Bragantino,0,0,post
+569664,2021-02-17 22:00:00,2021,Santos,Corinthians,1,0,post
+569646,2021-02-17 22:30:00,2021,Coritiba,Palmeiras,1,0,post
+569656,2021-02-20 00:30:00,2021,São Paulo,Palmeiras,1,1,post
+569625,2021-02-20 21:30:00,2021,Coritiba,Ceará,0,2,post
+569623,2021-02-21 00:00:00,2021,Fortaleza,Bahia,0,4,post
+569629,2021-02-21 19:00:00,2021,Corinthians,Vasco da Gama,0,0,post
+569627,2021-02-21 19:00:00,2021,Flamengo,Internacional,2,1,post
+569620,2021-02-21 19:00:00,2021,Sport,Atlético-MG,2,3,post
+569622,2021-02-21 21:15:00,2021,Grêmio,Athletico-PR,1,0,post
+569626,2021-02-21 21:15:00,2021,Santos,Fluminense,1,1,post
+569624,2021-02-21 23:30:00,2021,Goiás,Red Bull Bragantino,0,0,post
+569621,2021-02-22 21:00:00,2021,Palmeiras,Atlético Goianiense,1,1,post
+569628,2021-02-22 23:00:00,2021,Botafogo,São Paulo,1,0,post
+569615,2021-02-26 00:30:00,2021,Vasco da Gama,Goiás,3,2,post
+569616,2021-02-26 00:30:00,2021,Red Bull Bragantino,Grêmio,1,0,post
+569611,2021-02-26 00:30:00,2021,Internacional,Corinthians,0,0,post
+569614,2021-02-26 00:30:00,2021,Fluminense,Fortaleza,2,0,post
+569613,2021-02-26 00:30:00,2021,São Paulo,Flamengo,2,1,post
+569618,2021-02-26 00:30:00,2021,Bahia,Santos,2,0,post
+569619,2021-02-26 00:30:00,2021,Athletico-PR,Sport,2,0,post
+569610,2021-02-26 00:30:00,2021,Ceará,Botafogo,2,1,post
+569617,2021-02-26 00:30:00,2021,Atlético-MG,Palmeiras,2,0,post
+569612,2021-02-26 00:30:00,2021,Atlético Goianiense,Coritiba,3,1,post
+598601,2021-05-29 22:00:00,2021,Cuiabá,Juventude,2,2,post
+598603,2021-05-29 23:00:00,2021,Bahia,Santos,3,0,post
+598598,2021-05-30 00:00:00,2021,São Paulo,Fluminense,0,0,post
+598599,2021-05-30 14:00:00,2021,Atlético-MG,Fortaleza,1,2,post
+598600,2021-05-30 19:00:00,2021,Ceará,Grêmio,3,2,post
+598602,2021-05-30 19:00:00,2021,Flamengo,Palmeiras,1,0,post
+598596,2021-05-30 21:15:00,2021,Corinthians,Atlético Goianiense,0,1,post
+598595,2021-05-30 21:15:00,2021,Athletico-PR,América Mineiro,1,0,post
+598597,2021-05-30 21:15:00,2021,Chapecoense,Red Bull Bragantino,0,3,post
+598604,2021-05-30 23:30:00,2021,Internacional,Sport,2,2,post
+598594,2021-06-05 22:00:00,2021,Atlético Goianiense,São Paulo,2,0,post
+598587,2021-06-06 00:00:00,2021,Red Bull Bragantino,Bahia,3,3,post
+598588,2021-06-06 00:00:00,2021,Santos,Ceará,3,1,post
+598591,2021-06-06 14:00:00,2021,Fluminense,Cuiabá,1,0,post
+598593,2021-06-06 19:00:00,2021,Fortaleza,Internacional,5,1,post
+598590,2021-06-06 19:00:00,2021,América Mineiro,Corinthians,0,1,post
+598586,2021-06-06 21:15:00,2021,Juventude,Athletico-PR,0,3,post
+598589,2021-06-06 21:15:00,2021,Palmeiras,Chapecoense,3,1,post
+598585,2021-06-06 23:30:00,2021,Sport,Atlético-MG,0,1,post
+598579,2021-06-12 22:00:00,2021,Palmeiras,Corinthians,1,1,post
+598582,2021-06-12 22:00:00,2021,Santos,Juventude,0,0,post
+598584,2021-06-13 19:00:00,2021,Atlético-MG,São Paulo,1,0,post
+598575,2021-06-13 19:00:00,2021,Flamengo,América Mineiro,2,0,post
+598577,2021-06-13 19:00:00,2021,Grêmio,Athletico-PR,0,1,post
+598580,2021-06-13 23:30:00,2021,Red Bull Bragantino,Fluminense,2,2,post
+598583,2021-06-13 23:30:00,2021,Fortaleza,Sport,1,0,post
+598578,2021-06-13 23:30:00,2021,Chapecoense,Ceará,0,0,post
+598581,2021-06-13 23:30:00,2021,Bahia,Internacional,0,1,post
+598565,2021-06-16 22:00:00,2021,Internacional,Atlético-MG,0,1,post
+598568,2021-06-16 22:00:00,2021,São Paulo,Chapecoense,1,1,post
+598567,2021-06-16 23:30:00,2021,Corinthians,Red Bull Bragantino,1,2,post
+598573,2021-06-17 00:30:00,2021,Juventude,Palmeiras,0,3,post
+598569,2021-06-17 19:00:00,2021,América Mineiro,Cuiabá,0,0,post
+598566,2021-06-17 19:00:00,2021,Ceará,Bahia,1,2,post
+598574,2021-06-17 22:00:00,2021,Fluminense,Santos,1,0,post
+598572,2021-06-17 22:00:00,2021,Sport,Grêmio,1,0,post
+598571,2021-06-17 22:00:00,2021,Atlético Goianiense,Fortaleza,0,0,post
+598557,2021-06-20 00:00:00,2021,Flamengo,Red Bull Bragantino,2,3,post
+598555,2021-06-20 14:00:00,2021,Palmeiras,América Mineiro,2,1,post
+598560,2021-06-20 19:00:00,2021,Bahia,Corinthians,0,0,post
+598558,2021-06-20 19:00:00,2021,Internacional,Ceará,1,1,post
+598556,2021-06-20 21:15:00,2021,Athletico-PR,Atlético Goianiense,2,1,post
+598561,2021-06-20 21:15:00,2021,Fortaleza,Fluminense,1,1,post
+598564,2021-06-20 21:15:00,2021,Santos,São Paulo,2,0,post
+598563,2021-06-20 23:30:00,2021,Juventude,Sport,1,0,post
+598559,2021-06-21 23:00:00,2021,Atlético-MG,Chapecoense,1,1,post
+598548,2021-06-23 22:00:00,2021,Atlético Goianiense,Fluminense,1,0,post
+598549,2021-06-23 22:00:00,2021,Flamengo,Fortaleza,2,1,post
+598552,2021-06-23 22:00:00,2021,Red Bull Bragantino,Palmeiras,3,1,post
+598547,2021-06-23 22:00:00,2021,São Paulo,Cuiabá,2,2,post
+598551,2021-06-24 19:00:00,2021,América Mineiro,Juventude,1,1,post
+598550,2021-06-24 22:00:00,2021,Chapecoense,Internacional,1,2,post
+598554,2021-06-24 22:00:00,2021,Corinthians,Sport,2,1,post
+598545,2021-06-24 22:00:00,2021,Ceará,Atlético-MG,2,1,post
+598546,2021-06-25 00:30:00,2021,Bahia,Athletico-PR,2,1,post
+598553,2021-06-25 00:30:00,2021,Grêmio,Santos,2,2,post
+598541,2021-06-27 14:00:00,2021,Juventude,Flamengo,1,0,post
+598539,2021-06-27 19:00:00,2021,Fluminense,Corinthians,1,1,post
+598538,2021-06-27 23:00:00,2021,Athletico-PR,Chapecoense,2,2,post
+598542,2021-06-27 23:00:00,2021,Grêmio,Fortaleza,0,0,post
+598536,2021-06-27 23:00:00,2021,Palmeiras,Bahia,3,2,post
+598543,2021-06-27 23:30:00,2021,América Mineiro,Internacional,1,1,post
+598544,2021-06-27 23:30:00,2021,Ceará,São Paulo,1,1,post
+598535,2021-06-27 23:30:00,2021,Santos,Atlético-MG,2,0,post
+598540,2021-06-27 23:30:00,2021,Sport,Cuiabá,0,0,post
+598537,2021-06-28 23:00:00,2021,Atlético Goianiense,Red Bull Bragantino,0,1,post
+598527,2021-06-30 19:00:00,2021,Fluminense,Athletico-PR,1,4,post
+598529,2021-06-30 19:00:00,2021,Fortaleza,Chapecoense,3,2,post
+598532,2021-06-30 22:00:00,2021,Internacional,Palmeiras,1,2,post
+598525,2021-06-30 22:00:00,2021,Bahia,América Mineiro,3,4,post
+598533,2021-06-30 23:30:00,2021,Santos,Sport,0,0,post
+598531,2021-07-01 00:30:00,2021,Juventude,Grêmio,2,0,post
+598534,2021-07-01 00:30:00,2021,Corinthians,São Paulo,0,0,post
+598528,2021-07-01 19:00:00,2021,Red Bull Bragantino,Ceará,0,0,post
+598526,2021-07-01 22:00:00,2021,Atlético-MG,Atlético Goianiense,4,1,post
+598530,2021-07-01 23:00:00,2021,Cuiabá,Flamengo,0,2,post
+598524,2021-07-03 22:00:00,2021,América Mineiro,Santos,2,0,post
+598520,2021-07-03 22:00:00,2021,Athletico-PR,Fortaleza,2,1,post
+598521,2021-07-04 00:00:00,2021,Corinthians,Internacional,1,1,post
+598517,2021-07-04 14:00:00,2021,Chapecoense,Bahia,0,2,post
+598523,2021-07-04 19:00:00,2021,Sport,Palmeiras,0,1,post
+598519,2021-07-04 19:00:00,2021,Flamengo,Fluminense,0,1,post
+598522,2021-07-04 21:15:00,2021,Ceará,Juventude,2,0,post
+598515,2021-07-04 21:15:00,2021,Cuiabá,Atlético-MG,0,1,post
+598518,2021-07-04 21:15:00,2021,São Paulo,Red Bull Bragantino,1,2,post
+598516,2021-07-04 23:30:00,2021,Grêmio,Atlético Goianiense,0,1,post
+598506,2021-07-06 22:30:00,2021,Santos,Athletico-PR,2,1,post
+598512,2021-07-07 21:00:00,2021,Bahia,Juventude,1,0,post
+598505,2021-07-07 21:00:00,2021,Fortaleza,América Mineiro,4,0,post
+598509,2021-07-07 21:00:00,2021,Red Bull Bragantino,Cuiabá,1,1,post
+598511,2021-07-07 22:00:00,2021,Palmeiras,Grêmio,2,0,post
+598510,2021-07-07 22:00:00,2021,Atlético-MG,Flamengo,2,1,post
+598513,2021-07-07 22:15:00,2021,Atlético Goianiense,Sport,1,1,post
+598507,2021-07-08 00:30:00,2021,Fluminense,Ceará,0,0,post
+598514,2021-07-08 00:30:00,2021,Internacional,São Paulo,0,2,post
+598508,2021-07-09 00:00:00,2021,Chapecoense,Corinthians,0,1,post
+598503,2021-07-10 19:30:00,2021,Grêmio,Internacional,0,0,post
+598504,2021-07-10 19:30:00,2021,Palmeiras,Santos,3,2,post
+598498,2021-07-10 20:30:00,2021,Athletico-PR,Red Bull Bragantino,2,2,post
+598495,2021-07-10 22:00:00,2021,América Mineiro,Atlético-MG,0,1,post
+598497,2021-07-10 22:00:00,2021,São Paulo,Bahia,1,0,post
+598502,2021-07-10 22:00:00,2021,Sport,Fluminense,1,2,post
+598496,2021-07-11 14:00:00,2021,Juventude,Atlético Goianiense,1,1,post
+598499,2021-07-11 21:15:00,2021,Cuiabá,Ceará,2,2,post
+598500,2021-07-11 21:15:00,2021,Flamengo,Chapecoense,2,1,post
+598501,2021-07-11 23:30:00,2021,Fortaleza,Corinthians,1,0,post
+598486,2021-07-17 20:00:00,2021,Ceará,Athletico-PR,1,0,post
+598489,2021-07-17 20:00:00,2021,São Paulo,Fortaleza,0,1,post
+598485,2021-07-17 22:00:00,2021,Corinthians,Atlético-MG,1,2,post
+598490,2021-07-18 00:00:00,2021,Fluminense,Grêmio,0,1,post
+598487,2021-07-18 14:00:00,2021,Chapecoense,Cuiabá,2,3,post
+598492,2021-07-18 19:00:00,2021,Atlético Goianiense,Palmeiras,0,3,post
+598488,2021-07-18 21:15:00,2021,Bahia,Flamengo,0,5,post
+598491,2021-07-18 23:30:00,2021,Internacional,Juventude,1,0,post
+598493,2021-07-18 23:30:00,2021,Red Bull Bragantino,Santos,2,2,post
+598494,2021-07-19 23:00:00,2021,América Mineiro,Sport,0,1,post
+598576,2021-07-21 22:00:00,2021,Cuiabá,Atlético Goianiense,2,1,post
+598475,2021-07-24 20:00:00,2021,Grêmio,América Mineiro,1,1,post
+598482,2021-07-24 22:00:00,2021,Palmeiras,Fluminense,1,0,post
+598477,2021-07-25 14:00:00,2021,Atlético-MG,Bahia,3,0,post
+598484,2021-07-25 19:00:00,2021,Flamengo,São Paulo,5,1,post
+598478,2021-07-25 19:00:00,2021,Fortaleza,Red Bull Bragantino,1,0,post
+598483,2021-07-25 21:15:00,2021,Athletico-PR,Internacional,2,1,post
+598476,2021-07-25 21:15:00,2021,Santos,Atlético Goianiense,0,1,post
+598479,2021-07-25 23:30:00,2021,Sport,Ceará,0,0,post
+598480,2021-07-26 21:00:00,2021,Juventude,Chapecoense,1,0,post
+598481,2021-07-26 23:00:00,2021,Cuiabá,Corinthians,1,2,post
+598472,2021-07-31 22:00:00,2021,São Paulo,Palmeiras,0,0,post
+598467,2021-07-31 23:00:00,2021,Internacional,Cuiabá,0,0,post
+598470,2021-08-01 00:00:00,2021,Red Bull Bragantino,Grêmio,1,0,post
+598466,2021-08-01 19:00:00,2021,Atlético-MG,Athletico-PR,2,0,post
+598468,2021-08-01 19:00:00,2021,Corinthians,Flamengo,1,3,post
+598474,2021-08-01 21:15:00,2021,Bahia,Sport,0,1,post
+598473,2021-08-01 21:15:00,2021,Chapecoense,Santos,0,1,post
+598465,2021-08-01 23:30:00,2021,Atlético Goianiense,América Mineiro,1,1,post
+598469,2021-08-01 23:30:00,2021,Ceará,Fortaleza,3,1,post
+598458,2021-08-06 22:00:00,2021,Sport,Red Bull Bragantino,0,0,post
+598464,2021-08-07 21:00:00,2021,Athletico-PR,São Paulo,1,2,post
+598457,2021-08-08 00:00:00,2021,Cuiabá,Bahia,1,1,post
+598462,2021-08-08 00:00:00,2021,Palmeiras,Fortaleza,2,3,post
+598461,2021-08-08 19:00:00,2021,América Mineiro,Fluminense,1,0,post
+598455,2021-08-08 19:00:00,2021,Juventude,Atlético-MG,1,2,post
+598460,2021-08-08 19:00:00,2021,Santos,Corinthians,0,0,post
+598456,2021-08-08 21:15:00,2021,Ceará,Atlético Goianiense,0,0,post
+598463,2021-08-08 21:15:00,2021,Flamengo,Internacional,0,4,post
+598459,2021-08-09 23:00:00,2021,Grêmio,Chapecoense,2,1,post
+598451,2021-08-14 20:00:00,2021,Red Bull Bragantino,Juventude,1,2,post
+598452,2021-08-14 22:00:00,2021,Atlético-MG,Palmeiras,2,0,post
+598450,2021-08-15 00:00:00,2021,São Paulo,Grêmio,2,1,post
+598448,2021-08-15 19:00:00,2021,Corinthians,Ceará,3,1,post
+598454,2021-08-15 19:00:00,2021,Flamengo,Sport,2,0,post
+598446,2021-08-15 21:15:00,2021,Bahia,Atlético Goianiense,1,2,post
+598447,2021-08-15 21:15:00,2021,Cuiabá,Athletico-PR,1,0,post
+598453,2021-08-15 21:15:00,2021,Fortaleza,Santos,1,1,post
+598449,2021-08-15 23:30:00,2021,Internacional,Fluminense,4,2,post
+598445,2021-08-16 23:00:00,2021,Chapecoense,América Mineiro,1,1,post
+598562,2021-08-18 22:00:00,2021,Cuiabá,Grêmio,0,1,post
+598438,2021-08-21 20:00:00,2021,Atlético Goianiense,Chapecoense,1,1,post
+598436,2021-08-21 22:00:00,2021,Grêmio,Bahia,2,0,post
+598442,2021-08-22 00:00:00,2021,Juventude,Fortaleza,1,1,post
+598440,2021-08-22 14:00:00,2021,Palmeiras,Cuiabá,0,2,post
+598439,2021-08-22 19:00:00,2021,Athletico-PR,Corinthians,0,1,post
+598441,2021-08-22 19:00:00,2021,Ceará,Flamengo,1,1,post
+598443,2021-08-22 21:15:00,2021,Santos,Internacional,2,2,post
+598444,2021-08-22 23:30:00,2021,Sport,São Paulo,0,1,post
+598435,2021-08-23 23:00:00,2021,Fluminense,Atlético-MG,1,1,post
+598437,2021-08-23 23:00:00,2021,América Mineiro,Red Bull Bragantino,0,2,post
+598429,2021-08-28 20:00:00,2021,Sport,Chapecoense,0,0,post
+598432,2021-08-28 22:00:00,2021,Santos,Flamengo,0,4,post
+598430,2021-08-29 00:00:00,2021,Grêmio,Corinthians,0,1,post
+598426,2021-08-29 00:00:00,2021,Palmeiras,Athletico-PR,2,1,post
+598428,2021-08-29 14:00:00,2021,América Mineiro,Ceará,2,0,post
+598434,2021-08-29 19:00:00,2021,Juventude,São Paulo,1,1,post
+598433,2021-08-29 21:15:00,2021,Atlético Goianiense,Internacional,0,0,post
+598425,2021-08-29 23:30:00,2021,Red Bull Bragantino,Atlético-MG,1,1,post
+598427,2021-08-30 22:00:00,2021,Fluminense,Bahia,2,0,post
+598431,2021-08-31 00:30:00,2021,Fortaleza,Cuiabá,0,0,post
+598471,2021-09-02 22:00:00,2021,Fluminense,Juventude,1,1,post
+598419,2021-09-05 00:00:00,2021,Bahia,Fortaleza,4,2,post
+598423,2021-09-05 00:00:00,2021,Cuiabá,Santos,2,1,post
+598424,2021-09-05 21:15:00,2021,Athletico-PR,Sport,0,0,post
+598418,2021-09-08 00:30:00,2021,Chapecoense,Fluminense,1,2,post
+598421,2021-09-08 00:30:00,2021,Corinthians,Juventude,1,1,post
+598406,2021-09-11 19:00:00,2021,América Mineiro,Athletico-PR,2,0,post
+598411,2021-09-11 20:00:00,2021,Juventude,Cuiabá,1,2,post
+598409,2021-09-11 22:00:00,2021,Red Bull Bragantino,Chapecoense,1,2,post
+598407,2021-09-12 00:00:00,2021,Santos,Bahia,0,0,post
+598408,2021-09-12 14:00:00,2021,Grêmio,Ceará,2,0,post
+598412,2021-09-12 19:00:00,2021,Palmeiras,Flamengo,1,3,post
+598410,2021-09-12 21:15:00,2021,Atlético Goianiense,Corinthians,1,1,post
+598414,2021-09-12 23:30:00,2021,Fluminense,São Paulo,2,1,post
+598413,2021-09-13 23:00:00,2021,Sport,Internacional,0,1,post
+598402,2021-09-18 20:00:00,2021,Chapecoense,Palmeiras,0,2,post
+598401,2021-09-18 21:45:00,2021,Athletico-PR,Juventude,2,1,post
+598404,2021-09-18 22:00:00,2021,Atlético-MG,Sport,3,0,post
+598397,2021-09-19 00:00:00,2021,Bahia,Red Bull Bragantino,1,1,post
+598403,2021-09-19 00:00:00,2021,Ceará,Santos,0,0,post
+598399,2021-09-19 14:00:00,2021,Internacional,Fortaleza,1,0,post
+598396,2021-09-19 19:00:00,2021,São Paulo,Atlético Goianiense,2,1,post
+598395,2021-09-19 21:15:00,2021,Corinthians,América Mineiro,1,1,post
+598400,2021-09-19 23:30:00,2021,Flamengo,Grêmio,0,1,post
+598398,2021-09-20 23:00:00,2021,Cuiabá,Fluminense,2,2,post
+598415,2021-09-22 23:30:00,2021,São Paulo,América Mineiro,0,0,post
+598388,2021-09-25 20:00:00,2021,Ceará,Chapecoense,1,0,post
+598393,2021-09-25 22:00:00,2021,Corinthians,Palmeiras,2,1,post
+598385,2021-09-26 00:00:00,2021,São Paulo,Atlético-MG,0,0,post
+598390,2021-09-26 14:00:00,2021,América Mineiro,Flamengo,1,1,post
+598387,2021-09-26 19:00:00,2021,Fluminense,Red Bull Bragantino,2,1,post
+598386,2021-09-26 19:00:00,2021,Internacional,Bahia,2,0,post
+598394,2021-09-26 19:00:00,2021,Juventude,Santos,3,0,post
+598392,2021-09-26 21:15:00,2021,Athletico-PR,Grêmio,4,2,post
+598391,2021-09-26 21:15:00,2021,Sport,Fortaleza,0,1,post
+598389,2021-09-26 23:30:00,2021,Atlético Goianiense,Cuiabá,0,0,post
+598376,2021-10-02 20:00:00,2021,Fortaleza,Atlético Goianiense,0,3,post
+598375,2021-10-02 20:00:00,2021,Cuiabá,América Mineiro,0,2,post
+598379,2021-10-02 22:00:00,2021,Red Bull Bragantino,Corinthians,2,2,post
+598381,2021-10-03 00:00:00,2021,Atlético-MG,Internacional,1,0,post
+598384,2021-10-03 19:00:00,2021,Chapecoense,São Paulo,1,1,post
+598377,2021-10-03 19:00:00,2021,Flamengo,Athletico-PR,3,0,post
+598382,2021-10-03 21:15:00,2021,Palmeiras,Juventude,1,1,post
+598383,2021-10-03 23:30:00,2021,Grêmio,Sport,1,2,post
+598367,2021-10-06 00:30:00,2021,Corinthians,Bahia,3,1,post
+598372,2021-10-06 22:00:00,2021,Sport,Juventude,3,1,post
+598365,2021-10-06 22:00:00,2021,Chapecoense,Atlético-MG,2,2,post
+598366,2021-10-06 22:00:00,2021,Atlético Goianiense,Athletico-PR,0,2,post
+598371,2021-10-06 22:00:00,2021,Ceará,Internacional,0,0,post
+598369,2021-10-06 23:30:00,2021,Red Bull Bragantino,Flamengo,1,1,post
+598373,2021-10-07 00:30:00,2021,América Mineiro,Palmeiras,2,1,post
+598370,2021-10-07 00:30:00,2021,Fluminense,Fortaleza,0,2,post
+598368,2021-10-07 00:30:00,2021,Grêmio,Cuiabá,2,2,post
+598374,2021-10-07 21:30:00,2021,São Paulo,Santos,1,1,post
+598356,2021-10-09 19:30:00,2021,Fluminense,Atlético Goianiense,0,0,post
+598361,2021-10-09 19:30:00,2021,Sport,Corinthians,1,0,post
+598359,2021-10-09 19:30:00,2021,Atlético-MG,Ceará,3,1,post
+598357,2021-10-09 22:00:00,2021,Athletico-PR,Bahia,0,2,post
+598362,2021-10-09 22:00:00,2021,Fortaleza,Flamengo,0,3,post
+598355,2021-10-10 00:00:00,2021,Juventude,América Mineiro,1,1,post
+598358,2021-10-10 00:00:00,2021,Palmeiras,Red Bull Bragantino,2,4,post
+598360,2021-10-10 14:00:00,2021,Internacional,Chapecoense,5,2,post
+598363,2021-10-10 19:00:00,2021,Santos,Grêmio,1,0,post
+598364,2021-10-11 23:00:00,2021,Cuiabá,São Paulo,0,0,post
+598346,2021-10-12 22:00:00,2021,Red Bull Bragantino,Atlético Goianiense,1,0,post
+598352,2021-10-13 00:30:00,2021,Bahia,Palmeiras,0,0,post
+598353,2021-10-13 22:00:00,2021,Atlético-MG,Santos,3,1,post
+598347,2021-10-13 22:00:00,2021,Chapecoense,Athletico-PR,1,1,post
+598351,2021-10-13 22:00:00,2021,Flamengo,Juventude,3,1,post
+598350,2021-10-13 23:30:00,2021,Fortaleza,Grêmio,1,0,post
+598349,2021-10-14 00:00:00,2021,Corinthians,Fluminense,1,0,post
+598345,2021-10-14 00:30:00,2021,Internacional,América Mineiro,3,1,post
+598354,2021-10-14 22:00:00,2021,Cuiabá,Sport,1,0,post
+598348,2021-10-14 22:00:00,2021,São Paulo,Ceará,1,1,post
+598341,2021-10-16 22:00:00,2021,Chapecoense,Fortaleza,1,2,post
+598336,2021-10-17 00:00:00,2021,América Mineiro,Bahia,0,0,post
+598340,2021-10-17 19:00:00,2021,Athletico-PR,Fluminense,0,1,post
+598342,2021-10-17 19:00:00,2021,Palmeiras,Internacional,1,0,post
+598335,2021-10-17 21:15:00,2021,Atlético Goianiense,Atlético-MG,2,1,post
+598337,2021-10-17 21:15:00,2021,Ceará,Red Bull Bragantino,2,2,post
+598343,2021-10-17 21:15:00,2021,Grêmio,Juventude,3,2,post
+598339,2021-10-17 23:30:00,2021,Flamengo,Cuiabá,0,0,post
+598344,2021-10-17 23:30:00,2021,Sport,Santos,0,0,post
+598338,2021-10-18 23:00:00,2021,São Paulo,Corinthians,1,0,post
+598422,2021-10-20 22:00:00,2021,Ceará,Palmeiras,1,2,post
+598417,2021-10-21 23:00:00,2021,Internacional,Red Bull Bragantino,1,1,post
+598327,2021-10-23 20:00:00,2021,Juventude,Ceará,0,0,post
+598325,2021-10-23 20:00:00,2021,Santos,América Mineiro,0,2,post
+598331,2021-10-23 22:00:00,2021,Fluminense,Flamengo,3,1,post
+598326,2021-10-23 22:15:00,2021,Fortaleza,Athletico-PR,3,0,post
+598330,2021-10-24 19:00:00,2021,Atlético-MG,Cuiabá,2,1,post
+598329,2021-10-24 19:00:00,2021,Internacional,Corinthians,2,2,post
+598334,2021-10-24 21:15:00,2021,Red Bull Bragantino,São Paulo,1,0,post
+598328,2021-10-24 23:30:00,2021,Bahia,Chapecoense,3,0,post
+598332,2021-10-25 23:00:00,2021,Atlético Goianiense,Grêmio,2,0,post
+598333,2021-10-26 00:30:00,2021,Palmeiras,Sport,2,1,post
+598378,2021-10-27 22:00:00,2021,Bahia,Ceará,1,1,post
+598380,2021-10-27 22:00:00,2021,Santos,Fluminense,2,0,post
+598274,2021-10-28 22:00:00,2021,Red Bull Bragantino,Sport,3,0,post
+598324,2021-10-30 20:00:00,2021,Athletico-PR,Santos,0,1,post
+598315,2021-10-30 22:00:00,2021,Flamengo,Atlético-MG,1,0,post
+598317,2021-10-30 22:15:00,2021,Juventude,Bahia,0,0,post
+598321,2021-10-31 00:00:00,2021,América Mineiro,Fortaleza,2,1,post
+598320,2021-10-31 19:00:00,2021,Ceará,Fluminense,1,0,post
+598323,2021-10-31 19:00:00,2021,Grêmio,Palmeiras,1,3,post
+598322,2021-10-31 21:15:00,2021,São Paulo,Internacional,1,0,post
+598316,2021-10-31 23:30:00,2021,Sport,Atlético Goianiense,2,0,post
+598318,2021-11-01 23:00:00,2021,Cuiabá,Red Bull Bragantino,1,0,post
+598319,2021-11-02 00:30:00,2021,Corinthians,Chapecoense,1,0,post
+598570,2021-11-02 19:00:00,2021,Athletico-PR,Flamengo,2,2,post
+598420,2021-11-04 00:00:00,2021,Atlético-MG,Grêmio,2,1,post
+598300,2021-11-05 00:00:00,2021,Cuiabá,Chapecoense,0,0,post
+598416,2021-11-06 00:30:00,2021,Flamengo,Atlético Goianiense,2,0,post
+598309,2021-11-06 20:00:00,2021,Corinthians,Fortaleza,1,0,post
+598310,2021-11-06 22:00:00,2021,Internacional,Grêmio,1,0,post
+598313,2021-11-07 00:00:00,2021,Fluminense,Sport,1,0,post
+598305,2021-11-07 19:00:00,2021,Atlético-MG,América Mineiro,1,0,post
+598306,2021-11-07 19:00:00,2021,Red Bull Bragantino,Athletico-PR,0,2,post
+598312,2021-11-07 19:00:00,2021,Santos,Palmeiras,0,2,post
+598314,2021-11-07 21:15:00,2021,Bahia,São Paulo,1,0,post
+598307,2021-11-07 23:30:00,2021,Ceará,Cuiabá,1,0,post
+598308,2021-11-08 23:00:00,2021,Chapecoense,Flamengo,2,2,post
+598302,2021-11-10 00:30:00,2021,Grêmio,Fluminense,1,0,post
+598299,2021-11-10 21:30:00,2021,Athletico-PR,Ceará,2,1,post
+598301,2021-11-10 22:00:00,2021,Atlético-MG,Corinthians,3,0,post
+598298,2021-11-10 22:00:00,2021,Santos,Red Bull Bragantino,2,0,post
+598296,2021-11-10 23:30:00,2021,Palmeiras,Atlético Goianiense,4,0,post
+598303,2021-11-11 00:30:00,2021,Juventude,Internacional,2,1,post
+598295,2021-11-11 00:30:00,2021,Sport,América Mineiro,2,3,post
+598304,2021-11-11 00:30:00,2021,Fortaleza,São Paulo,1,1,post
+598297,2021-11-11 22:00:00,2021,Flamengo,Bahia,3,0,post
+598293,2021-11-13 20:00:00,2021,Atlético Goianiense,Santos,0,0,post
+598290,2021-11-13 21:30:00,2021,América Mineiro,Grêmio,3,1,post
+598286,2021-11-13 22:00:00,2021,Internacional,Athletico-PR,2,1,post
+598289,2021-11-13 22:00:00,2021,Red Bull Bragantino,Fortaleza,3,0,post
+598287,2021-11-14 00:00:00,2021,Corinthians,Cuiabá,3,2,post
+598288,2021-11-14 19:00:00,2021,São Paulo,Flamengo,0,4,post
+598292,2021-11-14 21:15:00,2021,Fluminense,Palmeiras,2,1,post
+598291,2021-11-14 22:00:00,2021,Chapecoense,Juventude,0,2,post
+598294,2021-11-14 22:00:00,2021,Ceará,Sport,2,1,post
+598275,2021-11-16 19:00:00,2021,Athletico-PR,Atlético-MG,0,1,post
+598278,2021-11-16 21:00:00,2021,Grêmio,Red Bull Bragantino,3,0,post
+598276,2021-11-17 22:00:00,2021,América Mineiro,Atlético Goianiense,0,0,post
+598283,2021-11-17 22:00:00,2021,Cuiabá,Internacional,1,0,post
+598280,2021-11-17 22:00:00,2021,Santos,Chapecoense,2,0,post
+598279,2021-11-17 23:00:00,2021,Fortaleza,Ceará,0,4,post
+598284,2021-11-17 23:30:00,2021,Palmeiras,São Paulo,0,2,post
+598282,2021-11-17 23:30:00,2021,Juventude,Fluminense,1,0,post
+598281,2021-11-18 00:30:00,2021,Flamengo,Corinthians,1,0,post
+598277,2021-11-19 00:00:00,2021,Sport,Bahia,1,0,post
+598271,2021-11-20 22:00:00,2021,Atlético-MG,Juventude,2,0,post
+598270,2021-11-20 22:00:00,2021,Chapecoense,Grêmio,1,3,post
+598272,2021-11-20 22:00:00,2021,Fortaleza,Palmeiras,1,0,post
+598267,2021-11-21 00:00:00,2021,Atlético Goianiense,Ceará,1,1,post
+598269,2021-11-21 00:30:00,2021,Internacional,Flamengo,1,2,post
+598273,2021-11-21 19:00:00,2021,Corinthians,Santos,2,0,post
+598265,2021-11-21 20:00:00,2021,Fluminense,América Mineiro,2,0,post
+598268,2021-11-21 22:00:00,2021,Bahia,Cuiabá,0,0,post
+598311,2021-11-23 22:00:00,2021,Atlético Goianiense,Juventude,1,1,post
+598592,2021-11-24 00:00:00,2021,Grêmio,Flamengo,2,2,post
+598255,2021-11-24 00:30:00,2021,Palmeiras,Atlético-MG,2,2,post
+598263,2021-11-25 00:30:00,2021,Fluminense,Internacional,1,0,post
+598266,2021-11-25 00:30:00,2021,São Paulo,Athletico-PR,0,0,post
+598262,2021-11-25 22:00:00,2021,Santos,Fortaleza,2,0,post
+598259,2021-11-25 23:00:00,2021,Ceará,Corinthians,2,1,post
+598250,2021-11-26 22:00:00,2021,Bahia,Grêmio,3,1,post
+598245,2021-11-27 22:30:00,2021,Red Bull Bragantino,América Mineiro,1,1,post
+598254,2021-11-28 00:30:00,2021,São Paulo,Sport,2,0,post
+598249,2021-11-28 19:00:00,2021,Atlético-MG,Fluminense,2,1,post
+598247,2021-11-28 19:00:00,2021,Corinthians,Athletico-PR,1,0,post
+598253,2021-11-28 22:00:00,2021,Internacional,Santos,1,1,post
+598256,2021-11-29 22:00:00,2021,Atlético Goianiense,Bahia,2,1,post
+598257,2021-11-30 22:00:00,2021,Juventude,Red Bull Bragantino,1,0,post
+598248,2021-11-30 23:00:00,2021,Flamengo,Ceará,2,1,post
+598258,2021-12-01 00:00:00,2021,América Mineiro,Chapecoense,3,0,post
+598252,2021-12-01 01:00:00,2021,Cuiabá,Palmeiras,1,3,post
+598285,2021-12-02 21:00:00,2021,Bahia,Atlético-MG,2,3,post
+598264,2021-12-02 23:00:00,2021,Grêmio,São Paulo,3,0,post
+598260,2021-12-03 22:00:00,2021,Athletico-PR,Cuiabá,1,0,post
+598246,2021-12-03 23:00:00,2021,Chapecoense,Atlético Goianiense,0,1,post
+598261,2021-12-03 23:00:00,2021,Sport,Flamengo,1,1,post
+598251,2021-12-04 00:00:00,2021,Fortaleza,Juventude,1,0,post
+598237,2021-12-05 19:00:00,2021,Atlético-MG,Red Bull Bragantino,4,3,post
+598238,2021-12-05 19:00:00,2021,Bahia,Fluminense,2,0,post
+598240,2021-12-05 19:00:00,2021,Corinthians,Grêmio,1,1,post
+598235,2021-12-05 22:00:00,2021,Ceará,América Mineiro,0,0,post
+598241,2021-12-06 22:00:00,2021,São Paulo,Juventude,3,1,post
+598242,2021-12-06 22:00:00,2021,Athletico-PR,Palmeiras,0,0,post
+598239,2021-12-06 23:00:00,2021,Cuiabá,Fortaleza,1,0,post
+598243,2021-12-06 23:00:00,2021,Flamengo,Santos,0,1,post
+598236,2021-12-06 23:00:00,2021,Internacional,Atlético Goianiense,1,2,post
+598244,2021-12-07 00:00:00,2021,Chapecoense,Sport,0,1,post
+598228,2021-12-10 00:30:00,2021,Palmeiras,Ceará,1,0,post
+598226,2021-12-10 00:30:00,2021,Sport,Athletico-PR,1,1,post
+598231,2021-12-10 00:30:00,2021,Santos,Cuiabá,1,1,post
+598233,2021-12-10 00:30:00,2021,Red Bull Bragantino,Internacional,1,0,post
+598230,2021-12-10 00:30:00,2021,Juventude,Corinthians,1,0,post
+598227,2021-12-10 00:30:00,2021,Fortaleza,Bahia,2,1,post
+598229,2021-12-10 00:30:00,2021,Fluminense,Chapecoense,3,0,post
+598232,2021-12-10 00:30:00,2021,Atlético Goianiense,Flamengo,2,0,post
+598234,2021-12-10 00:30:00,2021,América Mineiro,São Paulo,2,0,post
+598225,2021-12-10 00:30:00,2021,Grêmio,Atlético-MG,4,3,post
+631142,2022-04-09 19:30:00,2022,Fluminense,Santos,0,0,post
+631139,2022-04-09 22:00:00,2022,Atlético Goianiense,Flamengo,1,1,post
+631136,2022-04-10 00:00:00,2022,Palmeiras,Ceará,2,3,post
+631140,2022-04-10 14:00:00,2022,Coritiba,Goiás,3,0,post
+631141,2022-04-10 19:00:00,2022,Atlético-MG,Internacional,2,0,post
+631137,2022-04-10 19:00:00,2022,Botafogo,Corinthians,1,3,post
+631138,2022-04-10 21:00:00,2022,Fortaleza,Cuiabá,0,1,post
+631133,2022-04-10 22:00:00,2022,Avaí,América Mineiro,1,0,post
+631134,2022-04-10 22:00:00,2022,São Paulo,Athletico-PR,4,0,post
+631135,2022-04-11 23:00:00,2022,Juventude,Red Bull Bragantino,2,2,post
+631131,2022-04-16 19:30:00,2022,Goiás,Palmeiras,1,1,post
+631125,2022-04-16 22:00:00,2022,Corinthians,Avaí,3,0,post
+631130,2022-04-16 22:00:00,2022,América Mineiro,Juventude,4,1,post
+631128,2022-04-17 00:00:00,2022,Cuiabá,Fluminense,0,1,post
+631127,2022-04-17 14:00:00,2022,Santos,Coritiba,2,1,post
+631132,2022-04-17 19:00:00,2022,Flamengo,São Paulo,3,1,post
+631123,2022-04-17 21:00:00,2022,Athletico-PR,Atlético-MG,0,1,post
+631129,2022-04-17 21:00:00,2022,Internacional,Fortaleza,2,1,post
+631124,2022-04-17 21:00:00,2022,Red Bull Bragantino,Atlético Goianiense,4,0,post
+631126,2022-04-17 22:00:00,2022,Ceará,Botafogo,1,3,post
+631111,2022-04-20 22:30:00,2022,Flamengo,Palmeiras,0,0,post
+631119,2022-04-23 19:30:00,2022,Athletico-PR,Flamengo,1,0,post
+631122,2022-04-23 19:30:00,2022,Red Bull Bragantino,São Paulo,1,1,post
+631121,2022-04-23 22:00:00,2022,Fluminense,Internacional,0,1,post
+631116,2022-04-23 22:00:00,2022,Palmeiras,Corinthians,3,0,post
+631117,2022-04-24 00:00:00,2022,Atlético-MG,Coritiba,2,2,post
+631113,2022-04-24 19:00:00,2022,Santos,América Mineiro,3,0,post
+631118,2022-04-24 21:00:00,2022,Juventude,Cuiabá,0,1,post
+631114,2022-04-24 21:30:00,2022,Atlético Goianiense,Botafogo,1,1,post
+631120,2022-04-25 23:00:00,2022,Avaí,Goiás,3,2,post
+631107,2022-04-30 19:30:00,2022,Ceará,Red Bull Bragantino,0,1,post
+631105,2022-04-30 19:30:00,2022,América Mineiro,Athletico-PR,1,0,post
+631103,2022-04-30 21:30:00,2022,Goiás,Atlético-MG,2,2,post
+631104,2022-04-30 22:00:00,2022,Cuiabá,Atlético Goianiense,1,1,post
+631110,2022-05-01 14:00:00,2022,Botafogo,Juventude,1,1,post
+631109,2022-05-01 19:00:00,2022,Corinthians,Fortaleza,1,0,post
+631108,2022-05-01 19:00:00,2022,Coritiba,Fluminense,3,2,post
+631106,2022-05-01 22:00:00,2022,Internacional,Avaí,0,0,post
+631112,2022-05-02 23:00:00,2022,São Paulo,Santos,2,1,post
+631093,2022-05-07 19:30:00,2022,Atlético-MG,América Mineiro,1,2,post
+631095,2022-05-07 23:30:00,2022,Athletico-PR,Ceará,1,0,post
+631094,2022-05-08 14:00:00,2022,Flamengo,Botafogo,0,1,post
+631100,2022-05-08 19:00:00,2022,Atlético Goianiense,Goiás,0,1,post
+631099,2022-05-08 19:00:00,2022,Palmeiras,Fluminense,1,1,post
+631096,2022-05-08 21:00:00,2022,Red Bull Bragantino,Corinthians,0,1,post
+631098,2022-05-08 21:00:00,2022,Santos,Cuiabá,4,1,post
+631102,2022-05-08 22:00:00,2022,Fortaleza,São Paulo,1,1,post
+631101,2022-05-08 22:00:00,2022,Juventude,Internacional,1,1,post
+631097,2022-05-09 23:00:00,2022,Avaí,Coritiba,2,1,post
+631073,2022-05-11 23:30:00,2022,Red Bull Bragantino,Atlético-MG,1,1,post
+631089,2022-05-14 19:30:00,2022,Ceará,Flamengo,2,2,post
+631086,2022-05-14 19:30:00,2022,Palmeiras,Red Bull Bragantino,2,0,post
+631084,2022-05-14 22:00:00,2022,Atlético-MG,Atlético Goianiense,2,0,post
+631087,2022-05-14 22:00:00,2022,Internacional,Corinthians,2,2,post
+631085,2022-05-15 00:00:00,2022,Fluminense,Athletico-PR,2,1,post
+631088,2022-05-15 19:00:00,2022,São Paulo,Cuiabá,2,1,post
+631083,2022-05-15 20:30:00,2022,Coritiba,América Mineiro,1,0,post
+631090,2022-05-15 21:00:00,2022,Botafogo,Fortaleza,3,1,post
+631091,2022-05-15 21:00:00,2022,Avaí,Juventude,1,2,post
+631092,2022-05-15 22:00:00,2022,Goiás,Santos,1,0,post
+631077,2022-05-21 19:30:00,2022,Atlético Goianiense,Coritiba,2,0,post
+631079,2022-05-21 19:30:00,2022,Flamengo,Goiás,1,0,post
+631076,2022-05-21 21:30:00,2022,Santos,Ceará,0,0,post
+631081,2022-05-21 22:00:00,2022,Juventude,Palmeiras,0,3,post
+631075,2022-05-22 00:00:00,2022,América Mineiro,Botafogo,1,1,post
+631080,2022-05-22 00:00:00,2022,Cuiabá,Internacional,1,1,post
+631082,2022-05-22 19:00:00,2022,Corinthians,São Paulo,1,1,post
+631078,2022-05-22 19:00:00,2022,Fortaleza,Fluminense,0,1,post
+631074,2022-05-22 22:00:00,2022,Athletico-PR,Avaí,2,1,post
+631068,2022-05-28 19:30:00,2022,Goiás,Red Bull Bragantino,1,1,post
+631069,2022-05-28 22:00:00,2022,São Paulo,Ceará,2,2,post
+631071,2022-05-28 23:30:00,2022,Fortaleza,Juventude,1,1,post
+631067,2022-05-29 19:00:00,2022,Coritiba,Botafogo,1,0,post
+631072,2022-05-29 19:00:00,2022,Santos,Palmeiras,0,1,post
+631063,2022-05-29 21:00:00,2022,Corinthians,América Mineiro,1,1,post
+631065,2022-05-29 21:00:00,2022,Cuiabá,Athletico-PR,0,1,post
+631070,2022-05-29 21:00:00,2022,Fluminense,Flamengo,1,2,post
+631066,2022-05-29 22:00:00,2022,Atlético-MG,Avaí,2,1,post
+631064,2022-05-30 23:00:00,2022,Internacional,Atlético Goianiense,1,1,post
+631115,2022-06-01 23:30:00,2022,Fortaleza,Ceará,0,1,post
+631056,2022-06-04 19:30:00,2022,América Mineiro,Cuiabá,2,1,post
+631061,2022-06-04 22:00:00,2022,Athletico-PR,Santos,2,2,post
+631062,2022-06-04 22:00:00,2022,Avaí,São Paulo,1,1,post
+631055,2022-06-04 22:00:00,2022,Ceará,Coritiba,1,1,post
+631054,2022-06-04 23:30:00,2022,Atlético Goianiense,Corinthians,0,1,post
+631057,2022-06-05 14:00:00,2022,Juventude,Fluminense,1,0,post
+631053,2022-06-05 19:00:00,2022,Palmeiras,Atlético-MG,0,0,post
+631058,2022-06-05 19:00:00,2022,Flamengo,Fortaleza,1,2,post
+631060,2022-06-05 22:00:00,2022,Red Bull Bragantino,Internacional,0,2,post
+631059,2022-06-06 23:00:00,2022,Botafogo,Goiás,1,2,post
+631048,2022-06-08 00:30:00,2022,Cuiabá,Corinthians,1,0,post
+631047,2022-06-08 22:00:00,2022,América Mineiro,Ceará,0,2,post
+631044,2022-06-08 22:00:00,2022,Juventude,Athletico-PR,1,3,post
+631045,2022-06-08 23:30:00,2022,Atlético Goianiense,Avaí,2,1,post
+631049,2022-06-08 23:30:00,2022,Red Bull Bragantino,Flamengo,1,0,post
+631043,2022-06-09 00:30:00,2022,Fluminense,Atlético-MG,5,3,post
+631051,2022-06-09 00:30:00,2022,Santos,Internacional,1,1,post
+631046,2022-06-09 22:00:00,2022,Palmeiras,Botafogo,4,0,post
+631052,2022-06-09 23:00:00,2022,Coritiba,São Paulo,1,1,post
+631050,2022-06-09 23:00:00,2022,Fortaleza,Goiás,1,1,post
+631040,2022-06-11 19:30:00,2022,Corinthians,Juventude,2,0,post
+631042,2022-06-11 22:00:00,2022,Atlético-MG,Santos,1,1,post
+631037,2022-06-11 22:00:00,2022,Cuiabá,Red Bull Bragantino,1,1,post
+631034,2022-06-11 22:00:00,2022,Fluminense,Atlético Goianiense,0,2,post
+631039,2022-06-12 00:00:00,2022,Internacional,Flamengo,3,1,post
+631033,2022-06-12 19:00:00,2022,São Paulo,América Mineiro,1,0,post
+631038,2022-06-12 19:00:00,2022,Goiás,Ceará,1,1,post
+631041,2022-06-12 21:00:00,2022,Coritiba,Palmeiras,0,2,post
+631035,2022-06-12 22:00:00,2022,Fortaleza,Athletico-PR,0,0,post
+631036,2022-06-13 22:00:00,2022,Botafogo,Avaí,0,1,post
+631031,2022-06-15 00:30:00,2022,Juventude,Santos,1,2,post
+631023,2022-06-15 22:00:00,2022,Ceará,Atlético-MG,0,0,post
+631026,2022-06-15 22:00:00,2022,Red Bull Bragantino,Coritiba,4,2,post
+631027,2022-06-15 23:30:00,2022,Flamengo,Cuiabá,2,0,post
+631030,2022-06-15 23:30:00,2022,Goiás,Internacional,1,2,post
+631028,2022-06-16 00:30:00,2022,América Mineiro,Fluminense,0,0,post
+631025,2022-06-16 00:30:00,2022,Athletico-PR,Corinthians,1,1,post
+631032,2022-06-16 19:00:00,2022,Botafogo,São Paulo,1,0,post
+631024,2022-06-16 21:00:00,2022,Palmeiras,Atlético Goianiense,4,2,post
+631029,2022-06-16 22:00:00,2022,Avaí,Fortaleza,3,2,post
+631018,2022-06-18 22:00:00,2022,Cuiabá,Ceará,0,0,post
+631017,2022-06-19 00:00:00,2022,Santos,Red Bull Bragantino,2,2,post
+631020,2022-06-19 19:00:00,2022,Corinthians,Goiás,1,0,post
+631014,2022-06-19 19:00:00,2022,Coritiba,Athletico-PR,0,1,post
+631019,2022-06-19 19:00:00,2022,Atlético-MG,Flamengo,2,0,post
+631021,2022-06-19 21:00:00,2022,Atlético Goianiense,Juventude,3,1,post
+631013,2022-06-19 21:00:00,2022,Fortaleza,América Mineiro,1,0,post
+631016,2022-06-19 21:00:00,2022,Internacional,Botafogo,2,3,post
+631015,2022-06-19 22:00:00,2022,Fluminense,Avaí,2,0,post
+631022,2022-06-20 23:00:00,2022,São Paulo,Palmeiras,1,2,post
+631006,2022-06-25 00:30:00,2022,Internacional,Coritiba,3,0,post
+631005,2022-06-25 19:30:00,2022,Athletico-PR,Red Bull Bragantino,4,2,post
+631012,2022-06-25 22:00:00,2022,Corinthians,Santos,0,0,post
+631003,2022-06-25 22:00:00,2022,Flamengo,América Mineiro,3,0,post
+631009,2022-06-26 00:00:00,2022,Atlético-MG,Fortaleza,3,2,post
+631011,2022-06-26 19:00:00,2022,Avaí,Palmeiras,2,2,post
+631008,2022-06-26 19:00:00,2022,Botafogo,Fluminense,0,1,post
+631004,2022-06-26 21:00:00,2022,Ceará,Atlético Goianiense,1,1,post
+631007,2022-06-26 21:00:00,2022,Goiás,Cuiabá,1,0,post
+631010,2022-06-26 21:00:00,2022,São Paulo,Juventude,0,0,post
+630996,2022-07-02 19:30:00,2022,Fluminense,Corinthians,4,0,post
+630993,2022-07-02 19:30:00,2022,Juventude,Atlético-MG,1,2,post
+630998,2022-07-02 22:00:00,2022,Santos,Flamengo,1,2,post
+631001,2022-07-02 22:00:00,2022,Ceará,Internacional,1,1,post
+630994,2022-07-03 00:00:00,2022,Palmeiras,Athletico-PR,0,2,post
+630997,2022-07-03 14:00:00,2022,Avaí,Cuiabá,1,2,post
+631002,2022-07-03 19:00:00,2022,Atlético Goianiense,São Paulo,1,2,post
+631000,2022-07-03 21:00:00,2022,América Mineiro,Goiás,1,0,post
+630999,2022-07-03 21:45:00,2022,Coritiba,Fortaleza,2,1,post
+630995,2022-07-04 23:00:00,2022,Red Bull Bragantino,Botafogo,0,1,post
+630986,2022-07-09 19:30:00,2022,Red Bull Bragantino,Avaí,4,0,post
+630988,2022-07-09 22:00:00,2022,Fluminense,Ceará,2,1,post
+630985,2022-07-09 23:30:00,2022,Goiás,Athletico-PR,2,1,post
+630990,2022-07-10 14:00:00,2022,Coritiba,Juventude,2,2,post
+630989,2022-07-10 19:00:00,2022,Corinthians,Flamengo,1,0,post
+630992,2022-07-10 21:00:00,2022,Atlético-MG,São Paulo,0,0,post
+630991,2022-07-10 21:00:00,2022,Fortaleza,Palmeiras,0,0,post
+630984,2022-07-10 21:00:00,2022,Santos,Atlético Goianiense,1,0,post
+630987,2022-07-10 22:00:00,2022,Cuiabá,Botafogo,2,0,post
+630983,2022-07-11 23:00:00,2022,Internacional,América Mineiro,1,0,post
+630981,2022-07-16 19:30:00,2022,Athletico-PR,Internacional,0,0,post
+630976,2022-07-16 22:00:00,2022,Flamengo,Coritiba,2,0,post
+630982,2022-07-16 22:00:00,2022,Avaí,Santos,1,0,post
+630975,2022-07-17 00:00:00,2022,Ceará,Corinthians,3,1,post
+630980,2022-07-17 14:00:00,2022,Juventude,Goiás,0,0,post
+630978,2022-07-17 19:00:00,2022,São Paulo,Fluminense,2,2,post
+630979,2022-07-17 21:00:00,2022,Atlético Goianiense,Fortaleza,0,1,post
+630973,2022-07-17 21:00:00,2022,Botafogo,Atlético-MG,0,1,post
+630974,2022-07-17 22:00:00,2022,América Mineiro,Red Bull Bragantino,0,3,post
+630977,2022-07-18 23:00:00,2022,Palmeiras,Cuiabá,1,0,post
+630965,2022-07-20 00:30:00,2022,Ceará,Avaí,1,0,post
+630968,2022-07-20 22:00:00,2022,Goiás,Fluminense,2,3,post
+630969,2022-07-20 22:00:00,2022,Red Bull Bragantino,Fortaleza,2,1,post
+630964,2022-07-20 22:30:00,2022,Athletico-PR,Atlético Goianiense,4,1,post
+630970,2022-07-20 23:30:00,2022,Flamengo,Juventude,4,0,post
+630972,2022-07-20 23:30:00,2022,Internacional,São Paulo,3,3,post
+630967,2022-07-21 00:30:00,2022,Corinthians,Coritiba,3,1,post
+630966,2022-07-21 00:30:00,2022,Santos,Botafogo,2,0,post
+630963,2022-07-21 22:00:00,2022,Cuiabá,Atlético-MG,1,1,post
+630971,2022-07-21 23:00:00,2022,América Mineiro,Palmeiras,0,1,post
+630960,2022-07-23 22:00:00,2022,São Paulo,Goiás,3,3,post
+630954,2022-07-24 00:00:00,2022,Botafogo,Athletico-PR,2,0,post
+630959,2022-07-24 14:00:00,2022,Avaí,Flamengo,1,2,post
+630955,2022-07-24 19:00:00,2022,Fluminense,Red Bull Bragantino,2,1,post
+630956,2022-07-24 19:00:00,2022,Juventude,Ceará,1,0,post
+630961,2022-07-24 19:00:00,2022,Palmeiras,Internacional,2,1,post
+630953,2022-07-24 21:00:00,2022,Atlético Goianiense,América Mineiro,0,1,post
+630957,2022-07-24 21:00:00,2022,Atlético-MG,Corinthians,1,2,post
+630962,2022-07-24 22:00:00,2022,Fortaleza,Santos,0,0,post
+630958,2022-07-25 23:00:00,2022,Coritiba,Cuiabá,1,0,post
+630951,2022-07-30 19:30:00,2022,Ceará,Palmeiras,1,2,post
+630947,2022-07-30 19:30:00,2022,Goiás,Coritiba,1,0,post
+630946,2022-07-30 22:00:00,2022,Corinthians,Botafogo,1,0,post
+630944,2022-07-30 23:30:00,2022,Flamengo,Atlético Goianiense,4,1,post
+630952,2022-07-31 19:00:00,2022,Athletico-PR,São Paulo,1,0,post
+630943,2022-07-31 19:00:00,2022,Internacional,Atlético-MG,3,0,post
+630945,2022-07-31 21:00:00,2022,América Mineiro,Avaí,3,1,post
+630949,2022-07-31 21:00:00,2022,Cuiabá,Fortaleza,0,1,post
+630950,2022-07-31 22:00:00,2022,Red Bull Bragantino,Juventude,1,0,post
+630948,2022-08-01 23:00:00,2022,Santos,Fluminense,2,2,post
+630936,2022-08-06 19:30:00,2022,Botafogo,Ceará,1,1,post
+630933,2022-08-06 19:30:00,2022,Juventude,América Mineiro,0,1,post
+630935,2022-08-06 22:00:00,2022,Atlético Goianiense,Red Bull Bragantino,2,1,post
+630937,2022-08-06 22:00:00,2022,Avaí,Corinthians,1,1,post
+630939,2022-08-06 23:30:00,2022,São Paulo,Flamengo,0,2,post
+630938,2022-08-07 19:00:00,2022,Fluminense,Cuiabá,1,0,post
+630940,2022-08-07 19:00:00,2022,Palmeiras,Goiás,3,0,post
+630941,2022-08-07 21:00:00,2022,Fortaleza,Internacional,3,0,post
+630934,2022-08-07 22:00:00,2022,Atlético-MG,Athletico-PR,2,3,post
+630942,2022-08-08 23:00:00,2022,Coritiba,Santos,1,2,post
+630926,2022-08-13 19:30:00,2022,Goiás,Avaí,1,1,post
+630931,2022-08-13 22:00:00,2022,Corinthians,Palmeiras,0,1,post
+630930,2022-08-13 23:30:00,2022,Cuiabá,Juventude,1,0,post
+630924,2022-08-14 00:00:00,2022,Botafogo,Atlético Goianiense,0,0,post
+630923,2022-08-14 14:00:00,2022,Coritiba,Atlético-MG,0,1,post
+630925,2022-08-14 19:00:00,2022,Flamengo,Athletico-PR,5,0,post
+630927,2022-08-14 19:00:00,2022,São Paulo,Red Bull Bragantino,3,0,post
+630929,2022-08-14 19:00:00,2022,Ceará,Fortaleza,0,1,post
+630932,2022-08-14 21:00:00,2022,América Mineiro,Santos,1,0,post
+630928,2022-08-14 22:00:00,2022,Internacional,Fluminense,3,0,post
+630920,2022-08-20 19:30:00,2022,Atlético-MG,Goiás,0,1,post
+630917,2022-08-20 22:00:00,2022,Fluminense,Coritiba,5,2,post
+630914,2022-08-21 14:00:00,2022,Juventude,Botafogo,2,2,post
+630919,2022-08-21 19:00:00,2022,Palmeiras,Flamengo,1,1,post
+630915,2022-08-21 21:00:00,2022,Red Bull Bragantino,Ceará,1,1,post
+630916,2022-08-21 21:00:00,2022,Fortaleza,Corinthians,1,0,post
+630918,2022-08-21 21:00:00,2022,Atlético Goianiense,Cuiabá,1,1,post
+630913,2022-08-21 21:00:00,2022,Athletico-PR,América Mineiro,1,1,post
+630922,2022-08-21 22:00:00,2022,Santos,São Paulo,1,0,post
+630921,2022-08-22 23:00:00,2022,Avaí,Internacional,0,1,post
+630906,2022-08-27 19:30:00,2022,Coritiba,Avaí,1,0,post
+630904,2022-08-27 19:30:00,2022,Goiás,Atlético Goianiense,2,1,post
+630911,2022-08-27 22:00:00,2022,Fluminense,Palmeiras,1,1,post
+630905,2022-08-28 00:00:00,2022,Ceará,Athletico-PR,0,0,post
+630909,2022-08-28 19:00:00,2022,São Paulo,Fortaleza,0,1,post
+630903,2022-08-28 19:00:00,2022,América Mineiro,Atlético-MG,1,1,post
+630908,2022-08-28 21:00:00,2022,Botafogo,Flamengo,0,1,post
+630912,2022-08-28 21:00:00,2022,Cuiabá,Santos,0,0,post
+630910,2022-08-29 23:00:00,2022,Internacional,Juventude,4,0,post
+630907,2022-08-30 00:30:00,2022,Corinthians,Red Bull Bragantino,1,0,post
+630894,2022-09-03 19:30:00,2022,Juventude,Avaí,1,1,post
+630898,2022-09-03 22:00:00,2022,Athletico-PR,Fluminense,1,0,post
+630901,2022-09-03 22:00:00,2022,Red Bull Bragantino,Palmeiras,2,2,post
+630897,2022-09-03 23:30:00,2022,América Mineiro,Coritiba,2,0,post
+630896,2022-09-04 14:00:00,2022,Flamengo,Ceará,1,1,post
+630900,2022-09-04 19:00:00,2022,Corinthians,Internacional,2,2,post
+630895,2022-09-04 19:00:00,2022,Fortaleza,Botafogo,1,3,post
+630893,2022-09-04 21:00:00,2022,Atlético Goianiense,Atlético-MG,0,2,post
+630902,2022-09-04 22:00:00,2022,Cuiabá,São Paulo,1,1,post
+630899,2022-09-05 23:00:00,2022,Santos,Goiás,1,2,post
+630886,2022-09-07 20:00:00,2022,Atlético-MG,Red Bull Bragantino,1,1,post
+630888,2022-09-10 19:30:00,2022,Internacional,Cuiabá,1,0,post
+630892,2022-09-10 19:30:00,2022,Ceará,Santos,2,1,post
+630890,2022-09-10 22:00:00,2022,Fluminense,Fortaleza,2,1,post
+630891,2022-09-11 00:00:00,2022,Palmeiras,Juventude,2,1,post
+630885,2022-09-11 14:00:00,2022,Avaí,Athletico-PR,1,1,post
+630883,2022-09-11 14:00:00,2022,Botafogo,América Mineiro,0,0,post
+630884,2022-09-11 19:00:00,2022,Coritiba,Atlético Goianiense,2,0,post
+630887,2022-09-11 19:00:00,2022,São Paulo,Corinthians,1,1,post
+630889,2022-09-11 22:00:00,2022,Goiás,Flamengo,1,1,post
+630873,2022-09-17 19:30:00,2022,Avaí,Atlético-MG,1,0,post
+630875,2022-09-17 22:00:00,2022,Botafogo,Coritiba,2,0,post
+630879,2022-09-18 14:00:00,2022,Red Bull Bragantino,Goiás,1,1,post
+630877,2022-09-18 19:00:00,2022,Flamengo,Fluminense,1,2,post
+630882,2022-09-18 19:00:00,2022,Ceará,São Paulo,0,2,post
+630874,2022-09-18 21:00:00,2022,América Mineiro,Corinthians,1,0,post
+630878,2022-09-18 21:00:00,2022,Juventude,Fortaleza,1,1,post
+630881,2022-09-18 21:30:00,2022,Palmeiras,Santos,1,0,post
+630876,2022-09-18 22:00:00,2022,Athletico-PR,Cuiabá,2,2,post
+630880,2022-09-19 23:00:00,2022,Atlético Goianiense,Internacional,1,2,post
+630866,2022-09-25 23:00:00,2022,São Paulo,Avaí,4,0,post
+630865,2022-09-28 00:00:00,2022,Santos,Athletico-PR,2,0,post
+630870,2022-09-28 22:00:00,2022,Fortaleza,Flamengo,3,2,post
+630871,2022-09-28 22:00:00,2022,Fluminense,Juventude,4,0,post
+630864,2022-09-28 22:00:00,2022,Corinthians,Atlético Goianiense,2,1,post
+630869,2022-09-28 22:00:00,2022,Coritiba,Ceará,1,0,post
+630863,2022-09-29 00:00:00,2022,Cuiabá,América Mineiro,2,1,post
+630872,2022-09-29 00:45:00,2022,Atlético-MG,Palmeiras,0,1,post
+630867,2022-09-29 00:45:00,2022,Goiás,Botafogo,0,1,post
+630868,2022-09-29 00:45:00,2022,Internacional,Red Bull Bragantino,0,0,post
+630858,2022-10-01 18:00:00,2022,Atlético-MG,Fluminense,2,0,post
+630853,2022-10-01 18:00:00,2022,Ceará,América Mineiro,1,2,post
+630862,2022-10-01 18:00:00,2022,Internacional,Santos,1,0,post
+630860,2022-10-01 22:00:00,2022,Athletico-PR,Juventude,2,0,post
+630854,2022-10-01 22:00:00,2022,Avaí,Atlético Goianiense,1,2,post
+630855,2022-10-01 22:00:00,2022,Flamengo,Red Bull Bragantino,4,1,post
+630859,2022-10-01 22:00:00,2022,Goiás,Fortaleza,0,1,post
+630857,2022-10-02 00:00:00,2022,Corinthians,Cuiabá,2,0,post
+630861,2022-10-03 23:00:00,2022,Botafogo,Palmeiras,1,3,post
+630845,2022-10-05 00:30:00,2022,Juventude,Corinthians,2,2,post
+630847,2022-10-05 22:00:00,2022,Red Bull Bragantino,Cuiabá,2,1,post
+630850,2022-10-05 22:00:00,2022,Ceará,Goiás,1,1,post
+630848,2022-10-05 22:00:00,2022,Atlético Goianiense,Fluminense,3,2,post
+630849,2022-10-05 22:30:00,2022,Athletico-PR,Fortaleza,1,1,post
+630851,2022-10-06 00:30:00,2022,Flamengo,Internacional,0,0,post
+630843,2022-10-06 00:30:00,2022,Santos,Atlético-MG,1,2,post
+630846,2022-10-06 22:00:00,2022,Palmeiras,Coritiba,4,0,post
+630852,2022-10-06 23:00:00,2022,América Mineiro,São Paulo,1,2,post
+630844,2022-10-06 23:00:00,2022,Avaí,Botafogo,1,2,post
+630839,2022-10-08 22:00:00,2022,Cuiabá,Flamengo,1,2,post
+630834,2022-10-09 00:00:00,2022,Corinthians,Athletico-PR,2,1,post
+630840,2022-10-09 14:00:00,2022,Internacional,Goiás,4,2,post
+630835,2022-10-09 19:00:00,2022,Fortaleza,Avaí,2,0,post
+630836,2022-10-09 19:00:00,2022,São Paulo,Botafogo,0,1,post
+630838,2022-10-09 21:00:00,2022,Atlético-MG,Ceará,0,0,post
+630837,2022-10-09 21:00:00,2022,Coritiba,Red Bull Bragantino,2,1,post
+630833,2022-10-09 21:00:00,2022,Fluminense,América Mineiro,0,2,post
+630842,2022-10-10 21:30:00,2022,Atlético Goianiense,Palmeiras,1,1,post
+630841,2022-10-10 23:00:00,2022,Santos,Juventude,4,1,post
+630823,2022-10-15 23:30:00,2022,Flamengo,Atlético-MG,1,0,post
+630829,2022-10-15 23:30:00,2022,América Mineiro,Fortaleza,1,2,post
+630827,2022-10-16 19:00:00,2022,Ceará,Cuiabá,1,1,post
+630832,2022-10-16 19:00:00,2022,Palmeiras,São Paulo,0,0,post
+630830,2022-10-16 21:00:00,2022,Botafogo,Internacional,0,1,post
+630824,2022-10-16 21:00:00,2022,Juventude,Atlético Goianiense,1,1,post
+630826,2022-10-16 22:00:00,2022,Athletico-PR,Coritiba,1,0,post
+630828,2022-10-16 22:00:00,2022,Avaí,Fluminense,0,3,post
+630831,2022-10-17 23:00:00,2022,Red Bull Bragantino,Santos,0,2,post
+630856,2022-10-20 23:00:00,2022,São Paulo,Coritiba,3,1,post
+630814,2022-10-22 19:30:00,2022,Red Bull Bragantino,Athletico-PR,4,2,post
+630819,2022-10-22 22:00:00,2022,América Mineiro,Flamengo,1,2,post
+630818,2022-10-22 22:00:00,2022,Santos,Corinthians,0,1,post
+630815,2022-10-23 00:00:00,2022,Palmeiras,Avaí,3,0,post
+630816,2022-10-23 19:00:00,2022,Fluminense,Botafogo,2,2,post
+630822,2022-10-23 19:00:00,2022,Juventude,São Paulo,1,2,post
+630817,2022-10-23 21:00:00,2022,Atlético Goianiense,Ceará,1,0,post
+630821,2022-10-23 21:00:00,2022,Coritiba,Internacional,1,1,post
+630820,2022-10-23 21:00:00,2022,Cuiabá,Goiás,1,2,post
+630813,2022-10-24 23:00:00,2022,Fortaleza,Atlético-MG,0,0,post
+630811,2022-10-26 00:45:00,2022,Athletico-PR,Palmeiras,1,3,post
+630812,2022-10-26 00:45:00,2022,Flamengo,Santos,3,2,post
+630806,2022-10-26 22:30:00,2022,Botafogo,Red Bull Bragantino,2,1,post
+630809,2022-10-27 00:45:00,2022,Corinthians,Fluminense,0,2,post
+630803,2022-10-27 00:45:00,2022,Goiás,América Mineiro,2,2,post
+630807,2022-10-27 00:45:00,2022,Internacional,Ceará,2,1,post
+630808,2022-10-27 22:00:00,2022,Fortaleza,Coritiba,3,1,post
+630804,2022-10-27 22:00:00,2022,São Paulo,Atlético Goianiense,2,1,post
+630810,2022-10-27 22:30:00,2022,Atlético-MG,Juventude,1,0,post
+630805,2022-10-27 23:00:00,2022,Cuiabá,Avaí,1,0,post
+630825,2022-10-29 22:30:00,2022,Goiás,Corinthians,0,0,post
+630798,2022-10-31 23:00:00,2022,Ceará,Fluminense,0,1,post
+630797,2022-11-01 22:00:00,2022,Botafogo,Cuiabá,0,2,post
+630793,2022-11-02 00:30:00,2022,São Paulo,Atlético-MG,2,2,post
+630801,2022-11-02 19:00:00,2022,América Mineiro,Internacional,1,0,post
+630800,2022-11-02 19:00:00,2022,Athletico-PR,Goiás,3,2,post
+630794,2022-11-02 22:00:00,2022,Avaí,Red Bull Bragantino,1,2,post
+630796,2022-11-02 22:00:00,2022,Juventude,Coritiba,0,1,post
+630802,2022-11-02 22:00:00,2022,Atlético Goianiense,Santos,2,3,post
+630795,2022-11-03 00:30:00,2022,Flamengo,Corinthians,1,2,post
+630799,2022-11-03 00:30:00,2022,Palmeiras,Fortaleza,4,0,post
+630792,2022-11-05 19:30:00,2022,Fluminense,São Paulo,3,1,post
+630786,2022-11-05 19:30:00,2022,Santos,Avaí,1,1,post
+630790,2022-11-05 22:00:00,2022,Goiás,Juventude,1,0,post
+630783,2022-11-05 22:00:00,2022,Red Bull Bragantino,América Mineiro,1,4,post
+630788,2022-11-05 23:30:00,2022,Corinthians,Ceará,1,0,post
+630785,2022-11-06 00:00:00,2022,Internacional,Athletico-PR,2,0,post
+630784,2022-11-06 19:00:00,2022,Fortaleza,Atlético Goianiense,1,1,post
+630789,2022-11-06 19:00:00,2022,Coritiba,Flamengo,1,0,post
+630791,2022-11-06 21:30:00,2022,Cuiabá,Palmeiras,1,1,post
+630787,2022-11-07 23:00:00,2022,Atlético-MG,Botafogo,0,2,post
+630781,2022-11-09 00:30:00,2022,São Paulo,Internacional,0,1,post
+630776,2022-11-09 22:00:00,2022,Avaí,Ceará,2,0,post
+630777,2022-11-09 22:00:00,2022,Coritiba,Corinthians,2,2,post
+630780,2022-11-09 22:00:00,2022,Fluminense,Goiás,3,0,post
+630775,2022-11-09 23:30:00,2022,Fortaleza,Red Bull Bragantino,6,0,post
+630773,2022-11-10 00:30:00,2022,Palmeiras,América Mineiro,2,1,post
+630774,2022-11-10 00:30:00,2022,Atlético Goianiense,Athletico-PR,1,1,post
+630779,2022-11-10 00:30:00,2022,Juventude,Flamengo,2,2,post
+630778,2022-11-10 23:00:00,2022,Atlético-MG,Cuiabá,3,0,post
+630782,2022-11-10 23:00:00,2022,Botafogo,Santos,3,0,post
+630765,2022-11-12 19:00:00,2022,Flamengo,Avaí,1,2,post
+630769,2022-11-13 19:00:00,2022,Santos,Fortaleza,0,2,post
+630768,2022-11-13 19:00:00,2022,Red Bull Bragantino,Fluminense,0,1,post
+630771,2022-11-13 19:00:00,2022,Internacional,Palmeiras,3,0,post
+630772,2022-11-13 19:00:00,2022,Goiás,São Paulo,0,4,post
+630767,2022-11-13 19:00:00,2022,Cuiabá,Coritiba,2,1,post
+630763,2022-11-13 19:00:00,2022,Corinthians,Atlético-MG,0,1,post
+630770,2022-11-13 19:00:00,2022,Ceará,Juventude,4,1,post
+630766,2022-11-13 19:00:00,2022,Athletico-PR,Botafogo,3,0,post
+630764,2022-11-13 19:00:00,2022,América Mineiro,Atlético Goianiense,1,1,post
+665818,2023-04-15 19:00:00,2023,América Mineiro,Fluminense,0,3,post
+665826,2023-04-15 19:00:00,2023,Palmeiras,Cuiabá,2,1,post
+665827,2023-04-15 21:30:00,2023,Red Bull Bragantino,Bahia,2,1,post
+665824,2023-04-15 21:30:00,2023,Fortaleza,Internacional,1,1,post
+665821,2023-04-15 21:30:00,2023,Botafogo,São Paulo,2,1,post
+665819,2023-04-15 21:30:00,2023,Athletico-PR,Goiás,2,0,post
+665820,2023-04-16 00:00:00,2023,Atlético-MG,Vasco da Gama,1,2,post
+665822,2023-04-16 19:00:00,2023,Corinthians,Cruzeiro,2,1,post
+665823,2023-04-16 19:00:00,2023,Flamengo,Coritiba,3,0,post
+665825,2023-04-16 21:30:00,2023,Grêmio,Santos,1,0,post
+665832,2023-04-22 19:00:00,2023,Fluminense,Athletico-PR,2,0,post
+665831,2023-04-22 21:30:00,2023,Cuiabá,Red Bull Bragantino,1,1,post
+665836,2023-04-22 21:30:00,2023,São Paulo,América Mineiro,3,0,post
+665830,2023-04-23 00:00:00,2023,Cruzeiro,Grêmio,1,0,post
+665834,2023-04-23 14:00:00,2023,Internacional,Flamengo,2,1,post
+665835,2023-04-23 19:00:00,2023,Santos,Atlético-MG,0,0,post
+665837,2023-04-23 19:00:00,2023,Vasco da Gama,Palmeiras,2,2,post
+665829,2023-04-23 21:30:00,2023,Coritiba,Fortaleza,0,3,post
+665833,2023-04-23 22:00:00,2023,Goiás,Corinthians,3,1,post
+665828,2023-04-24 23:00:00,2023,Bahia,Botafogo,1,2,post
+665847,2023-04-29 19:30:00,2023,Fortaleza,Fluminense,4,2,post
+665839,2023-04-29 19:30:00,2023,Coritiba,São Paulo,1,1,post
+665845,2023-04-29 21:30:00,2023,Red Bull Bragantino,Cruzeiro,0,3,post
+665842,2023-04-29 21:30:00,2023,Santos,América Mineiro,3,2,post
+665844,2023-04-29 21:30:00,2023,Palmeiras,Corinthians,2,1,post
+665838,2023-04-30 00:00:00,2023,Atlético-MG,Athletico-PR,2,1,post
+665841,2023-04-30 19:00:00,2023,Flamengo,Botafogo,2,3,post
+665840,2023-04-30 21:30:00,2023,Cuiabá,Grêmio,1,2,post
+665843,2023-04-30 21:30:00,2023,Internacional,Goiás,1,0,post
+665846,2023-05-01 23:00:00,2023,Vasco da Gama,Bahia,0,1,post
+665853,2023-05-06 19:00:00,2023,Cruzeiro,Santos,2,1,post
+665854,2023-05-07 00:00:00,2023,Fluminense,Vasco da Gama,1,1,post
+665851,2023-05-07 14:00:00,2023,América Mineiro,Cuiabá,1,2,post
+665849,2023-05-07 19:00:00,2023,São Paulo,Internacional,2,0,post
+665850,2023-05-07 19:00:00,2023,Athletico-PR,Flamengo,2,1,post
+665857,2023-05-07 19:00:00,2023,Bahia,Coritiba,3,1,post
+665856,2023-05-07 21:30:00,2023,Botafogo,Atlético-MG,2,0,post
+665855,2023-05-07 21:30:00,2023,Goiás,Palmeiras,0,5,post
+665848,2023-05-07 21:30:00,2023,Grêmio,Red Bull Bragantino,3,3,post
+665852,2023-05-08 23:00:00,2023,Corinthians,Fortaleza,1,1,post
+665863,2023-05-10 22:00:00,2023,Santos,Bahia,3,0,post
+665864,2023-05-10 22:00:00,2023,Internacional,Athletico-PR,0,2,post
+665866,2023-05-10 22:00:00,2023,Red Bull Bragantino,América Mineiro,2,2,post
+665867,2023-05-10 23:00:00,2023,Flamengo,Goiás,2,0,post
+665861,2023-05-10 23:00:00,2023,Cuiabá,Atlético-MG,0,4,post
+665860,2023-05-11 00:30:00,2023,Cruzeiro,Fluminense,0,2,post
+665865,2023-05-11 00:30:00,2023,Palmeiras,Grêmio,4,1,post
+665859,2023-05-11 22:00:00,2023,Coritiba,Vasco da Gama,1,1,post
+665858,2023-05-11 22:30:00,2023,Botafogo,Corinthians,3,0,post
+665862,2023-05-11 23:00:00,2023,Fortaleza,São Paulo,0,0,post
+665871,2023-05-13 19:00:00,2023,Bahia,Flamengo,2,3,post
+665873,2023-05-13 21:30:00,2023,Fluminense,Cuiabá,2,0,post
+665876,2023-05-13 21:30:00,2023,Palmeiras,Red Bull Bragantino,1,1,post
+665870,2023-05-14 00:00:00,2023,Atlético-MG,Internacional,2,0,post
+665872,2023-05-14 19:00:00,2023,Corinthians,São Paulo,1,1,post
+665875,2023-05-14 19:00:00,2023,Grêmio,Fortaleza,0,0,post
+665877,2023-05-14 19:00:00,2023,Vasco da Gama,Santos,0,1,post
+665868,2023-05-14 21:30:00,2023,América Mineiro,Cruzeiro,0,4,post
+665869,2023-05-14 21:30:00,2023,Athletico-PR,Coritiba,3,2,post
+665874,2023-05-14 21:30:00,2023,Goiás,Botafogo,2,1,post
+665879,2023-05-20 19:00:00,2023,Bahia,Goiás,1,1,post
+665887,2023-05-20 21:30:00,2023,São Paulo,Vasco da Gama,4,2,post
+665885,2023-05-20 21:30:00,2023,Red Bull Bragantino,Athletico-PR,2,0,post
+665878,2023-05-20 21:30:00,2023,América Mineiro,Fortaleza,2,1,post
+665880,2023-05-20 21:30:00,2023,Botafogo,Fluminense,1,0,post
+665881,2023-05-20 21:30:00,2023,Coritiba,Atlético-MG,1,2,post
+665886,2023-05-21 00:00:00,2023,Santos,Palmeiras,0,0,post
+665883,2023-05-21 19:00:00,2023,Flamengo,Corinthians,1,0,post
+665884,2023-05-21 21:30:00,2023,Grêmio,Internacional,3,1,post
+665882,2023-05-22 23:00:00,2023,Cruzeiro,Cuiabá,0,1,post
+665888,2023-05-27 19:00:00,2023,Athletico-PR,Grêmio,1,2,post
+665894,2023-05-27 19:00:00,2023,Fortaleza,Vasco da Gama,2,0,post
+665895,2023-05-27 21:30:00,2023,Flamengo,Cruzeiro,1,1,post
+665896,2023-05-27 21:30:00,2023,Cuiabá,Coritiba,1,1,post
+665889,2023-05-28 00:00:00,2023,São Paulo,Goiás,2,1,post
+665891,2023-05-28 19:00:00,2023,Corinthians,Fluminense,2,0,post
+665892,2023-05-28 19:00:00,2023,Internacional,Bahia,2,0,post
+665893,2023-05-28 21:30:00,2023,Atlético-MG,Palmeiras,1,1,post
+665890,2023-05-28 21:30:00,2023,Red Bull Bragantino,Santos,2,0,post
+665897,2023-05-28 22:00:00,2023,Botafogo,América Mineiro,2,0,post
+665902,2023-06-03 19:00:00,2023,Fortaleza,Bahia,0,0,post
+665900,2023-06-03 21:30:00,2023,Cruzeiro,Atlético-MG,0,1,post
+665898,2023-06-03 21:30:00,2023,América Mineiro,Corinthians,2,0,post
+665899,2023-06-03 21:30:00,2023,Athletico-PR,Botafogo,1,0,post
+665906,2023-06-04 00:00:00,2023,Santos,Internacional,1,1,post
+665901,2023-06-04 19:00:00,2023,Fluminense,Red Bull Bragantino,2,1,post
+665904,2023-06-04 19:00:00,2023,Grêmio,São Paulo,2,1,post
+665903,2023-06-04 21:30:00,2023,Goiás,Cuiabá,0,1,post
+665905,2023-06-04 21:30:00,2023,Palmeiras,Coritiba,3,1,post
+665907,2023-06-05 23:00:00,2023,Vasco da Gama,Flamengo,1,4,post
+665913,2023-06-10 19:00:00,2023,Coritiba,Santos,0,0,post
+665909,2023-06-10 21:30:00,2023,Atlético-MG,Red Bull Bragantino,1,1,post
+665910,2023-06-10 21:30:00,2023,Bahia,Cruzeiro,2,2,post
+665912,2023-06-10 21:30:00,2023,Corinthians,Cuiabá,1,1,post
+665911,2023-06-11 00:00:00,2023,Botafogo,Fortaleza,2,0,post
+665908,2023-06-11 14:00:00,2023,América Mineiro,Athletico-PR,2,2,post
+665917,2023-06-11 19:00:00,2023,São Paulo,Palmeiras,0,2,post
+665916,2023-06-11 19:00:00,2023,Internacional,Vasco da Gama,2,1,post
+665915,2023-06-11 21:30:00,2023,Goiás,Fluminense,2,2,post
+665914,2023-06-11 21:30:00,2023,Flamengo,Grêmio,3,0,post
+665920,2023-06-21 22:00:00,2023,Cruzeiro,Fortaleza,0,1,post
+665926,2023-06-21 22:00:00,2023,São Paulo,Athletico-PR,2,1,post
+665925,2023-06-21 23:00:00,2023,Santos,Corinthians,0,2,post
+665918,2023-06-22 00:30:00,2023,Bahia,Palmeiras,1,0,post
+665922,2023-06-22 00:30:00,2023,Fluminense,Atlético-MG,1,1,post
+665923,2023-06-22 22:00:00,2023,Grêmio,América Mineiro,3,1,post
+665921,2023-06-22 23:00:00,2023,Cuiabá,Botafogo,0,1,post
+665927,2023-06-22 23:00:00,2023,Vasco da Gama,Goiás,0,1,post
+665919,2023-06-22 23:00:00,2023,Coritiba,Internacional,0,1,post
+665924,2023-06-23 00:30:00,2023,Red Bull Bragantino,Flamengo,4,0,post
+665929,2023-06-24 19:00:00,2023,Athletico-PR,Corinthians,1,0,post
+665931,2023-06-24 21:30:00,2023,Fluminense,Bahia,2,1,post
+665937,2023-06-24 21:30:00,2023,Fortaleza,Atlético-MG,2,1,post
+665930,2023-06-25 00:00:00,2023,Cruzeiro,São Paulo,1,0,post
+665934,2023-06-25 19:00:00,2023,Palmeiras,Botafogo,0,1,post
+665932,2023-06-25 19:00:00,2023,Grêmio,Coritiba,5,1,post
+665935,2023-06-25 21:30:00,2023,Red Bull Bragantino,Goiás,2,0,post
+665936,2023-06-25 21:30:00,2023,Santos,Flamengo,2,3,post
+665928,2023-06-25 21:30:00,2023,América Mineiro,Internacional,1,2,post
+665933,2023-06-27 00:00:00,2023,Vasco da Gama,Cuiabá,1,0,post
+665939,2023-07-01 19:00:00,2023,São Paulo,Fluminense,1,0,post
+665947,2023-07-01 21:30:00,2023,Bahia,Grêmio,1,2,post
+665944,2023-07-01 21:30:00,2023,Flamengo,Fortaleza,2,0,post
+665938,2023-07-02 00:00:00,2023,Internacional,Cruzeiro,0,0,post
+665942,2023-07-02 14:00:00,2023,Corinthians,Red Bull Bragantino,0,1,post
+665946,2023-07-02 19:00:00,2023,Botafogo,Vasco da Gama,2,0,post
+665940,2023-07-02 19:00:00,2023,Atlético-MG,América Mineiro,2,2,post
+665941,2023-07-02 19:00:00,2023,Athletico-PR,Palmeiras,2,2,post
+665943,2023-07-02 21:30:00,2023,Cuiabá,Santos,3,0,post
+665945,2023-07-03 23:00:00,2023,Goiás,Coritiba,1,2,post
+665950,2023-07-08 19:00:00,2023,Cuiabá,Bahia,1,1,post
+665953,2023-07-08 19:00:00,2023,Vasco da Gama,Cruzeiro,0,1,post
+665948,2023-07-08 21:30:00,2023,Atlético-MG,Corinthians,0,1,post
+665949,2023-07-08 21:30:00,2023,Coritiba,América Mineiro,3,1,post
+665954,2023-07-09 00:00:00,2023,Palmeiras,Flamengo,1,1,post
+665956,2023-07-09 14:00:00,2023,Santos,Goiás,4,3,post
+665955,2023-07-09 19:00:00,2023,Red Bull Bragantino,São Paulo,0,0,post
+665951,2023-07-09 19:00:00,2023,Fluminense,Internacional,2,0,post
+665957,2023-07-09 21:30:00,2023,Fortaleza,Athletico-PR,1,0,post
+665952,2023-07-09 21:30:00,2023,Grêmio,Botafogo,0,2,post
+665960,2023-07-16 00:00:00,2023,Botafogo,Red Bull Bragantino,2,0,post
+665962,2023-07-16 14:00:00,2023,Cruzeiro,Coritiba,0,0,post
+665963,2023-07-16 19:00:00,2023,Fluminense,Flamengo,0,0,post
+665964,2023-07-16 19:00:00,2023,Fortaleza,Cuiabá,0,1,post
+665967,2023-07-16 19:00:00,2023,São Paulo,Santos,4,1,post
+665959,2023-07-16 21:30:00,2023,Athletico-PR,Bahia,2,0,post
+665966,2023-07-16 21:30:00,2023,Internacional,Palmeiras,0,0,post
+665965,2023-07-17 23:00:00,2023,Goiás,Atlético-MG,0,0,post
+665972,2023-07-22 19:00:00,2023,Flamengo,América Mineiro,1,1,post
+665974,2023-07-22 19:00:00,2023,Palmeiras,Fortaleza,3,1,post
+665968,2023-07-22 21:30:00,2023,Bahia,Corinthians,0,0,post
+665971,2023-07-22 21:30:00,2023,Cuiabá,São Paulo,2,1,post
+665973,2023-07-23 00:00:00,2023,Grêmio,Atlético-MG,1,0,post
+665975,2023-07-23 19:00:00,2023,Red Bull Bragantino,Internacional,0,0,post
+665976,2023-07-23 19:00:00,2023,Santos,Botafogo,2,2,post
+665970,2023-07-23 19:00:00,2023,Cruzeiro,Goiás,0,1,post
+665977,2023-07-23 21:30:00,2023,Vasco da Gama,Athletico-PR,0,2,post
+665969,2023-07-24 22:00:00,2023,Coritiba,Fluminense,2,0,post
+665983,2023-07-29 19:00:00,2023,Athletico-PR,Cruzeiro,3,3,post
+665985,2023-07-29 19:00:00,2023,Fluminense,Santos,1,0,post
+665980,2023-07-29 19:00:00,2023,Internacional,Cuiabá,1,2,post
+665986,2023-07-29 21:30:00,2023,Corinthians,Vasco da Gama,3,1,post
+665984,2023-07-29 21:30:00,2023,Fortaleza,Red Bull Bragantino,0,3,post
+665987,2023-07-30 00:00:00,2023,Atlético-MG,Flamengo,1,2,post
+665979,2023-07-30 14:00:00,2023,São Paulo,Bahia,0,0,post
+665978,2023-07-30 19:00:00,2023,América Mineiro,Palmeiras,1,4,post
+665981,2023-07-30 19:00:00,2023,Botafogo,Coritiba,4,1,post
+665982,2023-07-30 21:30:00,2023,Goiás,Grêmio,1,1,post
+665997,2023-08-05 19:00:00,2023,Santos,Athletico-PR,1,1,post
+665994,2023-08-05 21:30:00,2023,Goiás,Fortaleza,1,0,post
+665993,2023-08-05 21:30:00,2023,Internacional,Corinthians,2,2,post
+665995,2023-08-06 00:00:00,2023,Fluminense,Palmeiras,2,1,post
+665990,2023-08-06 19:00:00,2023,Vasco da Gama,Grêmio,1,0,post
+665991,2023-08-06 19:00:00,2023,São Paulo,Atlético-MG,0,2,post
+665988,2023-08-06 21:30:00,2023,Bahia,América Mineiro,3,1,post
+665989,2023-08-06 21:30:00,2023,Coritiba,Red Bull Bragantino,0,1,post
+665992,2023-08-06 21:30:00,2023,Cruzeiro,Botafogo,0,0,post
+665996,2023-08-06 23:00:00,2023,Cuiabá,Flamengo,3,0,post
+666004,2023-08-13 00:00:00,2023,Botafogo,Internacional,3,1,post
+666005,2023-08-13 14:00:00,2023,Atlético-MG,Bahia,1,0,post
+666003,2023-08-13 19:00:00,2023,Corinthians,Coritiba,3,1,post
+666000,2023-08-13 19:00:00,2023,Grêmio,Fluminense,2,1,post
+665998,2023-08-13 19:00:00,2023,América Mineiro,Goiás,0,1,post
+666007,2023-08-13 21:30:00,2023,Flamengo,São Paulo,1,1,post
+666001,2023-08-13 21:30:00,2023,Fortaleza,Santos,4,0,post
+665999,2023-08-14 22:00:00,2023,Palmeiras,Cruzeiro,1,0,post
+666002,2023-08-15 00:00:00,2023,Red Bull Bragantino,Vasco da Gama,1,1,post
+666006,2023-08-15 23:00:00,2023,Athletico-PR,Cuiabá,2,0,post
+666016,2023-08-19 19:00:00,2023,São Paulo,Botafogo,0,0,post
+666014,2023-08-19 19:00:00,2023,Internacional,Fortaleza,0,1,post
+666017,2023-08-19 21:30:00,2023,Fluminense,América Mineiro,3,1,post
+666008,2023-08-19 21:30:00,2023,Cuiabá,Palmeiras,0,2,post
+666009,2023-08-20 00:00:00,2023,Cruzeiro,Corinthians,1,1,post
+666012,2023-08-20 14:00:00,2023,Vasco da Gama,Atlético-MG,1,0,post
+666011,2023-08-20 19:00:00,2023,Bahia,Red Bull Bragantino,4,0,post
+666010,2023-08-20 19:00:00,2023,Coritiba,Flamengo,2,3,post
+666015,2023-08-20 19:00:00,2023,Santos,Grêmio,2,1,post
+666013,2023-08-21 23:00:00,2023,Goiás,Athletico-PR,1,1,post
+666026,2023-08-26 21:30:00,2023,Flamengo,Internacional,0,0,post
+666025,2023-08-27 00:00:00,2023,Corinthians,Goiás,1,1,post
+666019,2023-08-27 14:00:00,2023,Red Bull Bragantino,Cuiabá,2,0,post
+666021,2023-08-27 19:00:00,2023,América Mineiro,São Paulo,2,1,post
+666023,2023-08-27 19:00:00,2023,Atlético-MG,Santos,2,0,post
+666024,2023-08-27 19:00:00,2023,Botafogo,Bahia,3,0,post
+666020,2023-08-27 21:30:00,2023,Athletico-PR,Fluminense,2,2,post
+666027,2023-08-27 21:30:00,2023,Fortaleza,Coritiba,3,1,post
+666018,2023-08-27 21:30:00,2023,Palmeiras,Vasco da Gama,1,0,post
+666022,2023-08-27 22:00:00,2023,Grêmio,Cruzeiro,3,0,post
+666030,2023-09-02 19:00:00,2023,Goiás,Internacional,0,0,post
+666037,2023-09-02 19:00:00,2023,Athletico-PR,Atlético-MG,1,1,post
+666034,2023-09-03 00:00:00,2023,Botafogo,Flamengo,1,2,post
+666029,2023-09-03 14:00:00,2023,Grêmio,Cuiabá,2,0,post
+666035,2023-09-03 19:00:00,2023,Corinthians,Palmeiras,0,0,post
+666031,2023-09-03 19:00:00,2023,Fluminense,Fortaleza,1,0,post
+666028,2023-09-03 21:30:00,2023,América Mineiro,Santos,2,0,post
+666033,2023-09-03 21:30:00,2023,Bahia,Vasco da Gama,1,1,post
+666032,2023-09-03 21:30:00,2023,Cruzeiro,Red Bull Bragantino,0,0,post
+666043,2023-09-14 00:30:00,2023,Internacional,São Paulo,2,1,post
+666041,2023-09-14 00:30:00,2023,Flamengo,Athletico-PR,0,3,post
+666042,2023-09-14 22:00:00,2023,Fortaleza,Corinthians,2,1,post
+666046,2023-09-14 22:00:00,2023,Santos,Cruzeiro,0,3,post
+666039,2023-09-14 23:00:00,2023,Coritiba,Bahia,2,4,post
+666045,2023-09-15 00:30:00,2023,Red Bull Bragantino,Grêmio,2,0,post
+666040,2023-09-15 23:00:00,2023,Cuiabá,América Mineiro,2,2,post
+666044,2023-09-16 00:30:00,2023,Palmeiras,Goiás,1,0,post
+666047,2023-09-16 19:00:00,2023,Vasco da Gama,Fluminense,4,2,post
+666038,2023-09-17 00:00:00,2023,Atlético-MG,Botafogo,1,0,post
+666051,2023-09-18 23:00:00,2023,Bahia,Santos,1,2,post
+665961,2023-09-19 00:00:00,2023,Corinthians,Grêmio,4,4,post
+666048,2023-09-20 00:30:00,2023,América Mineiro,Red Bull Bragantino,0,2,post
+666054,2023-09-20 22:00:00,2023,Goiás,Flamengo,0,0,post
+666053,2023-09-21 00:30:00,2023,Fluminense,Cruzeiro,1,0,post
+666056,2023-09-21 00:30:00,2023,São Paulo,Fortaleza,1,2,post
+666057,2023-09-21 22:00:00,2023,Vasco da Gama,Coritiba,5,1,post
+666049,2023-09-21 22:30:00,2023,Athletico-PR,Internacional,2,1,post
+666055,2023-09-22 00:30:00,2023,Grêmio,Palmeiras,1,0,post
+666052,2023-09-22 23:00:00,2023,Corinthians,Botafogo,1,0,post
+666050,2023-09-24 00:00:00,2023,Atlético-MG,Cuiabá,1,0,post
+665958,2023-09-25 23:00:00,2023,América Mineiro,Vasco da Gama,0,1,post
+666036,2023-09-27 22:00:00,2023,São Paulo,Coritiba,2,1,post
+666062,2023-09-30 19:00:00,2023,Flamengo,Bahia,1,0,post
+666063,2023-09-30 19:00:00,2023,Fortaleza,Grêmio,1,1,post
+666061,2023-09-30 21:30:00,2023,Cuiabá,Fluminense,3,0,post
+666067,2023-09-30 21:30:00,2023,São Paulo,Corinthians,2,1,post
+666064,2023-10-01 00:00:00,2023,Internacional,Atlético-MG,0,2,post
+666060,2023-10-01 19:00:00,2023,Cruzeiro,América Mineiro,1,1,post
+666066,2023-10-01 19:00:00,2023,Santos,Vasco da Gama,4,1,post
+666059,2023-10-01 19:00:00,2023,Coritiba,Athletico-PR,2,0,post
+666065,2023-10-01 21:30:00,2023,Red Bull Bragantino,Palmeiras,2,1,post
+666058,2023-10-02 23:00:00,2023,Botafogo,Goiás,1,1,post
+666074,2023-10-07 19:00:00,2023,Goiás,Bahia,4,6,post
+666073,2023-10-07 21:30:00,2023,Vasco da Gama,São Paulo,0,0,post
+666070,2023-10-08 00:00:00,2023,Corinthians,Flamengo,1,1,post
+666075,2023-10-08 19:00:00,2023,Internacional,Grêmio,3,2,post
+666076,2023-10-08 19:00:00,2023,Palmeiras,Santos,1,2,post
+666077,2023-10-08 19:00:00,2023,Fluminense,Botafogo,0,2,post
+666068,2023-10-08 21:30:00,2023,Athletico-PR,Red Bull Bragantino,1,1,post
+666069,2023-10-08 21:30:00,2023,Atlético-MG,Coritiba,1,2,post
+666072,2023-10-08 21:30:00,2023,Fortaleza,América Mineiro,3,2,post
+666071,2023-10-15 00:00:00,2023,Cuiabá,Cruzeiro,0,0,post
+666084,2023-10-18 22:00:00,2023,Grêmio,Athletico-PR,1,2,post
+666087,2023-10-18 23:00:00,2023,Coritiba,Cuiabá,0,3,post
+666081,2023-10-18 23:00:00,2023,América Mineiro,Botafogo,1,2,post
+666083,2023-10-19 00:30:00,2023,Goiás,São Paulo,2,0,post
+666079,2023-10-19 00:30:00,2023,Vasco da Gama,Fortaleza,1,0,post
+666080,2023-10-19 00:30:00,2023,Bahia,Internacional,1,0,post
+666086,2023-10-19 22:00:00,2023,Cruzeiro,Flamengo,0,2,post
+666085,2023-10-19 22:00:00,2023,Palmeiras,Atlético-MG,0,2,post
+666078,2023-10-19 23:00:00,2023,Santos,Red Bull Bragantino,1,3,post
+666082,2023-10-20 00:30:00,2023,Fluminense,Corinthians,3,3,post
+666089,2023-10-21 21:30:00,2023,Bahia,Fortaleza,2,0,post
+666092,2023-10-21 21:30:00,2023,Cuiabá,Goiás,1,1,post
+666093,2023-10-21 21:30:00,2023,São Paulo,Grêmio,3,0,post
+666090,2023-10-22 00:00:00,2023,Botafogo,Athletico-PR,1,1,post
+666088,2023-10-22 19:00:00,2023,Atlético-MG,Cruzeiro,0,1,post
+666094,2023-10-22 19:00:00,2023,Flamengo,Vasco da Gama,1,0,post
+666095,2023-10-22 19:00:00,2023,Internacional,Santos,7,1,post
+666091,2023-10-22 21:30:00,2023,Corinthians,América Mineiro,1,1,post
+666097,2023-10-22 21:30:00,2023,Coritiba,Palmeiras,0,2,post
+666096,2023-10-22 21:30:00,2023,Red Bull Bragantino,Fluminense,1,0,post
+666101,2023-10-25 22:00:00,2023,Fluminense,Goiás,5,3,post
+666105,2023-10-25 22:00:00,2023,Red Bull Bragantino,Atlético-MG,1,2,post
+666098,2023-10-25 22:00:00,2023,Athletico-PR,América Mineiro,3,2,post
+666104,2023-10-25 23:00:00,2023,Palmeiras,São Paulo,5,0,post
+666099,2023-10-25 23:00:00,2023,Cruzeiro,Bahia,3,0,post
+666100,2023-10-26 00:30:00,2023,Cuiabá,Corinthians,0,1,post
+666103,2023-10-26 00:30:00,2023,Grêmio,Flamengo,3,2,post
+666107,2023-10-26 22:00:00,2023,Vasco da Gama,Internacional,1,2,post
+666106,2023-10-27 00:30:00,2023,Santos,Coritiba,2,1,post
+666108,2023-10-28 22:00:00,2023,América Mineiro,Grêmio,3,4,post
+666117,2023-10-28 22:00:00,2023,Palmeiras,Bahia,1,0,post
+666110,2023-10-29 01:00:00,2023,Atlético-MG,Fluminense,2,0,post
+666109,2023-10-29 19:00:00,2023,Athletico-PR,São Paulo,1,1,post
+666115,2023-10-29 19:00:00,2023,Goiás,Vasco da Gama,1,1,post
+666112,2023-10-29 21:30:00,2023,Corinthians,Santos,1,1,post
+666116,2023-10-29 21:30:00,2023,Internacional,Coritiba,3,4,post
+666111,2023-10-29 23:00:00,2023,Botafogo,Cuiabá,0,1,post
+666123,2023-10-31 22:00:00,2023,Bahia,Fluminense,1,0,post
+666121,2023-11-01 22:00:00,2023,Corinthians,Athletico-PR,1,0,post
+666120,2023-11-01 22:00:00,2023,Internacional,América Mineiro,1,1,post
+666124,2023-11-01 23:00:00,2023,Flamengo,Santos,1,2,post
+666126,2023-11-01 23:00:00,2023,Coritiba,Grêmio,1,2,post
+666118,2023-11-02 00:30:00,2023,Atlético-MG,Fortaleza,3,1,post
+666127,2023-11-02 00:30:00,2023,Botafogo,Palmeiras,3,4,post
+666125,2023-11-02 20:00:00,2023,Cuiabá,Vasco da Gama,0,2,post
+666122,2023-11-02 21:00:00,2023,Goiás,Red Bull Bragantino,0,2,post
+666119,2023-11-02 23:00:00,2023,São Paulo,Cruzeiro,1,0,post
+666131,2023-11-04 22:30:00,2023,América Mineiro,Atlético-MG,1,1,post
+666136,2023-11-04 22:30:00,2023,Grêmio,Bahia,1,0,post
+666135,2023-11-05 00:30:00,2023,Palmeiras,Athletico-PR,1,0,post
+666133,2023-11-05 19:00:00,2023,Cruzeiro,Internacional,1,2,post
+666130,2023-11-05 19:00:00,2023,Fortaleza,Flamengo,0,2,post
+666128,2023-11-05 19:00:00,2023,Red Bull Bragantino,Corinthians,1,0,post
+666132,2023-11-05 21:30:00,2023,Coritiba,Goiás,0,1,post
+666137,2023-11-06 22:00:00,2023,Vasco da Gama,Botafogo,1,0,post
+666129,2023-11-07 00:00:00,2023,Santos,Cuiabá,0,0,post
+666142,2023-11-08 22:00:00,2023,América Mineiro,Coritiba,0,3,post
+666146,2023-11-08 22:00:00,2023,Internacional,Fluminense,0,0,post
+666138,2023-11-08 23:00:00,2023,São Paulo,Red Bull Bragantino,1,0,post
+666139,2023-11-08 23:00:00,2023,Athletico-PR,Fortaleza,1,1,post
+666144,2023-11-09 00:30:00,2023,Flamengo,Palmeiras,3,0,post
+666147,2023-11-09 22:00:00,2023,Corinthians,Atlético-MG,1,1,post
+666145,2023-11-09 22:00:00,2023,Goiás,Santos,0,1,post
+666143,2023-11-09 23:00:00,2023,Botafogo,Grêmio,3,4,post
+666140,2023-11-09 23:00:00,2023,Bahia,Cuiabá,0,3,post
+666148,2023-11-11 19:00:00,2023,Coritiba,Cruzeiro,1,0,post
+666151,2023-11-11 21:30:00,2023,Flamengo,Fluminense,1,1,post
+666153,2023-11-12 00:00:00,2023,Palmeiras,Internacional,3,0,post
+666157,2023-11-12 19:00:00,2023,Grêmio,Corinthians,0,1,post
+666154,2023-11-12 19:00:00,2023,Red Bull Bragantino,Botafogo,2,2,post
+666156,2023-11-12 21:30:00,2023,Vasco da Gama,América Mineiro,2,1,post
+666155,2023-11-12 21:30:00,2023,Santos,São Paulo,0,0,post
+666152,2023-11-12 21:30:00,2023,Cuiabá,Fortaleza,2,1,post
+666149,2023-11-12 21:30:00,2023,Bahia,Athletico-PR,1,1,post
+666150,2023-11-12 21:30:00,2023,Atlético-MG,Goiás,2,1,post
+666114,2023-11-18 21:30:00,2023,Fortaleza,Cruzeiro,0,1,post
+666141,2023-11-22 22:00:00,2023,Cruzeiro,Vasco da Gama,2,2,post
+666134,2023-11-23 00:30:00,2023,Fluminense,São Paulo,1,0,post
+666102,2023-11-23 22:00:00,2023,Fortaleza,Botafogo,2,2,post
+666113,2023-11-24 00:30:00,2023,Flamengo,Red Bull Bragantino,1,0,post
+666163,2023-11-25 00:00:00,2023,Corinthians,Bahia,1,5,post
+666165,2023-11-25 22:30:00,2023,Athletico-PR,Vasco da Gama,0,0,post
+666164,2023-11-26 00:00:00,2023,Fluminense,Coritiba,2,1,post
+666166,2023-11-26 19:00:00,2023,Atlético-MG,Grêmio,3,0,post
+666162,2023-11-26 19:00:00,2023,Botafogo,Santos,1,1,post
+666167,2023-11-26 21:30:00,2023,América Mineiro,Flamengo,0,3,post
+666158,2023-11-26 21:30:00,2023,Fortaleza,Palmeiras,2,2,post
+666160,2023-11-26 21:30:00,2023,Internacional,Red Bull Bragantino,1,0,post
+666161,2023-11-26 21:30:00,2023,São Paulo,Cuiabá,0,0,post
+666159,2023-11-28 00:00:00,2023,Goiás,Cruzeiro,0,1,post
+666169,2023-11-29 00:30:00,2023,Vasco da Gama,Corinthians,2,4,post
+666170,2023-11-29 22:00:00,2023,Santos,Fluminense,0,3,post
+666175,2023-11-29 22:30:00,2023,Flamengo,Atlético-MG,0,3,post
+666168,2023-11-29 23:00:00,2023,Bahia,São Paulo,0,1,post
+666176,2023-11-29 23:00:00,2023,Cuiabá,Internacional,0,2,post
+666173,2023-11-30 00:30:00,2023,Coritiba,Botafogo,1,1,post
+666172,2023-11-30 00:30:00,2023,Palmeiras,América Mineiro,4,0,post
+666174,2023-11-30 22:00:00,2023,Grêmio,Goiás,2,1,post
+666177,2023-11-30 23:00:00,2023,Cruzeiro,Athletico-PR,1,1,post
+666171,2023-11-30 23:30:00,2023,Red Bull Bragantino,Fortaleza,1,2,post
+666187,2023-12-02 21:00:00,2023,Corinthians,Internacional,1,2,post
+666179,2023-12-03 00:00:00,2023,Atlético-MG,São Paulo,2,1,post
+666182,2023-12-03 19:00:00,2023,Flamengo,Cuiabá,2,1,post
+666186,2023-12-03 19:00:00,2023,Palmeiras,Fluminense,1,0,post
+666183,2023-12-03 21:30:00,2023,América Mineiro,Bahia,3,2,post
+666178,2023-12-03 21:30:00,2023,Athletico-PR,Santos,3,0,post
+666180,2023-12-03 21:30:00,2023,Botafogo,Cruzeiro,0,0,post
+666184,2023-12-03 21:30:00,2023,Fortaleza,Goiás,1,0,post
+666185,2023-12-03 21:30:00,2023,Grêmio,Vasco da Gama,1,0,post
+666181,2023-12-03 21:30:00,2023,Red Bull Bragantino,Coritiba,1,0,post
+666193,2023-12-06 22:00:00,2023,Goiás,América Mineiro,1,0,post
+666197,2023-12-07 00:30:00,2023,Vasco da Gama,Red Bull Bragantino,2,1,post
+666195,2023-12-07 00:30:00,2023,Santos,Fortaleza,1,2,post
+666194,2023-12-07 00:30:00,2023,Internacional,Botafogo,3,1,post
+666192,2023-12-07 00:30:00,2023,Fluminense,Grêmio,2,3,post
+666196,2023-12-07 00:30:00,2023,São Paulo,Flamengo,1,0,post
+666190,2023-12-07 00:30:00,2023,Cruzeiro,Palmeiras,1,1,post
+666189,2023-12-07 00:30:00,2023,Coritiba,Corinthians,0,2,post
+666188,2023-12-07 00:30:00,2023,Bahia,Atlético-MG,4,1,post
+666191,2023-12-07 00:30:00,2023,Cuiabá,Athletico-PR,3,0,post
+699353,2024-04-13 21:30:00,2024,Criciúma,Juventude,1,1,post
+699356,2024-04-13 21:30:00,2024,Internacional,Bahia,2,1,post
+699355,2024-04-14 00:00:00,2024,Fluminense,Red Bull Bragantino,2,2,post
+699357,2024-04-14 00:00:00,2024,São Paulo,Fortaleza,1,2,post
+699358,2024-04-14 19:00:00,2024,Vasco da Gama,Grêmio,2,1,post
+699352,2024-04-14 19:00:00,2024,Corinthians,Atlético-MG,0,0,post
+699350,2024-04-14 19:00:00,2024,Athletico-PR,Cuiabá,4,0,post
+699351,2024-04-14 19:00:00,2024,Atlético Goianiense,Flamengo,1,2,post
+699354,2024-04-14 20:00:00,2024,Cruzeiro,Botafogo,3,2,post
+699359,2024-04-14 21:30:00,2024,Vitória,Palmeiras,0,1,post
+699361,2024-04-17 00:30:00,2024,Bahia,Fluminense,2,1,post
+699366,2024-04-17 22:00:00,2024,Grêmio,Athletico-PR,2,0,post
+699369,2024-04-17 22:00:00,2024,Red Bull Bragantino,Vasco da Gama,2,1,post
+699367,2024-04-17 23:00:00,2024,Juventude,Corinthians,2,0,post
+699360,2024-04-17 23:00:00,2024,Atlético-MG,Criciúma,1,1,post
+699365,2024-04-17 23:00:00,2024,Fortaleza,Cruzeiro,1,1,post
+699368,2024-04-17 23:00:00,2024,Palmeiras,Internacional,0,1,post
+699364,2024-04-18 00:30:00,2024,Flamengo,São Paulo,2,1,post
+699362,2024-04-19 00:30:00,2024,Botafogo,Atlético Goianiense,1,0,post
+699375,2024-04-20 19:00:00,2024,Fluminense,Vasco da Gama,2,1,post
+699376,2024-04-20 21:30:00,2024,Grêmio,Cuiabá,1,0,post
+699378,2024-04-20 21:30:00,2024,Red Bull Bragantino,Corinthians,1,0,post
+699372,2024-04-21 00:00:00,2024,Atlético-MG,Cruzeiro,3,0,post
+699370,2024-04-21 19:00:00,2024,Athletico-PR,Internacional,1,0,post
+699377,2024-04-21 19:00:00,2024,Palmeiras,Flamengo,0,0,post
+699379,2024-04-21 19:00:00,2024,Vitória,Bahia,2,2,post
+699373,2024-04-21 21:30:00,2024,Botafogo,Juventude,5,1,post
+699371,2024-04-21 21:30:00,2024,Atlético Goianiense,São Paulo,0,3,post
+699385,2024-04-27 19:00:00,2024,Vasco da Gama,Criciúma,0,4,post
+699383,2024-04-27 21:30:00,2024,Cuiabá,Atlético-MG,0,3,post
+699380,2024-04-28 00:00:00,2024,Bahia,Grêmio,1,0,post
+699389,2024-04-28 14:00:00,2024,Flamengo,Botafogo,0,2,post
+699381,2024-04-28 19:00:00,2024,Corinthians,Fluminense,3,0,post
+699382,2024-04-28 19:00:00,2024,Cruzeiro,Vitória,3,1,post
+699384,2024-04-28 21:30:00,2024,Fortaleza,Red Bull Bragantino,1,1,post
+699387,2024-04-28 21:30:00,2024,Juventude,Athletico-PR,1,1,post
+699386,2024-04-28 23:00:00,2024,Internacional,Atlético Goianiense,1,1,post
+699388,2024-04-29 23:00:00,2024,São Paulo,Palmeiras,0,0,post
+699395,2024-05-04 19:00:00,2024,Fluminense,Atlético-MG,2,2,post
+699398,2024-05-04 21:30:00,2024,Red Bull Bragantino,Flamengo,1,1,post
+699392,2024-05-05 00:00:00,2024,Corinthians,Fortaleza,0,0,post
+699390,2024-05-05 19:00:00,2024,Athletico-PR,Vasco da Gama,1,0,post
+699399,2024-05-05 19:00:00,2024,Vitória,São Paulo,1,3,post
+699391,2024-05-05 21:30:00,2024,Botafogo,Bahia,1,2,post
+699394,2024-05-05 21:30:00,2024,Cuiabá,Palmeiras,0,2,post
+699404,2024-05-11 19:00:00,2024,Flamengo,Corinthians,2,0,post
+699400,2024-05-12 19:00:00,2024,Atlético Goianiense,Cruzeiro,0,1,post
+699405,2024-05-12 19:00:00,2024,Fortaleza,Botafogo,1,1,post
+699407,2024-05-12 19:00:00,2024,Palmeiras,Athletico-PR,0,2,post
+699402,2024-05-12 21:30:00,2024,Bahia,Red Bull Bragantino,1,0,post
+699409,2024-05-12 21:30:00,2024,Vasco da Gama,Vitória,2,1,post
+699408,2024-05-13 23:00:00,2024,São Paulo,Fluminense,2,1,post
+699416,2024-06-01 19:00:00,2024,Grêmio,Red Bull Bragantino,0,2,post
+699419,2024-06-01 19:00:00,2024,Vitória,Atlético Goianiense,0,2,post
+699414,2024-06-01 21:30:00,2024,Fluminense,Juventude,1,1,post
+699413,2024-06-01 21:30:00,2024,Cuiabá,Internacional,0,1,post
+699411,2024-06-02 00:00:00,2024,Corinthians,Botafogo,0,1,post
+699410,2024-06-02 19:00:00,2024,Atlético-MG,Bahia,1,1,post
+699412,2024-06-02 19:00:00,2024,Criciúma,Palmeiras,1,2,post
+699418,2024-06-02 19:00:00,2024,Vasco da Gama,Flamengo,1,6,post
+699415,2024-06-02 21:30:00,2024,Fortaleza,Athletico-PR,1,0,post
+699417,2024-06-02 21:30:00,2024,São Paulo,Cruzeiro,2,0,post
+699397,2024-06-05 22:00:00,2024,Juventude,Atlético Goianiense,1,0,post
+699363,2024-06-05 23:00:00,2024,Cuiabá,Vitória,0,0,post
+699403,2024-06-09 19:00:00,2024,Criciúma,Cuiabá,2,5,post
+699421,2024-06-11 22:00:00,2024,Atlético Goianiense,Corinthians,2,2,post
+699427,2024-06-11 22:00:00,2024,Juventude,Vitória,1,1,post
+699423,2024-06-11 23:00:00,2024,Botafogo,Fluminense,1,0,post
+699425,2024-06-12 00:30:00,2024,Red Bull Bragantino,Atlético-MG,1,2,post
+699429,2024-06-13 22:00:00,2024,Cruzeiro,Cuiabá,2,1,post
+699420,2024-06-13 23:00:00,2024,Athletico-PR,Criciúma,3,1,post
+699424,2024-06-13 23:00:00,2024,Flamengo,Grêmio,2,1,post
+699426,2024-06-13 23:00:00,2024,Internacional,São Paulo,0,0,post
+699428,2024-06-14 00:30:00,2024,Palmeiras,Vasco da Gama,2,0,post
+699422,2024-06-14 00:30:00,2024,Bahia,Fortaleza,1,0,post
+699434,2024-06-15 21:30:00,2024,Red Bull Bragantino,Juventude,2,1,post
+699430,2024-06-16 00:00:00,2024,Fluminense,Atlético Goianiense,1,2,post
+699436,2024-06-16 19:00:00,2024,Athletico-PR,Flamengo,1,1,post
+699438,2024-06-16 19:00:00,2024,Corinthians,São Paulo,2,2,post
+699435,2024-06-16 19:00:00,2024,Vitória,Internacional,2,1,post
+699432,2024-06-16 21:30:00,2024,Grêmio,Botafogo,1,2,post
+699433,2024-06-16 21:30:00,2024,Vasco da Gama,Cruzeiro,0,0,post
+699439,2024-06-16 21:30:00,2024,Criciúma,Bahia,2,2,post
+699431,2024-06-16 21:30:00,2024,Cuiabá,Fortaleza,5,0,post
+699437,2024-06-17 23:30:00,2024,Atlético-MG,Palmeiras,0,4,post
+699440,2024-06-19 22:00:00,2024,Atlético Goianiense,Criciúma,1,2,post
+699441,2024-06-19 22:00:00,2024,Botafogo,Athletico-PR,1,1,post
+699449,2024-06-19 23:00:00,2024,Fortaleza,Grêmio,1,0,post
+699446,2024-06-19 23:00:00,2024,Juventude,Vasco da Gama,2,0,post
+699448,2024-06-19 23:00:00,2024,São Paulo,Cuiabá,0,1,post
+699442,2024-06-20 00:30:00,2024,Cruzeiro,Fluminense,2,0,post
+699444,2024-06-20 00:30:00,2024,Internacional,Corinthians,1,0,post
+699445,2024-06-20 21:30:00,2024,Vitória,Atlético-MG,4,2,post
+699443,2024-06-20 23:00:00,2024,Flamengo,Bahia,2,1,post
+699447,2024-06-21 00:30:00,2024,Palmeiras,Red Bull Bragantino,2,1,post
+699453,2024-06-22 19:00:00,2024,Criciúma,Botafogo,2,1,post
+699456,2024-06-22 20:30:00,2024,Grêmio,Internacional,0,1,post
+699454,2024-06-22 21:30:00,2024,Cuiabá,Atlético Goianiense,0,0,post
+699459,2024-06-23 00:30:00,2024,Vasco da Gama,São Paulo,4,1,post
+699452,2024-06-23 19:00:00,2024,Bahia,Cruzeiro,4,1,post
+699455,2024-06-23 19:00:00,2024,Fluminense,Flamengo,0,1,post
+699450,2024-06-23 19:00:00,2024,Athletico-PR,Corinthians,1,1,post
+699451,2024-06-23 21:30:00,2024,Atlético-MG,Fortaleza,1,1,post
+699457,2024-06-23 21:30:00,2024,Palmeiras,Juventude,3,1,post
+699458,2024-06-23 21:30:00,2024,Red Bull Bragantino,Vitória,2,1,post
+699462,2024-06-26 22:00:00,2024,Botafogo,Red Bull Bragantino,2,1,post
+699464,2024-06-26 22:00:00,2024,Cruzeiro,Athletico-PR,2,0,post
+699468,2024-06-26 23:00:00,2024,Juventude,Flamengo,2,1,post
+699460,2024-06-26 23:00:00,2024,Atlético Goianiense,Grêmio,1,1,post
+699463,2024-06-26 23:00:00,2024,Corinthians,Cuiabá,1,1,post
+699467,2024-06-27 00:30:00,2024,Internacional,Atlético-MG,1,2,post
+699461,2024-06-27 00:30:00,2024,Bahia,Vasco da Gama,2,1,post
+699466,2024-06-27 00:30:00,2024,Fortaleza,Palmeiras,3,0,post
+699465,2024-06-27 22:00:00,2024,Fluminense,Vitória,0,1,post
+699469,2024-06-27 23:00:00,2024,São Paulo,Criciúma,2,1,post
+699472,2024-06-29 21:30:00,2024,Cuiabá,Red Bull Bragantino,1,1,post
+699478,2024-06-29 21:30:00,2024,Vasco da Gama,Botafogo,1,1,post
+699470,2024-06-30 14:00:00,2024,Atlético-MG,Atlético Goianiense,1,1,post
+699477,2024-06-30 19:00:00,2024,São Paulo,Bahia,3,1,post
+699474,2024-06-30 19:00:00,2024,Fortaleza,Juventude,2,1,post
+699475,2024-06-30 19:00:00,2024,Grêmio,Fluminense,1,0,post
+699471,2024-06-30 21:30:00,2024,Criciúma,Internacional,1,1,post
+699473,2024-06-30 21:30:00,2024,Flamengo,Cruzeiro,2,1,post
+699479,2024-06-30 21:30:00,2024,Vitória,Athletico-PR,0,1,post
+699476,2024-07-01 23:00:00,2024,Palmeiras,Corinthians,2,0,post
+699485,2024-07-03 22:00:00,2024,Cuiabá,Botafogo,1,2,post
+699488,2024-07-03 23:00:00,2024,Vasco da Gama,Fortaleza,2,0,post
+699489,2024-07-03 23:00:00,2024,Criciúma,Cruzeiro,1,0,post
+699481,2024-07-04 00:30:00,2024,Atlético-MG,Flamengo,2,4,post
+699484,2024-07-04 00:30:00,2024,Red Bull Bragantino,Atlético Goianiense,3,1,post
+699480,2024-07-04 00:30:00,2024,Athletico-PR,São Paulo,1,2,post
+699482,2024-07-04 22:00:00,2024,Bahia,Juventude,2,0,post
+699487,2024-07-04 22:00:00,2024,Grêmio,Palmeiras,2,2,post
+699483,2024-07-04 23:00:00,2024,Corinthians,Vitória,3,2,post
+699486,2024-07-04 23:00:00,2024,Fluminense,Internacional,1,1,post
+699495,2024-07-06 23:00:00,2024,Flamengo,Cuiabá,1,1,post
+699490,2024-07-06 23:00:00,2024,São Paulo,Red Bull Bragantino,2,0,post
+699498,2024-07-07 19:00:00,2024,Juventude,Grêmio,3,0,post
+699496,2024-07-07 19:00:00,2024,Fortaleza,Fluminense,1,0,post
+699494,2024-07-07 19:00:00,2024,Cruzeiro,Corinthians,3,0,post
+699497,2024-07-07 21:00:00,2024,Internacional,Vasco da Gama,1,2,post
+699492,2024-07-07 21:30:00,2024,Atlético Goianiense,Athletico-PR,1,2,post
+699499,2024-07-07 21:30:00,2024,Palmeiras,Bahia,2,0,post
+699491,2024-07-07 21:30:00,2024,Vitória,Criciúma,2,1,post
+699493,2024-07-07 23:30:00,2024,Botafogo,Atlético-MG,3,0,post
+699504,2024-07-10 21:30:00,2024,Grêmio,Cruzeiro,0,2,post
+699502,2024-07-10 22:00:00,2024,Athletico-PR,Bahia,1,3,post
+699507,2024-07-10 22:00:00,2024,Vasco da Gama,Corinthians,2,0,post
+699508,2024-07-11 22:30:00,2024,Palmeiras,Atlético Goianiense,3,1,post
+699500,2024-07-11 23:00:00,2024,Criciúma,Fluminense,1,1,post
+699505,2024-07-11 23:00:00,2024,Flamengo,Fortaleza,1,2,post
+699501,2024-07-12 00:30:00,2024,Atlético-MG,São Paulo,2,1,post
+699506,2024-07-12 00:30:00,2024,Vitória,Botafogo,0,1,post
+699516,2024-07-13 19:00:00,2024,Bahia,Cuiabá,1,2,post
+699513,2024-07-13 19:00:00,2024,Cruzeiro,Red Bull Bragantino,2,1,post
+699518,2024-07-16 22:00:00,2024,Juventude,Atlético-MG,1,1,post
+699514,2024-07-17 00:00:00,2024,Corinthians,Criciúma,2,1,post
+699517,2024-07-17 22:00:00,2024,Atlético Goianiense,Vasco da Gama,0,1,post
+699519,2024-07-17 23:00:00,2024,São Paulo,Grêmio,1,0,post
+699515,2024-07-18 00:30:00,2024,Botafogo,Palmeiras,1,0,post
+699511,2024-07-18 00:30:00,2024,Fortaleza,Vitória,3,1,post
+699524,2024-07-20 19:00:00,2024,Flamengo,Criciúma,2,1,post
+699526,2024-07-20 21:30:00,2024,Botafogo,Internacional,1,0,post
+699520,2024-07-21 00:00:00,2024,Palmeiras,Cruzeiro,2,0,post
+699522,2024-07-21 14:00:00,2024,Grêmio,Vitória,2,0,post
+699527,2024-07-21 19:00:00,2024,Bahia,Corinthians,0,1,post
+699528,2024-07-21 19:00:00,2024,Atlético-MG,Vasco da Gama,2,0,post
+699529,2024-07-21 21:30:00,2024,Red Bull Bragantino,Athletico-PR,1,0,post
+699523,2024-07-21 21:30:00,2024,Fortaleza,Atlético Goianiense,3,1,post
+699521,2024-07-21 21:30:00,2024,Juventude,São Paulo,0,0,post
+699525,2024-07-21 23:00:00,2024,Cuiabá,Fluminense,0,1,post
+699374,2024-07-24 22:00:00,2024,Criciúma,Fortaleza,1,1,post
+699534,2024-07-24 22:00:00,2024,Cruzeiro,Juventude,2,0,post
+699531,2024-07-24 22:30:00,2024,São Paulo,Botafogo,2,2,post
+699539,2024-07-24 23:00:00,2024,Vitória,Flamengo,1,2,post
+699537,2024-07-25 00:30:00,2024,Atlético Goianiense,Bahia,1,1,post
+699533,2024-07-25 00:30:00,2024,Fluminense,Palmeiras,1,0,post
+699536,2024-07-25 23:00:00,2024,Corinthians,Grêmio,2,2,post
+699547,2024-07-27 22:00:00,2024,Juventude,Criciúma,1,2,post
+699548,2024-07-27 22:00:00,2024,Palmeiras,Vitória,0,2,post
+699541,2024-07-27 23:00:00,2024,Bahia,Internacional,1,1,post
+699542,2024-07-28 00:30:00,2024,Botafogo,Cruzeiro,0,3,post
+699545,2024-07-28 00:30:00,2024,Fortaleza,São Paulo,1,0,post
+699549,2024-07-28 14:00:00,2024,Red Bull Bragantino,Fluminense,0,1,post
+699544,2024-07-28 19:00:00,2024,Flamengo,Atlético Goianiense,2,0,post
+699546,2024-07-28 22:00:00,2024,Grêmio,Vasco da Gama,1,0,post
+699543,2024-07-28 22:00:00,2024,Cuiabá,Athletico-PR,1,2,post
+699540,2024-07-28 22:00:00,2024,Atlético-MG,Corinthians,2,1,post
+699555,2024-08-03 19:00:00,2024,Vitória,Cuiabá,1,0,post
+699558,2024-08-03 22:00:00,2024,Vasco da Gama,Red Bull Bragantino,2,2,post
+699551,2024-08-03 23:00:00,2024,Atlético Goianiense,Botafogo,1,4,post
+699553,2024-08-03 23:00:00,2024,Criciúma,Atlético-MG,2,1,post
+699557,2024-08-04 00:30:00,2024,São Paulo,Flamengo,1,0,post
+699552,2024-08-04 19:00:00,2024,Corinthians,Juventude,1,1,post
+699554,2024-08-04 19:00:00,2024,Fluminense,Bahia,1,0,post
+699550,2024-08-04 19:00:00,2024,Athletico-PR,Grêmio,0,2,post
+699556,2024-08-04 20:00:00,2024,Internacional,Palmeiras,1,1,post
+699559,2024-08-06 00:00:00,2024,Cruzeiro,Fortaleza,1,2,post
+699565,2024-08-10 19:00:00,2024,Fortaleza,Criciúma,1,0,post
+699568,2024-08-10 22:00:00,2024,Cuiabá,Grêmio,1,3,post
+699562,2024-08-11 00:30:00,2024,Corinthians,Red Bull Bragantino,1,1,post
+699569,2024-08-11 00:30:00,2024,Cruzeiro,Atlético-MG,0,0,post
+699561,2024-08-11 00:30:00,2024,Vasco da Gama,Fluminense,2,0,post
+699567,2024-08-11 14:00:00,2024,Juventude,Botafogo,3,2,post
+699560,2024-08-11 19:00:00,2024,São Paulo,Atlético Goianiense,1,0,post
+699564,2024-08-11 19:00:00,2024,Flamengo,Palmeiras,1,1,post
+699563,2024-08-11 19:00:00,2024,Bahia,Vitória,2,0,post
+699566,2024-08-11 22:00:00,2024,Internacional,Athletico-PR,2,2,post
+699406,2024-08-14 22:30:00,2024,Internacional,Juventude,2,1,post
+699572,2024-08-17 19:00:00,2024,Atlético-MG,Cuiabá,1,1,post
+699576,2024-08-17 19:00:00,2024,Grêmio,Bahia,0,2,post
+699578,2024-08-17 21:30:00,2024,Red Bull Bragantino,Fortaleza,1,2,post
+699574,2024-08-18 00:00:00,2024,Fluminense,Corinthians,0,0,post
+699571,2024-08-18 19:00:00,2024,Atlético Goianiense,Internacional,1,0,post
+699579,2024-08-18 19:00:00,2024,Criciúma,Vasco da Gama,2,2,post
+699577,2024-08-18 19:00:00,2024,Palmeiras,São Paulo,2,1,post
+699570,2024-08-18 21:30:00,2024,Athletico-PR,Juventude,1,2,post
+699573,2024-08-18 21:30:00,2024,Botafogo,Flamengo,4,1,post
+699575,2024-08-19 23:00:00,2024,Vitória,Cruzeiro,2,2,post
+699580,2024-08-24 19:00:00,2024,Atlético Goianiense,Juventude,2,1,post
+699587,2024-08-24 21:30:00,2024,Palmeiras,Cuiabá,5,0,post
+699581,2024-08-25 00:00:00,2024,Atlético-MG,Fluminense,0,2,post
+699582,2024-08-25 19:00:00,2024,Bahia,Botafogo,0,0,post
+699583,2024-08-25 19:00:00,2024,Criciúma,Grêmio,0,1,post
+699585,2024-08-25 19:00:00,2024,Fortaleza,Corinthians,1,0,post
+699588,2024-08-25 21:30:00,2024,São Paulo,Vitória,2,1,post
+699586,2024-08-25 22:00:00,2024,Internacional,Cruzeiro,1,0,post
+699584,2024-08-25 23:00:00,2024,Flamengo,Red Bull Bragantino,2,1,post
+699589,2024-08-27 00:00:00,2024,Vasco da Gama,Athletico-PR,2,1,post
+699535,2024-08-28 22:30:00,2024,Criciúma,Red Bull Bragantino,1,0,post
+699393,2024-08-28 22:30:00,2024,Cruzeiro,Internacional,0,0,post
+699594,2024-08-31 21:30:00,2024,Cuiabá,Criciúma,2,1,post
+699591,2024-09-01 00:00:00,2024,Botafogo,Fortaleza,2,0,post
+699593,2024-09-01 14:00:00,2024,Cruzeiro,Atlético Goianiense,3,1,post
+699596,2024-09-01 14:00:00,2024,Grêmio,Atlético-MG,2,3,post
+699592,2024-09-01 19:00:00,2024,Corinthians,Flamengo,2,1,post
+699598,2024-09-01 21:30:00,2024,Red Bull Bragantino,Bahia,2,1,post
+699597,2024-09-01 21:30:00,2024,Juventude,Internacional,1,3,post
+699599,2024-09-01 21:30:00,2024,Vitória,Vasco da Gama,0,1,post
+699590,2024-09-01 21:30:00,2024,Athletico-PR,Palmeiras,0,2,post
+699595,2024-09-01 21:30:00,2024,Fluminense,São Paulo,2,0,post
+699503,2024-09-05 23:00:00,2024,Cuiabá,Juventude,0,0,post
+699532,2024-09-11 22:30:00,2024,Internacional,Fortaleza,2,1,post
+699605,2024-09-14 19:00:00,2024,Atlético Goianiense,Vitória,0,2,post
+699600,2024-09-14 21:30:00,2024,Athletico-PR,Fortaleza,1,1,post
+699603,2024-09-15 00:00:00,2024,Botafogo,Corinthians,2,1,post
+699604,2024-09-15 19:00:00,2024,Juventude,Fluminense,2,1,post
+699602,2024-09-15 19:00:00,2024,Palmeiras,Criciúma,5,0,post
+699601,2024-09-15 19:00:00,2024,Red Bull Bragantino,Grêmio,2,2,post
+699608,2024-09-15 21:30:00,2024,Cruzeiro,São Paulo,0,1,post
+699607,2024-09-15 21:30:00,2024,Flamengo,Vasco da Gama,1,1,post
+699609,2024-09-15 21:30:00,2024,Bahia,Atlético-MG,3,0,post
+699606,2024-09-16 23:00:00,2024,Internacional,Cuiabá,3,0,post
+699611,2024-09-21 19:00:00,2024,Corinthians,Atlético Goianiense,3,0,post
+699619,2024-09-21 19:00:00,2024,Vitória,Juventude,1,0,post
+699614,2024-09-21 21:30:00,2024,Fluminense,Botafogo,0,1,post
+699615,2024-09-22 00:00:00,2024,Fortaleza,Bahia,4,1,post
+699618,2024-09-22 19:00:00,2024,Vasco da Gama,Palmeiras,0,1,post
+699610,2024-09-22 19:00:00,2024,Atlético-MG,Red Bull Bragantino,3,0,post
+699617,2024-09-22 21:30:00,2024,São Paulo,Internacional,1,3,post
+699616,2024-09-22 21:30:00,2024,Grêmio,Flamengo,3,2,post
+699613,2024-09-22 21:30:00,2024,Cuiabá,Cruzeiro,0,0,post
+699612,2024-09-22 23:00:00,2024,Criciúma,Athletico-PR,0,0,post
+699396,2024-09-25 22:00:00,2024,Grêmio,Criciúma,1,2,post
+699509,2024-09-25 22:00:00,2024,Red Bull Bragantino,Internacional,2,2,post
+699628,2024-09-28 21:30:00,2024,Palmeiras,Atlético-MG,2,1,post
+699622,2024-09-29 00:00:00,2024,Botafogo,Grêmio,0,0,post
+699627,2024-09-29 14:00:00,2024,Juventude,Red Bull Bragantino,1,1,post
+699629,2024-09-29 19:00:00,2024,São Paulo,Corinthians,3,1,post
+699625,2024-09-29 19:00:00,2024,Fortaleza,Cuiabá,1,0,post
+699620,2024-09-29 19:00:00,2024,Atlético Goianiense,Fluminense,1,0,post
+699621,2024-09-29 21:30:00,2024,Bahia,Criciúma,1,0,post
+699623,2024-09-29 21:30:00,2024,Cruzeiro,Vasco da Gama,1,1,post
+699626,2024-09-29 21:30:00,2024,Internacional,Vitória,3,1,post
+699624,2024-09-29 23:00:00,2024,Flamengo,Athletico-PR,1,0,post
+699639,2024-10-03 22:00:00,2024,Criciúma,Atlético Goianiense,2,0,post
+699636,2024-10-04 00:30:00,2024,Fluminense,Cruzeiro,1,0,post
+699637,2024-10-05 00:30:00,2024,Grêmio,Fortaleza,3,1,post
+699634,2024-10-05 19:30:00,2024,Red Bull Bragantino,Palmeiras,0,0,post
+699630,2024-10-05 19:30:00,2024,Athletico-PR,Botafogo,0,1,post
+699631,2024-10-05 19:30:00,2024,Atlético-MG,Vitória,2,2,post
+699632,2024-10-05 22:00:00,2024,Bahia,Flamengo,0,2,post
+699633,2024-10-05 22:00:00,2024,Corinthians,Internacional,2,2,post
+699635,2024-10-05 22:00:00,2024,Cuiabá,São Paulo,2,0,post
+699638,2024-10-06 00:00:00,2024,Vasco da Gama,Juventude,1,1,post
+699401,2024-10-09 22:30:00,2024,Atlético-MG,Grêmio,2,1,post
+699645,2024-10-17 00:45:00,2024,Fortaleza,Atlético-MG,1,1,post
+699648,2024-10-17 00:45:00,2024,São Paulo,Vasco da Gama,3,0,post
+699644,2024-10-17 23:00:00,2024,Flamengo,Fluminense,0,2,post
+699642,2024-10-17 23:00:00,2024,Corinthians,Athletico-PR,5,2,post
+699640,2024-10-18 22:00:00,2024,Atlético Goianiense,Cuiabá,0,0,post
+699641,2024-10-18 23:00:00,2024,Botafogo,Criciúma,1,1,post
+699643,2024-10-19 00:30:00,2024,Cruzeiro,Bahia,1,1,post
+699646,2024-10-19 19:00:00,2024,Internacional,Grêmio,1,0,post
+699649,2024-10-19 19:00:00,2024,Vitória,Red Bull Bragantino,1,0,post
+699647,2024-10-20 23:00:00,2024,Juventude,Palmeiras,3,5,post
+699512,2024-10-22 22:30:00,2024,Fluminense,Athletico-PR,1,0,post
+699530,2024-10-24 22:00:00,2024,Vasco da Gama,Cuiabá,1,0,post
+699654,2024-10-26 19:30:00,2024,Flamengo,Juventude,4,2,post
+699655,2024-10-26 19:30:00,2024,Grêmio,Atlético Goianiense,3,1,post
+699656,2024-10-26 19:30:00,2024,Palmeiras,Fortaleza,2,2,post
+699659,2024-10-26 19:30:00,2024,Vitória,Fluminense,2,1,post
+699650,2024-10-26 21:30:00,2024,Athletico-PR,Cruzeiro,3,0,post
+699651,2024-10-26 22:00:00,2024,Atlético-MG,Internacional,1,3,post
+699657,2024-10-26 22:00:00,2024,Red Bull Bragantino,Botafogo,0,1,post
+699652,2024-10-27 00:00:00,2024,Criciúma,São Paulo,1,1,post
+699653,2024-10-28 22:00:00,2024,Cuiabá,Corinthians,0,1,post
+699658,2024-10-29 00:00:00,2024,Vasco da Gama,Bahia,3,2,post
+699510,2024-10-30 22:00:00,2024,Internacional,Flamengo,1,1,post
+699666,2024-11-02 00:00:00,2024,Fluminense,Grêmio,2,2,post
+699668,2024-11-02 19:00:00,2024,Red Bull Bragantino,Cuiabá,0,0,post
+699660,2024-11-02 21:30:00,2024,Athletico-PR,Vitória,1,2,post
+699664,2024-11-02 21:30:00,2024,Juventude,Fortaleza,0,3,post
+699669,2024-11-04 23:00:00,2024,Corinthians,Palmeiras,2,0,post
+699663,2024-11-06 00:30:00,2024,Botafogo,Vasco da Gama,3,0,post
+699667,2024-11-06 00:30:00,2024,Internacional,Criciúma,2,0,post
+699662,2024-11-06 00:30:00,2024,Bahia,São Paulo,0,3,post
+699661,2024-11-07 00:00:00,2024,Atlético Goianiense,Atlético-MG,1,0,post
+699665,2024-11-07 00:00:00,2024,Cruzeiro,Flamengo,0,1,post
+699675,2024-11-08 22:00:00,2024,Internacional,Fluminense,2,0,post
+699677,2024-11-09 00:30:00,2024,Palmeiras,Grêmio,1,0,post
+699671,2024-11-09 19:30:00,2024,Botafogo,Cuiabá,0,0,post
+699679,2024-11-09 19:30:00,2024,Vitória,Corinthians,1,2,post
+699676,2024-11-09 22:00:00,2024,Juventude,Bahia,2,1,post
+699674,2024-11-09 22:00:00,2024,Fortaleza,Vasco da Gama,3,0,post
+699672,2024-11-09 22:00:00,2024,Cruzeiro,Criciúma,2,1,post
+699670,2024-11-09 22:00:00,2024,Atlético Goianiense,Red Bull Bragantino,0,0,post
+699678,2024-11-10 00:00:00,2024,São Paulo,Athletico-PR,2,1,post
+699673,2024-11-13 23:00:00,2024,Flamengo,Atlético-MG,0,0,post
+699538,2024-11-16 21:30:00,2024,Athletico-PR,Atlético-MG,1,0,post
+699683,2024-11-20 14:00:00,2024,Corinthians,Cruzeiro,2,1,post
+699680,2024-11-20 19:30:00,2024,Athletico-PR,Atlético Goianiense,2,0,post
+699684,2024-11-20 19:30:00,2024,Criciúma,Vitória,0,1,post
+699688,2024-11-20 19:30:00,2024,Red Bull Bragantino,São Paulo,1,1,post
+699682,2024-11-20 21:00:00,2024,Bahia,Palmeiras,1,2,post
+699685,2024-11-20 22:00:00,2024,Cuiabá,Flamengo,1,2,post
+699687,2024-11-20 22:00:00,2024,Grêmio,Juventude,2,2,post
+699681,2024-11-21 00:30:00,2024,Atlético-MG,Botafogo,0,0,post
+699689,2024-11-21 23:00:00,2024,Vasco da Gama,Internacional,0,1,post
+699686,2024-11-23 00:30:00,2024,Fluminense,Fortaleza,2,2,post
+699690,2024-11-23 22:30:00,2024,Atlético Goianiense,Palmeiras,0,1,post
+699692,2024-11-23 22:30:00,2024,Botafogo,Vitória,1,1,post
+699698,2024-11-23 22:30:00,2024,Juventude,Cuiabá,1,1,post
+699699,2024-11-24 00:30:00,2024,São Paulo,Atlético-MG,2,2,post
+699691,2024-11-24 19:00:00,2024,Bahia,Athletico-PR,1,1,post
+699693,2024-11-24 19:00:00,2024,Corinthians,Vasco da Gama,3,1,post
+699697,2024-11-24 19:00:00,2024,Internacional,Red Bull Bragantino,4,1,post
+699695,2024-11-26 22:00:00,2024,Fluminense,Criciúma,0,0,post
+699696,2024-11-26 23:00:00,2024,Fortaleza,Flamengo,0,0,post
+699701,2024-11-27 00:30:00,2024,Atlético-MG,Juventude,2,3,post
+699706,2024-11-27 00:30:00,2024,Palmeiras,Botafogo,1,3,post
+699694,2024-11-28 00:00:00,2024,Cruzeiro,Grêmio,1,1,post
+699703,2024-11-30 22:30:00,2024,Cuiabá,Bahia,1,2,post
+699702,2024-11-30 22:30:00,2024,Criciúma,Corinthians,2,4,post
+699708,2024-12-01 00:30:00,2024,Vasco da Gama,Atlético Goianiense,2,2,post
+699709,2024-12-01 19:00:00,2024,Flamengo,Internacional,3,2,post
+699704,2024-12-01 19:00:00,2024,Grêmio,São Paulo,2,1,post
+699700,2024-12-01 21:30:00,2024,Athletico-PR,Fluminense,1,1,post
+699707,2024-12-01 21:30:00,2024,Red Bull Bragantino,Cruzeiro,1,1,post
+699705,2024-12-01 21:30:00,2024,Vitória,Fortaleza,2,0,post
+699712,2024-12-03 23:00:00,2024,Corinthians,Bahia,3,0,post
+699718,2024-12-04 22:00:00,2024,Vasco da Gama,Atlético-MG,2,0,post
+699717,2024-12-04 23:00:00,2024,São Paulo,Juventude,1,2,post
+699719,2024-12-04 23:00:00,2024,Vitória,Grêmio,1,1,post
+699713,2024-12-04 23:00:00,2024,Criciúma,Flamengo,0,3,post
+699711,2024-12-05 00:30:00,2024,Atlético Goianiense,Fortaleza,3,1,post
+699714,2024-12-05 00:30:00,2024,Cruzeiro,Palmeiras,1,2,post
+699716,2024-12-05 00:30:00,2024,Internacional,Botafogo,0,1,post
+699710,2024-12-05 23:00:00,2024,Athletico-PR,Red Bull Bragantino,1,2,post
+699715,2024-12-05 23:00:00,2024,Fluminense,Cuiabá,1,0,post
+699726,2024-12-08 19:00:00,2024,Grêmio,Corinthians,0,3,post
+699725,2024-12-08 19:00:00,2024,Red Bull Bragantino,Criciúma,5,1,post
+699728,2024-12-08 19:00:00,2024,Palmeiras,Fluminense,0,1,post
+699727,2024-12-08 19:00:00,2024,Juventude,Cruzeiro,0,1,post
+699724,2024-12-08 19:00:00,2024,Fortaleza,Internacional,3,0,post
+699721,2024-12-08 19:00:00,2024,Bahia,Atlético Goianiense,2,0,post
+699723,2024-12-08 19:00:00,2024,Cuiabá,Vasco da Gama,1,2,post
+699722,2024-12-08 19:00:00,2024,Botafogo,São Paulo,2,1,post
+699720,2024-12-08 19:00:00,2024,Atlético-MG,Athletico-PR,1,0,post
+699729,2024-12-08 19:00:00,2024,Flamengo,Vitória,2,2,post
+732591,2025-03-29 21:30:00,2025,Cruzeiro,Mirassol,2,1,post
+732593,2025-03-29 21:30:00,2025,Fortaleza,Fluminense,2,0,post
+732599,2025-03-29 21:30:00,2025,Grêmio,Atlético-MG,2,1,post
+732595,2025-03-29 21:30:00,2025,Juventude,Vitória,2,0,post
+732598,2025-03-29 21:30:00,2025,São Paulo,Sport,0,0,post
+732592,2025-03-30 00:00:00,2025,Flamengo,Internacional,1,1,post
+732596,2025-03-30 19:00:00,2025,Palmeiras,Botafogo,0,0,post
+732594,2025-03-30 21:30:00,2025,Vasco da Gama,Santos,2,1,post
+732590,2025-03-30 23:00:00,2025,Bahia,Corinthians,1,1,post
+732597,2025-03-31 23:00:00,2025,Red Bull Bragantino,Ceará,2,2,post
+732600,2025-04-05 21:30:00,2025,Corinthians,Vasco da Gama,3,0,post
+732601,2025-04-05 21:30:00,2025,Ceará,Grêmio,2,0,post
+732609,2025-04-06 00:00:00,2025,Botafogo,Juventude,2,0,post
+732608,2025-04-06 19:00:00,2025,Atlético-MG,São Paulo,0,0,post
+732607,2025-04-06 19:00:00,2025,Fluminense,Red Bull Bragantino,2,1,post
+732606,2025-04-06 21:30:00,2025,Internacional,Cruzeiro,3,0,post
+732605,2025-04-06 21:30:00,2025,Mirassol,Fortaleza,1,1,post
+732603,2025-04-06 21:30:00,2025,Sport,Palmeiras,1,2,post
+732602,2025-04-06 21:30:00,2025,Vitória,Flamengo,1,2,post
+732604,2025-04-06 23:30:00,2025,Santos,Bahia,2,2,post
+732619,2025-04-12 19:00:00,2025,Juventude,Ceará,2,1,post
+732612,2025-04-12 19:00:00,2025,Red Bull Bragantino,Botafogo,1,0,post
+732613,2025-04-12 21:30:00,2025,Palmeiras,Corinthians,2,0,post
+732614,2025-04-13 00:00:00,2025,Vasco da Gama,Sport,3,1,post
+732618,2025-04-13 19:00:00,2025,Bahia,Mirassol,1,1,post
+732615,2025-04-13 20:30:00,2025,Grêmio,Flamengo,0,2,post
+732611,2025-04-13 20:30:00,2025,São Paulo,Cruzeiro,1,1,post
+732617,2025-04-13 22:30:00,2025,Fluminense,Santos,1,0,post
+732616,2025-04-13 23:00:00,2025,Fortaleza,Internacional,0,0,post
+732610,2025-04-13 23:30:00,2025,Atlético-MG,Vitória,2,2,post
+732622,2025-04-16 00:30:00,2025,Ceará,Vasco da Gama,2,1,post
+732623,2025-04-16 21:30:00,2025,Botafogo,São Paulo,2,2,post
+732628,2025-04-16 22:00:00,2025,Mirassol,Grêmio,4,1,post
+732626,2025-04-16 22:00:00,2025,Sport,Red Bull Bragantino,0,1,post
+732621,2025-04-16 22:30:00,2025,Corinthians,Fluminense,0,2,post
+732629,2025-04-16 22:30:00,2025,Internacional,Palmeiras,0,1,post
+732625,2025-04-17 00:30:00,2025,Vitória,Fortaleza,2,1,post
+732627,2025-04-17 00:30:00,2025,Santos,Atlético-MG,2,0,post
+732624,2025-04-17 00:30:00,2025,Flamengo,Juventude,6,0,post
+732620,2025-04-18 00:30:00,2025,Cruzeiro,Bahia,3,0,post
+732639,2025-04-19 19:00:00,2025,Corinthians,Sport,2,1,post
+732632,2025-04-19 21:30:00,2025,Vasco da Gama,Flamengo,0,0,post
+732636,2025-04-20 00:00:00,2025,Grêmio,Internacional,1,1,post
+732635,2025-04-20 14:00:00,2025,Juventude,Mirassol,2,2,post
+732630,2025-04-20 19:00:00,2025,Atlético-MG,Botafogo,1,0,post
+732633,2025-04-20 19:00:00,2025,São Paulo,Santos,2,1,post
+732637,2025-04-20 21:30:00,2025,Fortaleza,Palmeiras,1,2,post
+732638,2025-04-20 21:30:00,2025,Fluminense,Vitória,1,1,post
+732634,2025-04-20 23:30:00,2025,Red Bull Bragantino,Cruzeiro,1,0,post
+732631,2025-04-21 23:00:00,2025,Bahia,Ceará,1,0,post
+732641,2025-04-26 19:00:00,2025,Internacional,Juventude,3,1,post
+732648,2025-04-26 21:30:00,2025,Ceará,São Paulo,1,1,post
+732642,2025-04-26 21:30:00,2025,Mirassol,Atlético-MG,2,2,post
+732645,2025-04-26 23:00:00,2025,Sport,Fortaleza,0,0,post
+732640,2025-04-27 00:00:00,2025,Botafogo,Fluminense,2,0,post
+732646,2025-04-27 19:00:00,2025,Flamengo,Corinthians,4,0,post
+732644,2025-04-27 21:30:00,2025,Vitória,Grêmio,1,1,post
+732647,2025-04-27 21:30:00,2025,Cruzeiro,Vasco da Gama,1,0,post
+732643,2025-04-27 21:30:00,2025,Palmeiras,Bahia,0,1,post
+732649,2025-04-27 23:30:00,2025,Santos,Red Bull Bragantino,1,2,post
+732653,2025-05-03 00:30:00,2025,São Paulo,Fortaleza,0,0,post
+732659,2025-05-03 21:30:00,2025,Ceará,Vitória,1,0,post
+732651,2025-05-03 21:30:00,2025,Corinthians,Internacional,4,2,post
+732657,2025-05-03 21:30:00,2025,Fluminense,Sport,2,1,post
+732658,2025-05-04 00:00:00,2025,Bahia,Botafogo,1,0,post
+732652,2025-05-04 19:00:00,2025,Vasco da Gama,Palmeiras,0,1,post
+732656,2025-05-04 19:00:00,2025,Grêmio,Santos,1,0,post
+732650,2025-05-04 21:30:00,2025,Cruzeiro,Flamengo,2,1,post
+732654,2025-05-05 22:00:00,2025,Red Bull Bragantino,Mirassol,1,0,post
+732655,2025-05-05 23:00:00,2025,Juventude,Atlético-MG,0,1,post
+732666,2025-05-10 19:00:00,2025,Fortaleza,Juventude,5,0,post
+732665,2025-05-10 21:30:00,2025,Grêmio,Red Bull Bragantino,1,1,post
+732669,2025-05-10 21:30:00,2025,Mirassol,Corinthians,2,1,post
+732664,2025-05-10 21:30:00,2025,Vitória,Vasco da Gama,2,1,post
+732667,2025-05-11 00:00:00,2025,Flamengo,Bahia,1,0,post
+732661,2025-05-11 19:00:00,2025,Sport,Cruzeiro,0,4,post
+732660,2025-05-11 20:30:00,2025,Atlético-MG,Fluminense,3,2,post
+732663,2025-05-11 20:30:00,2025,Palmeiras,São Paulo,1,0,post
+732668,2025-05-11 23:00:00,2025,Botafogo,Internacional,4,0,post
+732662,2025-05-12 23:00:00,2025,Santos,Ceará,0,0,post
+732672,2025-05-17 19:00:00,2025,Ceará,Sport,2,0,post
+732675,2025-05-17 21:30:00,2025,Vasco da Gama,Fortaleza,3,0,post
+732676,2025-05-18 00:00:00,2025,São Paulo,Grêmio,2,1,post
+732671,2025-05-18 19:00:00,2025,Corinthians,Santos,1,0,post
+732678,2025-05-18 19:00:00,2025,Juventude,Fluminense,1,1,post
+732673,2025-05-18 19:00:00,2025,Bahia,Vitória,2,1,post
+732674,2025-05-18 21:30:00,2025,Flamengo,Botafogo,0,0,post
+732677,2025-05-18 21:30:00,2025,Red Bull Bragantino,Palmeiras,1,2,post
+732670,2025-05-18 23:30:00,2025,Cruzeiro,Atlético-MG,0,0,post
+732679,2025-05-18 23:30:00,2025,Internacional,Mirassol,1,1,post
+732689,2025-05-24 21:30:00,2025,Fluminense,Vasco da Gama,2,1,post
+732683,2025-05-24 21:30:00,2025,São Paulo,Mirassol,0,2,post
+732680,2025-05-25 00:00:00,2025,Atlético-MG,Corinthians,0,0,post
+732687,2025-05-25 14:00:00,2025,Grêmio,Bahia,1,0,post
+732686,2025-05-25 19:00:00,2025,Palmeiras,Flamengo,0,2,post
+732684,2025-05-25 19:00:00,2025,Sport,Internacional,1,1,post
+732682,2025-05-25 21:30:00,2025,Vitória,Santos,0,1,post
+732688,2025-05-25 23:30:00,2025,Fortaleza,Cruzeiro,0,2,post
+732685,2025-05-26 23:00:00,2025,Red Bull Bragantino,Juventude,1,0,post
+732690,2025-05-31 21:30:00,2025,Bahia,São Paulo,2,1,post
+732694,2025-06-01 00:00:00,2025,Vasco da Gama,Red Bull Bragantino,0,2,post
+732699,2025-06-01 14:00:00,2025,Mirassol,Sport,1,0,post
+732695,2025-06-01 19:00:00,2025,Santos,Botafogo,0,1,post
+732693,2025-06-01 19:00:00,2025,Juventude,Grêmio,0,2,post
+732698,2025-06-01 21:30:00,2025,Ceará,Atlético-MG,0,1,post
+732697,2025-06-01 21:30:00,2025,Corinthians,Vitória,0,0,post
+732691,2025-06-01 21:30:00,2025,Flamengo,Fortaleza,5,0,post
+732696,2025-06-01 22:30:00,2025,Cruzeiro,Palmeiras,2,1,post
+732692,2025-06-01 23:30:00,2025,Internacional,Fluminense,0,2,post
+732681,2025-06-04 23:00:00,2025,Botafogo,Ceará,3,2,post
+732704,2025-06-12 22:00:00,2025,Vitória,Cruzeiro,0,0,post
+732706,2025-06-12 22:00:00,2025,Red Bull Bragantino,Bahia,0,3,post
+732703,2025-06-12 22:30:00,2025,Fortaleza,Santos,2,3,post
+732709,2025-06-12 23:00:00,2025,Grêmio,Corinthians,1,1,post
+732700,2025-06-13 00:30:00,2025,Atlético-MG,Internacional,2,0,post
+732708,2025-06-13 00:30:00,2025,São Paulo,Vasco da Gama,1,3,post
+732710,2025-07-12 19:30:00,2025,Flamengo,São Paulo,2,0,post
+732716,2025-07-12 19:30:00,2025,Internacional,Vitória,1,0,post
+732712,2025-07-12 21:30:00,2025,Vasco da Gama,Botafogo,0,2,post
+732718,2025-07-13 00:00:00,2025,Bahia,Atlético-MG,2,1,post
+732719,2025-07-13 22:00:00,2025,Corinthians,Red Bull Bragantino,1,2,post
+732717,2025-07-13 23:30:00,2025,Fortaleza,Ceará,0,1,post
+732711,2025-07-13 23:30:00,2025,Cruzeiro,Grêmio,4,1,post
+732715,2025-07-14 23:00:00,2025,Juventude,Sport,2,0,post
+732722,2025-07-16 22:00:00,2025,Palmeiras,Mirassol,1,1,post
+732726,2025-07-16 22:30:00,2025,Ceará,Corinthians,0,1,post
+732724,2025-07-16 23:00:00,2025,Santos,Flamengo,1,0,post
+732727,2025-07-17 00:30:00,2025,Botafogo,Vitória,0,0,post
+732721,2025-07-17 00:30:00,2025,Red Bull Bragantino,São Paulo,2,2,post
+732725,2025-07-17 22:30:00,2025,Fluminense,Cruzeiro,0,2,post
+732731,2025-07-19 19:00:00,2025,Fortaleza,Bahia,1,1,post
+732736,2025-07-19 20:30:00,2025,Vasco da Gama,Grêmio,1,1,post
+732734,2025-07-19 21:30:00,2025,Mirassol,Santos,3,0,post
+732737,2025-07-20 00:00:00,2025,São Paulo,Corinthians,2,0,post
+732730,2025-07-20 14:00:00,2025,Internacional,Ceará,1,0,post
+732733,2025-07-20 19:00:00,2025,Cruzeiro,Juventude,4,0,post
+732735,2025-07-20 19:00:00,2025,Vitória,Red Bull Bragantino,1,0,post
+732739,2025-07-20 20:30:00,2025,Palmeiras,Atlético-MG,3,2,post
+732738,2025-07-20 20:30:00,2025,Sport,Botafogo,0,1,post
+732732,2025-07-20 22:30:00,2025,Flamengo,Fluminense,1,0,post
+732741,2025-07-23 22:00:00,2025,Ceará,Mirassol,0,2,post
+732748,2025-07-23 22:00:00,2025,Fluminense,Palmeiras,1,2,post
+732749,2025-07-23 22:30:00,2025,Corinthians,Cruzeiro,0,0,post
+732745,2025-07-24 00:30:00,2025,Red Bull Bragantino,Flamengo,1,2,post
+732744,2025-07-24 00:30:00,2025,Santos,Internacional,1,2,post
+732742,2025-07-24 00:30:00,2025,Vitória,Sport,2,2,post
+732746,2025-07-24 22:00:00,2025,Juventude,São Paulo,0,1,post
+732755,2025-07-26 21:30:00,2025,Sport,Santos,2,2,post
+732753,2025-07-26 21:30:00,2025,Mirassol,Vitória,1,1,post
+732751,2025-07-26 21:30:00,2025,Fortaleza,Red Bull Bragantino,3,1,post
+732758,2025-07-26 21:30:00,2025,Botafogo,Corinthians,1,1,post
+732759,2025-07-27 00:00:00,2025,Palmeiras,Grêmio,1,0,post
+732757,2025-07-27 19:00:00,2025,Cruzeiro,Ceará,1,2,post
+732754,2025-07-27 19:00:00,2025,São Paulo,Fluminense,3,1,post
+732750,2025-07-27 21:30:00,2025,Bahia,Juventude,3,0,post
+732752,2025-07-27 21:30:00,2025,Internacional,Vasco da Gama,1,1,post
+732756,2025-07-27 23:30:00,2025,Flamengo,Atlético-MG,1,0,post
+732729,2025-07-29 23:30:00,2025,Grêmio,Fortaleza,2,1,post
+732768,2025-08-02 19:00:00,2025,Sport,Bahia,0,0,post
+732766,2025-08-02 21:30:00,2025,Mirassol,Vasco da Gama,3,2,post
+732769,2025-08-03 00:00:00,2025,Fluminense,Grêmio,1,0,post
+732763,2025-08-03 19:00:00,2025,Corinthians,Fortaleza,1,1,post
+732761,2025-08-03 19:00:00,2025,Botafogo,Cruzeiro,0,2,post
+732760,2025-08-03 21:30:00,2025,Atlético-MG,Red Bull Bragantino,2,1,post
+732762,2025-08-03 21:30:00,2025,Ceará,Flamengo,1,1,post
+732764,2025-08-03 22:30:00,2025,Vitória,Palmeiras,2,2,post
+732765,2025-08-03 23:30:00,2025,Internacional,São Paulo,1,2,post
+732767,2025-08-04 23:00:00,2025,Santos,Juventude,3,1,post
+732772,2025-08-09 21:30:00,2025,Flamengo,Mirassol,2,1,post
+732777,2025-08-09 21:30:00,2025,Red Bull Bragantino,Internacional,1,3,post
+732778,2025-08-09 21:30:00,2025,São Paulo,Vitória,2,0,post
+732773,2025-08-09 23:30:00,2025,Fortaleza,Botafogo,0,5,post
+732770,2025-08-10 00:00:00,2025,Bahia,Fluminense,3,3,post
+732776,2025-08-10 19:00:00,2025,Palmeiras,Ceará,2,1,post
+732779,2025-08-10 19:00:00,2025,Vasco da Gama,Atlético-MG,1,1,post
+732771,2025-08-10 21:30:00,2025,Cruzeiro,Santos,1,2,post
+732774,2025-08-10 23:30:00,2025,Grêmio,Sport,0,1,post
+732775,2025-08-11 23:00:00,2025,Juventude,Corinthians,2,1,post
+732789,2025-08-16 19:00:00,2025,Fluminense,Fortaleza,2,1,post
+732781,2025-08-16 19:00:00,2025,Ceará,Red Bull Bragantino,1,0,post
+732788,2025-08-16 21:30:00,2025,Sport,São Paulo,2,2,post
+732784,2025-08-16 21:30:00,2025,Vitória,Juventude,2,2,post
+732780,2025-08-17 00:00:00,2025,Corinthians,Bahia,1,2,post
+732783,2025-08-17 19:00:00,2025,Atlético-MG,Grêmio,1,3,post
+732787,2025-08-17 19:00:00,2025,Santos,Vasco da Gama,0,6,post
+732785,2025-08-17 21:30:00,2025,Internacional,Flamengo,1,3,post
+732782,2025-08-17 23:30:00,2025,Botafogo,Palmeiras,0,1,post
+732786,2025-08-18 23:00:00,2025,Mirassol,Cruzeiro,1,1,post
+732723,2025-08-20 22:00:00,2025,Juventude,Vasco da Gama,2,0,post
+732797,2025-08-23 19:00:00,2025,Red Bull Bragantino,Fluminense,4,2,post
+732792,2025-08-23 21:30:00,2025,Cruzeiro,Internacional,2,1,post
+732794,2025-08-24 00:00:00,2025,Grêmio,Ceará,0,0,post
+732793,2025-08-24 19:00:00,2025,Bahia,Santos,2,0,post
+732795,2025-08-24 19:00:00,2025,Vasco da Gama,Corinthians,2,3,post
+732799,2025-08-24 21:30:00,2025,Juventude,Botafogo,1,3,post
+732790,2025-08-24 21:30:00,2025,Fortaleza,Mirassol,0,1,post
+732796,2025-08-24 23:30:00,2025,São Paulo,Atlético-MG,2,0,post
+732798,2025-08-25 22:00:00,2025,Palmeiras,Sport,3,0,post
+732791,2025-08-26 00:00:00,2025,Flamengo,Vitória,8,0,post
+732801,2025-08-30 19:00:00,2025,Ceará,Juventude,0,1,post
+732800,2025-08-30 21:30:00,2025,Botafogo,Red Bull Bragantino,4,1,post
+732803,2025-08-31 00:00:00,2025,Cruzeiro,São Paulo,1,0,post
+732808,2025-08-31 19:00:00,2025,Flamengo,Grêmio,1,1,post
+732805,2025-08-31 19:00:00,2025,Santos,Fluminense,0,0,post
+732802,2025-08-31 21:30:00,2025,Corinthians,Palmeiras,1,1,post
+732806,2025-08-31 21:30:00,2025,Mirassol,Bahia,5,1,post
+732804,2025-08-31 21:30:00,2025,Vitória,Atlético-MG,1,0,post
+732807,2025-08-31 23:30:00,2025,Internacional,Fortaleza,2,1,post
+732809,2025-08-31 23:30:00,2025,Sport,Vasco da Gama,2,3,post
+732810,2025-09-13 19:00:00,2025,Fortaleza,Vitória,2,0,post
+732819,2025-09-13 19:00:00,2025,Grêmio,Mirassol,0,1,post
+732816,2025-09-13 21:30:00,2025,Palmeiras,Internacional,4,1,post
+732811,2025-09-14 00:00:00,2025,Fluminense,Corinthians,0,1,post
+732817,2025-09-14 14:00:00,2025,Red Bull Bragantino,Sport,1,1,post
+732815,2025-09-14 19:00:00,2025,Juventude,Flamengo,0,2,post
+732813,2025-09-14 19:00:00,2025,Atlético-MG,Santos,1,1,post
+732818,2025-09-14 20:30:00,2025,São Paulo,Botafogo,1,0,post
+732814,2025-09-14 23:30:00,2025,Vasco da Gama,Ceará,2,2,post
+732812,2025-09-15 23:00:00,2025,Bahia,Cruzeiro,1,2,post
+732701,2025-09-17 22:30:00,2025,Botafogo,Mirassol,3,3,post
+732825,2025-09-20 19:00:00,2025,Vitória,Fluminense,0,1,post
+732823,2025-09-20 21:30:00,2025,Botafogo,Atlético-MG,1,0,post
+732822,2025-09-20 21:30:00,2025,Ceará,Bahia,1,1,post
+732828,2025-09-21 00:00:00,2025,Palmeiras,Fortaleza,4,1,post
+732829,2025-09-21 19:00:00,2025,Mirassol,Juventude,2,0,post
+732820,2025-09-21 20:30:00,2025,Flamengo,Vasco da Gama,1,1,post
+732824,2025-09-21 20:30:00,2025,Internacional,Grêmio,2,3,post
+732826,2025-09-21 20:30:00,2025,Sport,Corinthians,1,0,post
+732821,2025-09-21 23:30:00,2025,Cruzeiro,Red Bull Bragantino,2,1,post
+732827,2025-09-21 23:30:00,2025,Santos,São Paulo,1,0,post
+732743,2025-09-24 22:30:00,2025,Vasco da Gama,Bahia,3,1,post
+732747,2025-09-24 22:30:00,2025,Grêmio,Botafogo,1,1,post
+732838,2025-09-27 19:00:00,2025,Fortaleza,Sport,1,0,post
+732834,2025-09-27 21:30:00,2025,Vasco da Gama,Cruzeiro,2,0,post
+732836,2025-09-27 21:30:00,2025,Juventude,Internacional,1,1,post
+732830,2025-09-28 00:00:00,2025,Atlético-MG,Mirassol,1,0,post
+732837,2025-09-28 14:00:00,2025,Grêmio,Vitória,3,1,post
+732831,2025-09-28 19:00:00,2025,Bahia,Palmeiras,1,0,post
+732833,2025-09-28 19:00:00,2025,Fluminense,Botafogo,2,0,post
+732835,2025-09-28 21:30:00,2025,Red Bull Bragantino,Santos,2,2,post
+732832,2025-09-28 23:30:00,2025,Corinthians,Flamengo,1,2,post
+732839,2025-09-29 23:00:00,2025,São Paulo,Ceará,0,1,post
+732843,2025-10-01 00:30:00,2025,Atlético-MG,Juventude,0,0,post
+732848,2025-10-01 22:00:00,2025,Sport,Fluminense,2,2,post
+732845,2025-10-01 22:00:00,2025,Mirassol,Red Bull Bragantino,1,1,post
+732846,2025-10-01 22:00:00,2025,Palmeiras,Vasco da Gama,3,0,post
+732849,2025-10-01 22:30:00,2025,Internacional,Corinthians,1,1,post
+732842,2025-10-02 00:30:00,2025,Botafogo,Bahia,2,1,post
+732847,2025-10-02 00:30:00,2025,Santos,Grêmio,1,1,post
+732844,2025-10-02 22:00:00,2025,Vitória,Ceará,1,0,post
+732840,2025-10-02 22:30:00,2025,Fortaleza,São Paulo,0,2,post
+732841,2025-10-02 23:30:00,2025,Flamengo,Cruzeiro,0,0,post
+732857,2025-10-04 21:30:00,2025,Red Bull Bragantino,Grêmio,1,0,post
+732854,2025-10-04 21:30:00,2025,Fluminense,Atlético-MG,3,0,post
+732859,2025-10-04 21:30:00,2025,Internacional,Botafogo,2,0,post
+732851,2025-10-05 00:00:00,2025,Corinthians,Mirassol,3,0,post
+732856,2025-10-05 19:00:00,2025,São Paulo,Palmeiras,2,3,post
+732855,2025-10-05 19:00:00,2025,Vasco da Gama,Vitória,4,3,post
+732853,2025-10-05 21:30:00,2025,Bahia,Flamengo,1,0,post
+732858,2025-10-05 21:30:00,2025,Juventude,Fortaleza,1,2,post
+732852,2025-10-05 23:30:00,2025,Ceará,Santos,3,0,post
+732850,2025-10-05 23:30:00,2025,Cruzeiro,Sport,1,1,post
+732720,2025-10-08 22:00:00,2025,Atlético-MG,Sport,3,1,post
+732714,2025-10-09 00:00:00,2025,Mirassol,Fluminense,2,1,post
+732705,2025-10-11 22:00:00,2025,Palmeiras,Juventude,4,1,post
+732866,2025-10-15 22:00:00,2025,Palmeiras,Red Bull Bragantino,5,1,post
+732861,2025-10-15 22:30:00,2025,Botafogo,Flamengo,0,3,post
+732867,2025-10-15 23:00:00,2025,Mirassol,Internacional,3,1,post
+732869,2025-10-15 23:00:00,2025,Sport,Ceará,1,1,post
+732865,2025-10-16 00:30:00,2025,Santos,Corinthians,3,1,post
+732863,2025-10-16 00:30:00,2025,Fortaleza,Vasco da Gama,0,2,post
+732860,2025-10-16 00:30:00,2025,Atlético-MG,Cruzeiro,1,1,post
+732868,2025-10-16 22:00:00,2025,Grêmio,São Paulo,2,0,post
+732862,2025-10-17 00:30:00,2025,Fluminense,Juventude,1,0,post
+732864,2025-10-17 00:30:00,2025,Vitória,Bahia,2,1,post
+732876,2025-10-18 21:30:00,2025,Corinthians,Atlético-MG,1,0,post
+732875,2025-10-19 00:00:00,2025,Cruzeiro,Fortaleza,1,0,post
+732879,2025-10-19 19:00:00,2025,Flamengo,Palmeiras,3,2,post
+732877,2025-10-19 21:30:00,2025,Ceará,Botafogo,0,2,post
+732873,2025-10-19 21:30:00,2025,Internacional,Sport,2,0,post
+732871,2025-10-19 21:30:00,2025,Mirassol,São Paulo,3,0,post
+732878,2025-10-19 23:30:00,2025,Bahia,Grêmio,4,0,post
+732872,2025-10-20 22:00:00,2025,Juventude,Red Bull Bragantino,1,0,post
+732874,2025-10-20 22:30:00,2025,Vasco da Gama,Fluminense,2,0,post
+732870,2025-10-21 00:30:00,2025,Santos,Vitória,0,1,post
+732728,2025-10-22 22:00:00,2025,Bahia,Internacional,1,0,post
+732888,2025-10-25 19:00:00,2025,Atlético-MG,Ceará,1,0,post
+732889,2025-10-25 19:00:00,2025,Vitória,Corinthians,0,1,post
+732886,2025-10-25 20:30:00,2025,Fluminense,Internacional,1,0,post
+732881,2025-10-25 21:30:00,2025,Sport,Mirassol,1,2,post
+732885,2025-10-25 22:30:00,2025,Fortaleza,Flamengo,1,0,post
+732880,2025-10-26 00:30:00,2025,São Paulo,Bahia,2,0,post
+732887,2025-10-26 19:00:00,2025,Botafogo,Santos,2,2,post
+732884,2025-10-26 19:00:00,2025,Grêmio,Juventude,3,1,post
+732882,2025-10-26 21:30:00,2025,Red Bull Bragantino,Vasco da Gama,0,3,post
+732883,2025-10-26 23:30:00,2025,Palmeiras,Cruzeiro,0,0,post
+732702,2025-10-29 22:00:00,2025,Fluminense,Ceará,1,0,post
+732893,2025-11-01 19:00:00,2025,Santos,Fortaleza,1,1,post
+732898,2025-11-01 19:00:00,2025,Cruzeiro,Vitória,3,1,post
+732894,2025-11-01 21:00:00,2025,Mirassol,Botafogo,0,0,post
+732897,2025-11-02 00:00:00,2025,Flamengo,Sport,3,0,post
+732890,2025-11-02 19:00:00,2025,Bahia,Red Bull Bragantino,2,1,post
+732891,2025-11-02 19:00:00,2025,Ceará,Fluminense,2,0,post
+732899,2025-11-02 19:00:00,2025,Corinthians,Grêmio,2,0,post
+732896,2025-11-02 21:30:00,2025,Internacional,Atlético-MG,0,0,post
+732895,2025-11-02 21:30:00,2025,Juventude,Palmeiras,0,2,post
+732892,2025-11-02 23:30:00,2025,Vasco da Gama,São Paulo,0,2,post
+732902,2025-11-05 22:00:00,2025,Sport,Juventude,0,2,post
+732904,2025-11-05 22:00:00,2025,Vitória,Internacional,1,0,post
+732903,2025-11-05 22:00:00,2025,Red Bull Bragantino,Corinthians,2,1,post
+732908,2025-11-05 22:30:00,2025,Botafogo,Vasco da Gama,3,0,post
+732900,2025-11-05 23:00:00,2025,Atlético-MG,Bahia,3,0,post
+732905,2025-11-05 23:00:00,2025,Grêmio,Cruzeiro,0,1,post
+732901,2025-11-06 00:30:00,2025,São Paulo,Flamengo,2,2,post
+732906,2025-11-06 22:30:00,2025,Fluminense,Mirassol,1,0,post
+732907,2025-11-06 23:00:00,2025,Ceará,Fortaleza,1,1,post
+732909,2025-11-07 00:30:00,2025,Palmeiras,Santos,2,0,post
+732919,2025-11-08 19:00:00,2025,Sport,Atlético-MG,2,4,post
+732910,2025-11-08 21:00:00,2025,Vasco da Gama,Juventude,1,3,post
+732917,2025-11-08 21:30:00,2025,Internacional,Bahia,2,2,post
+732911,2025-11-09 00:00:00,2025,São Paulo,Red Bull Bragantino,0,1,post
+732913,2025-11-09 19:00:00,2025,Corinthians,Ceará,0,1,post
+732914,2025-11-09 19:00:00,2025,Cruzeiro,Fluminense,0,0,post
+732912,2025-11-09 19:00:00,2025,Vitória,Botafogo,0,0,post
+732915,2025-11-09 21:30:00,2025,Flamengo,Santos,3,2,post
+732918,2025-11-09 23:30:00,2025,Mirassol,Palmeiras,2,1,post
+732916,2025-11-09 23:30:00,2025,Fortaleza,Grêmio,2,2,post
+732740,2025-11-12 23:30:00,2025,Atlético-MG,Fortaleza,3,3,post
+732707,2025-11-15 21:30:00,2025,Sport,Flamengo,1,5,post
+732713,2025-11-16 00:00:00,2025,Santos,Palmeiras,1,0,post
+732957,2025-11-16 22:00:00,2025,Red Bull Bragantino,Atlético-MG,2,0,post
+732927,2025-11-18 23:30:00,2025,Botafogo,Sport,3,2,post
+732958,2025-11-19 22:30:00,2025,Palmeiras,Vitória,0,0,post
+732929,2025-11-20 00:30:00,2025,Fluminense,Flamengo,2,1,post
+732923,2025-11-20 00:30:00,2025,Grêmio,Vasco da Gama,2,0,post
+732924,2025-11-20 00:30:00,2025,Santos,Mirassol,1,1,post
+732922,2025-11-20 19:00:00,2025,Juventude,Cruzeiro,3,3,post
+732928,2025-11-20 21:00:00,2025,Bahia,Fortaleza,2,3,post
+732925,2025-11-20 22:30:00,2025,Corinthians,São Paulo,3,1,post
+732926,2025-11-21 00:30:00,2025,Ceará,Internacional,1,2,post
+732937,2025-11-22 22:30:00,2025,Botafogo,Grêmio,3,2,post
+732935,2025-11-23 00:30:00,2025,Flamengo,Red Bull Bragantino,3,0,post
+732931,2025-11-23 00:30:00,2025,Palmeiras,Fluminense,0,0,post
+732939,2025-11-23 19:00:00,2025,São Paulo,Juventude,2,1,post
+732938,2025-11-23 19:00:00,2025,Bahia,Vasco da Gama,1,0,post
+732930,2025-11-23 21:30:00,2025,Sport,Vitória,1,3,post
+732936,2025-11-23 23:30:00,2025,Cruzeiro,Corinthians,3,0,post
+732932,2025-11-24 22:00:00,2025,Mirassol,Ceará,3,0,post
+732933,2025-11-25 00:00:00,2025,Internacional,Santos,1,1,post
+732943,2025-11-26 00:30:00,2025,Atlético-MG,Flamengo,1,1,post
+732949,2025-11-26 00:30:00,2025,Grêmio,Palmeiras,3,2,post
+732946,2025-11-26 22:00:00,2025,Red Bull Bragantino,Fortaleza,0,1,post
+732940,2025-11-27 23:30:00,2025,Fluminense,São Paulo,6,0,post
+732945,2025-11-28 22:00:00,2025,Juventude,Bahia,1,1,post
+732948,2025-11-28 22:30:00,2025,Vasco da Gama,Internacional,5,1,post
+732947,2025-11-29 00:30:00,2025,Santos,Sport,3,0,post
+732944,2025-11-29 19:00:00,2025,Vitória,Mirassol,2,0,post
+732942,2025-11-30 00:00:00,2025,Ceará,Cruzeiro,1,1,post
+732941,2025-11-30 19:00:00,2025,Corinthians,Botafogo,2,2,post
+732934,2025-11-30 21:30:00,2025,Fortaleza,Atlético-MG,1,0,post
+732955,2025-12-02 22:00:00,2025,Vasco da Gama,Mirassol,0,2,post
+732954,2025-12-03 00:30:00,2025,Grêmio,Fluminense,1,2,post
+732921,2025-12-03 22:00:00,2025,Red Bull Bragantino,Vitória,4,0,post
+732950,2025-12-03 22:00:00,2025,Fortaleza,Corinthians,2,1,post
+732959,2025-12-03 22:30:00,2025,Juventude,Santos,0,3,post
+732953,2025-12-03 23:00:00,2025,Bahia,Sport,2,0,post
+732956,2025-12-03 23:00:00,2025,São Paulo,Internacional,3,0,post
+732920,2025-12-04 00:30:00,2025,Atlético-MG,Palmeiras,0,3,post
+732951,2025-12-04 00:30:00,2025,Flamengo,Ceará,1,0,post
+732952,2025-12-04 22:30:00,2025,Cruzeiro,Botafogo,2,2,post
+732966,2025-12-06 21:30:00,2025,Mirassol,Flamengo,3,3,post
+732969,2025-12-07 19:00:00,2025,Sport,Grêmio,0,4,post
+732965,2025-12-07 19:00:00,2025,Santos,Cruzeiro,3,0,post
+732967,2025-12-07 19:00:00,2025,Internacional,Red Bull Bragantino,3,1,post
+732968,2025-12-07 19:00:00,2025,Fluminense,Bahia,2,0,post
+732964,2025-12-07 19:00:00,2025,Vitória,São Paulo,1,0,post
+732962,2025-12-07 19:00:00,2025,Ceará,Palmeiras,1,3,post
+732961,2025-12-07 19:00:00,2025,Botafogo,Fortaleza,4,2,post
+732960,2025-12-07 19:00:00,2025,Atlético-MG,Vasco da Gama,5,0,post
+732963,2025-12-07 19:00:00,2025,Corinthians,Juventude,1,1,post
+401840812,2026-01-28 22:00:00,2026,Vitória,Remo,2,0,post
+401840814,2026-01-28 22:00:00,2026,Internacional,Athletico-PR,0,1,post
+401840977,2026-01-28 22:00:00,2026,Coritiba,Red Bull Bragantino,0,1,post
+401840808,2026-01-28 22:00:00,2026,Atlético-MG,Palmeiras,2,2,post
+401840813,2026-01-28 22:30:00,2026,Fluminense,Grêmio,2,1,post
+401840810,2026-01-28 23:00:00,2026,Chapecoense,Santos,4,2,post
+401840811,2026-01-28 23:00:00,2026,Corinthians,Bahia,1,2,post
+401840976,2026-01-29 00:30:00,2026,São Paulo,Flamengo,2,1,post
+401840975,2026-01-29 23:00:00,2026,Mirassol,Vasco da Gama,2,1,post
+401840809,2026-01-30 00:30:00,2026,Botafogo,Cruzeiro,4,0,post
+401840984,2026-02-04 22:00:00,2026,Red Bull Bragantino,Atlético-MG,1,0,post
+401840978,2026-02-04 22:00:00,2026,Flamengo,Internacional,1,1,post
+401840985,2026-02-04 23:00:00,2026,Remo,Mirassol,2,2,post
+401840986,2026-02-04 23:00:00,2026,Santos,São Paulo,1,1,post
+401840987,2026-02-05 00:30:00,2026,Grêmio,Botafogo,5,3,post
+401840983,2026-02-05 00:30:00,2026,Palmeiras,Vitória,5,1,post
+401840980,2026-02-05 22:00:00,2026,Bahia,Fluminense,1,1,post
+401840982,2026-02-05 23:00:00,2026,Vasco da Gama,Chapecoense,1,1,post
+401840979,2026-02-06 00:30:00,2026,Cruzeiro,Coritiba,1,2,post
+401840993,2026-02-11 00:30:00,2026,Vitória,Flamengo,1,2,post
+401840989,2026-02-11 22:00:00,2026,Chapecoense,Coritiba,3,3,post
+401840996,2026-02-11 22:00:00,2026,Mirassol,Cruzeiro,2,2,post
+401840990,2026-02-11 23:00:00,2026,Atlético-MG,Remo,3,3,post
+401840995,2026-02-12 00:30:00,2026,São Paulo,Grêmio,2,0,post
+401840994,2026-02-12 00:30:00,2026,Vasco da Gama,Bahia,0,1,post
+401840991,2026-02-12 22:00:00,2026,Athletico-PR,Santos,2,1,post
+401840992,2026-02-12 22:30:00,2026,Fluminense,Botafogo,1,0,post
+401840988,2026-02-12 23:00:00,2026,Corinthians,Red Bull Bragantino,2,0,post
+401840997,2026-02-13 00:30:00,2026,Internacional,Palmeiras,1,3,post
+401840981,2026-02-19 22:30:00,2026,Athletico-PR,Corinthians,0,1,post
+401840998,2026-02-25 20:00:00,2026,Bahia,Chapecoense,0,0,post
+401840999,2026-02-25 20:00:00,2026,Botafogo,Vitória,0,0,post
+401841006,2026-02-25 20:00:00,2026,Flamengo,Mirassol,0,0,post
+401841003,2026-02-25 22:00:00,2026,Red Bull Bragantino,Athletico-PR,1,1,post
+401841007,2026-02-25 22:00:00,2026,Remo,Internacional,1,1,post
+401841000,2026-02-25 22:30:00,2026,Coritiba,São Paulo,0,1,post
+401841001,2026-02-25 23:00:00,2026,Cruzeiro,Corinthians,1,1,post
+401841004,2026-02-26 00:30:00,2026,Palmeiras,Fluminense,2,1,post
+401841005,2026-02-26 00:30:00,2026,Grêmio,Atlético-MG,2,1,post
+401841002,2026-02-26 22:00:00,2026,Santos,Vasco da Gama,2,1,post
+401841010,2026-03-11 00:30:00,2026,Mirassol,Santos,2,2,post
+401841015,2026-03-11 22:00:00,2026,Atlético-MG,Internacional,1,0,post
+401841014,2026-03-11 23:00:00,2026,Bahia,Vitória,1,1,post
+401841013,2026-03-12 00:30:00,2026,Corinthians,Coritiba,0,2,post
+401841017,2026-03-12 00:30:00,2026,Flamengo,Cruzeiro,2,0,post
+401841009,2026-03-12 22:00:00,2026,Remo,Fluminense,0,2,post
+401841012,2026-03-12 22:30:00,2026,Vasco da Gama,Palmeiras,2,1,post
+401841008,2026-03-12 23:00:00,2026,São Paulo,Chapecoense,2,0,post
+401841011,2026-03-13 00:30:00,2026,Grêmio,Red Bull Bragantino,1,1,post
+401841027,2026-03-14 21:30:00,2026,Vitória,Atlético-MG,2,0,post
+401841026,2026-03-14 23:30:00,2026,Botafogo,Flamengo,0,3,post
+401841022,2026-03-15 19:00:00,2026,Fluminense,Athletico-PR,3,2,post
+401841021,2026-03-15 19:00:00,2026,Internacional,Bahia,0,1,post
+401841018,2026-03-15 19:00:00,2026,Santos,Corinthians,1,1,post
+401841020,2026-03-15 21:30:00,2026,Palmeiras,Mirassol,1,0,post
+401841024,2026-03-15 21:30:00,2026,Coritiba,Remo,1,0,post
+401841023,2026-03-15 23:30:00,2026,Cruzeiro,Vasco da Gama,3,3,post
+401841019,2026-03-15 23:30:00,2026,Red Bull Bragantino,São Paulo,1,2,post
+401841025,2026-03-16 23:00:00,2026,Chapecoense,Grêmio,1,1,post
+401841037,2026-03-18 22:00:00,2026,Bahia,Red Bull Bragantino,2,0,post
+401841032,2026-03-18 22:00:00,2026,Palmeiras,Botafogo,2,1,post
+401841028,2026-03-18 22:30:00,2026,Athletico-PR,Cruzeiro,2,1,post
+401841033,2026-03-18 23:00:00,2026,Mirassol,Coritiba,0,1,post
+401841029,2026-03-18 23:00:00,2026,Atlético-MG,São Paulo,1,0,post
+401841031,2026-03-19 00:30:00,2026,Santos,Internacional,1,2,post
+401841030,2026-03-19 00:30:00,2026,Vasco da Gama,Fluminense,3,2,post
+401841034,2026-03-19 22:00:00,2026,Grêmio,Vitória,2,0,post
+401841035,2026-03-19 23:00:00,2026,Flamengo,Remo,3,0,post
+401841036,2026-03-20 00:30:00,2026,Chapecoense,Corinthians,0,0,post
+401841047,2026-03-21 19:00:00,2026,Red Bull Bragantino,Botafogo,1,2,post
+401841044,2026-03-21 21:30:00,2026,Fluminense,Atlético-MG,1,0,post
+401841040,2026-03-22 00:00:00,2026,São Paulo,Palmeiras,0,1,post
+401841045,2026-03-22 19:00:00,2026,Cruzeiro,Santos,0,0,post
+401841041,2026-03-22 19:00:00,2026,Remo,Bahia,4,1,post
+401841038,2026-03-22 19:00:00,2026,Athletico-PR,Coritiba,2,0,post
+401841039,2026-03-22 19:00:00,2026,Vasco da Gama,Grêmio,2,1,post
+401841043,2026-03-22 21:30:00,2026,Internacional,Chapecoense,2,0,post
+401841042,2026-03-22 21:30:00,2026,Vitória,Mirassol,1,0,post
+401841046,2026-03-22 23:30:00,2026,Corinthians,Flamengo,1,1,post
+401841016,2026-03-29 22:30:00,2026,Athletico-PR,Botafogo,4,1,post
+401841057,2026-04-01 22:30:00,2026,Botafogo,Mirassol,3,2,post
+401841053,2026-04-01 22:30:00,2026,Internacional,São Paulo,1,1,post
+401841056,2026-04-01 23:00:00,2026,Bahia,Athletico-PR,3,0,post
+401841055,2026-04-01 23:00:00,2026,Cruzeiro,Vitória,3,0,post
+401841048,2026-04-01 23:30:00,2026,Coritiba,Vasco da Gama,1,1,post
+401841054,2026-04-02 00:30:00,2026,Fluminense,Corinthians,3,1,post
+401841050,2026-04-02 22:00:00,2026,Santos,Remo,2,0,post
+401841049,2026-04-02 22:00:00,2026,Chapecoense,Atlético-MG,0,4,post
+401841052,2026-04-03 00:30:00,2026,Palmeiras,Grêmio,2,1,post
+401841051,2026-04-03 00:30:00,2026,Red Bull Bragantino,Flamengo,3,0,post
+401841059,2026-04-04 21:30:00,2026,São Paulo,Cruzeiro,4,1,post
+401841063,2026-04-04 23:30:00,2026,Coritiba,Fluminense,1,1,post
+401841062,2026-04-05 00:00:00,2026,Vasco da Gama,Botafogo,1,2,post
+401841065,2026-04-05 19:00:00,2026,Chapecoense,Vitória,1,1,post
+401841067,2026-04-05 20:30:00,2026,Flamengo,Santos,3,1,post
+401841058,2026-04-05 20:30:00,2026,Atlético-MG,Athletico-PR,2,1,post
+401841064,2026-04-05 22:30:00,2026,Corinthians,Internacional,0,1,post
+401841066,2026-04-05 22:30:00,2026,Bahia,Palmeiras,1,2,post
+401841060,2026-04-05 23:00:00,2026,Mirassol,Red Bull Bragantino,0,1,post
+401841061,2026-04-05 23:30:00,2026,Grêmio,Remo,0,0,post
+401841075,2026-04-11 19:30:00,2026,Remo,Vasco da Gama,1,1,post
+401841073,2026-04-11 19:30:00,2026,Vitória,São Paulo,2,0,post
+401841076,2026-04-11 21:30:00,2026,Mirassol,Bahia,1,2,post
+401841074,2026-04-11 23:00:00,2026,Santos,Atlético-MG,1,0,post
+401841077,2026-04-11 23:30:00,2026,Internacional,Grêmio,0,0,post
+401841071,2026-04-12 14:00:00,2026,Athletico-PR,Chapecoense,2,0,post
+401841070,2026-04-12 19:00:00,2026,Botafogo,Coritiba,2,2,post
+401841072,2026-04-12 21:00:00,2026,Fluminense,Flamengo,1,2,post
+401841069,2026-04-12 21:30:00,2026,Corinthians,Palmeiras,0,0,post
+401841068,2026-04-12 21:30:00,2026,Cruzeiro,Red Bull Bragantino,2,1,post
+401841078,2026-04-18 21:30:00,2026,Chapecoense,Botafogo,1,4,post
+401841081,2026-04-18 21:30:00,2026,Vasco da Gama,São Paulo,2,1,post
+401841080,2026-04-18 23:00:00,2026,Vitória,Corinthians,0,0,post
+401841087,2026-04-18 23:30:00,2026,Cruzeiro,Grêmio,2,0,post
+401841085,2026-04-19 14:00:00,2026,Internacional,Mirassol,1,2,post
+401841079,2026-04-19 19:00:00,2026,Coritiba,Atlético-MG,2,0,post
+401841082,2026-04-19 19:00:00,2026,Santos,Fluminense,2,3,post
+401841084,2026-04-19 21:30:00,2026,Palmeiras,Athletico-PR,1,0,post
+401841083,2026-04-19 21:30:00,2026,Red Bull Bragantino,Remo,4,2,post
+401841086,2026-04-19 22:30:00,2026,Flamengo,Bahia,2,0,post
+401841095,2026-04-25 21:30:00,2026,Bahia,Santos,2,2,post
+401841094,2026-04-25 21:30:00,2026,Botafogo,Internacional,2,2,post
+401841093,2026-04-25 21:30:00,2026,Remo,Cruzeiro,0,1,post
+401841092,2026-04-26 00:00:00,2026,São Paulo,Mirassol,1,0,post
+401841089,2026-04-26 19:00:00,2026,Corinthians,Vasco da Gama,1,0,post
+401841091,2026-04-26 19:00:00,2026,Grêmio,Coritiba,1,0,post
+401841088,2026-04-26 21:30:00,2026,Athletico-PR,Vitória,3,1,post
+401841097,2026-04-26 21:30:00,2026,Red Bull Bragantino,Palmeiras,0,1,post
+401841096,2026-04-26 23:30:00,2026,Atlético-MG,Flamengo,0,4,post
+401841090,2026-04-26 23:30:00,2026,Fluminense,Chapecoense,2,1,post
+401841107,2026-05-02 19:00:00,2026,Botafogo,Remo,1,2,post
+401841100,2026-05-02 21:30:00,2026,Vitória,Coritiba,4,1,post
+401841102,2026-05-02 21:30:00,2026,Palmeiras,Santos,1,1,post
+401841106,2026-05-02 23:30:00,2026,Athletico-PR,Grêmio,0,0,post
+401841098,2026-05-03 00:00:00,2026,Cruzeiro,Atlético-MG,1,3,post
+401841105,2026-05-03 19:00:00,2026,Flamengo,Vasco da Gama,2,2,post
+401841101,2026-05-03 19:00:00,2026,São Paulo,Bahia,2,2,post
+401841099,2026-05-03 21:30:00,2026,Chapecoense,Red Bull Bragantino,1,2,post
+401841104,2026-05-03 21:30:00,2026,Internacional,Fluminense,2,0,post
+401841103,2026-05-03 23:30:00,2026,Mirassol,Corinthians,2,1,post
+401841114,2026-05-09 19:00:00,2026,Coritiba,Internacional,2,2,post
+401841113,2026-05-09 21:00:00,2026,Fluminense,Vitória,2,2,post
+401841116,2026-05-10 00:00:00,2026,Bahia,Cruzeiro,1,2,post
+401841108,2026-05-10 19:00:00,2026,Atlético-MG,Botafogo,1,1,post
+401841110,2026-05-10 19:00:00,2026,Remo,Palmeiras,1,1,post
+401841115,2026-05-10 21:30:00,2026,Corinthians,São Paulo,3,2,post
+401841111,2026-05-10 21:30:00,2026,Mirassol,Chapecoense,1,1,post
+401841109,2026-05-10 21:30:00,2026,Santos,Red Bull Bragantino,2,0,post
+401841117,2026-05-10 22:30:00,2026,Grêmio,Flamengo,0,1,post
+401841112,2026-05-10 23:30:00,2026,Vasco da Gama,Athletico-PR,1,0,post
+401841126,2026-05-16 21:30:00,2026,Internacional,Vasco da Gama,4,1,post
+401841120,2026-05-16 21:30:00,2026,Atlético-MG,Mirassol,3,1,post
+401841127,2026-05-16 22:00:00,2026,Fluminense,São Paulo,2,1,post
+401841125,2026-05-17 00:00:00,2026,Palmeiras,Cruzeiro,1,1,post
+401841123,2026-05-17 14:00:00,2026,Santos,Coritiba,0,3,post
+401841119,2026-05-17 19:00:00,2026,Bahia,Grêmio,1,1,post
+401841118,2026-05-17 19:00:00,2026,Botafogo,Corinthians,3,1,post
+401841122,2026-05-17 21:30:00,2026,Chapecoense,Remo,2,3,post
+401841124,2026-05-17 21:30:00,2026,Red Bull Bragantino,Vitória,2,0,post
+401841121,2026-05-17 22:30:00,2026,Athletico-PR,Flamengo,1,1,post
+401841132,2026-05-23 20:00:00,2026,São Paulo,Botafogo,1,1,post
+401841130,2026-05-23 20:00:00,2026,Vitória,Internacional,2,0,post
+401841135,2026-05-23 22:00:00,2026,Grêmio,Santos,3,2,post
+401841134,2026-05-23 22:00:00,2026,Mirassol,Fluminense,1,0,post
+401841136,2026-05-24 00:00:00,2026,Flamengo,Palmeiras,0,3,post
+401841137,2026-05-24 19:00:00,2026,Cruzeiro,Chapecoense,2,1,post
+401841133,2026-05-24 19:00:00,2026,Remo,Athletico-PR,1,2,post
+401841128,2026-05-24 21:30:00,2026,Corinthians,Atlético-MG,1,0,post
+401841131,2026-05-24 23:30:00,2026,Vasco da Gama,Red Bull Bragantino,0,3,post
+401841129,2026-05-25 23:00:00,2026,Coritiba,Bahia,3,2,post
+401841138,2026-05-30 19:00:00,2026,Athletico-PR,Mirassol,1,0,post
+401841144,2026-05-30 19:00:00,2026,Flamengo,Coritiba,3,0,post
+401841146,2026-05-30 20:30:00,2026,Bahia,Botafogo,2,1,post
+401841139,2026-05-30 20:30:00,2026,Grêmio,Corinthians,1,3,post
+401841143,2026-05-30 23:00:00,2026,Santos,Vitória,3,1,post
+401841141,2026-05-31 14:00:00,2026,Red Bull Bragantino,Internacional,3,1,post
+401841140,2026-05-31 19:00:00,2026,Palmeiras,Chapecoense,1,0,post
+401841142,2026-05-31 19:00:00,2026,Vasco da Gama,Atlético-MG,0,1,post
+401841147,2026-05-31 23:30:00,2026,Remo,São Paulo,1,0,post
+401841145,2026-05-31 23:30:00,2026,Cruzeiro,Fluminense,1,1,post
+401841149,2026-07-16 22:30:00,2026,Botafogo,Santos,2,1,post
+401841157,2026-07-16 22:30:00,2026,Vitória,Vasco da Gama,1,0,post
+401879459,2026-07-17 22:30:00,2026,Bahia,Chapecoense,2,0,post
+401841153,2026-07-17 23:00:00,2026,Fluminense,Red Bull Bragantino,1,1,post
+401841155,2026-07-17 23:00:00,2026,Mirassol,Grêmio,2,1,post
+401841169,2026-07-29 18:00:00,2026,São Paulo,Santos,0,0,post
+401841175,2026-07-29 18:00:00,2026,Chapecoense,Vasco da Gama,0,0,post
+401841176,2026-07-29 18:00:00,2026,Botafogo,Grêmio,0,0,post
+401841168,2026-07-29 18:00:00,2026,Atlético-MG,Red Bull Bragantino,0,0,post
