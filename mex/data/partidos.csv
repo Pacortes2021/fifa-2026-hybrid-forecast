@@ -1,0 +1,1878 @@
+event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
+591027,2021-01-09 01:30:00,2021,Puebla,Guadalajara,1,1,post
+591026,2021-01-09 03:06:00,2021,Tijuana,Pumas UNAM,0,0,post
+591025,2021-01-09 03:30:00,2021,Mazatlán FC,Necaxa,3,2,post
+591024,2021-01-09 23:00:00,2021,Atlas,Monterrey,0,2,post
+591023,2021-01-10 01:00:00,2021,Tigres UANL,León,2,0,post
+591022,2021-01-10 03:00:00,2021,América,Atlético de San Luis,2,1,post
+591021,2021-01-10 18:00:00,2021,Toluca,Querétaro,3,1,post
+591019,2021-01-11 01:06:00,2021,Santos,Cruz Azul,1,0,post
+591020,2021-01-12 03:00:00,2021,Pachuca,FC Juarez,1,1,post
+591018,2021-01-16 01:30:00,2021,Necaxa,Atlético de San Luis,1,0,post
+591017,2021-01-16 03:30:00,2021,FC Juarez,Tijuana,0,0,post
+591016,2021-01-16 23:00:00,2021,Guadalajara,Toluca,1,1,post
+591015,2021-01-17 01:00:00,2021,Cruz Azul,Puebla,0,1,post
+591014,2021-01-17 03:06:00,2021,Monterrey,América,1,0,post
+591013,2021-01-17 18:00:00,2021,Pumas UNAM,Mazatlán FC,3,0,post
+591012,2021-01-18 01:06:00,2021,Santos,Tigres UANL,2,0,post
+591011,2021-01-18 03:06:00,2021,Querétaro,Atlas,1,0,post
+591010,2021-01-19 03:00:00,2021,León,Pachuca,0,0,post
+591009,2021-01-22 03:00:00,2021,Atlético de San Luis,Guadalajara,3,1,post
+591008,2021-01-23 01:30:00,2021,Puebla,Tijuana,0,1,post
+591007,2021-01-23 03:30:00,2021,Mazatlán FC,Santos,0,0,post
+591005,2021-01-24 01:00:00,2021,Atlas,Tigres UANL,0,2,post
+591003,2021-01-24 18:00:00,2021,Toluca,Necaxa,2,0,post
+591002,2021-01-25 01:00:00,2021,Querétaro,Pumas UNAM,2,0,post
+591001,2021-01-26 03:00:00,2021,Pachuca,Cruz Azul,0,1,post
+591004,2021-01-27 02:30:00,2021,América,FC Juarez,2,0,post
+590996,2021-01-29 03:00:00,2021,Tigres UANL,Necaxa,1,1,post
+590999,2021-01-30 03:30:00,2021,Mazatlán FC,Pachuca,1,0,post
+590998,2021-01-31 01:00:00,2021,Guadalajara,FC Juarez,1,2,post
+590997,2021-01-31 03:00:00,2021,Cruz Azul,Querétaro,4,1,post
+590995,2021-01-31 03:06:00,2021,Tijuana,Toluca,3,2,post
+590994,2021-01-31 18:00:00,2021,Pumas UNAM,Atlas,0,0,post
+590993,2021-02-01 01:06:00,2021,Santos,América,1,1,post
+590992,2021-02-02 03:00:00,2021,León,Atlético de San Luis,3,1,post
+591000,2021-02-03 03:00:00,2021,Puebla,Monterrey,0,0,post
+590991,2021-02-05 01:00:00,2021,Atlético de San Luis,Tijuana,2,2,post
+590990,2021-02-05 03:00:00,2021,Querétaro,Pachuca,3,1,post
+590989,2021-02-06 03:30:00,2021,Necaxa,Cruz Azul,0,2,post
+590987,2021-02-06 23:00:00,2021,Atlas,Santos,1,1,post
+590986,2021-02-07 01:00:00,2021,América,Puebla,1,0,post
+590985,2021-02-07 03:06:00,2021,Monterrey,Pumas UNAM,1,0,post
+590984,2021-02-07 18:00:00,2021,Toluca,Mazatlán FC,4,1,post
+590983,2021-02-09 03:00:00,2021,León,Guadalajara,1,3,post
+590982,2021-02-13 01:30:00,2021,Puebla,FC Juarez,4,0,post
+590981,2021-02-13 03:06:00,2021,Tijuana,León,2,0,post
+590980,2021-02-13 03:30:00,2021,Mazatlán FC,Atlético de San Luis,0,3,post
+590979,2021-02-14 01:00:00,2021,Guadalajara,Necaxa,2,2,post
+590978,2021-02-14 03:00:00,2021,América,Querétaro,2,1,post
+590976,2021-02-14 18:00:00,2021,Toluca,Pumas UNAM,1,0,post
+590975,2021-02-15 01:06:00,2021,Santos,Monterrey,1,0,post
+590974,2021-02-16 03:00:00,2021,Pachuca,Atlas,0,1,post
+590977,2021-02-18 03:00:00,2021,Tigres UANL,Cruz Azul,0,2,post
+590973,2021-02-19 03:00:00,2021,Atlético de San Luis,Santos,1,0,post
+590972,2021-02-20 01:30:00,2021,Necaxa,Monterrey,1,1,post
+590971,2021-02-20 03:30:00,2021,FC Juarez,Mazatlán FC,1,0,post
+590970,2021-02-21 01:00:00,2021,Cruz Azul,Toluca,3,2,post
+590969,2021-02-21 03:00:00,2021,Atlas,América,3,0,post
+590968,2021-02-21 18:00:00,2021,Pumas UNAM,León,0,1,post
+590967,2021-02-21 23:00:00,2021,Querétaro,Puebla,1,1,post
+590966,2021-02-22 01:00:00,2021,Tigres UANL,Tijuana,3,2,post
+590965,2021-02-23 03:00:00,2021,Pachuca,Guadalajara,1,1,post
+590964,2021-02-26 03:00:00,2021,Atlético de San Luis,Tigres UANL,2,2,post
+590963,2021-02-27 01:30:00,2021,Puebla,Necaxa,1,0,post
+590962,2021-02-27 03:30:00,2021,Mazatlán FC,Querétaro,3,0,post
+590961,2021-02-27 23:00:00,2021,Toluca,Atlas,0,0,post
+590960,2021-02-28 01:00:00,2021,América,Pachuca,2,0,post
+590959,2021-02-28 03:00:00,2021,León,Cruz Azul,0,1,post
+590958,2021-02-28 23:00:00,2021,Monterrey,Tijuana,1,1,post
+590957,2021-03-01 01:06:00,2021,Santos,FC Juarez,3,2,post
+590956,2021-03-01 03:00:00,2021,Guadalajara,Pumas UNAM,2,1,post
+590955,2021-03-02 23:00:00,2021,Atlas,Atlético de San Luis,3,1,post
+590954,2021-03-03 01:00:00,2021,Tigres UANL,Toluca,0,1,post
+590953,2021-03-03 03:00:00,2021,León,Puebla,1,2,post
+590952,2021-03-04 01:00:00,2021,FC Juarez,Monterrey,1,6,post
+590951,2021-03-04 01:00:00,2021,Querétaro,Guadalajara,2,2,post
+590950,2021-03-04 03:00:00,2021,Cruz Azul,Mazatlán FC,1,0,post
+590949,2021-03-04 03:06:00,2021,Tijuana,América,0,2,post
+590948,2021-03-05 01:00:00,2021,Necaxa,Pachuca,2,2,post
+590947,2021-03-05 03:00:00,2021,Pumas UNAM,Santos,1,0,post
+590946,2021-03-06 01:30:00,2021,Atlético de San Luis,Toluca,0,0,post
+590945,2021-03-06 03:30:00,2021,Puebla,Tigres UANL,1,1,post
+590944,2021-03-06 23:00:00,2021,Atlas,FC Juarez,2,0,post
+590942,2021-03-07 01:00:00,2021,América,León,2,1,post
+590943,2021-03-07 01:06:00,2021,Monterrey,Querétaro,2,1,post
+590941,2021-03-07 03:00:00,2021,Mazatlán FC,Guadalajara,1,1,post
+590940,2021-03-08 01:06:00,2021,Santos,Necaxa,3,1,post
+590939,2021-03-08 03:00:00,2021,Pumas UNAM,Cruz Azul,0,1,post
+590938,2021-03-09 03:00:00,2021,Pachuca,Tijuana,2,1,post
+591006,2021-03-11 03:00:00,2021,Monterrey,León,1,1,post
+590937,2021-03-13 01:30:00,2021,Puebla,Atlas,0,1,post
+590936,2021-03-13 03:30:00,2021,FC Juarez,Pumas UNAM,1,1,post
+590935,2021-03-14 01:00:00,2021,Tigres UANL,Mazatlán FC,1,2,post
+590933,2021-03-14 03:00:00,2021,Cruz Azul,Monterrey,1,0,post
+590934,2021-03-14 03:06:00,2021,Tijuana,Santos,0,1,post
+590932,2021-03-14 18:00:00,2021,Toluca,Pachuca,0,2,post
+590931,2021-03-15 00:00:00,2021,Querétaro,Atlético de San Luis,2,1,post
+590930,2021-03-15 02:00:00,2021,Guadalajara,América,0,3,post
+590929,2021-03-16 03:00:00,2021,León,Necaxa,3,1,post
+590928,2021-03-19 02:00:00,2021,Pachuca,Tigres UANL,1,0,post
+590927,2021-03-20 01:00:00,2021,Necaxa,FC Juarez,1,0,post
+590926,2021-03-20 03:00:00,2021,Mazatlán FC,América,0,1,post
+590925,2021-03-20 23:00:00,2021,Atlético de San Luis,Pumas UNAM,0,1,post
+590923,2021-03-21 01:00:00,2021,Cruz Azul,Atlas,3,2,post
+590922,2021-03-21 03:06:00,2021,Tijuana,Querétaro,3,1,post
+590921,2021-03-21 18:00:00,2021,Toluca,Puebla,4,4,post
+590920,2021-03-22 01:06:00,2021,Santos,León,1,2,post
+590919,2021-04-03 01:30:00,2021,Puebla,Mazatlán FC,3,1,post
+590918,2021-04-03 03:30:00,2021,FC Juarez,Cruz Azul,0,1,post
+590917,2021-04-03 23:00:00,2021,Atlas,Tijuana,1,0,post
+590916,2021-04-04 01:00:00,2021,América,Necaxa,2,1,post
+590915,2021-04-04 03:06:00,2021,Monterrey,Atlético de San Luis,2,0,post
+590914,2021-04-04 17:00:00,2021,Pumas UNAM,Pachuca,2,2,post
+590913,2021-04-04 22:00:00,2021,Guadalajara,Santos,1,1,post
+590912,2021-04-05 00:00:00,2021,Querétaro,Tigres UANL,0,1,post
+590911,2021-04-05 02:05:00,2021,León,Toluca,2,1,post
+590910,2021-04-10 00:30:00,2021,Necaxa,Pumas UNAM,0,1,post
+590909,2021-04-10 02:30:00,2021,FC Juarez,Atlético de San Luis,2,1,post
+590908,2021-04-10 22:00:00,2021,Atlas,León,1,3,post
+590907,2021-04-11 00:00:00,2021,Cruz Azul,Guadalajara,1,0,post
+590906,2021-04-11 02:05:00,2021,Tigres UANL,América,1,3,post
+590905,2021-04-11 17:00:00,2021,Toluca,Monterrey,1,2,post
+590904,2021-04-12 00:00:00,2021,Querétaro,Santos,1,0,post
+590903,2021-04-12 02:06:00,2021,Tijuana,Mazatlán FC,2,3,post
+590902,2021-04-13 02:00:00,2021,Pachuca,Puebla,1,3,post
+590988,2021-04-15 02:00:00,2021,FC Juarez,Tigres UANL,2,3,post
+590901,2021-04-17 00:30:00,2021,Necaxa,Querétaro,0,0,post
+590900,2021-04-17 02:30:00,2021,Mazatlán FC,Atlas,0,0,post
+590899,2021-04-17 22:00:00,2021,Atlético de San Luis,Puebla,1,4,post
+590898,2021-04-18 00:00:00,2021,Guadalajara,Tijuana,2,0,post
+590897,2021-04-18 02:05:00,2021,América,Cruz Azul,1,1,post
+590896,2021-04-18 17:00:00,2021,Pumas UNAM,Tigres UANL,0,0,post
+590895,2021-04-19 00:00:00,2021,Santos,Toluca,3,1,post
+590894,2021-04-19 02:06:00,2021,Monterrey,Pachuca,0,1,post
+590893,2021-04-20 02:00:00,2021,León,FC Juarez,2,0,post
+590924,2021-04-22 02:00:00,2021,Monterrey,Guadalajara,1,2,post
+590892,2021-04-24 00:30:00,2021,Puebla,Pumas UNAM,0,0,post
+590891,2021-04-24 02:06:00,2021,Tijuana,Necaxa,1,0,post
+590890,2021-04-24 02:35:00,2021,Mazatlán FC,León,4,3,post
+590889,2021-04-24 22:00:00,2021,Cruz Azul,Atlético de San Luis,3,2,post
+590887,2021-04-25 00:00:00,2021,Atlas,Guadalajara,0,1,post
+590888,2021-04-25 02:10:00,2021,Tigres UANL,Monterrey,2,1,post
+590886,2021-04-25 22:30:00,2021,Toluca,América,3,1,post
+590885,2021-04-26 00:30:00,2021,Querétaro,FC Juarez,1,0,post
+590884,2021-04-27 02:00:00,2021,Pachuca,Santos,1,0,post
+590883,2021-04-30 02:00:00,2021,Atlético de San Luis,Pachuca,1,5,post
+590882,2021-05-01 00:30:00,2021,Necaxa,Atlas,1,5,post
+590881,2021-05-01 02:30:00,2021,FC Juarez,Toluca,1,0,post
+590880,2021-05-01 22:00:00,2021,Guadalajara,Tigres UANL,0,0,post
+590875,2021-05-01 22:00:00,2021,León,Querétaro,2,1,post
+590879,2021-05-02 00:00:00,2021,Cruz Azul,Tijuana,1,1,post
+590878,2021-05-02 02:06:00,2021,Monterrey,Mazatlán FC,1,0,post
+590877,2021-05-03 00:06:00,2021,Santos,Puebla,0,0,post
+590876,2021-05-03 02:05:00,2021,Pumas UNAM,América,0,1,post
+602125,2021-05-09 00:00:00,2021,Atlas,Tigres UANL,1,0,post
+602126,2021-05-09 02:15:00,2021,Santos,Querétaro,5,0,post
+602127,2021-05-10 00:00:00,2021,León,Toluca,2,2,post
+602128,2021-05-10 02:15:00,2021,Pachuca,Guadalajara,4,2,post
+602642,2021-05-13 00:00:00,2021,Toluca,Cruz Azul,2,1,post
+602644,2021-05-13 02:05:00,2021,Atlas,Puebla,1,0,post
+602641,2021-05-14 00:00:00,2021,Pachuca,América,3,1,post
+602643,2021-05-14 02:05:00,2021,Santos,Monterrey,2,1,post
+602645,2021-05-15 23:00:00,2021,Puebla,Atlas,1,0,post
+602648,2021-05-16 01:05:00,2021,Cruz Azul,Toluca,3,1,post
+602647,2021-05-16 23:00:00,2021,Monterrey,Santos,1,1,post
+602646,2021-05-17 01:05:00,2021,América,Pachuca,4,2,post
+602764,2021-05-20 01:30:00,2021,Pachuca,Cruz Azul,0,0,post
+602765,2021-05-21 02:00:00,2021,Santos,Puebla,3,0,post
+602762,2021-05-23 01:00:00,2021,Cruz Azul,Pachuca,1,0,post
+602763,2021-05-24 00:00:00,2021,Puebla,Santos,1,0,post
+602868,2021-05-28 02:00:00,2021,Santos,Cruz Azul,0,1,post
+602867,2021-05-31 01:15:00,2021,Cruz Azul,Santos,1,1,post
+611458,2021-07-23 02:00:00,2021,Querétaro,América,0,0,post
+611457,2021-07-24 00:00:00,2021,Necaxa,Santos,0,3,post
+611456,2021-07-24 02:00:00,2021,FC Juarez,Toluca,1,3,post
+611455,2021-07-24 21:00:00,2021,Pachuca,León,4,0,post
+611454,2021-07-25 02:00:00,2021,Guadalajara,Atlético de San Luis,1,2,post
+611453,2021-07-25 17:00:00,2021,Pumas UNAM,Atlas,0,0,post
+611452,2021-07-26 00:06:00,2021,Monterrey,Puebla,1,1,post
+611451,2021-07-26 02:06:00,2021,Tijuana,Tigres UANL,1,2,post
+611450,2021-07-27 01:00:00,2021,Cruz Azul,Mazatlán FC,0,2,post
+611449,2021-07-31 00:00:00,2021,Mazatlán FC,Pachuca,2,1,post
+611448,2021-07-31 02:05:00,2021,Puebla,Guadalajara,0,2,post
+611443,2021-07-31 22:00:00,2021,León,Tijuana,2,1,post
+611447,2021-08-01 00:00:00,2021,América,Necaxa,2,1,post
+611445,2021-08-01 02:00:00,2021,Atlas,FC Juarez,2,0,post
+611446,2021-08-01 02:00:00,2021,Monterrey,Pumas UNAM,2,0,post
+611444,2021-08-01 17:00:00,2021,Toluca,Tigres UANL,3,1,post
+611442,2021-08-01 23:00:00,2021,Santos,Cruz Azul,1,1,post
+611441,2021-08-03 02:00:00,2021,Atlético de San Luis,Querétaro,1,1,post
+611440,2021-08-06 02:05:00,2021,Querétaro,León,0,1,post
+611439,2021-08-07 00:00:00,2021,Mazatlán FC,Monterrey,1,1,post
+611437,2021-08-07 02:05:00,2021,Necaxa,Cruz Azul,1,2,post
+611438,2021-08-07 02:06:00,2021,Tijuana,Toluca,0,2,post
+611433,2021-08-07 22:00:00,2021,Guadalajara,FC Juarez,2,2,post
+611436,2021-08-08 00:00:00,2021,América,Puebla,2,0,post
+611435,2021-08-08 02:00:00,2021,Tigres UANL,Santos,1,1,post
+611434,2021-08-08 17:00:00,2021,Pumas UNAM,Atlético de San Luis,1,3,post
+611432,2021-08-10 02:00:00,2021,Pachuca,Atlas,0,1,post
+611431,2021-08-13 02:00:00,2021,Atlético de San Luis,Necaxa,0,2,post
+611430,2021-08-14 00:00:00,2021,Puebla,Tigres UANL,1,1,post
+611429,2021-08-14 02:00:00,2021,FC Juarez,Tijuana,1,1,post
+611425,2021-08-14 22:00:00,2021,Pumas UNAM,Querétaro,0,0,post
+611428,2021-08-15 00:45:00,2021,León,Mazatlán FC,3,0,post
+611427,2021-08-15 02:00:00,2021,Cruz Azul,Toluca,4,0,post
+611426,2021-08-15 02:06:00,2021,Monterrey,Pachuca,3,1,post
+611423,2021-08-15 22:00:00,2021,Atlas,América,0,1,post
+611424,2021-08-16 00:06:00,2021,Santos,Guadalajara,0,0,post
+611419,2021-08-17 22:00:00,2021,Toluca,Mazatlán FC,2,2,post
+611422,2021-08-18 00:00:00,2021,Tigres UANL,Querétaro,3,0,post
+611421,2021-08-18 02:00:00,2021,Necaxa,Pumas UNAM,3,0,post
+611420,2021-08-18 02:06:00,2021,Tijuana,Puebla,1,1,post
+611418,2021-08-19 00:00:00,2021,Cruz Azul,Monterrey,1,1,post
+611417,2021-08-19 00:00:00,2021,Santos,Atlas,1,1,post
+611415,2021-08-19 02:00:00,2021,FC Juarez,América,1,2,post
+611416,2021-08-19 02:00:00,2021,Guadalajara,León,0,3,post
+611414,2021-08-21 02:00:00,2021,Mazatlán FC,Tigres UANL,0,3,post
+611409,2021-08-21 22:00:00,2021,Atlas,Toluca,0,0,post
+611413,2021-08-22 00:00:00,2021,León,Santos,1,1,post
+611412,2021-08-22 02:00:00,2021,Atlético de San Luis,Cruz Azul,0,0,post
+611411,2021-08-22 02:36:00,2021,Monterrey,Guadalajara,0,0,post
+611410,2021-08-22 17:00:00,2021,Pumas UNAM,Puebla,2,0,post
+611406,2021-08-22 22:00:00,2021,América,Tijuana,2,0,post
+611408,2021-08-23 00:00:00,2021,Necaxa,FC Juarez,1,0,post
+611407,2021-08-23 02:00:00,2021,Querétaro,Pachuca,0,2,post
+611403,2021-08-28 00:00:00,2021,Mazatlán FC,Atlético de San Luis,2,2,post
+611405,2021-08-28 02:00:00,2021,Puebla,Querétaro,1,0,post
+611404,2021-08-28 02:06:00,2021,Tijuana,Monterrey,2,2,post
+611399,2021-08-28 22:00:00,2021,Guadalajara,Necaxa,2,1,post
+611402,2021-08-29 00:00:00,2021,Tigres UANL,Atlas,1,1,post
+611401,2021-08-29 02:00:00,2021,León,América,1,1,post
+611400,2021-08-29 17:00:00,2021,Toluca,Pumas UNAM,2,1,post
+611398,2021-08-29 23:00:00,2021,Santos,FC Juarez,2,0,post
+611397,2021-08-30 01:00:00,2021,Cruz Azul,Pachuca,1,1,post
+611396,2021-09-11 00:00:00,2021,Puebla,Atlético de San Luis,2,2,post
+611394,2021-09-11 02:00:00,2021,FC Juarez,Cruz Azul,2,1,post
+611395,2021-09-11 02:06:00,2021,Tijuana,Santos,2,1,post
+611391,2021-09-11 22:00:00,2021,Atlas,Monterrey,2,1,post
+611393,2021-09-12 00:00:00,2021,Tigres UANL,León,2,2,post
+611392,2021-09-12 02:00:00,2021,América,Mazatlán FC,2,0,post
+611389,2021-09-12 22:00:00,2021,Pumas UNAM,Guadalajara,0,0,post
+611390,2021-09-13 00:00:00,2021,Querétaro,Necaxa,3,0,post
+611388,2021-09-14 02:00:00,2021,Pachuca,Toluca,1,2,post
+611387,2021-09-17 00:00:00,2021,Atlético de San Luis,Tijuana,4,1,post
+611385,2021-09-18 02:00:00,2021,Necaxa,Atlas,0,3,post
+611382,2021-09-18 22:00:00,2021,León,FC Juarez,0,1,post
+611384,2021-09-19 00:00:00,2021,Toluca,América,3,1,post
+611383,2021-09-19 02:00:00,2021,Guadalajara,Pachuca,1,0,post
+611386,2021-09-19 02:00:00,2021,Mazatlán FC,Pumas UNAM,2,2,post
+611380,2021-09-20 00:00:00,2021,Cruz Azul,Querétaro,2,0,post
+611381,2021-09-20 00:06:00,2021,Monterrey,Tigres UANL,2,0,post
+611379,2021-09-20 02:06:00,2021,Santos,Puebla,1,1,post
+611378,2021-09-22 02:00:00,2021,FC Juarez,Atlético de San Luis,1,0,post
+611377,2021-09-23 00:06:00,2021,Monterrey,Toluca,2,0,post
+611376,2021-09-24 02:00:00,2021,Pachuca,Necaxa,1,0,post
+611375,2021-09-25 01:00:00,2021,Puebla,Cruz Azul,1,1,post
+611373,2021-09-25 02:06:00,2021,Tijuana,Mazatlán FC,0,0,post
+611369,2021-09-25 22:00:00,2021,Atlas,León,2,0,post
+611372,2021-09-26 00:00:00,2021,Tigres UANL,Pumas UNAM,0,0,post
+611371,2021-09-26 02:00:00,2021,América,Guadalajara,0,0,post
+611370,2021-09-26 17:00:00,2021,Toluca,Atlético de San Luis,1,2,post
+611368,2021-09-27 00:06:00,2021,Santos,Monterrey,1,2,post
+611364,2021-09-28 22:00:00,2021,Necaxa,Tijuana,3,0,post
+611366,2021-09-29 00:00:00,2021,Mazatlán FC,FC Juarez,3,1,post
+611367,2021-09-29 02:00:00,2021,Atlas,Puebla,0,1,post
+611365,2021-09-29 02:05:00,2021,Pachuca,América,1,1,post
+611362,2021-09-29 22:00:00,2021,Atlético de San Luis,Tigres UANL,0,3,post
+611363,2021-09-30 02:15:00,2021,Querétaro,Guadalajara,1,0,post
+611361,2021-10-02 00:00:00,2021,Puebla,Pachuca,1,2,post
+611360,2021-10-02 02:00:00,2021,FC Juarez,Monterrey,3,1,post
+611356,2021-10-02 22:00:00,2021,León,Atlético de San Luis,0,0,post
+611355,2021-10-03 00:06:00,2021,Santos,Mazatlán FC,1,0,post
+611359,2021-10-03 02:00:00,2021,Guadalajara,Atlas,0,1,post
+611357,2021-10-03 17:00:00,2021,Toluca,Querétaro,1,1,post
+611358,2021-10-03 22:00:00,2021,América,Pumas UNAM,2,0,post
+611353,2021-10-04 00:00:00,2021,Tigres UANL,Necaxa,0,0,post
+611354,2021-10-04 02:06:00,2021,Tijuana,Cruz Azul,0,1,post
+611374,2021-10-09 00:00:00,2021,FC Juarez,Querétaro,0,0,post
+611352,2021-10-15 01:00:00,2021,Querétaro,Tijuana,1,1,post
+611351,2021-10-16 00:00:00,2021,Necaxa,Puebla,0,1,post
+611350,2021-10-16 02:00:00,2021,Mazatlán FC,Atlas,1,0,post
+611345,2021-10-16 22:00:00,2021,Monterrey,León,0,1,post
+611348,2021-10-17 00:00:00,2021,Atlético de San Luis,América,0,1,post
+611349,2021-10-17 00:05:00,2021,Pachuca,Santos,1,1,post
+611347,2021-10-17 02:00:00,2021,Cruz Azul,Tigres UANL,1,1,post
+611346,2021-10-17 17:00:00,2021,Pumas UNAM,FC Juarez,1,0,post
+611344,2021-10-17 22:00:00,2021,Guadalajara,Toluca,2,0,post
+611340,2021-10-19 22:00:00,2021,Querétaro,Monterrey,1,0,post
+611342,2021-10-20 00:00:00,2021,Puebla,Mazatlán FC,2,0,post
+611343,2021-10-20 00:05:00,2021,América,Santos,2,1,post
+611341,2021-10-20 02:05:00,2021,Atlas,Cruz Azul,0,0,post
+611339,2021-10-21 00:00:00,2021,León,Pumas UNAM,1,2,post
+611338,2021-10-21 00:00:00,2021,Toluca,Necaxa,1,1,post
+611337,2021-10-21 02:00:00,2021,Tigres UANL,Pachuca,3,0,post
+611336,2021-10-21 02:06:00,2021,Tijuana,Guadalajara,0,0,post
+611335,2021-10-23 02:00:00,2021,Mazatlán FC,Querétaro,2,1,post
+611330,2021-10-23 22:00:00,2021,Puebla,León,0,1,post
+611331,2021-10-23 22:06:00,2021,Monterrey,Necaxa,0,1,post
+611334,2021-10-24 00:00:00,2021,América,Tigres UANL,1,0,post
+611333,2021-10-24 02:00:00,2021,Guadalajara,Cruz Azul,1,1,post
+611332,2021-10-24 17:00:00,2021,Pumas UNAM,Tijuana,3,1,post
+611328,2021-10-25 00:00:00,2021,Atlético de San Luis,Atlas,2,6,post
+611329,2021-10-25 00:06:00,2021,Santos,Toluca,2,2,post
+611327,2021-10-25 02:00:00,2021,Pachuca,FC Juarez,1,1,post
+611326,2021-10-29 00:00:00,2021,Atlas,Tijuana,0,2,post
+611325,2021-10-30 00:00:00,2021,Necaxa,Mazatlán FC,2,1,post
+611324,2021-10-30 02:00:00,2021,FC Juarez,Puebla,0,2,post
+611323,2021-10-30 22:00:00,2021,Querétaro,Santos,2,3,post
+611322,2021-10-31 00:06:00,2021,Pachuca,Pumas UNAM,1,1,post
+611321,2021-10-31 02:10:00,2021,Tigres UANL,Guadalajara,2,1,post
+611320,2021-10-31 18:00:00,2021,Toluca,León,0,0,post
+611318,2021-10-31 23:05:00,2021,Cruz Azul,América,2,1,post
+611319,2021-11-01 01:05:00,2021,Atlético de San Luis,Monterrey,1,1,post
+611317,2021-11-04 01:00:00,2021,Pachuca,Atlético de San Luis,0,0,post
+611316,2021-11-04 03:00:00,2021,Cruz Azul,León,0,1,post
+611315,2021-11-05 01:00:00,2021,Pumas UNAM,Santos,0,3,post
+611314,2021-11-05 03:00:00,2021,Atlas,Querétaro,2,0,post
+611313,2021-11-06 01:00:00,2021,Puebla,Toluca,1,0,post
+611312,2021-11-06 03:00:00,2021,Mazatlán FC,Guadalajara,0,1,post
+611311,2021-11-06 23:00:00,2021,León,Necaxa,3,0,post
+611310,2021-11-07 01:00:00,2021,América,Monterrey,0,0,post
+611308,2021-11-07 03:00:00,2021,Tigres UANL,FC Juarez,3,0,post
+611309,2021-11-07 03:06:00,2021,Tijuana,Pachuca,3,2,post
+611307,2021-11-07 23:00:00,2021,Pumas UNAM,Cruz Azul,4,3,post
+611306,2021-11-08 01:06:00,2021,Santos,Atlético de San Luis,0,0,post
+621666,2021-11-21 01:00:00,2021,Santos,Atlético de San Luis,2,0,post
+621667,2021-11-21 03:00:00,2021,Puebla,Guadalajara,2,2,post
+621669,2021-11-21 23:00:00,2021,Toluca,Pumas UNAM,1,2,post
+621668,2021-11-22 01:15:00,2021,Cruz Azul,Monterrey,1,4,post
+622033,2021-11-25 01:00:00,2021,Pumas UNAM,América,0,0,post
+622032,2021-11-25 03:05:00,2021,Monterrey,Atlas,0,0,post
+622031,2021-11-26 01:00:00,2021,Puebla,León,2,1,post
+622030,2021-11-26 03:05:00,2021,Santos,Tigres UANL,2,1,post
+622029,2021-11-28 01:00:00,2021,América,Pumas UNAM,1,3,post
+622028,2021-11-28 03:05:00,2021,Atlas,Monterrey,1,1,post
+622027,2021-11-29 00:00:00,2021,Tigres UANL,Santos,1,0,post
+622026,2021-11-29 02:05:00,2021,León,Puebla,2,0,post
+622142,2021-12-02 03:00:00,2021,Tigres UANL,León,2,1,post
+622141,2021-12-03 03:00:00,2021,Pumas UNAM,Atlas,0,1,post
+622140,2021-12-05 03:00:00,2021,León,Tigres UANL,2,1,post
+622139,2021-12-06 01:00:00,2021,Atlas,Pumas UNAM,0,1,post
+622732,2021-12-10 03:00:00,2021,León,Atlas,3,2,post
+622733,2021-12-13 02:15:00,2021,Atlas,León,1,0,post
+623178,2022-01-07 03:00:00,2022,Atlético de San Luis,Pachuca,0,2,post
+623177,2022-01-08 01:00:00,2022,FC Juarez,Necaxa,2,1,post
+623176,2022-01-08 03:00:00,2022,Puebla,América,1,1,post
+623175,2022-01-09 01:06:00,2022,Monterrey,Querétaro,0,0,post
+623173,2022-01-09 03:00:00,2022,Cruz Azul,Tijuana,2,0,post
+623171,2022-01-10 00:00:00,2022,Guadalajara,Mazatlán FC,3,0,post
+623172,2022-01-11 03:00:00,2022,Pumas UNAM,Toluca,5,0,post
+623174,2022-01-13 02:06:00,2022,Santos,Tigres UANL,1,1,post
+623170,2022-01-15 01:00:00,2022,Querétaro,Pumas UNAM,1,3,post
+623169,2022-01-15 03:00:00,2022,Necaxa,Monterrey,0,4,post
+623168,2022-01-15 23:00:00,2022,Atlas,Atlético de San Luis,1,0,post
+623167,2022-01-16 01:00:00,2022,Tigres UANL,Puebla,0,2,post
+623165,2022-01-16 03:00:00,2022,Cruz Azul,FC Juarez,1,0,post
+623166,2022-01-16 03:06:00,2022,Tijuana,León,1,1,post
+623164,2022-01-16 18:00:00,2022,Toluca,Santos,3,1,post
+623163,2022-01-16 23:00:00,2022,Pachuca,Guadalajara,2,1,post
+623162,2022-01-20 03:00:00,2022,León,Atlas,1,1,post
+623161,2022-01-21 03:00:00,2022,Atlético de San Luis,FC Juarez,0,1,post
+623160,2022-01-22 03:00:00,2022,Mazatlán FC,Toluca,1,2,post
+623158,2022-01-22 23:00:00,2022,Guadalajara,Querétaro,1,1,post
+623157,2022-01-23 01:00:00,2022,León,Pachuca,2,1,post
+623155,2022-01-23 03:00:00,2022,América,Atlas,0,2,post
+623156,2022-01-23 03:06:00,2022,Monterrey,Cruz Azul,2,2,post
+623154,2022-01-23 18:00:00,2022,Pumas UNAM,Tigres UANL,1,2,post
+623153,2022-01-24 01:00:00,2022,Santos,Necaxa,1,4,post
+623159,2022-01-29 03:00:00,2022,Puebla,Tijuana,3,1,post
+623152,2022-02-05 23:00:00,2022,Necaxa,Pachuca,1,3,post
+623151,2022-02-06 01:00:00,2022,América,Atlético de San Luis,2,3,post
+623150,2022-02-06 03:06:00,2022,Tijuana,Pumas UNAM,1,0,post
+623148,2022-02-06 22:00:00,2022,Querétaro,Puebla,0,2,post
+623147,2022-02-07 00:00:00,2022,Atlas,Santos,2,1,post
+623146,2022-02-07 02:00:00,2022,Tigres UANL,Mazatlán FC,4,3,post
+623145,2022-02-08 03:05:00,2022,León,Cruz Azul,0,1,post
+623149,2022-02-10 01:00:00,2022,FC Juarez,Guadalajara,1,3,post
+623144,2022-02-12 01:00:00,2022,Mazatlán FC,Tijuana,2,0,post
+623143,2022-02-12 03:00:00,2022,Puebla,Atlas,1,1,post
+623136,2022-02-12 23:00:00,2022,Guadalajara,Tigres UANL,1,3,post
+623142,2022-02-12 23:00:00,2022,Atlético de San Luis,Toluca,0,1,post
+623141,2022-02-13 01:00:00,2022,Cruz Azul,Necaxa,1,2,post
+623140,2022-02-13 03:00:00,2022,Santos,América,2,3,post
+623139,2022-02-13 18:00:00,2022,Pumas UNAM,León,2,1,post
+623138,2022-02-15 03:00:00,2022,Pachuca,Querétaro,2,2,post
+623137,2022-02-17 01:00:00,2022,Mazatlán FC,América,2,1,post
+623135,2022-02-19 01:00:00,2022,Puebla,Monterrey,1,0,post
+623134,2022-02-19 03:00:00,2022,FC Juarez,Santos,0,0,post
+623133,2022-02-19 03:06:00,2022,Tijuana,Necaxa,1,1,post
+623129,2022-02-19 23:00:00,2022,Querétaro,Mazatlán FC,2,0,post
+623132,2022-02-20 01:00:00,2022,Tigres UANL,Atlético de San Luis,2,1,post
+623130,2022-02-20 03:00:00,2022,León,Guadalajara,2,1,post
+623131,2022-02-20 22:00:00,2022,América,Pachuca,1,3,post
+623128,2022-02-21 00:05:00,2022,Toluca,Cruz Azul,1,4,post
+623127,2022-02-21 02:00:00,2022,Atlas,Pumas UNAM,0,0,post
+623126,2022-02-25 01:00:00,2022,Pachuca,Mazatlán FC,3,1,post
+623125,2022-02-25 03:05:00,2022,Querétaro,Toluca,1,1,post
+623124,2022-02-26 01:00:00,2022,Necaxa,León,0,1,post
+623123,2022-02-26 03:00:00,2022,FC Juarez,Tigres UANL,2,3,post
+623122,2022-02-26 03:06:00,2022,Tijuana,Atlas,2,0,post
+623121,2022-02-26 23:06:00,2022,Monterrey,Atlético de San Luis,0,2,post
+623120,2022-02-27 01:00:00,2022,Guadalajara,Puebla,2,3,post
+623119,2022-02-27 03:00:00,2022,Pumas UNAM,América,0,0,post
+623118,2022-02-28 01:00:00,2022,Cruz Azul,Santos,1,2,post
+623116,2022-03-02 01:00:00,2022,Puebla,FC Juarez,1,1,post
+623117,2022-03-02 01:00:00,2022,Toluca,Tijuana,1,2,post
+623115,2022-03-02 03:00:00,2022,América,Querétaro,1,1,post
+623113,2022-03-02 03:00:00,2022,León,Monterrey,0,0,post
+623114,2022-03-02 03:00:00,2022,Mazatlán FC,Necaxa,0,0,post
+623112,2022-03-03 01:00:00,2022,Atlas,Pachuca,0,1,post
+623111,2022-03-03 01:00:00,2022,Tigres UANL,Cruz Azul,2,2,post
+623110,2022-03-03 03:00:00,2022,Santos,Pumas UNAM,3,2,post
+623109,2022-03-03 03:00:00,2022,Atlético de San Luis,Guadalajara,2,2,post
+623108,2022-03-05 01:00:00,2022,Necaxa,Toluca,0,1,post
+623107,2022-03-05 03:00:00,2022,FC Juarez,León,0,1,post
+623106,2022-03-05 23:00:00,2022,Querétaro,Atlas,0,1,post
+623105,2022-03-06 01:06:00,2022,Monterrey,América,2,1,post
+623103,2022-03-06 03:00:00,2022,Cruz Azul,Puebla,1,3,post
+623104,2022-03-06 03:00:00,2022,Guadalajara,Santos,1,0,post
+623097,2022-03-12 01:00:00,2022,Necaxa,Querétaro,1,0,post
+623096,2022-03-12 03:00:00,2022,FC Juarez,Atlas,1,2,post
+623093,2022-03-12 03:06:00,2022,Monterrey,Mazatlán FC,2,1,post
+623095,2022-03-12 23:00:00,2022,León,Tigres UANL,0,3,post
+623094,2022-03-13 01:00:00,2022,Cruz Azul,Pumas UNAM,2,1,post
+623092,2022-03-13 03:00:00,2022,Guadalajara,América,0,0,post
+623091,2022-03-13 18:00:00,2022,Toluca,Pachuca,0,3,post
+623090,2022-03-13 23:00:00,2022,Atlético de San Luis,Puebla,2,1,post
+623098,2022-03-14 01:00:00,2022,Santos,Tijuana,4,0,post
+623099,2022-03-16 03:06:00,2022,Monterrey,FC Juarez,3,0,post
+623089,2022-03-18 03:05:00,2022,Querétaro,Atlético de San Luis,2,1,post
+623088,2022-03-19 03:00:00,2022,Puebla,Santos,2,2,post
+623085,2022-03-19 23:00:00,2022,Pumas UNAM,Necaxa,1,3,post
+623084,2022-03-20 01:00:00,2022,Tigres UANL,Monterrey,2,0,post
+623083,2022-03-20 03:00:00,2022,Pachuca,Cruz Azul,1,0,post
+623082,2022-03-20 23:00:00,2022,América,Toluca,3,0,post
+623081,2022-03-21 01:00:00,2022,Atlas,Guadalajara,1,1,post
+623087,2022-03-21 03:00:00,2022,Mazatlán FC,León,1,2,post
+623086,2022-03-21 03:06:00,2022,Tijuana,FC Juarez,1,0,post
+623102,2022-03-26 23:00:00,2022,Pumas UNAM,Mazatlán FC,1,1,post
+623080,2022-04-02 02:00:00,2022,Atlético de San Luis,Mazatlán FC,1,0,post
+623079,2022-04-02 23:00:00,2022,Cruz Azul,Atlas,1,0,post
+623078,2022-04-03 01:00:00,2022,Necaxa,América,0,1,post
+623077,2022-04-03 03:00:00,2022,FC Juarez,Pumas UNAM,0,1,post
+623075,2022-04-03 17:00:00,2022,Toluca,Puebla,2,1,post
+623074,2022-04-03 22:00:00,2022,León,Querétaro,1,1,post
+623072,2022-04-04 00:00:00,2022,Santos,Pachuca,3,1,post
+623073,2022-04-04 00:00:00,2022,Tigres UANL,Tijuana,2,0,post
+623071,2022-04-07 00:00:00,2022,Toluca,Monterrey,2,2,post
+623100,2022-04-07 02:06:00,2022,Tijuana,Atlético de San Luis,1,1,post
+623101,2022-04-08 00:00:00,2022,Pachuca,Tigres UANL,2,1,post
+623070,2022-04-08 02:00:00,2022,Atlas,Necaxa,2,1,post
+623069,2022-04-09 00:00:00,2022,Puebla,Pumas UNAM,2,2,post
+623068,2022-04-09 02:00:00,2022,Mazatlán FC,Cruz Azul,1,1,post
+623067,2022-04-09 22:00:00,2022,Atlético de San Luis,León,2,0,post
+623065,2022-04-10 00:00:00,2022,Toluca,Guadalajara,1,1,post
+623066,2022-04-10 00:06:00,2022,Monterrey,Santos,1,0,post
+623064,2022-04-10 02:00:00,2022,América,FC Juarez,3,0,post
+623063,2022-04-11 00:00:00,2022,Querétaro,Tigres UANL,0,1,post
+623062,2022-04-12 02:00:00,2022,Pachuca,Tijuana,0,0,post
+623076,2022-04-14 01:05:00,2022,Guadalajara,Monterrey,1,3,post
+623061,2022-04-15 02:00:00,2022,Atlas,Mazatlán FC,1,2,post
+623060,2022-04-16 00:00:00,2022,Necaxa,Atlético de San Luis,4,2,post
+623059,2022-04-16 02:00:00,2022,FC Juarez,Pachuca,1,2,post
+623058,2022-04-16 02:06:00,2022,Tijuana,América,1,3,post
+623057,2022-04-16 22:00:00,2022,León,Puebla,0,1,post
+623055,2022-04-17 00:00:00,2022,Santos,Querétaro,1,1,post
+623056,2022-04-17 00:00:00,2022,Tigres UANL,Toluca,3,0,post
+623054,2022-04-17 02:00:00,2022,Cruz Azul,Guadalajara,0,1,post
+623053,2022-04-17 17:00:00,2022,Pumas UNAM,Monterrey,2,0,post
+623052,2022-04-20 00:00:00,2022,Necaxa,Tigres UANL,2,0,post
+623051,2022-04-20 00:00:00,2022,Pachuca,Puebla,1,0,post
+623050,2022-04-20 02:00:00,2022,Guadalajara,Tijuana,2,1,post
+623049,2022-04-20 02:00:00,2022,Mazatlán FC,Santos,1,0,post
+623048,2022-04-20 02:00:00,2022,Toluca,FC Juarez,0,1,post
+623047,2022-04-21 00:00:00,2022,Atlético de San Luis,Pumas UNAM,2,0,post
+623046,2022-04-21 02:00:00,2022,América,León,2,0,post
+623045,2022-04-21 02:06:00,2022,Monterrey,Atlas,0,0,post
+623044,2022-04-22 02:00:00,2022,Querétaro,Cruz Azul,0,1,post
+623043,2022-04-23 00:00:00,2022,Puebla,Necaxa,0,1,post
+623042,2022-04-23 02:00:00,2022,FC Juarez,Mazatlán FC,0,2,post
+623041,2022-04-23 22:00:00,2022,Pachuca,Monterrey,3,0,post
+623040,2022-04-24 00:00:00,2022,Tigres UANL,América,0,2,post
+623039,2022-04-24 02:00:00,2022,Guadalajara,Pumas UNAM,3,1,post
+623038,2022-04-24 17:00:00,2022,Toluca,Atlas,2,4,post
+623037,2022-04-24 22:00:00,2022,Cruz Azul,Atlético de San Luis,0,1,post
+623036,2022-04-25 00:00:00,2022,Santos,León,1,1,post
+623035,2022-04-25 02:06:00,2022,Tijuana,Querétaro,2,2,post
+623034,2022-04-30 00:00:00,2022,Necaxa,Guadalajara,0,1,post
+623033,2022-04-30 02:05:00,2022,Mazatlán FC,Puebla,2,1,post
+623032,2022-04-30 22:00:00,2022,Querétaro,FC Juarez,4,0,post
+623030,2022-05-01 00:00:00,2022,Atlas,Tigres UANL,1,1,post
+623031,2022-05-01 00:06:00,2022,Monterrey,Tijuana,2,0,post
+623029,2022-05-01 02:00:00,2022,América,Cruz Azul,0,0,post
+623028,2022-05-01 17:00:00,2022,Pumas UNAM,Pachuca,2,0,post
+623027,2022-05-01 21:00:00,2022,Atlético de San Luis,Santos,1,3,post
+623026,2022-05-02 01:06:00,2022,León,Toluca,4,4,post
+634829,2022-05-07 22:45:00,2022,Cruz Azul,Necaxa,1,1,post
+634830,2022-05-08 01:06:00,2022,Monterrey,Atlético de San Luis,2,2,post
+634831,2022-05-08 22:00:00,2022,Puebla,Mazatlán FC,2,2,post
+634832,2022-05-09 00:15:00,2022,Guadalajara,Pumas UNAM,4,1,post
+635028,2022-05-12 00:00:00,2022,Atlético de San Luis,Pachuca,2,2,post
+635029,2022-05-12 02:05:00,2022,Puebla,América,1,1,post
+635030,2022-05-13 00:00:00,2022,Cruz Azul,Tigres UANL,0,1,post
+635031,2022-05-13 02:05:00,2022,Guadalajara,Atlas,1,2,post
+635032,2022-05-14 23:00:00,2022,América,Puebla,3,2,post
+635033,2022-05-15 01:05:00,2022,Pachuca,Atlético de San Luis,3,2,post
+635034,2022-05-15 23:00:00,2022,Atlas,Guadalajara,1,1,post
+635035,2022-05-16 01:05:00,2022,Tigres UANL,Cruz Azul,0,1,post
+635186,2022-05-19 02:00:00,2022,Atlas,Tigres UANL,3,0,post
+635187,2022-05-20 01:00:00,2022,América,Pachuca,1,1,post
+635188,2022-05-22 01:00:00,2022,Tigres UANL,Atlas,4,2,post
+635189,2022-05-23 01:06:00,2022,Pachuca,América,3,0,post
+635252,2022-05-27 02:00:00,2022,Atlas,Pachuca,2,0,post
+635253,2022-05-30 01:10:00,2022,Pachuca,Atlas,2,1,post
+636012,2022-07-02 02:05:00,2022,Mazatlán FC,Puebla,2,4,post
+636013,2022-07-02 22:00:00,2022,Guadalajara,FC Juarez,0,0,post
+636011,2022-07-02 22:00:00,2022,Necaxa,Toluca,1,3,post
+636014,2022-07-03 00:05:00,2022,Tigres UANL,Cruz Azul,2,3,post
+636015,2022-07-03 02:05:00,2022,América,Atlas,0,0,post
+636016,2022-07-03 17:00:00,2022,Pumas UNAM,Tijuana,1,1,post
+636017,2022-07-03 22:00:00,2022,Atlético de San Luis,León,1,2,post
+636018,2022-07-04 00:05:00,2022,Santos,Monterrey,4,3,post
+636019,2022-07-05 02:00:00,2022,Pachuca,Querétaro,2,0,post
+636020,2022-07-09 00:00:00,2022,Mazatlán FC,Tigres UANL,0,1,post
+636022,2022-07-09 02:05:00,2022,Puebla,Santos,1,0,post
+636021,2022-07-09 02:05:00,2022,Tijuana,FC Juarez,0,2,post
+636028,2022-07-10 00:00:00,2022,León,Pumas UNAM,3,3,post
+636023,2022-07-10 00:05:00,2022,Guadalajara,Atlético de San Luis,0,1,post
+636024,2022-07-10 02:05:00,2022,Cruz Azul,Pachuca,1,2,post
+636025,2022-07-10 02:05:00,2022,Monterrey,América,3,2,post
+636026,2022-07-10 17:00:00,2022,Toluca,Atlas,3,2,post
+636027,2022-07-10 22:00:00,2022,Querétaro,Necaxa,1,2,post
+636029,2022-07-14 02:00:00,2022,América,Toluca,1,0,post
+636030,2022-07-16 00:00:00,2022,Puebla,León,1,1,post
+636031,2022-07-16 02:05:00,2022,FC Juarez,Querétaro,1,1,post
+636032,2022-07-16 22:00:00,2022,Atlas,Cruz Azul,3,2,post
+636033,2022-07-17 00:05:00,2022,Santos,Guadalajara,1,1,post
+636034,2022-07-17 17:00:00,2022,Pumas UNAM,Necaxa,1,0,post
+636035,2022-07-17 22:00:00,2022,Atlético de San Luis,Monterrey,0,1,post
+636036,2022-07-18 00:00:00,2022,Tigres UANL,Tijuana,1,0,post
+636037,2022-07-19 00:00:00,2022,Pachuca,Mazatlán FC,1,1,post
+636038,2022-07-21 02:05:00,2022,Guadalajara,León,0,0,post
+636039,2022-07-22 02:00:00,2022,Querétaro,Monterrey,0,3,post
+636040,2022-07-23 00:00:00,2022,Mazatlán FC,Atlético de San Luis,1,1,post
+636041,2022-07-23 02:05:00,2022,Necaxa,FC Juarez,1,0,post
+636042,2022-07-23 22:00:00,2022,Toluca,Santos,2,1,post
+636043,2022-07-24 00:05:00,2022,Cruz Azul,Puebla,2,2,post
+636044,2022-07-24 01:00:00,2022,Tijuana,América,2,0,post
+636045,2022-07-24 02:05:00,2022,Tigres UANL,Atlas,2,0,post
+636046,2022-07-25 00:00:00,2022,Pachuca,Pumas UNAM,0,0,post
+636047,2022-07-27 00:00:00,2022,Atlas,Tijuana,1,2,post
+636048,2022-07-27 00:00:00,2022,FC Juarez,Tigres UANL,0,1,post
+636049,2022-07-27 00:00:00,2022,Monterrey,Puebla,1,0,post
+636050,2022-07-27 02:05:00,2022,León,Toluca,0,1,post
+636051,2022-07-27 02:05:00,2022,Atlético de San Luis,Cruz Azul,0,0,post
+636052,2022-07-28 00:00:00,2022,Necaxa,Pachuca,2,0,post
+636053,2022-07-28 00:00:00,2022,Querétaro,Guadalajara,2,2,post
+636054,2022-07-28 02:05:00,2022,Pumas UNAM,Mazatlán FC,1,1,post
+636055,2022-07-30 02:05:00,2022,FC Juarez,Toluca,1,1,post
+636056,2022-07-30 22:00:00,2022,Cruz Azul,Necaxa,1,0,post
+636057,2022-07-31 00:05:00,2022,Tigres UANL,Querétaro,2,1,post
+636059,2022-07-31 02:05:00,2022,Guadalajara,Pachuca,0,0,post
+636060,2022-07-31 02:05:00,2022,Puebla,Atlético de San Luis,0,0,post
+636058,2022-07-31 02:05:00,2022,Tijuana,Mazatlán FC,2,0,post
+636061,2022-07-31 17:00:00,2022,Pumas UNAM,Monterrey,1,1,post
+636062,2022-08-01 00:05:00,2022,Santos,Atlas,1,0,post
+636063,2022-08-01 02:05:00,2022,León,América,3,2,post
+636064,2022-08-03 01:00:00,2022,Toluca,Puebla,1,1,post
+636065,2022-08-04 01:00:00,2022,FC Juarez,Atlético de San Luis,1,1,post
+636066,2022-08-05 02:00:00,2022,Atlas,Querétaro,3,1,post
+636068,2022-08-06 02:05:00,2022,Mazatlán FC,Guadalajara,2,1,post
+636069,2022-08-07 00:05:00,2022,Monterrey,León,5,1,post
+636071,2022-08-07 02:05:00,2022,Santos,Cruz Azul,4,0,post
+636072,2022-08-07 17:00:00,2022,Toluca,Tijuana,3,1,post
+636073,2022-08-07 21:00:00,2022,Atlético de San Luis,Necaxa,1,2,post
+636074,2022-08-07 23:05:00,2022,Pachuca,Tigres UANL,2,0,post
+636070,2022-08-08 01:05:00,2022,América,FC Juarez,2,1,post
+636075,2022-08-12 02:00:00,2022,Querétaro,Atlético de San Luis,1,1,post
+636076,2022-08-13 02:00:00,2022,Necaxa,Monterrey,1,2,post
+636078,2022-08-13 02:05:00,2022,Tijuana,Puebla,3,3,post
+636079,2022-08-13 22:00:00,2022,León,Mazatlán FC,0,3,post
+636080,2022-08-14 00:05:00,2022,Pumas UNAM,América,0,3,post
+636081,2022-08-14 02:05:00,2022,Guadalajara,Atlas,1,1,post
+636082,2022-08-14 22:00:00,2022,Cruz Azul,Toluca,2,3,post
+636083,2022-08-15 00:05:00,2022,Tigres UANL,Santos,2,0,post
+636085,2022-08-17 00:00:00,2022,Mazatlán FC,Querétaro,1,1,post
+636084,2022-08-17 00:00:00,2022,Atlas,FC Juarez,0,1,post
+636086,2022-08-17 02:05:00,2022,Puebla,Necaxa,2,2,post
+636087,2022-08-18 00:00:00,2022,Toluca,Monterrey,1,1,post
+636089,2022-08-18 02:05:00,2022,Cruz Azul,Tijuana,1,2,post
+636088,2022-08-18 02:05:00,2022,Pachuca,América,0,3,post
+636090,2022-08-19 00:05:00,2022,Santos,León,2,1,post
+636091,2022-08-19 02:05:00,2022,Atlético de San Luis,Pumas UNAM,3,2,post
+636092,2022-08-20 00:00:00,2022,Necaxa,Guadalajara,0,4,post
+636094,2022-08-20 22:00:00,2022,Querétaro,Tijuana,2,0,post
+636096,2022-08-21 00:05:00,2022,Atlas,Puebla,1,1,post
+636095,2022-08-21 00:05:00,2022,Monterrey,Tigres UANL,0,0,post
+636097,2022-08-21 02:05:00,2022,América,Cruz Azul,7,0,post
+636093,2022-08-21 02:05:00,2022,FC Juarez,Mazatlán FC,1,1,post
+636098,2022-08-21 17:00:00,2022,Pumas UNAM,Santos,1,5,post
+636099,2022-08-21 22:00:00,2022,Atlético de San Luis,Toluca,1,0,post
+636100,2022-08-22 00:05:00,2022,Pachuca,León,1,0,post
+636101,2022-08-24 00:05:00,2022,Guadalajara,Monterrey,1,0,post
+636102,2022-08-24 02:05:00,2022,Querétaro,América,0,1,post
+636104,2022-08-25 02:05:00,2022,Pumas UNAM,Tigres UANL,1,1,post
+636105,2022-08-26 00:05:00,2022,Pachuca,Atlas,3,1,post
+636106,2022-08-26 02:05:00,2022,Tijuana,Santos,0,2,post
+636107,2022-08-27 00:00:00,2022,Puebla,FC Juarez,2,2,post
+636108,2022-08-27 02:05:00,2022,Mazatlán FC,América,1,3,post
+636109,2022-08-27 22:00:00,2022,Cruz Azul,Querétaro,2,1,post
+636110,2022-08-28 00:05:00,2022,Tigres UANL,Necaxa,0,0,post
+636111,2022-08-28 02:05:00,2022,Guadalajara,Pumas UNAM,3,1,post
+636112,2022-08-28 17:00:00,2022,Toluca,Pachuca,1,4,post
+636113,2022-08-29 00:00:00,2022,León,Atlas,4,2,post
+636114,2022-08-29 00:05:00,2022,Santos,Atlético de San Luis,4,1,post
+636115,2022-08-29 02:05:00,2022,Tijuana,Monterrey,0,3,post
+636116,2022-09-02 00:00:00,2022,Atlético de San Luis,Tijuana,0,0,post
+636117,2022-09-02 02:05:00,2022,Querétaro,Puebla,1,1,post
+636118,2022-09-03 00:00:00,2022,Necaxa,León,3,2,post
+636119,2022-09-03 02:05:00,2022,FC Juarez,Cruz Azul,2,2,post
+636120,2022-09-03 22:05:00,2022,Pachuca,Santos,2,0,post
+636121,2022-09-04 00:05:00,2022,Atlas,Pumas UNAM,0,0,post
+636122,2022-09-04 00:05:00,2022,Monterrey,Mazatlán FC,0,0,post
+636123,2022-09-04 02:05:00,2022,América,Tigres UANL,2,1,post
+636124,2022-09-04 22:30:00,2022,Toluca,Guadalajara,0,0,post
+636126,2022-09-07 00:00:00,2022,León,FC Juarez,1,0,post
+636125,2022-09-07 00:05:00,2022,Santos,Necaxa,3,1,post
+636128,2022-09-07 02:05:00,2022,América,Atlético de San Luis,3,0,post
+636127,2022-09-07 02:05:00,2022,Monterrey,Cruz Azul,3,2,post
+636130,2022-09-08 00:00:00,2022,Puebla,Pachuca,2,2,post
+636129,2022-09-08 00:00:00,2022,Tigres UANL,Toluca,3,1,post
+636133,2022-09-08 02:00:00,2022,Mazatlán FC,Atlas,1,0,post
+636132,2022-09-08 02:05:00,2022,Tijuana,Guadalajara,1,2,post
+636131,2022-09-08 02:05:00,2022,Pumas UNAM,Querétaro,4,1,post
+636135,2022-09-10 02:05:00,2022,FC Juarez,Monterrey,0,1,post
+636136,2022-09-10 22:00:00,2022,Querétaro,Santos,3,3,post
+636134,2022-09-11 00:00:00,2022,Necaxa,América,1,2,post
+636137,2022-09-11 00:05:00,2022,Tigres UANL,León,0,1,post
+636138,2022-09-11 02:05:00,2022,Guadalajara,Puebla,1,0,post
+636139,2022-09-11 02:05:00,2022,Toluca,Pumas UNAM,2,2,post
+636140,2022-09-11 21:00:00,2022,Cruz Azul,Mazatlán FC,2,0,post
+636141,2022-09-11 23:05:00,2022,Atlas,Atlético de San Luis,1,3,post
+636142,2022-09-12 01:05:00,2022,Pachuca,Tijuana,6,1,post
+636143,2022-09-14 02:05:00,2022,Guadalajara,Tigres UANL,1,4,post
+636144,2022-09-15 02:05:00,2022,América,Santos,3,3,post
+636077,2022-09-15 02:05:00,2022,FC Juarez,Pachuca,2,1,post
+636103,2022-09-16 00:00:00,2022,Cruz Azul,León,2,1,post
+636145,2022-09-17 00:00:00,2022,Puebla,Tigres UANL,2,1,post
+636146,2022-09-17 02:00:00,2022,Mazatlán FC,Toluca,1,1,post
+636148,2022-09-18 00:05:00,2022,Monterrey,Atlas,2,0,post
+636149,2022-09-18 01:00:00,2022,América,Guadalajara,2,1,post
+636150,2022-09-18 22:00:00,2022,Pumas UNAM,Cruz Azul,1,2,post
+636151,2022-09-19 00:05:00,2022,León,Querétaro,3,1,post
+636152,2022-09-19 00:05:00,2022,Santos,FC Juarez,2,0,post
+636147,2022-09-19 02:00:00,2022,Atlético de San Luis,Pachuca,1,2,post
+636153,2022-09-19 02:05:00,2022,Tijuana,Necaxa,1,1,post
+636154,2022-09-24 00:00:00,2022,Necaxa,Mazatlán FC,2,2,post
+636067,2022-09-24 02:05:00,2022,Puebla,Pumas UNAM,2,1,post
+636155,2022-10-01 00:00:00,2022,Puebla,América,1,2,post
+636156,2022-10-01 02:00:00,2022,FC Juarez,Pumas UNAM,3,1,post
+636157,2022-10-01 22:00:00,2022,Atlético de San Luis,Tigres UANL,0,3,post
+636158,2022-10-01 22:05:00,2022,Monterrey,Pachuca,0,0,post
+636159,2022-10-02 00:05:00,2022,Atlas,Necaxa,1,0,post
+636160,2022-10-02 02:05:00,2022,Cruz Azul,Guadalajara,2,1,post
+636161,2022-10-02 17:00:00,2022,Toluca,Querétaro,4,1,post
+636162,2022-10-02 23:05:00,2022,Santos,Mazatlán FC,3,0,post
+636163,2022-10-03 01:00:00,2022,León,Tijuana,2,2,post
+654396,2022-10-09 00:00:00,2022,Tigres UANL,Necaxa,2,0,post
+654398,2022-10-09 02:15:00,2022,Cruz Azul,León,1,0,post
+654399,2022-10-09 17:00:00,2022,Toluca,FC Juarez,3,0,post
+654397,2022-10-09 21:30:00,2022,Puebla,Guadalajara,1,1,post
+654401,2022-10-13 00:06:00,2022,Puebla,América,1,6,post
+654402,2022-10-13 02:06:00,2022,Cruz Azul,Monterrey,0,0,post
+654400,2022-10-14 00:06:00,2022,Toluca,Santos,4,3,post
+654403,2022-10-14 02:06:00,2022,Tigres UANL,Pachuca,1,0,post
+654406,2022-10-15 23:06:00,2022,Monterrey,Cruz Azul,3,0,post
+654404,2022-10-16 01:06:00,2022,América,Puebla,5,1,post
+654407,2022-10-17 00:06:00,2022,Santos,Toluca,1,2,post
+654405,2022-10-17 02:06:00,2022,Pachuca,Tigres UANL,2,1,post
+654722,2022-10-20 02:06:00,2022,Toluca,América,2,1,post
+654721,2022-10-21 02:06:00,2022,Pachuca,Monterrey,5,2,post
+654723,2022-10-23 01:06:00,2022,América,Toluca,1,1,post
+654724,2022-10-24 01:06:00,2022,Monterrey,Pachuca,0,1,post
+655667,2022-10-28 01:06:00,2022,Toluca,Pachuca,1,5,post
+655668,2022-10-31 01:36:00,2022,Pachuca,Toluca,3,1,post
+657572,2023-01-07 01:00:00,2023,Necaxa,Atlético de San Luis,2,3,post
+657574,2023-01-07 23:00:00,2023,América,Querétaro,0,0,post
+657576,2023-01-08 03:10:00,2023,Monterrey,Guadalajara,0,1,post
+657577,2023-01-08 18:00:00,2023,Pumas UNAM,FC Juarez,2,1,post
+657578,2023-01-09 01:00:00,2023,Santos,Tigres UANL,0,3,post
+657579,2023-01-09 03:10:00,2023,Tijuana,Cruz Azul,1,1,post
+657580,2023-01-10 03:10:00,2023,Pachuca,Puebla,5,1,post
+657581,2023-01-13 03:05:00,2023,Atlas,Mazatlán FC,2,1,post
+657582,2023-01-14 01:05:00,2023,Atlético de San Luis,Guadalajara,0,0,post
+657583,2023-01-14 03:05:00,2023,Puebla,Querétaro,2,0,post
+657584,2023-01-14 23:00:00,2023,Cruz Azul,Monterrey,2,3,post
+657585,2023-01-15 01:05:00,2023,Toluca,América,2,2,post
+657586,2023-01-15 01:05:00,2023,FC Juarez,Tijuana,3,0,post
+657587,2023-01-15 03:05:00,2023,Santos,Pumas UNAM,3,0,post
+657588,2023-01-16 01:05:00,2023,Tigres UANL,Pachuca,4,1,post
+657589,2023-01-17 03:05:00,2023,León,Necaxa,2,1,post
+657590,2023-01-21 03:00:00,2023,Mazatlán FC,Santos,1,2,post
+657591,2023-01-21 03:10:00,2023,Tijuana,Tigres UANL,1,1,post
+657592,2023-01-21 23:06:00,2023,Monterrey,Atlético de San Luis,3,1,post
+657593,2023-01-22 01:10:00,2023,América,Puebla,2,2,post
+657594,2023-01-22 03:10:00,2023,Guadalajara,Toluca,1,2,post
+657595,2023-01-22 03:10:00,2023,Necaxa,Cruz Azul,1,0,post
+657596,2023-01-22 18:00:00,2023,Pumas UNAM,León,4,1,post
+657597,2023-01-22 23:00:00,2023,Querétaro,Atlas,3,3,post
+657598,2023-01-23 01:10:00,2023,Pachuca,FC Juarez,4,1,post
+657599,2023-01-27 03:05:00,2023,Atlas,Santos,2,2,post
+657600,2023-01-28 01:05:00,2023,Puebla,Monterrey,1,2,post
+657601,2023-01-28 03:05:00,2023,Tijuana,Pumas UNAM,0,0,post
+657603,2023-01-29 01:05:00,2023,Tigres UANL,Atlético de San Luis,0,0,post
+657604,2023-01-29 03:05:00,2023,América,Mazatlán FC,6,0,post
+657605,2023-01-29 03:05:00,2023,FC Juarez,Guadalajara,1,2,post
+657606,2023-01-29 18:00:00,2023,Toluca,León,0,0,post
+657607,2023-01-30 01:00:00,2023,Pachuca,Necaxa,2,1,post
+657575,2023-02-02 02:05:00,2023,Atlas,Toluca,0,0,post
+657608,2023-02-03 03:00:00,2023,Atlético de San Luis,Puebla,2,0,post
+657609,2023-02-04 01:00:00,2023,Necaxa,Tijuana,1,1,post
+657610,2023-02-04 03:05:00,2023,Mazatlán FC,FC Juarez,2,3,post
+657611,2023-02-04 23:00:00,2023,León,Pachuca,0,1,post
+657612,2023-02-05 01:05:00,2023,Cruz Azul,Tigres UANL,0,1,post
+657613,2023-02-05 03:05:00,2023,Santos,América,2,2,post
+657614,2023-02-05 18:00:00,2023,Pumas UNAM,Atlas,2,2,post
+657615,2023-02-05 23:00:00,2023,Guadalajara,Querétaro,1,1,post
+657616,2023-02-06 01:10:00,2023,Monterrey,Toluca,2,1,post
+657617,2023-02-10 01:05:00,2023,Querétaro,León,0,3,post
+657618,2023-02-10 03:05:00,2023,Atlas,Monterrey,0,2,post
+657619,2023-02-11 01:00:00,2023,Puebla,Mazatlán FC,3,1,post
+657620,2023-02-11 03:10:00,2023,Tijuana,Atlético de San Luis,1,0,post
+657621,2023-02-11 23:00:00,2023,América,Necaxa,2,1,post
+657622,2023-02-12 01:05:00,2023,FC Juarez,Santos,3,1,post
+657623,2023-02-12 01:05:00,2023,Tigres UANL,Pumas UNAM,4,2,post
+657624,2023-02-12 03:05:00,2023,Pachuca,Guadalajara,1,1,post
+657625,2023-02-12 18:00:00,2023,Toluca,Cruz Azul,3,1,post
+657626,2023-02-15 01:05:00,2023,León,Puebla,2,0,post
+657627,2023-02-15 01:05:00,2023,Tigres UANL,FC Juarez,0,0,post
+657628,2023-02-15 03:05:00,2023,Atlético de San Luis,América,1,3,post
+657629,2023-02-16 01:05:00,2023,Guadalajara,Tijuana,2,1,post
+657630,2023-02-16 01:05:00,2023,Monterrey,Querétaro,2,0,post
+657631,2023-02-16 03:05:00,2023,Necaxa,Pumas UNAM,3,1,post
+657632,2023-02-17 03:00:00,2023,Mazatlán FC,Pachuca,2,3,post
+657634,2023-02-18 01:06:00,2023,FC Juarez,León,0,0,post
+657635,2023-02-18 03:05:00,2023,Puebla,Cruz Azul,1,3,post
+657633,2023-02-18 23:00:00,2023,Atlético de San Luis,Santos,1,1,post
+657636,2023-02-18 23:06:00,2023,Monterrey,Necaxa,2,1,post
+657637,2023-02-19 01:05:00,2023,Atlas,Tigres UANL,0,1,post
+657638,2023-02-19 03:05:00,2023,Pumas UNAM,Guadalajara,1,2,post
+657639,2023-02-19 23:00:00,2023,Querétaro,Mazatlán FC,1,1,post
+657640,2023-02-20 01:05:00,2023,América,Tijuana,2,1,post
+657641,2023-02-20 03:05:00,2023,Pachuca,Toluca,1,2,post
+657642,2023-02-23 02:05:00,2023,Cruz Azul,Atlas,1,0,post
+657643,2023-02-24 02:05:00,2023,Santos,Toluca,0,5,post
+657644,2023-02-25 01:05:00,2023,Necaxa,Querétaro,1,1,post
+657645,2023-02-25 03:10:00,2023,Mazatlán FC,Pumas UNAM,1,2,post
+657646,2023-02-25 23:00:00,2023,Cruz Azul,FC Juarez,1,0,post
+657647,2023-02-26 01:05:00,2023,Tigres UANL,Guadalajara,1,2,post
+657648,2023-02-26 03:05:00,2023,Atlas,América,2,2,post
+657649,2023-02-26 18:00:00,2023,Toluca,Atlético de San Luis,2,0,post
+657650,2023-02-27 01:05:00,2023,Santos,Puebla,3,2,post
+657651,2023-02-27 03:05:00,2023,Tijuana,Pachuca,2,0,post
+657652,2023-02-28 03:10:00,2023,León,Monterrey,1,1,post
+657653,2023-03-04 01:05:00,2023,Mazatlán FC,Cruz Azul,3,1,post
+657654,2023-03-04 01:05:00,2023,Necaxa,Tigres UANL,0,1,post
+657655,2023-03-04 03:15:00,2023,Tijuana,Atlas,1,1,post
+657656,2023-03-04 23:00:00,2023,León,Atlético de San Luis,2,0,post
+657657,2023-03-05 01:05:00,2023,América,Pachuca,0,3,post
+657658,2023-03-05 01:10:00,2023,Monterrey,FC Juarez,3,0,post
+657659,2023-03-05 03:05:00,2023,Guadalajara,Santos,2,0,post
+657660,2023-03-05 18:00:00,2023,Pumas UNAM,Puebla,2,4,post
+657661,2023-03-06 01:05:00,2023,Querétaro,Toluca,1,0,post
+657662,2023-03-11 01:05:00,2023,Atlético de San Luis,Querétaro,2,0,post
+657663,2023-03-11 03:05:00,2023,Puebla,Guadalajara,1,0,post
+657664,2023-03-11 23:00:00,2023,Atlas,León,0,1,post
+657665,2023-03-12 01:05:00,2023,Cruz Azul,Pumas UNAM,1,0,post
+657666,2023-03-12 03:10:00,2023,Tigres UANL,América,0,2,post
+657667,2023-03-12 18:00:00,2023,Toluca,Mazatlán FC,4,1,post
+657668,2023-03-13 01:05:00,2023,Pachuca,Monterrey,1,2,post
+657669,2023-03-13 01:05:00,2023,Santos,Tijuana,3,2,post
+657670,2023-03-13 03:15:00,2023,FC Juarez,Necaxa,1,1,post
+657671,2023-03-18 01:00:00,2023,Puebla,Atlas,0,4,post
+657673,2023-03-18 03:05:00,2023,Mazatlán FC,Necaxa,0,1,post
+657672,2023-03-18 03:05:00,2023,Tijuana,Toluca,3,3,post
+657674,2023-03-18 23:00:00,2023,Cruz Azul,Atlético de San Luis,1,0,post
+657675,2023-03-19 01:05:00,2023,Tigres UANL,Monterrey,0,1,post
+657676,2023-03-19 03:10:00,2023,Guadalajara,América,2,4,post
+657677,2023-03-19 18:00:00,2023,Pumas UNAM,Pachuca,0,2,post
+657678,2023-03-20 01:05:00,2023,Querétaro,FC Juarez,2,2,post
+657679,2023-03-20 03:05:00,2023,León,Santos,4,1,post
+657573,2023-03-25 03:05:00,2023,Mazatlán FC,León,1,2,post
+657602,2023-03-30 03:05:00,2023,Querétaro,Cruz Azul,2,2,post
+657680,2023-04-01 01:05:00,2023,Necaxa,Santos,0,0,post
+657681,2023-04-01 03:00:00,2023,FC Juarez,Puebla,0,2,post
+657682,2023-04-01 23:00:00,2023,Pachuca,Cruz Azul,0,2,post
+657683,2023-04-02 01:05:00,2023,América,León,2,2,post
+657684,2023-04-02 01:15:00,2023,Monterrey,Tijuana,4,0,post
+657685,2023-04-02 03:10:00,2023,Atlas,Guadalajara,3,3,post
+657686,2023-04-02 18:00:00,2023,Toluca,Tigres UANL,3,2,post
+657687,2023-04-02 23:00:00,2023,Atlético de San Luis,Mazatlán FC,2,1,post
+657688,2023-04-03 01:05:00,2023,Querétaro,Pumas UNAM,1,0,post
+657689,2023-04-08 01:05:00,2023,Puebla,Toluca,1,2,post
+657690,2023-04-08 03:10:00,2023,Tijuana,Querétaro,1,2,post
+657692,2023-04-08 23:00:00,2023,Guadalajara,Necaxa,1,0,post
+657693,2023-04-09 01:05:00,2023,Tigres UANL,Mazatlán FC,1,2,post
+657691,2023-04-09 01:05:00,2023,León,Cruz Azul,0,0,post
+657694,2023-04-09 03:10:00,2023,América,Monterrey,2,1,post
+657695,2023-04-09 18:00:00,2023,Pumas UNAM,Atlético de San Luis,3,1,post
+657696,2023-04-10 00:05:00,2023,Santos,Pachuca,1,4,post
+657697,2023-04-10 02:10:00,2023,FC Juarez,Atlas,1,1,post
+657698,2023-04-14 03:05:00,2023,Atlético de San Luis,FC Juarez,2,0,post
+657699,2023-04-15 01:05:00,2023,Necaxa,Puebla,1,1,post
+657700,2023-04-15 03:05:00,2023,Mazatlán FC,Tijuana,1,2,post
+657701,2023-04-15 23:00:00,2023,Atlas,Pachuca,4,1,post
+657702,2023-04-16 01:05:00,2023,León,Guadalajara,0,2,post
+657703,2023-04-16 03:10:00,2023,Cruz Azul,América,1,3,post
+657704,2023-04-16 18:00:00,2023,Pumas UNAM,Toluca,3,1,post
+657705,2023-04-16 23:00:00,2023,Querétaro,Tigres UANL,0,0,post
+657706,2023-04-17 01:10:00,2023,Monterrey,Santos,1,2,post
+657707,2023-04-21 02:05:00,2023,Tigres UANL,Puebla,1,0,post
+657709,2023-04-22 01:05:00,2023,Necaxa,Atlas,1,3,post
+657708,2023-04-22 01:05:00,2023,Mazatlán FC,Monterrey,0,2,post
+657710,2023-04-22 03:05:00,2023,Tijuana,León,0,0,post
+657711,2023-04-22 23:00:00,2023,Pachuca,Atlético de San Luis,2,1,post
+657712,2023-04-23 01:05:00,2023,Guadalajara,Cruz Azul,2,1,post
+657713,2023-04-23 03:10:00,2023,América,Pumas UNAM,1,1,post
+657714,2023-04-23 18:00:00,2023,Toluca,FC Juarez,1,1,post
+657715,2023-04-24 01:05:00,2023,Santos,Querétaro,0,2,post
+657717,2023-04-29 03:05:00,2023,FC Juarez,América,0,1,post
+657716,2023-04-29 23:00:00,2023,Puebla,Tijuana,5,2,post
+657718,2023-04-30 01:00:00,2023,Atlético de San Luis,Atlas,0,0,post
+657719,2023-04-30 01:05:00,2023,Guadalajara,Mazatlán FC,4,1,post
+657720,2023-04-30 01:05:00,2023,Monterrey,Pumas UNAM,4,1,post
+657721,2023-04-30 03:05:00,2023,Cruz Azul,Santos,3,2,post
+657722,2023-04-30 18:00:00,2023,Toluca,Necaxa,3,0,post
+657723,2023-04-30 23:00:00,2023,Querétaro,Pachuca,0,1,post
+657724,2023-05-01 01:05:00,2023,León,Tigres UANL,3,0,post
+668701,2023-05-06 23:00:00,2023,Cruz Azul,Atlas,0,1,post
+668702,2023-05-07 01:10:00,2023,Pachuca,Santos,4,4,post
+668700,2023-05-08 01:06:00,2023,León,Atlético de San Luis,1,3,post
+668703,2023-05-08 03:10:00,2023,Tigres UANL,Puebla,1,0,post
+668829,2023-05-11 01:00:00,2023,Santos,Monterrey,0,0,post
+668830,2023-05-11 03:10:00,2023,Atlético de San Luis,América,1,3,post
+668827,2023-05-12 01:00:00,2023,Atlas,Guadalajara,1,0,post
+668828,2023-05-12 03:10:00,2023,Tigres UANL,Toluca,4,1,post
+668823,2023-05-14 01:06:00,2023,Monterrey,Santos,2,0,post
+668825,2023-05-14 03:16:00,2023,América,Atlético de San Luis,1,2,post
+668824,2023-05-14 18:00:00,2023,Toluca,Tigres UANL,3,1,post
+668826,2023-05-15 01:05:00,2023,Guadalajara,Atlas,1,0,post
+668993,2023-05-18 03:00:00,2023,Tigres UANL,Monterrey,1,1,post
+668992,2023-05-19 02:10:00,2023,Guadalajara,América,0,1,post
+668995,2023-05-21 01:06:00,2023,Monterrey,Tigres UANL,0,1,post
+668994,2023-05-22 02:00:00,2023,América,Guadalajara,1,3,post
+669278,2023-05-26 02:00:00,2023,Tigres UANL,Guadalajara,0,0,post
+669279,2023-05-29 01:35:00,2023,Guadalajara,Tigres UANL,2,3,post
+670648,2023-07-01 01:00:00,2023,América,FC Juarez,1,2,post
+670650,2023-07-01 01:00:00,2023,Mazatlán FC,Pachuca,1,1,post
+670649,2023-07-01 03:10:00,2023,Tijuana,Pumas UNAM,2,3,post
+670498,2023-07-01 23:00:00,2023,Atlético de San Luis,Monterrey,1,1,post
+670499,2023-07-02 01:00:00,2023,Tigres UANL,Puebla,1,1,post
+670500,2023-07-02 03:10:00,2023,Atlas,Cruz Azul,2,0,post
+670501,2023-07-02 18:00:00,2023,Toluca,Necaxa,0,0,post
+670502,2023-07-03 01:05:00,2023,Santos,Querétaro,0,2,post
+670503,2023-07-04 02:00:00,2023,León,Guadalajara,1,2,post
+670504,2023-07-08 01:00:00,2023,Puebla,Santos,2,3,post
+670510,2023-07-08 03:00:00,2023,Necaxa,Tijuana,1,1,post
+670508,2023-07-08 23:50:00,2023,Cruz Azul,Toluca,0,2,post
+670506,2023-07-09 00:05:00,2023,Guadalajara,Atlético de San Luis,3,1,post
+670505,2023-07-09 00:06:00,2023,FC Juarez,Tigres UANL,1,1,post
+670509,2023-07-09 18:00:00,2023,Pumas UNAM,Mazatlán FC,0,0,post
+670507,2023-07-10 01:00:00,2023,Monterrey,Atlas,1,0,post
+670512,2023-07-11 02:00:00,2023,León,Pachuca,4,0,post
+670513,2023-07-14 01:05:00,2023,Santos,Atlas,0,0,post
+670514,2023-07-14 03:00:00,2023,Guadalajara,Necaxa,2,0,post
+670515,2023-07-15 01:00:00,2023,Mazatlán FC,Monterrey,0,3,post
+670516,2023-07-15 03:10:00,2023,Tijuana,Cruz Azul,2,1,post
+670517,2023-07-15 23:00:00,2023,Atlético de San Luis,Querétaro,4,1,post
+670518,2023-07-16 01:00:00,2023,América,Puebla,3,0,post
+670519,2023-07-16 03:05:00,2023,Tigres UANL,León,1,0,post
+670520,2023-07-16 18:00:00,2023,Toluca,FC Juarez,2,4,post
+670521,2023-07-17 02:15:00,2023,Pachuca,Pumas UNAM,1,1,post
+670525,2023-08-19 01:06:00,2023,León,Mazatlán FC,2,1,post
+670529,2023-08-19 03:00:00,2023,Pumas UNAM,Toluca,1,1,post
+670528,2023-08-19 03:06:00,2023,Puebla,Atlético de San Luis,1,2,post
+670524,2023-08-19 03:10:00,2023,FC Juarez,Guadalajara,1,1,post
+670523,2023-08-20 23:00:00,2023,Cruz Azul,Santos,2,2,post
+670530,2023-08-21 01:06:00,2023,Querétaro,Pachuca,1,1,post
+670522,2023-08-21 03:10:00,2023,América,Atlas,1,1,post
+670527,2023-08-21 03:10:00,2023,Necaxa,Tigres UANL,0,3,post
+670534,2023-08-23 01:00:00,2023,Guadalajara,Tijuana,1,0,post
+670535,2023-08-23 01:00:00,2023,Mazatlán FC,Puebla,1,0,post
+670533,2023-08-23 03:06:00,2023,FC Juarez,Pumas UNAM,4,1,post
+670531,2023-08-24 01:00:00,2023,América,Necaxa,3,2,post
+670536,2023-08-24 01:06:00,2023,Pachuca,Cruz Azul,1,0,post
+670532,2023-08-24 03:00:00,2023,Atlético de San Luis,León,3,0,post
+670540,2023-08-26 01:00:00,2023,Puebla,FC Juarez,1,0,post
+670541,2023-08-26 03:10:00,2023,Tijuana,Mazatlán FC,1,1,post
+670542,2023-08-26 23:00:00,2023,Atlas,Toluca,0,0,post
+670543,2023-08-27 01:00:00,2023,América,León,1,1,post
+670544,2023-08-27 03:05:00,2023,Santos,Guadalajara,2,1,post
+670545,2023-08-27 22:00:00,2023,Necaxa,Querétaro,0,1,post
+670546,2023-08-28 00:05:00,2023,Pumas UNAM,Tigres UANL,2,1,post
+670547,2023-08-28 02:05:00,2023,Monterrey,Cruz Azul,1,2,post
+670548,2023-08-29 03:10:00,2023,Pachuca,Atlético de San Luis,0,2,post
+670539,2023-08-31 01:00:00,2023,Toluca,Monterrey,1,0,post
+670537,2023-08-31 01:06:00,2023,Querétaro,Atlas,1,2,post
+670538,2023-08-31 03:00:00,2023,Tigres UANL,Santos,3,2,post
+670550,2023-09-02 01:06:00,2023,FC Juarez,Mazatlán FC,3,1,post
+670551,2023-09-02 03:10:00,2023,Puebla,Tijuana,3,0,post
+670552,2023-09-02 23:00:00,2023,León,Necaxa,1,1,post
+670554,2023-09-03 01:00:00,2023,Santos,Pumas UNAM,2,1,post
+670555,2023-09-03 01:05:00,2023,Tigres UANL,Querétaro,5,0,post
+670556,2023-09-03 03:10:00,2023,Cruz Azul,América,2,3,post
+670557,2023-09-03 18:00:00,2023,Toluca,Pachuca,5,0,post
+670553,2023-09-03 23:05:00,2023,Guadalajara,Monterrey,1,2,post
+670549,2023-09-04 02:00:00,2023,Atlético de San Luis,Atlas,2,0,post
+670558,2023-09-16 00:50:00,2023,Mazatlán FC,Cruz Azul,2,2,post
+670559,2023-09-16 03:00:00,2023,Tijuana,Toluca,2,1,post
+670562,2023-09-16 23:00:00,2023,Necaxa,FC Juarez,1,1,post
+670560,2023-09-17 01:00:00,2023,Monterrey,León,3,1,post
+670561,2023-09-17 03:10:00,2023,América,Guadalajara,4,0,post
+670563,2023-09-17 18:00:00,2023,Pumas UNAM,Atlético de San Luis,3,2,post
+670564,2023-09-17 23:00:00,2023,Querétaro,Puebla,1,1,post
+670565,2023-09-18 01:00:00,2023,Atlas,Tigres UANL,2,0,post
+670566,2023-09-19 03:00:00,2023,Pachuca,Santos,3,2,post
+670511,2023-09-21 02:06:00,2023,Querétaro,América,1,2,post
+670567,2023-09-23 01:00:00,2023,Atlético de San Luis,Mazatlán FC,3,2,post
+670568,2023-09-23 01:00:00,2023,FC Juarez,Atlas,1,2,post
+670569,2023-09-23 03:10:00,2023,Puebla,Pumas UNAM,0,2,post
+670570,2023-09-24 01:00:00,2023,Guadalajara,Pachuca,0,0,post
+670571,2023-09-24 01:00:00,2023,León,Tijuana,1,0,post
+670572,2023-09-24 03:05:00,2023,Tigres UANL,Monterrey,3,0,post
+670573,2023-09-24 18:00:00,2023,Toluca,América,1,1,post
+670574,2023-09-24 22:00:00,2023,Cruz Azul,Querétaro,1,3,post
+670575,2023-09-25 02:05:00,2023,Santos,Necaxa,2,5,post
+670609,2023-09-27 01:05:00,2023,Guadalajara,Mazatlán FC,1,3,post
+670576,2023-09-29 02:00:00,2023,Atlas,Puebla,2,3,post
+670577,2023-09-30 01:00:00,2023,Querétaro,León,1,1,post
+670584,2023-09-30 03:00:00,2023,Atlético de San Luis,Cruz Azul,1,2,post
+670578,2023-09-30 03:10:00,2023,Tijuana,FC Juarez,5,1,post
+670580,2023-09-30 23:00:00,2023,Pachuca,Necaxa,1,1,post
+670582,2023-10-01 00:40:00,2023,América,Pumas UNAM,1,0,post
+670579,2023-10-01 01:06:00,2023,Mazatlán FC,Tigres UANL,2,3,post
+670583,2023-10-01 23:20:00,2023,Toluca,Guadalajara,1,1,post
+670585,2023-10-04 01:00:00,2023,Puebla,Monterrey,1,1,post
+670586,2023-10-04 03:00:00,2023,América,Pachuca,4,0,post
+670587,2023-10-05 01:00:00,2023,Necaxa,Cruz Azul,1,3,post
+670588,2023-10-05 01:00:00,2023,Pumas UNAM,Querétaro,4,0,post
+670589,2023-10-05 03:00:00,2023,Tigres UANL,Toluca,2,2,post
+670610,2023-10-05 03:10:00,2023,Santos,Tijuana,2,1,post
+670590,2023-10-07 03:00:00,2023,Mazatlán FC,América,1,2,post
+670591,2023-10-07 23:00:00,2023,Monterrey,FC Juarez,3,1,post
+670592,2023-10-08 01:00:00,2023,Guadalajara,Atlas,4,1,post
+670593,2023-10-08 01:00:00,2023,Pachuca,Tigres UANL,1,1,post
+670594,2023-10-08 03:10:00,2023,Cruz Azul,Pumas UNAM,1,4,post
+670595,2023-10-08 18:00:00,2023,Toluca,Querétaro,3,1,post
+670596,2023-10-08 23:00:00,2023,Necaxa,Puebla,1,2,post
+670597,2023-10-09 01:05:00,2023,Santos,León,0,2,post
+670598,2023-10-09 03:00:00,2023,Tijuana,Atlético de San Luis,2,1,post
+670599,2023-10-21 01:00:00,2023,Atlas,Mazatlán FC,1,3,post
+670600,2023-10-21 01:06:00,2023,FC Juarez,Pachuca,0,1,post
+670601,2023-10-21 03:10:00,2023,Puebla,Guadalajara,0,2,post
+670602,2023-10-21 23:00:00,2023,León,Toluca,1,0,post
+670603,2023-10-22 01:00:00,2023,América,Santos,4,3,post
+670607,2023-10-22 01:06:00,2023,Querétaro,Tijuana,1,0,post
+670604,2023-10-22 03:10:00,2023,Tigres UANL,Cruz Azul,2,1,post
+670605,2023-10-22 18:00:00,2023,Pumas UNAM,Monterrey,0,1,post
+670606,2023-10-23 00:00:00,2023,Atlético de San Luis,Necaxa,4,0,post
+670608,2023-10-25 01:00:00,2023,León,Atlas,1,1,post
+670526,2023-10-26 01:00:00,2023,Monterrey,Tijuana,3,1,post
+670611,2023-10-26 03:06:00,2023,FC Juarez,Atlético de San Luis,3,2,post
+670612,2023-10-28 01:00:00,2023,Necaxa,Pumas UNAM,1,0,post
+670613,2023-10-28 03:00:00,2023,Mazatlán FC,Querétaro,3,0,post
+670614,2023-10-28 23:00:00,2023,Cruz Azul,León,1,0,post
+670615,2023-10-29 00:05:00,2023,Guadalajara,Tigres UANL,0,4,post
+670616,2023-10-29 01:00:00,2023,Pachuca,Puebla,1,1,post
+670617,2023-10-29 03:10:00,2023,Monterrey,América,0,3,post
+670618,2023-10-29 18:00:00,2023,Toluca,Atlético de San Luis,3,1,post
+670619,2023-10-30 01:05:00,2023,Santos,FC Juarez,5,1,post
+670620,2023-10-30 03:06:00,2023,Tijuana,Atlas,2,0,post
+670622,2023-11-01 01:00:00,2023,Toluca,Puebla,0,1,post
+670621,2023-11-01 01:00:00,2023,Querétaro,Guadalajara,1,2,post
+670623,2023-11-01 03:10:00,2023,León,Pumas UNAM,1,1,post
+670624,2023-11-01 03:10:00,2023,Monterrey,Necaxa,3,0,post
+670625,2023-11-02 01:00:00,2023,Atlas,Pachuca,0,2,post
+670626,2023-11-02 01:00:00,2023,Cruz Azul,FC Juarez,2,0,post
+670628,2023-11-02 03:00:00,2023,Atlético de San Luis,América,0,1,post
+670629,2023-11-02 03:00:00,2023,Mazatlán FC,Santos,3,1,post
+670627,2023-11-02 03:06:00,2023,Tijuana,Tigres UANL,2,0,post
+670630,2023-11-04 03:00:00,2023,Puebla,León,5,4,post
+670631,2023-11-04 22:55:00,2023,Tigres UANL,Atlético de San Luis,2,2,post
+670632,2023-11-05 01:00:00,2023,América,Tijuana,3,0,post
+670634,2023-11-05 03:00:00,2023,Pachuca,Monterrey,0,2,post
+670633,2023-11-05 03:05:00,2023,Guadalajara,Cruz Azul,1,0,post
+670635,2023-11-05 18:00:00,2023,Pumas UNAM,Atlas,3,0,post
+670636,2023-11-05 22:00:00,2023,Necaxa,Mazatlán FC,4,0,post
+670637,2023-11-06 00:05:00,2023,Santos,Toluca,3,1,post
+670638,2023-11-06 02:06:00,2023,FC Juarez,Querétaro,0,3,post
+670581,2023-11-09 02:00:00,2023,Monterrey,Santos,3,0,post
+670639,2023-11-11 01:00:00,2023,Atlas,Necaxa,0,0,post
+670640,2023-11-11 01:06:00,2023,Mazatlán FC,Toluca,1,0,post
+670641,2023-11-11 03:10:00,2023,Tijuana,Pachuca,2,3,post
+670643,2023-11-11 23:00:00,2023,Atlético de San Luis,Santos,0,2,post
+670642,2023-11-11 23:00:00,2023,Querétaro,Monterrey,0,0,post
+670644,2023-11-12 01:00:00,2023,Pumas UNAM,Guadalajara,1,0,post
+670645,2023-11-12 03:10:00,2023,Tigres UANL,América,0,0,post
+670646,2023-11-13 00:00:00,2023,Cruz Azul,Puebla,1,2,post
+670647,2023-11-13 02:05:00,2023,León,FC Juarez,2,1,post
+690132,2023-11-24 01:00:00,2023,Atlético de San Luis,León,3,2,post
+690131,2023-11-24 03:10:00,2023,Santos,Mazatlán FC,2,1,post
+690339,2023-11-27 02:06:00,2023,León,Santos,3,2,post
+690133,2023-11-30 01:06:00,2023,León,América,2,2,post
+690134,2023-11-30 03:10:00,2023,Atlético de San Luis,Monterrey,1,0,post
+690135,2023-12-01 01:00:00,2023,Puebla,Tigres UANL,2,2,post
+690136,2023-12-01 03:05:00,2023,Guadalajara,Pumas UNAM,1,0,post
+690140,2023-12-03 01:00:00,2023,América,León,2,0,post
+690137,2023-12-03 03:10:00,2023,Monterrey,Atlético de San Luis,1,1,post
+690138,2023-12-04 00:00:00,2023,Pumas UNAM,Guadalajara,3,0,post
+690139,2023-12-04 02:10:00,2023,Tigres UANL,Puebla,3,0,post
+690682,2023-12-07 03:00:00,2023,Atlético de San Luis,América,0,5,post
+690681,2023-12-08 03:00:00,2023,Pumas UNAM,Tigres UANL,0,1,post
+690684,2023-12-10 02:00:00,2023,América,Atlético de San Luis,0,2,post
+690683,2023-12-11 02:00:00,2023,Tigres UANL,Pumas UNAM,1,1,post
+690857,2023-12-15 03:00:00,2023,Tigres UANL,América,1,1,post
+690858,2023-12-18 01:30:00,2023,América,Tigres UANL,3,0,post
+692245,2024-01-13 01:00:00,2024,Querétaro,Toluca,2,2,post
+692246,2024-01-13 03:00:00,2024,Mazatlán FC,Atlético de San Luis,0,1,post
+692247,2024-01-14 01:00:00,2024,Cruz Azul,Pachuca,0,1,post
+692248,2024-01-14 01:05:00,2024,Guadalajara,Santos,1,1,post
+692250,2024-01-14 03:00:00,2024,Monterrey,Puebla,2,0,post
+692249,2024-01-14 03:00:00,2024,Tijuana,América,0,2,post
+692251,2024-01-14 18:00:00,2024,Pumas UNAM,FC Juarez,1,0,post
+692252,2024-01-15 00:00:00,2024,Necaxa,Atlas,2,1,post
+692253,2024-01-18 01:00:00,2024,León,Tigres UANL,1,2,post
+692254,2024-01-20 01:00:00,2024,Puebla,Necaxa,1,2,post
+692255,2024-01-20 03:00:00,2024,Atlético de San Luis,Pumas UNAM,3,1,post
+692256,2024-01-20 03:10:00,2024,FC Juarez,Cruz Azul,0,0,post
+692257,2024-01-20 23:00:00,2024,Toluca,Mazatlán FC,4,1,post
+692258,2024-01-21 01:05:00,2024,América,Querétaro,2,0,post
+692259,2024-01-21 03:10:00,2024,Atlas,Tijuana,0,0,post
+692261,2024-01-22 00:00:00,2024,Tigres UANL,Guadalajara,1,0,post
+692262,2024-01-22 02:05:00,2024,Santos,Monterrey,0,2,post
+692264,2024-01-25 01:00:00,2024,Monterrey,Querétaro,1,1,post
+692263,2024-01-25 01:00:00,2024,Atlético de San Luis,Tigres UANL,1,2,post
+692265,2024-01-25 03:06:00,2024,FC Juarez,América,0,2,post
+692266,2024-01-27 01:00:00,2024,Puebla,Toluca,1,1,post
+692267,2024-01-27 03:00:00,2024,Tijuana,Guadalajara,1,1,post
+692269,2024-01-27 23:00:00,2024,Cruz Azul,Mazatlán FC,2,1,post
+692268,2024-01-27 23:00:00,2024,León,Santos,3,2,post
+692270,2024-01-28 01:00:00,2024,Monterrey,Atlético de San Luis,3,1,post
+692271,2024-01-28 03:05:00,2024,Necaxa,América,0,0,post
+692273,2024-01-28 23:15:00,2024,Pumas UNAM,Pachuca,3,1,post
+692272,2024-01-29 01:00:00,2024,Atlas,FC Juarez,2,1,post
+692274,2024-01-29 03:00:00,2024,Querétaro,Tigres UANL,1,1,post
+692275,2024-01-31 01:00:00,2024,Cruz Azul,Tijuana,1,0,post
+692276,2024-01-31 01:00:00,2024,Mazatlán FC,León,2,2,post
+692280,2024-01-31 03:00:00,2024,Santos,Puebla,3,0,post
+692277,2024-01-31 03:05:00,2024,Guadalajara,Toluca,3,2,post
+692278,2024-02-01 01:00:00,2024,Pachuca,Atlas,4,3,post
+692279,2024-02-01 03:00:00,2024,Pumas UNAM,Necaxa,2,2,post
+692281,2024-02-03 01:00:00,2024,Querétaro,Cruz Azul,1,3,post
+692282,2024-02-03 03:00:00,2024,Puebla,Mazatlán FC,3,2,post
+692284,2024-02-03 23:00:00,2024,Toluca,León,4,1,post
+692283,2024-02-03 23:06:00,2024,FC Juarez,Necaxa,2,2,post
+692285,2024-02-04 01:05:00,2024,Tigres UANL,Pumas UNAM,2,2,post
+692286,2024-02-04 01:10:00,2024,Pachuca,Tijuana,3,2,post
+692287,2024-02-04 03:10:00,2024,América,Monterrey,1,1,post
+692288,2024-02-05 00:00:00,2024,Atlas,Santos,3,0,post
+692289,2024-02-05 01:00:00,2024,Atlético de San Luis,Guadalajara,0,2,post
+692260,2024-02-08 03:10:00,2024,Pachuca,León,3,2,post
+692290,2024-02-10 01:00:00,2024,Mazatlán FC,Atlas,2,0,post
+692291,2024-02-10 03:10:00,2024,Tijuana,Querétaro,1,1,post
+692293,2024-02-10 23:00:00,2024,Necaxa,Toluca,3,3,post
+692292,2024-02-10 23:05:00,2024,Guadalajara,FC Juarez,2,1,post
+692295,2024-02-11 01:00:00,2024,León,América,0,1,post
+692294,2024-02-11 01:05:00,2024,Cruz Azul,Atlético de San Luis,3,0,post
+692297,2024-02-11 03:10:00,2024,Monterrey,Pachuca,3,2,post
+692296,2024-02-11 03:10:00,2024,Santos,Tigres UANL,0,3,post
+692298,2024-02-11 18:00:00,2024,Pumas UNAM,Puebla,3,0,post
+692299,2024-02-15 03:00:00,2024,Atlas,Pumas UNAM,0,0,post
+692300,2024-02-17 01:00:00,2024,Querétaro,Necaxa,1,1,post
+692301,2024-02-17 03:00:00,2024,Mazatlán FC,Guadalajara,2,2,post
+692302,2024-02-17 23:00:00,2024,Atlético de San Luis,Tijuana,3,3,post
+692304,2024-02-18 01:00:00,2024,Pachuca,América,2,1,post
+692305,2024-02-18 03:05:00,2024,Cruz Azul,Tigres UANL,1,0,post
+692306,2024-02-18 22:00:00,2024,Atlas,León,0,1,post
+692307,2024-02-19 00:05:00,2024,Pumas UNAM,Santos,3,0,post
+692308,2024-02-19 02:10:00,2024,Monterrey,Toluca,0,0,post
+692309,2024-02-21 01:00:00,2024,Puebla,Pachuca,1,4,post
+692310,2024-02-21 03:00:00,2024,Necaxa,Guadalajara,1,0,post
+692311,2024-02-22 01:00:00,2024,Toluca,Santos,1,0,post
+692312,2024-02-22 03:00:00,2024,América,Mazatlán FC,2,2,post
+692313,2024-02-22 03:00:00,2024,León,Cruz Azul,2,3,post
+692314,2024-02-24 01:00:00,2024,Puebla,Querétaro,0,2,post
+692316,2024-02-24 03:00:00,2024,Necaxa,Pachuca,1,1,post
+692315,2024-02-24 03:10:00,2024,FC Juarez,Monterrey,0,3,post
+692317,2024-02-24 23:00:00,2024,León,Atlético de San Luis,1,0,post
+692319,2024-02-25 01:00:00,2024,Tigres UANL,Atlas,1,1,post
+692318,2024-02-25 01:05:00,2024,Guadalajara,Pumas UNAM,3,1,post
+692320,2024-02-25 03:10:00,2024,América,Cruz Azul,1,0,post
+692321,2024-02-25 18:00:00,2024,Toluca,Tijuana,2,0,post
+692322,2024-02-26 00:00:00,2024,Santos,Mazatlán FC,1,0,post
+692323,2024-02-28 01:00:00,2024,Querétaro,Atlético de San Luis,4,1,post
+692324,2024-02-29 01:00:00,2024,Tigres UANL,FC Juarez,1,0,post
+692325,2024-02-29 03:00:00,2024,Tijuana,Monterrey,1,1,post
+692327,2024-03-02 01:00:00,2024,Querétaro,Santos,0,1,post
+692326,2024-03-02 01:00:00,2024,Atlético de San Luis,Puebla,4,0,post
+692328,2024-03-02 03:00:00,2024,Mazatlán FC,Necaxa,2,1,post
+692329,2024-03-02 23:00:00,2024,Toluca,Tigres UANL,2,1,post
+692331,2024-03-03 01:00:00,2024,Pachuca,FC Juarez,3,2,post
+692330,2024-03-03 01:05:00,2024,Cruz Azul,Guadalajara,3,0,post
+692332,2024-03-03 03:10:00,2024,Atlas,América,1,5,post
+692333,2024-03-04 01:00:00,2024,Monterrey,Pumas UNAM,3,0,post
+692334,2024-03-04 03:00:00,2024,Tijuana,León,1,1,post
+692335,2024-03-09 01:00:00,2024,Puebla,Atlas,2,2,post
+692337,2024-03-09 03:00:00,2024,Necaxa,Atlético de San Luis,3,1,post
+692336,2024-03-09 03:10:00,2024,FC Juarez,Toluca,1,1,post
+692338,2024-03-09 23:05:00,2024,Guadalajara,León,1,2,post
+692340,2024-03-10 01:00:00,2024,Pachuca,Querétaro,1,2,post
+692339,2024-03-10 01:00:00,2024,Santos,Cruz Azul,3,0,post
+692341,2024-03-10 03:00:00,2024,América,Tigres UANL,2,0,post
+692342,2024-03-10 18:00:00,2024,Pumas UNAM,Tijuana,3,3,post
+692343,2024-03-11 01:00:00,2024,Monterrey,Mazatlán FC,2,1,post
+692344,2024-03-16 01:00:00,2024,Querétaro,FC Juarez,1,0,post
+692345,2024-03-16 03:00:00,2024,Tijuana,Santos,2,2,post
+692346,2024-03-16 23:00:00,2024,Cruz Azul,Necaxa,1,2,post
+692348,2024-03-17 01:00:00,2024,León,Puebla,2,1,post
+692350,2024-03-17 01:00:00,2024,Tigres UANL,Mazatlán FC,5,1,post
+692349,2024-03-17 03:05:00,2024,Guadalajara,América,0,0,post
+692351,2024-03-17 23:00:00,2024,Atlas,Monterrey,1,2,post
+692352,2024-03-18 01:00:00,2024,Atlético de San Luis,Pachuca,2,1,post
+692347,2024-03-18 01:00:00,2024,Toluca,Pumas UNAM,3,0,post
+692303,2024-03-24 01:00:00,2024,FC Juarez,Puebla,4,3,post
+692353,2024-03-30 01:00:00,2024,Puebla,Tigres UANL,2,3,post
+692355,2024-03-30 02:00:00,2024,América,Atlético de San Luis,2,1,post
+692354,2024-03-30 03:00:00,2024,Mazatlán FC,Tijuana,2,0,post
+692356,2024-03-31 01:00:00,2024,Monterrey,Guadalajara,0,2,post
+692357,2024-03-31 01:00:00,2024,Pachuca,Toluca,2,3,post
+692358,2024-03-31 03:05:00,2024,Pumas UNAM,Cruz Azul,0,0,post
+692359,2024-03-31 23:00:00,2024,Atlas,Querétaro,2,3,post
+692360,2024-04-01 01:00:00,2024,Necaxa,León,1,2,post
+692361,2024-04-01 01:36:00,2024,FC Juarez,Santos,2,1,post
+692362,2024-04-06 01:00:00,2024,Mazatlán FC,Pumas UNAM,0,4,post
+692363,2024-04-06 03:10:00,2024,Tijuana,Necaxa,2,3,post
+692364,2024-04-06 23:00:00,2024,León,Querétaro,0,2,post
+692366,2024-04-07 01:00:00,2024,Tigres UANL,Pachuca,0,3,post
+692365,2024-04-07 01:05:00,2024,Guadalajara,Puebla,3,2,post
+692367,2024-04-07 03:05:00,2024,Cruz Azul,Monterrey,2,1,post
+692368,2024-04-07 03:05:00,2024,Santos,América,1,1,post
+692369,2024-04-07 18:00:00,2024,Toluca,Atlas,4,1,post
+692370,2024-04-08 15:30:00,2024,Atlético de San Luis,FC Juarez,2,3,post
+692371,2024-04-13 01:06:00,2024,Querétaro,Mazatlán FC,0,2,post
+692373,2024-04-13 03:00:00,2024,Puebla,Cruz Azul,0,1,post
+692372,2024-04-13 03:00:00,2024,Necaxa,Santos,2,0,post
+692374,2024-04-13 23:00:00,2024,Pachuca,Guadalajara,0,1,post
+692375,2024-04-14 01:05:00,2024,América,Toluca,5,1,post
+692376,2024-04-14 03:10:00,2024,Monterrey,Tigres UANL,3,3,post
+692377,2024-04-15 00:00:00,2024,Atlas,Atlético de San Luis,2,1,post
+692378,2024-04-15 00:00:00,2024,Pumas UNAM,León,1,0,post
+692379,2024-04-15 02:06:00,2024,FC Juarez,Tijuana,0,1,post
+692380,2024-04-20 01:00:00,2024,Mazatlán FC,FC Juarez,0,2,post
+692381,2024-04-20 03:00:00,2024,Atlético de San Luis,Toluca,1,5,post
+692382,2024-04-20 03:10:00,2024,Tijuana,Puebla,3,1,post
+692383,2024-04-20 23:00:00,2024,León,Monterrey,2,0,post
+692384,2024-04-21 01:05:00,2024,Guadalajara,Querétaro,2,0,post
+692388,2024-04-21 01:05:00,2024,Santos,Pachuca,0,2,post
+692385,2024-04-21 01:05:00,2024,Tigres UANL,Necaxa,5,2,post
+692386,2024-04-21 03:10:00,2024,Pumas UNAM,América,2,1,post
+692387,2024-04-22 00:00:00,2024,Cruz Azul,Atlas,2,2,post
+692389,2024-04-27 01:00:00,2024,Puebla,América,1,2,post
+692390,2024-04-27 03:10:00,2024,Querétaro,Pumas UNAM,1,1,post
+692392,2024-04-27 23:06:00,2024,FC Juarez,León,1,1,post
+692391,2024-04-28 01:00:00,2024,Tigres UANL,Tijuana,4,1,post
+692394,2024-04-28 01:00:00,2024,Toluca,Cruz Azul,0,1,post
+692393,2024-04-28 01:10:00,2024,Pachuca,Mazatlán FC,1,1,post
+692395,2024-04-28 03:10:00,2024,Atlas,Guadalajara,0,1,post
+692396,2024-04-29 00:00:00,2024,Necaxa,Monterrey,2,5,post
+692397,2024-04-29 00:00:00,2024,Santos,Atlético de San Luis,0,3,post
+702270,2024-05-03 01:00:00,2024,Necaxa,Querétaro,1,1,post
+702271,2024-05-03 03:15:00,2024,Pachuca,Pumas UNAM,0,0,post
+702334,2024-05-06 02:06:00,2024,Pachuca,Necaxa,2,1,post
+702274,2024-05-09 01:05:00,2024,Guadalajara,Toluca,1,0,post
+702275,2024-05-09 03:16:00,2024,Pachuca,América,1,1,post
+702273,2024-05-10 01:00:00,2024,Pumas UNAM,Cruz Azul,0,2,post
+702272,2024-05-10 03:10:00,2024,Tigres UANL,Monterrey,1,2,post
+702279,2024-05-12 00:00:00,2024,América,Pachuca,1,1,post
+702276,2024-05-12 02:10:00,2024,Toluca,Guadalajara,0,0,post
+702278,2024-05-13 01:00:00,2024,Cruz Azul,Pumas UNAM,2,2,post
+702277,2024-05-13 03:10:00,2024,Monterrey,Tigres UANL,1,1,post
+702498,2024-05-16 02:05:00,2024,Guadalajara,América,0,0,post
+702497,2024-05-17 03:00:00,2024,Monterrey,Cruz Azul,0,1,post
+702500,2024-05-19 02:00:00,2024,América,Guadalajara,1,0,post
+702499,2024-05-20 00:00:00,2024,Cruz Azul,Monterrey,1,2,post
+702649,2024-05-24 02:00:00,2024,Cruz Azul,América,1,1,post
+702650,2024-05-27 01:00:00,2024,América,Cruz Azul,1,0,post
+703521,2024-07-05 22:45:00,2024,Puebla,Santos,1,0,post
+703522,2024-07-06 01:00:00,2024,Querétaro,Tijuana,1,2,post
+703523,2024-07-06 03:10:00,2024,FC Juarez,Atlas,2,2,post
+703524,2024-07-06 23:00:00,2024,Atlético de San Luis,América,2,1,post
+703526,2024-07-07 01:00:00,2024,Guadalajara,Toluca,0,0,post
+703525,2024-07-07 01:00:00,2024,Tigres UANL,Necaxa,1,0,post
+703527,2024-07-07 03:00:00,2024,Cruz Azul,Mazatlán FC,1,0,post
+703528,2024-07-07 18:00:00,2024,Pumas UNAM,León,4,1,post
+703529,2024-07-08 01:06:00,2024,Pachuca,Monterrey,0,1,post
+703530,2024-07-13 01:00:00,2024,América,Querétaro,3,1,post
+703531,2024-07-13 03:00:00,2024,Mazatlán FC,Atlético de San Luis,2,2,post
+703532,2024-07-13 03:00:00,2024,Tijuana,Guadalajara,4,2,post
+703533,2024-07-13 03:05:00,2024,Atlas,Tigres UANL,1,1,post
+703534,2024-07-13 23:00:00,2024,León,Pachuca,0,0,post
+703535,2024-07-13 23:00:00,2024,Necaxa,Puebla,4,1,post
+703536,2024-07-14 01:10:00,2024,Toluca,FC Juarez,3,2,post
+703537,2024-07-14 01:25:00,2024,Santos,Pumas UNAM,1,1,post
+703538,2024-07-14 03:10:00,2024,Monterrey,Cruz Azul,0,4,post
+703539,2024-07-17 01:00:00,2024,Atlas,Santos,1,0,post
+703541,2024-07-17 01:00:00,2024,Pachuca,Atlético de San Luis,2,0,post
+703540,2024-07-17 01:00:00,2024,Querétaro,Guadalajara,0,2,post
+703542,2024-07-17 03:00:00,2024,Puebla,León,2,2,post
+703543,2024-07-17 03:05:00,2024,Cruz Azul,Tijuana,3,0,post
+703547,2024-07-18 01:00:00,2024,Necaxa,Monterrey,0,1,post
+703544,2024-07-18 01:06:00,2024,FC Juarez,Pumas UNAM,1,2,post
+703546,2024-07-18 03:00:00,2024,Tigres UANL,América,1,0,post
+703545,2024-07-18 03:00:00,2024,Toluca,Mazatlán FC,3,0,post
+703548,2024-07-20 01:00:00,2024,Atlético de San Luis,Tijuana,1,1,post
+703549,2024-07-20 03:05:00,2024,Puebla,Atlas,1,2,post
+703550,2024-07-20 23:05:00,2024,Guadalajara,Mazatlán FC,2,0,post
+703551,2024-07-21 01:00:00,2024,Monterrey,Querétaro,2,1,post
+703552,2024-07-21 01:00:00,2024,Santos,Tigres UANL,0,3,post
+703554,2024-07-21 03:05:00,2024,Cruz Azul,Toluca,1,1,post
+703553,2024-07-21 03:10:00,2024,FC Juarez,América,1,2,post
+703555,2024-07-21 23:00:00,2024,Pumas UNAM,Pachuca,2,0,post
+703556,2024-07-22 01:05:00,2024,León,Necaxa,1,1,post
+703657,2024-08-17 01:00:00,2024,Puebla,Monterrey,1,2,post
+703592,2024-08-19 00:05:00,2024,Tijuana,Santos,3,1,post
+703633,2024-08-19 02:00:00,2024,Atlético de San Luis,Querétaro,4,0,post
+703557,2024-08-24 01:00:00,2024,Querétaro,Cruz Azul,0,2,post
+703558,2024-08-24 02:00:00,2024,Mazatlán FC,Pachuca,3,0,post
+703559,2024-08-24 03:05:00,2024,Tijuana,Monterrey,2,2,post
+703560,2024-08-24 23:00:00,2024,Necaxa,FC Juarez,3,0,post
+703561,2024-08-25 01:00:00,2024,Atlas,Pumas UNAM,2,1,post
+703562,2024-08-25 01:00:00,2024,León,Santos,1,1,post
+703563,2024-08-25 01:00:00,2024,Tigres UANL,Guadalajara,1,1,post
+703564,2024-08-25 03:05:00,2024,América,Puebla,0,1,post
+703565,2024-08-25 18:00:00,2024,Toluca,Atlético de San Luis,2,1,post
+703566,2024-08-31 01:00:00,2024,Atlético de San Luis,Atlas,2,1,post
+703567,2024-08-31 02:00:00,2024,Mazatlán FC,Puebla,1,1,post
+703568,2024-08-31 03:05:00,2024,Tijuana,León,2,1,post
+703570,2024-08-31 23:00:00,2024,Pachuca,Querétaro,1,1,post
+703569,2024-08-31 23:05:00,2024,Guadalajara,FC Juarez,5,0,post
+703571,2024-09-01 01:00:00,2024,Monterrey,Toluca,1,2,post
+703572,2024-09-01 03:10:00,2024,Cruz Azul,América,4,1,post
+703573,2024-09-01 23:00:00,2024,Pumas UNAM,Tigres UANL,1,3,post
+703574,2024-09-02 01:05:00,2024,Santos,Necaxa,3,2,post
+703575,2024-09-14 00:00:00,2024,Puebla,Querétaro,2,1,post
+703576,2024-09-14 01:00:00,2024,Atlas,Pachuca,2,0,post
+703577,2024-09-14 02:10:00,2024,FC Juarez,Mazatlán FC,1,0,post
+703578,2024-09-14 02:10:00,2024,Tigres UANL,Atlético de San Luis,1,0,post
+703579,2024-09-14 03:00:00,2024,Necaxa,Pumas UNAM,2,0,post
+703580,2024-09-14 22:45:00,2024,Toluca,Tijuana,4,0,post
+703581,2024-09-15 00:50:00,2024,América,Guadalajara,1,0,post
+703582,2024-09-15 02:35:00,2024,León,Cruz Azul,1,2,post
+703583,2024-09-15 03:00:00,2024,Santos,Monterrey,0,2,post
+703588,2024-09-18 01:00:00,2024,América,Atlas,3,0,post
+703586,2024-09-18 01:00:00,2024,Atlético de San Luis,Cruz Azul,3,1,post
+703585,2024-09-18 01:00:00,2024,Pachuca,Toluca,2,2,post
+703587,2024-09-18 03:00:00,2024,Querétaro,Tigres UANL,1,0,post
+703584,2024-09-18 03:05:00,2024,Pumas UNAM,Puebla,1,0,post
+703589,2024-09-19 01:05:00,2024,Guadalajara,León,2,0,post
+703590,2024-09-19 02:00:00,2024,Mazatlán FC,Necaxa,0,0,post
+703591,2024-09-19 03:00:00,2024,Monterrey,FC Juarez,3,2,post
+703593,2024-09-21 01:00:00,2024,Atlas,Querétaro,0,1,post
+703594,2024-09-21 01:00:00,2024,Puebla,Pachuca,2,3,post
+703595,2024-09-21 23:00:00,2024,León,Atlético de San Luis,1,0,post
+703596,2024-09-22 01:00:00,2024,Monterrey,Mazatlán FC,0,0,post
+703597,2024-09-22 01:00:00,2024,Necaxa,América,1,1,post
+703598,2024-09-22 03:05:00,2024,Cruz Azul,Guadalajara,1,0,post
+703599,2024-09-22 23:00:00,2024,Pumas UNAM,Tijuana,1,0,post
+703601,2024-09-23 01:05:00,2024,Santos,Toluca,2,0,post
+703600,2024-09-23 01:10:00,2024,FC Juarez,Tigres UANL,0,1,post
+703602,2024-09-28 00:00:00,2024,Puebla,FC Juarez,2,3,post
+703603,2024-09-28 01:00:00,2024,Querétaro,Necaxa,0,0,post
+703604,2024-09-28 02:00:00,2024,Tigres UANL,León,2,2,post
+703605,2024-09-28 03:05:00,2024,Tijuana,Mazatlán FC,1,0,post
+703606,2024-09-28 23:00:00,2024,Toluca,Atlas,4,1,post
+703607,2024-09-29 01:05:00,2024,Pachuca,Cruz Azul,2,4,post
+703608,2024-09-29 03:05:00,2024,Guadalajara,Monterrey,1,1,post
+703609,2024-09-29 03:10:00,2024,Atlético de San Luis,Santos,3,1,post
+703610,2024-09-30 00:00:00,2024,América,Pumas UNAM,0,1,post
+703611,2024-10-05 02:00:00,2024,Mazatlán FC,Querétaro,2,2,post
+703612,2024-10-05 03:00:00,2024,Tijuana,Pachuca,2,1,post
+703613,2024-10-05 23:00:00,2024,Atlético de San Luis,Monterrey,1,0,post
+703618,2024-10-05 23:00:00,2024,Cruz Azul,Necaxa,3,0,post
+703614,2024-10-05 23:00:00,2024,Tigres UANL,Puebla,1,0,post
+703617,2024-10-06 01:00:00,2024,Toluca,Pumas UNAM,1,1,post
+703615,2024-10-06 01:05:00,2024,Guadalajara,Atlas,2,3,post
+703616,2024-10-06 03:00:00,2024,León,América,1,1,post
+703619,2024-10-07 02:05:00,2024,Santos,FC Juarez,0,2,post
+703621,2024-10-19 01:00:00,2024,Querétaro,Toluca,0,1,post
+703620,2024-10-19 01:00:00,2024,Atlas,Mazatlán FC,0,0,post
+703622,2024-10-19 03:00:00,2024,Necaxa,Tijuana,1,2,post
+703623,2024-10-19 03:05:00,2024,Puebla,Cruz Azul,1,2,post
+703624,2024-10-19 23:00:00,2024,Pachuca,Guadalajara,0,2,post
+703626,2024-10-20 01:05:00,2024,América,Santos,3,0,post
+703625,2024-10-20 01:06:00,2024,FC Juarez,León,2,3,post
+703627,2024-10-20 03:10:00,2024,Monterrey,Tigres UANL,4,2,post
+703628,2024-10-20 18:00:00,2024,Pumas UNAM,Atlético de San Luis,3,0,post
+703630,2024-10-23 01:00:00,2024,Santos,Pachuca,1,1,post
+703629,2024-10-23 01:05:00,2024,Guadalajara,Necaxa,3,2,post
+703632,2024-10-23 03:05:00,2024,Toluca,Puebla,5,0,post
+703631,2024-10-23 03:06:00,2024,Mazatlán FC,Tigres UANL,2,0,post
+703635,2024-10-24 01:00:00,2024,Cruz Azul,FC Juarez,4,0,post
+703634,2024-10-24 01:00:00,2024,Monterrey,Pumas UNAM,0,0,post
+703636,2024-10-24 03:00:00,2024,León,Atlas,0,0,post
+703637,2024-10-24 03:05:00,2024,Tijuana,América,2,2,post
+703638,2024-10-26 01:00:00,2024,Santos,Mazatlán FC,0,0,post
+703639,2024-10-26 03:00:00,2024,Puebla,Guadalajara,1,0,post
+703640,2024-10-26 23:00:00,2024,León,Querétaro,4,0,post
+703641,2024-10-27 01:00:00,2024,Pumas UNAM,Cruz Azul,0,2,post
+703642,2024-10-27 03:00:00,2024,Tigres UANL,Pachuca,2,1,post
+703643,2024-10-27 03:05:00,2024,Atlas,Tijuana,0,0,post
+703644,2024-10-28 00:00:00,2024,Necaxa,Toluca,1,3,post
+703645,2024-10-28 00:06:00,2024,FC Juarez,Atlético de San Luis,2,4,post
+703646,2024-10-28 02:05:00,2024,América,Monterrey,2,1,post
+703647,2024-11-02 01:00:00,2024,Querétaro,FC Juarez,1,2,post
+703648,2024-11-02 03:00:00,2024,Mazatlán FC,América,0,5,post
+703649,2024-11-02 03:05:00,2024,Tijuana,Tigres UANL,0,3,post
+703650,2024-11-02 23:00:00,2024,Atlético de San Luis,Puebla,2,0,post
+703651,2024-11-02 23:00:00,2024,Toluca,León,2,2,post
+703653,2024-11-03 01:05:00,2024,Monterrey,Atlas,4,0,post
+703652,2024-11-03 01:05:00,2024,Guadalajara,Pumas UNAM,0,0,post
+703654,2024-11-03 03:06:00,2024,Pachuca,Necaxa,6,2,post
+703655,2024-11-03 03:10:00,2024,Cruz Azul,Santos,2,0,post
+703656,2024-11-06 01:00:00,2024,León,Mazatlán FC,0,0,post
+703659,2024-11-06 01:00:00,2024,Santos,Guadalajara,0,2,post
+703658,2024-11-06 03:05:00,2024,Pumas UNAM,Querétaro,2,0,post
+703660,2024-11-07 01:00:00,2024,América,Pachuca,2,1,post
+703661,2024-11-07 01:00:00,2024,Necaxa,Atlético de San Luis,1,1,post
+703662,2024-11-07 01:00:00,2024,Tigres UANL,Toluca,2,1,post
+703664,2024-11-07 03:05:00,2024,Atlas,Cruz Azul,2,2,post
+703663,2024-11-07 03:06:00,2024,FC Juarez,Tijuana,1,1,post
+703665,2024-11-09 01:00:00,2024,Querétaro,Santos,3,2,post
+703666,2024-11-09 03:00:00,2024,Mazatlán FC,Pumas UNAM,0,1,post
+703667,2024-11-09 23:05:00,2024,Guadalajara,Atlético de San Luis,0,1,post
+703668,2024-11-10 01:00:00,2024,Toluca,América,4,0,post
+703669,2024-11-10 01:00:00,2024,Pachuca,FC Juarez,0,1,post
+703670,2024-11-10 03:05:00,2024,Cruz Azul,Tigres UANL,1,1,post
+703671,2024-11-10 23:00:00,2024,Necaxa,Atlas,0,0,post
+703672,2024-11-11 01:05:00,2024,Monterrey,León,2,1,post
+703673,2024-11-11 03:10:00,2024,Tijuana,Puebla,2,1,post
+723396,2024-11-22 01:05:00,2024,Guadalajara,Atlas,1,2,post
+723397,2024-11-22 03:00:00,2024,Tijuana,América,2,2,post
+723706,2024-11-25 03:00:00,2024,Tijuana,Atlas,3,0,post
+723400,2024-11-28 01:00:00,2024,América,Toluca,2,0,post
+723401,2024-11-28 03:10:00,2024,Tijuana,Cruz Azul,3,0,post
+723398,2024-11-29 01:00:00,2024,Atlético de San Luis,Tigres UANL,3,0,post
+723399,2024-11-29 03:10:00,2024,Monterrey,Pumas UNAM,1,0,post
+723403,2024-11-30 23:00:00,2024,Toluca,América,0,2,post
+723404,2024-12-01 01:10:00,2024,Cruz Azul,Tijuana,3,0,post
+723402,2024-12-01 18:00:00,2024,Pumas UNAM,Monterrey,3,5,post
+723405,2024-12-02 01:00:00,2024,Tigres UANL,Atlético de San Luis,0,0,post
+723944,2024-12-05 03:00:00,2024,Atlético de San Luis,Monterrey,2,1,post
+723947,2024-12-06 02:00:00,2024,América,Cruz Azul,0,0,post
+723946,2024-12-08 02:00:00,2024,Monterrey,Atlético de San Luis,5,1,post
+723945,2024-12-09 01:00:00,2024,Cruz Azul,América,3,4,post
+724678,2024-12-13 02:00:00,2024,América,Monterrey,2,1,post
+724679,2024-12-16 01:00:00,2024,Monterrey,América,1,1,post
+725043,2025-01-11 01:00:00,2025,Querétaro,América,0,1,post
+725045,2025-01-11 03:00:00,2025,Mazatlán FC,FC Juarez,1,1,post
+725044,2025-01-11 03:05:00,2025,Tijuana,Toluca,2,4,post
+725046,2025-01-11 23:00:00,2025,Atlético de San Luis,Tigres UANL,1,3,post
+725048,2025-01-12 01:05:00,2025,Guadalajara,Santos,1,0,post
+725049,2025-01-12 03:05:00,2025,Cruz Azul,Atlas,1,1,post
+725050,2025-01-12 18:00:00,2025,Pumas UNAM,Necaxa,2,1,post
+725047,2025-01-13 01:00:00,2025,Monterrey,Puebla,1,1,post
+725051,2025-01-17 02:10:00,2025,América,Tijuana,1,1,post
+725054,2025-01-18 01:00:00,2025,Tigres UANL,Mazatlán FC,2,1,post
+725052,2025-01-18 01:00:00,2025,Puebla,Atlético de San Luis,1,2,post
+725053,2025-01-18 03:05:00,2025,Necaxa,Guadalajara,3,2,post
+725057,2025-01-18 23:00:00,2025,FC Juarez,Cruz Azul,1,0,post
+725055,2025-01-19 01:00:00,2025,Toluca,Monterrey,1,1,post
+725056,2025-01-19 03:00:00,2025,Atlas,León,1,2,post
+725058,2025-01-19 23:00:00,2025,Querétaro,Pumas UNAM,3,2,post
+725059,2025-01-21 01:00:00,2025,Pachuca,Santos,2,1,post
+725060,2025-01-25 01:00:00,2025,Atlético de San Luis,Necaxa,0,3,post
+725062,2025-01-25 03:00:00,2025,Mazatlán FC,Toluca,2,1,post
+725061,2025-01-25 03:00:00,2025,Tijuana,Querétaro,2,1,post
+725063,2025-01-25 23:00:00,2025,Cruz Azul,Puebla,1,1,post
+725064,2025-01-25 23:00:00,2025,León,FC Juarez,1,0,post
+725066,2025-01-26 01:05:00,2025,Guadalajara,Tigres UANL,1,1,post
+725067,2025-01-26 01:05:00,2025,Santos,América,1,4,post
+725065,2025-01-26 03:10:00,2025,Monterrey,Pachuca,2,3,post
+725068,2025-01-26 18:00:00,2025,Pumas UNAM,Atlas,0,0,post
+725070,2025-01-29 01:00:00,2025,Puebla,Mazatlán FC,0,1,post
+725069,2025-01-29 01:00:00,2025,América,Atlético de San Luis,3,0,post
+725073,2025-01-29 03:00:00,2025,León,Guadalajara,2,1,post
+725072,2025-01-29 03:00:00,2025,Tigres UANL,Tijuana,4,0,post
+725071,2025-01-29 03:05:00,2025,Necaxa,Cruz Azul,1,3,post
+725074,2025-01-30 01:00:00,2025,Atlas,Monterrey,3,3,post
+725075,2025-01-30 01:00:00,2025,Querétaro,Pachuca,0,1,post
+725077,2025-01-30 03:00:00,2025,FC Juarez,Santos,1,0,post
+725076,2025-01-30 03:05:00,2025,Pumas UNAM,Toluca,1,1,post
+725078,2025-02-01 01:00:00,2025,Mazatlán FC,León,1,2,post
+725079,2025-02-01 03:05:00,2025,Tijuana,Cruz Azul,2,3,post
+725080,2025-02-01 23:00:00,2025,América,FC Juarez,4,0,post
+725081,2025-02-01 23:05:00,2025,Guadalajara,Querétaro,1,1,post
+725083,2025-02-02 01:00:00,2025,Pachuca,Atlas,0,0,post
+725082,2025-02-02 01:05:00,2025,Monterrey,Necaxa,1,0,post
+725084,2025-02-02 03:15:00,2025,Toluca,Tigres UANL,1,0,post
+725085,2025-02-02 23:00:00,2025,Santos,Puebla,0,2,post
+725086,2025-02-03 01:00:00,2025,Atlético de San Luis,Pumas UNAM,2,3,post
+725087,2025-02-06 03:10:00,2025,Pachuca,León,1,2,post
+725090,2025-02-08 01:00:00,2025,Necaxa,Santos,3,2,post
+725088,2025-02-08 01:00:00,2025,Querétaro,Atlético de San Luis,1,0,post
+725089,2025-02-08 03:00:00,2025,Puebla,América,1,2,post
+725091,2025-02-09 01:00:00,2025,León,Toluca,3,3,post
+725092,2025-02-09 01:00:00,2025,Tigres UANL,Atlas,2,1,post
+725094,2025-02-09 03:00:00,2025,FC Juarez,Monterrey,2,1,post
+725093,2025-02-09 03:05:00,2025,Cruz Azul,Pachuca,2,1,post
+725095,2025-02-10 00:00:00,2025,Pumas UNAM,Mazatlán FC,1,0,post
+725096,2025-02-10 03:05:00,2025,Guadalajara,Tijuana,2,1,post
+725100,2025-02-15 03:00:00,2025,América,Necaxa,2,3,post
+725097,2025-02-15 03:00:00,2025,Mazatlán FC,Santos,1,1,post
+725098,2025-02-15 03:00:00,2025,Tijuana,FC Juarez,1,2,post
+725099,2025-02-15 23:00:00,2025,Atlas,Puebla,3,2,post
+725101,2025-02-16 01:00:00,2025,Tigres UANL,Cruz Azul,2,1,post
+725102,2025-02-16 03:10:00,2025,Toluca,Guadalajara,2,1,post
+725103,2025-02-16 23:00:00,2025,Querétaro,Monterrey,2,4,post
+725105,2025-02-17 01:00:00,2025,Atlético de San Luis,León,1,2,post
+725104,2025-02-17 01:05:00,2025,Pachuca,Pumas UNAM,2,1,post
+725107,2025-02-19 03:10:00,2025,Atlas,Necaxa,0,4,post
+725108,2025-02-20 01:00:00,2025,América,León,1,1,post
+725106,2025-02-20 03:05:00,2025,Santos,Cruz Azul,0,1,post
+725109,2025-02-22 01:00:00,2025,Necaxa,Mazatlán FC,3,1,post
+725110,2025-02-22 03:00:00,2025,Puebla,Tijuana,2,0,post
+725115,2025-02-22 23:00:00,2025,FC Juarez,Toluca,0,4,post
+725111,2025-02-23 01:00:00,2025,León,Tigres UANL,1,0,post
+725112,2025-02-23 01:00:00,2025,Monterrey,Atlético de San Luis,3,1,post
+725113,2025-02-23 01:05:00,2025,Guadalajara,Pachuca,2,1,post
+725114,2025-02-23 03:05:00,2025,Pumas UNAM,América,0,2,post
+725116,2025-02-23 23:00:00,2025,Santos,Atlas,2,0,post
+725117,2025-02-24 01:05:00,2025,Cruz Azul,Querétaro,1,0,post
+725118,2025-02-26 01:00:00,2025,Tigres UANL,FC Juarez,0,1,post
+725120,2025-02-26 03:00:00,2025,Mazatlán FC,Monterrey,1,0,post
+725119,2025-02-26 03:00:00,2025,Tijuana,Pumas UNAM,4,2,post
+725121,2025-02-27 01:00:00,2025,Pachuca,Puebla,2,1,post
+725123,2025-02-27 03:00:00,2025,Toluca,Querétaro,5,0,post
+725122,2025-02-27 03:05:00,2025,Atlético de San Luis,Guadalajara,3,1,post
+725124,2025-03-01 03:00:00,2025,Mazatlán FC,Cruz Azul,1,1,post
+725126,2025-03-01 23:00:00,2025,América,Toluca,3,0,post
+725128,2025-03-01 23:00:00,2025,FC Juarez,Pachuca,2,2,post
+725127,2025-03-02 01:00:00,2025,León,Tijuana,2,1,post
+725125,2025-03-02 01:00:00,2025,Necaxa,Tigres UANL,1,2,post
+725129,2025-03-02 03:10:00,2025,Pumas UNAM,Guadalajara,0,1,post
+725130,2025-03-02 22:00:00,2025,Querétaro,Puebla,2,0,post
+725131,2025-03-03 00:00:00,2025,Atlas,Atlético de San Luis,3,1,post
+725132,2025-03-03 02:05:00,2025,Monterrey,Santos,4,2,post
+725134,2025-03-08 01:00:00,2025,Tigres UANL,Querétaro,1,0,post
+725133,2025-03-08 01:00:00,2025,Atlético de San Luis,FC Juarez,1,0,post
+725135,2025-03-08 03:00:00,2025,Puebla,Pumas UNAM,1,3,post
+725136,2025-03-08 23:00:00,2025,Toluca,Necaxa,5,2,post
+725138,2025-03-09 01:00:00,2025,Pachuca,Mazatlán FC,1,1,post
+725137,2025-03-09 01:05:00,2025,Cruz Azul,Monterrey,1,1,post
+725139,2025-03-09 03:05:00,2025,Guadalajara,América,0,0,post
+725140,2025-03-09 23:00:00,2025,Santos,León,2,1,post
+725141,2025-03-10 03:00:00,2025,Tijuana,Atlas,3,4,post
+725142,2025-03-15 01:00:00,2025,Necaxa,León,2,1,post
+725143,2025-03-15 01:00:00,2025,Querétaro,Mazatlán FC,1,0,post
+725144,2025-03-15 03:05:00,2025,Puebla,Toluca,0,3,post
+725145,2025-03-15 23:00:00,2025,Tigres UANL,Santos,3,0,post
+725146,2025-03-16 01:00:00,2025,Cruz Azul,Atlético de San Luis,3,0,post
+725148,2025-03-16 01:10:00,2025,FC Juarez,Guadalajara,1,1,post
+725147,2025-03-16 03:05:00,2025,Atlas,América,1,3,post
+725149,2025-03-17 00:00:00,2025,Pumas UNAM,Monterrey,1,3,post
+725150,2025-03-17 02:00:00,2025,Pachuca,Tijuana,4,1,post
+725152,2025-03-29 01:00:00,2025,Necaxa,Querétaro,2,0,post
+725153,2025-03-29 03:10:00,2025,Mazatlán FC,Atlas,3,2,post
+725151,2025-03-29 23:00:00,2025,FC Juarez,Puebla,2,0,post
+725154,2025-03-29 23:00:00,2025,Toluca,Pachuca,3,2,post
+725155,2025-03-30 01:05:00,2025,América,Tigres UANL,3,0,post
+725157,2025-03-30 03:05:00,2025,Guadalajara,Cruz Azul,0,1,post
+725156,2025-03-30 03:15:00,2025,Monterrey,Tijuana,1,2,post
+725158,2025-03-30 23:00:00,2025,Santos,Atlético de San Luis,2,3,post
+725159,2025-03-31 01:05:00,2025,León,Pumas UNAM,1,2,post
+725160,2025-04-05 01:00:00,2025,Querétaro,León,1,1,post
+725161,2025-04-05 03:00:00,2025,Tijuana,Necaxa,1,2,post
+725162,2025-04-05 03:05:00,2025,Puebla,Tigres UANL,0,0,post
+725163,2025-04-05 23:00:00,2025,Atlas,FC Juarez,1,1,post
+725164,2025-04-05 23:00:00,2025,Pachuca,América,1,0,post
+725168,2025-04-06 01:00:00,2025,Atlético de San Luis,Mazatlán FC,2,1,post
+725165,2025-04-06 01:05:00,2025,Monterrey,Guadalajara,3,1,post
+725166,2025-04-06 03:10:00,2025,Cruz Azul,Pumas UNAM,3,2,post
+725167,2025-04-07 00:00:00,2025,Toluca,Santos,2,1,post
+725177,2025-04-11 02:05:00,2025,Tijuana,Atlético de San Luis,2,1,post
+725169,2025-04-12 01:00:00,2025,Necaxa,Pachuca,3,5,post
+725170,2025-04-12 03:05:00,2025,Mazatlán FC,Guadalajara,1,1,post
+725171,2025-04-12 23:00:00,2025,León,Puebla,1,0,post
+725172,2025-04-12 23:00:00,2025,Pumas UNAM,FC Juarez,0,0,post
+725174,2025-04-13 01:00:00,2025,Tigres UANL,Monterrey,2,1,post
+725173,2025-04-13 01:05:00,2025,Atlas,Toluca,2,3,post
+725175,2025-04-13 03:15:00,2025,América,Cruz Azul,0,0,post
+725176,2025-04-13 23:00:00,2025,Santos,Querétaro,1,2,post
+725178,2025-04-16 01:00:00,2025,Pachuca,Tigres UANL,0,0,post
+725179,2025-04-16 01:05:00,2025,Guadalajara,Puebla,1,0,post
+725181,2025-04-16 03:00:00,2025,FC Juarez,Necaxa,2,2,post
+725180,2025-04-16 03:05:00,2025,Cruz Azul,León,2,1,post
+725184,2025-04-17 01:00:00,2025,Monterrey,América,1,0,post
+725183,2025-04-17 01:00:00,2025,Querétaro,Atlas,1,2,post
+725182,2025-04-17 02:00:00,2025,Atlético de San Luis,Toluca,0,1,post
+725186,2025-04-17 03:00:00,2025,Mazatlán FC,Tijuana,0,2,post
+725185,2025-04-17 03:05:00,2025,Pumas UNAM,Santos,2,0,post
+725187,2025-04-19 01:00:00,2025,Puebla,Necaxa,0,1,post
+725188,2025-04-19 23:00:00,2025,América,Mazatlán FC,5,0,post
+725190,2025-04-20 01:05:00,2025,Toluca,Cruz Azul,2,2,post
+725191,2025-04-20 03:00:00,2025,Tigres UANL,Pumas UNAM,2,1,post
+725192,2025-04-20 03:15:00,2025,Atlas,Guadalajara,1,1,post
+725193,2025-04-20 23:00:00,2025,Santos,Tijuana,0,4,post
+725195,2025-04-21 01:00:00,2025,Atlético de San Luis,Pachuca,2,1,post
+725194,2025-04-21 01:05:00,2025,León,Monterrey,0,2,post
+725189,2025-04-21 03:00:00,2025,FC Juarez,Querétaro,0,2,post
+735470,2025-04-28 00:00:00,2025,FC Juarez,Pumas UNAM,1,1,post
+735471,2025-04-28 01:30:00,2025,Monterrey,Pachuca,1,2,post
+735577,2025-05-05 01:30:00,2025,Monterrey,Pumas UNAM,2,0,post
+735473,2025-05-08 01:00:00,2025,Monterrey,Toluca,3,2,post
+735475,2025-05-08 03:10:00,2025,Pachuca,América,0,0,post
+735472,2025-05-09 01:00:00,2025,Necaxa,Tigres UANL,0,0,post
+735474,2025-05-09 03:10:00,2025,León,Cruz Azul,2,3,post
+735479,2025-05-11 01:00:00,2025,Toluca,Monterrey,2,1,post
+735476,2025-05-11 03:10:00,2025,América,Pachuca,2,0,post
+735477,2025-05-12 01:00:00,2025,Cruz Azul,León,2,1,post
+735478,2025-05-12 03:10:00,2025,Tigres UANL,Necaxa,2,2,post
+735746,2025-05-15 03:00:00,2025,Tigres UANL,Toluca,1,1,post
+735745,2025-05-16 02:00:00,2025,Cruz Azul,América,1,0,post
+735747,2025-05-18 01:00:00,2025,Toluca,Tigres UANL,3,0,post
+735748,2025-05-19 01:15:00,2025,América,Cruz Azul,2,1,post
+735812,2025-05-23 02:00:00,2025,América,Toluca,0,0,post
+735813,2025-05-26 01:00:00,2025,Toluca,América,2,0,post
+736614,2025-07-12 01:00:00,2025,Puebla,Atlas,2,3,post
+736616,2025-07-12 03:00:00,2025,FC Juarez,América,1,1,post
+736615,2025-07-12 03:05:00,2025,Tijuana,Querétaro,1,0,post
+736617,2025-07-13 01:00:00,2025,Santos,Pumas UNAM,3,0,post
+736618,2025-07-13 01:00:00,2025,Toluca,Necaxa,3,1,post
+736619,2025-07-13 03:05:00,2025,Cruz Azul,Mazatlán FC,0,0,post
+736620,2025-07-13 23:00:00,2025,Pachuca,Monterrey,3,0,post
+736621,2025-07-14 01:00:00,2025,León,Atlético de San Luis,0,1,post
+736622,2025-07-17 01:00:00,2025,América,Tijuana,3,1,post
+736623,2025-07-17 03:05:00,2025,Santos,Toluca,2,4,post
+736624,2025-07-19 01:00:00,2025,Necaxa,Querétaro,3,1,post
+736626,2025-07-19 03:00:00,2025,Atlético de San Luis,Monterrey,0,1,post
+736625,2025-07-19 03:05:00,2025,Mazatlán FC,Puebla,2,1,post
+736627,2025-07-20 01:00:00,2025,Tigres UANL,FC Juarez,1,0,post
+736628,2025-07-20 01:00:00,2025,León,Guadalajara,1,0,post
+736629,2025-07-20 03:05:00,2025,Atlas,Cruz Azul,3,3,post
+736630,2025-07-20 18:00:00,2025,Pumas UNAM,Pachuca,2,3,post
+736631,2025-07-26 01:00:00,2025,Puebla,Santos,1,0,post
+736632,2025-07-26 01:00:00,2025,Querétaro,Pumas UNAM,0,2,post
+736633,2025-07-26 03:00:00,2025,Tijuana,FC Juarez,1,1,post
+736635,2025-07-26 23:00:00,2025,Pachuca,Mazatlán FC,1,0,post
+736634,2025-07-26 23:07:00,2025,Guadalajara,Atlético de San Luis,4,3,post
+736636,2025-07-27 01:00:00,2025,Cruz Azul,León,4,1,post
+736639,2025-07-27 01:00:00,2025,Monterrey,Atlas,3,1,post
+736637,2025-07-27 01:00:00,2025,Toluca,Tigres UANL,3,4,post
+736638,2025-07-27 03:05:00,2025,Necaxa,América,1,1,post
+736640,2025-08-09 03:00:00,2025,Tigres UANL,Puebla,7,0,post
+736641,2025-08-10 01:00:00,2025,América,Querétaro,1,0,post
+736643,2025-08-10 03:00:00,2025,Mazatlán FC,Tijuana,2,2,post
+736642,2025-08-10 03:05:00,2025,Atlas,Pachuca,0,3,post
+736644,2025-08-11 00:00:00,2025,Pumas UNAM,Necaxa,1,1,post
+736645,2025-08-11 02:05:00,2025,Santos,Guadalajara,1,0,post
+736646,2025-08-12 01:00:00,2025,León,Monterrey,1,3,post
+736648,2025-08-12 03:00:00,2025,FC Juarez,Toluca,0,2,post
+736647,2025-08-12 03:05:00,2025,Atlético de San Luis,Cruz Azul,1,2,post
+736649,2025-08-16 01:00:00,2025,Puebla,Atlético de San Luis,0,2,post
+736650,2025-08-16 03:05:00,2025,Necaxa,León,0,1,post
+736652,2025-08-16 23:07:00,2025,Guadalajara,FC Juarez,1,2,post
+736655,2025-08-17 01:00:00,2025,Cruz Azul,Santos,3,2,post
+736653,2025-08-17 01:00:00,2025,Pachuca,Tijuana,0,2,post
+736654,2025-08-17 01:00:00,2025,Tigres UANL,América,1,3,post
+736651,2025-08-17 03:10:00,2025,Toluca,Pumas UNAM,1,1,post
+736656,2025-08-17 22:00:00,2025,Querétaro,Atlas,3,3,post
+736657,2025-08-18 00:00:00,2025,Monterrey,Mazatlán FC,3,2,post
+736658,2025-08-23 01:00:00,2025,FC Juarez,Santos,2,1,post
+736659,2025-08-23 01:00:00,2025,Querétaro,Atlético de San Luis,3,2,post
+736660,2025-08-23 03:00:00,2025,Tijuana,Guadalajara,3,3,post
+736662,2025-08-23 23:00:00,2025,León,Pachuca,1,1,post
+736661,2025-08-24 01:00:00,2025,Mazatlán FC,Tigres UANL,2,2,post
+736663,2025-08-24 01:00:00,2025,Monterrey,Necaxa,3,0,post
+736664,2025-08-24 03:05:00,2025,Cruz Azul,Toluca,1,0,post
+736665,2025-08-24 23:00:00,2025,Pumas UNAM,Puebla,0,0,post
+736666,2025-08-25 01:05:00,2025,Atlas,América,2,4,post
+736667,2025-08-30 01:00:00,2025,Atlético de San Luis,Toluca,1,3,post
+736668,2025-08-30 01:00:00,2025,FC Juarez,Mazatlán FC,1,0,post
+736669,2025-08-30 03:05:00,2025,Puebla,Monterrey,2,4,post
+736670,2025-08-30 23:00:00,2025,León,Querétaro,3,0,post
+736672,2025-08-31 01:00:00,2025,Santos,Tigres UANL,0,1,post
+736671,2025-08-31 01:07:00,2025,Guadalajara,Cruz Azul,1,2,post
+736673,2025-08-31 03:05:00,2025,América,Pachuca,2,0,post
+736674,2025-08-31 22:00:00,2025,Pumas UNAM,Atlas,1,0,post
+736675,2025-09-01 03:00:00,2025,Tijuana,Necaxa,3,0,post
+736677,2025-09-13 01:00:00,2025,Necaxa,FC Juarez,1,1,post
+736678,2025-09-13 03:00:00,2025,Mazatlán FC,Pumas UNAM,1,4,post
+736679,2025-09-13 23:00:00,2025,Pachuca,Cruz Azul,0,1,post
+736680,2025-09-14 01:00:00,2025,Atlas,Santos,2,2,post
+736681,2025-09-14 01:00:00,2025,Tigres UANL,León,0,0,post
+736682,2025-09-14 03:00:00,2025,Toluca,Puebla,3,1,post
+736676,2025-09-14 03:15:00,2025,América,Guadalajara,1,2,post
+736683,2025-09-14 23:00:00,2025,Querétaro,Monterrey,0,1,post
+736684,2025-09-15 01:00:00,2025,Atlético de San Luis,Tijuana,1,1,post
+736685,2025-09-18 01:07:00,2025,Guadalajara,Tigres UANL,0,0,post
+736686,2025-09-20 01:00:00,2025,Cruz Azul,FC Juarez,3,2,post
+736687,2025-09-20 01:00:00,2025,Necaxa,Puebla,1,0,post
+736689,2025-09-20 03:00:00,2025,Mazatlán FC,Atlas,1,1,post
+736688,2025-09-20 03:05:00,2025,Tijuana,León,5,0,post
+736690,2025-09-20 23:00:00,2025,Pachuca,Querétaro,0,2,post
+736692,2025-09-21 01:00:00,2025,Pumas UNAM,Tigres UANL,1,1,post
+736691,2025-09-21 01:07:00,2025,Guadalajara,Toluca,0,3,post
+736693,2025-09-21 03:05:00,2025,Monterrey,América,2,2,post
+736694,2025-09-21 23:00:00,2025,Santos,Atlético de San Luis,1,4,post
+736696,2025-09-24 01:00:00,2025,Puebla,Pachuca,2,2,post
+736695,2025-09-24 01:07:00,2025,Guadalajara,Necaxa,3,1,post
+736697,2025-09-24 03:00:00,2025,FC Juarez,Pumas UNAM,3,1,post
+736698,2025-09-24 03:05:00,2025,León,Mazatlán FC,2,2,post
+736699,2025-09-25 00:00:00,2025,Cruz Azul,Querétaro,2,2,post
+736700,2025-09-25 01:00:00,2025,Tigres UANL,Atlas,2,0,post
+736701,2025-09-25 02:00:00,2025,Toluca,Monterrey,6,2,post
+736703,2025-09-25 03:00:00,2025,Atlético de San Luis,América,0,1,post
+736702,2025-09-25 03:00:00,2025,Santos,Tijuana,1,0,post
+736704,2025-09-27 01:00:00,2025,FC Juarez,León,2,0,post
+736707,2025-09-27 23:00:00,2025,Pachuca,Atlético de San Luis,2,1,post
+736705,2025-09-27 23:00:00,2025,Puebla,Guadalajara,0,2,post
+736706,2025-09-27 23:00:00,2025,Atlas,Necaxa,3,2,post
+736708,2025-09-28 01:00:00,2025,Monterrey,Santos,1,0,post
+736711,2025-09-28 01:00:00,2025,Toluca,Mazatlán FC,3,1,post
+736709,2025-09-28 03:05:00,2025,América,Pumas UNAM,4,1,post
+736710,2025-09-28 23:00:00,2025,Querétaro,Tigres UANL,0,2,post
+736712,2025-09-29 03:05:00,2025,Tijuana,Cruz Azul,2,0,post
+736713,2025-10-04 01:00:00,2025,Necaxa,Pachuca,0,1,post
+736715,2025-10-04 03:00:00,2025,Mazatlán FC,Atlético de San Luis,2,1,post
+736714,2025-10-04 03:05:00,2025,Atlas,FC Juarez,3,1,post
+736716,2025-10-04 23:00:00,2025,Querétaro,Puebla,3,1,post
+736717,2025-10-05 01:00:00,2025,León,Toluca,2,4,post
+736718,2025-10-05 01:00:00,2025,Tigres UANL,Cruz Azul,1,1,post
+736719,2025-10-05 03:05:00,2025,América,Santos,3,0,post
+736720,2025-10-06 01:00:00,2025,Pumas UNAM,Guadalajara,1,2,post
+736721,2025-10-06 03:05:00,2025,Tijuana,Monterrey,2,2,post
+736722,2025-10-18 01:00:00,2025,Puebla,Tijuana,4,3,post
+736724,2025-10-18 03:00:00,2025,Tigres UANL,Necaxa,5,3,post
+736723,2025-10-18 03:00:00,2025,Atlético de San Luis,Atlas,2,0,post
+736726,2025-10-18 23:00:00,2025,FC Juarez,Pachuca,2,2,post
+736725,2025-10-18 23:00:00,2025,Santos,León,2,0,post
+736730,2025-10-18 23:00:00,2025,Toluca,Querétaro,4,0,post
+736728,2025-10-19 01:00:00,2025,Monterrey,Pumas UNAM,1,1,post
+736727,2025-10-19 01:07:00,2025,Guadalajara,Mazatlán FC,2,0,post
+736729,2025-10-19 03:05:00,2025,Cruz Azul,América,2,1,post
+736731,2025-10-22 01:00:00,2025,América,Puebla,2,1,post
+736732,2025-10-22 01:00:00,2025,Necaxa,Cruz Azul,1,1,post
+736733,2025-10-22 03:00:00,2025,Mazatlán FC,Santos,2,2,post
+736734,2025-10-22 03:05:00,2025,Monterrey,FC Juarez,4,2,post
+736736,2025-10-23 01:00:00,2025,Pachuca,Tigres UANL,1,2,post
+736735,2025-10-23 01:00:00,2025,Querétaro,Guadalajara,1,0,post
+736738,2025-10-23 03:00:00,2025,Atlas,León,2,0,post
+736739,2025-10-23 03:00:00,2025,Tijuana,Toluca,0,0,post
+736737,2025-10-23 03:05:00,2025,Pumas UNAM,Atlético de San Luis,0,1,post
+736740,2025-10-25 01:00:00,2025,FC Juarez,Puebla,4,4,post
+736741,2025-10-25 03:00:00,2025,Mazatlán FC,América,2,2,post
+736742,2025-10-25 23:00:00,2025,Tigres UANL,Tijuana,2,0,post
+736744,2025-10-26 01:00:00,2025,León,Pumas UNAM,1,1,post
+736745,2025-10-26 01:07:00,2025,Guadalajara,Atlas,4,1,post
+736746,2025-10-26 03:05:00,2025,Cruz Azul,Monterrey,2,0,post
+736747,2025-10-26 23:00:00,2025,Santos,Querétaro,3,1,post
+736748,2025-10-27 01:00:00,2025,Atlético de San Luis,Necaxa,3,4,post
+736743,2025-10-27 01:00:00,2025,Toluca,Pachuca,2,2,post
+736749,2025-11-01 01:00:00,2025,Necaxa,Santos,4,1,post
+736750,2025-11-01 03:00:00,2025,Atlético de San Luis,FC Juarez,1,2,post
+736751,2025-11-01 03:05:00,2025,Puebla,Cruz Azul,0,3,post
+736752,2025-11-01 23:00:00,2025,Atlas,Toluca,0,0,post
+736753,2025-11-02 01:05:00,2025,Monterrey,Tigres UANL,1,1,post
+736754,2025-11-02 03:10:00,2025,América,León,2,0,post
+736755,2025-11-02 18:00:00,2025,Pumas UNAM,Tijuana,4,1,post
+736756,2025-11-02 23:00:00,2025,Querétaro,Mazatlán FC,1,0,post
+736757,2025-11-03 01:00:00,2025,Pachuca,Guadalajara,0,1,post
+736758,2025-11-08 01:00:00,2025,FC Juarez,Querétaro,1,2,post
+736759,2025-11-08 03:00:00,2025,Mazatlán FC,Necaxa,1,1,post
+736760,2025-11-08 03:00:00,2025,Tijuana,Atlas,2,0,post
+736762,2025-11-08 23:00:00,2025,Tigres UANL,Atlético de San Luis,3,1,post
+736761,2025-11-08 23:07:00,2025,Guadalajara,Monterrey,4,2,post
+736763,2025-11-09 01:00:00,2025,León,Puebla,1,2,post
+736764,2025-11-09 01:00:00,2025,Toluca,América,2,0,post
+736765,2025-11-09 03:05:00,2025,Cruz Azul,Pumas UNAM,2,3,post
+736766,2025-11-09 23:00:00,2025,Santos,Pachuca,1,0,post
+760937,2025-11-21 01:00:00,2025,Pachuca,Pumas UNAM,3,1,post
+760936,2025-11-21 03:00:00,2025,Tijuana,FC Juarez,3,1,post
+761414,2025-11-24 01:00:00,2025,FC Juarez,Pachuca,2,1,post
+760940,2025-11-27 01:00:00,2025,FC Juarez,Toluca,1,2,post
+760941,2025-11-27 03:05:00,2025,Monterrey,América,2,0,post
+760939,2025-11-27 05:00:00,2025,Tijuana,Tigres UANL,3,0,post
+760938,2025-11-28 02:07:00,2025,Guadalajara,Cruz Azul,0,0,post
+760944,2025-11-29 23:00:00,2025,América,Monterrey,2,1,post
+760945,2025-11-30 01:05:00,2025,Toluca,FC Juarez,0,0,post
+760942,2025-11-30 03:10:00,2025,Tigres UANL,Tijuana,5,0,post
+760943,2025-12-01 01:00:00,2025,Cruz Azul,Guadalajara,3,2,post
+762218,2025-12-04 01:00:00,2025,Cruz Azul,Tigres UANL,1,1,post
+762219,2025-12-04 03:10:00,2025,Monterrey,Toluca,1,0,post
+762221,2025-12-07 01:00:00,2025,Toluca,Monterrey,3,2,post
+762220,2025-12-07 03:10:00,2025,Tigres UANL,Cruz Azul,1,1,post
+762464,2025-12-12 02:00:00,2025,Tigres UANL,Toluca,1,0,post
+762465,2025-12-15 01:00:00,2025,Toluca,Tigres UANL,2,1,post
+401840817,2026-01-10 01:00:00,2026,Mazatlán FC,FC Juarez,1,2,post
+401840815,2026-01-10 03:00:00,2026,Atlas,Puebla,1,0,post
+401840816,2026-01-10 03:00:00,2026,Tijuana,América,0,0,post
+401840818,2026-01-10 23:07:00,2026,Guadalajara,Pachuca,2,0,post
+401840819,2026-01-11 01:00:00,2026,León,Cruz Azul,2,1,post
+401840820,2026-01-11 01:00:00,2026,Santos,Necaxa,1,3,post
+401840821,2026-01-11 03:05:00,2026,Monterrey,Toluca,0,1,post
+401840822,2026-01-11 18:00:00,2026,Pumas UNAM,Querétaro,1,1,post
+401840823,2026-01-12 01:00:00,2026,Atlético de San Luis,Tigres UANL,1,2,post
+401840826,2026-01-13 23:00:00,2026,Puebla,Mazatlán FC,2,1,post
+401840824,2026-01-14 01:00:00,2026,Necaxa,Monterrey,0,2,post
+401840825,2026-01-14 01:06:00,2026,Pachuca,León,2,1,post
+401840828,2026-01-14 03:10:00,2026,FC Juarez,Guadalajara,0,1,post
+401840827,2026-01-14 23:00:00,2026,Cruz Azul,Atlas,2,0,post
+401840830,2026-01-15 01:00:00,2026,Querétaro,Tijuana,1,2,post
+401840829,2026-01-15 01:05:00,2026,América,Atlético de San Luis,0,2,post
+401840831,2026-01-15 03:06:00,2026,Tigres UANL,Pumas UNAM,0,1,post
+401840832,2026-01-15 03:10:00,2026,Toluca,Santos,3,1,post
+401840833,2026-01-17 03:00:00,2026,Mazatlán FC,Monterrey,1,5,post
+401840835,2026-01-17 23:00:00,2026,Necaxa,Atlas,0,1,post
+401840834,2026-01-17 23:07:00,2026,Guadalajara,Querétaro,2,1,post
+401840836,2026-01-18 01:00:00,2026,Tigres UANL,Toluca,0,0,post
+401840838,2026-01-18 03:05:00,2026,Cruz Azul,Puebla,1,0,post
+401840837,2026-01-18 03:06:00,2026,Tijuana,Atlético de San Luis,1,1,post
+401840839,2026-01-18 18:00:00,2026,Pumas UNAM,León,1,1,post
+401840840,2026-01-18 23:00:00,2026,Santos,FC Juarez,2,2,post
+401840841,2026-01-19 01:06:00,2026,Pachuca,América,0,0,post
+401840842,2026-01-31 01:00:00,2026,Puebla,Toluca,0,0,post
+401840843,2026-01-31 03:00:00,2026,Pumas UNAM,Santos,4,0,post
+401840844,2026-01-31 03:06:00,2026,FC Juarez,Cruz Azul,3,4,post
+401840848,2026-01-31 22:00:00,2026,América,Necaxa,2,0,post
+401840845,2026-01-31 23:00:00,2026,Atlas,Mazatlán FC,1,0,post
+401840850,2026-01-31 23:00:00,2026,Atlético de San Luis,Guadalajara,2,3,post
+401840847,2026-02-01 01:00:00,2026,Monterrey,Tijuana,2,2,post
+401840846,2026-02-01 01:10:00,2026,León,Tigres UANL,1,2,post
+401840849,2026-02-01 23:00:00,2026,Querétaro,Pachuca,0,0,post
+401840852,2026-02-07 01:00:00,2026,Necaxa,Atlético de San Luis,4,1,post
+401840851,2026-02-07 01:00:00,2026,Tigres UANL,Santos,5,1,post
+401840853,2026-02-07 03:06:00,2026,Mazatlán FC,Guadalajara,1,2,post
+401840854,2026-02-07 03:06:00,2026,Tijuana,Puebla,0,0,post
+401840855,2026-02-07 23:00:00,2026,Querétaro,León,2,0,post
+401840856,2026-02-07 23:00:00,2026,Toluca,Cruz Azul,1,1,post
+401840857,2026-02-08 01:05:00,2026,Atlas,Pumas UNAM,2,2,post
+401840858,2026-02-08 01:06:00,2026,Pachuca,FC Juarez,2,0,post
+401840859,2026-02-08 03:10:00,2026,América,Monterrey,1,0,post
+401840860,2026-02-14 01:00:00,2026,Puebla,Pumas UNAM,2,3,post
+401840862,2026-02-14 03:05:00,2026,Toluca,Tijuana,1,0,post
+401840863,2026-02-14 23:00:00,2026,Atlético de San Luis,Querétaro,3,0,post
+401840865,2026-02-14 23:00:00,2026,Pachuca,Atlas,3,1,post
+401840864,2026-02-15 01:00:00,2026,Monterrey,León,1,0,post
+401840861,2026-02-15 01:06:00,2026,FC Juarez,Necaxa,1,2,post
+401840866,2026-02-15 03:07:00,2026,Guadalajara,América,1,0,post
+401840868,2026-02-15 22:30:00,2026,Cruz Azul,Tigres UANL,2,1,post
+401840867,2026-02-15 23:00:00,2026,Santos,Mazatlán FC,1,2,post
+401840869,2026-02-21 01:00:00,2026,Tigres UANL,Pachuca,1,2,post
+401840870,2026-02-21 03:06:00,2026,Puebla,América,0,4,post
+401840871,2026-02-21 23:00:00,2026,Atlas,Atlético de San Luis,3,2,post
+401840872,2026-02-22 01:00:00,2026,León,Santos,2,1,post
+401840873,2026-02-22 01:00:00,2026,Necaxa,Toluca,0,3,post
+401840874,2026-02-22 03:05:00,2026,Cruz Azul,Guadalajara,2,1,post
+401840877,2026-02-22 05:10:00,2026,Tijuana,Mazatlán FC,1,1,post
+401840875,2026-02-22 23:00:00,2026,Pumas UNAM,Monterrey,2,0,post
+401840878,2026-02-28 01:00:00,2026,Mazatlán FC,Pachuca,1,0,post
+401840879,2026-02-28 01:00:00,2026,Querétaro,Santos,2,2,post
+401840881,2026-02-28 03:00:00,2026,FC Juarez,Atlas,3,1,post
+401840880,2026-02-28 03:06:00,2026,Tijuana,Pumas UNAM,1,1,post
+401840883,2026-02-28 23:00:00,2026,Toluca,Guadalajara,2,0,post
+401840882,2026-02-28 23:00:00,2026,Atlético de San Luis,Puebla,0,1,post
+401840885,2026-03-01 01:05:00,2026,Monterrey,Cruz Azul,0,2,post
+401840884,2026-03-01 01:06:00,2026,León,Necaxa,2,1,post
+401840886,2026-03-01 03:10:00,2026,América,Tigres UANL,1,4,post
+401840887,2026-03-04 01:00:00,2026,Pachuca,Necaxa,2,1,post
+401840888,2026-03-04 01:00:00,2026,Santos,Cruz Azul,1,2,post
+401840890,2026-03-04 03:00:00,2026,Atlético de San Luis,Mazatlán FC,4,1,post
+401840889,2026-03-04 03:10:00,2026,Pumas UNAM,Toluca,2,3,post
+401840891,2026-03-05 01:00:00,2026,Monterrey,Querétaro,4,0,post
+401840892,2026-03-05 01:00:00,2026,Puebla,Tigres UANL,3,1,post
+401840894,2026-03-05 03:00:00,2026,América,FC Juarez,1,2,post
+401840893,2026-03-05 03:00:00,2026,Atlas,Tijuana,2,1,post
+401840895,2026-03-07 01:00:00,2026,Mazatlán FC,León,4,2,post
+401840896,2026-03-07 03:00:00,2026,Necaxa,Pumas UNAM,0,1,post
+401840901,2026-03-07 23:00:00,2026,Querétaro,América,1,2,post
+401840897,2026-03-07 23:00:00,2026,Cruz Azul,Atlético de San Luis,3,0,post
+401840899,2026-03-08 01:05:00,2026,Atlas,Guadalajara,1,2,post
+401840898,2026-03-08 01:06:00,2026,Pachuca,Puebla,2,1,post
+401840900,2026-03-08 03:00:00,2026,Tigres UANL,Monterrey,1,0,post
+401840902,2026-03-08 23:00:00,2026,Toluca,FC Juarez,3,1,post
+401840903,2026-03-09 03:06:00,2026,Tijuana,Santos,1,2,post
+401840905,2026-03-14 01:00:00,2026,Puebla,Necaxa,0,0,post
+401840906,2026-03-14 03:00:00,2026,FC Juarez,Monterrey,2,2,post
+401840908,2026-03-14 23:00:00,2026,Atlético de San Luis,Pachuca,1,1,post
+401840907,2026-03-14 23:07:00,2026,Guadalajara,Santos,3,0,post
+401840909,2026-03-15 01:00:00,2026,León,Tijuana,0,3,post
+401840910,2026-03-15 01:00:00,2026,Toluca,Atlas,1,1,post
+401840911,2026-03-15 03:10:00,2026,Pumas UNAM,Cruz Azul,2,2,post
+401840904,2026-03-15 23:00:00,2026,Tigres UANL,Querétaro,0,0,post
+401840912,2026-03-16 01:00:00,2026,América,Mazatlán FC,2,0,post
+401840913,2026-03-19 02:07:00,2026,Guadalajara,León,5,0,post
+401840914,2026-03-21 01:00:00,2026,Necaxa,Tijuana,3,0,post
+401840915,2026-03-21 03:06:00,2026,Mazatlán FC,Cruz Azul,1,1,post
+401840916,2026-03-21 23:00:00,2026,Atlas,Querétaro,0,0,post
+401840918,2026-03-22 01:00:00,2026,Atlético de San Luis,León,1,2,post
+401840919,2026-03-22 01:05:00,2026,Monterrey,Guadalajara,2,3,post
+401840920,2026-03-22 03:10:00,2026,Pumas UNAM,América,1,0,post
+401840917,2026-03-22 23:00:00,2026,Pachuca,Toluca,1,1,post
+401840921,2026-03-22 23:00:00,2026,Santos,Puebla,2,1,post
+401840922,2026-03-23 01:06:00,2026,FC Juarez,Tigres UANL,2,1,post
+401840923,2026-04-04 01:00:00,2026,Puebla,FC Juarez,1,1,post
+401840924,2026-04-04 03:00:00,2026,Necaxa,Mazatlán FC,2,1,post
+401840925,2026-04-04 03:06:00,2026,Tijuana,Tigres UANL,1,0,post
+401840926,2026-04-04 23:00:00,2026,Monterrey,Atlético de San Luis,1,2,post
+401840930,2026-04-04 23:00:00,2026,Querétaro,Toluca,1,0,post
+401840928,2026-04-05 01:00:00,2026,León,Atlas,2,0,post
+401840927,2026-04-05 01:05:00,2026,Cruz Azul,Pachuca,1,2,post
+401840929,2026-04-05 03:10:00,2026,Santos,América,1,1,post
+401840931,2026-04-06 02:07:00,2026,Guadalajara,Pumas UNAM,2,2,post
+401840876,2026-04-08 00:00:00,2026,Querétaro,FC Juarez,1,1,post
+401840932,2026-04-11 01:00:00,2026,Puebla,León,0,1,post
+401840933,2026-04-11 03:06:00,2026,FC Juarez,Tijuana,1,2,post
+401840934,2026-04-11 23:00:00,2026,Querétaro,Necaxa,3,1,post
+401840935,2026-04-11 23:00:00,2026,Tigres UANL,Guadalajara,4,1,post
+401840937,2026-04-12 01:00:00,2026,Atlas,Monterrey,0,0,post
+401840936,2026-04-12 01:00:00,2026,Pachuca,Santos,4,2,post
+401840938,2026-04-12 03:05:00,2026,América,Cruz Azul,1,1,post
+401840939,2026-04-12 18:00:00,2026,Pumas UNAM,Mazatlán FC,3,1,post
+401840940,2026-04-13 01:00:00,2026,Toluca,Atlético de San Luis,1,1,post
+401840942,2026-04-18 01:00:00,2026,Atlético de San Luis,Pumas UNAM,0,2,post
+401840941,2026-04-18 01:00:00,2026,Mazatlán FC,Querétaro,1,1,post
+401840944,2026-04-18 23:00:00,2026,Cruz Azul,Tijuana,1,1,post
+401840943,2026-04-18 23:00:00,2026,Necaxa,Tigres UANL,1,1,post
+401840946,2026-04-19 01:05:00,2026,Monterrey,Pachuca,1,3,post
+401840945,2026-04-19 01:07:00,2026,Guadalajara,Puebla,5,0,post
+401840947,2026-04-19 03:06:00,2026,León,FC Juarez,3,1,post
+401840948,2026-04-19 03:10:00,2026,América,Toluca,2,1,post
+401840949,2026-04-19 23:00:00,2026,Santos,Atlas,0,1,post
+401840950,2026-04-22 01:00:00,2026,Pumas UNAM,FC Juarez,4,2,post
+401840951,2026-04-22 01:00:00,2026,Querétaro,Cruz Azul,1,1,post
+401840952,2026-04-22 03:05:00,2026,Monterrey,Puebla,2,1,post
+401840953,2026-04-22 03:06:00,2026,León,América,2,3,post
+401840954,2026-04-23 01:00:00,2026,Atlas,Tigres UANL,0,0,post
+401840955,2026-04-23 01:00:00,2026,Atlético de San Luis,Santos,2,0,post
+401840956,2026-04-23 01:00:00,2026,Mazatlán FC,Toluca,4,3,post
+401840957,2026-04-23 03:06:00,2026,Tijuana,Pachuca,3,1,post
+401840958,2026-04-23 03:10:00,2026,Necaxa,Guadalajara,0,0,post
+401840959,2026-04-25 03:00:00,2026,Puebla,Querétaro,1,2,post
+401840961,2026-04-25 23:00:00,2026,Tigres UANL,Mazatlán FC,5,1,post
+401840960,2026-04-25 23:00:00,2026,Pachuca,Pumas UNAM,0,2,post
+401840962,2026-04-26 01:05:00,2026,Toluca,León,4,1,post
+401840963,2026-04-26 01:07:00,2026,Guadalajara,Tijuana,0,0,post
+401840964,2026-04-26 03:00:00,2026,FC Juarez,Atlético de San Luis,2,1,post
+401840965,2026-04-26 03:10:00,2026,América,Atlas,0,1,post
+401840966,2026-04-26 23:00:00,2026,Santos,Monterrey,3,0,post
+401840967,2026-04-27 01:05:00,2026,Cruz Azul,Necaxa,4,1,post
+401870486,2026-05-03 01:00:00,2026,Tigres UANL,Guadalajara,3,1,post
+401870484,2026-05-03 03:15:00,2026,Atlas,Cruz Azul,2,3,post
+401870485,2026-05-03 23:00:00,2026,América,Pumas UNAM,3,3,post
+401870614,2026-05-04 01:15:00,2026,Toluca,Pachuca,0,1,post
+401870507,2026-05-10 01:07:00,2026,Guadalajara,Tigres UANL,2,0,post
+401870509,2026-05-10 03:15:00,2026,Cruz Azul,Atlas,1,0,post
+401870615,2026-05-10 23:00:00,2026,Pachuca,Toluca,2,0,post
+401870508,2026-05-11 01:15:00,2026,Pumas UNAM,América,3,3,post
+401872570,2026-05-14 02:00:00,2026,Cruz Azul,Guadalajara,2,2,post
+401872572,2026-05-15 01:00:00,2026,Pachuca,Pumas UNAM,1,0,post
+401872571,2026-05-17 01:07:00,2026,Guadalajara,Cruz Azul,1,2,post
+401872573,2026-05-18 01:00:00,2026,Pumas UNAM,Pachuca,1,0,post
+401873245,2026-05-22 02:00:00,2026,Cruz Azul,Pumas UNAM,0,0,post
+401873246,2026-05-25 01:00:00,2026,Pumas UNAM,Cruz Azul,1,2,post
+401877045,2026-07-17 01:00:00,2026,Necaxa,Atlante,2,1,post
+401877044,2026-07-17 03:10:00,2026,Tijuana,Tigres UANL,3,1,post
+401877043,2026-07-18 01:00:00,2026,Atlético de San Luis,Cruz Azul,2,3,post
+401877042,2026-07-18 01:00:00,2026,León,Atlas,2,3,post
+401877041,2026-07-18 03:00:00,2026,FC Juarez,Puebla,0,1,post
