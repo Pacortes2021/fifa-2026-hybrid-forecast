@@ -383,7 +383,8 @@ def cargar_y_entrenar():
         "poisson_params": gp.params,
         "rho_dc": rho_dc,
         "partidos": partidos,
-        "box_dict": box_dict
+        "box_dict": box_dict,
+        "df_dataset": df_dataset
     }
 
 
@@ -808,3 +809,70 @@ def monte_carlo(M, n_sims=5000, fijos=None):
         
     df_res = pd.DataFrame(filas).sort_values(by="P_campeon", ascending=False).reset_index(drop=True)
     return df_res
+from sklearn.metrics import log_loss, accuracy_score
+
+def validacion_en_vivo(M, temporada_val=2026):
+    """
+    Compara las predicciones point-in-time (del df_dataset) con los resultados reales 
+    para una temporada dada y retorna métricas y tablas.
+    """
+    df = M["df_dataset"]
+    df_val = df[df["temporada"] == temporada_val].copy()
+    
+    if len(df_val) == 0:
+        return None, None, None
+        
+    pipe = M["pipe"]
+    features = M["features"]
+    
+    X_val = df_val[features].fillna(0.0)
+    y_val = df_val["resultado"]
+    
+    # Predecir
+    probs = pipe.predict_proba(X_val) # [visita, empate, local]
+    preds = pipe.predict(X_val)
+    
+    # Calcular log-loss y accuracy global
+    ll = log_loss(y_val, probs, labels=[0, 1, 2])
+    acc = accuracy_score(y_val, preds)
+    
+    # Frecuencias base para el baseline
+    freqs = y_val.value_counts(normalize=True)
+    baseline_probs = np.zeros_like(probs)
+    for i, c in enumerate([0, 1, 2]):
+        baseline_probs[:, i] = freqs.get(c, 0.33)
+    ll_base = log_loss(y_val, baseline_probs, labels=[0, 1, 2])
+    
+    met = {
+        "n": len(df_val),
+        "acierto": acc,
+        "logloss": ll,
+        "logloss_base": ll_base
+    }
+    
+    # Tabla detallada partido a partido
+    df_val["Prob_Visita"] = probs[:, 0]
+    df_val["Prob_Empate"] = probs[:, 1]
+    df_val["Prob_Local"] = probs[:, 2]
+    df_val["Prediccion"] = preds
+    
+    # Evolución
+    df_val = df_val.sort_values("fecha").reset_index(drop=True)
+    
+    evol_rows = []
+    log_losses = []
+    for i in range(1, len(df_val) + 1):
+        sub_y = df_val["resultado"].iloc[:i]
+        sub_p = probs[:i]
+        try:
+            curr_ll = log_loss(sub_y, sub_p, labels=[0, 1, 2])
+            log_losses.append(curr_ll)
+        except Exception:
+            log_losses.append(np.nan)
+            
+    evol = pd.DataFrame({
+        "partido": range(1, len(df_val) + 1),
+        "logloss_acum": log_losses
+    })
+    
+    return df_val, met, evol

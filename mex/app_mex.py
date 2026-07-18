@@ -101,7 +101,7 @@ st.markdown('<div class="main-title">🏆 Portal de Predicción Liga MX</div>', 
 st.markdown('<div class="main-subtitle">Modelo de Regularización LASSO (L1) + Simulación de Liguilla y Play-In</div>', unsafe_allow_html=True)
 
 # Tabs
-tab1, tab2, tab3 = st.tabs(["⚽ Predicción Versus", "📊 Tabla y Proyecciones", "🔬 Importancia de Variables"])
+tab1, tab2, tab3, tab4 = st.tabs(["⚽ Predicción Versus", "📊 Tabla y Proyecciones", "🔬 Importancia de Variables", "🎯 Validación vs Realidad"])
 
 # ============================================================================
 # TAB 1: Predicción Versus
@@ -127,6 +127,15 @@ with tab1:
         
         la_lbl = get_label(a)
         lb_lbl = get_label(b)
+        
+        # Alertas de Heurísticas de Alta Efectividad
+        if p[0] > 0.55 and (la - lb) > 1.0:
+            st.success(f"🔥 **ALERTA DE ALTA CONFIANZA (Acierto 82.6% Histórico):** Consenso perfecto entre Machine Learning (>55%) y modelo Poisson (>1.0 goles dif) a favor de victoria de **{a}**.")
+        elif p[0] > 0.60:
+            st.info(f"💪 **FAVORITO CLARO (Acierto 71% Histórico):** El modelo de Machine Learning asigna más del 60% de probabilidad de victoria a **{a}**.")
+        elif p[2] > 0.50:
+            st.success(f"⚠️ **VISITA FUERTE (Acierto 67% Histórico):** Probabilidad >50% para el equipo visitante (**{b}**). Es un evento raro en México y suele ser muy rentable.")
+
         
         # Mostrar Probabilidades
         col_probs, col_stats = st.columns(2)
@@ -249,6 +258,77 @@ with tab3:
         fig, ax = plt.subplots(figsize=(6, 5))
         top_n = df_imp.head(15)
         ax.barh(top_n["Variable"][::-1], top_n["Peso Absoluto Promedio"][::-1], color="#008170")
-        ax.set_xlabel("Importancia Relativa (L1 Coef)")
         ax.set_title("Top 15 Características Predictoras")
         st.pyplot(fig)
+
+# ============================================================================
+# TAB 4: Validación vs Realidad
+# ============================================================================
+with tab4:
+    st.markdown('<div class="sec-title">El Modelo contra la Realidad (Out-of-sample)</div>', unsafe_allow_html=True)
+    st.markdown("Comparación de la predicción **pre-partido** del modelo contra el **resultado real** para los partidos ya jugados.")
+    
+    # Seleccion de temporada
+    temporadas_disponibles = sorted(M["df_dataset"]["temporada"].unique(), reverse=True)
+    temporada_sel = st.selectbox("Selecciona la temporada a validar:", temporadas_disponibles, index=0)
+    
+    df_val, met, evol = mo.validacion_en_vivo(M, temporada_val=temporada_sel)
+    
+    if df_val is None or len(df_val) == 0:
+        st.info("Aún no hay partidos finalizados en la temporada 2026 para validar.")
+    else:
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("Partidos Jugados", met["n"])
+        m2.metric("Acierto (1X2)", f"{met['acierto']:.1%}")
+        m3.metric("Log-loss modelo", f"{met['logloss']:.3f}", 
+                  f"{met['logloss'] - met['logloss_base']:+.3f} vs baseline", delta_color="inverse")
+        m4.metric("Log-loss baseline", f"{met['logloss_base']:.3f}")
+        
+        if met["logloss"] < met["logloss_base"]:
+            st.success(f"El modelo va **por encima** del baseline en {met['n']} partidos reales de esta temporada. 👍")
+        else:
+            st.warning(f"⚠️ El modelo va por debajo del baseline, pero puede ser por la baja cantidad de partidos.")
+            
+        # Tabla detallada
+        st.markdown("##### Historial de Predicciones")
+        df_show = df_val[["fecha", "local", "visita", "goles_local", "goles_visita", "resultado", "Prediccion", "Prob_Local", "Prob_Empate", "Prob_Visita"]].copy()
+        df_show["Acierto"] = (df_show["resultado"] == df_show["Prediccion"]).replace({True: "✅", False: "❌"})
+        df_show["Prob_Local"] = df_show["Prob_Local"].apply(lambda x: f"{x:.1%}")
+        df_show["Prob_Empate"] = df_show["Prob_Empate"].apply(lambda x: f"{x:.1%}")
+        df_show["Prob_Visita"] = df_show["Prob_Visita"].apply(lambda x: f"{x:.1%}")
+        
+        st.dataframe(df_show, hide_index=True, width='stretch')
+        
+        c_plot, c_table = st.columns([6, 4])
+        with c_plot:
+            if met["n"] >= 3:
+                fig, ax = plt.subplots(figsize=(7, 4))
+                ax.plot(evol["partido"], evol["logloss_acum"], "o-", color="#005b41", label="Modelo (acumulado)")
+                ax.axhline(met["logloss_base"], color="#dc2626", ls="--", lw=1.5, label="Baseline")
+                ax.set_xlabel("Partidos jugados (cronológico)")
+                ax.set_ylabel("Log-loss acumulado")
+                ax.set_title("Evolución del Log-loss en la Temporada")
+                ax.legend()
+                st.pyplot(fig)
+                
+        with c_table:
+            st.markdown("##### % Acierto por Equipo")
+            # Calcular acierto donde el equipo participó
+            team_stats = []
+            equipos = set(df_val["local"]).union(set(df_val["visita"]))
+            for eq in equipos:
+                df_eq = df_val[(df_val["local"] == eq) | (df_val["visita"] == eq)]
+                if len(df_eq) > 0:
+                    aciertos = (df_eq["resultado"] == df_eq["Prediccion"]).sum()
+                    team_stats.append({
+                        "Equipo": eq,
+                        "Partidos": len(df_eq),
+                        "Aciertos": aciertos,
+                        "% Acierto": aciertos / len(df_eq)
+                    })
+            if team_stats:
+                df_teams = pd.DataFrame(team_stats).sort_values("% Acierto", ascending=False)
+                st.dataframe(
+                    df_teams.style.format({"% Acierto": "{:.1%}"}).background_gradient(subset=["% Acierto"], cmap="YlGn"),
+                    hide_index=True, width='stretch'
+                )
