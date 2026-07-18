@@ -308,7 +308,7 @@ def cargar_y_entrenar():
     for C in [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0]:
         pipe = Pipeline([
             ("sc", StandardScaler()),
-            ("lr", LogisticRegression(penalty="l1", solver="liblinear", C=C, max_iter=2000))
+            ("lr", LogisticRegression(penalty="l1", solver="liblinear", multi_class="ovr", C=C, max_iter=2000))
         ])
         pipe.fit(X_train, y_train)
         probs = pipe.predict_proba(X_test)
@@ -324,7 +324,7 @@ def cargar_y_entrenar():
     # Pipeline final con mejor C
     pipe_final = Pipeline([
         ("sc", StandardScaler()),
-        ("lr", LogisticRegression(penalty="l1", solver="liblinear", C=best_c, max_iter=2000))
+        ("lr", LogisticRegression(penalty="l1", solver="liblinear", multi_class="ovr", C=best_c, max_iter=2000))
     ])
     pipe_final.fit(df_dataset[cols_features].fillna(0.0), df_dataset["resultado"])
     
