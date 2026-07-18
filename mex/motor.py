@@ -876,3 +876,40 @@ def validacion_en_vivo(M, temporada_val=2026):
     })
     
     return df_val, met, evol
+
+
+def obtener_tabla_actual(M):
+    partidos = M["partidos"]
+    p_actuales = partidos[partidos.temporada == 2026]
+    
+    tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
+    
+    # Equipos únicos
+    equipos = set(ALTITUDES.keys()).difference({"Atlante"})
+    for eq in equipos:
+        tabla[eq] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        
+    for r in p_actuales.itertuples(index=False):
+        l, v, gl, gv = r.local, r.visita, int(r.goles_local), int(r.goles_visita)
+        if l not in tabla: tabla[l] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        if v not in tabla: tabla[v] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        tabla[l]["GF"] += gl
+        tabla[l]["GC"] += gv
+        tabla[v]["GF"] += gv
+        tabla[v]["GC"] += gl
+        if gl > gv:
+            tabla[l]["PTS"] += 3
+            tabla[l]["PG"] += 1
+            tabla[v]["PP"] += 1
+        elif gl == gv:
+            tabla[l]["PTS"] += 1
+            tabla[v]["PTS"] += 1
+            tabla[l]["PE"] += 1
+            tabla[v]["PE"] += 1
+        else:
+            tabla[v]["PTS"] += 3
+            tabla[v]["PG"] += 1
+            tabla[l]["PP"] += 1
+            
+    return ordenar_tabla(tabla)
+

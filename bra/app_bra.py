@@ -205,17 +205,26 @@ with tab1:
 # TAB 2: Tabla y Proyecciones de Monte Carlo
 # ============================================================================
 with tab2:
-    st.markdown('<div class="sec-title">Proyecciones de Fin de Temporada</div>', unsafe_allow_html=True)
-    st.markdown("Se simulan **4.000 campeonatos completos** a partir de los puntos actuales para calcular el campeón, copas y descenso.")
+    st.markdown('<div class="sec-title">Tabla General y Proyecciones Monte Carlo</div>', unsafe_allow_html=True)
     
+    col_act, col_proj = st.columns(2)
+    
+    # 1. Tabla Actual
+    df_actual = mo.obtener_tabla_actual(M)
+    df_actual_vis = df_actual.copy()
+    df_actual_vis["Equipo"] = df_actual_vis["Selección"].apply(get_label)
+    df_actual_vis = df_actual_vis[["Equipo", "PTS", "PG", "PE", "PP", "DG", "GF"]]
+    
+    with col_act:
+        st.markdown('<div class="card-title">Tabla de Posiciones Actual (Real)</div>', unsafe_allow_html=True)
+        st.dataframe(df_actual_vis, hide_index=True, width='stretch', height=500)
+        
+    # 2. Proyecciones
     last_key = f"{len(partidos_rec)}-{partidos_rec.fecha.max()}"
     df_proy = simular_campeonato(M, last_key)
     
     df_proy_visual = df_proy.copy()
     df_proy_visual["Equipo"] = df_proy_visual["Selección"].apply(get_label)
-    df_proy_visual = df_proy_visual.drop(columns=["Selección"])
-    
-    # Reordenar columnas
     df_proy_visual = df_proy_visual[[
         "Equipo", "Puntos esperados", "P_campeon", "P_libertadores_directo", 
         "P_libertadores_total", "P_sudamericana", "P_descenso"
@@ -229,19 +238,23 @@ with tab2:
         "P_descenso": "Descenso ⬇️"
     })
     
-    st.dataframe(
-        df_proy_visual.style.format({
-            "Pts Esperados": "{:.1f}",
-            "🏆 Campeón": "{:.1%}",
-            "Libertadores (G.G.)": "{:.1%}",
-            "Libertadores (Total)": "{:.1%}",
-            "Sudamericana": "{:.1%}",
-            "Descenso ⬇️": "{:.1%}"
-        }).background_gradient(subset=["🏆 Campeón"], cmap="YlGn")
-          .background_gradient(subset=["Descenso ⬇️"], cmap="OrRd"),
-        hide_index=True,
-        width='stretch'
-    )
+    with col_proj:
+        st.markdown('<div class="card-title">Proyecciones de Fin de Temporada (Monte Carlo)</div>', unsafe_allow_html=True)
+        st.dataframe(
+            df_proy_visual.style.format({
+                "Pts Esperados": "{:.1f}",
+                "🏆 Campeón": "{:.1%}",
+                "Libertadores (G.G.)": "{:.1%}",
+                "Libertadores (Total)": "{:.1%}",
+                "Sudamericana": "{:.1%}",
+                "Descenso ⬇️": "{:.1%}"
+            }).background_gradient(subset=["🏆 Campeón"], cmap="YlGn")
+              .background_gradient(subset=["Descenso ⬇️"], cmap="OrRd"),
+            hide_index=True,
+            width='stretch',
+            height=500
+        )
+
 
 # ============================================================================
 # TAB 3: Importancia de Variables

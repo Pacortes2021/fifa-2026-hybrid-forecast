@@ -198,37 +198,48 @@ with tab1:
 # TAB 2: Tabla y Proyecciones de Monte Carlo
 # ============================================================================
 with tab2:
-    st.markdown('<div class="sec-title">Proyecciones de Fin de Temporada</div>', unsafe_allow_html=True)
-    st.markdown("Se simulan **4.000 torneos completos** a partir de la tabla actual, incorporando la liguilla y el Play-In para obtener el porcentaje de campeonar.")
+    st.markdown('<div class="sec-title">Tabla General y Proyecciones Monte Carlo</div>', unsafe_allow_html=True)
     
-    # Obtener última fecha/evento para cache key
+    col_act, col_proj = st.columns(2)
+    
+    # 1. Tabla Actual
+    df_actual = mo.obtener_tabla_actual(M)
+    df_actual_vis = df_actual.copy()
+    df_actual_vis["Equipo"] = df_actual_vis["Selección"].apply(get_label)
+    df_actual_vis = df_actual_vis[["Equipo", "PTS", "PG", "PE", "PP", "DG", "GF"]]
+    
+    with col_act:
+        st.markdown('<div class="card-title">Tabla de Posiciones Actual (Real)</div>', unsafe_allow_html=True)
+        st.dataframe(df_actual_vis, hide_index=True, width='stretch', height=500)
+        
+    # 2. Proyecciones
     partidos_rec = M["partidos"]
     last_key = f"{len(partidos_rec)}-{partidos_rec.fecha.max()}"
-    
     df_proy = simular_liga(M, last_key)
     
-    # Emojis en la visualización de tabla
     df_proy_visual = df_proy.copy()
     df_proy_visual["Equipo"] = df_proy_visual["Selección"].apply(get_label)
-    df_proy_visual = df_proy_visual.drop(columns=["Selección"])
-    
-    # Reordenar columnas para una visualización premium
     df_proy_visual = df_proy_visual[["Equipo", "Puntos esperados", "P_directo_QF", "P_Liguilla_total", "P_campeon"]]
     df_proy_visual = df_proy_visual.rename(columns={
-        "P_directo_QF": "P(Top 6 Directo)",
-        "P_Liguilla_total": "P(Clasificar Liguilla)",
-        "P_campeon": "🏆 P(Campeón)"
+        "Puntos esperados": "Pts Esperados",
+        "P_directo_QF": "P(Top 6)",
+        "P_Liguilla_total": "P(Liguilla)",
+        "P_campeon": "🏆 P(Camp)"
     })
     
-    st.dataframe(
-        df_proy_visual.style.format({
-            "P(Top 6 Directo)": "{:.1%}",
-            "P(Clasificar Liguilla)": "{:.1%}",
-            "🏆 P(Campeón)": "{:.1%}"
-        }).background_gradient(subset=["🏆 P(Campeón)"], cmap="YlGn"),
-        hide_index=True,
-        width='stretch'
-    )
+    with col_proj:
+        st.markdown('<div class="card-title">Proyecciones de Fin de Temporada (Monte Carlo)</div>', unsafe_allow_html=True)
+        st.dataframe(
+            df_proy_visual.style.format({
+                "Pts Esperados": "{:.1f}",
+                "P(Top 6)": "{:.1%}",
+                "P(Liguilla)": "{:.1%}",
+                "🏆 P(Camp)": "{:.1%}"
+            }).background_gradient(subset=["🏆 P(Camp)"], cmap="YlGn"),
+            hide_index=True,
+            width='stretch',
+            height=500
+        )
 
 # ============================================================================
 # TAB 3: Importancia de Variables
