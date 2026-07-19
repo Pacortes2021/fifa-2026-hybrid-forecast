@@ -255,10 +255,11 @@ def run_app():
     if len(ESPN_DF):
         st.sidebar.success(f"🛰️ ESPN: {len(ESPN_DF)} partidos reales cargados.")
         
-    tab1, tabB, tab3 = st.tabs([
+    tab1, tabB, tab3, tab4 = st.tabs([
         "⚽ Partido + Mercados", 
         "🗺️ Cuadro de eliminatorias", 
-        "🔴 Torneo en vivo"
+        "🔴 Torneo en vivo",
+        "🎯 Validación vs Realidad"
     ])
     
     with tab1:
@@ -475,3 +476,62 @@ def run_app():
                              .background_gradient(subset=["Δ"], cmap="RdYlGn"), width='stretch', hide_index=True)
                 subio = comp.loc[comp["Δ"].idxmax()]
                 st.caption(f"Mayor salto: {subio['Selección']} ({subio['Δ']:+.1%}).")
+
+    with tab4:
+        st.markdown('<div class="sec-title">El Modelo contra la Realidad (Mundial en vivo)</div>', unsafe_allow_html=True)
+        st.markdown("Compara las predicciones pre-partido del modelo con los resultados reales del torneo recopilados de ESPN.")
+        
+        if len(ESPN_DF) == 0:
+            st.info("Aún no hay partidos reales finalizados en ESPN para validar.")
+        else:
+            df_val, met, evol = mo.validacion_en_vivo(M, ESPN_DF, modelo)
+            
+            if len(df_val) == 0:
+                st.info("No hay partidos jugados por selecciones mundialistas válidas aún.")
+            else:
+                m1, m2, m3, m4 = st.columns(4)
+                m1.metric("Partidos Jugados", met["n"])
+                m2.metric("Acierto (1X2)", f"{met['acierto']:.1%}")
+                m3.metric("Log-loss modelo", f"{met['logloss']:.3f}", 
+                          f"{met['logloss'] - met['logloss_base']:+.3f} vs baseline", delta_color="inverse")
+                m4.metric("Log-loss baseline", f"{met['logloss_base']:.3f}")
+                
+                if met["logloss"] < met["logloss_base"]:
+                    st.success(f"El modelo va **por encima** del baseline en {met['n']} partidos del Mundial. 👍")
+                else:
+                    st.warning(f"⚠️ El modelo va por debajo del baseline.")
+                    
+                st.markdown("##### Historial de Predicciones del Mundial")
+                st.dataframe(df_val, hide_index=True, width='stretch')
+                
+                c_plot, c_table = st.columns([6, 4])
+                with c_plot:
+                    if met["n"] >= 3:
+                        fig, ax = plt.subplots(figsize=(7, 4))
+                        ax.plot(evol["partido"], evol["logloss_acum"], "o-", color="#0b3d91", label="Modelo (acumulado)")
+                        ax.axhline(met["baseline"].iloc[0], color="#dc2626", ls="--", label="Baseline")
+                        ax.set_xlabel("Partidos jugados (cronológico)")
+                        ax.set_ylabel("Log-loss acumulado")
+                        ax.legend()
+                        st.pyplot(fig)
+                        
+                with c_table:
+                    st.markdown("##### % Acierto por Selección")
+                    team_stats = []
+                    equipos = set(df_val["Local"]).union(set(df_val["Visita"]))
+                    for eq in equipos:
+                        df_eq = df_val[(df_val["Local"] == eq) | (df_val["Visita"] == eq)]
+                        if len(df_eq) > 0:
+                            aciertos = (df_eq["Acierto"] == "✅").sum()
+                            team_stats.append({
+                                "Selección": eq,
+                                "Partidos": len(df_eq),
+                                "Aciertos": aciertos,
+                                "% Acierto": aciertos / len(df_eq)
+                            })
+                    if team_stats:
+                        df_teams = pd.DataFrame(team_stats).sort_values("% Acierto", ascending=False)
+                        st.dataframe(
+                            df_teams.style.format({"% Acierto": "{:.1%}"}).background_gradient(subset=["% Acierto"], cmap="YlGn"),
+                            hide_index=True, width='stretch'
+                        )
