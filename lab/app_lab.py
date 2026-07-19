@@ -302,11 +302,11 @@ def run_app():
 
             col_b, col_h, col_ts = st.columns(3)
             with col_b:
-                mix_b, _ = tarjeta("base", "🔵 Modelo Base (Elo + H2H + valor)", "card-title-base")
+                mix_b, p_b = tarjeta("base", "🔵 Modelo Base (Elo + H2H + valor)", "card-title-base")
             with col_h:
-                mix_h, _ = tarjeta("hyb", "🟣 Modelo Híbrido (Base + forma)", "card-title-hybrid")
+                mix_h, p_h = tarjeta("hyb", "🟣 Modelo Híbrido (Base + forma)", "card-title-hybrid")
             with col_ts:
-                mix_ts, _ = tarjeta("two_stage", "🟢 Híbrido 2 Etapas (Táctico)", "card-title-two-stage")
+                mix_ts, p_ts = tarjeta("two_stage", "🟢 Híbrido 2 Etapas (Táctico)", "card-title-two-stage")
 
             lbl_mod = "Base" if modelo == "base" else ("Híbrido" if modelo == "hyb" else "Híbrido 2 Etapas")
             st.markdown(f'<div class="sec-title">Mercados — modelo {lbl_mod} (probabilidad y cuota justa)</div>', unsafe_allow_html=True)
