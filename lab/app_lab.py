@@ -509,7 +509,7 @@ def run_app():
                     if met["n"] >= 3:
                         fig, ax = plt.subplots(figsize=(7, 4))
                         ax.plot(evol["partido"], evol["logloss_acum"], "o-", color="#0b3d91", label="Modelo (acumulado)")
-                        ax.axhline(met["baseline"].iloc[0], color="#dc2626", ls="--", label="Baseline")
+                        ax.axhline(evol["baseline"].iloc[0], color="#dc2626", ls="--", label="Baseline")
                         ax.set_xlabel("Partidos jugados (cronológico)")
                         ax.set_ylabel("Log-loss acumulado")
                         ax.legend()
