@@ -1,27 +1,27 @@
 """
-Motor del predictor de la Primera División de Chile. Misma filosofía que el del Mundial, adaptada
-a una liga de clubes (la localía es real, no se simetriza):
-
-  - Elo cronológico con ventaja de localía y multiplicador de goleada.
-  - Modelo de resultado (logística multinomial V/E/D) con features point-in-time, validado en el tiempo.
-  - Poisson de goles para marcadores.
-  - Simulador del campeonato: parte de la tabla actual y simula el fixture restante miles de veces
-    -> P(campeón), P(clasificar a copas), P(descenso), posición y puntos esperados.
+Motor predictivo de Machine Learning y simulación de Monte Carlo para la Primera División de Chile.
+Utiliza regresión logística multinomial con penalización L1 (LASSO) mediante el solver SAGA.
 """
 from pathlib import Path
-from collections import defaultdict, deque
+import os
+import warnings
+warnings.filterwarnings("ignore")
+
 import numpy as np
 import pandas as pd
+from collections import defaultdict, deque
 from scipy.stats import poisson
+import statsmodels.api as sm
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
+from sklearn.metrics import log_loss, accuracy_score
 
 DATA = Path(__file__).resolve().parent / "data"
-ELO_INIT, K_LIGA, HOME_ADV = 1500.0, 30.0, 55.0
-DESCIENDEN = 2          # nº de equipos que descienden (último y penúltimo)
-CUPOS_COPA = 4          # aprox. clasificación a torneos continentales (top-4)
 
+# Constantes del torneo chileno
+DESCIENDEN = 2
+CUPOS_COPA = 7 # Libertadores (Top 3) + Sudamericana (4º a 7º)
 
 SQUAD_VALUES_BY_YEAR = {
     2021: {
@@ -86,532 +86,530 @@ SQUAD_VALUES_BY_YEAR = {
     }
 }
 
+STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCommitted",
+         "yellowCards", "redCards", "offsides", "saves", "blockedShots"]
+
+ELO_INIT = 1500.0
+K_LIGA = 30.0
+HOME_ADV = 55.0
+
 
 def get_squad_value(team, season):
-    # Obtener el diccionario del año, o del año más cercano disponible
     year_dict = SQUAD_VALUES_BY_YEAR.get(season, SQUAD_VALUES_BY_YEAR[2026])
     return year_dict.get(team, 5.0)
 
 
-def _mult_goles(gd):
-    gd = abs(gd)
-    return 1.0 if gd <= 1 else (1.5 if gd == 2 else (1.75 if gd == 3 else 1.75 + (gd - 3) / 8))
+def actualizar_elo(ea, eb, ga, gb):
+    we = 1 / (1 + 10 ** (-(ea - eb) / 400))
+    w = 1.0 if ga > gb else (0.0 if ga < gb else 0.5)
+    gd = abs(ga - gb)
+    mult = 1.0 if gd <= 1 else (1.5 if gd == 2 else (1.75 if gd == 3 else 1.75 + (gd - 3) / 8))
+    return K_LIGA * mult * (w - we)
 
 
-def calcular_elo(part):
-    """Elo cronológico con regresión a la media inter-temporada e inicialización
-       de ascendidos a 1420."""
-    seasons = sorted(part.temporada.unique())
-    teams_by_season = {}
-    for s in seasons:
-        df_s = part[part.temporada == s]
-        teams_by_season[s] = set(df_s.local.unique()) | set(df_s.visita.unique())
+class StateTracker:
+    def __init__(self):
+        self.elos = defaultdict(lambda: ELO_INIT)
+        self.history = defaultdict(deque)
+        self.home_history = defaultdict(deque)
+        self.away_history = defaultdict(deque)
+        self.h2h_goles = defaultdict(float)
+
+    def get_features_for_match(self, local, visita, temporada):
+        feats = {}
+        feats["elo_diff"] = self.elos[local] - self.elos[visita]
+        vl = get_squad_value(local, temporada)
+        vv = get_squad_value(visita, temporada)
+        feats["squad_value_diff"] = np.log(vl) - np.log(vv)
+        feats["h2h_diff"] = self.h2h_goles[(local, visita)]
+
+        for s in STATS:
+            hl = self.history[local]
+            hv = self.history[visita]
+            vsl = [h[s] for h in hl if h[s] is not None]
+            vsv = [h[s] for h in hv if h[s] is not None]
+            feats[f"{s}_total_diff"] = (np.mean(vsl) if vsl else 0.0) - (np.mean(vsv) if vsv else 0.0)
+
+            hhl = self.home_history[local]
+            ahv = self.away_history[visita]
+            vhl = [h[s] for h in hhl if h[s] is not None]
+            vav = [h[s] for h in ahv if h[s] is not None]
+            feats[f"{s}_sede_diff"] = (np.mean(vhl) if vhl else 0.0) - (np.mean(vav) if vav else 0.0)
+
+        return feats
+
+    def registrar_partido(self, local, visita, ga, gb, stats_l=None, stats_v=None):
+        self.h2h_goles[(local, visita)] += (ga - gb)
+        self.h2h_goles[(visita, local)] -= (ga - gb)
+
+        delta = actualizar_elo(self.elos[local] + HOME_ADV, self.elos[visita], ga, gb)
+        self.elos[local] += delta
+        self.elos[visita] -= delta
+
+        sl = stats_l if stats_l else {s: None for s in STATS}
+        sv = stats_v if stats_v else {s: None for s in STATS}
+
+        self.history[local].append(sl)
+        if len(self.history[local]) > 6: self.history[local].popleft()
+        self.history[visita].append(sv)
+        if len(self.history[visita]) > 6: self.history[visita].popleft()
+
+        self.home_history[local].append(sl)
+        if len(self.home_history[local]) > 4: self.home_history[local].popleft()
+        self.away_history[visita].append(sv)
+        if len(self.away_history[visita]) > 4: self.away_history[visita].popleft()
+
+
+def cargar_y_entrenar():
+    partidos = pd.read_csv(DATA / "partidos.csv", parse_dates=["fecha"]).sort_values("fecha")
+    box_path = DATA / "box_score.csv"
+    box = pd.read_csv(box_path) if box_path.exists() else pd.DataFrame(columns=["event_id"])
     
-    elo = {}
-    first_season = seasons[0]
-    for t in teams_by_season[first_season]:
-        elo[t] = ELO_INIT
+    box_dict = {}
+    for r in box.itertuples(index=False):
+        sl = {}
+        sv = {}
+        for s in STATS:
+            sl[s] = getattr(r, f"local_{s}", None)
+            sv[s] = getattr(r, f"visita_{s}", None)
+        box_dict[str(r.event_id)] = (sl, sv)
+        
+    tracker = StateTracker()
+    filas_X = []
+    y = []
+    
+    for r in partidos.itertuples(index=False):
+        local, visita, ga, gb = r.local, r.visita, int(r.goles_local), int(r.goles_visita)
+        
+        feats = tracker.get_features_for_match(local, visita, r.temporada)
+        feats["event_id"] = str(r.event_id) if hasattr(r, "event_id") else ""
+        feats["fecha"] = r.fecha
+        feats["temporada"] = r.temporada
+        feats["local"] = local
+        feats["visita"] = visita
+        feats["goles_local"] = ga
+        feats["goles_visita"] = gb
+        
+        res = 2 if ga > gb else (1 if ga == gb else 0)
+        feats["resultado"] = res
+        
+        filas_X.append(feats)
+        y.append(res)
+        
+        eb_id = str(getattr(r, "event_id")) if hasattr(r, "event_id") else ""
+        stats_l, stats_v = box_dict.get(eb_id, (None, None))
+        tracker.registrar_partido(local, visita, ga, gb, stats_l, stats_v)
+        
+    df_dataset = pd.DataFrame(filas_X)
+    
+    cols_features = ["elo_diff", "squad_value_diff", "h2h_diff"]
+    for s in STATS:
+        cols_features.append(f"{s}_total_diff")
+        cols_features.append(f"{s}_sede_diff")
+        
+    train_mask = df_dataset["temporada"] <= 2024
+    X_train_raw = df_dataset.loc[train_mask, cols_features].fillna(0.0)
+    
+    non_zero_cols = [c for c in cols_features if X_train_raw[c].std() > 1e-5]
+    cols_features = non_zero_cols
 
-    pl, pv = [], []
-    last_season = first_season
-
-    for r in part.itertuples(index=False):
-        # Detectar cambio de temporada
-        if r.temporada != last_season:
-            # 1. Regresión inter-temporada (25% a la media)
-            for t in elo:
-                elo[t] = 0.75 * elo[t] + 0.25 * ELO_INIT
+    X_train = df_dataset.loc[train_mask, cols_features].fillna(0.0)
+    y_train = df_dataset.loc[train_mask, "resultado"]
+    X_test = df_dataset.loc[~train_mask, cols_features].fillna(0.0)
+    y_test = df_dataset.loc[~train_mask, "resultado"]
+    
+    best_c = 0.05
+    best_loss = 999.0
+    for C in [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0]:
+        pipe = Pipeline([
+            ("sc", StandardScaler()),
+            ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=2000, random_state=42))
+        ])
+        pipe.fit(X_train, y_train)
+        probs = pipe.predict_proba(X_test)
+        
+        loss = log_loss(y_test, probs, labels=[0, 1, 2])
+        if loss < best_loss:
+            best_loss = loss
+            best_c = C
             
-            # 2. Inicializar ascendidos (no jugaron en la temporada anterior) a 1420
-            s_idx = seasons.index(r.temporada)
-            prev_s = seasons[s_idx - 1]
-            for t in teams_by_season[r.temporada]:
-                if t not in elo or t not in teams_by_season[prev_s]:
-                    elo[t] = 1420.0
+    print(f"Mejor C para Lasso (Chile): {best_c} | Log-Loss en Test (2025-26): {best_loss:.4f}")
+    
+    pipe_final = Pipeline([
+        ("sc", StandardScaler()),
+        ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=2000, random_state=42))
+    ])
+    pipe_final.fit(df_dataset[cols_features].fillna(0.0), df_dataset["resultado"])
+    
+    coefs = pipe_final.named_steps["lr"].coef_
+    avg_coefs = np.mean(np.abs(coefs), axis=0)
+    active_features = []
+    for col, val in sorted(zip(cols_features, avg_coefs), key=lambda x: x[1], reverse=True):
+        if val > 0.001:
+            active_features.append(col)
             
-            last_season = r.temporada
-
-        if r.local not in elo:
-            elo[r.local] = 1500.0
-        if r.visita not in elo:
-            elo[r.visita] = 1500.0
-
-        el, ev = elo[r.local], elo[r.visita]
-        pl.append(el); pv.append(ev)
-        we = 1.0 / (1.0 + 10 ** (-((el + HOME_ADV) - ev) / 400.0))
-        gl, gv = r.goles_local, r.goles_visita
-        w = 1.0 if gl > gv else (0.5 if gl == gv else 0.0)
-        delta = K_LIGA * _mult_goles(gl - gv) * (w - we)
-        elo[r.local] = el + delta; elo[r.visita] = ev - delta
-
-    return dict(elo), pl, pv
-
-
-def cargar(en_vivo=True):
-    part_path = DATA / "partidos.csv"
-    fix_path = DATA / "fixture.csv"
+    # Goles Poisson GLM
+    datag_l = pd.DataFrame({
+        "g": df_dataset["goles_local"].values,
+        "d": df_dataset["elo_diff"].values
+    })
+    datag_v = pd.DataFrame({
+        "g": df_dataset["goles_visita"].values,
+        "d": -df_dataset["elo_diff"].values
+    })
+    datag_total = pd.concat([datag_l, datag_v], ignore_index=True)
     
-    part = pd.read_csv(part_path, parse_dates=["fecha"])
-    fixture = pd.read_csv(fix_path, parse_dates=["fecha"])
+    gp = sm.GLM(
+        datag_total["g"],
+        sm.add_constant(datag_total["d"]),
+        family=sm.families.Poisson()
+    ).fit()
     
-    if en_vivo:
-        try:
-            import requests
-            url = "https://site.api.espn.com/apis/site/v2/sports/soccer/chi.1/scoreboard?dates=20260101-20261231&limit=400"
-            r = requests.get(url, timeout=8)
-            if r.status_code == 200:
-                eventos = r.json().get("events", [])
-                filas_2026 = []
-                for e in eventos:
-                    try:
-                        comp = e["competitions"][0]; cs = comp["competitors"]
-                        h = next(x for x in cs if x["homeAway"] == "home")
-                        a = next(x for x in cs if x["homeAway"] == "away")
-                        estado = e["status"]["type"]["state"]
-                        try:
-                            gl = int(h["score"]) if h.get("score") not in (None, "") else None
-                            gv = int(a["score"]) if a.get("score") not in (None, "") else None
-                        except (TypeError, ValueError):
-                            gl = gv = None
-                        filas_2026.append({
-                            "fecha": pd.to_datetime(e["date"]).tz_localize(None),
-                            "temporada": 2026, "local": h["team"]["displayName"], "visita": a["team"]["displayName"],
-                            "goles_local": gl, "goles_visita": gv, "estado": estado,
-                        })
-                    except Exception:
-                        continue
-                if filas_2026:
-                    df_2026 = pd.DataFrame(filas_2026).drop_duplicates(subset=["fecha", "local", "visita"])
-                    jugados_2026 = df_2026[df_2026.estado == "post"].dropna(subset=["goles_local", "goles_visita"])
-                    fixture_2026 = df_2026[df_2026.estado == "pre"]
-                    
-                    part_hist = part[part.temporada < 2026]
-                    part = pd.concat([part_hist, jugados_2026], ignore_index=True)
-                    fixture = fixture_2026
-        except Exception:
-            pass # Usar cache de disco silenciosamente si hay fallas de red
-            
-    part = part.sort_values("fecha").reset_index(drop=True)
-    fixture = fixture.sort_values("fecha").reset_index(drop=True)
-    part["goles_local"] = part.goles_local.astype(int)
-    part["goles_visita"] = part.goles_visita.astype(int)
-
-    elo, pre_l, pre_v = calcular_elo(part)
-    part = part.copy(); part["elo_local"] = pre_l; part["elo_visita"] = pre_v
-
-    # features point-in-time: forma (ppg últimos 5) y h2h (dif. de gol promedio previa)
-    ppg = defaultdict(lambda: deque(maxlen=5)); h2h = defaultdict(list)
-    f_ppg_l, f_ppg_v, f_h2h = [], [], []
-    for r in part.itertuples(index=False):
-        f_ppg_l.append(np.mean(ppg[r.local]) if ppg[r.local] else 1.0)
-        f_ppg_v.append(np.mean(ppg[r.visita]) if ppg[r.visita] else 1.0)
-        par = tuple(sorted((r.local, r.visita)))
-        prev = h2h[par]
-        d = np.mean([x if r.local == par[0] else -x for x in prev]) if prev else 0.0
-        f_h2h.append(d if r.local == par[0] else -d)
-        # actualizar
-        gl, gv = r.goles_local, r.goles_visita
-        rl, rv = (3, 0) if gl > gv else ((1, 1) if gl == gv else (0, 3))
-        ppg[r.local].append(rl); ppg[r.visita].append(rv)
-        h2h[par].append(gl - gv)
-    part["ppg_local"], part["ppg_visita"], part["h2h_diff"] = f_ppg_l, f_ppg_v, f_h2h
-    part["elo_diff"] = part.elo_local + HOME_ADV - part.elo_visita
-    part["ppg_diff"] = part.ppg_local - part.ppg_visita
-    part["squad_value_diff"] = part.apply(lambda r: np.log(get_squad_value(r.local, r.temporada)) - np.log(get_squad_value(r.visita, r.temporada)), axis=1)
-    part["resultado"] = np.where(part.goles_local > part.goles_visita, 2,
-                                 np.where(part.goles_local == part.goles_visita, 1, 0))
-
-    FEATS = ["elo_diff", "ppg_diff", "h2h_diff", "squad_value_diff"]
-    pipe = Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))])
-    pipe.fit(part[FEATS], part.resultado)
-
-    # Calcular el boost de goles anotados de local vs de visita para cada equipo
-    boosts = {}
-    for t in set(part.local.unique()) | set(part.visita.unique()):
-        h_matches = part[part.local == t]
-        a_matches = part[part.visita == t]
-        if len(h_matches) > 3 and len(a_matches) > 3:
-            boosts[t] = float(h_matches.goles_local.mean() - a_matches.goles_visita.mean())
-        else:
-            boosts[t] = 0.20  # valor por defecto
-
-    # Determinar la mediana del boost para hacer un split binario óptimo (K=2 Quantiles)
-    median_boost = float(np.median(list(boosts.values())))
-    levels_dict = {eq: (1 if v >= median_boost else 0) for eq, v in boosts.items()}
-
-    # Poisson de goles (con Niveles Binarios de Localía): dos obs por partido.
-    largo = pd.concat([
-        pd.DataFrame({
-            "g": part.goles_local, "d": part.elo_local - part.elo_visita, "es_local": 1,
-            "level": [levels_dict.get(x, 0) for x in part.local]
-        }),
-        pd.DataFrame({
-            "g": part.goles_visita, "d": part.elo_visita - part.elo_local, "es_local": 0,
-            "level": 0
-        })
-    ]).reset_index(drop=True)
-    import statsmodels.api as sm
-    import statsmodels.formula.api as smf
-    gp = smf.glm("g ~ d + es_local + es_local:level", data=largo, family=sm.families.Poisson()).fit()
-    
-    gp_params = {
-        "const": float(gp.params["Intercept"]),
-        "d": float(gp.params["d"]),
-        "loc_0": float(gp.params["es_local"]),
-        "loc_1": float(gp.params["es_local"] + gp.params["es_local:level"])
+    # Dixon-Coles Correlation
+    rho_dc = -0.05
+    try:
+        cor = np.corrcoef(df_dataset["goles_local"], df_dataset["goles_visita"])[0, 1]
+        rho_dc = float(cor) * 0.5
+    except Exception:
+        pass
+        
+    return {
+        "tracker": tracker,
+        "pipe": pipe_final,
+        "features": cols_features,
+        "active_features": active_features,
+        "poisson_params": gp.params,
+        "rho_dc": rho_dc,
+        "partidos": partidos,
+        "box_dict": box_dict,
+        "df_dataset": df_dataset
     }
 
-    # estado actual de cada equipo (Elo + forma + h2h base)
-    estado = {}
-    for t in elo:
-        estado[t] = {"elo": elo[t], "ppg": np.mean(ppg[t]) if ppg[t] else 1.0}
 
-    # Panel de stats del partido (córners, tiros al arco, faltas, tarjetas, posesión) desde el box score
-    stats_modelos, stats_estado = _entrenar_stats_chile(part)
+_MOTOR_CACHE = None
 
-    return {"part": part, "fixture": fixture, "elo": elo, "estado": estado, "h2h": h2h,
-            "pipe": pipe, "FEATS": FEATS, "gp_params": gp_params, "levels_dict": levels_dict,
-            "stats_modelos": stats_modelos, "stats_estado": stats_estado,
-            "equipos_2026": sorted(set(part[part.temporada == 2026].local) | set(part[part.temporada == 2026].visita))}
+def cargar():
+    global _MOTOR_CACHE
+    if _MOTOR_CACHE is None:
+        _MOTOR_CACHE = cargar_y_entrenar()
+    return _MOTOR_CACHE
 
 
-# Stats del box score a modelar (objetivo -> conteo/posesión)
-STATS_OBJ = ["wonCorners", "shotsOnTarget", "foulsCommitted", "yellowCards", "possessionPct", "xg"]
-STATS_NOMBRE = {"wonCorners": "Córners", "shotsOnTarget": "Tiros al arco", "foulsCommitted": "Faltas",
-                "yellowCards": "Tarjetas amarillas", "possessionPct": "Posesión %", "xg": "Goles esperados (xG Proxy)"}
-
-
-def _entrenar_stats_chile(part):
-    """Construye features point-in-time del box score y entrena un modelo por stat (Poisson para
-       conteos, lineal para posesión). Devuelve (modelos, estado actual favor/concedido por equipo)."""
-    bs_path = DATA / "box_score.csv"
-    if not bs_path.exists():
-        return {}, {}
-    bs = pd.read_csv(bs_path, parse_dates=["fecha"])
-    key = lambda d, a, b: (pd.Timestamp(d).normalize(), a, b)
-    bsi = {key(r.fecha, r.local_equipo, r.visita_equipo): r for r in bs.itertuples(index=False)}
-    V = 6
-    favor = {s: defaultdict(lambda: deque(maxlen=V)) for s in STATS_OBJ}
-    contra = {s: defaultdict(lambda: deque(maxlen=V)) for s in STATS_OBJ}
-    rows = []
-    for r in part.itertuples(index=False):
-        a, b = r.local, r.visita
-        rec = bsi.get(key(r.fecha, a, b))
-        
-        # Calcular xG sintético si el registro existe
-        xg_l, xg_v = np.nan, np.nan
-        if rec is not None:
-            sot_l = getattr(rec, "local_shotsOnTarget", np.nan)
-            tot_l = getattr(rec, "local_totalShots", np.nan)
-            sot_v = getattr(rec, "visita_shotsOnTarget", np.nan)
-            tot_v = getattr(rec, "visita_totalShots", np.nan)
-            
-            if not (pd.isna(sot_l) or pd.isna(tot_l)):
-                xg_l = 0.30 * sot_l + 0.05 * max(0.0, tot_l - sot_l)
-            if not (pd.isna(sot_v) or pd.isna(tot_v)):
-                xg_v = 0.30 * sot_v + 0.05 * max(0.0, tot_v - sot_v)
-
-        if rec is not None:
-            fila = {"elo_diff": r.elo_local + HOME_ADV - r.elo_visita}
-            for s in STATS_OBJ:
-                fa = np.mean(favor[s][a]) if favor[s][a] else np.nan
-                cb = np.mean(contra[s][b]) if contra[s][b] else np.nan
-                fila[f"prop_{s}_f"], fila[f"riv_{s}_c"] = fa, cb
-                
-                if s == "xg":
-                    vl = xg_l
-                else:
-                    vl = getattr(rec, f"local_{s}", np.nan)
-                fila[f"t_{s}"] = vl
-            rows.append(fila)
-            
-        if rec is not None:
-            for s in STATS_OBJ:
-                if s == "xg":
-                    vl, vv = xg_l, xg_v
-                else:
-                    vl = getattr(rec, f"local_{s}", np.nan)
-                    vv = getattr(rec, f"visita_{s}", np.nan)
-                if not (pd.isna(vl) or pd.isna(vv)):
-                    favor[s][a].append(vl); contra[s][a].append(vv)
-                    favor[s][b].append(vv); contra[s][b].append(vl)
-    D = pd.DataFrame(rows)
-    import statsmodels.api as sm
-    from sklearn.linear_model import LinearRegression
-    modelos = {}
-    for s in STATS_OBJ:
-        cols = ["elo_diff", f"prop_{s}_f", f"riv_{s}_c"]; tgt = f"t_{s}"
-        d = D.dropna(subset=cols + [tgt])
-        if s == "possessionPct":
-            m = Pipeline([("sc", StandardScaler()), ("m", LinearRegression())]).fit(d[cols], d[tgt])
-            modelos[s] = (m, cols, "lineal")
-        else:
-            m = sm.GLM(d[tgt], sm.add_constant(d[cols], has_constant="add"), family=sm.families.Poisson()).fit()
-            modelos[s] = (m, cols, "poisson")
-    estado = {}
-    for s in STATS_OBJ:
-        for t in set(list(favor[s].keys()) + list(contra[s].keys())):
-            estado.setdefault(t, {})
-            estado[t][f"{s}_f"] = float(np.mean(favor[s][t])) if favor[s][t] else np.nan
-            estado[t][f"{s}_c"] = float(np.mean(contra[s][t])) if contra[s][t] else np.nan
-    glob = {f"{s}_{d}": float(np.nanmean([estado[t].get(f"{s}_{d}", np.nan) for t in estado]))
-            for s in STATS_OBJ for d in ("f", "c")}
-    return modelos, {"equipo": estado, "glob": glob}
-
-
-def stats_esperadas(M, local, visita):
-    """Estadísticas esperadas del local y la visita (córners, tiros al arco, faltas, tarjetas, posesión, xG)."""
-    import statsmodels.api as sm
-    mods, est = M.get("stats_modelos", {}), M.get("stats_estado", {})
-    if not mods:
-        return {}
-    eq, glob = est["equipo"], est["glob"]
-
-    def pred(s, a, b):
-        m, cols, tipo = mods[s]
-        ea = eq.get(a, {}).get(f"{s}_f", glob[f"{s}_f"])
-        cb = eq.get(b, {}).get(f"{s}_c", glob[f"{s}_c"])
-        ea = glob[f"{s}_f"] if (ea != ea) else ea; cb = glob[f"{s}_c"] if (cb != cb) else cb
-        X = pd.DataFrame([{"elo_diff": M["estado"][a]["elo"] + HOME_ADV - M["estado"][b]["elo"],
-                           f"prop_{s}_f": ea, f"riv_{s}_c": cb}])[cols]
-        if tipo == "poisson":
-            return float(m.predict(sm.add_constant(X, has_constant="add"))[0])
-        return float(m.predict(X)[0])
-
-    res = {}
-    for s in STATS_OBJ:
-        res[s] = (pred(s, local, visita), pred(s, visita, local))
-    # posesión renormalizada a 100
-    pa, pb = res["possessionPct"]
-    res["possessionPct"] = (pa / (pa + pb) * 100, pb / (pa + pb) * 100)
-    return res
-
-
-# --------------------------------------------------------------------------- #
-#  Análisis riguroso de variables (VIF + forward + significancia + comparación)
-# --------------------------------------------------------------------------- #
-def analisis_variables(M, corte="2025-07-01"):
-    """Justifica la elección de variables: construye un conjunto amplio de candidatas point-in-time
-       y reporta VIF (multicolinealidad), correlación, qué elige el forward y cómo rinden distintos
-       modelos en el hold-out temporal. Devuelve (df_candidatas, set_final, df_modelos)."""
-    import statsmodels.api as sm
-    from statsmodels.stats.outliers_influence import variance_inflation_factor
-    from sklearn.ensemble import RandomForestClassifier, HistGradientBoostingClassifier
-    from sklearn.model_selection import cross_val_score, TimeSeriesSplit
-    from sklearn.metrics import log_loss, accuracy_score
-
-    part = M["part"]
-    elo = {}
-    first_season = sorted(part.temporada.unique())[0]
-    # Recrear la misma inicialización que calcular_elo
-    seasons = sorted(part.temporada.unique())
-    teams_by_season = {}
-    for s in seasons:
-        df_s = part[part.temporada == s]
-        teams_by_season[s] = set(df_s.local.unique()) | set(df_s.visita.unique())
-    for t in teams_by_season[first_season]:
-        elo[t] = ELO_INIT
-
-    ppg5, gf, gc = defaultdict(lambda: deque(maxlen=5)), defaultdict(lambda: deque(maxlen=5)), defaultdict(lambda: deque(maxlen=5))
-    h2h = defaultdict(list); rows = []
-    last_season = first_season
-
-    for r in part.itertuples(index=False):
-        a, b, gl, gv = r.local, r.visita, r.goles_local, r.goles_visita
-        if r.temporada != last_season:
-            for t in elo:
-                elo[t] = 0.75 * elo[t] + 0.25 * ELO_INIT
-            s_idx = seasons.index(r.temporada)
-            prev_s = seasons[s_idx - 1]
-            for t in teams_by_season[r.temporada]:
-                if t not in elo or t not in teams_by_season[prev_s]:
-                    elo[t] = 1420.0
-            last_season = r.temporada
-
-        if a not in elo: elo[a] = 1500.0
-        if b not in elo: elo[b] = 1500.0
-
-        par = tuple(sorted((a, b))); prev = h2h[par]
-        hh = (np.mean([x if a == par[0] else -x for x in prev]) if prev else 0.0)
-        rows.append({
-            "elo_diff": elo[a] + HOME_ADV - elo[b],
-            "ppg5_diff": (np.mean(ppg5[a]) if ppg5[a] else 1.0) - (np.mean(ppg5[b]) if ppg5[b] else 1.0),
-            "gf_diff": (np.mean(gf[a]) if gf[a] else 1.2) - (np.mean(gf[b]) if gf[b] else 1.2),
-            "gc_diff": (np.mean(gc[a]) if gc[a] else 1.2) - (np.mean(gc[b]) if gc[b] else 1.2),
-            "h2h_diff": hh if a == par[0] else -hh,
-            "squad_value_diff": np.log(get_squad_value(a, r.temporada)) - np.log(get_squad_value(b, r.temporada)),
-            "fecha": r.fecha,
-            "resultado": 2 if gl > gv else (1 if gl == gv else 0)})
-        we = 1 / (1 + 10 ** (-((elo[a] + HOME_ADV) - elo[b]) / 400)); w = 1.0 if gl > gv else (0.5 if gl == gv else 0.0)
-        delta = K_LIGA * _mult_goles(gl - gv) * (w - we); elo[a] += delta; elo[b] -= delta
-        rl, rv = (3, 0) if gl > gv else ((1, 1) if gl == gv else (0, 3))
-        ppg5[a].append(rl); ppg5[b].append(rv); gf[a].append(gl); gc[a].append(gv); gf[b].append(gv); gc[b].append(gl)
-        h2h[par].append(gl - gv)
-
-    D = pd.DataFrame(rows)
-    CAND = ["elo_diff", "ppg5_diff", "gf_diff", "gc_diff", "h2h_diff", "squad_value_diff"]
-    tr, te = D[D.fecha < corte], D[D.fecha >= corte]; y = tr.resultado; cv = TimeSeriesSplit(5)
-
-    Xv = sm.add_constant(tr[CAND])
-    vif = {f: variance_inflation_factor(Xv.values, i + 1) for i, f in enumerate(CAND)}
-
-    def ll(cols):
-        p = Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))])
-        return -cross_val_score(p, tr[cols], y, cv=cv, scoring="neg_log_loss").mean()
-    sel, rem, best = [], CAND[:], 99
-    while rem:
-        sc = {f: ll(sel + [f]) for f in rem}; bf = min(sc, key=sc.get)
-        if sc[bf] < best - 0.001:
-            sel.append(bf); rem.remove(bf); best = sc[bf]
-        else:
-            break
-
-    df_cand = pd.DataFrame([{"variable": f, "corr_resultado": round(tr[[f, "resultado"]].corr().iloc[0, 1], 2),
-                             "VIF": round(vif[f], 1), "elegida": "✅" if f in sel else "—"} for f in CAND])
-
-    modelos = [("Logística (completa)", Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))]), ["elo_diff", "ppg5_diff", "h2h_diff", "squad_value_diff"]),
-               ("Logística (elo+forma+h2h)", Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))]), ["elo_diff", "ppg5_diff", "h2h_diff"]),
-               ("Logística (solo Elo)", Pipeline([("sc", StandardScaler()), ("m", LogisticRegression(max_iter=2000))]), ["elo_diff"]),
-               ("Random Forest", RandomForestClassifier(n_estimators=300, max_depth=6, random_state=42), CAND),
-               ("Gradient Boosting", HistGradientBoostingClassifier(max_iter=300, learning_rate=0.05, random_state=42), CAND)]
-    filas = []
-    for nom, mod, cols in modelos:
-        mod.fit(tr[cols], y); P = mod.predict_proba(te[cols])
-        filas.append({"Modelo": nom, "LogLoss": round(log_loss(te.resultado, P, labels=[0, 1, 2]), 4),
-                      "Acierto": f"{accuracy_score(te.resultado, P.argmax(1)):.0%}"})
-    base = np.tile(np.bincount(y) / len(y), (len(te), 1))
-    filas.append({"Modelo": "Baseline frecuencias", "LogLoss": round(log_loss(te.resultado, base, labels=[0, 1, 2]), 4), "Acierto": "—"})
-    return df_cand, sel, pd.DataFrame(filas)
-
-
-# --------------------------------------------------------------------------- #
-#  Predicción de un partido
-# --------------------------------------------------------------------------- #
-def _h2h(M, a, b):
-    par = tuple(sorted((a, b)))
-    prev = M["h2h"].get(par, [])
-    if not prev:
-        return 0.0
-    d = np.mean([x if a == par[0] else -x for x in prev])
-    return float(d if a == par[0] else -d)
-
-
-def features(M, local, visita):
-    e = M["estado"]
-    return {"elo_diff": e[local]["elo"] + HOME_ADV - e[visita]["elo"],
-            "ppg_diff": e[local]["ppg"] - e[visita]["ppg"],
-            "h2h_diff": _h2h(M, local, visita),
-            "squad_value_diff": np.log(get_squad_value(local, 2026)) - np.log(get_squad_value(visita, 2026))}
-
-
-def prob_partido(M, local, visita):
-    """[P(gana local), P(empate), P(gana visita)] con localía real del que juega de local."""
-    p = M["pipe"].predict_proba(pd.DataFrame([features(M, local, visita)])[M["FEATS"]])[0]
-    return np.array([p[2], p[1], p[0]])
-
-
-def lambdas(M, local, visita):
-    b = M["gp_params"]
-    lvls = M.get("levels_dict", {})
-    dl = M["estado"][local]["elo"] - M["estado"][visita]["elo"]
-    dv = M["estado"][visita]["elo"] - M["estado"][local]["elo"]
+def predecir_match(M, local, visita):
+    tracker = M["tracker"]
+    pipe = M["pipe"]
+    features = M["features"]
+    poisson_params = M["poisson_params"]
     
-    lvl = lvls.get(local, 0)
-    loc_l = b["loc_1"] if lvl == 1 else b["loc_0"]
-        
-    la = float(np.exp(b["const"] + b["d"] * dl + loc_l))
-    lb = float(np.exp(b["const"] + b["d"] * dv))
-    return la, lb
+    feats = tracker.get_features_for_match(local, visita, 2026)
+    df_feat = pd.DataFrame([feats])[features].fillna(0.0)
+    
+    p_raw = pipe.predict_proba(df_feat)[0]
+    p = np.array([p_raw[2], p_raw[1], p_raw[0]]) # [local, empate, visita]
+    
+    # Poisson local
+    d_elo_l = feats["elo_diff"]
+    la = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_l))
+    
+    # Poisson visita
+    d_elo_v = -feats["elo_diff"]
+    lb = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_v))
+    
+    return p, la, lb
 
 
-def dixon_coles_adj(la, lb, rho, gmax=8):
-    tau = np.ones((gmax + 1, gmax + 1))
-    if la > 0 and lb > 0:
-        tau[0, 0] = 1.0 - la * lb * rho
-        tau[1, 0] = 1.0 + la * rho
-        tau[0, 1] = 1.0 + lb * rho
-        tau[1, 1] = 1.0 - rho
-    return tau
-
-
-def grilla(M, local, visita, gmax=8):
-    p = prob_partido(M, local, visita)
-    la, lb = lambdas(M, local, visita)
-    g = np.arange(gmax + 1)
-    grid = np.outer(poisson.pmf(g, la), poisson.pmf(g, lb))
-    # Aplicar ajuste de Dixon-Coles (rho = -0.12 para la liga chilena)
-    tau = dixon_coles_adj(la, lb, -0.12, gmax)
-    grid *= tau
+def grilla_goles(M, local, visita):
+    p, la, lb = predecir_match(M, local, visita)
+    GRID_MAX = 8
+    gidx = np.arange(GRID_MAX + 1)
+    
+    grid = np.outer(poisson.pmf(gidx, la), poisson.pmf(gidx, lb))
+    rho = M["rho_dc"]
+    if GRID_MAX >= 1 and la > 0 and lb > 0:
+        grid[0, 0] *= (1.0 - la * lb * rho)
+        grid[1, 0] *= (1.0 + lb * rho)
+        grid[0, 1] *= (1.0 + la * rho)
+        grid[1, 1] *= (1.0 - rho)
+            
+    grid = np.clip(grid, 0.0, None)
     grid /= grid.sum()
+    
     gi, gj = np.indices(grid.shape)
-    mix = sum(p[k] * (grid * mk) / (grid * mk).sum() for k, mk in enumerate((gi > gj, gi == gj, gi < gj)))
+    masks = [gi > gj, gi == gj, gi < gj]
+    mix = np.zeros_like(grid)
+    for k, mk in enumerate(masks):
+        sub = grid * mk
+        if sub.sum() > 0:
+            mix += p[k] * sub / sub.sum()
+            
     return mix, p, (la, lb)
 
 
+def cuota(p):
+    return 1.0 / p if p > 0.001 else 999.0
+
+
+def mercados(mix):
+    gi, gj = np.indices(mix.shape)
+    mk = {}
+    for ln in [1.5, 2.5, 3.5]:
+        po = mix[gi + gj > ln].sum()
+        mk[f"Over {ln}"] = po
+        mk[f"Under {ln}"] = 1.0 - po
+        
+    btts_si = mix[1:, 1:].sum()
+    mk["Ambos marcan (BTTS sí)"] = btts_si
+    mk["BTTS no"] = 1.0 - btts_si
+    
+    flat = mix.ravel()
+    top_indices = flat.argsort()[::-1][:5]
+    top_scores = []
+    for ix in top_indices:
+        g1, g2 = divmod(ix, mix.shape[1])
+        top_scores.append((g1, g2, flat[ix]))
+    mk["_top_marcadores"] = top_scores
+    return mk
+
+
 # --------------------------------------------------------------------------- #
-#  Tabla actual y simulación del campeonato
+#  Simulador de Campeonato Primera División de Chile
 # --------------------------------------------------------------------------- #
-def tabla_actual(M):
-    """Tabla de posiciones 2026 a partir de los partidos ya jugados."""
-    p26 = M["part"][M["part"].temporada == 2026]
-    eq = M["equipos_2026"]
-    st = {t: dict(PJ=0, G=0, E=0, P=0, GF=0, GC=0) for t in eq}
-    for r in p26.itertuples(index=False):
-        a, b, gl, gv = r.local, r.visita, r.goles_local, r.goles_visita
-        st[a]["PJ"] += 1; st[b]["PJ"] += 1; st[a]["GF"] += gl; st[a]["GC"] += gv
-        st[b]["GF"] += gv; st[b]["GC"] += gl
-        if gl > gv: st[a]["G"] += 1; st[b]["P"] += 1
-        elif gl == gv: st[a]["E"] += 1; st[b]["E"] += 1
-        else: st[b]["G"] += 1; st[a]["P"] += 1
-    df = pd.DataFrame([{"Equipo": t, **s, "DG": s["GF"] - s["GC"], "Pts": 3 * s["G"] + s["E"]} for t, s in st.items()])
-    df = df.sort_values(["Pts", "DG", "GF"], ascending=False).reset_index(drop=True)
-    df.insert(0, "Pos", df.index + 1)
+def simular_fixture_regular(M, PREDS, fijos=None):
+    fix = pd.read_csv(DATA / "fixture.csv")
+    partidos = M["partidos"]
+    p_actuales = partidos[partidos.temporada == 2026]
+    
+    tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
+    
+    todos_activos = set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"] if not fix.empty else []))
+    if not todos_activos:
+        todos_activos = set(SQUAD_VALUES_BY_YEAR[2026].keys())
+        
+    for eq in todos_activos:
+        tabla[eq] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        
+    for r in p_actuales.itertuples(index=False):
+        l, v, gl, gv = r.local, r.visita, int(r.goles_local), int(r.goles_visita)
+        if l not in tabla: tabla[l] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        if v not in tabla: tabla[v] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        tabla[l]["GF"] += gl
+        tabla[l]["GC"] += gv
+        tabla[v]["GF"] += gv
+        tabla[v]["GC"] += gl
+        if gl > gv:
+            tabla[l]["PTS"] += 3
+            tabla[l]["PG"] += 1
+            tabla[v]["PP"] += 1
+        elif gl == gv:
+            tabla[l]["PTS"] += 1
+            tabla[v]["PTS"] += 1
+            tabla[l]["PE"] += 1
+            tabla[v]["PE"] += 1
+        else:
+            tabla[v]["PTS"] += 3
+            tabla[v]["PG"] += 1
+            tabla[l]["PP"] += 1
+
+    for r in fix.itertuples(index=False):
+        l, v = r.local, r.visita
+        if l not in tabla: tabla[l] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        if v not in tabla: tabla[v] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        
+        if fijos and (l, v) in fijos:
+            gl, gv = fijos[(l, v)]
+        else:
+            p, la, lb = PREDS.get((l, v), (None, 1.2, 1.2))
+            gl = int(np.random.poisson(la))
+            gv = int(np.random.poisson(lb))
+            
+        tabla[l]["GF"] += gl
+        tabla[l]["GC"] += gv
+        tabla[v]["GF"] += gv
+        tabla[v]["GC"] += gl
+        if gl > gv:
+            tabla[l]["PTS"] += 3
+            tabla[l]["PG"] += 1
+            tabla[v]["PP"] += 1
+        elif gl == gv:
+            tabla[l]["PTS"] += 1
+            tabla[v]["PTS"] += 1
+            tabla[l]["PE"] += 1
+            tabla[v]["PE"] += 1
+        else:
+            tabla[v]["PTS"] += 3
+            tabla[v]["PG"] += 1
+            tabla[l]["PP"] += 1
+            
+    return tabla
+
+
+def ordenar_tabla(tabla):
+    # Criterio Chileno: 1. Puntos, 2. Diferencia Goles (DG), 3. Victorias (PG), 4. Goles Favor (GF)
+    filas = []
+    for eq, s in tabla.items():
+        filas.append({
+            "Selección": eq,
+            "PTS": s["PTS"],
+            "DG": s["GF"] - s["GC"],
+            "PG": s["PG"],
+            "GF": s["GF"],
+            "PE": s["PE"],
+            "PP": s["PP"]
+        })
+    df = pd.DataFrame(filas)
+    df = df.sort_values(by=["PTS", "DG", "PG", "GF"], ascending=False).reset_index(drop=True)
     return df
 
 
-def simular_campeonato(M, n_sims=10000, seed=42):
-    """Parte de la tabla actual y simula el fixture restante n_sims veces."""
-    rng = np.random.default_rng(seed)
-    tabla = tabla_actual(M).set_index("Equipo")
-    pts0 = tabla["Pts"].to_dict(); gd0 = tabla["DG"].to_dict()
-    eq = list(tabla.index)
-    fix = [(r.local, r.visita) for r in M["fixture"].itertuples(index=False)
-           if r.local in pts0 and r.visita in pts0]
+def obtener_tabla_actual(M):
+    partidos = M["partidos"]
+    p_actuales = partidos[partidos.temporada == 2026]
+    fix = pd.read_csv(DATA / "fixture.csv")
     
-    # Precalcular la grilla mixta de goles de cada partido para muestreo consistente
-    MIX = {}
-    for a, b in set(fix):
-        mix_grid, _, _ = grilla(M, a, b)
-        MIX[(a, b)] = mix_grid
-
-    pos_count = {t: np.zeros(len(eq) + 1) for t in eq}     # histograma de posiciones
-    campeon = defaultdict(int); copa = defaultdict(int); desc = defaultdict(int)
-    pts_final = defaultdict(list)
-    for _ in range(n_sims):
-        pts = dict(pts0); gd = dict(gd0)
-        for a, b in fix:
-            mix_grid = MIX[(a, b)]
-            flat_grid = mix_grid.flatten()
-            idx = rng.choice(len(flat_grid), p=flat_grid)
-            dim = mix_grid.shape[1]
-            ga, gb = idx // dim, idx % dim
+    todos_activos = set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"] if not fix.empty else []))
+    if not todos_activos:
+        todos_activos = set(SQUAD_VALUES_BY_YEAR[2026].keys())
+        
+    tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
+    for eq in todos_activos:
+        tabla[eq] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        
+    for r in p_actuales.itertuples(index=False):
+        l, v, gl, gv = r.local, r.visita, int(r.goles_local), int(r.goles_visita)
+        if l not in tabla: tabla[l] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        if v not in tabla: tabla[v] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        tabla[l]["GF"] += gl
+        tabla[l]["GC"] += gv
+        tabla[v]["GF"] += gv
+        tabla[v]["GC"] += gl
+        if gl > gv:
+            tabla[l]["PTS"] += 3
+            tabla[l]["PG"] += 1
+            tabla[v]["PP"] += 1
+        elif gl == gv:
+            tabla[l]["PTS"] += 1
+            tabla[v]["PTS"] += 1
+            tabla[l]["PE"] += 1
+            tabla[v]["PE"] += 1
+        else:
+            tabla[v]["PTS"] += 3
+            tabla[v]["PG"] += 1
+            tabla[l]["PP"] += 1
             
-            gd[a] += ga - gb; gd[b] += gb - ga
-            if ga > gb: pts[a] += 3
-            elif ga == gb: pts[a] += 1; pts[b] += 1
-            else: pts[b] += 3
-        orden = sorted(eq, key=lambda t: (pts[t], gd[t], rng.random()), reverse=True)
-        for i, t in enumerate(orden):
-            pos_count[t][i + 1] += 1
-            pts_final[t].append(pts[t])
-        campeon[orden[0]] += 1
-        for t in orden[:CUPOS_COPA]: copa[t] += 1
-        for t in orden[-DESCIENDEN:]: desc[t] += 1
+    return ordenar_tabla(tabla)
 
+
+def simular_campeonato(M, n_sims=4000, fijos=None):
+    partidos_rec = M["partidos"]
+    p_actuales = partidos_rec[partidos_rec.temporada == 2026]
+    fix = pd.read_csv(DATA / "fixture.csv")
+    
+    todos_activos = list(set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"] if not fix.empty else [])))
+    if not todos_activos:
+        todos_activos = list(SQUAD_VALUES_BY_YEAR[2026].keys())
+        
+    PREDS = {}
+    for local in todos_activos:
+        for visita in todos_activos:
+            if local != visita:
+                p, la, lb = predecir_match(M, local, visita)
+                PREDS[(local, visita)] = (p, la, lb)
+                
+    resultados_campeon = defaultdict(int)
+    resultados_libertadores_directo = defaultdict(int) # Top 2
+    resultados_libertadores_total = defaultdict(int)   # Top 3
+    resultados_sudamericana = defaultdict(int)         # 4º al 7º
+    resultados_descenso = defaultdict(int)             # Bottom 2 (15º y 16º)
+    resultados_puntos = defaultdict(list)
+    
+    for _ in range(n_sims):
+        tabla = simular_fixture_regular(M, PREDS, fijos)
+        df_ord = ordenar_tabla(tabla)
+        
+        for idx, r in enumerate(df_ord.itertuples()):
+            eq = r.Selección
+            pos = idx + 1
+            resultados_puntos[eq].append(r.PTS)
+            
+            if pos == 1:
+                resultados_campeon[eq] += 1
+            if pos <= 2:
+                resultados_libertadores_directo[eq] += 1
+            if pos <= 3:
+                resultados_libertadores_total[eq] += 1
+            if 4 <= pos <= 7:
+                resultados_sudamericana[eq] += 1
+            if pos >= len(df_ord) - 1:
+                resultados_descenso[eq] += 1
+                
     filas = []
-    for t in eq:
-        filas.append({"Equipo": t, "Pts_actual": pts0[t],
-                      "P_campeon": campeon[t] / n_sims, "P_copa": copa[t] / n_sims, "P_descenso": desc[t] / n_sims,
-                      "pos_esperada": float(np.average(np.arange(1, len(eq) + 1), weights=pos_count[t][1:])),
-                      "pts_proy": float(np.mean(pts_final[t]))})
-    return pd.DataFrame(filas).sort_values("P_campeon", ascending=False).reset_index(drop=True)
+    for eq in todos_activos:
+        filas.append({
+            "Selección": eq,
+            "Puntos esperados": np.mean(resultados_puntos[eq]),
+            "P_campeon": resultados_campeon[eq] / n_sims,
+            "P_libertadores_directo": resultados_libertadores_directo[eq] / n_sims,
+            "P_libertadores_total": resultados_libertadores_total[eq] / n_sims,
+            "P_sudamericana": resultados_sudamericana[eq] / n_sims,
+            "P_descenso": resultados_descenso[eq] / n_sims
+        })
+        
+    df_res = pd.DataFrame(filas).sort_values(by="Puntos esperados", ascending=False).reset_index(drop=True)
+    return df_res
+
+
+def validacion_en_vivo(M, temporada_val=2026):
+    df = M["df_dataset"]
+    df_val = df[df["temporada"] == temporada_val].copy()
+    
+    if len(df_val) == 0:
+        return None, None, None
+        
+    pipe = M["pipe"]
+    features = M["features"]
+    
+    X_val = df_val[features].fillna(0.0)
+    y_val = df_val["resultado"]
+    
+    probs = pipe.predict_proba(X_val)
+    preds = pipe.predict(X_val)
+    
+    ll = log_loss(y_val, probs, labels=[0, 1, 2])
+    acc = accuracy_score(y_val, preds)
+    
+    freqs = y_val.value_counts(normalize=True)
+    baseline_probs = np.zeros_like(probs)
+    for i, c in enumerate([0, 1, 2]):
+        baseline_probs[:, i] = freqs.get(c, 0.33)
+    ll_base = log_loss(y_val, baseline_probs, labels=[0, 1, 2])
+    
+    met = {
+        "n": len(df_val),
+        "acierto": acc,
+        "logloss": ll,
+        "logloss_base": ll_base
+    }
+    
+    df_val["Prob_Visita"] = probs[:, 0]
+    df_val["Prob_Empate"] = probs[:, 1]
+    df_val["Prob_Local"] = probs[:, 2]
+    df_val["Prediccion"] = preds
+    
+    df_val = df_val.sort_values("fecha").reset_index(drop=True)
+    
+    log_losses = []
+    for i in range(1, len(df_val) + 1):
+        sub_y = df_val["resultado"].iloc[:i]
+        sub_p = probs[:i]
+        try:
+            curr_ll = log_loss(sub_y, sub_p, labels=[0, 1, 2])
+            log_losses.append(curr_ll)
+        except Exception:
+            log_losses.append(np.nan)
+            
+    evol = pd.DataFrame({
+        "partido": range(1, len(df_val) + 1),
+        "logloss_acum": log_losses
+    })
+    
+    return df_val, met, evol

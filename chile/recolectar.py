@@ -35,6 +35,7 @@ def _temporada(anio):
             except (TypeError, ValueError):
                 gl = gv = None
             filas.append({
+                "event_id": str(e["id"]),
                 "fecha": pd.to_datetime(e["date"]).tz_localize(None),
                 "temporada": anio, "local": h["team"]["displayName"], "visita": a["team"]["displayName"],
                 "goles_local": gl, "goles_visita": gv, "estado": estado,
