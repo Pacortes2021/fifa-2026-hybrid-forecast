@@ -1,527 +1,92 @@
+"""
+Portal Maestro de Predicciones y Proyecciones Deportivas (Machine Learning).
+Enruta a los simuladores de la Copa Mundial 2026, Liga MX, Brasileirão y Liga Chilena.
+"""
 import os
 import sys
-
-# Insertar la carpeta lab en sys.path para poder reutilizar el motor y recolector
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lab"))
-
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 import streamlit as st
-import streamlit.components.v1 as components
 
-import motor as mo
-import espn_live
-
-# Configuración de página con título y layout
+# Configuración única de Streamlit (debe ser la primera llamada de st)
 st.set_page_config(
-    page_title="Simulador Copa Mundial 2026",
-    page_icon="🏆",
+    page_title="Portal de Predicciones Fútbol ML",
+    page_icon="⚽",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
 
-# Estilizado CSS Premium personalizado (coherente con la identidad visual del proyecto)
+# Estilizado CSS Premium Global para el Portal
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
-.main-title { text-align:center; font-size:2.5rem; font-weight:700;
-    background:linear-gradient(135deg,#0b3d91,#7a3b91); -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent; margin-bottom:0.2rem; }
-.main-subtitle { text-align:center; font-size:1.05rem; color:#64748b; margin-bottom:1.5rem; }
-.card-title-base { font-size:1.25rem; font-weight:600; color:#0b3d91;
-    border-bottom:2px solid #e2e8f0; padding-bottom:0.4rem; margin-bottom:0.8rem; }
-.card-title-hybrid { font-size:1.25rem; font-weight:600; color:#7a3b91;
-    border-bottom:2px solid #e2e8f0; padding-bottom:0.4rem; margin-bottom:0.8rem; }
-.card-title-two-stage { font-size:1.25rem; font-weight:600; color:#2a9d5c;
-    border-bottom:2px solid #e2e8f0; padding-bottom:0.4rem; margin-bottom:0.8rem; }
-.sec-title { font-size:1.5rem; font-weight:700; color:#0b3d91; margin:0.4rem 0 0.6rem 0; }
-.vs-text { text-align:center; font-size:2rem; font-weight:800; color:#cbd5e1; margin-top:1.6rem; }
-/* sombra premium a los contenedores con borde */
-div[data-testid="stVerticalBlockBorderWrapper"] {
-    box-shadow:0 4px 6px -1px rgb(0 0 0/0.08),0 2px 4px -2px rgb(0 0 0/0.08);
-    border-radius:12px; }
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
+.sidebar .sidebar-content {
+    background-color: #f8fafc;
+}
 </style>
 """, unsafe_allow_html=True)
 
-# Mapeo español -> inglés con bandera
-COUNTRIES_ES = {
-    'Alemania': ('Germany', '🇩🇪'), 'Argelia': ('Algeria', '🇩🇿'), 'Argentina': ('Argentina', '🇦🇷'),
-    'Australia': ('Australia', '🇦🇺'), 'Austria': ('Austria', '🇦🇹'), 'Bélgica': ('Belgium', '🇧🇪'),
-    'Bosnia y Herzegovina': ('Bosnia and Herzegovina', '🇧🇦'), 'Brasil': ('Brazil', '🇧🇷'),
-    'Cabo Verde': ('Cape Verde', '🇨🇻'), 'Canadá': ('Canada', '🇨🇦'), 'Catar': ('Qatar', '🇶🇦'),
-    'Colombia': ('Colombia', '🇨🇴'), 'Corea del Sur': ('South Korea', '🇰🇷'), 'Costa de Marfil': ('Ivory Coast', '🇨🇮'),
-    'Croacia': ('Croatia', '🇭🇷'), 'Curazao': ('Curaçao', '🇨🇼'), 'Ecuador': ('Ecuador', '🇪🇨'),
-    'Egipto': ('Egypt', '🇪🇬'), 'Escocia': ('Scotland', '🏴'), 'España': ('Spain', '🇪🇸'),
-    'Estados Unidos': ('United States', '🇺🇸'), 'Francia': ('France', '🇫🇷'), 'Ghana': ('Ghana', '🇬🇭'),
-    'Haití': ('Haiti', '🇭🇹'), 'Inglaterra': ('England', '🏴'), 'Irak': ('Iraq', '🇮🇶'),
-    'Irán': ('Iran', '🇮🇷'), 'Japón': ('Japan', '🇯🇵'), 'Jordania': ('Jordan', '🇯🇴'),
-    'Marruecos': ('Morocco', '🇲🇦'), 'México': ('Mexico', '🇲🇽'), 'Noruega': ('Norway', '🇳🇴'),
-    'Nueva Zelanda': ('New Zealand', '🇳🇿'), 'Países Bajos': ('Netherlands', '🇳🇱'), 'Panamá': ('Panama', '🇵🇦'),
-    'Paraguay': ('Paraguay', '🇵🇾'), 'Portugal': ('Portugal', '🇵🇹'), 'República Checa': ('Czech Republic', '🇨🇿'),
-    'Rep. Democrática del Congo': ('DR Congo', '🇨🇩'), 'Senegal': ('Senegal', '🇸🇳'), 'Sudáfrica': ('South Africa', '🇿🇦'),
-    'Suecia': ('Sweden', '🇸🇪'), 'Suiza': ('Switzerland', '🇨🇭'), 'Túnez': ('Tunisia', '🇹🇳'),
-    'Turquía': ('Turkey', '🇹🇷'), 'Uruguay': ('Uruguay', '🇺🇾'), 'Uzbekistán': ('Uzbekistan', '🇺🇿'),
-    'Arabia Saudita': ('Saudi Arabia', '🇸🇦'),
-}
-EN2ES = {en: (es, fl) for es, (en, fl) in COUNTRIES_ES.items()}
-OPC = sorted(f"{fl} {es}" for es, (en, fl) in COUNTRIES_ES.items())
+
+def limpiar_cache_importacion():
+    """Limpia los módulos compartidos de sys.modules para evitar colisiones
+    entre las distintas ligas que usan archivos con el mismo nombre (ej. motor.py)."""
+    modulos_a_limpiar = [
+        "motor", "recolectar", "recolectar_boxscore", 
+        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile"
+    ]
+    for mod in modulos_a_limpiar:
+        if mod in sys.modules:
+            del sys.modules[mod]
+        # También limpiar submódulos si los hay
+        keys_to_del = [k for k in sys.modules.keys() if k.startswith(mod + ".")]
+        for k in keys_to_del:
+            del sys.modules[k]
 
 
-def es2en(label):
-    return COUNTRIES_ES[label.split(" ", 1)[1]][0]
+# Barra lateral para navegación
+st.sidebar.image("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=200&auto=format&fit=crop", caption="Predicciones ML", use_container_width=True)
+st.sidebar.markdown("## 🎮 Navegación")
 
-
-def nombre(en):
-    return EN2ES.get(en, (en,))[0]
-
-
-def etiqueta(en):
-    es, fl = EN2ES.get(en, (en, ""))
-    return f"{fl} {es}"
-
-
-def bandera(en):
-    return EN2ES.get(en, ("", "🏳️"))[1]
-
-
-@st.cache_resource
-def get_motor():
-    return mo.cargar()
-
-
-@st.cache_data(show_spinner="Simulando 8.000 mundiales…")
-def mc_base(modelo):
-    return mo.monte_carlo(get_motor(), n_sims=8000, modelo=modelo)
-
-
-@st.cache_data(show_spinner="Re-simulando con resultados reales…")
-def mc_vivo(modelo, key):
-    """Monte Carlo incorporando los resultados reales de ESPN (estados + grupos fijados)."""
-    M = get_motor()
-    if len(ESPN_DF) == 0:
-        return mc_base(modelo)
-    st2 = mo.actualizar_estados(M, ESPN_DF)
-    fijos = {(r.local, r.visita): (int(r.goles_local), int(r.goles_visita))
-             for r in ESPN_DF.itertuples(index=False)
-             if mo.GRUPO_DE.get(r.local) == mo.GRUPO_DE.get(r.visita)}
-    return mo.monte_carlo(M, 6000, modelo, states=st2, fijos=fijos)
-
-
-@st.cache_data(ttl=120, show_spinner=False)
-def cargar_espn():
-    try:
-        return espn_live.traer_resultados(), None
-    except Exception as e:
-        return pd.DataFrame(), str(e)
-
-
-@st.cache_data(ttl=120, show_spinner=False)
-def cargar_envivo():
-    try:
-        return espn_live.partidos_en_vivo()
-    except Exception:
-        return pd.DataFrame()
-
-
-@st.cache_data(ttl=120, show_spinner=False)
-def cargar_bracket(key):
-    try:
-        return list(espn_live.bracket_eliminatorias()["R32"].values()), None  # los 16 cruces reales
-    except Exception as e:
-        return None, str(e)
-
-
-@st.cache_data(show_spinner="Simulando las eliminatorias (15.000 torneos)…")
-def sim_bracket(key, modelo):
-    """Cuadro real (cruces de ESPN en la plantilla FIFA) + simulación del campeón, con el Elo
-       actualizado por los resultados reales y los KO ya jugados fijados."""
-    r32, err = cargar_bracket(key)
-    if not r32 or len(ESPN_DF) < 72:
-        return None
-    M = get_motor()
-    br = mo.bracket_real(ESPN_DF, r32)
-    st2 = mo.actualizar_estados(M, ESPN_DF)
-    fk = espn_live.ganadores_ko()        # ganadores reales de KO (penales incluidos)
-    return {"bracket": br, "sim": mo.simular_bracket(M, br, states=st2, n_sims=15000, modelo=modelo, fijos_ko=fk)}
-
-
-# --------------------------------------------------------------------------- #
-#  Render del cuadro de eliminatorias (HTML estilo portal deportivo)
-# --------------------------------------------------------------------------- #
-_BRACKET_CSS = """
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-*{box-sizing:border-box;}
-body{margin:0;font-family:'Inter',sans-serif;background:transparent;}
-.half{margin-bottom:4px;}
-.htitle{font-size:.82rem;font-weight:700;color:#0b3d91;text-transform:uppercase;
-        letter-spacing:.04em;margin:4px 0 2px 6px;}
-.bracket{display:flex;align-items:stretch;height:420px;}
-.round{display:flex;flex-direction:column;flex:1;min-width:150px;padding:0 7px;}
-.rbody{display:flex;flex-direction:column;justify-content:space-around;flex:1;}
-.rhead{text-align:center;font-size:.6rem;font-weight:700;color:#94a3b8;text-transform:uppercase;
-       letter-spacing:.07em;margin-bottom:3px;}
-.match{background:#fff;border:1px solid #e2e8f0;border-radius:7px;overflow:hidden;
-       box-shadow:0 1px 2px rgba(0,0,0,.06);margin:3px 0;}
-.match.played{border-color:#86efac;}
-.tm{display:flex;align-items:center;gap:5px;padding:3px 7px;font-size:.74rem;color:#475569;
-    border-bottom:1px solid #f1f5f9;}
-.tm:last-child{border-bottom:none;}
-.tm .fl{font-size:.9rem;line-height:1;}
-.tm .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.tm .pr{font-variant-numeric:tabular-nums;font-size:.68rem;color:#a3acba;font-weight:600;}
-.tm.win{background:#eef3fc;color:#0b3d91;font-weight:700;}
-.tm.win .pr{color:#2a5db0;}
-.match.played .tm.win{background:#e7f6ec;color:#15803d;}
-.match.played .tm.win .pr{color:#15803d;}
-.match.played .tm.lose{color:#cbd5e1;}
-.finalwrap{display:flex;flex-direction:column;align-items:center;margin:6px 0;}
-.fhdr{font-size:.7rem;font-weight:700;color:#7a3b91;text-transform:uppercase;letter-spacing:.08em;
-      margin-bottom:4px;}
-.finalists{display:flex;gap:10px;margin-bottom:8px;}
-.finalists .match{min-width:158px;}
-.champ{background:linear-gradient(135deg,#0b3d91,#7a3b91);color:#fff;border-radius:11px;
-       padding:9px 26px;text-align:center;box-shadow:0 5px 14px rgba(11,61,145,.28);}
-.champ .lbl{font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;opacity:.85;}
-.champ .nm{font-size:1.2rem;font-weight:700;margin:1px 0;}
-.champ .pr{font-size:.72rem;opacity:.92;}
-</style>
-"""
-_HEAD = {"R32": "Dieciseisavos", "R16": "Octavos", "QF": "Cuartos", "SF": "Semifinal"}
-
-
-def _argmax_reach(reach, key):
-    d = reach.get(key, {})
-    if not d:
-        return None, 0.0
-    t = max(d, key=d.get)
-    return t, d[t]
-
-
-def _box_info(bracket, reach, rnd, num):
-    m = bracket["FINAL"] if rnd == "FINAL" else bracket[rnd][num]
-    key = ("FINAL", 1) if rnd == "FINAL" else (rnd, num)
-    if rnd == "R32":
-        home, away = m["home"], m["away"]
-        slots = [(home, reach[key].get(home, 0.0)), (away, reach[key].get(away, 0.0))]
-        played = m["state"] == "post" and m["gh"] is not None and m["ga"] is not None
-        winner = (m.get("winner") or (home if m["gh"] > m["ga"] else away)) if played else _argmax_reach(reach, key)[0]
-        return {"slots": slots, "played": played, "score": (m["gh"], m["ga"]) if played else None,
-                "pens": m.get("pens") if played else None, "winner": winner}
-    th, ph = _argmax_reach(reach, m["home"])
-    ta, pa = _argmax_reach(reach, m["away"])
-    return {"slots": [(th, ph), (ta, pa)], "played": False, "score": None, "pens": None,
-            "winner": _argmax_reach(reach, key)[0]}
-
-
-def _box_html(info):
-    rows = ""
-    for idx, (team, p) in enumerate(info["slots"]):
-        es = nombre(team) if team else "—"
-        fl = bandera(team) if team else "·"
-        if info["played"]:
-            val = str(info["score"][idx])
-            if info.get("pens"):
-                val = f'{val} <small>({info["pens"][idx]})</small>'
-            cls = "tm win" if team == info["winner"] else "tm lose"
-        else:
-            val = f"{p:.0%}"
-            cls = "tm win" if team and team == info["winner"] else "tm"
-        rows += (f'<div class="{cls}"><span class="fl">{fl}</span>'
-                 f'<span class="nm" title="{es}">{es}</span><span class="pr">{val}</span></div>')
-    return f'<div class="match{" played" if info["played"] else ""}">{rows}</div>'
-
-
-def _collect_orden(bracket, side, acc):
-    rnd, num = side
-    if rnd != "R32":
-        m = bracket[rnd][num]
-        _collect_orden(bracket, m["home"], acc)
-        _collect_orden(bracket, m["away"], acc)
-    acc.setdefault(rnd, []).append(num)
-    return acc
-
-
-def _half_html(bracket, sim, sf_num, tabla):
-    reach = sim["reach"]
-    acc = _collect_orden(bracket, ("SF", sf_num), {})
-    teams = [bracket["R32"][n][s] for n in acc["R32"] for s in ("home", "away")]
-    pcamp = tabla.set_index("Selección")["P_campeon"]
-    fuerte = max(teams, key=lambda t: pcamp.get(t, 0))
-    cols = ""
-    for rnd in ("R32", "R16", "QF", "SF"):
-        boxes = "".join(_box_html(_box_info(bracket, reach, rnd, n)) for n in acc[rnd])
-        cols += f'<div class="round"><div class="rhead">{_HEAD[rnd]}</div><div class="rbody">{boxes}</div></div>'
-    return (f'<div class="half"><div class="htitle">Lado de {nombre(fuerte)} {bandera(fuerte)}</div>'
-            f'<div class="bracket">{cols}</div></div>')
-
-
-def _final_html(bracket, sim, tabla):
-    fi = _box_info(bracket, sim["reach"], "FINAL", 1)
-    champ = tabla.iloc[0]
-    return (f'<div class="finalwrap"><div class="fhdr">★ Final ★</div>'
-            f'<div class="finalists">{_box_html(fi)}</div>'
-            f'<div class="champ"><div class="lbl">Campeón más probable</div>'
-            f'<div class="nm">{bandera(champ["Selección"])} {nombre(champ["Selección"])}</div>'
-            f'<div class="pr">campeón en el {champ["P_campeon"]:.1%} de los torneos simulados</div></div></div>')
-
-
-def bracket_completo_html(bracket, sim, tabla):
-    return (_BRACKET_CSS + _half_html(bracket, sim, 1, tabla)
-            + _final_html(bracket, sim, tabla) + _half_html(bracket, sim, 2, tabla))
-
-
-M = get_motor()
-ESPN_DF, ESPN_ERR = cargar_espn()
-ESPN_KEY = "" if len(ESPN_DF) == 0 else f"{len(ESPN_DF)}-{ESPN_DF.fecha.max()}"
-
-# Render de Título principal de la aplicación
-st.markdown('<div class="main-title">🏆 Simulador de la Copa Mundial 2026</div>', unsafe_allow_html=True)
-st.markdown('<div class="main-subtitle">Predicción Versus · Cruces de eliminatorias reales · Simulación de campeonato en vivo</div>', unsafe_allow_html=True)
-
-# Selección de modelo para el panel e interfaces globales
-modelo = st.sidebar.radio(
-    "Modelo de predicción", 
-    ["base", "hyb", "two_stage"],
-    format_func=lambda x: "Base (Elo + H2H + valor)" if x == "base" else ("Híbrido (+ forma reciente)" if x == "hyb" else "Híbrido 2 Etapas (Táctico)")
+torneo_seleccionado = st.sidebar.selectbox(
+    "Selecciona el Torneo:",
+    [
+        "🏆 Copa Mundial 2026",
+        "🇲🇽 Liga MX (México)",
+        "🇧🇷 Brasileirão (Brasil)",
+        "🇨🇱 Liga Chilena (Primera)"
+    ]
 )
-st.sidebar.info("Todos los modelos usan **ponderación K-factor**: los partidos oficiales (Mundial, clasificatorias) pesan más que los amistosos.")
-if len(ESPN_DF):
-    st.sidebar.success(f"🛰️ ESPN: {len(ESPN_DF)} partidos reales cargados.")
 
-# Pestañas principales (con las secciones eliminadas según requerimiento)
-tab1, tabB, tab3 = st.tabs([
-    "⚽ Partido + Mercados", 
-    "🗺️ Cuadro de eliminatorias", 
-    "🔴 Torneo en vivo"
-])
+st.sidebar.markdown("---")
+st.sidebar.markdown("### 📊 Sobre los Modelos")
+st.sidebar.caption(
+    "Todos los modelos de ligas domésticas utilizan regularización LASSO (L1) con optimizador SAGA "
+    "sobre variables point-in-time de boxscore y priors de Elo y Valor de Plantilla. "
+    "El Mundial utiliza un enfoque híbrido bayesiano basado en Elo."
+)
 
-# ============================================================================
-# TAB 1 · Partido + mercados (comparación Base vs Híbrido vs 2 Etapas)
-# ============================================================================
-with tab1:
-    c1, cvs, c2 = st.columns([5, 1, 5])
-    with c1:
-        a = es2en(st.selectbox("Selección 1", OPC, index=OPC.index("🇪🇸 España"), key="m_a"))
-    with cvs:
-        st.markdown('<div class="vs-text">VS</div>', unsafe_allow_html=True)
-    with c2:
-        b = es2en(st.selectbox("Selección 2", OPC, index=OPC.index("🇦🇷 Argentina"), key="m_b"))
-    
-    cancha = st.radio("Cancha", ["Automática (anfitrión de local)", "Neutral",
-                                 f"Local {nombre(a)}", f"Local {nombre(b)}"], horizontal=True)
-    cmode = {"Automática (anfitrión de local)": "auto", "Neutral": "neutral",
-             f"Local {nombre(a)}": "1", f"Local {nombre(b)}": "2"}.get(cancha, "auto")
+# Enrutador
+limpiar_cache_importacion()
 
-    if a == b:
-        st.error("Elige dos selecciones distintas.")
-    else:
-        na, nb = nombre(a), nombre(b)
-        
-        # Historial/Forma Reciente en expanders
-        lc1, lc2 = st.columns(2)
-        for col, eq, nm in ((lc1, a, na), (lc2, b, nb)):
-            with col:
-                up = mo.ultimos_partidos(M, eq, n=6, extra=ESPN_DF)
-                with st.expander(f"📋 Forma reciente — {nm}", expanded=False):
-                    st.dataframe(up[["res", "loc", "rival", "marcador", "fecha"]] if len(up) else up,
-                                 hide_index=True, width='stretch')
+if torneo_seleccionado == "🏆 Copa Mundial 2026":
+    # Mover al directorio de lab
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lab"))
+    import lab.app_lab as lab_app
+    lab_app.run_app()
 
-        # Tarjetas de visualización de probabilidad por modelo
-        def tarjeta(modelo_id, titulo, css):
-            with st.container(border=True):
-                st.markdown(f'<div class="{css}">{titulo}</div>', unsafe_allow_html=True)
-                mix, p, (la, lb) = mo.grilla(M, a, b, cmode, modelo_id)
-                for nom_lado, prob in ((f"Victoria {na}", p[0]), ("Empate", p[1]), (f"Victoria {nb}", p[2])):
-                    st.markdown(f"**{nom_lado}: {prob:.1%}**  ·  cuota justa `{mo.cuota(prob):.2f}`")
-                    st.progress(float(prob))
-                pav = p[0] + p[1] * p[0] / (p[0] + p[2])
-                st.caption(f"Si fuese eliminatoria, avanza **{na} {pav:.0%}** / {nb} {1-pav:.0%}")
-                st.caption(f"Goles esperados (Poisson): {na} {la:.2f} — {lb:.2f} {nb}")
-                return mix, p
+elif torneo_seleccionado == "🇲🇽 Liga MX (México)":
+    # Mover al directorio de mex
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "mex"))
+    import mex.app_mex as mex_app
+    mex_app.run_app()
 
-        col_b, col_h, col_ts = st.columns(3)
-        with col_b:
-            mix_b, _ = tarjeta("base", "🔵 Modelo Base (Elo + H2H + valor)", "card-title-base")
-        with col_h:
-            mix_h, _ = tarjeta("hyb", "🟣 Modelo Híbrido (Base + forma)", "card-title-hybrid")
-        with col_ts:
-            mix_ts, _ = tarjeta("two_stage", "🟢 Híbrido 2 Etapas (Táctico)", "card-title-two-stage")
+elif torneo_seleccionado == "🇧🇷 Brasileirão (Brasil)":
+    # Mover al directorio de bra
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "bra"))
+    import bra.app_bra as bra_app
+    bra_app.run_app()
 
-        # Configuración de mercados para el modelo activo en la barra lateral
-        lbl_mod = "Base" if modelo == "base" else ("Híbrido" if modelo == "hyb" else "Híbrido 2 Etapas")
-        st.markdown(f'<div class="sec-title">Mercados — modelo {lbl_mod} (probabilidad y cuota justa)</div>', unsafe_allow_html=True)
-        st.caption("Compara la **cuota justa** (1 ÷ probabilidad) con la de tu casa de apuestas para encontrar value.")
-        
-        mix = mix_b if modelo == "base" else (mix_h if modelo == "hyb" else mix_ts)
-        mk = mo.mercados(mix)
-        
-        filas = []
-        for ln in (1.5, 2.5, 3.5):
-            for lado in ("Over", "Under"):
-                pr = mk[f"{lado} {ln}"]
-                filas.append({"Mercado": f"{lado} {ln} goles", "Prob.": f"{pr:.1%}", "Cuota justa": f"{mo.cuota(pr):.2f}"})
-        for et, key in (("Ambos marcan: Sí", "Ambos marcan (BTTS sí)"), ("Ambos marcan: No", "BTTS no")):
-            filas.append({"Mercado": et, "Prob.": f"{mk[key]:.1%}", "Cuota justa": f"{mo.cuota(mk[key]):.2f}"})
-        for ln in (-2, -1, 1):
-            hc = mo.handicap_asiatico(mix, ln)
-            sg = f"+{ln}" if ln > 0 else str(ln)
-            filas.append({"Mercado": f"Hándicap {na} {sg}", "Prob.": f"{hc['A cubre']:.1%}",
-                          "Cuota justa": f"{mo.cuota(hc['A cubre']):.2f}"})
-        
-        mc1, mc2 = st.columns(2)
-        mc1.dataframe(pd.DataFrame(filas[:8]), hide_index=True, width='stretch')
-        mc2.dataframe(pd.DataFrame(filas[8:]), hide_index=True, width='stretch')
-        st.markdown("**Marcadores más probables:** " + " · ".join(
-            f"`{i}-{j} ({pr:.0%}, cuota {mo.cuota(pr):.1f})`" for i, j, pr in mk["_top_marcadores"][:4]))
-
-        # Estadísticas esperadas del partido (córners, tiros al arco, faltas, posesión)
-        st.markdown('<div class="sec-title">Estadísticas esperadas del partido</div>', unsafe_allow_html=True)
-        st.caption("Un modelo por estadística, construido con selección de variables + validación temporal.")
-        se = mo.stats_esperadas(M, a, b, cmode)
-        se1, se2 = st.columns([1, 1])
-        with se1:
-            df_se = pd.DataFrame({
-                "Estadística": ["⛳ Córners", "🎯 Tiros al arco", "🟨 Faltas", "📊 Posesión %"],
-                na: [f"{se['corners'][0]:.1f}", f"{se['tiros_arco'][0]:.1f}",
-                     f"{se['faltas'][0]:.1f}", f"{se['posesion'][0]:.0f}%"],
-                nb: [f"{se['corners'][1]:.1f}", f"{se['tiros_arco'][1]:.1f}",
-                     f"{se['faltas'][1]:.1f}", f"{se['posesion'][1]:.0f}%"]})
-            st.dataframe(df_se, hide_index=True, width='stretch')
-        with se2:
-            filas_ou = []
-            for nm_st, lineas in (("Córners", [8.5, 9.5, 10.5]), ("Tiros al arco", [6.5, 7.5, 8.5])):
-                key = "corners" if nm_st == "Córners" else "tiros_arco"
-                ou = mo.over_under_total(*se[key], lineas)
-                for ln, (po, pu) in ou.items():
-                    filas_ou.append({"Mercado": f"{nm_st} Over {ln}", "Prob.": f"{po:.0%}",
-                                     "Cuota justa": f"{mo.cuota(po):.2f}"})
-            st.dataframe(pd.DataFrame(filas_ou), hide_index=True, width='stretch')
-            st.caption(f"Totales esperados — córners: **{sum(se['corners']):.1f}**  ·  "
-                       f"tiros al arco: **{sum(se['tiros_arco']):.1f}**  ·  faltas: **{sum(se['faltas']):.1f}**")
-
-        # Matrices de marcadores lado a lado
-        st.markdown('<div class="sec-title">Matrices de marcadores</div>', unsafe_allow_html=True)
-        st.caption("Con corrección Dixon-Coles (ajuste de empates de bajo marcador). El 1X2 lo define el clasificador ML y la grilla distribuye los scores.")
-        gx1, gx2 = st.columns(2)
-        for col, mix_x, tit, cmap in ((gx1, mix_b, "Base", "Blues"), (gx2, mix_h, "Híbrido", "Purples")):
-            with col:
-                fig, ax = plt.subplots(figsize=(5.4, 4.6))
-                m6 = np.zeros((7, 7)); m6[:6, :6] = mix_x[:6, :6]
-                m6[6, :6] = mix_x[6:, :6].sum(0); m6[:6, 6] = mix_x[:6, 6:].sum(1); m6[6, 6] = mix_x[6:, 6:].sum()
-                ax.imshow(m6, cmap=cmap)
-                etq = [str(i) for i in range(6)] + ["6+"]
-                ax.set_xticks(range(7)); ax.set_xticklabels(etq); ax.set_yticks(range(7)); ax.set_yticklabels(etq)
-                ax.set_xlabel(f"Goles {nb}"); ax.set_ylabel(f"Goles {na}"); ax.set_title(tit, fontsize=11)
-                imax, jmax = np.unravel_index(m6.argmax(), m6.shape)
-                for i in range(7):
-                    for j in range(7):
-                        ax.text(j, i, f"{m6[i,j]:.0%}", ha="center", va="center", fontsize=7.5,
-                                color="white" if m6[i, j] > m6.max() * 0.6 else "black",
-                                fontweight="bold" if (i, j) == (imax, jmax) else "normal")
-                ax.add_patch(plt.Rectangle((jmax-.5, imax-.5), 1, 1, fill=False, edgecolor="#d62728", lw=2))
-                st.pyplot(fig)
-
-# ============================================================================
-# TAB B · Cuadro de eliminatorias (bracket real + simulación del campeón)
-# ============================================================================
-with tabB:
-    st.markdown('<div class="sec-title">El cuadro de eliminatorias — camino al título</div>',
-                unsafe_allow_html=True)
-    st.markdown("Cuadro **real, ya definido**: los 16 cruces de dieciseisavos vienen de la API de ESPN. "
-                "Encima va la **simulación del campeón** corrida sobre ese cuadro — 15.000 torneos jugando "
-                "solo las eliminatorias, con el Elo de cada selección ya actualizado por sus resultados "
-                "reales en el Mundial. Los cruces ya jugados (penales incluidos) quedan **fijados**.")
-    if st.button("🔄 Actualizar resultados (ESPN)", key="refresh_bracket"):
-        st.cache_data.clear()
-        st.rerun()
-    payload = sim_bracket(ESPN_KEY, modelo)
-    if payload is None:
-        st.info("El cuadro de eliminatorias aún no está publicado en ESPN. Se llena solo en cuanto "
-                "termine la fase de grupos y se definan los cruces.")
-    else:
-        br, sim = payload["bracket"], payload["sim"]
-        tabla = sim["tabla"]
-        st.markdown("##### 🏆 Campeón según la simulación")
-        c = st.columns(3)
-        for col, (_, r), md in zip(c, tabla.head(3).iterrows(), ["🥇", "🥈", "🥉"]):
-            col.metric(f"{md} {etiqueta(r['Selección'])}", f"{r['P_campeon']:.1%}")
-        components.html(bracket_completo_html(br, sim, tabla), height=1010, scrolling=True)
-        st.caption("En **dieciseisavos** se ven los cruces reales con la probabilidad de avanzar de cada "
-                   "selección (verde = partido ya jugado, con su marcador). De **octavos en adelante**, "
-                   "cada casillero muestra el equipo **más probable** de ocuparlo según la simulación "
-                   "(proyección — el cruce exacto aún no está definido). El borde azul marca al favorito "
-                   "de cada llave.")
-        with st.expander("📋 Probabilidades completas por ronda (las 32 selecciones)"):
-            show = tabla.copy()
-            show["Selección"] = show["Selección"].map(etiqueta)
-            show = show.rename(columns={"P_R16": "P(8vos)", "P_QF": "P(4tos)", "P_SF": "P(semis)",
-                                         "P_final": "P(final)", "P_campeon": "P(campeón)"})
-            pct = ["P(8vos)", "P(4tos)", "P(semis)", "P(final)", "P(campeón)"]
-            st.dataframe(show.style.format({c: "{:.1%}" for c in pct})
-                         .background_gradient(subset=["P(campeón)"], cmap="Blues"),
-                         hide_index=True, width='stretch')
-
-# ============================================================================
-# TAB 3 · Torneo en vivo
-# ============================================================================
-with tab3:
-    st.markdown('<div class="sec-title">Modelo vivo: resultados reales → re-simulación</div>', unsafe_allow_html=True)
-    st.markdown("Trae los resultados **reales** del Mundial desde la **API de ESPN**, actualiza el Elo y la "
-                "forma de cada selección, **fija** los partidos de grupo jugados y **re-simula el resto**.")
-
-    fuente = st.radio("Fuente de resultados", ["🛰️ Automática (ESPN)", "✍️ Manual"], horizontal=True)
-    if fuente.startswith("🛰️"):
-        if ESPN_ERR:
-            st.error(f"No se pudo contactar a ESPN ({ESPN_ERR}). Usa el modo manual.")
-            res = pd.DataFrame()
-        elif len(ESPN_DF) == 0:
-            st.info("ESPN aún no reporta partidos finalizados. Vuelve cuando empiece el Mundial.")
-            res = pd.DataFrame()
-        else:
-            res = ESPN_DF.copy()
-            st.success(f"{len(res)} partidos finalizados traídos de ESPN (cache 15 min).")
-            ev = cargar_envivo()
-            if len(ev):
-                st.caption("🔴 En juego: " + " · ".join(
-                    f"{r.local} {r.marcador} {r.visita} ({r.minuto})" for r in ev.itertuples(index=False)))
-            st.dataframe(res[["fecha", "local", "goles_local", "goles_visita", "visita"]],
-                         hide_index=True, width='stretch', height=240)
-    else:
-        plantilla = pd.DataFrame({"local": pd.Series(dtype="str"), "visita": pd.Series(dtype="str"),
-                                  "goles_local": pd.Series(dtype="int"), "goles_visita": pd.Series(dtype="int")})
-        edit = st.data_editor(
-            plantilla, num_rows="dynamic", width='stretch', key="vivo",
-            column_config={
-                "local": st.column_config.SelectboxColumn("Local", options=mo.MUNDIALISTAS, required=True),
-                "visita": st.column_config.SelectboxColumn("Visita", options=mo.MUNDIALISTAS, required=True),
-                "goles_local": st.column_config.NumberColumn("Goles local", min_value=0, max_value=15, step=1),
-                "goles_visita": st.column_config.NumberColumn("Goles visita", min_value=0, max_value=15, step=1)})
-        res = edit.dropna(subset=["local", "visita", "goles_local", "goles_visita"])
-        res = res[res.local != res.visita]
-        if len(res):
-            st.success(f"{len(res)} resultado(s) cargado(s).")
-
-    if st.button("🔄 Actualizar y re-simular (4.000 mundiales)", type="primary"):
-        if len(res) == 0:
-            st.warning("No hay resultados para incorporar.")
-        else:
-            st2 = mo.actualizar_estados(M, res)
-            fijos = {(r.local, r.visita): (int(r.goles_local), int(r.goles_visita))
-                     for r in res.itertuples(index=False)
-                     if mo.GRUPO_DE.get(r.local) == mo.GRUPO_DE.get(r.visita)}
-            with st.spinner("Re-simulando…"):
-                r_pre = mo.monte_carlo(M, 4000, modelo)
-                r_post = mo.monte_carlo(M, 4000, modelo, states=st2, fijos=fijos)
-            comp = r_pre[["Selección", "P_campeon"]].rename(columns={"P_campeon": "pre"}).merge(
-                r_post[["Selección", "P_campeon"]].rename(columns={"P_campeon": "post"}), on="Selección")
-            comp["Δ"] = comp.post - comp.pre
-            comp = comp.sort_values("post", ascending=False).head(12)
-            comp["Selección"] = comp["Selección"].map(etiqueta)
-            st.markdown("##### Probabilidad de campeón: antes vs. después")
-            st.dataframe(comp.style.format({"pre": "{:.1%}", "post": "{:.1%}", "Δ": "{:+.1%}"})
-                         .background_gradient(subset=["Δ"], cmap="RdYlGn"), width='stretch', hide_index=True)
-            subio = comp.loc[comp["Δ"].idxmax()]
-            st.caption(f"Mayor salto: {subio['Selección']} ({subio['Δ']:+.1%}).")
+elif torneo_seleccionado == "🇨🇱 Liga Chilena (Primera)":
+    # Mover al directorio de chile
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "chile"))
+    import chile.app_chile as chile_app
+    chile_app.run_app()
