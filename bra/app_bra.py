@@ -170,7 +170,7 @@ def run_app():
                     st.markdown(f"*   `{g1} - {g2}`: **{pr:.1%}** (Cuota: `{mo.cuota(pr):.1f}`)")
                     
             # Mercados de apuestas
-            st.markdown('<div class="sec-title">Mercados de Goles y Hándicaps</div>', unsafe_allow_html=True)
+            st.markdown('<div class="sec-title">Mercados de Goles y Apuestas Especiales</div>', unsafe_allow_html=True)
             filas = []
             for ln in (1.5, 2.5, 3.5):
                 for lado in ("Over", "Under"):
@@ -179,9 +179,24 @@ def run_app():
             for et, key in (("Ambos marcan: Sí", "Ambos marcan (BTTS sí)"), ("Ambos marcan: No", "BTTS no")):
                 filas.append({"Mercado": et, "Prob.": f"{mk[key]:.1%}", "Cuota justa": f"{mo.cuota(mix.ravel()[0]):.2f}" if "no" in key else f"{mo.cuota(mk[key]):.2f}"})
                 
+            # Doble Oportunidad
+            p_1x = p[0] + p[1]
+            p_x2 = p[2] + p[1]
+            p_12 = p[0] + p[2]
+            filas.append({"Mercado": "Doble Oportunidad: Local o Empate (1X)", "Prob.": f"{p_1x:.1%}", "Cuota justa": f"{mo.cuota(p_1x):.2f}"})
+            filas.append({"Mercado": "Doble Oportunidad: Visita o Empate (X2)", "Prob.": f"{p_x2:.1%}", "Cuota justa": f"{mo.cuota(p_x2):.2f}"})
+            filas.append({"Mercado": "Doble Oportunidad: Local o Visita (12)", "Prob.": f"{p_12:.1%}", "Cuota justa": f"{mo.cuota(p_12):.2f}"})
+            
+            # Sin Empate (DNB)
+            denom = p[0] + p[2]
+            p_dnb1 = p[0] / denom if denom > 0 else 0.5
+            p_dnb2 = p[2] / denom if denom > 0 else 0.5
+            filas.append({"Mercado": f"Sin Empate: {a} (DNB 1)", "Prob.": f"{p_dnb1:.1%}", "Cuota justa": f"{mo.cuota(p_dnb1):.2f}"})
+            filas.append({"Mercado": f"Sin Empate: {b} (DNB 2)", "Prob.": f"{p_dnb2:.1%}", "Cuota justa": f"{mo.cuota(p_dnb2):.2f}"})
+                
             mc1, mc2 = st.columns(2)
-            mc1.dataframe(pd.DataFrame(filas[:4]), hide_index=True, width='stretch')
-            mc2.dataframe(pd.DataFrame(filas[4:]), hide_index=True, width='stretch')
+            mc1.dataframe(pd.DataFrame(filas[:7]), hide_index=True, width='stretch')
+            mc2.dataframe(pd.DataFrame(filas[7:]), hide_index=True, width='stretch')
             
             # Gráfica de la matriz Dixon-Coles
             st.markdown('<div class="sec-title">Matriz de Goles Exactos (Dixon-Coles)</div>', unsafe_allow_html=True)
