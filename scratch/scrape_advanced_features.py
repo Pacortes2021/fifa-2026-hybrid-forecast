@@ -205,7 +205,7 @@ def scrape_advanced():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
-    seasons = [2020, 2021, 2022, 2023, 2024, 2025]
+    seasons = [2020, 2021, 2022, 2023, 2024, 2025, 2026]
     
     for lkey, info in LEAGUES.items():
         print(f"\n=======================================================")

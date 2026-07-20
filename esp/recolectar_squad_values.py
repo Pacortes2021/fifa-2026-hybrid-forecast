@@ -69,7 +69,7 @@ def recolectar():
     
     filas = []
     # Scrapear desde 2020 a 2025
-    seasons = [2020, 2021, 2022, 2023, 2024, 2025]
+    seasons = [2020, 2021, 2022, 2023, 2024, 2025, 2026]
     
     for s in seasons:
         url = f"https://www.transfermarkt.us/laliga/startseite/wettbewerb/ES1/plus/?saison_id={s}"
