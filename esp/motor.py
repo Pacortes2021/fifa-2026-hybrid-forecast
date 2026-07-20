@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import statsmodels.api as sm
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import log_loss
@@ -148,13 +149,18 @@ def cargar_y_entrenar():
     cols_feat = ["elo_diff", "squad_value_diff", "h2h_diff"] + \
                 [f"{s}_total_diff" for s in STATS] + [f"{s}_sede_diff" for s in STATS]
                 
-    pipe = Pipeline([
+    pipe_lasso = Pipeline([
         ("scale", StandardScaler()),
         ("lr", LogisticRegression(penalty="l1", solver="saga", C=0.08, max_iter=4000, random_state=42))
     ])
+    pipe_lasso.fit(df_features[cols_feat], df_features["resultado"])
     
-    # Entrenar con el 100% de datos para predicción
-    pipe.fit(df_features[cols_feat], df_features["resultado"])
+    # Modelo 2: Random Forest Classifier
+    pipe_rf = Pipeline([
+        ("scale", StandardScaler()),
+        ("rf", RandomForestClassifier(max_depth=6, n_estimators=250, random_state=42, n_jobs=-1))
+    ])
+    pipe_rf.fit(df_features[cols_feat], df_features["resultado"])
     
     # Ajuste Poisson para goles esperados
     # Estimamos goles promedio en función del ELO diferencial
@@ -167,7 +173,8 @@ def cargar_y_entrenar():
     g_const, g_d = float(gp.params["const"]), float(gp.params["d"])
     
     return {
-        "pipe": pipe,
+        "pipe_lasso": pipe_lasso,
+        "pipe_rf": pipe_rf,
         "cols": cols_feat,
         "tracker": tracker,
         "g_const": g_const,
@@ -181,11 +188,11 @@ def cargar():
     return cargar_y_entrenar()
 
 
-def predecir_match(M, local, visita):
-    # Retorna P(Local), P(Empate), P(Visita) en base al modelo
+def predecir_match(M, local, visita, modelo_tipo="rf"):
+    # Retorna P(Local), P(Empate), P(Visita) en base al modelo seleccionado
     tracker = M["tracker"]
     cols = M["cols"]
-    pipe = M["pipe"]
+    pipe = M["pipe_rf"] if modelo_tipo == "rf" else M["pipe_lasso"]
     
     # Obtener features en el estado final del tracker
     feats = tracker.get_features_for_match(local, visita, 2026)
@@ -195,9 +202,9 @@ def predecir_match(M, local, visita):
     return np.array([p[2], p[1], p[0]])  # Orden: [Local, Empate, Visita]
 
 
-def grilla_goles(M, local, visita):
+def grilla_goles(M, local, visita, modelo_tipo="rf"):
     # Retorna matriz 10x10 de goles esperados usando modelo Poisson y Dixon-Coles
-    p_1x2 = predecir_match(M, local, visita)
+    p_1x2 = predecir_match(M, local, visita, modelo_tipo=modelo_tipo)
     
     tracker = M["tracker"]
     elo_diff = tracker.elos[local] - tracker.elos[visita]
@@ -292,7 +299,7 @@ def handicap_asiatico(mix, line):
     return {"A cubre": p_cubre, "Push": p_push, "B cubre": 1.0 - p_cubre - p_push}
 
 
-def simular_fixture_regular(M, PREDS, fijos=None):
+def simular_fixture_regular(M, PREDS, fijos=None, modelo_tipo="rf"):
     # Lee fixture.csv y simula el fin de temporada
     fix_path = DATA / "fixture.csv"
     if not fix_path.exists():
@@ -324,7 +331,7 @@ def simular_fixture_regular(M, PREDS, fijos=None):
         else:
             p = PREDS.get((local, visita))
             if p is None:
-                p = predecir_match(M, local, visita)
+                p = predecir_match(M, local, visita, modelo_tipo=modelo_tipo)
             # Simular resultado
             rnd = np.random.rand()
             if rnd < p[0]:
@@ -419,7 +426,7 @@ def obtener_tabla_actual(M, temporada=None):
     return ordenar_tabla(pd.DataFrame(filas))
 
 
-def simular_campeonato(M, n_sims=3000, fijos=None):
+def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf"):
     # Corre simulación de Monte Carlo para obtener probabilidades de campeón, copas y descenso
     fix_path = DATA / "fixture.csv"
     if not fix_path.exists() or len(pd.read_csv(fix_path)) == 0:
@@ -446,14 +453,14 @@ def simular_campeonato(M, n_sims=3000, fijos=None):
     print("Precalculando predicciones de fixture...")
     PREDS = {}
     for r in fix.itertuples(index=False):
-        PREDS[(r.local, r.visita)] = predecir_match(M, r.local, r.visita)
+        PREDS[(r.local, r.visita)] = predecir_match(M, r.local, r.visita, modelo_tipo=modelo_tipo)
         
     counts_campeon = defaultdict(int)
     counts_copas = defaultdict(int)
     counts_descenso = defaultdict(int)
     
     for _ in range(n_sims):
-        tabla_sim = simular_fixture_regular(M, PREDS, fijos)
+        tabla_sim = simular_fixture_regular(M, PREDS, fijos, modelo_tipo=modelo_tipo)
         
         # Campeón
         counts_campeon[tabla_sim.iloc[0]["equipo"]] += 1
@@ -478,7 +485,7 @@ def simular_campeonato(M, n_sims=3000, fijos=None):
     return pd.DataFrame(res).sort_values("P_campeon", ascending=False).reset_index(drop=True)
 
 
-def validacion_en_vivo(M, temporada_val=2026):
+def validacion_en_vivo(M, temporada_val=2026, modelo_tipo="rf"):
     # Mismo reporte de validación en vivo para LaLiga
     partidos = pd.read_csv(DATA / "partidos.csv", parse_dates=["fecha"]).sort_values("fecha")
     val_df = partidos[partidos.temporada == temporada_val]
@@ -510,7 +517,9 @@ def validacion_en_vivo(M, temporada_val=2026):
         if r.temporada == temporada_val:
             feats = tracker.get_features_for_match(local, visita, r.temporada)
             df_test = pd.DataFrame([feats])[M["cols"]]
-            p = M["pipe"].predict_proba(df_test)[0]
+            
+            pipe = M["pipe_rf"] if modelo_tipo == "rf" else M["pipe_lasso"]
+            p = pipe.predict_proba(df_test)[0]
             p_1x2 = np.array([p[2], p[1], p[0]])  # local, empate, visita
             
             real = 2 if ga > gb else (1 if ga == gb else 0)

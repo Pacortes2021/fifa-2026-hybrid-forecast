@@ -80,12 +80,20 @@ def get_motor():
 
 
 @st.cache_data(show_spinner="Corriendo simulaciones de Monte Carlo (3.000 iteraciones)...")
-def simular_liga(_M, key):
-    return mo.simular_campeonato(_M, n_sims=3000)
+def simular_liga(_M, key, modelo_tipo):
+    return mo.simular_campeonato(_M, n_sims=3000, modelo_tipo=modelo_tipo)
 
 
 def run_app():
     st.sidebar.markdown("### 🛠️ Controles del Modelo")
+    
+    # Selector de modelo activo
+    modelo_sel = st.sidebar.selectbox(
+        "🤖 Modelo Predictivo:",
+        ["Random Forest (Recomendado)", "Regresión Logística (LASSO L1)"],
+        index=0
+    )
+    modelo_tipo = "rf" if "Random Forest" in modelo_sel else "lasso"
     
     # Botón para actualizar resultados en vivo
     if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
@@ -126,8 +134,8 @@ def run_app():
             st.error("Selecciona dos equipos distintos.")
         else:
             # Calcular predicción 1X2 y marcadores
-            p = mo.predecir_match(M, a, b)
-            mix = mo.grilla_goles(M, a, b)
+            p = mo.predecir_match(M, a, b, modelo_tipo=modelo_tipo)
+            mix = mo.grilla_goles(M, a, b, modelo_tipo=modelo_tipo)
             
             tracker = M["tracker"]
             elo_diff = tracker.elos[a] - tracker.elos[b]
@@ -238,7 +246,7 @@ def run_app():
         # 2. Proyecciones
         partidos_rec = pd.read_csv(mo.DATA / "partidos.csv")
         last_key = f"{len(partidos_rec)}-{partidos_rec.fecha.max()}"
-        df_proy = simular_liga(M, last_key)
+        df_proy = simular_liga(M, last_key, modelo_tipo)
         
         df_proy_visual = df_proy.copy()
         df_proy_visual["Equipo"] = df_proy_visual["equipo"].apply(get_label)
@@ -267,21 +275,37 @@ def run_app():
     # TAB 3: Importancia de Variables
     # ============================================================================
     with tab3:
-        st.markdown('<div class="sec-title">Explicabilidad del Modelo LASSO (L1)</div>', unsafe_allow_html=True)
-        st.markdown("La regularización **LASSO (L1)** penaliza los coeficientes de las variables redundantes o no informativas hasta reducirlas exactamente a cero, dejando solo los predictores de mayor peso out-of-sample.")
-        
-        # Mostrar la lista de variables seleccionadas
-        importancia = []
-        pipe = M["pipe"]
-        lr = pipe.named_steps["lr"]
-        coefs = lr.coef_
-        avg_coef = np.mean(np.abs(coefs), axis=0)
-        
-        for feat, val in zip(M["cols"], avg_coef):
-            if val > 1e-4:
-                importancia.append({"Variable": feat, "Peso Absoluto Promedio": round(val, 4)})
-                
-        df_imp = pd.DataFrame(importancia).sort_values(by="Peso Absoluto Promedio", ascending=False).reset_index(drop=True)
+        if modelo_tipo == "lasso":
+            st.markdown('<div class="sec-title">Explicabilidad del Modelo LASSO (L1)</div>', unsafe_allow_html=True)
+            st.markdown("La regularización **LASSO (L1)** penaliza los coeficientes de las variables redundantes o no informativas hasta reducirlas exactamente a cero, dejando solo los predictores de mayor peso out-of-sample.")
+            
+            # Mostrar la lista de variables seleccionadas
+            importancia = []
+            pipe = M["pipe_lasso"]
+            lr = pipe.named_steps["lr"]
+            coefs = lr.coef_
+            avg_coef = np.mean(np.abs(coefs), axis=0)
+            
+            for feat, val in zip(M["cols"], avg_coef):
+                if val > 1e-4:
+                    importancia.append({"Variable": feat, "Peso Absoluto Promedio": round(val, 4)})
+            col_val_name = "Peso Absoluto Promedio"
+            title_graph = "Top 15 Características Predictoras (LASSO L1)"
+        else:
+            st.markdown('<div class="sec-title">Importancia de Características: Random Forest</div>', unsafe_allow_html=True)
+            st.markdown("La importancia de características en **Random Forest** se calcula a partir de la reducción promedio de la impureza de Gini que aporta cada variable al realizar las divisiones tácticas en el ensamble de árboles.")
+            
+            importancia = []
+            pipe = M["pipe_rf"]
+            rf = pipe.named_steps["rf"]
+            importances = rf.feature_importances_
+            
+            for feat, val in zip(M["cols"], importances):
+                importancia.append({"Variable": feat, "Importancia (Gini)": round(val, 4)})
+            col_val_name = "Importancia (Gini)"
+            title_graph = "Top 15 Características Predictoras (Random Forest Gini)"
+            
+        df_imp = pd.DataFrame(importancia).sort_values(by=col_val_name, ascending=False).reset_index(drop=True)
         
         col_t, col_g = st.columns([5, 7])
         with col_t:
@@ -290,8 +314,8 @@ def run_app():
         with col_g:
             fig, ax = plt.subplots(figsize=(6, 5))
             top_n = df_imp.head(15)
-            ax.barh(top_n["Variable"][::-1], top_n["Peso Absoluto Promedio"][::-1], color="#d90429")
-            ax.set_title("Top 15 Características Predictoras")
+            ax.barh(top_n["Variable"][::-1], top_n[col_val_name][::-1], color="#d90429")
+            ax.set_title(title_graph)
             st.pyplot(fig)
             
     # ============================================================================
@@ -305,7 +329,7 @@ def run_app():
         temporadas_disponibles = sorted(M["df_features"]["temporada"].unique(), reverse=True)
         temporada_sel = st.selectbox("Selecciona la temporada a validar:", temporadas_disponibles, index=0)
         
-        df_val, met, evol = mo.validacion_en_vivo(M, temporada_val=temporada_sel)
+        df_val, met, evol = mo.validacion_en_vivo(M, temporada_val=temporada_sel, modelo_tipo=modelo_tipo)
         
         if df_val is None or len(df_val) == 0:
             st.info("Aún no hay partidos finalizados en la temporada para validar.")
