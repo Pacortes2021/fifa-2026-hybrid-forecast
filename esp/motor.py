@@ -151,14 +151,14 @@ def cargar_y_entrenar():
                 
     pipe_lasso = Pipeline([
         ("scale", StandardScaler()),
-        ("lr", LogisticRegression(penalty="l1", solver="saga", C=0.08, max_iter=4000, random_state=42))
+        ("lr", LogisticRegression(penalty="l1", solver="saga", C=0.04, max_iter=4000, random_state=42))
     ])
     pipe_lasso.fit(df_features[cols_feat], df_features["resultado"])
     
     # Modelo 2: Random Forest Classifier
     pipe_rf = Pipeline([
         ("scale", StandardScaler()),
-        ("rf", RandomForestClassifier(max_depth=6, n_estimators=250, random_state=42, n_jobs=-1))
+        ("rf", RandomForestClassifier(max_depth=5, n_estimators=100, min_samples_split=15, random_state=42, n_jobs=-1))
     ])
     pipe_rf.fit(df_features[cols_feat], df_features["resultado"])
     
