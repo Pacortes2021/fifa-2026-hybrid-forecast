@@ -16,11 +16,15 @@ from sklearn.metrics import log_loss, accuracy_score
 
 DATA = Path(__file__).resolve().parent / "data"
 
-SQUAD_VALUES_PATH = DATA / "squad_values_historical.csv"
-if SQUAD_VALUES_PATH.exists():
-    DF_SQUAD_VALUES = pd.read_csv(SQUAD_VALUES_PATH)
+ADV_FEATURES_PATH = DATA / "advanced_features_historical.csv"
+if ADV_FEATURES_PATH.exists():
+    DF_ADV_FEATURES = pd.read_csv(ADV_FEATURES_PATH)
 else:
-    DF_SQUAD_VALUES = pd.DataFrame(columns=["temporada", "equipo", "squad_value"])
+    DF_ADV_FEATURES = pd.DataFrame(columns=[
+        "temporada", "equipo", "squad_size", "avg_age", "foreigners",
+        "pct_foreigners", "squad_value", "stadium_capacity", "avg_attendance", "stadium_occupation"
+    ])
+DF_SQUAD_VALUES = DF_ADV_FEATURES
 
 STATS = [
     "foulsCommitted", "yellowCards", "redCards", "offsides", "wonCorners", "saves",
@@ -49,6 +53,22 @@ def get_squad_value(team, season):
             return float(df_eq.loc[best_idx, "squad_value"])
     # Fallback estático
     return 10.0
+
+
+def get_advanced_features(team, season):
+    if len(DF_ADV_FEATURES) > 0:
+        df_eq = DF_ADV_FEATURES[DF_ADV_FEATURES.equipo == team]
+        if len(df_eq) > 0:
+            row = df_eq[df_eq.temporada == season]
+            if len(row) > 0:
+                return row.iloc[0]
+            diffs = (df_eq["temporada"] - season).abs()
+            best_idx = diffs.idxmin()
+            return df_eq.loc[best_idx]
+    return pd.Series({
+        "squad_size": 25, "avg_age": 25.0, "foreigners": 0, "pct_foreigners": 0.0,
+        "stadium_capacity": 25000, "avg_attendance": 12000, "stadium_occupation": 0.5
+    })
 
 
 def actualizar_elo(ea, eb, ga, gb):
@@ -80,10 +100,20 @@ class StateTracker:
         # 2. Squad Value difference (prior)
         vl = get_squad_value(local, temporada)
         vv = get_squad_value(visita, temporada)
-        feats["squad_value_diff"] = np.log(vl) - np.log(vv)
+        feats["squad_value_diff"] = np.log(max(vl, 0.1)) - np.log(max(vv, 0.1))
         
         # 3. H2H diff
         feats["h2h_diff"] = self.h2h_goles[(local, visita)]
+
+        # 3b. Características avanzadas de TM
+        feat_l = get_advanced_features(local, temporada)
+        feat_v = get_advanced_features(visita, temporada)
+        feats["avg_age_diff"] = feat_l["avg_age"] - feat_v["avg_age"]
+        feats["squad_size_diff"] = feat_l["squad_size"] - feat_v["squad_size"]
+        feats["pct_foreigners_diff"] = feat_l["pct_foreigners"] - feat_v["pct_foreigners"]
+        feats["stadium_capacity"] = np.log(max(float(feat_l["stadium_capacity"]), 1.0))
+        feats["stadium_occupation"] = float(feat_l["stadium_occupation"])
+        feats["avg_attendance"] = np.log(max(float(feat_l["avg_attendance"]), 1.0))
 
         # 4. Boxscore stats
         for s in STATS:
@@ -174,7 +204,11 @@ def cargar_y_entrenar():
     df_dataset = pd.DataFrame(filas_X)
     
     # Features candidates
-    cols_features = ["elo_diff", "squad_value_diff", "h2h_diff"]
+    cols_features = [
+        "elo_diff", "squad_value_diff", "h2h_diff",
+        "avg_age_diff", "squad_size_diff", "pct_foreigners_diff",
+        "stadium_capacity", "stadium_occupation", "avg_attendance"
+    ]
     for s in STATS:
         cols_features.append(f"{s}_total_diff")
         cols_features.append(f"{s}_sede_diff")
