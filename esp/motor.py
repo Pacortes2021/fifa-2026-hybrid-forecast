@@ -38,22 +38,6 @@ else:
     ])
 DF_SQUAD_VALUES = DF_ADV_FEATURES
 
-def get_squad_value(team, season):
-    # Intentar buscar el valor real exacto de Transfermarkt para la temporada y equipo
-    if len(DF_SQUAD_VALUES) > 0:
-        df_eq = DF_SQUAD_VALUES[DF_SQUAD_VALUES.equipo == team]
-        if len(df_eq) > 0:
-            # Buscar temporada exacta
-            row = df_eq[df_eq.temporada == season]
-            if len(row) > 0:
-                return float(row["squad_value"].iloc[0])
-            # Si no hay temporada exacta, buscar la temporada más cercana disponible
-            diffs = (df_eq["temporada"] - season).abs()
-            best_idx = diffs.idxmin()
-            return float(df_eq.loc[best_idx, "squad_value"])
-    # Fallback estático
-    return SQUAD_VALUES.get(team, 50.0)
-
 STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCommitted",
          "yellowCards", "redCards", "offsides", "saves", "blockedShots"]
 
@@ -74,8 +58,20 @@ def get_advanced_features(team, season):
             return df_eq.loc[best_idx]
     return pd.Series({
         "squad_size": 25, "avg_age": 25.0, "foreigners": 0, "pct_foreigners": 0.0,
-        "stadium_capacity": 35000, "avg_attendance": 20000, "stadium_occupation": 0.5
+        "stadium_capacity": 35000, "avg_attendance": 20000, "stadium_occupation": 0.5,
+        "squad_value": SQUAD_VALUES.get(team, 50.0)
     })
+
+
+def get_squad_value(team, season):
+    """Lee el valor real de plantilla desde TM. Fallback al dict estático si no hay datos."""
+    feat = get_advanced_features(team, season)
+    val = feat.get("squad_value", None)
+    if val is not None and float(val) > 0:
+        return float(val)
+    return SQUAD_VALUES.get(team, 50.0)
+
+
 
 
 def actualizar_elo(ea, eb, ga, gb):
