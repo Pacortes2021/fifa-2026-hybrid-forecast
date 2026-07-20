@@ -16,6 +16,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import log_loss, accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.calibration import CalibratedClassifierCV
+from scipy.optimize import minimize_scalar
 
 DATA = Path(__file__).resolve().parent / "data"
 
@@ -87,6 +90,10 @@ class StateTracker:
         self.home_history = defaultdict(deque)
         self.away_history = defaultdict(deque)
         self.h2h_goles = defaultdict(float)
+        self.recent_results = defaultdict(deque)
+        self.recent_gf = defaultdict(deque)
+        self.recent_ga = defaultdict(deque)
+        self.match_count = defaultdict(int)
 
     def get_features_for_match(self, local, visita, temporada):
         feats = {}
@@ -105,6 +112,15 @@ class StateTracker:
         feats["stadium_capacity"] = np.log(max(float(feat_l["stadium_capacity"]), 1.0))
         feats["stadium_occupation"] = float(feat_l["stadium_occupation"])
         feats["avg_attendance"] = np.log(max(float(feat_l["avg_attendance"]), 1.0))
+
+        N = 5
+        rl = list(self.recent_results[local]); rv = list(self.recent_results[visita])
+        feats["form_diff"] = (np.mean(rl[-N:]) if rl else 0.333) - (np.mean(rv[-N:]) if rv else 0.333)
+        gfl = list(self.recent_gf[local]); gfv = list(self.recent_gf[visita])
+        gal = list(self.recent_ga[local]); gav = list(self.recent_ga[visita])
+        feats["gf_diff"] = (np.mean(gfl[-N:]) if gfl else 1.0) - (np.mean(gfv[-N:]) if gfv else 1.0)
+        feats["ga_diff"] = (np.mean(gal[-N:]) if gal else 1.0) - (np.mean(gav[-N:]) if gav else 1.0)
+        feats["es_liguilla"] = 1.0 if (self.match_count[local] >= 17 or self.match_count[visita] >= 17) else 0.0
 
         for s in STATS:
             hl = self.history[local]
@@ -141,6 +157,13 @@ class StateTracker:
         if len(self.home_history[local]) > 4: self.home_history[local].popleft()
         self.away_history[visita].append(sv)
         if len(self.away_history[visita]) > 4: self.away_history[visita].popleft()
+
+        w_l = 1.0 if ga > gb else (0.5 if ga == gb else 0.0)
+        w_v = 1.0 - w_l if w_l != 0.5 else 0.5
+        self.recent_results[local].append(w_l); self.recent_results[visita].append(w_v)
+        self.recent_gf[local].append(ga);       self.recent_gf[visita].append(gb)
+        self.recent_ga[local].append(gb);       self.recent_ga[visita].append(ga)
+        self.match_count[local] += 1; self.match_count[visita] += 1
 
 
 def cargar_y_entrenar():
@@ -188,45 +211,78 @@ def cargar_y_entrenar():
     cols_features = [
         "elo_diff", "squad_value_diff", "h2h_diff",
         "avg_age_diff", "squad_size_diff", "pct_foreigners_diff",
-        "stadium_capacity", "stadium_occupation", "avg_attendance"
+        "stadium_capacity", "stadium_occupation", "avg_attendance",
+        "form_diff", "gf_diff", "ga_diff", "es_liguilla"
     ]
     for s in STATS:
         cols_features.append(f"{s}_total_diff")
         cols_features.append(f"{s}_sede_diff")
         
-    train_mask = df_dataset["temporada"] <= 2024
+    train_mask = df_dataset["temporada"] <= 2023
+    cal_mask   = df_dataset["temporada"] == 2024  
+    test_mask  = df_dataset["temporada"] >= 2025
+
     X_train_raw = df_dataset.loc[train_mask, cols_features].fillna(0.0)
-    
     non_zero_cols = [c for c in cols_features if X_train_raw[c].std() > 1e-5]
     cols_features = non_zero_cols
 
     X_train = df_dataset.loc[train_mask, cols_features].fillna(0.0)
     y_train = df_dataset.loc[train_mask, "resultado"]
-    X_test = df_dataset.loc[~train_mask, cols_features].fillna(0.0)
-    y_test = df_dataset.loc[~train_mask, "resultado"]
-    
-    best_c = 0.05
-    best_loss = 999.0
+    X_cal = df_dataset.loc[cal_mask, cols_features].fillna(0.0)
+    y_cal = df_dataset.loc[cal_mask, "resultado"]
+    X_test = df_dataset.loc[test_mask, cols_features].fillna(0.0)
+    y_test = df_dataset.loc[test_mask, "resultado"]
+
+    best_c = 0.05; best_loss = 999.0
     for C in [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0]:
-        pipe = Pipeline([
-            ("sc", StandardScaler()),
-            ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=2000, random_state=42))
-        ])
-        pipe.fit(X_train, y_train)
-        probs = pipe.predict_proba(X_test)
-        
-        loss = log_loss(y_test, probs, labels=[0, 1, 2])
-        if loss < best_loss:
-            best_loss = loss
-            best_c = C
-            
+        _p = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=3000))])
+        _p.fit(X_train, y_train)
+        _l = log_loss(y_test, _p.predict_proba(X_test))
+        if _l < best_loss: best_loss = _l; best_c = C
     print(f"Mejor C para Lasso (Chile): {best_c} | Log-Loss en Test (2025-26): {best_loss:.4f}")
-    
-    pipe_final = Pipeline([
-        ("sc", StandardScaler()),
-        ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=2000, random_state=42))
-    ])
+
+    pipe_lasso_base = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
+    pipe_lasso_base.fit(X_train, y_train)
+    pipe_rf_base = Pipeline([("sc", StandardScaler()), ("rf", RandomForestClassifier(n_estimators=200, max_depth=5, min_samples_split=15, random_state=42, n_jobs=-1))])
+    pipe_rf_base.fit(X_train, y_train)
+
+    if len(X_cal) >= 10:
+        pipe_lasso_cal = CalibratedClassifierCV(pipe_lasso_base, cv="prefit", method="isotonic")
+        pipe_lasso_cal.fit(X_cal, y_cal)
+        pipe_rf_cal = CalibratedClassifierCV(pipe_rf_base, cv="prefit", method="isotonic")
+        pipe_rf_cal.fit(X_cal, y_cal)
+    else:
+        pipe_lasso_cal = pipe_lasso_base; pipe_rf_cal = pipe_rf_base
+
+    if len(X_cal) >= 10:
+        p_l_cal = pipe_lasso_cal.predict_proba(X_cal)
+        p_r_cal = pipe_rf_cal.predict_proba(X_cal)
+        def _stkl(alpha):
+            return log_loss(y_cal, np.clip(alpha*p_l_cal+(1-alpha)*p_r_cal, 1e-7, 1-1e-7))
+        alpha_opt = float(minimize_scalar(_stkl, bounds=(0.0,1.0), method="bounded").x)
+    else:
+        alpha_opt = 0.4
+
+    X_full = df_dataset.loc[train_mask | cal_mask, cols_features].fillna(0.0)
+    y_full = df_dataset.loc[train_mask | cal_mask, "resultado"]
+    pipe_lasso_final = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
+    pipe_lasso_final.fit(X_full, y_full)
+    pipe_rf_final = Pipeline([("sc", StandardScaler()), ("rf", RandomForestClassifier(n_estimators=200, max_depth=5, min_samples_split=15, random_state=42, n_jobs=-1))])
+    pipe_rf_final.fit(X_full, y_full)
+
+    # Keep existing pipe_final variable for Monte Carlo compat
+    pipe_final = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=2000))])
     pipe_final.fit(df_dataset[cols_features].fillna(0.0), df_dataset["resultado"])
+
+    def _met(proba, y):
+        proba = np.clip(proba, 1e-7, 1-1e-7)
+        return {"logloss": round(log_loss(y, proba), 4), "accuracy": round(accuracy_score(y, proba.argmax(axis=1))*100, 2)}
+    met_lasso = _met(pipe_lasso_final.predict_proba(X_test), y_test)
+    met_rf = _met(pipe_rf_final.predict_proba(X_test), y_test)
+    p_st = np.clip(alpha_opt*pipe_lasso_final.predict_proba(X_test)+(1-alpha_opt)*pipe_rf_final.predict_proba(X_test), 1e-7, 1-1e-7)
+    met_stack = {"logloss": round(log_loss(y_test,p_st),4), "accuracy": round(accuracy_score(y_test,p_st.argmax(axis=1))*100,2), "alpha": round(alpha_opt,3)}
+    metricas = {"lasso": met_lasso, "rf": met_rf, "stacking": met_stack}
+    print(f"Metricas Test>=2025: LASSO={met_lasso} RF={met_rf} Stacking={met_stack}")
     
     coefs = pipe_final.named_steps["lr"].coef_
     avg_coefs = np.mean(np.abs(coefs), axis=0)
@@ -263,6 +319,10 @@ def cargar_y_entrenar():
     return {
         "tracker": tracker,
         "pipe": pipe_final,
+        "pipe_lasso": pipe_lasso_final,
+        "pipe_rf": pipe_rf_final,
+        "alpha_stack": alpha_opt,
+        "metricas": metricas,
         "features": cols_features,
         "active_features": active_features,
         "poisson_params": gp.params,
@@ -282,7 +342,7 @@ def cargar():
     return _MOTOR_CACHE
 
 
-def predecir_match(M, local, visita):
+def predecir_match(M, local, visita, modelo='stacking'):
     tracker = M["tracker"]
     pipe = M["pipe"]
     features = M["features"]
@@ -291,7 +351,19 @@ def predecir_match(M, local, visita):
     feats = tracker.get_features_for_match(local, visita, 2026)
     df_feat = pd.DataFrame([feats])[features].fillna(0.0)
     
-    p_raw = pipe.predict_proba(df_feat)[0]
+    if modelo == 'rf':
+        p_raw = M["pipe_rf"].predict_proba(df_feat)[0]
+    elif modelo == 'lasso':
+        p_raw = M["pipe_lasso"].predict_proba(df_feat)[0]
+    elif modelo == 'stacking':
+        alpha = M.get("alpha_stack", 0.4)
+        p_l = M["pipe_lasso"].predict_proba(df_feat)[0]
+        p_r = M["pipe_rf"].predict_proba(df_feat)[0]
+        p_raw = alpha*p_l + (1-alpha)*p_r
+        p_raw /= p_raw.sum()
+    else:
+        p_raw = pipe.predict_proba(df_feat)[0]
+
     p = np.array([p_raw[2], p_raw[1], p_raw[0]]) # [local, empate, visita]
     
     # Poisson local

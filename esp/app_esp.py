@@ -90,10 +90,15 @@ def run_app():
     # Selector de modelo activo
     modelo_sel = st.sidebar.selectbox(
         "🤖 Modelo Predictivo:",
-        ["Random Forest (Recomendado)", "Regresión Logística (LASSO L1)"],
+        ["🌲 Random Forest (Recomendado)", "📐 LASSO L1 (Regresión)", "🔀 Stacking (Ensemble óptimo)"],
         index=0
     )
-    modelo_tipo = "rf" if "Random Forest" in modelo_sel else "lasso"
+    if "LASSO" in modelo_sel:
+        modelo_tipo = "lasso"
+    elif "Stacking" in modelo_sel:
+        modelo_tipo = "stacking"
+    else:
+        modelo_tipo = "rf"
     
     # Botón para actualizar resultados en vivo
     if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
@@ -105,10 +110,24 @@ def run_app():
         st.rerun()
     
     M = get_motor()
-    
+
+    # ── Métricas por modelo (sidebar)
+    if "metricas" in M:
+        met_all = M["metricas"]
+        st.sidebar.markdown("---")
+        st.sidebar.markdown("#### 📊 Métricas Out-of-Sample (2025+)")
+        mejor_ll = min(met_all[k]["logloss"] for k in met_all)
+        for nombre, clave in [("LASSO", "lasso"), ("RF", "rf"), ("Stacking", "stacking")]:
+            if clave not in met_all: continue
+            m = met_all[clave]
+            star = " ⭐" if m["logloss"] == mejor_ll else ""
+            alpha_str = f" (α={m['alpha']:.2f})" if clave == "stacking" and "alpha" in m else ""
+            st.sidebar.caption(f"**{nombre}{alpha_str}{star}** — LL: `{m['logloss']:.4f}` | Acc: `{m['accuracy']:.1f}%`")
+
     # Encabezado
+    nombre_modelo = "🌲 Random Forest" if modelo_tipo == "rf" else ("🔀 Stacking" if modelo_tipo == "stacking" else "📐 LASSO L1")
     st.markdown('<div class="main-title">🇪🇸 Portal de Predicción LaLiga</div>', unsafe_allow_html=True)
-    st.markdown('<div class="main-subtitle">Modelo de Regularización LASSO (L1) + Simulación de Campeón, Europa y Descenso</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — LASSO + RF + Simulación de Campeón, Europa y Descenso</div>', unsafe_allow_html=True)
     
     # Tabs
     tab1, tab2, tab3, tab4 = st.tabs(["⚽ Predicción Versus", "📊 Tabla y Proyecciones", "🔬 Importancia de Variables", "🎯 Validación vs Realidad"])

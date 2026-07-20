@@ -74,15 +74,28 @@ def get_motor():
 
 
 @st.cache_data(show_spinner="Corriendo simulaciones de Monte Carlo (4.000 iteraciones)...")
-def simular_liga(_M, key):
-    return mo.monte_carlo(_M, n_sims=4000)
+def simular_liga(_M, key, modelo):
+    return mo.monte_carlo(_M, n_sims=4000, modelo=modelo)
 
 
 # Sidebar de controles
 def run_app():
     st.sidebar.markdown("### 🛠️ Controles del Modelo")
-    
-    # Botón para actualizar resultados en vivo
+
+    # ── Selector de modelo ──────────────────────────────────────────────────
+    OPCIONES_MOD = [
+        "🌲 Random Forest (Recomendado)",
+        "📐 LASSO L1 (Regresión)",
+        "🔀 Stacking (Ensemble óptimo)"
+    ]
+    modelo_sel = st.sidebar.selectbox("🤖 Modelo Predictivo:", OPCIONES_MOD, index=0)
+    if "LASSO" in modelo_sel:
+        modelo = "lasso"
+    elif "Stacking" in modelo_sel:
+        modelo = "stacking"
+    else:
+        modelo = "rf"
+
     if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
         with st.spinner("Descargando últimos resultados de ESPN..."):
             rec.recolectar()
@@ -92,10 +105,25 @@ def run_app():
         st.rerun()
     
     M = get_motor()
-    
+
+    # ── Tabla de métricas por modelo (sidebar) ───────────────────────────
+    if "metricas" in M:
+        met_all = M["metricas"]
+        st.sidebar.markdown("---")
+        st.sidebar.markdown("#### 📊 Métricas Out-of-Sample (2025+)")
+        mejor_ll = min(met_all[k]["logloss"] for k in met_all)
+        for nombre, clave in [("LASSO", "lasso"), ("RF", "rf"), ("Stacking", "stacking")]:
+            if clave not in met_all: continue
+            m = met_all[clave]
+            star = " ⭐" if m["logloss"] == mejor_ll else ""
+            alpha_str = f" (α={m['alpha']:.2f})" if clave == "stacking" and "alpha" in m else ""
+            st.sidebar.caption(f"**{nombre}{alpha_str}{star}** — LL: `{m['logloss']:.4f}` | Acc: `{m['accuracy']:.1f}%`")
+
     # Encabezado
     st.markdown('<div class="main-title">🏆 Portal de Predicción Liga MX</div>', unsafe_allow_html=True)
-    st.markdown('<div class="main-subtitle">Modelo de Regularización LASSO (L1) + Simulación de Liguilla y Play-In</div>', unsafe_allow_html=True)
+    nombre_modelo = "🌲 Random Forest" if modelo == "rf" else ("🔀 Stacking" if modelo == "stacking" else "📐 LASSO L1")
+    st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — LASSO + RF + Simulación de Liguilla y Play-In</div>', unsafe_allow_html=True)
+
     
     # Tabs
     tab1, tab2, tab3, tab4 = st.tabs(["⚽ Predicción Versus", "📊 Tabla y Proyecciones", "🔬 Importancia de Variables", "🎯 Validación vs Realidad"])
@@ -119,8 +147,8 @@ def run_app():
         if a == b:
             st.error("Selecciona dos equipos distintos.")
         else:
-            # Calcular grilla de goles
-            mix, p, (la, lb) = mo.grilla_goles(M, a, b)
+            # Calcular grilla de goles con el modelo seleccionado
+            mix, p, (la, lb) = mo.grilla_goles(M, a, b, modelo=modelo)
             
             la_lbl = get_label(a)
             lb_lbl = get_label(b)
