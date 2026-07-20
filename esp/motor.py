@@ -28,6 +28,28 @@ SQUAD_VALUES = {
     "Levante": 40.0, "Eibar": 25.0, "Huesca": 20.0
 }
 
+SQUAD_VALUES_PATH = DATA / "squad_values_historical.csv"
+if SQUAD_VALUES_PATH.exists():
+    DF_SQUAD_VALUES = pd.read_csv(SQUAD_VALUES_PATH)
+else:
+    DF_SQUAD_VALUES = pd.DataFrame(columns=["temporada", "equipo", "squad_value"])
+
+def get_squad_value(team, season):
+    # Intentar buscar el valor real exacto de Transfermarkt para la temporada y equipo
+    if len(DF_SQUAD_VALUES) > 0:
+        df_eq = DF_SQUAD_VALUES[DF_SQUAD_VALUES.equipo == team]
+        if len(df_eq) > 0:
+            # Buscar temporada exacta
+            row = df_eq[df_eq.temporada == season]
+            if len(row) > 0:
+                return float(row["squad_value"].iloc[0])
+            # Si no hay temporada exacta, buscar la temporada más cercana disponible
+            diffs = (df_eq["temporada"] - season).abs()
+            best_idx = diffs.idxmin()
+            return float(df_eq.loc[best_idx, "squad_value"])
+    # Fallback estático
+    return SQUAD_VALUES.get(team, 50.0)
+
 STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCommitted",
          "yellowCards", "redCards", "offsides", "saves", "blockedShots"]
 
