@@ -16,57 +16,11 @@ from sklearn.metrics import log_loss, accuracy_score
 
 DATA = Path(__file__).resolve().parent / "data"
 
-# Estimación del Valor de Plantilla (en millones de EUR) para los 30 clubes
-SQUAD_VALUES_BY_YEAR = {
-    2021: {
-        "Flamengo": 140.0, "Palmeiras": 130.0, "Atlético-MG": 85.0, "São Paulo": 70.0, "Grêmio": 70.0,
-        "Corinthians": 65.0, "Internacional": 60.0, "Athletico-PR": 55.0, "Santos": 55.0, "Red Bull Bragantino": 50.0,
-        "Fluminense": 50.0, "Bahia": 30.0, "Ceará": 22.0, "Fortaleza": 20.0, "Atlético Goianiense": 15.0,
-        "América Mineiro": 12.0, "Sport": 15.0, "Juventude": 10.0, "Cuiabá": 15.0, "Chapecoense": 12.0,
-        "Vasco da Gama": 15.0, "Cruzeiro": 12.0, "Botafogo": 15.0, "Coritiba": 10.0, "Goiás": 8.0,
-        "Criciúma": 5.0, "Vitória": 8.0, "Avaí": 8.0, "Mirassol": 3.0, "Remo": 2.0
-    },
-    2022: {
-        "Flamengo": 160.0, "Palmeiras": 150.0, "Atlético-MG": 90.0, "São Paulo": 75.0, "Corinthians": 75.0,
-        "Internacional": 65.0, "Red Bull Bragantino": 65.0, "Fluminense": 60.0, "Athletico-PR": 60.0, "Botafogo": 55.0,
-        "Santos": 50.0, "Fortaleza": 25.0, "Ceará": 25.0, "Coritiba": 20.0, "América Mineiro": 18.0,
-        "Atlético Goianiense": 18.0, "Cuiabá": 18.0, "Goiás": 15.0, "Juventude": 12.0, "Avaí": 12.0,
-        "Grêmio": 15.0, "Vasco da Gama": 15.0, "Cruzeiro": 15.0, "Bahia": 15.0, "Sport": 8.0,
-        "Criciúma": 5.0, "Vitória": 5.0, "Chapecoense": 6.0, "Mirassol": 3.0, "Remo": 2.0
-    },
-    2023: {
-        "Flamengo": 170.0, "Palmeiras": 160.0, "Atlético-MG": 85.0, "São Paulo": 85.0, "Corinthians": 80.0,
-        "Fluminense": 75.0, "Internacional": 70.0, "Red Bull Bragantino": 70.0, "Botafogo": 70.0, "Athletico-PR": 65.0,
-        "Grêmio": 60.0, "Bahia": 50.0, "Santos": 45.0, "Vasco da Gama": 45.0, "Cruzeiro": 35.0,
-        "Fortaleza": 30.0, "Coritiba": 25.0, "América Mineiro": 20.0, "Cuiabá": 20.0, "Goiás": 18.0,
-        "Atlético Goianiense": 10.0, "Juventude": 10.0, "Criciúma": 8.0, "Vitória": 8.0, "Chapecoense": 6.0,
-        "Sport": 8.0, "Avaí": 8.0, "Mirassol": 4.0, "Remo": 2.0
-    },
-    2024: {
-        "Palmeiras": 170.0, "Flamengo": 165.0, "Atlético-MG": 95.0, "Botafogo": 95.0, "São Paulo": 90.0,
-        "Corinthians": 85.0, "Fluminense": 80.0, "Internacional": 75.0, "Red Bull Bragantino": 75.0, "Grêmio": 70.0,
-        "Athletico-PR": 70.0, "Bahia": 65.0, "Vasco da Gama": 60.0, "Cruzeiro": 55.0, "Fortaleza": 35.0,
-        "Cuiabá": 22.0, "Juventude": 15.0, "Criciúma": 15.0, "Vitória": 15.0, "Santos": 15.0,
-        "América Mineiro": 10.0, "Coritiba": 10.0, "Goiás": 10.0, "Ceará": 10.0, "Atlético Goianiense": 18.0,
-        "Chapecoense": 6.0, "Sport": 8.0, "Avaí": 8.0, "Mirassol": 5.0, "Remo": 3.0
-    },
-    2025: {
-        "Palmeiras": 180.0, "Flamengo": 170.0, "Botafogo": 110.0, "São Paulo": 95.0, "Corinthians": 90.0,
-        "Atlético-MG": 90.0, "Fluminense": 80.0, "Internacional": 78.0, "Grêmio": 75.0, "Bahia": 75.0,
-        "Red Bull Bragantino": 72.0, "Athletico-PR": 72.0, "Vasco da Gama": 65.0, "Cruzeiro": 65.0, "Fortaleza": 38.0,
-        "Cuiabá": 22.0, "Criciúma": 16.0, "Juventude": 16.0, "Vitória": 16.0, "Santos": 15.0,
-        "Atlético Goianiense": 12.0, "América Mineiro": 10.0, "Coritiba": 10.0, "Goiás": 10.0, "Ceará": 10.0,
-        "Chapecoense": 6.0, "Sport": 8.0, "Avaí": 8.0, "Mirassol": 6.0, "Remo": 3.0
-    },
-    2026: {
-        "Palmeiras": 190.0, "Flamengo": 180.0, "Botafogo": 120.0, "São Paulo": 95.0, "Atlético-MG": 95.0,
-        "Corinthians": 92.0, "Bahia": 85.0, "Internacional": 80.0, "Fluminense": 78.0, "Grêmio": 78.0,
-        "Athletico-PR": 75.0, "Cruzeiro": 75.0, "Vasco da Gama": 70.0, "Red Bull Bragantino": 70.0, "Fortaleza": 40.0,
-        "Santos": 35.0, "Vitória": 20.0, "Juventude": 18.0, "Criciúma": 18.0, "Mirassol": 12.0,
-        "Atlético Goianiense": 12.0, "Cuiabá": 22.0, "América Mineiro": 10.0, "Coritiba": 12.0, "Goiás": 10.0,
-        "Ceará": 10.0, "Chapecoense": 10.0, "Sport": 8.0, "Avaí": 8.0, "Remo": 8.0
-    }
-}
+SQUAD_VALUES_PATH = DATA / "squad_values_historical.csv"
+if SQUAD_VALUES_PATH.exists():
+    DF_SQUAD_VALUES = pd.read_csv(SQUAD_VALUES_PATH)
+else:
+    DF_SQUAD_VALUES = pd.DataFrame(columns=["temporada", "equipo", "squad_value"])
 
 STATS = [
     "foulsCommitted", "yellowCards", "redCards", "offsides", "wonCorners", "saves",
@@ -83,9 +37,18 @@ HOME_ADV = 60.0  # ventaja Elo típica de localía
 
 
 def get_squad_value(team, season):
-    # Si la temporada no está mapeada, tomamos la de 2026
-    year_dict = SQUAD_VALUES_BY_YEAR.get(season, SQUAD_VALUES_BY_YEAR[2026])
-    return year_dict.get(team, 10.0)  # default a 10M si es un club raro
+    # Intentar buscar el valor real exacto de Transfermarkt
+    if len(DF_SQUAD_VALUES) > 0:
+        df_eq = DF_SQUAD_VALUES[DF_SQUAD_VALUES.equipo == team]
+        if len(df_eq) > 0:
+            row = df_eq[df_eq.temporada == season]
+            if len(row) > 0:
+                return float(row["squad_value"].iloc[0])
+            diffs = (df_eq["temporada"] - season).abs()
+            best_idx = diffs.idxmin()
+            return float(df_eq.loc[best_idx, "squad_value"])
+    # Fallback estático
+    return 10.0
 
 
 def actualizar_elo(ea, eb, ga, gb):

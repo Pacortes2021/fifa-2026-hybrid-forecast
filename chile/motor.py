@@ -23,68 +23,11 @@ DATA = Path(__file__).resolve().parent / "data"
 DESCIENDEN = 2
 CUPOS_COPA = 7 # Libertadores (Top 3) + Sudamericana (4º a 7º)
 
-SQUAD_VALUES_BY_YEAR = {
-    2021: {
-        "Colo Colo": 20.0, "Universidad Católica": 19.0, "Universidad de Chile": 14.0,
-        "Unión La Calera": 10.5, "Unión Española": 9.0, "Everton CD": 8.0,
-        "Audax Italiano": 7.0, "Palestino": 7.5, "O'Higgins": 7.0, "Huachipato": 6.5,
-        "Cobresal": 5.5, "Ñublense": 5.0, "Antofagasta": 7.0, "Curicó Unido": 5.5,
-        "Melipilla": 5.0, "Santiago Wanderers": 5.5, "La Serena": 6.5, "Coquimbo Unido": 4.0,
-        "Deportes Iquique": 4.0, "Cobreloa": 3.5, "Deportes Concepcion": 1.5,
-        "Deportes Limache": 2.0, "Universidad de Concepción": 3.5, "Copiapó": 3.0,
-        "Magallanes": 2.5, "Unión Wanderers": 3.5
-    },
-    2022: {
-        "Colo Colo": 22.0, "Universidad Católica": 17.5, "Universidad de Chile": 13.0,
-        "Unión La Calera": 9.5, "Unión Española": 9.5, "Everton CD": 8.5,
-        "Audax Italiano": 7.5, "Palestino": 7.2, "O'Higgins": 7.2, "Huachipato": 7.0,
-        "Cobresal": 5.8, "Ñublense": 7.5, "Antofagasta": 6.5, "Curicó Unido": 6.5,
-        "Melipilla": 3.5, "Santiago Wanderers": 4.0, "La Serena": 6.0, "Coquimbo Unido": 5.5,
-        "Deportes Iquique": 4.2, "Cobreloa": 3.8, "Deportes Concepcion": 2.0,
-        "Deportes Limache": 2.2, "Universidad de Concepción": 3.8, "Copiapó": 3.5,
-        "Magallanes": 3.2, "Unión Wanderers": 3.5
-    },
-    2023: {
-        "Colo Colo": 24.0, "Universidad Católica": 16.0, "Universidad de Chile": 15.0,
-        "Unión La Calera": 8.0, "Unión Española": 10.0, "Everton CD": 9.0,
-        "Audax Italiano": 8.0, "Palestino": 8.0, "O'Higgins": 7.5, "Huachipato": 8.5,
-        "Cobresal": 6.2, "Ñublense": 8.0, "Antofagasta": 4.5, "Curicó Unido": 5.8,
-        "Melipilla": 3.0, "Santiago Wanderers": 3.8, "La Serena": 4.0, "Coquimbo Unido": 6.5,
-        "Deportes Iquique": 4.5, "Cobreloa": 4.2, "Deportes Concepcion": 2.5,
-        "Deportes Limache": 2.5, "Universidad de Concepción": 4.0, "Copiapó": 5.5,
-        "Magallanes": 6.0, "Unión Wanderers": 3.5
-    },
-    2024: {
-        "Colo Colo": 23.0, "Universidad Católica": 15.5, "Universidad de Chile": 16.5,
-        "Unión La Calera": 7.0, "Unión Española": 9.0, "Everton CD": 9.5,
-        "Audax Italiano": 7.0, "Palestino": 7.8, "O'Higgins": 6.8, "Huachipato": 8.2,
-        "Cobresal": 6.5, "Ñublense": 7.0, "Antofagasta": 4.8, "Curicó Unido": 4.2,
-        "Melipilla": 3.2, "Santiago Wanderers": 3.5, "La Serena": 4.2, "Coquimbo Unido": 7.5,
-        "Deportes Iquique": 6.2, "Cobreloa": 6.0, "Deportes Concepcion": 3.0,
-        "Deportes Limache": 3.0, "Universidad de Concepción": 4.2, "Copiapó": 5.2,
-        "Magallanes": 4.5, "Unión Wanderers": 3.5
-    },
-    2025: {
-        "Colo Colo": 24.5, "Universidad Católica": 15.0, "Universidad de Chile": 17.5,
-        "Unión La Calera": 6.5, "Unión Española": 9.5, "Everton CD": 9.2,
-        "Audax Italiano": 7.2, "Palestino": 8.0, "O'Higgins": 7.0, "Huachipato": 8.0,
-        "Cobresal": 6.2, "Ñublense": 7.2, "Antofagasta": 5.0, "Curicó Unido": 4.0,
-        "Melipilla": 3.5, "Santiago Wanderers": 3.5, "La Serena": 4.5, "Coquimbo Unido": 8.0,
-        "Deportes Iquique": 6.5, "Cobreloa": 5.5, "Deportes Concepcion": 3.5,
-        "Deportes Limache": 3.5, "Universidad de Concepción": 4.5, "Copiapó": 4.5,
-        "Magallanes": 4.5, "Unión Wanderers": 3.5
-    },
-    2026: {
-        "Colo Colo": 25.0, "Universidad Católica": 16.0, "Universidad de Chile": 18.0,
-        "Unión La Calera": 6.5, "Unión Española": 10.0, "Everton CD": 9.5,
-        "Audax Italiano": 7.5, "Palestino": 8.0, "O'Higgins": 7.0, "Huachipato": 8.0,
-        "Cobresal": 6.5, "Ñublense": 7.5, "Antofagasta": 5.5, "Curicó Unido": 4.0,
-        "Melipilla": 3.5, "Santiago Wanderers": 3.5, "La Serena": 5.0, "Coquimbo Unido": 8.5,
-        "Deportes Iquique": 6.0, "Cobreloa": 4.5, "Deportes Concepcion": 4.5,
-        "Deportes Limache": 4.5, "Universidad de Concepción": 4.5, "Copiapó": 4.5,
-        "Magallanes": 4.5, "Unión Wanderers": 3.5
-    }
-}
+SQUAD_VALUES_PATH = DATA / "squad_values_historical.csv"
+if SQUAD_VALUES_PATH.exists():
+    DF_SQUAD_VALUES = pd.read_csv(SQUAD_VALUES_PATH)
+else:
+    DF_SQUAD_VALUES = pd.DataFrame(columns=["temporada", "equipo", "squad_value"])
 
 STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCommitted",
          "yellowCards", "redCards", "offsides", "saves", "blockedShots"]
@@ -95,8 +38,18 @@ HOME_ADV = 55.0
 
 
 def get_squad_value(team, season):
-    year_dict = SQUAD_VALUES_BY_YEAR.get(season, SQUAD_VALUES_BY_YEAR[2026])
-    return year_dict.get(team, 5.0)
+    # Intentar buscar el valor real exacto de Transfermarkt
+    if len(DF_SQUAD_VALUES) > 0:
+        df_eq = DF_SQUAD_VALUES[DF_SQUAD_VALUES.equipo == team]
+        if len(df_eq) > 0:
+            row = df_eq[df_eq.temporada == season]
+            if len(row) > 0:
+                return float(row["squad_value"].iloc[0])
+            diffs = (df_eq["temporada"] - season).abs()
+            best_idx = diffs.idxmin()
+            return float(df_eq.loc[best_idx, "squad_value"])
+    # Fallback estático
+    return 5.0
 
 
 def actualizar_elo(ea, eb, ga, gb):

@@ -48,44 +48,11 @@ ALTITUDES = {
     "Atlante": 2.240
 }
 
-SQUAD_VALUES_BY_YEAR = {
-    2021: {
-        "América": 75.0, "Monterrey": 80.0, "Tigres UANL": 70.0, "Cruz Azul": 65.0, "Guadalajara": 50.0,
-        "Toluca": 40.0, "Pachuca": 35.0, "Santos": 42.0, "León": 38.0, "Atlas": 30.0, "Pumas UNAM": 32.0,
-        "Tijuana": 28.0, "FC Juarez": 24.0, "Atlético de San Luis": 22.0, "Necaxa": 22.0, "Mazatlán FC": 20.0,
-        "Puebla": 18.0, "Querétaro": 15.0, "Atlante": 6.0
-    },
-    2022: {
-        "América": 80.0, "Monterrey": 78.0, "Tigres UANL": 72.0, "Cruz Azul": 62.0, "Guadalajara": 52.0,
-        "Toluca": 42.0, "Pachuca": 38.0, "Santos": 40.0, "León": 36.0, "Atlas": 35.0, "Pumas UNAM": 30.0,
-        "Tijuana": 27.0, "FC Juarez": 25.0, "Atlético de San Luis": 24.0, "Necaxa": 23.0, "Mazatlán FC": 20.0,
-        "Puebla": 19.0, "Querétaro": 14.0, "Atlante": 6.0
-    },
-    2023: {
-        "América": 90.0, "Monterrey": 75.0, "Tigres UANL": 75.0, "Cruz Azul": 55.0, "Guadalajara": 50.0,
-        "Toluca": 48.0, "Pachuca": 42.0, "Santos": 36.0, "León": 35.0, "Atlas": 32.0, "Pumas UNAM": 33.0,
-        "Tijuana": 29.0, "FC Juarez": 26.0, "Atlético de San Luis": 26.0, "Necaxa": 24.0, "Mazatlán FC": 21.0,
-        "Puebla": 18.0, "Querétaro": 14.0, "Atlante": 7.0
-    },
-    2024: {
-        "América": 95.0, "Monterrey": 70.0, "Tigres UANL": 76.0, "Cruz Azul": 58.0, "Guadalajara": 52.0,
-        "Toluca": 50.0, "Pachuca": 45.0, "Santos": 38.0, "León": 35.0, "Atlas": 32.0, "Pumas UNAM": 35.0,
-        "Tijuana": 30.0, "FC Juarez": 28.0, "Atlético de San Luis": 28.0, "Necaxa": 25.0, "Mazatlán FC": 22.0,
-        "Puebla": 18.0, "Querétaro": 14.0, "Atlante": 8.0
-    },
-    2025: {
-        "América": 100.0, "Monterrey": 65.0, "Tigres UANL": 78.0, "Cruz Azul": 60.0, "Guadalajara": 54.0,
-        "Toluca": 51.0, "Pachuca": 45.0, "Santos": 38.0, "León": 35.0, "Atlas": 32.0, "Pumas UNAM": 35.0,
-        "Tijuana": 30.0, "FC Juarez": 28.0, "Atlético de San Luis": 28.0, "Necaxa": 25.0, "Mazatlán FC": 22.0,
-        "Puebla": 18.0, "Querétaro": 14.0, "Atlante": 8.0
-    },
-    2026: {
-        "América": 103.5, "Monterrey": 62.0, "Tigres UANL": 78.2, "Cruz Azul": 60.0, "Guadalajara": 55.0,
-        "Toluca": 52.0, "Pachuca": 45.0, "Santos": 38.0, "León": 35.0, "Atlas": 32.0, "Pumas UNAM": 35.0,
-        "Tijuana": 30.0, "FC Juarez": 28.0, "Atlético de San Luis": 28.0, "Necaxa": 25.0, "Mazatlán FC": 22.0,
-        "Puebla": 18.0, "Querétaro": 14.0, "Atlante": 8.0
-    }
-}
+SQUAD_VALUES_PATH = DATA / "squad_values_historical.csv"
+if SQUAD_VALUES_PATH.exists():
+    DF_SQUAD_VALUES = pd.read_csv(SQUAD_VALUES_PATH)
+else:
+    DF_SQUAD_VALUES = pd.DataFrame(columns=["temporada", "equipo", "squad_value"])
 
 STATS = [
     "foulsCommitted", "yellowCards", "redCards", "offsides", "wonCorners", "saves",
@@ -98,8 +65,18 @@ STATS = [
 
 
 def get_squad_value(team, season):
-    year_dict = SQUAD_VALUES_BY_YEAR.get(season, SQUAD_VALUES_BY_YEAR[2026])
-    return year_dict.get(team, 10.0)
+    # Intentar buscar el valor real exacto de Transfermarkt
+    if len(DF_SQUAD_VALUES) > 0:
+        df_eq = DF_SQUAD_VALUES[DF_SQUAD_VALUES.equipo == team]
+        if len(df_eq) > 0:
+            row = df_eq[df_eq.temporada == season]
+            if len(row) > 0:
+                return float(row["squad_value"].iloc[0])
+            diffs = (df_eq["temporada"] - season).abs()
+            best_idx = diffs.idxmin()
+            return float(df_eq.loc[best_idx, "squad_value"])
+    # Fallback estático
+    return 10.0
 
 
 def _mult_goles(gd):
