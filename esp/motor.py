@@ -103,6 +103,7 @@ class StateTracker:
 
 def cargar_y_entrenar():
     partidos = pd.read_csv(DATA / "partidos.csv", parse_dates=["fecha"]).sort_values("fecha")
+    partidos["temporada"] = partidos["fecha"].apply(lambda x: x.year if x.month >= 7 else x.year - 1)
     box_path = DATA / "box_score.csv"
     box = pd.read_csv(box_path) if box_path.exists() else pd.DataFrame(columns=["event_id"])
     
@@ -301,8 +302,14 @@ def simular_fixture_regular(M, PREDS, fijos=None):
     if len(fix) == 0:
         return pd.DataFrame()
         
+    fix["temporada"] = pd.to_datetime(fix["fecha"]).apply(lambda x: x.year if x.month >= 7 else x.year - 1)
+    temporada_sim = fix["temporada"].mode().iloc[0]
+    
+    # Filtrar solo el fixture de la temporada activa
+    fix = fix[fix.temporada == temporada_sim].copy()
+    
     # Inicializar tabla de posiciones actual
-    tabla = obtener_tabla_actual(M)
+    tabla = obtener_tabla_actual(M, temporada=temporada_sim)
     
     pts = dict(zip(tabla["equipo"], tabla["puntos"]))
     gf = dict(zip(tabla["equipo"], tabla["goles_favor"]))
@@ -355,27 +362,33 @@ def ordenar_tabla(tabla):
     return tabla.sort_values(by=["puntos", "dif_goles", "goles_favor"], ascending=False).reset_index(drop=True)
 
 
-def obtener_tabla_actual(M):
+def obtener_tabla_actual(M, temporada=None):
     # Calcula la tabla de posiciones real a partir de partidos.csv
     partidos = pd.read_csv(DATA / "partidos.csv", parse_dates=["fecha"])
+    partidos["temporada"] = partidos["fecha"].apply(lambda x: x.year if x.month >= 7 else x.year - 1)
     
-    # Identificar todos los equipos de la temporada activa (2026)
-    # Para ser robustos, extraemos los equipos de la temporada 2026 del fixture y de partidos jugados
+    if temporada is None:
+        temporada = partidos["temporada"].max()
+        
+    # Identificar todos los equipos de la temporada activa
+    # Para ser robustos, extraemos los equipos de la temporada del fixture y de partidos jugados
     fix_path = DATA / "fixture.csv"
     eqs_active = set()
     if fix_path.exists():
         fix = pd.read_csv(fix_path)
-        if len(fix):
-            eqs_active.update(fix["local"].unique())
-            eqs_active.update(fix["visita"].unique())
+        fix["temporada"] = pd.to_datetime(fix["fecha"]).apply(lambda x: x.year if x.month >= 7 else x.year - 1)
+        fix_temp = fix[fix.temporada == temporada]
+        if len(fix_temp):
+            eqs_active.update(fix_temp["local"].unique())
+            eqs_active.update(fix_temp["visita"].unique())
             
-    partidos_2026 = partidos[partidos.temporada == 2026]
-    if len(partidos_2026):
-        eqs_active.update(partidos_2026["local"].unique())
-        eqs_active.update(partidos_2026["visita"].unique())
+    partidos_temp = partidos[partidos.temporada == temporada]
+    if len(partidos_temp):
+        eqs_active.update(partidos_temp["local"].unique())
+        eqs_active.update(partidos_temp["visita"].unique())
         
     if not eqs_active:
-        # Fallback si no hay temporada 2026
+        # Fallback si no hay temporada
         eqs_active = set(partidos["local"].unique())
         
     pts = {t: 0 for t in eqs_active}
@@ -383,7 +396,7 @@ def obtener_tabla_actual(M):
     gc = {t: 0 for t in eqs_active}
     pj = {t: 0 for t in eqs_active}
     
-    for r in partidos_2026.itertuples(index=False):
+    for r in partidos_temp.itertuples(index=False):
         l, v, gl, gv = r.local, r.visita, int(r.goles_local), int(r.goles_visita)
         if l not in eqs_active or v not in eqs_active:
             continue
@@ -422,6 +435,11 @@ def simular_campeonato(M, n_sims=3000, fijos=None):
         return res
         
     fix = pd.read_csv(fix_path)
+    fix["temporada"] = pd.to_datetime(fix["fecha"]).apply(lambda x: x.year if x.month >= 7 else x.year - 1)
+    temporada_sim = fix["temporada"].mode().iloc[0]
+    
+    # Filtrar solo el fixture de la temporada activa
+    fix = fix[fix.temporada == temporada_sim].copy()
     eqs = set(fix["local"].unique()).union(set(fix["visita"].unique()))
     
     # Pre-calcular predicciones fijas para acelerar
