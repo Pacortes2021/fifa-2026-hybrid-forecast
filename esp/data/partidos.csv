@@ -1,0 +1,2121 @@
+event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
+582039,2021-01-02 13:00:00,2021,Villarreal,Levante,2,1,post
+582042,2021-01-02 15:15:00,2021,Real Betis,Sevilla,1,1,post
+582041,2021-01-02 17:30:00,2021,Getafe,Real Valladolid,0,1,post
+582036,2021-01-02 20:00:00,2021,Real Madrid,Celta Vigo,2,0,post
+582037,2021-01-03 13:00:00,2021,Athletic Club,Elche,1,0,post
+582033,2021-01-03 15:15:00,2021,Alavés,Atlético Madrid,1,2,post
+582038,2021-01-03 17:30:00,2021,Eibar,Granada,2,0,post
+582040,2021-01-03 17:30:00,2021,Real Sociedad,Osasuna,1,1,post
+582034,2021-01-03 20:00:00,2021,Huesca,Barcelona,0,1,post
+582035,2021-01-04 20:00:00,2021,Valencia,Cádiz,1,1,post
+582185,2021-01-06 20:00:00,2021,Athletic Club,Barcelona,2,3,post
+582032,2021-01-08 20:00:00,2021,Celta Vigo,Villarreal,0,4,post
+582030,2021-01-09 13:00:00,2021,Sevilla,Real Sociedad,3,2,post
+582025,2021-01-09 17:30:00,2021,Granada,Barcelona,0,4,post
+582029,2021-01-09 20:00:00,2021,Osasuna,Real Madrid,0,0,post
+582026,2021-01-10 13:00:00,2021,Levante,Eibar,2,1,post
+582023,2021-01-10 15:15:00,2021,Cádiz,Alavés,3,1,post
+582031,2021-01-10 20:00:00,2021,Real Valladolid,Valencia,0,1,post
+582027,2021-01-11 18:00:00,2021,Elche,Getafe,1,3,post
+582028,2021-01-11 20:00:00,2021,Huesca,Real Betis,0,2,post
+582169,2021-01-12 18:00:00,2021,Granada,Osasuna,2,0,post
+582202,2021-01-12 20:30:00,2021,Atlético Madrid,Sevilla,2,0,post
+582018,2021-01-19 18:00:00,2021,Cádiz,Levante,2,2,post
+582016,2021-01-19 18:00:00,2021,Real Valladolid,Elche,2,2,post
+582022,2021-01-19 20:30:00,2021,Alavés,Sevilla,1,2,post
+582021,2021-01-20 18:00:00,2021,Getafe,Huesca,1,0,post
+582015,2021-01-20 20:00:00,2021,Real Betis,Celta Vigo,2,1,post
+582017,2021-01-20 20:30:00,2021,Villarreal,Granada,2,2,post
+582019,2021-01-21 18:00:00,2021,Valencia,Osasuna,1,1,post
+582014,2021-01-21 20:30:00,2021,Eibar,Atlético Madrid,1,2,post
+582010,2021-01-22 20:00:00,2021,Levante,Real Valladolid,2,2,post
+582012,2021-01-23 13:00:00,2021,Huesca,Villarreal,0,0,post
+582004,2021-01-23 15:15:00,2021,Sevilla,Cádiz,3,0,post
+582008,2021-01-23 17:30:00,2021,Real Sociedad,Real Betis,2,2,post
+582009,2021-01-23 20:00:00,2021,Alavés,Real Madrid,1,4,post
+582007,2021-01-24 13:00:00,2021,Osasuna,Granada,3,1,post
+582003,2021-01-24 15:15:00,2021,Elche,Barcelona,0,2,post
+582005,2021-01-24 17:30:00,2021,Celta Vigo,Eibar,1,1,post
+582011,2021-01-24 20:00:00,2021,Atlético Madrid,Valencia,3,1,post
+582006,2021-01-25 20:00:00,2021,Athletic Club,Getafe,5,1,post
+582001,2021-01-29 20:00:00,2021,Real Valladolid,Huesca,1,3,post
+582002,2021-01-30 13:00:00,2021,Eibar,Sevilla,0,2,post
+581998,2021-01-30 15:15:00,2021,Real Madrid,Levante,1,2,post
+581997,2021-01-30 17:30:00,2021,Valencia,Elche,1,0,post
+582000,2021-01-30 20:00:00,2021,Villarreal,Real Sociedad,1,1,post
+581993,2021-01-31 13:00:00,2021,Getafe,Alavés,0,0,post
+581995,2021-01-31 15:15:00,2021,Cádiz,Atlético Madrid,2,4,post
+581996,2021-01-31 17:30:00,2021,Granada,Celta Vigo,0,0,post
+581994,2021-01-31 20:00:00,2021,Barcelona,Athletic Club,2,1,post
+581999,2021-02-01 20:00:00,2021,Real Betis,Osasuna,1,0,post
+581990,2021-02-05 20:00:00,2021,Alavés,Real Valladolid,1,0,post
+581988,2021-02-06 13:00:00,2021,Levante,Granada,2,2,post
+581989,2021-02-06 15:15:00,2021,Huesca,Real Madrid,1,2,post
+581992,2021-02-06 17:30:00,2021,Elche,Villarreal,2,2,post
+581987,2021-02-06 20:00:00,2021,Sevilla,Getafe,3,0,post
+581984,2021-02-07 13:00:00,2021,Real Sociedad,Cádiz,4,1,post
+581991,2021-02-07 15:15:00,2021,Athletic Club,Valencia,1,1,post
+581986,2021-02-07 17:30:00,2021,Osasuna,Eibar,2,1,post
+581983,2021-02-07 20:00:00,2021,Real Betis,Barcelona,2,3,post
+581985,2021-02-08 20:00:00,2021,Atlético Madrid,Celta Vigo,2,2,post
+582196,2021-02-09 20:00:00,2021,Real Madrid,Getafe,2,0,post
+581976,2021-02-12 20:00:00,2021,Celta Vigo,Elche,3,1,post
+581975,2021-02-13 13:00:00,2021,Granada,Atlético Madrid,1,2,post
+581981,2021-02-13 15:15:00,2021,Sevilla,Huesca,1,0,post
+581980,2021-02-13 17:30:00,2021,Eibar,Real Valladolid,1,1,post
+581973,2021-02-13 20:00:00,2021,Barcelona,Alavés,5,1,post
+581979,2021-02-14 13:00:00,2021,Getafe,Real Sociedad,0,1,post
+581982,2021-02-14 15:15:00,2021,Real Madrid,Valencia,2,0,post
+581977,2021-02-14 17:30:00,2021,Levante,Osasuna,0,1,post
+581978,2021-02-14 20:00:00,2021,Villarreal,Real Betis,1,2,post
+581974,2021-02-15 20:00:00,2021,Cádiz,Athletic Club,0,4,post
+582184,2021-02-17 18:00:00,2021,Levante,Atlético Madrid,1,1,post
+581967,2021-02-19 20:00:00,2021,Real Betis,Getafe,1,0,post
+581966,2021-02-20 13:00:00,2021,Elche,Eibar,1,0,post
+581969,2021-02-20 15:15:00,2021,Atlético Madrid,Levante,0,2,post
+581965,2021-02-20 17:30:00,2021,Valencia,Celta Vigo,2,0,post
+581970,2021-02-20 20:00:00,2021,Real Valladolid,Real Madrid,0,1,post
+581964,2021-02-21 13:00:00,2021,Barcelona,Cádiz,1,1,post
+581963,2021-02-21 15:15:00,2021,Real Sociedad,Alavés,4,0,post
+581968,2021-02-21 17:30:00,2021,Huesca,Granada,3,2,post
+581972,2021-02-21 20:00:00,2021,Athletic Club,Villarreal,1,1,post
+581971,2021-02-22 20:00:00,2021,Osasuna,Sevilla,0,2,post
+582195,2021-02-24 18:00:00,2021,Barcelona,Elche,3,0,post
+581953,2021-02-26 20:00:00,2021,Levante,Athletic Club,1,1,post
+581961,2021-02-27 13:00:00,2021,Eibar,Huesca,1,1,post
+581955,2021-02-27 15:15:00,2021,Sevilla,Barcelona,0,2,post
+581957,2021-02-27 17:30:00,2021,Alavés,Osasuna,0,1,post
+581962,2021-02-27 20:00:00,2021,Getafe,Valencia,3,0,post
+581960,2021-02-28 13:00:00,2021,Celta Vigo,Real Valladolid,1,1,post
+581958,2021-02-28 15:15:00,2021,Cádiz,Real Betis,0,1,post
+581956,2021-02-28 17:30:00,2021,Granada,Elche,2,1,post
+581954,2021-02-28 20:00:00,2021,Villarreal,Atlético Madrid,0,2,post
+581959,2021-03-01 20:00:00,2021,Real Madrid,Real Sociedad,1,1,post
+581952,2021-03-05 20:00:00,2021,Valencia,Villarreal,2,1,post
+581947,2021-03-06 13:00:00,2021,Real Valladolid,Getafe,2,1,post
+581951,2021-03-06 15:15:00,2021,Elche,Sevilla,2,1,post
+581946,2021-03-06 17:30:00,2021,Cádiz,Eibar,1,0,post
+581944,2021-03-06 20:00:00,2021,Osasuna,Barcelona,0,2,post
+581945,2021-03-07 13:00:00,2021,Huesca,Celta Vigo,3,4,post
+581950,2021-03-07 15:15:00,2021,Atlético Madrid,Real Madrid,1,1,post
+581949,2021-03-07 17:30:00,2021,Real Sociedad,Levante,1,0,post
+581948,2021-03-07 20:00:00,2021,Athletic Club,Granada,2,1,post
+581943,2021-03-08 20:00:00,2021,Real Betis,Alavés,3,2,post
+582024,2021-03-10 18:00:00,2021,Atlético Madrid,Athletic Club,2,1,post
+581941,2021-03-12 20:00:00,2021,Levante,Valencia,1,0,post
+581935,2021-03-13 13:00:00,2021,Alavés,Cádiz,1,1,post
+581936,2021-03-13 15:15:00,2021,Real Madrid,Elche,2,1,post
+581939,2021-03-13 17:30:00,2021,Osasuna,Real Valladolid,0,0,post
+581934,2021-03-13 20:00:00,2021,Getafe,Atlético Madrid,0,0,post
+581933,2021-03-14 13:00:00,2021,Celta Vigo,Athletic Club,0,0,post
+581938,2021-03-14 15:15:00,2021,Granada,Real Sociedad,1,0,post
+581942,2021-03-14 17:30:00,2021,Eibar,Villarreal,1,3,post
+581937,2021-03-14 20:00:00,2021,Sevilla,Real Betis,1,0,post
+581940,2021-03-15 20:00:00,2021,Barcelona,Huesca,4,1,post
+582188,2021-03-17 18:00:00,2021,Sevilla,Elche,2,0,post
+581929,2021-03-19 20:00:00,2021,Real Betis,Levante,2,0,post
+581926,2021-03-20 13:00:00,2021,Athletic Club,Eibar,1,1,post
+581931,2021-03-20 15:15:00,2021,Celta Vigo,Real Madrid,1,3,post
+581930,2021-03-20 17:30:00,2021,Huesca,Osasuna,0,0,post
+581932,2021-03-20 20:00:00,2021,Real Valladolid,Sevilla,1,1,post
+581927,2021-03-21 13:00:00,2021,Getafe,Elche,1,1,post
+581928,2021-03-21 15:15:00,2021,Valencia,Granada,2,1,post
+581925,2021-03-21 15:15:00,2021,Villarreal,Cádiz,2,1,post
+581923,2021-03-21 17:30:00,2021,Atlético Madrid,Alavés,1,0,post
+581924,2021-03-21 20:00:00,2021,Real Sociedad,Barcelona,1,6,post
+581920,2021-04-02 19:00:00,2021,Levante,Huesca,0,2,post
+581922,2021-04-03 12:00:00,2021,Granada,Villarreal,0,3,post
+581916,2021-04-03 14:15:00,2021,Real Madrid,Eibar,2,0,post
+581917,2021-04-03 16:30:00,2021,Osasuna,Getafe,0,0,post
+581915,2021-04-04 12:00:00,2021,Alavés,Celta Vigo,1,3,post
+581918,2021-04-04 14:15:00,2021,Elche,Real Betis,1,1,post
+581921,2021-04-04 16:30:00,2021,Cádiz,Valencia,2,1,post
+581914,2021-04-04 19:00:00,2021,Sevilla,Atlético Madrid,1,0,post
+581919,2021-04-05 19:00:00,2021,Barcelona,Real Valladolid,1,0,post
+581913,2021-04-07 19:00:00,2021,Real Sociedad,Athletic Club,1,1,post
+581907,2021-04-09 19:00:00,2021,Huesca,Elche,3,1,post
+581906,2021-04-10 12:00:00,2021,Getafe,Cádiz,0,1,post
+581903,2021-04-10 14:15:00,2021,Athletic Club,Alavés,0,0,post
+581909,2021-04-10 16:30:00,2021,Eibar,Levante,0,1,post
+581905,2021-04-10 19:00:00,2021,Real Madrid,Barcelona,2,1,post
+581910,2021-04-11 12:00:00,2021,Villarreal,Osasuna,1,2,post
+581911,2021-04-11 14:15:00,2021,Valencia,Real Sociedad,2,2,post
+581908,2021-04-11 16:30:00,2021,Real Valladolid,Granada,1,2,post
+581904,2021-04-11 19:00:00,2021,Real Betis,Atlético Madrid,1,1,post
+581912,2021-04-12 19:00:00,2021,Celta Vigo,Sevilla,3,4,post
+581875,2021-04-18 12:00:00,2021,Osasuna,Elche,2,0,post
+581880,2021-04-18 12:00:00,2021,Real Sociedad,Sevilla,1,2,post
+581879,2021-04-18 14:15:00,2021,Alavés,Huesca,1,0,post
+581874,2021-04-18 14:15:00,2021,Atlético Madrid,Eibar,5,0,post
+581873,2021-04-18 16:30:00,2021,Cádiz,Celta Vigo,0,0,post
+581881,2021-04-18 16:30:00,2021,Real Betis,Valencia,2,2,post
+581877,2021-04-18 19:00:00,2021,Getafe,Real Madrid,0,0,post
+581882,2021-04-18 19:00:00,2021,Levante,Villarreal,1,5,post
+581900,2021-04-21 17:00:00,2021,Levante,Sevilla,0,1,post
+581901,2021-04-21 17:00:00,2021,Osasuna,Valencia,3,1,post
+581893,2021-04-21 18:00:00,2021,Real Betis,Athletic Club,0,0,post
+581902,2021-04-21 19:00:00,2021,Alavés,Villarreal,2,1,post
+581898,2021-04-21 19:00:00,2021,Elche,Real Valladolid,1,1,post
+581897,2021-04-21 20:00:00,2021,Cádiz,Real Madrid,0,3,post
+581899,2021-04-22 17:00:00,2021,Atlético Madrid,Huesca,2,0,post
+581895,2021-04-22 19:00:00,2021,Granada,Eibar,4,1,post
+581894,2021-04-22 19:00:00,2021,Real Sociedad,Celta Vigo,2,1,post
+581896,2021-04-22 20:00:00,2021,Barcelona,Getafe,5,2,post
+581889,2021-04-24 12:00:00,2021,Elche,Levante,1,0,post
+581886,2021-04-24 14:15:00,2021,Real Valladolid,Cádiz,1,1,post
+581883,2021-04-24 16:30:00,2021,Valencia,Alavés,1,1,post
+581891,2021-04-24 19:00:00,2021,Real Madrid,Real Betis,0,0,post
+581887,2021-04-25 12:00:00,2021,Huesca,Getafe,0,2,post
+581885,2021-04-25 14:15:00,2021,Villarreal,Barcelona,1,2,post
+581890,2021-04-25 16:30:00,2021,Celta Vigo,Osasuna,2,1,post
+581888,2021-04-25 16:30:00,2021,Sevilla,Granada,2,1,post
+581884,2021-04-25 19:00:00,2021,Athletic Club,Atlético Madrid,2,1,post
+581892,2021-04-26 19:00:00,2021,Eibar,Real Sociedad,0,1,post
+581878,2021-04-28 17:00:00,2021,Athletic Club,Real Valladolid,2,2,post
+581876,2021-04-29 17:00:00,2021,Barcelona,Granada,1,2,post
+581869,2021-04-30 19:00:00,2021,Celta Vigo,Levante,2,0,post
+581863,2021-05-01 12:00:00,2021,Eibar,Alavés,3,0,post
+581865,2021-05-01 14:15:00,2021,Elche,Atlético Madrid,0,1,post
+581872,2021-05-01 16:30:00,2021,Huesca,Real Sociedad,1,0,post
+581870,2021-05-01 19:00:00,2021,Real Madrid,Osasuna,2,0,post
+581871,2021-05-02 12:00:00,2021,Real Valladolid,Real Betis,1,1,post
+581868,2021-05-02 14:15:00,2021,Villarreal,Getafe,1,0,post
+581867,2021-05-02 16:30:00,2021,Granada,Cádiz,0,1,post
+581866,2021-05-02 19:00:00,2021,Valencia,Barcelona,2,3,post
+581864,2021-05-03 19:00:00,2021,Sevilla,Athletic Club,0,1,post
+581856,2021-05-07 19:00:00,2021,Real Sociedad,Elche,2,0,post
+581858,2021-05-08 12:00:00,2021,Alavés,Levante,2,2,post
+581853,2021-05-08 14:15:00,2021,Barcelona,Atlético Madrid,0,0,post
+581861,2021-05-08 16:30:00,2021,Cádiz,Huesca,2,1,post
+581859,2021-05-08 19:00:00,2021,Athletic Club,Osasuna,2,2,post
+581855,2021-05-09 12:00:00,2021,Getafe,Eibar,0,1,post
+581860,2021-05-09 14:15:00,2021,Valencia,Real Valladolid,3,0,post
+581854,2021-05-09 16:30:00,2021,Villarreal,Celta Vigo,2,4,post
+581862,2021-05-09 19:00:00,2021,Real Madrid,Sevilla,2,2,post
+581857,2021-05-10 19:00:00,2021,Real Betis,Granada,2,1,post
+581846,2021-05-11 17:00:00,2021,Osasuna,Cádiz,3,2,post
+581843,2021-05-11 18:00:00,2021,Elche,Alavés,0,2,post
+581845,2021-05-11 20:00:00,2021,Levante,Barcelona,3,3,post
+581851,2021-05-12 17:00:00,2021,Sevilla,Valencia,1,0,post
+581847,2021-05-12 18:00:00,2021,Celta Vigo,Getafe,1,0,post
+581844,2021-05-12 18:00:00,2021,Huesca,Athletic Club,1,0,post
+581850,2021-05-12 20:00:00,2021,Atlético Madrid,Real Sociedad,2,1,post
+581852,2021-05-13 17:00:00,2021,Real Valladolid,Villarreal,0,2,post
+581848,2021-05-13 18:00:00,2021,Eibar,Real Betis,1,1,post
+581849,2021-05-13 20:00:00,2021,Granada,Real Madrid,1,4,post
+581834,2021-05-16 16:30:00,2021,Valencia,Eibar,4,1,post
+581840,2021-05-16 16:30:00,2021,Real Sociedad,Real Valladolid,4,1,post
+581841,2021-05-16 16:30:00,2021,Real Betis,Huesca,1,0,post
+581837,2021-05-16 16:30:00,2021,Getafe,Levante,2,1,post
+581842,2021-05-16 16:30:00,2021,Villarreal,Sevilla,4,0,post
+581833,2021-05-16 16:30:00,2021,Barcelona,Celta Vigo,1,2,post
+581838,2021-05-16 16:30:00,2021,Atlético Madrid,Osasuna,2,1,post
+581839,2021-05-16 16:30:00,2021,Athletic Club,Real Madrid,0,1,post
+581836,2021-05-16 16:30:00,2021,Alavés,Granada,4,2,post
+581835,2021-05-16 16:30:00,2021,Cádiz,Elche,1,3,post
+581827,2021-05-21 19:00:00,2021,Levante,Cádiz,2,2,post
+581825,2021-05-22 16:00:00,2021,Real Valladolid,Atlético Madrid,1,2,post
+581832,2021-05-22 16:00:00,2021,Real Madrid,Villarreal,2,1,post
+581830,2021-05-22 16:00:00,2021,Osasuna,Real Sociedad,0,1,post
+581831,2021-05-22 16:00:00,2021,Huesca,Valencia,0,0,post
+581824,2021-05-22 16:00:00,2021,Elche,Athletic Club,2,0,post
+581826,2021-05-22 16:00:00,2021,Eibar,Barcelona,0,1,post
+581829,2021-05-22 16:00:00,2021,Celta Vigo,Real Betis,2,3,post
+581828,2021-05-23 16:30:00,2021,Granada,Getafe,0,0,post
+581823,2021-05-23 19:00:00,2021,Sevilla,Alavés,1,0,post
+610763,2021-08-13 19:00:00,2021,Valencia,Getafe,1,0,post
+610765,2021-08-14 17:30:00,2021,Cádiz,Levante,1,1,post
+610767,2021-08-14 17:30:00,2021,Mallorca,Real Betis,1,1,post
+610762,2021-08-14 20:00:00,2021,Osasuna,Espanyol,0,0,post
+610768,2021-08-14 20:00:00,2021,Alavés,Real Madrid,1,4,post
+610761,2021-08-15 15:30:00,2021,Celta Vigo,Atlético Madrid,1,2,post
+610769,2021-08-15 18:00:00,2021,Barcelona,Real Sociedad,4,2,post
+610766,2021-08-15 20:15:00,2021,Sevilla,Rayo Vallecano,3,0,post
+610764,2021-08-16 18:00:00,2021,Villarreal,Granada,0,0,post
+610760,2021-08-16 20:00:00,2021,Elche,Athletic Club,0,0,post
+610751,2021-08-20 19:00:00,2021,Real Betis,Cádiz,1,1,post
+610754,2021-08-21 15:00:00,2021,Alavés,Mallorca,0,1,post
+610758,2021-08-21 17:30:00,2021,Granada,Valencia,1,1,post
+610759,2021-08-21 17:30:00,2021,Espanyol,Villarreal,0,0,post
+610750,2021-08-21 20:00:00,2021,Athletic Club,Barcelona,1,1,post
+610755,2021-08-22 15:00:00,2021,Real Sociedad,Rayo Vallecano,1,0,post
+610753,2021-08-22 17:30:00,2021,Atlético Madrid,Elche,1,0,post
+610756,2021-08-22 20:00:00,2021,Levante,Real Madrid,3,3,post
+610757,2021-08-23 18:00:00,2021,Getafe,Sevilla,0,1,post
+610752,2021-08-23 20:00:00,2021,Osasuna,Celta Vigo,0,0,post
+610742,2021-08-27 18:00:00,2021,Mallorca,Espanyol,1,0,post
+610740,2021-08-27 20:15:00,2021,Valencia,Alavés,3,0,post
+610741,2021-08-28 15:00:00,2021,Celta Vigo,Athletic Club,0,1,post
+610748,2021-08-28 17:30:00,2021,Elche,Sevilla,1,1,post
+610745,2021-08-28 17:30:00,2021,Real Sociedad,Levante,1,0,post
+610747,2021-08-28 20:00:00,2021,Real Betis,Real Madrid,0,1,post
+610743,2021-08-29 15:00:00,2021,Barcelona,Getafe,2,1,post
+610746,2021-08-29 17:30:00,2021,Cádiz,Osasuna,2,3,post
+610744,2021-08-29 17:30:00,2021,Rayo Vallecano,Granada,4,0,post
+610749,2021-08-29 20:00:00,2021,Atlético Madrid,Villarreal,2,2,post
+610736,2021-09-11 16:30:00,2021,Levante,Rayo Vallecano,1,1,post
+610735,2021-09-11 19:00:00,2021,Athletic Club,Mallorca,2,0,post
+610731,2021-09-12 12:00:00,2021,Espanyol,Atlético Madrid,1,2,post
+610739,2021-09-12 14:15:00,2021,Osasuna,Valencia,1,4,post
+610738,2021-09-12 16:30:00,2021,Cádiz,Real Sociedad,0,2,post
+610733,2021-09-12 19:00:00,2021,Real Madrid,Celta Vigo,5,2,post
+610734,2021-09-13 18:00:00,2021,Getafe,Elche,0,1,post
+610737,2021-09-13 20:00:00,2021,Granada,Real Betis,1,2,post
+610721,2021-09-17 19:00:00,2021,Celta Vigo,Cádiz,1,2,post
+610723,2021-09-18 12:00:00,2021,Rayo Vallecano,Getafe,3,0,post
+610720,2021-09-18 14:15:00,2021,Atlético Madrid,Athletic Club,0,0,post
+610725,2021-09-18 16:30:00,2021,Elche,Levante,1,1,post
+610726,2021-09-18 19:00:00,2021,Alavés,Osasuna,0,2,post
+610729,2021-09-19 12:00:00,2021,Mallorca,Villarreal,0,0,post
+610728,2021-09-19 14:15:00,2021,Real Sociedad,Sevilla,0,0,post
+610722,2021-09-19 16:30:00,2021,Real Betis,Espanyol,2,2,post
+610727,2021-09-19 19:00:00,2021,Valencia,Real Madrid,1,2,post
+610724,2021-09-20 19:00:00,2021,Barcelona,Granada,1,1,post
+610711,2021-09-21 17:30:00,2021,Getafe,Atlético Madrid,1,2,post
+610716,2021-09-21 20:00:00,2021,Athletic Club,Rayo Vallecano,1,2,post
+610713,2021-09-21 20:00:00,2021,Levante,Celta Vigo,0,2,post
+610719,2021-09-22 17:30:00,2021,Sevilla,Valencia,3,1,post
+610710,2021-09-22 17:30:00,2021,Espanyol,Alavés,1,0,post
+610715,2021-09-22 20:00:00,2021,Real Madrid,Mallorca,6,1,post
+610714,2021-09-22 20:00:00,2021,Villarreal,Elche,4,1,post
+610718,2021-09-23 17:30:00,2021,Granada,Real Sociedad,2,3,post
+610717,2021-09-23 17:30:00,2021,Osasuna,Real Betis,1,3,post
+610712,2021-09-23 20:00:00,2021,Cádiz,Barcelona,0,0,post
+610701,2021-09-25 12:00:00,2021,Alavés,Atlético Madrid,1,0,post
+610700,2021-09-25 14:15:00,2021,Valencia,Athletic Club,1,1,post
+610704,2021-09-25 16:30:00,2021,Sevilla,Espanyol,2,0,post
+610709,2021-09-25 19:00:00,2021,Real Madrid,Villarreal,0,0,post
+610708,2021-09-26 12:00:00,2021,Mallorca,Osasuna,2,3,post
+610707,2021-09-26 14:15:00,2021,Barcelona,Levante,3,0,post
+610702,2021-09-26 16:30:00,2021,Rayo Vallecano,Cádiz,3,1,post
+610703,2021-09-26 16:30:00,2021,Real Sociedad,Elche,1,0,post
+610705,2021-09-26 19:00:00,2021,Real Betis,Getafe,2,0,post
+610706,2021-09-27 19:00:00,2021,Celta Vigo,Granada,1,0,post
+610690,2021-10-01 19:00:00,2021,Athletic Club,Alavés,1,0,post
+610694,2021-10-02 12:00:00,2021,Osasuna,Rayo Vallecano,1,0,post
+610693,2021-10-02 14:15:00,2021,Mallorca,Levante,1,0,post
+610699,2021-10-02 16:30:00,2021,Cádiz,Valencia,0,0,post
+610691,2021-10-02 19:00:00,2021,Atlético Madrid,Barcelona,2,0,post
+610692,2021-10-03 12:00:00,2021,Elche,Celta Vigo,1,0,post
+610696,2021-10-03 14:15:00,2021,Espanyol,Real Madrid,2,1,post
+610697,2021-10-03 16:30:00,2021,Getafe,Real Sociedad,1,1,post
+610695,2021-10-03 16:30:00,2021,Villarreal,Real Betis,2,0,post
+610698,2021-10-03 19:00:00,2021,Granada,Sevilla,1,0,post
+610684,2021-10-16 16:30:00,2021,Levante,Getafe,0,0,post
+610685,2021-10-16 19:00:00,2021,Real Sociedad,Mallorca,1,0,post
+610683,2021-10-17 12:00:00,2021,Rayo Vallecano,Elche,2,1,post
+610688,2021-10-17 14:15:00,2021,Celta Vigo,Sevilla,0,1,post
+610686,2021-10-17 16:30:00,2021,Villarreal,Osasuna,1,2,post
+610689,2021-10-17 19:00:00,2021,Barcelona,Valencia,3,1,post
+610687,2021-10-18 17:00:00,2021,Alavés,Real Betis,0,1,post
+610682,2021-10-18 19:00:00,2021,Espanyol,Cádiz,2,0,post
+610673,2021-10-22 19:00:00,2021,Osasuna,Granada,1,1,post
+610675,2021-10-23 12:00:00,2021,Valencia,Mallorca,2,2,post
+610670,2021-10-23 14:15:00,2021,Cádiz,Alavés,0,2,post
+610672,2021-10-23 16:30:00,2021,Elche,Espanyol,2,2,post
+610679,2021-10-23 19:00:00,2021,Athletic Club,Villarreal,2,1,post
+610674,2021-10-24 12:00:00,2021,Sevilla,Levante,5,3,post
+610677,2021-10-24 14:15:00,2021,Barcelona,Real Madrid,1,2,post
+610676,2021-10-24 16:30:00,2021,Real Betis,Rayo Vallecano,3,2,post
+610678,2021-10-24 19:00:00,2021,Atlético Madrid,Real Sociedad,2,2,post
+610671,2021-10-25 19:00:00,2021,Getafe,Celta Vigo,0,3,post
+610664,2021-10-26 17:00:00,2021,Alavés,Elche,1,0,post
+610660,2021-10-26 19:00:00,2021,Espanyol,Athletic Club,1,1,post
+610663,2021-10-26 19:30:00,2021,Villarreal,Cádiz,3,3,post
+610668,2021-10-27 17:00:00,2021,Mallorca,Sevilla,1,1,post
+610662,2021-10-27 17:00:00,2021,Rayo Vallecano,Barcelona,1,0,post
+610669,2021-10-27 18:00:00,2021,Real Betis,Valencia,4,1,post
+610666,2021-10-27 19:30:00,2021,Real Madrid,Osasuna,0,0,post
+610667,2021-10-28 17:00:00,2021,Celta Vigo,Real Sociedad,0,2,post
+610665,2021-10-28 18:00:00,2021,Granada,Getafe,1,1,post
+610661,2021-10-28 19:30:00,2021,Levante,Atlético Madrid,2,2,post
+610658,2021-10-30 12:00:00,2021,Elche,Real Madrid,1,2,post
+610656,2021-10-30 14:15:00,2021,Sevilla,Osasuna,2,0,post
+610659,2021-10-30 16:30:00,2021,Valencia,Villarreal,2,0,post
+610650,2021-10-30 19:00:00,2021,Barcelona,Alavés,1,1,post
+610655,2021-10-31 13:00:00,2021,Cádiz,Mallorca,1,1,post
+610657,2021-10-31 15:15:00,2021,Atlético Madrid,Real Betis,3,0,post
+610653,2021-10-31 17:30:00,2021,Getafe,Espanyol,2,1,post
+610651,2021-10-31 20:00:00,2021,Real Sociedad,Athletic Club,1,1,post
+610652,2021-11-01 17:30:00,2021,Rayo Vallecano,Celta Vigo,0,0,post
+610654,2021-11-01 20:00:00,2021,Levante,Granada,0,3,post
+610642,2021-11-05 20:00:00,2021,Athletic Club,Cádiz,0,1,post
+610645,2021-11-06 13:00:00,2021,Espanyol,Granada,2,0,post
+610641,2021-11-06 15:15:00,2021,Celta Vigo,Barcelona,3,3,post
+610646,2021-11-06 17:30:00,2021,Alavés,Levante,2,1,post
+610647,2021-11-06 20:00:00,2021,Real Madrid,Rayo Vallecano,2,1,post
+610644,2021-11-07 13:00:00,2021,Villarreal,Getafe,1,0,post
+610640,2021-11-07 15:15:00,2021,Valencia,Atlético Madrid,3,3,post
+610648,2021-11-07 17:30:00,2021,Osasuna,Real Sociedad,0,2,post
+610643,2021-11-07 17:30:00,2021,Mallorca,Elche,2,2,post
+610649,2021-11-07 20:00:00,2021,Real Betis,Sevilla,0,2,post
+610631,2021-11-19 20:00:00,2021,Levante,Athletic Club,0,0,post
+610639,2021-11-20 13:00:00,2021,Celta Vigo,Villarreal,1,1,post
+610630,2021-11-20 15:15:00,2021,Sevilla,Alavés,2,2,post
+610635,2021-11-20 17:30:00,2021,Atlético Madrid,Osasuna,1,0,post
+610633,2021-11-20 20:00:00,2021,Barcelona,Espanyol,1,0,post
+610632,2021-11-21 13:00:00,2021,Getafe,Cádiz,4,0,post
+610637,2021-11-21 15:15:00,2021,Granada,Real Madrid,1,4,post
+610636,2021-11-21 17:30:00,2021,Elche,Real Betis,0,3,post
+610638,2021-11-21 20:00:00,2021,Real Sociedad,Valencia,0,0,post
+610634,2021-11-22 20:00:00,2021,Rayo Vallecano,Mallorca,3,1,post
+610625,2021-11-26 20:00:00,2021,Athletic Club,Granada,2,2,post
+610622,2021-11-27 13:00:00,2021,Alavés,Celta Vigo,1,2,post
+610627,2021-11-27 15:15:00,2021,Valencia,Rayo Vallecano,1,1,post
+610624,2021-11-27 17:30:00,2021,Mallorca,Getafe,0,0,post
+610621,2021-11-27 20:00:00,2021,Villarreal,Barcelona,1,3,post
+610626,2021-11-28 13:00:00,2021,Real Betis,Levante,3,1,post
+610628,2021-11-28 15:15:00,2021,Espanyol,Real Sociedad,1,0,post
+610620,2021-11-28 17:30:00,2021,Cádiz,Atlético Madrid,1,4,post
+610629,2021-11-28 20:00:00,2021,Real Madrid,Sevilla,2,1,post
+610623,2021-11-29 20:00:00,2021,Osasuna,Elche,1,1,post
+610680,2021-12-01 20:00:00,2021,Real Madrid,Athletic Club,1,0,post
+610610,2021-12-03 20:00:00,2021,Granada,Alavés,2,1,post
+610619,2021-12-04 13:00:00,2021,Sevilla,Villarreal,1,0,post
+610616,2021-12-04 15:15:00,2021,Barcelona,Real Betis,0,1,post
+610614,2021-12-04 17:30:00,2021,Atlético Madrid,Mallorca,1,2,post
+610617,2021-12-04 20:00:00,2021,Real Sociedad,Real Madrid,0,2,post
+610613,2021-12-05 13:00:00,2021,Rayo Vallecano,Espanyol,1,0,post
+610612,2021-12-05 15:15:00,2021,Elche,Cádiz,3,1,post
+610615,2021-12-05 17:30:00,2021,Levante,Osasuna,0,0,post
+610618,2021-12-05 20:00:00,2021,Celta Vigo,Valencia,1,2,post
+610611,2021-12-06 20:00:00,2021,Getafe,Athletic Club,0,0,post
+610602,2021-12-10 20:00:00,2021,Mallorca,Celta Vigo,0,0,post
+610606,2021-12-11 13:00:00,2021,Espanyol,Levante,4,3,post
+610604,2021-12-11 15:15:00,2021,Alavés,Getafe,1,1,post
+610603,2021-12-11 17:30:00,2021,Valencia,Elche,2,1,post
+610609,2021-12-11 20:00:00,2021,Athletic Club,Sevilla,0,1,post
+610607,2021-12-12 13:00:00,2021,Villarreal,Rayo Vallecano,2,0,post
+610601,2021-12-12 15:15:00,2021,Osasuna,Barcelona,2,2,post
+610608,2021-12-12 17:30:00,2021,Real Betis,Real Sociedad,4,0,post
+610600,2021-12-12 20:00:00,2021,Real Madrid,Atlético Madrid,2,0,post
+610605,2021-12-13 20:00:00,2021,Cádiz,Granada,1,1,post
+610594,2021-12-17 20:00:00,2021,Celta Vigo,Espanyol,3,1,post
+610590,2021-12-18 13:00:00,2021,Rayo Vallecano,Alavés,2,0,post
+610599,2021-12-18 15:15:00,2021,Real Sociedad,Villarreal,1,3,post
+610593,2021-12-18 17:30:00,2021,Barcelona,Elche,3,2,post
+610591,2021-12-18 20:00:00,2021,Sevilla,Atlético Madrid,2,1,post
+610595,2021-12-19 13:00:00,2021,Granada,Mallorca,4,1,post
+610597,2021-12-19 15:15:00,2021,Athletic Club,Real Betis,3,2,post
+610596,2021-12-19 17:30:00,2021,Getafe,Osasuna,1,0,post
+610592,2021-12-19 20:00:00,2021,Real Madrid,Cádiz,0,0,post
+610598,2021-12-20 20:00:00,2021,Levante,Valencia,3,4,post
+610730,2021-12-21 18:00:00,2021,Villarreal,Alavés,5,2,post
+610732,2021-12-21 20:30:00,2021,Sevilla,Barcelona,1,1,post
+610681,2021-12-22 18:00:00,2021,Granada,Atlético Madrid,2,1,post
+610566,2021-12-22 20:30:00,2021,Athletic Club,Real Madrid,1,2,post
+610583,2021-12-31 15:15:00,2021,Valencia,Espanyol,1,2,post
+610587,2022-01-02 13:00:00,2022,Getafe,Real Madrid,1,0,post
+610586,2022-01-02 15:15:00,2022,Atlético Madrid,Rayo Vallecano,2,0,post
+610584,2022-01-02 15:15:00,2022,Elche,Granada,0,0,post
+610582,2022-01-02 17:30:00,2022,Real Betis,Celta Vigo,0,2,post
+610588,2022-01-02 17:30:00,2022,Alavés,Real Sociedad,1,1,post
+610581,2022-01-02 20:00:00,2022,Mallorca,Barcelona,0,1,post
+610585,2022-01-03 18:00:00,2022,Villarreal,Levante,5,0,post
+610580,2022-01-03 20:00:00,2022,Osasuna,Athletic Club,1,3,post
+610589,2022-01-03 20:15:00,2022,Cádiz,Sevilla,0,1,post
+610577,2022-01-08 13:00:00,2022,Levante,Mallorca,2,0,post
+610574,2022-01-08 15:15:00,2022,Real Sociedad,Celta Vigo,1,0,post
+610572,2022-01-08 17:30:00,2022,Granada,Barcelona,1,1,post
+610579,2022-01-08 20:00:00,2022,Real Madrid,Valencia,4,1,post
+610578,2022-01-09 13:00:00,2022,Rayo Vallecano,Real Betis,1,1,post
+610576,2022-01-09 15:15:00,2022,Sevilla,Getafe,1,0,post
+610570,2022-01-09 17:30:00,2022,Alavés,Athletic Club,0,0,post
+610573,2022-01-09 17:30:00,2022,Osasuna,Cádiz,2,0,post
+610571,2022-01-09 20:00:00,2022,Villarreal,Atlético Madrid,2,2,post
+610575,2022-01-10 20:00:00,2022,Espanyol,Elche,1,2,post
+610569,2022-01-16 13:00:00,2022,Elche,Villarreal,1,0,post
+610560,2022-01-18 19:00:00,2022,Real Betis,Alavés,4,0,post
+610561,2022-01-18 20:30:00,2022,Cádiz,Espanyol,2,2,post
+610564,2022-01-19 18:00:00,2022,Celta Vigo,Osasuna,2,0,post
+610568,2022-01-19 20:30:00,2022,Valencia,Sevilla,1,1,post
+610562,2022-01-20 18:00:00,2022,Getafe,Granada,4,2,post
+610558,2022-01-21 20:00:00,2022,Espanyol,Real Betis,1,4,post
+610552,2022-01-22 13:00:00,2022,Levante,Cádiz,0,2,post
+610556,2022-01-22 15:15:00,2022,Villarreal,Mallorca,3,0,post
+610553,2022-01-22 17:30:00,2022,Sevilla,Celta Vigo,2,2,post
+610559,2022-01-22 20:00:00,2022,Atlético Madrid,Valencia,3,2,post
+610557,2022-01-23 13:00:00,2022,Granada,Osasuna,0,2,post
+610554,2022-01-23 15:15:00,2022,Real Madrid,Elche,2,2,post
+610550,2022-01-23 17:30:00,2022,Rayo Vallecano,Athletic Club,0,1,post
+610555,2022-01-23 17:30:00,2022,Real Sociedad,Getafe,0,0,post
+610551,2022-01-23 20:00:00,2022,Alavés,Barcelona,0,1,post
+610545,2022-02-04 20:00:00,2022,Getafe,Levante,3,0,post
+610540,2022-02-05 13:00:00,2022,Elche,Alavés,3,1,post
+610542,2022-02-05 15:15:00,2022,Mallorca,Cádiz,2,1,post
+610546,2022-02-05 17:30:00,2022,Celta Vigo,Rayo Vallecano,2,0,post
+610548,2022-02-05 20:00:00,2022,Osasuna,Sevilla,0,0,post
+610547,2022-02-06 13:00:00,2022,Valencia,Real Sociedad,0,0,post
+610541,2022-02-06 15:15:00,2022,Barcelona,Atlético Madrid,4,2,post
+610549,2022-02-06 17:30:00,2022,Real Betis,Villarreal,0,2,post
+610544,2022-02-06 20:00:00,2022,Real Madrid,Granada,1,0,post
+610543,2022-02-07 20:00:00,2022,Athletic Club,Espanyol,2,1,post
+610533,2022-02-11 20:00:00,2022,Sevilla,Elche,2,0,post
+610532,2022-02-12 13:00:00,2022,Cádiz,Celta Vigo,0,0,post
+610538,2022-02-12 15:15:00,2022,Villarreal,Real Madrid,0,0,post
+610536,2022-02-12 17:30:00,2022,Rayo Vallecano,Osasuna,0,3,post
+610534,2022-02-12 20:00:00,2022,Atlético Madrid,Getafe,4,3,post
+610539,2022-02-13 13:00:00,2022,Alavés,Valencia,2,1,post
+610537,2022-02-13 15:15:00,2022,Levante,Real Betis,2,4,post
+610535,2022-02-13 17:30:00,2022,Real Sociedad,Granada,2,0,post
+610531,2022-02-13 20:00:00,2022,Espanyol,Barcelona,2,2,post
+610530,2022-02-14 20:00:00,2022,Mallorca,Athletic Club,3,2,post
+610563,2022-02-16 18:00:00,2022,Atlético Madrid,Levante,0,1,post
+610526,2022-02-18 20:00:00,2022,Elche,Rayo Vallecano,2,1,post
+610529,2022-02-19 13:00:00,2022,Granada,Villarreal,1,4,post
+610521,2022-02-19 15:15:00,2022,Osasuna,Atlético Madrid,0,3,post
+610523,2022-02-19 17:30:00,2022,Cádiz,Getafe,1,1,post
+610520,2022-02-19 20:00:00,2022,Real Madrid,Alavés,3,0,post
+610528,2022-02-20 13:00:00,2022,Espanyol,Sevilla,1,1,post
+610522,2022-02-20 15:15:00,2022,Valencia,Barcelona,1,4,post
+610525,2022-02-20 17:30:00,2022,Real Betis,Mallorca,2,1,post
+610527,2022-02-20 20:00:00,2022,Athletic Club,Real Sociedad,4,0,post
+610524,2022-02-21 20:00:00,2022,Celta Vigo,Levante,1,1,post
+610514,2022-02-25 20:00:00,2022,Levante,Elche,3,0,post
+610519,2022-02-26 13:00:00,2022,Mallorca,Valencia,0,1,post
+610510,2022-02-26 15:15:00,2022,Getafe,Alavés,2,2,post
+610518,2022-02-26 17:30:00,2022,Rayo Vallecano,Real Madrid,0,1,post
+610513,2022-02-26 20:00:00,2022,Atlético Madrid,Celta Vigo,2,0,post
+610515,2022-02-27 13:00:00,2022,Villarreal,Espanyol,5,1,post
+610517,2022-02-27 15:15:00,2022,Sevilla,Real Betis,2,1,post
+610516,2022-02-27 17:30:00,2022,Real Sociedad,Osasuna,1,0,post
+610511,2022-02-27 20:00:00,2022,Barcelona,Athletic Club,4,0,post
+610512,2022-02-28 20:00:00,2022,Granada,Cádiz,0,0,post
+610567,2022-03-02 20:00:00,2022,Mallorca,Real Sociedad,0,2,post
+610508,2022-03-04 20:00:00,2022,Alavés,Sevilla,0,0,post
+610509,2022-03-05 13:00:00,2022,Osasuna,Villarreal,1,0,post
+610502,2022-03-05 15:15:00,2022,Espanyol,Getafe,2,0,post
+610503,2022-03-05 17:30:00,2022,Valencia,Granada,3,1,post
+610507,2022-03-05 20:00:00,2022,Real Madrid,Real Sociedad,4,1,post
+610506,2022-03-06 13:00:00,2022,Cádiz,Rayo Vallecano,2,0,post
+610501,2022-03-06 15:15:00,2022,Elche,Barcelona,1,2,post
+610505,2022-03-06 17:30:00,2022,Celta Vigo,Mallorca,4,3,post
+610500,2022-03-06 20:00:00,2022,Real Betis,Atlético Madrid,1,3,post
+610504,2022-03-07 20:00:00,2022,Athletic Club,Levante,3,1,post
+610492,2022-03-11 20:00:00,2022,Atlético Madrid,Cádiz,2,1,post
+610495,2022-03-12 13:00:00,2022,Levante,Espanyol,1,1,post
+610494,2022-03-12 15:15:00,2022,Granada,Elche,0,1,post
+610493,2022-03-12 17:30:00,2022,Villarreal,Celta Vigo,1,0,post
+610499,2022-03-12 20:00:00,2022,Getafe,Valencia,0,0,post
+610498,2022-03-13 13:00:00,2022,Rayo Vallecano,Sevilla,1,1,post
+610491,2022-03-13 15:15:00,2022,Real Betis,Athletic Club,1,0,post
+610490,2022-03-13 17:30:00,2022,Real Sociedad,Alavés,1,0,post
+610496,2022-03-13 20:00:00,2022,Barcelona,Osasuna,4,0,post
+610497,2022-03-14 20:00:00,2022,Mallorca,Real Madrid,0,3,post
+610482,2022-03-18 20:00:00,2022,Athletic Club,Getafe,1,1,post
+610483,2022-03-19 13:00:00,2022,Alavés,Granada,2,3,post
+610488,2022-03-19 15:15:00,2022,Elche,Valencia,0,1,post
+610484,2022-03-19 17:30:00,2022,Osasuna,Levante,3,1,post
+610480,2022-03-19 20:00:00,2022,Rayo Vallecano,Atlético Madrid,0,1,post
+610485,2022-03-20 13:00:00,2022,Espanyol,Mallorca,1,0,post
+610486,2022-03-20 15:15:00,2022,Celta Vigo,Real Betis,0,0,post
+610489,2022-03-20 15:15:00,2022,Cádiz,Villarreal,1,0,post
+610487,2022-03-20 17:30:00,2022,Sevilla,Real Sociedad,0,0,post
+610481,2022-03-20 20:00:00,2022,Real Madrid,Barcelona,0,4,post
+610474,2022-04-02 12:00:00,2022,Getafe,Mallorca,1,0,post
+610479,2022-04-02 14:15:00,2022,Levante,Villarreal,2,0,post
+610477,2022-04-02 16:30:00,2022,Celta Vigo,Real Madrid,1,2,post
+610470,2022-04-02 19:00:00,2022,Atlético Madrid,Alavés,4,1,post
+610472,2022-04-03 12:00:00,2022,Athletic Club,Elche,2,1,post
+610475,2022-04-03 14:15:00,2022,Real Betis,Osasuna,4,1,post
+610476,2022-04-03 16:30:00,2022,Granada,Rayo Vallecano,2,2,post
+610471,2022-04-03 16:30:00,2022,Valencia,Cádiz,0,0,post
+610478,2022-04-03 19:00:00,2022,Barcelona,Sevilla,1,0,post
+610473,2022-04-04 19:00:00,2022,Real Sociedad,Espanyol,1,0,post
+610466,2022-04-08 19:00:00,2022,Sevilla,Granada,4,2,post
+610467,2022-04-09 12:00:00,2022,Cádiz,Real Betis,1,2,post
+610462,2022-04-09 14:15:00,2022,Mallorca,Atlético Madrid,1,0,post
+610461,2022-04-09 16:30:00,2022,Villarreal,Athletic Club,1,1,post
+610465,2022-04-09 19:00:00,2022,Real Madrid,Getafe,2,0,post
+610460,2022-04-10 12:00:00,2022,Osasuna,Alavés,1,0,post
+610464,2022-04-10 14:15:00,2022,Espanyol,Celta Vigo,1,0,post
+610468,2022-04-10 16:30:00,2022,Elche,Real Sociedad,1,2,post
+610463,2022-04-10 19:00:00,2022,Levante,Barcelona,2,3,post
+610469,2022-04-11 19:00:00,2022,Rayo Vallecano,Valencia,1,1,post
+610457,2022-04-15 19:00:00,2022,Real Sociedad,Real Betis,0,0,post
+610454,2022-04-16 12:00:00,2022,Elche,Mallorca,3,0,post
+610456,2022-04-16 14:15:00,2022,Alavés,Rayo Vallecano,1,0,post
+610455,2022-04-16 16:30:00,2022,Valencia,Osasuna,1,2,post
+610459,2022-04-16 19:00:00,2022,Getafe,Villarreal,1,2,post
+610453,2022-04-17 12:00:00,2022,Granada,Levante,1,4,post
+610452,2022-04-17 14:15:00,2022,Atlético Madrid,Espanyol,2,1,post
+610451,2022-04-17 16:30:00,2022,Athletic Club,Celta Vigo,0,2,post
+610458,2022-04-17 19:00:00,2022,Sevilla,Real Madrid,2,3,post
+610450,2022-04-18 19:00:00,2022,Barcelona,Cádiz,0,1,post
+610440,2022-04-19 17:00:00,2022,Mallorca,Alavés,2,1,post
+610443,2022-04-19 19:00:00,2022,Real Betis,Elche,0,1,post
+610449,2022-04-19 19:30:00,2022,Villarreal,Valencia,2,0,post
+610445,2022-04-20 17:00:00,2022,Atlético Madrid,Granada,0,0,post
+610444,2022-04-20 18:00:00,2022,Celta Vigo,Getafe,0,2,post
+610447,2022-04-20 19:30:00,2022,Osasuna,Real Madrid,1,3,post
+610446,2022-04-21 17:00:00,2022,Espanyol,Rayo Vallecano,0,1,post
+610448,2022-04-21 17:00:00,2022,Levante,Sevilla,2,3,post
+610441,2022-04-21 18:00:00,2022,Cádiz,Athletic Club,2,3,post
+610442,2022-04-21 19:30:00,2022,Real Sociedad,Barcelona,0,1,post
+610565,2022-04-24 19:00:00,2022,Barcelona,Rayo Vallecano,0,1,post
+610431,2022-04-29 19:00:00,2022,Sevilla,Cádiz,1,1,post
+610439,2022-04-30 12:00:00,2022,Alavés,Villarreal,2,1,post
+610433,2022-04-30 14:15:00,2022,Real Madrid,Espanyol,4,0,post
+610434,2022-04-30 16:30:00,2022,Valencia,Levante,1,1,post
+610430,2022-04-30 19:00:00,2022,Athletic Club,Atlético Madrid,2,0,post
+610436,2022-05-01 12:00:00,2022,Elche,Osasuna,1,1,post
+610432,2022-05-01 14:15:00,2022,Granada,Celta Vigo,1,1,post
+610438,2022-05-01 16:30:00,2022,Rayo Vallecano,Real Sociedad,1,1,post
+610435,2022-05-01 19:00:00,2022,Barcelona,Mallorca,2,1,post
+610437,2022-05-02 19:00:00,2022,Getafe,Real Betis,0,0,post
+610427,2022-05-06 19:00:00,2022,Levante,Real Sociedad,2,1,post
+610423,2022-05-07 12:00:00,2022,Mallorca,Granada,2,6,post
+610429,2022-05-07 14:15:00,2022,Athletic Club,Valencia,0,0,post
+610422,2022-05-07 16:30:00,2022,Cádiz,Elche,3,0,post
+610420,2022-05-07 16:30:00,2022,Celta Vigo,Alavés,4,0,post
+610421,2022-05-07 19:00:00,2022,Real Betis,Barcelona,1,2,post
+610425,2022-05-08 12:00:00,2022,Getafe,Rayo Vallecano,0,0,post
+610428,2022-05-08 14:15:00,2022,Villarreal,Sevilla,1,1,post
+610424,2022-05-08 16:30:00,2022,Espanyol,Osasuna,1,1,post
+610426,2022-05-08 19:00:00,2022,Atlético Madrid,Real Madrid,1,0,post
+610418,2022-05-10 17:00:00,2022,Valencia,Real Betis,0,3,post
+610410,2022-05-10 18:00:00,2022,Granada,Athletic Club,1,0,post
+610413,2022-05-10 19:30:00,2022,Barcelona,Celta Vigo,3,1,post
+610414,2022-05-11 17:00:00,2022,Alavés,Espanyol,2,1,post
+610415,2022-05-11 17:00:00,2022,Osasuna,Getafe,1,1,post
+610417,2022-05-11 18:30:00,2022,Sevilla,Mallorca,0,0,post
+610411,2022-05-11 19:30:00,2022,Elche,Atlético Madrid,0,2,post
+610412,2022-05-12 17:00:00,2022,Real Sociedad,Cádiz,3,0,post
+610419,2022-05-12 18:00:00,2022,Rayo Vallecano,Villarreal,1,5,post
+610416,2022-05-12 19:30:00,2022,Real Madrid,Levante,6,0,post
+610409,2022-05-14 16:30:00,2022,Espanyol,Valencia,1,1,post
+610407,2022-05-15 17:30:00,2022,Villarreal,Real Sociedad,1,2,post
+610403,2022-05-15 17:30:00,2022,Real Betis,Granada,2,0,post
+610405,2022-05-15 17:30:00,2022,Mallorca,Rayo Vallecano,2,1,post
+610400,2022-05-15 17:30:00,2022,Levante,Alavés,3,1,post
+610401,2022-05-15 17:30:00,2022,Getafe,Barcelona,0,0,post
+610402,2022-05-15 17:30:00,2022,Celta Vigo,Elche,1,0,post
+610406,2022-05-15 17:30:00,2022,Cádiz,Real Madrid,1,1,post
+610408,2022-05-15 17:30:00,2022,Atlético Madrid,Sevilla,1,1,post
+610404,2022-05-15 17:30:00,2022,Athletic Club,Osasuna,2,0,post
+610396,2022-05-20 19:00:00,2022,Rayo Vallecano,Levante,2,4,post
+610398,2022-05-20 19:00:00,2022,Real Madrid,Real Betis,0,0,post
+610393,2022-05-21 15:30:00,2022,Valencia,Celta Vigo,2,0,post
+610395,2022-05-22 15:30:00,2022,Elche,Getafe,3,1,post
+610397,2022-05-22 18:00:00,2022,Osasuna,Mallorca,0,2,post
+610392,2022-05-22 18:00:00,2022,Alavés,Cádiz,0,1,post
+610394,2022-05-22 18:00:00,2022,Granada,Espanyol,0,0,post
+610399,2022-05-22 20:00:00,2022,Barcelona,Villarreal,0,2,post
+610391,2022-05-22 20:00:00,2022,Real Sociedad,Atlético Madrid,1,2,post
+610390,2022-05-22 20:00:00,2022,Sevilla,Athletic Club,1,0,post
+643775,2022-08-12 19:00:00,2022,Osasuna,Sevilla,2,1,post
+643780,2022-08-13 15:00:00,2022,Celta Vigo,Espanyol,2,2,post
+643777,2022-08-13 17:00:00,2022,Real Valladolid,Villarreal,0,3,post
+643772,2022-08-13 19:00:00,2022,Barcelona,Rayo Vallecano,0,0,post
+643778,2022-08-14 15:30:00,2022,Cádiz,Real Sociedad,0,1,post
+643773,2022-08-14 17:30:00,2022,Valencia,Girona,1,0,post
+643779,2022-08-14 20:00:00,2022,Almería,Real Madrid,1,2,post
+643771,2022-08-15 15:30:00,2022,Athletic Club,Mallorca,0,0,post
+643774,2022-08-15 17:30:00,2022,Getafe,Atlético Madrid,0,3,post
+643776,2022-08-15 19:30:00,2022,Real Betis,Elche,3,0,post
+643783,2022-08-19 18:00:00,2022,Espanyol,Rayo Vallecano,0,2,post
+643784,2022-08-19 20:00:00,2022,Sevilla,Real Valladolid,1,1,post
+643786,2022-08-20 15:30:00,2022,Osasuna,Cádiz,2,0,post
+643787,2022-08-20 17:30:00,2022,Mallorca,Real Betis,1,2,post
+643790,2022-08-20 20:00:00,2022,Celta Vigo,Real Madrid,1,4,post
+643789,2022-08-21 15:30:00,2022,Athletic Club,Valencia,1,0,post
+643781,2022-08-21 17:30:00,2022,Atlético Madrid,Villarreal,0,2,post
+643785,2022-08-21 20:00:00,2022,Real Sociedad,Barcelona,1,4,post
+643782,2022-08-22 18:00:00,2022,Elche,Almería,1,1,post
+643788,2022-08-22 20:00:00,2022,Girona,Getafe,3,1,post
+643795,2022-08-26 18:00:00,2022,Girona,Celta Vigo,0,1,post
+643798,2022-08-26 20:00:00,2022,Real Betis,Osasuna,1,0,post
+643799,2022-08-27 15:30:00,2022,Elche,Real Sociedad,0,1,post
+643794,2022-08-27 17:30:00,2022,Rayo Vallecano,Mallorca,0,2,post
+643792,2022-08-27 20:00:00,2022,Almería,Sevilla,2,1,post
+643796,2022-08-28 15:30:00,2022,Getafe,Villarreal,0,0,post
+643800,2022-08-28 17:30:00,2022,Barcelona,Real Valladolid,4,0,post
+643797,2022-08-28 20:00:00,2022,Espanyol,Real Madrid,1,3,post
+643791,2022-08-29 18:00:00,2022,Cádiz,Athletic Club,0,4,post
+643793,2022-08-29 20:00:00,2022,Valencia,Atlético Madrid,0,1,post
+643801,2022-09-02 19:00:00,2022,Celta Vigo,Cádiz,3,0,post
+643810,2022-09-03 12:00:00,2022,Mallorca,Girona,1,1,post
+643808,2022-09-03 14:15:00,2022,Real Madrid,Real Betis,2,1,post
+643804,2022-09-03 16:30:00,2022,Real Sociedad,Atlético Madrid,1,1,post
+643806,2022-09-03 19:00:00,2022,Sevilla,Barcelona,0,3,post
+643802,2022-09-04 12:00:00,2022,Osasuna,Rayo Vallecano,2,1,post
+643809,2022-09-04 14:15:00,2022,Athletic Club,Espanyol,0,1,post
+643803,2022-09-04 16:30:00,2022,Villarreal,Elche,4,0,post
+643807,2022-09-04 19:00:00,2022,Valencia,Getafe,5,1,post
+643805,2022-09-05 19:00:00,2022,Real Valladolid,Almería,1,0,post
+643817,2022-09-09 19:00:00,2022,Girona,Real Valladolid,2,1,post
+643816,2022-09-10 12:00:00,2022,Rayo Vallecano,Valencia,2,1,post
+643813,2022-09-10 14:15:00,2022,Espanyol,Sevilla,2,3,post
+643820,2022-09-10 16:30:00,2022,Cádiz,Barcelona,0,4,post
+643811,2022-09-10 19:00:00,2022,Atlético Madrid,Celta Vigo,4,1,post
+643814,2022-09-11 12:00:00,2022,Real Madrid,Mallorca,4,1,post
+643812,2022-09-11 14:15:00,2022,Elche,Athletic Club,1,4,post
+643818,2022-09-11 16:30:00,2022,Getafe,Real Sociedad,2,1,post
+643815,2022-09-11 19:00:00,2022,Real Betis,Villarreal,1,0,post
+643819,2022-09-12 19:00:00,2022,Almería,Osasuna,0,1,post
+643824,2022-09-16 19:00:00,2022,Real Valladolid,Cádiz,0,1,post
+643822,2022-09-17 12:00:00,2022,Mallorca,Almería,1,0,post
+643821,2022-09-17 14:15:00,2022,Barcelona,Elche,3,0,post
+643828,2022-09-17 16:30:00,2022,Valencia,Celta Vigo,3,0,post
+643825,2022-09-17 19:00:00,2022,Athletic Club,Rayo Vallecano,3,2,post
+643827,2022-09-18 12:00:00,2022,Osasuna,Getafe,0,2,post
+643823,2022-09-18 14:15:00,2022,Villarreal,Sevilla,1,1,post
+643830,2022-09-18 16:30:00,2022,Real Sociedad,Espanyol,2,1,post
+643826,2022-09-18 16:30:00,2022,Real Betis,Girona,2,1,post
+643829,2022-09-18 19:00:00,2022,Atlético Madrid,Real Madrid,1,2,post
+643837,2022-09-30 19:00:00,2022,Athletic Club,Almería,4,0,post
+643839,2022-10-01 12:00:00,2022,Cádiz,Villarreal,0,0,post
+643831,2022-10-01 14:15:00,2022,Getafe,Real Valladolid,2,3,post
+643836,2022-10-01 16:30:00,2022,Sevilla,Atlético Madrid,0,2,post
+643833,2022-10-01 19:00:00,2022,Mallorca,Barcelona,0,1,post
+643835,2022-10-02 12:00:00,2022,Espanyol,Valencia,2,2,post
+643838,2022-10-02 14:15:00,2022,Celta Vigo,Real Betis,1,0,post
+643832,2022-10-02 16:30:00,2022,Girona,Real Sociedad,3,5,post
+643840,2022-10-02 19:00:00,2022,Real Madrid,Osasuna,1,1,post
+643834,2022-10-03 19:00:00,2022,Rayo Vallecano,Elche,2,1,post
+643847,2022-10-07 19:00:00,2022,Osasuna,Valencia,1,2,post
+643846,2022-10-08 12:00:00,2022,Almería,Rayo Vallecano,3,1,post
+643850,2022-10-08 14:15:00,2022,Atlético Madrid,Girona,2,1,post
+643845,2022-10-08 16:30:00,2022,Sevilla,Athletic Club,1,1,post
+643841,2022-10-08 19:00:00,2022,Getafe,Real Madrid,0,1,post
+643849,2022-10-09 12:00:00,2022,Real Valladolid,Real Betis,0,0,post
+643843,2022-10-09 14:15:00,2022,Cádiz,Espanyol,2,2,post
+643848,2022-10-09 16:30:00,2022,Real Sociedad,Villarreal,1,0,post
+643844,2022-10-09 19:00:00,2022,Barcelona,Celta Vigo,1,0,post
+643842,2022-10-10 19:30:00,2022,Elche,Mallorca,1,1,post
+643858,2022-10-14 19:00:00,2022,Rayo Vallecano,Getafe,0,0,post
+643860,2022-10-15 12:00:00,2022,Girona,Cádiz,1,1,post
+643851,2022-10-15 14:15:00,2022,Valencia,Elche,2,2,post
+643852,2022-10-15 16:30:00,2022,Mallorca,Sevilla,0,1,post
+643853,2022-10-15 19:00:00,2022,Athletic Club,Atlético Madrid,0,1,post
+643855,2022-10-16 12:00:00,2022,Celta Vigo,Real Sociedad,1,2,post
+643856,2022-10-16 14:15:00,2022,Real Madrid,Barcelona,3,1,post
+643854,2022-10-16 16:30:00,2022,Espanyol,Real Valladolid,1,0,post
+643857,2022-10-16 19:00:00,2022,Real Betis,Almería,3,1,post
+643859,2022-10-17 19:00:00,2022,Villarreal,Osasuna,2,0,post
+643863,2022-10-18 17:00:00,2022,Sevilla,Valencia,1,1,post
+643869,2022-10-18 18:00:00,2022,Getafe,Athletic Club,2,2,post
+643870,2022-10-18 19:00:00,2022,Atlético Madrid,Rayo Vallecano,1,1,post
+643861,2022-10-19 17:00:00,2022,Real Valladolid,Celta Vigo,4,1,post
+643867,2022-10-19 17:00:00,2022,Cádiz,Real Betis,0,0,post
+643862,2022-10-19 18:00:00,2022,Real Sociedad,Mallorca,1,0,post
+643868,2022-10-19 19:00:00,2022,Elche,Real Madrid,0,3,post
+643864,2022-10-20 17:00:00,2022,Almería,Girona,3,2,post
+643865,2022-10-20 18:00:00,2022,Osasuna,Espanyol,1,0,post
+643866,2022-10-20 19:00:00,2022,Barcelona,Villarreal,3,0,post
+643873,2022-10-22 12:00:00,2022,Rayo Vallecano,Cádiz,5,1,post
+643875,2022-10-22 14:15:00,2022,Real Valladolid,Real Sociedad,1,0,post
+643876,2022-10-22 16:30:00,2022,Valencia,Mallorca,1,2,post
+643874,2022-10-22 19:00:00,2022,Real Madrid,Sevilla,3,1,post
+643871,2022-10-23 12:00:00,2022,Espanyol,Elche,2,2,post
+643880,2022-10-23 14:15:00,2022,Real Betis,Atlético Madrid,1,2,post
+643872,2022-10-23 16:30:00,2022,Girona,Osasuna,1,1,post
+643877,2022-10-23 16:30:00,2022,Villarreal,Almería,2,1,post
+643879,2022-10-23 19:00:00,2022,Barcelona,Athletic Club,4,0,post
+643878,2022-10-24 19:00:00,2022,Celta Vigo,Getafe,1,1,post
+643889,2022-10-28 19:00:00,2022,Mallorca,Espanyol,1,1,post
+643884,2022-10-29 12:00:00,2022,Almería,Celta Vigo,3,1,post
+643887,2022-10-29 14:15:00,2022,Cádiz,Atlético Madrid,3,2,post
+643883,2022-10-29 16:30:00,2022,Sevilla,Rayo Vallecano,0,1,post
+643885,2022-10-29 19:00:00,2022,Valencia,Barcelona,0,1,post
+643890,2022-10-30 13:00:00,2022,Osasuna,Real Valladolid,2,0,post
+643881,2022-10-30 15:15:00,2022,Real Madrid,Girona,1,1,post
+643886,2022-10-30 17:30:00,2022,Athletic Club,Villarreal,1,0,post
+643882,2022-10-30 20:00:00,2022,Real Sociedad,Real Betis,0,2,post
+643888,2022-10-31 20:00:00,2022,Elche,Getafe,0,1,post
+643897,2022-11-04 20:00:00,2022,Girona,Athletic Club,2,1,post
+643896,2022-11-05 13:00:00,2022,Getafe,Cádiz,0,0,post
+643891,2022-11-05 15:15:00,2022,Real Valladolid,Elche,2,1,post
+643895,2022-11-05 17:30:00,2022,Celta Vigo,Osasuna,1,2,post
+643894,2022-11-05 20:00:00,2022,Barcelona,Almería,2,0,post
+643893,2022-11-06 13:00:00,2022,Atlético Madrid,Espanyol,1,1,post
+643892,2022-11-06 15:15:00,2022,Real Sociedad,Valencia,1,1,post
+643900,2022-11-06 17:30:00,2022,Villarreal,Mallorca,0,2,post
+643899,2022-11-06 20:00:00,2022,Real Betis,Sevilla,1,1,post
+643898,2022-11-07 20:00:00,2022,Rayo Vallecano,Real Madrid,3,2,post
+643903,2022-11-08 18:00:00,2022,Elche,Girona,1,2,post
+643902,2022-11-08 19:00:00,2022,Athletic Club,Real Valladolid,3,0,post
+643905,2022-11-08 20:30:00,2022,Osasuna,Barcelona,1,2,post
+643906,2022-11-09 18:00:00,2022,Almería,Getafe,1,0,post
+643901,2022-11-09 18:00:00,2022,Sevilla,Real Sociedad,1,2,post
+643904,2022-11-09 19:00:00,2022,Espanyol,Villarreal,0,1,post
+643910,2022-11-09 20:30:00,2022,Mallorca,Atlético Madrid,1,0,post
+643907,2022-11-10 18:00:00,2022,Rayo Vallecano,Celta Vigo,0,0,post
+643909,2022-11-10 19:00:00,2022,Valencia,Real Betis,3,0,post
+643908,2022-11-10 20:30:00,2022,Real Madrid,Cádiz,2,1,post
+643916,2022-12-29 16:00:00,2022,Girona,Rayo Vallecano,2,2,post
+643917,2022-12-29 18:15:00,2022,Real Betis,Athletic Club,0,0,post
+643911,2022-12-29 20:30:00,2022,Atlético Madrid,Elche,2,0,post
+643915,2022-12-30 16:00:00,2022,Getafe,Mallorca,2,0,post
+643914,2022-12-30 18:15:00,2022,Cádiz,Almería,1,1,post
+643913,2022-12-30 18:15:00,2022,Celta Vigo,Sevilla,1,1,post
+643919,2022-12-30 20:30:00,2022,Real Valladolid,Real Madrid,0,2,post
+643912,2022-12-31 13:00:00,2022,Barcelona,Espanyol,1,1,post
+643918,2022-12-31 15:15:00,2022,Real Sociedad,Osasuna,2,0,post
+643920,2022-12-31 15:15:00,2022,Villarreal,Valencia,2,1,post
+643929,2023-01-06 17:30:00,2023,Elche,Celta Vigo,0,1,post
+643921,2023-01-06 20:00:00,2023,Valencia,Cádiz,0,1,post
+643930,2023-01-07 15:15:00,2023,Villarreal,Real Madrid,2,1,post
+643924,2023-01-07 17:30:00,2023,Mallorca,Real Valladolid,1,0,post
+643925,2023-01-07 20:00:00,2023,Espanyol,Girona,2,2,post
+643926,2023-01-08 13:00:00,2023,Almería,Real Sociedad,0,2,post
+643923,2023-01-08 15:15:00,2023,Rayo Vallecano,Real Betis,1,2,post
+643922,2023-01-08 17:30:00,2023,Sevilla,Getafe,2,1,post
+643928,2023-01-08 20:00:00,2023,Atlético Madrid,Barcelona,0,1,post
+643927,2023-01-09 20:00:00,2023,Athletic Club,Osasuna,0,0,post
+643937,2023-01-13 20:00:00,2023,Celta Vigo,Villarreal,1,1,post
+643934,2023-01-14 13:00:00,2023,Real Valladolid,Rayo Vallecano,0,1,post
+643935,2023-01-14 15:15:00,2023,Girona,Sevilla,2,1,post
+643940,2023-01-14 17:30:00,2023,Osasuna,Mallorca,1,0,post
+643933,2023-01-14 20:00:00,2023,Real Sociedad,Athletic Club,3,1,post
+643939,2023-01-15 13:00:00,2023,Getafe,Espanyol,1,2,post
+643936,2023-01-15 15:15:00,2023,Almería,Atlético Madrid,1,1,post
+643938,2023-01-16 20:00:00,2023,Cádiz,Elche,1,1,post
+643945,2023-01-20 20:00:00,2023,Mallorca,Celta Vigo,1,0,post
+643946,2023-01-21 13:00:00,2023,Rayo Vallecano,Real Sociedad,0,2,post
+643944,2023-01-21 15:15:00,2023,Espanyol,Real Betis,1,0,post
+643942,2023-01-21 17:30:00,2023,Atlético Madrid,Real Valladolid,3,0,post
+643947,2023-01-21 20:00:00,2023,Sevilla,Cádiz,1,0,post
+643948,2023-01-22 13:00:00,2023,Villarreal,Girona,1,0,post
+643949,2023-01-22 15:15:00,2023,Elche,Osasuna,1,1,post
+643950,2023-01-22 17:30:00,2023,Barcelona,Getafe,1,0,post
+643941,2023-01-22 20:00:00,2023,Athletic Club,Real Madrid,0,2,post
+643943,2023-01-23 20:00:00,2023,Valencia,Almería,2,2,post
+643951,2023-01-27 20:00:00,2023,Almería,Espanyol,3,1,post
+643958,2023-01-28 13:00:00,2023,Cádiz,Mallorca,2,0,post
+643956,2023-01-28 15:15:00,2023,Girona,Barcelona,0,1,post
+643952,2023-01-28 17:30:00,2023,Sevilla,Elche,3,0,post
+643957,2023-01-28 20:00:00,2023,Getafe,Real Betis,0,1,post
+643953,2023-01-29 13:00:00,2023,Real Valladolid,Valencia,1,0,post
+643960,2023-01-29 15:15:00,2023,Osasuna,Atlético Madrid,0,1,post
+643959,2023-01-29 17:30:00,2023,Celta Vigo,Athletic Club,1,0,post
+643954,2023-01-29 20:00:00,2023,Real Madrid,Real Sociedad,0,0,post
+643955,2023-01-30 20:00:00,2023,Villarreal,Rayo Vallecano,0,1,post
+643931,2023-02-01 20:00:00,2023,Real Betis,Barcelona,1,2,post
+643932,2023-02-02 20:00:00,2023,Real Madrid,Valencia,2,0,post
+643969,2023-02-03 20:00:00,2023,Athletic Club,Cádiz,4,1,post
+643970,2023-02-04 13:00:00,2023,Espanyol,Osasuna,1,1,post
+643966,2023-02-04 15:15:00,2023,Elche,Villarreal,3,1,post
+643968,2023-02-04 17:30:00,2023,Atlético Madrid,Getafe,1,1,post
+643961,2023-02-04 20:00:00,2023,Real Betis,Celta Vigo,3,4,post
+643963,2023-02-05 13:00:00,2023,Mallorca,Real Madrid,1,0,post
+643964,2023-02-05 15:15:00,2023,Girona,Valencia,1,0,post
+643965,2023-02-05 17:30:00,2023,Real Sociedad,Real Valladolid,0,1,post
+643967,2023-02-05 20:00:00,2023,Barcelona,Sevilla,3,0,post
+643962,2023-02-06 20:00:00,2023,Rayo Vallecano,Almería,2,0,post
+643977,2023-02-10 20:00:00,2023,Cádiz,Girona,2,0,post
+643980,2023-02-12 13:00:00,2023,Getafe,Rayo Vallecano,1,1,post
+643978,2023-02-12 15:15:00,2023,Celta Vigo,Atlético Madrid,0,1,post
+643972,2023-02-12 17:30:00,2023,Real Valladolid,Osasuna,0,0,post
+643975,2023-02-12 20:00:00,2023,Villarreal,Barcelona,0,1,post
+643988,2023-02-17 20:00:00,2023,Girona,Almería,6,2,post
+643982,2023-02-18 13:00:00,2023,Real Sociedad,Celta Vigo,1,1,post
+643981,2023-02-18 15:15:00,2023,Real Betis,Real Valladolid,2,1,post
+643989,2023-02-18 17:30:00,2023,Mallorca,Villarreal,4,2,post
+643990,2023-02-18 20:00:00,2023,Osasuna,Real Madrid,0,2,post
+643986,2023-02-19 13:00:00,2023,Elche,Espanyol,0,1,post
+643985,2023-02-19 15:15:00,2023,Rayo Vallecano,Sevilla,1,1,post
+643984,2023-02-19 17:30:00,2023,Atlético Madrid,Athletic Club,1,0,post
+643983,2023-02-19 20:00:00,2023,Barcelona,Cádiz,2,0,post
+643987,2023-02-20 20:00:00,2023,Getafe,Valencia,1,0,post
+643998,2023-02-24 20:00:00,2023,Elche,Real Betis,2,3,post
+643995,2023-02-25 13:00:00,2023,Espanyol,Mallorca,2,1,post
+643997,2023-02-25 15:15:00,2023,Cádiz,Rayo Vallecano,1,0,post
+643994,2023-02-25 17:30:00,2023,Real Madrid,Atlético Madrid,1,1,post
+643992,2023-02-25 20:00:00,2023,Valencia,Real Sociedad,1,0,post
+644000,2023-02-26 13:00:00,2023,Athletic Club,Girona,2,3,post
+643996,2023-02-26 15:15:00,2023,Celta Vigo,Real Valladolid,3,0,post
+643991,2023-02-26 17:30:00,2023,Almería,Barcelona,1,0,post
+643993,2023-02-26 20:00:00,2023,Sevilla,Osasuna,2,3,post
+643999,2023-02-27 20:00:00,2023,Villarreal,Getafe,2,1,post
+644009,2023-03-03 20:00:00,2023,Real Sociedad,Cádiz,0,0,post
+644004,2023-03-04 13:00:00,2023,Getafe,Girona,3,2,post
+644001,2023-03-04 15:15:00,2023,Almería,Villarreal,0,2,post
+644005,2023-03-04 17:30:00,2023,Mallorca,Elche,0,1,post
+644002,2023-03-04 20:00:00,2023,Atlético Madrid,Sevilla,6,1,post
+644010,2023-03-05 13:00:00,2023,Real Valladolid,Espanyol,2,1,post
+644003,2023-03-05 15:15:00,2023,Barcelona,Valencia,1,0,post
+644007,2023-03-05 17:30:00,2023,Rayo Vallecano,Athletic Club,0,0,post
+644008,2023-03-05 20:00:00,2023,Real Betis,Real Madrid,0,0,post
+644006,2023-03-06 20:00:00,2023,Osasuna,Celta Vigo,0,0,post
+644013,2023-03-10 20:00:00,2023,Cádiz,Getafe,2,2,post
+644017,2023-03-11 13:00:00,2023,Real Madrid,Espanyol,3,1,post
+644014,2023-03-11 15:15:00,2023,Elche,Real Valladolid,1,1,post
+644012,2023-03-11 17:30:00,2023,Celta Vigo,Rayo Vallecano,3,0,post
+644019,2023-03-11 20:00:00,2023,Valencia,Osasuna,1,0,post
+644016,2023-03-12 13:00:00,2023,Mallorca,Real Sociedad,1,1,post
+644018,2023-03-12 15:15:00,2023,Sevilla,Almería,2,1,post
+644020,2023-03-12 17:30:00,2023,Villarreal,Real Betis,1,1,post
+644011,2023-03-12 20:00:00,2023,Athletic Club,Barcelona,0,1,post
+644015,2023-03-13 20:00:00,2023,Girona,Atlético Madrid,0,1,post
+644029,2023-03-17 20:00:00,2023,Real Valladolid,Athletic Club,1,3,post
+644021,2023-03-18 13:00:00,2023,Almería,Cádiz,1,1,post
+644027,2023-03-18 15:15:00,2023,Rayo Vallecano,Girona,2,2,post
+644024,2023-03-18 17:30:00,2023,Espanyol,Celta Vigo,1,3,post
+644022,2023-03-18 20:00:00,2023,Atlético Madrid,Valencia,3,0,post
+644028,2023-03-19 13:00:00,2023,Real Betis,Mallorca,1,0,post
+644026,2023-03-19 15:15:00,2023,Osasuna,Villarreal,0,3,post
+644025,2023-03-19 15:15:00,2023,Real Sociedad,Elche,2,0,post
+644030,2023-03-19 17:30:00,2023,Getafe,Sevilla,2,0,post
+644023,2023-03-19 20:00:00,2023,Barcelona,Real Madrid,2,1,post
+644035,2023-03-31 19:00:00,2023,Mallorca,Osasuna,0,0,post
+644039,2023-04-01 12:00:00,2023,Girona,Espanyol,2,1,post
+644034,2023-04-01 14:15:00,2023,Athletic Club,Getafe,0,0,post
+644037,2023-04-01 16:30:00,2023,Cádiz,Sevilla,0,2,post
+644038,2023-04-01 19:00:00,2023,Elche,Barcelona,0,4,post
+644036,2023-04-02 12:00:00,2023,Celta Vigo,Almería,2,2,post
+644032,2023-04-02 14:15:00,2023,Real Madrid,Real Valladolid,6,0,post
+644033,2023-04-02 16:30:00,2023,Villarreal,Real Sociedad,2,0,post
+644040,2023-04-02 19:00:00,2023,Atlético Madrid,Real Betis,1,0,post
+644031,2023-04-03 19:00:00,2023,Valencia,Rayo Vallecano,1,1,post
+644046,2023-04-07 19:00:00,2023,Sevilla,Celta Vigo,2,2,post
+644044,2023-04-08 12:00:00,2023,Osasuna,Elche,2,1,post
+644043,2023-04-08 14:15:00,2023,Espanyol,Athletic Club,1,2,post
+644048,2023-04-08 16:30:00,2023,Real Sociedad,Getafe,2,0,post
+644047,2023-04-08 19:00:00,2023,Real Madrid,Villarreal,2,3,post
+644050,2023-04-09 12:00:00,2023,Real Valladolid,Mallorca,3,3,post
+644041,2023-04-09 14:15:00,2023,Real Betis,Cádiz,0,2,post
+644049,2023-04-09 16:30:00,2023,Almería,Valencia,2,1,post
+644045,2023-04-09 19:00:00,2023,Rayo Vallecano,Atlético Madrid,1,2,post
+644042,2023-04-10 19:00:00,2023,Barcelona,Girona,0,0,post
+644057,2023-04-14 19:00:00,2023,Rayo Vallecano,Osasuna,2,1,post
+644055,2023-04-15 12:00:00,2023,Villarreal,Real Valladolid,1,2,post
+644051,2023-04-15 14:15:00,2023,Athletic Club,Real Sociedad,2,0,post
+644058,2023-04-15 16:30:00,2023,Real Betis,Espanyol,3,1,post
+644054,2023-04-15 19:00:00,2023,Cádiz,Real Madrid,0,2,post
+644056,2023-04-16 12:00:00,2023,Girona,Elche,2,0,post
+644060,2023-04-16 14:15:00,2023,Getafe,Barcelona,0,0,post
+644052,2023-04-16 16:30:00,2023,Atlético Madrid,Almería,2,1,post
+644059,2023-04-16 19:00:00,2023,Valencia,Sevilla,0,2,post
+644053,2023-04-17 19:00:00,2023,Celta Vigo,Mallorca,0,1,post
+644069,2023-04-21 19:00:00,2023,Espanyol,Cádiz,0,0,post
+644065,2023-04-22 12:00:00,2023,Osasuna,Real Betis,3,2,post
+644067,2023-04-22 14:15:00,2023,Almería,Athletic Club,1,2,post
+644063,2023-04-22 16:30:00,2023,Real Sociedad,Rayo Vallecano,2,1,post
+644062,2023-04-22 16:30:00,2023,Real Valladolid,Girona,1,0,post
+644064,2023-04-22 19:00:00,2023,Real Madrid,Celta Vigo,2,0,post
+644070,2023-04-23 12:00:00,2023,Elche,Valencia,0,2,post
+644068,2023-04-23 14:15:00,2023,Barcelona,Atlético Madrid,1,0,post
+644061,2023-04-23 16:30:00,2023,Mallorca,Getafe,3,1,post
+644066,2023-04-23 19:00:00,2023,Sevilla,Villarreal,2,1,post
+644075,2023-04-25 17:30:00,2023,Girona,Real Madrid,4,2,post
+644071,2023-04-25 17:30:00,2023,Cádiz,Osasuna,0,1,post
+644078,2023-04-25 20:00:00,2023,Real Betis,Real Sociedad,0,0,post
+644073,2023-04-26 17:30:00,2023,Atlético Madrid,Mallorca,3,1,post
+644080,2023-04-26 17:30:00,2023,Getafe,Almería,1,2,post
+644072,2023-04-26 20:00:00,2023,Celta Vigo,Elche,1,0,post
+644079,2023-04-26 20:00:00,2023,Rayo Vallecano,Barcelona,2,1,post
+644077,2023-04-27 17:30:00,2023,Valencia,Real Valladolid,2,1,post
+644076,2023-04-27 17:30:00,2023,Villarreal,Espanyol,4,2,post
+644074,2023-04-27 20:00:00,2023,Athletic Club,Sevilla,0,1,post
+644083,2023-04-28 19:00:00,2023,Osasuna,Real Sociedad,0,2,post
+644088,2023-04-29 14:15:00,2023,Elche,Rayo Vallecano,4,0,post
+644084,2023-04-29 16:30:00,2023,Real Madrid,Almería,4,2,post
+644089,2023-04-29 19:00:00,2023,Barcelona,Real Betis,4,0,post
+644090,2023-04-30 12:00:00,2023,Cádiz,Valencia,2,1,post
+644086,2023-04-30 14:15:00,2023,Villarreal,Celta Vigo,3,1,post
+644087,2023-04-30 16:30:00,2023,Espanyol,Getafe,1,0,post
+644085,2023-04-30 19:00:00,2023,Real Valladolid,Atlético Madrid,2,5,post
+644082,2023-05-01 17:00:00,2023,Mallorca,Athletic Club,1,1,post
+644081,2023-05-01 19:00:00,2023,Sevilla,Girona,0,2,post
+644097,2023-05-02 17:30:00,2023,Almería,Elche,2,1,post
+644095,2023-05-02 17:30:00,2023,Barcelona,Osasuna,1,0,post
+644092,2023-05-02 20:00:00,2023,Real Sociedad,Real Madrid,2,0,post
+644093,2023-05-03 17:30:00,2023,Valencia,Villarreal,1,1,post
+644094,2023-05-03 20:00:00,2023,Atlético Madrid,Cádiz,5,1,post
+644098,2023-05-03 20:00:00,2023,Getafe,Celta Vigo,1,0,post
+644091,2023-05-04 17:30:00,2023,Sevilla,Espanyol,3,2,post
+644099,2023-05-04 17:30:00,2023,Girona,Mallorca,2,1,post
+644096,2023-05-04 20:00:00,2023,Athletic Club,Real Betis,0,1,post
+644100,2023-05-04 20:00:00,2023,Rayo Vallecano,Real Valladolid,2,1,post
+644107,2023-05-12 19:00:00,2023,Mallorca,Cádiz,1,0,post
+644101,2023-05-13 12:00:00,2023,Real Sociedad,Girona,2,2,post
+644106,2023-05-13 14:15:00,2023,Osasuna,Almería,3,1,post
+644104,2023-05-13 16:30:00,2023,Villarreal,Athletic Club,5,1,post
+644105,2023-05-13 19:00:00,2023,Real Madrid,Getafe,1,0,post
+644102,2023-05-14 12:00:00,2023,Celta Vigo,Valencia,1,2,post
+644109,2023-05-14 14:15:00,2023,Elche,Atlético Madrid,1,0,post
+644103,2023-05-14 16:30:00,2023,Real Valladolid,Sevilla,0,3,post
+644108,2023-05-14 19:00:00,2023,Espanyol,Barcelona,2,4,post
+644110,2023-05-15 19:00:00,2023,Real Betis,Rayo Vallecano,3,1,post
+644112,2023-05-19 19:00:00,2023,Cádiz,Real Valladolid,2,0,post
+644120,2023-05-20 12:00:00,2023,Girona,Villarreal,1,2,post
+644113,2023-05-20 14:15:00,2023,Athletic Club,Celta Vigo,2,1,post
+644111,2023-05-20 16:30:00,2023,Almería,Mallorca,3,0,post
+644114,2023-05-20 16:30:00,2023,Getafe,Elche,1,1,post
+644119,2023-05-20 19:00:00,2023,Barcelona,Real Sociedad,1,2,post
+644116,2023-05-21 12:00:00,2023,Rayo Vallecano,Espanyol,1,2,post
+644115,2023-05-21 14:15:00,2023,Atlético Madrid,Osasuna,3,0,post
+644118,2023-05-21 16:30:00,2023,Valencia,Real Madrid,1,0,post
+644117,2023-05-21 19:00:00,2023,Sevilla,Real Betis,0,0,post
+644129,2023-05-23 17:30:00,2023,Celta Vigo,Girona,1,1,post
+644126,2023-05-23 17:30:00,2023,Real Sociedad,Almería,1,0,post
+644127,2023-05-23 20:00:00,2023,Real Valladolid,Barcelona,3,1,post
+644125,2023-05-24 17:30:00,2023,Real Madrid,Rayo Vallecano,2,1,post
+644130,2023-05-24 17:30:00,2023,Villarreal,Cádiz,2,0,post
+644128,2023-05-24 17:30:00,2023,Elche,Sevilla,1,1,post
+644121,2023-05-24 20:00:00,2023,Espanyol,Atlético Madrid,3,3,post
+644124,2023-05-24 20:00:00,2023,Real Betis,Getafe,0,1,post
+644122,2023-05-25 17:30:00,2023,Mallorca,Valencia,1,0,post
+644123,2023-05-25 19:30:00,2023,Osasuna,Athletic Club,2,0,post
+644138,2023-05-27 17:00:00,2023,Sevilla,Real Madrid,1,2,post
+644131,2023-05-28 17:00:00,2023,Girona,Real Betis,1,2,post
+644139,2023-05-28 17:00:00,2023,Valencia,Espanyol,2,2,post
+644140,2023-05-28 17:00:00,2023,Rayo Vallecano,Villarreal,2,1,post
+644135,2023-05-28 17:00:00,2023,Getafe,Osasuna,2,1,post
+644134,2023-05-28 17:00:00,2023,Athletic Club,Elche,0,1,post
+644137,2023-05-28 17:00:00,2023,Barcelona,Mallorca,3,0,post
+644136,2023-05-28 17:00:00,2023,Atlético Madrid,Real Sociedad,2,1,post
+644132,2023-05-28 17:00:00,2023,Cádiz,Celta Vigo,1,0,post
+644133,2023-05-28 17:00:00,2023,Almería,Real Valladolid,0,0,post
+644144,2023-06-04 16:30:00,2023,Mallorca,Rayo Vallecano,3,0,post
+644145,2023-06-04 16:30:00,2023,Osasuna,Girona,2,1,post
+644147,2023-06-04 16:30:00,2023,Real Madrid,Athletic Club,1,1,post
+644148,2023-06-04 16:30:00,2023,Real Sociedad,Sevilla,2,1,post
+644150,2023-06-04 16:30:00,2023,Villarreal,Atlético Madrid,2,2,post
+644141,2023-06-04 19:00:00,2023,Celta Vigo,Barcelona,2,1,post
+644142,2023-06-04 19:00:00,2023,Elche,Cádiz,1,1,post
+644143,2023-06-04 19:00:00,2023,Espanyol,Almería,3,3,post
+644146,2023-06-04 19:00:00,2023,Real Betis,Valencia,1,1,post
+644149,2023-06-04 19:00:00,2023,Real Valladolid,Getafe,0,0,post
+674011,2023-08-11 17:30:00,2023,Almería,Rayo Vallecano,0,2,post
+674019,2023-08-11 20:00:00,2023,Sevilla,Valencia,1,2,post
+674018,2023-08-12 15:00:00,2023,Real Sociedad,Girona,1,1,post
+674017,2023-08-12 17:30:00,2023,Las Palmas,Mallorca,1,1,post
+674012,2023-08-12 19:30:00,2023,Athletic Club,Real Madrid,0,2,post
+674014,2023-08-13 15:00:00,2023,Celta Vigo,Osasuna,0,2,post
+674020,2023-08-13 17:30:00,2023,Villarreal,Real Betis,1,2,post
+674016,2023-08-13 19:30:00,2023,Getafe,Barcelona,0,0,post
+674015,2023-08-14 17:30:00,2023,Cádiz,Alavés,1,0,post
+674013,2023-08-14 19:30:00,2023,Atlético Madrid,Granada,3,1,post
+674026,2023-08-18 17:30:00,2023,Mallorca,Villarreal,0,1,post
+674030,2023-08-18 19:30:00,2023,Valencia,Las Palmas,1,0,post
+674029,2023-08-19 15:00:00,2023,Real Sociedad,Celta Vigo,1,1,post
+674022,2023-08-19 17:30:00,2023,Almería,Real Madrid,1,3,post
+674027,2023-08-19 19:30:00,2023,Osasuna,Athletic Club,0,2,post
+674024,2023-08-20 17:00:00,2023,Girona,Getafe,3,0,post
+674023,2023-08-20 17:30:00,2023,Barcelona,Cádiz,2,0,post
+674028,2023-08-20 19:30:00,2023,Real Betis,Atlético Madrid,0,0,post
+674021,2023-08-21 17:00:00,2023,Alavés,Sevilla,4,3,post
+674025,2023-08-21 19:30:00,2023,Granada,Rayo Vallecano,0,2,post
+674036,2023-08-25 17:30:00,2023,Las Palmas,Real Sociedad,0,0,post
+674032,2023-08-25 19:30:00,2023,Celta Vigo,Real Madrid,0,1,post
+674033,2023-08-26 17:00:00,2023,Cádiz,Almería,1,1,post
+674040,2023-08-26 17:30:00,2023,Granada,Mallorca,3,2,post
+674038,2023-08-26 19:30:00,2023,Sevilla,Girona,1,2,post
+674039,2023-08-27 15:30:00,2023,Villarreal,Barcelona,3,4,post
+674035,2023-08-27 17:30:00,2023,Valencia,Osasuna,1,2,post
+674031,2023-08-27 19:30:00,2023,Athletic Club,Real Betis,4,2,post
+674034,2023-08-28 17:30:00,2023,Getafe,Alavés,1,0,post
+674037,2023-08-28 19:30:00,2023,Rayo Vallecano,Atlético Madrid,0,7,post
+674048,2023-09-01 17:30:00,2023,Cádiz,Villarreal,3,1,post
+674050,2023-09-01 20:00:00,2023,Almería,Celta Vigo,2,3,post
+674044,2023-09-02 12:00:00,2023,Real Sociedad,Granada,5,3,post
+674043,2023-09-02 14:15:00,2023,Real Madrid,Getafe,2,1,post
+674047,2023-09-02 16:30:00,2023,Alavés,Valencia,1,0,post
+674042,2023-09-02 19:00:00,2023,Real Betis,Rayo Vallecano,1,0,post
+674049,2023-09-03 12:00:00,2023,Girona,Las Palmas,1,0,post
+674045,2023-09-03 14:15:00,2023,Mallorca,Athletic Club,0,0,post
+674041,2023-09-03 19:00:00,2023,Osasuna,Barcelona,1,2,post
+674059,2023-09-15 19:00:00,2023,Rayo Vallecano,Alavés,2,0,post
+674053,2023-09-16 12:00:00,2023,Athletic Club,Cádiz,3,0,post
+674051,2023-09-16 14:15:00,2023,Valencia,Atlético Madrid,3,0,post
+674055,2023-09-16 16:30:00,2023,Celta Vigo,Mallorca,0,1,post
+674054,2023-09-16 19:00:00,2023,Barcelona,Real Betis,5,0,post
+674056,2023-09-17 12:00:00,2023,Getafe,Osasuna,3,2,post
+674052,2023-09-17 14:15:00,2023,Villarreal,Almería,2,1,post
+674060,2023-09-17 16:30:00,2023,Sevilla,Las Palmas,1,0,post
+674058,2023-09-17 19:00:00,2023,Real Madrid,Real Sociedad,2,1,post
+674057,2023-09-18 19:00:00,2023,Granada,Girona,2,4,post
+674065,2023-09-22 19:00:00,2023,Alavés,Athletic Club,0,2,post
+674068,2023-09-23 12:00:00,2023,Girona,Mallorca,5,3,post
+674061,2023-09-23 14:15:00,2023,Osasuna,Sevilla,0,0,post
+674070,2023-09-23 16:30:00,2023,Barcelona,Celta Vigo,3,2,post
+674066,2023-09-23 19:00:00,2023,Almería,Valencia,2,2,post
+674069,2023-09-24 12:00:00,2023,Real Sociedad,Getafe,4,3,post
+674062,2023-09-24 14:15:00,2023,Rayo Vallecano,Villarreal,1,1,post
+674067,2023-09-24 16:30:00,2023,Las Palmas,Granada,1,0,post
+674063,2023-09-24 16:30:00,2023,Real Betis,Cádiz,1,1,post
+674064,2023-09-24 19:00:00,2023,Atlético Madrid,Real Madrid,3,1,post
+674071,2023-09-26 17:00:00,2023,Sevilla,Almería,5,1,post
+674080,2023-09-26 19:30:00,2023,Mallorca,Barcelona,2,2,post
+674078,2023-09-27 17:00:00,2023,Real Madrid,Las Palmas,2,0,post
+674073,2023-09-27 17:00:00,2023,Villarreal,Girona,1,2,post
+674074,2023-09-27 17:00:00,2023,Athletic Club,Getafe,2,2,post
+674076,2023-09-27 19:30:00,2023,Cádiz,Rayo Vallecano,0,0,post
+674072,2023-09-27 19:30:00,2023,Valencia,Real Sociedad,0,1,post
+674075,2023-09-28 17:00:00,2023,Celta Vigo,Alavés,1,1,post
+674079,2023-09-28 17:00:00,2023,Granada,Real Betis,1,1,post
+674077,2023-09-28 19:30:00,2023,Osasuna,Atlético Madrid,0,2,post
+674089,2023-09-29 19:00:00,2023,Barcelona,Sevilla,1,0,post
+674085,2023-09-30 12:00:00,2023,Getafe,Villarreal,0,0,post
+674082,2023-09-30 14:15:00,2023,Rayo Vallecano,Mallorca,2,2,post
+674084,2023-09-30 16:30:00,2023,Girona,Real Madrid,0,3,post
+674090,2023-09-30 19:00:00,2023,Real Sociedad,Athletic Club,3,0,post
+674087,2023-10-01 12:00:00,2023,Almería,Granada,3,3,post
+674086,2023-10-01 14:15:00,2023,Alavés,Osasuna,0,2,post
+674088,2023-10-01 19:00:00,2023,Atlético Madrid,Cádiz,3,2,post
+674081,2023-10-01 19:00:00,2023,Real Betis,Valencia,3,0,post
+674083,2023-10-02 19:00:00,2023,Las Palmas,Celta Vigo,2,1,post
+674097,2023-10-06 19:00:00,2023,Athletic Club,Almería,3,0,post
+674095,2023-10-07 12:00:00,2023,Cádiz,Girona,0,1,post
+674092,2023-10-07 14:15:00,2023,Real Madrid,Osasuna,4,0,post
+674091,2023-10-07 16:30:00,2023,Mallorca,Valencia,1,1,post
+674093,2023-10-07 19:00:00,2023,Sevilla,Rayo Vallecano,2,2,post
+674094,2023-10-08 12:00:00,2023,Villarreal,Las Palmas,1,2,post
+674098,2023-10-08 14:15:00,2023,Atlético Madrid,Real Sociedad,2,1,post
+674096,2023-10-08 16:30:00,2023,Alavés,Real Betis,1,1,post
+674099,2023-10-08 16:30:00,2023,Celta Vigo,Getafe,2,2,post
+674100,2023-10-08 19:00:00,2023,Granada,Barcelona,2,2,post
+674105,2023-10-20 19:00:00,2023,Osasuna,Granada,2,0,post
+674106,2023-10-21 12:00:00,2023,Real Sociedad,Mallorca,1,0,post
+674110,2023-10-21 14:15:00,2023,Getafe,Real Betis,1,1,post
+674107,2023-10-21 16:30:00,2023,Sevilla,Real Madrid,1,1,post
+674102,2023-10-21 19:00:00,2023,Celta Vigo,Atlético Madrid,0,3,post
+674104,2023-10-22 12:00:00,2023,Las Palmas,Rayo Vallecano,0,1,post
+674109,2023-10-22 14:15:00,2023,Girona,Almería,5,2,post
+674108,2023-10-22 16:30:00,2023,Villarreal,Alavés,1,1,post
+674101,2023-10-22 19:00:00,2023,Barcelona,Athletic Club,1,0,post
+674103,2023-10-23 19:00:00,2023,Valencia,Cádiz,2,0,post
+674120,2023-10-27 19:00:00,2023,Girona,Celta Vigo,1,0,post
+674111,2023-10-28 12:00:00,2023,Almería,Las Palmas,1,2,post
+674117,2023-10-28 14:15:00,2023,Barcelona,Real Madrid,1,2,post
+674113,2023-10-28 16:30:00,2023,Mallorca,Getafe,0,0,post
+674116,2023-10-28 19:00:00,2023,Cádiz,Sevilla,2,2,post
+674115,2023-10-29 13:00:00,2023,Real Betis,Osasuna,2,1,post
+674112,2023-10-29 15:15:00,2023,Rayo Vallecano,Real Sociedad,2,2,post
+674119,2023-10-29 17:30:00,2023,Athletic Club,Valencia,2,2,post
+674118,2023-10-29 20:00:00,2023,Atlético Madrid,Alavés,2,1,post
+674114,2023-10-30 20:00:00,2023,Granada,Villarreal,2,3,post
+674124,2023-11-03 20:00:00,2023,Las Palmas,Atlético Madrid,2,1,post
+674125,2023-11-04 13:00:00,2023,Osasuna,Girona,2,4,post
+674126,2023-11-04 15:15:00,2023,Real Betis,Mallorca,2,0,post
+674122,2023-11-04 17:30:00,2023,Celta Vigo,Sevilla,1,1,post
+674123,2023-11-04 20:00:00,2023,Real Sociedad,Barcelona,0,1,post
+674121,2023-11-05 13:00:00,2023,Alavés,Almería,1,0,post
+674129,2023-11-05 15:15:00,2023,Valencia,Granada,1,0,post
+674130,2023-11-05 17:30:00,2023,Villarreal,Athletic Club,2,3,post
+674127,2023-11-05 20:00:00,2023,Real Madrid,Rayo Vallecano,0,0,post
+674128,2023-11-06 20:00:00,2023,Getafe,Cádiz,1,0,post
+674132,2023-11-10 20:00:00,2023,Athletic Club,Celta Vigo,4,3,post
+674131,2023-11-11 13:00:00,2023,Rayo Vallecano,Girona,1,2,post
+674135,2023-11-11 15:15:00,2023,Almería,Real Sociedad,1,3,post
+674140,2023-11-11 17:30:00,2023,Granada,Getafe,1,1,post
+674137,2023-11-11 17:30:00,2023,Osasuna,Las Palmas,1,1,post
+674139,2023-11-11 20:00:00,2023,Real Madrid,Valencia,5,1,post
+674134,2023-11-12 15:15:00,2023,Barcelona,Alavés,2,1,post
+674138,2023-11-12 17:30:00,2023,Sevilla,Real Betis,1,1,post
+674133,2023-11-12 20:00:00,2023,Atlético Madrid,Villarreal,3,1,post
+674142,2023-11-24 20:00:00,2023,Alavés,Granada,3,1,post
+674146,2023-11-25 13:00:00,2023,Rayo Vallecano,Barcelona,1,1,post
+674149,2023-11-25 15:15:00,2023,Valencia,Celta Vigo,0,0,post
+674144,2023-11-25 17:30:00,2023,Getafe,Almería,2,1,post
+674141,2023-11-25 20:00:00,2023,Atlético Madrid,Mallorca,1,0,post
+674145,2023-11-26 13:00:00,2023,Villarreal,Osasuna,3,1,post
+674148,2023-11-26 15:15:00,2023,Real Sociedad,Sevilla,2,1,post
+674143,2023-11-26 17:30:00,2023,Cádiz,Real Madrid,0,3,post
+674147,2023-11-26 20:00:00,2023,Real Betis,Las Palmas,1,0,post
+674150,2023-11-27 20:00:00,2023,Girona,Athletic Club,1,1,post
+674136,2023-11-29 20:00:00,2023,Mallorca,Cádiz,1,1,post
+674156,2023-12-01 20:00:00,2023,Las Palmas,Getafe,2,0,post
+674155,2023-12-02 13:00:00,2023,Girona,Valencia,2,1,post
+674152,2023-12-02 15:15:00,2023,Athletic Club,Rayo Vallecano,4,0,post
+674159,2023-12-02 17:30:00,2023,Real Madrid,Granada,2,0,post
+674158,2023-12-02 20:00:00,2023,Osasuna,Real Sociedad,1,1,post
+674157,2023-12-03 13:00:00,2023,Mallorca,Alavés,0,0,post
+674151,2023-12-03 15:15:00,2023,Almería,Real Betis,0,0,post
+674160,2023-12-03 17:30:00,2023,Sevilla,Villarreal,1,1,post
+674153,2023-12-03 20:00:00,2023,Barcelona,Atlético Madrid,1,0,post
+674154,2023-12-04 20:00:00,2023,Celta Vigo,Cádiz,1,1,post
+674165,2023-12-08 20:00:00,2023,Getafe,Valencia,1,0,post
+674161,2023-12-09 13:00:00,2023,Alavés,Las Palmas,0,1,post
+674169,2023-12-09 15:15:00,2023,Real Betis,Real Madrid,1,1,post
+674170,2023-12-09 17:30:00,2023,Villarreal,Real Sociedad,0,3,post
+674167,2023-12-09 20:00:00,2023,Mallorca,Sevilla,1,0,post
+674162,2023-12-10 13:00:00,2023,Atlético Madrid,Almería,2,1,post
+674164,2023-12-10 17:30:00,2023,Cádiz,Osasuna,1,1,post
+674163,2023-12-10 20:00:00,2023,Barcelona,Girona,2,4,post
+674166,2023-12-11 20:00:00,2023,Granada,Athletic Club,1,1,post
+674168,2023-12-11 20:00:00,2023,Rayo Vallecano,Celta Vigo,0,0,post
+674176,2023-12-15 20:00:00,2023,Osasuna,Rayo Vallecano,1,0,post
+674173,2023-12-16 13:00:00,2023,Celta Vigo,Granada,1,0,post
+674172,2023-12-16 15:15:00,2023,Athletic Club,Atlético Madrid,2,0,post
+674179,2023-12-16 17:30:00,2023,Sevilla,Getafe,0,3,post
+674180,2023-12-16 20:00:00,2023,Valencia,Barcelona,1,1,post
+674171,2023-12-17 13:00:00,2023,Almería,Mallorca,0,0,post
+674178,2023-12-17 15:15:00,2023,Real Sociedad,Real Betis,0,0,post
+674175,2023-12-17 17:30:00,2023,Las Palmas,Cádiz,1,1,post
+674177,2023-12-17 20:00:00,2023,Real Madrid,Villarreal,4,1,post
+674174,2023-12-18 20:00:00,2023,Girona,Alavés,3,0,post
+674188,2023-12-19 18:00:00,2023,Rayo Vallecano,Valencia,0,1,post
+674183,2023-12-19 20:30:00,2023,Atlético Madrid,Getafe,3,3,post
+674185,2023-12-19 20:30:00,2023,Granada,Sevilla,0,3,post
+674184,2023-12-20 18:00:00,2023,Barcelona,Almería,3,2,post
+674182,2023-12-20 20:30:00,2023,Athletic Club,Las Palmas,1,0,post
+674186,2023-12-20 20:30:00,2023,Villarreal,Celta Vigo,3,2,post
+674190,2023-12-21 18:00:00,2023,Cádiz,Real Sociedad,0,0,post
+674189,2023-12-21 18:00:00,2023,Real Betis,Girona,1,1,post
+674181,2023-12-21 20:30:00,2023,Alavés,Real Madrid,0,1,post
+674187,2023-12-21 20:30:00,2023,Mallorca,Osasuna,3,2,post
+674046,2023-12-23 15:15:00,2023,Atlético Madrid,Sevilla,1,0,post
+674198,2024-01-02 16:00:00,2024,Getafe,Rayo Vallecano,0,2,post
+674192,2024-01-02 18:15:00,2024,Real Sociedad,Alavés,1,1,post
+674195,2024-01-02 20:30:00,2024,Valencia,Villarreal,3,1,post
+674196,2024-01-03 16:00:00,2024,Granada,Cádiz,2,0,post
+674199,2024-01-03 18:15:00,2024,Celta Vigo,Real Betis,2,1,post
+674193,2024-01-03 18:15:00,2024,Real Madrid,Mallorca,1,0,post
+674197,2024-01-03 20:30:00,2024,Girona,Atlético Madrid,4,3,post
+674194,2024-01-04 16:00:00,2024,Osasuna,Almería,1,0,post
+674191,2024-01-04 18:15:00,2024,Sevilla,Athletic Club,0,2,post
+674200,2024-01-04 20:30:00,2024,Las Palmas,Barcelona,1,2,post
+674205,2024-01-12 20:00:00,2024,Sevilla,Alavés,2,3,post
+674203,2024-01-13 13:00:00,2024,Las Palmas,Villarreal,3,0,post
+674202,2024-01-13 15:15:00,2024,Mallorca,Celta Vigo,1,1,post
+674207,2024-01-13 17:30:00,2024,Athletic Club,Real Sociedad,2,1,post
+674201,2024-01-13 20:00:00,2024,Real Betis,Granada,1,0,post
+674206,2024-01-14 13:00:00,2024,Almería,Girona,0,0,post
+674210,2024-01-14 15:15:00,2024,Cádiz,Valencia,1,4,post
+674219,2024-01-19 20:00:00,2024,Alavés,Cádiz,1,0,post
+674213,2024-01-20 13:00:00,2024,Rayo Vallecano,Las Palmas,0,2,post
+674217,2024-01-20 15:15:00,2024,Villarreal,Mallorca,1,1,post
+674216,2024-01-20 17:30:00,2024,Valencia,Athletic Club,1,0,post
+674220,2024-01-20 20:00:00,2024,Celta Vigo,Real Sociedad,0,1,post
+674218,2024-01-21 13:00:00,2024,Osasuna,Getafe,3,2,post
+674215,2024-01-21 15:15:00,2024,Real Madrid,Almería,3,2,post
+674214,2024-01-21 17:30:00,2024,Real Betis,Barcelona,2,4,post
+674212,2024-01-21 20:00:00,2024,Girona,Sevilla,5,1,post
+674211,2024-01-22 20:00:00,2024,Granada,Atlético Madrid,0,1,post
+674221,2024-01-26 20:00:00,2024,Almería,Alavés,0,3,post
+674225,2024-01-27 13:00:00,2024,Real Sociedad,Rayo Vallecano,0,0,post
+674224,2024-01-27 15:15:00,2024,Las Palmas,Real Madrid,1,2,post
+674228,2024-01-27 17:30:00,2024,Barcelona,Villarreal,3,5,post
+674230,2024-01-27 20:00:00,2024,Mallorca,Real Betis,0,1,post
+674227,2024-01-28 13:00:00,2024,Celta Vigo,Girona,0,1,post
+674222,2024-01-28 15:15:00,2024,Cádiz,Athletic Club,0,0,post
+674226,2024-01-28 17:30:00,2024,Sevilla,Osasuna,1,1,post
+674229,2024-01-28 20:00:00,2024,Atlético Madrid,Valencia,2,0,post
+674223,2024-01-29 20:00:00,2024,Getafe,Granada,2,0,post
+674209,2024-01-31 18:00:00,2024,Barcelona,Osasuna,1,0,post
+674208,2024-01-31 20:00:00,2024,Atlético Madrid,Rayo Vallecano,2,1,post
+674204,2024-02-01 20:00:00,2024,Getafe,Real Madrid,0,2,post
+674233,2024-02-02 20:00:00,2024,Athletic Club,Mallorca,4,0,post
+674240,2024-02-03 13:00:00,2024,Valencia,Almería,2,1,post
+674235,2024-02-03 15:15:00,2024,Granada,Las Palmas,1,1,post
+674237,2024-02-03 17:30:00,2024,Alavés,Barcelona,1,3,post
+674234,2024-02-03 20:00:00,2024,Girona,Real Sociedad,0,0,post
+674236,2024-02-04 13:00:00,2024,Villarreal,Cádiz,0,0,post
+674231,2024-02-04 15:15:00,2024,Osasuna,Celta Vigo,0,3,post
+674238,2024-02-04 17:30:00,2024,Real Betis,Getafe,1,1,post
+674239,2024-02-04 20:00:00,2024,Real Madrid,Atlético Madrid,1,1,post
+674232,2024-02-05 20:00:00,2024,Rayo Vallecano,Sevilla,1,2,post
+674241,2024-02-09 20:00:00,2024,Cádiz,Real Betis,0,2,post
+674249,2024-02-10 13:00:00,2024,Alavés,Villarreal,1,1,post
+674246,2024-02-10 15:15:00,2024,Real Sociedad,Osasuna,0,1,post
+674250,2024-02-10 17:30:00,2024,Real Madrid,Girona,4,0,post
+674243,2024-02-10 20:00:00,2024,Las Palmas,Valencia,2,0,post
+674242,2024-02-11 13:00:00,2024,Getafe,Celta Vigo,3,2,post
+674244,2024-02-11 15:15:00,2024,Mallorca,Rayo Vallecano,2,1,post
+674245,2024-02-11 17:30:00,2024,Sevilla,Atlético Madrid,1,0,post
+674247,2024-02-11 20:00:00,2024,Barcelona,Granada,3,3,post
+674248,2024-02-12 20:00:00,2024,Almería,Athletic Club,0,0,post
+674258,2024-02-16 20:00:00,2024,Villarreal,Getafe,1,1,post
+674259,2024-02-17 13:00:00,2024,Atlético Madrid,Las Palmas,5,0,post
+674254,2024-02-17 15:15:00,2024,Osasuna,Cádiz,2,0,post
+674251,2024-02-17 17:30:00,2024,Celta Vigo,Barcelona,1,2,post
+674255,2024-02-17 20:00:00,2024,Valencia,Sevilla,0,0,post
+674257,2024-02-18 13:00:00,2024,Rayo Vallecano,Real Madrid,1,1,post
+674252,2024-02-18 15:15:00,2024,Granada,Almería,1,1,post
+674253,2024-02-18 17:30:00,2024,Mallorca,Real Sociedad,1,2,post
+674256,2024-02-18 20:00:00,2024,Real Betis,Alavés,0,0,post
+674260,2024-02-19 20:00:00,2024,Athletic Club,Girona,3,2,post
+674262,2024-02-23 20:00:00,2024,Real Sociedad,Villarreal,1,3,post
+674268,2024-02-24 15:15:00,2024,Barcelona,Getafe,4,0,post
+674266,2024-02-24 17:30:00,2024,Alavés,Mallorca,1,1,post
+674269,2024-02-24 20:00:00,2024,Almería,Atlético Madrid,2,2,post
+674267,2024-02-25 13:00:00,2024,Cádiz,Celta Vigo,2,2,post
+674264,2024-02-25 15:15:00,2024,Real Betis,Athletic Club,3,1,post
+674263,2024-02-25 17:30:00,2024,Las Palmas,Osasuna,1,1,post
+674270,2024-02-25 20:00:00,2024,Real Madrid,Sevilla,1,0,post
+674261,2024-02-26 20:00:00,2024,Girona,Rayo Vallecano,3,0,post
+674277,2024-03-01 20:00:00,2024,Celta Vigo,Almería,1,0,post
+674272,2024-03-02 13:00:00,2024,Sevilla,Real Sociedad,3,2,post
+674273,2024-03-02 15:15:00,2024,Rayo Vallecano,Cádiz,1,1,post
+674276,2024-03-02 17:30:00,2024,Getafe,Las Palmas,3,3,post
+674271,2024-03-02 20:00:00,2024,Valencia,Real Madrid,2,2,post
+674280,2024-03-03 13:00:00,2024,Villarreal,Granada,5,1,post
+674278,2024-03-03 15:15:00,2024,Atlético Madrid,Real Betis,2,1,post
+674275,2024-03-03 17:30:00,2024,Mallorca,Girona,1,0,post
+674279,2024-03-03 20:00:00,2024,Athletic Club,Barcelona,0,0,post
+674274,2024-03-04 20:00:00,2024,Osasuna,Alavés,1,0,post
+674287,2024-03-08 20:00:00,2024,Barcelona,Mallorca,1,0,post
+674290,2024-03-09 13:00:00,2024,Valencia,Getafe,1,0,post
+674286,2024-03-09 15:15:00,2024,Cádiz,Atlético Madrid,2,0,post
+674284,2024-03-09 17:30:00,2024,Granada,Real Sociedad,2,3,post
+674285,2024-03-09 20:00:00,2024,Girona,Osasuna,2,0,post
+674289,2024-03-10 13:00:00,2024,Alavés,Rayo Vallecano,1,0,post
+674283,2024-03-10 15:15:00,2024,Las Palmas,Athletic Club,0,2,post
+674281,2024-03-10 17:30:00,2024,Real Madrid,Celta Vigo,4,0,post
+674282,2024-03-10 20:00:00,2024,Real Betis,Villarreal,2,3,post
+674288,2024-03-11 20:00:00,2024,Almería,Sevilla,2,2,post
+674298,2024-03-15 20:00:00,2024,Real Sociedad,Cádiz,2,0,post
+674295,2024-03-16 13:00:00,2024,Mallorca,Granada,1,0,post
+674296,2024-03-16 15:15:00,2024,Osasuna,Real Madrid,2,4,post
+674293,2024-03-16 17:30:00,2024,Getafe,Girona,1,0,post
+674291,2024-03-16 20:00:00,2024,Athletic Club,Alavés,2,0,post
+674299,2024-03-17 13:00:00,2024,Sevilla,Celta Vigo,1,2,post
+674294,2024-03-17 15:15:00,2024,Las Palmas,Almería,0,1,post
+674300,2024-03-17 15:15:00,2024,Villarreal,Valencia,1,0,post
+674297,2024-03-17 17:30:00,2024,Rayo Vallecano,Real Betis,2,0,post
+674292,2024-03-17 20:00:00,2024,Atlético Madrid,Barcelona,0,3,post
+674310,2024-03-29 20:00:00,2024,Cádiz,Granada,1,0,post
+674305,2024-03-30 13:00:00,2024,Getafe,Sevilla,0,1,post
+674302,2024-03-30 15:15:00,2024,Almería,Osasuna,0,3,post
+674309,2024-03-30 17:30:00,2024,Valencia,Mallorca,0,0,post
+674303,2024-03-30 20:00:00,2024,Barcelona,Las Palmas,1,0,post
+674304,2024-03-31 12:00:00,2024,Celta Vigo,Rayo Vallecano,0,0,post
+674307,2024-03-31 14:15:00,2024,Girona,Real Betis,3,2,post
+674301,2024-03-31 16:30:00,2024,Alavés,Real Sociedad,0,1,post
+674308,2024-03-31 19:00:00,2024,Real Madrid,Athletic Club,2,0,post
+674306,2024-04-01 19:00:00,2024,Villarreal,Atlético Madrid,1,2,post
+674265,2024-04-04 18:00:00,2024,Granada,Valencia,0,1,post
+674311,2024-04-12 19:00:00,2024,Real Betis,Celta Vigo,2,1,post
+674318,2024-04-13 12:00:00,2024,Atlético Madrid,Girona,3,1,post
+674312,2024-04-13 14:15:00,2024,Rayo Vallecano,Getafe,0,0,post
+674315,2024-04-13 16:30:00,2024,Mallorca,Real Madrid,0,1,post
+674319,2024-04-13 19:00:00,2024,Cádiz,Barcelona,0,1,post
+674313,2024-04-14 12:00:00,2024,Las Palmas,Sevilla,0,2,post
+674320,2024-04-14 14:15:00,2024,Granada,Alavés,2,0,post
+674317,2024-04-14 16:30:00,2024,Athletic Club,Villarreal,1,1,post
+674316,2024-04-14 19:00:00,2024,Real Sociedad,Almería,2,2,post
+674314,2024-04-15 19:00:00,2024,Osasuna,Valencia,0,1,post
+674324,2024-04-19 19:00:00,2024,Athletic Club,Granada,1,1,post
+674322,2024-04-20 12:00:00,2024,Celta Vigo,Las Palmas,4,1,post
+674321,2024-04-20 14:15:00,2024,Rayo Vallecano,Osasuna,2,1,post
+674328,2024-04-20 16:30:00,2024,Valencia,Real Betis,1,2,post
+674323,2024-04-20 19:00:00,2024,Girona,Cádiz,4,1,post
+674327,2024-04-21 12:00:00,2024,Getafe,Real Sociedad,1,1,post
+674325,2024-04-21 14:15:00,2024,Almería,Villarreal,1,2,post
+674326,2024-04-21 16:30:00,2024,Alavés,Atlético Madrid,2,0,post
+674330,2024-04-21 19:00:00,2024,Real Madrid,Barcelona,3,2,post
+674329,2024-04-22 19:00:00,2024,Sevilla,Mallorca,2,1,post
+674332,2024-04-26 19:00:00,2024,Real Sociedad,Real Madrid,0,1,post
+674334,2024-04-27 12:00:00,2024,Las Palmas,Girona,0,2,post
+674339,2024-04-27 14:15:00,2024,Almería,Getafe,1,3,post
+674335,2024-04-27 16:30:00,2024,Alavés,Celta Vigo,3,0,post
+674338,2024-04-27 19:00:00,2024,Atlético Madrid,Athletic Club,3,1,post
+674331,2024-04-28 12:00:00,2024,Cádiz,Mallorca,1,1,post
+674333,2024-04-28 14:15:00,2024,Granada,Osasuna,3,0,post
+674336,2024-04-28 16:30:00,2024,Villarreal,Rayo Vallecano,3,0,post
+674340,2024-04-28 19:00:00,2024,Real Betis,Sevilla,1,1,post
+674337,2024-04-29 19:00:00,2024,Barcelona,Valencia,4,2,post
+674342,2024-05-03 19:00:00,2024,Getafe,Athletic Club,0,2,post
+674347,2024-05-04 12:00:00,2024,Real Sociedad,Las Palmas,2,0,post
+674346,2024-05-04 14:15:00,2024,Real Madrid,Cádiz,3,0,post
+674345,2024-05-04 16:30:00,2024,Girona,Barcelona,4,2,post
+674341,2024-05-04 19:00:00,2024,Mallorca,Atlético Madrid,0,1,post
+674344,2024-05-05 12:00:00,2024,Osasuna,Real Betis,0,2,post
+674343,2024-05-05 14:15:00,2024,Celta Vigo,Villarreal,3,2,post
+674349,2024-05-05 16:30:00,2024,Valencia,Alavés,0,1,post
+674350,2024-05-05 19:00:00,2024,Rayo Vallecano,Almería,0,1,post
+674348,2024-05-05 19:00:00,2024,Sevilla,Granada,3,0,post
+674351,2024-05-10 19:00:00,2024,Alavés,Girona,2,2,post
+674353,2024-05-11 12:00:00,2024,Mallorca,Las Palmas,1,0,post
+674354,2024-05-11 14:15:00,2024,Villarreal,Sevilla,3,2,post
+674360,2024-05-11 16:30:00,2024,Granada,Real Madrid,0,4,post
+674358,2024-05-11 19:00:00,2024,Athletic Club,Osasuna,2,2,post
+674355,2024-05-12 12:00:00,2024,Cádiz,Getafe,1,0,post
+674357,2024-05-12 14:15:00,2024,Atlético Madrid,Celta Vigo,1,0,post
+674359,2024-05-12 16:30:00,2024,Valencia,Rayo Vallecano,0,0,post
+674352,2024-05-12 19:00:00,2024,Real Betis,Almería,3,2,post
+674356,2024-05-13 19:00:00,2024,Barcelona,Real Sociedad,2,0,post
+674370,2024-05-14 17:30:00,2024,Osasuna,Mallorca,1,1,post
+674367,2024-05-14 19:30:00,2024,Real Madrid,Alavés,5,0,post
+674361,2024-05-14 20:00:00,2024,Girona,Villarreal,0,1,post
+674368,2024-05-15 17:30:00,2024,Rayo Vallecano,Granada,2,1,post
+674365,2024-05-15 17:30:00,2024,Sevilla,Cádiz,0,1,post
+674362,2024-05-15 20:00:00,2024,Celta Vigo,Athletic Club,2,1,post
+674369,2024-05-15 20:00:00,2024,Getafe,Atlético Madrid,0,3,post
+674364,2024-05-16 17:30:00,2024,Las Palmas,Real Betis,2,2,post
+674363,2024-05-16 19:30:00,2024,Almería,Barcelona,0,2,post
+674366,2024-05-16 20:00:00,2024,Real Sociedad,Valencia,1,0,post
+674371,2024-05-18 19:00:00,2024,Alavés,Getafe,1,0,post
+674372,2024-05-19 17:00:00,2024,Villarreal,Real Madrid,4,4,post
+674374,2024-05-19 17:00:00,2024,Real Betis,Real Sociedad,0,2,post
+674375,2024-05-19 17:00:00,2024,Mallorca,Almería,2,2,post
+674376,2024-05-19 17:00:00,2024,Granada,Celta Vigo,1,2,post
+674373,2024-05-19 17:00:00,2024,Valencia,Girona,1,3,post
+674378,2024-05-19 17:00:00,2024,Barcelona,Rayo Vallecano,3,0,post
+674380,2024-05-19 17:00:00,2024,Atlético Madrid,Osasuna,1,4,post
+674379,2024-05-19 17:00:00,2024,Athletic Club,Sevilla,2,0,post
+674377,2024-05-19 17:00:00,2024,Cádiz,Las Palmas,0,0,post
+674385,2024-05-24 19:00:00,2024,Girona,Granada,7,0,post
+674389,2024-05-25 12:00:00,2024,Osasuna,Villarreal,1,1,post
+674386,2024-05-25 14:15:00,2024,Real Sociedad,Atlético Madrid,0,2,post
+674381,2024-05-25 16:30:00,2024,Almería,Cádiz,6,1,post
+674390,2024-05-25 16:30:00,2024,Rayo Vallecano,Athletic Club,0,1,post
+674382,2024-05-25 19:00:00,2024,Real Madrid,Real Betis,0,0,post
+674384,2024-05-26 12:00:00,2024,Getafe,Mallorca,1,2,post
+674388,2024-05-26 14:15:00,2024,Las Palmas,Alavés,1,1,post
+674383,2024-05-26 14:15:00,2024,Celta Vigo,Valencia,2,2,post
+674387,2024-05-26 19:00:00,2024,Sevilla,Barcelona,1,2,post
+704660,2024-08-15 17:00:00,2024,Athletic Club,Getafe,1,1,post
+704665,2024-08-15 19:30:00,2024,Real Betis,Girona,1,1,post
+704661,2024-08-16 17:00:00,2024,Celta Vigo,Alavés,2,1,post
+704662,2024-08-16 19:30:00,2024,Las Palmas,Sevilla,2,2,post
+704664,2024-08-17 17:00:00,2024,Osasuna,Leganés,1,1,post
+704668,2024-08-17 19:30:00,2024,Valencia,Barcelona,1,2,post
+704666,2024-08-18 17:00:00,2024,Real Sociedad,Rayo Vallecano,1,2,post
+704663,2024-08-18 19:30:00,2024,Mallorca,Real Madrid,1,1,post
+704667,2024-08-19 17:00:00,2024,Real Valladolid,Espanyol,1,0,post
+704669,2024-08-19 19:30:00,2024,Villarreal,Atlético Madrid,2,2,post
+704673,2024-08-23 17:00:00,2024,Celta Vigo,Valencia,3,1,post
+704678,2024-08-23 19:30:00,2024,Sevilla,Villarreal,1,2,post
+704676,2024-08-24 15:00:00,2024,Osasuna,Mallorca,1,0,post
+704672,2024-08-24 17:00:00,2024,Barcelona,Athletic Club,2,1,post
+704674,2024-08-24 19:30:00,2024,Getafe,Rayo Vallecano,0,0,post
+704679,2024-08-24 19:30:00,2024,Espanyol,Real Sociedad,0,1,post
+704677,2024-08-25 15:00:00,2024,Real Madrid,Real Valladolid,3,0,post
+704675,2024-08-25 17:00:00,2024,Leganés,Las Palmas,2,1,post
+704670,2024-08-25 17:15:00,2024,Alavés,Real Betis,0,0,post
+704671,2024-08-25 19:30:00,2024,Atlético Madrid,Girona,3,0,post
+704688,2024-08-26 19:30:00,2024,Villarreal,Celta Vigo,4,3,post
+704689,2024-08-27 17:00:00,2024,Mallorca,Sevilla,0,0,post
+704685,2024-08-27 19:30:00,2024,Rayo Vallecano,Barcelona,1,2,post
+704680,2024-08-28 17:00:00,2024,Athletic Club,Valencia,1,0,post
+704684,2024-08-28 17:00:00,2024,Real Valladolid,Leganés,0,0,post
+704681,2024-08-28 19:30:00,2024,Atlético Madrid,Espanyol,0,0,post
+704687,2024-08-28 19:30:00,2024,Real Sociedad,Alavés,1,2,post
+704682,2024-08-29 17:00:00,2024,Girona,Osasuna,4,0,post
+704683,2024-08-29 19:30:00,2024,Las Palmas,Real Madrid,1,1,post
+704692,2024-08-31 15:00:00,2024,Barcelona,Real Valladolid,7,0,post
+704691,2024-08-31 17:00:00,2024,Athletic Club,Atlético Madrid,0,1,post
+704698,2024-08-31 17:15:00,2024,Espanyol,Rayo Vallecano,2,1,post
+704694,2024-08-31 19:30:00,2024,Valencia,Villarreal,1,1,post
+704696,2024-08-31 19:30:00,2024,Leganés,Mallorca,0,1,post
+704690,2024-09-01 15:00:00,2024,Alavés,Las Palmas,2,0,post
+704695,2024-09-01 15:00:00,2024,Osasuna,Celta Vigo,3,2,post
+704697,2024-09-01 17:00:00,2024,Sevilla,Girona,0,2,post
+704693,2024-09-01 17:15:00,2024,Getafe,Real Sociedad,0,0,post
+704699,2024-09-01 19:30:00,2024,Real Madrid,Real Betis,2,0,post
+704707,2024-09-13 19:00:00,2024,Real Betis,Leganés,2,0,post
+704709,2024-09-14 12:00:00,2024,Mallorca,Villarreal,1,2,post
+704701,2024-09-14 14:15:00,2024,Espanyol,Alavés,3,2,post
+704702,2024-09-14 16:30:00,2024,Sevilla,Getafe,1,0,post
+704704,2024-09-14 19:00:00,2024,Real Sociedad,Real Madrid,0,2,post
+704706,2024-09-15 12:00:00,2024,Celta Vigo,Real Valladolid,3,1,post
+704703,2024-09-15 14:15:00,2024,Girona,Barcelona,1,4,post
+704700,2024-09-15 16:30:00,2024,Las Palmas,Athletic Club,2,3,post
+704705,2024-09-15 19:00:00,2024,Atlético Madrid,Valencia,3,0,post
+704708,2024-09-16 19:00:00,2024,Rayo Vallecano,Osasuna,3,1,post
+704723,2024-09-17 17:00:00,2024,Mallorca,Real Sociedad,1,0,post
+704686,2024-09-18 17:00:00,2024,Real Betis,Getafe,2,1,post
+704726,2024-09-19 17:00:00,2024,Leganés,Athletic Club,0,2,post
+704710,2024-09-20 19:00:00,2024,Alavés,Sevilla,2,1,post
+704716,2024-09-21 12:00:00,2024,Real Valladolid,Real Sociedad,0,0,post
+704712,2024-09-21 14:15:00,2024,Osasuna,Las Palmas,2,1,post
+704715,2024-09-21 16:30:00,2024,Valencia,Girona,2,0,post
+704717,2024-09-21 19:00:00,2024,Real Madrid,Espanyol,4,1,post
+704713,2024-09-22 12:00:00,2024,Getafe,Leganés,1,1,post
+704719,2024-09-22 14:15:00,2024,Athletic Club,Celta Vigo,3,1,post
+704711,2024-09-22 16:30:00,2024,Villarreal,Barcelona,1,5,post
+704714,2024-09-22 19:00:00,2024,Rayo Vallecano,Atlético Madrid,1,1,post
+704718,2024-09-23 19:00:00,2024,Real Betis,Mallorca,1,2,post
+704727,2024-09-24 17:00:00,2024,Sevilla,Real Valladolid,2,1,post
+704729,2024-09-24 17:00:00,2024,Valencia,Osasuna,0,0,post
+704724,2024-09-24 19:00:00,2024,Real Madrid,Alavés,3,2,post
+704722,2024-09-25 17:00:00,2024,Girona,Rayo Vallecano,0,0,post
+704720,2024-09-25 19:00:00,2024,Barcelona,Getafe,1,0,post
+704728,2024-09-26 17:00:00,2024,Espanyol,Villarreal,1,2,post
+704725,2024-09-26 17:00:00,2024,Las Palmas,Real Betis,1,1,post
+704721,2024-09-26 19:00:00,2024,Celta Vigo,Atlético Madrid,0,1,post
+704738,2024-09-27 19:00:00,2024,Real Valladolid,Mallorca,1,2,post
+704733,2024-09-28 12:00:00,2024,Getafe,Alavés,2,0,post
+704735,2024-09-28 14:15:00,2024,Rayo Vallecano,Leganés,1,1,post
+704737,2024-09-28 16:30:00,2024,Real Sociedad,Valencia,3,0,post
+704739,2024-09-28 19:00:00,2024,Osasuna,Barcelona,4,2,post
+704732,2024-09-29 12:00:00,2024,Celta Vigo,Girona,1,1,post
+704730,2024-09-29 14:15:00,2024,Athletic Club,Sevilla,1,1,post
+704736,2024-09-29 16:30:00,2024,Real Betis,Espanyol,1,0,post
+704734,2024-09-29 19:00:00,2024,Atlético Madrid,Real Madrid,1,1,post
+704731,2024-09-30 19:00:00,2024,Villarreal,Las Palmas,3,1,post
+704744,2024-10-04 19:00:00,2024,Leganés,Valencia,0,0,post
+704749,2024-10-05 12:00:00,2024,Espanyol,Mallorca,2,1,post
+704741,2024-10-05 14:15:00,2024,Getafe,Osasuna,1,1,post
+704743,2024-10-05 16:30:00,2024,Las Palmas,Celta Vigo,0,1,post
+704747,2024-10-05 16:30:00,2024,Real Valladolid,Rayo Vallecano,1,2,post
+704745,2024-10-05 19:00:00,2024,Real Madrid,Villarreal,2,0,post
+704742,2024-10-06 12:00:00,2024,Girona,Athletic Club,2,1,post
+704740,2024-10-06 14:15:00,2024,Alavés,Barcelona,0,3,post
+704748,2024-10-06 16:30:00,2024,Sevilla,Real Betis,1,0,post
+704746,2024-10-06 19:00:00,2024,Real Sociedad,Atlético Madrid,1,1,post
+704750,2024-10-18 19:00:00,2024,Alavés,Real Valladolid,2,3,post
+704751,2024-10-19 12:00:00,2024,Athletic Club,Espanyol,4,1,post
+704757,2024-10-19 14:15:00,2024,Osasuna,Real Betis,1,2,post
+704754,2024-10-19 16:30:00,2024,Girona,Real Sociedad,0,1,post
+704759,2024-10-19 19:00:00,2024,Celta Vigo,Real Madrid,1,2,post
+704756,2024-10-20 12:00:00,2024,Mallorca,Rayo Vallecano,1,0,post
+704752,2024-10-20 14:15:00,2024,Atlético Madrid,Leganés,3,1,post
+704755,2024-10-20 16:30:00,2024,Villarreal,Getafe,1,1,post
+704753,2024-10-20 19:00:00,2024,Barcelona,Sevilla,5,1,post
+704758,2024-10-21 19:00:00,2024,Valencia,Las Palmas,2,3,post
+704769,2024-10-25 19:00:00,2024,Espanyol,Sevilla,0,2,post
+704768,2024-10-26 12:00:00,2024,Real Valladolid,Villarreal,1,2,post
+704764,2024-10-26 14:15:00,2024,Rayo Vallecano,Alavés,1,0,post
+704761,2024-10-26 16:30:00,2024,Las Palmas,Girona,1,0,post
+704766,2024-10-26 19:00:00,2024,Real Madrid,Barcelona,0,4,post
+704762,2024-10-27 13:00:00,2024,Leganés,Celta Vigo,3,0,post
+704760,2024-10-27 15:15:00,2024,Getafe,Valencia,1,1,post
+704765,2024-10-27 17:30:00,2024,Real Betis,Atlético Madrid,1,0,post
+704767,2024-10-27 20:00:00,2024,Real Sociedad,Osasuna,0,2,post
+704763,2024-10-28 20:00:00,2024,Mallorca,Athletic Club,0,0,post
+704770,2024-11-01 20:00:00,2024,Alavés,Mallorca,1,0,post
+704776,2024-11-02 13:00:00,2024,Osasuna,Real Valladolid,1,0,post
+704775,2024-11-02 15:15:00,2024,Girona,Leganés,4,3,post
+704777,2024-11-03 13:00:00,2024,Atlético Madrid,Las Palmas,2,0,post
+704773,2024-11-03 15:15:00,2024,Barcelona,Espanyol,3,1,post
+704772,2024-11-03 17:30:00,2024,Sevilla,Real Sociedad,0,2,post
+704771,2024-11-03 20:00:00,2024,Athletic Club,Real Betis,1,1,post
+704779,2024-11-04 20:00:00,2024,Celta Vigo,Getafe,1,0,post
+704783,2024-11-08 20:00:00,2024,Rayo Vallecano,Las Palmas,1,3,post
+704785,2024-11-09 13:00:00,2024,Real Madrid,Osasuna,4,0,post
+704787,2024-11-09 15:15:00,2024,Villarreal,Alavés,3,0,post
+704781,2024-11-09 20:00:00,2024,Leganés,Sevilla,1,0,post
+704784,2024-11-10 13:00:00,2024,Real Betis,Celta Vigo,2,2,post
+704780,2024-11-10 15:15:00,2024,Mallorca,Atlético Madrid,0,1,post
+704782,2024-11-10 17:30:00,2024,Getafe,Girona,0,1,post
+704789,2024-11-10 17:30:00,2024,Real Valladolid,Athletic Club,1,1,post
+704786,2024-11-10 20:00:00,2024,Real Sociedad,Barcelona,1,0,post
+704793,2024-11-22 20:00:00,2024,Getafe,Real Valladolid,2,0,post
+704799,2024-11-23 13:00:00,2024,Valencia,Real Betis,4,2,post
+704791,2024-11-23 15:15:00,2024,Atlético Madrid,Alavés,2,1,post
+704794,2024-11-23 17:30:00,2024,Girona,Espanyol,4,1,post
+704795,2024-11-23 17:30:00,2024,Las Palmas,Mallorca,2,3,post
+704792,2024-11-23 20:00:00,2024,Celta Vigo,Barcelona,2,2,post
+704797,2024-11-24 13:00:00,2024,Osasuna,Villarreal,2,2,post
+704798,2024-11-24 15:15:00,2024,Sevilla,Rayo Vallecano,1,0,post
+704796,2024-11-24 17:30:00,2024,Leganés,Real Madrid,0,3,post
+704790,2024-11-24 20:00:00,2024,Athletic Club,Real Sociedad,1,0,post
+704802,2024-11-29 20:00:00,2024,Mallorca,Valencia,2,1,post
+704801,2024-11-30 13:00:00,2024,Barcelona,Las Palmas,1,2,post
+704800,2024-11-30 15:15:00,2024,Alavés,Leganés,1,1,post
+704808,2024-11-30 17:30:00,2024,Espanyol,Celta Vigo,3,1,post
+704806,2024-11-30 20:00:00,2024,Real Valladolid,Atlético Madrid,0,5,post
+704809,2024-12-01 13:00:00,2024,Villarreal,Girona,2,2,post
+704804,2024-12-01 15:15:00,2024,Real Madrid,Getafe,2,0,post
+704803,2024-12-01 17:30:00,2024,Rayo Vallecano,Athletic Club,1,2,post
+704805,2024-12-01 20:00:00,2024,Real Sociedad,Real Betis,2,0,post
+704807,2024-12-02 20:00:00,2024,Sevilla,Osasuna,1,1,post
+704844,2024-12-03 18:00:00,2024,Mallorca,Barcelona,1,5,post
+704841,2024-12-04 20:00:00,2024,Athletic Club,Real Madrid,2,1,post
+704812,2024-12-06 20:00:00,2024,Celta Vigo,Mallorca,2,0,post
+704815,2024-12-07 13:00:00,2024,Las Palmas,Real Valladolid,2,1,post
+704818,2024-12-07 15:15:00,2024,Real Betis,Barcelona,2,2,post
+704819,2024-12-07 17:30:00,2024,Valencia,Rayo Vallecano,0,1,post
+704814,2024-12-07 20:00:00,2024,Girona,Real Madrid,0,3,post
+704816,2024-12-08 13:00:00,2024,Leganés,Real Sociedad,0,3,post
+704810,2024-12-08 15:15:00,2024,Athletic Club,Villarreal,2,0,post
+704817,2024-12-08 17:30:00,2024,Osasuna,Alavés,2,2,post
+704811,2024-12-08 20:00:00,2024,Atlético Madrid,Sevilla,4,3,post
+704813,2024-12-09 20:00:00,2024,Getafe,Espanyol,1,0,post
+704826,2024-12-13 20:00:00,2024,Real Valladolid,Valencia,1,0,post
+704828,2024-12-14 13:00:00,2024,Espanyol,Osasuna,0,0,post
+704823,2024-12-14 15:15:00,2024,Mallorca,Girona,2,1,post
+704827,2024-12-14 17:30:00,2024,Sevilla,Celta Vigo,1,0,post
+704824,2024-12-14 20:00:00,2024,Rayo Vallecano,Real Madrid,3,3,post
+704821,2024-12-15 13:00:00,2024,Atlético Madrid,Getafe,1,0,post
+704820,2024-12-15 15:15:00,2024,Alavés,Athletic Club,1,1,post
+704825,2024-12-15 17:30:00,2024,Real Sociedad,Las Palmas,0,0,post
+704829,2024-12-15 17:30:00,2024,Villarreal,Real Betis,1,2,post
+704822,2024-12-15 20:00:00,2024,Barcelona,Leganés,0,1,post
+704788,2024-12-18 20:30:00,2024,Espanyol,Valencia,1,1,post
+704774,2024-12-18 20:30:00,2024,Villarreal,Rayo Vallecano,1,1,post
+704833,2024-12-20 20:00:00,2024,Girona,Real Valladolid,3,0,post
+704832,2024-12-21 13:00:00,2024,Getafe,Mallorca,0,1,post
+704831,2024-12-21 15:15:00,2024,Celta Vigo,Real Sociedad,2,0,post
+704836,2024-12-21 17:30:00,2024,Osasuna,Athletic Club,1,2,post
+704830,2024-12-21 20:00:00,2024,Barcelona,Atlético Madrid,1,2,post
+704835,2024-12-22 13:00:00,2024,Valencia,Alavés,2,2,post
+704838,2024-12-22 15:15:00,2024,Real Madrid,Sevilla,4,2,post
+704839,2024-12-22 17:30:00,2024,Las Palmas,Espanyol,1,0,post
+704834,2024-12-22 17:30:00,2024,Leganés,Villarreal,2,5,post
+704837,2024-12-22 20:00:00,2024,Real Betis,Rayo Vallecano,1,1,post
+704778,2025-01-03 20:00:00,2025,Valencia,Real Madrid,1,2,post
+704845,2025-01-10 20:00:00,2025,Rayo Vallecano,Celta Vigo,2,1,post
+704840,2025-01-11 13:00:00,2025,Alavés,Girona,0,1,post
+704847,2025-01-11 15:15:00,2025,Real Valladolid,Real Betis,1,0,post
+704849,2025-01-11 17:30:00,2025,Espanyol,Leganés,1,1,post
+704848,2025-01-11 20:00:00,2025,Sevilla,Valencia,1,1,post
+704843,2025-01-12 13:00:00,2025,Las Palmas,Getafe,1,2,post
+704842,2025-01-12 15:15:00,2025,Atlético Madrid,Osasuna,1,0,post
+704846,2025-01-13 20:00:00,2025,Real Sociedad,Villarreal,1,0,post
+704857,2025-01-17 20:00:00,2025,Espanyol,Real Valladolid,2,1,post
+704852,2025-01-18 13:00:00,2025,Girona,Sevilla,1,2,post
+704853,2025-01-18 15:15:00,2025,Leganés,Atlético Madrid,1,0,post
+704855,2025-01-18 17:30:00,2025,Real Betis,Alavés,1,3,post
+704851,2025-01-18 20:00:00,2025,Getafe,Barcelona,1,1,post
+704850,2025-01-19 13:00:00,2025,Celta Vigo,Athletic Club,1,2,post
+704856,2025-01-19 15:15:00,2025,Real Madrid,Las Palmas,4,1,post
+704854,2025-01-19 17:30:00,2025,Osasuna,Rayo Vallecano,1,1,post
+704858,2025-01-19 20:00:00,2025,Valencia,Real Sociedad,1,0,post
+704859,2025-01-20 20:00:00,2025,Villarreal,Mallorca,4,0,post
+704869,2025-01-24 20:00:00,2025,Las Palmas,Osasuna,1,1,post
+704864,2025-01-25 13:00:00,2025,Mallorca,Real Betis,0,1,post
+704862,2025-01-25 15:15:00,2025,Atlético Madrid,Villarreal,1,1,post
+704865,2025-01-25 17:30:00,2025,Sevilla,Espanyol,1,1,post
+704868,2025-01-25 20:00:00,2025,Real Valladolid,Real Madrid,0,3,post
+704866,2025-01-26 13:00:00,2025,Rayo Vallecano,Girona,2,1,post
+704867,2025-01-26 15:15:00,2025,Real Sociedad,Getafe,0,3,post
+704861,2025-01-26 17:30:00,2025,Athletic Club,Leganés,0,0,post
+704863,2025-01-26 20:00:00,2025,Barcelona,Valencia,7,1,post
+704860,2025-01-27 20:00:00,2025,Alavés,Celta Vigo,1,1,post
+704874,2025-01-31 20:00:00,2025,Leganés,Rayo Vallecano,0,1,post
+704872,2025-02-01 13:00:00,2025,Getafe,Sevilla,0,0,post
+704879,2025-02-01 15:15:00,2025,Villarreal,Real Valladolid,5,1,post
+704870,2025-02-01 17:30:00,2025,Atlético Madrid,Mallorca,2,0,post
+704877,2025-02-01 20:00:00,2025,Espanyol,Real Madrid,1,0,post
+704871,2025-02-02 13:00:00,2025,Barcelona,Alavés,1,0,post
+704878,2025-02-02 15:15:00,2025,Valencia,Celta Vigo,2,1,post
+704875,2025-02-02 17:30:00,2025,Osasuna,Real Sociedad,2,1,post
+704876,2025-02-02 20:00:00,2025,Real Betis,Athletic Club,2,2,post
+704873,2025-02-03 20:00:00,2025,Girona,Las Palmas,2,1,post
+704885,2025-02-07 20:00:00,2025,Rayo Vallecano,Real Valladolid,1,0,post
+704882,2025-02-08 13:00:00,2025,Celta Vigo,Real Betis,3,2,post
+704881,2025-02-08 15:15:00,2025,Athletic Club,Girona,3,0,post
+704883,2025-02-08 17:30:00,2025,Las Palmas,Villarreal,1,2,post
+704886,2025-02-08 20:00:00,2025,Real Madrid,Atlético Madrid,1,1,post
+704880,2025-02-09 13:00:00,2025,Alavés,Getafe,0,1,post
+704889,2025-02-09 15:15:00,2025,Valencia,Leganés,2,0,post
+704887,2025-02-09 17:30:00,2025,Real Sociedad,Espanyol,2,1,post
+704888,2025-02-09 20:00:00,2025,Sevilla,Barcelona,1,4,post
+704884,2025-02-10 20:00:00,2025,Mallorca,Osasuna,1,1,post
+704892,2025-02-14 20:00:00,2025,Girona,Getafe,1,2,post
+704893,2025-02-15 13:00:00,2025,Leganés,Alavés,3,3,post
+704895,2025-02-15 15:15:00,2025,Osasuna,Real Madrid,1,1,post
+704890,2025-02-15 17:30:00,2025,Atlético Madrid,Celta Vigo,1,1,post
+704899,2025-02-15 20:00:00,2025,Villarreal,Valencia,1,1,post
+704898,2025-02-16 13:00:00,2025,Espanyol,Athletic Club,1,1,post
+704897,2025-02-16 15:15:00,2025,Real Valladolid,Sevilla,0,4,post
+704894,2025-02-16 17:30:00,2025,Mallorca,Las Palmas,3,1,post
+704896,2025-02-16 20:00:00,2025,Real Betis,Real Sociedad,3,0,post
+704891,2025-02-17 20:00:00,2025,Barcelona,Rayo Vallecano,1,0,post
+704902,2025-02-21 20:00:00,2025,Celta Vigo,Osasuna,1,0,post
+704900,2025-02-22 13:00:00,2025,Alavés,Espanyol,0,1,post
+704904,2025-02-22 15:15:00,2025,Rayo Vallecano,Villarreal,0,1,post
+704905,2025-02-22 17:30:00,2025,Valencia,Atlético Madrid,0,3,post
+704909,2025-02-22 20:00:00,2025,Las Palmas,Barcelona,0,2,post
+704901,2025-02-23 13:00:00,2025,Athletic Club,Real Valladolid,7,1,post
+704906,2025-02-23 15:15:00,2025,Real Madrid,Girona,2,0,post
+704903,2025-02-23 17:30:00,2025,Getafe,Real Betis,1,2,post
+704907,2025-02-23 20:00:00,2025,Real Sociedad,Leganés,3,0,post
+704908,2025-02-24 20:00:00,2025,Sevilla,Mallorca,1,1,post
+704918,2025-02-28 20:00:00,2025,Real Valladolid,Las Palmas,1,1,post
+704912,2025-03-01 13:00:00,2025,Girona,Celta Vigo,2,2,post
+704916,2025-03-01 15:15:00,2025,Rayo Vallecano,Sevilla,1,1,post
+704917,2025-03-01 17:30:00,2025,Real Betis,Real Madrid,2,1,post
+704910,2025-03-01 20:00:00,2025,Atlético Madrid,Athletic Club,1,0,post
+704913,2025-03-02 13:00:00,2025,Leganés,Getafe,1,0,post
+704911,2025-03-02 15:15:00,2025,Barcelona,Real Sociedad,4,0,post
+704914,2025-03-02 17:30:00,2025,Mallorca,Alavés,1,1,post
+704915,2025-03-02 20:00:00,2025,Osasuna,Valencia,3,3,post
+704923,2025-03-08 13:00:00,2025,Celta Vigo,Leganés,2,1,post
+704920,2025-03-08 15:15:00,2025,Alavés,Villarreal,1,0,post
+704929,2025-03-08 17:30:00,2025,Valencia,Real Valladolid,2,1,post
+704924,2025-03-09 13:00:00,2025,Getafe,Atlético Madrid,2,1,post
+704926,2025-03-09 15:15:00,2025,Real Madrid,Rayo Vallecano,2,1,post
+704921,2025-03-09 17:30:00,2025,Athletic Club,Mallorca,1,1,post
+704925,2025-03-09 17:30:00,2025,Real Betis,Las Palmas,1,0,post
+704927,2025-03-09 20:00:00,2025,Real Sociedad,Sevilla,0,1,post
+704928,2025-03-10 20:00:00,2025,Espanyol,Girona,1,1,post
+704932,2025-03-14 20:00:00,2025,Las Palmas,Alavés,2,2,post
+704937,2025-03-15 13:00:00,2025,Real Valladolid,Celta Vigo,0,1,post
+704934,2025-03-15 15:15:00,2025,Mallorca,Espanyol,2,1,post
+704939,2025-03-15 17:30:00,2025,Villarreal,Real Madrid,1,2,post
+704931,2025-03-15 20:00:00,2025,Girona,Valencia,1,1,post
+704933,2025-03-16 13:00:00,2025,Leganés,Real Betis,2,3,post
+704938,2025-03-16 15:15:00,2025,Sevilla,Athletic Club,0,1,post
+704936,2025-03-16 17:30:00,2025,Rayo Vallecano,Real Sociedad,2,2,post
+704935,2025-03-16 17:30:00,2025,Osasuna,Getafe,1,2,post
+704930,2025-03-16 20:00:00,2025,Atlético Madrid,Barcelona,2,4,post
+704922,2025-03-27 20:00:00,2025,Barcelona,Osasuna,3,0,post
+704947,2025-03-29 13:00:00,2025,Real Sociedad,Real Valladolid,2,1,post
+704948,2025-03-29 15:15:00,2025,Espanyol,Atlético Madrid,1,1,post
+704940,2025-03-29 17:30:00,2025,Alavés,Rayo Vallecano,0,2,post
+704946,2025-03-29 20:00:00,2025,Real Madrid,Leganés,3,2,post
+704949,2025-03-30 12:00:00,2025,Getafe,Villarreal,1,2,post
+704942,2025-03-30 14:15:00,2025,Barcelona,Girona,4,1,post
+704945,2025-03-30 16:30:00,2025,Valencia,Mallorca,1,0,post
+704941,2025-03-30 16:30:00,2025,Athletic Club,Osasuna,0,0,post
+704944,2025-03-30 19:00:00,2025,Real Betis,Sevilla,2,1,post
+704943,2025-03-31 19:00:00,2025,Celta Vigo,Las Palmas,1,1,post
+704952,2025-04-04 19:00:00,2025,Rayo Vallecano,Espanyol,0,4,post
+704957,2025-04-05 12:00:00,2025,Girona,Alavés,0,1,post
+704953,2025-04-05 14:15:00,2025,Real Madrid,Valencia,1,2,post
+704954,2025-04-05 16:30:00,2025,Mallorca,Celta Vigo,1,2,post
+704958,2025-04-05 19:00:00,2025,Barcelona,Real Betis,1,1,post
+704956,2025-04-06 12:00:00,2025,Las Palmas,Real Sociedad,1,3,post
+704955,2025-04-06 14:15:00,2025,Sevilla,Atlético Madrid,1,2,post
+704959,2025-04-06 16:30:00,2025,Real Valladolid,Getafe,0,4,post
+704951,2025-04-06 19:00:00,2025,Villarreal,Athletic Club,0,0,post
+704950,2025-04-07 19:00:00,2025,Leganés,Osasuna,1,1,post
+704967,2025-04-11 19:00:00,2025,Valencia,Sevilla,1,0,post
+704965,2025-04-12 12:00:00,2025,Real Sociedad,Mallorca,0,2,post
+704961,2025-04-12 14:15:00,2025,Getafe,Las Palmas,1,3,post
+704960,2025-04-12 16:30:00,2025,Celta Vigo,Espanyol,0,2,post
+704962,2025-04-12 19:00:00,2025,Leganés,Barcelona,0,1,post
+704963,2025-04-13 12:00:00,2025,Osasuna,Girona,2,1,post
+704966,2025-04-13 14:15:00,2025,Alavés,Real Madrid,0,1,post
+704964,2025-04-13 16:30:00,2025,Real Betis,Villarreal,1,2,post
+704968,2025-04-13 19:00:00,2025,Athletic Club,Rayo Vallecano,3,1,post
+704969,2025-04-14 19:00:00,2025,Atlético Madrid,Real Valladolid,4,2,post
+704977,2025-04-18 19:00:00,2025,Espanyol,Getafe,1,0,post
+704973,2025-04-19 12:00:00,2025,Rayo Vallecano,Valencia,1,1,post
+704970,2025-04-19 14:15:00,2025,Barcelona,Celta Vigo,4,3,post
+704972,2025-04-19 16:30:00,2025,Mallorca,Leganés,0,0,post
+704971,2025-04-19 19:00:00,2025,Las Palmas,Atlético Madrid,1,0,post
+704975,2025-04-20 12:00:00,2025,Real Valladolid,Osasuna,2,3,post
+704978,2025-04-20 14:15:00,2025,Villarreal,Real Sociedad,2,2,post
+704976,2025-04-20 16:30:00,2025,Sevilla,Alavés,1,1,post
+704974,2025-04-20 19:00:00,2025,Real Madrid,Athletic Club,1,0,post
+704979,2025-04-21 19:00:00,2025,Girona,Real Betis,1,3,post
+704982,2025-04-22 17:00:00,2025,Valencia,Espanyol,1,1,post
+704988,2025-04-22 19:30:00,2025,Barcelona,Mallorca,1,0,post
+704987,2025-04-23 17:00:00,2025,Celta Vigo,Villarreal,3,0,post
+704984,2025-04-23 17:00:00,2025,Athletic Club,Las Palmas,1,0,post
+704986,2025-04-23 19:30:00,2025,Alavés,Real Sociedad,1,0,post
+704981,2025-04-23 19:30:00,2025,Getafe,Real Madrid,0,1,post
+704983,2025-04-24 17:00:00,2025,Leganés,Girona,1,1,post
+704989,2025-04-24 17:00:00,2025,Osasuna,Sevilla,1,0,post
+704980,2025-04-24 19:30:00,2025,Atlético Madrid,Rayo Vallecano,3,0,post
+704985,2025-04-24 19:30:00,2025,Real Betis,Real Valladolid,5,1,post
+704919,2025-04-27 14:15:00,2025,Villarreal,Espanyol,1,0,post
+704998,2025-05-02 19:00:00,2025,Rayo Vallecano,Getafe,1,0,post
+704993,2025-05-03 12:00:00,2025,Alavés,Atlético Madrid,0,0,post
+704991,2025-05-03 14:15:00,2025,Villarreal,Osasuna,4,2,post
+704999,2025-05-03 16:30:00,2025,Las Palmas,Valencia,2,3,post
+704996,2025-05-03 19:00:00,2025,Real Valladolid,Barcelona,1,2,post
+704994,2025-05-04 12:00:00,2025,Real Madrid,Celta Vigo,3,2,post
+704997,2025-05-04 14:15:00,2025,Sevilla,Leganés,2,2,post
+704990,2025-05-04 16:30:00,2025,Espanyol,Real Betis,1,2,post
+704995,2025-05-04 19:00:00,2025,Real Sociedad,Athletic Club,0,0,post
+704992,2025-05-05 19:00:00,2025,Girona,Mallorca,1,0,post
+705004,2025-05-09 19:00:00,2025,Las Palmas,Rayo Vallecano,0,1,post
+705005,2025-05-10 12:00:00,2025,Valencia,Getafe,3,0,post
+705003,2025-05-10 14:15:00,2025,Celta Vigo,Sevilla,3,2,post
+705009,2025-05-10 16:30:00,2025,Girona,Villarreal,0,1,post
+705007,2025-05-10 16:30:00,2025,Mallorca,Real Valladolid,2,1,post
+705001,2025-05-10 19:00:00,2025,Atlético Madrid,Real Sociedad,4,0,post
+705006,2025-05-11 12:00:00,2025,Leganés,Espanyol,3,2,post
+705002,2025-05-11 14:15:00,2025,Barcelona,Real Madrid,4,3,post
+705000,2025-05-11 16:30:00,2025,Athletic Club,Alavés,1,0,post
+705008,2025-05-11 19:00:00,2025,Real Betis,Osasuna,1,1,post
+705016,2025-05-13 17:00:00,2025,Real Valladolid,Girona,0,1,post
+705015,2025-05-13 18:00:00,2025,Real Sociedad,Celta Vigo,0,1,post
+705017,2025-05-13 19:30:00,2025,Sevilla,Las Palmas,1,0,post
+705010,2025-05-14 17:00:00,2025,Alavés,Valencia,1,0,post
+705019,2025-05-14 17:00:00,2025,Villarreal,Leganés,3,0,post
+705014,2025-05-14 19:30:00,2025,Real Madrid,Mallorca,2,1,post
+705013,2025-05-15 17:00:00,2025,Rayo Vallecano,Real Betis,2,2,post
+705012,2025-05-15 17:00:00,2025,Osasuna,Atlético Madrid,2,0,post
+705018,2025-05-15 19:30:00,2025,Espanyol,Barcelona,0,2,post
+705011,2025-05-15 19:30:00,2025,Getafe,Athletic Club,0,2,post
+705029,2025-05-18 17:00:00,2025,Valencia,Athletic Club,0,1,post
+705028,2025-05-18 17:00:00,2025,Sevilla,Real Madrid,0,2,post
+705027,2025-05-18 17:00:00,2025,Real Valladolid,Alavés,0,1,post
+705025,2025-05-18 17:00:00,2025,Osasuna,Espanyol,2,0,post
+705026,2025-05-18 17:00:00,2025,Real Sociedad,Girona,3,2,post
+705023,2025-05-18 17:00:00,2025,Las Palmas,Leganés,0,1,post
+705022,2025-05-18 17:00:00,2025,Celta Vigo,Rayo Vallecano,1,2,post
+705021,2025-05-18 17:00:00,2025,Barcelona,Villarreal,2,3,post
+705020,2025-05-18 17:00:00,2025,Atlético Madrid,Real Betis,4,1,post
+705024,2025-05-18 17:00:00,2025,Mallorca,Getafe,1,2,post
+705036,2025-05-23 19:00:00,2025,Real Betis,Valencia,1,1,post
+705034,2025-05-24 14:15:00,2025,Real Madrid,Real Sociedad,2,0,post
+705038,2025-05-24 16:30:00,2025,Leganés,Real Valladolid,3,0,post
+705032,2025-05-24 16:30:00,2025,Espanyol,Las Palmas,2,0,post
+705037,2025-05-24 19:00:00,2025,Rayo Vallecano,Mallorca,0,0,post
+705030,2025-05-24 19:00:00,2025,Alavés,Osasuna,1,1,post
+705039,2025-05-24 19:00:00,2025,Getafe,Celta Vigo,1,2,post
+705033,2025-05-25 12:00:00,2025,Girona,Atlético Madrid,0,4,post
+705031,2025-05-25 14:15:00,2025,Villarreal,Sevilla,4,2,post
+705035,2025-05-25 19:00:00,2025,Athletic Club,Barcelona,0,3,post
+748152,2025-08-15 17:00:00,2025,Girona,Rayo Vallecano,1,3,post
+748151,2025-08-15 19:30:00,2025,Villarreal,Real Oviedo,2,0,post
+748153,2025-08-16 17:30:00,2025,Mallorca,Barcelona,0,3,post
+748150,2025-08-16 19:30:00,2025,Alavés,Levante,2,1,post
+748144,2025-08-16 19:30:00,2025,Valencia,Real Sociedad,1,1,post
+748148,2025-08-17 15:00:00,2025,Celta Vigo,Getafe,0,2,post
+748149,2025-08-17 17:30:00,2025,Athletic Club,Sevilla,3,2,post
+748146,2025-08-17 19:30:00,2025,Espanyol,Atlético Madrid,2,1,post
+748147,2025-08-18 19:00:00,2025,Elche,Real Betis,1,1,post
+748145,2025-08-19 19:00:00,2025,Real Madrid,Osasuna,1,0,post
+748158,2025-08-22 19:30:00,2025,Real Betis,Alavés,1,0,post
+748154,2025-08-23 15:00:00,2025,Mallorca,Celta Vigo,1,1,post
+748161,2025-08-23 17:30:00,2025,Atlético Madrid,Elche,1,1,post
+748162,2025-08-23 19:30:00,2025,Levante,Barcelona,2,3,post
+748159,2025-08-24 15:00:00,2025,Osasuna,Valencia,1,0,post
+748156,2025-08-24 17:30:00,2025,Real Sociedad,Espanyol,2,2,post
+748163,2025-08-24 17:30:00,2025,Villarreal,Girona,5,0,post
+748155,2025-08-24 19:30:00,2025,Real Oviedo,Real Madrid,0,3,post
+748160,2025-08-25 17:30:00,2025,Athletic Club,Rayo Vallecano,1,0,post
+748157,2025-08-25 19:30:00,2025,Sevilla,Getafe,1,2,post
+748198,2025-08-27 19:00:00,2025,Celta Vigo,Real Betis,1,1,post
+748170,2025-08-29 17:30:00,2025,Elche,Levante,2,0,post
+748168,2025-08-29 19:30:00,2025,Valencia,Getafe,3,0,post
+748172,2025-08-30 15:00:00,2025,Alavés,Atlético Madrid,1,1,post
+748173,2025-08-30 17:00:00,2025,Real Oviedo,Real Sociedad,1,0,post
+748164,2025-08-30 17:30:00,2025,Girona,Sevilla,0,2,post
+748167,2025-08-30 19:30:00,2025,Real Madrid,Mallorca,2,1,post
+748171,2025-08-31 15:00:00,2025,Celta Vigo,Villarreal,1,1,post
+748166,2025-08-31 17:00:00,2025,Real Betis,Athletic Club,1,2,post
+748169,2025-08-31 17:30:00,2025,Espanyol,Osasuna,1,0,post
+748165,2025-08-31 19:30:00,2025,Rayo Vallecano,Barcelona,1,1,post
+748183,2025-09-12 19:00:00,2025,Sevilla,Elche,2,2,post
+748174,2025-09-13 12:00:00,2025,Getafe,Real Oviedo,2,0,post
+748177,2025-09-13 14:15:00,2025,Real Sociedad,Real Madrid,1,2,post
+748182,2025-09-13 16:30:00,2025,Athletic Club,Alavés,0,1,post
+748181,2025-09-13 19:00:00,2025,Atlético Madrid,Villarreal,2,0,post
+748179,2025-09-14 12:00:00,2025,Celta Vigo,Girona,1,1,post
+748175,2025-09-14 14:15:00,2025,Levante,Real Betis,2,2,post
+748176,2025-09-14 16:30:00,2025,Osasuna,Rayo Vallecano,2,0,post
+748180,2025-09-14 19:00:00,2025,Barcelona,Valencia,6,0,post
+748178,2025-09-15 19:00:00,2025,Espanyol,Mallorca,3,2,post
+748185,2025-09-19 19:00:00,2025,Real Betis,Real Sociedad,3,1,post
+748193,2025-09-20 12:00:00,2025,Girona,Levante,0,4,post
+748186,2025-09-20 14:15:00,2025,Real Madrid,Espanyol,2,0,post
+748190,2025-09-20 16:30:00,2025,Alavés,Sevilla,1,2,post
+748189,2025-09-20 16:30:00,2025,Villarreal,Osasuna,2,1,post
+748187,2025-09-20 19:00:00,2025,Valencia,Athletic Club,2,0,post
+748184,2025-09-21 12:00:00,2025,Rayo Vallecano,Celta Vigo,1,1,post
+748188,2025-09-21 14:15:00,2025,Mallorca,Atlético Madrid,1,1,post
+748192,2025-09-21 16:30:00,2025,Elche,Real Oviedo,1,0,post
+748191,2025-09-21 19:00:00,2025,Barcelona,Getafe,3,0,post
+748194,2025-09-23 17:00:00,2025,Athletic Club,Girona,1,1,post
+748203,2025-09-23 17:00:00,2025,Espanyol,Valencia,2,2,post
+748200,2025-09-23 19:30:00,2025,Levante,Real Madrid,1,4,post
+748196,2025-09-23 19:30:00,2025,Sevilla,Villarreal,1,2,post
+748199,2025-09-24 17:00:00,2025,Getafe,Alavés,1,1,post
+748197,2025-09-24 19:30:00,2025,Real Sociedad,Mallorca,1,0,post
+748195,2025-09-24 19:30:00,2025,Atlético Madrid,Rayo Vallecano,3,2,post
+748201,2025-09-25 17:30:00,2025,Osasuna,Elche,1,1,post
+748202,2025-09-25 19:30:00,2025,Real Oviedo,Barcelona,1,3,post
+748205,2025-09-26 19:00:00,2025,Girona,Espanyol,0,0,post
+748206,2025-09-27 12:00:00,2025,Getafe,Levante,1,1,post
+748210,2025-09-27 14:15:00,2025,Atlético Madrid,Real Madrid,5,2,post
+748209,2025-09-27 16:30:00,2025,Mallorca,Alavés,1,0,post
+748204,2025-09-27 19:00:00,2025,Villarreal,Athletic Club,1,0,post
+748213,2025-09-28 12:00:00,2025,Rayo Vallecano,Sevilla,0,1,post
+748207,2025-09-28 14:15:00,2025,Elche,Celta Vigo,2,1,post
+748208,2025-09-28 16:30:00,2025,Barcelona,Real Sociedad,2,1,post
+748212,2025-09-28 19:00:00,2025,Real Betis,Osasuna,2,0,post
+748211,2025-09-30 18:00:00,2025,Valencia,Real Oviedo,1,2,post
+748223,2025-10-03 19:00:00,2025,Osasuna,Getafe,2,1,post
+748216,2025-10-04 12:00:00,2025,Real Oviedo,Levante,0,2,post
+748219,2025-10-04 14:15:00,2025,Girona,Valencia,2,1,post
+748222,2025-10-04 16:30:00,2025,Athletic Club,Mallorca,2,1,post
+748214,2025-10-04 19:00:00,2025,Real Madrid,Villarreal,3,1,post
+748218,2025-10-05 12:00:00,2025,Alavés,Elche,3,1,post
+748215,2025-10-05 14:15:00,2025,Sevilla,Barcelona,4,1,post
+748220,2025-10-05 16:30:00,2025,Espanyol,Real Betis,1,2,post
+748217,2025-10-05 16:30:00,2025,Real Sociedad,Rayo Vallecano,0,1,post
+748221,2025-10-05 19:00:00,2025,Celta Vigo,Atlético Madrid,1,1,post
+748229,2025-10-17 19:00:00,2025,Real Oviedo,Espanyol,0,2,post
+748227,2025-10-18 12:00:00,2025,Sevilla,Mallorca,1,3,post
+748228,2025-10-18 14:15:00,2025,Barcelona,Girona,2,1,post
+748225,2025-10-18 16:30:00,2025,Villarreal,Real Betis,2,2,post
+748224,2025-10-18 19:00:00,2025,Atlético Madrid,Osasuna,1,0,post
+748232,2025-10-19 12:00:00,2025,Elche,Athletic Club,0,0,post
+748233,2025-10-19 14:15:00,2025,Celta Vigo,Real Sociedad,1,1,post
+748230,2025-10-19 16:30:00,2025,Levante,Rayo Vallecano,0,3,post
+748231,2025-10-19 19:00:00,2025,Getafe,Real Madrid,0,1,post
+748226,2025-10-20 19:00:00,2025,Alavés,Valencia,0,0,post
+748234,2025-10-24 19:00:00,2025,Real Sociedad,Sevilla,2,1,post
+748239,2025-10-25 12:00:00,2025,Girona,Real Oviedo,3,3,post
+748243,2025-10-25 14:15:00,2025,Espanyol,Elche,1,0,post
+748242,2025-10-25 16:30:00,2025,Athletic Club,Getafe,0,1,post
+748235,2025-10-25 19:00:00,2025,Valencia,Villarreal,0,2,post
+748240,2025-10-26 13:00:00,2025,Mallorca,Levante,1,1,post
+748236,2025-10-26 15:15:00,2025,Real Madrid,Barcelona,2,1,post
+748241,2025-10-26 17:30:00,2025,Osasuna,Celta Vigo,2,3,post
+748238,2025-10-26 20:00:00,2025,Rayo Vallecano,Alavés,1,0,post
+748237,2025-10-27 20:00:00,2025,Real Betis,Atlético Madrid,0,2,post
+748248,2025-10-31 20:00:00,2025,Getafe,Girona,2,1,post
+748249,2025-11-01 13:00:00,2025,Villarreal,Rayo Vallecano,4,0,post
+748245,2025-11-01 15:15:00,2025,Atlético Madrid,Sevilla,3,0,post
+748253,2025-11-01 17:30:00,2025,Real Sociedad,Athletic Club,3,2,post
+748251,2025-11-01 20:00:00,2025,Real Madrid,Valencia,4,0,post
+748244,2025-11-02 13:00:00,2025,Levante,Celta Vigo,1,2,post
+748246,2025-11-02 15:15:00,2025,Alavés,Espanyol,2,1,post
+748247,2025-11-02 17:30:00,2025,Barcelona,Elche,3,1,post
+748250,2025-11-02 20:00:00,2025,Real Betis,Mallorca,3,0,post
+748252,2025-11-03 20:00:00,2025,Real Oviedo,Osasuna,0,0,post
+748259,2025-11-07 20:00:00,2025,Elche,Real Sociedad,1,1,post
+748257,2025-11-08 13:00:00,2025,Girona,Alavés,1,0,post
+748255,2025-11-08 15:15:00,2025,Sevilla,Osasuna,1,0,post
+748261,2025-11-08 17:30:00,2025,Atlético Madrid,Levante,3,1,post
+748263,2025-11-08 20:00:00,2025,Espanyol,Villarreal,0,2,post
+748262,2025-11-09 13:00:00,2025,Athletic Club,Real Oviedo,1,0,post
+748254,2025-11-09 15:15:00,2025,Rayo Vallecano,Real Madrid,0,0,post
+748256,2025-11-09 17:30:00,2025,Mallorca,Getafe,1,0,post
+748258,2025-11-09 17:30:00,2025,Valencia,Real Betis,1,1,post
+748260,2025-11-09 20:00:00,2025,Celta Vigo,Barcelona,2,4,post
+748270,2025-11-21 20:00:00,2025,Valencia,Levante,1,0,post
+748273,2025-11-22 13:00:00,2025,Alavés,Celta Vigo,0,1,post
+748272,2025-11-22 15:15:00,2025,Barcelona,Athletic Club,4,0,post
+748267,2025-11-22 17:30:00,2025,Osasuna,Real Sociedad,1,3,post
+748271,2025-11-22 20:00:00,2025,Villarreal,Mallorca,2,1,post
+748269,2025-11-23 13:00:00,2025,Real Oviedo,Rayo Vallecano,0,0,post
+748268,2025-11-23 15:15:00,2025,Real Betis,Girona,1,1,post
+748264,2025-11-23 17:30:00,2025,Getafe,Atlético Madrid,0,1,post
+748266,2025-11-23 20:00:00,2025,Elche,Real Madrid,2,2,post
+748265,2025-11-24 20:00:00,2025,Espanyol,Sevilla,2,1,post
+748280,2025-11-28 20:00:00,2025,Getafe,Elche,1,0,post
+748277,2025-11-29 13:00:00,2025,Mallorca,Osasuna,2,2,post
+748282,2025-11-29 15:15:00,2025,Barcelona,Alavés,3,1,post
+748278,2025-11-29 17:30:00,2025,Levante,Athletic Club,0,2,post
+748275,2025-11-29 20:00:00,2025,Atlético Madrid,Real Oviedo,2,0,post
+748274,2025-11-30 13:00:00,2025,Real Sociedad,Villarreal,2,3,post
+748283,2025-11-30 15:15:00,2025,Sevilla,Real Betis,0,2,post
+748281,2025-11-30 17:30:00,2025,Celta Vigo,Espanyol,0,1,post
+748279,2025-11-30 20:00:00,2025,Girona,Real Madrid,1,1,post
+748276,2025-12-01 20:00:00,2025,Rayo Vallecano,Valencia,1,1,post
+748331,2025-12-02 20:00:00,2025,Barcelona,Atlético Madrid,3,1,post
+748332,2025-12-03 18:00:00,2025,Athletic Club,Real Madrid,0,3,post
+748291,2025-12-05 20:00:00,2025,Real Oviedo,Mallorca,0,0,post
+748288,2025-12-06 13:00:00,2025,Villarreal,Getafe,2,0,post
+748287,2025-12-06 15:15:00,2025,Alavés,Real Sociedad,1,0,post
+748289,2025-12-06 17:30:00,2025,Real Betis,Barcelona,3,5,post
+748286,2025-12-06 20:00:00,2025,Athletic Club,Atlético Madrid,1,0,post
+748285,2025-12-07 13:00:00,2025,Elche,Girona,3,0,post
+748292,2025-12-07 15:15:00,2025,Valencia,Sevilla,1,1,post
+748284,2025-12-07 17:30:00,2025,Espanyol,Rayo Vallecano,1,0,post
+748290,2025-12-07 20:00:00,2025,Real Madrid,Celta Vigo,0,2,post
+748293,2025-12-08 20:00:00,2025,Osasuna,Levante,2,0,post
+748294,2025-12-12 20:00:00,2025,Real Sociedad,Girona,1,2,post
+748296,2025-12-13 13:00:00,2025,Atlético Madrid,Valencia,2,1,post
+748303,2025-12-13 15:15:00,2025,Mallorca,Elche,3,1,post
+748299,2025-12-13 17:30:00,2025,Barcelona,Osasuna,2,0,post
+748301,2025-12-13 20:00:00,2025,Getafe,Espanyol,0,1,post
+748295,2025-12-14 13:00:00,2025,Sevilla,Real Oviedo,4,0,post
+748300,2025-12-14 15:15:00,2025,Celta Vigo,Athletic Club,2,0,post
+748297,2025-12-14 20:00:00,2025,Alavés,Real Madrid,1,2,post
+748298,2025-12-15 20:00:00,2025,Rayo Vallecano,Real Betis,0,0,post
+748305,2025-12-19 20:00:00,2025,Valencia,Mallorca,1,1,post
+748306,2025-12-20 13:00:00,2025,Real Oviedo,Celta Vigo,0,0,post
+748310,2025-12-20 15:15:00,2025,Levante,Real Sociedad,1,1,post
+748311,2025-12-20 17:30:00,2025,Osasuna,Alavés,3,0,post
+748307,2025-12-20 20:00:00,2025,Real Madrid,Sevilla,2,0,post
+748309,2025-12-21 13:00:00,2025,Girona,Atlético Madrid,0,3,post
+748312,2025-12-21 15:15:00,2025,Villarreal,Barcelona,0,2,post
+748313,2025-12-21 17:30:00,2025,Elche,Rayo Vallecano,4,0,post
+748308,2025-12-21 20:00:00,2025,Real Betis,Getafe,4,0,post
+748304,2025-12-22 20:00:00,2025,Athletic Club,Espanyol,1,2,post
+748316,2026-01-02 20:00:00,2026,Rayo Vallecano,Getafe,1,1,post
+748321,2026-01-03 13:00:00,2026,Celta Vigo,Valencia,4,1,post
+748317,2026-01-03 15:15:00,2026,Osasuna,Athletic Club,1,1,post
+748320,2026-01-03 17:30:00,2026,Elche,Villarreal,1,3,post
+748319,2026-01-03 20:00:00,2026,Espanyol,Barcelona,0,2,post
+748323,2026-01-04 13:00:00,2026,Sevilla,Levante,0,3,post
+748315,2026-01-04 15:15:00,2026,Real Madrid,Real Betis,5,1,post
+748322,2026-01-04 17:30:00,2026,Alavés,Real Oviedo,1,1,post
+748318,2026-01-04 17:30:00,2026,Mallorca,Girona,1,2,post
+748314,2026-01-04 20:00:00,2026,Real Sociedad,Atlético Madrid,1,1,post
+748330,2026-01-09 20:00:00,2026,Getafe,Real Sociedad,1,2,post
+748326,2026-01-10 13:00:00,2026,Real Oviedo,Real Betis,1,1,post
+748333,2026-01-10 15:15:00,2026,Villarreal,Alavés,3,1,post
+748329,2026-01-10 17:30:00,2026,Girona,Osasuna,1,0,post
+748324,2026-01-10 20:00:00,2026,Valencia,Elche,1,1,post
+748327,2026-01-11 13:00:00,2026,Rayo Vallecano,Mallorca,2,1,post
+748328,2026-01-11 15:15:00,2026,Levante,Espanyol,1,1,post
+748325,2026-01-12 20:00:00,2026,Sevilla,Celta Vigo,0,1,post
+748337,2026-01-16 20:00:00,2026,Espanyol,Girona,0,2,post
+748342,2026-01-17 13:00:00,2026,Real Madrid,Levante,2,0,post
+748339,2026-01-17 15:15:00,2026,Mallorca,Athletic Club,3,2,post
+748340,2026-01-17 17:30:00,2026,Osasuna,Real Oviedo,3,2,post
+748341,2026-01-17 20:00:00,2026,Real Betis,Villarreal,2,0,post
+748338,2026-01-18 13:00:00,2026,Getafe,Valencia,0,1,post
+748334,2026-01-18 15:15:00,2026,Atlético Madrid,Alavés,1,0,post
+748335,2026-01-18 17:30:00,2026,Celta Vigo,Rayo Vallecano,3,0,post
+748343,2026-01-18 20:00:00,2026,Real Sociedad,Barcelona,2,1,post
+748336,2026-01-19 20:00:00,2026,Elche,Sevilla,2,2,post
+748353,2026-01-23 20:00:00,2026,Levante,Elche,3,2,post
+748348,2026-01-24 13:00:00,2026,Rayo Vallecano,Osasuna,1,3,post
+748352,2026-01-24 15:15:00,2026,Valencia,Espanyol,3,2,post
+748351,2026-01-24 17:30:00,2026,Sevilla,Athletic Club,2,1,post
+748349,2026-01-24 20:00:00,2026,Villarreal,Real Madrid,0,2,post
+748345,2026-01-25 13:00:00,2026,Atlético Madrid,Mallorca,3,0,post
+748346,2026-01-25 15:15:00,2026,Barcelona,Real Oviedo,3,0,post
+748350,2026-01-25 17:30:00,2026,Real Sociedad,Celta Vigo,3,1,post
+748344,2026-01-25 20:00:00,2026,Alavés,Real Betis,2,1,post
+748347,2026-01-26 20:00:00,2026,Girona,Getafe,1,1,post
+748355,2026-01-30 20:00:00,2026,Espanyol,Alavés,1,2,post
+748362,2026-01-31 13:00:00,2026,Real Oviedo,Girona,1,0,post
+748359,2026-01-31 15:15:00,2026,Osasuna,Villarreal,2,2,post
+748357,2026-01-31 17:30:00,2026,Levante,Atlético Madrid,0,0,post
+748354,2026-01-31 20:00:00,2026,Elche,Barcelona,1,3,post
+748356,2026-02-01 13:00:00,2026,Real Madrid,Rayo Vallecano,2,1,post
+748360,2026-02-01 15:15:00,2026,Real Betis,Valencia,2,1,post
+748361,2026-02-01 17:30:00,2026,Getafe,Celta Vigo,0,0,post
+748358,2026-02-01 20:00:00,2026,Athletic Club,Real Sociedad,1,1,post
+748363,2026-02-02 20:00:00,2026,Mallorca,Sevilla,4,1,post
+748371,2026-02-06 20:00:00,2026,Celta Vigo,Osasuna,1,2,post
+748370,2026-02-07 15:15:00,2026,Barcelona,Mallorca,3,0,post
+748366,2026-02-07 20:00:00,2026,Real Sociedad,Elche,3,1,post
+748367,2026-02-08 13:00:00,2026,Alavés,Getafe,0,2,post
+748373,2026-02-08 15:15:00,2026,Athletic Club,Levante,4,2,post
+748365,2026-02-08 15:15:00,2026,Sevilla,Girona,1,1,post
+748369,2026-02-08 17:30:00,2026,Atlético Madrid,Real Betis,0,1,post
+748364,2026-02-08 20:00:00,2026,Valencia,Real Madrid,0,2,post
+748368,2026-02-09 20:00:00,2026,Villarreal,Espanyol,4,1,post
+748376,2026-02-13 20:00:00,2026,Elche,Osasuna,0,0,post
+748377,2026-02-14 13:00:00,2026,Espanyol,Celta Vigo,2,2,post
+748378,2026-02-14 15:15:00,2026,Getafe,Villarreal,2,1,post
+748374,2026-02-14 17:30:00,2026,Sevilla,Alavés,1,1,post
+748383,2026-02-14 20:00:00,2026,Real Madrid,Real Sociedad,4,1,post
+748375,2026-02-15 13:00:00,2026,Real Oviedo,Athletic Club,1,2,post
+748382,2026-02-15 15:15:00,2026,Rayo Vallecano,Atlético Madrid,3,0,post
+748380,2026-02-15 17:30:00,2026,Levante,Valencia,0,2,post
+748379,2026-02-15 20:00:00,2026,Mallorca,Real Betis,1,2,post
+748381,2026-02-16 20:00:00,2026,Girona,Barcelona,2,1,post
+748302,2026-02-18 19:00:00,2026,Levante,Villarreal,0,1,post
+748388,2026-02-20 20:00:00,2026,Athletic Club,Elche,2,1,post
+748385,2026-02-21 13:00:00,2026,Real Sociedad,Real Oviedo,3,3,post
+748386,2026-02-21 15:15:00,2026,Real Betis,Rayo Vallecano,1,1,post
+748387,2026-02-21 17:30:00,2026,Osasuna,Real Madrid,2,1,post
+748390,2026-02-21 20:00:00,2026,Atlético Madrid,Espanyol,4,2,post
+748384,2026-02-22 13:00:00,2026,Getafe,Sevilla,0,1,post
+748391,2026-02-22 15:15:00,2026,Barcelona,Levante,3,0,post
+748392,2026-02-22 17:30:00,2026,Celta Vigo,Mallorca,2,0,post
+748389,2026-02-22 20:00:00,2026,Villarreal,Valencia,2,1,post
+748393,2026-02-23 20:00:00,2026,Alavés,Girona,2,2,post
+748399,2026-02-27 20:00:00,2026,Levante,Alavés,2,0,post
+748397,2026-02-28 13:00:00,2026,Rayo Vallecano,Athletic Club,1,1,post
+748402,2026-02-28 15:15:00,2026,Barcelona,Villarreal,4,1,post
+748403,2026-02-28 17:30:00,2026,Mallorca,Real Sociedad,0,1,post
+748394,2026-02-28 20:00:00,2026,Real Oviedo,Atlético Madrid,0,1,post
+748401,2026-03-01 13:00:00,2026,Elche,Espanyol,2,2,post
+748398,2026-03-01 15:15:00,2026,Valencia,Osasuna,1,0,post
+748396,2026-03-01 17:30:00,2026,Real Betis,Sevilla,2,2,post
+748400,2026-03-01 20:00:00,2026,Girona,Celta Vigo,1,2,post
+748395,2026-03-02 20:00:00,2026,Real Madrid,Getafe,0,1,post
+748372,2026-03-04 18:00:00,2026,Rayo Vallecano,Real Oviedo,3,0,post
+748411,2026-03-06 20:00:00,2026,Celta Vigo,Real Madrid,1,2,post
+748406,2026-03-07 13:00:00,2026,Osasuna,Mallorca,2,2,post
+748407,2026-03-07 15:15:00,2026,Levante,Girona,1,1,post
+748410,2026-03-07 17:30:00,2026,Atlético Madrid,Real Sociedad,3,2,post
+748409,2026-03-07 20:00:00,2026,Athletic Club,Barcelona,0,1,post
+748408,2026-03-08 13:00:00,2026,Villarreal,Elche,2,1,post
+748413,2026-03-08 15:15:00,2026,Getafe,Real Betis,2,0,post
+748405,2026-03-08 17:30:00,2026,Sevilla,Rayo Vallecano,1,1,post
+748404,2026-03-08 20:00:00,2026,Valencia,Alavés,3,2,post
+748412,2026-03-09 20:00:00,2026,Espanyol,Real Oviedo,1,1,post
+748422,2026-03-13 20:00:00,2026,Alavés,Villarreal,1,1,post
+748414,2026-03-14 13:00:00,2026,Girona,Athletic Club,3,0,post
+748423,2026-03-14 15:15:00,2026,Atlético Madrid,Getafe,1,0,post
+748419,2026-03-14 17:30:00,2026,Real Oviedo,Valencia,1,0,post
+748418,2026-03-14 20:00:00,2026,Real Madrid,Elche,4,1,post
+748421,2026-03-15 13:00:00,2026,Mallorca,Espanyol,2,1,post
+748415,2026-03-15 15:15:00,2026,Barcelona,Sevilla,5,2,post
+748417,2026-03-15 17:30:00,2026,Real Betis,Celta Vigo,1,1,post
+748420,2026-03-15 20:00:00,2026,Real Sociedad,Osasuna,3,1,post
+748416,2026-03-16 20:00:00,2026,Rayo Vallecano,Levante,1,1,post
+748429,2026-03-20 20:00:00,2026,Villarreal,Real Sociedad,3,1,post
+748430,2026-03-21 13:00:00,2026,Elche,Mallorca,2,1,post
+748425,2026-03-21 15:15:00,2026,Espanyol,Getafe,1,2,post
+748426,2026-03-21 17:30:00,2026,Levante,Real Oviedo,4,2,post
+748427,2026-03-21 17:30:00,2026,Osasuna,Girona,1,0,post
+748428,2026-03-21 20:00:00,2026,Sevilla,Valencia,0,2,post
+748432,2026-03-22 13:00:00,2026,Barcelona,Rayo Vallecano,1,0,post
+748431,2026-03-22 15:15:00,2026,Celta Vigo,Alavés,3,4,post
+748424,2026-03-22 17:30:00,2026,Athletic Club,Real Betis,2,1,post
+748433,2026-03-22 20:00:00,2026,Real Madrid,Atlético Madrid,3,2,post
+748443,2026-04-03 19:00:00,2026,Rayo Vallecano,Elche,1,0,post
+748442,2026-04-04 12:00:00,2026,Real Sociedad,Levante,2,0,post
+748437,2026-04-04 14:15:00,2026,Mallorca,Real Madrid,2,1,post
+748439,2026-04-04 16:30:00,2026,Real Betis,Espanyol,0,0,post
+748434,2026-04-04 19:00:00,2026,Atlético Madrid,Barcelona,1,2,post
+748435,2026-04-05 12:00:00,2026,Getafe,Athletic Club,2,0,post
+748440,2026-04-05 14:15:00,2026,Valencia,Celta Vigo,2,3,post
+748441,2026-04-05 16:30:00,2026,Real Oviedo,Sevilla,1,0,post
+748438,2026-04-05 19:00:00,2026,Alavés,Osasuna,2,2,post
+748436,2026-04-06 19:00:00,2026,Girona,Villarreal,1,0,post
+748453,2026-04-10 19:00:00,2026,Real Madrid,Girona,1,1,post
+748452,2026-04-11 12:00:00,2026,Real Sociedad,Alavés,3,3,post
+748447,2026-04-11 14:15:00,2026,Elche,Valencia,1,0,post
+748449,2026-04-11 16:30:00,2026,Barcelona,Espanyol,4,1,post
+748450,2026-04-11 19:00:00,2026,Sevilla,Atlético Madrid,2,1,post
+748444,2026-04-12 12:00:00,2026,Osasuna,Real Betis,1,1,post
+748445,2026-04-12 14:15:00,2026,Mallorca,Rayo Vallecano,3,0,post
+748448,2026-04-12 16:30:00,2026,Celta Vigo,Real Oviedo,0,3,post
+748451,2026-04-12 19:00:00,2026,Athletic Club,Villarreal,1,2,post
+748446,2026-04-13 19:00:00,2026,Levante,Getafe,1,0,post
+748469,2026-04-21 17:00:00,2026,Athletic Club,Osasuna,1,0,post
+748468,2026-04-21 17:00:00,2026,Mallorca,Valencia,1,1,post
+748467,2026-04-21 19:30:00,2026,Girona,Real Betis,2,3,post
+748471,2026-04-21 19:30:00,2026,Real Madrid,Alavés,2,1,post
+748466,2026-04-22 17:00:00,2026,Elche,Atlético Madrid,3,2,post
+748472,2026-04-22 18:00:00,2026,Real Sociedad,Getafe,0,1,post
+748465,2026-04-22 19:30:00,2026,Barcelona,Celta Vigo,1,0,post
+748473,2026-04-23 17:00:00,2026,Levante,Sevilla,2,0,post
+748470,2026-04-23 18:00:00,2026,Rayo Vallecano,Espanyol,1,0,post
+748464,2026-04-23 19:30:00,2026,Real Oviedo,Villarreal,1,1,post
+748457,2026-04-24 19:00:00,2026,Real Betis,Real Madrid,1,1,post
+748455,2026-04-25 12:00:00,2026,Alavés,Mallorca,2,1,post
+748460,2026-04-25 14:15:00,2026,Getafe,Barcelona,0,2,post
+748454,2026-04-25 16:30:00,2026,Valencia,Girona,2,1,post
+748462,2026-04-25 19:00:00,2026,Atlético Madrid,Athletic Club,3,2,post
+748458,2026-04-26 12:00:00,2026,Rayo Vallecano,Real Sociedad,3,3,post
+748456,2026-04-26 14:15:00,2026,Real Oviedo,Elche,1,2,post
+748459,2026-04-26 16:30:00,2026,Osasuna,Sevilla,2,1,post
+748463,2026-04-26 19:00:00,2026,Villarreal,Celta Vigo,2,1,post
+748461,2026-04-27 19:00:00,2026,Espanyol,Levante,0,0,post
+748476,2026-05-01 19:00:00,2026,Girona,Mallorca,0,1,post
+748477,2026-05-02 12:00:00,2026,Villarreal,Levante,5,1,post
+748481,2026-05-02 14:15:00,2026,Valencia,Atlético Madrid,0,2,post
+748482,2026-05-02 16:30:00,2026,Alavés,Athletic Club,2,4,post
+748480,2026-05-02 19:00:00,2026,Osasuna,Barcelona,1,2,post
+748483,2026-05-03 12:00:00,2026,Celta Vigo,Elche,3,1,post
+748474,2026-05-03 14:15:00,2026,Getafe,Rayo Vallecano,0,2,post
+748479,2026-05-03 16:30:00,2026,Real Betis,Real Oviedo,3,0,post
+748475,2026-05-03 19:00:00,2026,Espanyol,Real Madrid,0,2,post
+748478,2026-05-04 19:00:00,2026,Sevilla,Real Sociedad,1,0,post
+748491,2026-05-08 19:00:00,2026,Levante,Osasuna,3,2,post
+748492,2026-05-09 12:00:00,2026,Elche,Alavés,1,1,post
+748486,2026-05-09 14:15:00,2026,Sevilla,Espanyol,2,1,post
+748487,2026-05-09 16:30:00,2026,Atlético Madrid,Celta Vigo,0,1,post
+748485,2026-05-09 19:00:00,2026,Real Sociedad,Real Betis,2,2,post
+748490,2026-05-10 12:00:00,2026,Mallorca,Villarreal,1,1,post
+748488,2026-05-10 14:15:00,2026,Athletic Club,Valencia,0,1,post
+748493,2026-05-10 16:30:00,2026,Real Oviedo,Getafe,0,0,post
+748484,2026-05-10 19:00:00,2026,Barcelona,Real Madrid,2,0,post
+748489,2026-05-11 19:00:00,2026,Rayo Vallecano,Girona,1,1,post
+748500,2026-05-12 17:00:00,2026,Celta Vigo,Levante,2,3,post
+748499,2026-05-12 18:00:00,2026,Real Betis,Elche,2,1,post
+748494,2026-05-12 19:30:00,2026,Osasuna,Atlético Madrid,1,2,post
+748501,2026-05-13 17:00:00,2026,Villarreal,Sevilla,2,3,post
+748497,2026-05-13 17:00:00,2026,Espanyol,Athletic Club,2,0,post
+748498,2026-05-13 19:30:00,2026,Alavés,Barcelona,1,0,post
+748496,2026-05-13 19:30:00,2026,Getafe,Mallorca,3,1,post
+748502,2026-05-14 17:00:00,2026,Valencia,Rayo Vallecano,1,1,post
+748495,2026-05-14 18:00:00,2026,Girona,Real Sociedad,1,1,post
+748503,2026-05-14 19:30:00,2026,Real Madrid,Real Oviedo,2,0,post
+748510,2026-05-17 17:00:00,2026,Levante,Mallorca,2,0,post
+748504,2026-05-17 17:00:00,2026,Sevilla,Real Madrid,0,1,post
+748505,2026-05-17 17:00:00,2026,Real Sociedad,Valencia,3,4,post
+748513,2026-05-17 17:00:00,2026,Real Oviedo,Alavés,0,1,post
+748512,2026-05-17 17:00:00,2026,Rayo Vallecano,Villarreal,2,0,post
+748507,2026-05-17 17:00:00,2026,Elche,Getafe,1,0,post
+748509,2026-05-17 17:00:00,2026,Atlético Madrid,Girona,1,0,post
+748506,2026-05-17 17:00:00,2026,Athletic Club,Celta Vigo,1,1,post
+748511,2026-05-17 17:00:00,2026,Osasuna,Espanyol,1,2,post
+748508,2026-05-17 19:15:00,2026,Barcelona,Real Betis,3,1,post
+748514,2026-05-23 19:00:00,2026,Real Madrid,Athletic Club,4,2,post
+748522,2026-05-23 19:00:00,2026,Real Betis,Levante,2,1,post
+748519,2026-05-23 19:00:00,2026,Valencia,Barcelona,3,1,post
+748521,2026-05-23 19:00:00,2026,Mallorca,Real Oviedo,3,0,post
+748523,2026-05-23 19:00:00,2026,Alavés,Rayo Vallecano,1,2,post
+748518,2026-05-23 19:00:00,2026,Getafe,Osasuna,1,0,post
+748516,2026-05-23 19:00:00,2026,Espanyol,Real Sociedad,1,1,post
+748517,2026-05-23 19:00:00,2026,Celta Vigo,Sevilla,1,0,post
+748520,2026-05-23 19:00:00,2026,Girona,Elche,1,1,post
+748515,2026-05-24 19:00:00,2026,Villarreal,Atlético Madrid,5,1,post

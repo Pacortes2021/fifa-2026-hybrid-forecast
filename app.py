@@ -31,7 +31,7 @@ def limpiar_cache_importacion():
     entre las distintas ligas que usan archivos con el mismo nombre (ej. motor.py)."""
     modulos_a_limpiar = [
         "motor", "recolectar", "recolectar_boxscore", 
-        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile"
+        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp"
     ]
     for mod in modulos_a_limpiar:
         if mod in sys.modules:
@@ -52,7 +52,8 @@ torneo_seleccionado = st.sidebar.selectbox(
         "🏆 Copa Mundial 2026",
         "🇲🇽 Liga MX (México)",
         "🇧🇷 Brasileirão (Brasil)",
-        "🇨🇱 Liga Chilena (Primera)"
+        "🇨🇱 Liga Chilena (Primera)",
+        "🇪🇸 LaLiga (España)"
     ]
 )
 
@@ -90,3 +91,9 @@ elif torneo_seleccionado == "🇨🇱 Liga Chilena (Primera)":
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "chile"))
     import chile.app_chile as chile_app
     chile_app.run_app()
+
+elif torneo_seleccionado == "🇪🇸 LaLiga (España)":
+    # Mover al directorio de esp
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "esp"))
+    import esp.app_esp as esp_app
+    esp_app.run_app()
