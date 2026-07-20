@@ -1,4 +1,5 @@
 import sys
+import math
 from pathlib import Path
 from collections import defaultdict, deque
 import pandas as pd
@@ -330,8 +331,8 @@ def grilla_goles(M, local, visita, modelo_tipo="rf"):
     
     # Construir grilla Poisson
     max_g = 10
-    pa = np.array([la**i * np.exp(-la) / np.math.factorial(i) for i in range(max_g)])
-    pb = np.array([lb**j * np.exp(-lb) / np.math.factorial(j) for j in range(max_g)])
+    pa = np.array([la**i * np.exp(-la) / math.factorial(i) for i in range(max_g)])
+    pb = np.array([lb**j * np.exp(-lb) / math.factorial(j) for j in range(max_g)])
     
     grid = np.outer(pa, pb)
     
