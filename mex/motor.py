@@ -18,7 +18,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.calibration import CalibratedClassifierCV
 from sklearn.metrics import accuracy_score
 from scipy.optimize import minimize_scalar
 import warnings
@@ -362,10 +361,8 @@ def cargar_y_entrenar():
 
     # Calibrate on 2024
     if len(X_cal) >= 10:
-        pipe_lasso_cal = CalibratedClassifierCV(pipe_lasso_base, cv="prefit", method="isotonic")
-        pipe_lasso_cal.fit(X_cal, y_cal)
-        pipe_rf_cal = CalibratedClassifierCV(pipe_rf_base, cv="prefit", method="isotonic")
-        pipe_rf_cal.fit(X_cal, y_cal)
+        pipe_lasso_cal = pipe_lasso_base
+        pipe_rf_cal = pipe_rf_base
     else:
         pipe_lasso_cal = pipe_lasso_base
         pipe_rf_cal = pipe_rf_base
