@@ -374,8 +374,8 @@ def predecir_match(M, local, visita, modelo='stacking'):
     return p, la, lb
 
 
-def grilla_goles(M, local, visita):
-    p, la, lb = predecir_match(M, local, visita)
+def grilla_goles(M, local, visita, modelo="rf"):
+    p, la, lb = predecir_match(M, local, visita, modelo=modelo)
     GRID_MAX = 8
     gidx = np.arange(GRID_MAX + 1)
     
@@ -555,7 +555,7 @@ def obtener_tabla_actual(M):
     return ordenar_tabla(tabla)
 
 
-def simular_campeonato(M, n_sims=4000, fijos=None):
+def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf"):
     partidos_rec = M["partidos"]
     p_actuales = partidos_rec[partidos_rec.temporada == 2026]
     fix = pd.read_csv(DATA / "fixture.csv")
@@ -568,7 +568,7 @@ def simular_campeonato(M, n_sims=4000, fijos=None):
     for local in todos_activos:
         for visita in todos_activos:
             if local != visita:
-                p, la, lb = predecir_match(M, local, visita)
+                p, la, lb = predecir_match(M, local, visita, modelo=modelo)
                 PREDS[(local, visita)] = (p, la, lb)
                 
     resultados_campeon = defaultdict(int)

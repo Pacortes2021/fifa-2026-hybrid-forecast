@@ -247,7 +247,7 @@ def run_app():
             
         # 2. Proyecciones
         last_key = f"{len(partidos_rec)}-{partidos_rec.fecha.max()}"
-        df_proy = simular_campeonato(M, last_key)
+        df_proy = simular_campeonato(M, last_key, modelo)
         
         df_proy_visual = df_proy.copy()
         df_proy_visual["Equipo"] = df_proy_visual["Selección"].apply(get_label)

@@ -513,8 +513,8 @@ def predecir_match(M, local, visita, modelo="rf"):
     return p, la, lb
 
 
-def grilla_goles(M, local, visita):
-    p, la, lb = predecir_match(M, local, visita)
+def grilla_goles(M, local, visita, modelo="rf"):
+    p, la, lb = predecir_match(M, local, visita, modelo=modelo)
     GRID_MAX = 8
     gidx = np.arange(GRID_MAX + 1)
     
@@ -836,7 +836,7 @@ def simular_play_in_y_liguilla(PREDS, df_tabla):
     }
 
 
-def monte_carlo(M, n_sims=5000, fijos=None):
+def monte_carlo(M, n_sims=5000, fijos=None, modelo="rf"):
     """Ejecuta n simulaciones de Monte Carlo para calcular proyecciones finales precalculando las predicciones."""
     # Precalcular predicciones para todos los cruces posibles (18*17 = 306 combinaciones)
     equipos = set(ALTITUDES.keys()).difference({"Atlante"})
@@ -844,7 +844,7 @@ def monte_carlo(M, n_sims=5000, fijos=None):
     for local in equipos:
         for visita in equipos:
             if local != visita:
-                p, la, lb = predecir_match(M, local, visita)
+                p, la, lb = predecir_match(M, local, visita, modelo=modelo)
                 PREDS[(local, visita)] = (p, la, lb)
                 
     resultados_campeon = defaultdict(int)
