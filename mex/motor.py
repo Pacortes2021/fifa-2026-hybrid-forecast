@@ -71,6 +71,34 @@ STATS = [
 ]
 
 
+COORDS_MEXICO = {
+    "América": (19.4326, -99.1332), "Cruz Azul": (19.4326, -99.1332), "Pumas UNAM": (19.4326, -99.1332),
+    "Guadalajara": (20.6597, -103.3496), "Atlas": (20.6597, -103.3496),
+    "Tigres UANL": (25.6866, -100.3161), "Monterrey": (25.6866, -100.3161),
+    "Toluca": (19.2826, -99.6557), "Santos Laguna": (25.5428, -103.4068),
+    "Pachuca": (20.1011, -98.7591), "León": (21.1236, -101.6837),
+    "Tijuana": (32.5149, -117.0382), "FC Juárez": (31.6904, -106.4245),
+    "Puebla": (19.0414, -98.2063), "Necaxa": (21.8853, -102.2916),
+    "Querétaro": (20.5888, -100.3899), "Mazatlán FC": (23.2494, -106.4111),
+    "Atlético San Luis": (22.1565, -100.9855), "Morelia": (19.7060, -101.1950)
+}
+
+def haversine_km(lat1, lon1, lat2, lon2):
+    R = 6371.0088
+    phi1, phi2 = np.radians(lat1), np.radians(lat2)
+    dphi = np.radians(lat2 - lat1)
+    dlambda = np.radians(lon2 - lon1)
+    a = np.sin(dphi / 2.0)**2 + np.cos(phi1) * np.cos(phi2) * np.sin(dlambda / 2.0)**2
+    return 2.0 * R * np.arcsin(np.sqrt(a))
+
+def get_distance_km(local, visita):
+    c_loc = COORDS_MEXICO.get(local)
+    c_vis = COORDS_MEXICO.get(visita)
+    if not c_loc or not c_vis:
+        return 0.0
+    return haversine_km(c_vis[0], c_vis[1], c_loc[0], c_loc[1])
+
+
 def get_squad_value(team, season):
     # Intentar buscar el valor real exacto de Transfermarkt
     if len(DF_SQUAD_VALUES) > 0:
@@ -230,6 +258,10 @@ class StateTracker:
         pfeats = self.pi_tracker.get_features(local, visita)
         feats["pi_diff"] = pfeats["pi_diff"]
         feats["pi_overall_diff"] = pfeats["pi_overall_diff"]
+
+        d_km = get_distance_km(local, visita)
+        feats["travel_dist_log_km"] = float(np.log1p(d_km))
+
 
 
 
@@ -415,8 +447,10 @@ def cargar_y_entrenar():
         "avg_age_diff", "squad_size_diff", "pct_foreigners_diff",
         "stadium_capacity", "stadium_occupation", "avg_attendance",
         "form_diff", "gf_diff", "ga_diff", "es_liguilla", "ppg_diff",
-        "rest_days_diff", "congestion_14d_diff", "pi_diff", "pi_overall_diff"
+        "rest_days_diff", "congestion_14d_diff", "pi_diff", "pi_overall_diff",
+        "travel_dist_log_km"
     ]
+
 
 
 

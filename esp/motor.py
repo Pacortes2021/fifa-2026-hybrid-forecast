@@ -48,6 +48,37 @@ K_LIGA = 35.0      # ELO K-factor para LaLiga (las ligas top tienen más volatil
 HOME_ADV = 60.0    # Ventaja de local típica de 60 puntos ELO
 
 
+COORDS_SPAIN = {
+    "Real Madrid": (40.4168, -3.7038), "Atlético de Madrid": (40.4168, -3.7038),
+    "Rayo Vallecano": (40.4168, -3.7038), "Getafe": (40.3047, -3.7327),
+    "Leganés": (40.3282, -3.7635), "FC Barcelona": (41.3879, 2.1699),
+    "Espanyol": (41.3879, 2.1699), "Sevilla FC": (37.3891, -5.9845),
+    "Real Betis": (37.3891, -5.9845), "Athletic Club": (43.2630, -2.9350),
+    "Real Sociedad": (43.3183, -1.9812), "Deportivo Alavés": (42.8467, -2.6716),
+    "Valencia CF": (39.4699, -0.3763), "Villarreal CF": (39.9378, -0.1006),
+    "Celta de Vigo": (42.2406, -8.7207), "RCD Mallorca": (39.5696, 2.6502),
+    "UD Las Palmas": (28.1235, -15.4363), "CA Osasuna": (42.8125, -1.6458),
+    "Girona FC": (41.9794, 2.8214), "Cádiz CF": (36.5271, -6.2886),
+    "Granada CF": (37.1773, -3.5986), "UD Almería": (36.8340, -2.4637),
+    "Elche CF": (38.2669, -0.6983), "SD Eibar": (43.1843, -2.4716)
+}
+
+def haversine_km(lat1, lon1, lat2, lon2):
+    R = 6371.0088
+    phi1, phi2 = np.radians(lat1), np.radians(lat2)
+    dphi = np.radians(lat2 - lat1)
+    dlambda = np.radians(lon2 - lon1)
+    a = np.sin(dphi / 2.0)**2 + np.cos(phi1) * np.cos(phi2) * np.sin(dlambda / 2.0)**2
+    return 2.0 * R * np.arcsin(np.sqrt(a))
+
+def get_distance_km(local, visita):
+    c_loc = COORDS_SPAIN.get(local)
+    c_vis = COORDS_SPAIN.get(visita)
+    if not c_loc or not c_vis:
+        return 0.0
+    return haversine_km(c_vis[0], c_vis[1], c_loc[0], c_loc[1])
+
+
 def get_advanced_features(team, season):
     if len(DF_ADV_FEATURES) > 0:
         df_eq = DF_ADV_FEATURES[DF_ADV_FEATURES.equipo == team]
@@ -189,6 +220,10 @@ class StateTracker:
         feats["pi_diff"] = pfeats["pi_diff"]
         feats["pi_overall_diff"] = pfeats["pi_overall_diff"]
 
+        d_km = get_distance_km(local, visita)
+        feats["travel_dist_log_km"] = float(np.log1p(d_km))
+
+
 
 
 
@@ -313,8 +348,9 @@ def cargar_y_entrenar():
         "avg_age_diff", "squad_size_diff", "pct_foreigners_diff",
         "stadium_capacity", "stadium_occupation", "avg_attendance",
         "form_diff", "gf_diff", "ga_diff", "rest_days_diff", "congestion_14d_diff",
-        "pi_diff", "pi_overall_diff"
+        "pi_diff", "pi_overall_diff", "travel_dist_log_km"
     ] + [f"{s}_total_diff" for s in STATS] + [f"{s}_sede_diff" for s in STATS]
+
 
 
 
