@@ -93,6 +93,10 @@ class StateTracker:
         self.recent_gf = defaultdict(deque)
         self.recent_ga = defaultdict(deque)
         self.match_count = defaultdict(int)
+        self.season_pts = defaultdict(int)
+        self.season_matches = defaultdict(int)
+        self.curr_season = None
+
 
     def get_features_for_match(self, local, visita, temporada):
         feats = {}
@@ -120,6 +124,18 @@ class StateTracker:
         feats["gf_diff"] = (np.mean(gfl[-N:]) if gfl else 1.0) - (np.mean(gfv[-N:]) if gfv else 1.0)
         feats["ga_diff"] = (np.mean(gal[-N:]) if gal else 1.0) - (np.mean(gav[-N:]) if gav else 1.0)
         feats["es_liguilla"] = 1.0 if (self.match_count[local] >= 17 or self.match_count[visita] >= 17) else 0.0
+
+        if temporada != self.curr_season:
+            self.curr_season = temporada
+            self.season_pts.clear()
+            self.season_matches.clear()
+
+        pl = self.season_pts[local]; ml = self.season_matches[local]
+        pv = self.season_pts[visita]; mv = self.season_matches[visita]
+        ppg_l = (pl / ml) if ml > 0 else 1.33
+        ppg_v = (pv / mv) if mv > 0 else 1.33
+        feats["ppg_diff"] = ppg_l - ppg_v
+
 
         for s in STATS:
             hl = self.history[local]
@@ -163,6 +179,17 @@ class StateTracker:
         self.recent_gf[local].append(ga);       self.recent_gf[visita].append(gb)
         self.recent_ga[local].append(gb);       self.recent_ga[visita].append(ga)
         self.match_count[local] += 1; self.match_count[visita] += 1
+
+        if ga > gb:
+            self.season_pts[local] += 3
+        elif ga == gb:
+            self.season_pts[local] += 1
+            self.season_pts[visita] += 1
+        else:
+            self.season_pts[visita] += 3
+        self.season_matches[local] += 1
+        self.season_matches[visita] += 1
+
 
 
 def cargar_y_entrenar():
@@ -211,8 +238,9 @@ def cargar_y_entrenar():
         "elo_diff", "squad_value_diff", "h2h_diff",
         "avg_age_diff", "squad_size_diff", "pct_foreigners_diff",
         "stadium_capacity", "stadium_occupation", "avg_attendance",
-        "form_diff", "gf_diff", "ga_diff", "es_liguilla"
+        "form_diff", "gf_diff", "ga_diff", "es_liguilla", "ppg_diff"
     ]
+
     for s in STATS:
         cols_features.append(f"{s}_total_diff")
         cols_features.append(f"{s}_sede_diff")
