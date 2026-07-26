@@ -100,10 +100,14 @@ class StateTracker:
         self.season_pts = defaultdict(int)
         self.season_matches = defaultdict(int)
         self.curr_season = None
+        self.last_match_date = defaultdict(lambda: None)
+        self.recent_dates = defaultdict(deque)
 
 
-    def get_features_for_match(self, local, visita, temporada):
+
+    def get_features_for_match(self, local, visita, temporada, fecha=None):
         feats = {}
+
         # 1. Elo difference (prior)
         feats["elo_diff"] = self.elos[local] - self.elos[visita]
         
@@ -134,6 +138,20 @@ class StateTracker:
         ppg_v = (pv / mv) if mv > 0 else 1.33
         feats["ppg_diff"] = ppg_l - ppg_v
 
+        if fecha is not None:
+            f = pd.to_datetime(fecha)
+            dl = self.last_match_date[local]; dv = self.last_match_date[visita]
+            rl = float(np.clip((f - dl).days if dl is not None else 7.0, 3.0, 14.0))
+            rv = float(np.clip((f - dv).days if dv is not None else 7.0, 3.0, 14.0))
+            feats["rest_days_diff"] = rl - rv
+            cl = float(sum(1 for d in self.recent_dates[local] if 0 <= (f - d).days <= 14))
+            cv = float(sum(1 for d in self.recent_dates[visita] if 0 <= (f - d).days <= 14))
+            feats["congestion_14d_diff"] = cl - cv
+        else:
+            feats["rest_days_diff"] = 0.0
+            feats["congestion_14d_diff"] = 0.0
+
+
 
         # 3b. Características avanzadas de TM
         feat_l = get_advanced_features(local, temporada)
@@ -163,8 +181,9 @@ class StateTracker:
 
         return feats
 
-    def registrar_partido(self, local, visita, ga, gb, stats_l=None, stats_v=None):
+    def registrar_partido(self, local, visita, ga, gb, stats_l=None, stats_v=None, fecha=None):
         # Actualizar H2H
+
         self.h2h_goles[(local, visita)] += (ga - gb)
         self.h2h_goles[(visita, local)] -= (ga - gb)
 
@@ -206,6 +225,18 @@ class StateTracker:
         self.season_matches[local] += 1
         self.season_matches[visita] += 1
 
+        if fecha is not None:
+            f = pd.to_datetime(fecha)
+            self.last_match_date[local] = f
+            self.last_match_date[visita] = f
+            self.recent_dates[local].append(f)
+            self.recent_dates[visita].append(f)
+            while self.recent_dates[local] and (f - self.recent_dates[local][0]).days > 30:
+                self.recent_dates[local].popleft()
+            while self.recent_dates[visita] and (f - self.recent_dates[visita][0]).days > 30:
+                self.recent_dates[visita].popleft()
+
+
 
 def cargar_y_entrenar():
     partidos = pd.read_csv(DATA / "partidos.csv", parse_dates=["fecha"]).sort_values("fecha")
@@ -229,7 +260,8 @@ def cargar_y_entrenar():
     for r in partidos.itertuples(index=False):
         local, visita, ga, gb = r.local, r.visita, int(r.goles_local), int(r.goles_visita)
         
-        feats = tracker.get_features_for_match(local, visita, r.temporada)
+        feats = tracker.get_features_for_match(local, visita, r.temporada, fecha=r.fecha)
+
         feats["event_id"] = str(r.event_id) if hasattr(r, "event_id") else ""
         feats["fecha"] = r.fecha
         feats["temporada"] = r.temporada
@@ -246,7 +278,8 @@ def cargar_y_entrenar():
         
         eb_id = str(getattr(r, "event_id")) if hasattr(r, "event_id") else ""
         stats_l, stats_v = box_dict.get(eb_id, (None, None))
-        tracker.registrar_partido(local, visita, ga, gb, stats_l, stats_v)
+        tracker.registrar_partido(local, visita, ga, gb, stats_l, stats_v, fecha=r.fecha)
+
         
     df_dataset = pd.DataFrame(filas_X)
     
@@ -255,8 +288,9 @@ def cargar_y_entrenar():
         "elo_diff", "squad_value_diff", "h2h_diff",
         "avg_age_diff", "squad_size_diff", "pct_foreigners_diff",
         "stadium_capacity", "stadium_occupation", "avg_attendance",
-        "form_diff", "gf_diff", "ga_diff"
+        "form_diff", "gf_diff", "ga_diff", "rest_days_diff", "congestion_14d_diff"
     ]
+
 
 
     for s in STATS:
