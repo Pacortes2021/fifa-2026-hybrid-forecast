@@ -1,16 +1,4 @@
 event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
-401841148,2026-07-21 22:30:00,2026,Atlético-MG,Bahia,0,0,pre
-401841152,2026-07-22 22:30:00,2026,Coritiba,Palmeiras,0,0,pre
-401841156,2026-07-23 00:30:00,2026,São Paulo,Athletico-PR,0,0,pre
-401841150,2026-07-23 00:30:00,2026,Chapecoense,Flamengo,0,0,pre
-401841154,2026-07-23 00:30:00,2026,Internacional,Cruzeiro,0,0,pre
-401879458,2026-07-23 22:30:00,2026,Botafogo,Vitória,0,0,pre
-401841151,2026-07-23 22:30:00,2026,Corinthians,Remo,0,0,pre
-401841158,2026-07-25 21:30:00,2026,Athletico-PR,Internacional,0,0,pre
-401841161,2026-07-25 21:30:00,2026,Santos,Chapecoense,0,0,pre
-401841160,2026-07-25 23:30:00,2026,Vasco da Gama,Mirassol,0,0,pre
-401841159,2026-07-26 19:00:00,2026,Bahia,Corinthians,0,0,pre
-401841167,2026-07-26 19:00:00,2026,Cruzeiro,Botafogo,0,0,pre
 401841166,2026-07-26 21:30:00,2026,Flamengo,São Paulo,0,0,pre
 401841165,2026-07-26 21:30:00,2026,Grêmio,Fluminense,0,0,pre
 401841163,2026-07-26 21:30:00,2026,Red Bull Bragantino,Coritiba,0,0,pre

@@ -347,13 +347,9 @@ def cargar_y_entrenar():
     }
 
 
-_MOTOR_CACHE = None
-
 def cargar():
-    global _MOTOR_CACHE
-    if _MOTOR_CACHE is None:
-        _MOTOR_CACHE = cargar_y_entrenar()
-    return _MOTOR_CACHE
+    return cargar_y_entrenar()
+
 
 
 def predecir_match(M, local, visita, modelo="stacking"):

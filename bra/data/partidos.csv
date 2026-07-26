@@ -2195,6 +2195,16 @@ event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
 401879459,2026-07-17 22:30:00,2026,Bahia,Chapecoense,2,0,post
 401841153,2026-07-17 23:00:00,2026,Fluminense,Red Bull Bragantino,1,1,post
 401841155,2026-07-17 23:00:00,2026,Mirassol,Grêmio,2,1,post
+401841148,2026-07-21 22:30:00,2026,Atlético-MG,Bahia,1,1,post
+401841152,2026-07-22 22:30:00,2026,Coritiba,Palmeiras,1,3,post
+401841156,2026-07-23 00:30:00,2026,São Paulo,Athletico-PR,1,2,post
+401841150,2026-07-23 00:30:00,2026,Chapecoense,Flamengo,0,4,post
+401841154,2026-07-23 00:30:00,2026,Internacional,Cruzeiro,1,2,post
+401879458,2026-07-23 22:30:00,2026,Botafogo,Vitória,0,0,post
+401841151,2026-07-23 22:30:00,2026,Corinthians,Remo,3,0,post
+401841158,2026-07-25 21:30:00,2026,Athletico-PR,Internacional,2,0,post
+401841161,2026-07-25 21:30:00,2026,Santos,Chapecoense,2,2,post
+401841160,2026-07-25 23:30:00,2026,Vasco da Gama,Mirassol,1,1,post
 401841169,2026-07-29 18:00:00,2026,São Paulo,Santos,0,0,post
 401841175,2026-07-29 18:00:00,2026,Chapecoense,Vasco da Gama,0,0,post
 401841176,2026-07-29 18:00:00,2026,Botafogo,Grêmio,0,0,post
