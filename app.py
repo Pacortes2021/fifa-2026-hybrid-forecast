@@ -43,8 +43,12 @@ def limpiar_cache_importacion():
 
 
 # Barra lateral para navegación
-st.sidebar.image("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=200&auto=format&fit=crop", caption="Predicciones ML", use_container_width=True)
+logo_path = os.path.join(os.path.dirname(__file__), "assets", "sidebar_logo.jpg")
+if os.path.exists(logo_path):
+    st.sidebar.image(logo_path, caption="Predicciones ML", use_container_width=True)
+
 st.sidebar.markdown("## 🎮 Navegación")
+
 
 torneo_seleccionado = st.sidebar.selectbox(
     "Selecciona el Torneo:",
