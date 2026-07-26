@@ -182,8 +182,42 @@ def run_app():
                 mk = mo.mercados(mix)
                 for g1, g2, pr in mk["_top_marcadores"][:4]:
                     st.markdown(f"*   `{g1} - {g2}`: **{pr:.1%}** (Cuota: `{mo.cuota(pr):.1f}`)")
-                    
-            # Mercados de apuestas
+
+            # ── Comparativa Directa de los 3 Modelos ────────────────────────────────
+            st.markdown("---")
+            st.markdown('<div class="sec-title">🤖 Comparativa Directa entre Modelos para este Partido</div>', unsafe_allow_html=True)
+            p_lasso, _, _ = mo.predecir_match(M, a, b, modelo="lasso")
+            p_rf, _, _    = mo.predecir_match(M, a, b, modelo="rf")
+            p_stk, _, _   = mo.predecir_match(M, a, b, modelo="stacking")
+            
+            df_comp_mod = pd.DataFrame([
+                {
+                    "Modelo Predictivo": "📐 LASSO L1 (Regresión)",
+                    f"Victoria {a}": f"{p_lasso[0]:.1%}",
+                    "Empate": f"{p_lasso[1]:.1%}",
+                    f"Victoria {b}": f"{p_lasso[2]:.1%}",
+                    "Log-Loss Out-of-Sample (2025+)": f"{met_all.get('lasso',{}).get('logloss','-'):.4f}" if 'lasso' in met_all else "-",
+                    "Accuracy Out-of-Sample": f"{met_all.get('lasso',{}).get('accuracy','-'):.1f}%" if 'lasso' in met_all else "-"
+                },
+                {
+                    "Modelo Predictivo": "🌲 Random Forest",
+                    f"Victoria {a}": f"{p_rf[0]:.1%}",
+                    "Empate": f"{p_rf[1]:.1%}",
+                    f"Victoria {b}": f"{p_rf[2]:.1%}",
+                    "Log-Loss Out-of-Sample (2025+)": f"{met_all.get('rf',{}).get('logloss','-'):.4f}" if 'rf' in met_all else "-",
+                    "Accuracy Out-of-Sample": f"{met_all.get('rf',{}).get('accuracy','-'):.1f}%" if 'rf' in met_all else "-"
+                },
+                {
+                    "Modelo Predictivo": f"🔀 Stacking (Ensemble α={met_all.get('stacking',{}).get('alpha',0.5):.2f})" if 'alpha' in met_all.get('stacking',{}) else "🔀 Stacking",
+                    f"Victoria {a}": f"{p_stk[0]:.1%}",
+                    "Empate": f"{p_stk[1]:.1%}",
+                    f"Victoria {b}": f"{p_stk[2]:.1%}",
+                    "Log-Loss Out-of-Sample (2025+)": f"{met_all.get('stacking',{}).get('logloss','-'):.4f}" if 'stacking' in met_all else "-",
+                    "Accuracy Out-of-Sample": f"{met_all.get('stacking',{}).get('accuracy','-'):.1f}%" if 'stacking' in met_all else "-"
+                }
+            ])
+            st.dataframe(df_comp_mod, use_container_width=True, hide_index=True)
+
             st.markdown('<div class="sec-title">Mercados de Goles y Apuestas Especiales</div>', unsafe_allow_html=True)
             filas = []
             for ln in (1.5, 2.5, 3.5):
