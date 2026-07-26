@@ -83,7 +83,36 @@ def actualizar_elo(ea, eb, ga, gb):
     return K_LIGA * mult * (w - we)
 
 
+class PiRatingTracker:
+    def __init__(self, lmb=0.035, gamma=0.70):
+        self.r_home = defaultdict(float)
+        self.r_away = defaultdict(float)
+        self.lmb = lmb
+        self.gamma = gamma
+
+    def get_features(self, home, away):
+        rh = self.r_home[home]
+        ra = self.r_away[away]
+        pi_overall_l = (self.r_home[home] + self.r_away[home]) / 2.0
+        pi_overall_v = (self.r_home[away] + self.r_away[away]) / 2.0
+        return {
+            "pi_diff": rh - ra,
+            "pi_overall_diff": pi_overall_l - pi_overall_v
+        }
+
+    def registrar_partido(self, home, away, ga, gb):
+        e_actual = ga - gb
+        rh = self.r_home[home]
+        ra = self.r_away[away]
+        err = e_actual - (rh - ra)
+        self.r_home[home] += self.lmb * err
+        self.r_away[home] += self.gamma * self.lmb * err
+        self.r_away[away] -= self.lmb * err
+        self.r_home[away] -= self.gamma * self.lmb * err
+
+
 class StateTracker:
+
     def __init__(self):
         self.elos = defaultdict(lambda: ELO_INIT)
         # Historial de boxscores de cada equipo (máx 6 partidos generales)
@@ -102,6 +131,8 @@ class StateTracker:
         self.curr_season = None
         self.last_match_date = defaultdict(lambda: None)
         self.recent_dates = defaultdict(deque)
+        self.pi_tracker = PiRatingTracker()
+
 
 
 
@@ -150,6 +181,11 @@ class StateTracker:
         else:
             feats["rest_days_diff"] = 0.0
             feats["congestion_14d_diff"] = 0.0
+
+        pfeats = self.pi_tracker.get_features(local, visita)
+        feats["pi_diff"] = pfeats["pi_diff"]
+        feats["pi_overall_diff"] = pfeats["pi_overall_diff"]
+
 
 
 
@@ -236,6 +272,9 @@ class StateTracker:
             while self.recent_dates[visita] and (f - self.recent_dates[visita][0]).days > 30:
                 self.recent_dates[visita].popleft()
 
+        self.pi_tracker.registrar_partido(local, visita, ga, gb)
+
+
 
 
 def cargar_y_entrenar():
@@ -288,8 +327,10 @@ def cargar_y_entrenar():
         "elo_diff", "squad_value_diff", "h2h_diff",
         "avg_age_diff", "squad_size_diff", "pct_foreigners_diff",
         "stadium_capacity", "stadium_occupation", "avg_attendance",
-        "form_diff", "gf_diff", "ga_diff", "rest_days_diff", "congestion_14d_diff"
+        "form_diff", "gf_diff", "ga_diff", "rest_days_diff", "congestion_14d_diff",
+        "pi_diff", "pi_overall_diff"
     ]
+
 
 
 
