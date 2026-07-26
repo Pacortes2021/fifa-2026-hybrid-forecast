@@ -255,8 +255,9 @@ def cargar_y_entrenar():
         "elo_diff", "squad_value_diff", "h2h_diff",
         "avg_age_diff", "squad_size_diff", "pct_foreigners_diff",
         "stadium_capacity", "stadium_occupation", "avg_attendance",
-        "form_diff", "gf_diff", "ga_diff", "ppg_diff"
+        "form_diff", "gf_diff", "ga_diff"
     ]
+
 
     for s in STATS:
         cols_features.append(f"{s}_total_diff")

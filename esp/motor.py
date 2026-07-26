@@ -241,8 +241,9 @@ def cargar_y_entrenar():
         "elo_diff", "squad_value_diff", "h2h_diff",
         "avg_age_diff", "squad_size_diff", "pct_foreigners_diff",
         "stadium_capacity", "stadium_occupation", "avg_attendance",
-        "form_diff", "gf_diff", "ga_diff", "ppg_diff"
+        "form_diff", "gf_diff", "ga_diff"
     ] + [f"{s}_total_diff" for s in STATS] + [f"{s}_sede_diff" for s in STATS]
+
 
                 
     train_mask = df_features["temporada"] <= 2023
