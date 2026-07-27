@@ -1,9 +1,6 @@
 """
 Recolector de la Primera División de México (Liga MX) desde la API pública de ESPN (liga 'mex.1').
-Construye el histórico de partidos (para entrenar el modelo) y el fixture restante de 2026
-(para simular el campeonato). Sin API key.
-
-Uso:  python3 recolectar.py        -> escribe mex/data/partidos.csv y mex/data/fixture.csv
+Construye el histórico de partidos verdaderamente jugados y el fixture restante de 2026.
 """
 from pathlib import Path
 import time
@@ -14,34 +11,65 @@ DATA = Path(__file__).resolve().parent / "data"
 SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/scoreboard"
 TEMPORADAS = [2021, 2022, 2023, 2024, 2025, 2026]
 
+NORM_MAP = {
+    "Atlético de San Luis": "Atlético San Luis",
+    "FC Juarez": "FC Juárez",
+    "Santos": "Santos Laguna"
+}
+
+def norm_team(name):
+    return NORM_MAP.get(name, name)
+
 
 def _temporada(anio):
-    # Traemos por semestres con limit moderado para evitar error 500 en la API de ESPN
     eventos = []
     for ini, fin in ((f"{anio}0101", f"{anio}0630"), (f"{anio}0701", f"{anio}1231")):
-        r = requests.get(f"{SCOREBOARD}?dates={ini}-{fin}&limit=400", timeout=40)
-        r.raise_for_status()
-        eventos += r.json().get("events", [])
+        try:
+            r = requests.get(f"{SCOREBOARD}?dates={ini}-{fin}&limit=400", timeout=40)
+            r.raise_for_status()
+            eventos += r.json().get("events", [])
+        except Exception as ex:
+            print(f"  Error obteniendo rango {ini}-{fin}: {ex}")
+
     filas = []
     for e in eventos:
         try:
-            comp = e["competitions"][0]; cs = comp["competitors"]
+            comp = e["competitions"][0]
+            cs = comp["competitors"]
             h = next(x for x in cs if x["homeAway"] == "home")
             a = next(x for x in cs if x["homeAway"] == "away")
-            estado = e["status"]["type"]["state"]      # pre | in | post
-            try:
-                gl = int(h["score"]) if h.get("score") not in (None, "") else None
-                gv = int(a["score"]) if a.get("score") not in (None, "") else None
-            except (TypeError, ValueError):
-                gl = gv = None
+
+            st_type = e.get("status", {}).get("type", {})
+            status_name = st_type.get("name", "")
+
+            is_finished = status_name in ("STATUS_FULL_TIME", "STATUS_FINAL", "STATUS_FINAL_PEN", "STATUS_FINAL_AET")
+            estado = "post" if is_finished else "pre"
+
+            gl = None
+            gv = None
+            if is_finished:
+                try:
+                    gl = int(h["score"]) if h.get("score") not in (None, "") else None
+                    gv = int(a["score"]) if a.get("score") not in (None, "") else None
+                except (TypeError, ValueError):
+                    gl = gv = None
+
+            loc = norm_team(h["team"]["displayName"])
+            vis = norm_team(a["team"]["displayName"])
+
             filas.append({
                 "event_id": str(e["id"]),
                 "fecha": pd.to_datetime(e["date"]).tz_localize(None),
-                "temporada": anio, "local": h["team"]["displayName"], "visita": a["team"]["displayName"],
-                "goles_local": gl, "goles_visita": gv, "estado": estado,
+                "temporada": anio,
+                "local": loc,
+                "visita": vis,
+                "goles_local": gl,
+                "goles_visita": gv,
+                "estado": estado,
+                "status_name": status_name
             })
         except (KeyError, IndexError, StopIteration):
-            continue   # evento mal formado / sin equipos
+            continue
     return filas
 
 
@@ -57,21 +85,24 @@ def recolectar():
         except Exception as ex:
             print(f"  {anio}: error ({ex})")
         time.sleep(0.5)
-    
-    if not todo:
-        print("No se pudieron recolectar partidos.")
-        return
-        
-    df = pd.DataFrame(todo).drop_duplicates(subset=["fecha", "local", "visita"]).sort_values("fecha")
 
-    # Separar jugados y fixture
+    if not todo:
+        print("No se pudieron recolectar partidos de México.")
+        return
+
+    df = pd.DataFrame(todo).sort_values("fecha")
+    df = df.drop_duplicates(subset=["fecha", "local", "visita"], keep="last")
+
     jugados = df[df.estado == "post"].dropna(subset=["goles_local", "goles_visita"]).reset_index(drop=True)
     fixture = df[df.estado == "pre"].reset_index(drop=True)
-    
+
+    jugados = jugados.drop(columns=["status_name"], errors="ignore")
+    fixture = fixture.drop(columns=["status_name"], errors="ignore")
+
     jugados.to_csv(DATA / "partidos.csv", index=False)
     fixture.to_csv(DATA / "fixture.csv", index=False)
-    print(f"\nGuardado: partidos.csv ({len(jugados)} jugados)")
-    print(f"Guardado: fixture.csv ({len(fixture)} por jugar)")
+    print(f"\nGuardado México: partidos.csv ({len(jugados)} jugados)")
+    print(f"Guardado México: fixture.csv ({len(fixture)} por jugar)")
     return jugados, fixture
 
 
