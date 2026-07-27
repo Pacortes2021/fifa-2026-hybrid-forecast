@@ -575,9 +575,15 @@ def simular_fixture_regular(M, PREDS, fijos=None):
     
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
     
-    todos_activos = set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"] if not fix.empty else []))
+    todos_activos = set(p_actuales["local"]).union(set(p_actuales["visita"]))
+    if not fix.empty:
+        todos_activos = todos_activos.union(set(fix["local"])).union(set(fix["visita"]))
     if not todos_activos:
-        todos_activos = set(SQUAD_VALUES_BY_YEAR[2026].keys())
+        if len(DF_ADV_FEATURES) > 0:
+            todos_activos = set(DF_ADV_FEATURES["equipo"].unique())
+        else:
+            todos_activos = set(partidos["local"].unique())
+
         
     for eq in todos_activos:
         tabla[eq] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
