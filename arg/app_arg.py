@@ -197,7 +197,7 @@ def run_app():
                 "P_campeon": "{:.1%}",
                 "P_copas": "{:.1%}",
                 "P_descenso": "{:.1%}"
-            }).applymap(style_prob, subset=["P_campeon", "P_copas"]),
+            }).map(style_prob, subset=["P_campeon", "P_copas"]),
             use_container_width=True,
             hide_index=True
         )

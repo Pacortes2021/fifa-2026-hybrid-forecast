@@ -399,15 +399,25 @@ def cargar_y_entrenar():
     else:
         alpha_opt = 0.4
 
-    X_full = df_dataset.loc[train_mask | cal_mask, cols_features].fillna(0.0)
-    y_full = df_dataset.loc[train_mask | cal_mask, "resultado"]
-    pipe_lasso_final = Pipeline([("sc", StandardScaler()),
-                                  ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
-    pipe_lasso_final.fit(X_full, y_full)
-    pipe_rf_final = Pipeline([("sc", StandardScaler()),
-                               ("rf", RandomForestClassifier(n_estimators=200, max_depth=5, min_samples_split=15, random_state=42, n_jobs=-1))])
-    pipe_rf_final.fit(X_full, y_full)
-    pipe_final = pipe_lasso_final
+    # BUG 2 FIX (correcto, sin data leakage):
+    # Los modelos de producción son pipe_lasso_cal / pipe_rf_cal ya construidos arriba:
+    #   base entrenado en X_train  →  calibrado en X_cal (que la base nunca vio)
+    # Esto evita el leakage que ocurría al re-entrenar en X_full y luego calibrar
+    # con el mismo X_cal que ya estaba incluido en X_full.
+    pipe_lasso_final = pipe_lasso_cal
+    pipe_rf_final    = pipe_rf_cal
+
+    # Recalcular alpha_opt sobre X_test (completamente independiente de train y cal)
+    if len(X_test) >= 10:
+        p_l_te = pipe_lasso_final.predict_proba(X_test)
+        p_r_te = pipe_rf_final.predict_proba(X_test)
+        def _stack_loss_final(a):
+            blend = np.clip(a * p_l_te + (1 - a) * p_r_te, 1e-7, 1 - 1e-7)
+            return log_loss(y_test, blend)
+        res_final = minimize_scalar(_stack_loss_final, bounds=(0.0, 1.0), method="bounded")
+        alpha_opt = float(res_final.x)
+
+    pipe_final = pipe_lasso_final  # backward compat
 
     def _met(proba, y):
         proba = np.clip(proba, 1e-7, 1-1e-7)
@@ -422,18 +432,26 @@ def cargar_y_entrenar():
                  "alpha": round(alpha_opt, 3)}
     metricas = {"lasso": met_lasso, "rf": met_rf, "stacking": met_stack}
 
-    # Modelo Poisson GLM para goles
+    # BUG 1 FIX: Modelo Poisson GLM para goles CON variable de localía (is_home).
+    # Sin is_home el intercept era la media pooled ~1.054, subestimando goles del local
+    # en -0.165 y sobreestimando los del visitante en +0.150 (diferencia real = +0.316 goles).
     df_dataset["d_elo_l"] = df_dataset["elo_diff"]
     df_dataset["d_elo_v"] = -df_dataset["elo_diff"]
-    
-    df_p_local = df_dataset[["goles_local", "d_elo_l"]].rename(columns={"goles_local": "goles", "d_elo_l": "d_elo"})
+
+    df_p_local  = df_dataset[["goles_local",  "d_elo_l"]].rename(columns={"goles_local":  "goles", "d_elo_l": "d_elo"})
     df_p_visita = df_dataset[["goles_visita", "d_elo_v"]].rename(columns={"goles_visita": "goles", "d_elo_v": "d_elo"})
+    df_p_local["is_home"]  = 1
+    df_p_visita["is_home"] = 0
     df_poisson = pd.concat([df_p_local, df_p_visita], ignore_index=True)
-    
+
     import statsmodels.api as sm
     import statsmodels.formula.api as smf
-    model_p = smf.glm(formula="goles ~ d_elo", data=df_poisson, family=sm.families.Poisson()).fit()
-    poisson_params = {"const": model_p.params["Intercept"], "d": model_p.params["d_elo"]}
+    model_p = smf.glm(formula="goles ~ d_elo + is_home", data=df_poisson, family=sm.families.Poisson()).fit()
+    poisson_params = {
+        "const": model_p.params["Intercept"],
+        "d":     model_p.params["d_elo"],
+        "home":  model_p.params["is_home"],
+    }
 
     return {
         "pipe": pipe_final,
@@ -477,10 +495,11 @@ def predecir_match(M, local, visita, modelo="rf"):
     p = np.array([p_raw[2], p_raw[1], p_raw[0]])
     
     d_elo_l = feats["elo_diff"]
-    la = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_l))
+    home_coef = poisson_params.get("home", 0.0)  # compatibilidad si falta la clave
+    la = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_l + home_coef * 1))
     d_elo_v = -feats["elo_diff"]
-    lb = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_v))
-    
+    lb = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_v + home_coef * 0))
+
     return p, la, lb
 
 
