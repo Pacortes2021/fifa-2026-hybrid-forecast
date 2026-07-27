@@ -280,7 +280,16 @@ def run_app():
         st.markdown('<div class="sec-title">¿Qué Variables Pesan Más en el Fútbol Argentino?</div>', unsafe_allow_html=True)
 
         col_t, col_g = st.columns([5, 5])
-        rf_model = M["pipe_rf"].named_steps["rf"]
+        pipe_rf = M["pipe_rf"]
+        if hasattr(pipe_rf, "estimator"):
+            base_pipe = pipe_rf.estimator
+            if hasattr(base_pipe, "estimator"): # Handle FrozenEstimator
+                base_pipe = base_pipe.estimator
+        elif hasattr(pipe_rf, "base_estimator"):
+            base_pipe = pipe_rf.base_estimator
+        else:
+            base_pipe = pipe_rf
+        rf_model = base_pipe.named_steps["rf"]
         cols = M["features"]
         importances = rf_model.feature_importances_
 
