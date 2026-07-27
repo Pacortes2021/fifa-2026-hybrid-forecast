@@ -1,6 +1,6 @@
 """
 Recolector de la Primera División de México (Liga MX) desde la API pública de ESPN (liga 'mex.1').
-Construye el histórico de partidos verdaderamente jugados y el fixture restante de 2026.
+Convierte la fecha UTC de ESPN a la hora local mexicana ('America/Mexico_City') para coincidir exactamente con los días del calendario real.
 """
 from pathlib import Path
 import time
@@ -57,9 +57,12 @@ def _temporada(anio):
             loc = norm_team(h["team"]["displayName"])
             vis = norm_team(a["team"]["displayName"])
 
+            # Convertir hora UTC a la zona horaria local de México
+            fecha_local = pd.to_datetime(e["date"]).tz_convert("America/Mexico_City").tz_localize(None)
+
             filas.append({
                 "event_id": str(e["id"]),
-                "fecha": pd.to_datetime(e["date"]).tz_localize(None),
+                "fecha": fecha_local,
                 "temporada": anio,
                 "local": loc,
                 "visita": vis,

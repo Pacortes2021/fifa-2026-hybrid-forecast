@@ -1,6 +1,6 @@
 """
 Recolector de LaLiga de España desde la API pública de ESPN (liga 'esp.1').
-Construye el histórico de partidos verdaderamente jugados y el fixture restante de 2026.
+Convierte la fecha UTC de ESPN a la hora local española ('Europe/Madrid') para coincidir exactamente con los días del calendario real.
 """
 from pathlib import Path
 import time
@@ -63,9 +63,12 @@ def _temporada(anio):
             loc = norm_team(h["team"]["displayName"])
             vis = norm_team(a["team"]["displayName"])
 
+            # Convertir hora UTC a la zona horaria local de España (Madrid)
+            fecha_local = pd.to_datetime(e["date"]).tz_convert("Europe/Madrid").tz_localize(None)
+
             filas.append({
                 "event_id": str(e["id"]),
-                "fecha": pd.to_datetime(e["date"]).tz_localize(None),
+                "fecha": fecha_local,
                 "temporada": anio,
                 "local": loc,
                 "visita": vis,

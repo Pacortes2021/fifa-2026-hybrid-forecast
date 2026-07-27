@@ -1,6 +1,6 @@
 """
 Recolector de la Primera División de Chile desde la API pública de ESPN (liga 'chi.1').
-Construye el histórico de partidos verdaderamente jugados y el fixture restante de 2026.
+Convierte la fecha UTC de ESPN a la hora local chilena ('America/Santiago') para coincidir exactamente con los días del calendario real.
 """
 from pathlib import Path
 import time
@@ -59,9 +59,12 @@ def _temporada(anio):
             loc = norm_team(h["team"]["displayName"])
             vis = norm_team(a["team"]["displayName"])
 
+            # Convertir hora UTC a la zona horaria local de Chile
+            fecha_local = pd.to_datetime(e["date"]).tz_convert("America/Santiago").tz_localize(None)
+
             filas.append({
                 "event_id": str(e["id"]),
-                "fecha": pd.to_datetime(e["date"]).tz_localize(None),
+                "fecha": fecha_local,
                 "temporada": anio,
                 "local": loc,
                 "visita": vis,
@@ -93,13 +96,11 @@ def recolectar():
         return
 
     df = pd.DataFrame(todo).sort_values("fecha")
-    # Mantener la entrada más reciente para cada encuentro
     df = df.drop_duplicates(subset=["fecha", "local", "visita"], keep="last")
 
     jugados = df[df.estado == "post"].dropna(subset=["goles_local", "goles_visita"]).reset_index(drop=True)
     fixture = df[df.estado == "pre"].reset_index(drop=True)
 
-    # Eliminar columna auxiliar de status
     jugados = jugados.drop(columns=["status_name"], errors="ignore")
     fixture = fixture.drop(columns=["status_name"], errors="ignore")
 
