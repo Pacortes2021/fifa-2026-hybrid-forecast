@@ -1,0 +1,261 @@
+"""
+Interfaz de usuario en Streamlit para el Portal de Predicción de la Liga Profesional de Fútbol de Argentina.
+"""
+from pathlib import Path
+import matplotlib.pyplot as plt
+import pandas as pd
+import streamlit as st
+import arg.motor as mo
+import arg.recolectar as rec
+import arg.recolectar_boxscore as rec_box
+
+# Configuración de página
+st.set_page_config(
+    page_title="Predicción Liga Profesional Argentina 🇦🇷",
+    page_icon="🇦🇷",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+TEAM_DETAILS = {
+    "Boca Juniors": {"flag": "💙💛💙", "desc": "La Bombonera — Buenos Aires", "color": "#0033a0"},
+    "River Plate": {"flag": "⚪🔴⚪", "desc": "MÁS Monumental — Buenos Aires", "color": "#dc2626"},
+    "Racing Club": {"flag": "🩵⚪🩵", "desc": "El Cilindro de Avellaneda", "color": "#00a3e0"},
+    "Independiente": {"flag": "🔴⚪🔴", "desc": "Estadio Libertadores de América", "color": "#b91c1c"},
+    "San Lorenzo": {"flag": "🔵🔴🔵", "desc": "Pedro Bidegain (Nuevo Gasómetro)", "color": "#1d4ed8"},
+    "Vélez Sarsfield": {"flag": "⚪🔵⚪", "desc": "José Amalfitani — Liniers", "color": "#2563eb"},
+    "Estudiantes de La Plata": {"flag": "🔴⚪🔴", "desc": "Estadio UNO Jorge Luis Hirschi", "color": "#991b1b"},
+    "Gimnasia La Plata": {"flag": "🔵⚪🔵", "desc": "Juan Carmelo Zerillo (El Bosque)", "color": "#1e3a8a"},
+    "Rosario Central": {"flag": "🟡🔵🟡", "desc": "Gigante de Arroyito — Rosario", "color": "#eab308"},
+    "Newell's Old Boys": {"flag": "🔴⚫🔴", "desc": "Coloso Marcelo Bielsa — Rosario", "color": "#7f1d1d"},
+    "Talleres de Córdoba": {"flag": "🔵⚪🔵", "desc": "Mario Alberto Kempes — Córdoba", "color": "#1e40af"},
+    "Belgrano": {"flag": "🩵⚪🩵", "desc": "Julio César Villagra (El Gigante de Alberdi)", "color": "#38bdf8"},
+    "Instituto": {"flag": "🔴⚪🔴", "desc": "Juan Domingo Perón — Córdoba", "color": "#ef4444"},
+    "Godoy Cruz": {"flag": "🔵⚪🔵", "desc": "Malvinas Argentinas — Mendoza", "color": "#3b82f6"},
+    "Huracán": {"flag": "⚪🔴⚪", "desc": "Tomás Adolfo Ducó (El Palacio)", "color": "#dc2626"},
+    "Lanús": {"flag": "🟣⚪🟣", "desc": "Néstor Díaz Pérez (La Fortaleza)", "color": "#701a75"},
+    "Banfield": {"flag": "🟢⚪🟢", "desc": "Florencio Sola (El Taladro)", "color": "#15803d"},
+    "Argentinos Juniors": {"flag": "🔴⚪🔴", "desc": "Diego Armando Maradona — La Paternal", "color": "#b91c1c"},
+    "Defensa y Justicia": {"flag": "🟢🟡🟢", "desc": "Norberto Tomaghello — Florencio Varela", "color": "#16a34a"},
+    "Platense": {"flag": "🤎⚪🤎", "desc": "Ciudad de Vicente López", "color": "#78350f"},
+    "Tigre": {"flag": "🔵🔴🔵", "desc": "José Dellagiovanna — Victoria", "color": "#1d4ed8"},
+    "Central Córdoba": {"flag": "⚫⚪⚫", "desc": "Madre de Ciudades — Santiago del Estero", "color": "#18181b"},
+    "Atlético Tucumán": {"flag": "🩵⚪🩵", "desc": "Monumental José Fierro — Tucumán", "color": "#0ea5e9"},
+    "Unión de Santa Fe": {"flag": "🔴⚪🔴", "desc": "15 de Abril — Santa Fe", "color": "#ef4444"},
+    "Sarmiento": {"flag": "🟢⚪🟢", "desc": "Eva Perón — Junín", "color": "#15803d"},
+    "Barracas Central": {"flag": "🔴⚪🔴", "desc": "Claudio Chiqui Tapia", "color": "#b91c1c"},
+    "Deportivo Riestra": {"flag": "⚫⚪⚫", "desc": "Guillermo Laza — Flores", "color": "#27272a"},
+    "Independiente Rivadavia": {"flag": "🔵⚪🔵", "desc": "Bautista Gargantini — Mendoza", "color": "#1e3a8a"}
+}
+
+def get_label(team):
+    info = TEAM_DETAILS.get(team, {"flag": "⚽", "desc": team})
+    return f"{info['flag']} {team}"
+
+
+@st.cache_resource
+def get_motor():
+    return mo.cargar()
+
+
+@st.cache_data(show_spinner="Corriendo simulaciones de Monte Carlo (4.000 iteraciones)...")
+def simular_campeonato(_M, key, modelo):
+    return mo.simular_campeonato(_M, n_sims=4000, modelo=modelo)
+
+
+def run_app():
+    st.sidebar.markdown("### 🛠️ Controles del Modelo (Argentina)")
+
+    OPCIONES_MOD = ["🌲 Random Forest (Recomendado)", "📐 LASSO L1 (Regresión)", "🔀 Stacking (Ensemble óptimo)"]
+    modelo_sel = st.sidebar.selectbox("🤖 Modelo Predictivo:", OPCIONES_MOD, index=0)
+    modelo = "lasso" if "LASSO" in modelo_sel else ("stacking" if "Stacking" in modelo_sel else "rf")
+
+    if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", key="refresh_arg", type="primary"):
+        with st.spinner("Descargando últimos resultados de la Liga Profesional de Argentina..."):
+            rec.recolectar()
+            rec_box.recolectar()
+        st.cache_data.clear()
+        st.cache_resource.clear()
+        st.rerun()
+
+    M = get_motor()
+
+    if "metricas" in M:
+        met_all = M["metricas"]
+        st.sidebar.markdown("---")
+        st.sidebar.markdown("#### 📊 Métricas Out-of-Sample (2025+)")
+        mejor_ll = min(met_all[k]["logloss"] for k in met_all)
+        for nombre, clave in [("LASSO", "lasso"), ("RF", "rf"), ("Stacking", "stacking")]:
+            if clave not in met_all: continue
+            m = met_all[clave]
+            star = " ⭐" if m["logloss"] == mejor_ll else ""
+            alpha_str = f" (α={m['alpha']:.2f})" if clave == "stacking" and "alpha" in m else ""
+            st.sidebar.caption(f"**{nombre}{alpha_str}{star}** — LL: `{m['logloss']:.4f}` | Acc: `{m['accuracy']:.1f}%`")
+
+    nombre_modelo = "🌲 Random Forest" if modelo == "rf" else ("🔀 Stacking" if modelo == "stacking" else "📐 LASSO L1")
+    st.markdown('<div class="main-title">🇦🇷 Portal de Predicción Liga Profesional Argentina</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — LASSO + RF + Simulación de Campeonato Completo</div>', unsafe_allow_html=True)
+
+    tab1, tab2, tab3, tab4 = st.tabs(["⚽ Predicción Versus", "📊 Tabla y Proyecciones", "🔬 Importancia de Variables", "🎯 Validación vs Realidad"])
+
+    # TAB 1: Predicción Versus
+    with tab1:
+        st.markdown('<div class="sec-title">Analizador de Enfrentamientos Directos</div>', unsafe_allow_html=True)
+
+        opciones = sorted(list(TEAM_DETAILS.keys()))
+        partidos_rec = M["partidos"]
+        p_actuales = partidos_rec[partidos_rec.temporada == 2026]
+        fix_rec = pd.read_csv(mo.DATA / "fixture.csv") if (mo.DATA / "fixture.csv").exists() else pd.DataFrame()
+        equipos_activos = sorted(list(set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix_rec["local"] if not fix_rec.empty else []))))
+        if not equipos_activos:
+            equipos_activos = opciones
+
+        c1, cvs, c2 = st.columns([5, 1, 5])
+        with c1:
+            a = st.selectbox("Equipo Local", equipos_activos, index=equipos_activos.index("Boca Juniors") if "Boca Juniors" in equipos_activos else 0, key="sel_a_arg")
+        with cvs:
+            st.markdown('<div class="vs-text">VS</div>', unsafe_allow_html=True)
+        with c2:
+            b = st.selectbox("Equipo Visitante", equipos_activos, index=equipos_activos.index("River Plate") if "River Plate" in equipos_activos else 1, key="sel_b_arg")
+
+        if a == b:
+            st.error("Selecciona dos equipos distintos.")
+        else:
+            mix, p, (la, lb) = mo.grilla_goles(M, a, b, modelo=modelo)
+            la_lbl = get_label(a); lb_lbl = get_label(b)
+
+            if p[0] > 0.55 and (la - lb) > 1.0:
+                st.success(f"🔥 **ALERTA DE ALTA CONFIANZA:** Consenso perfecto entre Machine Learning (>55%) y Poisson (>1.0 goles dif) a favor de **{a}**.")
+            elif p[0] > 0.60:
+                st.info(f"💪 **FAVORITO CLARO:** El modelo asigna más del 60% de probabilidad de victoria a **{a}**.")
+            elif p[2] > 0.50:
+                st.success(f"⚠️ **VISITA FUERTE:** Probabilidad >50% para el equipo visitante (**{b}**).")
+
+            col_probs, col_stats = st.columns(2)
+            with col_probs:
+                st.markdown(f'<div class="card-title">Probabilidades de Victoria</div>', unsafe_allow_html=True)
+                for label, prob in [(f"Victoria {a}", p[0]), ("Empate", p[1]), (f"Victoria {b}", p[2])]:
+                    st.markdown(f"**{label}: {prob:.1%}** (Cuota Justa: `{mo.cuota(prob):.2f}`)")
+                    st.progress(float(prob))
+
+            with col_stats:
+                st.markdown(f'<div class="card-title">Goles Esperados y Marcadores</div>', unsafe_allow_html=True)
+                st.markdown(f"📈 **Goles esperados (Poisson):**")
+                st.markdown(f"*   {la_lbl}: `{la:.2f}` goles")
+                st.markdown(f"*   {lb_lbl}: `{lb:.2f}` goles")
+                st.markdown("🎯 **Marcadores más probables:**")
+                mk = mo.mercados(mix)
+                for g1, g2, pr in mk["_top_marcadores"][:4]:
+                    st.markdown(f"*   `{g1} - {g2}`: **{pr:.1%}** (Cuota: `{mo.cuota(pr):.1f}`)")
+
+            st.markdown("---")
+            st.markdown('<div class="sec-title">🤖 Comparativa Directa entre Modelos para este Partido</div>', unsafe_allow_html=True)
+            p_lasso, _, _ = mo.predecir_match(M, a, b, modelo="lasso")
+            p_rf, _, _    = mo.predecir_match(M, a, b, modelo="rf")
+            p_stk, _, _   = mo.predecir_match(M, a, b, modelo="stacking")
+
+            df_comp_mod = pd.DataFrame([
+                {
+                    "Modelo Predictivo": "📐 LASSO L1 (Regresión)",
+                    f"Victoria {a}": f"{p_lasso[0]:.1%}", "Empate": f"{p_lasso[1]:.1%}", f"Victoria {b}": f"{p_lasso[2]:.1%}",
+                    "Log-Loss Out-of-Sample": f"{met_all.get('lasso',{}).get('logloss','-'):.4f}" if 'lasso' in met_all else "-",
+                    "Accuracy Out-of-Sample": f"{met_all.get('lasso',{}).get('accuracy','-'):.1f}%" if 'lasso' in met_all else "-"
+                },
+                {
+                    "Modelo Predictivo": "🌲 Random Forest",
+                    f"Victoria {a}": f"{p_rf[0]:.1%}", "Empate": f"{p_rf[1]:.1%}", f"Victoria {b}": f"{p_rf[2]:.1%}",
+                    "Log-Loss Out-of-Sample": f"{met_all.get('rf',{}).get('logloss','-'):.4f}" if 'rf' in met_all else "-",
+                    "Accuracy Out-of-Sample": f"{met_all.get('rf',{}).get('accuracy','-'):.1f}%" if 'rf' in met_all else "-"
+                },
+                {
+                    "Modelo Predictivo": f"🔀 Stacking (Ensemble α={met_all.get('stacking',{}).get('alpha',0.5):.2f})" if 'alpha' in met_all.get('stacking',{}) else "🔀 Stacking",
+                    f"Victoria {a}": f"{p_stk[0]:.1%}", "Empate": f"{p_stk[1]:.1%}", f"Victoria {b}": f"{p_stk[2]:.1%}",
+                    "Log-Loss Out-of-Sample": f"{met_all.get('stacking',{}).get('logloss','-'):.4f}" if 'stacking' in met_all else "-",
+                    "Accuracy Out-of-Sample": f"{met_all.get('stacking',{}).get('accuracy','-'):.1f}%" if 'stacking' in met_all else "-"
+                }
+            ])
+            st.dataframe(df_comp_mod, use_container_width=True, hide_index=True)
+
+    # TAB 2: Tabla y Proyecciones
+    with tab2:
+        st.markdown('<div class="sec-title">Proyección de Tabla Liga Profesional Argentina 2026</div>', unsafe_allow_html=True)
+        st.markdown("Simulación estocástica de Monte Carlo (4.000 iteraciones del torneo completo).")
+
+        partidos_rec = M["partidos"]
+        last_key = f"{len(partidos_rec)}-{partidos_rec.fecha.max()}"
+        df_proy = simular_campeonato(M, last_key, modelo)
+
+        def style_prob(val):
+            if isinstance(val, (int, float)):
+                if val > 0.4: return "background-color: #d1fae5; color: #065f46; font-weight: bold;"
+                elif val > 0.15: return "background-color: #ecfdf5; color: #047857;"
+            return ""
+
+        st.dataframe(
+            df_proy.style.format({
+                "Puntos esperados": "{:.1f}",
+                "P_campeon": "{:.1%}",
+                "P_copas": "{:.1%}",
+                "P_descenso": "{:.1%}"
+            }).applymap(style_prob, subset=["P_campeon", "P_copas"]),
+            use_container_width=True,
+            hide_index=True
+        )
+
+    # TAB 3: Importancia de Variables
+    with tab3:
+        st.markdown('<div class="sec-title">¿Qué Variables Pesan Más en el Fútbol Argentino?</div>', unsafe_allow_html=True)
+
+        col_t, col_g = st.columns([5, 5])
+        rf_model = M["pipe_rf"].named_steps["rf"]
+        cols = M["features"]
+        importances = rf_model.feature_importances_
+
+        df_imp = pd.DataFrame({"Variable": cols, "Peso Absoluto Promedio": importances}).sort_values(by="Peso Absoluto Promedio", ascending=False).reset_index(drop=True)
+
+        with col_t:
+            st.markdown("##### 🏆 Ranking de Importancia (Random Forest)")
+            st.dataframe(df_imp.head(15).style.format({"Peso Absoluto Promedio": "{:.4f}"}), use_container_width=True, hide_index=True)
+
+        with col_g:
+            fig, ax = plt.subplots(figsize=(6, 5))
+            top_n = df_imp.head(15)
+            ax.barh(top_n["Variable"][::-1], top_n["Peso Absoluto Promedio"][::-1], color="#74acdf")
+            ax.set_title("Top 15 Características Predictoras (Argentina)")
+            st.pyplot(fig)
+
+    # TAB 4: Validación vs Realidad
+    with tab4:
+        st.markdown('<div class="sec-title">El Modelo contra la Realidad (Out-of-sample)</div>', unsafe_allow_html=True)
+        st.markdown("Comparación de la predicción del modelo contra el resultado real para los partidos de la liga argentina.")
+
+        temporadas_disponibles = sorted(M["df_dataset"]["temporada"].unique(), reverse=True)
+        temporada_sel = st.selectbox("Selecciona la temporada a validar:", temporadas_disponibles, index=0)
+
+        df_val, met, evol = mo.validacion_en_vivo(M, temporada_val=temporada_sel)
+
+        if df_val is None or len(df_val) == 0:
+            st.info("Aún no hay partidos finalizados en la temporada seleccionada para validar.")
+        else:
+            m1, m2, m3, m4 = st.columns(4)
+            m1.metric("Partidos Jugados", met["n"])
+            m2.metric("Acierto (1X2)", f"{met['acierto']:.1%}")
+            m3.metric("Log-loss modelo", f"{met['logloss']:.3f}", f"{met['logloss'] - met['logloss_base']:+.3f} vs baseline", delta_color="inverse")
+            m4.metric("Log-loss baseline", f"{met['logloss_base']:.3f}")
+
+            if met["logloss"] < met["logloss_base"]:
+                st.success(f"El modelo va **por encima** del baseline en {met['n']} partidos reales de esta temporada. 👍")
+            else:
+                st.warning(f"⚠️ El modelo va por debajo del baseline.")
+
+            st.markdown("##### Historial de Predicciones")
+            df_show = df_val[["fecha", "local", "visita", "goles_local", "goles_visita", "resultado", "Prediccion", "Prob_Local", "Prob_Empate", "Prob_Visita"]].copy()
+            df_show["Acierto"] = (df_show["resultado"] == df_show["Prediccion"]).replace({True: "✅", False: "❌"})
+            df_show["Prob_Local"] = df_show["Prob_Local"].apply(lambda x: f"{x:.1%}")
+            df_show["Prob_Empate"] = df_show["Prob_Empate"].apply(lambda x: f"{x:.1%}")
+            df_show["Prob_Visita"] = df_show["Prob_Visita"].apply(lambda x: f"{x:.1%}")
+            st.dataframe(df_show, hide_index=True, use_container_width=True)
+
+
+if __name__ == "__main__":
+    run_app()

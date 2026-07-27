@@ -1,0 +1,2267 @@
+event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
+590571,2021-01-02 17:30:00,2021,Rosario Central,Defensa y Justicia,3.0,0.0,post
+590576,2021-01-02 21:30:00,2021,Boca Juniors,River Plate,2.0,2.0,post
+590568,2021-01-03 17:10:00,2021,Independiente,Arsenal Sarandi,3.0,4.0,post
+590578,2021-01-03 19:20:00,2021,Newell's Old Boys,Vélez Sarsfield,0.0,1.0,post
+590574,2021-01-03 19:20:00,2021,Patronato,Lanús,1.0,1.0,post
+590575,2021-01-03 21:30:00,2021,Central Córdoba (Santiago del Estero),Racing Club,2.0,2.0,post
+590577,2021-01-04 17:10:00,2021,Aldosivi,Unión (Santa Fe),1.0,3.0,post
+590573,2021-01-04 19:20:00,2021,San Lorenzo,Gimnasia La Plata,1.0,2.0,post
+590569,2021-01-04 21:30:00,2021,Talleres (Córdoba),Banfield,3.0,2.0,post
+590572,2021-01-05 19:20:00,2021,Godoy Cruz Antonio Tomba,Estudiantes de La Plata,1.0,0.0,post
+590567,2021-01-05 19:20:00,2021,Huracán,Argentinos Juniors,0.0,1.0,post
+590570,2021-01-05 21:30:00,2021,Atlético Tucumán,Colón (Santa Fe),0.0,2.0,post
+590564,2021-01-09 17:10:00,2021,Lanús,Rosario Central,2.0,0.0,post
+590563,2021-01-09 17:10:00,2021,Unión (Santa Fe),Patronato,1.0,2.0,post
+590562,2021-01-09 19:20:00,2021,Racing Club,Newell's Old Boys,3.0,1.0,post
+590560,2021-01-09 19:20:00,2021,Vélez Sarsfield,Godoy Cruz Antonio Tomba,3.0,2.0,post
+590557,2021-01-09 21:30:00,2021,Argentinos Juniors,Boca Juniors,2.0,2.0,post
+590558,2021-01-09 21:30:00,2021,River Plate,Independiente,0.0,2.0,post
+590561,2021-01-10 19:20:00,2021,Arsenal Sarandi,Huracán,1.0,0.0,post
+590565,2021-01-10 21:30:00,2021,Banfield,San Lorenzo,4.0,1.0,post
+590566,2021-01-10 21:30:00,2021,Colón (Santa Fe),Talleres (Córdoba),1.0,2.0,post
+590556,2021-01-10 21:30:00,2021,Gimnasia La Plata,Atlético Tucumán,0.0,1.0,post
+590559,2021-01-11 21:30:00,2021,Estudiantes de La Plata,Central Córdoba (Santiago del Estero),1.0,2.0,post
+590555,2021-01-14 17:45:00,2021,Defensa y Justicia,Aldosivi,4.0,4.0,post
+592443,2021-01-16 22:10:00,2021,Rosario Central,Vélez Sarsfield,1.0,3.0,post
+592392,2021-01-17 22:10:00,2021,Banfield,Boca Juniors,1.0,1.0,post
+596394,2021-03-31 20:15:00,2021,Vélez Sarsfield,Banfield,2.0,3.0,post
+610246,2021-07-16 19:00:00,2021,Unión (Santa Fe),Boca Juniors,1.0,1.0,post
+610249,2021-07-16 21:15:00,2021,Sarmiento (Junín),Estudiantes de La Plata,0.0,3.0,post
+610250,2021-07-17 13:30:00,2021,Aldosivi,Patronato,0.0,2.0,post
+610244,2021-07-17 15:45:00,2021,Lanús,Atlético Tucumán,4.0,2.0,post
+610255,2021-07-17 15:45:00,2021,Newell's Old Boys,Talleres (Córdoba),3.0,2.0,post
+610251,2021-07-17 18:00:00,2021,Gimnasia La Plata,Platense,2.0,2.0,post
+610252,2021-07-17 20:15:00,2021,Vélez Sarsfield,Racing Club,0.0,0.0,post
+610248,2021-07-18 13:30:00,2021,Huracán,Defensa y Justicia,2.0,1.0,post
+610254,2021-07-18 15:45:00,2021,Arsenal Sarandi,San Lorenzo,1.0,1.0,post
+610247,2021-07-18 18:00:00,2021,River Plate,Colón (Santa Fe),1.0,2.0,post
+610243,2021-07-18 20:15:00,2021,Independiente,Argentinos Juniors,0.0,0.0,post
+610245,2021-07-19 18:00:00,2021,Central Córdoba (Santiago del Estero),Banfield,1.0,1.0,post
+610253,2021-07-19 20:15:00,2021,Godoy Cruz Antonio Tomba,Rosario Central,2.0,1.0,post
+610237,2021-07-23 19:00:00,2021,Atlético Tucumán,Huracán,1.0,0.0,post
+610230,2021-07-23 21:15:00,2021,Platense,Aldosivi,0.0,1.0,post
+610238,2021-07-24 13:30:00,2021,Colón (Santa Fe),Lanús,1.0,4.0,post
+610234,2021-07-24 15:45:00,2021,San Lorenzo,Central Córdoba (Santiago del Estero),1.0,0.0,post
+610235,2021-07-24 18:00:00,2021,Racing Club,Gimnasia La Plata,0.0,0.0,post
+610232,2021-07-24 20:15:00,2021,Banfield,Boca Juniors,0.0,0.0,post
+610240,2021-07-25 13:30:00,2021,Patronato,Sarmiento (Junín),2.0,0.0,post
+610236,2021-07-25 13:30:00,2021,Defensa y Justicia,Godoy Cruz Antonio Tomba,1.0,2.0,post
+610242,2021-07-25 15:45:00,2021,Rosario Central,Vélez Sarsfield,1.0,0.0,post
+610241,2021-07-25 18:00:00,2021,River Plate,Unión (Santa Fe),4.0,0.0,post
+610233,2021-07-25 20:15:00,2021,Estudiantes de La Plata,Independiente,0.0,1.0,post
+610231,2021-07-26 18:00:00,2021,Talleres (Córdoba),Arsenal Sarandi,2.0,0.0,post
+610239,2021-07-26 20:15:00,2021,Argentinos Juniors,Newell's Old Boys,1.0,0.0,post
+610220,2021-07-27 16:30:00,2021,Huracán,Colón (Santa Fe),1.0,1.0,post
+610225,2021-07-27 18:45:00,2021,Aldosivi,Racing Club,0.0,2.0,post
+610228,2021-07-27 21:00:00,2021,Boca Juniors,San Lorenzo,0.0,2.0,post
+610219,2021-07-28 14:15:00,2021,Unión (Santa Fe),Banfield,0.0,1.0,post
+610218,2021-07-28 14:15:00,2021,Godoy Cruz Antonio Tomba,Atlético Tucumán,1.0,2.0,post
+610224,2021-07-28 16:30:00,2021,Sarmiento (Junín),Platense,1.0,0.0,post
+610221,2021-07-28 16:30:00,2021,Vélez Sarsfield,Defensa y Justicia,0.0,0.0,post
+610223,2021-07-28 18:45:00,2021,Independiente,Patronato,2.0,0.0,post
+610226,2021-07-28 21:00:00,2021,Lanús,River Plate,0.0,3.0,post
+610229,2021-07-29 14:15:00,2021,Central Córdoba (Santiago del Estero),Talleres (Córdoba),2.0,1.0,post
+610217,2021-07-29 16:30:00,2021,Arsenal Sarandi,Argentinos Juniors,1.0,0.0,post
+610227,2021-07-29 18:45:00,2021,Gimnasia La Plata,Rosario Central,1.0,0.0,post
+610222,2021-07-29 21:00:00,2021,Newell's Old Boys,Estudiantes de La Plata,4.0,2.0,post
+610211,2021-07-31 13:30:00,2021,Colón (Santa Fe),Godoy Cruz Antonio Tomba,1.0,0.0,post
+610215,2021-07-31 15:45:00,2021,Lanús,Unión (Santa Fe),1.0,1.0,post
+610214,2021-07-31 18:00:00,2021,Racing Club,Sarmiento (Junín),1.0,0.0,post
+610208,2021-07-31 20:15:00,2021,Platense,Independiente,1.0,1.0,post
+610210,2021-08-01 13:30:00,2021,Defensa y Justicia,Gimnasia La Plata,3.0,2.0,post
+610207,2021-08-01 15:45:00,2021,Talleres (Córdoba),Boca Juniors,0.0,0.0,post
+610212,2021-08-01 18:00:00,2021,River Plate,Huracán,1.0,1.0,post
+610206,2021-08-01 20:15:00,2021,San Lorenzo,Banfield,1.0,1.0,post
+610209,2021-08-02 16:45:00,2021,Argentinos Juniors,Central Córdoba (Santiago del Estero),1.0,1.0,post
+610213,2021-08-02 16:45:00,2021,Patronato,Newell's Old Boys,0.0,0.0,post
+610204,2021-08-02 19:00:00,2021,Rosario Central,Aldosivi,1.0,2.0,post
+610205,2021-08-02 19:00:00,2021,Estudiantes de La Plata,Arsenal Sarandi,4.0,0.0,post
+610216,2021-08-02 21:15:00,2021,Atlético Tucumán,Vélez Sarsfield,0.0,0.0,post
+610201,2021-08-06 19:00:00,2021,Sarmiento (Junín),Rosario Central,1.0,0.0,post
+610198,2021-08-06 21:15:00,2021,Newell's Old Boys,Platense,1.0,0.0,post
+610203,2021-08-07 13:30:00,2021,Banfield,Talleres (Córdoba),0.0,1.0,post
+610202,2021-08-07 15:45:00,2021,Unión (Santa Fe),San Lorenzo,4.0,0.0,post
+610196,2021-08-07 18:00:00,2021,Huracán,Lanús,0.0,1.0,post
+610200,2021-08-07 20:15:00,2021,Godoy Cruz Antonio Tomba,River Plate,2.0,1.0,post
+610192,2021-08-08 13:30:00,2021,Gimnasia La Plata,Atlético Tucumán,1.0,0.0,post
+610193,2021-08-08 15:45:00,2021,Vélez Sarsfield,Colón (Santa Fe),0.0,1.0,post
+610191,2021-08-08 18:00:00,2021,Boca Juniors,Argentinos Juniors,1.0,1.0,post
+610199,2021-08-08 20:15:00,2021,Independiente,Racing Club,1.0,0.0,post
+610194,2021-08-09 18:00:00,2021,Aldosivi,Defensa y Justicia,1.0,0.0,post
+610197,2021-08-09 18:00:00,2021,Arsenal Sarandi,Patronato,2.0,2.0,post
+610195,2021-08-09 20:15:00,2021,Central Córdoba (Santiago del Estero),Estudiantes de La Plata,1.0,2.0,post
+610184,2021-08-13 19:00:00,2021,Colón (Santa Fe),Gimnasia La Plata,1.0,0.0,post
+610189,2021-08-13 21:15:00,2021,Huracán,Unión (Santa Fe),0.0,0.0,post
+610178,2021-08-14 13:30:00,2021,Atlético Tucumán,Aldosivi,2.0,2.0,post
+610180,2021-08-14 15:45:00,2021,Argentinos Juniors,Banfield,2.0,0.0,post
+610190,2021-08-14 18:00:00,2021,River Plate,Vélez Sarsfield,2.0,0.0,post
+610182,2021-08-14 20:15:00,2021,Rosario Central,Independiente,1.0,2.0,post
+610183,2021-08-15 13:30:00,2021,Patronato,Central Córdoba (Santiago del Estero),1.0,0.0,post
+610179,2021-08-15 15:45:00,2021,Platense,Arsenal Sarandi,2.0,1.0,post
+610181,2021-08-15 18:00:00,2021,Estudiantes de La Plata,Boca Juniors,1.0,0.0,post
+610186,2021-08-15 20:15:00,2021,Racing Club,Newell's Old Boys,2.0,0.0,post
+610187,2021-08-16 18:00:00,2021,Talleres (Córdoba),San Lorenzo,2.0,0.0,post
+610188,2021-08-16 20:15:00,2021,Defensa y Justicia,Sarmiento (Junín),4.0,2.0,post
+610185,2021-08-16 21:45:00,2021,Lanús,Godoy Cruz Antonio Tomba,3.0,1.0,post
+610167,2021-08-20 16:45:00,2021,Aldosivi,Colón (Santa Fe),3.0,0.0,post
+610169,2021-08-20 19:00:00,2021,Banfield,Estudiantes de La Plata,1.0,1.0,post
+610166,2021-08-20 19:00:00,2021,Sarmiento (Junín),Atlético Tucumán,3.0,0.0,post
+610168,2021-08-20 21:15:00,2021,Independiente,Defensa y Justicia,0.0,0.0,post
+610173,2021-08-21 13:30:00,2021,Central Córdoba (Santiago del Estero),Platense,2.0,2.0,post
+610170,2021-08-21 13:30:00,2021,Godoy Cruz Antonio Tomba,Huracán,1.0,1.0,post
+610171,2021-08-21 15:45:00,2021,Vélez Sarsfield,Lanús,5.0,1.0,post
+610174,2021-08-21 18:00:00,2021,Arsenal Sarandi,Racing Club,0.0,3.0,post
+610172,2021-08-21 20:15:00,2021,Boca Juniors,Patronato,1.0,0.0,post
+610177,2021-08-22 13:30:00,2021,Unión (Santa Fe),Talleres (Córdoba),1.0,2.0,post
+610176,2021-08-22 15:45:00,2021,Newell's Old Boys,Rosario Central,1.0,1.0,post
+610165,2021-08-22 18:00:00,2021,San Lorenzo,Argentinos Juniors,0.0,1.0,post
+610175,2021-08-22 20:15:00,2021,Gimnasia La Plata,River Plate,1.0,1.0,post
+610154,2021-08-24 14:15:00,2021,Patronato,Banfield,1.0,1.0,post
+610161,2021-08-24 16:30:00,2021,Colón (Santa Fe),Sarmiento (Junín),1.0,1.0,post
+610156,2021-08-24 18:45:00,2021,Atlético Tucumán,Independiente,2.0,0.0,post
+610157,2021-08-24 21:00:00,2021,Racing Club,Central Córdoba (Santiago del Estero),0.0,0.0,post
+610153,2021-08-25 14:15:00,2021,Rosario Central,Arsenal Sarandi,4.0,0.0,post
+610158,2021-08-25 16:30:00,2021,Lanús,Gimnasia La Plata,2.0,0.0,post
+610159,2021-08-25 16:30:00,2021,Defensa y Justicia,Newell's Old Boys,2.0,0.0,post
+610164,2021-08-25 18:45:00,2021,Huracán,Vélez Sarsfield,1.0,1.0,post
+610155,2021-08-25 21:00:00,2021,Platense,Boca Juniors,1.0,3.0,post
+610163,2021-08-26 14:15:00,2021,Godoy Cruz Antonio Tomba,Unión (Santa Fe),1.0,2.0,post
+610162,2021-08-26 16:30:00,2021,Argentinos Juniors,Talleres (Córdoba),1.0,2.0,post
+610160,2021-08-26 18:45:00,2021,Estudiantes de La Plata,San Lorenzo,2.0,0.0,post
+610152,2021-08-26 21:00:00,2021,River Plate,Aldosivi,2.0,0.0,post
+610145,2021-08-28 15:45:00,2021,Gimnasia La Plata,Huracán,0.0,0.0,post
+610148,2021-08-28 18:00:00,2021,Banfield,Platense,2.0,4.0,post
+610141,2021-08-28 20:15:00,2021,Independiente,Colón (Santa Fe),3.0,0.0,post
+610142,2021-08-29 13:30:00,2021,Arsenal Sarandi,Defensa y Justicia,0.0,0.0,post
+610146,2021-08-29 15:45:00,2021,Aldosivi,Lanús,2.0,3.0,post
+610151,2021-08-29 15:45:00,2021,Central Córdoba (Santiago del Estero),Rosario Central,2.0,4.0,post
+610144,2021-08-29 18:00:00,2021,Vélez Sarsfield,Godoy Cruz Antonio Tomba,3.0,0.0,post
+610149,2021-08-29 20:15:00,2021,Boca Juniors,Racing Club,0.0,0.0,post
+610140,2021-08-30 14:30:00,2021,Newell's Old Boys,Atlético Tucumán,1.0,2.0,post
+610139,2021-08-30 14:30:00,2021,Unión (Santa Fe),Argentinos Juniors,1.0,0.0,post
+610147,2021-08-30 16:45:00,2021,San Lorenzo,Patronato,3.0,0.0,post
+610150,2021-08-30 19:00:00,2021,Sarmiento (Junín),River Plate,1.0,2.0,post
+610143,2021-08-30 21:15:00,2021,Talleres (Córdoba),Estudiantes de La Plata,2.0,0.0,post
+610132,2021-09-03 19:00:00,2021,Defensa y Justicia,Central Córdoba (Santiago del Estero),1.0,1.0,post
+610126,2021-09-03 21:15:00,2021,Huracán,Aldosivi,2.0,0.0,post
+610128,2021-09-04 13:30:00,2021,Atlético Tucumán,Arsenal Sarandi,0.0,0.0,post
+610134,2021-09-04 15:45:00,2021,Colón (Santa Fe),Newell's Old Boys,1.0,1.0,post
+610136,2021-09-04 15:45:00,2021,Lanús,Sarmiento (Junín),1.0,1.0,post
+610135,2021-09-04 18:00:00,2021,Platense,San Lorenzo,1.0,1.0,post
+610130,2021-09-04 20:15:00,2021,Rosario Central,Boca Juniors,1.0,2.0,post
+610133,2021-09-05 13:30:00,2021,Godoy Cruz Antonio Tomba,Gimnasia La Plata,4.0,0.0,post
+610137,2021-09-05 13:30:00,2021,Patronato,Talleres (Córdoba),0.0,0.0,post
+610129,2021-09-05 19:00:00,2021,Racing Club,Banfield,0.0,0.0,post
+610131,2021-09-05 21:15:00,2021,River Plate,Independiente,1.0,1.0,post
+610127,2021-09-06 18:00:00,2021,Estudiantes de La Plata,Argentinos Juniors,1.0,1.0,post
+610138,2021-09-06 20:15:00,2021,Vélez Sarsfield,Unión (Santa Fe),4.0,0.0,post
+610117,2021-09-13 14:15:00,2021,Aldosivi,Godoy Cruz Antonio Tomba,1.0,4.0,post
+610118,2021-09-13 14:15:00,2021,Sarmiento (Junín),Huracán,0.0,0.0,post
+610119,2021-09-13 16:30:00,2021,Independiente,Lanús,0.0,1.0,post
+610122,2021-09-13 18:45:00,2021,San Lorenzo,Racing Club,1.0,1.0,post
+610125,2021-09-13 21:00:00,2021,Gimnasia La Plata,Vélez Sarsfield,0.0,0.0,post
+610121,2021-09-14 14:15:00,2021,Talleres (Córdoba),Platense,2.0,1.0,post
+610114,2021-09-14 16:30:00,2021,Arsenal Sarandi,Colón (Santa Fe),0.0,0.0,post
+610113,2021-09-14 18:45:00,2021,Central Córdoba (Santiago del Estero),Atlético Tucumán,2.0,0.0,post
+610115,2021-09-14 21:00:00,2021,Boca Juniors,Defensa y Justicia,0.0,0.0,post
+610116,2021-09-15 14:15:00,2021,Unión (Santa Fe),Estudiantes de La Plata,0.0,2.0,post
+610120,2021-09-15 16:30:00,2021,Argentinos Juniors,Patronato,1.0,1.0,post
+610124,2021-09-15 18:45:00,2021,Banfield,Rosario Central,1.0,2.0,post
+610123,2021-09-15 21:00:00,2021,Newell's Old Boys,River Plate,1.0,4.0,post
+610110,2021-09-18 13:30:00,2021,Godoy Cruz Antonio Tomba,Sarmiento (Junín),1.0,1.0,post
+610100,2021-09-18 15:45:00,2021,Vélez Sarsfield,Aldosivi,3.0,2.0,post
+610111,2021-09-18 18:00:00,2021,Racing Club,Talleres (Córdoba),1.0,2.0,post
+610104,2021-09-18 20:15:00,2021,Atlético Tucumán,Boca Juniors,1.0,2.0,post
+610107,2021-09-19 13:30:00,2021,Patronato,Estudiantes de La Plata,1.0,2.0,post
+610106,2021-09-19 15:45:00,2021,Colón (Santa Fe),Central Córdoba (Santiago del Estero),1.0,0.0,post
+610101,2021-09-19 15:45:00,2021,Platense,Argentinos Juniors,0.0,0.0,post
+610105,2021-09-19 18:00:00,2021,Huracán,Independiente,0.0,1.0,post
+610102,2021-09-19 20:15:00,2021,River Plate,Arsenal Sarandi,1.0,0.0,post
+610112,2021-09-20 13:30:00,2021,Gimnasia La Plata,Unión (Santa Fe),1.0,0.0,post
+610108,2021-09-20 15:45:00,2021,Lanús,Newell's Old Boys,1.0,2.0,post
+610109,2021-09-20 18:00:00,2021,Rosario Central,San Lorenzo,1.0,0.0,post
+610103,2021-09-20 20:15:00,2021,Defensa y Justicia,Banfield,0.0,0.0,post
+610099,2021-09-24 19:00:00,2021,Sarmiento (Junín),Vélez Sarsfield,0.0,1.0,post
+610095,2021-09-24 21:15:00,2021,Estudiantes de La Plata,Platense,1.0,1.0,post
+610090,2021-09-25 13:30:00,2021,Aldosivi,Gimnasia La Plata,1.0,3.0,post
+610093,2021-09-25 15:45:00,2021,Arsenal Sarandi,Lanús,1.0,0.0,post
+610098,2021-09-25 15:45:00,2021,Talleres (Córdoba),Rosario Central,4.0,1.0,post
+610087,2021-09-25 18:00:00,2021,Banfield,Atlético Tucumán,2.0,0.0,post
+610097,2021-09-25 20:15:00,2021,Central Córdoba (Santiago del Estero),River Plate,1.0,3.0,post
+610094,2021-09-26 13:30:00,2021,Unión (Santa Fe),Patronato,2.0,0.0,post
+610089,2021-09-26 15:45:00,2021,San Lorenzo,Defensa y Justicia,2.0,1.0,post
+610091,2021-09-26 18:00:00,2021,Independiente,Godoy Cruz Antonio Tomba,1.0,4.0,post
+610088,2021-09-26 20:15:00,2021,Boca Juniors,Colón (Santa Fe),1.0,0.0,post
+610096,2021-09-27 18:00:00,2021,Argentinos Juniors,Racing Club,2.0,0.0,post
+610092,2021-09-27 20:15:00,2021,Newell's Old Boys,Huracán,0.0,1.0,post
+610086,2021-10-01 19:00:00,2021,Aldosivi,Unión (Santa Fe),1.0,2.0,post
+610079,2021-10-01 21:15:00,2021,Lanús,Central Córdoba (Santiago del Estero),2.0,1.0,post
+610081,2021-10-02 13:30:00,2021,Godoy Cruz Antonio Tomba,Newell's Old Boys,2.0,2.0,post
+610082,2021-10-02 13:30:00,2021,Platense,Patronato,0.0,0.0,post
+610075,2021-10-02 15:45:00,2021,Huracán,Arsenal Sarandi,1.0,0.0,post
+610083,2021-10-02 18:00:00,2021,Atlético Tucumán,San Lorenzo,0.0,0.0,post
+610078,2021-10-02 20:15:00,2021,Vélez Sarsfield,Independiente,3.0,3.0,post
+610074,2021-10-03 13:30:00,2021,Rosario Central,Argentinos Juniors,0.0,1.0,post
+610084,2021-10-03 13:30:00,2021,Gimnasia La Plata,Sarmiento (Junín),0.0,1.0,post
+610077,2021-10-03 17:00:00,2021,River Plate,Boca Juniors,2.0,1.0,post
+610080,2021-10-03 20:15:00,2021,Racing Club,Estudiantes de La Plata,1.0,1.0,post
+610085,2021-10-04 18:00:00,2021,Defensa y Justicia,Talleres (Córdoba),3.0,0.0,post
+610076,2021-10-04 20:15:00,2021,Colón (Santa Fe),Banfield,0.0,0.0,post
+610069,2021-10-08 14:30:00,2021,Unión (Santa Fe),Platense,1.0,2.0,post
+610067,2021-10-08 16:45:00,2021,Central Córdoba (Santiago del Estero),Huracán,1.0,2.0,post
+610072,2021-10-08 19:00:00,2021,Estudiantes de La Plata,Rosario Central,2.0,2.0,post
+610073,2021-10-08 21:15:00,2021,Newell's Old Boys,Vélez Sarsfield,1.0,2.0,post
+610061,2021-10-09 13:30:00,2021,Sarmiento (Junín),Aldosivi,3.0,0.0,post
+610064,2021-10-09 13:30:00,2021,Argentinos Juniors,Defensa y Justicia,0.0,2.0,post
+610070,2021-10-09 15:45:00,2021,Patronato,Racing Club,1.0,2.0,post
+610071,2021-10-09 18:00:00,2021,Banfield,River Plate,0.0,1.0,post
+610068,2021-10-09 20:15:00,2021,Boca Juniors,Lanús,4.0,2.0,post
+610066,2021-10-11 14:30:00,2021,Arsenal Sarandi,Godoy Cruz Antonio Tomba,0.0,0.0,post
+610063,2021-10-11 16:45:00,2021,San Lorenzo,Colón (Santa Fe),1.0,2.0,post
+610065,2021-10-11 19:00:00,2021,Independiente,Gimnasia La Plata,1.0,1.0,post
+610062,2021-10-11 21:15:00,2021,Talleres (Córdoba),Atlético Tucumán,2.0,0.0,post
+610053,2021-10-15 14:30:00,2021,Godoy Cruz Antonio Tomba,Central Córdoba (Santiago del Estero),0.0,0.0,post
+610056,2021-10-15 16:45:00,2021,Rosario Central,Patronato,3.0,2.0,post
+610057,2021-10-15 19:00:00,2021,Racing Club,Platense,0.0,1.0,post
+610054,2021-10-15 21:15:00,2021,Defensa y Justicia,Estudiantes de La Plata,2.0,1.0,post
+610049,2021-10-15 21:15:00,2021,Vélez Sarsfield,Arsenal Sarandi,0.0,0.0,post
+610060,2021-10-16 13:30:00,2021,Sarmiento (Junín),Unión (Santa Fe),3.0,4.0,post
+610055,2021-10-16 15:45:00,2021,Gimnasia La Plata,Newell's Old Boys,1.0,0.0,post
+610050,2021-10-16 18:00:00,2021,Lanús,Banfield,1.0,1.0,post
+610051,2021-10-16 20:15:00,2021,Huracán,Boca Juniors,0.0,3.0,post
+610048,2021-10-17 15:45:00,2021,Atlético Tucumán,Argentinos Juniors,4.0,3.0,post
+610059,2021-10-17 15:45:00,2021,Colón (Santa Fe),Talleres (Córdoba),1.0,0.0,post
+610052,2021-10-17 18:00:00,2021,Aldosivi,Independiente,1.0,0.0,post
+610058,2021-10-17 20:15:00,2021,River Plate,San Lorenzo,3.0,1.0,post
+610045,2021-10-19 14:30:00,2021,Platense,Rosario Central,1.0,1.0,post
+610043,2021-10-19 16:45:00,2021,Unión (Santa Fe),Racing Club,1.0,1.0,post
+610038,2021-10-19 19:00:00,2021,Patronato,Defensa y Justicia,3.0,3.0,post
+610047,2021-10-19 21:15:00,2021,Central Córdoba (Santiago del Estero),Vélez Sarsfield,1.0,2.0,post
+610039,2021-10-20 14:30:00,2021,Arsenal Sarandi,Gimnasia La Plata,0.0,1.0,post
+610042,2021-10-20 16:45:00,2021,San Lorenzo,Lanús,1.0,3.0,post
+610036,2021-10-20 19:00:00,2021,Estudiantes de La Plata,Atlético Tucumán,1.0,1.0,post
+610041,2021-10-20 19:00:00,2021,Banfield,Huracán,1.0,4.0,post
+610040,2021-10-20 21:15:00,2021,Boca Juniors,Godoy Cruz Antonio Tomba,2.0,1.0,post
+610037,2021-10-21 14:30:00,2021,Argentinos Juniors,Colón (Santa Fe),3.0,1.0,post
+610035,2021-10-21 16:45:00,2021,Newell's Old Boys,Aldosivi,0.0,0.0,post
+610046,2021-10-21 19:00:00,2021,Independiente,Sarmiento (Junín),1.0,1.0,post
+610044,2021-10-21 21:15:00,2021,Talleres (Córdoba),River Plate,0.0,2.0,post
+610026,2021-10-23 15:45:00,2021,Gimnasia La Plata,Central Córdoba (Santiago del Estero),2.0,2.0,post
+610030,2021-10-23 18:00:00,2021,Defensa y Justicia,Platense,2.0,1.0,post
+610031,2021-10-23 20:15:00,2021,Rosario Central,Racing Club,2.0,1.0,post
+610024,2021-10-24 15:45:00,2021,Godoy Cruz Antonio Tomba,Banfield,2.0,1.0,post
+610027,2021-10-24 15:45:00,2021,Colón (Santa Fe),Estudiantes de La Plata,2.0,1.0,post
+610032,2021-10-24 18:00:00,2021,Huracán,San Lorenzo,2.0,1.0,post
+610025,2021-10-24 20:15:00,2021,Vélez Sarsfield,Boca Juniors,2.0,0.0,post
+610023,2021-10-25 14:30:00,2021,Aldosivi,Arsenal Sarandi,2.0,1.0,post
+610028,2021-10-25 14:30:00,2021,Sarmiento (Junín),Newell's Old Boys,2.0,1.0,post
+610029,2021-10-25 16:45:00,2021,Atlético Tucumán,Patronato,2.0,2.0,post
+610033,2021-10-25 16:45:00,2021,Lanús,Talleres (Córdoba),3.0,3.0,post
+610022,2021-10-25 19:00:00,2021,River Plate,Argentinos Juniors,3.0,0.0,post
+610034,2021-10-25 21:15:00,2021,Independiente,Unión (Santa Fe),1.0,0.0,post
+610013,2021-10-29 19:00:00,2021,Racing Club,Defensa y Justicia,1.0,2.0,post
+610017,2021-10-29 21:15:00,2021,Argentinos Juniors,Lanús,0.0,1.0,post
+610020,2021-10-30 15:45:00,2021,Arsenal Sarandi,Sarmiento (Junín),1.0,0.0,post
+610010,2021-10-30 15:45:00,2021,Platense,Atlético Tucumán,4.0,1.0,post
+610021,2021-10-30 18:00:00,2021,Banfield,Vélez Sarsfield,2.0,1.0,post
+610016,2021-10-30 18:00:00,2021,Talleres (Córdoba),Huracán,1.0,0.0,post
+610014,2021-10-30 20:15:00,2021,Boca Juniors,Gimnasia La Plata,0.0,1.0,post
+610015,2021-10-31 15:45:00,2021,San Lorenzo,Godoy Cruz Antonio Tomba,1.0,0.0,post
+610019,2021-10-31 15:45:00,2021,Unión (Santa Fe),Rosario Central,3.0,1.0,post
+610011,2021-10-31 18:00:00,2021,Newell's Old Boys,Independiente,1.0,0.0,post
+610018,2021-10-31 20:15:00,2021,Estudiantes de La Plata,River Plate,1.0,1.0,post
+610012,2021-11-01 19:00:00,2021,Patronato,Colón (Santa Fe),2.0,0.0,post
+610009,2021-11-01 21:15:00,2021,Central Córdoba (Santiago del Estero),Aldosivi,0.0,0.0,post
+610005,2021-11-05 19:00:00,2021,Defensa y Justicia,Rosario Central,3.0,0.0,post
+610001,2021-11-05 21:15:00,2021,Lanús,Estudiantes de La Plata,1.0,1.0,post
+610003,2021-11-06 15:45:00,2021,Colón (Santa Fe),Platense,3.0,0.0,post
+610007,2021-11-06 15:45:00,2021,Godoy Cruz Antonio Tomba,Talleres (Córdoba),0.0,2.0,post
+609997,2021-11-06 18:00:00,2021,Independiente,Arsenal Sarandi,3.0,0.0,post
+610004,2021-11-06 20:15:00,2021,Atlético Tucumán,Racing Club,0.0,2.0,post
+610000,2021-11-07 15:45:00,2021,Sarmiento (Junín),Central Córdoba (Santiago del Estero),1.0,3.0,post
+609998,2021-11-07 15:45:00,2021,Gimnasia La Plata,Banfield,0.0,1.0,post
+610006,2021-11-07 18:00:00,2021,Vélez Sarsfield,San Lorenzo,2.0,1.0,post
+610002,2021-11-07 20:15:00,2021,River Plate,Patronato,5.0,0.0,post
+610008,2021-11-08 16:45:00,2021,Newell's Old Boys,Unión (Santa Fe),1.0,0.0,post
+609996,2021-11-08 19:00:00,2021,Huracán,Argentinos Juniors,1.0,1.0,post
+609999,2021-11-08 21:15:00,2021,Aldosivi,Boca Juniors,0.0,3.0,post
+609987,2021-11-18 17:00:00,2021,Unión (Santa Fe),Defensa y Justicia,2.0,3.0,post
+609991,2021-11-18 19:15:00,2021,Patronato,Lanús,3.0,2.0,post
+609983,2021-11-18 21:30:00,2021,Banfield,Aldosivi,0.0,2.0,post
+609990,2021-11-19 17:00:00,2021,Estudiantes de La Plata,Huracán,4.0,1.0,post
+609988,2021-11-19 19:15:00,2021,San Lorenzo,Gimnasia La Plata,0.0,1.0,post
+609989,2021-11-19 21:30:00,2021,Argentinos Juniors,Godoy Cruz Antonio Tomba,0.0,0.0,post
+609995,2021-11-19 21:30:00,2021,Talleres (Córdoba),Vélez Sarsfield,1.0,1.0,post
+609984,2021-11-20 17:00:00,2021,Rosario Central,Atlético Tucumán,3.0,1.0,post
+609994,2021-11-20 19:15:00,2021,Boca Juniors,Sarmiento (Junín),2.0,0.0,post
+609985,2021-11-20 21:30:00,2021,Central Córdoba (Santiago del Estero),Independiente,1.0,0.0,post
+609992,2021-11-21 17:00:00,2021,Arsenal Sarandi,Newell's Old Boys,3.0,1.0,post
+609986,2021-11-21 19:15:00,2021,Racing Club,Colón (Santa Fe),1.0,2.0,post
+609993,2021-11-21 21:30:00,2021,Platense,River Plate,0.0,1.0,post
+609976,2021-11-23 17:00:00,2021,Huracán,Patronato,1.0,0.0,post
+609981,2021-11-23 17:00:00,2021,Gimnasia La Plata,Talleres (Córdoba),5.0,2.0,post
+609980,2021-11-23 19:15:00,2021,Aldosivi,San Lorenzo,2.0,0.0,post
+609975,2021-11-23 21:30:00,2021,Godoy Cruz Antonio Tomba,Estudiantes de La Plata,1.0,3.0,post
+609970,2021-11-23 21:30:00,2021,Vélez Sarsfield,Argentinos Juniors,2.0,0.0,post
+609973,2021-11-24 17:00:00,2021,Newell's Old Boys,Central Córdoba (Santiago del Estero),1.0,0.0,post
+609971,2021-11-24 17:00:00,2021,Sarmiento (Junín),Banfield,0.0,0.0,post
+609974,2021-11-24 19:15:00,2021,Atlético Tucumán,Defensa y Justicia,0.0,4.0,post
+609972,2021-11-24 21:30:00,2021,Independiente,Boca Juniors,1.0,0.0,post
+609982,2021-11-25 17:00:00,2021,Arsenal Sarandi,Unión (Santa Fe),0.0,1.0,post
+609977,2021-11-25 19:15:00,2021,Lanús,Platense,3.0,3.0,post
+609979,2021-11-25 19:15:00,2021,Colón (Santa Fe),Rosario Central,1.0,4.0,post
+609978,2021-11-25 21:30:00,2021,River Plate,Racing Club,4.0,0.0,post
+609957,2021-11-27 17:00:00,2021,Talleres (Córdoba),Aldosivi,2.0,0.0,post
+609963,2021-11-27 19:15:00,2021,Patronato,Godoy Cruz Antonio Tomba,0.0,3.0,post
+609969,2021-11-27 21:30:00,2021,Estudiantes de La Plata,Vélez Sarsfield,1.0,0.0,post
+609967,2021-11-28 17:00:00,2021,Rosario Central,River Plate,2.0,2.0,post
+609962,2021-11-28 19:15:00,2021,Argentinos Juniors,Gimnasia La Plata,3.0,0.0,post
+609961,2021-11-28 19:15:00,2021,Defensa y Justicia,Colón (Santa Fe),1.0,1.0,post
+609959,2021-11-29 17:00:00,2021,Unión (Santa Fe),Atlético Tucumán,3.0,0.0,post
+609965,2021-11-29 19:15:00,2021,Racing Club,Lanús,3.0,1.0,post
+609964,2021-11-29 21:30:00,2021,Platense,Huracán,4.0,2.0,post
+609958,2021-11-29 21:30:00,2021,Central Córdoba (Santiago del Estero),Arsenal Sarandi,5.0,0.0,post
+609968,2021-11-30 17:00:00,2021,San Lorenzo,Sarmiento (Junín),1.0,0.0,post
+609966,2021-11-30 19:15:00,2021,Boca Juniors,Newell's Old Boys,0.0,0.0,post
+609960,2021-11-30 21:30:00,2021,Banfield,Independiente,4.0,1.0,post
+609956,2021-12-03 19:15:00,2021,Central Córdoba (Santiago del Estero),Unión (Santa Fe),2.0,0.0,post
+609945,2021-12-03 19:15:00,2021,Colón (Santa Fe),Atlético Tucumán,3.0,0.0,post
+609950,2021-12-03 21:30:00,2021,Vélez Sarsfield,Patronato,0.0,0.0,post
+609947,2021-12-04 17:00:00,2021,Arsenal Sarandi,Boca Juniors,1.0,1.0,post
+609955,2021-12-04 19:15:00,2021,Sarmiento (Junín),Talleres (Córdoba),1.0,2.0,post
+609951,2021-12-04 19:15:00,2021,Godoy Cruz Antonio Tomba,Platense,2.0,2.0,post
+609952,2021-12-04 21:30:00,2021,Huracán,Racing Club,1.0,0.0,post
+609953,2021-12-04 21:30:00,2021,Lanús,Rosario Central,2.0,2.0,post
+609949,2021-12-05 17:00:00,2021,Gimnasia La Plata,Estudiantes de La Plata,4.0,4.0,post
+609954,2021-12-05 19:15:00,2021,Independiente,San Lorenzo,1.0,1.0,post
+609948,2021-12-05 21:30:00,2021,River Plate,Defensa y Justicia,2.0,3.0,post
+609944,2021-12-06 19:15:00,2021,Aldosivi,Argentinos Juniors,3.0,2.0,post
+609946,2021-12-06 21:30:00,2021,Newell's Old Boys,Banfield,0.0,0.0,post
+609943,2021-12-10 19:15:00,2021,Platense,Vélez Sarsfield,3.0,2.0,post
+609931,2021-12-10 21:30:00,2021,Estudiantes de La Plata,Aldosivi,2.0,3.0,post
+609942,2021-12-11 17:00:00,2021,Argentinos Juniors,Sarmiento (Junín),2.0,0.0,post
+609936,2021-12-11 17:00:00,2021,Patronato,Gimnasia La Plata,0.0,0.0,post
+609937,2021-12-11 17:00:00,2021,Racing Club,Godoy Cruz Antonio Tomba,2.0,1.0,post
+609938,2021-12-11 17:00:00,2021,Rosario Central,Huracán,1.0,4.0,post
+609935,2021-12-11 17:00:00,2021,Unión (Santa Fe),Colón (Santa Fe),3.0,0.0,post
+609941,2021-12-11 19:15:00,2021,Atlético Tucumán,River Plate,1.0,1.0,post
+609934,2021-12-11 22:00:00,2021,Boca Juniors,Central Córdoba (Santiago del Estero),8.0,1.0,post
+609940,2021-12-12 17:00:00,2021,San Lorenzo,Newell's Old Boys,3.0,2.0,post
+609939,2021-12-12 19:15:00,2021,Defensa y Justicia,Lanús,2.0,1.0,post
+609933,2021-12-12 21:30:00,2021,Talleres (Córdoba),Independiente,1.0,2.0,post
+609932,2021-12-13 20:00:00,2021,Banfield,Arsenal Sarandi,0.0,0.0,post
+635640,2022-06-03 20:00:00,2022,Barracas Central,Central Córdoba (Santiago del Estero),1.0,1.0,post
+635641,2022-06-04 12:00:00,2022,Atlético Tucumán,Colón (Santa Fe),1.0,1.0,post
+635642,2022-06-04 14:00:00,2022,San Lorenzo,Independiente,1.0,1.0,post
+635643,2022-06-04 16:30:00,2022,Banfield,Newell's Old Boys,1.0,2.0,post
+635645,2022-06-04 19:00:00,2022,Patronato,Vélez Sarsfield,1.0,1.0,post
+635644,2022-06-04 19:00:00,2022,Platense,Godoy Cruz Antonio Tomba,2.0,1.0,post
+635646,2022-06-04 21:30:00,2022,Racing Club,Huracán,2.0,0.0,post
+635647,2022-06-05 13:00:00,2022,Unión (Santa Fe),Tigre,1.0,2.0,post
+635648,2022-06-05 13:00:00,2022,Talleres (Córdoba),Sarmiento (Junín),2.0,0.0,post
+635649,2022-06-05 17:00:00,2022,Estudiantes de La Plata,Gimnasia La Plata,1.0,1.0,post
+635650,2022-06-05 19:30:00,2022,Boca Juniors,Arsenal Sarandi,2.0,1.0,post
+635651,2022-06-05 21:30:00,2022,Defensa y Justicia,River Plate,0.0,0.0,post
+635652,2022-06-06 19:00:00,2022,Rosario Central,Lanús,0.0,0.0,post
+635653,2022-06-06 21:30:00,2022,Argentinos Juniors,Aldosivi,2.0,1.0,post
+635279,2022-06-09 20:00:00,2022,Newell's Old Boys,San Lorenzo,0.0,0.0,post
+635284,2022-06-10 16:30:00,2022,Gimnasia La Plata,Patronato,2.0,0.0,post
+635280,2022-06-10 19:00:00,2022,Lanús,Defensa y Justicia,1.0,1.0,post
+635288,2022-06-10 19:00:00,2022,Aldosivi,Estudiantes de La Plata,0.0,1.0,post
+635282,2022-06-10 21:30:00,2022,Huracán,Rosario Central,2.0,0.0,post
+635281,2022-06-10 21:30:00,2022,Independiente,Talleres (Córdoba),1.0,0.0,post
+635287,2022-06-11 15:30:00,2022,Arsenal Sarandi,Banfield,0.0,0.0,post
+635276,2022-06-11 15:30:00,2022,Tigre,Barracas Central,1.0,1.0,post
+635277,2022-06-11 18:00:00,2022,Sarmiento (Junín),Argentinos Juniors,1.0,0.0,post
+635278,2022-06-11 20:30:00,2022,River Plate,Atlético Tucumán,0.0,0.0,post
+635285,2022-06-12 13:00:00,2022,Colón (Santa Fe),Unión (Santa Fe),2.0,2.0,post
+635283,2022-06-12 15:30:00,2022,Godoy Cruz Antonio Tomba,Racing Club,2.0,0.0,post
+635289,2022-06-12 18:00:00,2022,Vélez Sarsfield,Platense,0.0,1.0,post
+635286,2022-06-12 20:30:00,2022,Central Córdoba (Santiago del Estero),Boca Juniors,1.0,0.0,post
+635293,2022-06-14 15:00:00,2022,San Lorenzo,Arsenal Sarandi,3.0,3.0,post
+635297,2022-06-14 19:00:00,2022,Patronato,Aldosivi,1.0,0.0,post
+635292,2022-06-14 19:00:00,2022,Talleres (Córdoba),Newell's Old Boys,0.0,1.0,post
+635299,2022-06-14 21:30:00,2022,Defensa y Justicia,Huracán,1.0,1.0,post
+635298,2022-06-14 21:30:00,2022,Estudiantes de La Plata,Sarmiento (Junín),2.0,1.0,post
+635302,2022-06-15 14:00:00,2022,Barracas Central,Unión (Santa Fe),1.0,2.0,post
+635303,2022-06-15 16:30:00,2022,Banfield,Central Córdoba (Santiago del Estero),2.0,1.0,post
+635291,2022-06-15 16:30:00,2022,Atlético Tucumán,Lanús,2.0,1.0,post
+635300,2022-06-15 19:00:00,2022,Colón (Santa Fe),River Plate,1.0,0.0,post
+635301,2022-06-15 21:30:00,2022,Boca Juniors,Tigre,5.0,3.0,post
+635290,2022-06-16 19:00:00,2022,Argentinos Juniors,Independiente,2.0,1.0,post
+635294,2022-06-16 19:00:00,2022,Rosario Central,Godoy Cruz Antonio Tomba,1.0,0.0,post
+635296,2022-06-16 21:30:00,2022,Platense,Gimnasia La Plata,1.0,1.0,post
+635295,2022-06-16 21:30:00,2022,Racing Club,Vélez Sarsfield,2.0,0.0,post
+635316,2022-06-18 18:00:00,2022,Arsenal Sarandi,Talleres (Córdoba),1.0,1.0,post
+635307,2022-06-18 20:30:00,2022,Sarmiento (Junín),Patronato,3.0,1.0,post
+635306,2022-06-19 13:00:00,2022,Tigre,Banfield,0.0,1.0,post
+635311,2022-06-19 15:30:00,2022,Huracán,Atlético Tucumán,0.0,0.0,post
+635309,2022-06-19 15:30:00,2022,Lanús,Colón (Santa Fe),1.0,0.0,post
+635305,2022-06-19 18:00:00,2022,Unión (Santa Fe),River Plate,1.0,5.0,post
+635315,2022-06-19 21:30:00,2022,Barracas Central,Boca Juniors,1.0,3.0,post
+635312,2022-06-20 16:30:00,2022,Godoy Cruz Antonio Tomba,Defensa y Justicia,2.0,1.0,post
+635313,2022-06-20 19:00:00,2022,Gimnasia La Plata,Racing Club,3.0,1.0,post
+635310,2022-06-20 19:00:00,2022,Vélez Sarsfield,Rosario Central,2.0,0.0,post
+635317,2022-06-20 21:30:00,2022,Independiente,Estudiantes de La Plata,2.0,1.0,post
+635308,2022-06-20 21:30:00,2022,Newell's Old Boys,Argentinos Juniors,1.0,0.0,post
+635304,2022-06-21 19:00:00,2022,Aldosivi,Platense,0.0,0.0,post
+635314,2022-06-21 21:30:00,2022,Central Córdoba (Santiago del Estero),San Lorenzo,0.0,2.0,post
+635321,2022-06-24 19:00:00,2022,Rosario Central,Gimnasia La Plata,0.0,1.0,post
+635326,2022-06-24 19:00:00,2022,Banfield,Barracas Central,1.0,1.0,post
+635327,2022-06-24 21:30:00,2022,Boca Juniors,Unión (Santa Fe),1.0,2.0,post
+635329,2022-06-25 15:30:00,2022,Defensa y Justicia,Vélez Sarsfield,1.0,1.0,post
+635323,2022-06-25 15:30:00,2022,Talleres (Córdoba),Central Córdoba (Santiago del Estero),0.0,2.0,post
+635328,2022-06-25 18:00:00,2022,Colón (Santa Fe),Huracán,0.0,1.0,post
+635330,2022-06-25 18:00:00,2022,Estudiantes de La Plata,Newell's Old Boys,0.0,2.0,post
+635320,2022-06-25 20:30:00,2022,River Plate,Lanús,2.0,1.0,post
+635322,2022-06-26 13:00:00,2022,San Lorenzo,Tigre,1.0,1.0,post
+635318,2022-06-26 15:30:00,2022,Platense,Sarmiento (Junín),0.0,0.0,post
+635319,2022-06-26 18:00:00,2022,Racing Club,Aldosivi,5.0,0.0,post
+635324,2022-06-26 20:30:00,2022,Argentinos Juniors,Arsenal Sarandi,1.0,1.0,post
+635331,2022-06-27 15:30:00,2022,Patronato,Independiente,3.0,1.0,post
+635325,2022-06-27 20:00:00,2022,Atlético Tucumán,Godoy Cruz Antonio Tomba,1.0,1.0,post
+635340,2022-07-01 19:00:00,2022,Central Córdoba (Santiago del Estero),Argentinos Juniors,1.0,2.0,post
+635341,2022-07-01 21:30:00,2022,Boca Juniors,Banfield,0.0,3.0,post
+635333,2022-07-02 15:30:00,2022,Tigre,Talleres (Córdoba),1.0,1.0,post
+635345,2022-07-02 18:00:00,2022,Godoy Cruz Antonio Tomba,Colón (Santa Fe),1.0,0.0,post
+635338,2022-07-02 18:00:00,2022,Vélez Sarsfield,Atlético Tucumán,0.0,1.0,post
+635339,2022-07-02 20:30:00,2022,Gimnasia La Plata,Defensa y Justicia,1.0,0.0,post
+635332,2022-07-03 13:00:00,2022,Unión (Santa Fe),Lanús,3.0,0.0,post
+635342,2022-07-03 15:00:00,2022,Barracas Central,San Lorenzo,2.0,1.0,post
+635334,2022-07-03 18:00:00,2022,Sarmiento (Junín),Racing Club,1.0,1.0,post
+635337,2022-07-03 21:00:00,2022,Huracán,River Plate,3.0,2.0,post
+635343,2022-07-04 17:00:00,2022,Arsenal Sarandi,Estudiantes de La Plata,2.0,1.0,post
+635344,2022-07-04 19:00:00,2022,Aldosivi,Rosario Central,2.0,1.0,post
+635335,2022-07-04 19:00:00,2022,Newell's Old Boys,Patronato,2.0,2.0,post
+635336,2022-07-04 21:30:00,2022,Independiente,Platense,1.0,3.0,post
+635347,2022-07-08 20:00:00,2022,Rosario Central,Sarmiento (Junín),1.0,0.0,post
+635351,2022-07-09 13:00:00,2022,Patronato,Arsenal Sarandi,0.0,1.0,post
+635346,2022-07-09 15:30:00,2022,San Lorenzo,Boca Juniors,2.0,1.0,post
+635356,2022-07-09 18:00:00,2022,Banfield,Unión (Santa Fe),2.0,3.0,post
+635350,2022-07-09 20:30:00,2022,Platense,Newell's Old Boys,1.0,1.0,post
+635359,2022-07-09 20:30:00,2022,Talleres (Córdoba),Barracas Central,0.0,2.0,post
+635353,2022-07-10 13:00:00,2022,Estudiantes de La Plata,Central Córdoba (Santiago del Estero),2.0,2.0,post
+635349,2022-07-10 15:30:00,2022,Racing Club,Independiente,1.0,0.0,post
+635357,2022-07-10 18:00:00,2022,Atlético Tucumán,Gimnasia La Plata,2.0,0.0,post
+635352,2022-07-10 18:00:00,2022,Lanús,Huracán,2.0,3.0,post
+635348,2022-07-10 20:30:00,2022,River Plate,Godoy Cruz Antonio Tomba,0.0,2.0,post
+635354,2022-07-11 19:00:00,2022,Defensa y Justicia,Aldosivi,3.0,2.0,post
+635355,2022-07-11 19:00:00,2022,Colón (Santa Fe),Vélez Sarsfield,2.0,1.0,post
+635358,2022-07-11 21:30:00,2022,Argentinos Juniors,Tigre,2.0,1.0,post
+635370,2022-07-14 21:00:00,2022,Central Córdoba (Santiago del Estero),Patronato,1.0,3.0,post
+635365,2022-07-15 19:00:00,2022,Sarmiento (Junín),Defensa y Justicia,2.0,0.0,post
+635360,2022-07-15 21:30:00,2022,Aldosivi,Atlético Tucumán,0.0,1.0,post
+635361,2022-07-15 21:30:00,2022,Arsenal Sarandi,Platense,1.0,1.0,post
+635372,2022-07-16 13:00:00,2022,Barracas Central,Argentinos Juniors,1.0,3.0,post
+635369,2022-07-16 15:30:00,2022,Gimnasia La Plata,Colón (Santa Fe),0.0,0.0,post
+635367,2022-07-16 15:30:00,2022,Independiente,Rosario Central,0.0,0.0,post
+635366,2022-07-16 18:00:00,2022,Newell's Old Boys,Racing Club,0.0,0.0,post
+635371,2022-07-16 20:30:00,2022,Boca Juniors,Talleres (Córdoba),1.0,0.0,post
+635368,2022-07-17 13:00:00,2022,Godoy Cruz Antonio Tomba,Lanús,2.0,1.0,post
+635363,2022-07-17 13:00:00,2022,Unión (Santa Fe),Huracán,0.0,0.0,post
+635373,2022-07-17 15:30:00,2022,Banfield,San Lorenzo,1.0,1.0,post
+635364,2022-07-17 18:00:00,2022,Tigre,Estudiantes de La Plata,2.0,1.0,post
+635362,2022-07-17 20:30:00,2022,Vélez Sarsfield,River Plate,2.0,2.0,post
+635385,2022-07-19 16:30:00,2022,Colón (Santa Fe),Aldosivi,1.0,1.0,post
+635379,2022-07-19 17:00:00,2022,Platense,Central Córdoba (Santiago del Estero),2.0,0.0,post
+635378,2022-07-19 19:00:00,2022,Racing Club,Arsenal Sarandi,1.0,1.0,post
+635386,2022-07-19 19:00:00,2022,Atlético Tucumán,Sarmiento (Junín),1.0,0.0,post
+635374,2022-07-19 21:30:00,2022,Argentinos Juniors,Boca Juniors,2.0,0.0,post
+635375,2022-07-20 14:00:00,2022,San Lorenzo,Unión (Santa Fe),2.0,2.0,post
+635387,2022-07-20 16:30:00,2022,Patronato,Tigre,1.0,0.0,post
+635384,2022-07-20 19:00:00,2022,Defensa y Justicia,Independiente,2.0,1.0,post
+635383,2022-07-20 19:00:00,2022,Estudiantes de La Plata,Barracas Central,3.0,1.0,post
+635382,2022-07-20 21:30:00,2022,Huracán,Godoy Cruz Antonio Tomba,0.0,0.0,post
+635381,2022-07-20 21:30:00,2022,Lanús,Vélez Sarsfield,2.0,2.0,post
+635376,2022-07-21 16:30:00,2022,Rosario Central,Newell's Old Boys,1.0,0.0,post
+635380,2022-07-21 19:00:00,2022,Talleres (Córdoba),Banfield,1.0,0.0,post
+635377,2022-07-21 21:30:00,2022,River Plate,Gimnasia La Plata,1.0,0.0,post
+635390,2022-07-23 15:30:00,2022,Sarmiento (Junín),Colón (Santa Fe),1.0,3.0,post
+635399,2022-07-23 20:30:00,2022,Central Córdoba (Santiago del Estero),Racing Club,1.0,3.0,post
+635401,2022-07-24 11:00:00,2022,Independiente,Atlético Tucumán,0.0,1.0,post
+635391,2022-07-24 13:15:00,2022,Tigre,Platense,3.0,0.0,post
+635394,2022-07-24 15:30:00,2022,Aldosivi,River Plate,0.0,3.0,post
+635400,2022-07-24 18:00:00,2022,Gimnasia La Plata,Lanús,1.0,0.0,post
+635398,2022-07-24 20:30:00,2022,Boca Juniors,Estudiantes de La Plata,3.0,1.0,post
+635389,2022-07-25 16:30:00,2022,San Lorenzo,Talleres (Córdoba),1.0,1.0,post
+635388,2022-07-25 19:00:00,2022,Newell's Old Boys,Defensa y Justicia,1.0,2.0,post
+635396,2022-07-25 19:00:00,2022,Banfield,Argentinos Juniors,1.0,1.0,post
+635392,2022-07-25 21:30:00,2022,Unión (Santa Fe),Godoy Cruz Antonio Tomba,2.0,1.0,post
+635393,2022-07-25 21:30:00,2022,Vélez Sarsfield,Huracán,1.0,1.0,post
+635395,2022-07-26 20:00:00,2022,Arsenal Sarandi,Rosario Central,0.0,3.0,post
+635397,2022-07-26 20:00:00,2022,Barracas Central,Patronato,2.0,1.0,post
+635407,2022-07-29 20:00:00,2022,Godoy Cruz Antonio Tomba,Vélez Sarsfield,1.0,1.0,post
+635402,2022-07-30 15:30:00,2022,Argentinos Juniors,San Lorenzo,0.0,1.0,post
+635406,2022-07-30 18:00:00,2022,Estudiantes de La Plata,Banfield,0.0,0.0,post
+635415,2022-07-30 20:30:00,2022,Huracán,Gimnasia La Plata,0.0,1.0,post
+635403,2022-07-30 20:30:00,2022,Atlético Tucumán,Newell's Old Boys,2.0,0.0,post
+635409,2022-07-31 13:00:00,2022,Lanús,Aldosivi,0.0,1.0,post
+635411,2022-07-31 13:00:00,2022,Platense,Barracas Central,0.0,0.0,post
+635412,2022-07-31 15:30:00,2022,Racing Club,Tigre,3.0,3.0,post
+635410,2022-07-31 18:00:00,2022,Patronato,Boca Juniors,3.0,0.0,post
+635413,2022-07-31 20:30:00,2022,River Plate,Sarmiento (Junín),1.0,2.0,post
+635414,2022-08-01 19:00:00,2022,Rosario Central,Central Córdoba (Santiago del Estero),0.0,3.0,post
+635405,2022-08-01 19:00:00,2022,Defensa y Justicia,Arsenal Sarandi,0.0,0.0,post
+635404,2022-08-01 21:30:00,2022,Colón (Santa Fe),Independiente,0.0,3.0,post
+635425,2022-08-05 19:00:00,2022,Gimnasia La Plata,Godoy Cruz Antonio Tomba,2.0,0.0,post
+635429,2022-08-05 21:30:00,2022,Banfield,Patronato,0.0,0.0,post
+635421,2022-08-05 21:30:00,2022,Sarmiento (Junín),Lanús,2.0,1.0,post
+635417,2022-08-06 13:00:00,2022,Arsenal Sarandi,Atlético Tucumán,3.0,1.0,post
+635428,2022-08-06 15:00:00,2022,Barracas Central,Racing Club,0.0,0.0,post
+635420,2022-08-06 18:00:00,2022,Talleres (Córdoba),Argentinos Juniors,2.0,0.0,post
+635418,2022-08-06 18:00:00,2022,Unión (Santa Fe),Vélez Sarsfield,2.0,1.0,post
+635427,2022-08-06 21:00:00,2022,Boca Juniors,Platense,2.0,1.0,post
+635416,2022-08-07 13:00:00,2022,Aldosivi,Huracán,0.0,1.0,post
+635422,2022-08-07 15:00:00,2022,San Lorenzo,Estudiantes de La Plata,0.0,0.0,post
+635424,2022-08-07 17:30:00,2022,Independiente,River Plate,0.0,1.0,post
+635423,2022-08-07 20:00:00,2022,Newell's Old Boys,Colón (Santa Fe),0.0,0.0,post
+635426,2022-08-08 11:00:00,2022,Central Córdoba (Santiago del Estero),Defensa y Justicia,1.0,0.0,post
+635419,2022-08-08 20:00:00,2022,Tigre,Rosario Central,3.0,1.0,post
+635438,2022-08-11 19:00:00,2022,Godoy Cruz Antonio Tomba,Aldosivi,2.0,0.0,post
+635442,2022-08-11 21:30:00,2022,Atlético Tucumán,Central Córdoba (Santiago del Estero),1.0,0.0,post
+635441,2022-08-11 21:30:00,2022,Colón (Santa Fe),Arsenal Sarandi,1.0,1.0,post
+635437,2022-08-12 19:00:00,2022,Huracán,Sarmiento (Junín),4.0,1.0,post
+635434,2022-08-12 19:00:00,2022,Platense,Banfield,3.0,1.0,post
+635435,2022-08-12 21:30:00,2022,Patronato,San Lorenzo,3.0,2.0,post
+635440,2022-08-13 15:30:00,2022,Defensa y Justicia,Tigre,0.0,0.0,post
+635431,2022-08-13 15:30:00,2022,Rosario Central,Barracas Central,3.0,1.0,post
+635443,2022-08-13 18:00:00,2022,Lanús,Independiente,1.0,1.0,post
+635432,2022-08-13 20:30:00,2022,River Plate,Newell's Old Boys,4.0,1.0,post
+635436,2022-08-14 15:30:00,2022,Vélez Sarsfield,Gimnasia La Plata,1.0,1.0,post
+635430,2022-08-14 18:00:00,2022,Argentinos Juniors,Unión (Santa Fe),2.0,0.0,post
+635439,2022-08-14 18:00:00,2022,Estudiantes de La Plata,Talleres (Córdoba),1.0,0.0,post
+635433,2022-08-14 20:30:00,2022,Racing Club,Boca Juniors,0.0,0.0,post
+635454,2022-08-16 16:30:00,2022,Sarmiento (Junín),Godoy Cruz Antonio Tomba,1.0,2.0,post
+635450,2022-08-16 16:30:00,2022,Central Córdoba (Santiago del Estero),Colón (Santa Fe),3.0,0.0,post
+635453,2022-08-16 19:00:00,2022,San Lorenzo,Platense,2.0,0.0,post
+635451,2022-08-16 21:30:00,2022,Independiente,Huracán,1.0,1.0,post
+635452,2022-08-17 16:30:00,2022,Newell's Old Boys,Lanús,2.0,0.0,post
+635456,2022-08-17 16:30:00,2022,Tigre,Atlético Tucumán,0.0,0.0,post
+635446,2022-08-17 19:00:00,2022,Arsenal Sarandi,River Plate,0.0,0.0,post
+635449,2022-08-17 21:30:00,2022,Boca Juniors,Rosario Central,0.0,0.0,post
+635448,2022-08-18 14:30:00,2022,Barracas Central,Defensa y Justicia,3.0,1.0,post
+635444,2022-08-18 16:30:00,2022,Aldosivi,Vélez Sarsfield,3.0,2.0,post
+635457,2022-08-18 19:00:00,2022,Unión (Santa Fe),Gimnasia La Plata,0.0,2.0,post
+635455,2022-08-18 19:00:00,2022,Talleres (Córdoba),Patronato,3.0,3.0,post
+635445,2022-08-18 21:30:00,2022,Argentinos Juniors,Estudiantes de La Plata,1.0,0.0,post
+635447,2022-08-18 21:30:00,2022,Banfield,Racing Club,0.0,2.0,post
+635459,2022-08-20 18:00:00,2022,Colón (Santa Fe),Tigre,2.0,1.0,post
+635467,2022-08-20 20:30:00,2022,Huracán,Newell's Old Boys,1.0,0.0,post
+635466,2022-08-21 13:00:00,2022,Lanús,Arsenal Sarandi,1.0,0.0,post
+635468,2022-08-21 15:30:00,2022,Godoy Cruz Antonio Tomba,Independiente,1.0,1.0,post
+635462,2022-08-21 18:00:00,2022,River Plate,Central Córdoba (Santiago del Estero),3.0,0.0,post
+635471,2022-08-21 20:30:00,2022,Defensa y Justicia,Boca Juniors,0.0,1.0,post
+635461,2022-08-22 16:30:00,2022,Rosario Central,Banfield,0.0,1.0,post
+635470,2022-08-22 16:30:00,2022,Estudiantes de La Plata,Unión (Santa Fe),1.0,0.0,post
+635463,2022-08-22 19:00:00,2022,Racing Club,San Lorenzo,1.0,2.0,post
+635464,2022-08-22 21:30:00,2022,Platense,Talleres (Córdoba),0.0,0.0,post
+635460,2022-08-22 21:30:00,2022,Vélez Sarsfield,Sarmiento (Junín),1.0,1.0,post
+635465,2022-08-23 19:00:00,2022,Patronato,Argentinos Juniors,0.0,0.0,post
+635458,2022-08-23 21:30:00,2022,Atlético Tucumán,Barracas Central,4.0,0.0,post
+635469,2022-08-23 21:30:00,2022,Gimnasia La Plata,Aldosivi,0.0,0.0,post
+635480,2022-08-26 18:00:00,2022,Central Córdoba (Santiago del Estero),Lanús,2.0,2.0,post
+635484,2022-08-26 21:00:00,2022,Arsenal Sarandi,Huracán,1.0,1.0,post
+635476,2022-08-27 13:00:00,2022,San Lorenzo,Rosario Central,1.0,1.0,post
+635483,2022-08-27 15:30:00,2022,Banfield,Defensa y Justicia,1.0,2.0,post
+635477,2022-08-27 15:30:00,2022,Newell's Old Boys,Godoy Cruz Antonio Tomba,1.0,2.0,post
+635472,2022-08-27 18:00:00,2022,Argentinos Juniors,Platense,0.0,2.0,post
+635474,2022-08-27 18:00:00,2022,Talleres (Córdoba),Racing Club,1.0,1.0,post
+635473,2022-08-27 20:30:00,2022,Tigre,River Plate,1.0,1.0,post
+635482,2022-08-28 13:00:00,2022,Barracas Central,Colón (Santa Fe),1.0,0.0,post
+635475,2022-08-28 13:00:00,2022,Sarmiento (Junín),Gimnasia La Plata,0.0,0.0,post
+635485,2022-08-28 15:30:00,2022,Independiente,Vélez Sarsfield,1.0,1.0,post
+635481,2022-08-28 18:00:00,2022,Boca Juniors,Atlético Tucumán,2.0,1.0,post
+635478,2022-08-28 20:30:00,2022,Unión (Santa Fe),Aldosivi,0.0,0.0,post
+635479,2022-08-28 20:30:00,2022,Estudiantes de La Plata,Patronato,1.0,0.0,post
+635499,2022-09-01 20:00:00,2022,Huracán,Central Córdoba (Santiago del Estero),2.0,0.0,post
+635491,2022-09-03 12:00:00,2022,Lanús,Tigre,1.0,2.0,post
+635486,2022-09-03 13:00:00,2022,Rosario Central,Talleres (Córdoba),1.0,0.0,post
+635498,2022-09-03 15:30:00,2022,Aldosivi,Sarmiento (Junín),1.0,2.0,post
+635492,2022-09-03 15:30:00,2022,Vélez Sarsfield,Newell's Old Boys,0.0,1.0,post
+635488,2022-09-03 18:00:00,2022,Racing Club,Argentinos Juniors,1.0,0.0,post
+635494,2022-09-03 20:30:00,2022,Gimnasia La Plata,Independiente,3.0,1.0,post
+635489,2022-09-04 15:30:00,2022,Platense,Estudiantes de La Plata,0.0,0.0,post
+635490,2022-09-04 15:30:00,2022,Patronato,Unión (Santa Fe),0.0,0.0,post
+635496,2022-09-04 18:00:00,2022,Colón (Santa Fe),Boca Juniors,1.0,2.0,post
+635487,2022-09-04 20:30:00,2022,River Plate,Barracas Central,2.0,0.0,post
+635495,2022-09-05 19:00:00,2022,Defensa y Justicia,San Lorenzo,0.0,0.0,post
+635493,2022-09-05 19:00:00,2022,Godoy Cruz Antonio Tomba,Arsenal Sarandi,1.0,0.0,post
+635497,2022-09-05 21:30:00,2022,Atlético Tucumán,Banfield,0.0,0.0,post
+635505,2022-09-08 18:00:00,2022,Independiente,Aldosivi,3.0,0.0,post
+635512,2022-09-08 20:30:00,2022,Argentinos Juniors,Rosario Central,2.0,1.0,post
+635513,2022-09-08 20:30:00,2022,Unión (Santa Fe),Sarmiento (Junín),1.0,0.0,post
+635509,2022-09-09 15:30:00,2022,Barracas Central,Lanús,2.0,0.0,post
+635503,2022-09-09 18:00:00,2022,Patronato,Platense,1.0,0.0,post
+635506,2022-09-09 20:30:00,2022,Estudiantes de La Plata,Racing Club,1.0,0.0,post
+635500,2022-09-09 20:30:00,2022,Tigre,Huracán,1.0,1.0,post
+635507,2022-09-10 15:30:00,2022,Central Córdoba (Santiago del Estero),Godoy Cruz Antonio Tomba,3.0,0.0,post
+635502,2022-09-10 18:00:00,2022,San Lorenzo,Atlético Tucumán,1.0,1.0,post
+635510,2022-09-10 20:30:00,2022,Banfield,Colón (Santa Fe),2.0,1.0,post
+635511,2022-09-11 13:00:00,2022,Arsenal Sarandi,Vélez Sarsfield,2.0,2.0,post
+635504,2022-09-11 13:00:00,2022,Newell's Old Boys,Gimnasia La Plata,2.0,0.0,post
+635508,2022-09-11 17:00:00,2022,Boca Juniors,River Plate,1.0,0.0,post
+635501,2022-09-11 20:00:00,2022,Talleres (Córdoba),Defensa y Justicia,1.0,0.0,post
+635517,2022-09-12 17:00:00,2022,Sarmiento (Junín),Independiente,1.0,2.0,post
+635524,2022-09-13 19:00:00,2022,Godoy Cruz Antonio Tomba,Tigre,1.0,1.0,post
+635523,2022-09-13 19:00:00,2022,Huracán,Barracas Central,1.0,1.0,post
+635521,2022-09-13 21:30:00,2022,Platense,Unión (Santa Fe),1.0,0.0,post
+635520,2022-09-13 21:30:00,2022,Racing Club,Patronato,1.0,0.0,post
+635514,2022-09-14 14:00:00,2022,Aldosivi,Newell's Old Boys,1.0,2.0,post
+635527,2022-09-14 16:30:00,2022,Colón (Santa Fe),San Lorenzo,0.0,0.0,post
+635519,2022-09-14 19:00:00,2022,River Plate,Banfield,1.0,2.0,post
+635522,2022-09-14 21:30:00,2022,Lanús,Boca Juniors,0.0,1.0,post
+635526,2022-09-15 19:00:00,2022,Defensa y Justicia,Argentinos Juniors,2.0,1.0,post
+635518,2022-09-15 19:00:00,2022,Rosario Central,Estudiantes de La Plata,1.0,1.0,post
+635515,2022-09-15 21:30:00,2022,Atlético Tucumán,Talleres (Córdoba),1.0,1.0,post
+635525,2022-09-15 21:30:00,2022,Gimnasia La Plata,Arsenal Sarandi,2.0,0.0,post
+635538,2022-09-17 15:30:00,2022,Barracas Central,Godoy Cruz Antonio Tomba,3.0,1.0,post
+635541,2022-09-17 20:30:00,2022,Newell's Old Boys,Sarmiento (Junín),0.0,1.0,post
+635529,2022-09-18 13:00:00,2022,Tigre,Vélez Sarsfield,2.0,0.0,post
+635531,2022-09-18 15:30:00,2022,San Lorenzo,River Plate,0.0,1.0,post
+635539,2022-09-18 18:00:00,2022,Banfield,Lanús,1.0,2.0,post
+635530,2022-09-18 20:30:00,2022,Talleres (Córdoba),Colón (Santa Fe),2.0,0.0,post
+635532,2022-09-18 20:30:00,2022,Platense,Racing Club,0.0,1.0,post
+635540,2022-09-19 16:30:00,2022,Arsenal Sarandi,Aldosivi,3.0,0.0,post
+635537,2022-09-19 19:00:00,2022,Boca Juniors,Huracán,0.0,0.0,post
+635534,2022-09-19 19:00:00,2022,Unión (Santa Fe),Independiente,0.0,1.0,post
+635528,2022-09-19 21:30:00,2022,Argentinos Juniors,Atlético Tucumán,1.0,2.0,post
+635535,2022-09-19 21:30:00,2022,Estudiantes de La Plata,Defensa y Justicia,1.0,2.0,post
+635533,2022-09-20 18:00:00,2022,Patronato,Rosario Central,0.0,0.0,post
+635536,2022-09-20 20:30:00,2022,Central Córdoba (Santiago del Estero),Gimnasia La Plata,1.0,0.0,post
+635554,2022-09-23 19:00:00,2022,Huracán,Banfield,3.0,1.0,post
+635553,2022-09-23 19:00:00,2022,Godoy Cruz Antonio Tomba,Boca Juniors,0.0,1.0,post
+635551,2022-09-24 13:00:00,2022,Defensa y Justicia,Patronato,2.0,1.0,post
+635546,2022-09-24 13:00:00,2022,Sarmiento (Junín),Arsenal Sarandi,2.0,0.0,post
+635542,2022-09-24 15:30:00,2022,Lanús,San Lorenzo,2.0,0.0,post
+635544,2022-09-24 18:00:00,2022,River Plate,Talleres (Córdoba),0.0,1.0,post
+635555,2022-09-24 20:30:00,2022,Independiente,Newell's Old Boys,1.0,0.0,post
+635552,2022-09-25 15:30:00,2022,Gimnasia La Plata,Tigre,0.0,1.0,post
+635545,2022-09-25 15:30:00,2022,Rosario Central,Platense,1.0,1.0,post
+635543,2022-09-25 18:00:00,2022,Racing Club,Unión (Santa Fe),2.0,1.0,post
+635547,2022-09-25 20:30:00,2022,Vélez Sarsfield,Barracas Central,1.0,0.0,post
+635549,2022-09-25 20:30:00,2022,Atlético Tucumán,Estudiantes de La Plata,3.0,1.0,post
+635548,2022-09-26 17:00:00,2022,Aldosivi,Central Córdoba (Santiago del Estero),0.0,3.0,post
+635550,2022-09-26 17:00:00,2022,Colón (Santa Fe),Argentinos Juniors,0.0,4.0,post
+635565,2022-09-29 15:30:00,2022,Barracas Central,Gimnasia La Plata,1.0,1.0,post
+635569,2022-09-30 19:00:00,2022,Estudiantes de La Plata,Colón (Santa Fe),2.0,4.0,post
+635556,2022-09-30 19:00:00,2022,Tigre,Aldosivi,3.0,0.0,post
+635559,2022-09-30 21:30:00,2022,Racing Club,Rosario Central,4.0,3.0,post
+635562,2022-09-30 21:30:00,2022,Unión (Santa Fe),Newell's Old Boys,0.0,1.0,post
+635560,2022-10-01 13:00:00,2022,Platense,Defensa y Justicia,0.0,0.0,post
+635563,2022-10-01 13:00:00,2022,Central Córdoba (Santiago del Estero),Sarmiento (Junín),0.0,0.0,post
+635558,2022-10-01 15:30:00,2022,San Lorenzo,Huracán,1.0,0.0,post
+635566,2022-10-01 18:00:00,2022,Banfield,Godoy Cruz Antonio Tomba,1.0,1.0,post
+635567,2022-10-01 20:30:00,2022,Arsenal Sarandi,Independiente,0.0,1.0,post
+635561,2022-10-02 15:30:00,2022,Patronato,Atlético Tucumán,2.0,1.0,post
+635564,2022-10-02 18:00:00,2022,Boca Juniors,Vélez Sarsfield,1.0,0.0,post
+635557,2022-10-02 18:30:00,2022,Talleres (Córdoba),Lanús,0.0,1.0,post
+635568,2022-10-02 20:30:00,2022,Argentinos Juniors,River Plate,0.0,3.0,post
+635571,2022-10-03 20:00:00,2022,Rosario Central,Unión (Santa Fe),1.0,1.0,post
+635582,2022-10-04 14:00:00,2022,Aldosivi,Barracas Central,2.0,0.0,post
+635573,2022-10-04 16:30:00,2022,Newell's Old Boys,Arsenal Sarandi,0.0,0.0,post
+635577,2022-10-04 16:30:00,2022,Godoy Cruz Antonio Tomba,San Lorenzo,0.0,0.0,post
+635570,2022-10-04 19:00:00,2022,Sarmiento (Junín),Tigre,2.0,2.0,post
+635583,2022-10-04 21:30:00,2022,Vélez Sarsfield,Banfield,1.0,0.0,post
+635580,2022-10-05 16:30:00,2022,Colón (Santa Fe),Patronato,1.0,0.0,post
+635581,2022-10-05 19:00:00,2022,Atlético Tucumán,Platense,2.0,1.0,post
+635579,2022-10-05 19:00:00,2022,Defensa y Justicia,Racing Club,3.0,3.0,post
+635575,2022-10-05 21:30:00,2022,Independiente,Central Córdoba (Santiago del Estero),1.0,2.0,post
+635572,2022-10-05 21:30:00,2022,River Plate,Estudiantes de La Plata,5.0,0.0,post
+635576,2022-10-06 19:00:00,2022,Huracán,Talleres (Córdoba),1.0,0.0,post
+635574,2022-10-06 19:00:00,2022,Lanús,Argentinos Juniors,0.0,4.0,post
+635597,2022-10-08 13:00:00,2022,Barracas Central,Sarmiento (Junín),1.0,1.0,post
+635589,2022-10-08 16:00:00,2022,San Lorenzo,Vélez Sarsfield,1.0,0.0,post
+635586,2022-10-08 18:15:00,2022,Unión (Santa Fe),Arsenal Sarandi,1.0,0.0,post
+635592,2022-10-08 20:30:00,2022,Platense,Colón (Santa Fe),1.0,2.0,post
+635587,2022-10-09 13:00:00,2022,Tigre,Independiente,2.0,1.0,post
+635585,2022-10-09 15:30:00,2022,Banfield,Gimnasia La Plata,0.0,2.0,post
+635588,2022-10-09 15:30:00,2022,Talleres (Córdoba),Godoy Cruz Antonio Tomba,3.0,1.0,post
+635596,2022-10-09 18:00:00,2022,Boca Juniors,Aldosivi,2.0,1.0,post
+635593,2022-10-09 20:30:00,2022,Patronato,River Plate,0.0,1.0,post
+635590,2022-10-10 16:30:00,2022,Rosario Central,Defensa y Justicia,0.0,0.0,post
+635584,2022-10-10 16:30:00,2022,Argentinos Juniors,Huracán,1.0,1.0,post
+635594,2022-10-10 19:00:00,2022,Estudiantes de La Plata,Lanús,3.0,1.0,post
+635591,2022-10-10 19:00:00,2022,Racing Club,Atlético Tucumán,2.0,0.0,post
+635595,2022-10-10 21:30:00,2022,Central Córdoba (Santiago del Estero),Newell's Old Boys,0.0,3.0,post
+635598,2022-10-12 14:00:00,2022,Aldosivi,Banfield,0.0,1.0,post
+635606,2022-10-12 16:30:00,2022,Gimnasia La Plata,San Lorenzo,0.0,1.0,post
+635599,2022-10-12 16:30:00,2022,Sarmiento (Junín),Boca Juniors,0.0,1.0,post
+635603,2022-10-12 19:00:00,2022,Independiente,Barracas Central,2.0,2.0,post
+635600,2022-10-12 21:30:00,2022,River Plate,Platense,2.0,1.0,post
+635604,2022-10-13 16:30:00,2022,Vélez Sarsfield,Talleres (Córdoba),2.0,1.0,post
+635605,2022-10-13 19:00:00,2022,Godoy Cruz Antonio Tomba,Argentinos Juniors,0.0,0.0,post
+635602,2022-10-13 19:00:00,2022,Lanús,Patronato,0.0,1.0,post
+635609,2022-10-13 21:30:00,2022,Atlético Tucumán,Rosario Central,1.0,1.0,post
+635601,2022-10-13 21:30:00,2022,Newell's Old Boys,Tigre,0.0,2.0,post
+635608,2022-10-14 16:30:00,2022,Colón (Santa Fe),Racing Club,0.0,2.0,post
+635607,2022-10-14 19:00:00,2022,Defensa y Justicia,Unión (Santa Fe),1.0,0.0,post
+635611,2022-10-14 19:00:00,2022,Huracán,Estudiantes de La Plata,3.0,1.0,post
+635610,2022-10-14 21:30:00,2022,Arsenal Sarandi,Central Córdoba (Santiago del Estero),2.0,0.0,post
+635618,2022-10-16 13:00:00,2022,Aldosivi,Talleres (Córdoba),1.0,3.0,post
+635614,2022-10-16 15:30:00,2022,Newell's Old Boys,Boca Juniors,2.0,0.0,post
+635624,2022-10-16 18:00:00,2022,Godoy Cruz Antonio Tomba,Patronato,0.0,1.0,post
+635612,2022-10-16 18:00:00,2022,Independiente,Banfield,1.0,0.0,post
+635615,2022-10-16 20:30:00,2022,River Plate,Rosario Central,1.0,2.0,post
+635619,2022-10-17 14:00:00,2022,Arsenal Sarandi,Barracas Central,1.0,2.0,post
+635623,2022-10-17 15:00:00,2022,Gimnasia La Plata,Argentinos Juniors,0.0,0.0,post
+635617,2022-10-17 16:30:00,2022,Vélez Sarsfield,Estudiantes de La Plata,4.0,0.0,post
+635616,2022-10-17 21:30:00,2022,Sarmiento (Junín),San Lorenzo,2.0,4.0,post
+635620,2022-10-17 21:30:00,2022,Atlético Tucumán,Unión (Santa Fe),1.0,1.0,post
+635622,2022-10-18 16:30:00,2022,Colón (Santa Fe),Defensa y Justicia,1.0,2.0,post
+635613,2022-10-18 19:00:00,2022,Lanús,Racing Club,0.0,1.0,post
+635621,2022-10-18 21:30:00,2022,Central Córdoba (Santiago del Estero),Tigre,1.0,2.0,post
+635625,2022-10-18 21:30:00,2022,Huracán,Platense,2.0,0.0,post
+635408,2022-10-19 21:30:00,2022,Talleres (Córdoba),Unión (Santa Fe),2.0,2.0,post
+635578,2022-10-20 15:00:00,2022,Gimnasia La Plata,Boca Juniors,1.0,2.0,post
+635632,2022-10-22 14:00:00,2022,Unión (Santa Fe),Central Córdoba (Santiago del Estero),1.0,4.0,post
+635631,2022-10-22 16:30:00,2022,Estudiantes de La Plata,Godoy Cruz Antonio Tomba,2.0,0.0,post
+635636,2022-10-22 16:30:00,2022,San Lorenzo,Aldosivi,3.0,0.0,post
+635630,2022-10-22 16:30:00,2022,Defensa y Justicia,Atlético Tucumán,3.0,1.0,post
+635626,2022-10-22 19:30:00,2022,Argentinos Juniors,Vélez Sarsfield,2.0,0.0,post
+635627,2022-10-23 12:00:00,2022,Banfield,Sarmiento (Junín),0.0,0.0,post
+635637,2022-10-23 14:30:00,2022,Talleres (Córdoba),Gimnasia La Plata,2.0,1.0,post
+635629,2022-10-23 17:00:00,2022,Boca Juniors,Independiente,2.0,2.0,post
+635639,2022-10-23 17:00:00,2022,Patronato,Huracán,3.0,2.0,post
+635634,2022-10-23 17:00:00,2022,Racing Club,River Plate,1.0,2.0,post
+635628,2022-10-24 15:30:00,2022,Barracas Central,Newell's Old Boys,1.0,1.0,post
+635635,2022-10-24 16:30:00,2022,Rosario Central,Colón (Santa Fe),1.0,1.0,post
+635638,2022-10-24 20:30:00,2022,Tigre,Arsenal Sarandi,1.0,4.0,post
+635516,2022-10-25 19:00:00,2022,Vélez Sarsfield,Central Córdoba (Santiago del Estero),3.0,1.0,post
+635633,2022-10-25 20:00:00,2022,Platense,Lanús,1.0,1.0,post
+656227,2023-01-27 19:15:00,2023,Rosario Central,Argentinos Juniors,1.0,0.0,post
+656223,2023-01-27 21:30:00,2023,Defensa y Justicia,Huracán,2.0,4.0,post
+656228,2023-01-28 17:00:00,2023,San Lorenzo,Arsenal Sarandi,1.0,0.0,post
+656224,2023-01-28 19:15:00,2023,Estudiantes de La Plata,Tigre,1.0,2.0,post
+656229,2023-01-28 19:15:00,2023,Talleres (Córdoba),Independiente,0.0,1.0,post
+656221,2023-01-28 21:30:00,2023,Central Córdoba (Santiago del Estero),River Plate,0.0,2.0,post
+656225,2023-01-29 17:00:00,2023,Platense,Newell's Old Boys,2.0,2.0,post
+656226,2023-01-29 19:15:00,2023,Racing Club,Belgrano (Córdoba),0.0,0.0,post
+657760,2023-01-29 19:15:00,2023,Instituto (Córdoba),Sarmiento (Junín),0.0,0.0,post
+656222,2023-01-29 19:15:00,2023,Colón (Santa Fe),Lanús,1.0,2.0,post
+656220,2023-01-29 21:30:00,2023,Boca Juniors,Atlético Tucumán,1.0,0.0,post
+656219,2023-01-30 17:00:00,2023,Barracas Central,Godoy Cruz Antonio Tomba,0.0,1.0,post
+656218,2023-01-30 20:00:00,2023,Banfield,Unión (Santa Fe),0.0,0.0,post
+656230,2023-01-30 20:00:00,2023,Vélez Sarsfield,Gimnasia La Plata,3.0,1.0,post
+656241,2023-02-03 20:00:00,2023,Newell's Old Boys,Vélez Sarsfield,1.0,0.0,post
+656243,2023-02-03 20:00:00,2023,Tigre,Rosario Central,2.0,2.0,post
+656232,2023-02-04 17:00:00,2023,Arsenal Sarandi,Estudiantes de La Plata,1.0,1.0,post
+656242,2023-02-04 17:00:00,2023,Sarmiento (Junín),Barracas Central,3.0,5.0,post
+656234,2023-02-04 19:15:00,2023,Belgrano (Córdoba),River Plate,2.0,1.0,post
+656231,2023-02-04 21:30:00,2023,Argentinos Juniors,Racing Club,1.0,0.0,post
+656240,2023-02-04 21:30:00,2023,Lanús,San Lorenzo,2.0,1.0,post
+656239,2023-02-05 17:00:00,2023,Independiente,Platense,1.0,2.0,post
+656235,2023-02-05 19:15:00,2023,Boca Juniors,Central Córdoba (Santiago del Estero),0.0,0.0,post
+656233,2023-02-05 21:30:00,2023,Atlético Tucumán,Talleres (Córdoba),0.0,2.0,post
+656237,2023-02-05 21:30:00,2023,Godoy Cruz Antonio Tomba,Colón (Santa Fe),1.0,0.0,post
+656244,2023-02-05 21:30:00,2023,Unión (Santa Fe),Instituto (Córdoba),0.0,2.0,post
+656236,2023-02-06 18:00:00,2023,Gimnasia La Plata,Defensa y Justicia,0.0,2.0,post
+656238,2023-02-06 21:30:00,2023,Huracán,Banfield,3.0,2.0,post
+656248,2023-02-10 21:30:00,2023,Colón (Santa Fe),Sarmiento (Junín),0.0,2.0,post
+656247,2023-02-10 21:30:00,2023,Central Córdoba (Santiago del Estero),Belgrano (Córdoba),0.0,1.0,post
+656249,2023-02-11 17:00:00,2023,Defensa y Justicia,Newell's Old Boys,1.0,0.0,post
+656255,2023-02-11 17:00:00,2023,San Lorenzo,Godoy Cruz Antonio Tomba,1.0,0.0,post
+656251,2023-02-11 19:15:00,2023,Platense,Atlético Tucumán,1.0,1.0,post
+656257,2023-02-11 21:30:00,2023,Talleres (Córdoba),Boca Juniors,2.0,1.0,post
+656258,2023-02-11 21:30:00,2023,Vélez Sarsfield,Independiente,0.0,0.0,post
+656245,2023-02-12 17:00:00,2023,Banfield,Gimnasia La Plata,0.0,0.0,post
+656254,2023-02-12 17:00:00,2023,Rosario Central,Arsenal Sarandi,2.0,1.0,post
+656253,2023-02-12 19:15:00,2023,River Plate,Argentinos Juniors,2.0,1.0,post
+656252,2023-02-12 21:30:00,2023,Racing Club,Tigre,2.0,2.0,post
+656256,2023-02-12 21:30:00,2023,Instituto (Córdoba),Huracán,0.0,0.0,post
+656246,2023-02-13 17:00:00,2023,Barracas Central,Unión (Santa Fe),1.0,1.0,post
+656250,2023-02-13 20:00:00,2023,Estudiantes de La Plata,Lanús,0.0,2.0,post
+656263,2023-02-17 18:00:00,2023,Gimnasia La Plata,Instituto (Córdoba),2.0,0.0,post
+656260,2023-02-17 21:30:00,2023,Arsenal Sarandi,Racing Club,0.0,3.0,post
+656265,2023-02-17 21:30:00,2023,Huracán,Barracas Central,2.0,0.0,post
+656267,2023-02-18 17:00:00,2023,Lanús,Rosario Central,3.0,0.0,post
+656271,2023-02-18 18:00:00,2023,Tigre,River Plate,0.0,1.0,post
+656264,2023-02-18 19:15:00,2023,Godoy Cruz Antonio Tomba,Estudiantes de La Plata,0.0,1.0,post
+656259,2023-02-18 19:15:00,2023,Argentinos Juniors,Belgrano (Córdoba),3.0,0.0,post
+656268,2023-02-18 21:00:00,2023,Newell's Old Boys,Banfield,2.0,0.0,post
+656272,2023-02-19 17:00:00,2023,Unión (Santa Fe),Colón (Santa Fe),1.0,1.0,post
+656262,2023-02-19 19:15:00,2023,Boca Juniors,Platense,3.0,1.0,post
+656266,2023-02-19 21:30:00,2023,Independiente,Defensa y Justicia,0.0,2.0,post
+656270,2023-02-19 21:30:00,2023,Talleres (Córdoba),Central Córdoba (Santiago del Estero),2.0,0.0,post
+656269,2023-02-20 19:15:00,2023,Sarmiento (Junín),San Lorenzo,0.0,1.0,post
+656261,2023-02-20 21:30:00,2023,Atlético Tucumán,Vélez Sarsfield,1.0,1.0,post
+656283,2023-02-24 21:00:00,2023,Rosario Central,Godoy Cruz Antonio Tomba,1.0,0.0,post
+656275,2023-02-24 21:00:00,2023,Belgrano (Córdoba),Tigre,0.0,2.0,post
+656284,2023-02-25 17:00:00,2023,San Lorenzo,Unión (Santa Fe),1.0,0.0,post
+656286,2023-02-25 19:15:00,2023,Estudiantes de La Plata,Sarmiento (Junín),1.0,1.0,post
+656279,2023-02-25 19:15:00,2023,Platense,Talleres (Córdoba),2.0,4.0,post
+656280,2023-02-25 21:30:00,2023,Vélez Sarsfield,Boca Juniors,1.0,2.0,post
+656277,2023-02-26 17:00:00,2023,Colón (Santa Fe),Huracán,1.0,1.0,post
+656278,2023-02-26 17:00:00,2023,Defensa y Justicia,Atlético Tucumán,3.0,0.0,post
+656282,2023-02-26 19:15:00,2023,River Plate,Arsenal Sarandi,1.0,2.0,post
+656273,2023-02-26 21:30:00,2023,Banfield,Independiente,0.0,0.0,post
+656285,2023-02-26 21:30:00,2023,Instituto (Córdoba),Newell's Old Boys,3.0,1.0,post
+656274,2023-02-27 17:00:00,2023,Barracas Central,Gimnasia La Plata,1.0,0.0,post
+656281,2023-02-27 19:15:00,2023,Racing Club,Lanús,2.0,1.0,post
+656276,2023-02-27 21:30:00,2023,Central Córdoba (Santiago del Estero),Argentinos Juniors,1.0,0.0,post
+656297,2023-03-03 20:00:00,2023,Sarmiento (Junín),Rosario Central,4.0,1.0,post
+656300,2023-03-03 20:00:00,2023,Unión (Santa Fe),Estudiantes de La Plata,2.0,0.0,post
+656290,2023-03-04 17:00:00,2023,Gimnasia La Plata,Colón (Santa Fe),0.0,0.0,post
+656296,2023-03-04 17:00:00,2023,Platense,Central Córdoba (Santiago del Estero),1.0,1.0,post
+656294,2023-03-04 19:15:00,2023,Lanús,River Plate,0.0,2.0,post
+656288,2023-03-04 21:30:00,2023,Atlético Tucumán,Banfield,1.0,0.0,post
+656295,2023-03-04 21:30:00,2023,Newell's Old Boys,Barracas Central,1.0,0.0,post
+656293,2023-03-05 17:00:00,2023,Independiente,Instituto (Córdoba),2.0,2.0,post
+656292,2023-03-05 19:15:00,2023,Huracán,San Lorenzo,1.0,1.0,post
+656298,2023-03-05 21:30:00,2023,Talleres (Córdoba),Vélez Sarsfield,1.0,2.0,post
+656299,2023-03-05 21:30:00,2023,Tigre,Argentinos Juniors,0.0,1.0,post
+656287,2023-03-06 17:00:00,2023,Arsenal Sarandi,Belgrano (Córdoba),0.0,1.0,post
+656291,2023-03-06 17:00:00,2023,Godoy Cruz Antonio Tomba,Racing Club,2.0,0.0,post
+656289,2023-03-06 21:00:00,2023,Boca Juniors,Defensa y Justicia,0.0,0.0,post
+656303,2023-03-10 17:00:00,2023,Barracas Central,Independiente,1.0,1.0,post
+656301,2023-03-10 21:00:00,2023,Argentinos Juniors,Arsenal Sarandi,1.0,1.0,post
+656313,2023-03-10 21:00:00,2023,Instituto (Córdoba),Atlético Tucumán,1.0,1.0,post
+656312,2023-03-11 17:00:00,2023,San Lorenzo,Gimnasia La Plata,4.0,0.0,post
+656307,2023-03-11 19:15:00,2023,Defensa y Justicia,Talleres (Córdoba),1.0,1.0,post
+656304,2023-03-11 21:30:00,2023,Belgrano (Córdoba),Lanús,0.0,0.0,post
+656305,2023-03-11 21:30:00,2023,Central Córdoba (Santiago del Estero),Tigre,2.0,0.0,post
+656309,2023-03-12 17:00:00,2023,Racing Club,Sarmiento (Junín),1.0,0.0,post
+656308,2023-03-12 19:15:00,2023,Estudiantes de La Plata,Huracán,2.0,1.0,post
+656310,2023-03-12 19:15:00,2023,River Plate,Godoy Cruz Antonio Tomba,3.0,0.0,post
+656302,2023-03-12 21:30:00,2023,Banfield,Boca Juniors,1.0,0.0,post
+656311,2023-03-12 21:30:00,2023,Rosario Central,Unión (Santa Fe),1.0,1.0,post
+656314,2023-03-13 21:00:00,2023,Vélez Sarsfield,Platense,1.0,1.0,post
+656306,2023-03-13 21:00:00,2023,Colón (Santa Fe),Newell's Old Boys,1.0,1.0,post
+656327,2023-03-17 21:00:00,2023,Unión (Santa Fe),Racing Club,1.0,3.0,post
+656315,2023-03-18 16:30:00,2023,Arsenal Sarandi,Tigre,2.0,0.0,post
+656321,2023-03-18 19:00:00,2023,Independiente,Colón (Santa Fe),2.0,2.0,post
+656324,2023-03-18 19:00:00,2023,Platense,Defensa y Justicia,1.0,0.0,post
+656316,2023-03-18 21:30:00,2023,Atlético Tucumán,Barracas Central,1.0,1.0,post
+656319,2023-03-18 21:30:00,2023,Godoy Cruz Antonio Tomba,Belgrano (Córdoba),3.0,1.0,post
+656318,2023-03-19 16:30:00,2023,Gimnasia La Plata,Estudiantes de La Plata,2.0,1.0,post
+656317,2023-03-19 19:00:00,2023,Boca Juniors,Instituto (Córdoba),2.0,3.0,post
+656326,2023-03-19 21:30:00,2023,Talleres (Córdoba),Banfield,0.0,1.0,post
+656325,2023-03-19 21:30:00,2023,Sarmiento (Junín),River Plate,0.0,2.0,post
+656323,2023-03-20 18:30:00,2023,Newell's Old Boys,San Lorenzo,1.0,0.0,post
+656320,2023-03-20 21:00:00,2023,Huracán,Rosario Central,0.0,2.0,post
+656322,2023-03-20 21:00:00,2023,Lanús,Argentinos Juniors,0.0,0.0,post
+656328,2023-03-21 21:00:00,2023,Vélez Sarsfield,Central Córdoba (Santiago del Estero),4.0,0.0,post
+656342,2023-03-30 20:00:00,2023,Defensa y Justicia,Vélez Sarsfield,0.0,0.0,post
+656329,2023-03-30 21:30:00,2023,Argentinos Juniors,Godoy Cruz Antonio Tomba,3.0,0.0,post
+656339,2023-03-31 19:00:00,2023,Rosario Central,Gimnasia La Plata,3.0,1.0,post
+656335,2023-03-31 19:00:00,2023,Estudiantes de La Plata,Newell's Old Boys,3.0,0.0,post
+656338,2023-03-31 21:30:00,2023,River Plate,Unión (Santa Fe),1.0,0.0,post
+656331,2023-04-01 15:30:00,2023,Barracas Central,Boca Juniors,0.0,3.0,post
+656340,2023-04-01 19:00:00,2023,San Lorenzo,Independiente,0.0,0.0,post
+656337,2023-04-01 19:30:00,2023,Racing Club,Huracán,2.0,1.0,post
+656336,2023-04-01 21:30:00,2023,Tigre,Lanús,2.0,1.0,post
+656341,2023-04-02 16:30:00,2023,Instituto (Córdoba),Talleres (Córdoba),0.0,3.0,post
+656334,2023-04-02 19:00:00,2023,Colón (Santa Fe),Atlético Tucumán,0.0,0.0,post
+656330,2023-04-02 21:30:00,2023,Banfield,Platense,0.0,2.0,post
+656332,2023-04-03 20:00:00,2023,Belgrano (Córdoba),Sarmiento (Junín),0.0,0.0,post
+656333,2023-04-03 21:30:00,2023,Central Córdoba (Santiago del Estero),Arsenal Sarandi,1.0,0.0,post
+656352,2023-04-07 19:00:00,2023,Platense,Instituto (Córdoba),1.0,0.0,post
+656350,2023-04-07 19:00:00,2023,Lanús,Arsenal Sarandi,3.0,0.0,post
+656354,2023-04-07 21:30:00,2023,Talleres (Córdoba),Barracas Central,3.0,0.0,post
+656356,2023-04-07 21:30:00,2023,Vélez Sarsfield,Banfield,3.0,3.0,post
+656353,2023-04-08 15:30:00,2023,Sarmiento (Junín),Argentinos Juniors,2.0,0.0,post
+656346,2023-04-08 18:00:00,2023,Gimnasia La Plata,Racing Club,3.0,1.0,post
+656355,2023-04-08 18:00:00,2023,Unión (Santa Fe),Belgrano (Córdoba),0.0,3.0,post
+656343,2023-04-08 20:30:00,2023,Atlético Tucumán,San Lorenzo,1.0,3.0,post
+656345,2023-04-08 20:30:00,2023,Defensa y Justicia,Central Córdoba (Santiago del Estero),1.0,2.0,post
+656349,2023-04-09 14:00:00,2023,Independiente,Estudiantes de La Plata,1.0,2.0,post
+656347,2023-04-09 14:00:00,2023,Godoy Cruz Antonio Tomba,Tigre,1.0,1.0,post
+656351,2023-04-09 16:30:00,2023,Newell's Old Boys,Rosario Central,0.0,0.0,post
+656348,2023-04-09 19:00:00,2023,Huracán,River Plate,0.0,3.0,post
+656344,2023-04-09 21:30:00,2023,Boca Juniors,Colón (Santa Fe),1.0,2.0,post
+656360,2023-04-11 14:00:00,2023,Barracas Central,Platense,1.0,0.0,post
+656357,2023-04-11 19:00:00,2023,Argentinos Juniors,Unión (Santa Fe),5.0,1.0,post
+656362,2023-04-11 21:30:00,2023,Central Córdoba (Santiago del Estero),Lanús,1.0,1.0,post
+656359,2023-04-11 21:30:00,2023,Banfield,Defensa y Justicia,0.0,3.0,post
+656369,2023-04-11 21:30:00,2023,Instituto (Córdoba),Vélez Sarsfield,1.0,0.0,post
+656368,2023-04-12 17:30:00,2023,San Lorenzo,Boca Juniors,1.0,0.0,post
+656361,2023-04-12 19:00:00,2023,Belgrano (Córdoba),Huracán,2.0,0.0,post
+656365,2023-04-12 19:30:00,2023,Racing Club,Newell's Old Boys,0.0,1.0,post
+656364,2023-04-12 21:30:00,2023,Estudiantes de La Plata,Atlético Tucumán,0.0,0.0,post
+656367,2023-04-12 21:30:00,2023,Rosario Central,Independiente,1.0,0.0,post
+656358,2023-04-13 14:00:00,2023,Arsenal Sarandi,Godoy Cruz Antonio Tomba,2.0,3.0,post
+656363,2023-04-13 16:30:00,2023,Colón (Santa Fe),Talleres (Córdoba),2.0,2.0,post
+656366,2023-04-13 19:30:00,2023,River Plate,Gimnasia La Plata,3.0,0.0,post
+656370,2023-04-13 21:30:00,2023,Tigre,Sarmiento (Junín),1.0,0.0,post
+656374,2023-04-15 16:30:00,2023,Defensa y Justicia,Instituto (Córdoba),1.0,0.0,post
+656373,2023-04-15 19:00:00,2023,Boca Juniors,Estudiantes de La Plata,0.0,1.0,post
+656375,2023-04-15 21:30:00,2023,Gimnasia La Plata,Belgrano (Córdoba),0.0,2.0,post
+656377,2023-04-15 21:30:00,2023,Huracán,Argentinos Juniors,0.0,0.0,post
+656383,2023-04-16 14:00:00,2023,Unión (Santa Fe),Tigre,0.0,0.0,post
+656384,2023-04-16 14:00:00,2023,Vélez Sarsfield,Barracas Central,0.0,0.0,post
+656378,2023-04-16 16:30:00,2023,Independiente,Racing Club,1.0,1.0,post
+656379,2023-04-16 19:00:00,2023,Newell's Old Boys,River Plate,0.0,1.0,post
+656382,2023-04-16 21:30:00,2023,Talleres (Córdoba),San Lorenzo,0.0,0.0,post
+656380,2023-04-17 16:30:00,2023,Platense,Colón (Santa Fe),0.0,0.0,post
+656381,2023-04-17 19:00:00,2023,Sarmiento (Junín),Arsenal Sarandi,1.0,0.0,post
+656372,2023-04-17 19:00:00,2023,Banfield,Central Córdoba (Santiago del Estero),1.0,0.0,post
+656371,2023-04-17 21:30:00,2023,Atlético Tucumán,Rosario Central,2.0,2.0,post
+656376,2023-04-17 21:30:00,2023,Godoy Cruz Antonio Tomba,Lanús,4.0,4.0,post
+656390,2023-04-21 20:30:00,2023,Colón (Santa Fe),Vélez Sarsfield,2.0,1.0,post
+656386,2023-04-22 15:30:00,2023,Arsenal Sarandi,Unión (Santa Fe),2.0,1.0,post
+656391,2023-04-22 15:30:00,2023,Lanús,Sarmiento (Junín),2.0,1.0,post
+656388,2023-04-22 20:30:00,2023,Belgrano (Córdoba),Newell's Old Boys,1.0,0.0,post
+656389,2023-04-22 20:30:00,2023,Central Córdoba (Santiago del Estero),Godoy Cruz Antonio Tomba,0.0,2.0,post
+656396,2023-04-23 11:00:00,2023,San Lorenzo,Platense,1.0,0.0,post
+656395,2023-04-23 15:30:00,2023,Rosario Central,Boca Juniors,2.0,2.0,post
+656397,2023-04-23 17:30:00,2023,Instituto (Córdoba),Banfield,1.0,1.0,post
+656398,2023-04-23 18:00:00,2023,Estudiantes de La Plata,Talleres (Córdoba),1.0,0.0,post
+656394,2023-04-23 20:30:00,2023,River Plate,Independiente,2.0,0.0,post
+656387,2023-04-24 15:30:00,2023,Barracas Central,Defensa y Justicia,0.0,2.0,post
+656393,2023-04-24 19:00:00,2023,Racing Club,Atlético Tucumán,1.0,3.0,post
+656385,2023-04-24 21:30:00,2023,Argentinos Juniors,Gimnasia La Plata,2.0,4.0,post
+656392,2023-04-25 19:30:00,2023,Tigre,Huracán,1.0,0.0,post
+656401,2023-04-27 20:00:00,2023,Sarmiento (Junín),Godoy Cruz Antonio Tomba,1.0,1.0,post
+656399,2023-04-27 20:00:00,2023,Platense,Estudiantes de La Plata,1.0,2.0,post
+656412,2023-04-28 19:00:00,2023,Newell's Old Boys,Argentinos Juniors,0.0,0.0,post
+656410,2023-04-28 19:00:00,2023,Huracán,Arsenal Sarandi,2.0,1.0,post
+656405,2023-04-28 21:30:00,2023,Atlético Tucumán,River Plate,1.0,1.0,post
+656404,2023-04-29 14:00:00,2023,Vélez Sarsfield,San Lorenzo,0.0,0.0,post
+656409,2023-04-29 16:30:00,2023,Gimnasia La Plata,Tigre,1.0,1.0,post
+656406,2023-04-29 19:00:00,2023,Banfield,Barracas Central,0.0,0.0,post
+656400,2023-04-29 19:00:00,2023,Instituto (Córdoba),Central Córdoba (Santiago del Estero),0.0,2.0,post
+656407,2023-04-29 21:30:00,2023,Boca Juniors,Racing Club,3.0,1.0,post
+656408,2023-04-30 15:30:00,2023,Defensa y Justicia,Colón (Santa Fe),2.0,0.0,post
+656411,2023-04-30 18:00:00,2023,Independiente,Belgrano (Córdoba),2.0,0.0,post
+656402,2023-04-30 20:30:00,2023,Talleres (Córdoba),Rosario Central,3.0,1.0,post
+656423,2023-05-05 15:30:00,2023,Barracas Central,Instituto (Córdoba),3.0,0.0,post
+656413,2023-05-05 15:30:00,2023,Godoy Cruz Antonio Tomba,Unión (Santa Fe),0.0,0.0,post
+656414,2023-05-06 15:30:00,2023,Lanús,Huracán,1.0,0.0,post
+656422,2023-05-06 18:00:00,2023,Belgrano (Córdoba),Atlético Tucumán,1.0,0.0,post
+656420,2023-05-06 18:00:00,2023,Colón (Santa Fe),Banfield,2.0,0.0,post
+656425,2023-05-06 20:30:00,2023,Argentinos Juniors,Independiente,2.0,2.0,post
+656417,2023-05-07 14:00:00,2023,Rosario Central,Platense,4.0,0.0,post
+656416,2023-05-07 17:30:00,2023,River Plate,Boca Juniors,1.0,0.0,post
+656426,2023-05-07 21:00:00,2023,Tigre,Newell's Old Boys,2.0,2.0,post
+656419,2023-05-07 21:00:00,2023,Estudiantes de La Plata,Vélez Sarsfield,2.0,0.0,post
+656424,2023-05-08 15:30:00,2023,Arsenal Sarandi,Gimnasia La Plata,0.0,1.0,post
+656418,2023-05-08 17:00:00,2023,San Lorenzo,Defensa y Justicia,0.0,0.0,post
+656415,2023-05-08 19:30:00,2023,Racing Club,Talleres (Córdoba),2.0,4.0,post
+656421,2023-05-08 21:30:00,2023,Central Córdoba (Santiago del Estero),Sarmiento (Junín),0.0,1.0,post
+656433,2023-05-12 20:00:00,2023,Huracán,Godoy Cruz Antonio Tomba,0.0,0.0,post
+656435,2023-05-12 21:30:00,2023,Atlético Tucumán,Argentinos Juniors,1.0,2.0,post
+656427,2023-05-13 15:30:00,2023,Independiente,Tigre,2.0,1.0,post
+656436,2023-05-13 18:00:00,2023,Banfield,San Lorenzo,1.0,2.0,post
+656428,2023-05-13 20:30:00,2023,Newell's Old Boys,Arsenal Sarandi,2.0,0.0,post
+656430,2023-05-13 20:30:00,2023,Instituto (Córdoba),Colón (Santa Fe),1.0,0.0,post
+656439,2023-05-14 14:00:00,2023,Defensa y Justicia,Estudiantes de La Plata,1.0,1.0,post
+656429,2023-05-14 16:30:00,2023,Platense,Racing Club,3.0,0.0,post
+656438,2023-05-14 19:00:00,2023,Boca Juniors,Belgrano (Córdoba),2.0,0.0,post
+656431,2023-05-14 21:30:00,2023,Talleres (Córdoba),River Plate,2.0,1.0,post
+656437,2023-05-15 15:30:00,2023,Barracas Central,Central Córdoba (Santiago del Estero),2.0,2.0,post
+656432,2023-05-15 15:30:00,2023,Unión (Santa Fe),Sarmiento (Junín),0.0,2.0,post
+656440,2023-05-15 18:00:00,2023,Gimnasia La Plata,Lanús,1.0,0.0,post
+656434,2023-05-15 20:30:00,2023,Vélez Sarsfield,Rosario Central,0.0,0.0,post
+656442,2023-05-18 21:00:00,2023,Arsenal Sarandi,Independiente,2.0,1.0,post
+656450,2023-05-19 15:30:00,2023,Godoy Cruz Antonio Tomba,Gimnasia La Plata,2.0,0.0,post
+656454,2023-05-19 19:00:00,2023,Central Córdoba (Santiago del Estero),Unión (Santa Fe),0.0,1.0,post
+656449,2023-05-19 19:00:00,2023,Estudiantes de La Plata,Banfield,1.0,0.0,post
+656446,2023-05-19 19:00:00,2023,Rosario Central,Defensa y Justicia,2.0,1.0,post
+656441,2023-05-19 21:30:00,2023,Argentinos Juniors,Boca Juniors,0.0,1.0,post
+656445,2023-05-20 14:00:00,2023,San Lorenzo,Instituto (Córdoba),2.0,0.0,post
+656443,2023-05-20 21:30:00,2023,Tigre,Atlético Tucumán,0.0,0.0,post
+656451,2023-05-20 21:30:00,2023,Lanús,Newell's Old Boys,1.0,0.0,post
+656447,2023-05-21 15:30:00,2023,Belgrano (Córdoba),Talleres (Córdoba),1.0,1.0,post
+656448,2023-05-21 18:00:00,2023,Colón (Santa Fe),Barracas Central,1.0,1.0,post
+656444,2023-05-21 18:00:00,2023,Sarmiento (Junín),Huracán,0.0,0.0,post
+656453,2023-05-21 20:30:00,2023,River Plate,Platense,2.0,1.0,post
+656455,2023-05-26 21:30:00,2023,Atlético Tucumán,Arsenal Sarandi,1.0,0.0,post
+656462,2023-05-27 11:00:00,2023,Gimnasia La Plata,Sarmiento (Junín),0.0,0.0,post
+656458,2023-05-27 18:00:00,2023,Platense,Belgrano (Córdoba),1.0,0.0,post
+656460,2023-05-27 20:30:00,2023,Independiente,Lanús,1.0,1.0,post
+656466,2023-05-28 14:00:00,2023,Barracas Central,San Lorenzo,1.0,0.0,post
+656456,2023-05-28 16:30:00,2023,Talleres (Córdoba),Argentinos Juniors,1.0,0.0,post
+656463,2023-05-28 16:30:00,2023,Defensa y Justicia,Racing Club,1.0,1.0,post
+656465,2023-05-28 19:00:00,2023,Boca Juniors,Tigre,1.0,0.0,post
+656459,2023-05-28 21:30:00,2023,Newell's Old Boys,Godoy Cruz Antonio Tomba,2.0,0.0,post
+656464,2023-05-29 16:30:00,2023,Colón (Santa Fe),Central Córdoba (Santiago del Estero),2.0,2.0,post
+656467,2023-05-29 19:00:00,2023,Banfield,Rosario Central,2.0,0.0,post
+656468,2023-05-29 19:00:00,2023,Huracán,Unión (Santa Fe),0.0,1.0,post
+656457,2023-05-29 20:00:00,2023,Instituto (Córdoba),Estudiantes de La Plata,0.0,0.0,post
+656461,2023-05-29 21:30:00,2023,Vélez Sarsfield,River Plate,2.0,2.0,post
+656480,2023-06-01 20:00:00,2023,Sarmiento (Junín),Newell's Old Boys,0.0,0.0,post
+656470,2023-06-01 21:30:00,2023,Arsenal Sarandi,Boca Juniors,1.0,0.0,post
+656473,2023-06-02 19:00:00,2023,Estudiantes de La Plata,Barracas Central,5.0,2.0,post
+656469,2023-06-02 21:30:00,2023,Argentinos Juniors,Platense,1.0,0.0,post
+656481,2023-06-02 21:30:00,2023,Tigre,Talleres (Córdoba),1.0,3.0,post
+656471,2023-06-03 14:00:00,2023,Belgrano (Córdoba),Vélez Sarsfield,2.0,0.0,post
+656472,2023-06-03 19:00:00,2023,Central Córdoba (Santiago del Estero),Huracán,2.0,0.0,post
+656478,2023-06-03 19:00:00,2023,Rosario Central,Instituto (Córdoba),4.0,1.0,post
+656476,2023-06-03 21:30:00,2023,Racing Club,Banfield,2.0,0.0,post
+656482,2023-06-04 11:00:00,2023,Unión (Santa Fe),Gimnasia La Plata,2.0,0.0,post
+656479,2023-06-04 14:00:00,2023,San Lorenzo,Colón (Santa Fe),0.0,0.0,post
+656474,2023-06-04 17:00:00,2023,Godoy Cruz Antonio Tomba,Independiente,2.0,1.0,post
+656475,2023-06-04 21:30:00,2023,Lanús,Atlético Tucumán,2.0,1.0,post
+656485,2023-06-09 15:30:00,2023,Barracas Central,Rosario Central,0.0,0.0,post
+656490,2023-06-09 20:00:00,2023,Independiente,Sarmiento (Junín),2.0,0.0,post
+656492,2023-06-10 19:00:00,2023,Platense,Tigre,1.0,0.0,post
+656486,2023-06-10 20:00:00,2023,Boca Juniors,Lanús,1.0,1.0,post
+656495,2023-06-10 21:30:00,2023,Talleres (Córdoba),Arsenal Sarandi,1.0,0.0,post
+656491,2023-06-12 14:00:00,2023,Newell's Old Boys,Unión (Santa Fe),1.0,1.0,post
+656493,2023-06-12 17:00:00,2023,San Lorenzo,Central Córdoba (Santiago del Estero),0.0,0.0,post
+656484,2023-06-12 19:15:00,2023,Banfield,River Plate,1.0,4.0,post
+656494,2023-06-12 21:45:00,2023,Instituto (Córdoba),Racing Club,1.0,1.0,post
+656496,2023-06-12 21:45:00,2023,Vélez Sarsfield,Argentinos Juniors,0.0,1.0,post
+656487,2023-06-13 18:00:00,2023,Colón (Santa Fe),Estudiantes de La Plata,1.0,0.0,post
+656488,2023-06-13 18:00:00,2023,Defensa y Justicia,Belgrano (Córdoba),2.0,0.0,post
+656483,2023-06-13 20:30:00,2023,Atlético Tucumán,Godoy Cruz Antonio Tomba,2.0,1.0,post
+656489,2023-06-13 20:30:00,2023,Gimnasia La Plata,Huracán,1.0,0.0,post
+656403,2023-06-17 15:30:00,2023,Unión (Santa Fe),Lanús,1.0,1.0,post
+656452,2023-06-17 18:00:00,2023,Racing Club,Vélez Sarsfield,2.0,1.0,post
+656477,2023-06-17 21:00:00,2023,River Plate,Defensa y Justicia,1.0,0.0,post
+656501,2023-06-21 19:00:00,2023,Estudiantes de La Plata,San Lorenzo,1.0,1.0,post
+656500,2023-06-21 21:30:00,2023,Central Córdoba (Santiago del Estero),Gimnasia La Plata,0.0,0.0,post
+656509,2023-06-22 17:00:00,2023,Tigre,Vélez Sarsfield,2.0,1.0,post
+656505,2023-06-22 18:00:00,2023,Racing Club,Barracas Central,1.0,1.0,post
+656506,2023-06-22 19:45:00,2023,River Plate,Instituto (Córdoba),3.0,1.0,post
+656502,2023-06-22 21:45:00,2023,Godoy Cruz Antonio Tomba,Boca Juniors,4.0,0.0,post
+656503,2023-06-23 19:00:00,2023,Huracán,Newell's Old Boys,1.0,1.0,post
+656497,2023-06-23 21:30:00,2023,Argentinos Juniors,Defensa y Justicia,3.0,1.0,post
+656510,2023-06-24 17:00:00,2023,Unión (Santa Fe),Independiente,3.0,0.0,post
+656504,2023-06-24 20:00:00,2023,Lanús,Talleres (Córdoba),2.0,1.0,post
+656498,2023-06-25 15:30:00,2023,Arsenal Sarandi,Platense,0.0,2.0,post
+656507,2023-06-25 19:00:00,2023,Rosario Central,Colón (Santa Fe),1.0,1.0,post
+656508,2023-06-25 20:30:00,2023,Sarmiento (Junín),Atlético Tucumán,4.0,1.0,post
+656499,2023-06-26 20:00:00,2023,Belgrano (Córdoba),Banfield,3.0,1.0,post
+656520,2023-06-30 19:00:00,2023,Platense,Lanús,0.0,1.0,post
+656511,2023-06-30 21:30:00,2023,Atlético Tucumán,Unión (Santa Fe),1.0,0.0,post
+656518,2023-06-30 21:30:00,2023,Vélez Sarsfield,Arsenal Sarandi,1.0,0.0,post
+656513,2023-07-01 15:00:00,2023,Barracas Central,River Plate,2.0,1.0,post
+656521,2023-07-01 17:30:00,2023,San Lorenzo,Rosario Central,1.0,0.0,post
+656524,2023-07-01 19:00:00,2023,Estudiantes de La Plata,Central Córdoba (Santiago del Estero),1.0,1.0,post
+656523,2023-07-01 21:30:00,2023,Talleres (Córdoba),Godoy Cruz Antonio Tomba,1.0,1.0,post
+656517,2023-07-02 15:00:00,2023,Independiente,Huracán,1.0,0.0,post
+656515,2023-07-02 17:00:00,2023,Colón (Santa Fe),Racing Club,0.0,4.0,post
+656522,2023-07-02 19:00:00,2023,Instituto (Córdoba),Belgrano (Córdoba),1.0,0.0,post
+656512,2023-07-02 19:30:00,2023,Banfield,Argentinos Juniors,1.0,0.0,post
+656516,2023-07-02 19:30:00,2023,Defensa y Justicia,Tigre,1.0,0.0,post
+656514,2023-07-02 21:30:00,2023,Boca Juniors,Sarmiento (Junín),2.0,0.0,post
+656519,2023-07-03 20:00:00,2023,Newell's Old Boys,Gimnasia La Plata,2.0,2.0,post
+656532,2023-07-04 20:00:00,2023,Lanús,Vélez Sarsfield,0.0,1.0,post
+656530,2023-07-05 15:30:00,2023,Godoy Cruz Antonio Tomba,Platense,2.0,1.0,post
+656537,2023-07-05 17:00:00,2023,Tigre,Banfield,1.0,2.0,post
+656535,2023-07-05 18:00:00,2023,Rosario Central,Estudiantes de La Plata,0.0,0.0,post
+656533,2023-07-05 19:30:00,2023,Racing Club,San Lorenzo,1.0,1.0,post
+656534,2023-07-05 21:30:00,2023,River Plate,Colón (Santa Fe),2.0,0.0,post
+656526,2023-07-06 14:00:00,2023,Arsenal Sarandi,Defensa y Justicia,1.0,2.0,post
+656538,2023-07-06 17:00:00,2023,Unión (Santa Fe),Boca Juniors,0.0,0.0,post
+656525,2023-07-06 19:00:00,2023,Argentinos Juniors,Instituto (Córdoba),0.0,0.0,post
+656536,2023-07-06 19:00:00,2023,Sarmiento (Junín),Talleres (Córdoba),0.0,1.0,post
+656531,2023-07-06 21:30:00,2023,Huracán,Atlético Tucumán,0.0,1.0,post
+656527,2023-07-06 21:30:00,2023,Belgrano (Córdoba),Barracas Central,0.0,2.0,post
+656529,2023-07-07 19:00:00,2023,Gimnasia La Plata,Independiente,1.0,1.0,post
+656528,2023-07-07 21:30:00,2023,Central Córdoba (Santiago del Estero),Newell's Old Boys,2.0,0.0,post
+656545,2023-07-08 18:00:00,2023,Estudiantes de La Plata,Racing Club,0.0,0.0,post
+656549,2023-07-08 20:30:00,2023,San Lorenzo,River Plate,0.0,0.0,post
+656550,2023-07-09 15:30:00,2023,Instituto (Córdoba),Tigre,0.0,1.0,post
+656547,2023-07-09 15:30:00,2023,Platense,Sarmiento (Junín),1.0,0.0,post
+656552,2023-07-09 18:00:00,2023,Vélez Sarsfield,Godoy Cruz Antonio Tomba,1.0,1.0,post
+656544,2023-07-09 20:30:00,2023,Defensa y Justicia,Lanús,2.0,2.0,post
+656540,2023-07-09 20:30:00,2023,Banfield,Arsenal Sarandi,0.0,0.0,post
+656541,2023-07-10 14:00:00,2023,Barracas Central,Argentinos Juniors,0.0,0.0,post
+656543,2023-07-10 16:30:00,2023,Colón (Santa Fe),Belgrano (Córdoba),0.0,0.0,post
+656542,2023-07-10 19:30:00,2023,Boca Juniors,Huracán,1.0,0.0,post
+656551,2023-07-10 21:30:00,2023,Talleres (Córdoba),Unión (Santa Fe),0.0,0.0,post
+656548,2023-07-11 18:45:00,2023,Rosario Central,Central Córdoba (Santiago del Estero),2.0,0.0,post
+656546,2023-07-11 20:00:00,2023,Independiente,Newell's Old Boys,0.0,2.0,post
+656539,2023-07-11 21:30:00,2023,Atlético Tucumán,Gimnasia La Plata,2.0,0.0,post
+656558,2023-07-14 19:00:00,2023,Godoy Cruz Antonio Tomba,Defensa y Justicia,2.0,2.0,post
+656564,2023-07-14 19:00:00,2023,Sarmiento (Junín),Vélez Sarsfield,1.0,1.0,post
+656559,2023-07-14 21:30:00,2023,Huracán,Talleres (Córdoba),0.0,1.0,post
+656566,2023-07-15 14:00:00,2023,Unión (Santa Fe),Platense,0.0,0.0,post
+656562,2023-07-15 16:00:00,2023,Racing Club,Rosario Central,1.0,1.0,post
+656563,2023-07-15 19:00:00,2023,River Plate,Estudiantes de La Plata,3.0,1.0,post
+656555,2023-07-16 14:00:00,2023,Belgrano (Córdoba),San Lorenzo,0.0,1.0,post
+656557,2023-07-16 16:30:00,2023,Gimnasia La Plata,Boca Juniors,1.0,3.0,post
+656560,2023-07-16 19:00:00,2023,Lanús,Banfield,2.0,2.0,post
+656553,2023-07-16 21:30:00,2023,Argentinos Juniors,Colón (Santa Fe),1.0,0.0,post
+656556,2023-07-16 21:30:00,2023,Central Córdoba (Santiago del Estero),Independiente,0.0,1.0,post
+656565,2023-07-17 18:00:00,2023,Tigre,Barracas Central,0.0,1.0,post
+656554,2023-07-17 18:00:00,2023,Arsenal Sarandi,Instituto (Córdoba),0.0,2.0,post
+656561,2023-07-17 20:30:00,2023,Newell's Old Boys,Atlético Tucumán,0.0,0.0,post
+656577,2023-07-22 15:30:00,2023,San Lorenzo,Argentinos Juniors,0.0,2.0,post
+656580,2023-07-22 18:00:00,2023,Estudiantes de La Plata,Belgrano (Córdoba),4.0,0.0,post
+656573,2023-07-22 20:30:00,2023,Platense,Huracán,0.0,1.0,post
+656567,2023-07-23 16:30:00,2023,Atlético Tucumán,Independiente,1.0,0.0,post
+656572,2023-07-23 18:45:00,2023,Defensa y Justicia,Sarmiento (Junín),3.0,0.0,post
+656576,2023-07-23 21:00:00,2023,Rosario Central,River Plate,3.0,3.0,post
+656579,2023-07-24 16:30:00,2023,Talleres (Córdoba),Gimnasia La Plata,2.0,2.0,post
+656574,2023-07-24 16:30:00,2023,Vélez Sarsfield,Unión (Santa Fe),0.0,0.0,post
+656568,2023-07-24 18:30:00,2023,Banfield,Godoy Cruz Antonio Tomba,2.0,0.0,post
+656575,2023-07-24 19:30:00,2023,Racing Club,Central Córdoba (Santiago del Estero),3.0,1.0,post
+656570,2023-07-24 20:45:00,2023,Boca Juniors,Newell's Old Boys,2.0,1.0,post
+656569,2023-07-25 15:30:00,2023,Barracas Central,Arsenal Sarandi,0.0,0.0,post
+656571,2023-07-25 18:00:00,2023,Colón (Santa Fe),Tigre,1.0,3.0,post
+656578,2023-07-25 20:30:00,2023,Instituto (Córdoba),Lanús,2.0,1.0,post
+656593,2023-07-28 16:30:00,2023,Argentinos Juniors,Estudiantes de La Plata,2.0,3.0,post
+656592,2023-07-28 16:30:00,2023,Unión (Santa Fe),Defensa y Justicia,2.0,0.0,post
+656588,2023-07-28 19:00:00,2023,Newell's Old Boys,Talleres (Córdoba),1.0,1.0,post
+656581,2023-07-28 19:00:00,2023,Belgrano (Córdoba),Rosario Central,0.0,0.0,post
+656589,2023-07-28 21:30:00,2023,River Plate,Racing Club,2.0,1.0,post
+656582,2023-07-29 14:30:00,2023,Central Córdoba (Santiago del Estero),Atlético Tucumán,0.0,2.0,post
+656590,2023-07-29 15:00:00,2023,Sarmiento (Junín),Banfield,0.0,0.0,post
+656586,2023-07-29 17:00:00,2023,Independiente,Boca Juniors,0.0,2.0,post
+656591,2023-07-29 20:00:00,2023,Tigre,San Lorenzo,2.0,0.0,post
+656594,2023-07-30 15:00:00,2023,Arsenal Sarandi,Colón (Santa Fe),2.0,0.0,post
+656587,2023-07-30 15:00:00,2023,Lanús,Barracas Central,2.0,0.0,post
+656583,2023-07-30 17:30:00,2023,Gimnasia La Plata,Platense,1.0,1.0,post
+656585,2023-07-30 17:30:00,2023,Huracán,Vélez Sarsfield,1.0,0.0,post
+656584,2023-07-30 20:00:00,2023,Godoy Cruz Antonio Tomba,Instituto (Córdoba),4.0,2.0,post
+694182,2024-05-10 19:00:00,2024,Sarmiento (Junín),Instituto (Córdoba),1.0,2.0,post
+694171,2024-05-10 21:15:00,2024,Argentinos Juniors,Rosario Central,3.0,2.0,post
+694180,2024-05-10 21:15:00,2024,Newell's Old Boys,Platense,2.0,0.0,post
+694177,2024-05-11 14:30:00,2024,Huracán,Defensa y Justicia,3.0,1.0,post
+694176,2024-05-11 15:30:00,2024,Godoy Cruz Antonio Tomba,Barracas Central,0.0,1.0,post
+694178,2024-05-11 17:30:00,2024,Independiente,Talleres (Córdoba),1.0,3.0,post
+694181,2024-05-11 19:45:00,2024,River Plate,Central Córdoba (Santiago del Estero),3.0,0.0,post
+694174,2024-05-12 15:30:00,2024,Deportivo Riestra,San Lorenzo,1.0,0.0,post
+694183,2024-05-12 15:30:00,2024,Tigre,Estudiantes de La Plata,0.0,1.0,post
+694179,2024-05-12 17:45:00,2024,Lanús,Independiente Rivadavia,0.0,2.0,post
+694173,2024-05-12 17:45:00,2024,Belgrano (Córdoba),Racing Club,4.0,4.0,post
+694172,2024-05-12 20:15:00,2024,Atlético Tucumán,Boca Juniors,1.0,0.0,post
+694175,2024-05-13 19:00:00,2024,Gimnasia La Plata,Vélez Sarsfield,3.0,1.0,post
+694184,2024-05-13 21:00:00,2024,Unión (Santa Fe),Banfield,1.0,0.0,post
+694190,2024-05-18 15:30:00,2024,Independiente Rivadavia,Godoy Cruz Antonio Tomba,0.0,0.0,post
+694194,2024-05-18 18:00:00,2024,River Plate,Belgrano (Córdoba),3.0,0.0,post
+694188,2024-05-18 20:00:00,2024,Defensa y Justicia,Gimnasia La Plata,1.0,1.0,post
+694191,2024-05-18 20:30:00,2024,Instituto (Córdoba),Unión (Santa Fe),1.0,1.0,post
+694186,2024-05-19 15:00:00,2024,Barracas Central,Sarmiento (Junín),1.0,1.0,post
+694192,2024-05-19 15:30:00,2024,Platense,Independiente,0.0,0.0,post
+694185,2024-05-19 17:45:00,2024,Banfield,Huracán,1.0,1.0,post
+694197,2024-05-19 17:45:00,2024,Talleres (Córdoba),Atlético Tucumán,2.0,0.0,post
+694187,2024-05-19 20:00:00,2024,Central Córdoba (Santiago del Estero),Boca Juniors,2.0,4.0,post
+694189,2024-05-20 19:00:00,2024,Estudiantes de La Plata,Deportivo Riestra,2.0,0.0,post
+694196,2024-05-20 19:00:00,2024,San Lorenzo,Lanús,1.0,1.0,post
+694193,2024-05-20 21:15:00,2024,Racing Club,Argentinos Juniors,3.0,0.0,post
+694195,2024-05-20 21:15:00,2024,Rosario Central,Tigre,1.0,1.0,post
+694198,2024-05-21 20:00:00,2024,Vélez Sarsfield,Newell's Old Boys,1.0,0.0,post
+694203,2024-05-24 15:30:00,2024,Deportivo Riestra,Rosario Central,0.0,2.0,post
+694205,2024-05-24 19:00:00,2024,Tigre,Racing Club,0.0,4.0,post
+694201,2024-05-24 21:15:00,2024,Belgrano (Córdoba),Central Córdoba (Santiago del Estero),2.0,1.0,post
+694208,2024-05-24 21:15:00,2024,Lanús,Estudiantes de La Plata,2.0,1.0,post
+694199,2024-05-25 15:00:00,2024,Argentinos Juniors,River Plate,1.0,0.0,post
+694209,2024-05-25 17:30:00,2024,Newell's Old Boys,Defensa y Justicia,1.0,0.0,post
+694202,2024-05-25 20:00:00,2024,Boca Juniors,Talleres (Córdoba),0.0,0.0,post
+694206,2024-05-26 15:30:00,2024,Huracán,Instituto (Córdoba),1.0,0.0,post
+694210,2024-05-26 17:30:00,2024,Sarmiento (Junín),Independiente Rivadavia,0.0,1.0,post
+694204,2024-05-26 17:45:00,2024,Gimnasia La Plata,Banfield,3.0,0.0,post
+694207,2024-05-26 20:00:00,2024,Independiente,Vélez Sarsfield,1.0,1.0,post
+694211,2024-05-27 19:00:00,2024,Unión (Santa Fe),Barracas Central,2.0,0.0,post
+694200,2024-05-27 21:00:00,2024,Atlético Tucumán,Platense,1.0,1.0,post
+694222,2024-06-01 18:00:00,2024,Racing Club,Deportivo Riestra,1.0,0.0,post
+694215,2024-06-01 20:15:00,2024,Belgrano (Córdoba),Argentinos Juniors,1.0,0.0,post
+694226,2024-06-01 20:15:00,2024,Vélez Sarsfield,Atlético Tucumán,1.0,1.0,post
+694221,2024-06-02 14:30:00,2024,Platense,Boca Juniors,1.0,0.0,post
+694216,2024-06-02 18:00:00,2024,Central Córdoba (Santiago del Estero),Talleres (Córdoba),2.0,4.0,post
+694224,2024-06-02 18:00:00,2024,Rosario Central,Lanús,1.0,1.0,post
+694223,2024-06-02 20:15:00,2024,River Plate,Tigre,3.0,1.0,post
+694220,2024-06-02 20:15:00,2024,Instituto (Córdoba),Gimnasia La Plata,2.0,1.0,post
+694225,2024-06-03 19:00:00,2024,San Lorenzo,Sarmiento (Junín),0.0,1.0,post
+694217,2024-06-03 21:15:00,2024,Defensa y Justicia,Independiente,0.0,0.0,post
+694218,2024-06-03 21:15:00,2024,Estudiantes de La Plata,Godoy Cruz Antonio Tomba,1.0,1.0,post
+694214,2024-06-04 15:00:00,2024,Barracas Central,Huracán,0.0,2.0,post
+694213,2024-06-04 20:00:00,2024,Banfield,Newell's Old Boys,2.0,0.0,post
+694219,2024-06-04 20:00:00,2024,Independiente Rivadavia,Unión (Santa Fe),0.0,1.0,post
+694232,2024-06-12 17:00:00,2024,Godoy Cruz Antonio Tomba,Rosario Central,1.0,1.0,post
+694227,2024-06-12 19:00:00,2024,Argentinos Juniors,Central Córdoba (Santiago del Estero),2.0,1.0,post
+694233,2024-06-12 21:15:00,2024,Independiente,Banfield,2.0,1.0,post
+694231,2024-06-12 21:15:00,2024,Gimnasia La Plata,Barracas Central,2.0,1.0,post
+694230,2024-06-13 15:00:00,2024,Deportivo Riestra,River Plate,2.0,0.0,post
+694237,2024-06-13 19:00:00,2024,Sarmiento (Junín),Estudiantes de La Plata,2.0,0.0,post
+694239,2024-06-13 19:00:00,2024,Tigre,Belgrano (Córdoba),1.0,1.0,post
+694235,2024-06-13 21:15:00,2024,Lanús,Racing Club,2.0,0.0,post
+694236,2024-06-13 21:15:00,2024,Newell's Old Boys,Instituto (Córdoba),0.0,2.0,post
+694229,2024-06-14 19:00:00,2024,Boca Juniors,Vélez Sarsfield,1.0,0.0,post
+694238,2024-06-14 19:00:00,2024,Talleres (Córdoba),Platense,2.0,1.0,post
+694234,2024-06-15 16:00:00,2024,Unión (Santa Fe),San Lorenzo,2.0,1.0,post
+694240,2024-06-15 18:00:00,2024,Huracán,Independiente Rivadavia,1.0,0.0,post
+694228,2024-06-15 20:30:00,2024,Atlético Tucumán,Defensa y Justicia,1.0,1.0,post
+694241,2024-07-18 18:45:00,2024,Argentinos Juniors,Tigre,0.0,2.0,post
+694248,2024-07-18 19:00:00,2024,Independiente Rivadavia,Gimnasia La Plata,1.0,0.0,post
+694249,2024-07-18 21:00:00,2024,Instituto (Córdoba),Independiente,3.0,1.0,post
+694243,2024-07-19 15:00:00,2024,Barracas Central,Newell's Old Boys,0.0,1.0,post
+694244,2024-07-19 19:00:00,2024,Belgrano (Córdoba),Deportivo Riestra,2.0,1.0,post
+694252,2024-07-19 21:00:00,2024,Rosario Central,Sarmiento (Junín),4.0,2.0,post
+694253,2024-07-20 15:00:00,2024,San Lorenzo,Huracán,1.0,1.0,post
+694250,2024-07-20 17:00:00,2024,Racing Club,Godoy Cruz Antonio Tomba,3.0,0.0,post
+694242,2024-07-20 19:30:00,2024,Banfield,Atlético Tucumán,1.0,1.0,post
+694251,2024-07-21 15:00:00,2024,River Plate,Lanús,2.0,2.0,post
+694245,2024-07-21 17:15:00,2024,Central Córdoba (Santiago del Estero),Platense,0.0,2.0,post
+694247,2024-07-21 17:15:00,2024,Estudiantes de La Plata,Unión (Santa Fe),0.0,0.0,post
+694246,2024-07-21 20:00:00,2024,Defensa y Justicia,Boca Juniors,2.0,2.0,post
+694254,2024-07-21 20:00:00,2024,Vélez Sarsfield,Talleres (Córdoba),3.0,0.0,post
+694257,2024-07-23 15:00:00,2024,Deportivo Riestra,Argentinos Juniors,2.0,0.0,post
+694258,2024-07-23 18:45:00,2024,Gimnasia La Plata,San Lorenzo,0.0,1.0,post
+694263,2024-07-23 18:45:00,2024,Newell's Old Boys,Independiente Rivadavia,0.0,0.0,post
+694261,2024-07-23 21:00:00,2024,Independiente,Barracas Central,0.0,0.0,post
+694266,2024-07-24 17:00:00,2024,Talleres (Córdoba),Defensa y Justicia,1.0,1.0,post
+694265,2024-07-24 17:15:00,2024,Sarmiento (Junín),Racing Club,1.0,0.0,post
+694259,2024-07-24 19:30:00,2024,Godoy Cruz Antonio Tomba,River Plate,2.0,1.0,post
+694260,2024-07-24 19:30:00,2024,Huracán,Estudiantes de La Plata,0.0,0.0,post
+694262,2024-07-25 18:45:00,2024,Lanús,Belgrano (Córdoba),3.0,2.0,post
+694264,2024-07-25 18:45:00,2024,Platense,Vélez Sarsfield,0.0,2.0,post
+694255,2024-07-25 21:00:00,2024,Atlético Tucumán,Instituto (Córdoba),1.0,0.0,post
+694267,2024-07-25 21:00:00,2024,Tigre,Central Córdoba (Santiago del Estero),1.0,1.0,post
+694276,2024-07-27 15:00:00,2024,Independiente Rivadavia,Independiente,1.0,0.0,post
+694275,2024-07-27 17:00:00,2024,San Lorenzo,Newell's Old Boys,1.0,1.0,post
+694280,2024-07-27 19:00:00,2024,Rosario Central,Huracán,0.0,1.0,post
+694270,2024-07-28 15:00:00,2024,Banfield,Talleres (Córdoba),1.0,1.0,post
+694282,2024-07-28 15:00:00,2024,Estudiantes de La Plata,Gimnasia La Plata,4.0,1.0,post
+694278,2024-07-28 17:15:00,2024,Racing Club,Unión (Santa Fe),2.0,1.0,post
+694279,2024-07-28 18:30:00,2024,River Plate,Sarmiento (Junín),1.0,0.0,post
+694277,2024-07-28 20:30:00,2024,Instituto (Córdoba),Boca Juniors,0.0,0.0,post
+694271,2024-07-29 15:00:00,2024,Barracas Central,Atlético Tucumán,0.0,2.0,post
+694274,2024-07-29 16:30:00,2024,Defensa y Justicia,Platense,1.0,3.0,post
+694281,2024-07-29 18:45:00,2024,Tigre,Deportivo Riestra,2.0,1.0,post
+694273,2024-07-29 18:45:00,2024,Central Córdoba (Santiago del Estero),Vélez Sarsfield,0.0,2.0,post
+694269,2024-07-29 21:00:00,2024,Argentinos Juniors,Lanús,2.0,0.0,post
+694272,2024-07-29 21:00:00,2024,Belgrano (Córdoba),Godoy Cruz Antonio Tomba,1.0,0.0,post
+694268,2024-07-31 18:30:00,2024,Unión (Santa Fe),Rosario Central,1.0,0.0,post
+694256,2024-07-31 20:30:00,2024,Boca Juniors,Banfield,3.0,0.0,post
+694287,2024-08-02 20:00:00,2024,Newell's Old Boys,Estudiantes de La Plata,1.0,4.0,post
+694294,2024-08-03 15:00:00,2024,Godoy Cruz Antonio Tomba,Argentinos Juniors,1.0,0.0,post
+694296,2024-08-03 15:00:00,2024,Vélez Sarsfield,Defensa y Justicia,3.0,0.0,post
+694284,2024-08-03 17:15:00,2024,Talleres (Córdoba),Instituto (Córdoba),1.0,1.0,post
+694289,2024-08-03 19:15:00,2024,Independiente,San Lorenzo,0.0,0.0,post
+694295,2024-08-03 20:30:00,2024,Huracán,Racing Club,0.0,0.0,post
+694285,2024-08-04 15:00:00,2024,Sarmiento (Junín),Belgrano (Córdoba),0.0,0.0,post
+694283,2024-08-04 15:00:00,2024,Unión (Santa Fe),River Plate,0.0,0.0,post
+694291,2024-08-04 17:30:00,2024,Boca Juniors,Barracas Central,1.0,1.0,post
+694290,2024-08-04 20:00:00,2024,Atlético Tucumán,Independiente Rivadavia,2.0,1.0,post
+694288,2024-08-04 20:00:00,2024,Lanús,Tigre,3.0,2.0,post
+694292,2024-08-05 14:30:00,2024,Deportivo Riestra,Central Córdoba (Santiago del Estero),1.0,0.0,post
+694293,2024-08-05 17:00:00,2024,Gimnasia La Plata,Rosario Central,0.0,1.0,post
+694286,2024-08-05 20:00:00,2024,Platense,Banfield,0.0,1.0,post
+694304,2024-08-08 15:00:00,2024,Argentinos Juniors,Sarmiento (Junín),0.0,0.0,post
+694309,2024-08-09 15:00:00,2024,Deportivo Riestra,Lanús,3.0,1.0,post
+694306,2024-08-09 16:30:00,2024,Barracas Central,Talleres (Córdoba),1.0,1.0,post
+694307,2024-08-09 19:00:00,2024,Belgrano (Córdoba),Unión (Santa Fe),1.0,1.0,post
+694298,2024-08-09 21:00:00,2024,Racing Club,Gimnasia La Plata,0.0,1.0,post
+694301,2024-08-10 14:30:00,2024,San Lorenzo,Atlético Tucumán,0.0,1.0,post
+694300,2024-08-10 16:30:00,2024,Rosario Central,Newell's Old Boys,1.0,0.0,post
+694310,2024-08-10 18:45:00,2024,Independiente Rivadavia,Boca Juniors,1.0,1.0,post
+694299,2024-08-10 20:30:00,2024,River Plate,Huracán,1.0,1.0,post
+694297,2024-08-11 15:00:00,2024,Instituto (Córdoba),Platense,2.0,0.0,post
+694308,2024-08-11 15:00:00,2024,Central Córdoba (Santiago del Estero),Defensa y Justicia,2.0,0.0,post
+694305,2024-08-11 17:30:00,2024,Banfield,Vélez Sarsfield,2.0,2.0,post
+694303,2024-08-11 20:00:00,2024,Estudiantes de La Plata,Independiente,0.0,2.0,post
+694302,2024-08-12 19:00:00,2024,Tigre,Godoy Cruz Antonio Tomba,0.0,2.0,post
+694317,2024-08-16 19:00:00,2024,Platense,Barracas Central,0.0,0.0,post
+694316,2024-08-16 21:00:00,2024,Newell's Old Boys,Racing Club,0.0,1.0,post
+694315,2024-08-17 15:00:00,2024,Lanús,Central Córdoba (Santiago del Estero),1.0,1.0,post
+694314,2024-08-17 15:30:00,2024,Independiente,Rosario Central,1.0,0.0,post
+694323,2024-08-17 17:30:00,2024,Gimnasia La Plata,River Plate,1.0,1.0,post
+694319,2024-08-17 20:00:00,2024,Talleres (Córdoba),Independiente Rivadavia,2.0,1.0,post
+694320,2024-08-17 20:00:00,2024,Vélez Sarsfield,Instituto (Córdoba),1.0,0.0,post
+694312,2024-08-18 14:30:00,2024,Boca Juniors,San Lorenzo,3.0,2.0,post
+694311,2024-08-18 17:00:00,2024,Atlético Tucumán,Estudiantes de La Plata,2.0,0.0,post
+694318,2024-08-18 17:00:00,2024,Sarmiento (Junín),Tigre,0.0,0.0,post
+694321,2024-08-18 20:30:00,2024,Huracán,Belgrano (Córdoba),1.0,0.0,post
+694322,2024-08-19 18:45:00,2024,Godoy Cruz Antonio Tomba,Deportivo Riestra,4.0,1.0,post
+694313,2024-08-19 18:45:00,2024,Unión (Santa Fe),Argentinos Juniors,3.0,0.0,post
+694324,2024-08-19 21:00:00,2024,Defensa y Justicia,Banfield,1.0,0.0,post
+694337,2024-08-23 18:00:00,2024,Independiente Rivadavia,Platense,0.0,2.0,post
+694331,2024-08-24 14:30:00,2024,Deportivo Riestra,Sarmiento (Junín),2.0,1.0,post
+694329,2024-08-24 15:00:00,2024,Argentinos Juniors,Huracán,0.0,0.0,post
+694336,2024-08-24 17:00:00,2024,Instituto (Córdoba),Defensa y Justicia,4.0,1.0,post
+694330,2024-08-24 19:30:00,2024,Tigre,Unión (Santa Fe),5.0,1.0,post
+694335,2024-08-25 14:30:00,2024,Lanús,Godoy Cruz Antonio Tomba,1.0,1.0,post
+694338,2024-08-25 14:30:00,2024,San Lorenzo,Talleres (Córdoba),2.0,0.0,post
+694334,2024-08-25 17:00:00,2024,Racing Club,Independiente,0.0,0.0,post
+694333,2024-08-25 20:30:00,2024,River Plate,Newell's Old Boys,0.0,0.0,post
+694328,2024-08-26 16:00:00,2024,Barracas Central,Vélez Sarsfield,0.0,5.0,post
+694326,2024-08-26 16:00:00,2024,Central Córdoba (Santiago del Estero),Banfield,0.0,0.0,post
+694327,2024-08-26 18:30:00,2024,Belgrano (Córdoba),Gimnasia La Plata,0.0,1.0,post
+694332,2024-08-26 18:30:00,2024,Rosario Central,Atlético Tucumán,1.0,0.0,post
+694325,2024-08-26 21:00:00,2024,Estudiantes de La Plata,Boca Juniors,1.0,1.0,post
+694341,2024-08-30 19:00:00,2024,Sarmiento (Junín),Lanús,0.0,0.0,post
+694339,2024-08-30 21:00:00,2024,Unión (Santa Fe),Deportivo Riestra,0.0,0.0,post
+694348,2024-08-31 15:00:00,2024,Defensa y Justicia,Barracas Central,1.0,0.0,post
+694343,2024-08-31 15:00:00,2024,Newell's Old Boys,Belgrano (Córdoba),0.0,0.0,post
+694340,2024-08-31 18:00:00,2024,Talleres (Córdoba),Estudiantes de La Plata,1.0,0.0,post
+694352,2024-08-31 18:00:00,2024,Vélez Sarsfield,Independiente Rivadavia,4.0,0.0,post
+694349,2024-08-31 21:00:00,2024,Boca Juniors,Rosario Central,2.0,1.0,post
+694345,2024-09-01 14:30:00,2024,Huracán,Tigre,0.0,2.0,post
+694342,2024-09-01 14:30:00,2024,Platense,San Lorenzo,1.0,2.0,post
+694344,2024-09-01 17:00:00,2024,Independiente,River Plate,0.0,0.0,post
+694351,2024-09-01 19:00:00,2024,Atlético Tucumán,Racing Club,1.0,0.0,post
+694350,2024-09-01 21:00:00,2024,Banfield,Instituto (Córdoba),1.0,2.0,post
+694347,2024-09-02 17:00:00,2024,Gimnasia La Plata,Argentinos Juniors,1.0,0.0,post
+694346,2024-09-02 19:00:00,2024,Godoy Cruz Antonio Tomba,Central Córdoba (Santiago del Estero),1.0,1.0,post
+694361,2024-09-13 15:00:00,2024,Deportivo Riestra,Huracán,1.0,0.0,post
+694362,2024-09-13 18:30:00,2024,Central Córdoba (Santiago del Estero),Instituto (Córdoba),2.0,1.0,post
+694357,2024-09-13 18:30:00,2024,Lanús,Unión (Santa Fe),1.0,1.0,post
+694355,2024-09-13 21:00:00,2024,River Plate,Atlético Tucumán,4.0,1.0,post
+694353,2024-09-14 15:00:00,2024,San Lorenzo,Vélez Sarsfield,0.0,1.0,post
+694356,2024-09-14 17:30:00,2024,Racing Club,Boca Juniors,2.0,1.0,post
+694363,2024-09-14 20:00:00,2024,Belgrano (Córdoba),Independiente,1.0,1.0,post
+694366,2024-09-14 20:00:00,2024,Tigre,Gimnasia La Plata,1.0,1.0,post
+694360,2024-09-15 15:00:00,2024,Estudiantes de La Plata,Platense,1.0,1.0,post
+694359,2024-09-15 15:00:00,2024,Godoy Cruz Antonio Tomba,Sarmiento (Junín),1.0,1.0,post
+694354,2024-09-15 17:30:00,2024,Rosario Central,Talleres (Córdoba),2.0,2.0,post
+694365,2024-09-15 20:00:00,2024,Argentinos Juniors,Newell's Old Boys,3.0,0.0,post
+694364,2024-09-16 15:00:00,2024,Barracas Central,Banfield,0.0,1.0,post
+694358,2024-09-16 21:00:00,2024,Independiente Rivadavia,Defensa y Justicia,1.0,0.0,post
+694371,2024-09-20 17:30:00,2024,Gimnasia La Plata,Deportivo Riestra,0.0,0.0,post
+694379,2024-09-20 20:00:00,2024,Unión (Santa Fe),Godoy Cruz Antonio Tomba,3.0,1.0,post
+694369,2024-09-21 16:00:00,2024,Boca Juniors,River Plate,0.0,1.0,post
+694374,2024-09-21 19:00:00,2024,Instituto (Córdoba),Barracas Central,0.0,1.0,post
+694375,2024-09-21 19:00:00,2024,Newell's Old Boys,Tigre,1.0,0.0,post
+694370,2024-09-21 21:15:00,2024,Defensa y Justicia,San Lorenzo,0.0,0.0,post
+694372,2024-09-22 14:30:00,2024,Huracán,Lanús,3.0,0.0,post
+694373,2024-09-22 14:30:00,2024,Independiente,Argentinos Juniors,0.0,0.0,post
+694378,2024-09-22 17:00:00,2024,Talleres (Córdoba),Racing Club,2.0,0.0,post
+694376,2024-09-22 19:30:00,2024,Platense,Rosario Central,1.0,0.0,post
+694367,2024-09-22 19:30:00,2024,Atlético Tucumán,Belgrano (Córdoba),2.0,4.0,post
+694377,2024-09-23 18:45:00,2024,Sarmiento (Junín),Central Córdoba (Santiago del Estero),1.0,3.0,post
+694368,2024-09-23 21:00:00,2024,Banfield,Independiente Rivadavia,2.0,0.0,post
+694380,2024-09-23 21:00:00,2024,Vélez Sarsfield,Estudiantes de La Plata,2.0,0.0,post
+694384,2024-09-27 15:00:00,2024,Deportivo Riestra,Newell's Old Boys,3.0,3.0,post
+694394,2024-09-27 21:00:00,2024,Independiente Rivadavia,Instituto (Córdoba),1.0,1.0,post
+694392,2024-09-28 15:00:00,2024,San Lorenzo,Banfield,2.0,1.0,post
+694386,2024-09-28 17:30:00,2024,Godoy Cruz Antonio Tomba,Huracán,1.0,1.0,post
+694385,2024-09-28 17:30:00,2024,Estudiantes de La Plata,Defensa y Justicia,1.0,0.0,post
+694382,2024-09-28 20:00:00,2024,Belgrano (Córdoba),Boca Juniors,2.0,0.0,post
+694383,2024-09-29 14:30:00,2024,Central Córdoba (Santiago del Estero),Barracas Central,2.0,1.0,post
+694390,2024-09-29 18:15:00,2024,River Plate,Talleres (Córdoba),0.0,1.0,post
+694393,2024-09-29 19:30:00,2024,Sarmiento (Junín),Unión (Santa Fe),1.0,0.0,post
+694381,2024-09-30 19:00:00,2024,Argentinos Juniors,Atlético Tucumán,0.0,0.0,post
+694389,2024-09-30 21:00:00,2024,Racing Club,Platense,1.0,1.0,post
+694387,2024-09-30 21:15:00,2024,Lanús,Gimnasia La Plata,0.0,0.0,post
+694388,2024-10-01 18:30:00,2024,Tigre,Independiente,1.0,1.0,post
+694391,2024-10-01 20:30:00,2024,Rosario Central,Vélez Sarsfield,3.0,0.0,post
+694407,2024-10-04 19:00:00,2024,Unión (Santa Fe),Central Córdoba (Santiago del Estero),0.0,2.0,post
+694401,2024-10-04 21:00:00,2024,Huracán,Sarmiento (Junín),3.0,1.0,post
+694408,2024-10-05 15:00:00,2024,Vélez Sarsfield,Racing Club,1.0,0.0,post
+694400,2024-10-05 17:30:00,2024,Gimnasia La Plata,Godoy Cruz Antonio Tomba,0.0,1.0,post
+694404,2024-10-05 17:30:00,2024,Newell's Old Boys,Lanús,2.0,1.0,post
+694403,2024-10-05 20:00:00,2024,Instituto (Córdoba),San Lorenzo,2.0,0.0,post
+694402,2024-10-06 15:00:00,2024,Independiente,Deportivo Riestra,3.0,1.0,post
+694406,2024-10-06 16:30:00,2024,Talleres (Córdoba),Belgrano (Córdoba),0.0,0.0,post
+694405,2024-10-06 19:00:00,2024,Platense,River Plate,0.0,0.0,post
+694398,2024-10-06 21:00:00,2024,Boca Juniors,Argentinos Juniors,1.0,0.0,post
+694397,2024-10-07 15:00:00,2024,Barracas Central,Independiente Rivadavia,1.0,1.0,post
+694396,2024-10-07 18:00:00,2024,Banfield,Estudiantes de La Plata,1.0,2.0,post
+694399,2024-10-07 18:45:00,2024,Defensa y Justicia,Rosario Central,2.0,1.0,post
+694395,2024-10-07 21:00:00,2024,Atlético Tucumán,Tigre,1.0,2.0,post
+694212,2024-10-12 15:30:00,2024,Godoy Cruz Antonio Tomba,San Lorenzo,1.0,1.0,post
+694412,2024-10-18 15:00:00,2024,Deportivo Riestra,Atlético Tucumán,2.0,0.0,post
+694420,2024-10-18 17:00:00,2024,Sarmiento (Junín),Gimnasia La Plata,1.0,1.0,post
+694411,2024-10-18 18:45:00,2024,Central Córdoba (Santiago del Estero),Independiente Rivadavia,2.0,0.0,post
+694415,2024-10-18 19:15:00,2024,Lanús,Independiente,0.0,2.0,post
+694417,2024-10-18 21:00:00,2024,River Plate,Vélez Sarsfield,1.0,1.0,post
+694410,2024-10-19 17:00:00,2024,Belgrano (Córdoba),Platense,0.0,1.0,post
+694416,2024-10-19 17:00:00,2024,Racing Club,Defensa y Justicia,4.0,3.0,post
+694421,2024-10-19 19:15:00,2024,Tigre,Boca Juniors,3.0,0.0,post
+694422,2024-10-19 21:15:00,2024,Unión (Santa Fe),Huracán,0.0,1.0,post
+694409,2024-10-20 15:00:00,2024,Argentinos Juniors,Talleres (Córdoba),3.0,0.0,post
+694413,2024-10-20 17:15:00,2024,Estudiantes de La Plata,Instituto (Córdoba),3.0,2.0,post
+694418,2024-10-20 17:15:00,2024,Rosario Central,Banfield,1.0,1.0,post
+694414,2024-10-20 19:30:00,2024,Godoy Cruz Antonio Tomba,Newell's Old Boys,2.0,0.0,post
+694419,2024-10-20 19:30:00,2024,San Lorenzo,Barracas Central,1.0,0.0,post
+694425,2024-10-25 15:00:00,2024,Barracas Central,Estudiantes de La Plata,1.0,1.0,post
+694427,2024-10-25 21:00:00,2024,Defensa y Justicia,River Plate,0.0,0.0,post
+694433,2024-10-26 17:15:00,2024,Newell's Old Boys,Sarmiento (Junín),1.0,1.0,post
+694432,2024-10-26 17:15:00,2024,Instituto (Córdoba),Rosario Central,0.0,0.0,post
+694430,2024-10-26 19:30:00,2024,Independiente,Godoy Cruz Antonio Tomba,1.0,1.0,post
+694435,2024-10-26 21:00:00,2024,Vélez Sarsfield,Belgrano (Córdoba),1.0,1.0,post
+694431,2024-10-26 21:45:00,2024,Independiente Rivadavia,San Lorenzo,1.0,0.0,post
+694434,2024-10-27 15:00:00,2024,Platense,Argentinos Juniors,2.0,1.0,post
+694424,2024-10-27 17:15:00,2024,Banfield,Racing Club,2.0,1.0,post
+694426,2024-10-27 19:00:00,2024,Boca Juniors,Deportivo Riestra,1.0,1.0,post
+694423,2024-10-27 21:15:00,2024,Atlético Tucumán,Lanús,1.0,0.0,post
+694429,2024-10-27 21:15:00,2024,Talleres (Córdoba),Tigre,1.0,1.0,post
+694428,2024-10-28 19:00:00,2024,Gimnasia La Plata,Unión (Santa Fe),2.0,3.0,post
+694436,2024-10-28 21:00:00,2024,Huracán,Central Córdoba (Santiago del Estero),0.0,0.0,post
+694441,2024-10-31 19:00:00,2024,Estudiantes de La Plata,Independiente Rivadavia,1.0,1.0,post
+694448,2024-10-31 19:00:00,2024,Sarmiento (Junín),Independiente,0.0,0.0,post
+694442,2024-10-31 21:15:00,2024,Godoy Cruz Antonio Tomba,Atlético Tucumán,1.0,1.0,post
+694447,2024-10-31 21:15:00,2024,Rosario Central,Barracas Central,0.0,1.0,post
+694439,2024-11-01 19:00:00,2024,Central Córdoba (Santiago del Estero),San Lorenzo,0.0,1.0,post
+694443,2024-11-01 19:45:00,2024,Huracán,Gimnasia La Plata,0.0,0.0,post
+694450,2024-11-01 21:15:00,2024,Unión (Santa Fe),Newell's Old Boys,2.0,0.0,post
+694437,2024-11-01 22:00:00,2024,Argentinos Juniors,Vélez Sarsfield,1.0,1.0,post
+694440,2024-11-02 15:00:00,2024,Deportivo Riestra,Talleres (Córdoba),0.0,0.0,post
+694446,2024-11-02 18:00:00,2024,River Plate,Banfield,3.0,1.0,post
+694438,2024-11-02 20:00:00,2024,Belgrano (Córdoba),Defensa y Justicia,1.0,2.0,post
+694449,2024-11-03 17:00:00,2024,Tigre,Platense,0.0,0.0,post
+694445,2024-11-03 17:30:00,2024,Racing Club,Instituto (Córdoba),2.0,0.0,post
+694444,2024-11-03 19:30:00,2024,Lanús,Boca Juniors,1.0,0.0,post
+694451,2024-11-04 19:00:00,2024,Atlético Tucumán,Sarmiento (Junín),1.0,0.0,post
+694458,2024-11-04 21:00:00,2024,Independiente Rivadavia,Rosario Central,1.0,1.0,post
+694462,2024-11-05 18:45:00,2024,San Lorenzo,Estudiantes de La Plata,1.0,1.0,post
+694456,2024-11-05 18:45:00,2024,Gimnasia La Plata,Central Córdoba (Santiago del Estero),0.0,0.0,post
+694457,2024-11-05 21:00:00,2024,Independiente,Unión (Santa Fe),3.0,0.0,post
+694460,2024-11-05 21:00:00,2024,Newell's Old Boys,Huracán,2.0,4.0,post
+694453,2024-11-06 16:00:00,2024,Barracas Central,Racing Club,0.0,2.0,post
+694452,2024-11-06 17:00:00,2024,Banfield,Belgrano (Córdoba),1.0,1.0,post
+694454,2024-11-06 19:30:00,2024,Boca Juniors,Godoy Cruz Antonio Tomba,4.0,1.0,post
+694459,2024-11-06 21:30:00,2024,Instituto (Córdoba),River Plate,2.0,3.0,post
+694463,2024-11-07 18:45:00,2024,Talleres (Córdoba),Lanús,1.0,2.0,post
+694455,2024-11-07 19:00:00,2024,Defensa y Justicia,Argentinos Juniors,2.0,1.0,post
+694461,2024-11-07 21:00:00,2024,Platense,Deportivo Riestra,0.0,0.0,post
+694464,2024-11-07 21:15:00,2024,Vélez Sarsfield,Tigre,1.0,0.0,post
+694478,2024-11-09 16:45:00,2024,Unión (Santa Fe),Atlético Tucumán,1.0,0.0,post
+694469,2024-11-09 17:00:00,2024,Gimnasia La Plata,Newell's Old Boys,1.0,0.0,post
+694475,2024-11-09 19:00:00,2024,Rosario Central,San Lorenzo,0.0,1.0,post
+694471,2024-11-09 21:00:00,2024,Huracán,Independiente,1.0,0.0,post
+694467,2024-11-10 16:00:00,2024,Central Córdoba (Santiago del Estero),Estudiantes de La Plata,1.0,1.0,post
+694474,2024-11-10 17:15:00,2024,River Plate,Barracas Central,3.0,0.0,post
+694470,2024-11-10 19:15:00,2024,Godoy Cruz Antonio Tomba,Talleres (Córdoba),0.0,1.0,post
+694473,2024-11-10 19:30:00,2024,Racing Club,Independiente Rivadavia,2.0,1.0,post
+694476,2024-11-10 21:30:00,2024,Sarmiento (Junín),Boca Juniors,0.0,2.0,post
+694468,2024-11-11 16:00:00,2024,Deportivo Riestra,Vélez Sarsfield,1.0,1.0,post
+694472,2024-11-11 18:45:00,2024,Lanús,Platense,0.0,0.0,post
+694477,2024-11-11 18:45:00,2024,Tigre,Defensa y Justicia,0.0,4.0,post
+694465,2024-11-11 21:00:00,2024,Argentinos Juniors,Banfield,1.0,0.0,post
+694466,2024-11-11 21:00:00,2024,Belgrano (Córdoba),Instituto (Córdoba),3.0,1.0,post
+694490,2024-11-17 17:30:00,2024,San Lorenzo,Racing Club,1.0,2.0,post
+694480,2024-11-18 17:00:00,2024,Banfield,Tigre,0.0,1.0,post
+694483,2024-11-18 19:15:00,2024,Defensa y Justicia,Deportivo Riestra,1.0,1.0,post
+694489,2024-11-18 19:15:00,2024,Platense,Godoy Cruz Antonio Tomba,1.0,0.0,post
+694487,2024-11-18 21:30:00,2024,Instituto (Córdoba),Argentinos Juniors,1.0,0.0,post
+694479,2024-11-18 21:30:00,2024,Atlético Tucumán,Huracán,4.0,2.0,post
+694488,2024-11-20 17:00:00,2024,Newell's Old Boys,Central Córdoba (Santiago del Estero),2.0,3.0,post
+694484,2024-11-20 19:15:00,2024,Estudiantes de La Plata,Rosario Central,1.0,1.0,post
+694486,2024-11-20 19:15:00,2024,Vélez Sarsfield,Lanús,0.0,0.0,post
+694482,2024-11-20 21:30:00,2024,Boca Juniors,Unión (Santa Fe),1.0,0.0,post
+694481,2024-11-21 17:00:00,2024,Barracas Central,Belgrano (Córdoba),1.0,1.0,post
+694492,2024-11-21 19:15:00,2024,Independiente,Gimnasia La Plata,1.0,0.0,post
+694491,2024-11-21 19:15:00,2024,Talleres (Córdoba),Sarmiento (Junín),2.0,0.0,post
+694485,2024-11-21 21:30:00,2024,Independiente Rivadavia,River Plate,2.0,1.0,post
+694503,2024-11-23 19:30:00,2024,Tigre,Instituto (Córdoba),0.0,0.0,post
+694497,2024-11-23 21:45:00,2024,Huracán,Boca Juniors,0.0,0.0,post
+694494,2024-11-24 17:00:00,2024,Deportivo Riestra,Banfield,1.0,1.0,post
+694495,2024-11-24 17:00:00,2024,Gimnasia La Plata,Atlético Tucumán,1.0,0.0,post
+694496,2024-11-24 19:15:00,2024,Godoy Cruz Antonio Tomba,Vélez Sarsfield,0.0,0.0,post
+694498,2024-11-24 21:30:00,2024,Lanús,Defensa y Justicia,0.0,0.0,post
+694493,2024-11-25 19:00:00,2024,Central Córdoba (Santiago del Estero),Rosario Central,0.0,1.0,post
+694505,2024-11-25 21:15:00,2024,Argentinos Juniors,Barracas Central,0.0,1.0,post
+694506,2024-11-25 21:15:00,2024,Belgrano (Córdoba),Independiente Rivadavia,0.0,2.0,post
+694499,2024-11-26 19:00:00,2024,Newell's Old Boys,Independiente,2.0,1.0,post
+694504,2024-11-26 21:15:00,2024,Unión (Santa Fe),Talleres (Córdoba),2.0,3.0,post
+694502,2024-11-26 21:15:00,2024,Sarmiento (Junín),Platense,1.0,0.0,post
+694518,2024-11-29 19:00:00,2024,San Lorenzo,Belgrano (Córdoba),0.0,2.0,post
+694512,2024-11-29 21:00:00,2024,Estudiantes de La Plata,River Plate,1.0,2.0,post
+694508,2024-11-30 19:30:00,2024,Banfield,Lanús,0.0,1.0,post
+694517,2024-11-30 19:30:00,2024,Rosario Central,Racing Club,0.0,2.0,post
+694511,2024-11-30 21:45:00,2024,Defensa y Justicia,Godoy Cruz Antonio Tomba,2.0,1.0,post
+694515,2024-11-30 21:45:00,2024,Instituto (Córdoba),Deportivo Riestra,2.0,1.0,post
+694513,2024-12-01 17:00:00,2024,Independiente,Central Córdoba (Santiago del Estero),2.0,0.0,post
+694520,2024-12-01 19:15:00,2024,Vélez Sarsfield,Sarmiento (Junín),1.0,0.0,post
+694510,2024-12-01 21:45:00,2024,Boca Juniors,Gimnasia La Plata,1.0,0.0,post
+694509,2024-12-02 17:00:00,2024,Barracas Central,Tigre,0.0,0.0,post
+694516,2024-12-02 19:15:00,2024,Platense,Unión (Santa Fe),1.0,0.0,post
+694519,2024-12-02 19:45:00,2024,Talleres (Córdoba),Huracán,1.0,0.0,post
+694514,2024-12-02 21:30:00,2024,Independiente Rivadavia,Argentinos Juniors,2.0,1.0,post
+694507,2024-12-02 22:00:00,2024,Atlético Tucumán,Newell's Old Boys,0.0,0.0,post
+694500,2024-12-04 19:00:00,2024,Racing Club,Estudiantes de La Plata,4.0,5.0,post
+694501,2024-12-04 21:00:00,2024,River Plate,San Lorenzo,1.0,1.0,post
+694524,2024-12-06 17:00:00,2024,Deportivo Riestra,Barracas Central,0.0,0.0,post
+694532,2024-12-06 20:00:00,2024,Sarmiento (Junín),Defensa y Justicia,1.0,1.0,post
+694529,2024-12-07 17:00:00,2024,Lanús,Instituto (Córdoba),2.0,0.0,post
+694534,2024-12-07 19:00:00,2024,Unión (Santa Fe),Vélez Sarsfield,1.0,0.0,post
+694523,2024-12-07 21:15:00,2024,Central Córdoba (Santiago del Estero),Racing Club,3.0,1.0,post
+694525,2024-12-08 17:00:00,2024,Gimnasia La Plata,Talleres (Córdoba),0.0,1.0,post
+694526,2024-12-08 17:00:00,2024,Godoy Cruz Antonio Tomba,Banfield,4.0,0.0,post
+694531,2024-12-08 19:15:00,2024,River Plate,Rosario Central,4.0,0.0,post
+694530,2024-12-08 21:00:00,2024,Newell's Old Boys,Boca Juniors,0.0,1.0,post
+694533,2024-12-09 17:00:00,2024,Tigre,Independiente Rivadavia,0.0,2.0,post
+694522,2024-12-09 19:15:00,2024,Belgrano (Córdoba),Estudiantes de La Plata,2.0,2.0,post
+694521,2024-12-09 19:15:00,2024,Argentinos Juniors,San Lorenzo,1.0,0.0,post
+694527,2024-12-09 21:30:00,2024,Huracán,Platense,1.0,0.0,post
+694528,2024-12-09 21:30:00,2024,Independiente,Atlético Tucumán,2.0,1.0,post
+694537,2024-12-13 19:00:00,2024,Barracas Central,Lanús,3.0,3.0,post
+694540,2024-12-13 19:00:00,2024,Estudiantes de La Plata,Argentinos Juniors,2.0,2.0,post
+694536,2024-12-13 21:15:00,2024,Banfield,Sarmiento (Junín),1.0,1.0,post
+694546,2024-12-13 21:15:00,2024,San Lorenzo,Tigre,0.0,1.0,post
+694545,2024-12-14 17:00:00,2024,Rosario Central,Belgrano (Córdoba),2.0,1.0,post
+694542,2024-12-14 17:00:00,2024,Instituto (Córdoba),Godoy Cruz Antonio Tomba,1.0,3.0,post
+694538,2024-12-14 19:15:00,2024,Boca Juniors,Independiente,0.0,0.0,post
+694544,2024-12-14 21:15:00,2024,Racing Club,River Plate,1.0,0.0,post
+694539,2024-12-15 17:00:00,2024,Defensa y Justicia,Unión (Santa Fe),0.0,0.0,post
+694543,2024-12-15 17:00:00,2024,Platense,Gimnasia La Plata,1.0,0.0,post
+694541,2024-12-15 19:30:00,2024,Talleres (Córdoba),Newell's Old Boys,1.0,3.0,post
+694547,2024-12-15 19:30:00,2024,Vélez Sarsfield,Huracán,2.0,0.0,post
+694535,2024-12-16 21:00:00,2024,Atlético Tucumán,Central Córdoba (Santiago del Estero),2.0,0.0,post
+694548,2024-12-16 21:00:00,2024,Independiente Rivadavia,Deportivo Riestra,0.0,0.0,post
+727959,2025-01-23 19:00:00,2025,Godoy Cruz Antonio Tomba,Rosario Central,0.0,3.0,post
+727967,2025-01-23 19:00:00,2025,Tigre,Vélez Sarsfield,3.0,0.0,post
+727963,2025-01-23 21:30:00,2025,Newell's Old Boys,Independiente Rivadavia,0.0,1.0,post
+727957,2025-01-23 21:30:00,2025,Defensa y Justicia,Banfield,0.0,1.0,post
+727962,2025-01-23 21:30:00,2025,Lanús,Deportivo Riestra,0.0,2.0,post
+727953,2025-01-24 17:00:00,2025,Barracas Central,Racing Club,1.0,3.0,post
+727960,2025-01-24 19:15:00,2025,Independiente,Sarmiento (Junín),2.0,1.0,post
+727954,2025-01-24 21:00:00,2025,Belgrano (Córdoba),Huracán,1.0,1.0,post
+727966,2025-01-24 21:30:00,2025,San Martín (San Juan),Atlético Tucumán,0.0,1.0,post
+727965,2025-01-25 17:00:00,2025,San Lorenzo,Talleres (Córdoba),1.0,0.0,post
+727958,2025-01-25 19:15:00,2025,Estudiantes de La Plata,Unión (Santa Fe),3.0,1.0,post
+727961,2025-01-25 19:15:00,2025,Instituto (Córdoba),Gimnasia La Plata,3.0,0.0,post
+727964,2025-01-25 21:30:00,2025,Platense,River Plate,1.0,1.0,post
+727955,2025-01-26 19:00:00,2025,Boca Juniors,Argentinos Juniors,0.0,0.0,post
+727956,2025-01-26 21:00:00,2025,Central Córdoba (Santiago del Estero),Aldosivi,1.0,0.0,post
+727970,2025-01-27 20:00:00,2025,Banfield,Newell's Old Boys,3.0,0.0,post
+727972,2025-01-28 17:00:00,2025,Deportivo Riestra,San Martín (San Juan),0.0,0.0,post
+727978,2025-01-28 19:15:00,2025,Rosario Central,Lanús,2.0,1.0,post
+727979,2025-01-28 19:15:00,2025,Sarmiento (Junín),Godoy Cruz Antonio Tomba,0.0,0.0,post
+727975,2025-01-28 21:30:00,2025,Independiente Rivadavia,Barracas Central,0.0,0.0,post
+727981,2025-01-28 21:30:00,2025,Vélez Sarsfield,Platense,0.0,1.0,post
+727980,2025-01-29 17:00:00,2025,Talleres (Córdoba),Independiente,2.0,3.0,post
+727973,2025-01-29 17:00:00,2025,Gimnasia La Plata,San Lorenzo,0.0,2.0,post
+727974,2025-01-29 19:15:00,2025,Huracán,Estudiantes de La Plata,0.0,0.0,post
+727969,2025-01-29 19:15:00,2025,Unión (Santa Fe),Boca Juniors,1.0,1.0,post
+727977,2025-01-29 21:30:00,2025,River Plate,Instituto (Córdoba),1.0,0.0,post
+727968,2025-01-30 17:00:00,2025,Aldosivi,Defensa y Justicia,0.0,5.0,post
+727976,2025-01-30 19:15:00,2025,Racing Club,Belgrano (Córdoba),4.0,0.0,post
+727982,2025-01-30 21:30:00,2025,Argentinos Juniors,Tigre,1.0,0.0,post
+727971,2025-01-30 21:30:00,2025,Central Córdoba (Santiago del Estero),Atlético Tucumán,2.0,0.0,post
+727985,2025-02-01 17:00:00,2025,Barracas Central,Banfield,1.0,0.0,post
+727996,2025-02-01 19:00:00,2025,San Martín (San Juan),Rosario Central,0.0,0.0,post
+727993,2025-02-01 21:00:00,2025,Lanús,Sarmiento (Junín),2.0,0.0,post
+727984,2025-02-02 17:00:00,2025,San Lorenzo,River Plate,0.0,0.0,post
+727987,2025-02-02 19:15:00,2025,Boca Juniors,Huracán,2.0,1.0,post
+727994,2025-02-02 19:15:00,2025,Newell's Old Boys,Aldosivi,1.0,0.0,post
+727991,2025-02-02 21:30:00,2025,Independiente,Gimnasia La Plata,2.0,0.0,post
+727992,2025-02-02 21:30:00,2025,Instituto (Córdoba),Vélez Sarsfield,2.0,0.0,post
+727988,2025-02-03 17:00:00,2025,Defensa y Justicia,Central Córdoba (Santiago del Estero),2.0,1.0,post
+727989,2025-02-03 19:15:00,2025,Estudiantes de La Plata,Racing Club,2.0,0.0,post
+727995,2025-02-03 19:15:00,2025,Tigre,Unión (Santa Fe),1.0,0.0,post
+727986,2025-02-03 21:30:00,2025,Belgrano (Córdoba),Independiente Rivadavia,0.0,3.0,post
+727983,2025-02-03 21:30:00,2025,Argentinos Juniors,Platense,1.0,0.0,post
+727997,2025-02-04 21:00:00,2025,Atlético Tucumán,Deportivo Riestra,0.0,3.0,post
+727998,2025-02-06 17:00:00,2025,Aldosivi,Barracas Central,1.0,3.0,post
+728009,2025-02-06 20:00:00,2025,Sarmiento (Junín),San Martín (San Juan),1.0,1.0,post
+727999,2025-02-07 17:45:00,2025,Banfield,Belgrano (Córdoba),1.0,1.0,post
+728000,2025-02-07 20:00:00,2025,Central Córdoba (Santiago del Estero),Newell's Old Boys,2.0,0.0,post
+728003,2025-02-07 20:00:00,2025,Huracán,Tigre,2.0,0.0,post
+728004,2025-02-07 22:15:00,2025,Independiente Rivadavia,Estudiantes de La Plata,2.0,2.0,post
+728011,2025-02-07 22:15:00,2025,Unión (Santa Fe),Argentinos Juniors,0.0,1.0,post
+728012,2025-02-08 18:00:00,2025,Vélez Sarsfield,San Lorenzo,0.0,0.0,post
+728008,2025-02-08 19:30:00,2025,Rosario Central,Atlético Tucumán,3.0,1.0,post
+728007,2025-02-08 20:15:00,2025,River Plate,Independiente,2.0,0.0,post
+728006,2025-02-08 22:15:00,2025,Racing Club,Boca Juniors,2.0,0.0,post
+728001,2025-02-09 17:00:00,2025,Deportivo Riestra,Defensa y Justicia,1.0,1.0,post
+728005,2025-02-09 17:00:00,2025,Platense,Instituto (Córdoba),1.0,0.0,post
+728002,2025-02-09 19:15:00,2025,Gimnasia La Plata,Godoy Cruz Antonio Tomba,3.0,0.0,post
+728010,2025-02-09 21:30:00,2025,Talleres (Córdoba),Lanús,0.0,1.0,post
+728015,2025-02-11 17:45:00,2025,Barracas Central,Central Córdoba (Santiago del Estero),3.0,3.0,post
+728019,2025-02-11 20:00:00,2025,Estudiantes de La Plata,Banfield,1.0,0.0,post
+728017,2025-02-11 20:00:00,2025,Boca Juniors,Independiente Rivadavia,2.0,0.0,post
+728016,2025-02-11 22:15:00,2025,Belgrano (Córdoba),Aldosivi,2.0,0.0,post
+728026,2025-02-11 22:15:00,2025,Tigre,Racing Club,1.0,0.0,post
+728018,2025-02-12 17:00:00,2025,Deportivo Riestra,Rosario Central,0.0,0.0,post
+728023,2025-02-12 17:45:00,2025,Newell's Old Boys,Defensa y Justicia,0.0,1.0,post
+728013,2025-02-12 20:00:00,2025,Argentinos Juniors,Huracán,1.0,1.0,post
+728021,2025-02-12 20:00:00,2025,Independiente,Vélez Sarsfield,3.0,0.0,post
+728020,2025-02-12 22:15:00,2025,Godoy Cruz Antonio Tomba,River Plate,0.0,0.0,post
+728022,2025-02-13 17:45:00,2025,Lanús,Gimnasia La Plata,0.0,0.0,post
+728025,2025-02-13 20:00:00,2025,San Martín (San Juan),Talleres (Córdoba),0.0,1.0,post
+728024,2025-02-13 20:00:00,2025,San Lorenzo,Platense,2.0,1.0,post
+728014,2025-02-13 22:15:00,2025,Atlético Tucumán,Sarmiento (Junín),5.0,0.0,post
+728027,2025-02-13 22:15:00,2025,Unión (Santa Fe),Instituto (Córdoba),0.0,0.0,post
+728042,2025-02-14 20:00:00,2025,Banfield,Boca Juniors,0.0,1.0,post
+728028,2025-02-15 17:00:00,2025,Aldosivi,Estudiantes de La Plata,2.0,2.0,post
+728031,2025-02-15 17:00:00,2025,Defensa y Justicia,Barracas Central,1.0,1.0,post
+728030,2025-02-15 19:15:00,2025,Central Córdoba (Santiago del Estero),Belgrano (Córdoba),4.0,0.0,post
+728034,2025-02-15 19:15:00,2025,Independiente Rivadavia,Tigre,1.0,4.0,post
+728038,2025-02-15 21:30:00,2025,Racing Club,Argentinos Juniors,2.0,3.0,post
+728036,2025-02-16 17:00:00,2025,Newell's Old Boys,Rosario Central,1.0,2.0,post
+728039,2025-02-16 19:15:00,2025,River Plate,Lanús,1.0,0.0,post
+728033,2025-02-16 21:30:00,2025,Huracán,Unión (Santa Fe),1.0,0.0,post
+728029,2025-02-16 21:30:00,2025,Talleres (Córdoba),Atlético Tucumán,1.0,1.0,post
+728032,2025-02-17 17:00:00,2025,Gimnasia La Plata,San Martín (San Juan),1.0,0.0,post
+728040,2025-02-17 17:00:00,2025,Sarmiento (Junín),Deportivo Riestra,2.0,1.0,post
+728037,2025-02-17 19:15:00,2025,Platense,Independiente,1.0,1.0,post
+728035,2025-02-17 21:30:00,2025,Instituto (Córdoba),San Lorenzo,0.0,1.0,post
+728041,2025-02-17 21:30:00,2025,Vélez Sarsfield,Godoy Cruz Antonio Tomba,0.0,2.0,post
+728052,2025-02-21 17:00:00,2025,Deportivo Riestra,Talleres (Córdoba),0.0,0.0,post
+728054,2025-02-21 19:15:00,2025,Godoy Cruz Antonio Tomba,Platense,1.0,1.0,post
+728053,2025-02-21 19:15:00,2025,Estudiantes de La Plata,Central Córdoba (Santiago del Estero),3.0,2.0,post
+728057,2025-02-21 21:30:00,2025,Lanús,Vélez Sarsfield,0.0,0.0,post
+728056,2025-02-22 18:00:00,2025,Independiente,Instituto (Córdoba),2.0,0.0,post
+728051,2025-02-22 19:30:00,2025,Boca Juniors,Aldosivi,2.0,1.0,post
+728044,2025-02-22 21:30:00,2025,San Martín (San Juan),River Plate,0.0,2.0,post
+728043,2025-02-22 21:45:00,2025,Rosario Central,Sarmiento (Junín),1.0,0.0,post
+728055,2025-02-23 18:00:00,2025,Huracán,San Lorenzo,2.0,0.0,post
+728050,2025-02-23 21:00:00,2025,Belgrano (Córdoba),Defensa y Justicia,2.0,0.0,post
+728048,2025-02-23 21:00:00,2025,Atlético Tucumán,Gimnasia La Plata,0.0,1.0,post
+728049,2025-02-24 17:00:00,2025,Barracas Central,Newell's Old Boys,2.0,0.0,post
+728047,2025-02-24 19:00:00,2025,Argentinos Juniors,Independiente Rivadavia,0.0,0.0,post
+728045,2025-02-24 21:00:00,2025,Tigre,Banfield,1.0,0.0,post
+728059,2025-02-28 20:00:00,2025,Boca Juniors,Rosario Central,1.0,0.0,post
+728071,2025-02-28 22:15:00,2025,Central Córdoba (Santiago del Estero),Deportivo Riestra,0.0,0.0,post
+728060,2025-02-28 22:15:00,2025,San Martín (San Juan),Belgrano (Córdoba),3.0,1.0,post
+728065,2025-03-01 17:00:00,2025,Aldosivi,Sarmiento (Junín),2.0,2.0,post
+728062,2025-03-01 19:15:00,2025,River Plate,Estudiantes de La Plata,0.0,2.0,post
+728058,2025-03-01 21:30:00,2025,Unión (Santa Fe),Gimnasia La Plata,1.0,0.0,post
+728072,2025-03-01 21:30:00,2025,Talleres (Córdoba),Tigre,1.0,2.0,post
+728064,2025-03-02 17:00:00,2025,Independiente Rivadavia,Lanús,1.0,1.0,post
+728066,2025-03-02 17:00:00,2025,Argentinos Juniors,Instituto (Córdoba),2.0,0.0,post
+728070,2025-03-02 19:15:00,2025,Vélez Sarsfield,Huracán,0.0,2.0,post
+728069,2025-03-03 17:00:00,2025,Barracas Central,Godoy Cruz Antonio Tomba,1.0,2.0,post
+728061,2025-03-03 19:00:00,2025,San Lorenzo,Racing Club,3.0,2.0,post
+728067,2025-03-03 21:00:00,2025,Atlético Tucumán,Newell's Old Boys,1.0,2.0,post
+728068,2025-03-04 19:30:00,2025,Banfield,Independiente,0.0,0.0,post
+728063,2025-03-04 20:00:00,2025,Platense,Defensa y Justicia,0.0,1.0,post
+728081,2025-03-07 19:00:00,2025,Banfield,Argentinos Juniors,1.0,2.0,post
+728078,2025-03-07 19:00:00,2025,Vélez Sarsfield,San Martín (San Juan),1.0,0.0,post
+728082,2025-03-07 21:15:00,2025,Central Córdoba (Santiago del Estero),Boca Juniors,0.0,3.0,post
+728075,2025-03-08 17:00:00,2025,San Lorenzo,Independiente,1.0,2.0,post
+728073,2025-03-08 19:15:00,2025,Racing Club,Huracán,0.0,1.0,post
+728087,2025-03-08 21:30:00,2025,Platense,Lanús,0.0,0.0,post
+728076,2025-03-08 21:30:00,2025,Sarmiento (Junín),Barracas Central,1.0,1.0,post
+728080,2025-03-09 17:00:00,2025,Aldosivi,Tigre,0.0,2.0,post
+728083,2025-03-09 17:00:00,2025,Defensa y Justicia,Estudiantes de La Plata,1.0,0.0,post
+728074,2025-03-09 19:15:00,2025,River Plate,Atlético Tucumán,1.0,0.0,post
+728086,2025-03-09 21:30:00,2025,Instituto (Córdoba),Godoy Cruz Antonio Tomba,1.0,1.0,post
+728079,2025-03-09 21:30:00,2025,Newell's Old Boys,Belgrano (Córdoba),0.0,0.0,post
+728084,2025-03-10 19:00:00,2025,Gimnasia La Plata,Deportivo Riestra,1.0,1.0,post
+728085,2025-03-10 21:15:00,2025,Independiente Rivadavia,Unión (Santa Fe),2.0,0.0,post
+728077,2025-03-10 21:15:00,2025,Talleres (Córdoba),Rosario Central,0.0,0.0,post
+728088,2025-03-14 19:00:00,2025,Argentinos Juniors,Aldosivi,0.0,2.0,post
+728098,2025-03-14 21:00:00,2025,Godoy Cruz Antonio Tomba,San Lorenzo,0.0,0.0,post
+728100,2025-03-15 16:00:00,2025,Deportivo Riestra,River Plate,0.0,0.0,post
+728099,2025-03-15 18:30:00,2025,Estudiantes de La Plata,Newell's Old Boys,1.0,1.0,post
+728094,2025-03-15 18:30:00,2025,Rosario Central,Gimnasia La Plata,2.0,1.0,post
+728096,2025-03-15 21:00:00,2025,Sarmiento (Junín),Talleres (Córdoba),0.0,0.0,post
+728091,2025-03-15 21:00:00,2025,Huracán,Independiente Rivadavia,2.0,0.0,post
+728092,2025-03-16 16:00:00,2025,Independiente,Racing Club,1.0,1.0,post
+728101,2025-03-16 18:15:00,2025,Boca Juniors,Defensa y Justicia,4.0,0.0,post
+728102,2025-03-16 21:00:00,2025,Belgrano (Córdoba),Barracas Central,1.0,1.0,post
+728093,2025-03-16 21:00:00,2025,Lanús,Instituto (Córdoba),4.0,1.0,post
+728097,2025-03-17 19:00:00,2025,Tigre,Central Córdoba (Santiago del Estero),1.0,2.0,post
+728089,2025-03-17 19:00:00,2025,Unión (Santa Fe),Banfield,3.0,1.0,post
+728095,2025-03-17 21:15:00,2025,San Martín (San Juan),Platense,0.0,2.0,post
+728090,2025-03-17 21:15:00,2025,Atlético Tucumán,Vélez Sarsfield,1.0,2.0,post
+728046,2025-03-20 21:00:00,2025,Unión (Santa Fe),Racing Club,0.0,1.0,post
+727990,2025-03-22 17:00:00,2025,Godoy Cruz Antonio Tomba,Talleres (Córdoba),0.0,0.0,post
+728117,2025-03-27 15:30:00,2025,Aldosivi,Unión (Santa Fe),2.0,1.0,post
+728103,2025-03-27 18:00:00,2025,Barracas Central,Estudiantes de La Plata,2.0,1.0,post
+728111,2025-03-27 21:00:00,2025,Independiente Rivadavia,Racing Club,2.0,1.0,post
+728114,2025-03-28 17:00:00,2025,Defensa y Justicia,Tigre,1.0,2.0,post
+728104,2025-03-28 19:15:00,2025,Banfield,Huracán,0.0,0.0,post
+728106,2025-03-28 19:15:00,2025,San Lorenzo,Lanús,1.0,1.0,post
+728108,2025-03-28 21:30:00,2025,Platense,Atlético Tucumán,2.0,1.0,post
+728105,2025-03-28 21:30:00,2025,Vélez Sarsfield,Deportivo Riestra,0.0,1.0,post
+728110,2025-03-29 16:30:00,2025,Instituto (Córdoba),San Martín (San Juan),1.0,0.0,post
+728115,2025-03-29 18:30:00,2025,Central Córdoba (Santiago del Estero),Argentinos Juniors,1.0,1.0,post
+728112,2025-03-29 18:45:00,2025,Independiente,Godoy Cruz Antonio Tomba,4.0,0.0,post
+728107,2025-03-29 21:00:00,2025,River Plate,Rosario Central,2.0,2.0,post
+728116,2025-03-30 15:00:00,2025,Belgrano (Córdoba),Talleres (Córdoba),1.0,1.0,post
+728113,2025-03-30 16:00:00,2025,Gimnasia La Plata,Sarmiento (Junín),0.0,0.0,post
+728109,2025-03-30 19:30:00,2025,Newell's Old Boys,Boca Juniors,2.0,0.0,post
+728122,2025-04-04 19:00:00,2025,Estudiantes de La Plata,Belgrano (Córdoba),0.0,1.0,post
+728128,2025-04-04 22:00:00,2025,San Martín (San Juan),San Lorenzo,0.0,1.0,post
+728127,2025-04-05 15:30:00,2025,Rosario Central,Vélez Sarsfield,2.0,1.0,post
+728123,2025-04-05 15:30:00,2025,Godoy Cruz Antonio Tomba,Independiente Rivadavia,1.0,1.0,post
+728124,2025-04-05 18:00:00,2025,Huracán,Aldosivi,3.0,3.0,post
+728119,2025-04-05 18:00:00,2025,Talleres (Córdoba),Gimnasia La Plata,2.0,0.0,post
+728129,2025-04-05 20:30:00,2025,Sarmiento (Junín),River Plate,1.0,1.0,post
+728125,2025-04-06 15:30:00,2025,Lanús,Independiente,1.0,1.0,post
+728130,2025-04-06 15:30:00,2025,Unión (Santa Fe),Central Córdoba (Santiago del Estero),1.0,0.0,post
+728120,2025-04-06 18:00:00,2025,Boca Juniors,Barracas Central,1.0,0.0,post
+728126,2025-04-06 20:15:00,2025,Racing Club,Banfield,4.0,1.0,post
+728118,2025-04-06 20:15:00,2025,Argentinos Juniors,Defensa y Justicia,4.0,1.0,post
+728121,2025-04-07 15:30:00,2025,Deportivo Riestra,Platense,1.0,0.0,post
+728132,2025-04-07 21:00:00,2025,Atlético Tucumán,Instituto (Córdoba),3.0,2.0,post
+728131,2025-04-07 21:00:00,2025,Tigre,Newell's Old Boys,0.0,2.0,post
+728134,2025-04-11 19:00:00,2025,Banfield,Independiente Rivadavia,1.0,1.0,post
+728143,2025-04-11 21:00:00,2025,Newell's Old Boys,Argentinos Juniors,0.0,0.0,post
+728146,2025-04-12 15:30:00,2025,San Lorenzo,Atlético Tucumán,1.0,0.0,post
+728135,2025-04-12 18:00:00,2025,Barracas Central,Tigre,1.0,0.0,post
+728136,2025-04-12 20:30:00,2025,Belgrano (Córdoba),Boca Juniors,1.0,3.0,post
+728142,2025-04-13 15:30:00,2025,Instituto (Córdoba),Deportivo Riestra,3.0,0.0,post
+728139,2025-04-13 15:30:00,2025,Gimnasia La Plata,Estudiantes de La Plata,1.0,1.0,post
+728141,2025-04-13 18:00:00,2025,Independiente,San Martín (San Juan),2.0,0.0,post
+728145,2025-04-13 20:15:00,2025,River Plate,Talleres (Córdoba),1.0,1.0,post
+728133,2025-04-14 15:30:00,2025,Aldosivi,Racing Club,0.0,2.0,post
+728137,2025-04-14 18:00:00,2025,Central Córdoba (Santiago del Estero),Huracán,1.0,2.0,post
+728138,2025-04-14 19:00:00,2025,Defensa y Justicia,Unión (Santa Fe),0.0,0.0,post
+728140,2025-04-14 21:15:00,2025,Godoy Cruz Antonio Tomba,Lanús,0.0,0.0,post
+728147,2025-04-14 21:15:00,2025,Vélez Sarsfield,Sarmiento (Junín),0.0,1.0,post
+728144,2025-04-15 20:00:00,2025,Platense,Rosario Central,0.0,0.0,post
+728152,2025-04-18 17:00:00,2025,Gimnasia La Plata,River Plate,0.0,3.0,post
+728160,2025-04-18 19:15:00,2025,Talleres (Córdoba),Vélez Sarsfield,0.0,1.0,post
+728156,2025-04-18 19:15:00,2025,Racing Club,Central Córdoba (Santiago del Estero),1.0,0.0,post
+728162,2025-04-18 21:30:00,2025,Unión (Santa Fe),Newell's Old Boys,1.0,1.0,post
+728155,2025-04-19 16:15:00,2025,Lanús,Banfield,1.0,1.0,post
+728153,2025-04-19 18:15:00,2025,Huracán,Defensa y Justicia,1.0,1.0,post
+728150,2025-04-19 20:30:00,2025,Boca Juniors,Estudiantes de La Plata,2.0,0.0,post
+728151,2025-04-20 15:30:00,2025,Deportivo Riestra,San Lorenzo,0.0,0.0,post
+728158,2025-04-20 16:30:00,2025,San Martín (San Juan),Godoy Cruz Antonio Tomba,1.0,0.0,post
+728159,2025-04-20 18:00:00,2025,Sarmiento (Junín),Platense,0.0,1.0,post
+728157,2025-04-20 20:30:00,2025,Rosario Central,Instituto (Córdoba),3.0,0.0,post
+728161,2025-04-22 19:00:00,2025,Tigre,Belgrano (Córdoba),0.0,0.0,post
+728148,2025-04-22 19:00:00,2025,Argentinos Juniors,Barracas Central,3.0,0.0,post
+728154,2025-04-22 21:15:00,2025,Independiente Rivadavia,Aldosivi,1.0,0.0,post
+728163,2025-04-26 15:00:00,2025,Aldosivi,Banfield,2.0,1.0,post
+728164,2025-04-26 17:00:00,2025,San Lorenzo,Rosario Central,0.0,1.0,post
+728165,2025-04-26 19:00:00,2025,Belgrano (Córdoba),Argentinos Juniors,1.0,1.0,post
+728175,2025-04-27 15:30:00,2025,River Plate,Boca Juniors,2.0,1.0,post
+728171,2025-04-27 19:00:00,2025,Instituto (Córdoba),Sarmiento (Junín),1.0,1.0,post
+728172,2025-04-27 19:00:00,2025,Lanús,San Martín (San Juan),1.0,0.0,post
+728170,2025-04-27 21:15:00,2025,Independiente,Deportivo Riestra,0.0,0.0,post
+728177,2025-04-28 15:00:00,2025,Barracas Central,Unión (Santa Fe),2.0,1.0,post
+728169,2025-04-28 17:15:00,2025,Godoy Cruz Antonio Tomba,Atlético Tucumán,1.0,0.0,post
+728167,2025-04-28 19:30:00,2025,Defensa y Justicia,Racing Club,1.0,2.0,post
+728168,2025-04-28 19:30:00,2025,Estudiantes de La Plata,Tigre,0.0,0.0,post
+728166,2025-04-28 21:45:00,2025,Central Córdoba (Santiago del Estero),Independiente Rivadavia,1.0,2.0,post
+728176,2025-04-28 21:45:00,2025,Vélez Sarsfield,Gimnasia La Plata,1.0,0.0,post
+728173,2025-04-29 19:00:00,2025,Newell's Old Boys,Huracán,2.0,0.0,post
+728174,2025-04-29 19:00:00,2025,Platense,Talleres (Córdoba),2.0,1.0,post
+728149,2025-04-30 21:00:00,2025,Atlético Tucumán,Independiente,2.0,0.0,post
+728185,2025-05-02 15:30:00,2025,Racing Club,Newell's Old Boys,1.0,0.0,post
+728184,2025-05-02 15:30:00,2025,Independiente Rivadavia,Defensa y Justicia,3.0,2.0,post
+728180,2025-05-02 15:30:00,2025,Banfield,Central Córdoba (Santiago del Estero),3.0,1.0,post
+728178,2025-05-02 15:30:00,2025,Argentinos Juniors,Estudiantes de La Plata,4.0,0.0,post
+728192,2025-05-02 18:00:00,2025,Unión (Santa Fe),Belgrano (Córdoba),1.0,1.0,post
+728181,2025-05-03 16:00:00,2025,Deportivo Riestra,Godoy Cruz Antonio Tomba,3.0,0.0,post
+728189,2025-05-03 16:00:00,2025,Sarmiento (Junín),San Lorenzo,1.0,1.0,post
+728190,2025-05-03 16:00:00,2025,Talleres (Córdoba),Instituto (Córdoba),1.0,2.0,post
+728187,2025-05-03 18:30:00,2025,Rosario Central,Independiente,1.0,0.0,post
+728179,2025-05-03 21:00:00,2025,Atlético Tucumán,Lanús,1.0,0.0,post
+728183,2025-05-03 21:00:00,2025,Huracán,Barracas Central,0.0,1.0,post
+728188,2025-05-04 15:30:00,2025,San Martín (San Juan),Aldosivi,0.0,3.0,post
+728182,2025-05-04 15:30:00,2025,Gimnasia La Plata,Platense,1.0,0.0,post
+728191,2025-05-04 18:00:00,2025,Tigre,Boca Juniors,1.0,1.0,post
+728186,2025-05-04 20:30:00,2025,River Plate,Vélez Sarsfield,4.0,1.0,post
+735658,2025-05-10 14:00:00,2025,San Lorenzo,Tigre,2.0,1.0,post
+735662,2025-05-10 16:30:00,2025,Rosario Central,Estudiantes de La Plata,2.0,0.0,post
+735660,2025-05-10 18:45:00,2025,Racing Club,Platense,0.0,1.0,post
+735663,2025-05-10 21:00:00,2025,Boca Juniors,Lanús,0.0,0.0,post
+735659,2025-05-11 15:30:00,2025,Independiente,Independiente Rivadavia,1.0,0.0,post
+735664,2025-05-11 18:00:00,2025,Argentinos Juniors,Instituto (Córdoba),3.0,1.0,post
+735665,2025-05-11 20:30:00,2025,Huracán,Deportivo Riestra,3.0,2.0,post
+735661,2025-05-12 20:30:00,2025,River Plate,Barracas Central,3.0,0.0,post
+735759,2025-05-18 19:00:00,2025,Rosario Central,Huracán,0.0,1.0,post
+735760,2025-05-19 19:00:00,2025,Argentinos Juniors,San Lorenzo,1.0,1.0,post
+735761,2025-05-19 21:30:00,2025,Boca Juniors,Independiente,0.0,1.0,post
+735763,2025-05-20 20:30:00,2025,River Plate,Platense,1.0,1.0,post
+735837,2025-05-24 18:30:00,2025,Independiente,Huracán,0.0,0.0,post
+735839,2025-05-25 16:00:00,2025,San Lorenzo,Platense,0.0,1.0,post
+736029,2025-06-01 17:00:00,2025,Huracán,Platense,0.0,1.0,post
+728987,2025-07-11 15:30:00,2025,Aldosivi,Central Córdoba (Santiago del Estero),0.0,0.0,post
+728999,2025-07-11 20:00:00,2025,Talleres (Córdoba),San Lorenzo,1.0,2.0,post
+728997,2025-07-12 16:00:00,2025,Rosario Central,Godoy Cruz Antonio Tomba,1.0,1.0,post
+728988,2025-07-12 18:30:00,2025,Gimnasia La Plata,Instituto (Córdoba),0.0,1.0,post
+728993,2025-07-12 18:30:00,2025,Huracán,Belgrano (Córdoba),0.0,3.0,post
+728995,2025-07-12 20:45:00,2025,Racing Club,Barracas Central,0.0,1.0,post
+728998,2025-07-13 14:15:00,2025,Sarmiento (Junín),Independiente,2.0,2.0,post
+728989,2025-07-13 16:30:00,2025,Atlético Tucumán,San Martín (San Juan),2.0,1.0,post
+728994,2025-07-13 16:30:00,2025,Independiente Rivadavia,Newell's Old Boys,1.0,2.0,post
+729001,2025-07-13 18:45:00,2025,Argentinos Juniors,Boca Juniors,0.0,0.0,post
+728996,2025-07-13 21:00:00,2025,River Plate,Platense,3.0,1.0,post
+728991,2025-07-14 16:30:00,2025,Deportivo Riestra,Lanús,1.0,0.0,post
+728990,2025-07-14 19:00:00,2025,Banfield,Defensa y Justicia,0.0,0.0,post
+729000,2025-07-14 21:15:00,2025,Unión (Santa Fe),Estudiantes de La Plata,1.0,0.0,post
+728992,2025-07-14 21:15:00,2025,Vélez Sarsfield,Tigre,2.0,1.0,post
+729005,2025-07-18 19:30:00,2025,Boca Juniors,Unión (Santa Fe),1.0,1.0,post
+729002,2025-07-18 21:30:00,2025,Atlético Tucumán,Central Córdoba (Santiago del Estero),1.0,1.0,post
+729014,2025-07-19 14:30:00,2025,San Lorenzo,Gimnasia La Plata,0.0,0.0,post
+729011,2025-07-19 16:30:00,2025,Lanús,Rosario Central,0.0,1.0,post
+729013,2025-07-19 18:45:00,2025,Platense,Vélez Sarsfield,0.0,0.0,post
+729008,2025-07-19 18:45:00,2025,Godoy Cruz Antonio Tomba,Sarmiento (Junín),0.0,0.0,post
+729010,2025-07-19 21:00:00,2025,Instituto (Córdoba),River Plate,0.0,4.0,post
+729003,2025-07-20 14:30:00,2025,Barracas Central,Independiente Rivadavia,0.0,3.0,post
+729012,2025-07-20 16:45:00,2025,Newell's Old Boys,Banfield,1.0,2.0,post
+729016,2025-07-20 16:45:00,2025,Tigre,Argentinos Juniors,2.0,1.0,post
+729004,2025-07-20 19:00:00,2025,Belgrano (Córdoba),Racing Club,0.0,1.0,post
+729009,2025-07-20 21:00:00,2025,Independiente,Talleres (Córdoba),1.0,2.0,post
+729007,2025-07-21 19:00:00,2025,Estudiantes de La Plata,Huracán,2.0,1.0,post
+729015,2025-07-21 21:15:00,2025,San Martín (San Juan),Deportivo Riestra,3.0,2.0,post
+729006,2025-07-21 21:15:00,2025,Defensa y Justicia,Aldosivi,2.0,0.0,post
+729028,2025-07-25 19:00:00,2025,Sarmiento (Junín),Lanús,0.0,2.0,post
+729023,2025-07-25 21:15:00,2025,Independiente Rivadavia,Belgrano (Córdoba),0.0,0.0,post
+729030,2025-07-25 21:15:00,2025,Unión (Santa Fe),Tigre,0.0,0.0,post
+729017,2025-07-26 14:30:00,2025,Aldosivi,Newell's Old Boys,0.0,0.0,post
+729027,2025-07-26 17:00:00,2025,Rosario Central,San Martín (San Juan),0.0,0.0,post
+729024,2025-07-26 19:00:00,2025,Platense,Argentinos Juniors,0.0,0.0,post
+729031,2025-07-26 19:00:00,2025,Vélez Sarsfield,Instituto (Córdoba),0.0,0.0,post
+729025,2025-07-26 21:15:00,2025,Racing Club,Estudiantes de La Plata,0.0,1.0,post
+729029,2025-07-27 16:00:00,2025,Talleres (Córdoba),Godoy Cruz Antonio Tomba,0.0,0.0,post
+729021,2025-07-27 16:00:00,2025,Gimnasia La Plata,Independiente,1.0,0.0,post
+729022,2025-07-27 18:30:00,2025,Huracán,Boca Juniors,1.0,0.0,post
+729026,2025-07-27 20:30:00,2025,River Plate,San Lorenzo,0.0,0.0,post
+729020,2025-07-28 16:00:00,2025,Deportivo Riestra,Atlético Tucumán,1.0,0.0,post
+729019,2025-07-28 18:00:00,2025,Central Córdoba (Santiago del Estero),Defensa y Justicia,2.0,1.0,post
+729018,2025-07-28 20:00:00,2025,Banfield,Barracas Central,1.0,3.0,post
+729039,2025-08-07 17:00:00,2025,Godoy Cruz Antonio Tomba,Gimnasia La Plata,1.0,2.0,post
+729033,2025-08-07 19:00:00,2025,San Lorenzo,Vélez Sarsfield,1.0,0.0,post
+729038,2025-08-07 21:00:00,2025,Estudiantes de La Plata,Independiente Rivadavia,2.0,1.0,post
+729044,2025-08-08 19:00:00,2025,Tigre,Huracán,0.0,1.0,post
+729043,2025-08-08 21:00:00,2025,Newell's Old Boys,Central Córdoba (Santiago del Estero),1.0,1.0,post
+729042,2025-08-08 21:15:00,2025,Lanús,Talleres (Córdoba),1.0,0.0,post
+729045,2025-08-09 14:30:00,2025,San Martín (San Juan),Sarmiento (Junín),0.0,1.0,post
+729036,2025-08-09 16:30:00,2025,Boca Juniors,Racing Club,1.0,1.0,post
+729040,2025-08-09 18:30:00,2025,Independiente,River Plate,0.0,0.0,post
+729046,2025-08-09 20:45:00,2025,Atlético Tucumán,Rosario Central,0.0,0.0,post
+729035,2025-08-09 20:45:00,2025,Belgrano (Córdoba),Banfield,2.0,1.0,post
+729034,2025-08-10 15:00:00,2025,Barracas Central,Aldosivi,3.0,1.0,post
+729041,2025-08-10 17:00:00,2025,Instituto (Córdoba),Platense,1.0,1.0,post
+729032,2025-08-10 20:00:00,2025,Argentinos Juniors,Unión (Santa Fe),1.0,0.0,post
+729037,2025-08-11 19:00:00,2025,Defensa y Justicia,Deportivo Riestra,1.0,0.0,post
+729047,2025-08-15 15:30:00,2025,Aldosivi,Belgrano (Córdoba),0.0,0.0,post
+729054,2025-08-15 19:00:00,2025,Instituto (Córdoba),Unión (Santa Fe),0.0,4.0,post
+729056,2025-08-15 21:00:00,2025,Racing Club,Tigre,1.0,2.0,post
+729055,2025-08-16 14:15:00,2025,Platense,San Lorenzo,2.0,1.0,post
+729052,2025-08-16 16:15:00,2025,Huracán,Argentinos Juniors,1.0,0.0,post
+729058,2025-08-16 18:30:00,2025,Rosario Central,Deportivo Riestra,1.0,1.0,post
+729061,2025-08-16 20:30:00,2025,Vélez Sarsfield,Independiente,2.0,1.0,post
+729051,2025-08-17 14:00:00,2025,Gimnasia La Plata,Lanús,1.0,2.0,post
+729050,2025-08-17 14:00:00,2025,Defensa y Justicia,Newell's Old Boys,1.0,1.0,post
+729048,2025-08-17 16:15:00,2025,Banfield,Estudiantes de La Plata,3.0,2.0,post
+729049,2025-08-17 16:15:00,2025,Central Córdoba (Santiago del Estero),Barracas Central,1.0,1.0,post
+729057,2025-08-17 18:30:00,2025,River Plate,Godoy Cruz Antonio Tomba,4.0,2.0,post
+729053,2025-08-17 20:30:00,2025,Independiente Rivadavia,Boca Juniors,0.0,3.0,post
+729059,2025-08-18 19:00:00,2025,Sarmiento (Junín),Atlético Tucumán,2.0,2.0,post
+729060,2025-08-18 21:00:00,2025,Talleres (Córdoba),San Martín (San Juan),0.0,0.0,post
+729064,2025-08-22 15:30:00,2025,Barracas Central,Defensa y Justicia,1.0,1.0,post
+729075,2025-08-22 20:00:00,2025,Tigre,Independiente Rivadavia,1.0,1.0,post
+729073,2025-08-23 14:30:00,2025,San Lorenzo,Instituto (Córdoba),1.0,0.0,post
+729072,2025-08-23 17:30:00,2025,Rosario Central,Newell's Old Boys,1.0,0.0,post
+729063,2025-08-23 20:00:00,2025,Atlético Tucumán,Talleres (Córdoba),3.0,0.0,post
+729074,2025-08-23 20:00:00,2025,San Martín (San Juan),Gimnasia La Plata,1.0,0.0,post
+729076,2025-08-24 14:00:00,2025,Unión (Santa Fe),Huracán,1.0,1.0,post
+729062,2025-08-24 16:15:00,2025,Argentinos Juniors,Racing Club,4.0,1.0,post
+729066,2025-08-24 18:15:00,2025,Boca Juniors,Banfield,2.0,0.0,post
+729067,2025-08-25 15:00:00,2025,Deportivo Riestra,Sarmiento (Junín),3.0,0.0,post
+729069,2025-08-25 17:00:00,2025,Godoy Cruz Antonio Tomba,Vélez Sarsfield,0.0,2.0,post
+729065,2025-08-25 19:00:00,2025,Belgrano (Córdoba),Central Córdoba (Santiago del Estero),0.0,3.0,post
+729068,2025-08-25 19:15:00,2025,Estudiantes de La Plata,Aldosivi,1.0,0.0,post
+729071,2025-08-25 21:15:00,2025,Lanús,River Plate,1.0,1.0,post
+729091,2025-08-29 19:00:00,2025,Banfield,Tigre,1.0,0.0,post
+729084,2025-08-29 19:00:00,2025,Newell's Old Boys,Barracas Central,1.0,2.0,post
+729083,2025-08-29 21:15:00,2025,Instituto (Córdoba),Independiente,0.0,0.0,post
+729088,2025-08-30 14:45:00,2025,San Lorenzo,Huracán,0.0,0.0,post
+729079,2025-08-30 17:00:00,2025,Central Córdoba (Santiago del Estero),Estudiantes de La Plata,2.0,0.0,post
+729082,2025-08-30 17:00:00,2025,Independiente Rivadavia,Argentinos Juniors,2.0,1.0,post
+729090,2025-08-30 21:30:00,2025,Vélez Sarsfield,Lanús,3.0,0.0,post
+729077,2025-08-31 14:30:00,2025,Aldosivi,Boca Juniors,0.0,2.0,post
+729078,2025-08-31 16:45:00,2025,Talleres (Córdoba),Deportivo Riestra,0.0,1.0,post
+729080,2025-08-31 16:45:00,2025,Defensa y Justicia,Belgrano (Córdoba),2.0,1.0,post
+729087,2025-08-31 19:15:00,2025,River Plate,San Martín (San Juan),2.0,0.0,post
+729086,2025-08-31 21:15:00,2025,Racing Club,Unión (Santa Fe),2.0,3.0,post
+729081,2025-09-01 17:00:00,2025,Gimnasia La Plata,Atlético Tucumán,1.0,0.0,post
+729085,2025-09-01 19:15:00,2025,Platense,Godoy Cruz Antonio Tomba,1.0,3.0,post
+729092,2025-09-11 20:00:00,2025,Belgrano (Córdoba),San Martín (San Juan),0.0,0.0,post
+729094,2025-09-12 14:30:00,2025,Deportivo Riestra,Central Córdoba (Santiago del Estero),2.0,0.0,post
+729103,2025-09-12 19:00:00,2025,Racing Club,San Lorenzo,2.0,0.0,post
+729098,2025-09-12 19:00:00,2025,Huracán,Vélez Sarsfield,0.0,0.0,post
+729102,2025-09-12 21:15:00,2025,Newell's Old Boys,Atlético Tucumán,2.0,0.0,post
+729101,2025-09-12 21:15:00,2025,Lanús,Independiente Rivadavia,1.0,0.0,post
+729097,2025-09-13 14:30:00,2025,Godoy Cruz Antonio Tomba,Barracas Central,0.0,0.0,post
+729099,2025-09-13 16:45:00,2025,Independiente,Banfield,0.0,1.0,post
+729095,2025-09-13 19:00:00,2025,Estudiantes de La Plata,River Plate,1.0,2.0,post
+729105,2025-09-13 21:15:00,2025,Sarmiento (Junín),Aldosivi,2.0,0.0,post
+729096,2025-09-14 15:00:00,2025,Gimnasia La Plata,Unión (Santa Fe),1.0,3.0,post
+729100,2025-09-14 15:00:00,2025,Instituto (Córdoba),Argentinos Juniors,2.0,0.0,post
+729104,2025-09-14 17:30:00,2025,Rosario Central,Boca Juniors,1.0,1.0,post
+729106,2025-09-14 20:00:00,2025,Tigre,Talleres (Córdoba),0.0,0.0,post
+729093,2025-09-14 20:00:00,2025,Defensa y Justicia,Platense,1.0,2.0,post
+729112,2025-09-19 17:00:00,2025,Deportivo Riestra,Gimnasia La Plata,1.0,0.0,post
+729115,2025-09-19 19:00:00,2025,Huracán,Racing Club,0.0,2.0,post
+729119,2025-09-19 19:15:00,2025,San Martín (San Juan),Vélez Sarsfield,1.0,2.0,post
+729117,2025-09-19 21:15:00,2025,Lanús,Platense,2.0,1.0,post
+729109,2025-09-20 14:30:00,2025,Barracas Central,Sarmiento (Junín),0.0,1.0,post
+729121,2025-09-20 16:45:00,2025,Unión (Santa Fe),Independiente Rivadavia,2.0,2.0,post
+729108,2025-09-20 21:15:00,2025,Atlético Tucumán,River Plate,2.0,0.0,post
+729120,2025-09-21 12:00:00,2025,Tigre,Aldosivi,2.0,0.0,post
+729116,2025-09-21 14:30:00,2025,Independiente,San Lorenzo,1.0,1.0,post
+729114,2025-09-21 16:45:00,2025,Godoy Cruz Antonio Tomba,Instituto (Córdoba),1.0,1.0,post
+729107,2025-09-21 19:00:00,2025,Argentinos Juniors,Banfield,3.0,0.0,post
+729118,2025-09-21 19:00:00,2025,Rosario Central,Talleres (Córdoba),1.0,1.0,post
+729111,2025-09-21 21:15:00,2025,Boca Juniors,Central Córdoba (Santiago del Estero),2.0,2.0,post
+729113,2025-09-22 19:00:00,2025,Estudiantes de La Plata,Defensa y Justicia,1.0,0.0,post
+729110,2025-09-22 21:00:00,2025,Belgrano (Córdoba),Newell's Old Boys,3.0,0.0,post
+729123,2025-09-26 19:00:00,2025,Banfield,Unión (Santa Fe),0.0,0.0,post
+729131,2025-09-26 19:00:00,2025,Platense,San Martín (San Juan),2.0,2.0,post
+729125,2025-09-26 21:15:00,2025,Central Córdoba (Santiago del Estero),Tigre,0.0,1.0,post
+729127,2025-09-27 14:30:00,2025,Gimnasia La Plata,Rosario Central,0.0,3.0,post
+729122,2025-09-27 14:30:00,2025,Aldosivi,Argentinos Juniors,0.0,2.0,post
+729134,2025-09-27 16:45:00,2025,San Lorenzo,Godoy Cruz Antonio Tomba,2.0,0.0,post
+729126,2025-09-27 19:00:00,2025,Defensa y Justicia,Boca Juniors,2.0,1.0,post
+729135,2025-09-27 21:15:00,2025,Talleres (Córdoba),Sarmiento (Junín),1.0,0.0,post
+729132,2025-09-28 15:15:00,2025,Racing Club,Independiente,0.0,0.0,post
+729133,2025-09-28 18:00:00,2025,River Plate,Deportivo Riestra,1.0,2.0,post
+729128,2025-09-28 19:30:00,2025,Independiente Rivadavia,Huracán,0.0,0.0,post
+729129,2025-09-28 20:15:00,2025,Instituto (Córdoba),Lanús,0.0,0.0,post
+729124,2025-09-29 15:30:00,2025,Barracas Central,Belgrano (Córdoba),1.0,1.0,post
+729136,2025-09-29 20:00:00,2025,Vélez Sarsfield,Atlético Tucumán,3.0,1.0,post
+729130,2025-09-30 19:00:00,2025,Newell's Old Boys,Estudiantes de La Plata,1.0,1.0,post
+729150,2025-10-03 19:00:00,2025,Tigre,Defensa y Justicia,1.0,1.0,post
+729137,2025-10-03 21:15:00,2025,Argentinos Juniors,Central Córdoba (Santiago del Estero),0.0,0.0,post
+729142,2025-10-03 21:15:00,2025,Unión (Santa Fe),Aldosivi,0.0,2.0,post
+729148,2025-10-04 14:30:00,2025,Sarmiento (Junín),Gimnasia La Plata,0.0,1.0,post
+729147,2025-10-04 16:45:00,2025,San Martín (San Juan),Instituto (Córdoba),0.0,0.0,post
+729151,2025-10-04 19:00:00,2025,Atlético Tucumán,Platense,2.0,0.0,post
+729143,2025-10-04 19:00:00,2025,Huracán,Banfield,1.0,0.0,post
+729144,2025-10-04 21:15:00,2025,Lanús,San Lorenzo,2.0,1.0,post
+729138,2025-10-05 14:30:00,2025,Godoy Cruz Antonio Tomba,Independiente,1.0,1.0,post
+729141,2025-10-05 16:30:00,2025,Estudiantes de La Plata,Barracas Central,1.0,1.0,post
+729149,2025-10-05 16:45:00,2025,Talleres (Córdoba),Belgrano (Córdoba),0.0,0.0,post
+729139,2025-10-05 19:00:00,2025,Boca Juniors,Newell's Old Boys,5.0,0.0,post
+729146,2025-10-05 21:15:00,2025,Rosario Central,River Plate,2.0,1.0,post
+729140,2025-10-06 19:00:00,2025,Deportivo Riestra,Vélez Sarsfield,2.0,2.0,post
+729145,2025-10-06 21:00:00,2025,Racing Club,Independiente Rivadavia,0.0,0.0,post
+729165,2025-10-10 14:30:00,2025,San Lorenzo,San Martín (San Juan),0.0,1.0,post
+729157,2025-10-10 16:15:00,2025,Defensa y Justicia,Argentinos Juniors,1.0,0.0,post
+729156,2025-10-10 16:45:00,2025,Central Córdoba (Santiago del Estero),Unión (Santa Fe),3.0,1.0,post
+729162,2025-10-10 18:30:00,2025,Newell's Old Boys,Tigre,1.0,1.0,post
+729158,2025-10-11 16:00:00,2025,Gimnasia La Plata,Talleres (Córdoba),1.0,2.0,post
+729153,2025-10-11 18:00:00,2025,Banfield,Racing Club,1.0,3.0,post
+729155,2025-10-11 22:15:00,2025,Belgrano (Córdoba),Estudiantes de La Plata,1.0,1.0,post
+729166,2025-10-11 22:15:00,2025,Vélez Sarsfield,Rosario Central,1.0,2.0,post
+729152,2025-10-12 14:30:00,2025,Aldosivi,Huracán,2.0,0.0,post
+729160,2025-10-12 16:45:00,2025,Independiente Rivadavia,Godoy Cruz Antonio Tomba,0.0,0.0,post
+729161,2025-10-12 16:45:00,2025,Instituto (Córdoba),Atlético Tucumán,2.0,0.0,post
+729164,2025-10-12 19:15:00,2025,River Plate,Sarmiento (Junín),0.0,1.0,post
+729159,2025-10-12 21:15:00,2025,Independiente,Lanús,0.0,2.0,post
+729163,2025-10-13 18:30:00,2025,Platense,Deportivo Riestra,1.0,1.0,post
+729175,2025-10-17 19:00:00,2025,Racing Club,Aldosivi,1.0,0.0,post
+729167,2025-10-17 21:15:00,2025,Argentinos Juniors,Newell's Old Boys,3.0,1.0,post
+729174,2025-10-17 21:15:00,2025,Lanús,Godoy Cruz Antonio Tomba,2.0,0.0,post
+729173,2025-10-18 15:45:00,2025,Independiente Rivadavia,Banfield,1.0,2.0,post
+729169,2025-10-18 18:00:00,2025,Boca Juniors,Belgrano (Córdoba),1.0,2.0,post
+729179,2025-10-18 20:30:00,2025,Talleres (Córdoba),River Plate,0.0,2.0,post
+729178,2025-10-19 15:00:00,2025,Sarmiento (Junín),Vélez Sarsfield,0.0,2.0,post
+729171,2025-10-19 15:00:00,2025,Estudiantes de La Plata,Gimnasia La Plata,2.0,0.0,post
+729176,2025-10-19 18:00:00,2025,Rosario Central,Platense,1.0,0.0,post
+729177,2025-10-19 18:00:00,2025,San Martín (San Juan),Independiente,1.0,0.0,post
+729170,2025-10-20 19:00:00,2025,Deportivo Riestra,Instituto (Córdoba),1.0,0.0,post
+729180,2025-10-20 19:00:00,2025,Tigre,Barracas Central,2.0,2.0,post
+729168,2025-10-20 21:15:00,2025,Atlético Tucumán,San Lorenzo,1.0,2.0,post
+729181,2025-10-21 19:15:00,2025,Unión (Santa Fe),Defensa y Justicia,3.0,0.0,post
+729172,2025-10-22 19:30:00,2025,Huracán,Central Córdoba (Santiago del Estero),0.0,1.0,post
+729089,2025-10-24 16:00:00,2025,Sarmiento (Junín),Rosario Central,0.0,1.0,post
+729070,2025-10-24 18:00:00,2025,Independiente,Platense,3.0,0.0,post
+729154,2025-10-27 16:00:00,2025,Barracas Central,Boca Juniors,1.0,3.0,post
+729195,2025-10-31 19:00:00,2025,San Lorenzo,Deportivo Riestra,1.0,0.0,post
+729191,2025-10-31 21:15:00,2025,Instituto (Córdoba),Rosario Central,1.0,3.0,post
+729192,2025-10-31 21:15:00,2025,Newell's Old Boys,Unión (Santa Fe),0.0,1.0,post
+729182,2025-11-01 14:45:00,2025,Aldosivi,Independiente Rivadavia,3.0,1.0,post
+729184,2025-11-01 16:00:00,2025,Barracas Central,Argentinos Juniors,2.0,0.0,post
+729187,2025-11-01 17:00:00,2025,Vélez Sarsfield,Talleres (Córdoba),0.0,1.0,post
+729190,2025-11-01 20:00:00,2025,Independiente,Atlético Tucumán,3.0,0.0,post
+729188,2025-11-02 16:00:00,2025,Estudiantes de La Plata,Boca Juniors,1.0,2.0,post
+729189,2025-11-02 18:30:00,2025,Godoy Cruz Antonio Tomba,San Martín (San Juan),0.0,0.0,post
+729194,2025-11-02 20:30:00,2025,River Plate,Gimnasia La Plata,0.0,1.0,post
+729183,2025-11-03 16:45:00,2025,Defensa y Justicia,Huracán,1.0,3.0,post
+729193,2025-11-03 16:45:00,2025,Platense,Sarmiento (Junín),1.0,1.0,post
+729186,2025-11-03 19:00:00,2025,Central Córdoba (Santiago del Estero),Racing Club,0.0,0.0,post
+729196,2025-11-03 21:15:00,2025,Banfield,Lanús,2.0,1.0,post
+729185,2025-11-03 21:15:00,2025,Belgrano (Córdoba),Tigre,0.0,0.0,post
+729206,2025-11-07 21:00:00,2025,Rosario Central,San Lorenzo,0.0,0.0,post
+729203,2025-11-08 17:00:00,2025,Huracán,Newell's Old Boys,0.0,2.0,post
+729205,2025-11-08 17:00:00,2025,Racing Club,Defensa y Justicia,1.0,0.0,post
+729209,2025-11-08 19:15:00,2025,Talleres (Córdoba),Platense,1.0,0.0,post
+729211,2025-11-08 21:30:00,2025,Unión (Santa Fe),Barracas Central,0.0,0.0,post
+729207,2025-11-08 21:30:00,2025,San Martín (San Juan),Lanús,1.0,1.0,post
+729200,2025-11-09 16:30:00,2025,Boca Juniors,River Plate,2.0,0.0,post
+729199,2025-11-09 19:20:00,2025,Banfield,Aldosivi,0.0,1.0,post
+729208,2025-11-09 19:20:00,2025,Sarmiento (Junín),Instituto (Córdoba),2.0,1.0,post
+729198,2025-11-09 21:30:00,2025,Atlético Tucumán,Godoy Cruz Antonio Tomba,2.0,1.0,post
+729210,2025-11-09 21:30:00,2025,Tigre,Estudiantes de La Plata,1.0,0.0,post
+729202,2025-11-10 17:00:00,2025,Gimnasia La Plata,Vélez Sarsfield,2.0,0.0,post
+729201,2025-11-10 19:00:00,2025,Deportivo Riestra,Independiente,0.0,1.0,post
+729204,2025-11-10 21:15:00,2025,Independiente Rivadavia,Central Córdoba (Santiago del Estero),0.0,0.0,post
+729197,2025-11-10 21:15:00,2025,Argentinos Juniors,Belgrano (Córdoba),1.0,0.0,post
+729222,2025-11-14 20:00:00,2025,Lanús,Atlético Tucumán,3.0,1.0,post
+729212,2025-11-15 17:00:00,2025,Aldosivi,San Martín (San Juan),4.0,2.0,post
+729219,2025-11-15 17:00:00,2025,Godoy Cruz Antonio Tomba,Deportivo Riestra,1.0,1.0,post
+729225,2025-11-15 19:30:00,2025,San Lorenzo,Sarmiento (Junín),1.0,1.0,post
+729220,2025-11-15 21:30:00,2025,Independiente,Rosario Central,1.0,0.0,post
+729221,2025-11-16 17:00:00,2025,Instituto (Córdoba),Talleres (Córdoba),0.0,0.0,post
+729226,2025-11-16 17:00:00,2025,Vélez Sarsfield,River Plate,0.0,0.0,post
+729223,2025-11-16 20:15:00,2025,Newell's Old Boys,Racing Club,0.0,1.0,post
+729218,2025-11-16 20:15:00,2025,Estudiantes de La Plata,Argentinos Juniors,1.0,2.0,post
+729216,2025-11-16 20:15:00,2025,Central Córdoba (Santiago del Estero),Banfield,1.0,1.0,post
+729215,2025-11-16 20:15:00,2025,Boca Juniors,Tigre,2.0,0.0,post
+729213,2025-11-17 17:00:00,2025,Barracas Central,Huracán,1.0,1.0,post
+729214,2025-11-17 17:00:00,2025,Belgrano (Córdoba),Unión (Santa Fe),0.0,0.0,post
+729217,2025-11-17 17:00:00,2025,Defensa y Justicia,Independiente Rivadavia,0.0,2.0,post
+729224,2025-11-17 19:30:00,2025,Platense,Gimnasia La Plata,0.0,3.0,post
+761360,2025-11-22 20:00:00,2025,Vélez Sarsfield,Argentinos Juniors,0.0,2.0,post
+761361,2025-11-22 22:00:00,2025,Central Córdoba (Santiago del Estero),San Lorenzo,2.0,1.0,post
+761362,2025-11-23 17:30:00,2025,Rosario Central,Estudiantes de La Plata,0.0,1.0,post
+761363,2025-11-23 20:00:00,2025,Boca Juniors,Talleres (Córdoba),2.0,0.0,post
+761364,2025-11-24 17:00:00,2025,Deportivo Riestra,Barracas Central,0.0,1.0,post
+761365,2025-11-24 19:15:00,2025,Racing Club,River Plate,3.0,2.0,post
+761366,2025-11-24 22:00:00,2025,Unión (Santa Fe),Gimnasia La Plata,1.0,2.0,post
+761367,2025-11-26 21:30:00,2025,Lanús,Tigre,0.0,1.0,post
+761966,2025-11-29 21:30:00,2025,Central Córdoba (Santiago del Estero),Estudiantes de La Plata,0.0,1.0,post
+761967,2025-11-30 18:30:00,2025,Boca Juniors,Argentinos Juniors,1.0,0.0,post
+762062,2025-12-01 17:00:00,2025,Barracas Central,Gimnasia La Plata,0.0,2.0,post
+762066,2025-12-01 21:30:00,2025,Racing Club,Tigre,0.0,0.0,post
+762356,2025-12-07 19:00:00,2025,Boca Juniors,Racing Club,0.0,1.0,post
+762357,2025-12-08 17:00:00,2025,Gimnasia La Plata,Estudiantes de La Plata,0.0,1.0,post
+762487,2025-12-13 21:00:00,2025,Racing Club,Estudiantes de La Plata,1.0,1.0,post
+762774,2026-01-22 17:00:00,2026,Aldosivi,Defensa y Justicia,0.0,0.0,post
+762776,2026-01-22 20:00:00,2026,Banfield,Huracán,1.0,1.0,post
+762788,2026-01-22 20:00:00,2026,Unión (Santa Fe),Platense,0.0,0.0,post
+762779,2026-01-22 22:15:00,2026,Central Córdoba (Santiago del Estero),Gimnasia (Mendoza),0.0,1.0,post
+762783,2026-01-22 22:15:00,2026,Instituto (Córdoba),Vélez Sarsfield,0.0,1.0,post
+762785,2026-01-23 19:00:00,2026,San Lorenzo,Lanús,2.0,3.0,post
+762781,2026-01-23 20:00:00,2026,Independiente,Estudiantes de La Plata,1.0,1.0,post
+762782,2026-01-23 22:15:00,2026,Independiente Rivadavia,Atlético Tucumán,2.0,1.0,post
+762786,2026-01-23 22:15:00,2026,Talleres (Córdoba),Newell's Old Boys,2.0,1.0,post
+762777,2026-01-24 17:00:00,2026,Barracas Central,River Plate,0.0,1.0,post
+762780,2026-01-24 19:30:00,2026,Gimnasia La Plata,Racing Club,2.0,1.0,post
+762784,2026-01-24 22:00:00,2026,Rosario Central,Belgrano (Córdoba),1.0,2.0,post
+762778,2026-01-25 18:30:00,2026,Boca Juniors,Deportivo Riestra,1.0,0.0,post
+762775,2026-01-25 21:00:00,2026,Argentinos Juniors,Sarmiento (Junín),1.0,0.0,post
+762787,2026-01-25 21:00:00,2026,Tigre,Estudiantes de Río Cuarto,2.0,0.0,post
+762799,2026-01-26 17:00:00,2026,Platense,Instituto (Córdoba),2.0,1.0,post
+762802,2026-01-27 17:45:00,2026,Vélez Sarsfield,Talleres (Córdoba),2.0,1.0,post
+762795,2026-01-27 20:00:00,2026,Gimnasia (Mendoza),San Lorenzo,0.0,1.0,post
+762796,2026-01-27 20:00:00,2026,Huracán,Independiente Rivadavia,1.0,2.0,post
+762803,2026-01-27 22:15:00,2026,Atlético Tucumán,Central Córdoba (Santiago del Estero),0.0,0.0,post
+762798,2026-01-27 22:15:00,2026,Newell's Old Boys,Independiente,1.0,1.0,post
+762789,2026-01-28 17:00:00,2026,Aldosivi,Barracas Central,0.0,0.0,post
+762800,2026-01-28 19:00:00,2026,Racing Club,Rosario Central,1.0,2.0,post
+762801,2026-01-28 20:00:00,2026,River Plate,Gimnasia La Plata,2.0,0.0,post
+762794,2026-01-28 22:15:00,2026,Estudiantes de La Plata,Boca Juniors,2.0,1.0,post
+762792,2026-01-29 17:00:00,2026,Deportivo Riestra,Defensa y Justicia,0.0,1.0,post
+762797,2026-01-29 19:15:00,2026,Lanús,Unión (Santa Fe),2.0,1.0,post
+762791,2026-01-29 19:15:00,2026,Belgrano (Córdoba),Tigre,1.0,1.0,post
+762793,2026-01-29 21:30:00,2026,Estudiantes de Río Cuarto,Argentinos Juniors,0.0,0.0,post
+762790,2026-01-29 21:30:00,2026,Sarmiento (Junín),Banfield,1.0,0.0,post
+762815,2026-01-31 17:30:00,2026,San Lorenzo,Central Córdoba (Santiago del Estero),1.0,0.0,post
+762811,2026-01-31 19:45:00,2026,Independiente,Vélez Sarsfield,1.0,1.0,post
+762818,2026-01-31 22:00:00,2026,Atlético Tucumán,Huracán,1.0,1.0,post
+762805,2026-01-31 22:00:00,2026,Talleres (Córdoba),Platense,1.0,2.0,post
+762807,2026-02-01 17:00:00,2026,Barracas Central,Deportivo Riestra,1.0,1.0,post
+762808,2026-02-01 19:15:00,2026,Boca Juniors,Newell's Old Boys,2.0,0.0,post
+762814,2026-02-01 21:30:00,2026,Rosario Central,River Plate,0.0,0.0,post
+762810,2026-02-02 17:30:00,2026,Gimnasia La Plata,Aldosivi,3.0,1.0,post
+762809,2026-02-02 19:45:00,2026,Defensa y Justicia,Estudiantes de La Plata,0.0,0.0,post
+762817,2026-02-02 19:45:00,2026,Tigre,Racing Club,3.0,1.0,post
+762804,2026-02-02 22:00:00,2026,Argentinos Juniors,Belgrano (Córdoba),0.0,0.0,post
+762816,2026-02-02 22:00:00,2026,Unión (Santa Fe),Gimnasia (Mendoza),4.0,0.0,post
+762806,2026-02-03 19:00:00,2026,Banfield,Estudiantes de Río Cuarto,2.0,1.0,post
+762812,2026-02-03 21:15:00,2026,Independiente Rivadavia,Sarmiento (Junín),2.0,1.0,post
+762813,2026-02-03 21:15:00,2026,Instituto (Córdoba),Lanús,2.0,2.0,post
+762822,2026-02-06 21:00:00,2026,Central Córdoba (Santiago del Estero),Unión (Santa Fe),1.0,0.0,post
+762819,2026-02-07 17:00:00,2026,Aldosivi,Rosario Central,1.0,1.0,post
+762830,2026-02-07 18:00:00,2026,Racing Club,Argentinos Juniors,2.0,1.0,post
+762831,2026-02-07 20:00:00,2026,River Plate,Tigre,1.0,4.0,post
+762821,2026-02-07 22:15:00,2026,Belgrano (Córdoba),Banfield,1.0,0.0,post
+762828,2026-02-07 22:15:00,2026,Newell's Old Boys,Defensa y Justicia,2.0,3.0,post
+762829,2026-02-08 17:00:00,2026,Platense,Independiente,0.0,1.0,post
+762832,2026-02-08 17:00:00,2026,Sarmiento (Junín),Atlético Tucumán,2.0,1.0,post
+762826,2026-02-08 19:15:00,2026,Huracán,San Lorenzo,1.0,0.0,post
+762833,2026-02-08 22:15:00,2026,Vélez Sarsfield,Boca Juniors,2.0,1.0,post
+762825,2026-02-08 22:15:00,2026,Gimnasia (Mendoza),Instituto (Córdoba),1.0,0.0,post
+762820,2026-02-09 17:00:00,2026,Barracas Central,Gimnasia La Plata,2.0,0.0,post
+762824,2026-02-09 19:15:00,2026,Estudiantes de La Plata,Deportivo Riestra,1.0,0.0,post
+762827,2026-02-09 19:15:00,2026,Lanús,Talleres (Córdoba),1.0,1.0,post
+762823,2026-02-09 21:30:00,2026,Estudiantes de Río Cuarto,Independiente Rivadavia,0.0,1.0,post
+762847,2026-02-12 19:00:00,2026,Tigre,Aldosivi,1.0,0.0,post
+762834,2026-02-12 21:15:00,2026,Argentinos Juniors,River Plate,1.0,0.0,post
+762842,2026-02-13 20:00:00,2026,Independiente,Lanús,2.0,0.0,post
+762838,2026-02-13 22:15:00,2026,Defensa y Justicia,Vélez Sarsfield,1.0,1.0,post
+762848,2026-02-13 22:15:00,2026,Unión (Santa Fe),San Lorenzo,0.0,0.0,post
+762836,2026-02-14 17:30:00,2026,Banfield,Racing Club,0.0,2.0,post
+762841,2026-02-14 19:45:00,2026,Huracán,Sarmiento (Junín),1.0,0.0,post
+762846,2026-02-14 19:45:00,2026,Talleres (Córdoba),Gimnasia (Mendoza),2.0,1.0,post
+762835,2026-02-14 22:00:00,2026,Atlético Tucumán,Estudiantes de Río Cuarto,4.0,0.0,post
+762843,2026-02-14 22:00:00,2026,Independiente Rivadavia,Belgrano (Córdoba),0.0,1.0,post
+762840,2026-02-15 17:00:00,2026,Gimnasia La Plata,Estudiantes de La Plata,0.0,0.0,post
+762837,2026-02-15 19:30:00,2026,Boca Juniors,Platense,0.0,0.0,post
+762844,2026-02-15 22:00:00,2026,Instituto (Córdoba),Central Córdoba (Santiago del Estero),2.0,0.0,post
+762845,2026-02-15 22:00:00,2026,Rosario Central,Barracas Central,2.0,0.0,post
+762839,2026-02-16 19:00:00,2026,Deportivo Riestra,Newell's Old Boys,1.0,1.0,post
+762853,2026-02-20 17:15:00,2026,Defensa y Justicia,Belgrano (Córdoba),1.0,1.0,post
+762855,2026-02-20 17:45:00,2026,Estudiantes de La Plata,Sarmiento (Junín),1.0,0.0,post
+762851,2026-02-20 20:00:00,2026,Boca Juniors,Racing Club,0.0,0.0,post
+762858,2026-02-20 20:00:00,2026,Instituto (Córdoba),Atlético Tucumán,2.0,1.0,post
+762856,2026-02-20 22:15:00,2026,Gimnasia (Mendoza),Gimnasia La Plata,0.0,1.0,post
+762860,2026-02-20 22:15:00,2026,Rosario Central,Talleres (Córdoba),0.0,1.0,post
+762857,2026-02-21 17:00:00,2026,Independiente Rivadavia,Independiente,3.0,2.0,post
+762859,2026-02-21 17:00:00,2026,Platense,Barracas Central,1.0,0.0,post
+762854,2026-02-21 19:15:00,2026,Deportivo Riestra,Huracán,0.0,0.0,post
+762863,2026-02-21 19:15:00,2026,Banfield,Newell's Old Boys,3.0,0.0,post
+762852,2026-02-21 21:30:00,2026,Central Córdoba (Santiago del Estero),Tigre,0.0,0.0,post
+762861,2026-02-22 17:00:00,2026,San Lorenzo,Estudiantes de Río Cuarto,2.0,0.0,post
+762862,2026-02-22 19:15:00,2026,Vélez Sarsfield,River Plate,1.0,0.0,post
+762850,2026-02-22 21:30:00,2026,Unión (Santa Fe),Aldosivi,1.0,0.0,post
+762865,2026-02-24 17:00:00,2026,Platense,Defensa y Justicia,0.0,0.0,post
+762868,2026-02-24 19:15:00,2026,San Lorenzo,Instituto (Córdoba),1.0,1.0,post
+762874,2026-02-24 19:45:00,2026,Central Córdoba (Santiago del Estero),Talleres (Córdoba),2.0,0.0,post
+762873,2026-02-24 21:30:00,2026,Belgrano (Córdoba),Atlético Tucumán,3.0,1.0,post
+762877,2026-02-24 22:00:00,2026,Gimnasia (Mendoza),Independiente,1.0,1.0,post
+762872,2026-02-25 17:00:00,2026,Barracas Central,Tigre,2.0,1.0,post
+762876,2026-02-25 17:00:00,2026,Gimnasia La Plata,Rosario Central,1.0,2.0,post
+762864,2026-02-25 19:30:00,2026,Newell's Old Boys,Estudiantes de La Plata,0.0,2.0,post
+762870,2026-02-25 19:30:00,2026,Vélez Sarsfield,Deportivo Riestra,0.0,0.0,post
+762866,2026-02-26 17:15:00,2026,Racing Club,Independiente Rivadavia,1.0,1.0,post
+762869,2026-02-26 17:15:00,2026,Sarmiento (Junín),Unión (Santa Fe),1.0,3.0,post
+762875,2026-02-26 19:30:00,2026,Estudiantes de Río Cuarto,Huracán,2.0,0.0,post
+762867,2026-02-26 19:30:00,2026,River Plate,Banfield,3.0,1.0,post
+762882,2026-02-28 17:45:00,2026,Boca Juniors,Gimnasia (Mendoza),1.0,1.0,post
+762887,2026-02-28 20:00:00,2026,Independiente,Central Córdoba (Santiago del Estero),2.0,0.0,post
+762892,2026-02-28 22:15:00,2026,Talleres (Córdoba),San Lorenzo,0.0,0.0,post
+762890,2026-03-01 17:00:00,2026,Newell's Old Boys,Rosario Central,0.0,2.0,post
+762879,2026-03-01 19:15:00,2026,Argentinos Juniors,Barracas Central,1.0,1.0,post
+762889,2026-03-01 19:15:00,2026,Instituto (Córdoba),Unión (Santa Fe),1.0,2.0,post
+762883,2026-03-01 21:30:00,2026,Defensa y Justicia,Lanús,1.0,1.0,post
+762893,2026-03-01 21:30:00,2026,Tigre,Gimnasia La Plata,2.0,2.0,post
+762884,2026-03-02 19:15:00,2026,Deportivo Riestra,Platense,0.0,0.0,post
+762885,2026-03-02 19:15:00,2026,Estudiantes de La Plata,Vélez Sarsfield,0.0,1.0,post
+762888,2026-03-02 21:30:00,2026,Independiente Rivadavia,River Plate,1.0,1.0,post
+762881,2026-03-02 21:30:00,2026,Banfield,Aldosivi,2.0,0.0,post
+762891,2026-03-03 19:00:00,2026,Sarmiento (Junín),Estudiantes de Río Cuarto,1.0,0.0,post
+762886,2026-03-03 19:15:00,2026,Huracán,Belgrano (Córdoba),3.0,1.0,post
+762880,2026-03-03 21:15:00,2026,Atlético Tucumán,Racing Club,0.0,3.0,post
+762878,2026-03-04 21:00:00,2026,Lanús,Boca Juniors,0.0,3.0,post
+762918,2026-03-10 19:45:00,2026,Independiente,Unión (Santa Fe),4.0,4.0,post
+762914,2026-03-10 19:45:00,2026,Tigre,Vélez Sarsfield,1.0,1.0,post
+762920,2026-03-10 22:00:00,2026,Newell's Old Boys,Platense,1.0,1.0,post
+762921,2026-03-10 22:00:00,2026,Sarmiento (Junín),Racing Club,0.0,0.0,post
+762911,2026-03-11 17:30:00,2026,Banfield,Gimnasia La Plata,1.0,2.0,post
+762909,2026-03-11 17:30:00,2026,Argentinos Juniors,Rosario Central,0.0,0.0,post
+762912,2026-03-11 19:45:00,2026,Boca Juniors,San Lorenzo,1.0,1.0,post
+762923,2026-03-11 22:00:00,2026,Atlético Tucumán,Aldosivi,1.0,1.0,post
+762919,2026-03-11 22:00:00,2026,Independiente Rivadavia,Barracas Central,1.0,2.0,post
+762913,2026-03-12 17:00:00,2026,Defensa y Justicia,Central Córdoba (Santiago del Estero),1.0,1.0,post
+762910,2026-03-12 17:00:00,2026,Deportivo Riestra,Gimnasia (Mendoza),0.0,0.0,post
+762915,2026-03-12 19:15:00,2026,Estudiantes de Río Cuarto,Belgrano (Córdoba),0.0,1.0,post
+762922,2026-03-12 19:15:00,2026,Talleres (Córdoba),Instituto (Córdoba),2.0,0.0,post
+762917,2026-03-12 21:30:00,2026,Huracán,River Plate,1.0,2.0,post
+762916,2026-03-13 20:00:00,2026,Estudiantes de La Plata,Lanús,0.0,1.0,post
+762932,2026-03-14 19:00:00,2026,Platense,Vélez Sarsfield,0.0,2.0,post
+762935,2026-03-14 21:00:00,2026,Rosario Central,Banfield,2.0,1.0,post
+762928,2026-03-15 15:15:00,2026,Gimnasia La Plata,Independiente Rivadavia,2.0,3.0,post
+762926,2026-03-15 17:30:00,2026,Belgrano (Córdoba),Talleres (Córdoba),0.0,0.0,post
+762934,2026-03-15 19:45:00,2026,River Plate,Sarmiento (Junín),2.0,0.0,post
+762937,2026-03-15 22:00:00,2026,Tigre,Argentinos Juniors,1.0,1.0,post
+762938,2026-03-15 22:00:00,2026,Unión (Santa Fe),Boca Juniors,1.0,1.0,post
+762924,2026-03-16 15:30:00,2026,Aldosivi,Huracán,0.0,0.0,post
+762925,2026-03-16 15:30:00,2026,Barracas Central,Atlético Tucumán,2.0,1.0,post
+762936,2026-03-16 18:30:00,2026,San Lorenzo,Defensa y Justicia,2.0,5.0,post
+762933,2026-03-16 20:00:00,2026,Racing Club,Estudiantes de Río Cuarto,2.0,0.0,post
+762930,2026-03-16 22:15:00,2026,Instituto (Córdoba),Independiente,2.0,1.0,post
+762931,2026-03-17 19:00:00,2026,Lanús,Newell's Old Boys,5.0,0.0,post
+762927,2026-03-17 21:15:00,2026,Central Córdoba (Santiago del Estero),Deportivo Riestra,1.0,0.0,post
+762929,2026-03-17 21:15:00,2026,Gimnasia (Mendoza),Estudiantes de La Plata,1.0,2.0,post
+762940,2026-03-20 21:00:00,2026,Atlético Tucumán,Gimnasia La Plata,1.0,0.0,post
+762941,2026-03-20 21:00:00,2026,Banfield,Tigre,1.0,0.0,post
+762953,2026-03-21 15:30:00,2026,Vélez Sarsfield,Lanús,0.0,1.0,post
+762951,2026-03-21 17:45:00,2026,Newell's Old Boys,Gimnasia (Mendoza),1.0,0.0,post
+762944,2026-03-21 17:45:00,2026,Defensa y Justicia,Unión (Santa Fe),2.0,0.0,post
+762949,2026-03-21 20:00:00,2026,Independiente,Talleres (Córdoba),1.0,2.0,post
+762942,2026-03-21 22:15:00,2026,Belgrano (Córdoba),Racing Club,1.0,2.0,post
+762952,2026-03-22 15:30:00,2026,Sarmiento (Junín),Aldosivi,2.0,0.0,post
+762946,2026-03-22 17:45:00,2026,Estudiantes de Río Cuarto,River Plate,0.0,2.0,post
+762943,2026-03-22 20:00:00,2026,Boca Juniors,Instituto (Córdoba),2.0,0.0,post
+762939,2026-03-22 22:15:00,2026,Argentinos Juniors,Platense,1.0,0.0,post
+762950,2026-03-22 22:15:00,2026,Independiente Rivadavia,Rosario Central,2.0,0.0,post
+762947,2026-03-23 19:00:00,2026,Estudiantes de La Plata,Central Córdoba (Santiago del Estero),5.0,0.0,post
+762948,2026-03-23 21:15:00,2026,Huracán,Barracas Central,0.0,0.0,post
+762945,2026-03-25 19:00:00,2026,Deportivo Riestra,San Lorenzo,1.0,1.0,post
+762849,2026-03-26 21:00:00,2026,Argentinos Juniors,Lanús,2.0,1.0,post
+762871,2026-03-31 14:00:00,2026,Aldosivi,Argentinos Juniors,0.0,2.0,post
+762959,2026-04-01 20:00:00,2026,Lanús,Platense,0.0,0.0,post
+762955,2026-04-02 15:00:00,2026,Barracas Central,Sarmiento (Junín),1.0,2.0,post
+762964,2026-04-02 17:30:00,2026,Tigre,Independiente Rivadavia,0.0,2.0,post
+762963,2026-04-02 20:30:00,2026,Talleres (Córdoba),Boca Juniors,0.0,1.0,post
+762956,2026-04-03 15:00:00,2026,Gimnasia (Mendoza),Vélez Sarsfield,3.0,2.0,post
+762965,2026-04-03 17:15:00,2026,Unión (Santa Fe),Deportivo Riestra,2.0,0.0,post
+762962,2026-04-03 19:30:00,2026,San Lorenzo,Estudiantes de La Plata,1.0,0.0,post
+762967,2026-04-04 13:30:00,2026,Aldosivi,Estudiantes de Río Cuarto,0.0,0.0,post
+762957,2026-04-04 17:30:00,2026,Independiente,Racing Club,1.0,0.0,post
+762961,2026-04-04 21:00:00,2026,Rosario Central,Atlético Tucumán,2.0,1.0,post
+762968,2026-04-05 15:30:00,2026,Gimnasia La Plata,Huracán,0.0,3.0,post
+762960,2026-04-05 18:00:00,2026,River Plate,Belgrano (Córdoba),3.0,0.0,post
+762954,2026-04-05 20:30:00,2026,Central Córdoba (Santiago del Estero),Newell's Old Boys,1.0,3.0,post
+762966,2026-04-06 19:00:00,2026,Argentinos Juniors,Banfield,3.0,2.0,post
+762958,2026-04-06 21:15:00,2026,Instituto (Córdoba),Defensa y Justicia,2.0,0.0,post
+762969,2026-04-10 21:00:00,2026,Belgrano (Córdoba),Aldosivi,1.0,0.0,post
+762972,2026-04-11 15:00:00,2026,Deportivo Riestra,Instituto (Córdoba),0.0,1.0,post
+762980,2026-04-11 15:30:00,2026,Independiente Rivadavia,Argentinos Juniors,3.0,1.0,post
+762981,2026-04-11 17:15:00,2026,Estudiantes de La Plata,Unión (Santa Fe),2.0,1.0,post
+762970,2026-04-11 19:30:00,2026,Boca Juniors,Independiente,1.0,1.0,post
+762973,2026-04-11 21:45:00,2026,Estudiantes de Río Cuarto,Barracas Central,1.0,2.0,post
+762978,2026-04-12 15:00:00,2026,Newell's Old Boys,San Lorenzo,0.0,0.0,post
+762977,2026-04-12 15:00:00,2026,Platense,Gimnasia (Mendoza),1.0,1.0,post
+762982,2026-04-12 17:30:00,2026,Atlético Tucumán,Tigre,0.0,0.0,post
+762983,2026-04-12 17:30:00,2026,Huracán,Rosario Central,3.0,1.0,post
+762976,2026-04-12 20:00:00,2026,Racing Club,River Plate,0.0,2.0,post
+762975,2026-04-13 16:30:00,2026,Sarmiento (Junín),Gimnasia La Plata,1.0,2.0,post
+762971,2026-04-13 16:30:00,2026,Defensa y Justicia,Talleres (Córdoba),1.0,2.0,post
+762979,2026-04-13 19:00:00,2026,Lanús,Banfield,1.0,0.0,post
+762974,2026-04-13 21:30:00,2026,Vélez Sarsfield,Central Córdoba (Santiago del Estero),1.0,0.0,post
+762984,2026-04-17 20:30:00,2026,Unión (Santa Fe),Newell's Old Boys,2.0,3.0,post
+762991,2026-04-18 15:00:00,2026,Gimnasia La Plata,Estudiantes de Río Cuarto,1.0,0.0,post
+762994,2026-04-18 17:15:00,2026,Instituto (Córdoba),Estudiantes de La Plata,0.0,1.0,post
+762993,2026-04-18 19:30:00,2026,Independiente,Defensa y Justicia,3.0,1.0,post
+762987,2026-04-18 21:45:00,2026,Argentinos Juniors,Atlético Tucumán,1.0,0.0,post
+762986,2026-04-19 13:30:00,2026,Aldosivi,Racing Club,1.0,1.0,post
+762995,2026-04-19 17:00:00,2026,River Plate,Boca Juniors,0.0,1.0,post
+762996,2026-04-19 20:30:00,2026,Rosario Central,Sarmiento (Junín),2.0,1.0,post
+762998,2026-04-19 20:30:00,2026,Talleres (Córdoba),Deportivo Riestra,2.0,0.0,post
+762989,2026-04-20 15:00:00,2026,Barracas Central,Belgrano (Córdoba),0.0,0.0,post
+762988,2026-04-20 17:15:00,2026,Banfield,Independiente Rivadavia,0.0,0.0,post
+762990,2026-04-20 17:15:00,2026,Central Córdoba (Santiago del Estero),Platense,4.0,3.0,post
+762997,2026-04-20 19:30:00,2026,San Lorenzo,Vélez Sarsfield,0.0,0.0,post
+762992,2026-04-20 21:45:00,2026,Gimnasia (Mendoza),Lanús,1.0,0.0,post
+762985,2026-04-20 21:45:00,2026,Tigre,Huracán,1.0,1.0,post
+763011,2026-04-23 20:00:00,2026,Defensa y Justicia,Boca Juniors,0.0,4.0,post
+763010,2026-04-24 17:00:00,2026,Deportivo Riestra,Independiente,2.0,0.0,post
+763009,2026-04-24 19:15:00,2026,Estudiantes de Río Cuarto,Rosario Central,1.0,2.0,post
+763005,2026-04-24 19:15:00,2026,Lanús,Central Córdoba (Santiago del Estero),0.0,0.0,post
+763012,2026-04-24 21:30:00,2026,Platense,San Lorenzo,0.0,1.0,post
+763013,2026-04-24 21:30:00,2026,Racing Club,Barracas Central,1.0,1.0,post
+763008,2026-04-25 17:00:00,2026,Estudiantes de La Plata,Talleres (Córdoba),0.0,0.0,post
+763002,2026-04-25 19:15:00,2026,Sarmiento (Junín),Tigre,1.0,0.0,post
+763001,2026-04-25 21:30:00,2026,River Plate,Aldosivi,3.0,1.0,post
+763006,2026-04-26 15:00:00,2026,Independiente Rivadavia,Gimnasia (Mendoza),5.0,1.0,post
+763004,2026-04-26 17:30:00,2026,Newell's Old Boys,Instituto (Córdoba),1.0,1.0,post
+763000,2026-04-26 17:30:00,2026,Belgrano (Córdoba),Gimnasia La Plata,0.0,1.0,post
+762999,2026-04-26 20:00:00,2026,Atlético Tucumán,Banfield,1.0,1.0,post
+763003,2026-04-27 18:45:00,2026,Vélez Sarsfield,Unión (Santa Fe),2.0,2.0,post
+763007,2026-04-27 21:00:00,2026,Huracán,Argentinos Juniors,1.0,2.0,post
+762905,2026-05-02 14:00:00,2026,Barracas Central,Banfield,1.0,2.0,post
+762896,2026-05-02 14:30:00,2026,Lanús,Deportivo Riestra,0.0,0.0,post
+762907,2026-05-02 16:15:00,2026,Central Córdoba (Santiago del Estero),Boca Juniors,1.0,2.0,post
+762902,2026-05-02 18:45:00,2026,Unión (Santa Fe),Talleres (Córdoba),1.0,1.0,post
+762901,2026-05-02 18:45:00,2026,San Lorenzo,Independiente,1.0,2.0,post
+762897,2026-05-02 21:15:00,2026,Platense,Estudiantes de La Plata,0.0,2.0,post
+762904,2026-05-03 13:30:00,2026,Aldosivi,Independiente Rivadavia,1.0,1.0,post
+762906,2026-05-03 16:00:00,2026,Belgrano (Córdoba),Sarmiento (Junín),4.0,0.0,post
+762894,2026-05-03 16:00:00,2026,Gimnasia La Plata,Argentinos Juniors,2.0,0.0,post
+762898,2026-05-03 16:00:00,2026,Racing Club,Huracán,0.0,0.0,post
+762900,2026-05-03 16:00:00,2026,Rosario Central,Tigre,1.0,1.0,post
+762899,2026-05-03 18:30:00,2026,River Plate,Atlético Tucumán,0.0,1.0,post
+762895,2026-05-04 17:00:00,2026,Gimnasia (Mendoza),Defensa y Justicia,2.0,1.0,post
+762903,2026-05-04 19:15:00,2026,Vélez Sarsfield,Newell's Old Boys,1.0,1.0,post
+762908,2026-05-04 21:30:00,2026,Estudiantes de Río Cuarto,Instituto (Córdoba),0.0,2.0,post
+401871432,2026-05-09 16:30:00,2026,Talleres (Córdoba),Belgrano (Córdoba),0.0,1.0,post
+401871437,2026-05-09 19:00:00,2026,Boca Juniors,Huracán,2.0,3.0,post
+401871433,2026-05-09 21:30:00,2026,Independiente Rivadavia,Unión (Santa Fe),1.0,2.0,post
+401871435,2026-05-09 22:15:00,2026,Argentinos Juniors,Lanús,2.0,0.0,post
+401871431,2026-05-10 15:00:00,2026,Rosario Central,Independiente,3.0,1.0,post
+401871434,2026-05-10 17:00:00,2026,Estudiantes de La Plata,Racing Club,0.0,1.0,post
+401871430,2026-05-10 19:00:00,2026,River Plate,San Lorenzo,2.0,2.0,post
+401871436,2026-05-10 21:30:00,2026,Vélez Sarsfield,Gimnasia La Plata,0.0,1.0,post
+401872290,2026-05-12 19:00:00,2026,Belgrano (Córdoba),Unión (Santa Fe),2.0,0.0,post
+401872291,2026-05-12 21:30:00,2026,Argentinos Juniors,Huracán,1.0,0.0,post
+401872179,2026-05-13 18:45:00,2026,Rosario Central,Racing Club,2.0,1.0,post
+401872546,2026-05-13 21:45:00,2026,River Plate,Gimnasia La Plata,2.0,0.0,post
+401872650,2026-05-16 19:30:00,2026,River Plate,Rosario Central,1.0,0.0,post
+401872677,2026-05-17 17:00:00,2026,Argentinos Juniors,Belgrano (Córdoba),1.0,1.0,post
+401873392,2026-05-24 15:30:00,2026,River Plate,Belgrano (Córdoba),2.0,3.0,post
+401841435,2026-07-23 19:30:00,2026,Belgrano (Córdoba),Rosario Central,2.0,1.0,post
+401841437,2026-07-23 19:30:00,2026,Sarmiento (Junín),Argentinos Juniors,2.0,3.0,post
+401841448,2026-07-23 21:45:00,2026,Defensa y Justicia,Aldosivi,1.0,1.0,post
+401841444,2026-07-24 16:45:00,2026,Gimnasia (Mendoza),Central Córdoba (Santiago del Estero),1.0,0.0,post
+401841436,2026-07-24 19:00:00,2026,Vélez Sarsfield,Instituto (Córdoba),1.0,0.0,post
+401841439,2026-07-24 19:00:00,2026,Racing Club,Gimnasia La Plata,2.0,1.0,post
+401841443,2026-07-24 21:15:00,2026,Huracán,Banfield,1.0,0.0,post
+401841440,2026-07-24 21:15:00,2026,Platense,Unión (Santa Fe),2.0,2.0,post
+401841446,2026-07-25 14:45:00,2026,Estudiantes de Río Cuarto,Tigre,1.0,0.0,post
+401841441,2026-07-25 17:00:00,2026,Newell's Old Boys,Talleres (Córdoba),1.0,0.0,post
+401841438,2026-07-25 19:15:00,2026,River Plate,Barracas Central,0.0,1.0,post
+401841442,2026-07-25 21:30:00,2026,Lanús,San Lorenzo,1.0,0.0,post
+401841434,2026-07-26 15:00:00,2026,Atlético Tucumán,Independiente Rivadavia,0.0,0.0,post
+401841445,2026-07-26 17:15:00,2026,Estudiantes de La Plata,Independiente,0.0,2.0,post
+401841447,2026-07-26 19:30:00,2026,Deportivo Riestra,Boca Juniors,3.0,0.0,post
