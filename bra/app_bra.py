@@ -108,7 +108,8 @@ def run_app():
     M = get_motor()
 
     # ── Métricas por modelo (sidebar)
-    met_all = M.get("metricas", {})  # inicializacion defensiva — evita NameError si metricas falta
+    met_all = M.get("metricas", {})
+    if met_all:
         st.sidebar.markdown("---")
         st.sidebar.markdown("#### 📊 Métricas Out-of-Sample (2025+)")
         mejor_ll = min(met_all[k]["logloss"] for k in met_all)
@@ -220,6 +221,79 @@ def run_app():
                 }
             ])
             st.dataframe(df_comp_mod, use_container_width=True, hide_index=True)
+
+
+            # ── DETALLES DEL PARTIDO ──────────────────────────────────────────
+            with st.expander("🔍 Detalles del Partido — Variables del Modelo", expanded=False):
+                tracker = M["tracker"]
+                N = 5
+
+                elo_a  = tracker.elos.get(a, 1500.0)
+                elo_b  = tracker.elos.get(b, 1500.0)
+                vl_a   = mo.get_squad_value(a, 2026)
+                vl_b   = mo.get_squad_value(b, 2026)
+                fa_d   = mo.get_advanced_features(a, 2026)
+                fb_d   = mo.get_advanced_features(b, 2026)
+                form_a = float(np.mean(list(tracker.recent_results[a])[-N:])) if tracker.recent_results[a] else 0.333
+                form_b = float(np.mean(list(tracker.recent_results[b])[-N:])) if tracker.recent_results[b] else 0.333
+                gfa    = float(np.mean(list(tracker.recent_gf[a])[-N:])) if tracker.recent_gf[a] else 1.0
+                gfb    = float(np.mean(list(tracker.recent_gf[b])[-N:])) if tracker.recent_gf[b] else 1.0
+                gaa    = float(np.mean(list(tracker.recent_ga[a])[-N:])) if tracker.recent_ga[a] else 1.0
+                gab    = float(np.mean(list(tracker.recent_ga[b])[-N:])) if tracker.recent_ga[b] else 1.0
+                ppg_a  = (tracker.season_pts[a] / tracker.season_matches[a]) if tracker.season_matches[a] > 0 else 1.33
+                ppg_b  = (tracker.season_pts[b] / tracker.season_matches[b]) if tracker.season_matches[b] > 0 else 1.33
+                pi_a   = tracker.pi_tracker.r_home.get(a, 0.0)
+                pi_b   = tracker.pi_tracker.r_home.get(b, 0.0)
+                d_km   = mo.get_distance_km(a, b)
+
+                def _barra(va, vb, fmt=".0f", invert=False):
+                    total = va + vb if (va + vb) > 0 else 1
+                    pa = va / total; pb = vb / total
+                    if invert: pa, pb = pb, pa
+                    ca = "#10b981" if pa >= pb else "#9ca3af"
+                    cb = "#10b981" if pb > pa  else "#9ca3af"
+                    return (f"<div style='display:flex;align-items:center;gap:8px;margin:3px 0;'>"
+                            f"<span style='min-width:75px;text-align:right;font-weight:700;color:{ca};font-size:.9rem;'>{va:{fmt}}</span>"
+                            f"<div style='flex:1;background:#e5e7eb;border-radius:8px;height:10px;overflow:hidden;'>"
+                            f"<div style='width:{pa*100:.1f}%;background:{ca};height:100%;border-radius:8px 0 0 8px;float:left;'></div>"
+                            f"<div style='width:{pb*100:.1f}%;background:{cb};height:100%;border-radius:0 8px 8px 0;float:right;'></div>"
+                            f"</div>"
+                            f"<span style='min-width:75px;font-weight:700;color:{cb};font-size:.9rem;'>{vb:{fmt}}</span>"
+                            f"</div>")
+
+                st.markdown(
+                    f"<div style='display:flex;justify-content:space-between;font-weight:800;font-size:1rem;"
+                    f"padding:6px 0 8px 0;border-bottom:2px solid #e5e7eb;margin-bottom:8px;'>"
+                    f"<span style='color:#1d4ed8;'>🏠 {a}</span>"
+                    f"<span style='color:#6b7280;font-size:.8rem;'>Variable</span>"
+                    f"<span style='color:#dc2626;'>✈️ {b}</span></div>", unsafe_allow_html=True)
+
+                filas_d = [
+                    ("⚡ ELO Rating",              elo_a,  elo_b,  ".0f",  False),
+                    ("💰 Valor Plantilla (M€)",     vl_a,   vl_b,   ".1f",  False),
+                    ("🏆 Pi-Rating (local)",        pi_a,   pi_b,   ".3f",  False),
+                    ("📈 Puntos por Partido",       ppg_a,  ppg_b,  ".2f",  False),
+                    ("🔥 Forma últimos 5 (0–1)",    form_a, form_b, ".3f",  False),
+                    ("⚽ GF últimos 5",             gfa,    gfb,    ".2f",  False),
+                    ("🛡️ GA últimos 5",             gaa,    gab,    ".2f",  True),
+                    ("🎂 Edad promedio",             fa_d.get("avg_age", 0),        fb_d.get("avg_age", 0),        ".1f", True),
+                    ("🌍 % Extranjeros",            fa_d.get("pct_foreigners",0)*100, fb_d.get("pct_foreigners",0)*100, ".1f", False),
+                    ("🏟️ Capacidad estadio",        fa_d.get("stadium_capacity", 0), fb_d.get("stadium_capacity", 0), ".0f", False),
+                    ("👥 Asistencia promedio",      fa_d.get("avg_attendance", 0),   fb_d.get("avg_attendance", 0),   ".0f", False),
+                ]
+                for lbl, va, vb, fmt, inv in filas_d:
+                    c_lbl, c_bar = st.columns([1.6, 3.4])
+                    with c_lbl:
+                        st.markdown(f"<span style='font-size:.83rem;color:#374151;'>{lbl}</span>", unsafe_allow_html=True)
+                    with c_bar:
+                        st.markdown(_barra(va, vb, fmt=fmt, invert=inv), unsafe_allow_html=True)
+
+                st.markdown(
+                    f"<div style='margin-top:10px;padding:8px 14px;background:#f0f9ff;"
+                    f"border-radius:8px;font-size:.82rem;color:#0369a1;'>"
+                    f"📍 Distancia de viaje del visitante: <b>{d_km:.0f} km</b></div>",
+                    unsafe_allow_html=True)
+            # ─────────────────────────────────────────────────────────────────
 
             # Mercados de apuestas
             st.markdown('<div class="sec-title">Mercados de Goles y Apuestas Especiales</div>', unsafe_allow_html=True)
