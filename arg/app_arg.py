@@ -4,6 +4,7 @@ Interfaz de usuario en Streamlit para el Portal de Predicción de la Liga Profes
 from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 import streamlit as st
 import arg.motor as mo
 import arg.recolectar as rec
