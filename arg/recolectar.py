@@ -1,6 +1,6 @@
 """
 Recolector de la Liga Profesional de Fútbol de Argentina desde la API pública de ESPN (liga 'arg.1').
-Convierte la fecha UTC de ESPN a la hora local argentina ('America/Argentina/Buenos_Aires').
+Mapeo exhaustivo de normalización de nombres y conversión a hora local argentina ('America/Argentina/Buenos_Aires').
 """
 from pathlib import Path
 import time
@@ -20,16 +20,28 @@ NORM_MAP = {
     "Vélez Sarsfield": "Vélez Sarsfield",
     "Velez Sarsfield": "Vélez Sarsfield",
     "Estudiantes": "Estudiantes de La Plata",
+    "Estudiantes de La Plata": "Estudiantes de La Plata",
+    "Estudiantes (La Plata)": "Estudiantes de La Plata",
+    "Estudiantes L.P.": "Estudiantes de La Plata",
     "Gimnasia": "Gimnasia La Plata",
     "Gimnasia La Plata": "Gimnasia La Plata",
+    "Gimnasia (La Plata)": "Gimnasia La Plata",
+    "Gimnasia L.P.": "Gimnasia La Plata",
     "Rosario Central": "Rosario Central",
     "Newell's Old Boys": "Newell's Old Boys",
     "Newells Old Boys": "Newell's Old Boys",
     "Talleres": "Talleres de Córdoba",
     "Talleres de Córdoba": "Talleres de Córdoba",
+    "Talleres (Córdoba)": "Talleres de Córdoba",
+    "Talleres (Cordoba)": "Talleres de Córdoba",
     "Belgrano": "Belgrano",
+    "Belgrano (Córdoba)": "Belgrano",
+    "Belgrano (Cordoba)": "Belgrano",
     "Instituto": "Instituto",
+    "Instituto (Córdoba)": "Instituto",
+    "Instituto (Cordoba)": "Instituto",
     "Godoy Cruz": "Godoy Cruz",
+    "Godoy Cruz Antonio Tomba": "Godoy Cruz",
     "Defensa y Justicia": "Defensa y Justicia",
     "Argentinos Juniors": "Argentinos Juniors",
     "Huracán": "Huracán",
@@ -41,15 +53,37 @@ NORM_MAP = {
     "Tigre": "Tigre",
     "Central Córdoba": "Central Córdoba",
     "Central Cordoba": "Central Córdoba",
+    "Central Córdoba (Santiago del Estero)": "Central Córdoba",
+    "Central Cordoba (SdE)": "Central Córdoba",
     "Atlético Tucumán": "Atlético Tucumán",
     "Atletico Tucuman": "Atlético Tucumán",
+    "Atl. Tucumán": "Atlético Tucumán",
     "Unión": "Unión de Santa Fe",
     "Union": "Unión de Santa Fe",
     "Unión de Santa Fe": "Unión de Santa Fe",
+    "Unión (Santa Fe)": "Unión de Santa Fe",
+    "Union (Santa Fe)": "Unión de Santa Fe",
     "Sarmiento": "Sarmiento",
+    "Sarmiento (Junín)": "Sarmiento",
+    "Sarmiento (Junin)": "Sarmiento",
     "Barracas Central": "Barracas Central",
     "Deportivo Riestra": "Deportivo Riestra",
-    "Independiente Rivadavia": "Independiente Rivadavia"
+    "Riestra": "Deportivo Riestra",
+    "Independiente Rivadavia": "Independiente Rivadavia",
+    "Colón": "Colón de Santa Fe",
+    "Colon": "Colón de Santa Fe",
+    "Colón de Santa Fe": "Colón de Santa Fe",
+    "Colón (Santa Fe)": "Colón de Santa Fe",
+    "Arsenal": "Arsenal Sarandí",
+    "Arsenal Sarandí": "Arsenal Sarandí",
+    "Arsenal Sarandi": "Arsenal Sarandí",
+    "Aldosivi": "Aldosivi",
+    "Patronato": "Patronato",
+    "Gimnasia (Mendoza)": "Gimnasia Mendoza",
+    "Gimnasia Mendoza": "Gimnasia Mendoza",
+    "San Martín (San Juan)": "San Martín San Juan",
+    "San Martin (San Juan)": "San Martín San Juan",
+    "Estudiantes de Río Cuarto": "Estudiantes de Río Cuarto"
 }
 
 def norm_team(name):
@@ -92,7 +126,6 @@ def _temporada(anio):
             loc = norm_team(h["team"]["displayName"])
             vis = norm_team(a["team"]["displayName"])
 
-            # Convertir fecha a hora local argentina (America/Argentina/Buenos_Aires)
             fecha_local = pd.to_datetime(e["date"]).tz_convert("America/Argentina/Buenos_Aires").tz_localize(None)
 
             filas.append({

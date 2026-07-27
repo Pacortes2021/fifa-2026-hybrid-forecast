@@ -22,20 +22,35 @@ warnings.filterwarnings("ignore")
 DATA = Path(__file__).resolve().parent / "data"
 
 COORDS_ARGENTINA = {
-    "Boca Juniors": (-34.6037, -58.3816), "River Plate": (-34.6037, -58.3816),
-    "San Lorenzo": (-34.6037, -58.3816), "Racing Club": (-34.6037, -58.3816),
-    "Independiente": (-34.6037, -58.3816), "Vélez Sarsfield": (-34.6037, -58.3816),
-    "Huracán": (-34.6037, -58.3816), "Argentinos Juniors": (-34.6037, -58.3816),
-    "Platense": (-34.6037, -58.3816), "Barracas Central": (-34.6037, -58.3816),
-    "Deportivo Riestra": (-34.6037, -58.3816), "Tigre": (-34.6037, -58.3816),
-    "Lanús": (-34.6037, -58.3816), "Banfield": (-34.6037, -58.3816),
-    "Defensa y Justicia": (-34.6037, -58.3816), "Rosario Central": (-32.9468, -60.6393),
-    "Newell's Old Boys": (-32.9468, -60.6393), "Estudiantes de La Plata": (-34.9214, -57.9545),
-    "Gimnasia La Plata": (-34.9214, -57.9545), "Talleres de Córdoba": (-31.4201, -64.1888),
-    "Belgrano": (-31.4201, -64.1888), "Instituto": (-31.4201, -64.1888),
+    # Buenos Aires & Gran Buenos Aires
+    "Boca Juniors": (-34.6356, -58.3647), "River Plate": (-34.5453, -58.4497),
+    "Racing Club": (-34.6678, -58.3686), "Independiente": (-34.6703, -58.3711),
+    "San Lorenzo": (-34.6517, -58.4403), "Vélez Sarsfield": (-34.6353, -58.5208),
+    "Huracán": (-34.6433, -58.3969), "Argentinos Juniors": (-34.6037, -58.3816),
+    "Platense": (-34.5425, -58.4772), "Barracas Central": (-34.6469, -58.3853),
+    "Deportivo Riestra": (-34.6542, -58.4486), "Tigre": (-34.4372, -58.5528),
+    "Lanús": (-34.7083, -58.3917), "Banfield": (-34.7447, -58.3908),
+    "Defensa y Justicia": (-34.8219, -58.2778), "Arsenal Sarandí": (-34.6858, -58.3400),
+    
+    # Rosario & Santa Fe
+    "Rosario Central": (-32.9468, -60.6393), "Newell's Old Boys": (-32.9468, -60.6393),
+    "Unión de Santa Fe": (-31.6333, -60.7000), "Colón de Santa Fe": (-31.6333, -60.7000),
+    
+    # La Plata
+    "Estudiantes de La Plata": (-34.9214, -57.9545), "Gimnasia La Plata": (-34.9214, -57.9545),
+    
+    # Córdoba & Río Cuarto
+    "Talleres de Córdoba": (-31.4201, -64.1888), "Belgrano": (-31.4201, -64.1888),
+    "Instituto": (-31.4201, -64.1888), "Estudiantes de Río Cuarto": (-33.1307, -64.3499),
+    
+    # Mendoza & San Juan
     "Godoy Cruz": (-32.8895, -68.8458), "Independiente Rivadavia": (-32.8895, -68.8458),
+    "Gimnasia Mendoza": (-32.8895, -68.8458), "San Martín San Juan": (-31.5375, -68.5364),
+    
+    # Tucumán, Santiago del Estero, Junín, Mar del Plata, Paraná
     "Atlético Tucumán": (-26.8083, -65.2176), "Central Córdoba": (-27.7834, -64.2642),
-    "Unión de Santa Fe": (-31.6333, -60.7000), "Sarmiento": (-34.5833, -60.9500)
+    "Sarmiento": (-34.5833, -60.9500), "Aldosivi": (-38.0000, -57.5500),
+    "Patronato": (-31.7333, -60.5333)
 }
 
 def haversine_km(lat1, lon1, lat2, lon2):
