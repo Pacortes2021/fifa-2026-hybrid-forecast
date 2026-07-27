@@ -446,20 +446,22 @@ def cargar_y_entrenar():
         if val > 0.001:
             active_features.append(col)
             
-    # Goles Poisson GLM
+    # Goles Poisson GLM — con is_home para capturar ventaja de localía (bias ±0.200 sin esto)
     datag_l = pd.DataFrame({
         "g": df_dataset["goles_local"].values,
-        "d": df_dataset["elo_diff"].values
+        "d": df_dataset["elo_diff"].values,
+        "is_home": 1
     })
     datag_v = pd.DataFrame({
         "g": df_dataset["goles_visita"].values,
-        "d": -df_dataset["elo_diff"].values
+        "d": -df_dataset["elo_diff"].values,
+        "is_home": 0
     })
     datag_total = pd.concat([datag_l, datag_v], ignore_index=True)
-    
+
     gp = sm.GLM(
         datag_total["g"],
-        sm.add_constant(datag_total["d"]),
+        sm.add_constant(datag_total[["d", "is_home"]]),
         family=sm.families.Poisson()
     ).fit()
     
@@ -517,11 +519,11 @@ def predecir_match(M, local, visita, modelo="stacking"):
     
     # Poisson local
     d_elo_l = feats["elo_diff"]
-    la = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_l))
+    la = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_l + poisson_params.get("is_home", 0.0) * 1))
     
     # Poisson visita
     d_elo_v = -feats["elo_diff"]
-    lb = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_v))
+    lb = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_v + poisson_params.get("is_home", 0.0) * 0))
     
     return p, la, lb
 

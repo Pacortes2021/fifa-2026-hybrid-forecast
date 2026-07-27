@@ -43,7 +43,11 @@ def _temporada(anio):
             st_type = e.get("status", {}).get("type", {})
             status_name = st_type.get("name", "")
 
-            # Solo considerar 'post' si el partido realmente finalizó a tiempo completo
+            # Ignorar partidos que no se jugarán en la fecha prevista
+            if status_name in ("STATUS_POSTPONED", "STATUS_CANCELED",
+                               "STATUS_DELAYED",   "STATUS_SUSPENDED"):
+                continue
+
             is_finished = status_name in ("STATUS_FULL_TIME", "STATUS_FINAL", "STATUS_FINAL_PEN", "STATUS_FINAL_AET")
             estado = "post" if is_finished else "pre"
 

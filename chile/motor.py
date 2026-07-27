@@ -430,20 +430,22 @@ def cargar_y_entrenar():
         if val > 0.001:
             active_features.append(col)
             
-    # Goles Poisson GLM
+    # Goles Poisson GLM — con is_home para capturar ventaja de localía (bias ±0.158 sin esto)
     datag_l = pd.DataFrame({
         "g": df_dataset["goles_local"].values,
-        "d": df_dataset["elo_diff"].values
+        "d": df_dataset["elo_diff"].values,
+        "is_home": 1
     })
     datag_v = pd.DataFrame({
         "g": df_dataset["goles_visita"].values,
-        "d": -df_dataset["elo_diff"].values
+        "d": -df_dataset["elo_diff"].values,
+        "is_home": 0
     })
     datag_total = pd.concat([datag_l, datag_v], ignore_index=True)
-    
+
     gp = sm.GLM(
         datag_total["g"],
-        sm.add_constant(datag_total["d"]),
+        sm.add_constant(datag_total[["d", "is_home"]]),
         family=sm.families.Poisson()
     ).fit()
     
@@ -503,11 +505,11 @@ def predecir_match(M, local, visita, modelo='stacking'):
     
     # Poisson local
     d_elo_l = feats["elo_diff"]
-    la = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_l))
+    la = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_l + poisson_params.get("is_home", 0.0) * 1))
     
     # Poisson visita
     d_elo_v = -feats["elo_diff"]
-    lb = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_v))
+    lb = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_v + poisson_params.get("is_home", 0.0) * 0))
     
     return p, la, lb
 
@@ -668,7 +670,7 @@ def obtener_tabla_actual(M):
     
     todos_activos = set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"] if not fix.empty else []))
     if not todos_activos:
-        todos_activos = set(SQUAD_VALUES_BY_YEAR[2026].keys())
+        todos_activos = set(partidos["local"].unique())
         
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
     for eq in todos_activos:
@@ -706,7 +708,7 @@ def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf"):
     
     todos_activos = list(set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"] if not fix.empty else [])))
     if not todos_activos:
-        todos_activos = list(SQUAD_VALUES_BY_YEAR[2026].keys())
+        todos_activos = list(set(partidos["local"].unique()))
         
     PREDS = {}
     for local in todos_activos:

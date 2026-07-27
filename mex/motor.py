@@ -568,19 +568,21 @@ def cargar_y_entrenar():
     datag_l = pd.DataFrame({
         "g": df_dataset["goles_local"].values,
         "d": df_dataset["elo_diff"].values,
-        "alt": df_dataset["altitude_diff"].values
+        "alt": df_dataset["altitude_diff"].values,
+        "is_home": 1
     })
     datag_v = pd.DataFrame({
         "g": df_dataset["goles_visita"].values,
         "d": -df_dataset["elo_diff"].values,
-        "alt": -df_dataset["altitude_diff"].values # La altitud actúa a la inversa para el visita
+        "alt": -df_dataset["altitude_diff"].values,
+        "is_home": 0
     })
     datag_total = pd.concat([datag_l, datag_v], ignore_index=True)
-    
-    # Ajustar Poisson GLM
+
+    # Ajustar Poisson GLM — con is_home para capturar ventaja de localía (bias ±0.176 sin esto)
     gp = sm.GLM(
         datag_total["g"],
-        sm.add_constant(datag_total[["d", "alt"]]),
+        sm.add_constant(datag_total[["d", "alt", "is_home"]]),
         family=sm.families.Poisson()
     ).fit()
     
@@ -639,9 +641,9 @@ def predecir_match(M, local, visita, modelo="rf"):
         p_raw = pipe.predict_proba(df_feat)[0]
     p = np.array([p_raw[2], p_raw[1], p_raw[0]])
     d_elo_l = feats["elo_diff"]; alt_l = feats["altitude_diff"]
-    la = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_l + poisson_params["alt"] * alt_l))
+    la = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_l + poisson_params["alt"] * alt_l + poisson_params.get("is_home", 0.0) * 1))
     d_elo_v = -feats["elo_diff"]; alt_v = -feats["altitude_diff"]
-    lb = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_v + poisson_params["alt"] * alt_v))
+    lb = float(np.exp(poisson_params["const"] + poisson_params["d"] * d_elo_v + poisson_params["alt"] * alt_v + poisson_params.get("is_home", 0.0) * 0))
     return p, la, lb
 
 

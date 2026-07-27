@@ -108,8 +108,7 @@ def run_app():
     M = get_motor()
 
     # ── Métricas por modelo (sidebar)
-    if "metricas" in M:
-        met_all = M["metricas"]
+    met_all = M.get("metricas", {})  # inicializacion defensiva — evita NameError si metricas falta
         st.sidebar.markdown("---")
         st.sidebar.markdown("#### 📊 Métricas Out-of-Sample (2025+)")
         mejor_ll = min(met_all[k]["logloss"] for k in met_all)

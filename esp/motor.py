@@ -405,14 +405,14 @@ def cargar_y_entrenar():
     print(f"Metricas ESP Test>=2025: LASSO={met_lasso} RF={met_rf} Stacking={met_stack}")
     
     # Ajuste Poisson para goles esperados
-    # Estimamos goles promedio en función del ELO diferencial
+    # Estimamos goles promedio en función del ELO diferencial + localidad (bias ±0.172 sin is_home)
     largo = pd.concat([
-        pd.DataFrame({"g": df_features["goles_local"].values, "d": df_features["elo_diff"].values}),
-        pd.DataFrame({"g": df_features["goles_visita"].values, "d": -df_features["elo_diff"].values})
+        pd.DataFrame({"g": df_features["goles_local"].values,  "d": df_features["elo_diff"].values,  "is_home": 1}),
+        pd.DataFrame({"g": df_features["goles_visita"].values, "d": -df_features["elo_diff"].values, "is_home": 0})
     ])
-    
-    gp = sm.GLM(largo["g"], sm.add_constant(largo[["d"]]), family=sm.families.Poisson()).fit()
-    g_const, g_d = float(gp.params["const"]), float(gp.params["d"])
+
+    gp = sm.GLM(largo["g"], sm.add_constant(largo[["d", "is_home"]]), family=sm.families.Poisson()).fit()
+    g_const, g_d, g_home = float(gp.params["const"]), float(gp.params["d"]), float(gp.params["is_home"])
     
     return {
         "pipe_lasso": pipe_lasso,
@@ -421,6 +421,7 @@ def cargar_y_entrenar():
         "tracker": tracker,
         "g_const": g_const,
         "g_d": g_d,
+        "g_home": g_home,
         "df_features": df_features,
         "alpha_stack": alpha_opt,
         "metricas": metricas
@@ -461,8 +462,8 @@ def grilla_goles(M, local, visita, modelo_tipo="rf"):
     elo_diff = tracker.elos[local] - tracker.elos[visita]
     
     # Calcular lambdas esperados
-    la = np.exp(M["g_const"] + M["g_d"] * elo_diff)
-    lb = np.exp(M["g_const"] - M["g_d"] * elo_diff)
+    la = np.exp(M["g_const"] + M["g_d"] * elo_diff + M.get("g_home", 0.0) * 1)
+    lb = np.exp(M["g_const"] - M["g_d"] * elo_diff + M.get("g_home", 0.0) * 0)
     
     # Construir grilla Poisson
     max_g = 10
