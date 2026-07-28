@@ -1133,8 +1133,8 @@ event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
 731122,2025-04-20 12:30:00,2025,Everton,Unión La Calera,1.0,1.0,post
 731124,2025-04-20 15:00:00,2025,O'Higgins,Palestino,1.0,0.0,post
 731127,2025-04-20 20:00:00,2025,Ñublense,Coquimbo Unido,0.0,0.0,post
-731255,2025-04-25 18:00:00,2025,Ñublense,Deportes La Serena,2.0,0.0,post
 731135,2025-04-25 18:00:00,2025,Unión La Calera,Audax Italiano,1.0,0.0,post
+731255,2025-04-25 18:00:00,2025,Ñublense,Deportes La Serena,2.0,0.0,post
 731134,2025-04-25 20:30:00,2025,Universidad Católica,Everton,6.0,0.0,post
 731128,2025-04-26 14:00:00,2025,Cobresal,Deportes Limache,3.0,1.0,post
 731129,2025-04-26 16:00:00,2025,Colo Colo,Coquimbo Unido,2.0,0.0,post
@@ -1439,3 +1439,4 @@ event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
 401850603,2026-07-26 15:00:00,2026,Ñublense,Palestino,2.0,0.0,post
 401850596,2026-07-26 17:30:00,2026,Audax Italiano,Universidad de Chile,1.0,2.0,post
 401850420,2026-07-26 20:30:00,2026,Deportes Concepción,O'Higgins,2.0,0.0,post
+401850602,2026-07-27 19:00:00,2026,Unión La Calera,Everton,1.0,1.0,post
