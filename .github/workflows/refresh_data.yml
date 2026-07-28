@@ -1,0 +1,98 @@
+name: 🔄 Refresh ESPN Match Data
+
+on:
+  schedule:
+    # Runs every day at 06:00 UTC (02:00 Santiago / 03:00 Buenos Aires)
+    # This is after midnight local time, so all same-day matches are finished
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write  # Needed to push the updated CSVs
+
+jobs:
+  refresh:
+    name: Fetch & Commit Latest Matches
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 🐍 Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 📦 Install dependencies
+        run: |
+          pip install --quiet requests pandas pytz
+
+      - name: 🇨🇱 Recolectar Chile
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'chile')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
+      - name: 🇦🇷 Recolectar Argentina
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'arg')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
+      - name: 🇧🇷 Recolectar Brasil
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'bra')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
+      - name: 🇲🇽 Recolectar México
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'mex')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
+      - name: 🇪🇸 Recolectar España
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'esp')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
+      - name: 💾 Commit updated CSVs (if any changes)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage only data CSVs (never model code or notebooks)
+          git add chile/data/partidos.csv chile/data/fixture.csv \
+                  arg/data/partidos.csv   arg/data/fixture.csv   \
+                  bra/data/partidos.csv   bra/data/fixture.csv   \
+                  mex/data/partidos.csv   mex/data/fixture.csv   \
+                  esp/data/partidos.csv   esp/data/fixture.csv
+
+          # Only commit if there are actual changes
+          if git diff --cached --quiet; then
+            echo "✅ No new match data — nothing to commit."
+          else
+            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+            git commit -m "data(auto): refresh all leagues [${TIMESTAMP}]
+
+          Automated daily refresh from ESPN API via GitHub Actions.
+          CSVs updated: chile, arg, bra, mex, esp."
+            git push origin main
+            echo "✅ Pushed updated CSVs to main."
+          fi
