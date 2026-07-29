@@ -2265,3 +2265,7 @@ event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
 401841434,2026-07-26 15:00:00,2026,Atlético Tucumán,Independiente Rivadavia,0.0,0.0,post
 401841445,2026-07-26 17:15:00,2026,Estudiantes de La Plata,Independiente,0.0,2.0,post
 401841447,2026-07-26 19:30:00,2026,Deportivo Riestra,Boca Juniors,3.0,0.0,post
+401841462,2026-07-28 19:00:00,2026,Banfield,Sarmiento,3.0,2.0,post
+401841452,2026-07-28 19:00:00,2026,San Lorenzo,Gimnasia Mendoza,1.0,0.0,post
+401841449,2026-07-28 21:15:00,2026,Argentinos Juniors,Estudiantes de Río Cuarto,3.0,0.0,post
+401841453,2026-07-28 21:15:00,2026,Rosario Central,Racing Club,0.0,0.0,post
