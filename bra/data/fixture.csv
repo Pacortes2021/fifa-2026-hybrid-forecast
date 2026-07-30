@@ -1,9 +1,5 @@
 event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
 598405,2021-09-12 16:00:00,2021,Fortaleza,Atlético Mineiro,,,pre
-401841171,2026-07-29 19:30:00,2026,Internacional,Flamengo,,,pre
-401841170,2026-07-29 19:30:00,2026,Mirassol,Remo,,,pre
-401841177,2026-07-29 21:30:00,2026,Fluminense,Bahia,,,pre
-401841172,2026-07-29 21:30:00,2026,Vitória,Palmeiras,,,pre
 401841174,2026-07-30 19:30:00,2026,Corinthians,Athletico Paranaense,,,pre
 401841173,2026-07-30 21:30:00,2026,Coritiba,Cruzeiro,,,pre
 401841181,2026-08-08 16:00:00,2026,Grêmio,São Paulo,,,pre

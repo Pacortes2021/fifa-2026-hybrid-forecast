@@ -2209,3 +2209,7 @@ event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
 401841163,2026-07-26 18:30:00,2026,Red Bull Bragantino,Coritiba,0.0,0.0,post
 401841162,2026-07-26 19:30:00,2026,Remo,Vitória,2.0,0.0,post
 401841164,2026-07-26 19:30:00,2026,Palmeiras,Atlético Mineiro,1.0,2.0,post
+401841171,2026-07-29 19:30:00,2026,Internacional,Flamengo,1.0,1.0,post
+401841170,2026-07-29 19:30:00,2026,Mirassol,Remo,2.0,1.0,post
+401841177,2026-07-29 21:30:00,2026,Fluminense,Bahia,0.0,0.0,post
+401841172,2026-07-29 21:30:00,2026,Vitória,Palmeiras,0.0,4.0,post

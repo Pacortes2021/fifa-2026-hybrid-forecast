@@ -2269,3 +2269,7 @@ event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
 401841452,2026-07-28 19:00:00,2026,San Lorenzo,Gimnasia Mendoza,1.0,0.0,post
 401841449,2026-07-28 21:15:00,2026,Argentinos Juniors,Estudiantes de Río Cuarto,3.0,0.0,post
 401841453,2026-07-28 21:15:00,2026,Rosario Central,Racing Club,0.0,0.0,post
+401841461,2026-07-29 14:30:00,2026,Barracas Central,Aldosivi,1.0,0.0,post
+401841458,2026-07-29 17:00:00,2026,Defensa y Justicia,Deportivo Riestra,2.0,1.0,post
+401841457,2026-07-29 19:15:00,2026,Gimnasia La Plata,River Plate,1.0,0.0,post
+401841454,2026-07-29 21:30:00,2026,Instituto,Platense,2.0,1.0,post
