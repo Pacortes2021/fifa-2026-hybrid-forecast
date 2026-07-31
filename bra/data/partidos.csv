@@ -2213,3 +2213,5 @@ event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
 401841170,2026-07-29 19:30:00,2026,Mirassol,Remo,2.0,1.0,post
 401841177,2026-07-29 21:30:00,2026,Fluminense,Bahia,0.0,0.0,post
 401841172,2026-07-29 21:30:00,2026,Vitória,Palmeiras,0.0,4.0,post
+401841174,2026-07-30 19:30:00,2026,Corinthians,Athletico Paranaense,0.0,0.0,post
+401841173,2026-07-30 21:30:00,2026,Coritiba,Cruzeiro,0.0,1.0,post
