@@ -583,15 +583,10 @@ def simular_fixture_regular(M, PREDS, fijos=None, modelo_tipo="rf"):
         else:
             p = PREDS.get((local, visita))
             if p is None:
-                p = predecir_match(M, local, visita, modelo_tipo=modelo_tipo)
-            # Simular resultado
-            rnd = np.random.rand()
-            if rnd < p[0]:
-                gl, gv = 2, 0  # Victoria local
-            elif rnd < p[0] + p[1]:
-                gl, gv = 1, 1  # Empate
-            else:
-                gl, gv = 0, 2  # Victoria visita
+                p = grilla_goles(M, local, visita, modelo_tipo=modelo_tipo)
+            # Muestrear marcador realista desde la grilla 10x10 calibrada (Dixon-Coles + 1X2)
+            idx = np.random.choice(p.size, p=p.ravel())
+            gl, gv = divmod(int(idx), p.shape[1])
                 
         # Registrar stats
         pj[local] += 1; pj[visita] += 1
@@ -705,7 +700,7 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf"):
     print("Precalculando predicciones de fixture...")
     PREDS = {}
     for r in fix.itertuples(index=False):
-        PREDS[(r.local, r.visita)] = predecir_match(M, r.local, r.visita, modelo_tipo=modelo_tipo)
+        PREDS[(r.local, r.visita)] = grilla_goles(M, r.local, r.visita, modelo_tipo=modelo_tipo)
         
     counts_campeon = defaultdict(int)
     counts_copas = defaultdict(int)
@@ -740,6 +735,9 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf"):
 def validacion_en_vivo(M, temporada_val=2026, modelo_tipo="rf"):
     # Mismo reporte de validación en vivo para LaLiga
     partidos = pd.read_csv(DATA / "partidos.csv", parse_dates=["fecha"]).sort_values("fecha")
+    # Re-etiquetar temporada como en cargar_y_entrenar (jul-jun), para que coincida
+    # con el selector de la app (df_features["temporada"])
+    partidos["temporada"] = partidos["fecha"].apply(lambda x: x.year if x.month >= 7 else x.year - 1)
     val_df = partidos[partidos.temporada == temporada_val]
     
     if len(val_df) == 0:
