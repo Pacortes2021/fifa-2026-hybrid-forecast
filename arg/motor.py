@@ -363,14 +363,22 @@ def cargar_y_entrenar():
     X_test  = df_dataset.loc[test_mask,  cols_features].fillna(0.0)
     y_test  = df_dataset.loc[test_mask,  "resultado"]
 
+    # C-search con CV temporal sobre train (sin mirar el test)
     best_c = 0.05; best_loss = 999.0
+    from sklearn.metrics import log_loss
+    from sklearn.model_selection import TimeSeriesSplit
+    tscv = TimeSeriesSplit(n_splits=4)
     for C in [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0]:
-        _pipe = Pipeline([("sc", StandardScaler()),
-                          ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=3000))])
-        _pipe.fit(X_train, y_train)
-        _loss = log_loss(y_test, _pipe.predict_proba(X_test), labels=[0,1,2])
+        _losses = []
+        for tr, va in tscv.split(X_train):
+            _pipe = Pipeline([("sc", StandardScaler()),
+                              ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=3000))])
+            _pipe.fit(X_train.iloc[tr], y_train.iloc[tr])
+            _losses.append(log_loss(y_train.iloc[va], _pipe.predict_proba(X_train.iloc[va]), labels=[0,1,2]))
+        _loss = float(np.mean(_losses))
         if _loss < best_loss:
             best_loss = _loss; best_c = C
+    print(f"Mejor C para Lasso (CV temporal en train): {best_c} | Log-Loss CV: {best_loss:.4f}")
 
     pipe_lasso_base = Pipeline([("sc", StandardScaler()),
                                  ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
@@ -406,16 +414,6 @@ def cargar_y_entrenar():
     # con el mismo X_cal que ya estaba incluido en X_full.
     pipe_lasso_final = pipe_lasso_cal
     pipe_rf_final    = pipe_rf_cal
-
-    # Recalcular alpha_opt sobre X_test (completamente independiente de train y cal)
-    if len(X_test) >= 10:
-        p_l_te = pipe_lasso_final.predict_proba(X_test)
-        p_r_te = pipe_rf_final.predict_proba(X_test)
-        def _stack_loss_final(a):
-            blend = np.clip(a * p_l_te + (1 - a) * p_r_te, 1e-7, 1 - 1e-7)
-            return log_loss(y_test, blend)
-        res_final = minimize_scalar(_stack_loss_final, bounds=(0.0, 1.0), method="bounded")
-        alpha_opt = float(res_final.x)
 
     pipe_final = pipe_lasso_final  # backward compat
 
@@ -579,10 +577,26 @@ def mercados(mix):
     return mk
 
 
+def _torneo_actual(M):
+    # En Argentina el año calendario contiene DOS torneos (Copa de la Liga ene-jul,
+    # Liga Profesional ago-nov), ambos etiquetados como temporada 2026 en partidos.csv.
+    # El torneo vigente es el definido por fixture.csv; los partidos jugados de ese
+    # torneo son los que caen dentro de su ventana de fechas.
+    fix = pd.read_csv(DATA / "fixture.csv", parse_dates=["fecha"]) if (DATA / "fixture.csv").exists() else pd.DataFrame()
+    fix = fix[fix.temporada == 2026] if not fix.empty else fix
+    if len(fix) == 0:
+        return pd.DataFrame(), fix
+    inicio_torneo = fix["fecha"].min() - pd.Timedelta(days=1)
+    partidos = M["partidos"].copy()
+    partidos["fecha"] = pd.to_datetime(partidos["fecha"])
+    p_actuales = partidos[(partidos["temporada"] == 2026) & (partidos["fecha"] >= inicio_torneo)]
+    return p_actuales, fix
+
+
 def simular_fixture_regular(M, PREDS, fijos=None):
-    fix = pd.read_csv(DATA / "fixture.csv") if (DATA / "fixture.csv").exists() else pd.DataFrame()
-    partidos = M["partidos"]
-    p_actuales = partidos[partidos.temporada == 2026]
+    # Solo se siembran partidos jugados del torneo vigente (Liga Profesional 2026).
+    # Los resultados de la Copa de la Liga (torneo anterior) no se mezclan.
+    p_actuales, fix = _torneo_actual(M)
     
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
     
@@ -623,6 +637,9 @@ def simular_fixture_regular(M, PREDS, fijos=None):
     if not fix.empty:
         for r in fix.itertuples(index=False):
             l, v = r.local, r.visita
+            # Partidos ya jugados del torneo actual se siembran desde partidos.csv
+            if r.estado != "pre" and pd.notna(r.goles_local) and pd.notna(r.goles_visita):
+                continue
             if l not in tabla: tabla[l] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
             if v not in tabla: tabla[v] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
             if fijos and (l, v) in fijos:
