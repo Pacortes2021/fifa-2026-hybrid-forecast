@@ -391,14 +391,19 @@ def cargar_y_entrenar():
     X_test = df_dataset.loc[test_mask, cols_features].fillna(0.0)
     y_test = df_dataset.loc[test_mask, "resultado"]
 
-    # C search (keep existing best_c logic, just use X_train/X_test)
+    # C search con CV temporal sobre train (sin mirar el test)
     best_c = 0.02; best_loss = 999.0
+    from sklearn.model_selection import TimeSeriesSplit
+    tscv = TimeSeriesSplit(n_splits=4)
     for C in [0.005, 0.01, 0.02, 0.05, 0.1, 0.2]:
-        _p = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=3000))])
-        _p.fit(X_train, y_train)
-        _l = log_loss(y_test, _p.predict_proba(X_test))
+        _losses = []
+        for tr, va in tscv.split(X_train):
+            _p = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=3000))])
+            _p.fit(X_train.iloc[tr], y_train.iloc[tr])
+            _losses.append(log_loss(y_train.iloc[va], _p.predict_proba(X_train.iloc[va]), labels=[0,1,2]))
+        _l = float(np.mean(_losses))
         if _l < best_loss: best_loss = _l; best_c = C
-    print(f"Mejor C para Lasso (SAGA): {best_c} | Log-Loss en Test (2025-26): {best_loss:.4f}")
+    print(f"Mejor C para Lasso (CV temporal en train): {best_c} | Log-Loss CV: {best_loss:.4f}")
 
     pipe_lasso_base = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
     pipe_lasso_base.fit(X_train, y_train)
@@ -587,6 +592,7 @@ def mercados(mix):
 # --------------------------------------------------------------------------- #
 def simular_fixture_regular(M, PREDS, fijos=None):
     fix = pd.read_csv(DATA / "fixture.csv")
+    fix = fix[fix.temporada == 2026]  # descartar filas stale de otros años
     partidos = M["partidos"]
     p_actuales = partidos[partidos.temporada == 2026]
     
