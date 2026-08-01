@@ -374,13 +374,19 @@ def cargar_y_entrenar():
     X_test = df_dataset.loc[test_mask, cols_features].fillna(0.0)
     y_test = df_dataset.loc[test_mask, "resultado"]
 
+    # C-search con CV temporal sobre train (sin mirar el test)
     best_c = 0.05; best_loss = 999.0
+    from sklearn.model_selection import TimeSeriesSplit
+    tscv = TimeSeriesSplit(n_splits=4)
     for C in [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0]:
-        _p = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=3000))])
-        _p.fit(X_train, y_train)
-        _l = log_loss(y_test, _p.predict_proba(X_test))
+        _losses = []
+        for tr, va in tscv.split(X_train):
+            _p = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=3000))])
+            _p.fit(X_train.iloc[tr], y_train.iloc[tr])
+            _losses.append(log_loss(y_train.iloc[va], _p.predict_proba(X_train.iloc[va]), labels=[0,1,2]))
+        _l = float(np.mean(_losses))
         if _l < best_loss: best_loss = _l; best_c = C
-    print(f"Mejor C para Lasso (Chile): {best_c} | Log-Loss en Test (2025-26): {best_loss:.4f}")
+    print(f"Mejor C para Lasso (CV temporal en train): {best_c} | Log-Loss CV: {best_loss:.4f}")
 
     pipe_lasso_base = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
     pipe_lasso_base.fit(X_train, y_train)
@@ -412,6 +418,7 @@ def cargar_y_entrenar():
     # Keep existing pipe_final variable for Monte Carlo compat
     pipe_final = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=2000))])
     pipe_final.fit(df_dataset[cols_features].fillna(0.0), df_dataset["resultado"])
+    pipe_val = pipe_lasso_final  # para validación out-of-sample (entrenado sin 2025-26)
 
     def _met(proba, y):
         proba = np.clip(proba, 1e-7, 1-1e-7)
@@ -460,6 +467,7 @@ def cargar_y_entrenar():
     return {
         "tracker": tracker,
         "pipe": pipe_final,
+        "pipe_val": pipe_val,
         "pipe_lasso": pipe_lasso_final,
         "pipe_rf": pipe_rf_final,
         "alpha_stack": alpha_opt,
@@ -708,7 +716,7 @@ def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf"):
     
     todos_activos = list(set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"] if not fix.empty else [])))
     if not todos_activos:
-        todos_activos = list(set(partidos["local"].unique()))
+        todos_activos = list(set(partidos_rec["local"].unique()))
         
     PREDS = {}
     for local in todos_activos:
@@ -767,7 +775,7 @@ def validacion_en_vivo(M, temporada_val=2026):
     if len(df_val) == 0:
         return None, None, None
         
-    pipe = M["pipe"]
+    pipe = M["pipe_val"]  # out-of-sample: entrenado solo con temporadas <= 2024
     features = M["features"]
     
     X_val = df_val[features].fillna(0.0)
