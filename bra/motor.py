@@ -38,6 +38,14 @@ STATS = [
 ]
 
 ELO_INIT = 1500.0
+
+def _elo_default():
+    return ELO_INIT
+
+
+def _none_default():
+    return None
+
 K_LIGA = 35.0
 HOME_ADV = 60.0  # ventaja Elo típica de localía
 
@@ -146,7 +154,7 @@ class PiRatingTracker:
 class StateTracker:
 
     def __init__(self):
-        self.elos = defaultdict(lambda: ELO_INIT)
+        self.elos = defaultdict(_elo_default)
         # Historial de boxscores de cada equipo (máx 6 partidos generales)
         self.history = defaultdict(deque)
         # Historial de boxscores por sede (máx 4 partidos local/visita)
@@ -161,7 +169,7 @@ class StateTracker:
         self.season_pts = defaultdict(int)
         self.season_matches = defaultdict(int)
         self.curr_season = None
-        self.last_match_date = defaultdict(lambda: None)
+        self.last_match_date = defaultdict(_none_default)
         self.recent_dates = defaultdict(deque)
         self.pi_tracker = PiRatingTracker()
 
@@ -495,17 +503,55 @@ def cargar_y_entrenar():
     }
 
 
-def cargar():
-    return cargar_y_entrenar()
+def _cache_key():
+    # El modelo depende de los datos (data/*.csv) y del propio código del motor
+    import hashlib
+    h = hashlib.sha256()
+    h.update(str(Path(__file__).stat().st_mtime_ns).encode())
+    for f in sorted(DATA.glob("*.csv")):
+        h.update(f.name.encode())
+        h.update(str(f.stat().st_size).encode())
+        h.update(str(f.stat().st_mtime_ns).encode())
+    return h.hexdigest()
+
+
+def cargar(use_cache=True):
+    import pickle
+    cache_path = Path(__file__).resolve().parent / ".model_cache.pkl"
+    if use_cache and cache_path.exists():
+        try:
+            with open(cache_path, "rb") as fh:
+                saved = pickle.load(fh)
+            if saved.get("key") == _cache_key():
+                print("Modelo cargado desde cache de disco")
+                return saved["M"]
+        except Exception as ex:
+            print(f"Cache inválido ({ex}); re-entrenando...")
+    M = cargar_y_entrenar()
+    if use_cache:
+        try:
+            with open(cache_path, "wb") as fh:
+                pickle.dump({"key": _cache_key(), "M": M}, fh)
+            print("Modelo guardado en cache de disco")
+        except Exception as ex:
+            print(f"No se pudo guardar el cache: {ex}")
+    return M
 
 
 
-def predecir_match(M, local, visita, modelo="stacking"):
+def _temporada_actual():
+    # En Brasil la temporada es el año calendario
+    return int(pd.Timestamp.now().year)
+
+
+def predecir_match(M, local, visita, temporada=None, modelo="stacking"):
     tracker = M["tracker"]
     features = M["features"]
     poisson_params = M["poisson_params"]
+    if temporada is None:
+        temporada = _temporada_actual()
     
-    feats = tracker.get_features_for_match(local, visita, 2026)
+    feats = tracker.get_features_for_match(local, visita, temporada)
     df_feat = pd.DataFrame([feats])[features].fillna(0.0)
     
     if modelo in ("lasso", "l1"):
@@ -685,10 +731,13 @@ def ordenar_tabla(tabla):
     return df
 
 
-def monte_carlo(M, n_sims=4000, fijos=None, modelo="rf"):
+def monte_carlo(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
+    if seed is not None:
+        np.random.seed(seed)
     partidos_rec = M["partidos"]
     p_actuales = partidos_rec[partidos_rec.temporada == 2026]
     fix = pd.read_csv(DATA / "fixture.csv")
+    fix = fix[fix.temporada == 2026]  # descartar filas stale de otros años
     
     todos_activos = list(set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"])).union(set(fix["visita"])))
     
