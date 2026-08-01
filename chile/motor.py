@@ -39,6 +39,14 @@ STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCom
          "yellowCards", "redCards", "offsides", "saves", "blockedShots"]
 
 ELO_INIT = 1500.0
+
+def _elo_default():
+    return ELO_INIT
+
+
+def _none_default():
+    return None
+
 K_LIGA = 30.0
 HOME_ADV = 55.0
 
@@ -146,7 +154,7 @@ class PiRatingTracker:
 class StateTracker:
 
     def __init__(self):
-        self.elos = defaultdict(lambda: ELO_INIT)
+        self.elos = defaultdict(_elo_default)
         self.history = defaultdict(deque)
         self.home_history = defaultdict(deque)
         self.away_history = defaultdict(deque)
@@ -158,7 +166,7 @@ class StateTracker:
         self.season_pts = defaultdict(int)
         self.season_matches = defaultdict(int)
         self.curr_season = None
-        self.last_match_date = defaultdict(lambda: None)
+        self.last_match_date = defaultdict(_none_default)
         self.recent_dates = defaultdict(deque)
         self.pi_tracker = PiRatingTracker()
 
@@ -191,7 +199,7 @@ class StateTracker:
         gal = list(self.recent_ga[local]); gav = list(self.recent_ga[visita])
         feats["gf_diff"] = (np.mean(gfl[-N:]) if gfl else 1.0) - (np.mean(gfv[-N:]) if gfv else 1.0)
         feats["ga_diff"] = (np.mean(gal[-N:]) if gal else 1.0) - (np.mean(gav[-N:]) if gav else 1.0)
-        feats["es_liguilla"] = 1.0 if (self.match_count[local] >= 17 or self.match_count[visita] >= 17) else 0.0
+        feats["es_liguilla"] = 1.0 if (self.season_matches[local] >= 17 or self.season_matches[visita] >= 17) else 0.0
 
         if temporada != self.curr_season:
             self.curr_season = temporada
@@ -482,18 +490,56 @@ def cargar_y_entrenar():
     }
 
 
-def cargar():
-    return cargar_y_entrenar()
+def _cache_key():
+    # El modelo depende de los datos (data/*.csv) y del propio código del motor
+    import hashlib
+    h = hashlib.sha256()
+    h.update(str(Path(__file__).stat().st_mtime_ns).encode())
+    for f in sorted(DATA.glob("*.csv")):
+        h.update(f.name.encode())
+        h.update(str(f.stat().st_size).encode())
+        h.update(str(f.stat().st_mtime_ns).encode())
+    return h.hexdigest()
+
+
+def cargar(use_cache=True):
+    import pickle
+    cache_path = Path(__file__).resolve().parent / ".model_cache.pkl"
+    if use_cache and cache_path.exists():
+        try:
+            with open(cache_path, "rb") as fh:
+                saved = pickle.load(fh)
+            if saved.get("key") == _cache_key():
+                print("Modelo cargado desde cache de disco")
+                return saved["M"]
+        except Exception as ex:
+            print(f"Cache inválido ({ex}); re-entrenando...")
+    M = cargar_y_entrenar()
+    if use_cache:
+        try:
+            with open(cache_path, "wb") as fh:
+                pickle.dump({"key": _cache_key(), "M": M}, fh)
+            print("Modelo guardado en cache de disco")
+        except Exception as ex:
+            print(f"No se pudo guardar el cache: {ex}")
+    return M
 
 
 
-def predecir_match(M, local, visita, modelo='stacking'):
+def _temporada_actual():
+    # En Chile la temporada es el año calendario
+    return int(pd.Timestamp.now().year)
+
+
+def predecir_match(M, local, visita, temporada=None, modelo='stacking'):
     tracker = M["tracker"]
     pipe = M["pipe"]
     features = M["features"]
     poisson_params = M["poisson_params"]
+    if temporada is None:
+        temporada = _temporada_actual()
     
-    feats = tracker.get_features_for_match(local, visita, 2026)
+    feats = tracker.get_features_for_match(local, visita, temporada)
     df_feat = pd.DataFrame([feats])[features].fillna(0.0)
     
     if modelo == 'rf':
@@ -675,6 +721,7 @@ def obtener_tabla_actual(M):
     partidos = M["partidos"]
     p_actuales = partidos[partidos.temporada == 2026]
     fix = pd.read_csv(DATA / "fixture.csv")
+    fix = fix[fix.temporada == 2026]  # descartar filas stale de otros años
     
     todos_activos = set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"] if not fix.empty else []))
     if not todos_activos:
@@ -709,7 +756,9 @@ def obtener_tabla_actual(M):
     return ordenar_tabla(tabla)
 
 
-def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf"):
+def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
+    if seed is not None:
+        np.random.seed(seed)
     partidos_rec = M["partidos"]
     p_actuales = partidos_rec[partidos_rec.temporada == 2026]
     fix = pd.read_csv(DATA / "fixture.csv")
