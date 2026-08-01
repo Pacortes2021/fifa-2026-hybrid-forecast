@@ -49,14 +49,39 @@ TEAM_DETAILS = {
     "Independiente Rivadavia": {"flag": "🔵⚪🔵", "desc": "Bautista Gargantini — Mendoza", "color": "#1e3a8a"}
 }
 
-def logo_html(equipos, team, size=64):
-    """Devuelve el <img> del escudo del club desde data/equipos.csv (ID estable de ESPN)."""
+def logo_url(equipos, team):
+    """URL del escudo del club (ID estable de ESPN) o None si no existe."""
     if not equipos:
-        return ""
+        return None
     for e in equipos.values():
         if e.get("norm_name") == team and e.get("logo"):
-            return f'<img src="{e["logo"]}" width="{size}" style="border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.15);">'
-    return ""
+            return e["logo"]
+    return None
+
+
+def logo_html(equipos, team, size=64):
+    """Devuelve el <img> del escudo del club desde data/equipos.csv (ID estable de ESPN)."""
+    url = logo_url(equipos, team)
+    if not url:
+        return ""
+    return f'<img src="{url}" width="{size}" style="border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.15);">'
+
+
+def fmt_opcion(equipos, team):
+    """Etiqueta de opcion del selectbox: abreviatura del club + nombre.
+    Streamlit renderiza las opciones como texto plano (no admite HTML/emojis)."""
+    if equipos:
+        for e in equipos.values():
+            if e.get("norm_name") == team and e.get("abbreviation"):
+                return f"{e['abbreviation']} · {team}"
+    return team
+
+
+def label_tabla(equipos, team):
+    """Nombre en tablas: emoji solo como fallback si el club no tiene escudo."""
+    if logo_url(equipos, team):
+        return team
+    return get_label(team)
 
 
 def get_label(team):
@@ -124,12 +149,12 @@ def run_app():
 
         c1, cvs, c2 = st.columns([5, 1, 5])
         with c1:
-            a = st.selectbox("Equipo Local", equipos_activos, index=equipos_activos.index("Boca Juniors") if "Boca Juniors" in equipos_activos else 0, key="sel_a_arg")
+            a = st.selectbox("Equipo Local", equipos_activos, index=equipos_activos.index("Boca Juniors") if "Boca Juniors" in equipos_activos else 0, key="sel_a_arg", format_func=lambda t: fmt_opcion(equipos, t))
             st.markdown(f'<div style=\"text-align:center;margin-top:0.2rem;\">{logo_html(equipos, a, 64)}</div>', unsafe_allow_html=True)
         with cvs:
             st.markdown('<div class="vs-text">VS</div>', unsafe_allow_html=True)
         with c2:
-            b = st.selectbox("Equipo Visitante", equipos_activos, index=equipos_activos.index("River Plate") if "River Plate" in equipos_activos else 1, key="sel_b_arg")
+            b = st.selectbox("Equipo Visitante", equipos_activos, index=equipos_activos.index("River Plate") if "River Plate" in equipos_activos else 1, key="sel_b_arg", format_func=lambda t: fmt_opcion(equipos, t))
             st.markdown(f'<div style=\"text-align:center;margin-top:0.2rem;\">{logo_html(equipos, b, 64)}</div>', unsafe_allow_html=True)
 
         if a == b:
