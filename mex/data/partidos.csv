@@ -1888,3 +1888,6 @@ event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
 401877034,2026-07-25 21:00:00,2026,Tigres UANL,Atlético San Luis,2.0,2.0,post
 401877029,2026-07-26 17:00:00,2026,Necaxa,Monterrey,2.0,1.0,post
 401877028,2026-07-26 19:06:00,2026,Pachuca,Querétaro,1.0,2.0,post
+401877027,2026-07-31 19:00:00,2026,Puebla,Guadalajara,1.0,1.0,post
+401877026,2026-07-31 21:00:00,2026,Atlético San Luis,Tijuana,0.0,0.0,post
+401877025,2026-07-31 21:00:00,2026,FC Juárez,Pumas UNAM,1.0,5.0,post

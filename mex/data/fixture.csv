@@ -1,8 +1,5 @@
 event_id,fecha,temporada,local,visita,goles_local,goles_visita,estado
 590969,2021-02-20 21:00:00,2021,Atlas,América,,,pre
-401877027,2026-07-31 19:00:00,2026,Puebla,Guadalajara,,,pre
-401877026,2026-07-31 21:00:00,2026,Atlético San Luis,Tijuana,,,pre
-401877025,2026-07-31 21:00:00,2026,FC Juárez,Pumas UNAM,,,pre
 401877024,2026-08-01 17:00:00,2026,Querétaro,Tigres UANL,,,pre
 401877022,2026-08-01 19:05:00,2026,Atlas,Monterrey,,,pre
 401877023,2026-08-01 19:06:00,2026,León,Pachuca,,,pre
