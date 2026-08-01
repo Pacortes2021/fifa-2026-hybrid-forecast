@@ -68,6 +68,16 @@ TEAM_DETAILS = {
 }
 
 
+def logo_html(equipos, team, size=64):
+    """Devuelve el <img> del escudo del club desde data/equipos.csv (ID estable de ESPN)."""
+    if not equipos:
+        return ""
+    for e in equipos.values():
+        if e.get("norm_name") == team and e.get("logo"):
+            return f'<img src="{e["logo"]}" width="{size}" style="border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.15);">'
+    return ""
+
+
 def get_label(team):
     info = TEAM_DETAILS.get(team, {"flag": "⚽"})
     flag = info.get("flag_emoji", info.get("flag", "⚽"))
@@ -110,6 +120,7 @@ def run_app():
         st.rerun()
     
     M = get_motor()
+    equipos = M.get("equipos", {})
 
     # ── Métricas por modelo (sidebar)
     met_all = M.get("metricas", {})
@@ -144,10 +155,12 @@ def run_app():
         c1, cvs, c2 = st.columns([5, 1, 5])
         with c1:
             a = st.selectbox("Equipo Local", opciones, index=opciones.index("Real Madrid") if "Real Madrid" in opciones else 0, key="sel_a")
+            st.markdown(f'<div style=\"text-align:center;margin-top:0.2rem;\">{logo_html(equipos, a, 64)}</div>', unsafe_allow_html=True)
         with cvs:
             st.markdown('<div class="vs-text">VS</div>', unsafe_allow_html=True)
         with c2:
             b = st.selectbox("Equipo Visitante", opciones, index=opciones.index("Barcelona") if "Barcelona" in opciones else 0, key="sel_b")
+            st.markdown(f'<div style=\"text-align:center;margin-top:0.2rem;\">{logo_html(equipos, b, 64)}</div>', unsafe_allow_html=True)
             
         if a == b:
             st.error("Selecciona dos equipos distintos.")
