@@ -386,7 +386,8 @@ def run_app():
         })
         
         with col_proj:
-            st.markdown('<div class="card-title">Proyecciones de Fin de Temporada (Monte Carlo)</div>', unsafe_allow_html=True)
+            st.markdown('<div class="card-title">Proyección de la Temporada en Curso (Monte Carlo)</div>', unsafe_allow_html=True)
+            st.caption("Simula el resto de la temporada 2026/27 a partir del fixture publicado hasta la fecha.")
             st.dataframe(
                 df_proy_visual.style.format({
                     "🏆 P(Campeón)": "{:.1%}",
