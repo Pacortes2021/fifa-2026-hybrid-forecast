@@ -1,8 +1,3 @@
-.DS_Store
-.ipynb_checkpoints/
+.model_cache.pkl
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.system_generated/
-*.log
