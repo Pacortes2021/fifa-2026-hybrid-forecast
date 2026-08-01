@@ -87,9 +87,26 @@ def get_distance_km(local, visita):
     return haversine_km(c_vis[0], c_vis[1], c_loc[0], c_loc[1])
 
 
+NOMBRES_ADV = {
+    "FC Barcelona": "Barcelona",
+    "Atlético de Madrid": "Atlético Madrid",
+    "Sevilla FC": "Sevilla",
+    "Villarreal CF": "Villarreal",
+    "Valencia CF": "Valencia",
+    "Celta de Vigo": "Celta Vigo",
+    "CA Osasuna": "Osasuna",
+    "Elche CF": "Elche",
+    "Girona FC": "Girona",
+}
+
+
+def _norm_equipo(team):
+    return NOMBRES_ADV.get(team, team)
+
+
 def get_advanced_features(team, season):
     if len(DF_ADV_FEATURES) > 0:
-        df_eq = DF_ADV_FEATURES[DF_ADV_FEATURES.equipo == team]
+        df_eq = DF_ADV_FEATURES[DF_ADV_FEATURES.equipo == _norm_equipo(team)]
         if len(df_eq) > 0:
             row = df_eq[df_eq.temporada == season]
             if len(row) > 0:
@@ -100,7 +117,7 @@ def get_advanced_features(team, season):
     return pd.Series({
         "squad_size": 25, "avg_age": 25.0, "foreigners": 0, "pct_foreigners": 0.0,
         "stadium_capacity": 35000, "avg_attendance": 20000, "stadium_occupation": 0.5,
-        "squad_value": SQUAD_VALUES.get(team, 50.0)
+        "squad_value": SQUAD_VALUES.get(_norm_equipo(team), 50.0)
     })
 
 
@@ -173,7 +190,7 @@ class StateTracker:
 
 
 
-    def get_features_for_match(self, local, visita, temporada, fecha=None):
+    def get_features_for_match(self, local, visita, temporada, fecha=None, reset_season=True):
         feats = {}
 
         feats["elo_diff"] = self.elos[local] - self.elos[visita]
@@ -200,7 +217,7 @@ class StateTracker:
         feats["gf_diff"] = (np.mean(gfl[-N:]) if gfl else 1.0) - (np.mean(gfv[-N:]) if gfv else 1.0)
         feats["ga_diff"] = (np.mean(gal[-N:]) if gal else 1.0) - (np.mean(gav[-N:]) if gav else 1.0)
 
-        if temporada != self.curr_season:
+        if reset_season and temporada != self.curr_season:
             self.curr_season = temporada
             self.season_pts.clear()
             self.season_matches.clear()
@@ -382,7 +399,7 @@ def cargar_y_entrenar():
     for C in [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0]:
         _losses = []
         for tr, va in tscv.split(X_train):
-            _p = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=4000))])
+            _p = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=4000, random_state=42))])
             _p.fit(X_train.iloc[tr], y_train.iloc[tr])
             _losses.append(log_loss(y_train.iloc[va], _p.predict_proba(X_train.iloc[va]), labels=[0,1,2]))
         _l = float(np.mean(_losses))
@@ -427,10 +444,12 @@ def cargar_y_entrenar():
     print(f"Metricas ESP Test>=2025: LASSO={met_lasso} RF={met_rf} Stacking={met_stack}")
     
     # Ajuste Poisson para goles esperados
-    # Estimamos goles promedio en función del ELO diferencial + localidad (bias ±0.172 sin is_home)
+    # Estimamos goles promedio en función del ELO diferencial + localidad (bias ±0.172 sin is_home).
+    # Solo train+cal (temporada <= 2024): los partidos de test no entrenan el modelo.
+    df_goles = df_features[df_features["temporada"] <= 2024]
     largo = pd.concat([
-        pd.DataFrame({"g": df_features["goles_local"].values,  "d": df_features["elo_diff"].values,  "is_home": 1}),
-        pd.DataFrame({"g": df_features["goles_visita"].values, "d": -df_features["elo_diff"].values, "is_home": 0})
+        pd.DataFrame({"g": df_goles["goles_local"].values,  "d": df_goles["elo_diff"].values,  "is_home": 1}),
+        pd.DataFrame({"g": df_goles["goles_visita"].values, "d": -df_goles["elo_diff"].values, "is_home": 0})
     ])
 
     gp = sm.GLM(largo["g"], sm.add_constant(largo[["d", "is_home"]]), family=sm.families.Poisson()).fit()
@@ -500,7 +519,7 @@ def predecir_match(M, local, visita, temporada=None, modelo_tipo="rf"):
         temporada = _temporada_actual()
     
     # Obtener features en el estado final del tracker
-    feats = tracker.get_features_for_match(local, visita, temporada)
+    feats = tracker.get_features_for_match(local, visita, temporada, reset_season=False)
     df_test = pd.DataFrame([feats])[cols]
     
     if modelo_tipo == "stacking":
@@ -748,7 +767,7 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
         res["P_copas"] = 0.0
         res.loc[:CUPOS_COPA - 1, "P_copas"] = 1.0
         res["P_descenso"] = 0.0
-        res.iloc[-DESCIENDEN:]["P_descenso"] = 1.0
+        res.loc[res.index[-DESCIENDEN:], "P_descenso"] = 1.0
         return res
         
     fix = pd.read_csv(fix_path)
@@ -795,12 +814,14 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
     return pd.DataFrame(res).sort_values("P_campeon", ascending=False).reset_index(drop=True)
 
 
-def validacion_en_vivo(M, temporada_val=2026, modelo_tipo="rf"):
+def validacion_en_vivo(M, temporada_val=None, modelo_tipo="rf"):
     # Mismo reporte de validación en vivo para LaLiga
     partidos = pd.read_csv(DATA / "partidos.csv", parse_dates=["fecha"]).sort_values("fecha")
     # Re-etiquetar temporada como en cargar_y_entrenar (jul-jun), para que coincida
     # con el selector de la app (df_features["temporada"])
     partidos["temporada"] = partidos["fecha"].apply(lambda x: x.year if x.month >= 7 else x.year - 1)
+    if temporada_val is None:
+        temporada_val = partidos["temporada"].max()
     val_df = partidos[partidos.temporada == temporada_val]
     
     if len(val_df) == 0:

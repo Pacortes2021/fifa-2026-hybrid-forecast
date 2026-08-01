@@ -82,10 +82,20 @@ def get_distance_km(local, visita):
     return haversine_km(c_vis[0], c_vis[1], c_loc[0], c_loc[1])
 
 
+NOMBRES_ADV = {
+    "Athletico Paranaense": "Athletico-PR",
+    "Atlético Mineiro": "Atlético-MG",
+}
+
+
+def _norm_equipo(team):
+    return NOMBRES_ADV.get(team, team)
+
+
 def get_squad_value(team, season):
     # Intentar buscar el valor real exacto de Transfermarkt
     if len(DF_SQUAD_VALUES) > 0:
-        df_eq = DF_SQUAD_VALUES[DF_SQUAD_VALUES.equipo == team]
+        df_eq = DF_SQUAD_VALUES[DF_SQUAD_VALUES.equipo == _norm_equipo(team)]
         if len(df_eq) > 0:
             row = df_eq[df_eq.temporada == season]
             if len(row) > 0:
@@ -99,7 +109,7 @@ def get_squad_value(team, season):
 
 def get_advanced_features(team, season):
     if len(DF_ADV_FEATURES) > 0:
-        df_eq = DF_ADV_FEATURES[DF_ADV_FEATURES.equipo == team]
+        df_eq = DF_ADV_FEATURES[DF_ADV_FEATURES.equipo == _norm_equipo(team)]
         if len(df_eq) > 0:
             row = df_eq[df_eq.temporada == season]
             if len(row) > 0:
@@ -176,7 +186,7 @@ class StateTracker:
 
 
 
-    def get_features_for_match(self, local, visita, temporada, fecha=None):
+    def get_features_for_match(self, local, visita, temporada, fecha=None, reset_season=True):
         feats = {}
 
         # 1. Elo difference (prior)
@@ -198,7 +208,7 @@ class StateTracker:
         feats["gf_diff"] = (np.mean(gfl[-N:]) if gfl else 1.0) - (np.mean(gfv[-N:]) if gfv else 1.0)
         feats["ga_diff"] = (np.mean(gal[-N:]) if gal else 1.0) - (np.mean(gav[-N:]) if gav else 1.0)
 
-        if temporada != self.curr_season:
+        if reset_season and temporada != self.curr_season:
             self.curr_season = temporada
             self.season_pts.clear()
             self.season_matches.clear()
@@ -459,15 +469,17 @@ def cargar_y_entrenar():
         if val > 0.001:
             active_features.append(col)
             
-    # Goles Poisson GLM — con is_home para capturar ventaja de localía (bias ±0.200 sin esto)
+    # Goles Poisson GLM — con is_home para capturar ventaja de localía (bias ±0.200 sin esto).
+    # Solo train+cal (temporada <= 2024): los partidos de test no entrenan el modelo.
+    df_goles = df_dataset[df_dataset["temporada"] <= 2024]
     datag_l = pd.DataFrame({
-        "g": df_dataset["goles_local"].values,
-        "d": df_dataset["elo_diff"].values,
+        "g": df_goles["goles_local"].values,
+        "d": df_goles["elo_diff"].values,
         "is_home": 1
     })
     datag_v = pd.DataFrame({
-        "g": df_dataset["goles_visita"].values,
-        "d": -df_dataset["elo_diff"].values,
+        "g": df_goles["goles_visita"].values,
+        "d": -df_goles["elo_diff"].values,
         "is_home": 0
     })
     datag_total = pd.concat([datag_l, datag_v], ignore_index=True)
@@ -481,7 +493,7 @@ def cargar_y_entrenar():
     # Dixon-Coles Correlation Approximation
     rho_dc = 0.05
     try:
-        cor = np.corrcoef(df_dataset["goles_local"], df_dataset["goles_visita"])[0, 1]
+        cor = np.corrcoef(df_goles["goles_local"], df_goles["goles_visita"])[0, 1]
         rho_dc = float(cor) * 0.5
     except Exception:
         pass
@@ -551,7 +563,7 @@ def predecir_match(M, local, visita, temporada=None, modelo="stacking"):
     if temporada is None:
         temporada = _temporada_actual()
     
-    feats = tracker.get_features_for_match(local, visita, temporada)
+    feats = tracker.get_features_for_match(local, visita, temporada, reset_season=False)
     df_feat = pd.DataFrame([feats])[features].fillna(0.0)
     
     if modelo in ("lasso", "l1"):
@@ -638,9 +650,9 @@ def mercados(mix):
 # --------------------------------------------------------------------------- #
 def simular_fixture_regular(M, PREDS, fijos=None):
     fix = pd.read_csv(DATA / "fixture.csv")
-    fix = fix[fix.temporada == 2026]  # descartar filas stale de otros años
+    fix = fix[fix.temporada == _temporada_actual()]  # descartar filas stale de otros años
     partidos = M["partidos"]
-    p_actuales = partidos[partidos.temporada == 2026]
+    p_actuales = partidos[partidos.temporada == _temporada_actual()]
     
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
     
@@ -735,9 +747,9 @@ def monte_carlo(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
     if seed is not None:
         np.random.seed(seed)
     partidos_rec = M["partidos"]
-    p_actuales = partidos_rec[partidos_rec.temporada == 2026]
+    p_actuales = partidos_rec[partidos_rec.temporada == _temporada_actual()]
     fix = pd.read_csv(DATA / "fixture.csv")
-    fix = fix[fix.temporada == 2026]  # descartar filas stale de otros años
+    fix = fix[fix.temporada == _temporada_actual()]  # descartar filas stale de otros años
     
     todos_activos = list(set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"])).union(set(fix["visita"])))
     
@@ -851,8 +863,9 @@ def validacion_en_vivo(M, temporada_val=2026):
 
 def obtener_tabla_actual(M):
     partidos = M["partidos"]
-    p_actuales = partidos[partidos.temporada == 2026]
+    p_actuales = partidos[partidos.temporada == _temporada_actual()]
     fix = pd.read_csv(DATA / "fixture.csv")
+    fix = fix[fix.temporada == _temporada_actual()] if not fix.empty else fix
     todos_activos = set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"] if not fix.empty else []))
     
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})

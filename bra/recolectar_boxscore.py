@@ -6,6 +6,7 @@ Incremental: no re-pide partidos ya guardados.
 
 Uso:  python3 recolectar_boxscore.py   -> bra/data/box_score.csv
 """
+from datetime import datetime
 from pathlib import Path
 import time
 import requests
@@ -15,7 +16,7 @@ import concurrent.futures
 DATA = Path(__file__).resolve().parent / "data"
 SB = "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard"
 SUM = "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/summary"
-TEMPORADAS = [2021, 2022, 2023, 2024, 2025, 2026]
+TEMPORADAS = list(range(2021, int(datetime.now().year) + 1))
 
 STATS = [
     "foulsCommitted", "yellowCards", "redCards", "offsides", "wonCorners", "saves",

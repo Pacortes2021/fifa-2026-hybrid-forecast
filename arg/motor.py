@@ -185,7 +185,7 @@ class StateTracker:
         self.recent_dates = defaultdict(deque)
         self.pi_tracker = PiRatingTracker()
 
-    def get_features_for_match(self, local, visita, temporada, fecha=None):
+    def get_features_for_match(self, local, visita, temporada, fecha=None, reset_season=True):
         feats = {}
         feats["elo_diff"] = self.elos[local] - self.elos[visita]
         vl = get_squad_value(local, temporada)
@@ -210,7 +210,7 @@ class StateTracker:
         feats["gf_diff"] = (np.mean(gfl[-N:]) if gfl else 1.0) - (np.mean(gfv[-N:]) if gfv else 1.0)
         feats["ga_diff"] = (np.mean(gal[-N:]) if gal else 1.0) - (np.mean(gav[-N:]) if gav else 1.0)
 
-        if temporada != self.curr_season:
+        if reset_season and temporada != self.curr_season:
             self.curr_season = temporada
             self.season_pts.clear()
             self.season_matches.clear()
@@ -441,11 +441,13 @@ def cargar_y_entrenar():
     # BUG 1 FIX: Modelo Poisson GLM para goles CON variable de localía (is_home).
     # Sin is_home el intercept era la media pooled ~1.054, subestimando goles del local
     # en -0.165 y sobreestimando los del visitante en +0.150 (diferencia real = +0.316 goles).
+    # Solo train+cal (temporada <= 2024): los partidos de test no entrenan el modelo.
+    df_goles = df_dataset[df_dataset["temporada"] <= 2024]
     df_dataset["d_elo_l"] = df_dataset["elo_diff"]
     df_dataset["d_elo_v"] = -df_dataset["elo_diff"]
 
-    df_p_local  = df_dataset[["goles_local",  "d_elo_l"]].rename(columns={"goles_local":  "goles", "d_elo_l": "d_elo"})
-    df_p_visita = df_dataset[["goles_visita", "d_elo_v"]].rename(columns={"goles_visita": "goles", "d_elo_v": "d_elo"})
+    df_p_local  = df_goles[["goles_local",  "elo_diff"]].rename(columns={"goles_local":  "goles", "elo_diff": "d_elo"})
+    df_p_visita = df_goles[["goles_visita", "elo_diff"]].rename(columns={"goles_visita": "goles", "elo_diff": "d_elo"})
     df_p_local["is_home"]  = 1
     df_p_visita["is_home"] = 0
     df_poisson = pd.concat([df_p_local, df_p_visita], ignore_index=True)
@@ -520,7 +522,7 @@ def predecir_match(M, local, visita, temporada=None, modelo="rf"):
     if temporada is None:
         temporada = _temporada_actual()
     
-    feats = tracker.get_features_for_match(local, visita, temporada)
+    feats = tracker.get_features_for_match(local, visita, temporada, reset_season=False)
     df_feat = pd.DataFrame([feats])[features].fillna(0.0)
     
     if modelo in ("lasso", "l1"):
@@ -629,13 +631,13 @@ def _torneo_actual(M):
     # El torneo vigente es el definido por fixture.csv; los partidos jugados de ese
     # torneo son los que caen dentro de su ventana de fechas.
     fix = pd.read_csv(DATA / "fixture.csv", parse_dates=["fecha"]) if (DATA / "fixture.csv").exists() else pd.DataFrame()
-    fix = fix[fix.temporada == 2026] if not fix.empty else fix
+    fix = fix[fix.temporada == _temporada_actual()] if not fix.empty else fix
     if len(fix) == 0:
         return pd.DataFrame(), fix
     inicio_torneo = fix["fecha"].min() - pd.Timedelta(days=1)
     partidos = M["partidos"].copy()
     partidos["fecha"] = pd.to_datetime(partidos["fecha"])
-    p_actuales = partidos[(partidos["temporada"] == 2026) & (partidos["fecha"] >= inicio_torneo)]
+    p_actuales = partidos[(partidos["temporada"] == _temporada_actual()) & (partidos["fecha"] >= inicio_torneo)]
     return p_actuales, fix
 
 
@@ -719,7 +721,7 @@ def monte_carlo(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
     if seed is not None:
         np.random.seed(seed)
     fix = pd.read_csv(DATA / "fixture.csv") if (DATA / "fixture.csv").exists() else pd.DataFrame()
-    fix = fix[fix.temporada == 2026] if not fix.empty else fix
+    fix = fix[fix.temporada == _temporada_actual()] if not fix.empty else fix
 
     PREDS = {}
     if not fix.empty:
@@ -730,7 +732,7 @@ def monte_carlo(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
                 PREDS[(l, v)] = (p, la, lb)
             
     partidos = M["partidos"]
-    p_actuales = partidos[partidos.temporada == 2026]
+    p_actuales = partidos[partidos.temporada == _temporada_actual()]
     todos_activos = set(p_actuales["local"]).union(set(p_actuales["visita"]))
     if not fix.empty:
         todos_activos = todos_activos.union(set(fix["local"])).union(set(fix["visita"]))

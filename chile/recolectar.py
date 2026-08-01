@@ -2,6 +2,7 @@
 Recolector de la Primera División de Chile desde la API pública de ESPN (liga 'chi.1').
 Convierte la fecha UTC de ESPN a la hora local chilena ('America/Santiago') para coincidir exactamente con los días del calendario real.
 """
+from datetime import datetime
 from pathlib import Path
 import time
 import requests
@@ -9,7 +10,7 @@ import pandas as pd
 
 DATA = Path(__file__).resolve().parent / "data"
 SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/soccer/chi.1/scoreboard"
-TEMPORADAS = [2021, 2022, 2023, 2024, 2025, 2026]
+TEMPORADAS = list(range(2021, int(datetime.now().year) + 1))
 
 NORM_MAP = {
     "Everton CD": "Everton",

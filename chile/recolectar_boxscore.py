@@ -5,6 +5,7 @@ tiros bloqueados. Cobertura ~96%. Incremental: no re-pide partidos ya guardados.
 
 Uso:  python3 recolectar_boxscore.py   -> chile/data/box_score.csv  (una fila por equipo-partido)
 """
+from datetime import datetime
 from pathlib import Path
 import time
 import requests
@@ -13,7 +14,7 @@ import pandas as pd
 DATA = Path(__file__).resolve().parent / "data"
 SB = "https://site.api.espn.com/apis/site/v2/sports/soccer/chi.1/scoreboard"
 SUM = "https://site.api.espn.com/apis/site/v2/sports/soccer/chi.1/summary"
-TEMPORADAS = [2021, 2022, 2023, 2024, 2025, 2026]
+TEMPORADAS = list(range(2021, int(datetime.now().year) + 1))
 STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCommitted",
          "yellowCards", "redCards", "offsides", "saves", "blockedShots"]
 

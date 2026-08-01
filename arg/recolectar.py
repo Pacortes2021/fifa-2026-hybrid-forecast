@@ -2,6 +2,7 @@
 Recolector de la Liga Profesional de Fútbol de Argentina desde la API pública de ESPN (liga 'arg.1').
 Mapeo exhaustivo de normalización de nombres y conversión a hora local argentina ('America/Argentina/Buenos_Aires').
 """
+from datetime import datetime
 from pathlib import Path
 import time
 import requests
@@ -9,7 +10,7 @@ import pandas as pd
 
 DATA = Path(__file__).resolve().parent / "data"
 SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/soccer/arg.1/scoreboard"
-TEMPORADAS = [2021, 2022, 2023, 2024, 2025, 2026]
+TEMPORADAS = list(range(2021, int(datetime.now().year) + 1))
 
 NORM_MAP = {
     "Boca Juniors": "Boca Juniors",

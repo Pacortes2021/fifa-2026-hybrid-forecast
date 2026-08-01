@@ -232,10 +232,10 @@ def run_app():
 
                 elo_a  = tracker.elos.get(a, 1500.0)
                 elo_b  = tracker.elos.get(b, 1500.0)
-                vl_a   = mo.get_squad_value(a, 2026)
-                vl_b   = mo.get_squad_value(b, 2026)
-                fa_d   = mo.get_advanced_features(a, 2026)
-                fb_d   = mo.get_advanced_features(b, 2026)
+                vl_a   = mo.get_squad_value(a, mo._temporada_actual())
+                vl_b   = mo.get_squad_value(b, mo._temporada_actual())
+                fa_d   = mo.get_advanced_features(a, mo._temporada_actual())
+                fb_d   = mo.get_advanced_features(b, mo._temporada_actual())
                 form_a = float(np.mean(list(tracker.recent_results[a])[-N:])) if tracker.recent_results[a] else 0.333
                 form_b = float(np.mean(list(tracker.recent_results[b])[-N:])) if tracker.recent_results[b] else 0.333
                 gfa    = float(np.mean(list(tracker.recent_gf[a])[-N:])) if tracker.recent_gf[a] else 1.0
@@ -306,7 +306,7 @@ def run_app():
                     pr = mk[f"{lado} {ln}"]
                     filas.append({"Mercado": f"{lado} {ln} goles", "Prob.": f"{pr:.1%}", "Cuota justa": f"{mo.cuota(pr):.2f}"})
             for et, key in (("Ambos marcan: Sí", "Ambos marcan (BTTS sí)"), ("Ambos marcan: No", "BTTS no")):
-                filas.append({"Mercado": et, "Prob.": f"{mk[key]:.1%}", "Cuota justa": f"{mo.cuota(mix.ravel()[0]):.2f}" if "no" in key else f"{mo.cuota(mk[key]):.2f}"})
+                filas.append({"Mercado": et, "Prob.": f"{mk[key]:.1%}", "Cuota justa": f"{mo.cuota(mk[key]):.2f}"})
                 
             # Doble Oportunidad
             p_1x = p[0] + p[1]
@@ -430,7 +430,9 @@ def run_app():
         st.markdown("Comparación de la predicción **pre-partido** del modelo contra el **resultado real** para los partidos ya jugados.")
         
         # Seleccion de temporada
+        # La validación es honesta solo sobre temporadas out-of-sample (test >= 2025).
         temporadas_disponibles = sorted(M["df_dataset"]["temporada"].unique(), reverse=True)
+        temporadas_disponibles = [t for t in temporadas_disponibles if t >= 2025]
         temporada_sel = st.selectbox("Selecciona la temporada a validar:", temporadas_disponibles, index=0)
         
         df_val, met, evol = mo.validacion_en_vivo(M, temporada_val=temporada_sel)
@@ -494,3 +496,6 @@ def run_app():
                         hide_index=True, width='stretch'
                     )
     
+
+if __name__ == "__main__":
+    run_app()

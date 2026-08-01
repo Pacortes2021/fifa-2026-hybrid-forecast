@@ -1,6 +1,7 @@
 """
 Recolecta el BOX SCORE detallado de cada partido de la Liga Profesional de Argentina desde ESPN (endpoint summary).
 """
+from datetime import datetime
 from pathlib import Path
 import time
 import requests
@@ -10,7 +11,7 @@ from concurrent.futures import ThreadPoolExecutor
 DATA = Path(__file__).resolve().parent / "data"
 SB = "https://site.api.espn.com/apis/site/v2/sports/soccer/arg.1/scoreboard"
 SUM = "https://site.api.espn.com/apis/site/v2/sports/soccer/arg.1/summary"
-TEMPORADAS = [2021, 2022, 2023, 2024, 2025, 2026]
+TEMPORADAS = list(range(2021, int(datetime.now().year) + 1))
 STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCommitted",
          "yellowCards", "redCards", "offsides", "saves", "blockedShots"]
 

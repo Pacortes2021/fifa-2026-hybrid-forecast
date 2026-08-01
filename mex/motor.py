@@ -45,13 +45,13 @@ ALTITUDES = {
     "Pumas UNAM": 2.240,
     "Puebla": 2.200,
     "Necaxa": 1.880,
-    "Atlético de San Luis": 1.860,
+    "Atlético San Luis": 1.860,
     "Querétaro": 1.820,
     "León": 1.815,
     "Guadalajara": 1.566,
     "Atlas": 1.566,
-    "FC Juarez": 1.137,
-    "Santos": 1.120,
+    "FC Juárez": 1.137,
+    "Santos Laguna": 1.120,
     "Monterrey": 0.540,
     "Tigres UANL": 0.540,
     "Tijuana": 0.020,
@@ -107,10 +107,21 @@ def get_distance_km(local, visita):
     return haversine_km(c_vis[0], c_vis[1], c_loc[0], c_loc[1])
 
 
+NOMBRES_ADV = {
+    "Atlético San Luis": "Atlético de San Luis",
+    "FC Juárez": "FC Juarez",
+    "Santos Laguna": "Santos",
+}
+
+
+def _norm_equipo(team):
+    return NOMBRES_ADV.get(team, team)
+
+
 def get_squad_value(team, season):
     # Intentar buscar el valor real exacto de Transfermarkt
     if len(DF_SQUAD_VALUES) > 0:
-        df_eq = DF_SQUAD_VALUES[DF_SQUAD_VALUES.equipo == team]
+        df_eq = DF_SQUAD_VALUES[DF_SQUAD_VALUES.equipo == _norm_equipo(team)]
         if len(df_eq) > 0:
             row = df_eq[df_eq.temporada == season]
             if len(row) > 0:
@@ -124,7 +135,7 @@ def get_squad_value(team, season):
 
 def get_advanced_features(team, season):
     if len(DF_ADV_FEATURES) > 0:
-        df_eq = DF_ADV_FEATURES[DF_ADV_FEATURES.equipo == team]
+        df_eq = DF_ADV_FEATURES[DF_ADV_FEATURES.equipo == _norm_equipo(team)]
         if len(df_eq) > 0:
             row = df_eq[df_eq.temporada == season]
             if len(row) > 0:
@@ -210,7 +221,7 @@ class StateTracker:
 
 
         
-    def get_features_for_match(self, local, visita, temporada, fecha=None):
+    def get_features_for_match(self, local, visita, temporada, fecha=None, reset_season=True):
         feats = {}
 
         
@@ -241,7 +252,7 @@ class StateTracker:
         feats["ga_diff"] = (np.mean(gal[-N:]) if gal else 1.0) - (np.mean(gav[-N:]) if gav else 1.0)
         feats["es_liguilla"] = 1.0 if (self.torneo_matches[local] >= 17 or self.torneo_matches[visita] >= 17) else 0.0
 
-        if temporada != self.curr_season:
+        if reset_season and temporada != self.curr_season:
             self.curr_season = temporada
             self.season_pts.clear()
             self.season_matches.clear()
@@ -587,20 +598,22 @@ def cargar_y_entrenar():
     # -------------------------------------------------------------------------
     #  Modelos de Goles Poisson (Dixon-Coles)
     # -------------------------------------------------------------------------
-    # Entrenamos un Poisson GLM sobre la diferencia de calidad y goles
+    # Entrenamos un Poisson GLM sobre la diferencia de calidad y goles.
+    # Solo train+cal (temporada <= 2024): los partidos de test no entrenan el modelo.
     import statsmodels.api as sm
+    df_goles = df_dataset[df_dataset["temporada"] <= 2024]
     
     # Creamos un dataset largo de goles
     datag_l = pd.DataFrame({
-        "g": df_dataset["goles_local"].values,
-        "d": df_dataset["elo_diff"].values,
-        "alt": df_dataset["altitude_diff"].values,
+        "g": df_goles["goles_local"].values,
+        "d": df_goles["elo_diff"].values,
+        "alt": df_goles["altitude_diff"].values,
         "is_home": 1
     })
     datag_v = pd.DataFrame({
-        "g": df_dataset["goles_visita"].values,
-        "d": -df_dataset["elo_diff"].values,
-        "alt": -df_dataset["altitude_diff"].values,
+        "g": df_goles["goles_visita"].values,
+        "d": -df_goles["elo_diff"].values,
+        "alt": -df_goles["altitude_diff"].values,
         "is_home": 0
     })
     datag_total = pd.concat([datag_l, datag_v], ignore_index=True)
@@ -617,7 +630,7 @@ def cargar_y_entrenar():
     rho_dc = 0.05
     try:
         # Calcular el residuo para marcadores de bajo score
-        cor = np.corrcoef(df_dataset["goles_local"], df_dataset["goles_visita"])[0, 1]
+        cor = np.corrcoef(df_goles["goles_local"], df_goles["goles_visita"])[0, 1]
         rho_dc = float(cor) * 0.5  # aproximación Dixon-Coles
     except Exception:
         pass
@@ -690,7 +703,7 @@ def predecir_match(M, local, visita, temporada=None, modelo="rf"):
     poisson_params = M["poisson_params"]
     if temporada is None:
         temporada = _temporada_actual()
-    feats = tracker.get_features_for_match(local, visita, temporada)
+    feats = tracker.get_features_for_match(local, visita, temporada, reset_season=False)
     df_feat = pd.DataFrame([feats])[features].fillna(0.0)
     if modelo in ("lasso", "l1"):
         pipe = M["pipe_lasso"]
@@ -799,14 +812,15 @@ def _torneo_actual(M):
     # jul-nov), ambos etiquetados como temporada 2026 en partidos.csv. El torneo
     # vigente es el definido por fixture.csv; los partidos jugados de ese torneo
     # son los que caen dentro de su ventana de fechas.
+    temporada = _temporada_actual()
     fix = pd.read_csv(DATA / "fixture.csv", parse_dates=["fecha"])
-    fix = fix[fix.temporada == 2026]
+    fix = fix[fix.temporada == temporada]
     if len(fix) == 0:
         return pd.DataFrame(), fix
-    inicio_torneo = fix["fecha"].min() - pd.Timedelta(days=1)
+    inicio_torneo = fix["fecha"].min()
     partidos = M["partidos"].copy()
     partidos["fecha"] = pd.to_datetime(partidos["fecha"])
-    p_actuales = partidos[(partidos["temporada"] == 2026) & (partidos["fecha"] >= inicio_torneo)]
+    p_actuales = partidos[(partidos["temporada"] == temporada) & (partidos["fecha"] >= inicio_torneo)]
     return p_actuales, fix
 
 
@@ -821,7 +835,7 @@ def simular_fixture_regular(M, PREDS, fijos=None):
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
     
     # Equipos únicos
-    equipos = set(ALTITUDES.keys()).difference({"Atlante"})
+    equipos = set(ALTITUDES.keys())
     for eq in equipos:
         tabla[eq] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
         
@@ -1058,7 +1072,7 @@ def monte_carlo(M, n_sims=5000, fijos=None, modelo="rf", seed=42):
     if seed is not None:
         np.random.seed(seed)
     # Precalcular predicciones para todos los cruces posibles (18*17 = 306 combinaciones)
-    equipos = set(ALTITUDES.keys()).difference({"Atlante"})
+    equipos = set(ALTITUDES.keys())
     PREDS = {}
     for local in equipos:
         for visita in equipos:
@@ -1190,7 +1204,7 @@ def obtener_tabla_actual(M):
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
     
     # Equipos únicos
-    equipos = set(ALTITUDES.keys()).difference({"Atlante"})
+    equipos = set(ALTITUDES.keys())
     for eq in equipos:
         tabla[eq] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
         

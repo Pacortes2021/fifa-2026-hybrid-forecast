@@ -2,6 +2,7 @@
 Recolector de la Primera División de México (Liga MX) desde la API pública de ESPN (liga 'mex.1').
 Convierte la fecha UTC de ESPN a la hora local mexicana ('America/Mexico_City') para coincidir exactamente con los días del calendario real.
 """
+from datetime import datetime
 from pathlib import Path
 import time
 import requests
@@ -9,7 +10,7 @@ import pandas as pd
 
 DATA = Path(__file__).resolve().parent / "data"
 SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/scoreboard"
-TEMPORADAS = [2021, 2022, 2023, 2024, 2025, 2026]
+TEMPORADAS = list(range(2021, int(datetime.now().year) + 1))
 
 NORM_MAP = {
     "Atlético de San Luis": "Atlético San Luis",
