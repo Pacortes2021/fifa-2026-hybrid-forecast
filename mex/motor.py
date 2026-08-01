@@ -24,6 +24,19 @@ import warnings
 warnings.filterwarnings("ignore")
 
 DATA = Path(__file__).resolve().parent / "data"
+EQUIPOS_PATH = DATA / "equipos.csv"
+
+def _cargar_equipos():
+    """Lee data/equipos.csv (id estable de ESPN -> info del club: nombre, abreviatura, colores, logo)."""
+    if EQUIPOS_PATH.exists():
+        try:
+            df = pd.read_csv(EQUIPOS_PATH).set_index("id")
+            return df.to_dict("index")
+        except Exception:
+            return {}
+    return {}
+
+
 ELO_INIT = 1500.0
 
 def _elo_default():
@@ -637,6 +650,7 @@ def cargar_y_entrenar():
         
     return {
         "tracker": tracker,
+        "equipos": _cargar_equipos(),
         "pipe": pipe_final,
         "pipe_val": pipe_val,
         "pipe_lasso": pipe_lasso_final,

@@ -13,6 +13,19 @@ from sklearn.metrics import log_loss, accuracy_score
 from scipy.optimize import minimize_scalar
 
 DATA = Path(__file__).resolve().parent / "data"
+EQUIPOS_PATH = DATA / "equipos.csv"
+
+def _cargar_equipos():
+    """Lee data/equipos.csv (id estable de ESPN -> info del club: nombre, abreviatura, colores, logo)."""
+    if EQUIPOS_PATH.exists():
+        try:
+            df = pd.read_csv(EQUIPOS_PATH).set_index("id")
+            return df.to_dict("index")
+        except Exception:
+            return {}
+    return {}
+
+
 
 # Constantes de LaLiga de España
 DESCIENDEN = 3
@@ -460,6 +473,7 @@ def cargar_y_entrenar():
         "pipe_rf": pipe_rf,
         "cols": cols_feat,
         "tracker": tracker,
+        "equipos": _cargar_equipos(),
         "g_const": g_const,
         "g_d": g_d,
         "g_home": g_home,

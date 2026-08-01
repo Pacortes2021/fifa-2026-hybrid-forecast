@@ -7,9 +7,11 @@ from pathlib import Path
 import time
 import requests
 import pandas as pd
+import numpy as np
 
 DATA = Path(__file__).resolve().parent / "data"
 SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/soccer/chi.1/scoreboard"
+TEAMS_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer/chi.1/teams"
 TEMPORADAS = list(range(2021, int(datetime.now().year) + 1))
 
 NORM_MAP = {
@@ -71,6 +73,8 @@ def _temporada(anio):
                 "event_id": str(e["id"]),
                 "fecha": fecha_local,
                 "temporada": anio,
+                "local_id": str(h["team"]["id"]),
+                "visita_id": str(a["team"]["id"]),
                 "local": loc,
                 "visita": vis,
                 "goles_local": gl,
@@ -81,6 +85,26 @@ def _temporada(anio):
         except (KeyError, IndexError, StopIteration):
             continue
     return filas
+
+
+def _canonizar_por_id(df):
+    """Reasigna los nombres usando el ID estable de ESPN: si un club aparece con
+    nombres distintos entre temporadas (reformas de nombres, promociones, etc.),
+    todo su historial queda bajo el nombre más reciente del ID."""
+    if "local_id" not in df.columns:
+        return df
+    df = df.copy()
+    id2name = {}
+    for r in df.sort_values("fecha").itertuples(index=False):
+        for idv, nm in ((r.local_id, r.local), (r.visita_id, r.visita)):
+            if pd.notna(idv) and pd.notna(nm):
+                id2name[str(idv)] = nm
+    orig_l, orig_v = df["local"], df["visita"]
+    df["local"] = df["local_id"].map(lambda x: id2name.get(str(x), np.nan) if pd.notna(x) else np.nan)
+    df["visita"] = df["visita_id"].map(lambda x: id2name.get(str(x), np.nan) if pd.notna(x) else np.nan)
+    df["local"] = df["local"].where(df["local"].notna(), orig_l)
+    df["visita"] = df["visita"].where(df["visita"].notna(), orig_v)
+    return df
 
 
 def recolectar():
@@ -100,8 +124,8 @@ def recolectar():
         print("No se pudieron recolectar partidos de Chile.")
         return
 
-    df = pd.DataFrame(todo).sort_values("fecha")
-    df = df.drop_duplicates(subset=["fecha", "local", "visita"], keep="last")
+    df = _canonizar_por_id(pd.DataFrame(todo).sort_values("fecha"))
+    df = df.drop_duplicates(subset=["event_id"], keep="last")
 
     jugados = df[df.estado == "post"].dropna(subset=["goles_local", "goles_visita"]).reset_index(drop=True)
     fixture = df[df.estado == "pre"]

@@ -20,6 +20,19 @@ from sklearn.metrics import log_loss, accuracy_score
 warnings.filterwarnings("ignore")
 
 DATA = Path(__file__).resolve().parent / "data"
+EQUIPOS_PATH = DATA / "equipos.csv"
+
+def _cargar_equipos():
+    """Lee data/equipos.csv (id estable de ESPN -> info del club: nombre, abreviatura, colores, logo)."""
+    if EQUIPOS_PATH.exists():
+        try:
+            df = pd.read_csv(EQUIPOS_PATH).set_index("id")
+            return df.to_dict("index")
+        except Exception:
+            return {}
+    return {}
+
+
 
 COORDS_ARGENTINA = {
     # Buenos Aires & Gran Buenos Aires
@@ -470,6 +483,7 @@ def cargar_y_entrenar():
         "poisson_params": poisson_params,
         "features": cols_features,
         "tracker": tracker,
+        "equipos": _cargar_equipos(),
         "df_dataset": df_dataset,
         "partidos": partidos
     }
