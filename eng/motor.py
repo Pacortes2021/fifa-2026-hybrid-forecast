@@ -218,20 +218,34 @@ class StateTracker:
         feats = {}
 
         feats["elo_diff"] = self.elos[local] - self.elos[visita]
+        feats["elo_home"] = self.elos[local] + HOME_ADV
+        feats["elo_away"] = self.elos[visita]
         vl = get_squad_value(local, temporada)
         vv = get_squad_value(visita, temporada)
         feats["squad_value_diff"] = np.log(max(vl, 0.1)) - np.log(max(vv, 0.1))
+        feats["squad_value_home_log"] = np.log(max(vl, 0.1))
+        feats["squad_value_away_log"] = np.log(max(vv, 0.1))
         feats["h2h_diff"] = self.h2h_goles[(local, visita)]
 
         # Características avanzadas de TM
         feat_l = get_advanced_features(local, temporada)
         feat_v = get_advanced_features(visita, temporada)
         feats["avg_age_diff"] = feat_l["avg_age"] - feat_v["avg_age"]
+        feats["avg_age_home"] = float(feat_l["avg_age"])
+        feats["avg_age_away"] = float(feat_v["avg_age"])
         feats["squad_size_diff"] = feat_l["squad_size"] - feat_v["squad_size"]
+        feats["squad_size_home"] = float(feat_l["squad_size"])
+        feats["squad_size_away"] = float(feat_v["squad_size"])
         feats["pct_foreigners_diff"] = feat_l["pct_foreigners"] - feat_v["pct_foreigners"]
+        feats["pct_foreigners_home"] = float(feat_l["pct_foreigners"])
+        feats["pct_foreigners_away"] = float(feat_v["pct_foreigners"])
+        feats["foreigners_diff"] = feat_l["foreigners"] - feat_v["foreigners"]
         feats["stadium_capacity"] = np.log(max(float(feat_l["stadium_capacity"]), 1.0))
         feats["stadium_occupation"] = float(feat_l["stadium_occupation"])
         feats["avg_attendance"] = np.log(max(float(feat_l["avg_attendance"]), 1.0))
+        feats["stadium_capacity_diff"] = np.log(max(float(feat_l["stadium_capacity"]), 1.0)) - np.log(max(float(feat_v["stadium_capacity"]), 1.0))
+        feats["stadium_occupation_diff"] = float(feat_l["stadium_occupation"]) - float(feat_v["stadium_occupation"])
+        feats["avg_attendance_diff"] = np.log(max(float(feat_l["avg_attendance"]), 1.0)) - np.log(max(float(feat_v["avg_attendance"]), 1.0))
 
         N = 5
         rl = list(self.recent_results[local]); rv = list(self.recent_results[visita])
@@ -393,9 +407,15 @@ def cargar_y_entrenar():
     
     # Modelo 1: L1 Regularized SAGA logistic regression
     cols_feat = [
-        "elo_diff", "squad_value_diff", "h2h_diff",
-        "avg_age_diff", "squad_size_diff", "pct_foreigners_diff",
+        "elo_diff", "elo_home", "elo_away",
+        "squad_value_diff", "squad_value_home_log", "squad_value_away_log",
+        "h2h_diff",
+        "avg_age_diff", "avg_age_home", "avg_age_away",
+        "squad_size_diff", "squad_size_home", "squad_size_away",
+        "pct_foreigners_diff", "pct_foreigners_home", "pct_foreigners_away",
+        "foreigners_diff",
         "stadium_capacity", "stadium_occupation", "avg_attendance",
+        "stadium_capacity_diff", "stadium_occupation_diff", "avg_attendance_diff",
         "form_diff", "gf_diff", "ga_diff", "rest_days_diff", "congestion_14d_diff",
         "pi_diff", "pi_overall_diff", "travel_dist_log_km"
     ] + [f"{s}_total_diff" for s in STATS] + [f"{s}_sede_diff" for s in STATS]
@@ -466,6 +486,7 @@ def cargar_y_entrenar():
     met_stack = {"logloss": round(log_loss(y_test,p_st),4), "accuracy": round(accuracy_score(y_test,p_st.argmax(axis=1))*100,2), "alpha": round(alpha_opt,3)}
     metricas = {"lasso": met_lasso, "rf": met_rf, "stacking": met_stack}
     print(f"Metricas ENG Test>=2025: LASSO={met_lasso} RF={met_rf} Stacking={met_stack}")
+    print(f"LASSO (L1): {len(cols_feat)} features totales -> {int((np.abs(pipe_lasso.named_steps['lr'].coef_) > 1e-8).sum())} seleccionadas")
     
     # Ajuste Poisson para goles esperados
     # Estimamos goles promedio en función del ELO diferencial + localidad (bias ±0.172 sin is_home).

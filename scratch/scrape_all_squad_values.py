@@ -96,6 +96,38 @@ LEAGUES = {
             "Deportes Concepcion": "Deportes Concepcion",
             "Universidad de Concepción": "Universidad de Concepción"
         }
+    },
+    "eng": {
+        "tm_id": "GB1",
+        "espn_partidos": ROOT / "eng" / "data" / "partidos.csv",
+        "out_csv": ROOT / "eng" / "data" / "squad_values_historical.csv",
+        "manual": {
+            "Manchester City": "Man City",
+            "Manchester United": "Man Utd",
+            "Brighton & Hove Albion": "Brighton",
+            "Wolverhampton Wanderers": "Wolves",
+            "Tottenham Hotspur": "Tottenham",
+            "Newcastle United": "Newcastle",
+            "Leeds United": "Leeds",
+            "Leicester City": "Leicester",
+            "West Ham United": "West Ham",
+            "Nottingham Forest": "Nottm Forest",
+            "AFC Bournemouth": "Bournemouth",
+            "Ipswich Town": "Ipswich",
+            "Coventry City": "Coventry",
+            "Hull City": "Hull City",
+            "Sheffield United": "Sheffield United",
+            "Arsenal FC": "Arsenal",
+            "Chelsea FC": "Chelsea",
+            "Liverpool FC": "Liverpool",
+            "Everton FC": "Everton",
+            "Fulham FC": "Fulham",
+            "Brentford FC": "Brentford",
+            "Burnley FC": "Burnley",
+            "Watford FC": "Watford",
+            "Southampton FC": "Southampton",
+            "Sunderland AFC": "Sunderland"
+        }
     }
 }
 
@@ -158,14 +190,17 @@ def match_team(tm_name, espn_names, manual_map):
         
     return tm_name
 
-def scrape_all():
+def scrape_all(only=None, seasons=None):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
     
-    seasons = [2020, 2021, 2022, 2023, 2024, 2025, 2026]
+    if seasons is None:
+        seasons = [2020, 2021, 2022, 2023, 2024, 2025, 2026]
     
     for league_key, info in LEAGUES.items():
+        if only and league_key not in only:
+            continue
         print(f"\n=======================================================")
         print(f"Scrapeando valores de plantilla para {league_key.upper()} ({info['tm_id']})")
         print(f"=======================================================")
@@ -189,6 +224,8 @@ def scrape_all():
                 url = f"https://www.transfermarkt.us/campeonato-brasileiro-serie-a/startseite/wettbewerb/BRA1/plus/?saison_id={s}"
             elif league_key == "chile":
                 url = f"https://www.transfermarkt.us/primera-division-de-chile/startseite/wettbewerb/CLPD/plus/?saison_id={s}"
+            elif league_key == "eng":
+                url = f"https://www.transfermarkt.us/premier-league/startseite/wettbewerb/GB1/plus/?saison_id={s}"
                 
             print(f"  Temporada {s} -> {url}")
             try:
@@ -238,10 +275,18 @@ def scrape_all():
                 
         if filas_liga:
             df = pd.DataFrame(filas_liga)
+            if info["out_csv"].exists():
+                existente = pd.read_csv(info["out_csv"])
+                df = pd.concat([existente, df], ignore_index=True).drop_duplicates(
+                    subset=["temporada", "equipo"], keep="last"
+                ).sort_values(["temporada", "equipo"]).reset_index(drop=True)
             df.to_csv(info["out_csv"], index=False)
             print(f"  ✓ Guardado {info['out_csv']} con {len(df)} registros.")
         else:
             print(f"  ✗ No se recopilaron datos para {league_key.upper()}")
 
 if __name__ == "__main__":
-    scrape_all()
+    import sys
+    only = sys.argv[1].split(",") if len(sys.argv) > 1 else None
+    seasons = [int(x) for x in sys.argv[2].split(",")] if len(sys.argv) > 2 else None
+    scrape_all(only=only, seasons=seasons)
