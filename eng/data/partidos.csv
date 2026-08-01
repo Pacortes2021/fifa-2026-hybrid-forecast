@@ -1,0 +1,2126 @@
+event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
+578499,2021-01-01 17:30:00,2021,368,371,Everton,West Ham United,0.0,1.0,post
+578492,2021-01-01 20:00:00,2021,360,362,Manchester United,Aston Villa,2.0,1.0,post
+578494,2021-01-02 12:30:00,2021,367,357,Tottenham Hotspur,Leeds United,3.0,0.0,post
+578498,2021-01-02 15:00:00,2021,384,398,Crystal Palace,Sheffield United,2.0,0.0,post
+578500,2021-01-02 17:30:00,2021,331,380,Brighton & Hove Albion,Wolverhampton Wanderers,3.0,3.0,post
+578491,2021-01-02 20:00:00,2021,383,359,West Bromwich Albion,Arsenal,0.0,4.0,post
+578495,2021-01-03 14:15:00,2021,361,375,Newcastle United,Leicester City,1.0,2.0,post
+578497,2021-01-03 16:30:00,2021,363,382,Chelsea,Manchester City,1.0,3.0,post
+578496,2021-01-04 20:00:00,2021,376,364,Southampton,Liverpool,1.0,0.0,post
+578487,2021-01-12 18:00:00,2021,398,361,Sheffield United,Newcastle United,1.0,0.0,post
+578660,2021-01-12 20:15:00,2021,379,360,Burnley,Manchester United,0.0,1.0,post
+578485,2021-01-12 20:15:00,2021,380,368,Wolverhampton Wanderers,Everton,1.0,2.0,post
+578481,2021-01-13 18:00:00,2021,382,331,Manchester City,Brighton & Hove Albion,1.0,0.0,post
+578503,2021-01-13 20:15:00,2021,367,370,Tottenham Hotspur,Fulham,1.0,1.0,post
+578484,2021-01-14 20:00:00,2021,359,384,Arsenal,Crystal Palace,0.0,0.0,post
+578480,2021-01-16 12:30:00,2021,380,383,Wolverhampton Wanderers,West Bromwich Albion,2.0,3.0,post
+578472,2021-01-16 15:00:00,2021,371,379,West Ham United,Burnley,1.0,0.0,post
+578471,2021-01-16 15:00:00,2021,357,331,Leeds United,Brighton & Hove Albion,0.0,1.0,post
+578473,2021-01-16 17:30:00,2021,370,363,Fulham,Chelsea,0.0,1.0,post
+578478,2021-01-16 20:00:00,2021,375,376,Leicester City,Southampton,2.0,0.0,post
+578479,2021-01-17 14:00:00,2021,398,367,Sheffield United,Tottenham Hotspur,1.0,3.0,post
+578476,2021-01-17 16:30:00,2021,364,360,Liverpool,Manchester United,0.0,0.0,post
+578474,2021-01-17 19:15:00,2021,382,384,Manchester City,Crystal Palace,4.0,0.0,post
+578477,2021-01-18 20:00:00,2021,359,361,Arsenal,Newcastle United,3.0,0.0,post
+578490,2021-01-19 18:00:00,2021,371,383,West Ham United,West Bromwich Albion,2.0,1.0,post
+578483,2021-01-19 20:15:00,2021,375,363,Leicester City,Chelsea,2.0,0.0,post
+578659,2021-01-20 18:00:00,2021,382,362,Manchester City,Aston Villa,2.0,0.0,post
+578486,2021-01-20 20:15:00,2021,370,360,Fulham,Manchester United,1.0,2.0,post
+578482,2021-01-21 20:00:00,2021,364,379,Liverpool,Burnley,0.0,1.0,post
+578558,2021-01-23 20:00:00,2021,362,361,Aston Villa,Newcastle United,2.0,0.0,post
+578461,2021-01-26 18:00:00,2021,384,371,Crystal Palace,West Ham United,2.0,3.0,post
+578463,2021-01-26 18:00:00,2021,361,357,Newcastle United,Leeds United,1.0,2.0,post
+578462,2021-01-26 20:15:00,2021,376,359,Southampton,Arsenal,1.0,3.0,post
+578466,2021-01-26 20:15:00,2021,383,382,West Bromwich Albion,Manchester City,0.0,5.0,post
+578465,2021-01-27 18:00:00,2021,363,380,Chelsea,Wolverhampton Wanderers,0.0,0.0,post
+578468,2021-01-27 18:00:00,2021,379,362,Burnley,Aston Villa,3.0,2.0,post
+578469,2021-01-27 19:30:00,2021,331,370,Brighton & Hove Albion,Fulham,0.0,0.0,post
+578470,2021-01-27 20:15:00,2021,368,375,Everton,Leicester City,1.0,1.0,post
+578467,2021-01-27 20:15:00,2021,360,398,Manchester United,Sheffield United,1.0,2.0,post
+578464,2021-01-28 20:00:00,2021,367,364,Tottenham Hotspur,Liverpool,1.0,3.0,post
+578457,2021-01-30 12:30:00,2021,368,361,Everton,Newcastle United,0.0,2.0,post
+578458,2021-01-30 15:00:00,2021,382,398,Manchester City,Sheffield United,1.0,0.0,post
+578453,2021-01-30 15:00:00,2021,383,370,West Bromwich Albion,Fulham,2.0,2.0,post
+578460,2021-01-30 15:00:00,2021,384,380,Crystal Palace,Wolverhampton Wanderers,1.0,0.0,post
+578456,2021-01-30 17:30:00,2021,359,360,Arsenal,Manchester United,0.0,0.0,post
+578451,2021-01-30 20:00:00,2021,376,362,Southampton,Aston Villa,0.0,1.0,post
+578452,2021-01-31 12:00:00,2021,363,379,Chelsea,Burnley,2.0,0.0,post
+578454,2021-01-31 14:00:00,2021,375,357,Leicester City,Leeds United,1.0,3.0,post
+578455,2021-01-31 16:30:00,2021,371,364,West Ham United,Liverpool,1.0,3.0,post
+578459,2021-01-31 19:15:00,2021,331,367,Brighton & Hove Albion,Tottenham Hotspur,1.0,0.0,post
+578449,2021-02-02 18:00:00,2021,398,383,Sheffield United,West Bromwich Albion,2.0,1.0,post
+578445,2021-02-02 18:00:00,2021,380,359,Wolverhampton Wanderers,Arsenal,2.0,1.0,post
+578443,2021-02-02 20:15:00,2021,361,384,Newcastle United,Crystal Palace,1.0,2.0,post
+578444,2021-02-02 20:15:00,2021,360,376,Manchester United,Southampton,9.0,0.0,post
+578448,2021-02-03 18:00:00,2021,379,382,Burnley,Manchester City,0.0,2.0,post
+578447,2021-02-03 18:00:00,2021,370,375,Fulham,Leicester City,0.0,2.0,post
+578446,2021-02-03 19:30:00,2021,357,368,Leeds United,Everton,1.0,2.0,post
+578450,2021-02-03 20:15:00,2021,362,371,Aston Villa,West Ham United,1.0,3.0,post
+578441,2021-02-03 20:15:00,2021,364,331,Liverpool,Brighton & Hove Albion,0.0,1.0,post
+578442,2021-02-04 20:00:00,2021,367,363,Tottenham Hotspur,Chelsea,0.0,1.0,post
+578431,2021-02-06 12:30:00,2021,362,359,Aston Villa,Arsenal,1.0,0.0,post
+578432,2021-02-06 15:00:00,2021,379,331,Burnley,Brighton & Hove Albion,1.0,1.0,post
+578438,2021-02-06 15:00:00,2021,361,376,Newcastle United,Southampton,3.0,2.0,post
+578440,2021-02-06 17:30:00,2021,370,371,Fulham,West Ham United,0.0,0.0,post
+578435,2021-02-06 20:00:00,2021,360,368,Manchester United,Everton,3.0,3.0,post
+578439,2021-02-07 12:00:00,2021,367,383,Tottenham Hotspur,West Bromwich Albion,2.0,0.0,post
+578436,2021-02-07 14:00:00,2021,380,375,Wolverhampton Wanderers,Leicester City,0.0,0.0,post
+578437,2021-02-07 16:30:00,2021,364,382,Liverpool,Manchester City,1.0,4.0,post
+578433,2021-02-07 19:15:00,2021,398,363,Sheffield United,Chelsea,1.0,2.0,post
+578434,2021-02-08 20:00:00,2021,357,384,Leeds United,Crystal Palace,2.0,0.0,post
+578425,2021-02-13 12:30:00,2021,375,364,Leicester City,Liverpool,3.0,1.0,post
+578422,2021-02-13 15:00:00,2021,384,379,Crystal Palace,Burnley,0.0,3.0,post
+578429,2021-02-13 17:30:00,2021,382,367,Manchester City,Tottenham Hotspur,3.0,0.0,post
+578421,2021-02-13 20:00:00,2021,331,362,Brighton & Hove Albion,Aston Villa,0.0,0.0,post
+578430,2021-02-14 12:00:00,2021,376,380,Southampton,Wolverhampton Wanderers,1.0,2.0,post
+578426,2021-02-14 14:00:00,2021,383,360,West Bromwich Albion,Manchester United,1.0,1.0,post
+578424,2021-02-14 16:30:00,2021,359,357,Arsenal,Leeds United,4.0,2.0,post
+578423,2021-02-14 19:00:00,2021,368,370,Everton,Fulham,0.0,2.0,post
+578428,2021-02-15 18:00:00,2021,371,398,West Ham United,Sheffield United,3.0,0.0,post
+578427,2021-02-15 20:00:00,2021,363,361,Chelsea,Newcastle United,2.0,0.0,post
+578493,2021-02-17 18:00:00,2021,379,370,Burnley,Fulham,1.0,1.0,post
+578507,2021-02-17 20:15:00,2021,368,382,Everton,Manchester City,1.0,3.0,post
+578414,2021-02-19 20:00:00,2021,380,357,Wolverhampton Wanderers,Leeds United,1.0,0.0,post
+578411,2021-02-20 12:30:00,2021,376,363,Southampton,Chelsea,1.0,1.0,post
+578420,2021-02-20 15:00:00,2021,379,383,Burnley,West Bromwich Albion,0.0,0.0,post
+578413,2021-02-20 17:30:00,2021,364,368,Liverpool,Everton,0.0,2.0,post
+578418,2021-02-20 20:00:00,2021,370,398,Fulham,Sheffield United,1.0,0.0,post
+578419,2021-02-21 12:00:00,2021,371,367,West Ham United,Tottenham Hotspur,2.0,1.0,post
+578415,2021-02-21 14:05:00,2021,362,375,Aston Villa,Leicester City,1.0,2.0,post
+578416,2021-02-21 16:30:00,2021,359,382,Arsenal,Manchester City,0.0,1.0,post
+578417,2021-02-21 19:00:00,2021,360,361,Manchester United,Newcastle United,3.0,1.0,post
+578412,2021-02-22 20:00:00,2021,331,384,Brighton & Hove Albion,Crystal Palace,1.0,2.0,post
+578488,2021-02-23 18:00:00,2021,357,376,Leeds United,Southampton,3.0,0.0,post
+578409,2021-02-27 12:30:00,2021,382,371,Manchester City,West Ham United,2.0,1.0,post
+578403,2021-02-27 15:00:00,2021,383,331,West Bromwich Albion,Brighton & Hove Albion,1.0,0.0,post
+578402,2021-02-27 17:30:00,2021,357,362,Leeds United,Aston Villa,0.0,1.0,post
+578410,2021-02-27 20:00:00,2021,361,380,Newcastle United,Wolverhampton Wanderers,1.0,1.0,post
+578401,2021-02-28 12:00:00,2021,375,359,Leicester City,Arsenal,1.0,3.0,post
+578405,2021-02-28 12:00:00,2021,384,370,Crystal Palace,Fulham,0.0,0.0,post
+578404,2021-02-28 14:00:00,2021,367,379,Tottenham Hotspur,Burnley,4.0,0.0,post
+578407,2021-02-28 16:30:00,2021,363,360,Chelsea,Manchester United,0.0,0.0,post
+578406,2021-02-28 19:15:00,2021,398,364,Sheffield United,Liverpool,0.0,2.0,post
+578408,2021-03-01 20:00:00,2021,368,376,Everton,Southampton,1.0,0.0,post
+578380,2021-03-02 20:00:00,2021,382,380,Manchester City,Wolverhampton Wanderers,4.0,1.0,post
+578376,2021-03-03 18:00:00,2021,379,375,Burnley,Leicester City,1.0,1.0,post
+578372,2021-03-03 18:00:00,2021,398,362,Sheffield United,Aston Villa,1.0,0.0,post
+578377,2021-03-03 20:15:00,2021,384,360,Crystal Palace,Manchester United,0.0,0.0,post
+578374,2021-03-04 18:00:00,2021,383,368,West Bromwich Albion,Everton,0.0,1.0,post
+578339,2021-03-04 18:00:00,2021,370,367,Fulham,Tottenham Hotspur,0.0,1.0,post
+578373,2021-03-04 20:15:00,2021,364,363,Liverpool,Chelsea,0.0,1.0,post
+578391,2021-03-06 12:30:00,2021,379,359,Burnley,Arsenal,1.0,1.0,post
+578399,2021-03-06 15:00:00,2021,398,376,Sheffield United,Southampton,0.0,2.0,post
+578400,2021-03-06 17:30:00,2021,362,380,Aston Villa,Wolverhampton Wanderers,0.0,0.0,post
+578396,2021-03-06 20:00:00,2021,331,375,Brighton & Hove Albion,Leicester City,1.0,2.0,post
+578398,2021-03-07 12:00:00,2021,383,361,West Bromwich Albion,Newcastle United,0.0,0.0,post
+578394,2021-03-07 14:00:00,2021,364,370,Liverpool,Fulham,0.0,1.0,post
+578397,2021-03-07 16:30:00,2021,382,360,Manchester City,Manchester United,0.0,2.0,post
+578392,2021-03-07 19:15:00,2021,367,384,Tottenham Hotspur,Crystal Palace,4.0,1.0,post
+578393,2021-03-08 18:00:00,2021,363,368,Chelsea,Everton,2.0,0.0,post
+578395,2021-03-08 20:00:00,2021,371,357,West Ham United,Leeds United,2.0,0.0,post
+578338,2021-03-10 18:00:00,2021,382,376,Manchester City,Southampton,5.0,2.0,post
+578381,2021-03-12 20:00:00,2021,361,362,Newcastle United,Aston Villa,1.0,1.0,post
+578384,2021-03-13 12:30:00,2021,357,363,Leeds United,Chelsea,0.0,0.0,post
+578389,2021-03-13 15:00:00,2021,384,383,Crystal Palace,West Bromwich Albion,1.0,0.0,post
+578383,2021-03-13 17:30:00,2021,368,379,Everton,Burnley,1.0,2.0,post
+578386,2021-03-13 20:00:00,2021,370,382,Fulham,Manchester City,0.0,3.0,post
+578382,2021-03-14 12:00:00,2021,376,331,Southampton,Brighton & Hove Albion,1.0,2.0,post
+578387,2021-03-14 14:00:00,2021,375,398,Leicester City,Sheffield United,5.0,0.0,post
+578388,2021-03-14 16:30:00,2021,359,367,Arsenal,Tottenham Hotspur,2.0,1.0,post
+578390,2021-03-14 19:15:00,2021,360,371,Manchester United,West Ham United,1.0,0.0,post
+578385,2021-03-15 20:00:00,2021,380,364,Wolverhampton Wanderers,Liverpool,0.0,1.0,post
+578375,2021-03-19 20:00:00,2021,370,357,Fulham,Leeds United,1.0,2.0,post
+578378,2021-03-20 20:00:00,2021,331,361,Brighton & Hove Albion,Newcastle United,3.0,0.0,post
+578371,2021-03-21 15:00:00,2021,371,359,West Ham United,Arsenal,3.0,3.0,post
+578489,2021-03-21 19:30:00,2021,362,367,Aston Villa,Tottenham Hotspur,0.0,2.0,post
+578369,2021-04-03 12:30:00,2021,363,383,Chelsea,West Bromwich Albion,2.0,5.0,post
+578367,2021-04-03 15:00:00,2021,357,398,Leeds United,Sheffield United,2.0,1.0,post
+578366,2021-04-03 17:30:00,2021,375,382,Leicester City,Manchester City,0.0,2.0,post
+578365,2021-04-03 20:00:00,2021,359,364,Arsenal,Liverpool,0.0,3.0,post
+578362,2021-04-04 12:00:00,2021,376,379,Southampton,Burnley,3.0,2.0,post
+578368,2021-04-04 14:05:00,2021,361,367,Newcastle United,Tottenham Hotspur,2.0,2.0,post
+578364,2021-04-04 16:30:00,2021,362,370,Aston Villa,Fulham,3.0,1.0,post
+578361,2021-04-04 19:30:00,2021,360,331,Manchester United,Brighton & Hove Albion,2.0,1.0,post
+578363,2021-04-05 18:00:00,2021,368,384,Everton,Crystal Palace,1.0,1.0,post
+578370,2021-04-05 20:15:00,2021,380,371,Wolverhampton Wanderers,West Ham United,2.0,3.0,post
+578360,2021-04-09 20:00:00,2021,370,380,Fulham,Wolverhampton Wanderers,0.0,1.0,post
+578355,2021-04-10 12:30:00,2021,382,357,Manchester City,Leeds United,1.0,2.0,post
+578352,2021-04-10 15:00:00,2021,364,362,Liverpool,Aston Villa,2.0,1.0,post
+578353,2021-04-10 17:30:00,2021,384,363,Crystal Palace,Chelsea,1.0,4.0,post
+578358,2021-04-11 12:00:00,2021,379,361,Burnley,Newcastle United,1.0,2.0,post
+578356,2021-04-11 14:05:00,2021,371,375,West Ham United,Leicester City,3.0,2.0,post
+578357,2021-04-11 16:30:00,2021,367,360,Tottenham Hotspur,Manchester United,1.0,3.0,post
+578351,2021-04-11 19:00:00,2021,398,359,Sheffield United,Arsenal,0.0,3.0,post
+578359,2021-04-12 18:00:00,2021,383,376,West Bromwich Albion,Southampton,3.0,0.0,post
+578354,2021-04-12 20:15:00,2021,331,368,Brighton & Hove Albion,Everton,0.0,0.0,post
+578348,2021-04-16 20:00:00,2021,368,367,Everton,Tottenham Hotspur,2.0,2.0,post
+578350,2021-04-17 12:30:00,2021,361,371,Newcastle United,West Ham United,3.0,2.0,post
+578347,2021-04-17 20:15:00,2021,380,398,Wolverhampton Wanderers,Sheffield United,1.0,0.0,post
+578344,2021-04-18 13:30:00,2021,359,370,Arsenal,Fulham,1.0,1.0,post
+578342,2021-04-18 16:00:00,2021,360,379,Manchester United,Burnley,3.0,1.0,post
+578345,2021-04-19 20:00:00,2021,357,364,Leeds United,Liverpool,1.0,1.0,post
+578341,2021-04-20 20:15:00,2021,363,331,Chelsea,Brighton & Hove Albion,0.0,0.0,post
+578379,2021-04-21 18:00:00,2021,367,376,Tottenham Hotspur,Southampton,2.0,1.0,post
+578346,2021-04-21 20:15:00,2021,362,382,Aston Villa,Manchester City,1.0,2.0,post
+578349,2021-04-22 20:00:00,2021,375,383,Leicester City,West Bromwich Albion,3.0,0.0,post
+578335,2021-04-23 20:00:00,2021,359,368,Arsenal,Everton,0.0,1.0,post
+578337,2021-04-24 12:30:00,2021,364,361,Liverpool,Newcastle United,1.0,1.0,post
+578333,2021-04-24 17:30:00,2021,371,363,West Ham United,Chelsea,0.0,1.0,post
+578331,2021-04-24 20:00:00,2021,398,331,Sheffield United,Brighton & Hove Albion,1.0,0.0,post
+578332,2021-04-25 12:00:00,2021,380,379,Wolverhampton Wanderers,Burnley,0.0,4.0,post
+578336,2021-04-25 14:00:00,2021,357,360,Leeds United,Manchester United,0.0,0.0,post
+578340,2021-04-25 19:00:00,2021,362,383,Aston Villa,West Bromwich Albion,2.0,2.0,post
+578334,2021-04-26 20:00:00,2021,375,384,Leicester City,Crystal Palace,2.0,1.0,post
+578325,2021-04-30 20:00:00,2021,376,375,Southampton,Leicester City,1.0,1.0,post
+578327,2021-05-01 12:30:00,2021,384,382,Crystal Palace,Manchester City,0.0,2.0,post
+578324,2021-05-01 15:00:00,2021,331,357,Brighton & Hove Albion,Leeds United,2.0,0.0,post
+578323,2021-05-01 17:30:00,2021,363,370,Chelsea,Fulham,2.0,0.0,post
+578322,2021-05-01 20:00:00,2021,368,362,Everton,Aston Villa,1.0,2.0,post
+578321,2021-05-02 14:00:00,2021,361,359,Newcastle United,Arsenal,0.0,2.0,post
+578328,2021-05-02 19:15:00,2021,367,398,Tottenham Hotspur,Sheffield United,4.0,0.0,post
+578330,2021-05-03 18:00:00,2021,383,380,West Bromwich Albion,Wolverhampton Wanderers,1.0,1.0,post
+578329,2021-05-03 20:15:00,2021,379,371,Burnley,West Ham United,1.0,2.0,post
+578317,2021-05-07 20:00:00,2021,375,361,Leicester City,Newcastle United,2.0,4.0,post
+578319,2021-05-08 12:30:00,2021,357,367,Leeds United,Tottenham Hotspur,3.0,1.0,post
+578314,2021-05-08 15:00:00,2021,398,384,Sheffield United,Crystal Palace,0.0,2.0,post
+578313,2021-05-08 17:30:00,2021,382,363,Manchester City,Chelsea,1.0,2.0,post
+578318,2021-05-08 20:15:00,2021,364,376,Liverpool,Southampton,2.0,0.0,post
+578311,2021-05-09 12:00:00,2021,380,331,Wolverhampton Wanderers,Brighton & Hove Albion,2.0,1.0,post
+578316,2021-05-09 14:05:00,2021,362,360,Aston Villa,Manchester United,1.0,3.0,post
+578315,2021-05-09 16:30:00,2021,371,368,West Ham United,Everton,0.0,1.0,post
+578320,2021-05-09 19:00:00,2021,359,383,Arsenal,West Bromwich Albion,3.0,1.0,post
+578312,2021-05-10 20:00:00,2021,370,379,Fulham,Burnley,0.0,2.0,post
+578306,2021-05-11 18:00:00,2021,360,375,Manchester United,Leicester City,1.0,2.0,post
+578343,2021-05-11 20:15:00,2021,376,384,Southampton,Crystal Palace,3.0,1.0,post
+578302,2021-05-12 20:15:00,2021,363,359,Chelsea,Arsenal,0.0,1.0,post
+578475,2021-05-13 18:00:00,2021,362,368,Aston Villa,Everton,0.0,0.0,post
+578326,2021-05-13 20:15:00,2021,360,364,Manchester United,Liverpool,2.0,4.0,post
+578304,2021-05-14 20:00:00,2021,361,382,Newcastle United,Manchester City,3.0,4.0,post
+578308,2021-05-15 12:30:00,2021,379,357,Burnley,Leeds United,0.0,4.0,post
+578303,2021-05-15 15:00:00,2021,376,370,Southampton,Fulham,3.0,1.0,post
+578310,2021-05-15 20:00:00,2021,331,371,Brighton & Hove Albion,West Ham United,1.0,1.0,post
+578301,2021-05-16 12:00:00,2021,384,362,Crystal Palace,Aston Villa,3.0,2.0,post
+578305,2021-05-16 14:05:00,2021,367,380,Tottenham Hotspur,Wolverhampton Wanderers,2.0,0.0,post
+578307,2021-05-16 16:30:00,2021,383,364,West Bromwich Albion,Liverpool,1.0,2.0,post
+578309,2021-05-16 19:00:00,2021,368,398,Everton,Sheffield United,0.0,1.0,post
+578293,2021-05-18 18:00:00,2021,360,370,Manchester United,Fulham,1.0,1.0,post
+578294,2021-05-18 18:00:00,2021,376,357,Southampton,Leeds United,0.0,2.0,post
+578297,2021-05-18 19:00:00,2021,331,382,Brighton & Hove Albion,Manchester City,3.0,2.0,post
+578295,2021-05-18 20:15:00,2021,363,375,Chelsea,Leicester City,2.0,1.0,post
+578292,2021-05-19 18:00:00,2021,367,362,Tottenham Hotspur,Aston Villa,1.0,2.0,post
+578298,2021-05-19 18:00:00,2021,361,398,Newcastle United,Sheffield United,1.0,0.0,post
+578300,2021-05-19 18:00:00,2021,368,380,Everton,Wolverhampton Wanderers,1.0,0.0,post
+578291,2021-05-19 19:00:00,2021,384,359,Crystal Palace,Arsenal,1.0,3.0,post
+578296,2021-05-19 20:15:00,2021,379,364,Burnley,Liverpool,0.0,3.0,post
+578299,2021-05-19 20:15:00,2021,383,371,West Bromwich Albion,West Ham United,1.0,3.0,post
+578286,2021-05-23 16:00:00,2021,380,360,Wolverhampton Wanderers,Manchester United,1.0,2.0,post
+578288,2021-05-23 16:00:00,2021,371,376,West Ham United,Southampton,3.0,0.0,post
+578282,2021-05-23 16:00:00,2021,398,379,Sheffield United,Burnley,1.0,0.0,post
+578285,2021-05-23 16:00:00,2021,382,368,Manchester City,Everton,5.0,0.0,post
+578284,2021-05-23 16:00:00,2021,364,384,Liverpool,Crystal Palace,2.0,0.0,post
+578281,2021-05-23 16:00:00,2021,359,331,Arsenal,Brighton & Hove Albion,2.0,0.0,post
+578290,2021-05-23 16:00:00,2021,357,383,Leeds United,West Bromwich Albion,3.0,1.0,post
+578287,2021-05-23 16:00:00,2021,370,361,Fulham,Newcastle United,0.0,2.0,post
+578283,2021-05-23 16:00:00,2021,362,363,Aston Villa,Chelsea,2.0,1.0,post
+578289,2021-05-23 16:00:00,2021,375,367,Leicester City,Tottenham Hotspur,2.0,4.0,post
+606029,2021-08-13 20:00:00,2021,337,359,Brentford,Arsenal,2.0,0.0,post
+606033,2021-08-14 12:30:00,2021,360,357,Manchester United,Leeds United,5.0,1.0,post
+606030,2021-08-14 15:00:00,2021,395,362,Watford,Aston Villa,3.0,2.0,post
+606038,2021-08-14 15:00:00,2021,375,380,Leicester City,Wolverhampton Wanderers,1.0,0.0,post
+606036,2021-08-14 15:00:00,2021,368,376,Everton,Southampton,3.0,1.0,post
+606032,2021-08-14 15:00:00,2021,363,384,Chelsea,Crystal Palace,3.0,0.0,post
+606031,2021-08-14 15:00:00,2021,379,331,Burnley,Brighton & Hove Albion,1.0,2.0,post
+606034,2021-08-14 17:30:00,2021,381,364,Norwich City,Liverpool,0.0,3.0,post
+606037,2021-08-15 14:00:00,2021,361,371,Newcastle United,West Ham United,2.0,4.0,post
+606035,2021-08-15 16:30:00,2021,367,382,Tottenham Hotspur,Manchester City,1.0,0.0,post
+606020,2021-08-21 12:30:00,2021,364,379,Liverpool,Burnley,2.0,0.0,post
+606026,2021-08-21 15:00:00,2021,382,381,Manchester City,Norwich City,5.0,0.0,post
+606022,2021-08-21 15:00:00,2021,357,368,Leeds United,Everton,2.0,2.0,post
+606019,2021-08-21 15:00:00,2021,384,337,Crystal Palace,Brentford,0.0,0.0,post
+606025,2021-08-21 15:00:00,2021,362,361,Aston Villa,Newcastle United,2.0,0.0,post
+606028,2021-08-21 17:30:00,2021,331,395,Brighton & Hove Albion,Watford,2.0,0.0,post
+606024,2021-08-22 14:00:00,2021,376,360,Southampton,Manchester United,1.0,1.0,post
+606027,2021-08-22 14:00:00,2021,380,367,Wolverhampton Wanderers,Tottenham Hotspur,0.0,1.0,post
+606021,2021-08-22 16:30:00,2021,359,363,Arsenal,Chelsea,0.0,2.0,post
+606023,2021-08-23 20:00:00,2021,371,375,West Ham United,Leicester City,4.0,1.0,post
+606009,2021-08-28 12:30:00,2021,382,359,Manchester City,Arsenal,5.0,0.0,post
+606010,2021-08-28 15:00:00,2021,362,337,Aston Villa,Brentford,1.0,1.0,post
+606013,2021-08-28 15:00:00,2021,331,368,Brighton & Hove Albion,Everton,0.0,2.0,post
+606017,2021-08-28 15:00:00,2021,361,376,Newcastle United,Southampton,2.0,2.0,post
+606015,2021-08-28 15:00:00,2021,381,375,Norwich City,Leicester City,1.0,2.0,post
+606012,2021-08-28 15:00:00,2021,371,384,West Ham United,Crystal Palace,2.0,2.0,post
+606011,2021-08-28 17:30:00,2021,364,363,Liverpool,Chelsea,1.0,1.0,post
+606014,2021-08-29 14:00:00,2021,379,357,Burnley,Leeds United,1.0,1.0,post
+606018,2021-08-29 14:00:00,2021,367,395,Tottenham Hotspur,Watford,1.0,0.0,post
+606016,2021-08-29 16:30:00,2021,380,360,Wolverhampton Wanderers,Manchester United,0.0,1.0,post
+606006,2021-09-11 12:30:00,2021,384,367,Crystal Palace,Tottenham Hotspur,3.0,0.0,post
+606005,2021-09-11 15:00:00,2021,359,381,Arsenal,Norwich City,1.0,0.0,post
+606000,2021-09-11 15:00:00,2021,337,331,Brentford,Brighton & Hove Albion,0.0,1.0,post
+606003,2021-09-11 15:00:00,2021,375,382,Leicester City,Manchester City,0.0,1.0,post
+606004,2021-09-11 15:00:00,2021,360,361,Manchester United,Newcastle United,4.0,1.0,post
+606007,2021-09-11 15:00:00,2021,376,371,Southampton,West Ham United,0.0,0.0,post
+606008,2021-09-11 15:00:00,2021,395,380,Watford,Wolverhampton Wanderers,0.0,2.0,post
+605999,2021-09-11 17:30:00,2021,363,362,Chelsea,Aston Villa,3.0,0.0,post
+606002,2021-09-12 16:30:00,2021,357,364,Leeds United,Liverpool,0.0,3.0,post
+606001,2021-09-13 20:00:00,2021,368,379,Everton,Burnley,3.0,1.0,post
+605994,2021-09-17 20:00:00,2021,361,357,Newcastle United,Leeds United,1.0,1.0,post
+605990,2021-09-18 12:30:00,2021,380,337,Wolverhampton Wanderers,Brentford,0.0,2.0,post
+605989,2021-09-18 15:00:00,2021,379,359,Burnley,Arsenal,0.0,1.0,post
+605992,2021-09-18 15:00:00,2021,364,384,Liverpool,Crystal Palace,3.0,0.0,post
+605997,2021-09-18 15:00:00,2021,382,376,Manchester City,Southampton,0.0,0.0,post
+605998,2021-09-18 15:00:00,2021,381,395,Norwich City,Watford,1.0,3.0,post
+605993,2021-09-18 17:30:00,2021,362,368,Aston Villa,Everton,3.0,0.0,post
+605995,2021-09-19 14:00:00,2021,331,375,Brighton & Hove Albion,Leicester City,2.0,1.0,post
+605996,2021-09-19 14:00:00,2021,371,360,West Ham United,Manchester United,1.0,2.0,post
+605991,2021-09-19 16:30:00,2021,367,363,Tottenham Hotspur,Chelsea,0.0,3.0,post
+605983,2021-09-25 12:30:00,2021,363,382,Chelsea,Manchester City,0.0,1.0,post
+605979,2021-09-25 12:30:00,2021,360,362,Manchester United,Aston Villa,0.0,1.0,post
+605985,2021-09-25 15:00:00,2021,368,381,Everton,Norwich City,2.0,0.0,post
+605987,2021-09-25 15:00:00,2021,357,371,Leeds United,West Ham United,1.0,2.0,post
+605981,2021-09-25 15:00:00,2021,375,379,Leicester City,Burnley,2.0,2.0,post
+605984,2021-09-25 15:00:00,2021,395,361,Watford,Newcastle United,1.0,1.0,post
+605982,2021-09-25 17:30:00,2021,337,364,Brentford,Liverpool,3.0,3.0,post
+605988,2021-09-26 14:00:00,2021,376,380,Southampton,Wolverhampton Wanderers,0.0,1.0,post
+605986,2021-09-26 16:30:00,2021,359,367,Arsenal,Tottenham Hotspur,3.0,1.0,post
+605980,2021-09-27 20:00:00,2021,384,331,Crystal Palace,Brighton & Hove Albion,1.0,1.0,post
+605972,2021-10-02 12:30:00,2021,360,368,Manchester United,Everton,1.0,1.0,post
+605975,2021-10-02 15:00:00,2021,380,361,Wolverhampton Wanderers,Newcastle United,2.0,1.0,post
+605978,2021-10-02 15:00:00,2021,357,395,Leeds United,Watford,1.0,0.0,post
+605976,2021-10-02 15:00:00,2021,379,381,Burnley,Norwich City,0.0,0.0,post
+605977,2021-10-02 15:00:00,2021,363,376,Chelsea,Southampton,3.0,1.0,post
+605969,2021-10-02 17:30:00,2021,331,359,Brighton & Hove Albion,Arsenal,0.0,0.0,post
+605973,2021-10-03 14:00:00,2021,384,375,Crystal Palace,Leicester City,2.0,2.0,post
+605970,2021-10-03 14:00:00,2021,367,362,Tottenham Hotspur,Aston Villa,2.0,1.0,post
+605971,2021-10-03 14:00:00,2021,371,337,West Ham United,Brentford,1.0,2.0,post
+605974,2021-10-03 16:30:00,2021,364,382,Liverpool,Manchester City,2.0,2.0,post
+605964,2021-10-16 12:30:00,2021,395,364,Watford,Liverpool,0.0,5.0,post
+605963,2021-10-16 15:00:00,2021,376,357,Southampton,Leeds United,1.0,0.0,post
+605959,2021-10-16 15:00:00,2021,381,331,Norwich City,Brighton & Hove Albion,0.0,0.0,post
+605965,2021-10-16 15:00:00,2021,375,360,Leicester City,Manchester United,4.0,2.0,post
+605968,2021-10-16 15:00:00,2021,362,380,Aston Villa,Wolverhampton Wanderers,2.0,3.0,post
+605960,2021-10-16 15:00:00,2021,382,379,Manchester City,Burnley,2.0,0.0,post
+605961,2021-10-16 17:30:00,2021,337,363,Brentford,Chelsea,0.0,1.0,post
+605967,2021-10-17 14:00:00,2021,368,371,Everton,West Ham United,0.0,1.0,post
+605966,2021-10-17 16:30:00,2021,361,367,Newcastle United,Tottenham Hotspur,2.0,3.0,post
+605962,2021-10-18 20:00:00,2021,359,384,Arsenal,Crystal Palace,2.0,2.0,post
+605949,2021-10-22 20:00:00,2021,359,362,Arsenal,Aston Villa,3.0,1.0,post
+605955,2021-10-23 12:30:00,2021,363,381,Chelsea,Norwich City,7.0,0.0,post
+605954,2021-10-23 15:00:00,2021,384,361,Crystal Palace,Newcastle United,1.0,1.0,post
+605957,2021-10-23 15:00:00,2021,368,395,Everton,Watford,2.0,5.0,post
+605958,2021-10-23 15:00:00,2021,357,380,Leeds United,Wolverhampton Wanderers,1.0,1.0,post
+605950,2021-10-23 15:00:00,2021,376,379,Southampton,Burnley,2.0,2.0,post
+605953,2021-10-23 17:30:00,2021,331,382,Brighton & Hove Albion,Manchester City,1.0,4.0,post
+605951,2021-10-24 14:00:00,2021,337,375,Brentford,Leicester City,1.0,2.0,post
+605956,2021-10-24 14:00:00,2021,371,367,West Ham United,Tottenham Hotspur,1.0,0.0,post
+605952,2021-10-24 16:30:00,2021,360,364,Manchester United,Liverpool,0.0,5.0,post
+605939,2021-10-30 12:30:00,2021,375,359,Leicester City,Arsenal,0.0,2.0,post
+605940,2021-10-30 15:00:00,2021,379,337,Burnley,Brentford,3.0,1.0,post
+605941,2021-10-30 15:00:00,2021,364,331,Liverpool,Brighton & Hove Albion,2.0,2.0,post
+605943,2021-10-30 15:00:00,2021,382,384,Manchester City,Crystal Palace,0.0,2.0,post
+605942,2021-10-30 15:00:00,2021,361,363,Newcastle United,Chelsea,0.0,3.0,post
+605947,2021-10-30 15:00:00,2021,395,376,Watford,Southampton,0.0,1.0,post
+605946,2021-10-30 17:30:00,2021,367,360,Tottenham Hotspur,Manchester United,0.0,3.0,post
+605945,2021-10-31 14:00:00,2021,381,357,Norwich City,Leeds United,1.0,2.0,post
+605948,2021-10-31 16:30:00,2021,362,371,Aston Villa,West Ham United,1.0,4.0,post
+605944,2021-11-01 20:00:00,2021,380,368,Wolverhampton Wanderers,Everton,2.0,1.0,post
+605929,2021-11-05 20:00:00,2021,376,362,Southampton,Aston Villa,1.0,0.0,post
+605933,2021-11-06 12:30:00,2021,360,382,Manchester United,Manchester City,0.0,2.0,post
+605935,2021-11-06 15:00:00,2021,337,381,Brentford,Norwich City,1.0,2.0,post
+605930,2021-11-06 15:00:00,2021,363,379,Chelsea,Burnley,1.0,1.0,post
+605938,2021-11-06 15:00:00,2021,384,380,Crystal Palace,Wolverhampton Wanderers,2.0,0.0,post
+605934,2021-11-06 17:30:00,2021,331,361,Brighton & Hove Albion,Newcastle United,1.0,1.0,post
+605936,2021-11-07 14:00:00,2021,368,367,Everton,Tottenham Hotspur,0.0,0.0,post
+605931,2021-11-07 14:00:00,2021,357,375,Leeds United,Leicester City,1.0,1.0,post
+605937,2021-11-07 14:00:00,2021,359,395,Arsenal,Watford,1.0,0.0,post
+605932,2021-11-07 16:30:00,2021,371,364,West Ham United,Liverpool,3.0,2.0,post
+605922,2021-11-20 12:30:00,2021,375,363,Leicester City,Chelsea,0.0,3.0,post
+605926,2021-11-20 15:00:00,2021,395,360,Watford,Manchester United,4.0,1.0,post
+605921,2021-11-20 15:00:00,2021,362,331,Aston Villa,Brighton & Hove Albion,2.0,0.0,post
+605923,2021-11-20 15:00:00,2021,379,384,Burnley,Crystal Palace,3.0,3.0,post
+605920,2021-11-20 15:00:00,2021,361,337,Newcastle United,Brentford,3.0,3.0,post
+605927,2021-11-20 15:00:00,2021,381,376,Norwich City,Southampton,2.0,1.0,post
+605928,2021-11-20 15:00:00,2021,380,371,Wolverhampton Wanderers,West Ham United,1.0,0.0,post
+605919,2021-11-20 17:30:00,2021,364,359,Liverpool,Arsenal,4.0,0.0,post
+605924,2021-11-21 14:00:00,2021,382,368,Manchester City,Everton,3.0,0.0,post
+605925,2021-11-21 16:30:00,2021,367,357,Tottenham Hotspur,Leeds United,2.0,1.0,post
+605913,2021-11-27 12:30:00,2021,359,361,Arsenal,Newcastle United,2.0,0.0,post
+605909,2021-11-27 15:00:00,2021,384,362,Crystal Palace,Aston Villa,1.0,2.0,post
+605914,2021-11-27 15:00:00,2021,364,376,Liverpool,Southampton,4.0,0.0,post
+605918,2021-11-27 15:00:00,2021,381,380,Norwich City,Wolverhampton Wanderers,0.0,0.0,post
+605911,2021-11-27 17:30:00,2021,331,357,Brighton & Hove Albion,Leeds United,0.0,0.0,post
+605917,2021-11-28 14:00:00,2021,382,371,Manchester City,West Ham United,2.0,1.0,post
+605916,2021-11-28 14:00:00,2021,375,395,Leicester City,Watford,4.0,2.0,post
+605910,2021-11-28 14:00:00,2021,337,368,Brentford,Everton,1.0,0.0,post
+605912,2021-11-28 16:30:00,2021,363,360,Chelsea,Manchester United,1.0,1.0,post
+605901,2021-11-30 19:30:00,2021,361,381,Newcastle United,Norwich City,1.0,1.0,post
+605906,2021-11-30 20:15:00,2021,357,384,Leeds United,Crystal Palace,1.0,0.0,post
+605900,2021-12-01 19:30:00,2021,376,375,Southampton,Leicester City,2.0,2.0,post
+605905,2021-12-01 19:30:00,2021,395,363,Watford,Chelsea,1.0,2.0,post
+605903,2021-12-01 19:30:00,2021,371,331,West Ham United,Brighton & Hove Albion,1.0,1.0,post
+605904,2021-12-01 19:30:00,2021,380,379,Wolverhampton Wanderers,Burnley,0.0,0.0,post
+605907,2021-12-01 20:15:00,2021,368,364,Everton,Liverpool,1.0,4.0,post
+605908,2021-12-01 20:15:00,2021,362,382,Aston Villa,Manchester City,1.0,2.0,post
+605899,2021-12-02 19:30:00,2021,367,337,Tottenham Hotspur,Brentford,2.0,0.0,post
+605902,2021-12-02 20:15:00,2021,360,359,Manchester United,Arsenal,3.0,2.0,post
+605893,2021-12-04 12:30:00,2021,371,363,West Ham United,Chelsea,3.0,2.0,post
+605892,2021-12-04 15:00:00,2021,361,379,Newcastle United,Burnley,1.0,0.0,post
+605891,2021-12-04 15:00:00,2021,376,331,Southampton,Brighton & Hove Albion,1.0,1.0,post
+605896,2021-12-04 15:00:00,2021,380,364,Wolverhampton Wanderers,Liverpool,0.0,1.0,post
+605897,2021-12-04 17:30:00,2021,395,382,Watford,Manchester City,1.0,3.0,post
+605890,2021-12-05 14:00:00,2021,357,337,Leeds United,Brentford,2.0,2.0,post
+605894,2021-12-05 14:00:00,2021,360,384,Manchester United,Crystal Palace,1.0,0.0,post
+605898,2021-12-05 14:00:00,2021,367,381,Tottenham Hotspur,Norwich City,3.0,0.0,post
+605895,2021-12-05 16:30:00,2021,362,375,Aston Villa,Leicester City,2.0,1.0,post
+605889,2021-12-06 20:00:00,2021,368,359,Everton,Arsenal,2.0,1.0,post
+605886,2021-12-10 20:00:00,2021,337,395,Brentford,Watford,2.0,1.0,post
+605888,2021-12-11 12:30:00,2021,382,380,Manchester City,Wolverhampton Wanderers,1.0,0.0,post
+605881,2021-12-11 15:00:00,2021,363,357,Chelsea,Leeds United,3.0,2.0,post
+605879,2021-12-11 15:00:00,2021,364,362,Liverpool,Aston Villa,1.0,0.0,post
+605884,2021-12-11 15:00:00,2021,359,376,Arsenal,Southampton,3.0,0.0,post
+605882,2021-12-11 17:30:00,2021,381,360,Norwich City,Manchester United,0.0,1.0,post
+605887,2021-12-12 14:00:00,2021,379,371,Burnley,West Ham United,0.0,0.0,post
+605883,2021-12-12 14:00:00,2021,375,361,Leicester City,Newcastle United,4.0,0.0,post
+605880,2021-12-12 16:30:00,2021,384,368,Crystal Palace,Everton,3.0,1.0,post
+605873,2021-12-14 19:45:00,2021,381,362,Norwich City,Aston Villa,0.0,2.0,post
+605870,2021-12-14 20:00:00,2021,382,357,Manchester City,Leeds United,7.0,0.0,post
+605872,2021-12-15 19:30:00,2021,384,376,Crystal Palace,Southampton,2.0,2.0,post
+605878,2021-12-15 19:30:00,2021,331,380,Brighton & Hove Albion,Wolverhampton Wanderers,0.0,1.0,post
+605877,2021-12-15 20:00:00,2021,359,371,Arsenal,West Ham United,2.0,0.0,post
+605869,2021-12-16 19:45:00,2021,363,368,Chelsea,Everton,1.0,1.0,post
+605871,2021-12-16 20:00:00,2021,364,361,Liverpool,Newcastle United,3.0,1.0,post
+605859,2021-12-18 17:30:00,2021,357,359,Leeds United,Arsenal,1.0,4.0,post
+605867,2021-12-19 14:00:00,2021,361,382,Newcastle United,Manchester City,0.0,4.0,post
+605863,2021-12-19 14:00:00,2021,380,363,Wolverhampton Wanderers,Chelsea,0.0,0.0,post
+605866,2021-12-19 16:30:00,2021,367,364,Tottenham Hotspur,Liverpool,2.0,2.0,post
+605857,2021-12-26 15:00:00,2021,371,376,West Ham United,Southampton,2.0,3.0,post
+605852,2021-12-26 15:00:00,2021,367,384,Tottenham Hotspur,Crystal Palace,3.0,0.0,post
+605855,2021-12-26 15:00:00,2021,382,375,Manchester City,Leicester City,6.0,3.0,post
+605849,2021-12-26 15:00:00,2021,381,359,Norwich City,Arsenal,0.0,5.0,post
+605851,2021-12-26 17:30:00,2021,362,363,Aston Villa,Chelsea,1.0,3.0,post
+605850,2021-12-26 20:00:00,2021,331,337,Brighton & Hove Albion,Brentford,2.0,0.0,post
+605856,2021-12-27 20:00:00,2021,361,360,Newcastle United,Manchester United,1.0,1.0,post
+605845,2021-12-28 15:00:00,2021,384,381,Crystal Palace,Norwich City,3.0,0.0,post
+605846,2021-12-28 15:00:00,2021,376,367,Southampton,Tottenham Hotspur,1.0,1.0,post
+605847,2021-12-28 15:00:00,2021,395,371,Watford,West Ham United,1.0,4.0,post
+605842,2021-12-28 20:00:00,2021,375,364,Leicester City,Liverpool,1.0,0.0,post
+605840,2021-12-29 19:30:00,2021,363,331,Chelsea,Brighton & Hove Albion,1.0,1.0,post
+605843,2021-12-29 20:15:00,2021,337,382,Brentford,Manchester City,0.0,1.0,post
+605841,2021-12-30 20:15:00,2021,360,379,Manchester United,Burnley,3.0,1.0,post
+605833,2022-01-01 12:30:00,2022,359,382,Arsenal,Manchester City,1.0,2.0,post
+605836,2022-01-01 15:00:00,2022,395,367,Watford,Tottenham Hotspur,0.0,1.0,post
+605837,2022-01-01 17:30:00,2022,384,371,Crystal Palace,West Ham United,2.0,3.0,post
+605831,2022-01-02 14:00:00,2022,357,379,Leeds United,Burnley,3.0,1.0,post
+605830,2022-01-02 14:00:00,2022,368,331,Everton,Brighton & Hove Albion,2.0,3.0,post
+605829,2022-01-02 14:00:00,2022,337,362,Brentford,Aston Villa,2.0,1.0,post
+605832,2022-01-02 16:30:00,2022,363,364,Chelsea,Liverpool,2.0,2.0,post
+605838,2022-01-03 17:30:00,2022,360,380,Manchester United,Wolverhampton Wanderers,0.0,1.0,post
+605860,2022-01-11 19:45:00,2022,376,337,Southampton,Brentford,4.0,1.0,post
+605868,2022-01-12 19:45:00,2022,371,381,West Ham United,Norwich City,2.0,0.0,post
+605822,2022-01-14 20:00:00,2022,331,384,Brighton & Hove Albion,Crystal Palace,1.0,1.0,post
+605821,2022-01-15 12:30:00,2022,382,363,Manchester City,Chelsea,1.0,0.0,post
+605827,2022-01-15 15:00:00,2022,380,376,Wolverhampton Wanderers,Southampton,3.0,1.0,post
+605823,2022-01-15 15:00:00,2022,381,368,Norwich City,Everton,2.0,1.0,post
+605828,2022-01-15 15:00:00,2022,361,395,Newcastle United,Watford,1.0,1.0,post
+605826,2022-01-15 17:30:00,2022,362,360,Aston Villa,Manchester United,2.0,2.0,post
+605820,2022-01-16 14:00:00,2022,364,337,Liverpool,Brentford,3.0,0.0,post
+605824,2022-01-16 14:00:00,2022,371,357,West Ham United,Leeds United,2.0,3.0,post
+605804,2022-01-18 20:00:00,2022,331,363,Brighton & Hove Albion,Chelsea,1.0,1.0,post
+605875,2022-01-19 19:30:00,2022,375,367,Leicester City,Tottenham Hotspur,2.0,3.0,post
+605874,2022-01-19 20:00:00,2022,337,360,Brentford,Manchester United,1.0,3.0,post
+605815,2022-01-21 20:00:00,2022,395,381,Watford,Norwich City,0.0,3.0,post
+605809,2022-01-22 12:30:00,2022,368,362,Everton,Aston Villa,0.0,1.0,post
+605817,2022-01-22 15:00:00,2022,360,371,Manchester United,West Ham United,1.0,0.0,post
+605818,2022-01-22 15:00:00,2022,337,380,Brentford,Wolverhampton Wanderers,1.0,2.0,post
+605814,2022-01-22 15:00:00,2022,357,361,Leeds United,Newcastle United,0.0,1.0,post
+605813,2022-01-22 17:30:00,2022,376,382,Southampton,Manchester City,1.0,1.0,post
+605811,2022-01-23 14:00:00,2022,359,379,Arsenal,Burnley,0.0,0.0,post
+605812,2022-01-23 14:00:00,2022,384,364,Crystal Palace,Liverpool,1.0,3.0,post
+605810,2022-01-23 14:00:00,2022,375,331,Leicester City,Brighton & Hove Albion,1.0,1.0,post
+605816,2022-01-23 16:30:00,2022,363,367,Chelsea,Tottenham Hotspur,2.0,0.0,post
+605876,2022-02-05 18:00:00,2022,379,395,Burnley,Watford,0.0,0.0,post
+605801,2022-02-08 19:45:00,2022,361,368,Newcastle United,Everton,3.0,1.0,post
+605808,2022-02-08 19:45:00,2022,371,395,West Ham United,Watford,1.0,0.0,post
+605807,2022-02-08 20:00:00,2022,379,360,Burnley,Manchester United,1.0,1.0,post
+605799,2022-02-09 19:45:00,2022,382,337,Manchester City,Brentford,2.0,0.0,post
+605805,2022-02-09 19:45:00,2022,381,384,Norwich City,Crystal Palace,1.0,1.0,post
+605802,2022-02-09 19:45:00,2022,367,376,Tottenham Hotspur,Southampton,2.0,3.0,post
+605806,2022-02-09 20:00:00,2022,362,357,Aston Villa,Leeds United,3.0,3.0,post
+605800,2022-02-10 19:45:00,2022,364,375,Liverpool,Leicester City,2.0,0.0,post
+605803,2022-02-10 19:45:00,2022,380,359,Wolverhampton Wanderers,Arsenal,0.0,1.0,post
+605796,2022-02-12 12:30:00,2022,360,376,Manchester United,Southampton,1.0,1.0,post
+605792,2022-02-12 15:00:00,2022,337,384,Brentford,Crystal Palace,0.0,0.0,post
+605793,2022-02-12 15:00:00,2022,368,357,Everton,Leeds United,3.0,0.0,post
+605791,2022-02-12 15:00:00,2022,395,331,Watford,Brighton & Hove Albion,0.0,2.0,post
+605795,2022-02-12 17:30:00,2022,381,382,Norwich City,Manchester City,0.0,4.0,post
+605794,2022-02-13 14:00:00,2022,379,364,Burnley,Liverpool,0.0,1.0,post
+605790,2022-02-13 14:00:00,2022,361,362,Newcastle United,Aston Villa,1.0,0.0,post
+605798,2022-02-13 14:00:00,2022,367,380,Tottenham Hotspur,Wolverhampton Wanderers,0.0,2.0,post
+605797,2022-02-13 16:30:00,2022,375,371,Leicester City,West Ham United,2.0,2.0,post
+605861,2022-02-15 20:15:00,2022,360,331,Manchester United,Brighton & Hove Albion,2.0,0.0,post
+605785,2022-02-19 12:30:00,2022,371,361,West Ham United,Newcastle United,1.0,1.0,post
+605779,2022-02-19 15:00:00,2022,359,337,Arsenal,Brentford,2.0,1.0,post
+605788,2022-02-19 15:00:00,2022,362,395,Aston Villa,Watford,0.0,1.0,post
+605780,2022-02-19 15:00:00,2022,331,379,Brighton & Hove Albion,Burnley,0.0,3.0,post
+605781,2022-02-19 15:00:00,2022,384,363,Crystal Palace,Chelsea,0.0,1.0,post
+605786,2022-02-19 15:00:00,2022,364,381,Liverpool,Norwich City,3.0,1.0,post
+605782,2022-02-19 15:00:00,2022,376,368,Southampton,Everton,2.0,0.0,post
+605787,2022-02-19 17:30:00,2022,382,367,Manchester City,Tottenham Hotspur,2.0,3.0,post
+605784,2022-02-20 14:00:00,2022,357,360,Leeds United,Manchester United,2.0,4.0,post
+605783,2022-02-20 16:30:00,2022,380,375,Wolverhampton Wanderers,Leicester City,2.0,1.0,post
+605915,2022-02-23 19:30:00,2022,379,367,Burnley,Tottenham Hotspur,1.0,0.0,post
+605864,2022-02-23 19:30:00,2022,395,384,Watford,Crystal Palace,1.0,4.0,post
+605854,2022-02-23 19:45:00,2022,364,357,Liverpool,Leeds United,6.0,0.0,post
+605848,2022-02-24 19:45:00,2022,359,380,Arsenal,Wolverhampton Wanderers,2.0,1.0,post
+605775,2022-02-25 20:00:00,2022,376,381,Southampton,Norwich City,2.0,0.0,post
+605776,2022-02-26 12:30:00,2022,357,367,Leeds United,Tottenham Hotspur,0.0,4.0,post
+605777,2022-02-26 15:00:00,2022,360,395,Manchester United,Watford,0.0,0.0,post
+605774,2022-02-26 15:00:00,2022,337,361,Brentford,Newcastle United,0.0,2.0,post
+605770,2022-02-26 15:00:00,2022,384,379,Crystal Palace,Burnley,1.0,1.0,post
+605769,2022-02-26 15:30:00,2022,331,362,Brighton & Hove Albion,Aston Villa,0.0,2.0,post
+605773,2022-02-26 17:30:00,2022,368,382,Everton,Manchester City,0.0,1.0,post
+605778,2022-02-27 14:00:00,2022,371,380,West Ham United,Wolverhampton Wanderers,1.0,0.0,post
+605825,2022-03-01 19:45:00,2022,379,375,Burnley,Leicester City,0.0,2.0,post
+605765,2022-03-05 12:30:00,2022,375,357,Leicester City,Leeds United,1.0,0.0,post
+605763,2022-03-05 15:00:00,2022,380,384,Wolverhampton Wanderers,Crystal Palace,0.0,2.0,post
+605760,2022-03-05 15:00:00,2022,381,337,Norwich City,Brentford,1.0,3.0,post
+605767,2022-03-05 15:00:00,2022,362,376,Aston Villa,Southampton,4.0,0.0,post
+605762,2022-03-05 15:00:00,2022,379,363,Burnley,Chelsea,0.0,4.0,post
+605761,2022-03-05 15:00:00,2022,361,331,Newcastle United,Brighton & Hove Albion,2.0,1.0,post
+605768,2022-03-05 17:30:00,2022,364,371,Liverpool,West Ham United,1.0,0.0,post
+605759,2022-03-06 14:00:00,2022,395,359,Watford,Arsenal,2.0,3.0,post
+605766,2022-03-06 16:30:00,2022,382,360,Manchester City,Manchester United,4.0,1.0,post
+605764,2022-03-07 20:00:00,2022,367,368,Tottenham Hotspur,Everton,5.0,0.0,post
+605742,2022-03-10 19:30:00,2022,381,363,Norwich City,Chelsea,1.0,3.0,post
+605834,2022-03-10 19:30:00,2022,376,361,Southampton,Newcastle United,1.0,2.0,post
+605858,2022-03-10 19:30:00,2022,380,395,Wolverhampton Wanderers,Watford,4.0,0.0,post
+605839,2022-03-10 19:45:00,2022,357,362,Leeds United,Aston Villa,0.0,3.0,post
+605752,2022-03-12 12:30:00,2022,331,364,Brighton & Hove Albion,Liverpool,0.0,2.0,post
+605750,2022-03-12 15:00:00,2022,337,379,Brentford,Burnley,2.0,0.0,post
+605756,2022-03-12 17:30:00,2022,360,367,Manchester United,Tottenham Hotspur,3.0,2.0,post
+605749,2022-03-13 14:00:00,2022,371,362,West Ham United,Aston Villa,2.0,1.0,post
+605757,2022-03-13 14:00:00,2022,376,395,Southampton,Watford,1.0,2.0,post
+605758,2022-03-13 14:00:00,2022,368,380,Everton,Wolverhampton Wanderers,0.0,1.0,post
+605755,2022-03-13 14:00:00,2022,357,381,Leeds United,Norwich City,2.0,1.0,post
+605754,2022-03-13 14:00:00,2022,363,361,Chelsea,Newcastle United,1.0,0.0,post
+605751,2022-03-13 16:30:00,2022,359,375,Arsenal,Leicester City,2.0,0.0,post
+605753,2022-03-14 20:00:00,2022,384,382,Crystal Palace,Manchester City,0.0,0.0,post
+605885,2022-03-16 19:30:00,2022,331,367,Brighton & Hove Albion,Tottenham Hotspur,0.0,2.0,post
+605772,2022-03-16 20:15:00,2022,359,364,Arsenal,Liverpool,0.0,2.0,post
+605844,2022-03-17 19:45:00,2022,368,361,Everton,Newcastle United,1.0,0.0,post
+605745,2022-03-18 20:00:00,2022,380,357,Wolverhampton Wanderers,Leeds United,2.0,3.0,post
+605739,2022-03-19 12:30:00,2022,362,359,Aston Villa,Arsenal,0.0,1.0,post
+605740,2022-03-20 14:00:00,2022,375,337,Leicester City,Brentford,2.0,1.0,post
+605748,2022-03-20 16:30:00,2022,367,371,Tottenham Hotspur,West Ham United,3.0,1.0,post
+605738,2022-04-02 12:30:00,2022,364,395,Liverpool,Watford,2.0,0.0,post
+605730,2022-04-02 15:00:00,2022,380,362,Wolverhampton Wanderers,Aston Villa,2.0,1.0,post
+605731,2022-04-02 15:00:00,2022,363,337,Chelsea,Brentford,1.0,4.0,post
+605737,2022-04-02 15:00:00,2022,357,376,Leeds United,Southampton,1.0,1.0,post
+605736,2022-04-02 15:00:00,2022,331,381,Brighton & Hove Albion,Norwich City,0.0,0.0,post
+605734,2022-04-02 15:00:00,2022,379,382,Burnley,Manchester City,0.0,2.0,post
+605733,2022-04-02 17:30:00,2022,360,375,Manchester United,Leicester City,1.0,1.0,post
+605732,2022-04-03 14:00:00,2022,371,368,West Ham United,Everton,2.0,1.0,post
+605735,2022-04-03 16:30:00,2022,367,361,Tottenham Hotspur,Newcastle United,5.0,1.0,post
+605729,2022-04-04 20:00:00,2022,384,359,Crystal Palace,Arsenal,3.0,0.0,post
+605853,2022-04-06 19:30:00,2022,379,368,Burnley,Everton,3.0,2.0,post
+605728,2022-04-08 20:00:00,2022,361,380,Newcastle United,Wolverhampton Wanderers,1.0,0.0,post
+605725,2022-04-09 12:30:00,2022,368,360,Everton,Manchester United,1.0,0.0,post
+605719,2022-04-09 15:00:00,2022,359,331,Arsenal,Brighton & Hove Albion,1.0,2.0,post
+605721,2022-04-09 15:00:00,2022,376,363,Southampton,Chelsea,0.0,6.0,post
+605723,2022-04-09 15:00:00,2022,395,357,Watford,Leeds United,0.0,3.0,post
+605726,2022-04-09 17:30:00,2022,362,367,Aston Villa,Tottenham Hotspur,0.0,4.0,post
+605722,2022-04-10 14:00:00,2022,375,384,Leicester City,Crystal Palace,2.0,1.0,post
+605720,2022-04-10 14:00:00,2022,381,379,Norwich City,Burnley,2.0,0.0,post
+605727,2022-04-10 14:00:00,2022,337,371,Brentford,West Ham United,2.0,0.0,post
+605724,2022-04-10 16:30:00,2022,382,364,Manchester City,Liverpool,2.0,2.0,post
+605711,2022-04-16 12:30:00,2022,367,331,Tottenham Hotspur,Brighton & Hove Albion,0.0,1.0,post
+605718,2022-04-16 15:00:00,2022,360,381,Manchester United,Norwich City,3.0,2.0,post
+605709,2022-04-16 15:00:00,2022,376,359,Southampton,Arsenal,1.0,0.0,post
+605710,2022-04-16 15:00:00,2022,395,337,Watford,Brentford,1.0,2.0,post
+605715,2022-04-17 14:15:00,2022,361,375,Newcastle United,Leicester City,2.0,1.0,post
+605712,2022-04-17 14:15:00,2022,371,379,West Ham United,Burnley,1.0,1.0,post
+605746,2022-04-19 20:00:00,2022,364,360,Liverpool,Manchester United,4.0,0.0,post
+605789,2022-04-20 19:45:00,2022,363,359,Chelsea,Arsenal,2.0,4.0,post
+605865,2022-04-20 19:45:00,2022,368,375,Everton,Leicester City,1.0,1.0,post
+605743,2022-04-20 19:45:00,2022,361,384,Newcastle United,Crystal Palace,1.0,0.0,post
+605741,2022-04-20 20:00:00,2022,382,331,Manchester City,Brighton & Hove Albion,3.0,0.0,post
+605747,2022-04-21 19:45:00,2022,379,376,Burnley,Southampton,2.0,0.0,post
+605702,2022-04-23 12:30:00,2022,359,360,Arsenal,Manchester United,3.0,1.0,post
+605699,2022-04-23 15:00:00,2022,375,362,Leicester City,Aston Villa,0.0,0.0,post
+605706,2022-04-23 15:00:00,2022,382,395,Manchester City,Watford,5.0,1.0,post
+605703,2022-04-23 15:00:00,2022,381,361,Norwich City,Newcastle United,0.0,3.0,post
+605705,2022-04-23 17:30:00,2022,337,367,Brentford,Tottenham Hotspur,0.0,0.0,post
+605704,2022-04-24 14:00:00,2022,331,376,Brighton & Hove Albion,Southampton,2.0,2.0,post
+605708,2022-04-24 14:00:00,2022,379,380,Burnley,Wolverhampton Wanderers,1.0,0.0,post
+605707,2022-04-24 14:00:00,2022,363,371,Chelsea,West Ham United,1.0,0.0,post
+605700,2022-04-24 16:30:00,2022,364,368,Liverpool,Everton,2.0,0.0,post
+605701,2022-04-25 20:00:00,2022,384,357,Crystal Palace,Leeds United,0.0,0.0,post
+605673,2022-04-28 19:45:00,2022,360,363,Manchester United,Chelsea,1.0,1.0,post
+605696,2022-04-30 12:30:00,2022,361,364,Newcastle United,Liverpool,0.0,1.0,post
+605698,2022-04-30 15:00:00,2022,362,381,Aston Villa,Norwich City,2.0,0.0,post
+605694,2022-04-30 15:00:00,2022,376,384,Southampton,Crystal Palace,1.0,2.0,post
+605692,2022-04-30 15:00:00,2022,395,379,Watford,Burnley,1.0,2.0,post
+605691,2022-04-30 15:00:00,2022,380,331,Wolverhampton Wanderers,Brighton & Hove Albion,0.0,3.0,post
+605697,2022-04-30 17:30:00,2022,357,382,Leeds United,Manchester City,0.0,4.0,post
+605693,2022-05-01 14:00:00,2022,368,363,Everton,Chelsea,1.0,0.0,post
+605695,2022-05-01 14:00:00,2022,367,375,Tottenham Hotspur,Leicester City,3.0,1.0,post
+605689,2022-05-01 16:30:00,2022,371,359,West Ham United,Arsenal,1.0,2.0,post
+605690,2022-05-02 20:00:00,2022,360,337,Manchester United,Brentford,3.0,0.0,post
+605688,2022-05-07 15:00:00,2022,363,380,Chelsea,Wolverhampton Wanderers,2.0,2.0,post
+605686,2022-05-07 15:00:00,2022,384,395,Crystal Palace,Watford,1.0,0.0,post
+605684,2022-05-07 15:00:00,2022,337,376,Brentford,Southampton,3.0,0.0,post
+605679,2022-05-07 15:00:00,2022,379,362,Burnley,Aston Villa,1.0,3.0,post
+605682,2022-05-07 17:30:00,2022,331,360,Brighton & Hove Albion,Manchester United,4.0,0.0,post
+605685,2022-05-07 19:45:00,2022,364,367,Liverpool,Tottenham Hotspur,1.0,1.0,post
+605680,2022-05-08 14:00:00,2022,375,368,Leicester City,Everton,1.0,2.0,post
+605687,2022-05-08 14:00:00,2022,381,371,Norwich City,West Ham United,0.0,4.0,post
+605681,2022-05-08 14:00:00,2022,359,357,Arsenal,Leeds United,2.0,1.0,post
+605683,2022-05-08 16:30:00,2022,382,361,Manchester City,Newcastle United,5.0,0.0,post
+605716,2022-05-10 20:00:00,2022,362,364,Aston Villa,Liverpool,1.0,2.0,post
+605713,2022-05-11 19:30:00,2022,357,363,Leeds United,Chelsea,0.0,3.0,post
+605835,2022-05-11 19:45:00,2022,375,381,Leicester City,Norwich City,3.0,0.0,post
+605744,2022-05-11 19:45:00,2022,395,368,Watford,Everton,0.0,0.0,post
+605717,2022-05-11 20:15:00,2022,380,382,Wolverhampton Wanderers,Manchester City,1.0,5.0,post
+605819,2022-05-12 19:45:00,2022,367,359,Tottenham Hotspur,Arsenal,3.0,0.0,post
+605672,2022-05-15 12:00:00,2022,367,379,Tottenham Hotspur,Burnley,1.0,0.0,post
+605674,2022-05-15 14:00:00,2022,362,384,Aston Villa,Crystal Palace,1.0,1.0,post
+605671,2022-05-15 14:00:00,2022,357,331,Leeds United,Brighton & Hove Albion,1.0,1.0,post
+605675,2022-05-15 14:00:00,2022,395,375,Watford,Leicester City,1.0,5.0,post
+605677,2022-05-15 14:00:00,2022,371,382,West Ham United,Manchester City,2.0,2.0,post
+605678,2022-05-15 14:00:00,2022,380,381,Wolverhampton Wanderers,Norwich City,1.0,1.0,post
+605670,2022-05-15 16:30:00,2022,368,337,Everton,Brentford,2.0,3.0,post
+605669,2022-05-16 20:00:00,2022,361,359,Newcastle United,Arsenal,2.0,0.0,post
+605676,2022-05-17 19:45:00,2022,376,364,Southampton,Liverpool,1.0,2.0,post
+605714,2022-05-19 19:45:00,2022,368,384,Everton,Crystal Palace,3.0,2.0,post
+605862,2022-05-19 20:00:00,2022,362,379,Aston Villa,Burnley,1.0,1.0,post
+605771,2022-05-19 20:00:00,2022,363,375,Chelsea,Leicester City,1.0,1.0,post
+605660,2022-05-22 16:00:00,2022,359,368,Arsenal,Everton,5.0,1.0,post
+605661,2022-05-22 16:00:00,2022,337,357,Brentford,Leeds United,1.0,2.0,post
+605667,2022-05-22 16:00:00,2022,331,371,Brighton & Hove Albion,West Ham United,3.0,1.0,post
+605663,2022-05-22 16:00:00,2022,379,361,Burnley,Newcastle United,1.0,2.0,post
+605666,2022-05-22 16:00:00,2022,363,395,Chelsea,Watford,2.0,1.0,post
+605662,2022-05-22 16:00:00,2022,384,360,Crystal Palace,Manchester United,1.0,0.0,post
+605664,2022-05-22 16:00:00,2022,375,376,Leicester City,Southampton,4.0,1.0,post
+605668,2022-05-22 16:00:00,2022,364,380,Liverpool,Wolverhampton Wanderers,3.0,1.0,post
+605659,2022-05-22 16:00:00,2022,382,362,Manchester City,Aston Villa,3.0,2.0,post
+605665,2022-05-22 16:00:00,2022,381,367,Norwich City,Tottenham Hotspur,0.0,5.0,post
+638199,2022-08-05 20:00:00,2022,384,359,Crystal Palace,Arsenal,0.0,2.0,post
+638200,2022-08-06 12:30:00,2022,370,364,Fulham,Liverpool,2.0,2.0,post
+638204,2022-08-06 15:00:00,2022,361,393,Newcastle United,Nottingham Forest,2.0,0.0,post
+638203,2022-08-06 15:00:00,2022,367,376,Tottenham Hotspur,Southampton,4.0,1.0,post
+638201,2022-08-06 15:00:00,2022,349,362,AFC Bournemouth,Aston Villa,2.0,0.0,post
+638202,2022-08-06 15:00:00,2022,357,380,Leeds United,Wolverhampton Wanderers,2.0,1.0,post
+638206,2022-08-06 17:30:00,2022,368,363,Everton,Chelsea,0.0,1.0,post
+638205,2022-08-07 14:00:00,2022,375,337,Leicester City,Brentford,2.0,2.0,post
+638207,2022-08-07 14:00:00,2022,360,331,Manchester United,Brighton & Hove Albion,1.0,2.0,post
+638208,2022-08-07 16:30:00,2022,371,382,West Ham United,Manchester City,0.0,2.0,post
+638210,2022-08-13 12:30:00,2022,362,368,Aston Villa,Everton,2.0,1.0,post
+638218,2022-08-13 15:00:00,2022,380,370,Wolverhampton Wanderers,Fulham,0.0,0.0,post
+638217,2022-08-13 15:00:00,2022,376,357,Southampton,Leeds United,2.0,2.0,post
+638209,2022-08-13 15:00:00,2022,359,375,Arsenal,Leicester City,4.0,2.0,post
+638212,2022-08-13 15:00:00,2022,331,361,Brighton & Hove Albion,Newcastle United,0.0,0.0,post
+638215,2022-08-13 15:00:00,2022,382,349,Manchester City,AFC Bournemouth,4.0,0.0,post
+638211,2022-08-13 17:30:00,2022,337,360,Brentford,Manchester United,4.0,0.0,post
+638216,2022-08-14 14:00:00,2022,393,371,Nottingham Forest,West Ham United,1.0,0.0,post
+638213,2022-08-14 16:30:00,2022,363,367,Chelsea,Tottenham Hotspur,2.0,2.0,post
+638214,2022-08-15 20:00:00,2022,364,384,Liverpool,Crystal Palace,1.0,1.0,post
+638227,2022-08-20 12:30:00,2022,367,380,Tottenham Hotspur,Wolverhampton Wanderers,1.0,0.0,post
+638222,2022-08-20 15:00:00,2022,370,337,Fulham,Brentford,3.0,2.0,post
+638224,2022-08-20 15:00:00,2022,375,376,Leicester City,Southampton,1.0,2.0,post
+638221,2022-08-20 15:00:00,2022,368,393,Everton,Nottingham Forest,1.0,1.0,post
+638220,2022-08-20 15:00:00,2022,384,362,Crystal Palace,Aston Villa,3.0,1.0,post
+638219,2022-08-20 17:30:00,2022,349,359,AFC Bournemouth,Arsenal,0.0,3.0,post
+638223,2022-08-21 14:00:00,2022,357,363,Leeds United,Chelsea,3.0,0.0,post
+638228,2022-08-21 14:00:00,2022,371,331,West Ham United,Brighton & Hove Albion,0.0,2.0,post
+638226,2022-08-21 16:30:00,2022,361,382,Newcastle United,Manchester City,3.0,3.0,post
+638225,2022-08-22 20:00:00,2022,360,364,Manchester United,Liverpool,2.0,1.0,post
+638237,2022-08-27 12:30:00,2022,376,360,Southampton,Manchester United,0.0,1.0,post
+638232,2022-08-27 15:00:00,2022,331,357,Brighton & Hove Albion,Leeds United,1.0,0.0,post
+638231,2022-08-27 15:00:00,2022,337,368,Brentford,Everton,1.0,1.0,post
+638233,2022-08-27 15:00:00,2022,363,375,Chelsea,Leicester City,2.0,1.0,post
+638234,2022-08-27 15:00:00,2022,364,349,Liverpool,AFC Bournemouth,9.0,0.0,post
+638235,2022-08-27 15:00:00,2022,382,384,Manchester City,Crystal Palace,4.0,2.0,post
+638229,2022-08-27 17:30:00,2022,359,370,Arsenal,Fulham,2.0,1.0,post
+638230,2022-08-28 14:00:00,2022,362,371,Aston Villa,West Ham United,0.0,1.0,post
+638238,2022-08-28 14:00:00,2022,380,361,Wolverhampton Wanderers,Newcastle United,1.0,1.0,post
+638236,2022-08-28 16:30:00,2022,393,367,Nottingham Forest,Tottenham Hotspur,0.0,2.0,post
+638241,2022-08-30 19:30:00,2022,370,331,Fulham,Brighton & Hove Albion,2.0,1.0,post
+638245,2022-08-30 19:30:00,2022,384,337,Crystal Palace,Brentford,1.0,1.0,post
+638246,2022-08-30 19:45:00,2022,376,363,Southampton,Chelsea,2.0,1.0,post
+638242,2022-08-30 20:00:00,2022,357,368,Leeds United,Everton,1.0,1.0,post
+638239,2022-08-31 19:30:00,2022,349,380,AFC Bournemouth,Wolverhampton Wanderers,0.0,0.0,post
+638240,2022-08-31 19:30:00,2022,359,362,Arsenal,Aston Villa,2.0,1.0,post
+638248,2022-08-31 19:30:00,2022,382,393,Manchester City,Nottingham Forest,6.0,0.0,post
+638244,2022-08-31 19:45:00,2022,371,367,West Ham United,Tottenham Hotspur,1.0,1.0,post
+638247,2022-08-31 20:00:00,2022,364,361,Liverpool,Newcastle United,2.0,1.0,post
+638243,2022-09-01 20:00:00,2022,375,360,Leicester City,Manchester United,0.0,1.0,post
+638255,2022-09-03 12:30:00,2022,368,364,Everton,Liverpool,0.0,0.0,post
+638250,2022-09-03 15:00:00,2022,337,357,Brentford,Leeds United,5.0,2.0,post
+638252,2022-09-03 15:00:00,2022,363,371,Chelsea,West Ham United,2.0,1.0,post
+638258,2022-09-03 15:00:00,2022,361,384,Newcastle United,Crystal Palace,0.0,0.0,post
+638256,2022-09-03 15:00:00,2022,393,349,Nottingham Forest,AFC Bournemouth,2.0,3.0,post
+638257,2022-09-03 15:00:00,2022,367,370,Tottenham Hotspur,Fulham,2.0,1.0,post
+638253,2022-09-03 15:00:00,2022,380,376,Wolverhampton Wanderers,Southampton,1.0,0.0,post
+638249,2022-09-03 17:30:00,2022,362,382,Aston Villa,Manchester City,1.0,1.0,post
+638251,2022-09-04 14:00:00,2022,331,375,Brighton & Hove Albion,Leicester City,5.0,2.0,post
+638254,2022-09-04 16:30:00,2022,360,359,Manchester United,Arsenal,3.0,1.0,post
+637894,2022-09-16 20:00:00,2022,362,376,Aston Villa,Southampton,1.0,0.0,post
+637896,2022-09-16 20:00:00,2022,393,370,Nottingham Forest,Fulham,2.0,3.0,post
+637893,2022-09-17 12:30:00,2022,380,382,Wolverhampton Wanderers,Manchester City,0.0,3.0,post
+637895,2022-09-17 15:00:00,2022,361,349,Newcastle United,AFC Bournemouth,1.0,1.0,post
+637897,2022-09-17 17:30:00,2022,367,375,Tottenham Hotspur,Leicester City,6.0,2.0,post
+637898,2022-09-18 12:00:00,2022,337,359,Brentford,Arsenal,0.0,3.0,post
+637890,2022-09-18 14:15:00,2022,368,371,Everton,West Ham United,1.0,0.0,post
+637899,2022-10-01 12:30:00,2022,359,367,Arsenal,Tottenham Hotspur,3.0,1.0,post
+637900,2022-10-01 15:00:00,2022,349,337,AFC Bournemouth,Brentford,0.0,0.0,post
+637908,2022-10-01 15:00:00,2022,384,363,Crystal Palace,Chelsea,1.0,2.0,post
+637907,2022-10-01 15:00:00,2022,370,361,Fulham,Newcastle United,1.0,4.0,post
+637904,2022-10-01 15:00:00,2022,364,331,Liverpool,Brighton & Hove Albion,3.0,3.0,post
+637902,2022-10-01 15:00:00,2022,376,368,Southampton,Everton,1.0,2.0,post
+637901,2022-10-01 17:30:00,2022,371,380,West Ham United,Wolverhampton Wanderers,2.0,0.0,post
+637903,2022-10-02 14:00:00,2022,382,360,Manchester City,Manchester United,6.0,3.0,post
+637906,2022-10-02 16:30:00,2022,357,362,Leeds United,Aston Villa,0.0,0.0,post
+637905,2022-10-03 20:00:00,2022,375,393,Leicester City,Nottingham Forest,4.0,0.0,post
+637917,2022-10-08 15:00:00,2022,349,375,AFC Bournemouth,Leicester City,2.0,1.0,post
+637915,2022-10-08 15:00:00,2022,363,380,Chelsea,Wolverhampton Wanderers,3.0,0.0,post
+637912,2022-10-08 15:00:00,2022,382,376,Manchester City,Southampton,4.0,0.0,post
+637911,2022-10-08 15:00:00,2022,361,337,Newcastle United,Brentford,5.0,1.0,post
+637916,2022-10-08 17:30:00,2022,331,367,Brighton & Hove Albion,Tottenham Hotspur,0.0,1.0,post
+637914,2022-10-09 14:00:00,2022,384,357,Crystal Palace,Leeds United,2.0,1.0,post
+637913,2022-10-09 14:00:00,2022,371,370,West Ham United,Fulham,3.0,1.0,post
+637909,2022-10-09 16:30:00,2022,359,364,Arsenal,Liverpool,3.0,2.0,post
+637918,2022-10-09 19:00:00,2022,368,360,Everton,Manchester United,1.0,2.0,post
+637910,2022-10-10 20:00:00,2022,393,362,Nottingham Forest,Aston Villa,1.0,1.0,post
+637920,2022-10-14 20:00:00,2022,337,331,Brentford,Brighton & Hove Albion,2.0,0.0,post
+637923,2022-10-15 12:30:00,2022,375,384,Leicester City,Crystal Palace,0.0,0.0,post
+637921,2022-10-15 15:00:00,2022,370,349,Fulham,AFC Bournemouth,2.0,2.0,post
+637928,2022-10-15 15:00:00,2022,380,393,Wolverhampton Wanderers,Nottingham Forest,1.0,0.0,post
+637927,2022-10-15 17:30:00,2022,367,368,Tottenham Hotspur,Everton,2.0,0.0,post
+637926,2022-10-16 14:00:00,2022,376,371,Southampton,West Ham United,1.0,1.0,post
+637925,2022-10-16 14:00:00,2022,360,361,Manchester United,Newcastle United,0.0,0.0,post
+637922,2022-10-16 14:00:00,2022,357,359,Leeds United,Arsenal,0.0,1.0,post
+637919,2022-10-16 14:00:00,2022,362,363,Aston Villa,Chelsea,0.0,2.0,post
+637924,2022-10-16 16:30:00,2022,364,382,Liverpool,Manchester City,1.0,0.0,post
+637929,2022-10-18 19:30:00,2022,331,393,Brighton & Hove Albion,Nottingham Forest,0.0,0.0,post
+637935,2022-10-18 20:15:00,2022,384,380,Crystal Palace,Wolverhampton Wanderers,2.0,1.0,post
+637930,2022-10-19 19:30:00,2022,349,376,AFC Bournemouth,Southampton,0.0,1.0,post
+637932,2022-10-19 19:30:00,2022,337,363,Brentford,Chelsea,0.0,0.0,post
+637938,2022-10-19 19:30:00,2022,364,371,Liverpool,West Ham United,1.0,0.0,post
+637936,2022-10-19 19:30:00,2022,361,368,Newcastle United,Everton,1.0,0.0,post
+637937,2022-10-19 20:15:00,2022,360,367,Manchester United,Tottenham Hotspur,2.0,0.0,post
+637934,2022-10-20 19:30:00,2022,370,362,Fulham,Aston Villa,3.0,0.0,post
+637933,2022-10-20 20:15:00,2022,375,357,Leicester City,Leeds United,2.0,0.0,post
+637943,2022-10-22 12:30:00,2022,393,364,Nottingham Forest,Liverpool,1.0,0.0,post
+637946,2022-10-22 15:00:00,2022,368,384,Everton,Crystal Palace,3.0,0.0,post
+637944,2022-10-22 15:00:00,2022,382,331,Manchester City,Brighton & Hove Albion,3.0,1.0,post
+637947,2022-10-22 17:30:00,2022,363,360,Chelsea,Manchester United,1.0,1.0,post
+637942,2022-10-23 14:00:00,2022,376,359,Southampton,Arsenal,1.0,1.0,post
+637941,2022-10-23 14:00:00,2022,380,375,Wolverhampton Wanderers,Leicester City,0.0,4.0,post
+637948,2022-10-23 14:00:00,2022,362,337,Aston Villa,Brentford,4.0,0.0,post
+637945,2022-10-23 14:00:00,2022,357,370,Leeds United,Fulham,2.0,3.0,post
+637939,2022-10-23 16:30:00,2022,367,361,Tottenham Hotspur,Newcastle United,1.0,2.0,post
+637940,2022-10-24 20:00:00,2022,371,349,West Ham United,AFC Bournemouth,2.0,0.0,post
+637955,2022-10-29 12:30:00,2022,375,382,Leicester City,Manchester City,0.0,1.0,post
+637949,2022-10-29 15:00:00,2022,349,367,AFC Bournemouth,Tottenham Hotspur,2.0,3.0,post
+637951,2022-10-29 15:00:00,2022,337,380,Brentford,Wolverhampton Wanderers,1.0,1.0,post
+637952,2022-10-29 15:00:00,2022,331,363,Brighton & Hove Albion,Chelsea,4.0,1.0,post
+637958,2022-10-29 15:00:00,2022,384,376,Crystal Palace,Southampton,1.0,0.0,post
+637953,2022-10-29 15:00:00,2022,361,362,Newcastle United,Aston Villa,4.0,0.0,post
+637954,2022-10-29 17:30:00,2022,370,368,Fulham,Everton,0.0,0.0,post
+637956,2022-10-29 19:45:00,2022,364,357,Liverpool,Leeds United,1.0,2.0,post
+637950,2022-10-30 14:00:00,2022,359,393,Arsenal,Nottingham Forest,5.0,0.0,post
+637957,2022-10-30 16:15:00,2022,360,371,Manchester United,West Ham United,1.0,0.0,post
+637967,2022-11-05 15:00:00,2022,357,349,Leeds United,AFC Bournemouth,4.0,3.0,post
+637966,2022-11-05 15:00:00,2022,382,370,Manchester City,Fulham,2.0,1.0,post
+637965,2022-11-05 15:00:00,2022,393,337,Nottingham Forest,Brentford,2.0,2.0,post
+637961,2022-11-05 15:00:00,2022,380,331,Wolverhampton Wanderers,Brighton & Hove Albion,2.0,3.0,post
+637968,2022-11-05 17:30:00,2022,368,375,Everton,Leicester City,0.0,2.0,post
+637960,2022-11-06 12:00:00,2022,363,359,Chelsea,Arsenal,0.0,1.0,post
+637959,2022-11-06 14:00:00,2022,362,360,Aston Villa,Manchester United,3.0,1.0,post
+637964,2022-11-06 14:00:00,2022,376,361,Southampton,Newcastle United,1.0,4.0,post
+637962,2022-11-06 14:00:00,2022,371,384,West Ham United,Crystal Palace,1.0,2.0,post
+637963,2022-11-06 16:30:00,2022,367,364,Tottenham Hotspur,Liverpool,1.0,2.0,post
+637974,2022-11-12 12:30:00,2022,382,337,Manchester City,Brentford,1.0,2.0,post
+637970,2022-11-12 15:00:00,2022,371,375,West Ham United,Leicester City,0.0,2.0,post
+637971,2022-11-12 15:00:00,2022,367,357,Tottenham Hotspur,Leeds United,4.0,3.0,post
+637972,2022-11-12 15:00:00,2022,393,384,Nottingham Forest,Crystal Palace,1.0,0.0,post
+637975,2022-11-12 15:00:00,2022,364,376,Liverpool,Southampton,3.0,1.0,post
+637969,2022-11-12 15:00:00,2022,349,368,AFC Bournemouth,Everton,3.0,0.0,post
+637978,2022-11-12 17:30:00,2022,361,363,Newcastle United,Chelsea,1.0,0.0,post
+637973,2022-11-12 19:45:00,2022,380,359,Wolverhampton Wanderers,Arsenal,0.0,2.0,post
+637977,2022-11-13 14:00:00,2022,331,362,Brighton & Hove Albion,Aston Villa,1.0,2.0,post
+637976,2022-11-13 16:30:00,2022,370,360,Fulham,Manchester United,1.0,2.0,post
+637988,2022-12-26 12:30:00,2022,337,367,Brentford,Tottenham Hotspur,2.0,2.0,post
+637981,2022-12-26 15:00:00,2022,376,331,Southampton,Brighton & Hove Albion,1.0,3.0,post
+637983,2022-12-26 15:00:00,2022,375,361,Leicester City,Newcastle United,0.0,3.0,post
+637985,2022-12-26 15:00:00,2022,368,380,Everton,Wolverhampton Wanderers,1.0,2.0,post
+637986,2022-12-26 15:00:00,2022,384,370,Crystal Palace,Fulham,0.0,3.0,post
+637980,2022-12-26 17:30:00,2022,362,364,Aston Villa,Liverpool,1.0,3.0,post
+637979,2022-12-26 20:00:00,2022,359,371,Arsenal,West Ham United,3.0,1.0,post
+637987,2022-12-27 17:30:00,2022,363,349,Chelsea,AFC Bournemouth,2.0,0.0,post
+637982,2022-12-27 20:00:00,2022,360,393,Manchester United,Nottingham Forest,3.0,0.0,post
+637984,2022-12-28 20:00:00,2022,357,382,Leeds United,Manchester City,1.0,3.0,post
+637990,2022-12-30 19:45:00,2022,371,337,West Ham United,Brentford,0.0,2.0,post
+637995,2022-12-30 20:00:00,2022,364,375,Liverpool,Leicester City,2.0,1.0,post
+637993,2022-12-31 12:30:00,2022,380,360,Wolverhampton Wanderers,Manchester United,0.0,1.0,post
+637989,2022-12-31 15:00:00,2022,349,384,AFC Bournemouth,Crystal Palace,0.0,2.0,post
+637996,2022-12-31 15:00:00,2022,370,376,Fulham,Southampton,2.0,1.0,post
+637994,2022-12-31 15:00:00,2022,382,368,Manchester City,Everton,1.0,1.0,post
+637998,2022-12-31 15:00:00,2022,361,357,Newcastle United,Leeds United,0.0,0.0,post
+637997,2022-12-31 17:30:00,2022,331,359,Brighton & Hove Albion,Arsenal,2.0,4.0,post
+637991,2023-01-01 14:00:00,2023,367,362,Tottenham Hotspur,Aston Villa,0.0,2.0,post
+637992,2023-01-01 16:30:00,2023,393,363,Nottingham Forest,Chelsea,1.0,1.0,post
+638001,2023-01-02 17:30:00,2023,337,364,Brentford,Liverpool,3.0,1.0,post
+637999,2023-01-03 19:45:00,2023,359,361,Arsenal,Newcastle United,0.0,0.0,post
+638004,2023-01-03 19:45:00,2023,368,331,Everton,Brighton & Hove Albion,1.0,4.0,post
+638006,2023-01-03 19:45:00,2023,375,370,Leicester City,Fulham,0.0,1.0,post
+638007,2023-01-03 20:00:00,2023,360,349,Manchester United,AFC Bournemouth,3.0,0.0,post
+638008,2023-01-04 19:30:00,2023,376,393,Southampton,Nottingham Forest,0.0,1.0,post
+638005,2023-01-04 19:45:00,2023,357,371,Leeds United,West Ham United,2.0,2.0,post
+638000,2023-01-04 20:00:00,2023,362,380,Aston Villa,Wolverhampton Wanderers,1.0,1.0,post
+638003,2023-01-04 20:00:00,2023,384,367,Crystal Palace,Tottenham Hotspur,0.0,4.0,post
+638002,2023-01-05 20:00:00,2023,363,382,Chelsea,Manchester City,0.0,1.0,post
+638261,2023-01-12 20:00:00,2023,370,363,Fulham,Chelsea,2.0,1.0,post
+638009,2023-01-13 20:00:00,2023,362,357,Aston Villa,Leeds United,2.0,1.0,post
+638015,2023-01-14 12:30:00,2023,360,382,Manchester United,Manchester City,2.0,1.0,post
+638018,2023-01-14 15:00:00,2023,331,364,Brighton & Hove Albion,Liverpool,3.0,0.0,post
+638016,2023-01-14 15:00:00,2023,368,376,Everton,Southampton,1.0,2.0,post
+638013,2023-01-14 15:00:00,2023,393,375,Nottingham Forest,Leicester City,2.0,0.0,post
+638011,2023-01-14 15:00:00,2023,380,371,Wolverhampton Wanderers,West Ham United,1.0,0.0,post
+638010,2023-01-14 17:30:00,2023,337,349,Brentford,AFC Bournemouth,2.0,0.0,post
+638014,2023-01-15 14:00:00,2023,361,370,Newcastle United,Fulham,1.0,0.0,post
+638017,2023-01-15 14:00:00,2023,363,384,Chelsea,Crystal Palace,1.0,0.0,post
+638012,2023-01-15 16:30:00,2023,367,359,Tottenham Hotspur,Arsenal,0.0,2.0,post
+637886,2023-01-18 20:00:00,2023,384,360,Crystal Palace,Manchester United,1.0,1.0,post
+638263,2023-01-19 20:00:00,2023,382,367,Manchester City,Tottenham Hotspur,4.0,2.0,post
+638022,2023-01-21 12:30:00,2023,364,363,Liverpool,Chelsea,0.0,0.0,post
+638027,2023-01-21 15:00:00,2023,349,393,AFC Bournemouth,Nottingham Forest,1.0,1.0,post
+638028,2023-01-21 15:00:00,2023,375,331,Leicester City,Brighton & Hove Albion,2.0,2.0,post
+638020,2023-01-21 15:00:00,2023,376,362,Southampton,Aston Villa,0.0,1.0,post
+638023,2023-01-21 15:00:00,2023,371,368,West Ham United,Everton,2.0,0.0,post
+638026,2023-01-21 17:30:00,2023,384,361,Crystal Palace,Newcastle United,0.0,0.0,post
+638024,2023-01-22 14:00:00,2023,357,337,Leeds United,Brentford,0.0,0.0,post
+638021,2023-01-22 14:00:00,2023,382,380,Manchester City,Wolverhampton Wanderers,3.0,0.0,post
+638019,2023-01-22 16:30:00,2023,359,360,Arsenal,Manchester United,3.0,2.0,post
+638025,2023-01-23 20:15:00,2023,370,367,Fulham,Tottenham Hotspur,0.0,1.0,post
+638034,2023-02-03 20:00:00,2023,363,370,Chelsea,Fulham,0.0,0.0,post
+638038,2023-02-04 12:30:00,2023,368,359,Everton,Arsenal,1.0,0.0,post
+638033,2023-02-04 15:00:00,2023,380,364,Wolverhampton Wanderers,Liverpool,3.0,0.0,post
+638032,2023-02-04 15:00:00,2023,360,384,Manchester United,Crystal Palace,2.0,1.0,post
+638035,2023-02-04 15:00:00,2023,331,349,Brighton & Hove Albion,AFC Bournemouth,1.0,0.0,post
+638036,2023-02-04 15:00:00,2023,337,376,Brentford,Southampton,3.0,0.0,post
+638037,2023-02-04 15:00:00,2023,362,375,Aston Villa,Leicester City,2.0,4.0,post
+638031,2023-02-04 17:30:00,2023,361,371,Newcastle United,West Ham United,1.0,1.0,post
+638030,2023-02-05 14:00:00,2023,393,357,Nottingham Forest,Leeds United,1.0,0.0,post
+638029,2023-02-05 16:30:00,2023,367,382,Tottenham Hotspur,Manchester City,1.0,0.0,post
+637889,2023-02-08 20:00:00,2023,360,357,Manchester United,Leeds United,2.0,2.0,post
+638048,2023-02-11 12:30:00,2023,371,363,West Ham United,Chelsea,1.0,1.0,post
+638039,2023-02-11 15:00:00,2023,376,380,Southampton,Wolverhampton Wanderers,1.0,2.0,post
+638042,2023-02-11 15:00:00,2023,375,367,Leicester City,Tottenham Hotspur,4.0,1.0,post
+638045,2023-02-11 15:00:00,2023,384,331,Crystal Palace,Brighton & Hove Albion,1.0,1.0,post
+638047,2023-02-11 15:00:00,2023,359,337,Arsenal,Brentford,1.0,1.0,post
+638044,2023-02-11 15:00:00,2023,370,393,Fulham,Nottingham Forest,2.0,0.0,post
+638046,2023-02-11 17:30:00,2023,349,361,AFC Bournemouth,Newcastle United,1.0,1.0,post
+638043,2023-02-12 14:00:00,2023,357,360,Leeds United,Manchester United,0.0,2.0,post
+638040,2023-02-12 16:30:00,2023,382,362,Manchester City,Aston Villa,3.0,1.0,post
+638041,2023-02-13 20:00:00,2023,364,368,Liverpool,Everton,2.0,0.0,post
+637931,2023-02-15 19:30:00,2023,359,382,Arsenal,Manchester City,1.0,3.0,post
+638049,2023-02-18 12:30:00,2023,362,359,Aston Villa,Arsenal,2.0,4.0,post
+638050,2023-02-18 15:00:00,2023,337,384,Brentford,Crystal Palace,1.0,1.0,post
+638058,2023-02-18 15:00:00,2023,331,370,Brighton & Hove Albion,Fulham,0.0,1.0,post
+638057,2023-02-18 15:00:00,2023,363,376,Chelsea,Southampton,0.0,1.0,post
+638056,2023-02-18 15:00:00,2023,368,357,Everton,Leeds United,1.0,0.0,post
+638053,2023-02-18 15:00:00,2023,393,382,Nottingham Forest,Manchester City,1.0,1.0,post
+638051,2023-02-18 15:00:00,2023,380,349,Wolverhampton Wanderers,AFC Bournemouth,0.0,1.0,post
+638054,2023-02-18 17:30:00,2023,361,364,Newcastle United,Liverpool,0.0,2.0,post
+638055,2023-02-19 14:00:00,2023,360,375,Manchester United,Leicester City,3.0,0.0,post
+638052,2023-02-19 16:30:00,2023,367,371,Tottenham Hotspur,West Ham United,2.0,0.0,post
+638065,2023-02-24 20:00:00,2023,370,380,Fulham,Wolverhampton Wanderers,1.0,1.0,post
+638066,2023-02-25 15:00:00,2023,368,362,Everton,Aston Villa,0.0,2.0,post
+638064,2023-02-25 15:00:00,2023,357,376,Leeds United,Southampton,1.0,0.0,post
+638068,2023-02-25 15:00:00,2023,375,359,Leicester City,Arsenal,0.0,1.0,post
+638063,2023-02-25 15:00:00,2023,371,393,West Ham United,Nottingham Forest,4.0,0.0,post
+638059,2023-02-25 17:30:00,2023,349,382,AFC Bournemouth,Manchester City,1.0,4.0,post
+638067,2023-02-25 19:45:00,2023,384,364,Crystal Palace,Liverpool,0.0,0.0,post
+638060,2023-02-26 13:30:00,2023,367,363,Tottenham Hotspur,Chelsea,2.0,0.0,post
+637888,2023-03-01 19:45:00,2023,359,368,Arsenal,Everton,4.0,0.0,post
+638260,2023-03-01 20:00:00,2023,364,380,Liverpool,Wolverhampton Wanderers,2.0,0.0,post
+638075,2023-03-04 12:30:00,2023,382,361,Manchester City,Newcastle United,2.0,0.0,post
+638072,2023-03-04 15:00:00,2023,359,349,Arsenal,AFC Bournemouth,3.0,2.0,post
+638071,2023-03-04 15:00:00,2023,362,384,Aston Villa,Crystal Palace,1.0,0.0,post
+638069,2023-03-04 15:00:00,2023,331,371,Brighton & Hove Albion,West Ham United,4.0,0.0,post
+638078,2023-03-04 15:00:00,2023,363,357,Chelsea,Leeds United,1.0,0.0,post
+638073,2023-03-04 15:00:00,2023,380,367,Wolverhampton Wanderers,Tottenham Hotspur,1.0,0.0,post
+638077,2023-03-04 17:30:00,2023,376,375,Southampton,Leicester City,1.0,0.0,post
+638076,2023-03-05 14:00:00,2023,393,368,Nottingham Forest,Everton,2.0,2.0,post
+638074,2023-03-05 16:30:00,2023,364,360,Liverpool,Manchester United,7.0,0.0,post
+638070,2023-03-06 20:00:00,2023,337,370,Brentford,Fulham,3.0,2.0,post
+638082,2023-03-11 12:30:00,2023,349,364,AFC Bournemouth,Liverpool,1.0,0.0,post
+638080,2023-03-11 15:00:00,2023,368,337,Everton,Brentford,1.0,0.0,post
+638083,2023-03-11 15:00:00,2023,357,331,Leeds United,Brighton & Hove Albion,2.0,2.0,post
+638088,2023-03-11 15:00:00,2023,375,363,Leicester City,Chelsea,1.0,3.0,post
+638085,2023-03-11 15:00:00,2023,367,393,Tottenham Hotspur,Nottingham Forest,3.0,1.0,post
+638081,2023-03-11 17:30:00,2023,384,382,Crystal Palace,Manchester City,0.0,1.0,post
+638084,2023-03-12 14:00:00,2023,371,362,West Ham United,Aston Villa,1.0,1.0,post
+638079,2023-03-12 14:00:00,2023,370,359,Fulham,Arsenal,0.0,3.0,post
+638087,2023-03-12 14:00:00,2023,360,376,Manchester United,Southampton,0.0,0.0,post
+638086,2023-03-12 16:30:00,2023,361,380,Newcastle United,Wolverhampton Wanderers,2.0,1.0,post
+637892,2023-03-15 19:30:00,2023,331,384,Brighton & Hove Albion,Crystal Palace,1.0,0.0,post
+638264,2023-03-15 19:30:00,2023,376,337,Southampton,Brentford,0.0,2.0,post
+638094,2023-03-17 20:00:00,2023,393,361,Nottingham Forest,Newcastle United,1.0,2.0,post
+638090,2023-03-18 15:00:00,2023,362,349,Aston Villa,AFC Bournemouth,3.0,0.0,post
+638091,2023-03-18 15:00:00,2023,337,375,Brentford,Leicester City,1.0,1.0,post
+638098,2023-03-18 15:00:00,2023,376,367,Southampton,Tottenham Hotspur,3.0,3.0,post
+638093,2023-03-18 15:00:00,2023,380,357,Wolverhampton Wanderers,Leeds United,2.0,4.0,post
+638097,2023-03-18 17:30:00,2023,363,368,Chelsea,Everton,2.0,2.0,post
+638089,2023-03-19 14:00:00,2023,359,384,Arsenal,Crystal Palace,4.0,1.0,post
+638108,2023-04-01 12:30:00,2023,382,364,Manchester City,Liverpool,4.0,1.0,post
+638106,2023-04-01 15:00:00,2023,384,375,Crystal Palace,Leicester City,2.0,1.0,post
+638104,2023-04-01 15:00:00,2023,331,337,Brighton & Hove Albion,Brentford,3.0,3.0,post
+638099,2023-04-01 15:00:00,2023,393,380,Nottingham Forest,Wolverhampton Wanderers,1.0,1.0,post
+638103,2023-04-01 15:00:00,2023,349,370,AFC Bournemouth,Fulham,2.0,1.0,post
+638102,2023-04-01 15:00:00,2023,359,357,Arsenal,Leeds United,4.0,1.0,post
+638105,2023-04-01 17:30:00,2023,363,362,Chelsea,Aston Villa,0.0,2.0,post
+638101,2023-04-02 14:00:00,2023,371,376,West Ham United,Southampton,1.0,0.0,post
+638100,2023-04-02 16:30:00,2023,361,360,Newcastle United,Manchester United,2.0,0.0,post
+638107,2023-04-03 20:00:00,2023,368,367,Everton,Tottenham Hotspur,1.0,1.0,post
+637887,2023-04-04 19:45:00,2023,349,331,AFC Bournemouth,Brighton & Hove Albion,0.0,2.0,post
+638262,2023-04-04 19:45:00,2023,357,393,Leeds United,Nottingham Forest,2.0,1.0,post
+638259,2023-04-04 19:45:00,2023,375,362,Leicester City,Aston Villa,1.0,2.0,post
+637891,2023-04-04 20:00:00,2023,363,364,Chelsea,Liverpool,0.0,0.0,post
+638062,2023-04-05 20:00:00,2023,360,337,Manchester United,Brentford,1.0,0.0,post
+638265,2023-04-05 20:00:00,2023,371,361,West Ham United,Newcastle United,1.0,5.0,post
+638112,2023-04-08 12:30:00,2023,360,368,Manchester United,Everton,2.0,0.0,post
+638109,2023-04-08 15:00:00,2023,362,393,Aston Villa,Nottingham Forest,2.0,0.0,post
+638117,2023-04-08 15:00:00,2023,337,361,Brentford,Newcastle United,1.0,2.0,post
+638116,2023-04-08 15:00:00,2023,370,371,Fulham,West Ham United,0.0,1.0,post
+638114,2023-04-08 15:00:00,2023,375,349,Leicester City,AFC Bournemouth,0.0,1.0,post
+638110,2023-04-08 15:00:00,2023,367,331,Tottenham Hotspur,Brighton & Hove Albion,2.0,1.0,post
+638113,2023-04-08 15:00:00,2023,380,363,Wolverhampton Wanderers,Chelsea,1.0,0.0,post
+638111,2023-04-08 17:30:00,2023,376,382,Southampton,Manchester City,1.0,4.0,post
+638115,2023-04-09 14:00:00,2023,357,384,Leeds United,Crystal Palace,1.0,5.0,post
+638118,2023-04-09 16:30:00,2023,364,359,Liverpool,Arsenal,2.0,2.0,post
+638127,2023-04-15 12:30:00,2023,362,361,Aston Villa,Newcastle United,3.0,0.0,post
+638126,2023-04-15 15:00:00,2023,363,331,Chelsea,Brighton & Hove Albion,1.0,2.0,post
+638125,2023-04-15 15:00:00,2023,368,370,Everton,Fulham,1.0,3.0,post
+638121,2023-04-15 15:00:00,2023,376,384,Southampton,Crystal Palace,0.0,2.0,post
+638128,2023-04-15 15:00:00,2023,380,337,Wolverhampton Wanderers,Brentford,2.0,0.0,post
+638120,2023-04-15 15:15:00,2023,367,349,Tottenham Hotspur,AFC Bournemouth,2.0,3.0,post
+638123,2023-04-15 17:30:00,2023,382,375,Manchester City,Leicester City,3.0,1.0,post
+638119,2023-04-16 14:00:00,2023,371,359,West Ham United,Arsenal,2.0,2.0,post
+638122,2023-04-16 16:30:00,2023,393,360,Nottingham Forest,Manchester United,0.0,2.0,post
+638124,2023-04-17 20:00:00,2023,357,364,Leeds United,Liverpool,1.0,6.0,post
+638129,2023-04-21 20:00:00,2023,359,376,Arsenal,Southampton,3.0,3.0,post
+638134,2023-04-22 12:30:00,2023,370,357,Fulham,Leeds United,2.0,1.0,post
+638136,2023-04-22 15:00:00,2023,364,393,Liverpool,Nottingham Forest,3.0,2.0,post
+638135,2023-04-22 15:00:00,2023,375,380,Leicester City,Wolverhampton Wanderers,2.0,1.0,post
+638131,2023-04-22 15:00:00,2023,337,362,Brentford,Aston Villa,1.0,1.0,post
+638138,2023-04-22 15:00:00,2023,384,368,Crystal Palace,Everton,0.0,0.0,post
+638130,2023-04-23 14:00:00,2023,349,371,AFC Bournemouth,West Ham United,0.0,4.0,post
+638133,2023-04-23 14:00:00,2023,361,367,Newcastle United,Tottenham Hotspur,6.0,1.0,post
+638140,2023-04-25 19:30:00,2023,380,384,Wolverhampton Wanderers,Crystal Palace,2.0,0.0,post
+638145,2023-04-25 19:45:00,2023,362,370,Aston Villa,Fulham,1.0,0.0,post
+638143,2023-04-25 20:00:00,2023,357,375,Leeds United,Leicester City,1.0,1.0,post
+638142,2023-04-26 19:30:00,2023,393,331,Nottingham Forest,Brighton & Hove Albion,3.0,1.0,post
+638146,2023-04-26 19:45:00,2023,363,337,Chelsea,Brentford,0.0,2.0,post
+638141,2023-04-26 19:45:00,2023,371,364,West Ham United,Liverpool,1.0,2.0,post
+638148,2023-04-26 20:00:00,2023,382,359,Manchester City,Arsenal,4.0,1.0,post
+638144,2023-04-27 19:45:00,2023,368,361,Everton,Newcastle United,1.0,4.0,post
+638147,2023-04-27 19:45:00,2023,376,349,Southampton,AFC Bournemouth,0.0,1.0,post
+638139,2023-04-27 20:15:00,2023,367,360,Tottenham Hotspur,Manchester United,2.0,2.0,post
+638153,2023-04-29 12:30:00,2023,384,371,Crystal Palace,West Ham United,4.0,3.0,post
+638158,2023-04-29 15:00:00,2023,337,393,Brentford,Nottingham Forest,2.0,1.0,post
+638154,2023-04-29 15:00:00,2023,331,380,Brighton & Hove Albion,Wolverhampton Wanderers,6.0,0.0,post
+638150,2023-04-30 14:00:00,2023,361,376,Newcastle United,Southampton,3.0,1.0,post
+638157,2023-04-30 14:00:00,2023,360,362,Manchester United,Aston Villa,1.0,0.0,post
+638152,2023-04-30 14:00:00,2023,370,382,Fulham,Manchester City,1.0,2.0,post
+638155,2023-04-30 14:00:00,2023,349,357,AFC Bournemouth,Leeds United,4.0,1.0,post
+638149,2023-04-30 16:30:00,2023,364,367,Liverpool,Tottenham Hotspur,4.0,3.0,post
+638151,2023-05-01 20:00:00,2023,375,368,Leicester City,Everton,2.0,2.0,post
+638156,2023-05-02 20:00:00,2023,359,363,Arsenal,Chelsea,3.0,1.0,post
+638096,2023-05-03 20:00:00,2023,364,370,Liverpool,Fulham,1.0,0.0,post
+638095,2023-05-03 20:00:00,2023,382,371,Manchester City,West Ham United,3.0,0.0,post
+638092,2023-05-04 20:00:00,2023,331,360,Brighton & Hove Albion,Manchester United,1.0,0.0,post
+638167,2023-05-06 15:00:00,2023,349,363,AFC Bournemouth,Chelsea,1.0,3.0,post
+638168,2023-05-06 15:00:00,2023,382,357,Manchester City,Leeds United,2.0,1.0,post
+638160,2023-05-06 15:00:00,2023,367,384,Tottenham Hotspur,Crystal Palace,1.0,0.0,post
+638163,2023-05-06 15:00:00,2023,380,362,Wolverhampton Wanderers,Aston Villa,1.0,0.0,post
+638164,2023-05-06 17:30:00,2023,364,337,Liverpool,Brentford,1.0,0.0,post
+638162,2023-05-07 16:30:00,2023,361,359,Newcastle United,Arsenal,0.0,2.0,post
+638159,2023-05-07 19:00:00,2023,371,360,West Ham United,Manchester United,1.0,0.0,post
+638165,2023-05-08 15:00:00,2023,370,375,Fulham,Leicester City,5.0,3.0,post
+638166,2023-05-08 17:30:00,2023,331,368,Brighton & Hove Albion,Everton,1.0,5.0,post
+638161,2023-05-08 20:00:00,2023,393,376,Nottingham Forest,Southampton,4.0,3.0,post
+638171,2023-05-13 12:30:00,2023,357,361,Leeds United,Newcastle United,2.0,2.0,post
+638176,2023-05-13 15:00:00,2023,362,367,Aston Villa,Tottenham Hotspur,2.0,1.0,post
+638174,2023-05-13 15:00:00,2023,363,393,Chelsea,Nottingham Forest,2.0,2.0,post
+638173,2023-05-13 15:00:00,2023,384,349,Crystal Palace,AFC Bournemouth,2.0,0.0,post
+638169,2023-05-13 15:00:00,2023,360,380,Manchester United,Wolverhampton Wanderers,2.0,0.0,post
+638178,2023-05-13 15:00:00,2023,376,370,Southampton,Fulham,0.0,2.0,post
+638175,2023-05-14 14:00:00,2023,337,371,Brentford,West Ham United,2.0,0.0,post
+638172,2023-05-14 14:00:00,2023,368,382,Everton,Manchester City,0.0,3.0,post
+638177,2023-05-14 16:30:00,2023,359,331,Arsenal,Brighton & Hove Albion,0.0,3.0,post
+638170,2023-05-15 20:00:00,2023,375,364,Leicester City,Liverpool,0.0,3.0,post
+638061,2023-05-18 19:30:00,2023,361,331,Newcastle United,Brighton & Hove Albion,4.0,1.0,post
+638183,2023-05-20 12:30:00,2023,367,337,Tottenham Hotspur,Brentford,1.0,3.0,post
+638179,2023-05-20 15:00:00,2023,349,360,AFC Bournemouth,Manchester United,0.0,1.0,post
+638188,2023-05-20 15:00:00,2023,370,384,Fulham,Crystal Palace,2.0,2.0,post
+638187,2023-05-20 15:00:00,2023,364,362,Liverpool,Aston Villa,1.0,1.0,post
+638181,2023-05-20 15:00:00,2023,380,368,Wolverhampton Wanderers,Everton,1.0,1.0,post
+638184,2023-05-20 17:30:00,2023,393,359,Nottingham Forest,Arsenal,1.0,0.0,post
+638182,2023-05-21 13:30:00,2023,371,357,West Ham United,Leeds United,3.0,1.0,post
+638180,2023-05-21 14:00:00,2023,331,376,Brighton & Hove Albion,Southampton,3.0,1.0,post
+638186,2023-05-21 16:00:00,2023,382,363,Manchester City,Chelsea,1.0,0.0,post
+638185,2023-05-22 20:00:00,2023,361,375,Newcastle United,Leicester City,0.0,0.0,post
+638132,2023-05-24 20:00:00,2023,331,382,Brighton & Hove Albion,Manchester City,1.0,1.0,post
+638137,2023-05-25 20:00:00,2023,360,363,Manchester United,Chelsea,4.0,1.0,post
+638189,2023-05-28 16:30:00,2023,359,380,Arsenal,Wolverhampton Wanderers,5.0,0.0,post
+638197,2023-05-28 16:30:00,2023,362,331,Aston Villa,Brighton & Hove Albion,2.0,1.0,post
+638196,2023-05-28 16:30:00,2023,337,382,Brentford,Manchester City,1.0,0.0,post
+638195,2023-05-28 16:30:00,2023,363,361,Chelsea,Newcastle United,1.0,1.0,post
+638194,2023-05-28 16:30:00,2023,384,393,Crystal Palace,Nottingham Forest,1.0,1.0,post
+638198,2023-05-28 16:30:00,2023,368,349,Everton,AFC Bournemouth,1.0,0.0,post
+638192,2023-05-28 16:30:00,2023,357,367,Leeds United,Tottenham Hotspur,1.0,4.0,post
+638191,2023-05-28 16:30:00,2023,375,371,Leicester City,West Ham United,2.0,1.0,post
+638190,2023-05-28 16:30:00,2023,360,370,Manchester United,Fulham,2.0,1.0,post
+638193,2023-05-28 16:30:00,2023,376,364,Southampton,Liverpool,4.0,4.0,post
+671031,2023-08-11 20:00:00,2023,379,382,Burnley,Manchester City,0.0,3.0,post
+671032,2023-08-12 13:00:00,2023,359,393,Arsenal,Nottingham Forest,2.0,1.0,post
+671033,2023-08-12 15:00:00,2023,349,371,AFC Bournemouth,West Ham United,1.0,1.0,post
+671034,2023-08-12 15:00:00,2023,331,301,Brighton & Hove Albion,Luton Town,4.0,1.0,post
+671035,2023-08-12 15:00:00,2023,368,370,Everton,Fulham,0.0,1.0,post
+671036,2023-08-12 15:00:00,2023,398,384,Sheffield United,Crystal Palace,0.0,1.0,post
+671037,2023-08-12 17:30:00,2023,361,362,Newcastle United,Aston Villa,5.0,1.0,post
+671038,2023-08-13 14:00:00,2023,337,367,Brentford,Tottenham Hotspur,2.0,2.0,post
+671039,2023-08-13 16:30:00,2023,363,364,Chelsea,Liverpool,1.0,1.0,post
+671040,2023-08-14 20:00:00,2023,360,380,Manchester United,Wolverhampton Wanderers,1.0,0.0,post
+671047,2023-08-18 19:45:00,2023,393,398,Nottingham Forest,Sheffield United,2.0,1.0,post
+671043,2023-08-19 15:00:00,2023,370,337,Fulham,Brentford,0.0,3.0,post
+671044,2023-08-19 15:00:00,2023,364,349,Liverpool,AFC Bournemouth,3.0,1.0,post
+671050,2023-08-19 15:00:00,2023,380,331,Wolverhampton Wanderers,Brighton & Hove Albion,1.0,4.0,post
+671048,2023-08-19 17:30:00,2023,367,360,Tottenham Hotspur,Manchester United,2.0,0.0,post
+671046,2023-08-19 20:00:00,2023,382,361,Manchester City,Newcastle United,1.0,0.0,post
+671041,2023-08-20 14:00:00,2023,362,368,Aston Villa,Everton,4.0,0.0,post
+671049,2023-08-20 16:30:00,2023,371,363,West Ham United,Chelsea,3.0,1.0,post
+671042,2023-08-21 20:00:00,2023,384,359,Crystal Palace,Arsenal,0.0,1.0,post
+671056,2023-08-25 20:00:00,2023,363,301,Chelsea,Luton Town,3.0,0.0,post
+671052,2023-08-26 12:30:00,2023,349,367,AFC Bournemouth,Tottenham Hotspur,0.0,2.0,post
+671058,2023-08-26 15:00:00,2023,360,393,Manchester United,Nottingham Forest,3.0,2.0,post
+671057,2023-08-26 15:00:00,2023,368,380,Everton,Wolverhampton Wanderers,0.0,1.0,post
+671051,2023-08-26 15:00:00,2023,359,370,Arsenal,Fulham,2.0,2.0,post
+671053,2023-08-26 15:00:00,2023,337,384,Brentford,Crystal Palace,1.0,1.0,post
+671054,2023-08-26 17:30:00,2023,331,371,Brighton & Hove Albion,West Ham United,1.0,3.0,post
+671060,2023-08-27 14:00:00,2023,379,362,Burnley,Aston Villa,1.0,3.0,post
+671059,2023-08-27 14:00:00,2023,398,382,Sheffield United,Manchester City,1.0,2.0,post
+671055,2023-08-27 16:30:00,2023,361,364,Newcastle United,Liverpool,1.0,2.0,post
+671070,2023-09-01 20:00:00,2023,301,371,Luton Town,West Ham United,1.0,2.0,post
+671067,2023-09-02 12:30:00,2023,398,368,Sheffield United,Everton,2.0,2.0,post
+671066,2023-09-02 15:00:00,2023,382,370,Manchester City,Fulham,5.0,1.0,post
+671062,2023-09-02 15:00:00,2023,363,393,Chelsea,Nottingham Forest,0.0,1.0,post
+671061,2023-09-02 15:00:00,2023,379,367,Burnley,Tottenham Hotspur,2.0,5.0,post
+671068,2023-09-02 15:00:00,2023,337,349,Brentford,AFC Bournemouth,2.0,2.0,post
+671069,2023-09-02 17:30:00,2023,331,361,Brighton & Hove Albion,Newcastle United,3.0,1.0,post
+671063,2023-09-03 14:00:00,2023,384,380,Crystal Palace,Wolverhampton Wanderers,3.0,2.0,post
+671064,2023-09-03 14:00:00,2023,364,362,Liverpool,Aston Villa,3.0,0.0,post
+671065,2023-09-03 16:30:00,2023,359,360,Arsenal,Manchester United,3.0,1.0,post
+671080,2023-09-16 12:30:00,2023,380,364,Wolverhampton Wanderers,Liverpool,1.0,3.0,post
+671078,2023-09-16 15:00:00,2023,371,382,West Ham United,Manchester City,1.0,3.0,post
+671079,2023-09-16 15:00:00,2023,367,398,Tottenham Hotspur,Sheffield United,2.0,1.0,post
+671071,2023-09-16 15:00:00,2023,362,384,Aston Villa,Crystal Palace,3.0,1.0,post
+671074,2023-09-16 15:00:00,2023,370,301,Fulham,Luton Town,1.0,0.0,post
+671075,2023-09-16 15:00:00,2023,360,331,Manchester United,Brighton & Hove Albion,1.0,3.0,post
+671077,2023-09-16 17:30:00,2023,361,337,Newcastle United,Brentford,1.0,0.0,post
+671072,2023-09-17 14:00:00,2023,349,363,AFC Bournemouth,Chelsea,0.0,0.0,post
+671073,2023-09-17 16:30:00,2023,368,359,Everton,Arsenal,0.0,1.0,post
+671076,2023-09-18 19:45:00,2023,393,379,Nottingham Forest,Burnley,1.0,1.0,post
+671089,2023-09-23 15:00:00,2023,384,370,Crystal Palace,Fulham,0.0,0.0,post
+671082,2023-09-23 15:00:00,2023,301,380,Luton Town,Wolverhampton Wanderers,1.0,1.0,post
+671081,2023-09-23 15:00:00,2023,382,393,Manchester City,Nottingham Forest,2.0,0.0,post
+671086,2023-09-23 17:30:00,2023,337,368,Brentford,Everton,1.0,3.0,post
+671088,2023-09-23 20:00:00,2023,379,360,Burnley,Manchester United,0.0,1.0,post
+671083,2023-09-24 14:00:00,2023,363,362,Chelsea,Aston Villa,0.0,1.0,post
+671085,2023-09-24 14:00:00,2023,359,367,Arsenal,Tottenham Hotspur,2.0,2.0,post
+671087,2023-09-24 14:00:00,2023,331,349,Brighton & Hove Albion,AFC Bournemouth,3.0,1.0,post
+671090,2023-09-24 14:00:00,2023,364,371,Liverpool,West Ham United,3.0,1.0,post
+671084,2023-09-24 16:30:00,2023,398,361,Sheffield United,Newcastle United,0.0,8.0,post
+671098,2023-09-30 12:30:00,2023,362,331,Aston Villa,Brighton & Hove Albion,6.0,1.0,post
+671099,2023-09-30 15:00:00,2023,349,359,AFC Bournemouth,Arsenal,0.0,4.0,post
+671091,2023-09-30 15:00:00,2023,368,301,Everton,Luton Town,1.0,2.0,post
+671092,2023-09-30 15:00:00,2023,360,384,Manchester United,Crystal Palace,0.0,1.0,post
+671095,2023-09-30 15:00:00,2023,361,379,Newcastle United,Burnley,2.0,0.0,post
+671096,2023-09-30 15:00:00,2023,371,398,West Ham United,Sheffield United,2.0,0.0,post
+671097,2023-09-30 15:00:00,2023,380,382,Wolverhampton Wanderers,Manchester City,2.0,1.0,post
+671100,2023-09-30 17:30:00,2023,367,364,Tottenham Hotspur,Liverpool,2.0,1.0,post
+671094,2023-10-01 14:00:00,2023,393,337,Nottingham Forest,Brentford,1.0,1.0,post
+671093,2023-10-02 20:00:00,2023,370,363,Fulham,Chelsea,0.0,2.0,post
+671045,2023-10-03 19:30:00,2023,301,379,Luton Town,Burnley,1.0,2.0,post
+671107,2023-10-07 12:30:00,2023,301,367,Luton Town,Tottenham Hotspur,0.0,1.0,post
+671103,2023-10-07 15:00:00,2023,379,363,Burnley,Chelsea,1.0,4.0,post
+671110,2023-10-07 15:00:00,2023,368,349,Everton,AFC Bournemouth,3.0,0.0,post
+671106,2023-10-07 15:00:00,2023,370,398,Fulham,Sheffield United,3.0,1.0,post
+671108,2023-10-07 15:00:00,2023,360,337,Manchester United,Brentford,2.0,1.0,post
+671104,2023-10-07 17:30:00,2023,384,393,Crystal Palace,Nottingham Forest,0.0,0.0,post
+671102,2023-10-08 14:00:00,2023,331,364,Brighton & Hove Albion,Liverpool,2.0,2.0,post
+671109,2023-10-08 14:00:00,2023,371,361,West Ham United,Newcastle United,2.0,2.0,post
+671105,2023-10-08 14:00:00,2023,380,362,Wolverhampton Wanderers,Aston Villa,1.0,1.0,post
+671101,2023-10-08 16:30:00,2023,359,382,Arsenal,Manchester City,1.0,0.0,post
+671115,2023-10-21 12:30:00,2023,364,368,Liverpool,Everton,2.0,0.0,post
+671118,2023-10-21 15:00:00,2023,393,301,Nottingham Forest,Luton Town,2.0,2.0,post
+671113,2023-10-21 15:00:00,2023,382,331,Manchester City,Brighton & Hove Albion,2.0,1.0,post
+671117,2023-10-21 15:00:00,2023,361,384,Newcastle United,Crystal Palace,4.0,0.0,post
+671112,2023-10-21 15:00:00,2023,349,380,AFC Bournemouth,Wolverhampton Wanderers,1.0,2.0,post
+671111,2023-10-21 15:00:00,2023,337,379,Brentford,Burnley,3.0,0.0,post
+671114,2023-10-21 17:30:00,2023,363,359,Chelsea,Arsenal,2.0,2.0,post
+671119,2023-10-21 20:00:00,2023,398,360,Sheffield United,Manchester United,1.0,2.0,post
+671120,2023-10-22 16:30:00,2023,362,371,Aston Villa,West Ham United,4.0,1.0,post
+671116,2023-10-23 20:00:00,2023,367,370,Tottenham Hotspur,Fulham,2.0,0.0,post
+671126,2023-10-27 20:00:00,2023,384,367,Crystal Palace,Tottenham Hotspur,1.0,2.0,post
+671130,2023-10-28 12:30:00,2023,363,337,Chelsea,Brentford,0.0,2.0,post
+671122,2023-10-28 15:00:00,2023,359,398,Arsenal,Sheffield United,5.0,0.0,post
+671123,2023-10-28 15:00:00,2023,349,379,AFC Bournemouth,Burnley,2.0,1.0,post
+671125,2023-10-28 17:30:00,2023,380,361,Wolverhampton Wanderers,Newcastle United,2.0,2.0,post
+671129,2023-10-29 13:00:00,2023,371,368,West Ham United,Everton,0.0,1.0,post
+671121,2023-10-29 14:00:00,2023,362,301,Aston Villa,Luton Town,3.0,1.0,post
+671124,2023-10-29 14:00:00,2023,331,370,Brighton & Hove Albion,Fulham,1.0,1.0,post
+671127,2023-10-29 14:00:00,2023,364,393,Liverpool,Nottingham Forest,3.0,0.0,post
+671128,2023-10-29 15:30:00,2023,360,382,Manchester United,Manchester City,0.0,3.0,post
+671131,2023-11-04 12:30:00,2023,370,360,Fulham,Manchester United,0.0,1.0,post
+671134,2023-11-04 15:00:00,2023,337,371,Brentford,West Ham United,3.0,2.0,post
+671133,2023-11-04 15:00:00,2023,379,384,Burnley,Crystal Palace,0.0,2.0,post
+671132,2023-11-04 15:00:00,2023,368,331,Everton,Brighton & Hove Albion,1.0,1.0,post
+671136,2023-11-04 15:00:00,2023,382,349,Manchester City,AFC Bournemouth,6.0,1.0,post
+671140,2023-11-04 15:00:00,2023,398,380,Sheffield United,Wolverhampton Wanderers,2.0,1.0,post
+671137,2023-11-04 17:30:00,2023,361,359,Newcastle United,Arsenal,1.0,0.0,post
+671138,2023-11-05 14:00:00,2023,393,362,Nottingham Forest,Aston Villa,2.0,0.0,post
+671135,2023-11-05 16:30:00,2023,301,364,Luton Town,Liverpool,1.0,1.0,post
+671139,2023-11-06 20:00:00,2023,367,363,Tottenham Hotspur,Chelsea,1.0,4.0,post
+671144,2023-11-11 12:30:00,2023,380,367,Wolverhampton Wanderers,Tottenham Hotspur,2.0,1.0,post
+671146,2023-11-11 15:00:00,2023,359,379,Arsenal,Burnley,3.0,1.0,post
+671145,2023-11-11 15:00:00,2023,384,368,Crystal Palace,Everton,2.0,3.0,post
+671142,2023-11-11 15:00:00,2023,360,301,Manchester United,Luton Town,1.0,0.0,post
+671148,2023-11-11 17:30:00,2023,349,361,AFC Bournemouth,Newcastle United,2.0,0.0,post
+671147,2023-11-12 14:00:00,2023,362,370,Aston Villa,Fulham,3.0,1.0,post
+671149,2023-11-12 14:00:00,2023,331,398,Brighton & Hove Albion,Sheffield United,1.0,1.0,post
+671141,2023-11-12 14:00:00,2023,364,337,Liverpool,Brentford,3.0,0.0,post
+671143,2023-11-12 14:00:00,2023,371,393,West Ham United,Nottingham Forest,3.0,2.0,post
+671150,2023-11-12 16:30:00,2023,363,382,Chelsea,Manchester City,4.0,4.0,post
+671154,2023-11-25 12:30:00,2023,382,364,Manchester City,Liverpool,1.0,1.0,post
+671156,2023-11-25 15:00:00,2023,379,371,Burnley,West Ham United,1.0,2.0,post
+671155,2023-11-25 15:00:00,2023,301,384,Luton Town,Crystal Palace,2.0,1.0,post
+671153,2023-11-25 15:00:00,2023,361,363,Newcastle United,Chelsea,4.0,1.0,post
+671152,2023-11-25 15:00:00,2023,393,331,Nottingham Forest,Brighton & Hove Albion,2.0,3.0,post
+671159,2023-11-25 15:00:00,2023,398,349,Sheffield United,AFC Bournemouth,1.0,3.0,post
+671160,2023-11-25 17:30:00,2023,337,359,Brentford,Arsenal,0.0,1.0,post
+671151,2023-11-26 14:00:00,2023,367,362,Tottenham Hotspur,Aston Villa,1.0,2.0,post
+671157,2023-11-26 16:30:00,2023,368,360,Everton,Manchester United,0.0,3.0,post
+671158,2023-11-27 20:00:00,2023,370,380,Fulham,Wolverhampton Wanderers,3.0,2.0,post
+671162,2023-12-02 15:00:00,2023,359,380,Arsenal,Wolverhampton Wanderers,2.0,1.0,post
+671170,2023-12-02 15:00:00,2023,337,301,Brentford,Luton Town,3.0,1.0,post
+671169,2023-12-02 15:00:00,2023,379,398,Burnley,Sheffield United,5.0,0.0,post
+671164,2023-12-02 17:30:00,2023,393,368,Nottingham Forest,Everton,0.0,1.0,post
+671165,2023-12-02 20:00:00,2023,361,360,Newcastle United,Manchester United,1.0,0.0,post
+671168,2023-12-03 14:00:00,2023,371,384,West Ham United,Crystal Palace,1.0,1.0,post
+671167,2023-12-03 14:00:00,2023,364,370,Liverpool,Fulham,4.0,3.0,post
+671161,2023-12-03 14:00:00,2023,349,362,AFC Bournemouth,Aston Villa,2.0,2.0,post
+671163,2023-12-03 14:00:00,2023,363,331,Chelsea,Brighton & Hove Albion,3.0,2.0,post
+671166,2023-12-03 16:30:00,2023,382,367,Manchester City,Tottenham Hotspur,3.0,3.0,post
+671177,2023-12-05 19:30:00,2023,380,379,Wolverhampton Wanderers,Burnley,1.0,0.0,post
+671175,2023-12-05 20:15:00,2023,301,359,Luton Town,Arsenal,3.0,4.0,post
+671172,2023-12-06 19:30:00,2023,398,364,Sheffield United,Liverpool,0.0,2.0,post
+671178,2023-12-06 19:30:00,2023,370,393,Fulham,Nottingham Forest,5.0,0.0,post
+671171,2023-12-06 19:30:00,2023,331,337,Brighton & Hove Albion,Brentford,2.0,1.0,post
+671179,2023-12-06 19:30:00,2023,384,349,Crystal Palace,AFC Bournemouth,0.0,2.0,post
+671173,2023-12-06 20:15:00,2023,362,382,Aston Villa,Manchester City,1.0,0.0,post
+671180,2023-12-06 20:15:00,2023,360,363,Manchester United,Chelsea,2.0,1.0,post
+671174,2023-12-07 19:30:00,2023,368,361,Everton,Newcastle United,3.0,0.0,post
+671176,2023-12-07 20:15:00,2023,367,371,Tottenham Hotspur,West Ham United,1.0,2.0,post
+671182,2023-12-09 12:30:00,2023,384,364,Crystal Palace,Liverpool,1.0,2.0,post
+671181,2023-12-09 15:00:00,2023,331,379,Brighton & Hove Albion,Burnley,1.0,1.0,post
+671184,2023-12-09 15:00:00,2023,360,349,Manchester United,AFC Bournemouth,0.0,3.0,post
+671183,2023-12-09 15:00:00,2023,398,337,Sheffield United,Brentford,1.0,0.0,post
+671186,2023-12-09 15:00:00,2023,380,393,Wolverhampton Wanderers,Nottingham Forest,1.0,1.0,post
+671188,2023-12-09 17:30:00,2023,362,359,Aston Villa,Arsenal,1.0,0.0,post
+671187,2023-12-10 14:00:00,2023,370,371,Fulham,West Ham United,5.0,0.0,post
+671190,2023-12-10 14:00:00,2023,368,363,Everton,Chelsea,2.0,0.0,post
+671185,2023-12-10 14:00:00,2023,301,382,Luton Town,Manchester City,1.0,2.0,post
+671189,2023-12-10 16:30:00,2023,367,361,Tottenham Hotspur,Newcastle United,4.0,1.0,post
+671197,2023-12-15 20:00:00,2023,393,367,Nottingham Forest,Tottenham Hotspur,0.0,2.0,post
+671199,2023-12-16 15:00:00,2023,382,384,Manchester City,Crystal Palace,2.0,2.0,post
+671191,2023-12-16 15:00:00,2023,363,398,Chelsea,Sheffield United,2.0,0.0,post
+671198,2023-12-16 15:00:00,2023,361,370,Newcastle United,Fulham,3.0,0.0,post
+671192,2023-12-16 17:30:00,2023,379,368,Burnley,Everton,0.0,2.0,post
+671193,2023-12-17 14:00:00,2023,337,362,Brentford,Aston Villa,1.0,2.0,post
+671196,2023-12-17 14:00:00,2023,371,380,West Ham United,Wolverhampton Wanderers,3.0,0.0,post
+671200,2023-12-17 14:00:00,2023,359,331,Arsenal,Brighton & Hove Albion,2.0,0.0,post
+671195,2023-12-17 16:30:00,2023,364,360,Liverpool,Manchester United,0.0,0.0,post
+671208,2023-12-21 20:00:00,2023,384,331,Crystal Palace,Brighton & Hove Albion,1.0,1.0,post
+671209,2023-12-22 20:00:00,2023,362,398,Aston Villa,Sheffield United,1.0,1.0,post
+671206,2023-12-23 12:30:00,2023,371,360,West Ham United,Manchester United,2.0,0.0,post
+671204,2023-12-23 15:00:00,2023,393,349,Nottingham Forest,AFC Bournemouth,2.0,3.0,post
+671205,2023-12-23 15:00:00,2023,367,368,Tottenham Hotspur,Everton,2.0,1.0,post
+671210,2023-12-23 15:00:00,2023,370,379,Fulham,Burnley,0.0,2.0,post
+671202,2023-12-23 15:00:00,2023,301,361,Luton Town,Newcastle United,1.0,0.0,post
+671201,2023-12-23 17:30:00,2023,364,359,Liverpool,Arsenal,1.0,1.0,post
+671207,2023-12-24 13:00:00,2023,380,363,Wolverhampton Wanderers,Chelsea,2.0,1.0,post
+671216,2023-12-26 12:30:00,2023,361,393,Newcastle United,Nottingham Forest,1.0,3.0,post
+671219,2023-12-26 15:00:00,2023,349,370,AFC Bournemouth,Fulham,3.0,0.0,post
+671217,2023-12-26 15:00:00,2023,398,301,Sheffield United,Luton Town,2.0,3.0,post
+671212,2023-12-26 17:30:00,2023,379,364,Burnley,Liverpool,0.0,2.0,post
+671215,2023-12-26 20:00:00,2023,360,362,Manchester United,Aston Villa,3.0,2.0,post
+671213,2023-12-27 19:30:00,2023,363,384,Chelsea,Crystal Palace,2.0,1.0,post
+671220,2023-12-27 19:30:00,2023,337,380,Brentford,Wolverhampton Wanderers,1.0,4.0,post
+671214,2023-12-27 20:15:00,2023,368,382,Everton,Manchester City,1.0,3.0,post
+671211,2023-12-28 19:30:00,2023,331,367,Brighton & Hove Albion,Tottenham Hotspur,4.0,2.0,post
+671218,2023-12-28 20:15:00,2023,359,371,Arsenal,West Ham United,0.0,2.0,post
+671228,2023-12-30 12:30:00,2023,301,363,Luton Town,Chelsea,2.0,3.0,post
+671227,2023-12-30 15:00:00,2023,362,379,Aston Villa,Burnley,3.0,2.0,post
+671226,2023-12-30 15:00:00,2023,384,337,Crystal Palace,Brentford,3.0,1.0,post
+671225,2023-12-30 15:00:00,2023,382,398,Manchester City,Sheffield United,2.0,0.0,post
+671222,2023-12-30 15:00:00,2023,380,368,Wolverhampton Wanderers,Everton,3.0,0.0,post
+671230,2023-12-30 17:30:00,2023,393,360,Nottingham Forest,Manchester United,2.0,1.0,post
+671221,2023-12-31 14:00:00,2023,370,359,Fulham,Arsenal,2.0,1.0,post
+671224,2023-12-31 14:00:00,2023,367,349,Tottenham Hotspur,AFC Bournemouth,3.0,1.0,post
+671229,2024-01-01 20:00:00,2024,364,361,Liverpool,Newcastle United,4.0,2.0,post
+671223,2024-01-02 19:30:00,2024,371,331,West Ham United,Brighton & Hove Albion,0.0,0.0,post
+671235,2024-01-12 19:45:00,2024,379,301,Burnley,Luton Town,1.0,1.0,post
+671236,2024-01-13 12:30:00,2024,363,370,Chelsea,Fulham,1.0,0.0,post
+671239,2024-01-13 17:30:00,2024,361,382,Newcastle United,Manchester City,2.0,3.0,post
+671237,2024-01-14 14:00:00,2024,368,362,Everton,Aston Villa,0.0,0.0,post
+671238,2024-01-14 16:30:00,2024,360,367,Manchester United,Tottenham Hotspur,2.0,2.0,post
+671231,2024-01-20 12:30:00,2024,359,384,Arsenal,Crystal Palace,5.0,0.0,post
+671233,2024-01-20 17:30:00,2024,337,393,Brentford,Nottingham Forest,3.0,2.0,post
+671240,2024-01-21 14:00:00,2024,398,371,Sheffield United,West Ham United,2.0,2.0,post
+671232,2024-01-21 16:30:00,2024,349,364,AFC Bournemouth,Liverpool,0.0,4.0,post
+671234,2024-01-22 19:45:00,2024,331,380,Brighton & Hove Albion,Wolverhampton Wanderers,0.0,0.0,post
+671245,2024-01-30 19:30:00,2024,393,359,Nottingham Forest,Arsenal,1.0,2.0,post
+671247,2024-01-30 19:45:00,2024,301,331,Luton Town,Brighton & Hove Albion,4.0,0.0,post
+671244,2024-01-30 19:45:00,2024,370,368,Fulham,Everton,0.0,0.0,post
+671248,2024-01-30 20:00:00,2024,384,398,Crystal Palace,Sheffield United,3.0,2.0,post
+671241,2024-01-30 20:15:00,2024,362,361,Aston Villa,Newcastle United,1.0,3.0,post
+671250,2024-01-31 19:30:00,2024,382,379,Manchester City,Burnley,3.0,1.0,post
+671243,2024-01-31 19:30:00,2024,367,337,Tottenham Hotspur,Brentford,3.0,2.0,post
+671249,2024-01-31 20:15:00,2024,364,363,Liverpool,Chelsea,4.0,1.0,post
+671242,2024-02-01 19:30:00,2024,371,349,West Ham United,AFC Bournemouth,1.0,1.0,post
+671246,2024-02-01 20:15:00,2024,380,360,Wolverhampton Wanderers,Manchester United,3.0,4.0,post
+671253,2024-02-03 12:30:00,2024,368,367,Everton,Tottenham Hotspur,2.0,2.0,post
+671251,2024-02-03 15:00:00,2024,361,301,Newcastle United,Luton Town,4.0,4.0,post
+671256,2024-02-03 15:00:00,2024,331,384,Brighton & Hove Albion,Crystal Palace,4.0,1.0,post
+671260,2024-02-03 15:00:00,2024,379,370,Burnley,Fulham,2.0,2.0,post
+671255,2024-02-03 17:30:00,2024,398,362,Sheffield United,Aston Villa,0.0,5.0,post
+671258,2024-02-04 14:00:00,2024,349,393,AFC Bournemouth,Nottingham Forest,1.0,1.0,post
+671254,2024-02-04 14:00:00,2024,363,380,Chelsea,Wolverhampton Wanderers,2.0,4.0,post
+671252,2024-02-04 14:00:00,2024,360,371,Manchester United,West Ham United,3.0,0.0,post
+671259,2024-02-04 16:30:00,2024,359,364,Arsenal,Liverpool,3.0,1.0,post
+671257,2024-02-05 20:00:00,2024,337,382,Brentford,Manchester City,1.0,3.0,post
+671264,2024-02-10 12:30:00,2024,382,368,Manchester City,Everton,2.0,0.0,post
+671268,2024-02-10 15:00:00,2024,370,349,Fulham,AFC Bournemouth,3.0,1.0,post
+671269,2024-02-10 15:00:00,2024,364,379,Liverpool,Burnley,3.0,1.0,post
+671270,2024-02-10 15:00:00,2024,301,398,Luton Town,Sheffield United,1.0,3.0,post
+671262,2024-02-10 15:00:00,2024,367,331,Tottenham Hotspur,Brighton & Hove Albion,2.0,1.0,post
+671265,2024-02-10 15:00:00,2024,380,337,Wolverhampton Wanderers,Brentford,0.0,2.0,post
+671263,2024-02-10 17:30:00,2024,393,361,Nottingham Forest,Newcastle United,2.0,3.0,post
+671261,2024-02-11 14:00:00,2024,371,359,West Ham United,Arsenal,0.0,6.0,post
+671266,2024-02-11 16:30:00,2024,362,360,Aston Villa,Manchester United,1.0,2.0,post
+671267,2024-02-12 20:00:00,2024,384,363,Crystal Palace,Chelsea,1.0,3.0,post
+671279,2024-02-17 12:30:00,2024,337,364,Brentford,Liverpool,1.0,4.0,post
+671280,2024-02-17 15:00:00,2024,379,359,Burnley,Arsenal,0.0,5.0,post
+671271,2024-02-17 15:00:00,2024,370,362,Fulham,Aston Villa,1.0,2.0,post
+671274,2024-02-17 15:00:00,2024,361,349,Newcastle United,AFC Bournemouth,2.0,2.0,post
+671275,2024-02-17 15:00:00,2024,393,371,Nottingham Forest,West Ham United,2.0,0.0,post
+671277,2024-02-17 15:00:00,2024,367,380,Tottenham Hotspur,Wolverhampton Wanderers,1.0,2.0,post
+671273,2024-02-17 17:30:00,2024,382,363,Manchester City,Chelsea,1.0,1.0,post
+671276,2024-02-18 14:00:00,2024,398,331,Sheffield United,Brighton & Hove Albion,0.0,5.0,post
+671278,2024-02-18 16:30:00,2024,301,360,Luton Town,Manchester United,1.0,2.0,post
+671272,2024-02-19 20:00:00,2024,368,384,Everton,Crystal Palace,1.0,1.0,post
+671203,2024-02-20 19:30:00,2024,382,337,Manchester City,Brentford,1.0,0.0,post
+671284,2024-02-21 19:30:00,2024,364,301,Liverpool,Luton Town,4.0,1.0,post
+671289,2024-02-24 15:00:00,2024,362,393,Aston Villa,Nottingham Forest,4.0,2.0,post
+671287,2024-02-24 15:00:00,2024,331,368,Brighton & Hove Albion,Everton,1.0,1.0,post
+671283,2024-02-24 15:00:00,2024,384,379,Crystal Palace,Burnley,3.0,0.0,post
+671290,2024-02-24 15:00:00,2024,360,370,Manchester United,Fulham,1.0,2.0,post
+671288,2024-02-24 17:30:00,2024,349,382,AFC Bournemouth,Manchester City,0.0,1.0,post
+671281,2024-02-24 20:00:00,2024,359,361,Arsenal,Newcastle United,4.0,1.0,post
+671286,2024-02-25 13:30:00,2024,380,398,Wolverhampton Wanderers,Sheffield United,1.0,0.0,post
+671285,2024-02-26 20:00:00,2024,371,337,West Ham United,Brentford,4.0,2.0,post
+671295,2024-03-02 15:00:00,2024,337,363,Brentford,Chelsea,2.0,2.0,post
+671293,2024-03-02 15:00:00,2024,368,371,Everton,West Ham United,1.0,3.0,post
+671297,2024-03-02 15:00:00,2024,370,331,Fulham,Brighton & Hove Albion,3.0,0.0,post
+671298,2024-03-02 15:00:00,2024,361,380,Newcastle United,Wolverhampton Wanderers,3.0,0.0,post
+671299,2024-03-02 15:00:00,2024,393,364,Nottingham Forest,Liverpool,0.0,1.0,post
+671291,2024-03-02 15:00:00,2024,367,384,Tottenham Hotspur,Crystal Palace,3.0,1.0,post
+671296,2024-03-02 17:30:00,2024,301,362,Luton Town,Aston Villa,2.0,3.0,post
+671294,2024-03-03 13:00:00,2024,379,349,Burnley,AFC Bournemouth,0.0,2.0,post
+671292,2024-03-03 15:30:00,2024,382,360,Manchester City,Manchester United,3.0,1.0,post
+671300,2024-03-04 20:00:00,2024,398,359,Sheffield United,Arsenal,0.0,6.0,post
+671308,2024-03-09 12:30:00,2024,360,368,Manchester United,Everton,2.0,0.0,post
+671303,2024-03-09 15:00:00,2024,349,398,AFC Bournemouth,Sheffield United,2.0,2.0,post
+671310,2024-03-09 15:00:00,2024,384,301,Crystal Palace,Luton Town,1.0,1.0,post
+671306,2024-03-09 15:00:00,2024,380,370,Wolverhampton Wanderers,Fulham,2.0,1.0,post
+671305,2024-03-09 17:30:00,2024,359,337,Arsenal,Brentford,2.0,1.0,post
+671304,2024-03-10 13:00:00,2024,362,367,Aston Villa,Tottenham Hotspur,0.0,4.0,post
+671307,2024-03-10 14:00:00,2024,331,393,Brighton & Hove Albion,Nottingham Forest,1.0,0.0,post
+671302,2024-03-10 14:00:00,2024,371,379,West Ham United,Burnley,2.0,2.0,post
+671309,2024-03-10 15:45:00,2024,364,382,Liverpool,Manchester City,1.0,1.0,post
+671301,2024-03-11 20:00:00,2024,363,361,Chelsea,Newcastle United,3.0,2.0,post
+671194,2024-03-13 19:30:00,2024,349,301,AFC Bournemouth,Luton Town,4.0,3.0,post
+671316,2024-03-16 15:00:00,2024,379,337,Burnley,Brentford,2.0,1.0,post
+671317,2024-03-16 15:00:00,2024,301,393,Luton Town,Nottingham Forest,1.0,1.0,post
+671313,2024-03-16 17:30:00,2024,370,367,Fulham,Tottenham Hotspur,3.0,0.0,post
+671320,2024-03-17 14:00:00,2024,371,362,West Ham United,Aston Villa,1.0,1.0,post
+671327,2024-03-30 12:30:00,2024,361,371,Newcastle United,West Ham United,4.0,3.0,post
+671330,2024-03-30 15:00:00,2024,349,368,AFC Bournemouth,Everton,2.0,1.0,post
+671323,2024-03-30 15:00:00,2024,363,379,Chelsea,Burnley,2.0,2.0,post
+671328,2024-03-30 15:00:00,2024,393,384,Nottingham Forest,Crystal Palace,1.0,1.0,post
+671329,2024-03-30 15:00:00,2024,398,370,Sheffield United,Fulham,3.0,3.0,post
+671321,2024-03-30 15:00:00,2024,367,301,Tottenham Hotspur,Luton Town,2.0,1.0,post
+671325,2024-03-30 17:30:00,2024,362,380,Aston Villa,Wolverhampton Wanderers,2.0,0.0,post
+671324,2024-03-30 20:00:00,2024,337,360,Brentford,Manchester United,1.0,1.0,post
+671322,2024-03-31 14:00:00,2024,364,331,Liverpool,Brighton & Hove Albion,2.0,1.0,post
+671326,2024-03-31 16:30:00,2024,382,359,Manchester City,Arsenal,0.0,0.0,post
+671338,2024-04-02 19:30:00,2024,361,368,Newcastle United,Everton,1.0,1.0,post
+671335,2024-04-02 19:30:00,2024,393,370,Nottingham Forest,Fulham,3.0,1.0,post
+671332,2024-04-02 19:45:00,2024,349,384,AFC Bournemouth,Crystal Palace,1.0,0.0,post
+671334,2024-04-02 19:45:00,2024,379,380,Burnley,Wolverhampton Wanderers,1.0,1.0,post
+671336,2024-04-02 20:15:00,2024,371,367,West Ham United,Tottenham Hotspur,1.0,1.0,post
+671331,2024-04-03 19:30:00,2024,359,301,Arsenal,Luton Town,2.0,0.0,post
+671333,2024-04-03 19:30:00,2024,337,331,Brentford,Brighton & Hove Albion,0.0,0.0,post
+671339,2024-04-03 20:15:00,2024,382,362,Manchester City,Aston Villa,4.0,1.0,post
+671340,2024-04-04 19:30:00,2024,364,398,Liverpool,Sheffield United,3.0,1.0,post
+671337,2024-04-04 20:15:00,2024,363,360,Chelsea,Manchester United,4.0,3.0,post
+671342,2024-04-06 12:30:00,2024,384,382,Crystal Palace,Manchester City,2.0,4.0,post
+671344,2024-04-06 15:00:00,2024,362,337,Aston Villa,Brentford,3.0,3.0,post
+671349,2024-04-06 15:00:00,2024,368,379,Everton,Burnley,1.0,0.0,post
+671350,2024-04-06 15:00:00,2024,370,361,Fulham,Newcastle United,0.0,1.0,post
+671346,2024-04-06 15:00:00,2024,301,349,Luton Town,AFC Bournemouth,2.0,1.0,post
+671345,2024-04-06 15:00:00,2024,380,371,Wolverhampton Wanderers,West Ham United,1.0,2.0,post
+671343,2024-04-06 17:30:00,2024,331,359,Brighton & Hove Albion,Arsenal,0.0,3.0,post
+671347,2024-04-07 15:30:00,2024,360,364,Manchester United,Liverpool,2.0,2.0,post
+671348,2024-04-07 17:30:00,2024,398,363,Sheffield United,Chelsea,2.0,2.0,post
+671341,2024-04-07 18:00:00,2024,367,393,Tottenham Hotspur,Nottingham Forest,3.0,1.0,post
+671357,2024-04-13 12:30:00,2024,361,367,Newcastle United,Tottenham Hotspur,4.0,0.0,post
+671351,2024-04-13 15:00:00,2024,337,398,Brentford,Sheffield United,2.0,0.0,post
+671360,2024-04-13 15:00:00,2024,379,331,Burnley,Brighton & Hove Albion,1.0,1.0,post
+671356,2024-04-13 15:00:00,2024,382,301,Manchester City,Luton Town,5.0,1.0,post
+671358,2024-04-13 15:00:00,2024,393,380,Nottingham Forest,Wolverhampton Wanderers,2.0,2.0,post
+671352,2024-04-13 17:30:00,2024,349,360,AFC Bournemouth,Manchester United,2.0,2.0,post
+671355,2024-04-14 14:00:00,2024,364,384,Liverpool,Crystal Palace,0.0,1.0,post
+671359,2024-04-14 14:00:00,2024,371,370,West Ham United,Fulham,0.0,2.0,post
+671353,2024-04-14 16:30:00,2024,359,362,Arsenal,Aston Villa,0.0,2.0,post
+671354,2024-04-15 20:00:00,2024,363,368,Chelsea,Everton,6.0,0.0,post
+671363,2024-04-20 15:00:00,2024,301,337,Luton Town,Brentford,1.0,5.0,post
+671361,2024-04-20 15:00:00,2024,398,379,Sheffield United,Burnley,1.0,4.0,post
+671369,2024-04-20 19:30:00,2024,380,359,Wolverhampton Wanderers,Arsenal,0.0,2.0,post
+671370,2024-04-21 13:30:00,2024,368,393,Everton,Nottingham Forest,2.0,0.0,post
+671368,2024-04-21 15:00:00,2024,362,349,Aston Villa,AFC Bournemouth,3.0,1.0,post
+671366,2024-04-21 15:00:00,2024,384,371,Crystal Palace,West Ham United,5.0,2.0,post
+671364,2024-04-21 16:30:00,2024,370,364,Fulham,Liverpool,1.0,3.0,post
+671312,2024-04-23 20:00:00,2024,359,363,Arsenal,Chelsea,5.0,0.0,post
+671319,2024-04-24 19:45:00,2024,380,349,Wolverhampton Wanderers,AFC Bournemouth,0.0,1.0,post
+671315,2024-04-24 20:00:00,2024,384,361,Crystal Palace,Newcastle United,2.0,0.0,post
+671314,2024-04-24 20:00:00,2024,368,364,Everton,Liverpool,2.0,0.0,post
+671311,2024-04-24 20:00:00,2024,360,398,Manchester United,Sheffield United,4.0,2.0,post
+671318,2024-04-25 20:00:00,2024,331,382,Brighton & Hove Albion,Manchester City,0.0,4.0,post
+671377,2024-04-27 12:30:00,2024,371,364,West Ham United,Liverpool,2.0,2.0,post
+671375,2024-04-27 15:00:00,2024,370,384,Fulham,Crystal Palace,1.0,1.0,post
+671371,2024-04-27 15:00:00,2024,360,379,Manchester United,Burnley,1.0,1.0,post
+671372,2024-04-27 15:00:00,2024,361,398,Newcastle United,Sheffield United,5.0,1.0,post
+671374,2024-04-27 15:00:00,2024,380,301,Wolverhampton Wanderers,Luton Town,2.0,1.0,post
+671376,2024-04-27 17:30:00,2024,368,337,Everton,Brentford,1.0,0.0,post
+671380,2024-04-27 20:00:00,2024,362,363,Aston Villa,Chelsea,2.0,2.0,post
+671378,2024-04-28 14:00:00,2024,367,359,Tottenham Hotspur,Arsenal,2.0,3.0,post
+671379,2024-04-28 14:00:00,2024,349,331,AFC Bournemouth,Brighton & Hove Albion,3.0,0.0,post
+671373,2024-04-28 16:30:00,2024,393,382,Nottingham Forest,Manchester City,0.0,2.0,post
+671282,2024-05-02 19:30:00,2024,363,367,Chelsea,Tottenham Hotspur,2.0,0.0,post
+671388,2024-05-03 20:00:00,2024,301,368,Luton Town,Everton,1.0,1.0,post
+671381,2024-05-04 12:30:00,2024,359,349,Arsenal,AFC Bournemouth,3.0,0.0,post
+671382,2024-05-04 15:00:00,2024,337,370,Brentford,Fulham,0.0,0.0,post
+671384,2024-05-04 15:00:00,2024,379,361,Burnley,Newcastle United,1.0,4.0,post
+671390,2024-05-04 15:00:00,2024,398,393,Sheffield United,Nottingham Forest,1.0,3.0,post
+671389,2024-05-04 17:30:00,2024,382,380,Manchester City,Wolverhampton Wanderers,5.0,1.0,post
+671383,2024-05-05 14:00:00,2024,331,362,Brighton & Hove Albion,Aston Villa,1.0,0.0,post
+671385,2024-05-05 14:00:00,2024,363,371,Chelsea,West Ham United,5.0,0.0,post
+671387,2024-05-05 16:30:00,2024,364,367,Liverpool,Tottenham Hotspur,4.0,2.0,post
+671386,2024-05-06 20:00:00,2024,384,360,Crystal Palace,Manchester United,4.0,0.0,post
+671394,2024-05-11 12:30:00,2024,370,382,Fulham,Manchester City,0.0,4.0,post
+671400,2024-05-11 15:00:00,2024,380,384,Wolverhampton Wanderers,Crystal Palace,1.0,3.0,post
+671399,2024-05-11 15:00:00,2024,371,301,West Ham United,Luton Town,3.0,1.0,post
+671398,2024-05-11 15:00:00,2024,367,379,Tottenham Hotspur,Burnley,2.0,1.0,post
+671392,2024-05-11 15:00:00,2024,349,337,AFC Bournemouth,Brentford,1.0,2.0,post
+671393,2024-05-11 15:00:00,2024,368,398,Everton,Sheffield United,1.0,0.0,post
+671396,2024-05-11 15:00:00,2024,361,331,Newcastle United,Brighton & Hove Albion,1.0,1.0,post
+671397,2024-05-11 17:30:00,2024,393,363,Nottingham Forest,Chelsea,2.0,3.0,post
+671395,2024-05-12 16:30:00,2024,360,359,Manchester United,Arsenal,0.0,1.0,post
+671391,2024-05-13 20:00:00,2024,362,364,Aston Villa,Liverpool,3.0,3.0,post
+671365,2024-05-14 20:00:00,2024,367,382,Tottenham Hotspur,Manchester City,0.0,2.0,post
+671367,2024-05-15 19:45:00,2024,331,363,Brighton & Hove Albion,Chelsea,1.0,2.0,post
+671362,2024-05-15 20:00:00,2024,360,361,Manchester United,Newcastle United,3.0,2.0,post
+671406,2024-05-19 16:00:00,2024,384,362,Crystal Palace,Aston Villa,5.0,0.0,post
+671408,2024-05-19 16:00:00,2024,301,370,Luton Town,Fulham,2.0,4.0,post
+671407,2024-05-19 16:00:00,2024,364,380,Liverpool,Wolverhampton Wanderers,2.0,0.0,post
+671410,2024-05-19 16:00:00,2024,363,349,Chelsea,AFC Bournemouth,2.0,1.0,post
+671405,2024-05-19 16:00:00,2024,382,371,Manchester City,West Ham United,3.0,1.0,post
+671403,2024-05-19 16:00:00,2024,331,360,Brighton & Hove Albion,Manchester United,0.0,2.0,post
+671402,2024-05-19 16:00:00,2024,337,361,Brentford,Newcastle United,2.0,4.0,post
+671401,2024-05-19 16:00:00,2024,359,368,Arsenal,Everton,2.0,1.0,post
+671404,2024-05-19 16:00:00,2024,379,393,Burnley,Nottingham Forest,1.0,2.0,post
+671409,2024-05-19 16:00:00,2024,398,367,Sheffield United,Tottenham Hotspur,0.0,3.0,post
+704279,2024-08-16 20:00:00,2024,360,370,Manchester United,Fulham,1.0,0.0,post
+704280,2024-08-17 12:30:00,2024,373,364,Ipswich Town,Liverpool,0.0,2.0,post
+704281,2024-08-17 15:00:00,2024,359,380,Arsenal,Wolverhampton Wanderers,2.0,0.0,post
+704282,2024-08-17 15:00:00,2024,368,331,Everton,Brighton & Hove Albion,0.0,3.0,post
+704283,2024-08-17 15:00:00,2024,361,376,Newcastle United,Southampton,1.0,0.0,post
+704284,2024-08-17 15:00:00,2024,393,349,Nottingham Forest,AFC Bournemouth,1.0,1.0,post
+704285,2024-08-17 17:30:00,2024,371,362,West Ham United,Aston Villa,1.0,2.0,post
+704286,2024-08-18 14:00:00,2024,337,384,Brentford,Crystal Palace,2.0,1.0,post
+704287,2024-08-18 16:30:00,2024,363,382,Chelsea,Manchester City,0.0,2.0,post
+704288,2024-08-19 20:00:00,2024,375,367,Leicester City,Tottenham Hotspur,1.0,1.0,post
+704291,2024-08-24 12:30:00,2024,331,360,Brighton & Hove Albion,Manchester United,2.0,1.0,post
+704292,2024-08-24 15:00:00,2024,384,371,Crystal Palace,West Ham United,0.0,2.0,post
+704293,2024-08-24 15:00:00,2024,370,375,Fulham,Leicester City,2.0,1.0,post
+704295,2024-08-24 15:00:00,2024,382,373,Manchester City,Ipswich Town,4.0,1.0,post
+704296,2024-08-24 15:00:00,2024,376,393,Southampton,Nottingham Forest,0.0,1.0,post
+704297,2024-08-24 15:00:00,2024,367,368,Tottenham Hotspur,Everton,4.0,0.0,post
+704289,2024-08-24 17:30:00,2024,362,359,Aston Villa,Arsenal,0.0,2.0,post
+704298,2024-08-25 14:00:00,2024,380,363,Wolverhampton Wanderers,Chelsea,2.0,6.0,post
+704290,2024-08-25 14:00:00,2024,349,361,AFC Bournemouth,Newcastle United,1.0,1.0,post
+704294,2024-08-25 16:30:00,2024,364,337,Liverpool,Brentford,2.0,0.0,post
+704299,2024-08-31 12:30:00,2024,359,331,Arsenal,Brighton & Hove Albion,1.0,1.0,post
+704300,2024-08-31 15:00:00,2024,337,376,Brentford,Southampton,3.0,1.0,post
+704302,2024-08-31 15:00:00,2024,368,349,Everton,AFC Bournemouth,2.0,3.0,post
+704308,2024-08-31 15:00:00,2024,373,370,Ipswich Town,Fulham,1.0,1.0,post
+704304,2024-08-31 15:00:00,2024,375,362,Leicester City,Aston Villa,1.0,2.0,post
+704303,2024-08-31 15:00:00,2024,393,380,Nottingham Forest,Wolverhampton Wanderers,1.0,1.0,post
+704307,2024-08-31 17:30:00,2024,371,382,West Ham United,Manchester City,1.0,3.0,post
+704301,2024-09-01 13:30:00,2024,363,384,Chelsea,Crystal Palace,1.0,1.0,post
+704306,2024-09-01 13:30:00,2024,361,367,Newcastle United,Tottenham Hotspur,2.0,1.0,post
+704305,2024-09-01 16:00:00,2024,360,364,Manchester United,Liverpool,0.0,3.0,post
+704316,2024-09-14 12:30:00,2024,376,360,Southampton,Manchester United,0.0,3.0,post
+704313,2024-09-14 15:00:00,2024,370,371,Fulham,West Ham United,1.0,1.0,post
+704314,2024-09-14 15:00:00,2024,364,393,Liverpool,Nottingham Forest,0.0,1.0,post
+704311,2024-09-14 15:00:00,2024,331,373,Brighton & Hove Albion,Ipswich Town,0.0,0.0,post
+704312,2024-09-14 15:00:00,2024,384,375,Crystal Palace,Leicester City,2.0,2.0,post
+704315,2024-09-14 15:00:00,2024,382,337,Manchester City,Brentford,2.0,1.0,post
+704309,2024-09-14 17:30:00,2024,362,368,Aston Villa,Everton,3.0,2.0,post
+704310,2024-09-14 20:00:00,2024,349,363,AFC Bournemouth,Chelsea,0.0,1.0,post
+704317,2024-09-15 14:00:00,2024,367,359,Tottenham Hotspur,Arsenal,0.0,1.0,post
+704318,2024-09-15 16:30:00,2024,380,361,Wolverhampton Wanderers,Newcastle United,1.0,2.0,post
+704328,2024-09-21 12:30:00,2024,371,363,West Ham United,Chelsea,0.0,3.0,post
+704319,2024-09-21 15:00:00,2024,362,380,Aston Villa,Wolverhampton Wanderers,3.0,1.0,post
+704322,2024-09-21 15:00:00,2024,370,361,Fulham,Newcastle United,3.0,1.0,post
+704323,2024-09-21 15:00:00,2024,375,368,Leicester City,Everton,1.0,1.0,post
+704324,2024-09-21 15:00:00,2024,364,349,Liverpool,AFC Bournemouth,3.0,0.0,post
+704326,2024-09-21 15:00:00,2024,376,373,Southampton,Ipswich Town,1.0,1.0,post
+704327,2024-09-21 15:00:00,2024,367,337,Tottenham Hotspur,Brentford,3.0,1.0,post
+704321,2024-09-21 17:30:00,2024,384,360,Crystal Palace,Manchester United,0.0,0.0,post
+704320,2024-09-22 14:00:00,2024,331,393,Brighton & Hove Albion,Nottingham Forest,2.0,2.0,post
+704325,2024-09-22 16:30:00,2024,382,359,Manchester City,Arsenal,2.0,2.0,post
+704336,2024-09-28 12:30:00,2024,361,382,Newcastle United,Manchester City,1.0,1.0,post
+704333,2024-09-28 15:00:00,2024,393,370,Nottingham Forest,Fulham,0.0,1.0,post
+704332,2024-09-28 15:00:00,2024,363,331,Chelsea,Brighton & Hove Albion,4.0,2.0,post
+704338,2024-09-28 15:00:00,2024,368,384,Everton,Crystal Palace,2.0,1.0,post
+704329,2024-09-28 15:00:00,2024,359,375,Arsenal,Leicester City,4.0,2.0,post
+704331,2024-09-28 15:00:00,2024,337,371,Brentford,West Ham United,1.0,1.0,post
+704337,2024-09-28 17:30:00,2024,380,364,Wolverhampton Wanderers,Liverpool,1.0,2.0,post
+704334,2024-09-29 14:00:00,2024,373,362,Ipswich Town,Aston Villa,2.0,2.0,post
+704335,2024-09-29 16:30:00,2024,360,367,Manchester United,Tottenham Hotspur,0.0,3.0,post
+704330,2024-09-30 20:00:00,2024,349,376,AFC Bournemouth,Southampton,3.0,1.0,post
+704345,2024-10-05 12:30:00,2024,384,364,Crystal Palace,Liverpool,0.0,1.0,post
+704346,2024-10-05 15:00:00,2024,337,380,Brentford,Wolverhampton Wanderers,5.0,3.0,post
+704343,2024-10-05 15:00:00,2024,359,376,Arsenal,Southampton,3.0,1.0,post
+704339,2024-10-05 15:00:00,2024,375,349,Leicester City,AFC Bournemouth,1.0,0.0,post
+704348,2024-10-05 15:00:00,2024,382,370,Manchester City,Fulham,3.0,2.0,post
+704344,2024-10-05 15:00:00,2024,371,373,West Ham United,Ipswich Town,4.0,1.0,post
+704340,2024-10-05 17:30:00,2024,368,361,Everton,Newcastle United,0.0,0.0,post
+704347,2024-10-06 14:00:00,2024,362,360,Aston Villa,Manchester United,0.0,0.0,post
+704342,2024-10-06 14:00:00,2024,363,393,Chelsea,Nottingham Forest,1.0,1.0,post
+704341,2024-10-06 16:30:00,2024,331,367,Brighton & Hove Albion,Tottenham Hotspur,3.0,2.0,post
+704353,2024-10-19 12:30:00,2024,367,371,Tottenham Hotspur,West Ham United,4.0,1.0,post
+704349,2024-10-19 15:00:00,2024,376,375,Southampton,Leicester City,2.0,3.0,post
+704357,2024-10-19 15:00:00,2024,361,331,Newcastle United,Brighton & Hove Albion,0.0,1.0,post
+704352,2024-10-19 15:00:00,2024,360,337,Manchester United,Brentford,2.0,1.0,post
+704356,2024-10-19 15:00:00,2024,370,362,Fulham,Aston Villa,1.0,3.0,post
+704355,2024-10-19 15:15:00,2024,373,368,Ipswich Town,Everton,0.0,2.0,post
+704351,2024-10-19 17:30:00,2024,349,359,AFC Bournemouth,Arsenal,2.0,0.0,post
+704358,2024-10-20 14:00:00,2024,380,382,Wolverhampton Wanderers,Manchester City,1.0,2.0,post
+704354,2024-10-20 16:30:00,2024,364,363,Liverpool,Chelsea,2.0,1.0,post
+704350,2024-10-21 20:00:00,2024,393,384,Nottingham Forest,Crystal Palace,1.0,0.0,post
+704362,2024-10-25 20:00:00,2024,375,393,Leicester City,Nottingham Forest,1.0,3.0,post
+704368,2024-10-26 15:00:00,2024,362,349,Aston Villa,AFC Bournemouth,1.0,1.0,post
+704364,2024-10-26 15:00:00,2024,337,373,Brentford,Ipswich Town,4.0,3.0,post
+704365,2024-10-26 15:00:00,2024,331,380,Brighton & Hove Albion,Wolverhampton Wanderers,2.0,2.0,post
+704363,2024-10-26 15:00:00,2024,382,376,Manchester City,Southampton,1.0,0.0,post
+704361,2024-10-26 17:30:00,2024,368,370,Everton,Fulham,1.0,1.0,post
+704359,2024-10-27 14:00:00,2024,363,361,Chelsea,Newcastle United,2.0,1.0,post
+704360,2024-10-27 14:00:00,2024,384,367,Crystal Palace,Tottenham Hotspur,1.0,0.0,post
+704366,2024-10-27 14:00:00,2024,371,360,West Ham United,Manchester United,2.0,1.0,post
+704367,2024-10-27 16:30:00,2024,359,364,Arsenal,Liverpool,2.0,2.0,post
+704372,2024-11-02 12:30:00,2024,361,359,Newcastle United,Arsenal,1.0,0.0,post
+704377,2024-11-02 15:00:00,2024,349,382,AFC Bournemouth,Manchester City,2.0,1.0,post
+704375,2024-11-02 15:00:00,2024,373,375,Ipswich Town,Leicester City,1.0,1.0,post
+704374,2024-11-02 15:00:00,2024,364,331,Liverpool,Brighton & Hove Albion,2.0,1.0,post
+704371,2024-11-02 15:00:00,2024,393,371,Nottingham Forest,West Ham United,3.0,0.0,post
+704370,2024-11-02 15:00:00,2024,376,368,Southampton,Everton,1.0,0.0,post
+704373,2024-11-02 17:30:00,2024,380,384,Wolverhampton Wanderers,Crystal Palace,2.0,2.0,post
+704369,2024-11-03 14:00:00,2024,367,362,Tottenham Hotspur,Aston Villa,4.0,1.0,post
+704378,2024-11-03 16:30:00,2024,360,363,Manchester United,Chelsea,1.0,1.0,post
+704376,2024-11-04 20:00:00,2024,370,337,Fulham,Brentford,2.0,1.0,post
+704382,2024-11-09 15:00:00,2024,337,349,Brentford,AFC Bournemouth,3.0,2.0,post
+704379,2024-11-09 15:00:00,2024,384,370,Crystal Palace,Fulham,0.0,2.0,post
+704384,2024-11-09 15:00:00,2024,371,368,West Ham United,Everton,0.0,0.0,post
+704385,2024-11-09 15:00:00,2024,380,376,Wolverhampton Wanderers,Southampton,2.0,0.0,post
+704381,2024-11-09 17:30:00,2024,331,382,Brighton & Hove Albion,Manchester City,2.0,1.0,post
+704388,2024-11-09 20:00:00,2024,364,362,Liverpool,Aston Villa,2.0,0.0,post
+704383,2024-11-10 14:00:00,2024,367,373,Tottenham Hotspur,Ipswich Town,1.0,2.0,post
+704387,2024-11-10 14:00:00,2024,393,361,Nottingham Forest,Newcastle United,1.0,3.0,post
+704386,2024-11-10 14:00:00,2024,360,375,Manchester United,Leicester City,3.0,0.0,post
+704380,2024-11-10 16:30:00,2024,363,359,Chelsea,Arsenal,1.0,1.0,post
+704392,2024-11-23 12:30:00,2024,375,363,Leicester City,Chelsea,1.0,2.0,post
+704395,2024-11-23 15:00:00,2024,349,331,AFC Bournemouth,Brighton & Hove Albion,1.0,2.0,post
+704393,2024-11-23 15:00:00,2024,359,393,Arsenal,Nottingham Forest,3.0,0.0,post
+704394,2024-11-23 15:00:00,2024,362,384,Aston Villa,Crystal Palace,2.0,2.0,post
+704391,2024-11-23 15:00:00,2024,368,337,Everton,Brentford,0.0,0.0,post
+704390,2024-11-23 15:00:00,2024,370,380,Fulham,Wolverhampton Wanderers,1.0,4.0,post
+704396,2024-11-23 17:30:00,2024,382,367,Manchester City,Tottenham Hotspur,0.0,4.0,post
+704397,2024-11-24 14:00:00,2024,376,364,Southampton,Liverpool,2.0,3.0,post
+704389,2024-11-24 16:30:00,2024,373,360,Ipswich Town,Manchester United,1.0,1.0,post
+704398,2024-11-25 20:00:00,2024,361,371,Newcastle United,West Ham United,0.0,2.0,post
+704408,2024-11-29 20:00:00,2024,331,376,Brighton & Hove Albion,Southampton,1.0,1.0,post
+704402,2024-11-30 15:00:00,2024,337,375,Brentford,Leicester City,4.0,1.0,post
+704405,2024-11-30 15:00:00,2024,384,361,Crystal Palace,Newcastle United,1.0,1.0,post
+704399,2024-11-30 15:00:00,2024,393,373,Nottingham Forest,Ipswich Town,1.0,0.0,post
+704403,2024-11-30 15:00:00,2024,380,349,Wolverhampton Wanderers,AFC Bournemouth,2.0,4.0,post
+704400,2024-11-30 17:30:00,2024,371,359,West Ham United,Arsenal,2.0,5.0,post
+704404,2024-12-01 13:30:00,2024,363,362,Chelsea,Aston Villa,3.0,0.0,post
+704407,2024-12-01 13:30:00,2024,360,368,Manchester United,Everton,4.0,0.0,post
+704401,2024-12-01 13:30:00,2024,367,370,Tottenham Hotspur,Fulham,1.0,1.0,post
+704406,2024-12-01 16:00:00,2024,364,382,Liverpool,Manchester City,2.0,0.0,post
+704412,2024-12-03 19:30:00,2024,373,384,Ipswich Town,Crystal Palace,0.0,1.0,post
+704411,2024-12-03 20:15:00,2024,375,371,Leicester City,West Ham United,3.0,1.0,post
+704418,2024-12-04 19:30:00,2024,376,363,Southampton,Chelsea,1.0,5.0,post
+704417,2024-12-04 19:30:00,2024,361,364,Newcastle United,Liverpool,3.0,3.0,post
+704415,2024-12-04 19:30:00,2024,368,380,Everton,Wolverhampton Wanderers,4.0,0.0,post
+704416,2024-12-04 19:30:00,2024,382,393,Manchester City,Nottingham Forest,3.0,0.0,post
+704410,2024-12-04 20:15:00,2024,359,360,Arsenal,Manchester United,2.0,0.0,post
+704409,2024-12-04 20:15:00,2024,362,337,Aston Villa,Brentford,3.0,1.0,post
+704413,2024-12-05 19:30:00,2024,370,331,Fulham,Brighton & Hove Albion,3.0,1.0,post
+704414,2024-12-05 20:15:00,2024,349,367,AFC Bournemouth,Tottenham Hotspur,1.0,0.0,post
+704423,2024-12-07 15:00:00,2024,337,361,Brentford,Newcastle United,4.0,2.0,post
+704422,2024-12-07 15:00:00,2024,362,376,Aston Villa,Southampton,1.0,0.0,post
+704424,2024-12-07 15:00:00,2024,384,382,Crystal Palace,Manchester City,2.0,2.0,post
+704419,2024-12-07 17:30:00,2024,360,393,Manchester United,Nottingham Forest,2.0,3.0,post
+704421,2024-12-08 14:00:00,2024,370,359,Fulham,Arsenal,1.0,1.0,post
+704427,2024-12-08 14:00:00,2024,373,349,Ipswich Town,AFC Bournemouth,1.0,2.0,post
+704428,2024-12-08 14:00:00,2024,375,331,Leicester City,Brighton & Hove Albion,2.0,2.0,post
+704420,2024-12-08 16:30:00,2024,367,363,Tottenham Hotspur,Chelsea,3.0,4.0,post
+704426,2024-12-09 20:00:00,2024,371,380,West Ham United,Wolverhampton Wanderers,2.0,1.0,post
+704435,2024-12-14 15:00:00,2024,361,375,Newcastle United,Leicester City,4.0,0.0,post
+704433,2024-12-14 15:00:00,2024,380,373,Wolverhampton Wanderers,Ipswich Town,1.0,2.0,post
+704429,2024-12-14 15:00:00,2024,359,368,Arsenal,Everton,0.0,0.0,post
+704438,2024-12-14 15:00:00,2024,364,370,Liverpool,Fulham,2.0,2.0,post
+704436,2024-12-14 17:30:00,2024,393,362,Nottingham Forest,Aston Villa,2.0,1.0,post
+704431,2024-12-15 14:00:00,2024,331,384,Brighton & Hove Albion,Crystal Palace,1.0,3.0,post
+704434,2024-12-15 16:30:00,2024,382,360,Manchester City,Manchester United,1.0,2.0,post
+704432,2024-12-15 19:00:00,2024,363,337,Chelsea,Brentford,2.0,1.0,post
+704437,2024-12-15 19:00:00,2024,376,367,Southampton,Tottenham Hotspur,0.0,5.0,post
+704430,2024-12-16 20:00:00,2024,349,371,AFC Bournemouth,West Ham United,1.0,1.0,post
+704444,2024-12-21 12:30:00,2024,362,382,Aston Villa,Manchester City,2.0,1.0,post
+704443,2024-12-21 15:00:00,2024,371,331,West Ham United,Brighton & Hove Albion,1.0,1.0,post
+704442,2024-12-21 15:00:00,2024,373,361,Ipswich Town,Newcastle United,0.0,4.0,post
+704445,2024-12-21 15:00:00,2024,337,393,Brentford,Nottingham Forest,0.0,2.0,post
+704446,2024-12-21 17:30:00,2024,384,359,Crystal Palace,Arsenal,1.0,5.0,post
+704447,2024-12-22 14:00:00,2024,368,363,Everton,Chelsea,0.0,0.0,post
+704448,2024-12-22 14:00:00,2024,370,376,Fulham,Southampton,0.0,0.0,post
+704441,2024-12-22 14:00:00,2024,375,380,Leicester City,Wolverhampton Wanderers,0.0,3.0,post
+704440,2024-12-22 14:00:00,2024,360,349,Manchester United,AFC Bournemouth,0.0,3.0,post
+704439,2024-12-22 16:30:00,2024,367,364,Tottenham Hotspur,Liverpool,3.0,6.0,post
+704451,2024-12-26 12:30:00,2024,382,368,Manchester City,Everton,1.0,1.0,post
+704454,2024-12-26 15:00:00,2024,376,371,Southampton,West Ham United,0.0,1.0,post
+704453,2024-12-26 15:00:00,2024,393,367,Nottingham Forest,Tottenham Hotspur,1.0,0.0,post
+704458,2024-12-26 15:00:00,2024,349,384,AFC Bournemouth,Crystal Palace,0.0,0.0,post
+704449,2024-12-26 15:00:00,2024,363,370,Chelsea,Fulham,1.0,2.0,post
+704452,2024-12-26 15:00:00,2024,361,362,Newcastle United,Aston Villa,3.0,0.0,post
+704455,2024-12-26 17:30:00,2024,380,360,Wolverhampton Wanderers,Manchester United,2.0,0.0,post
+704456,2024-12-26 20:00:00,2024,364,375,Liverpool,Leicester City,3.0,1.0,post
+704450,2024-12-27 19:30:00,2024,331,337,Brighton & Hove Albion,Brentford,0.0,0.0,post
+704457,2024-12-27 20:15:00,2024,359,373,Arsenal,Ipswich Town,1.0,0.0,post
+704462,2024-12-29 14:30:00,2024,375,382,Leicester City,Manchester City,0.0,2.0,post
+704466,2024-12-29 15:00:00,2024,384,376,Crystal Palace,Southampton,2.0,1.0,post
+704465,2024-12-29 15:00:00,2024,368,393,Everton,Nottingham Forest,0.0,2.0,post
+704460,2024-12-29 15:00:00,2024,370,349,Fulham,AFC Bournemouth,2.0,2.0,post
+704463,2024-12-29 15:00:00,2024,367,380,Tottenham Hotspur,Wolverhampton Wanderers,2.0,2.0,post
+704464,2024-12-29 17:15:00,2024,371,364,West Ham United,Liverpool,0.0,5.0,post
+704459,2024-12-30 19:45:00,2024,362,331,Aston Villa,Brighton & Hove Albion,2.0,2.0,post
+704461,2024-12-30 19:45:00,2024,373,363,Ipswich Town,Chelsea,2.0,0.0,post
+704468,2024-12-30 20:00:00,2024,360,361,Manchester United,Newcastle United,0.0,2.0,post
+704467,2025-01-01 17:30:00,2025,337,359,Brentford,Arsenal,1.0,3.0,post
+704472,2025-01-04 12:30:00,2025,367,361,Tottenham Hotspur,Newcastle United,1.0,2.0,post
+704469,2025-01-04 15:00:00,2025,349,368,AFC Bournemouth,Everton,1.0,0.0,post
+704470,2025-01-04 15:00:00,2025,362,375,Aston Villa,Leicester City,2.0,1.0,post
+704478,2025-01-04 15:00:00,2025,384,363,Crystal Palace,Chelsea,1.0,1.0,post
+704474,2025-01-04 15:00:00,2025,382,371,Manchester City,West Ham United,4.0,1.0,post
+704473,2025-01-04 15:00:00,2025,376,337,Southampton,Brentford,0.0,5.0,post
+704477,2025-01-04 17:30:00,2025,331,359,Brighton & Hove Albion,Arsenal,1.0,1.0,post
+704471,2025-01-05 14:00:00,2025,370,373,Fulham,Ipswich Town,2.0,2.0,post
+704475,2025-01-05 16:30:00,2025,364,360,Liverpool,Manchester United,2.0,2.0,post
+704476,2025-01-06 20:00:00,2025,380,393,Wolverhampton Wanderers,Nottingham Forest,0.0,3.0,post
+704482,2025-01-14 19:30:00,2025,337,382,Brentford,Manchester City,2.0,2.0,post
+704487,2025-01-14 19:30:00,2025,363,349,Chelsea,AFC Bournemouth,2.0,2.0,post
+704483,2025-01-14 19:30:00,2025,371,370,West Ham United,Fulham,3.0,2.0,post
+704484,2025-01-14 20:00:00,2025,393,364,Nottingham Forest,Liverpool,1.0,1.0,post
+704481,2025-01-15 19:30:00,2025,368,362,Everton,Aston Villa,0.0,1.0,post
+704479,2025-01-15 19:30:00,2025,375,384,Leicester City,Crystal Palace,0.0,2.0,post
+704486,2025-01-15 19:30:00,2025,361,380,Newcastle United,Wolverhampton Wanderers,3.0,0.0,post
+704485,2025-01-15 20:00:00,2025,359,367,Arsenal,Tottenham Hotspur,2.0,1.0,post
+704480,2025-01-16 19:30:00,2025,373,331,Ipswich Town,Brighton & Hove Albion,0.0,2.0,post
+704488,2025-01-16 20:00:00,2025,360,376,Manchester United,Southampton,3.0,1.0,post
+704496,2025-01-18 12:30:00,2025,361,349,Newcastle United,AFC Bournemouth,1.0,4.0,post
+704494,2025-01-18 15:00:00,2025,337,364,Brentford,Liverpool,0.0,2.0,post
+704498,2025-01-18 15:00:00,2025,375,370,Leicester City,Fulham,0.0,2.0,post
+704491,2025-01-18 15:00:00,2025,371,384,West Ham United,Crystal Palace,0.0,2.0,post
+704493,2025-01-18 17:30:00,2025,359,362,Arsenal,Aston Villa,2.0,2.0,post
+704492,2025-01-19 14:00:00,2025,393,376,Nottingham Forest,Southampton,3.0,2.0,post
+704489,2025-01-19 14:00:00,2025,368,367,Everton,Tottenham Hotspur,3.0,2.0,post
+704497,2025-01-19 14:00:00,2025,360,331,Manchester United,Brighton & Hove Albion,1.0,3.0,post
+704490,2025-01-19 16:30:00,2025,373,382,Ipswich Town,Manchester City,0.0,6.0,post
+704495,2025-01-20 20:00:00,2025,363,380,Chelsea,Wolverhampton Wanderers,3.0,1.0,post
+704507,2025-01-25 15:00:00,2025,349,393,AFC Bournemouth,Nottingham Forest,5.0,0.0,post
+704506,2025-01-25 15:00:00,2025,331,368,Brighton & Hove Albion,Everton,0.0,1.0,post
+704508,2025-01-25 15:00:00,2025,364,373,Liverpool,Ipswich Town,4.0,1.0,post
+704501,2025-01-25 15:00:00,2025,376,361,Southampton,Newcastle United,1.0,3.0,post
+704504,2025-01-25 15:00:00,2025,380,359,Wolverhampton Wanderers,Arsenal,0.0,1.0,post
+704502,2025-01-25 17:30:00,2025,382,363,Manchester City,Chelsea,3.0,1.0,post
+704505,2025-01-26 14:00:00,2025,384,337,Crystal Palace,Brentford,1.0,2.0,post
+704500,2025-01-26 14:00:00,2025,367,375,Tottenham Hotspur,Leicester City,1.0,2.0,post
+704499,2025-01-26 16:30:00,2025,362,371,Aston Villa,West Ham United,1.0,1.0,post
+704503,2025-01-26 19:00:00,2025,370,360,Fulham,Manchester United,0.0,1.0,post
+704518,2025-02-01 12:30:00,2025,393,331,Nottingham Forest,Brighton & Hove Albion,7.0,0.0,post
+704510,2025-02-01 15:00:00,2025,373,376,Ipswich Town,Southampton,1.0,2.0,post
+704517,2025-02-01 15:00:00,2025,361,370,Newcastle United,Fulham,1.0,2.0,post
+704511,2025-02-01 15:00:00,2025,349,364,AFC Bournemouth,Liverpool,0.0,2.0,post
+704509,2025-02-01 15:00:00,2025,368,375,Everton,Leicester City,4.0,0.0,post
+704514,2025-02-01 17:30:00,2025,380,362,Wolverhampton Wanderers,Aston Villa,2.0,0.0,post
+704512,2025-02-02 14:00:00,2025,337,367,Brentford,Tottenham Hotspur,0.0,2.0,post
+704516,2025-02-02 14:00:00,2025,360,384,Manchester United,Crystal Palace,0.0,2.0,post
+704515,2025-02-02 16:30:00,2025,359,382,Arsenal,Manchester City,5.0,1.0,post
+704513,2025-02-03 20:00:00,2025,363,371,Chelsea,West Ham United,2.0,1.0,post
+704425,2025-02-12 19:30:00,2025,368,364,Everton,Liverpool,2.0,2.0,post
+704526,2025-02-14 20:00:00,2025,331,363,Brighton & Hove Albion,Chelsea,3.0,0.0,post
+704520,2025-02-15 12:30:00,2025,375,359,Leicester City,Arsenal,0.0,2.0,post
+704527,2025-02-15 15:00:00,2025,362,373,Aston Villa,Ipswich Town,1.0,1.0,post
+704519,2025-02-15 15:00:00,2025,370,393,Fulham,Nottingham Forest,2.0,1.0,post
+704522,2025-02-15 15:00:00,2025,382,361,Manchester City,Newcastle United,4.0,0.0,post
+704528,2025-02-15 15:00:00,2025,376,349,Southampton,AFC Bournemouth,1.0,3.0,post
+704523,2025-02-15 15:00:00,2025,371,337,West Ham United,Brentford,0.0,1.0,post
+704525,2025-02-15 17:30:00,2025,384,368,Crystal Palace,Everton,1.0,2.0,post
+704521,2025-02-16 14:00:00,2025,364,380,Liverpool,Wolverhampton Wanderers,2.0,1.0,post
+704524,2025-02-16 16:30:00,2025,367,360,Tottenham Hotspur,Manchester United,1.0,0.0,post
+704567,2025-02-19 19:30:00,2025,362,364,Aston Villa,Liverpool,2.0,2.0,post
+704535,2025-02-21 20:00:00,2025,375,337,Leicester City,Brentford,0.0,4.0,post
+704530,2025-02-22 12:30:00,2025,368,360,Everton,Manchester United,2.0,2.0,post
+704529,2025-02-22 15:00:00,2025,349,380,AFC Bournemouth,Wolverhampton Wanderers,0.0,1.0,post
+704538,2025-02-22 15:00:00,2025,359,371,Arsenal,West Ham United,0.0,1.0,post
+704531,2025-02-22 15:00:00,2025,370,384,Fulham,Crystal Palace,0.0,2.0,post
+704532,2025-02-22 15:00:00,2025,373,367,Ipswich Town,Tottenham Hotspur,1.0,4.0,post
+704536,2025-02-22 15:00:00,2025,376,331,Southampton,Brighton & Hove Albion,0.0,4.0,post
+704537,2025-02-22 17:30:00,2025,362,363,Aston Villa,Chelsea,2.0,1.0,post
+704533,2025-02-23 14:00:00,2025,361,393,Newcastle United,Nottingham Forest,4.0,3.0,post
+704534,2025-02-23 16:30:00,2025,382,364,Manchester City,Liverpool,0.0,2.0,post
+704542,2025-02-25 19:30:00,2025,331,349,Brighton & Hove Albion,AFC Bournemouth,2.0,1.0,post
+704544,2025-02-25 19:30:00,2025,384,362,Crystal Palace,Aston Villa,4.0,1.0,post
+704539,2025-02-25 19:30:00,2025,380,370,Wolverhampton Wanderers,Fulham,1.0,2.0,post
+704547,2025-02-25 20:15:00,2025,363,376,Chelsea,Southampton,4.0,0.0,post
+704545,2025-02-26 19:30:00,2025,337,368,Brentford,Everton,1.0,1.0,post
+704546,2025-02-26 19:30:00,2025,360,373,Manchester United,Ipswich Town,3.0,2.0,post
+704541,2025-02-26 19:30:00,2025,393,359,Nottingham Forest,Arsenal,0.0,0.0,post
+704540,2025-02-26 19:30:00,2025,367,382,Tottenham Hotspur,Manchester City,0.0,1.0,post
+704548,2025-02-26 20:15:00,2025,364,361,Liverpool,Newcastle United,2.0,0.0,post
+704543,2025-02-27 20:00:00,2025,371,375,West Ham United,Leicester City,2.0,0.0,post
+704554,2025-03-08 12:30:00,2025,393,382,Nottingham Forest,Manchester City,1.0,0.0,post
+704550,2025-03-08 15:00:00,2025,331,370,Brighton & Hove Albion,Fulham,2.0,1.0,post
+704557,2025-03-08 15:00:00,2025,384,373,Crystal Palace,Ipswich Town,1.0,0.0,post
+704556,2025-03-08 15:00:00,2025,364,376,Liverpool,Southampton,3.0,1.0,post
+704549,2025-03-08 17:30:00,2025,337,362,Brentford,Aston Villa,0.0,1.0,post
+704551,2025-03-08 20:00:00,2025,380,368,Wolverhampton Wanderers,Everton,1.0,1.0,post
+704558,2025-03-09 14:00:00,2025,367,349,Tottenham Hotspur,AFC Bournemouth,2.0,2.0,post
+704553,2025-03-09 14:00:00,2025,363,375,Chelsea,Leicester City,1.0,0.0,post
+704555,2025-03-09 16:30:00,2025,360,359,Manchester United,Arsenal,1.0,1.0,post
+704552,2025-03-10 20:00:00,2025,371,361,West Ham United,Newcastle United,0.0,1.0,post
+704565,2025-03-15 15:00:00,2025,368,371,Everton,West Ham United,1.0,1.0,post
+704568,2025-03-15 15:00:00,2025,373,393,Ipswich Town,Nottingham Forest,2.0,4.0,post
+704561,2025-03-15 15:00:00,2025,382,331,Manchester City,Brighton & Hove Albion,2.0,2.0,post
+704563,2025-03-15 15:00:00,2025,376,380,Southampton,Wolverhampton Wanderers,1.0,2.0,post
+704566,2025-03-15 17:30:00,2025,349,337,AFC Bournemouth,Brentford,1.0,2.0,post
+704564,2025-03-16 13:30:00,2025,370,367,Fulham,Tottenham Hotspur,2.0,0.0,post
+704559,2025-03-16 13:30:00,2025,359,363,Arsenal,Chelsea,1.0,0.0,post
+704562,2025-03-16 19:00:00,2025,375,360,Leicester City,Manchester United,0.0,3.0,post
+704572,2025-04-01 19:45:00,2025,359,370,Arsenal,Fulham,2.0,1.0,post
+704573,2025-04-01 19:45:00,2025,380,371,Wolverhampton Wanderers,West Ham United,1.0,0.0,post
+704569,2025-04-01 20:00:00,2025,393,360,Nottingham Forest,Manchester United,1.0,0.0,post
+704578,2025-04-02 19:45:00,2025,361,337,Newcastle United,Brentford,2.0,1.0,post
+704574,2025-04-02 19:45:00,2025,382,375,Manchester City,Leicester City,2.0,0.0,post
+704577,2025-04-02 19:45:00,2025,376,384,Southampton,Crystal Palace,1.0,1.0,post
+704570,2025-04-02 19:45:00,2025,349,373,AFC Bournemouth,Ipswich Town,1.0,2.0,post
+704571,2025-04-02 19:45:00,2025,331,362,Brighton & Hove Albion,Aston Villa,0.0,3.0,post
+704575,2025-04-02 20:00:00,2025,364,368,Liverpool,Everton,1.0,0.0,post
+704576,2025-04-03 20:00:00,2025,363,367,Chelsea,Tottenham Hotspur,1.0,0.0,post
+704584,2025-04-05 12:30:00,2025,368,359,Everton,Arsenal,1.0,1.0,post
+704583,2025-04-05 15:00:00,2025,384,331,Crystal Palace,Brighton & Hove Albion,2.0,1.0,post
+704585,2025-04-05 15:00:00,2025,373,380,Ipswich Town,Wolverhampton Wanderers,1.0,2.0,post
+704582,2025-04-05 15:00:00,2025,371,349,West Ham United,AFC Bournemouth,2.0,2.0,post
+704580,2025-04-05 17:30:00,2025,362,393,Aston Villa,Nottingham Forest,2.0,1.0,post
+704587,2025-04-06 14:00:00,2025,367,376,Tottenham Hotspur,Southampton,3.0,1.0,post
+704579,2025-04-06 14:00:00,2025,337,363,Brentford,Chelsea,0.0,0.0,post
+704586,2025-04-06 14:00:00,2025,370,364,Fulham,Liverpool,3.0,2.0,post
+704581,2025-04-06 16:30:00,2025,360,382,Manchester United,Manchester City,0.0,0.0,post
+704588,2025-04-07 20:00:00,2025,375,361,Leicester City,Newcastle United,0.0,3.0,post
+704591,2025-04-12 12:30:00,2025,382,384,Manchester City,Crystal Palace,5.0,2.0,post
+704597,2025-04-12 15:00:00,2025,331,375,Brighton & Hove Albion,Leicester City,2.0,2.0,post
+704589,2025-04-12 15:00:00,2025,393,368,Nottingham Forest,Everton,0.0,1.0,post
+704592,2025-04-12 15:00:00,2025,376,362,Southampton,Aston Villa,0.0,3.0,post
+704595,2025-04-12 17:30:00,2025,359,337,Arsenal,Brentford,1.0,1.0,post
+704598,2025-04-13 14:00:00,2025,363,373,Chelsea,Ipswich Town,2.0,2.0,post
+704594,2025-04-13 14:00:00,2025,364,371,Liverpool,West Ham United,2.0,1.0,post
+704593,2025-04-13 14:00:00,2025,380,367,Wolverhampton Wanderers,Tottenham Hotspur,4.0,2.0,post
+704590,2025-04-13 16:30:00,2025,361,360,Newcastle United,Manchester United,4.0,1.0,post
+704596,2025-04-14 20:00:00,2025,349,370,AFC Bournemouth,Fulham,1.0,0.0,post
+704560,2025-04-16 19:30:00,2025,361,384,Newcastle United,Crystal Palace,5.0,0.0,post
+704603,2025-04-19 15:00:00,2025,371,376,West Ham United,Southampton,1.0,1.0,post
+704604,2025-04-19 15:00:00,2025,368,382,Everton,Manchester City,0.0,2.0,post
+704605,2025-04-19 15:00:00,2025,384,349,Crystal Palace,AFC Bournemouth,0.0,0.0,post
+704607,2025-04-19 15:00:00,2025,337,331,Brentford,Brighton & Hove Albion,4.0,2.0,post
+704606,2025-04-19 17:30:00,2025,362,361,Aston Villa,Newcastle United,4.0,1.0,post
+704608,2025-04-20 14:00:00,2025,370,363,Fulham,Chelsea,1.0,2.0,post
+704602,2025-04-20 14:00:00,2025,373,359,Ipswich Town,Arsenal,0.0,4.0,post
+704600,2025-04-20 14:00:00,2025,360,380,Manchester United,Wolverhampton Wanderers,0.0,1.0,post
+704601,2025-04-20 16:30:00,2025,375,364,Leicester City,Liverpool,0.0,1.0,post
+704599,2025-04-21 20:00:00,2025,367,393,Tottenham Hotspur,Nottingham Forest,1.0,2.0,post
+704615,2025-04-22 20:00:00,2025,382,362,Manchester City,Aston Villa,2.0,1.0,post
+704618,2025-04-23 20:00:00,2025,359,384,Arsenal,Crystal Palace,2.0,2.0,post
+704611,2025-04-26 12:30:00,2025,363,368,Chelsea,Everton,1.0,0.0,post
+704610,2025-04-26 15:00:00,2025,331,371,Brighton & Hove Albion,West Ham United,3.0,2.0,post
+704614,2025-04-26 15:00:00,2025,361,373,Newcastle United,Ipswich Town,3.0,0.0,post
+704612,2025-04-26 15:00:00,2025,376,370,Southampton,Fulham,1.0,2.0,post
+704613,2025-04-26 15:00:00,2025,380,375,Wolverhampton Wanderers,Leicester City,3.0,0.0,post
+704609,2025-04-27 14:00:00,2025,349,360,AFC Bournemouth,Manchester United,1.0,1.0,post
+704617,2025-04-27 16:30:00,2025,364,367,Liverpool,Tottenham Hotspur,5.0,1.0,post
+704616,2025-05-01 19:30:00,2025,393,337,Nottingham Forest,Brentford,0.0,2.0,post
+704627,2025-05-02 20:00:00,2025,382,380,Manchester City,Wolverhampton Wanderers,1.0,0.0,post
+704620,2025-05-03 12:30:00,2025,362,370,Aston Villa,Fulham,1.0,0.0,post
+704625,2025-05-03 15:00:00,2025,368,373,Everton,Ipswich Town,2.0,2.0,post
+704626,2025-05-03 15:00:00,2025,375,376,Leicester City,Southampton,2.0,0.0,post
+704619,2025-05-03 17:30:00,2025,359,349,Arsenal,AFC Bournemouth,1.0,2.0,post
+704621,2025-05-04 14:00:00,2025,337,360,Brentford,Manchester United,4.0,3.0,post
+704622,2025-05-04 14:00:00,2025,331,361,Brighton & Hove Albion,Newcastle United,1.0,1.0,post
+704628,2025-05-04 14:00:00,2025,371,367,West Ham United,Tottenham Hotspur,1.0,1.0,post
+704623,2025-05-04 16:30:00,2025,363,364,Chelsea,Liverpool,3.0,1.0,post
+704624,2025-05-05 20:00:00,2025,384,393,Crystal Palace,Nottingham Forest,1.0,1.0,post
+704630,2025-05-10 15:00:00,2025,370,368,Fulham,Everton,1.0,3.0,post
+704631,2025-05-10 15:00:00,2025,373,337,Ipswich Town,Brentford,0.0,1.0,post
+704636,2025-05-10 15:00:00,2025,376,382,Southampton,Manchester City,0.0,0.0,post
+704638,2025-05-10 15:00:00,2025,380,331,Wolverhampton Wanderers,Brighton & Hove Albion,0.0,2.0,post
+704629,2025-05-10 17:30:00,2025,349,362,AFC Bournemouth,Aston Villa,0.0,1.0,post
+704634,2025-05-11 12:00:00,2025,361,363,Newcastle United,Chelsea,2.0,0.0,post
+704635,2025-05-11 14:15:00,2025,393,375,Nottingham Forest,Leicester City,2.0,2.0,post
+704637,2025-05-11 14:15:00,2025,367,384,Tottenham Hotspur,Crystal Palace,0.0,2.0,post
+704633,2025-05-11 14:15:00,2025,360,371,Manchester United,West Ham United,0.0,2.0,post
+704632,2025-05-11 16:30:00,2025,364,359,Liverpool,Arsenal,2.0,2.0,post
+704640,2025-05-16 19:30:00,2025,362,367,Aston Villa,Tottenham Hotspur,2.0,0.0,post
+704643,2025-05-16 20:15:00,2025,363,360,Chelsea,Manchester United,1.0,0.0,post
+704645,2025-05-18 12:00:00,2025,368,376,Everton,Southampton,2.0,0.0,post
+704648,2025-05-18 14:15:00,2025,371,393,West Ham United,Nottingham Forest,1.0,2.0,post
+704641,2025-05-18 15:00:00,2025,337,370,Brentford,Fulham,2.0,3.0,post
+704646,2025-05-18 15:00:00,2025,375,373,Leicester City,Ipswich Town,2.0,0.0,post
+704639,2025-05-18 16:30:00,2025,359,361,Arsenal,Newcastle United,1.0,0.0,post
+704642,2025-05-19 20:00:00,2025,331,364,Brighton & Hove Albion,Liverpool,3.0,2.0,post
+704644,2025-05-20 20:00:00,2025,384,380,Crystal Palace,Wolverhampton Wanderers,4.0,2.0,post
+704647,2025-05-20 20:00:00,2025,382,349,Manchester City,AFC Bournemouth,3.0,1.0,post
+704657,2025-05-25 16:00:00,2025,367,331,Tottenham Hotspur,Brighton & Hove Albion,1.0,4.0,post
+704656,2025-05-25 16:00:00,2025,376,359,Southampton,Arsenal,1.0,2.0,post
+704655,2025-05-25 16:00:00,2025,393,363,Nottingham Forest,Chelsea,0.0,1.0,post
+704653,2025-05-25 16:00:00,2025,361,368,Newcastle United,Everton,0.0,1.0,post
+704654,2025-05-25 16:00:00,2025,380,337,Wolverhampton Wanderers,Brentford,1.0,1.0,post
+704652,2025-05-25 16:00:00,2025,364,384,Liverpool,Crystal Palace,1.0,1.0,post
+704651,2025-05-25 16:00:00,2025,373,371,Ipswich Town,West Ham United,1.0,3.0,post
+704650,2025-05-25 16:00:00,2025,370,382,Fulham,Manchester City,0.0,2.0,post
+704649,2025-05-25 16:00:00,2025,349,375,AFC Bournemouth,Leicester City,2.0,0.0,post
+704658,2025-05-25 16:00:00,2025,360,362,Manchester United,Aston Villa,2.0,0.0,post
+740596,2025-08-15 20:00:00,2025,364,349,Liverpool,AFC Bournemouth,4.0,2.0,post
+740597,2025-08-16 12:30:00,2025,362,361,Aston Villa,Newcastle United,0.0,0.0,post
+740598,2025-08-16 15:00:00,2025,331,370,Brighton & Hove Albion,Fulham,1.0,1.0,post
+740600,2025-08-16 15:00:00,2025,366,371,Sunderland,West Ham United,3.0,0.0,post
+740601,2025-08-16 15:00:00,2025,367,379,Tottenham Hotspur,Burnley,3.0,0.0,post
+740602,2025-08-16 17:30:00,2025,380,382,Wolverhampton Wanderers,Manchester City,0.0,4.0,post
+740603,2025-08-17 14:00:00,2025,363,384,Chelsea,Crystal Palace,0.0,0.0,post
+740599,2025-08-17 14:00:00,2025,393,337,Nottingham Forest,Brentford,3.0,1.0,post
+740604,2025-08-17 16:30:00,2025,360,359,Manchester United,Arsenal,0.0,1.0,post
+740605,2025-08-18 20:00:00,2025,357,368,Leeds United,Everton,1.0,0.0,post
+740615,2025-08-22 20:00:00,2025,371,363,West Ham United,Chelsea,1.0,5.0,post
+740613,2025-08-23 12:30:00,2025,382,367,Manchester City,Tottenham Hotspur,0.0,2.0,post
+740607,2025-08-23 15:00:00,2025,349,380,AFC Bournemouth,Wolverhampton Wanderers,1.0,0.0,post
+740608,2025-08-23 15:00:00,2025,337,362,Brentford,Aston Villa,1.0,0.0,post
+740609,2025-08-23 15:00:00,2025,379,366,Burnley,Sunderland,2.0,0.0,post
+740606,2025-08-23 17:30:00,2025,359,357,Arsenal,Leeds United,5.0,0.0,post
+740611,2025-08-24 14:00:00,2025,368,331,Everton,Brighton & Hove Albion,2.0,0.0,post
+740610,2025-08-24 14:00:00,2025,384,393,Crystal Palace,Nottingham Forest,1.0,1.0,post
+740612,2025-08-24 16:30:00,2025,370,360,Fulham,Manchester United,1.0,1.0,post
+740614,2025-08-25 20:00:00,2025,361,364,Newcastle United,Liverpool,2.0,3.0,post
+740618,2025-08-30 12:30:00,2025,363,370,Chelsea,Fulham,2.0,0.0,post
+740621,2025-08-30 15:00:00,2025,360,379,Manchester United,Burnley,3.0,2.0,post
+740623,2025-08-30 15:00:00,2025,366,337,Sunderland,Brentford,2.0,1.0,post
+740620,2025-08-30 15:00:00,2025,367,349,Tottenham Hotspur,AFC Bournemouth,0.0,1.0,post
+740624,2025-08-30 15:00:00,2025,380,368,Wolverhampton Wanderers,Everton,2.0,3.0,post
+740619,2025-08-30 17:30:00,2025,357,361,Leeds United,Newcastle United,0.0,0.0,post
+740617,2025-08-31 14:00:00,2025,331,382,Brighton & Hove Albion,Manchester City,2.0,1.0,post
+740622,2025-08-31 14:00:00,2025,393,371,Nottingham Forest,West Ham United,0.0,3.0,post
+740625,2025-08-31 16:30:00,2025,364,359,Liverpool,Arsenal,1.0,0.0,post
+740616,2025-08-31 19:00:00,2025,362,384,Aston Villa,Crystal Palace,0.0,3.0,post
+740627,2025-09-13 12:30:00,2025,359,393,Arsenal,Nottingham Forest,3.0,0.0,post
+740631,2025-09-13 15:00:00,2025,370,357,Fulham,Leeds United,1.0,0.0,post
+740629,2025-09-13 15:00:00,2025,361,380,Newcastle United,Wolverhampton Wanderers,1.0,0.0,post
+740632,2025-09-13 15:00:00,2025,368,362,Everton,Aston Villa,0.0,0.0,post
+740628,2025-09-13 15:00:00,2025,384,366,Crystal Palace,Sunderland,0.0,0.0,post
+740635,2025-09-13 15:00:00,2025,349,331,AFC Bournemouth,Brighton & Hove Albion,2.0,1.0,post
+740626,2025-09-13 17:30:00,2025,371,367,West Ham United,Tottenham Hotspur,0.0,3.0,post
+740634,2025-09-13 20:00:00,2025,337,363,Brentford,Chelsea,2.0,2.0,post
+740633,2025-09-14 14:00:00,2025,379,364,Burnley,Liverpool,0.0,1.0,post
+740630,2025-09-14 16:30:00,2025,382,360,Manchester City,Manchester United,3.0,0.0,post
+740641,2025-09-20 12:30:00,2025,364,368,Liverpool,Everton,2.0,1.0,post
+740636,2025-09-20 15:00:00,2025,331,367,Brighton & Hove Albion,Tottenham Hotspur,2.0,2.0,post
+740637,2025-09-20 15:00:00,2025,379,393,Burnley,Nottingham Forest,1.0,1.0,post
+740638,2025-09-20 15:00:00,2025,371,384,West Ham United,Crystal Palace,1.0,2.0,post
+740640,2025-09-20 15:00:00,2025,380,357,Wolverhampton Wanderers,Leeds United,1.0,3.0,post
+740645,2025-09-20 17:30:00,2025,360,363,Manchester United,Chelsea,2.0,1.0,post
+740642,2025-09-20 20:00:00,2025,370,337,Fulham,Brentford,3.0,1.0,post
+740644,2025-09-21 14:00:00,2025,349,361,AFC Bournemouth,Newcastle United,0.0,0.0,post
+740639,2025-09-21 14:00:00,2025,366,362,Sunderland,Aston Villa,1.0,1.0,post
+740643,2025-09-21 16:30:00,2025,359,382,Arsenal,Manchester City,1.0,1.0,post
+740649,2025-09-27 12:30:00,2025,337,360,Brentford,Manchester United,3.0,1.0,post
+740655,2025-09-27 15:00:00,2025,357,349,Leeds United,AFC Bournemouth,2.0,2.0,post
+740654,2025-09-27 15:00:00,2025,382,379,Manchester City,Burnley,5.0,1.0,post
+740648,2025-09-27 15:00:00,2025,363,331,Chelsea,Brighton & Hove Albion,1.0,3.0,post
+740647,2025-09-27 15:00:00,2025,384,364,Crystal Palace,Liverpool,2.0,1.0,post
+740651,2025-09-27 17:30:00,2025,393,366,Nottingham Forest,Sunderland,0.0,1.0,post
+740646,2025-09-27 20:00:00,2025,367,380,Tottenham Hotspur,Wolverhampton Wanderers,1.0,1.0,post
+740650,2025-09-28 14:00:00,2025,362,370,Aston Villa,Fulham,3.0,1.0,post
+740653,2025-09-28 16:30:00,2025,361,359,Newcastle United,Arsenal,1.0,2.0,post
+740652,2025-09-29 20:00:00,2025,368,371,Everton,West Ham United,1.0,1.0,post
+740658,2025-10-03 20:00:00,2025,349,370,AFC Bournemouth,Fulham,3.0,1.0,post
+740662,2025-10-04 12:30:00,2025,357,367,Leeds United,Tottenham Hotspur,1.0,2.0,post
+740656,2025-10-04 15:00:00,2025,359,371,Arsenal,West Ham United,2.0,0.0,post
+740663,2025-10-04 15:00:00,2025,360,366,Manchester United,Sunderland,2.0,0.0,post
+740660,2025-10-04 17:30:00,2025,363,364,Chelsea,Liverpool,2.0,1.0,post
+740657,2025-10-05 14:00:00,2025,362,379,Aston Villa,Burnley,2.0,1.0,post
+740661,2025-10-05 14:00:00,2025,368,384,Everton,Crystal Palace,2.0,1.0,post
+740664,2025-10-05 14:00:00,2025,361,393,Newcastle United,Nottingham Forest,2.0,0.0,post
+740665,2025-10-05 14:00:00,2025,380,331,Wolverhampton Wanderers,Brighton & Hove Albion,1.0,1.0,post
+740659,2025-10-05 16:30:00,2025,337,382,Brentford,Manchester City,0.0,1.0,post
+740672,2025-10-18 12:30:00,2025,393,363,Nottingham Forest,Chelsea,0.0,3.0,post
+740666,2025-10-18 15:00:00,2025,331,361,Brighton & Hove Albion,Newcastle United,2.0,1.0,post
+740667,2025-10-18 15:00:00,2025,379,357,Burnley,Leeds United,2.0,0.0,post
+740668,2025-10-18 15:00:00,2025,384,349,Crystal Palace,AFC Bournemouth,3.0,3.0,post
+740671,2025-10-18 15:00:00,2025,382,368,Manchester City,Everton,2.0,0.0,post
+740673,2025-10-18 15:00:00,2025,366,380,Sunderland,Wolverhampton Wanderers,2.0,0.0,post
+740669,2025-10-18 17:30:00,2025,370,359,Fulham,Arsenal,0.0,1.0,post
+740674,2025-10-19 14:00:00,2025,367,362,Tottenham Hotspur,Aston Villa,1.0,2.0,post
+740670,2025-10-19 16:30:00,2025,364,360,Liverpool,Manchester United,1.0,2.0,post
+740675,2025-10-20 20:00:00,2025,371,337,West Ham United,Brentford,0.0,2.0,post
+740682,2025-10-24 20:00:00,2025,357,371,Leeds United,West Ham United,2.0,1.0,post
+740685,2025-10-25 15:00:00,2025,363,366,Chelsea,Sunderland,1.0,2.0,post
+740680,2025-10-25 15:00:00,2025,361,370,Newcastle United,Fulham,2.0,1.0,post
+740683,2025-10-25 17:30:00,2025,360,331,Manchester United,Brighton & Hove Albion,4.0,2.0,post
+740679,2025-10-25 20:00:00,2025,337,364,Brentford,Liverpool,3.0,2.0,post
+740677,2025-10-26 14:00:00,2025,362,382,Aston Villa,Manchester City,1.0,0.0,post
+740684,2025-10-26 14:00:00,2025,380,379,Wolverhampton Wanderers,Burnley,2.0,3.0,post
+740678,2025-10-26 14:00:00,2025,349,393,AFC Bournemouth,Nottingham Forest,2.0,0.0,post
+740676,2025-10-26 14:00:00,2025,359,384,Arsenal,Crystal Palace,1.0,0.0,post
+740681,2025-10-26 16:30:00,2025,368,367,Everton,Tottenham Hotspur,0.0,3.0,post
+740686,2025-11-01 15:00:00,2025,331,357,Brighton & Hove Albion,Leeds United,3.0,0.0,post
+740687,2025-11-01 15:00:00,2025,379,359,Burnley,Arsenal,0.0,2.0,post
+740688,2025-11-01 15:00:00,2025,384,337,Crystal Palace,Brentford,2.0,0.0,post
+740689,2025-11-01 15:00:00,2025,370,380,Fulham,Wolverhampton Wanderers,3.0,0.0,post
+740692,2025-11-01 15:00:00,2025,393,360,Nottingham Forest,Manchester United,2.0,2.0,post
+740690,2025-11-01 17:30:00,2025,367,363,Tottenham Hotspur,Chelsea,0.0,1.0,post
+740694,2025-11-01 20:00:00,2025,364,362,Liverpool,Aston Villa,2.0,0.0,post
+740695,2025-11-02 14:00:00,2025,371,361,West Ham United,Newcastle United,3.0,1.0,post
+740691,2025-11-02 16:30:00,2025,382,349,Manchester City,AFC Bournemouth,3.0,1.0,post
+740693,2025-11-03 20:00:00,2025,366,368,Sunderland,Everton,1.0,1.0,post
+740705,2025-11-08 12:30:00,2025,367,360,Tottenham Hotspur,Manchester United,2.0,2.0,post
+740701,2025-11-08 15:00:00,2025,368,370,Everton,Fulham,2.0,0.0,post
+740696,2025-11-08 15:00:00,2025,371,379,West Ham United,Burnley,3.0,2.0,post
+740704,2025-11-08 17:30:00,2025,366,359,Sunderland,Arsenal,2.0,2.0,post
+740699,2025-11-08 20:00:00,2025,363,380,Chelsea,Wolverhampton Wanderers,3.0,0.0,post
+740703,2025-11-09 14:00:00,2025,393,357,Nottingham Forest,Leeds United,3.0,1.0,post
+740700,2025-11-09 14:00:00,2025,384,331,Crystal Palace,Brighton & Hove Albion,0.0,0.0,post
+740697,2025-11-09 14:00:00,2025,362,349,Aston Villa,AFC Bournemouth,4.0,0.0,post
+740698,2025-11-09 14:00:00,2025,337,361,Brentford,Newcastle United,3.0,1.0,post
+740702,2025-11-09 16:30:00,2025,382,364,Manchester City,Liverpool,3.0,0.0,post
+740707,2025-11-22 12:30:00,2025,379,363,Burnley,Chelsea,0.0,2.0,post
+740715,2025-11-22 15:00:00,2025,349,371,AFC Bournemouth,West Ham United,2.0,2.0,post
+740706,2025-11-22 15:00:00,2025,331,337,Brighton & Hove Albion,Brentford,2.0,1.0,post
+740708,2025-11-22 15:00:00,2025,370,366,Fulham,Sunderland,1.0,0.0,post
+740710,2025-11-22 15:00:00,2025,364,393,Liverpool,Nottingham Forest,0.0,3.0,post
+740713,2025-11-22 15:00:00,2025,380,384,Wolverhampton Wanderers,Crystal Palace,0.0,2.0,post
+740712,2025-11-22 17:30:00,2025,361,382,Newcastle United,Manchester City,2.0,1.0,post
+740709,2025-11-23 14:00:00,2025,357,362,Leeds United,Aston Villa,1.0,2.0,post
+740714,2025-11-23 16:30:00,2025,359,367,Arsenal,Tottenham Hotspur,4.0,1.0,post
+740711,2025-11-24 20:00:00,2025,360,368,Manchester United,Everton,0.0,1.0,post
+740718,2025-11-29 15:00:00,2025,337,379,Brentford,Burnley,3.0,1.0,post
+740717,2025-11-29 15:00:00,2025,382,357,Manchester City,Leeds United,3.0,2.0,post
+740724,2025-11-29 15:00:00,2025,366,349,Sunderland,AFC Bournemouth,3.0,2.0,post
+740721,2025-11-29 17:30:00,2025,368,361,Everton,Newcastle United,1.0,4.0,post
+740720,2025-11-29 20:00:00,2025,367,370,Tottenham Hotspur,Fulham,1.0,2.0,post
+740725,2025-11-30 12:00:00,2025,384,360,Crystal Palace,Manchester United,1.0,2.0,post
+740716,2025-11-30 14:05:00,2025,362,380,Aston Villa,Wolverhampton Wanderers,1.0,0.0,post
+740723,2025-11-30 14:05:00,2025,393,331,Nottingham Forest,Brighton & Hove Albion,0.0,2.0,post
+740722,2025-11-30 14:05:00,2025,371,364,West Ham United,Liverpool,0.0,2.0,post
+740719,2025-11-30 16:30:00,2025,363,359,Chelsea,Arsenal,1.0,1.0,post
+740733,2025-12-02 19:30:00,2025,349,368,AFC Bournemouth,Everton,0.0,1.0,post
+740730,2025-12-02 19:30:00,2025,370,382,Fulham,Manchester City,4.0,5.0,post
+740729,2025-12-02 20:15:00,2025,361,367,Newcastle United,Tottenham Hotspur,2.0,2.0,post
+740728,2025-12-03 19:30:00,2025,380,393,Wolverhampton Wanderers,Nottingham Forest,0.0,1.0,post
+740726,2025-12-03 19:30:00,2025,379,384,Burnley,Crystal Palace,0.0,1.0,post
+740727,2025-12-03 19:30:00,2025,331,362,Brighton & Hove Albion,Aston Villa,3.0,4.0,post
+740734,2025-12-03 19:30:00,2025,359,337,Arsenal,Brentford,2.0,0.0,post
+740732,2025-12-03 20:15:00,2025,357,363,Leeds United,Chelsea,3.0,1.0,post
+740731,2025-12-03 20:15:00,2025,364,366,Liverpool,Sunderland,1.0,1.0,post
+740735,2025-12-04 20:00:00,2025,360,371,Manchester United,West Ham United,1.0,1.0,post
+740745,2025-12-06 12:30:00,2025,362,359,Aston Villa,Arsenal,2.0,1.0,post
+740744,2025-12-06 15:00:00,2025,367,337,Tottenham Hotspur,Brentford,2.0,0.0,post
+740741,2025-12-06 15:00:00,2025,361,379,Newcastle United,Burnley,2.0,1.0,post
+740739,2025-12-06 15:00:00,2025,368,393,Everton,Nottingham Forest,3.0,0.0,post
+740743,2025-12-06 15:00:00,2025,349,363,AFC Bournemouth,Chelsea,0.0,0.0,post
+740736,2025-12-06 15:00:00,2025,382,366,Manchester City,Sunderland,3.0,0.0,post
+740742,2025-12-06 17:30:00,2025,357,364,Leeds United,Liverpool,3.0,3.0,post
+740740,2025-12-07 14:00:00,2025,331,371,Brighton & Hove Albion,West Ham United,1.0,1.0,post
+740738,2025-12-07 16:30:00,2025,370,384,Fulham,Crystal Palace,1.0,2.0,post
+740737,2025-12-08 20:00:00,2025,380,360,Wolverhampton Wanderers,Manchester United,1.0,4.0,post
+740750,2025-12-13 15:00:00,2025,363,368,Chelsea,Everton,2.0,0.0,post
+740752,2025-12-13 15:00:00,2025,364,331,Liverpool,Brighton & Hove Albion,2.0,0.0,post
+740754,2025-12-13 17:30:00,2025,379,370,Burnley,Fulham,2.0,3.0,post
+740746,2025-12-13 20:00:00,2025,359,380,Arsenal,Wolverhampton Wanderers,2.0,1.0,post
+740747,2025-12-14 14:00:00,2025,384,382,Crystal Palace,Manchester City,0.0,3.0,post
+740755,2025-12-14 14:00:00,2025,393,367,Nottingham Forest,Tottenham Hotspur,3.0,0.0,post
+740749,2025-12-14 14:00:00,2025,366,361,Sunderland,Newcastle United,1.0,0.0,post
+740748,2025-12-14 14:00:00,2025,371,362,West Ham United,Aston Villa,2.0,3.0,post
+740753,2025-12-14 16:30:00,2025,337,357,Brentford,Leeds United,1.0,1.0,post
+740751,2025-12-15 20:00:00,2025,360,349,Manchester United,AFC Bournemouth,4.0,4.0,post
+740763,2025-12-20 12:30:00,2025,361,363,Newcastle United,Chelsea,2.0,2.0,post
+740764,2025-12-20 15:00:00,2025,349,379,AFC Bournemouth,Burnley,1.0,1.0,post
+740756,2025-12-20 15:00:00,2025,331,366,Brighton & Hove Albion,Sunderland,0.0,0.0,post
+740760,2025-12-20 15:00:00,2025,382,371,Manchester City,West Ham United,3.0,0.0,post
+740761,2025-12-20 15:00:00,2025,380,337,Wolverhampton Wanderers,Brentford,0.0,2.0,post
+740762,2025-12-20 17:30:00,2025,367,364,Tottenham Hotspur,Liverpool,1.0,2.0,post
+740757,2025-12-20 20:00:00,2025,368,359,Everton,Arsenal,0.0,1.0,post
+740759,2025-12-20 20:00:00,2025,357,384,Leeds United,Crystal Palace,4.0,1.0,post
+740765,2025-12-21 16:30:00,2025,362,360,Aston Villa,Manchester United,2.0,1.0,post
+740758,2025-12-22 20:00:00,2025,370,393,Fulham,Nottingham Forest,1.0,0.0,post
+740769,2025-12-26 20:00:00,2025,360,361,Manchester United,Newcastle United,1.0,0.0,post
+740770,2025-12-27 12:30:00,2025,393,382,Nottingham Forest,Manchester City,1.0,2.0,post
+740772,2025-12-27 15:00:00,2025,359,331,Arsenal,Brighton & Hove Albion,2.0,1.0,post
+740774,2025-12-27 15:00:00,2025,337,349,Brentford,AFC Bournemouth,4.0,1.0,post
+740773,2025-12-27 15:00:00,2025,379,368,Burnley,Everton,0.0,0.0,post
+740775,2025-12-27 15:00:00,2025,364,380,Liverpool,Wolverhampton Wanderers,2.0,1.0,post
+740768,2025-12-27 15:00:00,2025,371,370,West Ham United,Fulham,0.0,1.0,post
+740766,2025-12-27 17:30:00,2025,363,362,Chelsea,Aston Villa,1.0,2.0,post
+740767,2025-12-28 14:00:00,2025,366,357,Sunderland,Leeds United,1.0,1.0,post
+740771,2025-12-28 16:30:00,2025,384,367,Crystal Palace,Tottenham Hotspur,0.0,1.0,post
+740778,2025-12-30 19:30:00,2025,379,361,Burnley,Newcastle United,1.0,3.0,post
+740779,2025-12-30 19:30:00,2025,363,349,Chelsea,AFC Bournemouth,2.0,2.0,post
+740783,2025-12-30 19:30:00,2025,393,368,Nottingham Forest,Everton,0.0,2.0,post
+740785,2025-12-30 19:30:00,2025,371,331,West Ham United,Brighton & Hove Albion,2.0,2.0,post
+740776,2025-12-30 20:15:00,2025,359,362,Arsenal,Aston Villa,4.0,1.0,post
+740782,2025-12-30 20:15:00,2025,360,380,Manchester United,Wolverhampton Wanderers,1.0,1.0,post
+740781,2026-01-01 17:30:00,2026,364,357,Liverpool,Leeds United,0.0,0.0,post
+740780,2026-01-01 17:30:00,2026,384,370,Crystal Palace,Fulham,1.0,1.0,post
+740777,2026-01-01 20:00:00,2026,337,367,Brentford,Tottenham Hotspur,0.0,0.0,post
+740784,2026-01-01 20:00:00,2026,366,382,Sunderland,Manchester City,0.0,0.0,post
+740789,2026-01-03 12:30:00,2026,362,393,Aston Villa,Nottingham Forest,3.0,1.0,post
+740795,2026-01-03 15:00:00,2026,331,379,Brighton & Hove Albion,Burnley,2.0,0.0,post
+740787,2026-01-03 15:00:00,2026,380,371,Wolverhampton Wanderers,West Ham United,3.0,0.0,post
+740788,2026-01-03 17:30:00,2026,349,359,AFC Bournemouth,Arsenal,2.0,3.0,post
+740791,2026-01-04 12:30:00,2026,357,360,Leeds United,Manchester United,1.0,1.0,post
+740786,2026-01-04 15:00:00,2026,367,366,Tottenham Hotspur,Sunderland,1.0,1.0,post
+740793,2026-01-04 15:00:00,2026,361,384,Newcastle United,Crystal Palace,2.0,0.0,post
+740794,2026-01-04 15:00:00,2026,368,337,Everton,Brentford,2.0,4.0,post
+740790,2026-01-04 15:15:00,2026,370,364,Fulham,Liverpool,2.0,2.0,post
+740792,2026-01-04 17:30:00,2026,382,363,Manchester City,Chelsea,1.0,1.0,post
+740801,2026-01-06 20:00:00,2026,371,393,West Ham United,Nottingham Forest,1.0,2.0,post
+740797,2026-01-07 19:30:00,2026,349,367,AFC Bournemouth,Tottenham Hotspur,3.0,2.0,post
+740798,2026-01-07 19:30:00,2026,337,366,Brentford,Sunderland,3.0,0.0,post
+740805,2026-01-07 19:30:00,2026,384,362,Crystal Palace,Aston Villa,0.0,0.0,post
+740800,2026-01-07 19:30:00,2026,368,380,Everton,Wolverhampton Wanderers,1.0,1.0,post
+740802,2026-01-07 19:30:00,2026,370,363,Fulham,Chelsea,2.0,1.0,post
+740803,2026-01-07 19:30:00,2026,382,331,Manchester City,Brighton & Hove Albion,1.0,1.0,post
+740799,2026-01-07 20:15:00,2026,379,360,Burnley,Manchester United,2.0,2.0,post
+740804,2026-01-07 20:15:00,2026,361,357,Newcastle United,Leeds United,4.0,3.0,post
+740796,2026-01-08 20:00:00,2026,359,364,Arsenal,Liverpool,0.0,0.0,post
+740811,2026-01-17 12:30:00,2026,360,382,Manchester United,Manchester City,2.0,0.0,post
+740814,2026-01-17 15:00:00,2026,367,371,Tottenham Hotspur,West Ham United,1.0,2.0,post
+740813,2026-01-17 15:00:00,2026,366,384,Sunderland,Crystal Palace,2.0,1.0,post
+740810,2026-01-17 15:00:00,2026,364,379,Liverpool,Burnley,1.0,1.0,post
+740809,2026-01-17 15:00:00,2026,357,370,Leeds United,Fulham,1.0,0.0,post
+740808,2026-01-17 15:00:00,2026,363,337,Chelsea,Brentford,2.0,0.0,post
+740812,2026-01-17 17:30:00,2026,393,359,Nottingham Forest,Arsenal,0.0,0.0,post
+740815,2026-01-18 14:00:00,2026,380,361,Wolverhampton Wanderers,Newcastle United,0.0,0.0,post
+740806,2026-01-18 16:30:00,2026,362,368,Aston Villa,Everton,0.0,1.0,post
+740807,2026-01-19 20:00:00,2026,331,349,Brighton & Hove Albion,AFC Bournemouth,1.0,1.0,post
+740825,2026-01-24 12:30:00,2026,371,366,West Ham United,Sunderland,3.0,1.0,post
+740823,2026-01-24 15:00:00,2026,382,380,Manchester City,Wolverhampton Wanderers,2.0,0.0,post
+740822,2026-01-24 15:00:00,2026,370,331,Fulham,Brighton & Hove Albion,2.0,1.0,post
+740819,2026-01-24 15:00:00,2026,379,367,Burnley,Tottenham Hotspur,2.0,2.0,post
+740817,2026-01-24 17:30:00,2026,349,364,AFC Bournemouth,Liverpool,3.0,2.0,post
+740818,2026-01-25 14:00:00,2026,337,393,Brentford,Nottingham Forest,0.0,2.0,post
+740820,2026-01-25 14:00:00,2026,384,363,Crystal Palace,Chelsea,1.0,3.0,post
+740824,2026-01-25 14:00:00,2026,361,362,Newcastle United,Aston Villa,0.0,2.0,post
+740816,2026-01-25 16:30:00,2026,359,360,Arsenal,Manchester United,2.0,3.0,post
+740821,2026-01-26 20:00:00,2026,368,357,Everton,Leeds United,1.0,1.0,post
+740827,2026-01-31 15:00:00,2026,380,349,Wolverhampton Wanderers,AFC Bournemouth,0.0,2.0,post
+740829,2026-01-31 15:00:00,2026,357,359,Leeds United,Arsenal,0.0,4.0,post
+740831,2026-01-31 15:00:00,2026,331,368,Brighton & Hove Albion,Everton,1.0,1.0,post
+740835,2026-01-31 17:30:00,2026,363,371,Chelsea,West Ham United,3.0,2.0,post
+740834,2026-01-31 20:00:00,2026,364,361,Liverpool,Newcastle United,4.0,1.0,post
+740826,2026-02-01 14:00:00,2026,362,337,Aston Villa,Brentford,0.0,1.0,post
+740833,2026-02-01 14:00:00,2026,360,370,Manchester United,Fulham,3.0,2.0,post
+740832,2026-02-01 14:00:00,2026,393,384,Nottingham Forest,Crystal Palace,1.0,1.0,post
+740828,2026-02-01 16:30:00,2026,367,382,Tottenham Hotspur,Manchester City,2.0,2.0,post
+740830,2026-02-02 20:00:00,2026,366,379,Sunderland,Burnley,3.0,0.0,post
+740841,2026-02-06 20:00:00,2026,357,393,Leeds United,Nottingham Forest,3.0,1.0,post
+740843,2026-02-07 12:30:00,2026,360,367,Manchester United,Tottenham Hotspur,2.0,0.0,post
+740837,2026-02-07 15:00:00,2026,349,362,AFC Bournemouth,Aston Villa,1.0,1.0,post
+740836,2026-02-07 15:00:00,2026,359,366,Arsenal,Sunderland,3.0,0.0,post
+740839,2026-02-07 15:00:00,2026,379,371,Burnley,West Ham United,0.0,2.0,post
+740842,2026-02-07 15:00:00,2026,370,368,Fulham,Everton,1.0,2.0,post
+740840,2026-02-07 15:00:00,2026,380,363,Wolverhampton Wanderers,Chelsea,1.0,3.0,post
+740844,2026-02-07 17:30:00,2026,361,337,Newcastle United,Brentford,2.0,3.0,post
+740838,2026-02-08 14:00:00,2026,331,384,Brighton & Hove Albion,Crystal Palace,0.0,1.0,post
+740845,2026-02-08 16:30:00,2026,364,382,Liverpool,Manchester City,1.0,2.0,post
+740848,2026-02-10 19:30:00,2026,363,357,Chelsea,Leeds United,2.0,2.0,post
+740852,2026-02-10 19:30:00,2026,368,349,Everton,AFC Bournemouth,1.0,2.0,post
+740854,2026-02-10 19:30:00,2026,367,361,Tottenham Hotspur,Newcastle United,1.0,2.0,post
+740855,2026-02-10 20:15:00,2026,371,360,West Ham United,Manchester United,1.0,1.0,post
+740846,2026-02-11 19:30:00,2026,362,331,Aston Villa,Brighton & Hove Albion,1.0,0.0,post
+740849,2026-02-11 19:30:00,2026,382,370,Manchester City,Fulham,3.0,0.0,post
+740850,2026-02-11 19:30:00,2026,393,380,Nottingham Forest,Wolverhampton Wanderers,0.0,0.0,post
+740851,2026-02-11 19:40:00,2026,384,379,Crystal Palace,Burnley,2.0,3.0,post
+740853,2026-02-11 20:15:00,2026,366,364,Sunderland,Liverpool,0.0,1.0,post
+740847,2026-02-12 20:00:00,2026,337,359,Brentford,Arsenal,1.0,1.0,post
+740901,2026-02-18 20:00:00,2026,380,359,Wolverhampton Wanderers,Arsenal,2.0,2.0,post
+740862,2026-02-21 15:00:00,2026,362,357,Aston Villa,Leeds United,1.0,1.0,post
+740858,2026-02-21 15:00:00,2026,337,331,Brentford,Brighton & Hove Albion,0.0,2.0,post
+740864,2026-02-21 15:00:00,2026,363,379,Chelsea,Burnley,1.0,1.0,post
+740861,2026-02-21 17:30:00,2026,371,349,West Ham United,AFC Bournemouth,0.0,0.0,post
+740857,2026-02-21 20:00:00,2026,382,361,Manchester City,Newcastle United,2.0,1.0,post
+740863,2026-02-22 14:00:00,2026,393,364,Nottingham Forest,Liverpool,0.0,1.0,post
+740859,2026-02-22 14:00:00,2026,366,370,Sunderland,Fulham,1.0,3.0,post
+740860,2026-02-22 14:00:00,2026,384,380,Crystal Palace,Wolverhampton Wanderers,1.0,0.0,post
+740865,2026-02-22 16:30:00,2026,367,359,Tottenham Hotspur,Arsenal,1.0,4.0,post
+740856,2026-02-23 20:00:00,2026,368,360,Everton,Manchester United,0.0,1.0,post
+740868,2026-02-27 20:00:00,2026,380,362,Wolverhampton Wanderers,Aston Villa,2.0,0.0,post
+740873,2026-02-28 12:30:00,2026,349,366,AFC Bournemouth,Sunderland,1.0,1.0,post
+740867,2026-02-28 15:00:00,2026,379,337,Burnley,Brentford,3.0,4.0,post
+740872,2026-02-28 15:00:00,2026,364,371,Liverpool,West Ham United,5.0,2.0,post
+740874,2026-02-28 15:00:00,2026,361,368,Newcastle United,Everton,2.0,3.0,post
+740869,2026-02-28 17:30:00,2026,357,382,Leeds United,Manchester City,0.0,1.0,post
+740875,2026-03-01 14:00:00,2026,360,384,Manchester United,Crystal Palace,2.0,1.0,post
+740866,2026-03-01 14:00:00,2026,331,393,Brighton & Hove Albion,Nottingham Forest,2.0,1.0,post
+740870,2026-03-01 14:00:00,2026,370,367,Fulham,Tottenham Hotspur,2.0,1.0,post
+740871,2026-03-01 16:30:00,2026,359,363,Arsenal,Chelsea,2.0,1.0,post
+740877,2026-03-03 19:30:00,2026,349,337,AFC Bournemouth,Brentford,0.0,0.0,post
+740879,2026-03-03 19:30:00,2026,368,379,Everton,Burnley,2.0,0.0,post
+740881,2026-03-03 19:30:00,2026,357,366,Leeds United,Sunderland,0.0,1.0,post
+740885,2026-03-03 20:15:00,2026,380,364,Wolverhampton Wanderers,Liverpool,2.0,1.0,post
+740882,2026-03-04 19:30:00,2026,382,393,Manchester City,Nottingham Forest,2.0,2.0,post
+740880,2026-03-04 19:30:00,2026,370,371,Fulham,West Ham United,0.0,1.0,post
+740876,2026-03-04 19:30:00,2026,362,363,Aston Villa,Chelsea,1.0,4.0,post
+740878,2026-03-04 19:30:00,2026,331,359,Brighton & Hove Albion,Arsenal,0.0,1.0,post
+740883,2026-03-04 20:15:00,2026,361,360,Newcastle United,Manchester United,2.0,1.0,post
+740884,2026-03-05 20:00:00,2026,367,384,Tottenham Hotspur,Crystal Palace,1.0,3.0,post
+740888,2026-03-14 15:00:00,2026,379,349,Burnley,AFC Bournemouth,0.0,0.0,post
+740894,2026-03-14 15:00:00,2026,366,331,Sunderland,Brighton & Hove Albion,0.0,1.0,post
+740886,2026-03-14 17:30:00,2026,359,368,Arsenal,Everton,2.0,0.0,post
+740889,2026-03-14 17:30:00,2026,363,361,Chelsea,Newcastle United,0.0,1.0,post
+740895,2026-03-14 20:00:00,2026,371,382,West Ham United,Manchester City,1.0,1.0,post
+740890,2026-03-15 14:00:00,2026,384,357,Crystal Palace,Leeds United,0.0,0.0,post
+740892,2026-03-15 14:00:00,2026,360,362,Manchester United,Aston Villa,3.0,1.0,post
+740893,2026-03-15 14:00:00,2026,393,370,Nottingham Forest,Fulham,0.0,0.0,post
+740891,2026-03-15 16:30:00,2026,364,367,Liverpool,Tottenham Hotspur,1.0,1.0,post
+740887,2026-03-16 20:00:00,2026,337,380,Brentford,Wolverhampton Wanderers,2.0,2.0,post
+740897,2026-03-20 20:00:00,2026,349,360,AFC Bournemouth,Manchester United,2.0,2.0,post
+740898,2026-03-21 12:45:00,2026,331,364,Brighton & Hove Albion,Liverpool,2.0,1.0,post
+740905,2026-03-21 15:00:00,2026,370,379,Fulham,Burnley,3.0,1.0,post
+740899,2026-03-21 17:30:00,2026,368,363,Everton,Chelsea,3.0,0.0,post
+740900,2026-03-21 20:00:00,2026,357,337,Leeds United,Brentford,0.0,0.0,post
+740903,2026-03-22 12:00:00,2026,361,366,Newcastle United,Sunderland,1.0,2.0,post
+740896,2026-03-22 14:15:00,2026,362,371,Aston Villa,West Ham United,2.0,0.0,post
+740904,2026-03-22 14:15:00,2026,367,393,Tottenham Hotspur,Nottingham Forest,0.0,3.0,post
+740913,2026-04-10 20:00:00,2026,371,380,West Ham United,Wolverhampton Wanderers,4.0,0.0,post
+740908,2026-04-11 12:30:00,2026,359,349,Arsenal,AFC Bournemouth,1.0,2.0,post
+740906,2026-04-11 15:00:00,2026,337,368,Brentford,Everton,2.0,2.0,post
+740907,2026-04-11 15:00:00,2026,379,331,Burnley,Brighton & Hove Albion,0.0,2.0,post
+740911,2026-04-11 17:30:00,2026,364,370,Liverpool,Fulham,2.0,0.0,post
+740910,2026-04-12 14:00:00,2026,384,361,Crystal Palace,Newcastle United,2.0,1.0,post
+740914,2026-04-12 14:00:00,2026,393,362,Nottingham Forest,Aston Villa,1.0,1.0,post
+740915,2026-04-12 14:00:00,2026,366,367,Sunderland,Tottenham Hotspur,1.0,0.0,post
+740909,2026-04-12 16:30:00,2026,363,382,Chelsea,Manchester City,0.0,3.0,post
+740912,2026-04-13 20:00:00,2026,360,357,Manchester United,Leeds United,1.0,2.0,post
+740921,2026-04-18 12:30:00,2026,337,370,Brentford,Fulham,0.0,0.0,post
+740918,2026-04-18 15:00:00,2026,361,349,Newcastle United,AFC Bournemouth,1.0,2.0,post
+740924,2026-04-18 15:00:00,2026,357,380,Leeds United,Wolverhampton Wanderers,3.0,0.0,post
+740920,2026-04-18 17:30:00,2026,367,331,Tottenham Hotspur,Brighton & Hove Albion,2.0,2.0,post
+740922,2026-04-18 20:00:00,2026,363,360,Chelsea,Manchester United,0.0,1.0,post
+740919,2026-04-19 14:00:00,2026,362,366,Aston Villa,Sunderland,4.0,3.0,post
+740925,2026-04-19 14:00:00,2026,368,364,Everton,Liverpool,1.0,2.0,post
+740917,2026-04-19 14:00:00,2026,393,379,Nottingham Forest,Burnley,4.0,1.0,post
+740916,2026-04-19 16:30:00,2026,382,359,Manchester City,Arsenal,2.0,1.0,post
+740923,2026-04-20 20:00:00,2026,384,371,Crystal Palace,West Ham United,0.0,0.0,post
+740928,2026-04-21 20:00:00,2026,331,363,Brighton & Hove Albion,Chelsea,3.0,0.0,post
+740926,2026-04-22 20:00:00,2026,349,357,AFC Bournemouth,Leeds United,2.0,2.0,post
+740929,2026-04-22 20:00:00,2026,379,382,Burnley,Manchester City,0.0,1.0,post
+740933,2026-04-24 20:00:00,2026,366,393,Sunderland,Nottingham Forest,0.0,5.0,post
+740935,2026-04-25 12:30:00,2026,370,362,Fulham,Aston Villa,1.0,0.0,post
+740927,2026-04-25 15:00:00,2026,364,384,Liverpool,Crystal Palace,3.0,1.0,post
+740930,2026-04-25 15:00:00,2026,371,368,West Ham United,Everton,2.0,1.0,post
+740934,2026-04-25 15:00:00,2026,380,367,Wolverhampton Wanderers,Tottenham Hotspur,0.0,1.0,post
+740931,2026-04-25 17:30:00,2026,359,361,Arsenal,Newcastle United,1.0,0.0,post
+740932,2026-04-27 20:00:00,2026,360,337,Manchester United,Brentford,2.0,1.0,post
+740942,2026-05-01 20:00:00,2026,357,379,Leeds United,Burnley,3.0,1.0,post
+740939,2026-05-02 15:00:00,2026,337,371,Brentford,West Ham United,3.0,0.0,post
+740944,2026-05-02 15:00:00,2026,361,331,Newcastle United,Brighton & Hove Albion,3.0,1.0,post
+740945,2026-05-02 15:00:00,2026,380,366,Wolverhampton Wanderers,Sunderland,1.0,1.0,post
+740936,2026-05-02 17:30:00,2026,359,370,Arsenal,Fulham,3.0,0.0,post
+740938,2026-05-03 14:00:00,2026,349,384,AFC Bournemouth,Crystal Palace,3.0,0.0,post
+740943,2026-05-03 15:30:00,2026,360,364,Manchester United,Liverpool,3.0,2.0,post
+740937,2026-05-03 19:00:00,2026,362,367,Aston Villa,Tottenham Hotspur,1.0,2.0,post
+740940,2026-05-04 15:00:00,2026,363,393,Chelsea,Nottingham Forest,1.0,3.0,post
+740941,2026-05-04 20:00:00,2026,368,382,Everton,Manchester City,3.0,3.0,post
+740950,2026-05-09 12:30:00,2026,364,363,Liverpool,Chelsea,1.0,1.0,post
+740946,2026-05-09 15:00:00,2026,331,380,Brighton & Hove Albion,Wolverhampton Wanderers,3.0,0.0,post
+740949,2026-05-09 15:00:00,2026,370,349,Fulham,AFC Bournemouth,0.0,1.0,post
+740953,2026-05-09 15:00:00,2026,366,360,Sunderland,Manchester United,0.0,0.0,post
+740951,2026-05-09 17:30:00,2026,382,337,Manchester City,Brentford,3.0,0.0,post
+740947,2026-05-10 14:00:00,2026,379,362,Burnley,Aston Villa,2.0,2.0,post
+740948,2026-05-10 14:00:00,2026,384,368,Crystal Palace,Everton,2.0,2.0,post
+740952,2026-05-10 14:00:00,2026,393,361,Nottingham Forest,Newcastle United,1.0,1.0,post
+740955,2026-05-10 16:30:00,2026,371,359,West Ham United,Arsenal,0.0,1.0,post
+740954,2026-05-11 20:00:00,2026,367,357,Tottenham Hotspur,Leeds United,1.0,1.0,post
+740902,2026-05-13 20:00:00,2026,382,384,Manchester City,Crystal Palace,3.0,0.0,post
+740957,2026-05-15 20:00:00,2026,362,364,Aston Villa,Liverpool,4.0,2.0,post
+740963,2026-05-17 12:30:00,2026,360,393,Manchester United,Nottingham Forest,3.0,2.0,post
+740959,2026-05-17 15:00:00,2026,337,384,Brentford,Crystal Palace,2.0,2.0,post
+740961,2026-05-17 15:00:00,2026,368,366,Everton,Sunderland,1.0,3.0,post
+740962,2026-05-17 15:00:00,2026,357,331,Leeds United,Brighton & Hove Albion,1.0,0.0,post
+740965,2026-05-17 15:00:00,2026,380,370,Wolverhampton Wanderers,Fulham,1.0,1.0,post
+740964,2026-05-17 17:30:00,2026,361,371,Newcastle United,West Ham United,3.0,1.0,post
+740956,2026-05-18 20:00:00,2026,359,379,Arsenal,Burnley,1.0,0.0,post
+740958,2026-05-19 19:30:00,2026,349,382,AFC Bournemouth,Manchester City,1.0,1.0,post
+740960,2026-05-19 20:15:00,2026,363,367,Chelsea,Tottenham Hotspur,2.0,1.0,post
+740971,2026-05-24 16:00:00,2026,371,357,West Ham United,Leeds United,3.0,0.0,post
+740974,2026-05-24 16:00:00,2026,367,368,Tottenham Hotspur,Everton,1.0,0.0,post
+740973,2026-05-24 16:00:00,2026,366,363,Sunderland,Chelsea,2.0,1.0,post
+740972,2026-05-24 16:00:00,2026,393,349,Nottingham Forest,AFC Bournemouth,1.0,1.0,post
+740970,2026-05-24 16:00:00,2026,382,362,Manchester City,Aston Villa,1.0,2.0,post
+740975,2026-05-24 16:00:00,2026,364,337,Liverpool,Brentford,1.0,1.0,post
+740969,2026-05-24 16:00:00,2026,370,361,Fulham,Newcastle United,2.0,0.0,post
+740968,2026-05-24 16:00:00,2026,384,359,Crystal Palace,Arsenal,1.0,2.0,post
+740967,2026-05-24 16:00:00,2026,379,380,Burnley,Wolverhampton Wanderers,1.0,1.0,post
+740966,2026-05-24 16:00:00,2026,331,360,Brighton & Hove Albion,Manchester United,0.0,3.0,post
