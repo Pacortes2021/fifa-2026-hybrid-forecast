@@ -25,6 +25,14 @@ warnings.filterwarnings("ignore")
 
 DATA = Path(__file__).resolve().parent / "data"
 ELO_INIT = 1500.0
+
+def _elo_default():
+    return ELO_INIT
+
+
+def _none_default():
+    return None
+
 K_LIGA = 35.0
 HOME_ADV = 60.0
 
@@ -180,7 +188,7 @@ class PiRatingTracker:
 class StateTracker:
 
     def __init__(self):
-        self.elos = defaultdict(lambda: ELO_INIT)
+        self.elos = defaultdict(_elo_default)
         # Historial de partidos para tendencias
         self.history = defaultdict(deque)  # guarda diccionarios de estadísticas por equipo
         self.home_history = defaultdict(deque)
@@ -192,8 +200,10 @@ class StateTracker:
         self.match_count = defaultdict(int)
         self.season_pts = defaultdict(int)
         self.season_matches = defaultdict(int)
+        self.torneo_matches = defaultdict(int)
+        self.curr_torneo = None
         self.curr_season = None
-        self.last_match_date = defaultdict(lambda: None)
+        self.last_match_date = defaultdict(_none_default)
         self.recent_dates = defaultdict(deque)
         self.pi_tracker = PiRatingTracker()
 
@@ -229,7 +239,7 @@ class StateTracker:
         gal = list(self.recent_ga[local]); gav = list(self.recent_ga[visita])
         feats["gf_diff"] = (np.mean(gfl[-N:]) if gfl else 1.0) - (np.mean(gfv[-N:]) if gfv else 1.0)
         feats["ga_diff"] = (np.mean(gal[-N:]) if gal else 1.0) - (np.mean(gav[-N:]) if gav else 1.0)
-        feats["es_liguilla"] = 1.0 if (self.match_count[local] >= 17 or self.match_count[visita] >= 17) else 0.0
+        feats["es_liguilla"] = 1.0 if (self.torneo_matches[local] >= 17 or self.torneo_matches[visita] >= 17) else 0.0
 
         if temporada != self.curr_season:
             self.curr_season = temporada
@@ -344,6 +354,16 @@ class StateTracker:
         self.recent_ga[local].append(gb);       self.recent_ga[visita].append(ga)
         self.match_count[local] += 1
         self.match_count[visita] += 1
+
+        # Contador por torneo (Clausura ene-jun / Apertura jul-dic) para es_liguilla
+        if fecha is not None:
+            f = pd.to_datetime(fecha)
+            torneo = "apertura" if f.month >= 7 else "clausura"
+            if torneo != self.curr_torneo:
+                self.curr_torneo = torneo
+                self.torneo_matches.clear()
+        self.torneo_matches[local] += 1
+        self.torneo_matches[visita] += 1
 
         if ga > gb:
             self.season_pts[local] += 3
@@ -620,19 +640,57 @@ def cargar_y_entrenar():
     }
 
 
-def cargar():
-    return cargar_y_entrenar()
+def _cache_key():
+    # El modelo depende de los datos (data/*.csv) y del propio código del motor
+    import hashlib
+    h = hashlib.sha256()
+    h.update(str(Path(__file__).stat().st_mtime_ns).encode())
+    for f in sorted(DATA.glob("*.csv")):
+        h.update(f.name.encode())
+        h.update(str(f.stat().st_size).encode())
+        h.update(str(f.stat().st_mtime_ns).encode())
+    return h.hexdigest()
+
+
+def cargar(use_cache=True):
+    import pickle
+    cache_path = Path(__file__).resolve().parent / ".model_cache.pkl"
+    if use_cache and cache_path.exists():
+        try:
+            with open(cache_path, "rb") as fh:
+                saved = pickle.load(fh)
+            if saved.get("key") == _cache_key():
+                print("Modelo cargado desde cache de disco")
+                return saved["M"]
+        except Exception as ex:
+            print(f"Cache inválido ({ex}); re-entrenando...")
+    M = cargar_y_entrenar()
+    if use_cache:
+        try:
+            with open(cache_path, "wb") as fh:
+                pickle.dump({"key": _cache_key(), "M": M}, fh)
+            print("Modelo guardado en cache de disco")
+        except Exception as ex:
+            print(f"No se pudo guardar el cache: {ex}")
+    return M
 
 
 
 # --------------------------------------------------------------------------- #
 #  Cálculos de probabilidades y mercados
 # --------------------------------------------------------------------------- #
-def predecir_match(M, local, visita, modelo="rf"):
+def _temporada_actual():
+    # En Liga MX la temporada es el año calendario (Clausura + Apertura)
+    return int(pd.Timestamp.now().year)
+
+
+def predecir_match(M, local, visita, temporada=None, modelo="rf"):
     tracker = M["tracker"]
     features = M["features"]
     poisson_params = M["poisson_params"]
-    feats = tracker.get_features_for_match(local, visita, 2026)
+    if temporada is None:
+        temporada = _temporada_actual()
+    feats = tracker.get_features_for_match(local, visita, temporada)
     df_feat = pd.DataFrame([feats])[features].fillna(0.0)
     if modelo in ("lasso", "l1"):
         pipe = M["pipe_lasso"]
@@ -722,14 +780,15 @@ def mercados(mix):
 
 
 def handicap_asiatico(mix, line):
+    # Convención: line > 0 → el local (A) es favorito y da 'line' goles; line < 0 → A recibe |line|.
+    # A cubre si su diferencia de goles ajustada es positiva; con línea entera, empuje (devolución)
+    # si la diferencia ajustada es exactamente 0.
     gi, gj = np.indices(mix.shape)
-    # local - linea vs visita
-    diff = gi - gj
-    if line > 0:
-        a_cubre = mix[diff + line > 0].sum()
-    else:
-        a_cubre = mix[diff + line > 0].sum()
-    return {"A cubre": a_cubre, "B cubre": 1.0 - a_cubre}
+    net = (gi - gj) - line
+    p_a = mix[net > 0].sum()
+    p_b = mix[net < 0].sum()
+    p_push = mix[net == 0].sum() if float(line) == int(line) else 0.0
+    return {"A cubre": p_a, "Push": p_push, "B cubre": p_b}
 
 
 # --------------------------------------------------------------------------- #
@@ -994,8 +1053,10 @@ def simular_play_in_y_liguilla(PREDS, df_tabla):
     }
 
 
-def monte_carlo(M, n_sims=5000, fijos=None, modelo="rf"):
+def monte_carlo(M, n_sims=5000, fijos=None, modelo="rf", seed=42):
     """Ejecuta n simulaciones de Monte Carlo para calcular proyecciones finales precalculando las predicciones."""
+    if seed is not None:
+        np.random.seed(seed)
     # Precalcular predicciones para todos los cruces posibles (18*17 = 306 combinaciones)
     equipos = set(ALTITUDES.keys()).difference({"Atlante"})
     PREDS = {}
