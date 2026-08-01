@@ -476,17 +476,22 @@ def cargar_y_entrenar():
     X_test  = df_dataset.loc[test_mask,  cols_features].fillna(0.0)
     y_test  = df_dataset.loc[test_mask,  "resultado"]
 
-    # C-search on train -> test
+    # C-search con CV temporal sobre train (sin mirar el test)
     best_c = 0.05; best_loss = 999.0
     from sklearn.metrics import log_loss
+    from sklearn.model_selection import TimeSeriesSplit
+    tscv = TimeSeriesSplit(n_splits=4)
     for C in [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0]:
-        _pipe = Pipeline([("sc", StandardScaler()),
-                          ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=2000))])
-        _pipe.fit(X_train, y_train)
-        _loss = log_loss(y_test, _pipe.predict_proba(X_test), labels=[0,1,2])
+        _losses = []
+        for tr, va in tscv.split(X_train):
+            _pipe = Pipeline([("sc", StandardScaler()),
+                              ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=2000))])
+            _pipe.fit(X_train.iloc[tr], y_train.iloc[tr])
+            _losses.append(log_loss(y_train.iloc[va], _pipe.predict_proba(X_train.iloc[va]), labels=[0,1,2]))
+        _loss = float(np.mean(_losses))
         if _loss < best_loss:
             best_loss = _loss; best_c = C
-    print(f"Mejor C para Lasso: {best_c} | Log-Loss en Test (2025-26): {best_loss:.4f}")
+    print(f"Mejor C para Lasso (CV temporal en train): {best_c} | Log-Loss CV: {best_loss:.4f}")
 
     # Base models on train only
     pipe_lasso_base = Pipeline([("sc", StandardScaler()),
@@ -530,6 +535,7 @@ def cargar_y_entrenar():
     pipe_final = Pipeline([("sc", StandardScaler()),
                             ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=2000))])
     pipe_final.fit(df_dataset[cols_features].fillna(0.0), df_dataset["resultado"])
+    pipe_val = pipe_lasso_final  # para validación out-of-sample (entrenado sin 2025-26)
 
     # Coefs display (keep existing print)
     coefs = pipe_final.named_steps["lr"].coef_
@@ -599,6 +605,7 @@ def cargar_y_entrenar():
     return {
         "tracker": tracker,
         "pipe": pipe_final,
+        "pipe_val": pipe_val,
         "pipe_lasso": pipe_lasso_final,
         "pipe_rf": pipe_rf_final,
         "alpha_stack": alpha_opt,
@@ -728,16 +735,29 @@ def handicap_asiatico(mix, line):
 # --------------------------------------------------------------------------- #
 #  Simulador de Campeonato Liga MX (Fase Regular + Play-In + Liguilla)
 # --------------------------------------------------------------------------- #
+def _torneo_actual(M):
+    # En México el año calendario contiene DOS torneos (Clausura ene-jun, Apertura
+    # jul-nov), ambos etiquetados como temporada 2026 en partidos.csv. El torneo
+    # vigente es el definido por fixture.csv; los partidos jugados de ese torneo
+    # son los que caen dentro de su ventana de fechas.
+    fix = pd.read_csv(DATA / "fixture.csv", parse_dates=["fecha"])
+    fix = fix[fix.temporada == 2026]
+    if len(fix) == 0:
+        return pd.DataFrame(), fix
+    inicio_torneo = fix["fecha"].min() - pd.Timedelta(days=1)
+    partidos = M["partidos"].copy()
+    partidos["fecha"] = pd.to_datetime(partidos["fecha"])
+    p_actuales = partidos[(partidos["temporada"] == 2026) & (partidos["fecha"] >= inicio_torneo)]
+    return p_actuales, fix
+
+
 def simular_fixture_regular(M, PREDS, fijos=None):
-    # Cargar fixture
-    fix = pd.read_csv(DATA / "fixture.csv")
+    # Tabla de posiciones (Puntos, GF, GC, PG, PE, PP)
+    # Inicializar solo con los partidos jugados del torneo actual (Apertura 2026).
+    # Los resultados del torneo anterior (Clausura 2026) no se mezclan.
+    p_actuales, fix = _torneo_actual(M)
     if len(fix) == 0:
         return {}
-        
-    # Tabla de posiciones (Puntos, GF, GC, PG, PE, PP)
-    # Inicializar con los ya jugados de la temporada actual (2026)
-    partidos = M["partidos"]
-    p_actuales = partidos[partidos.temporada == 2026]
     
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
     
@@ -770,6 +790,10 @@ def simular_fixture_regular(M, PREDS, fijos=None):
     for r in fix.itertuples(index=False):
         l, v = r.local, r.visita
         
+        # Partidos ya jugados del torneo actual se siembran desde partidos.csv
+        if r.estado != "pre" and pd.notna(r.goles_local) and pd.notna(r.goles_visita):
+            continue
+            
         # Si ya se forzó un marcador manual
         if fijos and (l, v) in fijos:
             gl, gv = fijos[(l, v)]
@@ -1040,7 +1064,7 @@ def validacion_en_vivo(M, temporada_val=2026):
     if len(df_val) == 0:
         return None, None, None
         
-    pipe = M["pipe"]
+    pipe = M["pipe_val"]  # out-of-sample: entrenado solo con temporadas <= 2024
     features = M["features"]
     
     X_val = df_val[features].fillna(0.0)
@@ -1097,8 +1121,10 @@ def validacion_en_vivo(M, temporada_val=2026):
 
 
 def obtener_tabla_actual(M):
-    partidos = M["partidos"]
-    p_actuales = partidos[partidos.temporada == 2026]
+    # Tabla real del torneo vigente (Apertura 2026), no del torneo anterior
+    p_actuales, _ = _torneo_actual(M)
+    if len(p_actuales) == 0:
+        p_actuales = pd.DataFrame(columns=["local", "visita", "goles_local", "goles_visita"])
     
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
     

@@ -359,6 +359,7 @@ def run_app():
         
         with col_act:
             st.markdown('<div class="card-title">Tabla de Posiciones Actual (Real)</div>', unsafe_allow_html=True)
+            st.caption("Torneo vigente: Apertura 2026. Los resultados del Clausura 2026 (torneo anterior) no se mezclan en la tabla ni en la proyección.")
             st.dataframe(df_actual_vis, hide_index=True, width='stretch', height=500)
             
         # 2. Proyecciones
