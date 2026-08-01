@@ -5,6 +5,7 @@ from pathlib import Path
 import time
 import requests
 import pandas as pd
+from concurrent.futures import ThreadPoolExecutor
 
 DATA = Path(__file__).resolve().parent / "data"
 SB = "https://site.api.espn.com/apis/site/v2/sports/soccer/arg.1/scoreboard"
@@ -55,20 +56,22 @@ def recolectar():
     print(f"{len(eventos)} partidos jugados; {len(hechos)} ya recolectados en Argentina. Pidiendo el resto...")
     filas = ya.to_dict("records") if len(ya) else []
     nuevos = 0
-    for i, (eid, fecha, anio) in enumerate(eventos):
-        if str(eid) in hechos:
-            continue
+    pendientes = [(eid, fecha, anio) for eid, fecha, anio in eventos if str(eid) not in hechos]
+
+    def _box_seguro(eid):
         try:
-            b = _box(eid)
+            return _box(eid)
+        except Exception:
+            return None
+
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        for eid, fecha, anio, b in ex.map(lambda ev: (ev[0], ev[1], ev[2], _box_seguro(ev[0])), pendientes):
             if b:
                 b.update({"event_id": eid, "fecha": fecha, "temporada": anio})
                 filas.append(b); nuevos += 1
-        except Exception:
-            pass
-        time.sleep(0.08)
-        if nuevos and nuevos % 100 == 0:
-            pd.DataFrame(filas).to_csv(path, index=False)
-            print(f"  ...{nuevos} nuevos guardados")
+            if nuevos and nuevos % 100 == 0:
+                pd.DataFrame(filas).to_csv(path, index=False)
+                print(f"  ...{nuevos} nuevos guardados")
     df = pd.DataFrame(filas)
     df.to_csv(path, index=False)
     cob = df[[c for c in df.columns if c.endswith("totalShots")]].notna().mean().mean() if len(df) else 0

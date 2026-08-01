@@ -173,7 +173,8 @@ def recolectar():
     df = df.drop_duplicates(subset=["fecha", "local", "visita"], keep="last")
 
     jugados = df[df.estado == "post"].dropna(subset=["goles_local", "goles_visita"]).reset_index(drop=True)
-    fixture = df[df.estado == "pre"].reset_index(drop=True)
+    fixture = df[df.estado == "pre"]
+    fixture = fixture[fixture.temporada == fixture.temporada.max()].reset_index(drop=True)
 
     jugados = jugados.drop(columns=["status_name"], errors="ignore")
     fixture = fixture.drop(columns=["status_name"], errors="ignore")
