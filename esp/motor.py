@@ -44,6 +44,14 @@ STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCom
          "yellowCards", "redCards", "offsides", "saves", "blockedShots"]
 
 ELO_INIT = 1500.0
+
+def _elo_default():
+    return ELO_INIT
+
+
+def _none_default():
+    return None
+
 K_LIGA = 35.0      # ELO K-factor para LaLiga (las ligas top tienen más volatilidad)
 HOME_ADV = 60.0    # Ventaja de local típica de 60 puntos ELO
 
@@ -146,7 +154,7 @@ class PiRatingTracker:
 class StateTracker:
 
     def __init__(self):
-        self.elos = defaultdict(lambda: ELO_INIT)
+        self.elos = defaultdict(_elo_default)
         self.history = defaultdict(deque)
         self.home_history = defaultdict(deque)
         self.away_history = defaultdict(deque)
@@ -158,7 +166,7 @@ class StateTracker:
         self.season_pts = defaultdict(int)
         self.season_matches = defaultdict(int)
         self.curr_season = None
-        self.last_match_date = defaultdict(lambda: None)
+        self.last_match_date = defaultdict(_none_default)
         self.recent_dates = defaultdict(deque)
         self.pi_tracker = PiRatingTracker()
 
@@ -367,7 +375,21 @@ def cargar_y_entrenar():
     X_test = df_features.loc[test_mask, cols_feat].fillna(0.0)
     y_test = df_features.loc[test_mask, "resultado"]
 
-    pipe_lasso_base = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=0.04, max_iter=4000, random_state=42))])
+    # C-search con CV temporal sobre train (sin mirar el test)
+    best_c = 0.04; best_loss = 999.0
+    from sklearn.model_selection import TimeSeriesSplit
+    tscv = TimeSeriesSplit(n_splits=4)
+    for C in [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0]:
+        _losses = []
+        for tr, va in tscv.split(X_train):
+            _p = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=4000))])
+            _p.fit(X_train.iloc[tr], y_train.iloc[tr])
+            _losses.append(log_loss(y_train.iloc[va], _p.predict_proba(X_train.iloc[va]), labels=[0,1,2]))
+        _l = float(np.mean(_losses))
+        if _l < best_loss: best_loss = _l; best_c = C
+    print(f"Mejor C para Lasso (CV temporal en train): {best_c} | Log-Loss CV: {best_loss:.4f}")
+
+    pipe_lasso_base = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=4000, random_state=42))])
     pipe_lasso_base.fit(X_train, y_train)
     pipe_rf_base = Pipeline([("scale", StandardScaler()), ("rf", RandomForestClassifier(max_depth=5, n_estimators=200, min_samples_split=15, random_state=42, n_jobs=-1))])
     pipe_rf_base.fit(X_train, y_train)
@@ -389,7 +411,7 @@ def cargar_y_entrenar():
 
     X_full = df_features.loc[train_mask | cal_mask, cols_feat].fillna(0.0)
     y_full = df_features.loc[train_mask | cal_mask, "resultado"]
-    pipe_lasso = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=0.04, max_iter=4000, random_state=42))])
+    pipe_lasso = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=4000, random_state=42))])
     pipe_lasso.fit(X_full, y_full)
     pipe_rf = Pipeline([("scale", StandardScaler()), ("rf", RandomForestClassifier(max_depth=5, n_estimators=200, min_samples_split=15, random_state=42, n_jobs=-1))])
     pipe_rf.fit(X_full, y_full)
@@ -428,18 +450,57 @@ def cargar_y_entrenar():
     }
 
 
-def cargar():
+def _cache_key():
+    # El modelo depende de los datos (data/*.csv) y del propio código del motor
+    import hashlib
+    h = hashlib.sha256()
+    h.update(str(Path(__file__).stat().st_mtime_ns).encode())
+    for f in sorted(DATA.glob("*.csv")):
+        h.update(f.name.encode())
+        h.update(str(f.stat().st_size).encode())
+        h.update(str(f.stat().st_mtime_ns).encode())
+    return h.hexdigest()
+
+
+def cargar(use_cache=True):
     # Retorna un diccionario con modelos entrenados y estados finales
-    return cargar_y_entrenar()
+    import pickle
+    cache_path = Path(__file__).resolve().parent / ".model_cache.pkl"
+    if use_cache and cache_path.exists():
+        try:
+            with open(cache_path, "rb") as fh:
+                saved = pickle.load(fh)
+            if saved.get("key") == _cache_key():
+                print("Modelo cargado desde cache de disco")
+                return saved["M"]
+        except Exception as ex:
+            print(f"Cache inválido ({ex}); re-entrenando...")
+    M = cargar_y_entrenar()
+    if use_cache:
+        try:
+            with open(cache_path, "wb") as fh:
+                pickle.dump({"key": _cache_key(), "M": M}, fh)
+            print("Modelo guardado en cache de disco")
+        except Exception as ex:
+            print(f"No se pudo guardar el cache: {ex}")
+    return M
 
 
-def predecir_match(M, local, visita, modelo_tipo="rf"):
+def _temporada_actual():
+    # En LaLiga la temporada va de julio a junio (2026 = temporada 2026/27)
+    hoy = pd.Timestamp.now()
+    return int(hoy.year) if hoy.month >= 7 else int(hoy.year) - 1
+
+
+def predecir_match(M, local, visita, temporada=None, modelo_tipo="rf"):
     # Retorna P(Local), P(Empate), P(Visita) en base al modelo seleccionado
     tracker = M["tracker"]
     cols = M["cols"]
+    if temporada is None:
+        temporada = _temporada_actual()
     
     # Obtener features en el estado final del tracker
-    feats = tracker.get_features_for_match(local, visita, 2026)
+    feats = tracker.get_features_for_match(local, visita, temporada)
     df_test = pd.DataFrame([feats])[cols]
     
     if modelo_tipo == "stacking":
@@ -673,8 +734,10 @@ def obtener_tabla_actual(M, temporada=None):
     return ordenar_tabla(pd.DataFrame(filas))
 
 
-def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf"):
+def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
     # Corre simulación de Monte Carlo para obtener probabilidades de campeón, copas y descenso
+    if seed is not None:
+        np.random.seed(seed)
     fix_path = DATA / "fixture.csv"
     if not fix_path.exists() or len(pd.read_csv(fix_path)) == 0:
         # Si no hay fixture por jugar, la tabla actual es la definitiva
