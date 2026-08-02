@@ -97,6 +97,53 @@ LEAGUES = {
             "Universidad de Concepción": "Universidad de Concepción"
         }
     },
+    "bund": {
+        "tm_id": "L1",
+        "espn_partidos": ROOT / "bund" / "data" / "partidos.csv",
+        "out_csv": ROOT / "bund" / "data" / "squad_values_historical.csv",
+        "manual": {
+            "FC Bayern München": "Bayern Munich",
+            "Bayern Munich": "Bayern Munich",
+            "Bayer 04 Leverkusen": "Bayer Leverkusen",
+            "Bayer Leverkusen": "Bayer Leverkusen",
+            "Eintracht Frankfurt": "Eintracht Frankfurt",
+            "RB Leipzig": "RB Leipzig",
+            "SC Freiburg": "SC Freiburg",
+            "VfL Wolfsburg": "VfL Wolfsburg",
+            "VfB Stuttgart": "VfB Stuttgart",
+            "FC Augsburg": "FC Augsburg",
+            "TSG 1899 Hoffenheim": "TSG Hoffenheim",
+            "TSG Hoffenheim": "TSG Hoffenheim",
+            "1. FC Köln": "FC Cologne",
+            "FC Köln": "FC Cologne",
+            "Borussia Dortmund": "Borussia Dortmund",
+            "Borussia Mönchengladbach": "Borussia Mönchengladbach",
+            "1. FC Union Berlin": "1. FC Union Berlin",
+            "Union Berlin": "1. FC Union Berlin",
+            "1. FSV Mainz 05": "Mainz",
+            "Mainz 05": "Mainz",
+            "SV Werder Bremen": "Werder Bremen",
+            "Werder Bremen": "Werder Bremen",
+            "FC Schalke 04": "Schalke 04",
+            "Schalke 04": "Schalke 04",
+            "Hertha BSC": "Hertha Berlin",
+            "Hertha Berlin": "Hertha Berlin",
+            "Hamburger SV": "Hamburg SV",
+            "Hamburg SV": "Hamburg SV",
+            "FC St. Pauli": "St. Pauli",
+            "St. Pauli": "St. Pauli",
+            "Holstein Kiel": "Holstein Kiel",
+            "VfL Bochum": "VfL Bochum",
+            "SV Darmstadt 98": "SV Darmstadt 98",
+            "SpVgg Greuther Fürth": "SpVgg Greuther Fürth",
+            "DSC Arminia Bielefeld": "Arminia Bielefeld",
+            "Arminia Bielefeld": "Arminia Bielefeld",
+            "1. FC Heidenheim 1846": "1. FC Heidenheim 1846",
+            "1. FC Heidenheim": "1. FC Heidenheim 1846",
+            "SC Paderborn 07": "SC Paderborn 07",
+            "SV Elversberg": "SV Elversberg"
+        }
+    },
     "eng": {
         "tm_id": "GB1",
         "espn_partidos": ROOT / "eng" / "data" / "partidos.csv",
@@ -226,6 +273,8 @@ def scrape_all(only=None, seasons=None):
                 url = f"https://www.transfermarkt.us/primera-division-de-chile/startseite/wettbewerb/CLPD/plus/?saison_id={s}"
             elif league_key == "eng":
                 url = f"https://www.transfermarkt.us/premier-league/startseite/wettbewerb/GB1/plus/?saison_id={s}"
+            elif league_key == "bund":
+                url = f"https://www.transfermarkt.us/bundesliga/startseite/wettbewerb/L1/plus/?saison_id={s}"
                 
             print(f"  Temporada {s} -> {url}")
             try:

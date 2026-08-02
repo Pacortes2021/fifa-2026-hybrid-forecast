@@ -1,0 +1,127 @@
+event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
+401884817,2026-08-28 20:30:00,2026,132,134,Bayern Munich,VfB Stuttgart,,,pre
+401884809,2026-08-29 15:30:00,2026,10388,131,SV Elversberg,Bayer Leverkusen,,,pre
+401884811,2026-08-29 15:30:00,2026,598,125,1. FC Union Berlin,Eintracht Frankfurt,,,pre
+401884810,2026-08-29 15:30:00,2026,122,7911,FC Cologne,TSG Hoffenheim,,,pre
+401884812,2026-08-29 15:30:00,2026,2950,3307,Mainz,SC Paderborn 07,,,pre
+401884815,2026-08-29 15:30:00,2026,11420,268,RB Leipzig,Borussia Mönchengladbach,,,pre
+401884816,2026-08-29 18:30:00,2026,124,127,Borussia Dortmund,Hamburg SV,,,pre
+401884814,2026-08-30 15:30:00,2026,126,137,SC Freiburg,Werder Bremen,,,pre
+401884813,2026-08-30 17:30:00,2026,3841,133,FC Augsburg,Schalke 04,,,pre
+401884808,2026-09-04 20:30:00,2026,134,122,VfB Stuttgart,FC Cologne,,,pre
+401884802,2026-09-05 15:30:00,2026,137,11420,Werder Bremen,RB Leipzig,,,pre
+401884807,2026-09-05 15:30:00,2026,7911,124,TSG Hoffenheim,Borussia Dortmund,,,pre
+401884806,2026-09-05 15:30:00,2026,131,598,Bayer Leverkusen,1. FC Union Berlin,,,pre
+401884804,2026-09-05 15:30:00,2026,268,10388,Borussia Mönchengladbach,SV Elversberg,,,pre
+401884800,2026-09-05 15:30:00,2026,3307,126,SC Paderborn 07,SC Freiburg,,,pre
+401884801,2026-09-05 18:30:00,2026,133,132,Schalke 04,Bayern Munich,,,pre
+401884803,2026-09-06 15:30:00,2026,127,2950,Hamburg SV,Mainz,,,pre
+401884805,2026-09-06 17:30:00,2026,125,3841,Eintracht Frankfurt,FC Augsburg,,,pre
+401884793,2026-09-11 20:30:00,2026,598,133,1. FC Union Berlin,Schalke 04,,,pre
+401884799,2026-09-12 15:30:00,2026,124,3307,Borussia Dortmund,SC Paderborn 07,,,pre
+401884795,2026-09-12 15:30:00,2026,3841,131,FC Augsburg,Bayer Leverkusen,,,pre
+401884794,2026-09-12 15:30:00,2026,2950,125,Mainz,Eintracht Frankfurt,,,pre
+401884796,2026-09-12 15:30:00,2026,126,268,SC Freiburg,Borussia Mönchengladbach,,,pre
+401884797,2026-09-12 15:30:00,2026,7911,134,TSG Hoffenheim,VfB Stuttgart,,,pre
+401884792,2026-09-12 18:30:00,2026,122,137,FC Cologne,Werder Bremen,,,pre
+401884798,2026-09-13 15:30:00,2026,11420,127,RB Leipzig,Hamburg SV,,,pre
+401884791,2026-09-13 17:30:00,2026,10388,132,SV Elversberg,Bayern Munich,,,pre
+401884790,2026-09-18 20:30:00,2026,132,598,Bayern Munich,1. FC Union Berlin,,,pre
+401884786,2026-09-19 15:30:00,2026,268,2950,Borussia Mönchengladbach,Mainz,,,pre
+401884787,2026-09-19 15:30:00,2026,125,126,Eintracht Frankfurt,SC Freiburg,,,pre
+401884785,2026-09-19 15:30:00,2026,127,122,Hamburg SV,FC Cologne,,,pre
+401884784,2026-09-19 15:30:00,2026,137,3841,Werder Bremen,FC Augsburg,,,pre
+401884789,2026-09-19 18:30:00,2026,134,124,VfB Stuttgart,Borussia Dortmund,,,pre
+401884788,2026-09-20 15:30:00,2026,131,11420,Bayer Leverkusen,RB Leipzig,,,pre
+401884783,2026-09-20 17:30:00,2026,133,10388,Schalke 04,SV Elversberg,,,pre
+401884782,2026-09-20 19:30:00,2026,3307,7911,SC Paderborn 07,TSG Hoffenheim,,,pre
+401884779,2026-10-10 20:00:00,2026,7911,127,TSG Hoffenheim,Hamburg SV,,,pre
+401884773,2026-10-10 20:00:00,2026,3307,134,SC Paderborn 07,VfB Stuttgart,,,pre
+401884778,2026-10-10 20:00:00,2026,126,133,SC Freiburg,Schalke 04,,,pre
+401884780,2026-10-10 20:00:00,2026,11420,125,RB Leipzig,Eintracht Frankfurt,,,pre
+401884776,2026-10-10 20:00:00,2026,2950,131,Mainz,Bayer Leverkusen,,,pre
+401884774,2026-10-10 20:00:00,2026,122,268,FC Cologne,Borussia Mönchengladbach,,,pre
+401884777,2026-10-10 20:00:00,2026,3841,132,FC Augsburg,Bayern Munich,,,pre
+401884781,2026-10-10 20:00:00,2026,124,137,Borussia Dortmund,Werder Bremen,,,pre
+401884775,2026-10-10 20:00:00,2026,598,10388,1. FC Union Berlin,SV Elversberg,,,pre
+401884764,2026-10-17 20:00:00,2026,10388,3841,SV Elversberg,FC Augsburg,,,pre
+401884765,2026-10-17 20:00:00,2026,133,2950,Schalke 04,Mainz,,,pre
+401884767,2026-10-17 20:00:00,2026,127,134,Hamburg SV,VfB Stuttgart,,,pre
+401884770,2026-10-17 20:00:00,2026,125,122,Eintracht Frankfurt,FC Cologne,,,pre
+401884766,2026-10-17 20:00:00,2026,137,3307,Werder Bremen,SC Paderborn 07,,,pre
+401884772,2026-10-17 20:00:00,2026,132,11420,Bayern Munich,RB Leipzig,,,pre
+401884771,2026-10-17 20:00:00,2026,131,126,Bayer Leverkusen,SC Freiburg,,,pre
+401884769,2026-10-17 20:00:00,2026,598,124,1. FC Union Berlin,Borussia Dortmund,,,pre
+401884768,2026-10-17 20:00:00,2026,268,7911,Borussia Mönchengladbach,TSG Hoffenheim,,,pre
+401884761,2026-10-24 20:00:00,2026,134,268,VfB Stuttgart,Borussia Mönchengladbach,,,pre
+401884760,2026-10-24 20:00:00,2026,7911,131,TSG Hoffenheim,Bayer Leverkusen,,,pre
+401884755,2026-10-24 20:00:00,2026,3307,127,SC Paderborn 07,Hamburg SV,,,pre
+401884759,2026-10-24 20:00:00,2026,126,132,SC Freiburg,Bayern Munich,,,pre
+401884762,2026-10-24 20:00:00,2026,11420,10388,RB Leipzig,SV Elversberg,,,pre
+401884756,2026-10-24 20:00:00,2026,122,133,FC Cologne,Schalke 04,,,pre
+401884758,2026-10-24 20:00:00,2026,3841,598,FC Augsburg,1. FC Union Berlin,,,pre
+401884763,2026-10-24 20:00:00,2026,124,125,Borussia Dortmund,Eintracht Frankfurt,,,pre
+401884757,2026-10-24 20:00:00,2026,2950,137,Mainz,Werder Bremen,,,pre
+401884748,2026-10-31 19:00:00,2026,137,7911,Werder Bremen,TSG Hoffenheim,,,pre
+401884746,2026-10-31 19:00:00,2026,10388,2950,SV Elversberg,Mainz,,,pre
+401884747,2026-10-31 19:00:00,2026,133,11420,Schalke 04,RB Leipzig,,,pre
+401884751,2026-10-31 19:00:00,2026,3841,126,FC Augsburg,SC Freiburg,,,pre
+401884749,2026-10-31 19:00:00,2026,268,3307,Borussia Mönchengladbach,SC Paderborn 07,,,pre
+401884754,2026-10-31 19:00:00,2026,132,124,Bayern Munich,Borussia Dortmund,,,pre
+401884750,2026-10-31 19:00:00,2026,598,122,1. FC Union Berlin,FC Cologne,,,pre
+401884752,2026-10-31 19:00:00,2026,125,127,Eintracht Frankfurt,Hamburg SV,,,pre
+401884753,2026-10-31 19:00:00,2026,131,134,Bayer Leverkusen,VfB Stuttgart,,,pre
+401884743,2026-11-07 21:00:00,2026,134,137,VfB Stuttgart,Werder Bremen,,,pre
+401884745,2026-11-07 21:00:00,2026,124,10388,Borussia Dortmund,SV Elversberg,,,pre
+401884738,2026-11-07 21:00:00,2026,122,131,FC Cologne,Bayer Leverkusen,,,pre
+401884739,2026-11-07 21:00:00,2026,127,268,Hamburg SV,Borussia Mönchengladbach,,,pre
+401884740,2026-11-07 21:00:00,2026,2950,132,Mainz,Bayern Munich,,,pre
+401884744,2026-11-07 21:00:00,2026,11420,3841,RB Leipzig,FC Augsburg,,,pre
+401884741,2026-11-07 21:00:00,2026,126,598,SC Freiburg,1. FC Union Berlin,,,pre
+401884737,2026-11-07 21:00:00,2026,3307,125,SC Paderborn 07,Eintracht Frankfurt,,,pre
+401884742,2026-11-07 21:00:00,2026,7911,133,TSG Hoffenheim,Schalke 04,,,pre
+401884730,2026-11-21 21:00:00,2026,137,127,Werder Bremen,Hamburg SV,,,pre
+401884728,2026-11-21 21:00:00,2026,10388,126,SV Elversberg,SC Freiburg,,,pre
+401884729,2026-11-21 21:00:00,2026,133,134,Schalke 04,VfB Stuttgart,,,pre
+401884733,2026-11-21 21:00:00,2026,3841,2950,FC Augsburg,Mainz,,,pre
+401884735,2026-11-21 21:00:00,2026,131,3307,Bayer Leverkusen,SC Paderborn 07,,,pre
+401884731,2026-11-21 21:00:00,2026,268,124,Borussia Mönchengladbach,Borussia Dortmund,,,pre
+401884736,2026-11-21 21:00:00,2026,132,122,Bayern Munich,FC Cologne,,,pre
+401884732,2026-11-21 21:00:00,2026,598,11420,1. FC Union Berlin,RB Leipzig,,,pre
+401884734,2026-11-21 21:00:00,2026,125,7911,Eintracht Frankfurt,TSG Hoffenheim,,,pre
+401884719,2026-11-28 21:00:00,2026,3307,133,SC Paderborn 07,Schalke 04,,,pre
+401884726,2026-11-28 21:00:00,2026,134,125,VfB Stuttgart,Eintracht Frankfurt,,,pre
+401884725,2026-11-28 21:00:00,2026,7911,3841,TSG Hoffenheim,FC Augsburg,,,pre
+401884720,2026-11-28 21:00:00,2026,137,268,Werder Bremen,Borussia Mönchengladbach,,,pre
+401884723,2026-11-28 21:00:00,2026,2950,598,Mainz,1. FC Union Berlin,,,pre
+401884722,2026-11-28 21:00:00,2026,127,132,Hamburg SV,Bayern Munich,,,pre
+401884721,2026-11-28 21:00:00,2026,122,10388,FC Cologne,SV Elversberg,,,pre
+401884727,2026-11-28 21:00:00,2026,124,131,Borussia Dortmund,Bayer Leverkusen,,,pre
+401884724,2026-11-28 21:00:00,2026,126,11420,SC Freiburg,RB Leipzig,,,pre
+401884711,2026-12-05 21:00:00,2026,133,124,Schalke 04,Borussia Dortmund,,,pre
+401884715,2026-12-05 21:00:00,2026,126,7911,SC Freiburg,TSG Hoffenheim,,,pre
+401884717,2026-12-05 21:00:00,2026,11420,2950,RB Leipzig,Mainz,,,pre
+401884713,2026-12-05 21:00:00,2026,3841,122,FC Augsburg,FC Cologne,,,pre
+401884710,2026-12-05 21:00:00,2026,10388,134,SV Elversberg,VfB Stuttgart,,,pre
+401884718,2026-12-05 21:00:00,2026,132,3307,Bayern Munich,SC Paderborn 07,,,pre
+401884716,2026-12-05 21:00:00,2026,131,268,Bayer Leverkusen,Borussia Mönchengladbach,,,pre
+401884712,2026-12-05 21:00:00,2026,598,127,1. FC Union Berlin,Hamburg SV,,,pre
+401884714,2026-12-05 21:00:00,2026,125,137,Eintracht Frankfurt,Werder Bremen,,,pre
+401884709,2026-12-12 21:00:00,2026,124,3841,Borussia Dortmund,FC Augsburg,,,pre
+401884705,2026-12-12 21:00:00,2026,268,125,Borussia Mönchengladbach,Eintracht Frankfurt,,,pre
+401884703,2026-12-12 21:00:00,2026,122,11420,FC Cologne,RB Leipzig,,,pre
+401884704,2026-12-12 21:00:00,2026,127,133,Hamburg SV,Schalke 04,,,pre
+401884706,2026-12-12 21:00:00,2026,2950,126,Mainz,SC Freiburg,,,pre
+401884701,2026-12-12 21:00:00,2026,3307,10388,SC Paderborn 07,SV Elversberg,,,pre
+401884707,2026-12-12 21:00:00,2026,7911,132,TSG Hoffenheim,Bayern Munich,,,pre
+401884708,2026-12-12 21:00:00,2026,134,598,VfB Stuttgart,1. FC Union Berlin,,,pre
+401884702,2026-12-12 21:00:00,2026,137,131,Werder Bremen,Bayer Leverkusen,,,pre
+401884699,2026-12-19 21:00:00,2026,11420,124,RB Leipzig,Borussia Dortmund,,,pre
+401884697,2026-12-19 21:00:00,2026,126,134,SC Freiburg,VfB Stuttgart,,,pre
+401884695,2026-12-19 21:00:00,2026,2950,122,Mainz,FC Cologne,,,pre
+401884693,2026-12-19 21:00:00,2026,133,268,Schalke 04,Borussia Mönchengladbach,,,pre
+401884700,2026-12-19 21:00:00,2026,132,137,Bayern Munich,Werder Bremen,,,pre
+401884698,2026-12-19 21:00:00,2026,131,125,Bayer Leverkusen,Eintracht Frankfurt,,,pre
+401884694,2026-12-19 21:00:00,2026,598,7911,1. FC Union Berlin,TSG Hoffenheim,,,pre
+401884696,2026-12-19 21:00:00,2026,3841,3307,FC Augsburg,SC Paderborn 07,,,pre
+401884692,2026-12-19 21:00:00,2026,10388,127,SV Elversberg,Hamburg SV,,,pre

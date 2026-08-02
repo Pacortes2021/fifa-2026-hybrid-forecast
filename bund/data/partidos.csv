@@ -1,0 +1,1720 @@
+event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
+576670,2021-01-02 15:30:00,2021,2506,268,Arminia Bielefeld,Borussia Mönchengladbach,0.0,1.0,post
+576673,2021-01-02 15:30:00,2021,125,131,Eintracht Frankfurt,Bayer Leverkusen,2.0,1.0,post
+576672,2021-01-02 15:30:00,2021,122,3841,FC Cologne,FC Augsburg,0.0,1.0,post
+576665,2021-01-02 15:30:00,2021,7911,126,TSG Hoffenheim,SC Freiburg,1.0,3.0,post
+576666,2021-01-02 15:30:00,2021,137,598,Werder Bremen,1. FC Union Berlin,0.0,2.0,post
+576667,2021-01-02 18:30:00,2021,129,133,Hertha Berlin,Schalke 04,3.0,0.0,post
+576669,2021-01-02 20:30:00,2021,134,11420,VfB Stuttgart,RB Leipzig,0.0,1.0,post
+576671,2021-01-03 15:30:00,2021,124,138,Borussia Dortmund,VfL Wolfsburg,2.0,0.0,post
+576668,2021-01-03 18:00:00,2021,132,2950,Bayern Munich,Mainz,5.0,2.0,post
+576678,2021-01-08 20:30:00,2021,268,132,Borussia Mönchengladbach,Bayern Munich,3.0,2.0,post
+576682,2021-01-09 15:30:00,2021,126,122,SC Freiburg,FC Cologne,5.0,0.0,post
+576680,2021-01-09 15:30:00,2021,2950,125,Mainz,Eintracht Frankfurt,0.0,2.0,post
+576675,2021-01-09 15:30:00,2021,133,7911,Schalke 04,TSG Hoffenheim,4.0,0.0,post
+576681,2021-01-09 15:30:00,2021,598,138,1. FC Union Berlin,VfL Wolfsburg,2.0,2.0,post
+576679,2021-01-09 15:30:00,2021,131,137,Bayer Leverkusen,Werder Bremen,1.0,1.0,post
+576674,2021-01-09 18:30:00,2021,11420,124,RB Leipzig,Borussia Dortmund,1.0,3.0,post
+576676,2021-01-10 15:30:00,2021,3841,134,FC Augsburg,VfB Stuttgart,1.0,4.0,post
+576677,2021-01-10 18:00:00,2021,2506,129,Arminia Bielefeld,Hertha Berlin,1.0,0.0,post
+576684,2021-01-15 20:30:00,2021,598,131,1. FC Union Berlin,Bayer Leverkusen,1.0,0.0,post
+576691,2021-01-16 15:30:00,2021,124,2950,Borussia Dortmund,Mainz,1.0,1.0,post
+576683,2021-01-16 15:30:00,2021,122,129,FC Cologne,Hertha Berlin,0.0,0.0,post
+576687,2021-01-16 15:30:00,2021,7911,2506,TSG Hoffenheim,Arminia Bielefeld,0.0,0.0,post
+576685,2021-01-16 15:30:00,2021,138,11420,VfL Wolfsburg,RB Leipzig,2.0,2.0,post
+576688,2021-01-16 15:30:00,2021,137,3841,Werder Bremen,FC Augsburg,2.0,0.0,post
+576686,2021-01-16 18:30:00,2021,134,268,VfB Stuttgart,Borussia Mönchengladbach,2.0,2.0,post
+576689,2021-01-17 15:30:00,2021,132,126,Bayern Munich,SC Freiburg,2.0,1.0,post
+576690,2021-01-17 18:00:00,2021,125,133,Eintracht Frankfurt,Schalke 04,3.0,1.0,post
+576698,2021-01-19 18:30:00,2021,268,137,Borussia Mönchengladbach,Werder Bremen,1.0,0.0,post
+576692,2021-01-19 20:30:00,2021,2950,138,Mainz,VfL Wolfsburg,0.0,2.0,post
+576699,2021-01-19 20:30:00,2021,131,124,Bayer Leverkusen,Borussia Dortmund,2.0,1.0,post
+576694,2021-01-19 20:30:00,2021,129,7911,Hertha Berlin,TSG Hoffenheim,0.0,3.0,post
+576695,2021-01-20 18:30:00,2021,133,122,Schalke 04,FC Cologne,1.0,2.0,post
+576697,2021-01-20 20:30:00,2021,2506,134,Arminia Bielefeld,VfB Stuttgart,3.0,0.0,post
+576700,2021-01-20 20:30:00,2021,3841,132,FC Augsburg,Bayern Munich,0.0,1.0,post
+576693,2021-01-20 20:30:00,2021,11420,598,RB Leipzig,1. FC Union Berlin,1.0,0.0,post
+576696,2021-01-20 20:30:00,2021,126,125,SC Freiburg,Eintracht Frankfurt,2.0,2.0,post
+576703,2021-01-22 20:30:00,2021,268,124,Borussia Mönchengladbach,Borussia Dortmund,4.0,2.0,post
+576704,2021-01-23 15:30:00,2021,2506,125,Arminia Bielefeld,Eintracht Frankfurt,1.0,5.0,post
+576702,2021-01-23 15:30:00,2021,131,138,Bayer Leverkusen,VfL Wolfsburg,0.0,1.0,post
+576705,2021-01-23 15:30:00,2021,3841,598,FC Augsburg,1. FC Union Berlin,2.0,1.0,post
+576701,2021-01-23 15:30:00,2021,2950,11420,Mainz,RB Leipzig,3.0,2.0,post
+576708,2021-01-23 15:30:00,2021,126,134,SC Freiburg,VfB Stuttgart,2.0,1.0,post
+576707,2021-01-23 18:30:00,2021,129,137,Hertha Berlin,Werder Bremen,1.0,4.0,post
+576706,2021-01-24 15:30:00,2021,133,132,Schalke 04,Bayern Munich,0.0,4.0,post
+576709,2021-01-24 18:00:00,2021,7911,122,TSG Hoffenheim,FC Cologne,3.0,0.0,post
+576717,2021-01-29 20:30:00,2021,134,2950,VfB Stuttgart,Mainz,2.0,0.0,post
+576711,2021-01-30 15:30:00,2021,598,268,1. FC Union Berlin,Borussia Mönchengladbach,1.0,1.0,post
+576718,2021-01-30 15:30:00,2021,132,7911,Bayern Munich,TSG Hoffenheim,4.0,1.0,post
+576712,2021-01-30 15:30:00,2021,124,3841,Borussia Dortmund,FC Augsburg,3.0,1.0,post
+576713,2021-01-30 15:30:00,2021,125,129,Eintracht Frankfurt,Hertha Berlin,3.0,1.0,post
+576716,2021-01-30 15:30:00,2021,137,133,Werder Bremen,Schalke 04,1.0,1.0,post
+576715,2021-01-30 18:30:00,2021,11420,131,RB Leipzig,Bayer Leverkusen,1.0,0.0,post
+576710,2021-01-31 15:30:00,2021,122,2506,FC Cologne,Arminia Bielefeld,3.0,1.0,post
+576714,2021-01-31 18:00:00,2021,138,126,VfL Wolfsburg,SC Freiburg,3.0,0.0,post
+576720,2021-02-05 20:00:00,2021,129,132,Hertha Berlin,Bayern Munich,0.0,1.0,post
+576721,2021-02-06 15:30:00,2021,133,11420,Schalke 04,RB Leipzig,0.0,3.0,post
+576719,2021-02-06 15:30:00,2021,126,124,SC Freiburg,Borussia Dortmund,2.0,1.0,post
+576722,2021-02-06 15:30:00,2021,3841,138,FC Augsburg,VfL Wolfsburg,0.0,2.0,post
+576725,2021-02-06 15:30:00,2021,131,134,Bayer Leverkusen,VfB Stuttgart,5.0,2.0,post
+576726,2021-02-06 15:30:00,2021,2950,598,Mainz,1. FC Union Berlin,1.0,0.0,post
+576724,2021-02-06 18:30:00,2021,268,122,Borussia Mönchengladbach,FC Cologne,1.0,2.0,post
+576723,2021-02-07 15:30:00,2021,7911,125,TSG Hoffenheim,Eintracht Frankfurt,1.0,3.0,post
+576730,2021-02-12 20:30:00,2021,11420,3841,RB Leipzig,FC Augsburg,2.0,1.0,post
+576734,2021-02-13 15:30:00,2021,131,2950,Bayer Leverkusen,Mainz,2.0,2.0,post
+576733,2021-02-13 15:30:00,2021,124,7911,Borussia Dortmund,TSG Hoffenheim,2.0,2.0,post
+576728,2021-02-13 15:30:00,2021,134,129,VfB Stuttgart,Hertha Berlin,1.0,1.0,post
+576729,2021-02-13 15:30:00,2021,137,126,Werder Bremen,SC Freiburg,0.0,0.0,post
+576735,2021-02-13 18:30:00,2021,598,133,1. FC Union Berlin,Schalke 04,0.0,0.0,post
+576732,2021-02-14 15:30:00,2021,125,122,Eintracht Frankfurt,FC Cologne,2.0,0.0,post
+576736,2021-02-14 18:00:00,2021,138,268,VfL Wolfsburg,Borussia Mönchengladbach,0.0,0.0,post
+576731,2021-02-15 20:30:00,2021,132,2506,Bayern Munich,Arminia Bielefeld,3.0,3.0,post
+576745,2021-02-19 20:30:00,2021,2506,138,Arminia Bielefeld,VfL Wolfsburg,0.0,3.0,post
+576738,2021-02-20 15:30:00,2021,268,2950,Borussia Mönchengladbach,Mainz,1.0,2.0,post
+576744,2021-02-20 15:30:00,2021,125,132,Eintracht Frankfurt,Bayern Munich,2.0,1.0,post
+576737,2021-02-20 15:30:00,2021,122,134,FC Cologne,VfB Stuttgart,0.0,1.0,post
+576740,2021-02-20 15:30:00,2021,126,598,SC Freiburg,1. FC Union Berlin,0.0,1.0,post
+576742,2021-02-20 18:30:00,2021,133,124,Schalke 04,Borussia Dortmund,0.0,4.0,post
+576743,2021-02-21 13:30:00,2021,3841,131,FC Augsburg,Bayer Leverkusen,1.0,1.0,post
+576741,2021-02-21 15:30:00,2021,129,11420,Hertha Berlin,RB Leipzig,0.0,3.0,post
+576739,2021-02-21 18:00:00,2021,7911,137,TSG Hoffenheim,Werder Bremen,4.0,0.0,post
+576748,2021-02-26 20:30:00,2021,137,125,Werder Bremen,Eintracht Frankfurt,2.0,1.0,post
+576751,2021-02-27 15:30:00,2021,124,2506,Borussia Dortmund,Arminia Bielefeld,3.0,0.0,post
+576747,2021-02-27 15:30:00,2021,134,133,VfB Stuttgart,Schalke 04,5.0,1.0,post
+576754,2021-02-27 15:30:00,2021,132,122,Bayern Munich,FC Cologne,5.0,1.0,post
+576750,2021-02-27 15:30:00,2021,138,129,VfL Wolfsburg,Hertha Berlin,2.0,0.0,post
+576749,2021-02-27 18:30:00,2021,11420,268,RB Leipzig,Borussia Mönchengladbach,3.0,2.0,post
+576746,2021-02-28 13:30:00,2021,598,7911,1. FC Union Berlin,TSG Hoffenheim,1.0,1.0,post
+576753,2021-02-28 15:30:00,2021,2950,3841,Mainz,FC Augsburg,0.0,1.0,post
+576752,2021-02-28 18:00:00,2021,131,126,Bayer Leverkusen,SC Freiburg,1.0,2.0,post
+576760,2021-03-05 20:30:00,2021,133,2950,Schalke 04,Mainz,0.0,0.0,post
+576756,2021-03-06 15:30:00,2021,268,131,Borussia Mönchengladbach,Bayer Leverkusen,0.0,1.0,post
+576762,2021-03-06 15:30:00,2021,125,134,Eintracht Frankfurt,VfB Stuttgart,1.0,1.0,post
+576759,2021-03-06 15:30:00,2021,129,3841,Hertha Berlin,FC Augsburg,2.0,1.0,post
+576758,2021-03-06 15:30:00,2021,126,11420,SC Freiburg,RB Leipzig,0.0,3.0,post
+576757,2021-03-06 15:30:00,2021,7911,138,TSG Hoffenheim,VfL Wolfsburg,2.0,1.0,post
+576761,2021-03-06 18:30:00,2021,132,124,Bayern Munich,Borussia Dortmund,4.0,2.0,post
+576763,2021-03-07 15:30:00,2021,122,137,FC Cologne,Werder Bremen,1.0,1.0,post
+576755,2021-03-07 18:00:00,2021,2506,598,Arminia Bielefeld,1. FC Union Berlin,0.0,0.0,post
+576727,2021-03-10 18:30:00,2021,2506,137,Arminia Bielefeld,Werder Bremen,0.0,2.0,post
+576766,2021-03-12 20:30:00,2021,3841,268,FC Augsburg,Borussia Mönchengladbach,3.0,1.0,post
+576765,2021-03-13 15:30:00,2021,598,122,1. FC Union Berlin,FC Cologne,2.0,1.0,post
+576764,2021-03-13 15:30:00,2021,2950,126,Mainz,SC Freiburg,1.0,0.0,post
+576770,2021-03-13 15:30:00,2021,138,133,VfL Wolfsburg,Schalke 04,5.0,0.0,post
+576772,2021-03-13 15:30:00,2021,137,132,Werder Bremen,Bayern Munich,1.0,3.0,post
+576768,2021-03-13 18:30:00,2021,124,129,Borussia Dortmund,Hertha Berlin,2.0,0.0,post
+576771,2021-03-14 13:30:00,2021,131,2506,Bayer Leverkusen,Arminia Bielefeld,1.0,2.0,post
+576767,2021-03-14 15:30:00,2021,11420,125,RB Leipzig,Eintracht Frankfurt,1.0,1.0,post
+576769,2021-03-14 18:00:00,2021,134,7911,VfB Stuttgart,TSG Hoffenheim,2.0,0.0,post
+576774,2021-03-19 20:30:00,2021,2506,11420,Arminia Bielefeld,RB Leipzig,0.0,1.0,post
+576773,2021-03-20 15:30:00,2021,125,598,Eintracht Frankfurt,1. FC Union Berlin,5.0,2.0,post
+576775,2021-03-20 15:30:00,2021,122,124,FC Cologne,Borussia Dortmund,2.0,2.0,post
+576779,2021-03-20 15:30:00,2021,132,134,Bayern Munich,VfB Stuttgart,4.0,0.0,post
+576778,2021-03-20 15:30:00,2021,137,138,Werder Bremen,VfL Wolfsburg,1.0,2.0,post
+576780,2021-03-20 18:30:00,2021,133,268,Schalke 04,Borussia Mönchengladbach,0.0,3.0,post
+576776,2021-03-21 13:30:00,2021,7911,2950,TSG Hoffenheim,Mainz,1.0,2.0,post
+576781,2021-03-21 15:30:00,2021,129,131,Hertha Berlin,Bayer Leverkusen,3.0,0.0,post
+576777,2021-03-21 18:00:00,2021,126,3841,SC Freiburg,FC Augsburg,2.0,0.0,post
+576783,2021-04-03 15:30:00,2021,131,133,Bayer Leverkusen,Schalke 04,2.0,1.0,post
+576782,2021-04-03 15:30:00,2021,124,125,Borussia Dortmund,Eintracht Frankfurt,1.0,2.0,post
+576787,2021-04-03 15:30:00,2021,3841,7911,FC Augsburg,TSG Hoffenheim,2.0,1.0,post
+576790,2021-04-03 15:30:00,2021,2950,2506,Mainz,Arminia Bielefeld,1.0,1.0,post
+576784,2021-04-03 15:30:00,2021,138,122,VfL Wolfsburg,FC Cologne,1.0,0.0,post
+576786,2021-04-03 18:30:00,2021,11420,132,RB Leipzig,Bayern Munich,0.0,1.0,post
+576788,2021-04-03 20:30:00,2021,268,126,Borussia Mönchengladbach,SC Freiburg,2.0,1.0,post
+576785,2021-04-04 15:30:00,2021,134,137,VfB Stuttgart,Werder Bremen,1.0,0.0,post
+576789,2021-04-04 18:00:00,2021,598,129,1. FC Union Berlin,Hertha Berlin,1.0,1.0,post
+576798,2021-04-09 20:30:00,2021,2506,126,Arminia Bielefeld,SC Freiburg,1.0,0.0,post
+576793,2021-04-10 15:30:00,2021,137,11420,Werder Bremen,RB Leipzig,1.0,4.0,post
+576794,2021-04-10 15:30:00,2021,129,268,Hertha Berlin,Borussia Mönchengladbach,2.0,2.0,post
+576796,2021-04-10 15:30:00,2021,132,598,Bayern Munich,1. FC Union Berlin,1.0,1.0,post
+576797,2021-04-10 15:30:00,2021,125,138,Eintracht Frankfurt,VfL Wolfsburg,4.0,3.0,post
+576795,2021-04-10 18:30:00,2021,134,124,VfB Stuttgart,Borussia Dortmund,2.0,3.0,post
+576799,2021-04-11 15:30:00,2021,133,3841,Schalke 04,FC Augsburg,1.0,0.0,post
+576791,2021-04-11 18:00:00,2021,122,2950,FC Cologne,Mainz,2.0,3.0,post
+576792,2021-04-12 20:30:00,2021,7911,131,TSG Hoffenheim,Bayer Leverkusen,0.0,0.0,post
+576807,2021-04-16 20:30:00,2021,11420,7911,RB Leipzig,TSG Hoffenheim,0.0,0.0,post
+576806,2021-04-17 15:30:00,2021,126,133,SC Freiburg,Schalke 04,4.0,0.0,post
+576803,2021-04-17 15:30:00,2021,598,134,1. FC Union Berlin,VfB Stuttgart,2.0,1.0,post
+576804,2021-04-17 15:30:00,2021,268,125,Borussia Mönchengladbach,Eintracht Frankfurt,4.0,0.0,post
+576808,2021-04-17 15:30:00,2021,3841,2506,FC Augsburg,Arminia Bielefeld,0.0,0.0,post
+576805,2021-04-17 15:30:00,2021,138,132,VfL Wolfsburg,Bayern Munich,2.0,3.0,post
+576801,2021-04-17 18:30:00,2021,131,122,Bayer Leverkusen,FC Cologne,3.0,0.0,post
+576800,2021-04-18 15:30:00,2021,124,137,Borussia Dortmund,Werder Bremen,4.0,1.0,post
+576809,2021-04-20 18:30:00,2021,122,11420,FC Cologne,RB Leipzig,2.0,1.0,post
+576817,2021-04-20 20:30:00,2021,2506,133,Arminia Bielefeld,Schalke 04,1.0,0.0,post
+576815,2021-04-20 20:30:00,2021,132,131,Bayern Munich,Bayer Leverkusen,2.0,0.0,post
+576816,2021-04-20 20:30:00,2021,125,3841,Eintracht Frankfurt,FC Augsburg,2.0,0.0,post
+576810,2021-04-21 20:30:00,2021,124,598,Borussia Dortmund,1. FC Union Berlin,2.0,0.0,post
+576812,2021-04-21 20:30:00,2021,7911,268,TSG Hoffenheim,Borussia Mönchengladbach,3.0,2.0,post
+576811,2021-04-21 20:30:00,2021,134,138,VfB Stuttgart,VfL Wolfsburg,1.0,3.0,post
+576813,2021-04-21 20:30:00,2021,137,2950,Werder Bremen,Mainz,0.0,1.0,post
+576819,2021-04-23 20:30:00,2021,3841,122,FC Augsburg,FC Cologne,2.0,3.0,post
+576826,2021-04-24 15:30:00,2021,126,7911,SC Freiburg,TSG Hoffenheim,1.0,1.0,post
+576822,2021-04-24 15:30:00,2021,138,124,VfL Wolfsburg,Borussia Dortmund,0.0,2.0,post
+576818,2021-04-24 15:30:00,2021,598,137,1. FC Union Berlin,Werder Bremen,3.0,1.0,post
+576825,2021-04-24 15:30:00,2021,2950,132,Mainz,Bayern Munich,2.0,1.0,post
+576824,2021-04-24 18:30:00,2021,131,125,Bayer Leverkusen,Eintracht Frankfurt,3.0,1.0,post
+576821,2021-04-25 15:30:00,2021,11420,134,RB Leipzig,VfB Stuttgart,2.0,0.0,post
+576823,2021-04-25 18:00:00,2021,268,2506,Borussia Mönchengladbach,Arminia Bielefeld,5.0,0.0,post
+576802,2021-05-03 18:00:00,2021,2950,129,Mainz,Hertha Berlin,1.0,1.0,post
+576814,2021-05-06 18:30:00,2021,129,126,Hertha Berlin,SC Freiburg,3.0,0.0,post
+576834,2021-05-07 20:30:00,2021,134,3841,VfB Stuttgart,FC Augsburg,2.0,1.0,post
+576829,2021-05-08 15:30:00,2021,124,11420,Borussia Dortmund,RB Leipzig,3.0,2.0,post
+576833,2021-05-08 15:30:00,2021,7911,133,TSG Hoffenheim,Schalke 04,4.0,2.0,post
+576831,2021-05-08 15:30:00,2021,138,598,VfL Wolfsburg,1. FC Union Berlin,3.0,0.0,post
+576832,2021-05-08 15:30:00,2021,137,131,Werder Bremen,Bayer Leverkusen,0.0,0.0,post
+576827,2021-05-08 18:30:00,2021,132,268,Bayern Munich,Borussia Mönchengladbach,6.0,0.0,post
+576830,2021-05-09 13:30:00,2021,122,126,FC Cologne,SC Freiburg,1.0,4.0,post
+576828,2021-05-09 15:30:00,2021,125,2950,Eintracht Frankfurt,Mainz,1.0,1.0,post
+576835,2021-05-09 18:00:00,2021,129,2506,Hertha Berlin,Arminia Bielefeld,0.0,0.0,post
+576820,2021-05-12 18:00:00,2021,133,129,Schalke 04,Hertha Berlin,1.0,2.0,post
+576836,2021-05-15 15:30:00,2021,2506,7911,Arminia Bielefeld,TSG Hoffenheim,1.0,1.0,post
+576838,2021-05-15 15:30:00,2021,131,598,Bayer Leverkusen,1. FC Union Berlin,1.0,1.0,post
+576837,2021-05-15 15:30:00,2021,268,134,Borussia Mönchengladbach,VfB Stuttgart,1.0,2.0,post
+576840,2021-05-15 15:30:00,2021,3841,137,FC Augsburg,Werder Bremen,2.0,0.0,post
+576843,2021-05-15 15:30:00,2021,129,122,Hertha Berlin,FC Cologne,0.0,0.0,post
+576841,2021-05-15 15:30:00,2021,126,132,SC Freiburg,Bayern Munich,2.0,2.0,post
+576844,2021-05-15 15:30:00,2021,133,125,Schalke 04,Eintracht Frankfurt,4.0,3.0,post
+576839,2021-05-16 18:00:00,2021,2950,124,Mainz,Borussia Dortmund,1.0,3.0,post
+576842,2021-05-16 20:30:00,2021,11420,138,RB Leipzig,VfL Wolfsburg,2.0,2.0,post
+576851,2021-05-22 15:30:00,2021,137,268,Werder Bremen,Borussia Mönchengladbach,2.0,4.0,post
+576849,2021-05-22 15:30:00,2021,138,2950,VfL Wolfsburg,Mainz,2.0,3.0,post
+576853,2021-05-22 15:30:00,2021,134,2506,VfB Stuttgart,Arminia Bielefeld,0.0,2.0,post
+576850,2021-05-22 15:30:00,2021,7911,129,TSG Hoffenheim,Hertha Berlin,2.0,1.0,post
+576845,2021-05-22 15:30:00,2021,122,133,FC Cologne,Schalke 04,1.0,0.0,post
+576848,2021-05-22 15:30:00,2021,125,126,Eintracht Frankfurt,SC Freiburg,3.0,1.0,post
+576847,2021-05-22 15:30:00,2021,124,131,Borussia Dortmund,Bayer Leverkusen,3.0,1.0,post
+576852,2021-05-22 15:30:00,2021,132,3841,Bayern Munich,FC Augsburg,5.0,2.0,post
+576846,2021-05-22 15:30:00,2021,598,11420,1. FC Union Berlin,RB Leipzig,2.0,1.0,post
+608539,2021-08-13 20:30:00,2021,268,132,Borussia Mönchengladbach,Bayern Munich,1.0,1.0,post
+608540,2021-08-14 15:30:00,2021,598,131,1. FC Union Berlin,Bayer Leverkusen,1.0,1.0,post
+608543,2021-08-14 15:30:00,2021,2506,126,Arminia Bielefeld,SC Freiburg,0.0,0.0,post
+608544,2021-08-14 15:30:00,2021,3841,7911,FC Augsburg,TSG Hoffenheim,0.0,4.0,post
+608545,2021-08-14 15:30:00,2021,134,3070,VfB Stuttgart,SpVgg Greuther Fürth,5.0,1.0,post
+608542,2021-08-14 15:30:00,2021,138,121,VfL Wolfsburg,VfL Bochum,1.0,0.0,post
+608547,2021-08-14 18:30:00,2021,124,125,Borussia Dortmund,Eintracht Frankfurt,5.0,2.0,post
+608546,2021-08-15 15:30:00,2021,2950,11420,Mainz,RB Leipzig,1.0,0.0,post
+608541,2021-08-15 17:30:00,2021,122,129,FC Cologne,Hertha Berlin,3.0,1.0,post
+608552,2021-08-20 20:30:00,2021,11420,134,RB Leipzig,VfB Stuttgart,4.0,0.0,post
+608550,2021-08-21 15:30:00,2021,125,3841,Eintracht Frankfurt,FC Augsburg,0.0,0.0,post
+608548,2021-08-21 15:30:00,2021,129,138,Hertha Berlin,VfL Wolfsburg,1.0,2.0,post
+608555,2021-08-21 15:30:00,2021,126,124,SC Freiburg,Borussia Dortmund,2.0,1.0,post
+608556,2021-08-21 15:30:00,2021,3070,2506,SpVgg Greuther Fürth,Arminia Bielefeld,1.0,1.0,post
+608553,2021-08-21 15:30:00,2021,121,2950,VfL Bochum,Mainz,2.0,0.0,post
+608551,2021-08-21 18:30:00,2021,131,268,Bayer Leverkusen,Borussia Mönchengladbach,4.0,0.0,post
+608554,2021-08-22 15:30:00,2021,7911,598,TSG Hoffenheim,1. FC Union Berlin,2.0,2.0,post
+608549,2021-08-22 17:30:00,2021,132,122,Bayern Munich,FC Cologne,3.0,2.0,post
+608560,2021-08-27 20:30:00,2021,124,7911,Borussia Dortmund,TSG Hoffenheim,3.0,2.0,post
+608559,2021-08-28 15:30:00,2021,2950,3070,Mainz,SpVgg Greuther Fürth,3.0,0.0,post
+608557,2021-08-28 15:30:00,2021,122,121,FC Cologne,VfL Bochum,2.0,1.0,post
+608565,2021-08-28 15:30:00,2021,134,126,VfB Stuttgart,SC Freiburg,2.0,3.0,post
+608564,2021-08-28 15:30:00,2021,2506,125,Arminia Bielefeld,Eintracht Frankfurt,1.0,1.0,post
+608563,2021-08-28 15:30:00,2021,3841,131,FC Augsburg,Bayer Leverkusen,1.0,4.0,post
+608562,2021-08-28 18:30:00,2021,132,129,Bayern Munich,Hertha Berlin,5.0,0.0,post
+608558,2021-08-29 15:30:00,2021,598,268,1. FC Union Berlin,Borussia Mönchengladbach,2.0,1.0,post
+608561,2021-08-29 17:30:00,2021,138,11420,VfL Wolfsburg,RB Leipzig,1.0,0.0,post
+608571,2021-09-11 15:30:00,2021,598,3841,1. FC Union Berlin,FC Augsburg,0.0,0.0,post
+608572,2021-09-11 15:30:00,2021,131,124,Bayer Leverkusen,Borussia Dortmund,3.0,4.0,post
+608570,2021-09-11 15:30:00,2021,126,122,SC Freiburg,FC Cologne,1.0,1.0,post
+608566,2021-09-11 15:30:00,2021,3070,138,SpVgg Greuther Fürth,VfL Wolfsburg,0.0,2.0,post
+608569,2021-09-11 15:30:00,2021,7911,2950,TSG Hoffenheim,Mainz,0.0,2.0,post
+608567,2021-09-11 18:30:00,2021,11420,132,RB Leipzig,Bayern Munich,1.0,4.0,post
+608574,2021-09-12 15:30:00,2021,125,134,Eintracht Frankfurt,VfB Stuttgart,1.0,1.0,post
+608568,2021-09-12 17:30:00,2021,121,129,VfL Bochum,Hertha Berlin,1.0,3.0,post
+608573,2021-09-12 19:30:00,2021,268,2506,Borussia Mönchengladbach,Arminia Bielefeld,3.0,1.0,post
+608579,2021-09-17 20:30:00,2021,129,3070,Hertha Berlin,SpVgg Greuther Fürth,2.0,1.0,post
+608575,2021-09-18 15:30:00,2021,3841,268,FC Augsburg,Borussia Mönchengladbach,1.0,0.0,post
+608580,2021-09-18 15:30:00,2021,2950,126,Mainz,SC Freiburg,0.0,0.0,post
+608576,2021-09-18 15:30:00,2021,2506,7911,Arminia Bielefeld,TSG Hoffenheim,0.0,0.0,post
+608582,2021-09-18 15:30:00,2021,132,121,Bayern Munich,VfL Bochum,7.0,0.0,post
+608581,2021-09-18 18:30:00,2021,122,11420,FC Cologne,RB Leipzig,1.0,1.0,post
+608577,2021-09-19 15:30:00,2021,134,131,VfB Stuttgart,Bayer Leverkusen,1.0,3.0,post
+608583,2021-09-19 17:30:00,2021,124,598,Borussia Dortmund,1. FC Union Berlin,4.0,2.0,post
+608578,2021-09-19 19:30:00,2021,138,125,VfL Wolfsburg,Eintracht Frankfurt,1.0,1.0,post
+608584,2021-09-24 20:30:00,2021,3070,132,SpVgg Greuther Fürth,Bayern Munich,1.0,3.0,post
+608589,2021-09-25 15:30:00,2021,598,2506,1. FC Union Berlin,Arminia Bielefeld,1.0,0.0,post
+608588,2021-09-25 15:30:00,2021,131,2950,Bayer Leverkusen,Mainz,1.0,0.0,post
+608586,2021-09-25 15:30:00,2021,125,122,Eintracht Frankfurt,FC Cologne,1.0,1.0,post
+608585,2021-09-25 15:30:00,2021,11420,129,RB Leipzig,Hertha Berlin,6.0,0.0,post
+608591,2021-09-25 15:30:00,2021,7911,138,TSG Hoffenheim,VfL Wolfsburg,3.0,1.0,post
+608587,2021-09-25 18:30:00,2021,268,124,Borussia Mönchengladbach,Borussia Dortmund,1.0,0.0,post
+608592,2021-09-26 15:30:00,2021,121,134,VfL Bochum,VfB Stuttgart,0.0,0.0,post
+608590,2021-09-26 17:30:00,2021,126,3841,SC Freiburg,FC Augsburg,3.0,0.0,post
+608600,2021-10-01 20:30:00,2021,122,3070,FC Cologne,SpVgg Greuther Fürth,3.0,1.0,post
+608598,2021-10-02 15:30:00,2021,124,3841,Borussia Dortmund,FC Augsburg,2.0,1.0,post
+608595,2021-10-02 15:30:00,2021,129,126,Hertha Berlin,SC Freiburg,1.0,2.0,post
+608593,2021-10-02 15:30:00,2021,134,7911,VfB Stuttgart,TSG Hoffenheim,3.0,1.0,post
+608597,2021-10-02 15:30:00,2021,138,268,VfL Wolfsburg,Borussia Mönchengladbach,1.0,3.0,post
+608594,2021-10-02 18:30:00,2021,11420,121,RB Leipzig,VfL Bochum,3.0,0.0,post
+608599,2021-10-03 15:30:00,2021,2950,598,Mainz,1. FC Union Berlin,1.0,2.0,post
+608596,2021-10-03 17:30:00,2021,132,125,Bayern Munich,Eintracht Frankfurt,1.0,2.0,post
+608601,2021-10-03 19:30:00,2021,2506,131,Arminia Bielefeld,Bayer Leverkusen,0.0,4.0,post
+608610,2021-10-15 20:30:00,2021,7911,122,TSG Hoffenheim,FC Cologne,5.0,0.0,post
+608603,2021-10-16 15:30:00,2021,3070,121,SpVgg Greuther Fürth,VfL Bochum,0.0,1.0,post
+608605,2021-10-16 15:30:00,2021,125,129,Eintracht Frankfurt,Hertha Berlin,1.0,2.0,post
+608602,2021-10-16 15:30:00,2021,126,11420,SC Freiburg,RB Leipzig,1.0,1.0,post
+608609,2021-10-16 15:30:00,2021,598,138,1. FC Union Berlin,VfL Wolfsburg,2.0,0.0,post
+608607,2021-10-16 15:30:00,2021,124,2950,Borussia Dortmund,Mainz,3.0,1.0,post
+608606,2021-10-16 18:30:00,2021,268,134,Borussia Mönchengladbach,VfB Stuttgart,1.0,1.0,post
+608608,2021-10-17 15:30:00,2021,131,132,Bayer Leverkusen,Bayern Munich,1.0,5.0,post
+608604,2021-10-17 17:30:00,2021,3841,2506,FC Augsburg,Arminia Bielefeld,1.0,1.0,post
+608612,2021-10-22 20:30:00,2021,2950,3841,Mainz,FC Augsburg,4.0,1.0,post
+608619,2021-10-23 15:30:00,2021,2506,124,Arminia Bielefeld,Borussia Dortmund,1.0,3.0,post
+608618,2021-10-23 15:30:00,2021,132,7911,Bayern Munich,TSG Hoffenheim,4.0,0.0,post
+608616,2021-10-23 15:30:00,2021,11420,3070,RB Leipzig,SpVgg Greuther Fürth,4.0,1.0,post
+608613,2021-10-23 15:30:00,2021,138,126,VfL Wolfsburg,SC Freiburg,0.0,2.0,post
+608617,2021-10-23 18:30:00,2021,129,268,Hertha Berlin,Borussia Mönchengladbach,1.0,0.0,post
+608611,2021-10-24 15:30:00,2021,122,131,FC Cologne,Bayer Leverkusen,2.0,2.0,post
+608615,2021-10-24 17:30:00,2021,134,598,VfB Stuttgart,1. FC Union Berlin,1.0,1.0,post
+608614,2021-10-24 19:30:00,2021,121,125,VfL Bochum,Eintracht Frankfurt,2.0,0.0,post
+608624,2021-10-29 20:30:00,2021,7911,129,TSG Hoffenheim,Hertha Berlin,2.0,0.0,post
+608620,2021-10-30 15:30:00,2021,598,132,1. FC Union Berlin,Bayern Munich,2.0,5.0,post
+608628,2021-10-30 15:30:00,2021,2506,2950,Arminia Bielefeld,Mainz,1.0,2.0,post
+608627,2021-10-30 15:30:00,2021,131,138,Bayer Leverkusen,VfL Wolfsburg,0.0,2.0,post
+608626,2021-10-30 15:30:00,2021,124,122,Borussia Dortmund,FC Cologne,2.0,0.0,post
+608621,2021-10-30 15:30:00,2021,126,3070,SC Freiburg,SpVgg Greuther Fürth,3.0,1.0,post
+608623,2021-10-30 18:30:00,2021,125,11420,Eintracht Frankfurt,RB Leipzig,1.0,1.0,post
+608622,2021-10-31 15:30:00,2021,3841,134,FC Augsburg,VfB Stuttgart,4.0,1.0,post
+608625,2021-10-31 17:30:00,2021,268,121,Borussia Mönchengladbach,VfL Bochum,2.0,1.0,post
+608631,2021-11-05 20:30:00,2021,2950,268,Mainz,Borussia Mönchengladbach,1.0,1.0,post
+608630,2021-11-06 15:30:00,2021,132,126,Bayern Munich,SC Freiburg,2.0,1.0,post
+608635,2021-11-06 15:30:00,2021,134,2506,VfB Stuttgart,Arminia Bielefeld,0.0,1.0,post
+608636,2021-11-06 15:30:00,2021,121,7911,VfL Bochum,TSG Hoffenheim,2.0,0.0,post
+608633,2021-11-06 15:30:00,2021,138,3841,VfL Wolfsburg,FC Augsburg,1.0,0.0,post
+608637,2021-11-06 18:30:00,2021,11420,124,RB Leipzig,Borussia Dortmund,2.0,1.0,post
+608629,2021-11-07 15:30:00,2021,129,131,Hertha Berlin,Bayer Leverkusen,1.0,1.0,post
+608632,2021-11-07 17:30:00,2021,122,598,FC Cologne,1. FC Union Berlin,2.0,2.0,post
+608634,2021-11-07 19:30:00,2021,3070,125,SpVgg Greuther Fürth,Eintracht Frankfurt,1.0,2.0,post
+608645,2021-11-19 20:30:00,2021,3841,132,FC Augsburg,Bayern Munich,2.0,1.0,post
+608646,2021-11-20 15:30:00,2021,2506,138,Arminia Bielefeld,VfL Wolfsburg,2.0,2.0,post
+608639,2021-11-20 15:30:00,2021,131,121,Bayer Leverkusen,VfL Bochum,1.0,0.0,post
+608638,2021-11-20 15:30:00,2021,124,134,Borussia Dortmund,VfB Stuttgart,2.0,1.0,post
+608642,2021-11-20 15:30:00,2021,268,3070,Borussia Mönchengladbach,SpVgg Greuther Fürth,4.0,0.0,post
+608643,2021-11-20 15:30:00,2021,7911,11420,TSG Hoffenheim,RB Leipzig,2.0,0.0,post
+608641,2021-11-20 18:30:00,2021,598,129,1. FC Union Berlin,Hertha Berlin,2.0,0.0,post
+608644,2021-11-21 15:30:00,2021,126,125,SC Freiburg,Eintracht Frankfurt,0.0,2.0,post
+608640,2021-11-21 17:30:00,2021,2950,122,Mainz,FC Cologne,1.0,1.0,post
+608652,2021-11-26 20:30:00,2021,134,2950,VfB Stuttgart,Mainz,2.0,1.0,post
+608651,2021-11-27 15:30:00,2021,138,124,VfL Wolfsburg,Borussia Dortmund,1.0,3.0,post
+608655,2021-11-27 15:30:00,2021,121,126,VfL Bochum,SC Freiburg,2.0,1.0,post
+608653,2021-11-27 15:30:00,2021,3070,7911,SpVgg Greuther Fürth,TSG Hoffenheim,3.0,6.0,post
+608650,2021-11-27 15:30:00,2021,129,3841,Hertha Berlin,FC Augsburg,1.0,1.0,post
+608647,2021-11-27 15:30:00,2021,122,268,FC Cologne,Borussia Mönchengladbach,4.0,1.0,post
+608649,2021-11-27 18:30:00,2021,132,2506,Bayern Munich,Arminia Bielefeld,1.0,0.0,post
+608648,2021-11-28 15:30:00,2021,125,598,Eintracht Frankfurt,1. FC Union Berlin,2.0,1.0,post
+608654,2021-11-28 17:30:00,2021,11420,131,RB Leipzig,Bayer Leverkusen,1.0,3.0,post
+608656,2021-12-03 20:30:00,2021,598,11420,1. FC Union Berlin,RB Leipzig,2.0,1.0,post
+608661,2021-12-04 15:30:00,2021,2506,122,Arminia Bielefeld,FC Cologne,1.0,1.0,post
+608664,2021-12-04 15:30:00,2021,131,3070,Bayer Leverkusen,SpVgg Greuther Fürth,7.0,1.0,post
+608660,2021-12-04 15:30:00,2021,3841,121,FC Augsburg,VfL Bochum,2.0,3.0,post
+608657,2021-12-04 15:30:00,2021,2950,138,Mainz,VfL Wolfsburg,3.0,0.0,post
+608659,2021-12-04 15:30:00,2021,7911,125,TSG Hoffenheim,Eintracht Frankfurt,3.0,2.0,post
+608663,2021-12-04 18:30:00,2021,124,132,Borussia Dortmund,Bayern Munich,2.0,3.0,post
+608658,2021-12-05 15:30:00,2021,134,129,VfB Stuttgart,Hertha Berlin,2.0,2.0,post
+608662,2021-12-05 17:30:00,2021,268,126,Borussia Mönchengladbach,SC Freiburg,0.0,6.0,post
+608665,2021-12-10 20:30:00,2021,122,3841,FC Cologne,FC Augsburg,0.0,2.0,post
+608671,2021-12-11 15:30:00,2021,132,2950,Bayern Munich,Mainz,2.0,1.0,post
+608670,2021-12-11 15:30:00,2021,129,2506,Hertha Berlin,Arminia Bielefeld,2.0,0.0,post
+608673,2021-12-11 15:30:00,2021,11420,268,RB Leipzig,Borussia Mönchengladbach,4.0,1.0,post
+608667,2021-12-11 15:30:00,2021,126,7911,SC Freiburg,TSG Hoffenheim,1.0,2.0,post
+608666,2021-12-11 15:30:00,2021,121,124,VfL Bochum,Borussia Dortmund,1.0,1.0,post
+608669,2021-12-11 18:30:00,2021,138,134,VfL Wolfsburg,VfB Stuttgart,0.0,2.0,post
+608668,2021-12-12 15:30:00,2021,3070,598,SpVgg Greuther Fürth,1. FC Union Berlin,1.0,0.0,post
+608672,2021-12-12 17:30:00,2021,125,131,Eintracht Frankfurt,Bayer Leverkusen,5.0,2.0,post
+608679,2021-12-14 18:30:00,2021,134,132,VfB Stuttgart,Bayern Munich,0.0,5.0,post
+608677,2021-12-14 20:30:00,2021,2506,121,Arminia Bielefeld,VfL Bochum,2.0,0.0,post
+608682,2021-12-14 20:30:00,2021,2950,129,Mainz,Hertha Berlin,4.0,0.0,post
+608680,2021-12-14 20:30:00,2021,138,122,VfL Wolfsburg,FC Cologne,2.0,3.0,post
+608676,2021-12-15 18:30:00,2021,268,125,Borussia Mönchengladbach,Eintracht Frankfurt,2.0,3.0,post
+608678,2021-12-15 20:30:00,2021,3841,11420,FC Augsburg,RB Leipzig,1.0,1.0,post
+608675,2021-12-15 20:30:00,2021,124,3070,Borussia Dortmund,SpVgg Greuther Fürth,3.0,0.0,post
+608674,2021-12-15 20:30:00,2021,131,7911,Bayer Leverkusen,TSG Hoffenheim,2.0,2.0,post
+608681,2021-12-15 20:30:00,2021,598,126,1. FC Union Berlin,SC Freiburg,0.0,0.0,post
+608685,2021-12-17 20:30:00,2021,132,138,Bayern Munich,VfL Wolfsburg,4.0,0.0,post
+608684,2021-12-18 15:30:00,2021,125,2950,Eintracht Frankfurt,Mainz,1.0,0.0,post
+608691,2021-12-18 15:30:00,2021,11420,2506,RB Leipzig,Arminia Bielefeld,0.0,2.0,post
+608688,2021-12-18 15:30:00,2021,3070,3841,SpVgg Greuther Fürth,FC Augsburg,0.0,0.0,post
+608690,2021-12-18 15:30:00,2021,7911,268,TSG Hoffenheim,Borussia Mönchengladbach,1.0,1.0,post
+608687,2021-12-18 15:30:00,2021,121,598,VfL Bochum,1. FC Union Berlin,0.0,1.0,post
+608686,2021-12-18 18:30:00,2021,129,124,Hertha Berlin,Borussia Dortmund,3.0,2.0,post
+608689,2021-12-19 15:30:00,2021,126,131,SC Freiburg,Bayer Leverkusen,2.0,1.0,post
+608683,2021-12-19 17:30:00,2021,122,134,FC Cologne,VfB Stuttgart,1.0,0.0,post
+608693,2022-01-07 20:30:00,2022,132,268,Bayern Munich,Borussia Mönchengladbach,1.0,2.0,post
+608699,2022-01-08 15:30:00,2022,7911,3841,TSG Hoffenheim,FC Augsburg,3.0,1.0,post
+608697,2022-01-08 15:30:00,2022,3070,134,SpVgg Greuther Fürth,VfB Stuttgart,0.0,0.0,post
+608695,2022-01-08 15:30:00,2022,131,598,Bayer Leverkusen,1. FC Union Berlin,2.0,2.0,post
+608700,2022-01-08 15:30:00,2022,11420,2950,RB Leipzig,Mainz,4.0,1.0,post
+608698,2022-01-08 15:30:00,2022,126,2506,SC Freiburg,Arminia Bielefeld,2.0,2.0,post
+608694,2022-01-08 18:30:00,2022,125,124,Eintracht Frankfurt,Borussia Dortmund,2.0,3.0,post
+608692,2022-01-09 15:30:00,2022,129,122,Hertha Berlin,FC Cologne,1.0,3.0,post
+608696,2022-01-09 17:30:00,2022,121,138,VfL Bochum,VfL Wolfsburg,1.0,0.0,post
+608701,2022-01-14 20:30:00,2022,124,126,Borussia Dortmund,SC Freiburg,5.0,1.0,post
+608703,2022-01-15 15:30:00,2022,598,7911,1. FC Union Berlin,TSG Hoffenheim,2.0,1.0,post
+608704,2022-01-15 15:30:00,2022,122,132,FC Cologne,Bayern Munich,0.0,4.0,post
+608702,2022-01-15 15:30:00,2022,2950,121,Mainz,VfL Bochum,1.0,0.0,post
+608707,2022-01-15 15:30:00,2022,134,11420,VfB Stuttgart,RB Leipzig,0.0,2.0,post
+608706,2022-01-15 15:30:00,2022,138,129,VfL Wolfsburg,Hertha Berlin,0.0,0.0,post
+608705,2022-01-15 18:30:00,2022,268,131,Borussia Mönchengladbach,Bayer Leverkusen,1.0,2.0,post
+608708,2022-01-16 15:30:00,2022,3841,125,FC Augsburg,Eintracht Frankfurt,1.0,1.0,post
+608709,2022-01-16 17:30:00,2022,2506,3070,Arminia Bielefeld,SpVgg Greuther Fürth,2.0,2.0,post
+608712,2022-01-21 20:30:00,2022,125,2506,Eintracht Frankfurt,Arminia Bielefeld,0.0,2.0,post
+608710,2022-01-22 15:30:00,2022,131,3841,Bayer Leverkusen,FC Augsburg,5.0,1.0,post
+608711,2022-01-22 15:30:00,2022,268,598,Borussia Mönchengladbach,1. FC Union Berlin,1.0,2.0,post
+608715,2022-01-22 15:30:00,2022,126,134,SC Freiburg,VfB Stuttgart,2.0,0.0,post
+608716,2022-01-22 15:30:00,2022,3070,2950,SpVgg Greuther Fürth,Mainz,2.0,1.0,post
+608718,2022-01-22 15:30:00,2022,7911,124,TSG Hoffenheim,Borussia Dortmund,2.0,3.0,post
+608714,2022-01-22 18:30:00,2022,121,122,VfL Bochum,FC Cologne,2.0,2.0,post
+608717,2022-01-23 15:30:00,2022,11420,138,RB Leipzig,VfL Wolfsburg,2.0,0.0,post
+608713,2022-01-23 17:30:00,2022,129,132,Hertha Berlin,Bayern Munich,1.0,4.0,post
+608720,2022-02-04 20:30:00,2022,129,121,Hertha Berlin,VfL Bochum,1.0,1.0,post
+608719,2022-02-05 15:30:00,2022,134,125,VfB Stuttgart,Eintracht Frankfurt,2.0,3.0,post
+608726,2022-02-05 15:30:00,2022,122,126,FC Cologne,SC Freiburg,1.0,0.0,post
+608725,2022-02-05 15:30:00,2022,2950,7911,Mainz,TSG Hoffenheim,2.0,0.0,post
+608727,2022-02-05 15:30:00,2022,2506,268,Arminia Bielefeld,Borussia Mönchengladbach,1.0,1.0,post
+608722,2022-02-05 15:30:00,2022,3841,598,FC Augsburg,1. FC Union Berlin,2.0,0.0,post
+608721,2022-02-05 18:30:00,2022,132,11420,Bayern Munich,RB Leipzig,3.0,2.0,post
+608724,2022-02-06 15:30:00,2022,124,131,Borussia Dortmund,Bayer Leverkusen,2.0,5.0,post
+608723,2022-02-06 17:30:00,2022,138,3070,VfL Wolfsburg,SpVgg Greuther Fürth,4.0,1.0,post
+608731,2022-02-11 20:30:00,2022,11420,122,RB Leipzig,FC Cologne,3.0,1.0,post
+608733,2022-02-12 15:30:00,2022,268,3841,Borussia Mönchengladbach,FC Augsburg,3.0,2.0,post
+608732,2022-02-12 15:30:00,2022,125,138,Eintracht Frankfurt,VfL Wolfsburg,0.0,2.0,post
+608729,2022-02-12 15:30:00,2022,126,2950,SC Freiburg,Mainz,1.0,1.0,post
+608730,2022-02-12 15:30:00,2022,3070,129,SpVgg Greuther Fürth,Hertha Berlin,2.0,1.0,post
+608736,2022-02-12 15:30:00,2022,121,132,VfL Bochum,Bayern Munich,4.0,2.0,post
+608734,2022-02-12 18:30:00,2022,131,134,Bayer Leverkusen,VfB Stuttgart,4.0,2.0,post
+608735,2022-02-13 15:30:00,2022,598,124,1. FC Union Berlin,Borussia Dortmund,0.0,3.0,post
+608728,2022-02-13 17:30:00,2022,7911,2506,TSG Hoffenheim,Arminia Bielefeld,2.0,0.0,post
+608738,2022-02-18 20:30:00,2022,2950,131,Mainz,Bayer Leverkusen,3.0,2.0,post
+608744,2022-02-19 15:30:00,2022,2506,598,Arminia Bielefeld,1. FC Union Berlin,1.0,0.0,post
+608743,2022-02-19 15:30:00,2022,3841,126,FC Augsburg,SC Freiburg,1.0,2.0,post
+608740,2022-02-19 15:30:00,2022,134,121,VfB Stuttgart,VfL Bochum,1.0,1.0,post
+608739,2022-02-19 15:30:00,2022,138,7911,VfL Wolfsburg,TSG Hoffenheim,1.0,2.0,post
+608737,2022-02-19 18:30:00,2022,122,125,FC Cologne,Eintracht Frankfurt,1.0,0.0,post
+608742,2022-02-20 15:30:00,2022,132,3070,Bayern Munich,SpVgg Greuther Fürth,4.0,1.0,post
+608745,2022-02-20 17:30:00,2022,124,268,Borussia Dortmund,Borussia Mönchengladbach,6.0,0.0,post
+608741,2022-02-20 19:30:00,2022,129,11420,Hertha Berlin,RB Leipzig,1.0,6.0,post
+608747,2022-02-25 20:30:00,2022,7911,134,TSG Hoffenheim,VfB Stuttgart,2.0,1.0,post
+608752,2022-02-26 15:30:00,2022,268,138,Borussia Mönchengladbach,VfL Wolfsburg,2.0,2.0,post
+608748,2022-02-26 15:30:00,2022,126,129,SC Freiburg,Hertha Berlin,3.0,0.0,post
+608746,2022-02-26 15:30:00,2022,598,2950,1. FC Union Berlin,Mainz,3.0,1.0,post
+608753,2022-02-26 15:30:00,2022,131,2506,Bayer Leverkusen,Arminia Bielefeld,3.0,0.0,post
+608749,2022-02-26 15:30:00,2022,3070,122,SpVgg Greuther Fürth,FC Cologne,1.0,1.0,post
+608751,2022-02-26 18:30:00,2022,125,132,Eintracht Frankfurt,Bayern Munich,0.0,1.0,post
+608750,2022-02-27 15:30:00,2022,121,11420,VfL Bochum,RB Leipzig,0.0,1.0,post
+608754,2022-02-27 17:30:00,2022,3841,124,FC Augsburg,Borussia Dortmund,1.0,1.0,post
+608756,2022-03-04 20:30:00,2022,2506,3841,Arminia Bielefeld,FC Augsburg,0.0,1.0,post
+608757,2022-03-05 15:30:00,2022,132,131,Bayern Munich,Bayer Leverkusen,1.0,1.0,post
+608758,2022-03-05 15:30:00,2022,129,125,Hertha Berlin,Eintracht Frankfurt,1.0,4.0,post
+608763,2022-03-05 15:30:00,2022,11420,126,RB Leipzig,SC Freiburg,1.0,1.0,post
+608761,2022-03-05 15:30:00,2022,121,3070,VfL Bochum,SpVgg Greuther Fürth,2.0,1.0,post
+608762,2022-03-05 15:30:00,2022,138,598,VfL Wolfsburg,1. FC Union Berlin,1.0,0.0,post
+608760,2022-03-05 18:30:00,2022,134,268,VfB Stuttgart,Borussia Mönchengladbach,3.0,2.0,post
+608759,2022-03-06 17:30:00,2022,122,7911,FC Cologne,TSG Hoffenheim,0.0,1.0,post
+608764,2022-03-12 15:30:00,2022,598,134,1. FC Union Berlin,VfB Stuttgart,1.0,1.0,post
+608771,2022-03-12 15:30:00,2022,126,138,SC Freiburg,VfL Wolfsburg,3.0,2.0,post
+608772,2022-03-12 15:30:00,2022,7911,132,TSG Hoffenheim,Bayern Munich,1.0,1.0,post
+608767,2022-03-12 18:30:00,2022,268,129,Borussia Mönchengladbach,Hertha Berlin,2.0,0.0,post
+608765,2022-03-13 15:30:00,2022,131,122,Bayer Leverkusen,FC Cologne,0.0,1.0,post
+608766,2022-03-13 17:30:00,2022,124,2506,Borussia Dortmund,Arminia Bielefeld,1.0,0.0,post
+608768,2022-03-13 17:30:00,2022,125,121,Eintracht Frankfurt,VfL Bochum,2.0,1.0,post
+608770,2022-03-13 19:30:00,2022,3070,11420,SpVgg Greuther Fürth,RB Leipzig,1.0,6.0,post
+608755,2022-03-16 18:30:00,2022,2950,124,Mainz,Borussia Dortmund,0.0,1.0,post
+608780,2022-03-18 20:30:00,2022,121,268,VfL Bochum,Borussia Mönchengladbach,0.0,2.0,post
+608776,2022-03-19 15:30:00,2022,129,7911,Hertha Berlin,TSG Hoffenheim,3.0,0.0,post
+608774,2022-03-19 15:30:00,2022,2950,2506,Mainz,Arminia Bielefeld,4.0,0.0,post
+608778,2022-03-19 15:30:00,2022,3070,126,SpVgg Greuther Fürth,SC Freiburg,0.0,0.0,post
+608779,2022-03-19 15:30:00,2022,134,3841,VfB Stuttgart,FC Augsburg,3.0,2.0,post
+608775,2022-03-19 18:30:00,2022,132,598,Bayern Munich,1. FC Union Berlin,4.0,0.0,post
+608781,2022-03-20 15:30:00,2022,11420,125,RB Leipzig,Eintracht Frankfurt,0.0,0.0,post
+608777,2022-03-20 17:30:00,2022,138,131,VfL Wolfsburg,Bayer Leverkusen,0.0,2.0,post
+608773,2022-03-20 19:30:00,2022,122,124,FC Cologne,Borussia Dortmund,1.0,1.0,post
+608782,2022-04-01 20:30:00,2022,598,122,1. FC Union Berlin,FC Cologne,1.0,0.0,post
+608787,2022-04-02 15:30:00,2022,2506,134,Arminia Bielefeld,VfB Stuttgart,1.0,1.0,post
+608786,2022-04-02 15:30:00,2022,131,129,Bayer Leverkusen,Hertha Berlin,2.0,1.0,post
+608790,2022-04-02 15:30:00,2022,125,3070,Eintracht Frankfurt,SpVgg Greuther Fürth,0.0,0.0,post
+608784,2022-04-02 15:30:00,2022,126,132,SC Freiburg,Bayern Munich,1.0,4.0,post
+608783,2022-04-02 15:30:00,2022,7911,121,TSG Hoffenheim,VfL Bochum,1.0,2.0,post
+608789,2022-04-02 18:30:00,2022,124,11420,Borussia Dortmund,RB Leipzig,1.0,4.0,post
+608785,2022-04-03 15:30:00,2022,3841,138,FC Augsburg,VfL Wolfsburg,3.0,0.0,post
+608788,2022-04-03 17:30:00,2022,268,2950,Borussia Mönchengladbach,Mainz,1.0,1.0,post
+608769,2022-04-06 18:30:00,2022,3841,2950,FC Augsburg,Mainz,2.0,1.0,post
+608796,2022-04-08 20:30:00,2022,134,124,VfB Stuttgart,Borussia Dortmund,0.0,2.0,post
+608799,2022-04-09 15:30:00,2022,138,2506,VfL Wolfsburg,Arminia Bielefeld,4.0,0.0,post
+608795,2022-04-09 15:30:00,2022,3070,268,SpVgg Greuther Fürth,Borussia Mönchengladbach,0.0,2.0,post
+608792,2022-04-09 15:30:00,2022,132,3841,Bayern Munich,FC Augsburg,1.0,0.0,post
+608791,2022-04-09 15:30:00,2022,122,2950,FC Cologne,Mainz,3.0,2.0,post
+608793,2022-04-09 18:30:00,2022,129,598,Hertha Berlin,1. FC Union Berlin,1.0,4.0,post
+608797,2022-04-10 15:30:00,2022,121,131,VfL Bochum,Bayer Leverkusen,0.0,0.0,post
+608798,2022-04-10 17:30:00,2022,125,126,Eintracht Frankfurt,SC Freiburg,1.0,2.0,post
+608794,2022-04-10 19:30:00,2022,11420,7911,RB Leipzig,TSG Hoffenheim,3.0,0.0,post
+608802,2022-04-16 15:30:00,2022,124,138,Borussia Dortmund,VfL Wolfsburg,6.0,1.0,post
+608805,2022-04-16 15:30:00,2022,3841,129,FC Augsburg,Hertha Berlin,0.0,1.0,post
+608807,2022-04-16 15:30:00,2022,2950,134,Mainz,VfB Stuttgart,0.0,0.0,post
+608806,2022-04-16 15:30:00,2022,126,121,SC Freiburg,VfL Bochum,3.0,0.0,post
+608803,2022-04-16 18:30:00,2022,268,122,Borussia Mönchengladbach,FC Cologne,1.0,3.0,post
+608804,2022-04-17 15:30:00,2022,2506,132,Arminia Bielefeld,Bayern Munich,0.0,3.0,post
+608808,2022-04-17 17:30:00,2022,7911,3070,TSG Hoffenheim,SpVgg Greuther Fürth,0.0,0.0,post
+608800,2022-04-17 17:30:00,2022,598,125,1. FC Union Berlin,Eintracht Frankfurt,2.0,0.0,post
+608801,2022-04-17 19:30:00,2022,131,11420,Bayer Leverkusen,RB Leipzig,0.0,1.0,post
+608817,2022-04-22 20:30:00,2022,138,2950,VfL Wolfsburg,Mainz,5.0,0.0,post
+608816,2022-04-23 15:30:00,2022,125,7911,Eintracht Frankfurt,TSG Hoffenheim,2.0,2.0,post
+608809,2022-04-23 15:30:00,2022,122,2506,FC Cologne,Arminia Bielefeld,3.0,1.0,post
+608812,2022-04-23 15:30:00,2022,11420,598,RB Leipzig,1. FC Union Berlin,1.0,2.0,post
+608814,2022-04-23 15:30:00,2022,126,268,SC Freiburg,Borussia Mönchengladbach,3.0,3.0,post
+608813,2022-04-23 15:30:00,2022,3070,131,SpVgg Greuther Fürth,Bayer Leverkusen,1.0,4.0,post
+608810,2022-04-23 18:30:00,2022,132,124,Bayern Munich,Borussia Dortmund,3.0,1.0,post
+608815,2022-04-24 15:30:00,2022,121,3841,VfL Bochum,FC Augsburg,0.0,2.0,post
+608811,2022-04-24 17:30:00,2022,129,134,Hertha Berlin,VfB Stuttgart,2.0,0.0,post
+608818,2022-04-29 20:30:00,2022,598,3070,1. FC Union Berlin,SpVgg Greuther Fürth,1.0,1.0,post
+608822,2022-04-30 15:30:00,2022,2506,129,Arminia Bielefeld,Hertha Berlin,1.0,1.0,post
+608826,2022-04-30 15:30:00,2022,124,121,Borussia Dortmund,VfL Bochum,3.0,4.0,post
+608821,2022-04-30 15:30:00,2022,3841,122,FC Augsburg,FC Cologne,1.0,4.0,post
+608824,2022-04-30 15:30:00,2022,2950,132,Mainz,Bayern Munich,3.0,1.0,post
+608819,2022-04-30 15:30:00,2022,134,138,VfB Stuttgart,VfL Wolfsburg,1.0,1.0,post
+608820,2022-04-30 18:30:00,2022,7911,126,TSG Hoffenheim,SC Freiburg,3.0,4.0,post
+608825,2022-05-02 20:30:00,2022,131,125,Bayer Leverkusen,Eintracht Frankfurt,2.0,0.0,post
+608823,2022-05-02 20:30:00,2022,268,11420,Borussia Mönchengladbach,RB Leipzig,3.0,1.0,post
+608829,2022-05-06 20:30:00,2022,121,2506,VfL Bochum,Arminia Bielefeld,2.0,1.0,post
+608827,2022-05-07 15:30:00,2022,122,138,FC Cologne,VfL Wolfsburg,0.0,1.0,post
+608831,2022-05-07 15:30:00,2022,126,598,SC Freiburg,1. FC Union Berlin,1.0,4.0,post
+608832,2022-05-07 15:30:00,2022,3070,124,SpVgg Greuther Fürth,Borussia Dortmund,1.0,3.0,post
+608830,2022-05-07 15:30:00,2022,7911,131,TSG Hoffenheim,Bayer Leverkusen,2.0,4.0,post
+608834,2022-05-07 18:30:00,2022,129,2950,Hertha Berlin,Mainz,1.0,2.0,post
+608828,2022-05-08 15:30:00,2022,125,268,Eintracht Frankfurt,Borussia Mönchengladbach,1.0,1.0,post
+608835,2022-05-08 17:30:00,2022,132,134,Bayern Munich,VfB Stuttgart,2.0,2.0,post
+608833,2022-05-08 19:30:00,2022,11420,3841,RB Leipzig,FC Augsburg,4.0,0.0,post
+608840,2022-05-14 15:30:00,2022,138,132,VfL Wolfsburg,Bayern Munich,2.0,2.0,post
+608837,2022-05-14 15:30:00,2022,134,122,VfB Stuttgart,FC Cologne,2.0,1.0,post
+608843,2022-05-14 15:30:00,2022,2950,125,Mainz,Eintracht Frankfurt,2.0,2.0,post
+608838,2022-05-14 15:30:00,2022,3841,3070,FC Augsburg,SpVgg Greuther Fürth,2.0,1.0,post
+608839,2022-05-14 15:30:00,2022,2506,11420,Arminia Bielefeld,RB Leipzig,1.0,1.0,post
+608841,2022-05-14 15:30:00,2022,124,129,Borussia Dortmund,Hertha Berlin,2.0,1.0,post
+608842,2022-05-14 15:30:00,2022,131,126,Bayer Leverkusen,SC Freiburg,2.0,1.0,post
+608844,2022-05-14 15:30:00,2022,268,7911,Borussia Mönchengladbach,TSG Hoffenheim,5.0,1.0,post
+608836,2022-05-14 15:30:00,2022,598,121,1. FC Union Berlin,VfL Bochum,3.0,2.0,post
+638734,2022-08-05 20:30:00,2022,125,132,Eintracht Frankfurt,Bayern Munich,1.0,6.0,post
+638442,2022-08-06 15:30:00,2022,598,129,1. FC Union Berlin,Hertha Berlin,3.0,1.0,post
+638440,2022-08-06 15:30:00,2022,268,7911,Borussia Mönchengladbach,TSG Hoffenheim,3.0,1.0,post
+638439,2022-08-06 15:30:00,2022,3841,126,FC Augsburg,SC Freiburg,0.0,4.0,post
+638444,2022-08-06 15:30:00,2022,121,2950,VfL Bochum,Mainz,1.0,2.0,post
+638441,2022-08-06 15:30:00,2022,138,137,VfL Wolfsburg,Werder Bremen,2.0,2.0,post
+638445,2022-08-06 18:30:00,2022,124,131,Borussia Dortmund,Bayer Leverkusen,1.0,0.0,post
+638438,2022-08-07 15:30:00,2022,134,11420,VfB Stuttgart,RB Leipzig,1.0,1.0,post
+638443,2022-08-07 17:30:00,2022,122,133,FC Cologne,Schalke 04,3.0,1.0,post
+638447,2022-08-12 20:30:00,2022,126,124,SC Freiburg,Borussia Dortmund,1.0,3.0,post
+638452,2022-08-13 15:30:00,2022,131,3841,Bayer Leverkusen,FC Augsburg,1.0,2.0,post
+638449,2022-08-13 15:30:00,2022,129,125,Hertha Berlin,Eintracht Frankfurt,1.0,1.0,post
+638448,2022-08-13 15:30:00,2022,11420,122,RB Leipzig,FC Cologne,2.0,2.0,post
+638454,2022-08-13 15:30:00,2022,7911,121,TSG Hoffenheim,VfL Bochum,3.0,2.0,post
+638446,2022-08-13 15:30:00,2022,137,134,Werder Bremen,VfB Stuttgart,2.0,2.0,post
+638450,2022-08-13 18:30:00,2022,133,268,Schalke 04,Borussia Mönchengladbach,2.0,2.0,post
+638453,2022-08-14 15:30:00,2022,2950,598,Mainz,1. FC Union Berlin,0.0,0.0,post
+638451,2022-08-14 17:30:00,2022,132,138,Bayern Munich,VfL Wolfsburg,2.0,0.0,post
+638462,2022-08-19 20:30:00,2022,268,129,Borussia Mönchengladbach,Hertha Berlin,1.0,0.0,post
+638457,2022-08-20 15:30:00,2022,138,133,VfL Wolfsburg,Schalke 04,0.0,0.0,post
+638459,2022-08-20 15:30:00,2022,134,126,VfB Stuttgart,SC Freiburg,0.0,1.0,post
+638460,2022-08-20 15:30:00,2022,3841,2950,FC Augsburg,Mainz,1.0,2.0,post
+638463,2022-08-20 15:30:00,2022,124,137,Borussia Dortmund,Werder Bremen,2.0,3.0,post
+638456,2022-08-20 15:30:00,2022,131,7911,Bayer Leverkusen,TSG Hoffenheim,0.0,3.0,post
+638455,2022-08-20 18:30:00,2022,598,11420,1. FC Union Berlin,RB Leipzig,2.0,1.0,post
+638461,2022-08-21 15:30:00,2022,125,122,Eintracht Frankfurt,FC Cologne,1.0,1.0,post
+638458,2022-08-21 17:30:00,2022,121,132,VfL Bochum,Bayern Munich,0.0,7.0,post
+638466,2022-08-26 20:30:00,2022,126,121,SC Freiburg,VfL Bochum,1.0,0.0,post
+638472,2022-08-27 15:30:00,2022,129,124,Hertha Berlin,Borussia Dortmund,0.0,1.0,post
+638471,2022-08-27 15:30:00,2022,2950,131,Mainz,Bayer Leverkusen,0.0,3.0,post
+638467,2022-08-27 15:30:00,2022,11420,138,RB Leipzig,VfL Wolfsburg,2.0,0.0,post
+638469,2022-08-27 15:30:00,2022,133,598,Schalke 04,1. FC Union Berlin,1.0,6.0,post
+638468,2022-08-27 15:30:00,2022,7911,3841,TSG Hoffenheim,FC Augsburg,1.0,0.0,post
+638470,2022-08-27 18:30:00,2022,132,268,Bayern Munich,Borussia Mönchengladbach,1.0,1.0,post
+638464,2022-08-28 15:30:00,2022,122,134,FC Cologne,VfB Stuttgart,0.0,0.0,post
+638465,2022-08-28 17:30:00,2022,137,125,Werder Bremen,Eintracht Frankfurt,3.0,4.0,post
+638474,2022-09-02 20:30:00,2022,124,7911,Borussia Dortmund,TSG Hoffenheim,1.0,0.0,post
+638476,2022-09-03 15:30:00,2022,598,132,1. FC Union Berlin,Bayern Munich,1.0,1.0,post
+638475,2022-09-03 15:30:00,2022,131,126,Bayer Leverkusen,SC Freiburg,2.0,3.0,post
+638479,2022-09-03 15:30:00,2022,134,133,VfB Stuttgart,Schalke 04,1.0,1.0,post
+638480,2022-09-03 15:30:00,2022,121,137,VfL Bochum,Werder Bremen,0.0,2.0,post
+638477,2022-09-03 15:30:00,2022,138,122,VfL Wolfsburg,FC Cologne,2.0,4.0,post
+638481,2022-09-03 18:30:00,2022,125,11420,Eintracht Frankfurt,RB Leipzig,4.0,0.0,post
+638478,2022-09-04 15:30:00,2022,3841,129,FC Augsburg,Hertha Berlin,0.0,2.0,post
+638473,2022-09-04 17:30:00,2022,268,2950,Borussia Mönchengladbach,Mainz,0.0,1.0,post
+638488,2022-09-09 20:30:00,2022,137,3841,Werder Bremen,FC Augsburg,0.0,1.0,post
+638487,2022-09-10 15:30:00,2022,7911,2950,TSG Hoffenheim,Mainz,4.0,1.0,post
+638486,2022-09-10 15:30:00,2022,129,131,Hertha Berlin,Bayer Leverkusen,2.0,2.0,post
+638490,2022-09-10 15:30:00,2022,11420,124,RB Leipzig,Borussia Dortmund,3.0,0.0,post
+638483,2022-09-10 15:30:00,2022,132,134,Bayern Munich,VfB Stuttgart,2.0,2.0,post
+638484,2022-09-10 15:30:00,2022,125,138,Eintracht Frankfurt,VfL Wolfsburg,0.0,1.0,post
+638482,2022-09-10 18:30:00,2022,133,121,Schalke 04,VfL Bochum,3.0,1.0,post
+638485,2022-09-11 15:30:00,2022,122,598,FC Cologne,1. FC Union Berlin,0.0,1.0,post
+638489,2022-09-11 17:30:00,2022,126,268,SC Freiburg,Borussia Mönchengladbach,0.0,0.0,post
+638492,2022-09-16 20:30:00,2022,2950,129,Mainz,Hertha Berlin,1.0,1.0,post
+638493,2022-09-17 15:30:00,2022,131,137,Bayer Leverkusen,Werder Bremen,1.0,1.0,post
+638494,2022-09-17 15:30:00,2022,124,133,Borussia Dortmund,Schalke 04,1.0,0.0,post
+638497,2022-09-17 15:30:00,2022,3841,132,FC Augsburg,Bayern Munich,1.0,0.0,post
+638499,2022-09-17 15:30:00,2022,134,125,VfB Stuttgart,Eintracht Frankfurt,1.0,3.0,post
+638498,2022-09-17 18:30:00,2022,268,11420,Borussia Mönchengladbach,RB Leipzig,3.0,0.0,post
+638491,2022-09-18 15:30:00,2022,598,138,1. FC Union Berlin,VfL Wolfsburg,2.0,0.0,post
+638495,2022-09-18 17:30:00,2022,121,122,VfL Bochum,FC Cologne,1.0,1.0,post
+638496,2022-09-18 19:30:00,2022,7911,126,TSG Hoffenheim,SC Freiburg,0.0,0.0,post
+638507,2022-09-30 20:30:00,2022,132,131,Bayern Munich,Bayer Leverkusen,4.0,0.0,post
+638504,2022-10-01 15:30:00,2022,125,598,Eintracht Frankfurt,1. FC Union Berlin,2.0,0.0,post
+638503,2022-10-01 15:30:00,2022,122,124,FC Cologne,Borussia Dortmund,3.0,2.0,post
+638508,2022-10-01 15:30:00,2022,11420,121,RB Leipzig,VfL Bochum,4.0,0.0,post
+638502,2022-10-01 15:30:00,2022,126,2950,SC Freiburg,Mainz,2.0,1.0,post
+638500,2022-10-01 15:30:00,2022,138,134,VfL Wolfsburg,VfB Stuttgart,3.0,2.0,post
+638501,2022-10-01 18:30:00,2022,137,268,Werder Bremen,Borussia Mönchengladbach,5.0,1.0,post
+638505,2022-10-02 15:30:00,2022,129,7911,Hertha Berlin,TSG Hoffenheim,1.0,1.0,post
+638506,2022-10-02 17:30:00,2022,133,3841,Schalke 04,FC Augsburg,2.0,3.0,post
+638511,2022-10-07 20:30:00,2022,7911,137,TSG Hoffenheim,Werder Bremen,1.0,2.0,post
+638516,2022-10-08 15:30:00,2022,2950,11420,Mainz,RB Leipzig,1.0,1.0,post
+638509,2022-10-08 15:30:00,2022,121,125,VfL Bochum,Eintracht Frankfurt,3.0,0.0,post
+638515,2022-10-08 15:30:00,2022,131,133,Bayer Leverkusen,Schalke 04,4.0,0.0,post
+638512,2022-10-08 15:30:00,2022,3841,138,FC Augsburg,VfL Wolfsburg,1.0,1.0,post
+638514,2022-10-08 18:30:00,2022,124,132,Borussia Dortmund,Bayern Munich,2.0,2.0,post
+638513,2022-10-09 15:30:00,2022,268,122,Borussia Mönchengladbach,FC Cologne,5.0,2.0,post
+638517,2022-10-09 17:30:00,2022,129,126,Hertha Berlin,SC Freiburg,2.0,2.0,post
+638510,2022-10-09 19:30:00,2022,134,598,VfB Stuttgart,1. FC Union Berlin,0.0,1.0,post
+638521,2022-10-14 20:30:00,2022,133,7911,Schalke 04,TSG Hoffenheim,0.0,3.0,post
+638519,2022-10-15 15:30:00,2022,125,131,Eintracht Frankfurt,Bayer Leverkusen,5.0,1.0,post
+638524,2022-10-15 15:30:00,2022,134,121,VfB Stuttgart,VfL Bochum,4.0,1.0,post
+638525,2022-10-15 15:30:00,2022,138,268,VfL Wolfsburg,Borussia Mönchengladbach,2.0,2.0,post
+638523,2022-10-15 15:30:00,2022,137,2950,Werder Bremen,Mainz,0.0,2.0,post
+638526,2022-10-15 18:30:00,2022,11420,129,RB Leipzig,Hertha Berlin,3.0,2.0,post
+638522,2022-10-16 15:30:00,2022,122,3841,FC Cologne,FC Augsburg,3.0,2.0,post
+638518,2022-10-16 17:30:00,2022,598,124,1. FC Union Berlin,Borussia Dortmund,2.0,0.0,post
+638520,2022-10-16 19:30:00,2022,132,126,Bayern Munich,SC Freiburg,5.0,0.0,post
+638527,2022-10-21 20:30:00,2022,2950,122,Mainz,FC Cologne,5.0,0.0,post
+638534,2022-10-22 15:30:00,2022,7911,132,TSG Hoffenheim,Bayern Munich,0.0,2.0,post
+638533,2022-10-22 15:30:00,2022,126,137,SC Freiburg,Werder Bremen,2.0,0.0,post
+638529,2022-10-22 15:30:00,2022,124,134,Borussia Dortmund,VfB Stuttgart,5.0,0.0,post
+638528,2022-10-22 15:30:00,2022,131,138,Bayer Leverkusen,VfL Wolfsburg,2.0,2.0,post
+638531,2022-10-22 15:30:00,2022,3841,11420,FC Augsburg,RB Leipzig,3.0,3.0,post
+638530,2022-10-22 18:30:00,2022,268,125,Borussia Mönchengladbach,Eintracht Frankfurt,1.0,3.0,post
+638535,2022-10-23 15:30:00,2022,121,598,VfL Bochum,1. FC Union Berlin,2.0,1.0,post
+638532,2022-10-23 17:30:00,2022,129,133,Hertha Berlin,Schalke 04,2.0,1.0,post
+638539,2022-10-28 20:30:00,2022,137,129,Werder Bremen,Hertha Berlin,1.0,0.0,post
+638542,2022-10-29 15:30:00,2022,132,2950,Bayern Munich,Mainz,6.0,2.0,post
+638544,2022-10-29 15:30:00,2022,11420,131,RB Leipzig,Bayer Leverkusen,2.0,0.0,post
+638538,2022-10-29 15:30:00,2022,134,3841,VfB Stuttgart,FC Augsburg,2.0,1.0,post
+638537,2022-10-29 15:30:00,2022,138,121,VfL Wolfsburg,VfL Bochum,4.0,0.0,post
+638543,2022-10-29 18:30:00,2022,125,124,Eintracht Frankfurt,Borussia Dortmund,1.0,2.0,post
+638540,2022-10-30 15:30:00,2022,598,268,1. FC Union Berlin,Borussia Mönchengladbach,2.0,1.0,post
+638541,2022-10-30 17:30:00,2022,133,126,Schalke 04,SC Freiburg,0.0,2.0,post
+638536,2022-10-30 19:30:00,2022,122,7911,FC Cologne,TSG Hoffenheim,1.0,1.0,post
+638547,2022-11-04 20:30:00,2022,268,134,Borussia Mönchengladbach,VfB Stuttgart,3.0,1.0,post
+638546,2022-11-05 15:30:00,2022,124,121,Borussia Dortmund,VfL Bochum,3.0,0.0,post
+638548,2022-11-05 15:30:00,2022,3841,125,FC Augsburg,Eintracht Frankfurt,1.0,2.0,post
+638549,2022-11-05 15:30:00,2022,129,132,Hertha Berlin,Bayern Munich,2.0,3.0,post
+638545,2022-11-05 15:30:00,2022,2950,138,Mainz,VfL Wolfsburg,0.0,3.0,post
+638553,2022-11-05 15:30:00,2022,7911,11420,TSG Hoffenheim,RB Leipzig,1.0,3.0,post
+638551,2022-11-05 18:30:00,2022,137,133,Werder Bremen,Schalke 04,2.0,1.0,post
+638552,2022-11-06 15:30:00,2022,131,598,Bayer Leverkusen,1. FC Union Berlin,5.0,0.0,post
+638550,2022-11-06 17:30:00,2022,126,122,SC Freiburg,FC Cologne,2.0,0.0,post
+638562,2022-11-08 18:30:00,2022,138,124,VfL Wolfsburg,Borussia Dortmund,2.0,0.0,post
+638559,2022-11-08 20:30:00,2022,134,129,VfB Stuttgart,Hertha Berlin,2.0,1.0,post
+638560,2022-11-08 20:30:00,2022,121,268,VfL Bochum,Borussia Mönchengladbach,2.0,1.0,post
+638556,2022-11-08 20:30:00,2022,132,137,Bayern Munich,Werder Bremen,6.0,1.0,post
+638554,2022-11-09 18:30:00,2022,122,131,FC Cologne,Bayer Leverkusen,1.0,2.0,post
+638561,2022-11-09 20:30:00,2022,598,3841,1. FC Union Berlin,FC Augsburg,2.0,2.0,post
+638555,2022-11-09 20:30:00,2022,125,7911,Eintracht Frankfurt,TSG Hoffenheim,4.0,2.0,post
+638558,2022-11-09 20:30:00,2022,11420,126,RB Leipzig,SC Freiburg,3.0,1.0,post
+638557,2022-11-09 20:30:00,2022,133,2950,Schalke 04,Mainz,1.0,0.0,post
+638570,2022-11-11 20:30:00,2022,268,124,Borussia Mönchengladbach,Borussia Dortmund,4.0,2.0,post
+638569,2022-11-12 15:30:00,2022,131,134,Bayer Leverkusen,VfB Stuttgart,2.0,0.0,post
+638571,2022-11-12 15:30:00,2022,3841,121,FC Augsburg,VfL Bochum,0.0,1.0,post
+638567,2022-11-12 15:30:00,2022,129,122,Hertha Berlin,FC Cologne,2.0,0.0,post
+638564,2022-11-12 15:30:00,2022,7911,138,TSG Hoffenheim,VfL Wolfsburg,1.0,2.0,post
+638565,2022-11-12 15:30:00,2022,137,11420,Werder Bremen,RB Leipzig,1.0,2.0,post
+638568,2022-11-12 18:30:00,2022,133,132,Schalke 04,Bayern Munich,0.0,2.0,post
+638563,2022-11-13 15:30:00,2022,2950,125,Mainz,Eintracht Frankfurt,1.0,1.0,post
+638566,2022-11-13 17:30:00,2022,126,598,SC Freiburg,1. FC Union Berlin,4.0,1.0,post
+638577,2023-01-20 20:30:00,2023,11420,132,RB Leipzig,Bayern Munich,1.0,1.0,post
+638573,2023-01-21 15:30:00,2023,598,7911,1. FC Union Berlin,TSG Hoffenheim,3.0,1.0,post
+638578,2023-01-21 15:30:00,2023,125,133,Eintracht Frankfurt,Schalke 04,3.0,0.0,post
+638576,2023-01-21 15:30:00,2023,134,2950,VfB Stuttgart,Mainz,1.0,1.0,post
+638575,2023-01-21 15:30:00,2023,121,129,VfL Bochum,Hertha Berlin,3.0,1.0,post
+638574,2023-01-21 15:30:00,2023,138,126,VfL Wolfsburg,SC Freiburg,6.0,0.0,post
+638572,2023-01-21 18:30:00,2023,122,137,FC Cologne,Werder Bremen,7.0,1.0,post
+638580,2023-01-22 15:30:00,2023,124,3841,Borussia Dortmund,FC Augsburg,4.0,3.0,post
+638579,2023-01-22 17:30:00,2023,268,131,Borussia Mönchengladbach,Bayer Leverkusen,2.0,3.0,post
+638589,2023-01-24 18:30:00,2023,133,11420,Schalke 04,RB Leipzig,1.0,6.0,post
+638586,2023-01-24 20:30:00,2023,132,122,Bayern Munich,FC Cologne,1.0,1.0,post
+638584,2023-01-24 20:30:00,2023,129,138,Hertha Berlin,VfL Wolfsburg,0.0,5.0,post
+638585,2023-01-24 20:30:00,2023,7911,134,TSG Hoffenheim,VfB Stuttgart,2.0,2.0,post
+638581,2023-01-25 18:30:00,2023,2950,124,Mainz,Borussia Dortmund,1.0,2.0,post
+638582,2023-01-25 20:30:00,2023,137,598,Werder Bremen,1. FC Union Berlin,1.0,2.0,post
+638583,2023-01-25 20:30:00,2023,126,125,SC Freiburg,Eintracht Frankfurt,1.0,1.0,post
+638587,2023-01-25 20:30:00,2023,3841,268,FC Augsburg,Borussia Mönchengladbach,1.0,0.0,post
+638588,2023-01-25 20:30:00,2023,131,121,Bayer Leverkusen,VfL Bochum,2.0,0.0,post
+638595,2023-01-27 20:30:00,2023,11420,134,RB Leipzig,VfB Stuttgart,2.0,1.0,post
+638594,2023-01-28 15:30:00,2023,129,598,Hertha Berlin,1. FC Union Berlin,0.0,2.0,post
+638590,2023-01-28 15:30:00,2023,2950,121,Mainz,VfL Bochum,5.0,2.0,post
+638596,2023-01-28 15:30:00,2023,126,3841,SC Freiburg,FC Augsburg,3.0,1.0,post
+638598,2023-01-28 15:30:00,2023,7911,268,TSG Hoffenheim,Borussia Mönchengladbach,1.0,4.0,post
+638597,2023-01-28 15:30:00,2023,137,138,Werder Bremen,VfL Wolfsburg,2.0,1.0,post
+638592,2023-01-28 18:30:00,2023,132,125,Bayern Munich,Eintracht Frankfurt,1.0,1.0,post
+638593,2023-01-29 15:30:00,2023,133,122,Schalke 04,FC Cologne,0.0,0.0,post
+638591,2023-01-29 17:30:00,2023,131,124,Bayer Leverkusen,Borussia Dortmund,0.0,2.0,post
+638601,2023-02-03 20:30:00,2023,3841,131,FC Augsburg,Bayer Leverkusen,1.0,0.0,post
+638599,2023-02-04 15:30:00,2023,121,7911,VfL Bochum,TSG Hoffenheim,5.0,2.0,post
+638606,2023-02-04 15:30:00,2023,122,11420,FC Cologne,RB Leipzig,0.0,0.0,post
+638605,2023-02-04 15:30:00,2023,598,2950,1. FC Union Berlin,Mainz,2.0,1.0,post
+638604,2023-02-04 15:30:00,2023,124,126,Borussia Dortmund,SC Freiburg,5.0,1.0,post
+638602,2023-02-04 15:30:00,2023,125,129,Eintracht Frankfurt,Hertha Berlin,3.0,0.0,post
+638607,2023-02-04 18:30:00,2023,268,133,Borussia Mönchengladbach,Schalke 04,0.0,0.0,post
+638600,2023-02-05 15:30:00,2023,134,137,VfB Stuttgart,Werder Bremen,0.0,2.0,post
+638603,2023-02-05 17:30:00,2023,138,132,VfL Wolfsburg,Bayern Munich,2.0,4.0,post
+638612,2023-02-10 20:30:00,2023,133,138,Schalke 04,VfL Wolfsburg,0.0,0.0,post
+638613,2023-02-11 15:30:00,2023,132,121,Bayern Munich,VfL Bochum,3.0,0.0,post
+638614,2023-02-11 15:30:00,2023,2950,3841,Mainz,FC Augsburg,3.0,1.0,post
+638609,2023-02-11 15:30:00,2023,126,134,SC Freiburg,VfB Stuttgart,2.0,1.0,post
+638616,2023-02-11 15:30:00,2023,7911,131,TSG Hoffenheim,Bayer Leverkusen,1.0,3.0,post
+638608,2023-02-11 15:30:00,2023,137,124,Werder Bremen,Borussia Dortmund,0.0,2.0,post
+638610,2023-02-11 18:30:00,2023,11420,598,RB Leipzig,1. FC Union Berlin,1.0,2.0,post
+638611,2023-02-12 15:30:00,2023,129,268,Hertha Berlin,Borussia Mönchengladbach,4.0,1.0,post
+638615,2023-02-12 17:30:00,2023,122,125,FC Cologne,Eintracht Frankfurt,3.0,0.0,post
+638622,2023-02-17 20:30:00,2023,3841,7911,FC Augsburg,TSG Hoffenheim,1.0,0.0,post
+638624,2023-02-18 15:30:00,2023,268,132,Borussia Mönchengladbach,Bayern Munich,3.0,2.0,post
+638621,2023-02-18 15:30:00,2023,134,122,VfB Stuttgart,FC Cologne,3.0,0.0,post
+638620,2023-02-18 15:30:00,2023,121,126,VfL Bochum,SC Freiburg,0.0,2.0,post
+638619,2023-02-18 15:30:00,2023,138,11420,VfL Wolfsburg,RB Leipzig,0.0,3.0,post
+638623,2023-02-18 18:30:00,2023,125,137,Eintracht Frankfurt,Werder Bremen,2.0,0.0,post
+638617,2023-02-19 15:30:00,2023,598,133,1. FC Union Berlin,Schalke 04,0.0,0.0,post
+638625,2023-02-19 17:30:00,2023,124,129,Borussia Dortmund,Hertha Berlin,4.0,1.0,post
+638618,2023-02-19 19:30:00,2023,131,2950,Bayer Leverkusen,Mainz,2.0,3.0,post
+638633,2023-02-24 20:30:00,2023,2950,268,Mainz,Borussia Mönchengladbach,4.0,0.0,post
+638630,2023-02-25 15:30:00,2023,7911,124,TSG Hoffenheim,Borussia Dortmund,0.0,1.0,post
+638629,2023-02-25 15:30:00,2023,11420,125,RB Leipzig,Eintracht Frankfurt,2.0,1.0,post
+638627,2023-02-25 15:30:00,2023,137,121,Werder Bremen,VfL Bochum,3.0,0.0,post
+638626,2023-02-25 15:30:00,2023,122,138,FC Cologne,VfL Wolfsburg,0.0,2.0,post
+638634,2023-02-25 15:30:00,2023,129,3841,Hertha Berlin,FC Augsburg,2.0,0.0,post
+638631,2023-02-25 18:30:00,2023,133,134,Schalke 04,VfB Stuttgart,2.0,1.0,post
+638628,2023-02-26 15:30:00,2023,126,131,SC Freiburg,Bayer Leverkusen,1.0,1.0,post
+638632,2023-02-26 17:30:00,2023,132,598,Bayern Munich,1. FC Union Berlin,3.0,0.0,post
+638635,2023-03-03 20:30:00,2023,124,11420,Borussia Dortmund,RB Leipzig,2.0,1.0,post
+638638,2023-03-04 15:30:00,2023,598,122,1. FC Union Berlin,FC Cologne,0.0,0.0,post
+638643,2023-03-04 15:30:00,2023,268,126,Borussia Mönchengladbach,SC Freiburg,0.0,0.0,post
+638640,2023-03-04 15:30:00,2023,3841,137,FC Augsburg,Werder Bremen,2.0,1.0,post
+638637,2023-03-04 15:30:00,2023,2950,7911,Mainz,TSG Hoffenheim,1.0,0.0,post
+638642,2023-03-04 15:30:00,2023,121,133,VfL Bochum,Schalke 04,0.0,2.0,post
+638641,2023-03-04 18:30:00,2023,134,132,VfB Stuttgart,Bayern Munich,1.0,2.0,post
+638636,2023-03-05 15:30:00,2023,131,129,Bayer Leverkusen,Hertha Berlin,4.0,1.0,post
+638639,2023-03-05 17:30:00,2023,138,125,VfL Wolfsburg,Eintracht Frankfurt,2.0,2.0,post
+638647,2023-03-10 20:30:00,2023,122,121,FC Cologne,VfL Bochum,0.0,2.0,post
+638652,2023-03-11 15:30:00,2023,11420,268,RB Leipzig,Borussia Mönchengladbach,3.0,0.0,post
+638648,2023-03-11 15:30:00,2023,129,2950,Hertha Berlin,Mainz,1.0,1.0,post
+638645,2023-03-11 15:30:00,2023,132,3841,Bayern Munich,FC Augsburg,5.0,3.0,post
+638646,2023-03-11 15:30:00,2023,125,134,Eintracht Frankfurt,VfB Stuttgart,1.0,1.0,post
+638644,2023-03-11 18:30:00,2023,133,124,Schalke 04,Borussia Dortmund,2.0,2.0,post
+638651,2023-03-12 15:30:00,2023,126,7911,SC Freiburg,TSG Hoffenheim,2.0,1.0,post
+638650,2023-03-12 17:30:00,2023,137,131,Werder Bremen,Bayer Leverkusen,2.0,3.0,post
+638649,2023-03-12 19:30:00,2023,138,598,VfL Wolfsburg,1. FC Union Berlin,1.0,1.0,post
+638660,2023-03-17 20:30:00,2023,268,137,Borussia Mönchengladbach,Werder Bremen,2.0,2.0,post
+638657,2023-03-18 15:30:00,2023,121,11420,VfL Bochum,RB Leipzig,1.0,0.0,post
+638659,2023-03-18 15:30:00,2023,3841,133,FC Augsburg,Schalke 04,1.0,1.0,post
+638658,2023-03-18 15:30:00,2023,7911,129,TSG Hoffenheim,Hertha Berlin,3.0,1.0,post
+638661,2023-03-18 15:30:00,2023,134,138,VfB Stuttgart,VfL Wolfsburg,0.0,1.0,post
+638656,2023-03-18 18:30:00,2023,124,122,Borussia Dortmund,FC Cologne,6.0,1.0,post
+638653,2023-03-19 15:30:00,2023,598,125,1. FC Union Berlin,Eintracht Frankfurt,2.0,0.0,post
+638655,2023-03-19 17:30:00,2023,131,132,Bayer Leverkusen,Bayern Munich,2.0,1.0,post
+638654,2023-03-19 19:30:00,2023,2950,126,Mainz,SC Freiburg,1.0,1.0,post
+638663,2023-03-31 20:30:00,2023,125,121,Eintracht Frankfurt,VfL Bochum,1.0,1.0,post
+638670,2023-04-01 15:30:00,2023,598,134,1. FC Union Berlin,VfB Stuttgart,3.0,0.0,post
+638667,2023-04-01 15:30:00,2023,11420,2950,RB Leipzig,Mainz,0.0,3.0,post
+638666,2023-04-01 15:30:00,2023,126,129,SC Freiburg,Hertha Berlin,1.0,1.0,post
+638668,2023-04-01 15:30:00,2023,133,131,Schalke 04,Bayer Leverkusen,0.0,3.0,post
+638664,2023-04-01 15:30:00,2023,138,3841,VfL Wolfsburg,FC Augsburg,2.0,2.0,post
+638662,2023-04-01 18:30:00,2023,132,124,Bayern Munich,Borussia Dortmund,4.0,2.0,post
+638669,2023-04-02 15:30:00,2023,122,268,FC Cologne,Borussia Mönchengladbach,0.0,0.0,post
+638665,2023-04-02 17:30:00,2023,137,7911,Werder Bremen,TSG Hoffenheim,1.0,2.0,post
+638673,2023-04-08 15:30:00,2023,126,132,SC Freiburg,Bayern Munich,0.0,1.0,post
+638671,2023-04-08 15:30:00,2023,2950,137,Mainz,Werder Bremen,2.0,2.0,post
+638679,2023-04-08 15:30:00,2023,3841,122,FC Augsburg,FC Cologne,1.0,3.0,post
+638677,2023-04-08 15:30:00,2023,124,598,Borussia Dortmund,1. FC Union Berlin,2.0,1.0,post
+638678,2023-04-08 15:30:00,2023,131,125,Bayer Leverkusen,Eintracht Frankfurt,3.0,1.0,post
+638674,2023-04-08 18:30:00,2023,129,11420,Hertha Berlin,RB Leipzig,0.0,1.0,post
+638676,2023-04-09 15:30:00,2023,268,138,Borussia Mönchengladbach,VfL Wolfsburg,2.0,0.0,post
+638675,2023-04-09 17:30:00,2023,121,134,VfL Bochum,VfB Stuttgart,2.0,3.0,post
+638672,2023-04-09 19:30:00,2023,7911,133,TSG Hoffenheim,Schalke 04,2.0,0.0,post
+638684,2023-04-14 20:30:00,2023,133,129,Schalke 04,Hertha Berlin,5.0,2.0,post
+638680,2023-04-15 15:30:00,2023,132,7911,Bayern Munich,TSG Hoffenheim,1.0,1.0,post
+638683,2023-04-15 15:30:00,2023,122,2950,FC Cologne,Mainz,1.0,1.0,post
+638688,2023-04-15 15:30:00,2023,11420,3841,RB Leipzig,FC Augsburg,3.0,2.0,post
+638686,2023-04-15 15:30:00,2023,134,124,VfB Stuttgart,Borussia Dortmund,3.0,3.0,post
+638681,2023-04-15 18:30:00,2023,125,268,Eintracht Frankfurt,Borussia Mönchengladbach,1.0,1.0,post
+638687,2023-04-16 15:30:00,2023,137,126,Werder Bremen,SC Freiburg,1.0,2.0,post
+638682,2023-04-16 17:30:00,2023,598,121,1. FC Union Berlin,VfL Bochum,1.0,1.0,post
+638685,2023-04-16 19:30:00,2023,138,131,VfL Wolfsburg,Bayer Leverkusen,0.0,0.0,post
+638695,2023-04-21 20:30:00,2023,3841,134,FC Augsburg,VfB Stuttgart,1.0,1.0,post
+638694,2023-04-22 15:30:00,2023,129,137,Hertha Berlin,Werder Bremen,2.0,4.0,post
+638689,2023-04-22 15:30:00,2023,2950,132,Mainz,Bayern Munich,3.0,1.0,post
+638692,2023-04-22 15:30:00,2023,7911,122,TSG Hoffenheim,FC Cologne,1.0,3.0,post
+638691,2023-04-22 15:30:00,2023,121,138,VfL Bochum,VfL Wolfsburg,1.0,5.0,post
+638697,2023-04-22 18:30:00,2023,124,125,Borussia Dortmund,Eintracht Frankfurt,4.0,0.0,post
+638693,2023-04-23 15:30:00,2023,126,133,SC Freiburg,Schalke 04,4.0,0.0,post
+638690,2023-04-23 17:30:00,2023,131,11420,Bayer Leverkusen,RB Leipzig,2.0,0.0,post
+638696,2023-04-23 19:30:00,2023,268,598,Borussia Mönchengladbach,1. FC Union Berlin,0.0,1.0,post
+638706,2023-04-28 20:30:00,2023,121,124,VfL Bochum,Borussia Dortmund,1.0,1.0,post
+638701,2023-04-29 15:30:00,2023,134,268,VfB Stuttgart,Borussia Mönchengladbach,2.0,1.0,post
+638700,2023-04-29 15:30:00,2023,11420,7911,RB Leipzig,TSG Hoffenheim,1.0,0.0,post
+638698,2023-04-29 15:30:00,2023,122,126,FC Cologne,SC Freiburg,0.0,1.0,post
+638704,2023-04-29 15:30:00,2023,125,3841,Eintracht Frankfurt,FC Augsburg,1.0,1.0,post
+638705,2023-04-29 15:30:00,2023,598,131,1. FC Union Berlin,Bayer Leverkusen,0.0,0.0,post
+638699,2023-04-29 18:30:00,2023,133,137,Schalke 04,Werder Bremen,2.0,1.0,post
+638703,2023-04-30 15:30:00,2023,132,129,Bayern Munich,Hertha Berlin,2.0,0.0,post
+638702,2023-04-30 17:30:00,2023,138,2950,VfL Wolfsburg,Mainz,3.0,0.0,post
+638713,2023-05-05 20:30:00,2023,131,122,Bayer Leverkusen,FC Cologne,1.0,2.0,post
+638714,2023-05-05 20:30:00,2023,2950,133,Mainz,Schalke 04,2.0,3.0,post
+638715,2023-05-06 15:30:00,2023,268,121,Borussia Mönchengladbach,VfL Bochum,2.0,0.0,post
+638710,2023-05-06 15:30:00,2023,3841,598,FC Augsburg,1. FC Union Berlin,1.0,0.0,post
+638709,2023-05-06 15:30:00,2023,129,134,Hertha Berlin,VfB Stuttgart,2.0,1.0,post
+638708,2023-05-06 15:30:00,2023,126,11420,SC Freiburg,RB Leipzig,0.0,1.0,post
+638711,2023-05-06 15:30:00,2023,7911,125,TSG Hoffenheim,Eintracht Frankfurt,3.0,1.0,post
+638707,2023-05-06 18:30:00,2023,137,132,Werder Bremen,Bayern Munich,1.0,2.0,post
+638712,2023-05-07 17:30:00,2023,124,138,Borussia Dortmund,VfL Wolfsburg,6.0,0.0,post
+638723,2023-05-12 20:30:00,2023,122,129,FC Cologne,Hertha Berlin,5.0,2.0,post
+638722,2023-05-13 15:30:00,2023,598,126,1. FC Union Berlin,SC Freiburg,4.0,2.0,post
+638719,2023-05-13 15:30:00,2023,132,133,Bayern Munich,Schalke 04,6.0,0.0,post
+638720,2023-05-13 15:30:00,2023,125,2950,Eintracht Frankfurt,Mainz,3.0,0.0,post
+638716,2023-05-13 15:30:00,2023,121,3841,VfL Bochum,FC Augsburg,3.0,2.0,post
+638724,2023-05-13 15:30:00,2023,138,7911,VfL Wolfsburg,TSG Hoffenheim,2.0,1.0,post
+638721,2023-05-13 18:30:00,2023,124,268,Borussia Dortmund,Borussia Mönchengladbach,5.0,2.0,post
+638717,2023-05-14 15:30:00,2023,134,131,VfB Stuttgart,Bayer Leverkusen,1.0,1.0,post
+638718,2023-05-14 17:30:00,2023,11420,137,RB Leipzig,Werder Bremen,2.0,1.0,post
+638729,2023-05-19 20:30:00,2023,126,138,SC Freiburg,VfL Wolfsburg,2.0,0.0,post
+638730,2023-05-20 15:30:00,2023,129,121,Hertha Berlin,VfL Bochum,1.0,1.0,post
+638731,2023-05-20 15:30:00,2023,133,125,Schalke 04,Eintracht Frankfurt,2.0,2.0,post
+638727,2023-05-20 15:30:00,2023,7911,598,TSG Hoffenheim,1. FC Union Berlin,4.0,2.0,post
+638728,2023-05-20 15:30:00,2023,137,122,Werder Bremen,FC Cologne,1.0,1.0,post
+638732,2023-05-20 18:30:00,2023,132,11420,Bayern Munich,RB Leipzig,1.0,3.0,post
+638725,2023-05-21 15:30:00,2023,2950,134,Mainz,VfB Stuttgart,1.0,4.0,post
+638733,2023-05-21 17:30:00,2023,3841,124,FC Augsburg,Borussia Dortmund,0.0,3.0,post
+638726,2023-05-21 19:30:00,2023,131,268,Bayer Leverkusen,Borussia Mönchengladbach,2.0,2.0,post
+638736,2023-05-27 15:30:00,2023,598,137,1. FC Union Berlin,Werder Bremen,1.0,0.0,post
+638737,2023-05-27 15:30:00,2023,124,2950,Borussia Dortmund,Mainz,2.0,2.0,post
+638738,2023-05-27 15:30:00,2023,268,3841,Borussia Mönchengladbach,FC Augsburg,2.0,0.0,post
+638739,2023-05-27 15:30:00,2023,125,126,Eintracht Frankfurt,SC Freiburg,2.0,1.0,post
+638735,2023-05-27 15:30:00,2023,122,132,FC Cologne,Bayern Munich,1.0,2.0,post
+638740,2023-05-27 15:30:00,2023,11420,133,RB Leipzig,Schalke 04,4.0,2.0,post
+638741,2023-05-27 15:30:00,2023,134,7911,VfB Stuttgart,TSG Hoffenheim,1.0,1.0,post
+638742,2023-05-27 15:30:00,2023,121,131,VfL Bochum,Bayer Leverkusen,3.0,0.0,post
+638743,2023-05-27 15:30:00,2023,138,129,VfL Wolfsburg,Hertha Berlin,1.0,2.0,post
+677584,2023-08-18 20:30:00,2023,137,132,Werder Bremen,Bayern Munich,0.0,4.0,post
+677591,2023-08-19 15:30:00,2023,134,121,VfB Stuttgart,VfL Bochum,5.0,0.0,post
+677592,2023-08-19 15:30:00,2023,138,6418,VfL Wolfsburg,1. FC Heidenheim 1846,2.0,0.0,post
+677589,2023-08-19 15:30:00,2023,3841,268,FC Augsburg,Borussia Mönchengladbach,4.0,4.0,post
+677586,2023-08-19 15:30:00,2023,131,11420,Bayer Leverkusen,RB Leipzig,3.0,2.0,post
+677590,2023-08-19 15:30:00,2023,7911,126,TSG Hoffenheim,SC Freiburg,1.0,2.0,post
+677587,2023-08-19 18:30:00,2023,124,122,Borussia Dortmund,FC Cologne,1.0,0.0,post
+677585,2023-08-20 15:30:00,2023,598,2950,1. FC Union Berlin,Mainz,4.0,1.0,post
+677588,2023-08-20 17:30:00,2023,125,3812,Eintracht Frankfurt,SV Darmstadt 98,1.0,0.0,post
+677598,2023-08-25 20:30:00,2023,11420,134,RB Leipzig,VfB Stuttgart,5.0,1.0,post
+677593,2023-08-26 15:30:00,2023,6418,7911,1. FC Heidenheim 1846,TSG Hoffenheim,2.0,3.0,post
+677594,2023-08-26 15:30:00,2023,122,138,FC Cologne,VfL Wolfsburg,1.0,2.0,post
+677599,2023-08-26 15:30:00,2023,126,137,SC Freiburg,Werder Bremen,1.0,0.0,post
+677600,2023-08-26 15:30:00,2023,3812,598,SV Darmstadt 98,1. FC Union Berlin,1.0,4.0,post
+677601,2023-08-26 15:30:00,2023,121,124,VfL Bochum,Borussia Dortmund,1.0,1.0,post
+677596,2023-08-26 18:30:00,2023,268,131,Borussia Mönchengladbach,Bayer Leverkusen,0.0,3.0,post
+677595,2023-08-27 15:30:00,2023,2950,125,Mainz,Eintracht Frankfurt,1.0,1.0,post
+677597,2023-08-27 17:30:00,2023,132,3841,Bayern Munich,FC Augsburg,3.0,1.0,post
+677604,2023-09-01 20:30:00,2023,124,6418,Borussia Dortmund,1. FC Heidenheim 1846,2.0,2.0,post
+677603,2023-09-02 15:30:00,2023,131,3812,Bayer Leverkusen,SV Darmstadt 98,5.0,1.0,post
+677607,2023-09-02 15:30:00,2023,3841,121,FC Augsburg,VfL Bochum,2.0,2.0,post
+677609,2023-09-02 15:30:00,2023,7911,138,TSG Hoffenheim,VfL Wolfsburg,3.0,1.0,post
+677605,2023-09-02 15:30:00,2023,134,126,VfB Stuttgart,SC Freiburg,5.0,0.0,post
+677608,2023-09-02 15:30:00,2023,137,2950,Werder Bremen,Mainz,4.0,0.0,post
+677606,2023-09-02 18:30:00,2023,268,132,Borussia Mönchengladbach,Bayern Munich,1.0,2.0,post
+677610,2023-09-03 15:30:00,2023,125,122,Eintracht Frankfurt,FC Cologne,1.0,1.0,post
+677602,2023-09-03 17:30:00,2023,598,11420,1. FC Union Berlin,RB Leipzig,0.0,3.0,post
+677614,2023-09-15 20:30:00,2023,132,131,Bayern Munich,Bayer Leverkusen,2.0,2.0,post
+677616,2023-09-16 15:30:00,2023,126,124,SC Freiburg,Borussia Dortmund,2.0,4.0,post
+677615,2023-09-16 15:30:00,2023,11420,3841,RB Leipzig,FC Augsburg,3.0,0.0,post
+677619,2023-09-16 15:30:00,2023,138,598,VfL Wolfsburg,1. FC Union Berlin,2.0,1.0,post
+677612,2023-09-16 15:30:00,2023,122,7911,FC Cologne,TSG Hoffenheim,1.0,3.0,post
+677613,2023-09-16 15:30:00,2023,2950,134,Mainz,VfB Stuttgart,1.0,3.0,post
+677618,2023-09-16 18:30:00,2023,121,125,VfL Bochum,Eintracht Frankfurt,1.0,1.0,post
+677611,2023-09-17 15:30:00,2023,6418,137,1. FC Heidenheim 1846,Werder Bremen,4.0,2.0,post
+677617,2023-09-17 17:30:00,2023,3812,268,SV Darmstadt 98,Borussia Mönchengladbach,3.0,3.0,post
+677628,2023-09-22 20:30:00,2023,134,3812,VfB Stuttgart,SV Darmstadt 98,3.0,1.0,post
+677620,2023-09-23 15:30:00,2023,598,7911,1. FC Union Berlin,TSG Hoffenheim,0.0,2.0,post
+677626,2023-09-23 15:30:00,2023,132,121,Bayern Munich,VfL Bochum,7.0,0.0,post
+677622,2023-09-23 15:30:00,2023,124,138,Borussia Dortmund,VfL Wolfsburg,1.0,0.0,post
+677623,2023-09-23 15:30:00,2023,268,11420,Borussia Mönchengladbach,RB Leipzig,0.0,1.0,post
+677625,2023-09-23 15:30:00,2023,3841,2950,FC Augsburg,Mainz,2.0,1.0,post
+677627,2023-09-23 18:30:00,2023,137,122,Werder Bremen,FC Cologne,2.0,1.0,post
+677621,2023-09-24 15:30:00,2023,131,6418,Bayer Leverkusen,1. FC Heidenheim 1846,4.0,1.0,post
+677624,2023-09-24 17:30:00,2023,125,126,Eintracht Frankfurt,SC Freiburg,0.0,0.0,post
+677635,2023-09-29 20:30:00,2023,7911,124,TSG Hoffenheim,Borussia Dortmund,1.0,3.0,post
+677629,2023-09-30 15:30:00,2023,6418,598,1. FC Heidenheim 1846,1. FC Union Berlin,1.0,0.0,post
+677630,2023-09-30 15:30:00,2023,122,134,FC Cologne,VfB Stuttgart,0.0,2.0,post
+677631,2023-09-30 15:30:00,2023,2950,131,Mainz,Bayer Leverkusen,0.0,3.0,post
+677636,2023-09-30 15:30:00,2023,121,268,VfL Bochum,Borussia Mönchengladbach,1.0,3.0,post
+677637,2023-09-30 15:30:00,2023,138,125,VfL Wolfsburg,Eintracht Frankfurt,2.0,0.0,post
+677632,2023-09-30 18:30:00,2023,11420,132,RB Leipzig,Bayern Munich,2.0,2.0,post
+677634,2023-10-01 15:30:00,2023,3812,137,SV Darmstadt 98,Werder Bremen,4.0,2.0,post
+677633,2023-10-01 17:30:00,2023,126,3841,SC Freiburg,FC Augsburg,2.0,0.0,post
+677640,2023-10-06 20:30:00,2023,268,2950,Borussia Mönchengladbach,Mainz,2.0,2.0,post
+677639,2023-10-07 15:30:00,2023,124,598,Borussia Dortmund,1. FC Union Berlin,4.0,2.0,post
+677642,2023-10-07 15:30:00,2023,3841,3812,FC Augsburg,SV Darmstadt 98,1.0,2.0,post
+677644,2023-10-07 15:30:00,2023,11420,121,RB Leipzig,VfL Bochum,0.0,0.0,post
+677646,2023-10-07 15:30:00,2023,134,138,VfB Stuttgart,VfL Wolfsburg,3.0,1.0,post
+677645,2023-10-07 18:30:00,2023,137,7911,Werder Bremen,TSG Hoffenheim,2.0,3.0,post
+677638,2023-10-08 15:30:00,2023,131,122,Bayer Leverkusen,FC Cologne,3.0,0.0,post
+677643,2023-10-08 17:30:00,2023,132,126,Bayern Munich,SC Freiburg,3.0,0.0,post
+677641,2023-10-08 19:30:00,2023,125,6418,Eintracht Frankfurt,1. FC Heidenheim 1846,2.0,0.0,post
+677651,2023-10-20 20:30:00,2023,124,137,Borussia Dortmund,Werder Bremen,1.0,0.0,post
+677647,2023-10-21 15:30:00,2023,598,134,1. FC Union Berlin,VfB Stuttgart,0.0,3.0,post
+677652,2023-10-21 15:30:00,2023,126,121,SC Freiburg,VfL Bochum,2.0,1.0,post
+677655,2023-10-21 15:30:00,2023,3812,11420,SV Darmstadt 98,RB Leipzig,1.0,3.0,post
+677654,2023-10-21 15:30:00,2023,7911,125,TSG Hoffenheim,Eintracht Frankfurt,1.0,3.0,post
+677653,2023-10-21 15:30:00,2023,138,131,VfL Wolfsburg,Bayer Leverkusen,1.0,2.0,post
+677650,2023-10-21 18:30:00,2023,2950,132,Mainz,Bayern Munich,1.0,3.0,post
+677648,2023-10-22 15:30:00,2023,122,268,FC Cologne,Borussia Mönchengladbach,3.0,1.0,post
+677649,2023-10-22 17:30:00,2023,6418,3841,1. FC Heidenheim 1846,FC Augsburg,2.0,5.0,post
+677659,2023-10-27 20:30:00,2023,121,2950,VfL Bochum,Mainz,2.0,2.0,post
+677662,2023-10-28 15:30:00,2023,137,598,Werder Bremen,1. FC Union Berlin,2.0,0.0,post
+677663,2023-10-28 15:30:00,2023,134,7911,VfB Stuttgart,TSG Hoffenheim,2.0,3.0,post
+677660,2023-10-28 15:30:00,2023,3841,138,FC Augsburg,VfL Wolfsburg,3.0,2.0,post
+677657,2023-10-28 15:30:00,2023,268,6418,Borussia Mönchengladbach,1. FC Heidenheim 1846,2.0,1.0,post
+677664,2023-10-28 15:30:00,2023,132,3812,Bayern Munich,SV Darmstadt 98,8.0,0.0,post
+677661,2023-10-28 18:30:00,2023,11420,122,RB Leipzig,FC Cologne,6.0,0.0,post
+677658,2023-10-29 15:30:00,2023,125,124,Eintracht Frankfurt,Borussia Dortmund,3.0,3.0,post
+677656,2023-10-29 17:30:00,2023,131,126,Bayer Leverkusen,SC Freiburg,2.0,1.0,post
+677671,2023-11-03 20:30:00,2023,3812,121,SV Darmstadt 98,VfL Bochum,1.0,2.0,post
+677667,2023-11-04 15:30:00,2023,598,125,1. FC Union Berlin,Eintracht Frankfurt,0.0,3.0,post
+677666,2023-11-04 15:30:00,2023,122,3841,FC Cologne,FC Augsburg,1.0,1.0,post
+677668,2023-11-04 15:30:00,2023,2950,11420,Mainz,RB Leipzig,2.0,0.0,post
+677670,2023-11-04 15:30:00,2023,126,268,SC Freiburg,Borussia Mönchengladbach,3.0,3.0,post
+677672,2023-11-04 15:30:00,2023,7911,131,TSG Hoffenheim,Bayer Leverkusen,2.0,3.0,post
+677669,2023-11-04 18:30:00,2023,124,132,Borussia Dortmund,Bayern Munich,0.0,4.0,post
+677673,2023-11-05 15:30:00,2023,138,137,VfL Wolfsburg,Werder Bremen,2.0,2.0,post
+677665,2023-11-05 17:30:00,2023,6418,134,1. FC Heidenheim 1846,VfB Stuttgart,2.0,0.0,post
+677675,2023-11-10 20:30:00,2023,268,138,Borussia Mönchengladbach,VfL Wolfsburg,4.0,0.0,post
+677677,2023-11-11 15:30:00,2023,132,6418,Bayern Munich,1. FC Heidenheim 1846,4.0,2.0,post
+677676,2023-11-11 15:30:00,2023,3841,7911,FC Augsburg,TSG Hoffenheim,1.0,1.0,post
+677679,2023-11-11 15:30:00,2023,3812,2950,SV Darmstadt 98,Mainz,0.0,0.0,post
+677681,2023-11-11 15:30:00,2023,134,124,VfB Stuttgart,Borussia Dortmund,2.0,1.0,post
+677682,2023-11-11 18:30:00,2023,121,122,VfL Bochum,FC Cologne,1.0,1.0,post
+677674,2023-11-12 15:30:00,2023,131,598,Bayer Leverkusen,1. FC Union Berlin,4.0,0.0,post
+677680,2023-11-12 17:30:00,2023,137,125,Werder Bremen,Eintracht Frankfurt,2.0,2.0,post
+677678,2023-11-12 19:30:00,2023,11420,126,RB Leipzig,SC Freiburg,3.0,1.0,post
+677684,2023-11-24 20:30:00,2023,122,132,FC Cologne,Bayern Munich,0.0,1.0,post
+677685,2023-11-25 15:30:00,2023,138,11420,VfL Wolfsburg,RB Leipzig,2.0,1.0,post
+677688,2023-11-25 15:30:00,2023,126,3812,SC Freiburg,SV Darmstadt 98,1.0,1.0,post
+677689,2023-11-25 15:30:00,2023,137,131,Werder Bremen,Bayer Leverkusen,0.0,3.0,post
+677687,2023-11-25 15:30:00,2023,598,3841,1. FC Union Berlin,FC Augsburg,1.0,1.0,post
+677686,2023-11-25 15:30:00,2023,124,268,Borussia Dortmund,Borussia Mönchengladbach,4.0,2.0,post
+677691,2023-11-25 18:30:00,2023,125,134,Eintracht Frankfurt,VfB Stuttgart,1.0,2.0,post
+677683,2023-11-26 15:30:00,2023,6418,121,1. FC Heidenheim 1846,VfL Bochum,0.0,0.0,post
+677690,2023-11-26 17:30:00,2023,7911,2950,TSG Hoffenheim,Mainz,1.0,1.0,post
+677694,2023-12-01 20:30:00,2023,3812,122,SV Darmstadt 98,FC Cologne,0.0,1.0,post
+677700,2023-12-02 15:30:00,2023,268,7911,Borussia Mönchengladbach,TSG Hoffenheim,2.0,1.0,post
+677693,2023-12-02 15:30:00,2023,11420,6418,RB Leipzig,1. FC Heidenheim 1846,2.0,1.0,post
+677696,2023-12-02 15:30:00,2023,121,138,VfL Bochum,VfL Wolfsburg,3.0,1.0,post
+677699,2023-12-02 18:30:00,2023,134,137,VfB Stuttgart,Werder Bremen,2.0,0.0,post
+677698,2023-12-03 15:30:00,2023,2950,126,Mainz,SC Freiburg,0.0,1.0,post
+677695,2023-12-03 17:30:00,2023,131,124,Bayer Leverkusen,Borussia Dortmund,1.0,1.0,post
+677697,2023-12-03 19:30:00,2023,3841,125,FC Augsburg,Eintracht Frankfurt,2.0,1.0,post
+677707,2023-12-08 20:30:00,2023,7911,121,TSG Hoffenheim,VfL Bochum,3.0,1.0,post
+677709,2023-12-09 15:30:00,2023,138,126,VfL Wolfsburg,SC Freiburg,0.0,1.0,post
+677701,2023-12-09 15:30:00,2023,125,132,Eintracht Frankfurt,Bayern Munich,5.0,1.0,post
+677702,2023-12-09 15:30:00,2023,137,3841,Werder Bremen,FC Augsburg,2.0,0.0,post
+677703,2023-12-09 15:30:00,2023,6418,3812,1. FC Heidenheim 1846,SV Darmstadt 98,3.0,2.0,post
+677705,2023-12-09 15:30:00,2023,598,268,1. FC Union Berlin,Borussia Mönchengladbach,3.0,1.0,post
+677708,2023-12-09 18:30:00,2023,124,11420,Borussia Dortmund,RB Leipzig,2.0,3.0,post
+677704,2023-12-10 15:30:00,2023,134,131,VfB Stuttgart,Bayer Leverkusen,1.0,1.0,post
+677706,2023-12-10 17:30:00,2023,122,2950,FC Cologne,Mainz,0.0,0.0,post
+677712,2023-12-15 20:30:00,2023,268,137,Borussia Mönchengladbach,Werder Bremen,2.0,2.0,post
+677711,2023-12-16 15:30:00,2023,3841,124,FC Augsburg,Borussia Dortmund,1.0,1.0,post
+677710,2023-12-16 15:30:00,2023,2950,6418,Mainz,1. FC Heidenheim 1846,0.0,1.0,post
+677715,2023-12-16 15:30:00,2023,3812,138,SV Darmstadt 98,VfL Wolfsburg,0.0,1.0,post
+677718,2023-12-16 15:30:00,2023,121,598,VfL Bochum,1. FC Union Berlin,3.0,0.0,post
+677717,2023-12-16 18:30:00,2023,11420,7911,RB Leipzig,TSG Hoffenheim,3.0,1.0,post
+677716,2023-12-17 15:30:00,2023,126,122,SC Freiburg,FC Cologne,2.0,0.0,post
+677713,2023-12-17 17:30:00,2023,131,125,Bayer Leverkusen,Eintracht Frankfurt,3.0,0.0,post
+677714,2023-12-17 19:30:00,2023,132,134,Bayern Munich,VfB Stuttgart,3.0,0.0,post
+677724,2023-12-19 18:30:00,2023,137,11420,Werder Bremen,RB Leipzig,1.0,1.0,post
+677722,2023-12-19 20:30:00,2023,124,2950,Borussia Dortmund,Mainz,1.0,1.0,post
+677725,2023-12-19 20:30:00,2023,7911,3812,TSG Hoffenheim,SV Darmstadt 98,3.0,3.0,post
+677720,2023-12-20 18:30:00,2023,598,122,1. FC Union Berlin,FC Cologne,2.0,0.0,post
+677719,2023-12-20 20:30:00,2023,6418,126,1. FC Heidenheim 1846,SC Freiburg,3.0,2.0,post
+677723,2023-12-20 20:30:00,2023,131,121,Bayer Leverkusen,VfL Bochum,4.0,0.0,post
+677727,2023-12-20 20:30:00,2023,125,268,Eintracht Frankfurt,Borussia Mönchengladbach,2.0,1.0,post
+677726,2023-12-20 20:30:00,2023,134,3841,VfB Stuttgart,FC Augsburg,3.0,0.0,post
+677721,2023-12-20 20:30:00,2023,138,132,VfL Wolfsburg,Bayern Munich,1.0,2.0,post
+677732,2024-01-12 20:30:00,2024,132,7911,Bayern Munich,TSG Hoffenheim,3.0,0.0,post
+677730,2024-01-13 15:30:00,2024,11420,125,RB Leipzig,Eintracht Frankfurt,0.0,1.0,post
+677734,2024-01-13 15:30:00,2024,2950,138,Mainz,VfL Wolfsburg,1.0,1.0,post
+677729,2024-01-13 15:30:00,2024,126,598,SC Freiburg,1. FC Union Berlin,0.0,0.0,post
+677736,2024-01-13 15:30:00,2024,3841,131,FC Augsburg,Bayer Leverkusen,0.0,1.0,post
+677735,2024-01-13 15:30:00,2024,122,6418,FC Cologne,1. FC Heidenheim 1846,1.0,1.0,post
+677728,2024-01-13 18:30:00,2024,3812,124,SV Darmstadt 98,Borussia Dortmund,0.0,3.0,post
+677731,2024-01-14 15:30:00,2024,121,137,VfL Bochum,Werder Bremen,1.0,1.0,post
+677733,2024-01-14 17:30:00,2024,268,134,Borussia Mönchengladbach,VfB Stuttgart,3.0,1.0,post
+677743,2024-01-20 15:30:00,2024,6418,138,1. FC Heidenheim 1846,VfL Wolfsburg,1.0,1.0,post
+677742,2024-01-20 15:30:00,2024,122,124,FC Cologne,Borussia Dortmund,0.0,4.0,post
+677737,2024-01-20 15:30:00,2024,126,7911,SC Freiburg,TSG Hoffenheim,3.0,2.0,post
+677745,2024-01-20 15:30:00,2024,3812,125,SV Darmstadt 98,Eintracht Frankfurt,2.0,2.0,post
+677744,2024-01-20 15:30:00,2024,121,134,VfL Bochum,VfB Stuttgart,1.0,0.0,post
+677738,2024-01-20 18:30:00,2024,11420,131,RB Leipzig,Bayer Leverkusen,2.0,3.0,post
+677739,2024-01-21 15:30:00,2024,132,137,Bayern Munich,Werder Bremen,0.0,1.0,post
+677740,2024-01-21 17:30:00,2024,268,3841,Borussia Mönchengladbach,FC Augsburg,1.0,2.0,post
+677692,2024-01-24 20:30:00,2024,132,598,Bayern Munich,1. FC Union Berlin,1.0,0.0,post
+677753,2024-01-26 20:30:00,2024,125,2950,Eintracht Frankfurt,Mainz,1.0,0.0,post
+677748,2024-01-27 15:30:00,2024,3841,132,FC Augsburg,Bayern Munich,2.0,3.0,post
+677750,2024-01-27 15:30:00,2024,7911,6418,TSG Hoffenheim,1. FC Heidenheim 1846,1.0,1.0,post
+677749,2024-01-27 15:30:00,2024,134,11420,VfB Stuttgart,RB Leipzig,5.0,2.0,post
+677752,2024-01-27 15:30:00,2024,138,122,VfL Wolfsburg,FC Cologne,1.0,1.0,post
+677751,2024-01-27 15:30:00,2024,137,126,Werder Bremen,SC Freiburg,3.0,1.0,post
+677747,2024-01-27 18:30:00,2024,131,268,Bayer Leverkusen,Borussia Mönchengladbach,0.0,0.0,post
+677746,2024-01-28 15:30:00,2024,598,3812,1. FC Union Berlin,SV Darmstadt 98,1.0,0.0,post
+677754,2024-01-28 17:30:00,2024,124,121,Borussia Dortmund,VfL Bochum,3.0,1.0,post
+677756,2024-02-02 20:30:00,2024,6418,124,1. FC Heidenheim 1846,Borussia Dortmund,0.0,0.0,post
+677759,2024-02-03 15:30:00,2024,132,268,Bayern Munich,Borussia Mönchengladbach,3.0,1.0,post
+677758,2024-02-03 15:30:00,2024,2950,137,Mainz,Werder Bremen,0.0,1.0,post
+677761,2024-02-03 15:30:00,2024,126,134,SC Freiburg,VfB Stuttgart,1.0,3.0,post
+677762,2024-02-03 15:30:00,2024,3812,131,SV Darmstadt 98,Bayer Leverkusen,0.0,2.0,post
+677755,2024-02-03 15:30:00,2024,121,3841,VfL Bochum,FC Augsburg,1.0,1.0,post
+677757,2024-02-03 18:30:00,2024,122,125,FC Cologne,Eintracht Frankfurt,2.0,0.0,post
+677763,2024-02-04 15:30:00,2024,138,7911,VfL Wolfsburg,TSG Hoffenheim,2.0,2.0,post
+677760,2024-02-04 17:30:00,2024,11420,598,RB Leipzig,1. FC Union Berlin,2.0,0.0,post
+677741,2024-02-07 18:30:00,2024,2950,598,Mainz,1. FC Union Berlin,1.0,1.0,post
+677769,2024-02-09 20:30:00,2024,124,126,Borussia Dortmund,SC Freiburg,3.0,0.0,post
+677771,2024-02-10 15:30:00,2024,598,138,1. FC Union Berlin,VfL Wolfsburg,1.0,0.0,post
+677768,2024-02-10 15:30:00,2024,268,3812,Borussia Mönchengladbach,SV Darmstadt 98,0.0,0.0,post
+677767,2024-02-10 15:30:00,2024,125,121,Eintracht Frankfurt,VfL Bochum,1.0,1.0,post
+677766,2024-02-10 15:30:00,2024,3841,11420,FC Augsburg,RB Leipzig,2.0,2.0,post
+677765,2024-02-10 15:30:00,2024,137,6418,Werder Bremen,1. FC Heidenheim 1846,1.0,2.0,post
+677770,2024-02-10 18:30:00,2024,131,132,Bayer Leverkusen,Bayern Munich,3.0,0.0,post
+677772,2024-02-11 15:30:00,2024,134,2950,VfB Stuttgart,Mainz,3.0,1.0,post
+677764,2024-02-11 17:30:00,2024,7911,122,TSG Hoffenheim,FC Cologne,1.0,1.0,post
+677774,2024-02-16 20:30:00,2024,122,137,FC Cologne,Werder Bremen,0.0,1.0,post
+677781,2024-02-17 15:30:00,2024,138,124,VfL Wolfsburg,Borussia Dortmund,1.0,1.0,post
+677779,2024-02-17 15:30:00,2024,7911,598,TSG Hoffenheim,1. FC Union Berlin,0.0,1.0,post
+677775,2024-02-17 15:30:00,2024,2950,3841,Mainz,FC Augsburg,1.0,0.0,post
+677773,2024-02-17 15:30:00,2024,6418,131,1. FC Heidenheim 1846,Bayer Leverkusen,1.0,2.0,post
+677778,2024-02-17 15:30:00,2024,3812,134,SV Darmstadt 98,VfB Stuttgart,1.0,2.0,post
+677776,2024-02-17 18:30:00,2024,11420,268,RB Leipzig,Borussia Mönchengladbach,2.0,0.0,post
+677777,2024-02-18 15:30:00,2024,126,125,SC Freiburg,Eintracht Frankfurt,3.0,3.0,post
+677780,2024-02-18 17:30:00,2024,121,132,VfL Bochum,Bayern Munich,3.0,2.0,post
+677783,2024-02-23 20:30:00,2024,131,2950,Bayer Leverkusen,Mainz,2.0,1.0,post
+677782,2024-02-24 15:30:00,2024,598,6418,1. FC Union Berlin,1. FC Heidenheim 1846,2.0,2.0,post
+677785,2024-02-24 15:30:00,2024,268,121,Borussia Mönchengladbach,VfL Bochum,5.0,2.0,post
+677790,2024-02-24 15:30:00,2024,134,122,VfB Stuttgart,FC Cologne,1.0,1.0,post
+677789,2024-02-24 15:30:00,2024,137,3812,Werder Bremen,SV Darmstadt 98,1.0,1.0,post
+677788,2024-02-24 18:30:00,2024,132,11420,Bayern Munich,RB Leipzig,2.0,1.0,post
+677786,2024-02-25 15:30:00,2024,125,138,Eintracht Frankfurt,VfL Wolfsburg,2.0,2.0,post
+677784,2024-02-25 17:30:00,2024,124,7911,Borussia Dortmund,TSG Hoffenheim,2.0,3.0,post
+677787,2024-02-25 19:30:00,2024,3841,126,FC Augsburg,SC Freiburg,2.0,1.0,post
+677792,2024-03-01 20:30:00,2024,126,132,SC Freiburg,Bayern Munich,2.0,2.0,post
+677795,2024-03-02 15:30:00,2024,6418,125,1. FC Heidenheim 1846,Eintracht Frankfurt,1.0,2.0,post
+677798,2024-03-02 15:30:00,2024,598,124,1. FC Union Berlin,Borussia Dortmund,0.0,2.0,post
+677791,2024-03-02 15:30:00,2024,2950,268,Mainz,Borussia Mönchengladbach,1.0,1.0,post
+677793,2024-03-02 15:30:00,2024,3812,3841,SV Darmstadt 98,FC Augsburg,0.0,6.0,post
+677799,2024-03-02 15:30:00,2024,121,11420,VfL Bochum,RB Leipzig,1.0,4.0,post
+677796,2024-03-02 18:30:00,2024,138,134,VfL Wolfsburg,VfB Stuttgart,2.0,3.0,post
+677797,2024-03-03 15:30:00,2024,122,131,FC Cologne,Bayer Leverkusen,0.0,2.0,post
+677794,2024-03-03 17:30:00,2024,7911,137,TSG Hoffenheim,Werder Bremen,2.0,1.0,post
+677800,2024-03-08 20:30:00,2024,134,598,VfB Stuttgart,1. FC Union Berlin,2.0,0.0,post
+677804,2024-03-09 15:30:00,2024,132,2950,Bayern Munich,Mainz,8.0,1.0,post
+677808,2024-03-09 15:30:00,2024,268,122,Borussia Mönchengladbach,FC Cologne,3.0,3.0,post
+677805,2024-03-09 15:30:00,2024,3841,6418,FC Augsburg,1. FC Heidenheim 1846,1.0,0.0,post
+677802,2024-03-09 15:30:00,2024,11420,3812,RB Leipzig,SV Darmstadt 98,2.0,0.0,post
+677803,2024-03-09 18:30:00,2024,137,124,Werder Bremen,Borussia Dortmund,1.0,2.0,post
+677801,2024-03-10 15:30:00,2024,121,126,VfL Bochum,SC Freiburg,1.0,2.0,post
+677806,2024-03-10 17:30:00,2024,125,7911,Eintracht Frankfurt,TSG Hoffenheim,3.0,1.0,post
+677807,2024-03-10 19:30:00,2024,131,138,Bayer Leverkusen,VfL Wolfsburg,2.0,0.0,post
+677811,2024-03-15 20:30:00,2024,122,11420,FC Cologne,RB Leipzig,1.0,5.0,post
+677809,2024-03-16 15:30:00,2024,6418,268,1. FC Heidenheim 1846,Borussia Mönchengladbach,1.0,1.0,post
+677812,2024-03-16 15:30:00,2024,598,137,1. FC Union Berlin,Werder Bremen,2.0,1.0,post
+677813,2024-03-16 15:30:00,2024,2950,121,Mainz,VfL Bochum,2.0,0.0,post
+677816,2024-03-16 15:30:00,2024,3812,132,SV Darmstadt 98,Bayern Munich,2.0,5.0,post
+677810,2024-03-16 15:30:00,2024,138,3841,VfL Wolfsburg,FC Augsburg,1.0,3.0,post
+677817,2024-03-16 18:30:00,2024,7911,134,TSG Hoffenheim,VfB Stuttgart,0.0,3.0,post
+677815,2024-03-17 15:30:00,2024,126,131,SC Freiburg,Bayer Leverkusen,2.0,3.0,post
+677814,2024-03-17 17:30:00,2024,124,125,Borussia Dortmund,Eintracht Frankfurt,3.0,1.0,post
+677823,2024-03-30 15:30:00,2024,137,138,Werder Bremen,VfL Wolfsburg,0.0,2.0,post
+677822,2024-03-30 15:30:00,2024,11420,2950,RB Leipzig,Mainz,0.0,0.0,post
+677820,2024-03-30 15:30:00,2024,131,7911,Bayer Leverkusen,TSG Hoffenheim,2.0,1.0,post
+677819,2024-03-30 15:30:00,2024,268,126,Borussia Mönchengladbach,SC Freiburg,0.0,3.0,post
+677818,2024-03-30 15:30:00,2024,125,598,Eintracht Frankfurt,1. FC Union Berlin,0.0,0.0,post
+677825,2024-03-30 18:30:00,2024,132,124,Bayern Munich,Borussia Dortmund,0.0,2.0,post
+677824,2024-03-31 15:30:00,2024,3841,122,FC Augsburg,FC Cologne,1.0,1.0,post
+677826,2024-03-31 17:30:00,2024,134,6418,VfB Stuttgart,1. FC Heidenheim 1846,3.0,3.0,post
+677821,2024-03-31 19:30:00,2024,121,3812,VfL Bochum,SV Darmstadt 98,2.0,2.0,post
+677832,2024-04-05 20:30:00,2024,125,137,Eintracht Frankfurt,Werder Bremen,1.0,1.0,post
+677827,2024-04-06 15:30:00,2024,6418,132,1. FC Heidenheim 1846,Bayern Munich,3.0,2.0,post
+677829,2024-04-06 15:30:00,2024,598,131,1. FC Union Berlin,Bayer Leverkusen,0.0,1.0,post
+677828,2024-04-06 15:30:00,2024,122,121,FC Cologne,VfL Bochum,2.0,1.0,post
+677831,2024-04-06 15:30:00,2024,2950,3812,Mainz,SV Darmstadt 98,4.0,0.0,post
+677833,2024-04-06 15:30:00,2024,126,11420,SC Freiburg,RB Leipzig,1.0,4.0,post
+677835,2024-04-06 18:30:00,2024,124,134,Borussia Dortmund,VfB Stuttgart,0.0,1.0,post
+677834,2024-04-07 15:30:00,2024,7911,3841,TSG Hoffenheim,FC Augsburg,3.0,1.0,post
+677830,2024-04-07 17:30:00,2024,138,268,VfL Wolfsburg,Borussia Mönchengladbach,1.0,3.0,post
+677839,2024-04-12 20:30:00,2024,3841,598,FC Augsburg,1. FC Union Berlin,2.0,0.0,post
+677840,2024-04-13 15:30:00,2024,132,122,Bayern Munich,FC Cologne,2.0,0.0,post
+677838,2024-04-13 15:30:00,2024,268,124,Borussia Mönchengladbach,Borussia Dortmund,1.0,2.0,post
+677836,2024-04-13 15:30:00,2024,2950,7911,Mainz,TSG Hoffenheim,4.0,1.0,post
+677841,2024-04-13 15:30:00,2024,11420,138,RB Leipzig,VfL Wolfsburg,3.0,0.0,post
+677844,2024-04-13 15:30:00,2024,121,6418,VfL Bochum,1. FC Heidenheim 1846,1.0,1.0,post
+677843,2024-04-13 18:30:00,2024,134,125,VfB Stuttgart,Eintracht Frankfurt,3.0,0.0,post
+677842,2024-04-14 15:30:00,2024,3812,126,SV Darmstadt 98,SC Freiburg,0.0,1.0,post
+677837,2024-04-14 17:30:00,2024,131,137,Bayer Leverkusen,Werder Bremen,5.0,0.0,post
+677849,2024-04-19 20:30:00,2024,125,3841,Eintracht Frankfurt,FC Augsburg,3.0,1.0,post
+677853,2024-04-20 15:30:00,2024,138,121,VfL Wolfsburg,VfL Bochum,1.0,0.0,post
+677852,2024-04-20 15:30:00,2024,7911,268,TSG Hoffenheim,Borussia Mönchengladbach,4.0,3.0,post
+677846,2024-04-20 15:30:00,2024,122,3812,FC Cologne,SV Darmstadt 98,0.0,2.0,post
+677845,2024-04-20 15:30:00,2024,6418,11420,1. FC Heidenheim 1846,RB Leipzig,1.0,2.0,post
+677847,2024-04-20 18:30:00,2024,598,132,1. FC Union Berlin,Bayern Munich,1.0,5.0,post
+677851,2024-04-21 15:30:00,2024,137,134,Werder Bremen,VfB Stuttgart,2.0,1.0,post
+677848,2024-04-21 17:30:00,2024,124,131,Borussia Dortmund,Bayer Leverkusen,1.0,1.0,post
+677850,2024-04-21 19:30:00,2024,126,2950,SC Freiburg,Mainz,1.0,1.0,post
+677862,2024-04-26 20:30:00,2024,121,7911,VfL Bochum,TSG Hoffenheim,3.0,2.0,post
+677858,2024-04-27 15:30:00,2024,132,125,Bayern Munich,Eintracht Frankfurt,2.0,1.0,post
+677857,2024-04-27 15:30:00,2024,3841,137,FC Augsburg,Werder Bremen,0.0,3.0,post
+677859,2024-04-27 15:30:00,2024,11420,124,RB Leipzig,Borussia Dortmund,4.0,1.0,post
+677860,2024-04-27 15:30:00,2024,126,138,SC Freiburg,VfL Wolfsburg,1.0,2.0,post
+677855,2024-04-27 18:30:00,2024,131,134,Bayer Leverkusen,VfB Stuttgart,2.0,2.0,post
+677856,2024-04-28 15:30:00,2024,268,598,Borussia Mönchengladbach,1. FC Union Berlin,0.0,0.0,post
+677854,2024-04-28 17:30:00,2024,2950,122,Mainz,FC Cologne,1.0,1.0,post
+677861,2024-04-28 19:30:00,2024,3812,6418,SV Darmstadt 98,1. FC Heidenheim 1846,0.0,1.0,post
+677869,2024-05-03 20:30:00,2024,7911,11420,TSG Hoffenheim,RB Leipzig,1.0,1.0,post
+677866,2024-05-04 15:30:00,2024,124,3841,Borussia Dortmund,FC Augsburg,5.0,1.0,post
+677870,2024-05-04 15:30:00,2024,134,132,VfB Stuttgart,Bayern Munich,3.0,1.0,post
+677871,2024-05-04 15:30:00,2024,138,3812,VfL Wolfsburg,SV Darmstadt 98,3.0,0.0,post
+677868,2024-05-04 15:30:00,2024,137,268,Werder Bremen,Borussia Mönchengladbach,2.0,2.0,post
+677864,2024-05-04 18:30:00,2024,122,126,FC Cologne,SC Freiburg,0.0,0.0,post
+677865,2024-05-05 15:30:00,2024,598,121,1. FC Union Berlin,VfL Bochum,3.0,4.0,post
+677867,2024-05-05 17:30:00,2024,125,131,Eintracht Frankfurt,Bayer Leverkusen,1.0,5.0,post
+677863,2024-05-05 19:30:00,2024,6418,2950,1. FC Heidenheim 1846,Mainz,1.0,1.0,post
+677875,2024-05-10 20:30:00,2024,3841,134,FC Augsburg,VfB Stuttgart,0.0,1.0,post
+677574,2024-05-11 15:30:00,2024,11420,137,RB Leipzig,Werder Bremen,1.0,1.0,post
+677877,2024-05-11 15:30:00,2024,126,6418,SC Freiburg,1. FC Heidenheim 1846,1.0,1.0,post
+677874,2024-05-11 15:30:00,2024,268,125,Borussia Mönchengladbach,Eintracht Frankfurt,1.0,1.0,post
+677872,2024-05-11 15:30:00,2024,122,598,FC Cologne,1. FC Union Berlin,3.0,2.0,post
+677873,2024-05-11 18:30:00,2024,2950,124,Mainz,Borussia Dortmund,3.0,0.0,post
+677878,2024-05-12 15:30:00,2024,3812,7911,SV Darmstadt 98,TSG Hoffenheim,0.0,6.0,post
+677876,2024-05-12 17:30:00,2024,132,138,Bayern Munich,VfL Wolfsburg,2.0,0.0,post
+677879,2024-05-12 19:30:00,2024,121,131,VfL Bochum,Bayer Leverkusen,0.0,5.0,post
+677581,2024-05-18 15:30:00,2024,137,121,Werder Bremen,VfL Bochum,4.0,1.0,post
+677583,2024-05-18 15:30:00,2024,134,268,VfB Stuttgart,Borussia Mönchengladbach,4.0,0.0,post
+677580,2024-05-18 15:30:00,2024,7911,132,TSG Hoffenheim,Bayern Munich,4.0,2.0,post
+677582,2024-05-18 15:30:00,2024,125,11420,Eintracht Frankfurt,RB Leipzig,2.0,2.0,post
+677579,2024-05-18 15:30:00,2024,138,2950,VfL Wolfsburg,Mainz,1.0,3.0,post
+677577,2024-05-18 15:30:00,2024,131,3841,Bayer Leverkusen,FC Augsburg,2.0,1.0,post
+677576,2024-05-18 15:30:00,2024,598,126,1. FC Union Berlin,SC Freiburg,2.0,1.0,post
+677575,2024-05-18 15:30:00,2024,6418,122,1. FC Heidenheim 1846,FC Cologne,4.0,1.0,post
+677578,2024-05-18 15:30:00,2024,124,3812,Borussia Dortmund,SV Darmstadt 98,4.0,0.0,post
+711729,2024-08-23 20:30:00,2024,268,131,Borussia Mönchengladbach,Bayer Leverkusen,2.0,3.0,post
+711439,2024-08-24 15:30:00,2024,3841,137,FC Augsburg,Werder Bremen,2.0,2.0,post
+711433,2024-08-24 15:30:00,2024,2950,598,Mainz,1. FC Union Berlin,1.0,1.0,post
+711437,2024-08-24 15:30:00,2024,11420,121,RB Leipzig,VfL Bochum,1.0,0.0,post
+711436,2024-08-24 15:30:00,2024,126,134,SC Freiburg,VfB Stuttgart,3.0,1.0,post
+711435,2024-08-24 15:30:00,2024,7911,7884,TSG Hoffenheim,Holstein Kiel,3.0,2.0,post
+711440,2024-08-24 18:30:00,2024,124,125,Borussia Dortmund,Eintracht Frankfurt,2.0,0.0,post
+711434,2024-08-25 15:30:00,2024,138,132,VfL Wolfsburg,Bayern Munich,2.0,3.0,post
+711438,2024-08-25 17:30:00,2024,270,6418,St. Pauli,1. FC Heidenheim 1846,0.0,2.0,post
+711448,2024-08-30 20:30:00,2024,598,270,1. FC Union Berlin,St. Pauli,1.0,0.0,post
+711443,2024-08-31 15:30:00,2024,137,124,Werder Bremen,Borussia Dortmund,0.0,0.0,post
+711442,2024-08-31 15:30:00,2024,134,2950,VfB Stuttgart,Mainz,3.0,3.0,post
+711445,2024-08-31 15:30:00,2024,121,268,VfL Bochum,Borussia Mönchengladbach,0.0,2.0,post
+711446,2024-08-31 15:30:00,2024,125,7911,Eintracht Frankfurt,TSG Hoffenheim,3.0,1.0,post
+711444,2024-08-31 15:30:00,2024,7884,138,Holstein Kiel,VfL Wolfsburg,0.0,2.0,post
+711447,2024-08-31 18:30:00,2024,131,11420,Bayer Leverkusen,RB Leipzig,2.0,3.0,post
+711441,2024-09-01 15:30:00,2024,6418,3841,1. FC Heidenheim 1846,FC Augsburg,4.0,0.0,post
+711449,2024-09-01 17:30:00,2024,132,126,Bayern Munich,SC Freiburg,2.0,0.0,post
+711452,2024-09-13 20:30:00,2024,124,6418,Borussia Dortmund,1. FC Heidenheim 1846,4.0,2.0,post
+711451,2024-09-14 15:30:00,2024,268,134,Borussia Mönchengladbach,VfB Stuttgart,1.0,3.0,post
+711455,2024-09-14 15:30:00,2024,11420,598,RB Leipzig,1. FC Union Berlin,0.0,0.0,post
+711456,2024-09-14 15:30:00,2024,126,121,SC Freiburg,VfL Bochum,2.0,1.0,post
+711457,2024-09-14 15:30:00,2024,7911,131,TSG Hoffenheim,Bayer Leverkusen,1.0,4.0,post
+711454,2024-09-14 15:30:00,2024,138,125,VfL Wolfsburg,Eintracht Frankfurt,1.0,2.0,post
+711458,2024-09-14 18:30:00,2024,7884,132,Holstein Kiel,Bayern Munich,1.0,6.0,post
+711450,2024-09-15 15:30:00,2024,3841,270,FC Augsburg,St. Pauli,3.0,1.0,post
+711453,2024-09-15 17:30:00,2024,2950,137,Mainz,Werder Bremen,1.0,2.0,post
+711463,2024-09-20 20:30:00,2024,3841,2950,FC Augsburg,Mainz,2.0,3.0,post
+711462,2024-09-21 15:30:00,2024,6418,126,1. FC Heidenheim 1846,SC Freiburg,0.0,3.0,post
+711461,2024-09-21 15:30:00,2024,598,7911,1. FC Union Berlin,TSG Hoffenheim,2.0,1.0,post
+711464,2024-09-21 15:30:00,2024,121,7884,VfL Bochum,Holstein Kiel,2.0,2.0,post
+711466,2024-09-21 15:30:00,2024,137,132,Werder Bremen,Bayern Munich,0.0,5.0,post
+711459,2024-09-21 18:30:00,2024,125,268,Eintracht Frankfurt,Borussia Mönchengladbach,2.0,0.0,post
+711460,2024-09-22 15:30:00,2024,131,138,Bayer Leverkusen,VfL Wolfsburg,4.0,3.0,post
+711465,2024-09-22 17:30:00,2024,134,124,VfB Stuttgart,Borussia Dortmund,5.0,1.0,post
+711467,2024-09-22 19:30:00,2024,270,11420,St. Pauli,RB Leipzig,0.0,0.0,post
+711469,2024-09-27 20:30:00,2024,124,121,Borussia Dortmund,VfL Bochum,4.0,2.0,post
+711470,2024-09-28 15:30:00,2024,268,598,Borussia Mönchengladbach,1. FC Union Berlin,1.0,0.0,post
+711468,2024-09-28 15:30:00,2024,2950,6418,Mainz,1. FC Heidenheim 1846,0.0,2.0,post
+711474,2024-09-28 15:30:00,2024,11420,3841,RB Leipzig,FC Augsburg,4.0,0.0,post
+711473,2024-09-28 15:30:00,2024,126,270,SC Freiburg,St. Pauli,0.0,3.0,post
+711472,2024-09-28 15:30:00,2024,138,134,VfL Wolfsburg,VfB Stuttgart,2.0,2.0,post
+711471,2024-09-28 18:30:00,2024,132,131,Bayern Munich,Bayer Leverkusen,1.0,1.0,post
+711475,2024-09-29 15:30:00,2024,7884,125,Holstein Kiel,Eintracht Frankfurt,2.0,4.0,post
+711476,2024-09-29 17:30:00,2024,7911,137,TSG Hoffenheim,Werder Bremen,3.0,4.0,post
+711485,2024-10-04 20:30:00,2024,3841,268,FC Augsburg,Borussia Mönchengladbach,2.0,1.0,post
+711484,2024-10-05 15:30:00,2024,598,124,1. FC Union Berlin,Borussia Dortmund,2.0,1.0,post
+711483,2024-10-05 15:30:00,2024,131,7884,Bayer Leverkusen,Holstein Kiel,2.0,2.0,post
+711477,2024-10-05 15:30:00,2024,121,138,VfL Bochum,VfL Wolfsburg,1.0,3.0,post
+711479,2024-10-05 15:30:00,2024,137,126,Werder Bremen,SC Freiburg,0.0,1.0,post
+711480,2024-10-05 18:30:00,2024,270,2950,St. Pauli,Mainz,0.0,3.0,post
+711481,2024-10-06 15:30:00,2024,6418,11420,1. FC Heidenheim 1846,RB Leipzig,0.0,1.0,post
+711482,2024-10-06 17:30:00,2024,125,132,Eintracht Frankfurt,Bayern Munich,3.0,3.0,post
+711478,2024-10-06 19:30:00,2024,134,7911,VfB Stuttgart,TSG Hoffenheim,1.0,1.0,post
+711492,2024-10-18 20:30:00,2024,124,270,Borussia Dortmund,St. Pauli,2.0,1.0,post
+711487,2024-10-19 15:30:00,2024,7911,121,TSG Hoffenheim,VfL Bochum,3.0,1.0,post
+711488,2024-10-19 15:30:00,2024,126,3841,SC Freiburg,FC Augsburg,3.0,1.0,post
+711494,2024-10-19 15:30:00,2024,2950,11420,Mainz,RB Leipzig,0.0,2.0,post
+711491,2024-10-19 15:30:00,2024,268,6418,Borussia Mönchengladbach,1. FC Heidenheim 1846,3.0,2.0,post
+711493,2024-10-19 15:30:00,2024,131,125,Bayer Leverkusen,Eintracht Frankfurt,2.0,1.0,post
+711490,2024-10-19 18:30:00,2024,132,134,Bayern Munich,VfB Stuttgart,4.0,0.0,post
+711489,2024-10-20 15:30:00,2024,7884,598,Holstein Kiel,1. FC Union Berlin,0.0,2.0,post
+711486,2024-10-20 17:30:00,2024,138,137,VfL Wolfsburg,Werder Bremen,2.0,4.0,post
+711497,2024-10-25 20:30:00,2024,2950,268,Mainz,Borussia Mönchengladbach,1.0,1.0,post
+711498,2024-10-26 15:30:00,2024,3841,124,FC Augsburg,Borussia Dortmund,2.0,1.0,post
+711500,2024-10-26 15:30:00,2024,11420,126,RB Leipzig,SC Freiburg,3.0,1.0,post
+711503,2024-10-26 15:30:00,2024,270,138,St. Pauli,VfL Wolfsburg,0.0,0.0,post
+711502,2024-10-26 15:30:00,2024,134,7884,VfB Stuttgart,Holstein Kiel,2.0,1.0,post
+711501,2024-10-26 18:30:00,2024,137,131,Werder Bremen,Bayer Leverkusen,2.0,2.0,post
+711499,2024-10-27 15:30:00,2024,121,132,VfL Bochum,Bayern Munich,0.0,5.0,post
+711496,2024-10-27 17:30:00,2024,598,125,1. FC Union Berlin,Eintracht Frankfurt,1.0,1.0,post
+711495,2024-10-27 19:30:00,2024,6418,7911,1. FC Heidenheim 1846,TSG Hoffenheim,0.0,0.0,post
+711504,2024-11-01 20:30:00,2024,131,134,Bayer Leverkusen,VfB Stuttgart,0.0,0.0,post
+711510,2024-11-02 15:30:00,2024,132,598,Bayern Munich,1. FC Union Berlin,3.0,0.0,post
+711511,2024-11-02 15:30:00,2024,125,121,Eintracht Frankfurt,VfL Bochum,7.0,2.0,post
+711509,2024-11-02 15:30:00,2024,7884,6418,Holstein Kiel,1. FC Heidenheim 1846,1.0,0.0,post
+711507,2024-11-02 15:30:00,2024,7911,270,TSG Hoffenheim,St. Pauli,0.0,2.0,post
+711506,2024-11-02 15:30:00,2024,138,3841,VfL Wolfsburg,FC Augsburg,1.0,1.0,post
+711505,2024-11-02 18:30:00,2024,124,11420,Borussia Dortmund,RB Leipzig,2.0,1.0,post
+711508,2024-11-03 15:30:00,2024,126,2950,SC Freiburg,Mainz,0.0,0.0,post
+711512,2024-11-03 17:30:00,2024,268,137,Borussia Mönchengladbach,Werder Bremen,4.0,1.0,post
+711520,2024-11-08 20:30:00,2024,598,126,1. FC Union Berlin,SC Freiburg,0.0,0.0,post
+711517,2024-11-09 15:30:00,2024,121,131,VfL Bochum,Bayer Leverkusen,1.0,1.0,post
+711515,2024-11-09 15:30:00,2024,137,7884,Werder Bremen,Holstein Kiel,2.0,1.0,post
+711519,2024-11-09 15:30:00,2024,2950,124,Mainz,Borussia Dortmund,3.0,1.0,post
+711521,2024-11-09 15:30:00,2024,270,132,St. Pauli,Bayern Munich,0.0,1.0,post
+711516,2024-11-09 18:30:00,2024,11420,268,RB Leipzig,Borussia Mönchengladbach,0.0,0.0,post
+711518,2024-11-10 15:30:00,2024,3841,7911,FC Augsburg,TSG Hoffenheim,0.0,0.0,post
+711514,2024-11-10 17:30:00,2024,134,125,VfB Stuttgart,Eintracht Frankfurt,2.0,3.0,post
+711513,2024-11-10 19:30:00,2024,6418,138,1. FC Heidenheim 1846,VfL Wolfsburg,1.0,3.0,post
+711526,2024-11-22 20:30:00,2024,132,3841,Bayern Munich,FC Augsburg,3.0,0.0,post
+711522,2024-11-23 15:30:00,2024,131,6418,Bayer Leverkusen,1. FC Heidenheim 1846,5.0,2.0,post
+711523,2024-11-23 15:30:00,2024,124,126,Borussia Dortmund,SC Freiburg,4.0,0.0,post
+711528,2024-11-23 15:30:00,2024,7911,11420,TSG Hoffenheim,RB Leipzig,4.0,3.0,post
+711529,2024-11-23 15:30:00,2024,134,121,VfB Stuttgart,VfL Bochum,2.0,0.0,post
+711530,2024-11-23 15:30:00,2024,138,598,VfL Wolfsburg,1. FC Union Berlin,1.0,0.0,post
+711525,2024-11-23 18:30:00,2024,125,137,Eintracht Frankfurt,Werder Bremen,1.0,0.0,post
+711527,2024-11-24 15:30:00,2024,7884,2950,Holstein Kiel,Mainz,0.0,3.0,post
+711524,2024-11-24 17:30:00,2024,268,270,Borussia Mönchengladbach,St. Pauli,2.0,0.0,post
+711539,2024-11-29 20:30:00,2024,270,7884,St. Pauli,Holstein Kiel,3.0,1.0,post
+711535,2024-11-30 15:30:00,2024,598,131,1. FC Union Berlin,Bayer Leverkusen,1.0,2.0,post
+711536,2024-11-30 15:30:00,2024,3841,121,FC Augsburg,VfL Bochum,1.0,0.0,post
+711534,2024-11-30 15:30:00,2024,11420,138,RB Leipzig,VfL Wolfsburg,1.0,5.0,post
+711533,2024-11-30 15:30:00,2024,126,268,SC Freiburg,Borussia Mönchengladbach,3.0,1.0,post
+711532,2024-11-30 15:30:00,2024,137,134,Werder Bremen,VfB Stuttgart,2.0,2.0,post
+711537,2024-11-30 18:30:00,2024,124,132,Borussia Dortmund,Bayern Munich,1.0,1.0,post
+711538,2024-12-01 15:30:00,2024,2950,7911,Mainz,TSG Hoffenheim,2.0,0.0,post
+711531,2024-12-01 17:30:00,2024,6418,125,1. FC Heidenheim 1846,Eintracht Frankfurt,0.0,4.0,post
+711545,2024-12-06 20:30:00,2024,134,598,VfB Stuttgart,1. FC Union Berlin,3.0,2.0,post
+711540,2024-12-07 15:30:00,2024,131,270,Bayer Leverkusen,St. Pauli,2.0,1.0,post
+711542,2024-12-07 15:30:00,2024,132,6418,Bayern Munich,1. FC Heidenheim 1846,4.0,2.0,post
+711541,2024-12-07 15:30:00,2024,125,3841,Eintracht Frankfurt,FC Augsburg,2.0,2.0,post
+711543,2024-12-07 15:30:00,2024,7884,11420,Holstein Kiel,RB Leipzig,0.0,2.0,post
+711546,2024-12-07 15:30:00,2024,121,137,VfL Bochum,Werder Bremen,0.0,1.0,post
+711547,2024-12-07 18:30:00,2024,268,124,Borussia Mönchengladbach,Borussia Dortmund,1.0,1.0,post
+711548,2024-12-08 15:30:00,2024,138,2950,VfL Wolfsburg,Mainz,4.0,3.0,post
+711544,2024-12-08 17:30:00,2024,7911,126,TSG Hoffenheim,SC Freiburg,1.0,1.0,post
+711557,2024-12-13 20:30:00,2024,126,138,SC Freiburg,VfL Wolfsburg,3.0,2.0,post
+711556,2024-12-14 15:30:00,2024,598,121,1. FC Union Berlin,VfL Bochum,0.0,2.0,post
+711552,2024-12-14 15:30:00,2024,268,7884,Borussia Mönchengladbach,Holstein Kiel,4.0,1.0,post
+711553,2024-12-14 15:30:00,2024,3841,131,FC Augsburg,Bayer Leverkusen,0.0,2.0,post
+711550,2024-12-14 15:30:00,2024,2950,132,Mainz,Bayern Munich,2.0,1.0,post
+711554,2024-12-14 18:30:00,2024,270,137,St. Pauli,Werder Bremen,0.0,2.0,post
+711549,2024-12-15 15:30:00,2024,6418,134,1. FC Heidenheim 1846,VfB Stuttgart,1.0,3.0,post
+711551,2024-12-15 17:30:00,2024,124,7911,Borussia Dortmund,TSG Hoffenheim,1.0,1.0,post
+711555,2024-12-15 19:30:00,2024,11420,125,RB Leipzig,Eintracht Frankfurt,2.0,1.0,post
+711565,2024-12-20 20:30:00,2024,132,11420,Bayern Munich,RB Leipzig,5.0,1.0,post
+711563,2024-12-21 15:30:00,2024,137,598,Werder Bremen,1. FC Union Berlin,4.0,1.0,post
+711561,2024-12-21 15:30:00,2024,134,270,VfB Stuttgart,St. Pauli,0.0,1.0,post
+711564,2024-12-21 15:30:00,2024,125,2950,Eintracht Frankfurt,Mainz,1.0,3.0,post
+711566,2024-12-21 15:30:00,2024,7884,3841,Holstein Kiel,FC Augsburg,5.0,1.0,post
+711562,2024-12-21 15:30:00,2024,7911,268,TSG Hoffenheim,Borussia Mönchengladbach,1.0,2.0,post
+711558,2024-12-21 18:30:00,2024,131,126,Bayer Leverkusen,SC Freiburg,5.0,1.0,post
+711560,2024-12-22 15:30:00,2024,121,6418,VfL Bochum,1. FC Heidenheim 1846,2.0,0.0,post
+711559,2024-12-22 17:30:00,2024,138,124,VfL Wolfsburg,Borussia Dortmund,1.0,3.0,post
+711572,2025-01-10 20:45:00,2025,124,131,Borussia Dortmund,Bayer Leverkusen,2.0,3.0,post
+711570,2025-01-11 15:30:00,2025,6418,598,1. FC Heidenheim 1846,1. FC Union Berlin,2.0,0.0,post
+711571,2025-01-11 15:30:00,2025,2950,121,Mainz,VfL Bochum,2.0,0.0,post
+711567,2025-01-11 15:30:00,2025,126,7884,SC Freiburg,Holstein Kiel,3.0,2.0,post
+711575,2025-01-11 15:30:00,2025,270,125,St. Pauli,Eintracht Frankfurt,0.0,1.0,post
+711569,2025-01-11 15:30:00,2025,7911,138,TSG Hoffenheim,VfL Wolfsburg,0.0,1.0,post
+711573,2025-01-11 18:30:00,2025,268,132,Borussia Mönchengladbach,Bayern Munich,0.0,1.0,post
+711568,2025-01-12 15:30:00,2025,11420,137,RB Leipzig,Werder Bremen,4.0,2.0,post
+711574,2025-01-12 17:30:00,2025,3841,134,FC Augsburg,VfB Stuttgart,0.0,1.0,post
+711584,2025-01-14 18:30:00,2025,7884,124,Holstein Kiel,Borussia Dortmund,4.0,2.0,post
+711583,2025-01-14 20:30:00,2025,131,2950,Bayer Leverkusen,Mainz,1.0,0.0,post
+711582,2025-01-14 20:30:00,2025,125,126,Eintracht Frankfurt,SC Freiburg,4.0,1.0,post
+711580,2025-01-14 20:30:00,2025,138,268,VfL Wolfsburg,Borussia Mönchengladbach,5.0,1.0,post
+711577,2025-01-15 18:30:00,2025,121,270,VfL Bochum,St. Pauli,1.0,0.0,post
+711576,2025-01-15 20:30:00,2025,598,3841,1. FC Union Berlin,FC Augsburg,0.0,2.0,post
+711581,2025-01-15 20:30:00,2025,132,7911,Bayern Munich,TSG Hoffenheim,5.0,0.0,post
+711578,2025-01-15 20:30:00,2025,134,11420,VfB Stuttgart,RB Leipzig,2.0,1.0,post
+711579,2025-01-15 20:30:00,2025,137,6418,Werder Bremen,1. FC Heidenheim 1846,3.0,3.0,post
+711589,2025-01-17 20:30:00,2025,125,124,Eintracht Frankfurt,Borussia Dortmund,2.0,0.0,post
+711585,2025-01-18 15:30:00,2025,134,126,VfB Stuttgart,SC Freiburg,4.0,0.0,post
+711587,2025-01-18 15:30:00,2025,7884,7911,Holstein Kiel,TSG Hoffenheim,1.0,3.0,post
+711593,2025-01-18 15:30:00,2025,121,11420,VfL Bochum,RB Leipzig,3.0,3.0,post
+711592,2025-01-18 15:30:00,2025,6418,270,1. FC Heidenheim 1846,St. Pauli,0.0,2.0,post
+711588,2025-01-18 15:30:00,2025,132,138,Bayern Munich,VfL Wolfsburg,3.0,2.0,post
+711590,2025-01-18 18:30:00,2025,131,268,Bayer Leverkusen,Borussia Mönchengladbach,3.0,1.0,post
+711591,2025-01-19 15:30:00,2025,598,2950,1. FC Union Berlin,Mainz,2.0,1.0,post
+711586,2025-01-19 17:30:00,2025,137,3841,Werder Bremen,FC Augsburg,0.0,2.0,post
+711598,2025-01-24 20:30:00,2025,138,7884,VfL Wolfsburg,Holstein Kiel,2.0,2.0,post
+711596,2025-01-25 15:30:00,2025,124,137,Borussia Dortmund,Werder Bremen,2.0,2.0,post
+711594,2025-01-25 15:30:00,2025,3841,6418,FC Augsburg,1. FC Heidenheim 1846,2.0,1.0,post
+711597,2025-01-25 15:30:00,2025,2950,134,Mainz,VfB Stuttgart,2.0,0.0,post
+711599,2025-01-25 15:30:00,2025,11420,131,RB Leipzig,Bayer Leverkusen,2.0,2.0,post
+711600,2025-01-25 15:30:00,2025,126,132,SC Freiburg,Bayern Munich,1.0,2.0,post
+711595,2025-01-25 18:30:00,2025,268,121,Borussia Mönchengladbach,VfL Bochum,3.0,0.0,post
+711601,2025-01-26 15:30:00,2025,7911,125,TSG Hoffenheim,Eintracht Frankfurt,2.0,2.0,post
+711602,2025-01-26 17:30:00,2025,270,598,St. Pauli,1. FC Union Berlin,3.0,0.0,post
+711610,2025-01-31 20:30:00,2025,137,2950,Werder Bremen,Mainz,1.0,0.0,post
+711606,2025-02-01 15:30:00,2025,6418,124,1. FC Heidenheim 1846,Borussia Dortmund,1.0,2.0,post
+711607,2025-02-01 15:30:00,2025,132,7884,Bayern Munich,Holstein Kiel,4.0,3.0,post
+711611,2025-02-01 15:30:00,2025,270,3841,St. Pauli,FC Augsburg,1.0,1.0,post
+711609,2025-02-01 15:30:00,2025,134,268,VfB Stuttgart,Borussia Mönchengladbach,1.0,2.0,post
+711608,2025-02-01 15:30:00,2025,121,126,VfL Bochum,SC Freiburg,0.0,1.0,post
+711605,2025-02-01 18:30:00,2025,598,11420,1. FC Union Berlin,RB Leipzig,0.0,0.0,post
+711603,2025-02-02 15:30:00,2025,125,138,Eintracht Frankfurt,VfL Wolfsburg,1.0,1.0,post
+711604,2025-02-02 17:30:00,2025,131,7911,Bayer Leverkusen,TSG Hoffenheim,3.0,1.0,post
+711615,2025-02-07 20:30:00,2025,132,137,Bayern Munich,Werder Bremen,3.0,0.0,post
+711620,2025-02-08 15:30:00,2025,7911,598,TSG Hoffenheim,1. FC Union Berlin,0.0,4.0,post
+711617,2025-02-08 15:30:00,2025,126,6418,SC Freiburg,1. FC Heidenheim 1846,1.0,0.0,post
+711616,2025-02-08 15:30:00,2025,138,131,VfL Wolfsburg,Bayer Leverkusen,0.0,0.0,post
+711613,2025-02-08 15:30:00,2025,124,134,Borussia Dortmund,VfB Stuttgart,1.0,2.0,post
+711612,2025-02-08 15:30:00,2025,2950,3841,Mainz,FC Augsburg,0.0,0.0,post
+711614,2025-02-08 18:30:00,2025,268,125,Borussia Mönchengladbach,Eintracht Frankfurt,1.0,1.0,post
+711619,2025-02-09 15:30:00,2025,7884,121,Holstein Kiel,VfL Bochum,2.0,2.0,post
+711618,2025-02-09 17:30:00,2025,11420,270,RB Leipzig,St. Pauli,2.0,0.0,post
+711626,2025-02-14 20:30:00,2025,3841,11420,FC Augsburg,RB Leipzig,0.0,0.0,post
+711623,2025-02-15 15:30:00,2025,598,268,1. FC Union Berlin,Borussia Mönchengladbach,1.0,2.0,post
+711627,2025-02-15 15:30:00,2025,270,126,St. Pauli,SC Freiburg,0.0,1.0,post
+711629,2025-02-15 15:30:00,2025,134,138,VfB Stuttgart,VfL Wolfsburg,1.0,2.0,post
+711621,2025-02-15 15:30:00,2025,121,124,VfL Bochum,Borussia Dortmund,2.0,0.0,post
+711624,2025-02-15 18:30:00,2025,131,132,Bayer Leverkusen,Bayern Munich,0.0,0.0,post
+711628,2025-02-16 15:30:00,2025,137,7911,Werder Bremen,TSG Hoffenheim,1.0,3.0,post
+711625,2025-02-16 17:30:00,2025,125,7884,Eintracht Frankfurt,Holstein Kiel,3.0,1.0,post
+711622,2025-02-16 19:30:00,2025,6418,2950,1. FC Heidenheim 1846,Mainz,0.0,2.0,post
+711636,2025-02-21 20:30:00,2025,126,137,SC Freiburg,Werder Bremen,5.0,0.0,post
+711632,2025-02-22 15:30:00,2025,268,3841,Borussia Mönchengladbach,FC Augsburg,0.0,3.0,post
+711638,2025-02-22 15:30:00,2025,7884,131,Holstein Kiel,Bayer Leverkusen,0.0,2.0,post
+711630,2025-02-22 15:30:00,2025,2950,270,Mainz,St. Pauli,2.0,0.0,post
+711634,2025-02-22 15:30:00,2025,138,121,VfL Wolfsburg,VfL Bochum,1.0,1.0,post
+711631,2025-02-22 18:30:00,2025,124,598,Borussia Dortmund,1. FC Union Berlin,6.0,0.0,post
+711635,2025-02-23 15:30:00,2025,11420,6418,RB Leipzig,1. FC Heidenheim 1846,2.0,2.0,post
+711633,2025-02-23 17:30:00,2025,132,125,Bayern Munich,Eintracht Frankfurt,4.0,0.0,post
+711637,2025-02-23 19:30:00,2025,7911,134,TSG Hoffenheim,VfB Stuttgart,1.0,1.0,post
+711639,2025-02-28 20:30:00,2025,134,132,VfB Stuttgart,Bayern Munich,1.0,3.0,post
+711646,2025-03-01 15:30:00,2025,6418,268,1. FC Heidenheim 1846,Borussia Mönchengladbach,0.0,3.0,post
+711641,2025-03-01 15:30:00,2025,11420,2950,RB Leipzig,Mainz,1.0,2.0,post
+711642,2025-03-01 15:30:00,2025,270,124,St. Pauli,Borussia Dortmund,0.0,2.0,post
+711643,2025-03-01 15:30:00,2025,121,7911,VfL Bochum,TSG Hoffenheim,0.0,1.0,post
+711640,2025-03-01 15:30:00,2025,137,138,Werder Bremen,VfL Wolfsburg,1.0,2.0,post
+711644,2025-03-01 18:30:00,2025,125,131,Eintracht Frankfurt,Bayer Leverkusen,1.0,4.0,post
+711645,2025-03-02 15:30:00,2025,598,7884,1. FC Union Berlin,Holstein Kiel,0.0,1.0,post
+711647,2025-03-02 17:30:00,2025,3841,126,FC Augsburg,SC Freiburg,0.0,0.0,post
+711653,2025-03-07 20:30:00,2025,268,2950,Borussia Mönchengladbach,Mainz,1.0,3.0,post
+711655,2025-03-08 15:30:00,2025,131,137,Bayer Leverkusen,Werder Bremen,0.0,2.0,post
+711651,2025-03-08 15:30:00,2025,132,121,Bayern Munich,VfL Bochum,2.0,3.0,post
+711654,2025-03-08 15:30:00,2025,124,3841,Borussia Dortmund,FC Augsburg,0.0,1.0,post
+711650,2025-03-08 15:30:00,2025,7884,134,Holstein Kiel,VfB Stuttgart,2.0,2.0,post
+711656,2025-03-08 15:30:00,2025,138,270,VfL Wolfsburg,St. Pauli,1.0,1.0,post
+711649,2025-03-08 18:30:00,2025,126,11420,SC Freiburg,RB Leipzig,0.0,0.0,post
+711652,2025-03-09 15:30:00,2025,125,598,Eintracht Frankfurt,1. FC Union Berlin,1.0,2.0,post
+711648,2025-03-09 17:30:00,2025,7911,6418,TSG Hoffenheim,1. FC Heidenheim 1846,1.0,1.0,post
+711663,2025-03-14 20:30:00,2025,270,7911,St. Pauli,TSG Hoffenheim,1.0,0.0,post
+711661,2025-03-15 15:30:00,2025,137,268,Werder Bremen,Borussia Mönchengladbach,2.0,4.0,post
+711665,2025-03-15 15:30:00,2025,2950,126,Mainz,SC Freiburg,2.0,2.0,post
+711658,2025-03-15 15:30:00,2025,598,132,1. FC Union Berlin,Bayern Munich,1.0,1.0,post
+711664,2025-03-15 15:30:00,2025,3841,138,FC Augsburg,VfL Wolfsburg,1.0,0.0,post
+711662,2025-03-15 18:30:00,2025,11420,124,RB Leipzig,Borussia Dortmund,2.0,0.0,post
+711659,2025-03-16 15:30:00,2025,121,125,VfL Bochum,Eintracht Frankfurt,1.0,3.0,post
+711657,2025-03-16 17:30:00,2025,6418,7884,1. FC Heidenheim 1846,Holstein Kiel,3.0,1.0,post
+711660,2025-03-16 19:30:00,2025,134,131,VfB Stuttgart,Bayer Leverkusen,3.0,4.0,post
+711666,2025-03-28 20:30:00,2025,131,121,Bayer Leverkusen,VfL Bochum,3.0,1.0,post
+711674,2025-03-29 15:30:00,2025,132,270,Bayern Munich,St. Pauli,3.0,2.0,post
+711672,2025-03-29 15:30:00,2025,268,11420,Borussia Mönchengladbach,RB Leipzig,1.0,0.0,post
+711669,2025-03-29 15:30:00,2025,7884,137,Holstein Kiel,Werder Bremen,0.0,3.0,post
+711667,2025-03-29 15:30:00,2025,7911,3841,TSG Hoffenheim,FC Augsburg,1.0,1.0,post
+711670,2025-03-29 15:30:00,2025,138,6418,VfL Wolfsburg,1. FC Heidenheim 1846,0.0,1.0,post
+711671,2025-03-29 18:30:00,2025,125,134,Eintracht Frankfurt,VfB Stuttgart,1.0,0.0,post
+711668,2025-03-30 15:30:00,2025,126,598,SC Freiburg,1. FC Union Berlin,1.0,2.0,post
+711673,2025-03-30 17:30:00,2025,124,2950,Borussia Dortmund,Mainz,3.0,1.0,post
+711683,2025-04-04 20:30:00,2025,3841,132,FC Augsburg,Bayern Munich,1.0,3.0,post
+711682,2025-04-05 15:30:00,2025,6418,131,1. FC Heidenheim 1846,Bayer Leverkusen,0.0,1.0,post
+711680,2025-04-05 15:30:00,2025,2950,7884,Mainz,Holstein Kiel,1.0,1.0,post
+711677,2025-04-05 15:30:00,2025,11420,7911,RB Leipzig,TSG Hoffenheim,3.0,1.0,post
+711676,2025-04-05 15:30:00,2025,126,124,SC Freiburg,Borussia Dortmund,1.0,4.0,post
+711679,2025-04-05 15:30:00,2025,121,134,VfL Bochum,VfB Stuttgart,0.0,4.0,post
+711675,2025-04-05 18:30:00,2025,137,125,Werder Bremen,Eintracht Frankfurt,2.0,0.0,post
+711678,2025-04-06 15:30:00,2025,270,268,St. Pauli,Borussia Mönchengladbach,1.0,1.0,post
+711681,2025-04-06 17:30:00,2025,598,138,1. FC Union Berlin,VfL Wolfsburg,1.0,0.0,post
+711692,2025-04-11 20:30:00,2025,138,11420,VfL Wolfsburg,RB Leipzig,2.0,3.0,post
+711691,2025-04-12 15:30:00,2025,131,598,Bayer Leverkusen,1. FC Union Berlin,0.0,0.0,post
+711690,2025-04-12 15:30:00,2025,268,126,Borussia Mönchengladbach,SC Freiburg,1.0,2.0,post
+711687,2025-04-12 15:30:00,2025,7884,270,Holstein Kiel,St. Pauli,1.0,2.0,post
+711686,2025-04-12 15:30:00,2025,7911,2950,TSG Hoffenheim,Mainz,2.0,0.0,post
+711684,2025-04-12 15:30:00,2025,121,3841,VfL Bochum,FC Augsburg,1.0,2.0,post
+711688,2025-04-12 18:30:00,2025,132,124,Bayern Munich,Borussia Dortmund,2.0,2.0,post
+711685,2025-04-13 15:30:00,2025,134,137,VfB Stuttgart,Werder Bremen,1.0,2.0,post
+711689,2025-04-13 17:30:00,2025,125,6418,Eintracht Frankfurt,1. FC Heidenheim 1846,3.0,0.0,post
+711693,2025-04-19 15:30:00,2025,6418,132,1. FC Heidenheim 1846,Bayern Munich,0.0,4.0,post
+711701,2025-04-19 15:30:00,2025,2950,138,Mainz,VfL Wolfsburg,2.0,2.0,post
+711697,2025-04-19 15:30:00,2025,11420,7884,RB Leipzig,Holstein Kiel,1.0,1.0,post
+711696,2025-04-19 15:30:00,2025,126,7911,SC Freiburg,TSG Hoffenheim,3.0,2.0,post
+711695,2025-04-19 15:30:00,2025,137,121,Werder Bremen,VfL Bochum,1.0,0.0,post
+711694,2025-04-19 18:30:00,2025,598,134,1. FC Union Berlin,VfB Stuttgart,4.0,4.0,post
+711699,2025-04-20 15:30:00,2025,3841,125,FC Augsburg,Eintracht Frankfurt,0.0,0.0,post
+711700,2025-04-20 17:30:00,2025,124,268,Borussia Dortmund,Borussia Mönchengladbach,3.0,2.0,post
+711698,2025-04-20 19:30:00,2025,270,131,St. Pauli,Bayer Leverkusen,1.0,1.0,post
+711704,2025-04-25 20:30:00,2025,134,6418,VfB Stuttgart,1. FC Heidenheim 1846,0.0,1.0,post
+711705,2025-04-26 15:30:00,2025,7911,124,TSG Hoffenheim,Borussia Dortmund,2.0,3.0,post
+711707,2025-04-26 15:30:00,2025,7884,268,Holstein Kiel,Borussia Mönchengladbach,4.0,3.0,post
+711706,2025-04-26 15:30:00,2025,138,126,VfL Wolfsburg,SC Freiburg,0.0,1.0,post
+711702,2025-04-26 15:30:00,2025,131,3841,Bayer Leverkusen,FC Augsburg,2.0,0.0,post
+711708,2025-04-26 15:30:00,2025,132,2950,Bayern Munich,Mainz,3.0,0.0,post
+711709,2025-04-26 18:30:00,2025,125,11420,Eintracht Frankfurt,RB Leipzig,4.0,0.0,post
+711703,2025-04-27 15:30:00,2025,121,598,VfL Bochum,1. FC Union Berlin,1.0,1.0,post
+711710,2025-04-27 17:30:00,2025,137,270,Werder Bremen,St. Pauli,0.0,0.0,post
+711714,2025-05-02 20:30:00,2025,6418,121,1. FC Heidenheim 1846,VfL Bochum,0.0,0.0,post
+711713,2025-05-03 15:30:00,2025,598,137,1. FC Union Berlin,Werder Bremen,2.0,2.0,post
+711719,2025-05-03 15:30:00,2025,268,7911,Borussia Mönchengladbach,TSG Hoffenheim,4.0,4.0,post
+711718,2025-05-03 15:30:00,2025,11420,132,RB Leipzig,Bayern Munich,3.0,3.0,post
+711717,2025-05-03 15:30:00,2025,270,134,St. Pauli,VfB Stuttgart,0.0,1.0,post
+711711,2025-05-03 18:30:00,2025,124,138,Borussia Dortmund,VfL Wolfsburg,4.0,0.0,post
+711716,2025-05-04 15:30:00,2025,3841,7884,FC Augsburg,Holstein Kiel,1.0,3.0,post
+711715,2025-05-04 17:30:00,2025,126,131,SC Freiburg,Bayer Leverkusen,2.0,2.0,post
+711712,2025-05-04 19:30:00,2025,2950,125,Mainz,Eintracht Frankfurt,1.0,1.0,post
+711725,2025-05-09 20:30:00,2025,138,7911,VfL Wolfsburg,TSG Hoffenheim,2.0,2.0,post
+711723,2025-05-10 15:30:00,2025,598,6418,1. FC Union Berlin,1. FC Heidenheim 1846,0.0,3.0,post
+711724,2025-05-10 15:30:00,2025,7884,126,Holstein Kiel,SC Freiburg,1.0,2.0,post
+711726,2025-05-10 15:30:00,2025,121,2950,VfL Bochum,Mainz,1.0,4.0,post
+711728,2025-05-10 15:30:00,2025,137,11420,Werder Bremen,RB Leipzig,0.0,0.0,post
+711720,2025-05-10 18:30:00,2025,132,268,Bayern Munich,Borussia Mönchengladbach,2.0,0.0,post
+711722,2025-05-11 15:30:00,2025,131,124,Bayer Leverkusen,Borussia Dortmund,2.0,4.0,post
+711721,2025-05-11 17:30:00,2025,125,270,Eintracht Frankfurt,St. Pauli,2.0,2.0,post
+711727,2025-05-11 19:30:00,2025,134,3841,VfB Stuttgart,FC Augsburg,4.0,0.0,post
+711737,2025-05-17 15:30:00,2025,7911,132,TSG Hoffenheim,Bayern Munich,0.0,4.0,post
+711735,2025-05-17 15:30:00,2025,270,121,St. Pauli,VfL Bochum,0.0,2.0,post
+711736,2025-05-17 15:30:00,2025,11420,134,RB Leipzig,VfB Stuttgart,2.0,3.0,post
+711731,2025-05-17 15:30:00,2025,2950,131,Mainz,Bayer Leverkusen,2.0,2.0,post
+711734,2025-05-17 15:30:00,2025,126,125,SC Freiburg,Eintracht Frankfurt,1.0,3.0,post
+711733,2025-05-17 15:30:00,2025,268,138,Borussia Mönchengladbach,VfL Wolfsburg,0.0,1.0,post
+711732,2025-05-17 15:30:00,2025,124,7884,Borussia Dortmund,Holstein Kiel,3.0,0.0,post
+711730,2025-05-17 15:30:00,2025,6418,137,1. FC Heidenheim 1846,Werder Bremen,1.0,4.0,post
+711738,2025-05-17 15:30:00,2025,3841,598,FC Augsburg,1. FC Union Berlin,1.0,2.0,post
+746718,2025-08-22 20:30:00,2025,132,11420,Bayern Munich,RB Leipzig,6.0,0.0,post
+746719,2025-08-23 15:30:00,2025,6418,138,1. FC Heidenheim 1846,VfL Wolfsburg,1.0,3.0,post
+746720,2025-08-23 15:30:00,2025,598,134,1. FC Union Berlin,VfB Stuttgart,2.0,1.0,post
+746722,2025-08-23 15:30:00,2025,131,7911,Bayer Leverkusen,TSG Hoffenheim,1.0,2.0,post
+746724,2025-08-23 15:30:00,2025,125,137,Eintracht Frankfurt,Werder Bremen,4.0,1.0,post
+746726,2025-08-23 15:30:00,2025,126,3841,SC Freiburg,FC Augsburg,1.0,3.0,post
+746725,2025-08-23 18:30:00,2025,270,124,St. Pauli,Borussia Dortmund,3.0,3.0,post
+746721,2025-08-24 15:30:00,2025,2950,122,Mainz,FC Cologne,0.0,1.0,post
+746723,2025-08-24 17:30:00,2025,268,127,Borussia Mönchengladbach,Hamburg SV,0.0,0.0,post
+746730,2025-08-29 20:30:00,2025,127,270,Hamburg SV,St. Pauli,0.0,2.0,post
+746732,2025-08-30 15:30:00,2025,137,131,Werder Bremen,Bayer Leverkusen,3.0,3.0,post
+746734,2025-08-30 15:30:00,2025,134,268,VfB Stuttgart,Borussia Mönchengladbach,1.0,0.0,post
+746731,2025-08-30 15:30:00,2025,11420,6418,RB Leipzig,1. FC Heidenheim 1846,2.0,0.0,post
+746733,2025-08-30 15:30:00,2025,7911,125,TSG Hoffenheim,Eintracht Frankfurt,1.0,3.0,post
+746729,2025-08-30 18:30:00,2025,3841,132,FC Augsburg,Bayern Munich,2.0,3.0,post
+746735,2025-08-31 15:30:00,2025,138,2950,VfL Wolfsburg,Mainz,1.0,1.0,post
+746728,2025-08-31 17:30:00,2025,124,598,Borussia Dortmund,1. FC Union Berlin,3.0,0.0,post
+746727,2025-08-31 19:30:00,2025,122,126,FC Cologne,SC Freiburg,4.0,1.0,post
+746739,2025-09-12 20:30:00,2025,131,125,Bayer Leverkusen,Eintracht Frankfurt,3.0,1.0,post
+746736,2025-09-13 15:30:00,2025,6418,124,1. FC Heidenheim 1846,Borussia Dortmund,0.0,2.0,post
+746737,2025-09-13 15:30:00,2025,598,7911,1. FC Union Berlin,TSG Hoffenheim,2.0,4.0,post
+746738,2025-09-13 15:30:00,2025,2950,11420,Mainz,RB Leipzig,0.0,1.0,post
+746743,2025-09-13 15:30:00,2025,126,134,SC Freiburg,VfB Stuttgart,3.0,1.0,post
+746744,2025-09-13 15:30:00,2025,138,122,VfL Wolfsburg,FC Cologne,3.0,3.0,post
+746741,2025-09-13 18:30:00,2025,132,127,Bayern Munich,Hamburg SV,5.0,0.0,post
+746742,2025-09-14 15:30:00,2025,270,3841,St. Pauli,FC Augsburg,2.0,1.0,post
+746740,2025-09-14 17:30:00,2025,268,137,Borussia Mönchengladbach,Werder Bremen,0.0,4.0,post
+746753,2025-09-19 20:30:00,2025,134,270,VfB Stuttgart,St. Pauli,2.0,0.0,post
+746748,2025-09-20 15:30:00,2025,3841,2950,FC Augsburg,Mainz,1.0,4.0,post
+746749,2025-09-20 15:30:00,2025,127,6418,Hamburg SV,1. FC Heidenheim 1846,2.0,1.0,post
+746752,2025-09-20 15:30:00,2025,7911,132,TSG Hoffenheim,Bayern Munich,1.0,4.0,post
+746751,2025-09-20 15:30:00,2025,137,126,Werder Bremen,SC Freiburg,0.0,3.0,post
+746750,2025-09-20 18:30:00,2025,11420,122,RB Leipzig,FC Cologne,3.0,1.0,post
+746747,2025-09-21 15:30:00,2025,125,598,Eintracht Frankfurt,1. FC Union Berlin,3.0,4.0,post
+746745,2025-09-21 17:30:00,2025,131,268,Bayer Leverkusen,Borussia Mönchengladbach,1.0,1.0,post
+746746,2025-09-21 19:30:00,2025,124,138,Borussia Dortmund,VfL Wolfsburg,1.0,0.0,post
+746759,2025-09-26 20:30:00,2025,132,137,Bayern Munich,Werder Bremen,4.0,0.0,post
+746760,2025-09-27 15:30:00,2025,270,131,St. Pauli,Bayer Leverkusen,1.0,2.0,post
+746761,2025-09-27 15:30:00,2025,138,11420,VfL Wolfsburg,RB Leipzig,0.0,1.0,post
+746754,2025-09-27 15:30:00,2025,6418,3841,1. FC Heidenheim 1846,FC Augsburg,2.0,1.0,post
+746757,2025-09-27 15:30:00,2025,2950,124,Mainz,Borussia Dortmund,0.0,2.0,post
+746762,2025-09-27 18:30:00,2025,268,125,Borussia Mönchengladbach,Eintracht Frankfurt,4.0,6.0,post
+746758,2025-09-28 15:30:00,2025,126,7911,SC Freiburg,TSG Hoffenheim,1.0,1.0,post
+746755,2025-09-28 17:30:00,2025,122,134,FC Cologne,VfB Stuttgart,1.0,2.0,post
+746756,2025-09-28 19:30:00,2025,598,127,1. FC Union Berlin,Hamburg SV,0.0,0.0,post
+746771,2025-10-03 20:30:00,2025,7911,122,TSG Hoffenheim,FC Cologne,0.0,1.0,post
+746766,2025-10-04 15:30:00,2025,131,598,Bayer Leverkusen,1. FC Union Berlin,2.0,0.0,post
+746765,2025-10-04 15:30:00,2025,124,11420,Borussia Dortmund,RB Leipzig,1.0,1.0,post
+746767,2025-10-04 15:30:00,2025,3841,138,FC Augsburg,VfL Wolfsburg,3.0,1.0,post
+746769,2025-10-04 15:30:00,2025,137,270,Werder Bremen,St. Pauli,1.0,0.0,post
+746763,2025-10-04 18:30:00,2025,125,132,Eintracht Frankfurt,Bayern Munich,0.0,3.0,post
+746770,2025-10-05 15:30:00,2025,134,6418,VfB Stuttgart,1. FC Heidenheim 1846,1.0,0.0,post
+746768,2025-10-05 17:30:00,2025,127,2950,Hamburg SV,Mainz,4.0,0.0,post
+746764,2025-10-05 19:30:00,2025,268,126,Borussia Mönchengladbach,SC Freiburg,0.0,0.0,post
+746779,2025-10-17 20:30:00,2025,598,268,1. FC Union Berlin,Borussia Mönchengladbach,3.0,1.0,post
+746777,2025-10-18 15:30:00,2025,6418,137,1. FC Heidenheim 1846,Werder Bremen,2.0,2.0,post
+746780,2025-10-18 15:30:00,2025,122,3841,FC Cologne,FC Augsburg,1.0,1.0,post
+746778,2025-10-18 15:30:00,2025,2950,131,Mainz,Bayer Leverkusen,3.0,4.0,post
+746773,2025-10-18 15:30:00,2025,11420,127,RB Leipzig,Hamburg SV,2.0,1.0,post
+746775,2025-10-18 15:30:00,2025,138,134,VfL Wolfsburg,VfB Stuttgart,0.0,3.0,post
+746776,2025-10-18 18:30:00,2025,132,124,Bayern Munich,Borussia Dortmund,2.0,1.0,post
+746774,2025-10-19 15:30:00,2025,126,125,SC Freiburg,Eintracht Frankfurt,2.0,2.0,post
+746772,2025-10-19 17:30:00,2025,270,7911,St. Pauli,TSG Hoffenheim,0.0,3.0,post
+746781,2025-10-24 20:30:00,2025,137,598,Werder Bremen,1. FC Union Berlin,1.0,0.0,post
+746784,2025-10-25 15:30:00,2025,125,270,Eintracht Frankfurt,St. Pauli,2.0,0.0,post
+746783,2025-10-25 15:30:00,2025,3841,11420,FC Augsburg,RB Leipzig,0.0,6.0,post
+746782,2025-10-25 15:30:00,2025,127,138,Hamburg SV,VfL Wolfsburg,0.0,1.0,post
+746789,2025-10-25 15:30:00,2025,7911,6418,TSG Hoffenheim,1. FC Heidenheim 1846,3.0,1.0,post
+746785,2025-10-25 15:45:00,2025,268,132,Borussia Mönchengladbach,Bayern Munich,0.0,3.0,post
+746787,2025-10-25 18:30:00,2025,124,122,Borussia Dortmund,FC Cologne,1.0,0.0,post
+746786,2025-10-26 15:30:00,2025,131,126,Bayer Leverkusen,SC Freiburg,2.0,0.0,post
+746788,2025-10-26 17:30:00,2025,134,2950,VfB Stuttgart,Mainz,2.0,1.0,post
+746791,2025-10-31 20:30:00,2025,3841,124,FC Augsburg,Borussia Dortmund,0.0,1.0,post
+746797,2025-11-01 15:30:00,2025,6418,125,1. FC Heidenheim 1846,Eintracht Frankfurt,1.0,1.0,post
+746794,2025-11-01 15:30:00,2025,598,126,1. FC Union Berlin,SC Freiburg,0.0,0.0,post
+746790,2025-11-01 15:30:00,2025,2950,137,Mainz,Werder Bremen,1.0,1.0,post
+746798,2025-11-01 15:30:00,2025,11420,134,RB Leipzig,VfB Stuttgart,3.0,1.0,post
+746793,2025-11-01 15:30:00,2025,270,268,St. Pauli,Borussia Mönchengladbach,0.0,4.0,post
+746792,2025-11-01 18:30:00,2025,132,131,Bayern Munich,Bayer Leverkusen,3.0,0.0,post
+746796,2025-11-02 15:30:00,2025,122,127,FC Cologne,Hamburg SV,4.0,1.0,post
+746795,2025-11-02 17:30:00,2025,138,7911,VfL Wolfsburg,TSG Hoffenheim,2.0,3.0,post
+746804,2025-11-07 20:30:00,2025,137,138,Werder Bremen,VfL Wolfsburg,2.0,1.0,post
+746805,2025-11-08 15:30:00,2025,7911,11420,TSG Hoffenheim,RB Leipzig,3.0,1.0,post
+746807,2025-11-08 15:30:00,2025,127,124,Hamburg SV,Borussia Dortmund,1.0,1.0,post
+746799,2025-11-08 15:30:00,2025,131,6418,Bayer Leverkusen,1. FC Heidenheim 1846,6.0,0.0,post
+746806,2025-11-08 15:30:00,2025,598,132,1. FC Union Berlin,Bayern Munich,2.0,2.0,post
+746800,2025-11-08 18:30:00,2025,268,122,Borussia Mönchengladbach,FC Cologne,3.0,1.0,post
+746803,2025-11-09 15:30:00,2025,126,270,SC Freiburg,St. Pauli,2.0,1.0,post
+746802,2025-11-09 17:30:00,2025,134,3841,VfB Stuttgart,FC Augsburg,3.0,2.0,post
+746801,2025-11-09 19:30:00,2025,125,2950,Eintracht Frankfurt,Mainz,1.0,0.0,post
+746816,2025-11-21 20:30:00,2025,2950,7911,Mainz,TSG Hoffenheim,1.0,1.0,post
+746808,2025-11-22 15:30:00,2025,6418,268,1. FC Heidenheim 1846,Borussia Mönchengladbach,0.0,3.0,post
+746813,2025-11-22 15:30:00,2025,132,126,Bayern Munich,SC Freiburg,6.0,2.0,post
+746815,2025-11-22 15:30:00,2025,124,134,Borussia Dortmund,VfB Stuttgart,3.0,3.0,post
+746814,2025-11-22 15:30:00,2025,3841,127,FC Augsburg,Hamburg SV,1.0,0.0,post
+746810,2025-11-22 15:30:00,2025,138,131,VfL Wolfsburg,Bayer Leverkusen,1.0,3.0,post
+746809,2025-11-22 18:30:00,2025,122,125,FC Cologne,Eintracht Frankfurt,3.0,4.0,post
+746811,2025-11-23 15:30:00,2025,11420,137,RB Leipzig,Werder Bremen,2.0,0.0,post
+746812,2025-11-23 17:30:00,2025,270,598,St. Pauli,1. FC Union Berlin,0.0,1.0,post
+746817,2025-11-28 20:30:00,2025,268,11420,Borussia Mönchengladbach,RB Leipzig,0.0,0.0,post
+746823,2025-11-29 15:30:00,2025,598,6418,1. FC Union Berlin,1. FC Heidenheim 1846,1.0,2.0,post
+746818,2025-11-29 15:30:00,2025,132,270,Bayern Munich,St. Pauli,3.0,1.0,post
+746821,2025-11-29 15:30:00,2025,7911,3841,TSG Hoffenheim,FC Augsburg,3.0,0.0,post
+746820,2025-11-29 15:30:00,2025,137,122,Werder Bremen,FC Cologne,1.0,1.0,post
+746824,2025-11-29 18:30:00,2025,131,124,Bayer Leverkusen,Borussia Dortmund,1.0,2.0,post
+746825,2025-11-30 15:30:00,2025,127,134,Hamburg SV,VfB Stuttgart,2.0,1.0,post
+746822,2025-11-30 17:30:00,2025,125,138,Eintracht Frankfurt,VfL Wolfsburg,1.0,1.0,post
+746819,2025-11-30 19:30:00,2025,126,2950,SC Freiburg,Mainz,4.0,0.0,post
+746832,2025-12-05 20:30:00,2025,2950,268,Mainz,Borussia Mönchengladbach,0.0,1.0,post
+746827,2025-12-06 15:30:00,2025,138,598,VfL Wolfsburg,1. FC Union Berlin,3.0,1.0,post
+746833,2025-12-06 15:30:00,2025,122,270,FC Cologne,St. Pauli,1.0,1.0,post
+746828,2025-12-06 15:30:00,2025,134,132,VfB Stuttgart,Bayern Munich,0.0,5.0,post
+746830,2025-12-06 15:30:00,2025,6418,126,1. FC Heidenheim 1846,SC Freiburg,2.0,1.0,post
+746834,2025-12-06 15:30:00,2025,3841,131,FC Augsburg,Bayer Leverkusen,2.0,0.0,post
+746829,2025-12-06 18:30:00,2025,11420,125,RB Leipzig,Eintracht Frankfurt,6.0,0.0,post
+746826,2025-12-07 15:30:00,2025,127,137,Hamburg SV,Werder Bremen,3.0,2.0,post
+746831,2025-12-07 17:30:00,2025,124,7911,Borussia Dortmund,TSG Hoffenheim,2.0,0.0,post
+746838,2025-12-12 20:30:00,2025,598,11420,1. FC Union Berlin,RB Leipzig,3.0,1.0,post
+746836,2025-12-13 15:30:00,2025,268,138,Borussia Mönchengladbach,VfL Wolfsburg,1.0,3.0,post
+746841,2025-12-13 15:30:00,2025,125,3841,Eintracht Frankfurt,FC Augsburg,1.0,0.0,post
+746835,2025-12-13 15:30:00,2025,270,6418,St. Pauli,1. FC Heidenheim 1846,2.0,1.0,post
+746839,2025-12-13 15:30:00,2025,7911,127,TSG Hoffenheim,Hamburg SV,4.0,1.0,post
+746837,2025-12-13 18:30:00,2025,131,122,Bayer Leverkusen,FC Cologne,2.0,0.0,post
+746842,2025-12-14 15:30:00,2025,126,124,SC Freiburg,Borussia Dortmund,1.0,1.0,post
+746840,2025-12-14 17:30:00,2025,132,2950,Bayern Munich,Mainz,2.0,2.0,post
+746843,2025-12-14 19:30:00,2025,137,134,Werder Bremen,VfB Stuttgart,0.0,4.0,post
+746848,2025-12-19 20:30:00,2025,124,268,Borussia Dortmund,Borussia Mönchengladbach,2.0,0.0,post
+746851,2025-12-20 15:30:00,2025,3841,137,FC Augsburg,Werder Bremen,0.0,0.0,post
+746847,2025-12-20 15:30:00,2025,122,598,FC Cologne,1. FC Union Berlin,0.0,1.0,post
+746852,2025-12-20 15:30:00,2025,127,125,Hamburg SV,Eintracht Frankfurt,1.0,1.0,post
+746844,2025-12-20 15:30:00,2025,134,7911,VfB Stuttgart,TSG Hoffenheim,0.0,0.0,post
+746850,2025-12-20 15:30:00,2025,138,126,VfL Wolfsburg,SC Freiburg,3.0,4.0,post
+746845,2025-12-20 18:30:00,2025,11420,131,RB Leipzig,Bayer Leverkusen,1.0,3.0,post
+746849,2025-12-21 15:30:00,2025,2950,270,Mainz,St. Pauli,0.0,0.0,post
+746846,2025-12-21 17:30:00,2025,6418,132,1. FC Heidenheim 1846,Bayern Munich,0.0,4.0,post
+746859,2026-01-09 20:30:00,2026,125,124,Eintracht Frankfurt,Borussia Dortmund,3.0,3.0,post
+746853,2026-01-10 15:30:00,2026,6418,122,1. FC Heidenheim 1846,FC Cologne,2.0,2.0,post
+746856,2026-01-10 15:30:00,2026,598,2950,1. FC Union Berlin,Mainz,2.0,2.0,post
+746854,2026-01-10 15:30:00,2026,126,127,SC Freiburg,Hamburg SV,2.0,1.0,post
+746861,2026-01-10 18:30:00,2026,131,134,Bayer Leverkusen,VfB Stuttgart,1.0,4.0,post
+746860,2026-01-11 15:30:00,2026,268,3841,Borussia Mönchengladbach,FC Augsburg,4.0,0.0,post
+746858,2026-01-11 17:30:00,2026,132,138,Bayern Munich,VfL Wolfsburg,8.0,1.0,post
+746863,2026-01-13 18:30:00,2026,134,125,VfB Stuttgart,Eintracht Frankfurt,3.0,2.0,post
+746868,2026-01-13 20:30:00,2026,124,137,Borussia Dortmund,Werder Bremen,3.0,0.0,post
+746869,2026-01-13 20:30:00,2026,2950,6418,Mainz,1. FC Heidenheim 1846,2.0,1.0,post
+746870,2026-01-14 18:30:00,2026,138,270,VfL Wolfsburg,St. Pauli,2.0,1.0,post
+746864,2026-01-14 20:30:00,2026,122,132,FC Cologne,Bayern Munich,1.0,3.0,post
+746865,2026-01-14 20:30:00,2026,11420,126,RB Leipzig,SC Freiburg,2.0,0.0,post
+746862,2026-01-14 20:30:00,2026,7911,268,TSG Hoffenheim,Borussia Mönchengladbach,5.0,1.0,post
+746867,2026-01-15 20:30:00,2026,3841,598,FC Augsburg,1. FC Union Berlin,1.0,1.0,post
+746872,2026-01-16 20:30:00,2026,137,125,Werder Bremen,Eintracht Frankfurt,3.0,3.0,post
+746873,2026-01-17 15:30:00,2026,7911,131,TSG Hoffenheim,Bayer Leverkusen,1.0,0.0,post
+746876,2026-01-17 15:30:00,2026,127,268,Hamburg SV,Borussia Mönchengladbach,0.0,0.0,post
+746871,2026-01-17 15:30:00,2026,138,6418,VfL Wolfsburg,1. FC Heidenheim 1846,1.0,1.0,post
+746878,2026-01-17 15:30:00,2026,124,270,Borussia Dortmund,St. Pauli,3.0,2.0,post
+746879,2026-01-17 15:30:00,2026,122,2950,FC Cologne,Mainz,2.0,1.0,post
+746875,2026-01-17 18:30:00,2026,11420,132,RB Leipzig,Bayern Munich,1.0,5.0,post
+746874,2026-01-18 15:30:00,2026,134,598,VfB Stuttgart,1. FC Union Berlin,1.0,1.0,post
+746877,2026-01-18 17:30:00,2026,3841,126,FC Augsburg,SC Freiburg,2.0,2.0,post
+746884,2026-01-23 20:30:00,2026,270,127,St. Pauli,Hamburg SV,0.0,0.0,post
+746885,2026-01-24 15:30:00,2026,6418,11420,1. FC Heidenheim 1846,RB Leipzig,0.0,3.0,post
+746883,2026-01-24 15:30:00,2026,131,137,Bayer Leverkusen,Werder Bremen,1.0,0.0,post
+746880,2026-01-24 15:30:00,2026,132,3841,Bayern Munich,FC Augsburg,1.0,2.0,post
+746881,2026-01-24 15:30:00,2026,125,7911,Eintracht Frankfurt,TSG Hoffenheim,1.0,3.0,post
+746888,2026-01-24 15:30:00,2026,2950,138,Mainz,VfL Wolfsburg,3.0,1.0,post
+746886,2026-01-24 18:30:00,2026,598,124,1. FC Union Berlin,Borussia Dortmund,0.0,3.0,post
+746882,2026-01-25 15:30:00,2026,268,134,Borussia Mönchengladbach,VfB Stuttgart,0.0,3.0,post
+746887,2026-01-25 17:30:00,2026,126,122,SC Freiburg,FC Cologne,2.0,1.0,post
+746857,2026-01-27 20:30:00,2026,270,11420,St. Pauli,RB Leipzig,1.0,1.0,post
+746855,2026-01-27 20:30:00,2026,137,7911,Werder Bremen,TSG Hoffenheim,0.0,2.0,post
+746894,2026-01-30 20:30:00,2026,122,138,FC Cologne,VfL Wolfsburg,1.0,0.0,post
+746890,2026-01-31 15:30:00,2026,125,131,Eintracht Frankfurt,Bayer Leverkusen,1.0,3.0,post
+746891,2026-01-31 15:30:00,2026,3841,270,FC Augsburg,St. Pauli,2.0,1.0,post
+746893,2026-01-31 15:30:00,2026,11420,2950,RB Leipzig,Mainz,1.0,2.0,post
+746897,2026-01-31 15:30:00,2026,7911,598,TSG Hoffenheim,1. FC Union Berlin,3.0,1.0,post
+746896,2026-01-31 15:30:00,2026,137,268,Werder Bremen,Borussia Mönchengladbach,1.0,1.0,post
+746895,2026-01-31 18:30:00,2026,127,132,Hamburg SV,Bayern Munich,2.0,2.0,post
+746892,2026-02-01 15:30:00,2026,134,126,VfB Stuttgart,SC Freiburg,1.0,0.0,post
+746889,2026-02-01 17:30:00,2026,124,6418,Borussia Dortmund,1. FC Heidenheim 1846,3.0,2.0,post
+746900,2026-02-06 20:30:00,2026,598,125,1. FC Union Berlin,Eintracht Frankfurt,1.0,1.0,post
+746898,2026-02-07 15:30:00,2026,6418,127,1. FC Heidenheim 1846,Hamburg SV,0.0,2.0,post
+746902,2026-02-07 15:30:00,2026,2950,3841,Mainz,FC Augsburg,2.0,0.0,post
+746905,2026-02-07 15:30:00,2026,126,137,SC Freiburg,Werder Bremen,1.0,0.0,post
+746904,2026-02-07 15:30:00,2026,270,134,St. Pauli,VfB Stuttgart,2.0,1.0,post
+746901,2026-02-07 15:30:00,2026,138,124,VfL Wolfsburg,Borussia Dortmund,1.0,2.0,post
+746906,2026-02-07 18:30:00,2026,268,131,Borussia Mönchengladbach,Bayer Leverkusen,1.0,1.0,post
+746899,2026-02-08 15:30:00,2026,122,11420,FC Cologne,RB Leipzig,1.0,2.0,post
+746903,2026-02-08 17:30:00,2026,132,7911,Bayern Munich,TSG Hoffenheim,5.0,1.0,post
+746908,2026-02-13 20:30:00,2026,124,2950,Borussia Dortmund,Mainz,4.0,0.0,post
+746907,2026-02-14 15:30:00,2026,131,270,Bayer Leverkusen,St. Pauli,4.0,0.0,post
+746909,2026-02-14 15:30:00,2026,125,268,Eintracht Frankfurt,Borussia Mönchengladbach,3.0,0.0,post
+746911,2026-02-14 15:30:00,2026,127,598,Hamburg SV,1. FC Union Berlin,3.0,2.0,post
+746914,2026-02-14 15:30:00,2026,7911,126,TSG Hoffenheim,SC Freiburg,3.0,0.0,post
+746913,2026-02-14 15:30:00,2026,137,132,Werder Bremen,Bayern Munich,0.0,3.0,post
+746915,2026-02-14 18:30:00,2026,134,122,VfB Stuttgart,FC Cologne,3.0,1.0,post
+746910,2026-02-15 15:30:00,2026,3841,6418,FC Augsburg,1. FC Heidenheim 1846,1.0,0.0,post
+746912,2026-02-15 17:30:00,2026,11420,138,RB Leipzig,VfL Wolfsburg,2.0,2.0,post
+746919,2026-02-20 20:40:00,2026,2950,127,Mainz,Hamburg SV,1.0,1.0,post
+746917,2026-02-21 15:30:00,2026,122,7911,FC Cologne,TSG Hoffenheim,2.0,2.0,post
+746924,2026-02-21 15:30:00,2026,138,3841,VfL Wolfsburg,FC Augsburg,2.0,3.0,post
+746920,2026-02-21 15:30:00,2026,132,125,Bayern Munich,Eintracht Frankfurt,3.0,2.0,post
+746918,2026-02-21 15:30:00,2026,598,131,1. FC Union Berlin,Bayer Leverkusen,1.0,0.0,post
+746922,2026-02-21 18:30:00,2026,11420,124,RB Leipzig,Borussia Dortmund,2.0,2.0,post
+746923,2026-02-22 15:30:00,2026,126,268,SC Freiburg,Borussia Mönchengladbach,2.0,1.0,post
+746921,2026-02-22 17:30:00,2026,270,137,St. Pauli,Werder Bremen,2.0,1.0,post
+746916,2026-02-22 19:30:00,2026,6418,134,1. FC Heidenheim 1846,VfB Stuttgart,3.0,3.0,post
+746929,2026-02-27 20:30:00,2026,3841,122,FC Augsburg,FC Cologne,2.0,0.0,post
+746925,2026-02-28 15:30:00,2026,131,2950,Bayer Leverkusen,Mainz,1.0,1.0,post
+746927,2026-02-28 15:30:00,2026,268,598,Borussia Mönchengladbach,1. FC Union Berlin,1.0,0.0,post
+746932,2026-02-28 15:30:00,2026,7911,270,TSG Hoffenheim,St. Pauli,0.0,1.0,post
+746931,2026-02-28 15:30:00,2026,137,6418,Werder Bremen,1. FC Heidenheim 1846,2.0,0.0,post
+746926,2026-02-28 18:30:00,2026,124,132,Borussia Dortmund,Bayern Munich,2.0,3.0,post
+746933,2026-03-01 15:30:00,2026,134,138,VfB Stuttgart,VfL Wolfsburg,4.0,0.0,post
+746928,2026-03-01 17:30:00,2026,125,126,Eintracht Frankfurt,SC Freiburg,2.0,0.0,post
+746930,2026-03-01 19:30:00,2026,127,11420,Hamburg SV,RB Leipzig,1.0,2.0,post
+746866,2026-03-04 20:30:00,2026,127,131,Hamburg SV,Bayer Leverkusen,0.0,1.0,post
+746935,2026-03-06 20:30:00,2026,132,268,Bayern Munich,Borussia Mönchengladbach,4.0,1.0,post
+746939,2026-03-07 15:30:00,2026,6418,7911,1. FC Heidenheim 1846,TSG Hoffenheim,2.0,4.0,post
+746936,2026-03-07 15:30:00,2026,2950,134,Mainz,VfB Stuttgart,2.0,2.0,post
+746942,2026-03-07 15:30:00,2026,11420,3841,RB Leipzig,FC Augsburg,2.0,1.0,post
+746934,2026-03-07 15:30:00,2026,126,131,SC Freiburg,Bayer Leverkusen,3.0,3.0,post
+746940,2026-03-07 15:30:00,2026,138,127,VfL Wolfsburg,Hamburg SV,1.0,2.0,post
+746938,2026-03-07 18:30:00,2026,122,124,FC Cologne,Borussia Dortmund,1.0,2.0,post
+746941,2026-03-08 15:30:00,2026,270,125,St. Pauli,Eintracht Frankfurt,0.0,0.0,post
+746937,2026-03-08 17:30:00,2026,598,137,1. FC Union Berlin,Werder Bremen,1.0,4.0,post
+746944,2026-03-13 20:30:00,2026,268,270,Borussia Mönchengladbach,St. Pauli,2.0,0.0,post
+746947,2026-03-14 15:30:00,2026,7911,138,TSG Hoffenheim,VfL Wolfsburg,1.0,1.0,post
+746943,2026-03-14 15:30:00,2026,125,6418,Eintracht Frankfurt,1. FC Heidenheim 1846,1.0,0.0,post
+746951,2026-03-14 15:30:00,2026,124,3841,Borussia Dortmund,FC Augsburg,2.0,0.0,post
+746950,2026-03-14 15:30:00,2026,131,132,Bayer Leverkusen,Bayern Munich,1.0,1.0,post
+746949,2026-03-14 18:30:00,2026,127,122,Hamburg SV,FC Cologne,1.0,1.0,post
+746946,2026-03-15 15:30:00,2026,137,2950,Werder Bremen,Mainz,0.0,2.0,post
+746945,2026-03-15 17:30:00,2026,126,598,SC Freiburg,1. FC Union Berlin,0.0,1.0,post
+746948,2026-03-15 19:30:00,2026,134,11420,VfB Stuttgart,RB Leipzig,1.0,0.0,post
+746956,2026-03-20 20:30:00,2026,11420,7911,RB Leipzig,TSG Hoffenheim,5.0,0.0,post
+746952,2026-03-21 15:30:00,2026,6418,131,1. FC Heidenheim 1846,Bayer Leverkusen,3.0,3.0,post
+746954,2026-03-21 15:30:00,2026,132,598,Bayern Munich,1. FC Union Berlin,4.0,0.0,post
+746959,2026-03-21 15:30:00,2026,122,268,FC Cologne,Borussia Mönchengladbach,3.0,3.0,post
+746960,2026-03-21 15:30:00,2026,138,137,VfL Wolfsburg,Werder Bremen,0.0,1.0,post
+746957,2026-03-21 18:30:00,2026,124,127,Borussia Dortmund,Hamburg SV,3.0,2.0,post
+746958,2026-03-22 15:30:00,2026,2950,125,Mainz,Eintracht Frankfurt,2.0,1.0,post
+746955,2026-03-22 17:30:00,2026,270,126,St. Pauli,SC Freiburg,1.0,2.0,post
+746953,2026-03-22 19:30:00,2026,3841,134,FC Augsburg,VfB Stuttgart,2.0,5.0,post
+746962,2026-04-04 15:30:00,2026,131,138,Bayer Leverkusen,VfL Wolfsburg,6.0,3.0,post
+746963,2026-04-04 15:30:00,2026,268,6418,Borussia Mönchengladbach,1. FC Heidenheim 1846,2.0,2.0,post
+746969,2026-04-04 15:30:00,2026,127,3841,Hamburg SV,FC Augsburg,1.0,1.0,post
+746966,2026-04-04 15:30:00,2026,126,132,SC Freiburg,Bayern Munich,2.0,3.0,post
+746968,2026-04-04 15:30:00,2026,7911,2950,TSG Hoffenheim,Mainz,1.0,2.0,post
+746967,2026-04-04 15:30:00,2026,137,11420,Werder Bremen,RB Leipzig,1.0,2.0,post
+746964,2026-04-04 18:30:00,2026,134,124,VfB Stuttgart,Borussia Dortmund,0.0,2.0,post
+746961,2026-04-05 15:30:00,2026,598,270,1. FC Union Berlin,St. Pauli,1.0,1.0,post
+746965,2026-04-05 17:30:00,2026,125,122,Eintracht Frankfurt,FC Cologne,2.0,2.0,post
+746974,2026-04-10 20:30:00,2026,3841,7911,FC Augsburg,TSG Hoffenheim,2.0,2.0,post
+746976,2026-04-11 15:30:00,2026,11420,268,RB Leipzig,Borussia Mönchengladbach,1.0,0.0,post
+746978,2026-04-11 15:30:00,2026,138,125,VfL Wolfsburg,Eintracht Frankfurt,1.0,2.0,post
+746970,2026-04-11 15:30:00,2026,6418,598,1. FC Heidenheim 1846,1. FC Union Berlin,3.0,1.0,post
+746973,2026-04-11 15:30:00,2026,124,131,Borussia Dortmund,Bayer Leverkusen,0.0,1.0,post
+746975,2026-04-11 18:30:00,2026,270,132,St. Pauli,Bayern Munich,0.0,5.0,post
+746971,2026-04-12 15:30:00,2026,122,137,FC Cologne,Werder Bremen,3.0,1.0,post
+746977,2026-04-12 17:30:00,2026,134,127,VfB Stuttgart,Hamburg SV,4.0,0.0,post
+746972,2026-04-12 19:30:00,2026,2950,126,Mainz,SC Freiburg,0.0,1.0,post
+746984,2026-04-17 20:30:00,2026,270,122,St. Pauli,FC Cologne,1.0,1.0,post
+746979,2026-04-18 15:30:00,2026,598,138,1. FC Union Berlin,VfL Wolfsburg,1.0,2.0,post
+746980,2026-04-18 15:30:00,2026,131,3841,Bayer Leverkusen,FC Augsburg,1.0,2.0,post
+746987,2026-04-18 15:30:00,2026,7911,124,TSG Hoffenheim,Borussia Dortmund,2.0,1.0,post
+746986,2026-04-18 15:30:00,2026,137,127,Werder Bremen,Hamburg SV,3.0,1.0,post
+746982,2026-04-18 18:30:00,2026,125,11420,Eintracht Frankfurt,RB Leipzig,1.0,3.0,post
+746985,2026-04-19 15:30:00,2026,126,6418,SC Freiburg,1. FC Heidenheim 1846,2.0,1.0,post
+746983,2026-04-19 17:30:00,2026,132,134,Bayern Munich,VfB Stuttgart,4.0,2.0,post
+746981,2026-04-19 19:30:00,2026,268,2950,Borussia Mönchengladbach,Mainz,1.0,1.0,post
+746994,2026-04-24 20:30:00,2026,11420,598,RB Leipzig,1. FC Union Berlin,3.0,1.0,post
+746996,2026-04-25 15:30:00,2026,138,268,VfL Wolfsburg,Borussia Mönchengladbach,0.0,0.0,post
+746990,2026-04-25 15:30:00,2026,2950,132,Mainz,Bayern Munich,3.0,4.0,post
+746992,2026-04-25 15:30:00,2026,3841,125,FC Augsburg,Eintracht Frankfurt,1.0,1.0,post
+746988,2026-04-25 15:30:00,2026,6418,270,1. FC Heidenheim 1846,St. Pauli,2.0,0.0,post
+746989,2026-04-25 15:30:00,2026,122,131,FC Cologne,Bayer Leverkusen,1.0,2.0,post
+746993,2026-04-25 18:30:00,2026,127,7911,Hamburg SV,TSG Hoffenheim,1.0,2.0,post
+746995,2026-04-26 15:30:00,2026,134,137,VfB Stuttgart,Werder Bremen,1.0,1.0,post
+746991,2026-04-26 17:30:00,2026,124,126,Borussia Dortmund,SC Freiburg,4.0,0.0,post
+746997,2026-05-02 15:30:00,2026,598,122,1. FC Union Berlin,FC Cologne,2.0,2.0,post
+747001,2026-05-02 15:30:00,2026,132,6418,Bayern Munich,1. FC Heidenheim 1846,3.0,3.0,post
+747000,2026-05-02 15:30:00,2026,125,127,Eintracht Frankfurt,Hamburg SV,1.0,2.0,post
+747005,2026-05-02 15:30:00,2026,7911,134,TSG Hoffenheim,VfB Stuttgart,3.0,3.0,post
+747004,2026-05-02 15:30:00,2026,137,3841,Werder Bremen,FC Augsburg,1.0,3.0,post
+746998,2026-05-02 18:30:00,2026,131,11420,Bayer Leverkusen,RB Leipzig,4.0,1.0,post
+747002,2026-05-03 15:30:00,2026,270,2950,St. Pauli,Mainz,1.0,2.0,post
+746999,2026-05-03 17:30:00,2026,268,124,Borussia Mönchengladbach,Borussia Dortmund,1.0,0.0,post
+747003,2026-05-03 19:30:00,2026,126,138,SC Freiburg,VfL Wolfsburg,1.0,1.0,post
+747008,2026-05-08 20:30:00,2026,124,125,Borussia Dortmund,Eintracht Frankfurt,3.0,2.0,post
+747009,2026-05-09 15:30:00,2026,3841,268,FC Augsburg,Borussia Mönchengladbach,3.0,1.0,post
+747011,2026-05-09 15:30:00,2026,11420,270,RB Leipzig,St. Pauli,2.0,1.0,post
+747012,2026-05-09 15:30:00,2026,7911,137,TSG Hoffenheim,Werder Bremen,1.0,0.0,post
+747013,2026-05-09 15:30:00,2026,134,131,VfB Stuttgart,Bayer Leverkusen,3.0,1.0,post
+747014,2026-05-09 18:30:00,2026,138,132,VfL Wolfsburg,Bayern Munich,0.0,1.0,post
+747010,2026-05-10 15:30:00,2026,127,126,Hamburg SV,SC Freiburg,3.0,2.0,post
+747006,2026-05-10 17:30:00,2026,122,6418,FC Cologne,1. FC Heidenheim 1846,1.0,3.0,post
+747007,2026-05-10 19:30:00,2026,2950,598,Mainz,1. FC Union Berlin,1.0,3.0,post
+747022,2026-05-16 15:30:00,2026,137,124,Werder Bremen,Borussia Dortmund,0.0,2.0,post
+747021,2026-05-16 15:30:00,2026,270,138,St. Pauli,VfL Wolfsburg,1.0,3.0,post
+747019,2026-05-16 15:30:00,2026,126,11420,SC Freiburg,RB Leipzig,4.0,1.0,post
+747023,2026-05-16 15:30:00,2026,125,134,Eintracht Frankfurt,VfB Stuttgart,2.0,2.0,post
+747017,2026-05-16 15:30:00,2026,131,127,Bayer Leverkusen,Hamburg SV,1.0,1.0,post
+747020,2026-05-16 15:30:00,2026,132,122,Bayern Munich,FC Cologne,5.0,1.0,post
+747016,2026-05-16 15:30:00,2026,598,3841,1. FC Union Berlin,FC Augsburg,4.0,0.0,post
+747015,2026-05-16 15:30:00,2026,6418,2950,1. FC Heidenheim 1846,Mainz,0.0,2.0,post
+747018,2026-05-16 15:30:00,2026,268,7911,Borussia Mönchengladbach,TSG Hoffenheim,4.0,0.0,post
