@@ -1,0 +1,35 @@
+{
+  "liga": "/Users/pabloignaciocortesvielma/Documents/fifas/arg/motor.py",
+  "rf": {
+    "baseline": {
+      "logloss": 1.0695,
+      "accuracy": 43.7
+    },
+    "best_params": {
+      "max_depth": 3,
+      "min_samples_split": 30,
+      "n_estimators": 100
+    },
+    "cv_ll": 1.0587409064518531,
+    "test": {
+      "logloss": 1.0692,
+      "accuracy": 43.8
+    }
+  },
+  "xgb": {
+    "baseline": {
+      "logloss": 1.1396,
+      "accuracy": 39.0
+    },
+    "best_params": {
+      "max_depth": 3,
+      "learning_rate": 0.02,
+      "n_estimators": 100
+    },
+    "cv_ll": 1.0691798715070389,
+    "test": {
+      "logloss": 1.0702,
+      "accuracy": 43.4
+    }
+  }
+}

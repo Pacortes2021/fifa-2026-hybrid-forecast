@@ -454,9 +454,9 @@ def cargar_y_entrenar():
 
     pipe_lasso_base = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=4000, random_state=42))])
     pipe_lasso_base.fit(X_train, y_train)
-    pipe_rf_base = Pipeline([("scale", StandardScaler()), ("rf", RandomForestClassifier(max_depth=5, n_estimators=200, min_samples_split=15, random_state=42, n_jobs=-1))])
+    pipe_rf_base = Pipeline([("scale", StandardScaler()), ("rf", RandomForestClassifier(max_depth=3, n_estimators=100, min_samples_split=5, random_state=42, n_jobs=-1))])
     pipe_rf_base.fit(X_train, y_train)
-    pipe_xgb_base = Pipeline([("scale", StandardScaler()), ("xgb", XGBClassifier(n_estimators=250, max_depth=4, learning_rate=0.05, subsample=0.8, colsample_bytree=0.8, random_state=42, n_jobs=-1, eval_metric="mlogloss"))])
+    pipe_xgb_base = Pipeline([("scale", StandardScaler()), ("xgb", XGBClassifier(n_estimators=100, max_depth=3, learning_rate=0.02, subsample=0.8, colsample_bytree=0.8, random_state=42, n_jobs=-1, eval_metric="mlogloss"))])
     pipe_xgb_base.fit(X_train, y_train)
 
     if len(X_cal) >= 10:
@@ -485,9 +485,9 @@ def cargar_y_entrenar():
     y_full = df_features.loc[train_mask | cal_mask, "resultado"]
     pipe_lasso = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=4000, random_state=42))])
     pipe_lasso.fit(X_full, y_full)
-    pipe_rf = Pipeline([("scale", StandardScaler()), ("rf", RandomForestClassifier(max_depth=5, n_estimators=200, min_samples_split=15, random_state=42, n_jobs=-1))])
+    pipe_rf = Pipeline([("scale", StandardScaler()), ("rf", RandomForestClassifier(max_depth=3, n_estimators=100, min_samples_split=5, random_state=42, n_jobs=-1))])
     pipe_rf.fit(X_full, y_full)
-    pipe_xgb = Pipeline([("scale", StandardScaler()), ("xgb", XGBClassifier(n_estimators=250, max_depth=4, learning_rate=0.05, subsample=0.8, colsample_bytree=0.8, random_state=42, n_jobs=-1, eval_metric="mlogloss"))])
+    pipe_xgb = Pipeline([("scale", StandardScaler()), ("xgb", XGBClassifier(n_estimators=100, max_depth=3, learning_rate=0.02, subsample=0.8, colsample_bytree=0.8, random_state=42, n_jobs=-1, eval_metric="mlogloss"))])
     pipe_xgb.fit(X_full, y_full)
 
     def _met(proba, y):

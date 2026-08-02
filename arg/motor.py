@@ -407,9 +407,9 @@ def cargar_y_entrenar():
                                  ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
     pipe_lasso_base.fit(X_train, y_train)
     pipe_rf_base = Pipeline([("sc", StandardScaler()),
-                              ("rf", RandomForestClassifier(n_estimators=200, max_depth=5, min_samples_split=15, random_state=42, n_jobs=-1))])
+                              ("rf", RandomForestClassifier(n_estimators=100, max_depth=3, min_samples_split=30, random_state=42, n_jobs=-1))])
     pipe_rf_base.fit(X_train, y_train)
-    pipe_xgb_base = Pipeline([("sc", StandardScaler()), ("xgb", XGBClassifier(n_estimators=250, max_depth=4, learning_rate=0.05, subsample=0.8, colsample_bytree=0.8, random_state=42, n_jobs=-1, eval_metric="mlogloss"))])
+    pipe_xgb_base = Pipeline([("sc", StandardScaler()), ("xgb", XGBClassifier(n_estimators=100, max_depth=3, learning_rate=0.02, subsample=0.8, colsample_bytree=0.8, random_state=42, n_jobs=-1, eval_metric="mlogloss"))])
     pipe_xgb_base.fit(X_train, y_train)
 
     if len(X_cal) >= 10:
