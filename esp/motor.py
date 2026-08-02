@@ -504,11 +504,11 @@ def _cache_key():
     # El modelo depende de los datos (data/*.csv) y del propio código del motor
     import hashlib
     h = hashlib.sha256()
-    h.update(str(Path(__file__).stat().st_mtime_ns).encode())
+    h.update(hashlib.sha256(Path(__file__).read_bytes()).hexdigest().encode())
     for f in sorted(DATA.glob("*.csv")):
         h.update(f.name.encode())
         h.update(str(f.stat().st_size).encode())
-        h.update(str(f.stat().st_mtime_ns).encode())
+        h.update(hashlib.sha256(f.read_bytes()).hexdigest().encode())
     return h.hexdigest()
 
 
@@ -808,7 +808,7 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
 
     import hashlib
     fp = hashlib.sha256()
-    fp.update(str(fix_path.stat().st_mtime_ns).encode())
+    fp.update(hashlib.sha256(fix_path.read_bytes()).hexdigest().encode())
     fp.update(str(fix_path.stat().st_size).encode())
     fp.update(str(n_sims).encode())
     fp.update(_cache_key().encode())

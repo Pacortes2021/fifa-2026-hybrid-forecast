@@ -508,11 +508,11 @@ def _cache_key():
     # El modelo depende de los datos (data/*.csv) y del propio código del motor
     import hashlib
     h = hashlib.sha256()
-    h.update(str(Path(__file__).stat().st_mtime_ns).encode())
+    h.update(hashlib.sha256(Path(__file__).read_bytes()).hexdigest().encode())
     for f in sorted(DATA.glob("*.csv")):
         h.update(f.name.encode())
         h.update(str(f.stat().st_size).encode())
-        h.update(str(f.stat().st_mtime_ns).encode())
+        h.update(hashlib.sha256(f.read_bytes()).hexdigest().encode())
     return h.hexdigest()
 
 
