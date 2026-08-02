@@ -122,14 +122,14 @@ def run_app():
         st.sidebar.markdown("---")
         st.sidebar.markdown("#### 📊 Métricas Out-of-Sample (2025+)")
         mejor_ll = min(met_all[k]["logloss"] for k in met_all)
-        for nombre, clave in [("LASSO", "lasso"), ("RF", "rf"), ("Stacking", "stacking")]:
+        for nombre, clave in [("LASSO", "lasso"), ("RF", "rf"), ("XGB", "xgb"), ("Stacking", "stacking")]:
             if clave not in met_all: continue
             m = met_all[clave]
             star = " ⭐" if m["logloss"] == mejor_ll else ""
-            alpha_str = f" (α={m['alpha']:.2f})" if clave == "stacking" and "alpha" in m else ""
-            st.sidebar.caption(f"**{nombre}{alpha_str}{star}** — LL: `{m['logloss']:.4f}` | Acc: `{m['accuracy']:.1f}%`")
+            w_str = f" (w={m['w']})" if clave == "stacking" and "w" in m else ""
+            st.sidebar.caption(f"**{nombre}{w_str}{star}** — LL: `{m['logloss']:.4f}` | Acc: `{m['accuracy']:.1f}%`")
 
-    nombre_modelo = "🌲 Random Forest" if modelo == "rf" else ("🔀 Stacking" if modelo == "stacking" else "📐 LASSO L1")
+    nombre_modelo = "🌲 Random Forest" if modelo == "rf" else ("🔀 Stacking" if modelo == "stacking" else ("🚀 XGBoost" if modelo == "xgb" else "📐 LASSO L1"))
     st.markdown('<div class="main-title">🇦🇷 Portal de Predicción Liga Profesional Argentina</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — LASSO + RF + Simulación de Campeonato Completo</div>', unsafe_allow_html=True)
 
@@ -192,6 +192,7 @@ def run_app():
             p_lasso, _, _ = mo.predecir_match(M, a, b, modelo="lasso")
             p_rf, _, _    = mo.predecir_match(M, a, b, modelo="rf")
             p_stk, _, _   = mo.predecir_match(M, a, b, modelo="stacking")
+            p_xgb, _, _   = mo.predecir_match(M, a, b, modelo="xgb")
 
             df_comp_mod = pd.DataFrame([
                 {
@@ -206,8 +207,15 @@ def run_app():
                     "Log-Loss Out-of-Sample": f"{met_all.get('rf',{}).get('logloss','-'):.4f}" if 'rf' in met_all else "-",
                     "Accuracy Out-of-Sample": f"{met_all.get('rf',{}).get('accuracy','-'):.1f}%" if 'rf' in met_all else "-"
                 },
+                {"Modelo Predictivo": "🚀 XGBoost",
+                    f"Victoria {a}": f"{p_xgb[0]:.1%}",
+                    "Empate": f"{p_xgb[1]:.1%}",
+                    f"Victoria {b}": f"{p_xgb[2]:.1%}",
+                    "Log-Loss Out-of-Sample (2025+)": f"{met_all.get('xgb',{}).get('logloss','-'):.4f}" if 'xgb' in met_all else "-",
+                    "Accuracy Out-of-Sample": f"{met_all.get('xgb',{}).get('accuracy','-'):.1f}%" if 'xgb' in met_all else "-"
+                },
                 {
-                    "Modelo Predictivo": f"🔀 Stacking (Ensemble α={met_all.get('stacking',{}).get('alpha',0.5):.2f})" if 'alpha' in met_all.get('stacking',{}) else "🔀 Stacking",
+                    "Modelo Predictivo": f"🔀 Stacking (w={met_all.get('stacking',{}).get('w',[0.5,0.5,0.0])})" if 'w' in met_all.get('stacking',{}) else "🔀 Stacking",
                     f"Victoria {a}": f"{p_stk[0]:.1%}", "Empate": f"{p_stk[1]:.1%}", f"Victoria {b}": f"{p_stk[2]:.1%}",
                     "Log-Loss Out-of-Sample": f"{met_all.get('stacking',{}).get('logloss','-'):.4f}" if 'stacking' in met_all else "-",
                     "Accuracy Out-of-Sample": f"{met_all.get('stacking',{}).get('accuracy','-'):.1f}%" if 'stacking' in met_all else "-"
