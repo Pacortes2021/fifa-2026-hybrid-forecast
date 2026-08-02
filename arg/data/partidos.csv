@@ -2277,3 +2277,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841455,2026-07-30 19:00:00,2026,9744,10,Independiente Rivadavia,Huracán,2.0,1.0,post
 401841459,2026-07-30 21:15:00,2026,11989,9785,Central Córdoba,Atlético Tucumán,0.0,2.0,post
 401841456,2026-07-30 21:15:00,2026,11,14,Independiente,Newell's Old Boys,1.0,0.0,post
+401841466,2026-08-01 15:30:00,2026,19685,235,Estudiantes de Río Cuarto,Banfield,0.0,0.0,post
+401841464,2026-08-01 15:30:00,2026,11972,20,Gimnasia Mendoza,Unión de Santa Fe,2.0,0.0,post
+401841469,2026-08-01 18:00:00,2026,4,3,Belgrano,Argentinos Juniors,0.0,1.0,post
+401841478,2026-08-01 18:00:00,2026,8,8950,Estudiantes de La Plata,Defensa y Justicia,3.0,0.0,post
+401841475,2026-08-01 20:30:00,2026,15,7767,Racing Club,Tigre,1.0,3.0,post

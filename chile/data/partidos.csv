@@ -823,8 +823,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 660537,2023-12-02 18:00:00,2023,885,10139,Universidad Católica,Copiapó,2.0,2.0,post
 660535,2023-12-02 20:30:00,2023,4129,6072,Everton,O'Higgins,0.0,2.0,post
 660531,2023-12-03 18:00:00,2023,7427,4134,Ñublense,Huachipato,0.0,1.0,post
-660532,2023-12-03 18:00:00,2023,4133,4139,Cobresal,Universidad de Chile,4.0,3.0,post
 660533,2023-12-03 18:00:00,2023,2688,4132,Colo Colo,Unión Española,0.0,2.0,post
+660532,2023-12-03 18:00:00,2023,4133,4139,Cobresal,Universidad de Chile,4.0,3.0,post
 660541,2023-12-08 18:00:00,2023,17365,2688,Curicó Unido,Colo Colo,0.0,1.0,post
 660542,2023-12-08 18:00:00,2023,4134,4138,Huachipato,Audax Italiano,2.0,0.0,post
 660540,2023-12-08 18:00:00,2023,4132,4133,Unión Española,Cobresal,1.0,0.0,post
@@ -990,19 +990,19 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 696874,2024-08-17 17:30:00,2024,6072,4139,O'Higgins,Universidad de Chile,0.0,4.0,post
 696871,2024-08-17 20:00:00,2024,7427,4129,Ñublense,Everton,1.0,1.0,post
 696870,2024-08-18 12:00:00,2024,10144,4422,Unión La Calera,Palestino,2.0,1.0,post
-696872,2024-08-18 15:00:00,2024,4133,10142,Cobresal,Deportes Iquique,2.0,1.0,post
 696869,2024-08-18 15:00:00,2024,4138,885,Audax Italiano,Universidad Católica,2.0,1.0,post
+696872,2024-08-18 15:00:00,2024,4133,10142,Cobresal,Deportes Iquique,2.0,1.0,post
 696884,2024-08-22 19:00:00,2024,7427,4132,Ñublense,Unión Española,0.0,0.0,post
-696878,2024-08-23 19:00:00,2024,10144,10139,Unión La Calera,Copiapó,3.0,3.0,post
 696879,2024-08-23 19:00:00,2024,4139,2678,Universidad de Chile,Cobreloa,4.0,0.0,post
+696878,2024-08-23 19:00:00,2024,10144,10139,Unión La Calera,Copiapó,3.0,3.0,post
 696877,2024-08-24 15:00:00,2024,8186,4138,Coquimbo Unido,Audax Italiano,1.0,1.0,post
 696883,2024-08-24 17:30:00,2024,10142,6072,Deportes Iquique,O'Higgins,1.0,3.0,post
 696881,2024-08-25 12:30:00,2024,4422,4133,Palestino,Cobresal,3.0,0.0,post
 696882,2024-08-25 15:00:00,2024,4129,2688,Everton,Colo Colo,0.0,1.0,post
 696880,2024-08-25 17:30:00,2024,885,4134,Universidad Católica,Huachipato,4.0,0.0,post
 696765,2024-08-27 18:00:00,2024,4139,4132,Universidad de Chile,Unión Española,2.0,0.0,post
-696887,2024-08-27 20:30:00,2024,10142,10139,Deportes Iquique,Copiapó,2.0,1.0,post
 696885,2024-08-27 20:30:00,2024,2678,8186,Cobreloa,Coquimbo Unido,1.0,0.0,post
+696887,2024-08-27 20:30:00,2024,10142,10139,Deportes Iquique,Copiapó,2.0,1.0,post
 696890,2024-08-28 15:00:00,2024,4133,885,Cobresal,Universidad Católica,3.0,1.0,post
 696889,2024-08-28 18:00:00,2024,6072,10144,O'Higgins,Unión La Calera,1.0,1.0,post
 696891,2024-08-28 20:30:00,2024,4138,4129,Audax Italiano,Everton,1.0,2.0,post
@@ -1052,21 +1052,21 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 696937,2024-10-19 15:00:00,2024,6072,7427,O'Higgins,Ñublense,1.0,3.0,post
 696939,2024-10-19 18:00:00,2024,885,4139,Universidad Católica,Universidad de Chile,1.0,2.0,post
 696938,2024-10-20 15:00:00,2024,4422,2688,Palestino,Colo Colo,2.0,3.0,post
-696813,2024-10-20 17:30:00,2024,4138,4134,Audax Italiano,Huachipato,0.0,2.0,post
-696934,2024-10-20 17:30:00,2024,10139,4129,Copiapó,Everton,3.0,5.0,post
-696933,2024-10-20 17:30:00,2024,8186,4133,Coquimbo Unido,Cobresal,2.0,0.0,post
-696935,2024-10-20 17:30:00,2024,10142,2678,Deportes Iquique,Cobreloa,4.0,1.0,post
 696940,2024-10-20 17:30:00,2024,10144,4132,Unión La Calera,Unión Española,0.0,2.0,post
+696935,2024-10-20 17:30:00,2024,10142,2678,Deportes Iquique,Cobreloa,4.0,1.0,post
+696934,2024-10-20 17:30:00,2024,10139,4129,Copiapó,Everton,3.0,5.0,post
+696813,2024-10-20 17:30:00,2024,4138,4134,Audax Italiano,Huachipato,0.0,2.0,post
+696933,2024-10-20 17:30:00,2024,8186,4133,Coquimbo Unido,Cobresal,2.0,0.0,post
 696941,2024-11-02 18:00:00,2024,4138,10139,Audax Italiano,Copiapó,4.0,1.0,post
 696942,2024-11-02 18:00:00,2024,2678,885,Cobreloa,Universidad Católica,2.0,2.0,post
 696943,2024-11-02 18:00:00,2024,4133,6072,Cobresal,O'Higgins,3.0,1.0,post
 696945,2024-11-02 18:00:00,2024,8186,10144,Coquimbo Unido,Unión La Calera,0.0,0.0,post
 696946,2024-11-02 18:00:00,2024,4129,4134,Everton,Huachipato,1.0,0.0,post
 696947,2024-11-02 18:00:00,2024,4132,4422,Unión Española,Palestino,2.0,3.0,post
-696948,2024-11-03 18:00:00,2024,7427,4139,Ñublense,Universidad de Chile,1.0,4.0,post
 696944,2024-11-03 18:00:00,2024,2688,10142,Colo Colo,Deportes Iquique,3.0,0.0,post
-696950,2024-11-09 18:00:00,2024,10142,4132,Deportes Iquique,Unión Española,2.0,0.0,post
+696948,2024-11-03 18:00:00,2024,7427,4139,Ñublense,Universidad de Chile,1.0,4.0,post
 696954,2024-11-09 18:00:00,2024,885,8186,Universidad Católica,Coquimbo Unido,1.0,2.0,post
+696950,2024-11-09 18:00:00,2024,10142,4132,Deportes Iquique,Unión Española,2.0,0.0,post
 696951,2024-11-10 12:00:00,2024,4134,7427,Huachipato,Ñublense,1.0,0.0,post
 696952,2024-11-10 12:00:00,2024,6072,2678,O'Higgins,Cobreloa,0.0,3.0,post
 696953,2024-11-10 12:00:00,2024,4422,4138,Palestino,Audax Italiano,2.0,0.0,post
@@ -1074,8 +1074,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 696949,2024-11-10 16:00:00,2024,10139,2688,Copiapó,Colo Colo,1.0,1.0,post
 696955,2024-11-10 16:00:00,2024,4139,4129,Universidad de Chile,Everton,1.0,1.0,post
 731064,2025-02-14 21:00:00,2025,10142,8186,Deportes Iquique,Coquimbo Unido,0.0,3.0,post
-731068,2025-02-15 18:00:00,2025,4422,4133,Palestino,Cobresal,2.0,1.0,post
 731067,2025-02-15 18:00:00,2025,6072,4134,O'Higgins,Huachipato,0.0,0.0,post
+731068,2025-02-15 18:00:00,2025,4422,4133,Palestino,Cobresal,2.0,1.0,post
 731070,2025-02-15 20:30:00,2025,4139,7427,Universidad de Chile,Ñublense,5.0,0.0,post
 731066,2025-02-16 12:00:00,2025,4137,2688,Deportes La Serena,Colo Colo,1.0,3.0,post
 731065,2025-02-16 20:30:00,2025,19195,4129,Deportes Limache,Everton,1.0,1.0,post
@@ -1099,8 +1099,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 731087,2025-03-02 20:30:00,2025,10144,6072,Unión La Calera,O'Higgins,2.0,2.0,post
 731094,2025-03-07 20:00:00,2025,10144,4134,Unión La Calera,Huachipato,1.0,0.0,post
 731095,2025-03-08 18:00:00,2025,7427,885,Ñublense,Universidad Católica,1.0,1.0,post
-731091,2025-03-08 20:30:00,2025,10142,4422,Deportes Iquique,Palestino,1.0,3.0,post
 731088,2025-03-08 20:30:00,2025,4138,19195,Audax Italiano,Deportes Limache,3.0,1.0,post
+731091,2025-03-08 20:30:00,2025,10142,4422,Deportes Iquique,Palestino,1.0,3.0,post
 731090,2025-03-09 12:00:00,2025,8186,4133,Coquimbo Unido,Cobresal,1.0,1.0,post
 731092,2025-03-09 18:00:00,2025,6072,4137,O'Higgins,Deportes La Serena,1.0,1.0,post
 731089,2025-03-09 20:30:00,2025,2688,4129,Colo Colo,Everton,2.0,0.0,post
@@ -1133,8 +1133,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 731122,2025-04-20 12:30:00,2025,4129,10144,Everton,Unión La Calera,1.0,1.0,post
 731124,2025-04-20 15:00:00,2025,6072,4422,O'Higgins,Palestino,1.0,0.0,post
 731127,2025-04-20 20:00:00,2025,7427,8186,Ñublense,Coquimbo Unido,0.0,0.0,post
-731135,2025-04-25 18:00:00,2025,10144,4138,Unión La Calera,Audax Italiano,1.0,0.0,post
 731255,2025-04-25 18:00:00,2025,7427,4137,Ñublense,Deportes La Serena,2.0,0.0,post
+731135,2025-04-25 18:00:00,2025,10144,4138,Unión La Calera,Audax Italiano,1.0,0.0,post
 731134,2025-04-25 20:30:00,2025,885,4129,Universidad Católica,Everton,6.0,0.0,post
 731128,2025-04-26 14:00:00,2025,4133,19195,Cobresal,Deportes Limache,3.0,1.0,post
 731129,2025-04-26 16:00:00,2025,2688,8186,Colo Colo,Coquimbo Unido,2.0,0.0,post
@@ -1308,8 +1308,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 731301,2025-12-05 20:00:00,2025,4422,4134,Palestino,Huachipato,2.0,2.0,post
 731302,2025-12-06 18:00:00,2025,885,10144,Universidad Católica,Unión La Calera,2.0,1.0,post
 731300,2025-12-06 18:00:00,2025,6072,4129,O'Higgins,Everton,1.0,0.0,post
-731298,2025-12-06 18:00:00,2025,10142,4139,Deportes Iquique,Universidad de Chile,2.0,3.0,post
 731299,2025-12-06 18:00:00,2025,19195,4137,Deportes Limache,Deportes La Serena,1.0,0.0,post
+731298,2025-12-06 18:00:00,2025,10142,4139,Deportes Iquique,Universidad de Chile,2.0,3.0,post
 731297,2025-12-06 18:00:00,2025,8186,4132,Coquimbo Unido,Unión Española,4.0,2.0,post
 731296,2025-12-07 18:00:00,2025,2688,4138,Colo Colo,Audax Italiano,1.0,2.0,post
 731303,2025-12-07 18:00:00,2025,7427,4133,Ñublense,Cobresal,5.0,0.0,post
@@ -1355,8 +1355,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850492,2026-03-01 20:30:00,2026,7427,885,Ñublense,Universidad Católica,1.0,2.0,post
 401850510,2026-03-06 18:00:00,2026,4137,10144,Deportes La Serena,Unión La Calera,3.0,0.0,post
 401850496,2026-03-06 20:30:00,2026,8110,7427,Deportes Concepción,Ñublense,0.0,2.0,post
-401850501,2026-03-07 12:00:00,2026,4134,8186,Huachipato,Coquimbo Unido,1.0,3.0,post
 401850495,2026-03-07 12:00:00,2026,4129,19195,Everton,Deportes Limache,1.0,0.0,post
+401850501,2026-03-07 12:00:00,2026,4134,8186,Huachipato,Coquimbo Unido,1.0,3.0,post
 401850499,2026-03-07 18:00:00,2026,4138,2688,Audax Italiano,Colo Colo,0.0,1.0,post
 401850508,2026-03-07 20:30:00,2026,6072,885,O'Higgins,Universidad Católica,1.0,0.0,post
 401850505,2026-03-08 20:30:00,2026,4422,4133,Palestino,Cobresal,4.0,2.0,post
@@ -1443,3 +1443,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850606,2026-07-31 20:00:00,2026,5362,4138,Universidad de Concepción,Audax Italiano,0.0,1.0,post
 401850611,2026-08-01 12:30:00,2026,4133,10144,Cobresal,Unión La Calera,4.0,0.0,post
 401850610,2026-08-01 15:00:00,2026,4129,2688,Everton,Colo Colo,3.0,4.0,post
+401850608,2026-08-01 17:30:00,2026,4422,8186,Palestino,Coquimbo Unido,2.0,1.0,post
