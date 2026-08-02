@@ -2,6 +2,7 @@
 Motor predictivo de Machine Learning y simulación de Monte Carlo para la Primera División de Chile.
 Utiliza regresión logística multinomial con penalización L1 (LASSO) mediante el solver SAGA.
 """
+import pickle
 from pathlib import Path
 import os
 import warnings
@@ -787,6 +788,27 @@ def obtener_tabla_actual(M):
 def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
     if seed is not None:
         np.random.seed(seed)
+    import hashlib
+    fp = hashlib.sha256()
+    fp.update(str(n_sims).encode())
+    fp.update(str(modelo).encode())
+    fp.update(_cache_key().encode())
+    if fijos is not None:
+        fp.update(repr(sorted(fijos.items())).encode())
+    cache_path = Path(__file__).resolve().parent / "simulacion_mc.pkl"
+    resultados = {}
+    if cache_path.exists():
+        try:
+            with open(cache_path, "rb") as fh:
+                saved = pickle.load(fh)
+            if saved.get("key") == fp.hexdigest():
+                resultados = saved.get("results", {})
+                if modelo in resultados:
+                    print("Simulación Monte Carlo cargada desde cache de disco")
+                    return resultados[modelo]
+        except Exception as ex:
+            print(f"Cache de simulación inválido ({ex}); re-simulando...")
+
     partidos_rec = M["partidos"]
     p_actuales = partidos_rec[partidos_rec.temporada == _temporada_actual()]
     fix = pd.read_csv(DATA / "fixture.csv")
@@ -842,6 +864,13 @@ def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
         })
         
     df_res = pd.DataFrame(filas).sort_values(by="Puntos esperados", ascending=False).reset_index(drop=True)
+    try:
+        resultados[modelo] = df_res
+        with open(cache_path, "wb") as fh:
+            pickle.dump({"key": fp.hexdigest(), "results": resultados}, fh)
+        print("Simulación Monte Carlo guardada en cache de disco")
+    except Exception as ex:
+        print(f"No se pudo guardar el cache de simulación: {ex}")
     return df_res
 
 

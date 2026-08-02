@@ -114,9 +114,9 @@ def get_motor():
     return mo.cargar()
 
 
-@st.cache_data(show_spinner="Corriendo simulaciones de Monte Carlo (3.000 iteraciones)...")
+@st.cache_data(show_spinner="Corriendo simulaciones de Monte Carlo (50.000 iteraciones)...")
 def simular_liga(_M, key, modelo_tipo):
-    return mo.simular_campeonato(_M, n_sims=3000, modelo_tipo=modelo_tipo)
+    return mo.simular_campeonato(_M, n_sims=50000, modelo_tipo=modelo_tipo)
 
 
 def run_app():

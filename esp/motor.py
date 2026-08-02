@@ -1,5 +1,6 @@
 import sys
 import math
+import pickle
 from pathlib import Path
 from collections import defaultdict, deque
 import pandas as pd
@@ -768,7 +769,9 @@ def obtener_tabla_actual(M, temporada=None):
 
 
 def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
-    # Corre simulación de Monte Carlo para obtener probabilidades de campeón, copas y descenso
+    # Corre simulación de Monte Carlo para obtener probabilidades de campeón, copas y descenso.
+    # El resultado se persiste a disco (simulacion_mc.pkl) y se reutiliza mientras el fixture,
+    # el modelo y n_sims no cambien: la simulación solo se ejecuta una vez.
     if seed is not None:
         np.random.seed(seed)
     fix_path = DATA / "fixture.csv"
@@ -783,7 +786,29 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
         res["P_descenso"] = 0.0
         res.loc[res.index[-DESCIENDEN:], "P_descenso"] = 1.0
         return res
-        
+
+    import hashlib
+    fp = hashlib.sha256()
+    fp.update(str(fix_path.stat().st_mtime_ns).encode())
+    fp.update(str(fix_path.stat().st_size).encode())
+    fp.update(str(n_sims).encode())
+    fp.update(_cache_key().encode())
+    if fijos is not None:
+        fp.update(repr(sorted(fijos.items())).encode())
+    cache_path = Path(__file__).resolve().parent / "simulacion_mc.pkl"
+    resultados = {}
+    if cache_path.exists():
+        try:
+            with open(cache_path, "rb") as fh:
+                saved = pickle.load(fh)
+            if saved.get("key") == fp.hexdigest():
+                resultados = saved.get("results", {})
+                if modelo_tipo in resultados:
+                    print("Simulación Monte Carlo cargada desde cache de disco")
+                    return resultados[modelo_tipo]
+        except Exception as ex:
+            print(f"Cache de simulación inválido ({ex}); re-simulando...")
+
     fix = pd.read_csv(fix_path)
     fix["temporada"] = pd.to_datetime(fix["fecha"]).apply(lambda x: x.year if x.month >= 7 else x.year - 1)
     temporada_sim = fix["temporada"].mode().iloc[0]
@@ -825,7 +850,16 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
             "P_copas": counts_copas[eq] / n_sims,
             "P_descenso": counts_descenso[eq] / n_sims
         })
-    return pd.DataFrame(res).sort_values("P_campeon", ascending=False).reset_index(drop=True)
+    df_res = pd.DataFrame(res).sort_values("P_campeon", ascending=False).reset_index(drop=True)
+
+    try:
+        resultados[modelo_tipo] = df_res
+        with open(cache_path, "wb") as fh:
+            pickle.dump({"key": fp.hexdigest(), "results": resultados}, fh)
+        print("Simulación Monte Carlo guardada en cache de disco")
+    except Exception as ex:
+        print(f"No se pudo guardar el cache de simulación: {ex}")
+    return df_res
 
 
 def validacion_en_vivo(M, temporada_val=None, modelo_tipo="rf"):
