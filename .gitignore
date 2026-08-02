@@ -1,3 +1,4 @@
 .model_cache.pkl
 __pycache__/
 *.pyc
+simulacion_mc.pkl
