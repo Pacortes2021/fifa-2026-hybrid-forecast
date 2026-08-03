@@ -1,9 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841470,2026-08-02 14:30:00,2026,9739,9,Aldosivi,Gimnasia La Plata,,,pre
-401841467,2026-08-02 14:30:00,2026,17702,10060,Deportivo Riestra,Barracas Central,,,pre
-401841473,2026-08-02 17:00:00,2026,14,5,Newell's Old Boys,Boca Juniors,,,pre
-401841476,2026-08-02 19:15:00,2026,16,17,River Plate,Rosario Central,,,pre
-401841472,2026-08-02 21:30:00,2026,12,2975,Lanús,Instituto,,,pre
 401841477,2026-08-03 16:45:00,2026,10158,9744,Sarmiento,Independiente Rivadavia,,,pre
 401841474,2026-08-03 19:00:00,2026,7764,19,Platense,Talleres de Córdoba,,,pre
 401841465,2026-08-03 19:00:00,2026,21,11,Vélez Sarsfield,Independiente,,,pre
@@ -12,96 +7,96 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841460,2026-08-05 19:00:00,2026,5,8,Boca Juniors,Estudiantes de La Plata,,,pre
 401841463,2026-08-05 21:15:00,2026,7767,4,Tigre,Belgrano,,,pre
 401841450,2026-08-06 19:00:00,2026,20,12,Unión de Santa Fe,Lanús,,,pre
-401841487,2026-08-09 15:00:00,2026,20,11989,Unión de Santa Fe,Central Córdoba,,,pre
-401841488,2026-08-09 15:00:00,2026,7767,16,Tigre,River Plate,,,pre
-401841489,2026-08-09 15:00:00,2026,19,12,Talleres de Córdoba,Lanús,,,pre
+401841491,2026-08-07 19:30:00,2026,17,9739,Rosario Central,Aldosivi,,,pre
+401841493,2026-08-07 21:45:00,2026,9744,19685,Independiente Rivadavia,Estudiantes de Río Cuarto,,,pre
+401841484,2026-08-08 14:45:00,2026,9785,10158,Atlético Tucumán,Sarmiento,,,pre
+401841480,2026-08-08 14:45:00,2026,17702,8,Deportivo Riestra,Estudiantes de La Plata,,,pre
+401841488,2026-08-08 17:00:00,2026,7767,16,Tigre,River Plate,,,pre
+401841482,2026-08-08 19:15:00,2026,5,21,Boca Juniors,Vélez Sarsfield,,,pre
+401841486,2026-08-08 21:30:00,2026,11,7764,Independiente,Platense,,,pre
+401841492,2026-08-08 21:30:00,2026,2975,11972,Instituto,Gimnasia Mendoza,,,pre
 401841490,2026-08-09 15:00:00,2026,18,10,San Lorenzo,Huracán,,,pre
-401841492,2026-08-09 15:00:00,2026,2975,11972,Instituto,Gimnasia Mendoza,,,pre
-401841493,2026-08-09 15:00:00,2026,9744,19685,Independiente Rivadavia,Estudiantes de Río Cuarto,,,pre
-401841486,2026-08-09 15:00:00,2026,11,7764,Independiente,Platense,,,pre
-401841491,2026-08-09 15:00:00,2026,17,9739,Rosario Central,Aldosivi,,,pre
-401841480,2026-08-09 15:00:00,2026,17702,8,Deportivo Riestra,Estudiantes de La Plata,,,pre
-401841481,2026-08-09 15:00:00,2026,8950,14,Defensa y Justicia,Newell's Old Boys,,,pre
-401841482,2026-08-09 15:00:00,2026,5,21,Boca Juniors,Vélez Sarsfield,,,pre
-401841483,2026-08-09 15:00:00,2026,235,4,Banfield,Belgrano,,,pre
-401841484,2026-08-09 15:00:00,2026,9785,10158,Atlético Tucumán,Sarmiento,,,pre
-401841485,2026-08-09 15:00:00,2026,3,15,Argentinos Juniors,Racing Club,,,pre
-401841479,2026-08-09 15:00:00,2026,9,10060,Gimnasia La Plata,Barracas Central,,,pre
-401841505,2026-08-16 15:00:00,2026,7764,5,Platense,Boca Juniors,,,pre
-401841495,2026-08-16 15:00:00,2026,21,8950,Vélez Sarsfield,Defensa y Justicia,,,pre
-401841501,2026-08-16 15:00:00,2026,10158,10,Sarmiento,Huracán,,,pre
-401841502,2026-08-16 15:00:00,2026,18,20,San Lorenzo,Unión de Santa Fe,,,pre
-401841503,2026-08-16 15:00:00,2026,16,3,River Plate,Argentinos Juniors,,,pre
-401841504,2026-08-16 15:00:00,2026,15,235,Racing Club,Banfield,,,pre
-401841506,2026-08-16 15:00:00,2026,14,17702,Newell's Old Boys,Deportivo Riestra,,,pre
-401841494,2026-08-16 15:00:00,2026,9739,7767,Aldosivi,Tigre,,,pre
-401841500,2026-08-16 15:00:00,2026,11972,19,Gimnasia Mendoza,Talleres de Córdoba,,,pre
-401841498,2026-08-16 15:00:00,2026,19685,9785,Estudiantes de Río Cuarto,Atlético Tucumán,,,pre
-401841499,2026-08-16 15:00:00,2026,8,9,Estudiantes de La Plata,Gimnasia La Plata,,,pre
+401841479,2026-08-09 17:45:00,2026,9,10060,Gimnasia La Plata,Barracas Central,,,pre
+401841481,2026-08-09 17:45:00,2026,8950,14,Defensa y Justicia,Newell's Old Boys,,,pre
+401841485,2026-08-09 20:15:00,2026,3,15,Argentinos Juniors,Racing Club,,,pre
+401841483,2026-08-10 19:00:00,2026,235,4,Banfield,Belgrano,,,pre
+401841487,2026-08-10 21:15:00,2026,20,11989,Unión de Santa Fe,Central Córdoba,,,pre
+401841489,2026-08-11 21:00:00,2026,19,12,Talleres de Córdoba,Lanús,,,pre
+401841504,2026-08-14 20:30:00,2026,15,235,Racing Club,Banfield,,,pre
+401841494,2026-08-15 14:30:00,2026,9739,7767,Aldosivi,Tigre,,,pre
+401841502,2026-08-15 14:30:00,2026,18,20,San Lorenzo,Unión de Santa Fe,,,pre
+401841499,2026-08-15 16:45:00,2026,8,9,Estudiantes de La Plata,Gimnasia La Plata,,,pre
+401841506,2026-08-15 19:00:00,2026,14,17702,Newell's Old Boys,Deportivo Riestra,,,pre
+401841496,2026-08-15 19:00:00,2026,4,9744,Belgrano,Independiente Rivadavia,,,pre
+401841505,2026-08-15 21:15:00,2026,7764,5,Platense,Boca Juniors,,,pre
 401841497,2026-08-16 15:00:00,2026,11989,2975,Central Córdoba,Instituto,,,pre
-401841496,2026-08-16 15:00:00,2026,4,9744,Belgrano,Independiente Rivadavia,,,pre
-401841508,2026-08-16 15:00:00,2026,10060,17,Barracas Central,Rosario Central,,,pre
-401841507,2026-08-16 15:00:00,2026,12,11,Lanús,Independiente,,,pre
-401841517,2026-08-23 15:00:00,2026,15,5,Racing Club,Boca Juniors,,,pre
-401841518,2026-08-23 15:00:00,2026,16,21,River Plate,Vélez Sarsfield,,,pre
-401841515,2026-08-23 15:00:00,2026,12,3,Lanús,Argentinos Juniors,,,pre
-401841520,2026-08-23 15:00:00,2026,19,17,Talleres de Córdoba,Rosario Central,,,pre
-401841521,2026-08-23 15:00:00,2026,7767,11989,Tigre,Central Córdoba,,,pre
-401841519,2026-08-23 15:00:00,2026,10158,8,Sarmiento,Estudiantes de La Plata,,,pre
-401841514,2026-08-23 15:00:00,2026,11,9744,Independiente,Independiente Rivadavia,,,pre
-401841516,2026-08-23 15:00:00,2026,14,235,Newell's Old Boys,Banfield,,,pre
-401841512,2026-08-23 15:00:00,2026,9,11972,Gimnasia La Plata,Gimnasia Mendoza,,,pre
-401841513,2026-08-23 15:00:00,2026,10,17702,Huracán,Deportivo Riestra,,,pre
-401841511,2026-08-23 15:00:00,2026,19685,18,Estudiantes de Río Cuarto,San Lorenzo,,,pre
-401841510,2026-08-23 15:00:00,2026,4,8950,Belgrano,Defensa y Justicia,,,pre
-401841509,2026-08-23 15:00:00,2026,10060,7764,Barracas Central,Platense,,,pre
-401841523,2026-08-23 15:00:00,2026,9785,2975,Atlético Tucumán,Instituto,,,pre
-401841522,2026-08-23 15:00:00,2026,9739,20,Aldosivi,Unión de Santa Fe,,,pre
-401841525,2026-08-30 15:00:00,2026,20,10158,Unión de Santa Fe,Sarmiento,,,pre
-401841537,2026-08-30 15:00:00,2026,7767,10060,Tigre,Barracas Central,,,pre
-401841536,2026-08-30 15:00:00,2026,19,11989,Talleres de Córdoba,Central Córdoba,,,pre
-401841535,2026-08-30 15:00:00,2026,17,9,Rosario Central,Gimnasia La Plata,,,pre
-401841534,2026-08-30 15:00:00,2026,2975,18,Instituto,San Lorenzo,,,pre
-401841533,2026-08-30 15:00:00,2026,9744,15,Independiente Rivadavia,Racing Club,,,pre
-401841532,2026-08-30 15:00:00,2026,11,11972,Independiente,Gimnasia Mendoza,,,pre
-401841531,2026-08-30 15:00:00,2026,10,19685,Huracán,Estudiantes de Río Cuarto,,,pre
-401841530,2026-08-30 15:00:00,2026,8,14,Estudiantes de La Plata,Newell's Old Boys,,,pre
-401841529,2026-08-30 15:00:00,2026,17702,21,Deportivo Riestra,Vélez Sarsfield,,,pre
-401841528,2026-08-30 15:00:00,2026,8950,7764,Defensa y Justicia,Platense,,,pre
-401841527,2026-08-30 15:00:00,2026,5,12,Boca Juniors,Lanús,,,pre
+401841501,2026-08-16 15:00:00,2026,10158,10,Sarmiento,Huracán,,,pre
+401841503,2026-08-16 18:00:00,2026,16,3,River Plate,Argentinos Juniors,,,pre
+401841508,2026-08-16 20:15:00,2026,10060,17,Barracas Central,Rosario Central,,,pre
+401841498,2026-08-17 14:45:00,2026,19685,9785,Estudiantes de Río Cuarto,Atlético Tucumán,,,pre
+401841507,2026-08-17 17:00:00,2026,12,11,Lanús,Independiente,,,pre
+401841495,2026-08-17 19:15:00,2026,21,8950,Vélez Sarsfield,Defensa y Justicia,,,pre
+401841500,2026-08-17 21:30:00,2026,11972,19,Gimnasia Mendoza,Talleres de Córdoba,,,pre
+401841522,2026-08-21 14:30:00,2026,9739,20,Aldosivi,Unión de Santa Fe,,,pre
+401841511,2026-08-21 20:00:00,2026,19685,18,Estudiantes de Río Cuarto,San Lorenzo,,,pre
+401841523,2026-08-22 16:00:00,2026,9785,2975,Atlético Tucumán,Instituto,,,pre
+401841512,2026-08-22 16:00:00,2026,9,11972,Gimnasia La Plata,Gimnasia Mendoza,,,pre
+401841514,2026-08-22 18:30:00,2026,11,9744,Independiente,Independiente Rivadavia,,,pre
+401841513,2026-08-22 21:00:00,2026,10,17702,Huracán,Deportivo Riestra,,,pre
+401841516,2026-08-22 21:00:00,2026,14,235,Newell's Old Boys,Banfield,,,pre
+401841509,2026-08-23 14:45:00,2026,10060,7764,Barracas Central,Platense,,,pre
+401841519,2026-08-23 14:45:00,2026,10158,8,Sarmiento,Estudiantes de La Plata,,,pre
+401841510,2026-08-23 17:00:00,2026,4,8950,Belgrano,Defensa y Justicia,,,pre
+401841518,2026-08-23 19:15:00,2026,16,21,River Plate,Vélez Sarsfield,,,pre
+401841517,2026-08-23 21:30:00,2026,15,5,Racing Club,Boca Juniors,,,pre
+401841521,2026-08-24 19:00:00,2026,7767,11989,Tigre,Central Córdoba,,,pre
+401841515,2026-08-24 21:15:00,2026,12,3,Lanús,Argentinos Juniors,,,pre
+401841520,2026-08-24 21:15:00,2026,19,17,Talleres de Córdoba,Rosario Central,,,pre
+401841531,2026-08-28 19:00:00,2026,10,19685,Huracán,Estudiantes de Río Cuarto,,,pre
+401841525,2026-08-28 21:15:00,2026,20,10158,Unión de Santa Fe,Sarmiento,,,pre
+401841529,2026-08-29 14:45:00,2026,17702,21,Deportivo Riestra,Vélez Sarsfield,,,pre
+401841535,2026-08-29 17:00:00,2026,17,9,Rosario Central,Gimnasia La Plata,,,pre
+401841527,2026-08-29 19:00:00,2026,5,12,Boca Juniors,Lanús,,,pre
+401841538,2026-08-29 21:30:00,2026,9785,4,Atlético Tucumán,Belgrano,,,pre
+401841536,2026-08-29 21:30:00,2026,19,11989,Talleres de Córdoba,Central Córdoba,,,pre
 401841526,2026-08-30 15:00:00,2026,235,16,Banfield,River Plate,,,pre
-401841538,2026-08-30 15:00:00,2026,9785,4,Atlético Tucumán,Belgrano,,,pre
-401841524,2026-08-30 15:00:00,2026,3,9739,Argentinos Juniors,Aldosivi,,,pre
+401841524,2026-08-30 17:00:00,2026,3,9739,Argentinos Juniors,Aldosivi,,,pre
+401841532,2026-08-30 19:15:00,2026,11,11972,Independiente,Gimnasia Mendoza,,,pre
+401841533,2026-08-30 21:30:00,2026,9744,15,Independiente Rivadavia,Racing Club,,,pre
+401841528,2026-08-31 19:00:00,2026,8950,7764,Defensa y Justicia,Platense,,,pre
+401841530,2026-08-31 19:00:00,2026,8,14,Estudiantes de La Plata,Newell's Old Boys,,,pre
+401841534,2026-08-31 21:15:00,2026,2975,18,Instituto,San Lorenzo,,,pre
+401841537,2026-08-31 21:15:00,2026,7767,10060,Tigre,Barracas Central,,,pre
+401841540,2026-09-06 15:00:00,2026,21,8,Vélez Sarsfield,Estudiantes de La Plata,,,pre
 401841552,2026-09-06 15:00:00,2026,20,2975,Unión de Santa Fe,Instituto,,,pre
 401841551,2026-09-06 15:00:00,2026,18,19,San Lorenzo,Talleres de Córdoba,,,pre
 401841550,2026-09-06 15:00:00,2026,17,14,Rosario Central,Newell's Old Boys,,,pre
 401841549,2026-09-06 15:00:00,2026,16,9744,River Plate,Independiente Rivadavia,,,pre
 401841548,2026-09-06 15:00:00,2026,15,9785,Racing Club,Atlético Tucumán,,,pre
 401841547,2026-09-06 15:00:00,2026,7764,17702,Platense,Deportivo Riestra,,,pre
-401841546,2026-09-06 15:00:00,2026,12,8950,Lanús,Defensa y Justicia,,,pre
-401841540,2026-09-06 15:00:00,2026,21,8,Vélez Sarsfield,Estudiantes de La Plata,,,pre
+401841545,2026-09-06 15:00:00,2026,9739,235,Aldosivi,Banfield,,,pre
+401841553,2026-09-06 15:00:00,2026,9,7767,Gimnasia La Plata,Tigre,,,pre
 401841539,2026-09-06 15:00:00,2026,11972,5,Gimnasia Mendoza,Boca Juniors,,,pre
 401841541,2026-09-06 15:00:00,2026,19685,10158,Estudiantes de Río Cuarto,Sarmiento,,,pre
 401841542,2026-09-06 15:00:00,2026,11989,11,Central Córdoba,Independiente,,,pre
 401841543,2026-09-06 15:00:00,2026,4,10,Belgrano,Huracán,,,pre
 401841544,2026-09-06 15:00:00,2026,10060,3,Barracas Central,Argentinos Juniors,,,pre
-401841545,2026-09-06 15:00:00,2026,9739,235,Aldosivi,Banfield,,,pre
-401841553,2026-09-06 15:00:00,2026,9,7767,Gimnasia La Plata,Tigre,,,pre
+401841546,2026-09-06 15:00:00,2026,12,8950,Lanús,Defensa y Justicia,,,pre
+401841567,2026-09-13 15:00:00,2026,9744,9739,Independiente Rivadavia,Aldosivi,,,pre
+401841562,2026-09-13 15:00:00,2026,7767,17,Tigre,Rosario Central,,,pre
 401841563,2026-09-13 15:00:00,2026,19,20,Talleres de Córdoba,Unión de Santa Fe,,,pre
 401841564,2026-09-13 15:00:00,2026,10158,4,Sarmiento,Belgrano,,,pre
 401841565,2026-09-13 15:00:00,2026,14,21,Newell's Old Boys,Vélez Sarsfield,,,pre
 401841566,2026-09-13 15:00:00,2026,2975,19685,Instituto,Estudiantes de Río Cuarto,,,pre
-401841567,2026-09-13 15:00:00,2026,9744,9739,Independiente Rivadavia,Aldosivi,,,pre
 401841568,2026-09-13 15:00:00,2026,11,18,Independiente,San Lorenzo,,,pre
-401841561,2026-09-13 15:00:00,2026,10,15,Huracán,Racing Club,,,pre
-401841562,2026-09-13 15:00:00,2026,7767,17,Tigre,Rosario Central,,,pre
+401841560,2026-09-13 15:00:00,2026,3,9,Argentinos Juniors,Gimnasia La Plata,,,pre
+401841554,2026-09-13 15:00:00,2026,8,7764,Estudiantes de La Plata,Platense,,,pre
 401841555,2026-09-13 15:00:00,2026,17702,12,Deportivo Riestra,Lanús,,,pre
 401841556,2026-09-13 15:00:00,2026,8950,11972,Defensa y Justicia,Gimnasia Mendoza,,,pre
 401841557,2026-09-13 15:00:00,2026,5,11989,Boca Juniors,Central Córdoba,,,pre
 401841558,2026-09-13 15:00:00,2026,235,10060,Banfield,Barracas Central,,,pre
 401841559,2026-09-13 15:00:00,2026,9785,16,Atlético Tucumán,River Plate,,,pre
-401841560,2026-09-13 15:00:00,2026,3,9,Argentinos Juniors,Gimnasia La Plata,,,pre
-401841554,2026-09-13 15:00:00,2026,8,7764,Estudiantes de La Plata,Platense,,,pre
+401841561,2026-09-13 15:00:00,2026,10,15,Huracán,Racing Club,,,pre
 401841570,2026-09-20 15:00:00,2026,21,7767,Vélez Sarsfield,Tigre,,,pre
 401841576,2026-09-20 15:00:00,2026,20,11,Unión de Santa Fe,Independiente,,,pre
 401841577,2026-09-20 15:00:00,2026,18,5,San Lorenzo,Boca Juniors,,,pre
@@ -118,20 +113,20 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841569,2026-09-20 15:00:00,2026,9739,9785,Aldosivi,Atlético Tucumán,,,pre
 401841575,2026-09-20 15:00:00,2026,2975,19,Instituto,Talleres de Córdoba,,,pre
 401841589,2026-10-04 15:00:00,2026,10,9739,Huracán,Aldosivi,,,pre
-401841584,2026-10-04 15:00:00,2026,19,4,Talleres de Córdoba,Belgrano,,,pre
-401841598,2026-10-04 15:00:00,2026,10158,16,Sarmiento,River Plate,,,pre
 401841585,2026-10-04 15:00:00,2026,21,7764,Vélez Sarsfield,Platense,,,pre
+401841584,2026-10-04 15:00:00,2026,19,4,Talleres de Córdoba,Belgrano,,,pre
+401841586,2026-10-04 15:00:00,2026,14,12,Newell's Old Boys,Lanús,,,pre
 401841587,2026-10-04 15:00:00,2026,9744,9,Independiente Rivadavia,Gimnasia La Plata,,,pre
 401841588,2026-10-04 15:00:00,2026,11,2975,Independiente,Instituto,,,pre
 401841591,2026-10-04 15:00:00,2026,19685,15,Estudiantes de Río Cuarto,Racing Club,,,pre
-401841586,2026-10-04 15:00:00,2026,14,12,Newell's Old Boys,Lanús,,,pre
+401841598,2026-10-04 15:00:00,2026,10158,16,Sarmiento,River Plate,,,pre
 401841592,2026-10-04 15:00:00,2026,17702,11989,Deportivo Riestra,Central Córdoba,,,pre
 401841593,2026-10-04 15:00:00,2026,8950,18,Defensa y Justicia,San Lorenzo,,,pre
 401841594,2026-10-04 15:00:00,2026,5,20,Boca Juniors,Unión de Santa Fe,,,pre
 401841595,2026-10-04 15:00:00,2026,235,17,Banfield,Rosario Central,,,pre
+401841590,2026-10-04 15:00:00,2026,8,11972,Estudiantes de La Plata,Gimnasia Mendoza,,,pre
 401841596,2026-10-04 15:00:00,2026,9785,10060,Atlético Tucumán,Barracas Central,,,pre
 401841597,2026-10-04 15:00:00,2026,3,7767,Argentinos Juniors,Tigre,,,pre
-401841590,2026-10-04 15:00:00,2026,8,11972,Estudiantes de La Plata,Gimnasia Mendoza,,,pre
 401841599,2026-10-11 15:00:00,2026,7767,235,Tigre,Banfield,,,pre
 401841600,2026-10-11 15:00:00,2026,19,11,Talleres de Córdoba,Independiente,,,pre
 401841601,2026-10-11 15:00:00,2026,18,17702,San Lorenzo,Deportivo Riestra,,,pre

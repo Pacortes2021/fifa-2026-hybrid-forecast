@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401877020,2026-08-02 17:00:00,2026,227,225,América,Santos Laguna,,,pre
-401877019,2026-08-02 19:05:00,2026,223,229,Toluca,Necaxa,,,pre
 401877018,2026-08-15 17:00:00,2026,226,223,Atlante,Toluca,,,pre
 401877017,2026-08-15 19:00:00,2026,220,17851,Monterrey,FC Juárez,,,pre
 401877016,2026-08-15 21:00:00,2026,216,232,Atlas,Tigres UANL,,,pre

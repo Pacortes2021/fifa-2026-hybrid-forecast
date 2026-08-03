@@ -1444,3 +1444,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850611,2026-08-01 12:30:00,2026,4133,10144,Cobresal,Unión La Calera,4.0,0.0,post
 401850610,2026-08-01 15:00:00,2026,4129,2688,Everton,Colo Colo,3.0,4.0,post
 401850608,2026-08-01 17:30:00,2026,4422,8186,Palestino,Coquimbo Unido,2.0,1.0,post
+401850605,2026-08-02 12:30:00,2026,8110,885,Deportes Concepción,Universidad Católica,3.0,0.0,post
+401850609,2026-08-02 15:00:00,2026,4137,6072,Deportes La Serena,O'Higgins,1.0,2.0,post
+401850607,2026-08-02 17:30:00,2026,4139,4134,Universidad de Chile,Huachipato,2.0,0.0,post

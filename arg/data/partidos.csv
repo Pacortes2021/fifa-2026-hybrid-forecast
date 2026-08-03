@@ -2186,8 +2186,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762982,2026-04-12 17:30:00,2026,9785,7767,Atlético Tucumán,Tigre,0.0,0.0,post
 762983,2026-04-12 17:30:00,2026,10,17,Huracán,Rosario Central,3.0,1.0,post
 762976,2026-04-12 20:00:00,2026,15,16,Racing Club,River Plate,0.0,2.0,post
-762975,2026-04-13 16:30:00,2026,10158,9,Sarmiento,Gimnasia La Plata,1.0,2.0,post
 762971,2026-04-13 16:30:00,2026,8950,19,Defensa y Justicia,Talleres de Córdoba,1.0,2.0,post
+762975,2026-04-13 16:30:00,2026,10158,9,Sarmiento,Gimnasia La Plata,1.0,2.0,post
 762979,2026-04-13 19:00:00,2026,12,235,Lanús,Banfield,1.0,0.0,post
 762974,2026-04-13 21:30:00,2026,21,11989,Vélez Sarsfield,Central Córdoba,1.0,0.0,post
 762984,2026-04-17 20:30:00,2026,20,14,Unión de Santa Fe,Newell's Old Boys,2.0,3.0,post
@@ -2197,8 +2197,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762987,2026-04-18 21:45:00,2026,3,9785,Argentinos Juniors,Atlético Tucumán,1.0,0.0,post
 762986,2026-04-19 13:30:00,2026,9739,15,Aldosivi,Racing Club,1.0,1.0,post
 762995,2026-04-19 17:00:00,2026,16,5,River Plate,Boca Juniors,0.0,1.0,post
-762996,2026-04-19 20:30:00,2026,17,10158,Rosario Central,Sarmiento,2.0,1.0,post
 762998,2026-04-19 20:30:00,2026,19,17702,Talleres de Córdoba,Deportivo Riestra,2.0,0.0,post
+762996,2026-04-19 20:30:00,2026,17,10158,Rosario Central,Sarmiento,2.0,1.0,post
 762989,2026-04-20 15:00:00,2026,10060,4,Barracas Central,Belgrano,0.0,0.0,post
 762988,2026-04-20 17:15:00,2026,235,9744,Banfield,Independiente Rivadavia,0.0,0.0,post
 762990,2026-04-20 17:15:00,2026,11989,7764,Central Córdoba,Platense,4.0,3.0,post
@@ -2207,30 +2207,30 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762985,2026-04-20 21:45:00,2026,7767,10,Tigre,Huracán,1.0,1.0,post
 763011,2026-04-23 20:00:00,2026,8950,5,Defensa y Justicia,Boca Juniors,0.0,4.0,post
 763010,2026-04-24 17:00:00,2026,17702,11,Deportivo Riestra,Independiente,2.0,0.0,post
-763009,2026-04-24 19:15:00,2026,19685,17,Estudiantes de Río Cuarto,Rosario Central,1.0,2.0,post
 763005,2026-04-24 19:15:00,2026,12,11989,Lanús,Central Córdoba,0.0,0.0,post
+763009,2026-04-24 19:15:00,2026,19685,17,Estudiantes de Río Cuarto,Rosario Central,1.0,2.0,post
 763012,2026-04-24 21:30:00,2026,7764,18,Platense,San Lorenzo,0.0,1.0,post
 763013,2026-04-24 21:30:00,2026,15,10060,Racing Club,Barracas Central,1.0,1.0,post
 763008,2026-04-25 17:00:00,2026,8,19,Estudiantes de La Plata,Talleres de Córdoba,0.0,0.0,post
 763002,2026-04-25 19:15:00,2026,10158,7767,Sarmiento,Tigre,1.0,0.0,post
 763001,2026-04-25 21:30:00,2026,16,9739,River Plate,Aldosivi,3.0,1.0,post
 763006,2026-04-26 15:00:00,2026,9744,11972,Independiente Rivadavia,Gimnasia Mendoza,5.0,1.0,post
-763004,2026-04-26 17:30:00,2026,14,2975,Newell's Old Boys,Instituto,1.0,1.0,post
 763000,2026-04-26 17:30:00,2026,4,9,Belgrano,Gimnasia La Plata,0.0,1.0,post
+763004,2026-04-26 17:30:00,2026,14,2975,Newell's Old Boys,Instituto,1.0,1.0,post
 762999,2026-04-26 20:00:00,2026,9785,235,Atlético Tucumán,Banfield,1.0,1.0,post
 763003,2026-04-27 18:45:00,2026,21,20,Vélez Sarsfield,Unión de Santa Fe,2.0,2.0,post
 763007,2026-04-27 21:00:00,2026,10,3,Huracán,Argentinos Juniors,1.0,2.0,post
 762905,2026-05-02 14:00:00,2026,10060,235,Barracas Central,Banfield,1.0,2.0,post
 762896,2026-05-02 14:30:00,2026,12,17702,Lanús,Deportivo Riestra,0.0,0.0,post
 762907,2026-05-02 16:15:00,2026,11989,5,Central Córdoba,Boca Juniors,1.0,2.0,post
-762902,2026-05-02 18:45:00,2026,20,19,Unión de Santa Fe,Talleres de Córdoba,1.0,1.0,post
 762901,2026-05-02 18:45:00,2026,18,11,San Lorenzo,Independiente,1.0,2.0,post
+762902,2026-05-02 18:45:00,2026,20,19,Unión de Santa Fe,Talleres de Córdoba,1.0,1.0,post
 762897,2026-05-02 21:15:00,2026,7764,8,Platense,Estudiantes de La Plata,0.0,2.0,post
 762904,2026-05-03 13:30:00,2026,9739,9744,Aldosivi,Independiente Rivadavia,1.0,1.0,post
+762900,2026-05-03 16:00:00,2026,17,7767,Rosario Central,Tigre,1.0,1.0,post
+762898,2026-05-03 16:00:00,2026,15,10,Racing Club,Huracán,0.0,0.0,post
 762906,2026-05-03 16:00:00,2026,4,10158,Belgrano,Sarmiento,4.0,0.0,post
 762894,2026-05-03 16:00:00,2026,9,3,Gimnasia La Plata,Argentinos Juniors,2.0,0.0,post
-762898,2026-05-03 16:00:00,2026,15,10,Racing Club,Huracán,0.0,0.0,post
-762900,2026-05-03 16:00:00,2026,17,7767,Rosario Central,Tigre,1.0,1.0,post
 762899,2026-05-03 18:30:00,2026,16,9785,River Plate,Atlético Tucumán,0.0,1.0,post
 762895,2026-05-04 17:00:00,2026,11972,8950,Gimnasia Mendoza,Defensa y Justicia,2.0,1.0,post
 762903,2026-05-04 19:15:00,2026,21,14,Vélez Sarsfield,Newell's Old Boys,1.0,1.0,post
@@ -2254,10 +2254,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841437,2026-07-23 19:30:00,2026,10158,3,Sarmiento,Argentinos Juniors,2.0,3.0,post
 401841448,2026-07-23 21:45:00,2026,8950,9739,Defensa y Justicia,Aldosivi,1.0,1.0,post
 401841444,2026-07-24 16:45:00,2026,11972,11989,Gimnasia Mendoza,Central Córdoba,1.0,0.0,post
-401841436,2026-07-24 19:00:00,2026,21,2975,Vélez Sarsfield,Instituto,1.0,0.0,post
 401841439,2026-07-24 19:00:00,2026,15,9,Racing Club,Gimnasia La Plata,2.0,1.0,post
-401841443,2026-07-24 21:15:00,2026,10,235,Huracán,Banfield,1.0,0.0,post
+401841436,2026-07-24 19:00:00,2026,21,2975,Vélez Sarsfield,Instituto,1.0,0.0,post
 401841440,2026-07-24 21:15:00,2026,7764,20,Platense,Unión de Santa Fe,2.0,2.0,post
+401841443,2026-07-24 21:15:00,2026,10,235,Huracán,Banfield,1.0,0.0,post
 401841446,2026-07-25 14:45:00,2026,19685,7767,Estudiantes de Río Cuarto,Tigre,1.0,0.0,post
 401841441,2026-07-25 17:00:00,2026,14,19,Newell's Old Boys,Talleres de Córdoba,1.0,0.0,post
 401841438,2026-07-25 19:15:00,2026,16,10060,River Plate,Barracas Central,0.0,1.0,post
@@ -2265,20 +2265,25 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841434,2026-07-26 15:00:00,2026,9785,9744,Atlético Tucumán,Independiente Rivadavia,0.0,0.0,post
 401841445,2026-07-26 17:15:00,2026,8,11,Estudiantes de La Plata,Independiente,0.0,2.0,post
 401841447,2026-07-26 19:30:00,2026,17702,5,Deportivo Riestra,Boca Juniors,3.0,0.0,post
-401841462,2026-07-28 19:00:00,2026,235,10158,Banfield,Sarmiento,3.0,2.0,post
 401841452,2026-07-28 19:00:00,2026,18,11972,San Lorenzo,Gimnasia Mendoza,1.0,0.0,post
+401841462,2026-07-28 19:00:00,2026,235,10158,Banfield,Sarmiento,3.0,2.0,post
 401841449,2026-07-28 21:15:00,2026,3,19685,Argentinos Juniors,Estudiantes de Río Cuarto,3.0,0.0,post
 401841453,2026-07-28 21:15:00,2026,17,15,Rosario Central,Racing Club,0.0,0.0,post
 401841461,2026-07-29 14:30:00,2026,10060,9739,Barracas Central,Aldosivi,1.0,0.0,post
 401841458,2026-07-29 17:00:00,2026,8950,17702,Defensa y Justicia,Deportivo Riestra,2.0,1.0,post
 401841457,2026-07-29 19:15:00,2026,9,16,Gimnasia La Plata,River Plate,1.0,0.0,post
 401841454,2026-07-29 21:30:00,2026,2975,7764,Instituto,Platense,2.0,1.0,post
-401841451,2026-07-30 19:00:00,2026,19,21,Talleres de Córdoba,Vélez Sarsfield,1.0,3.0,post
 401841455,2026-07-30 19:00:00,2026,9744,10,Independiente Rivadavia,Huracán,2.0,1.0,post
-401841459,2026-07-30 21:15:00,2026,11989,9785,Central Córdoba,Atlético Tucumán,0.0,2.0,post
+401841451,2026-07-30 19:00:00,2026,19,21,Talleres de Córdoba,Vélez Sarsfield,1.0,3.0,post
 401841456,2026-07-30 21:15:00,2026,11,14,Independiente,Newell's Old Boys,1.0,0.0,post
+401841459,2026-07-30 21:15:00,2026,11989,9785,Central Córdoba,Atlético Tucumán,0.0,2.0,post
 401841466,2026-08-01 15:30:00,2026,19685,235,Estudiantes de Río Cuarto,Banfield,0.0,0.0,post
 401841464,2026-08-01 15:30:00,2026,11972,20,Gimnasia Mendoza,Unión de Santa Fe,2.0,0.0,post
 401841469,2026-08-01 18:00:00,2026,4,3,Belgrano,Argentinos Juniors,0.0,1.0,post
 401841478,2026-08-01 18:00:00,2026,8,8950,Estudiantes de La Plata,Defensa y Justicia,3.0,0.0,post
 401841475,2026-08-01 20:30:00,2026,15,7767,Racing Club,Tigre,1.0,3.0,post
+401841470,2026-08-02 14:30:00,2026,9739,9,Aldosivi,Gimnasia La Plata,1.0,2.0,post
+401841467,2026-08-02 14:30:00,2026,17702,10060,Deportivo Riestra,Barracas Central,0.0,1.0,post
+401841473,2026-08-02 17:00:00,2026,14,5,Newell's Old Boys,Boca Juniors,2.0,2.0,post
+401841476,2026-08-02 19:15:00,2026,16,17,River Plate,Rosario Central,0.0,1.0,post
+401841472,2026-08-02 21:30:00,2026,12,2975,Lanús,Instituto,0.0,1.0,post

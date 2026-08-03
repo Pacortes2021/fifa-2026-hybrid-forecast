@@ -1895,3 +1895,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401877022,2026-08-01 19:05:00,2026,216,220,Atlas,Monterrey,0.0,2.0,post
 401877023,2026-08-01 19:06:00,2026,228,234,León,Pachuca,1.0,0.0,post
 401877021,2026-08-01 21:00:00,2026,218,226,Cruz Azul,Atlante,2.0,3.0,post
+401877020,2026-08-02 17:00:00,2026,227,225,América,Santos Laguna,3.0,0.0,post
+401877019,2026-08-02 19:05:00,2026,223,229,Toluca,Necaxa,3.0,1.0,post
