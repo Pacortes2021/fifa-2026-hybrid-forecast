@@ -142,6 +142,12 @@ def run_app():
     
     M = get_motor()
     equipos = M.get("equipos", {})
+    try:
+        _partidos_df = pd.read_csv(mo.DATA / "partidos.csv", parse_dates=["fecha"])
+        _ult_fecha = pd.to_datetime(_partidos_df["fecha"].max()).date().strftime("%d/%m/%Y")
+        st.sidebar.caption(f"🗓️ Datos actualizados: {_ult_fecha} · {len(_partidos_df)} partidos")
+    except Exception:
+        pass
 
     # ── Métricas por modelo (sidebar)
     met_all = M.get("metricas", {})
@@ -162,7 +168,7 @@ def run_app():
     st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — LASSO + RF + Simulación de Campeonato Completo</div>', unsafe_allow_html=True)
     
     # Tabs
-    tab1, tab2, tab3, tab4 = st.tabs(["⚽ Predicción Versus", "📊 Tabla y Proyecciones", "🔬 Importancia de Variables", "🎯 Validación vs Realidad"])
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(["⚽ Predicción Versus", "📊 Tabla y Proyecciones", "🔬 Importancia de Variables", "🎯 Validación vs Realidad", "📈 Evolución de la Tabla"])
     
     # ============================================================================
     # TAB 1: Predicción Versus
@@ -411,7 +417,8 @@ def run_app():
         df_proy = simular_campeonato(M, last_key, modelo)
         
         df_proy_visual = df_proy.copy()
-        df_proy_visual["Equipo"] = df_proy_visual["Selección"].apply(get_label)
+        df_proy_visual["Escudo"] = df_proy_visual["Selección"].apply(lambda t: logo_url(equipos, t))
+        df_proy_visual["Equipo"] = df_proy_visual["Selección"].apply(lambda t: label_tabla(equipos, t))
         df_proy_visual = df_proy_visual[[
             "Equipo", "Puntos esperados", "P_campeon", "P_libertadores_directo", 
             "P_libertadores_total", "P_sudamericana", "P_descenso"
@@ -439,7 +446,8 @@ def run_app():
                   .background_gradient(subset=["Descenso ⬇️"], cmap="OrRd"),
                 hide_index=True,
                 width='stretch',
-                height=500
+                height=500,
+                column_config={"Escudo": st.column_config.ImageColumn("", width="small")}
             )
     
     
@@ -524,8 +532,8 @@ def run_app():
             with c_table:
                 st.markdown("##### % Acierto por Equipo")
                 team_stats = []
-                equipos = set(df_val["local"]).union(set(df_val["visita"]))
-                for eq in equipos:
+                eqs_val = set(df_val["local"]).union(set(df_val["visita"]))
+                for eq in eqs_val:
                     df_eq = df_val[(df_val["local"] == eq) | (df_val["visita"] == eq)]
                     if len(df_eq) > 0:
                         aciertos = (df_eq["resultado"] == df_eq["Prediccion"]).sum()
@@ -542,6 +550,64 @@ def run_app():
                         hide_index=True, width='stretch'
                     )
     
+
+
+    with tab5:
+        st.markdown('<div class="sec-title">📈 Evolución de la Tabla (Posición Real a lo Largo de la Temporada)</div>', unsafe_allow_html=True)
+        st.caption("Trayectoria de cada equipo en la tabla: en el eje Y la posición (1 = líder, arriba) y en el eje X los partidos jugados (jornada)."
+                   " Cada línea es un equipo; así se ve la carrera por el título/descenso fecha a fecha, tal como en las noticias.")
+
+        try:
+            import plotly.graph_objects as go
+        except ImportError:
+            go = None
+
+        df_tmp = pd.read_csv(mo.DATA / "partidos.csv", parse_dates=["fecha"])
+        if "temporada" not in df_tmp.columns:
+            df_tmp["temporada"] = df_tmp["fecha"].apply(lambda x: x.year if x.month >= 7 else x.year - 1)
+        temps_disp = sorted(set(int(t) for t in df_tmp["temporada"]))
+        temp_ev = st.selectbox("Temporada a visualizar:", temps_disp, index=len(temps_disp) - 1)
+
+        @st.cache_data(show_spinner="Calculando evolución de la tabla...")
+        def _evolucion_global(t):
+            return mo.evolucion_tabla(M, temporada=int(t))
+
+        dfe = _evolucion_global(temp_ev)
+        if dfe is None or len(dfe) == 0:
+            st.info("No hay partidos jugados para esta temporada todavía.")
+        else:
+            ultima = dfe.sort_values("pj").groupby("equipo").tail(1).sort_values("posicion").reset_index(drop=True)
+            default_eq = list(ultima["equipo"].head(6))
+            sel_eq = st.multiselect(
+                "Equipos a visualizar:",
+                list(ultima["equipo"]),
+                default=default_eq,
+                format_func=lambda t: fmt_opcion(equipos, t) if equipos else t,
+            )
+            if not sel_eq:
+                st.info("Selecciona al menos un equipo.")
+            elif go is None:
+                st.warning("Instala plotly (`pip install plotly`) para ver la gráfica.")
+            else:
+                fig = go.Figure()
+                for eq in sel_eq:
+                    sub = dfe[dfe["equipo"] == eq].sort_values("pj")
+                    color = TEAM_DETAILS.get(eq, {}).get("color", "#64748b")
+                    fig.add_trace(go.Scatter(
+                        x=sub["pj"], y=sub["posicion"], mode="lines+markers",
+                        name=eq, line=dict(color=color, width=3),
+                        hovertemplate=f"<b>{eq}</b><br>Posición %{{y}}ª · Jornada %{{x}}<extra></extra>",
+                    ))
+                fig.update_yaxes(autorange="reversed", title="Posición (1 = líder)", dtick=1)
+                fig.update_xaxes(title="Jornada (partidos jugados)", dtick=1)
+                fig.update_layout(
+                    height=520, hovermode="closest", showlegend=True,
+                    legend=dict(orientation="h", yanchor="bottom", y=1.02),
+                    plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
+                    margin=dict(l=40, r=20, t=40, b=40),
+                )
+                st.plotly_chart(fig, use_container_width=True)
+
 
 if __name__ == "__main__":
     run_app()

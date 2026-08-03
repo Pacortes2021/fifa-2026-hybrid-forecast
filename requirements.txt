@@ -10,3 +10,4 @@ requests==2.32.5
 ripser==0.6.15
 persim==0.3.8
 xgboost==2.1.4
+plotly==6.6.0

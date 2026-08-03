@@ -1255,6 +1255,55 @@ def validacion_en_vivo(M, temporada_val=2026):
     return df_val, met, evol
 
 
+
+
+def evolucion_tabla(M, temporada=None):
+    """Posicion en la tabla de cada equipo a lo largo de la temporada (formato largo).
+
+    Eje X util: pj (partidos jugados). Ordena con criterio puntos, dif_goles, goles_favor,
+    consistente en todas las ligas (independiente de ordenar_tabla de cada motor).
+    """
+    partidos = pd.read_csv(DATA / "partidos.csv", parse_dates=["fecha"]).sort_values("fecha")
+    partidos["temporada"] = partidos["fecha"].apply(lambda x: x.year if x.month >= 7 else x.year - 1)
+    if temporada is None:
+        temporada = partidos["temporada"].max()
+    pp = partidos[partidos["temporada"] == temporada]
+    eqs = sorted(set(pp["local"].unique()).union(set(pp["visita"].unique())))
+    pts = {e: 0 for e in eqs}
+    gf = {e: 0 for e in eqs}
+    gc = {e: 0 for e in eqs}
+    pj = {e: 0 for e in eqs}
+    filas = []
+    for fecha in sorted(pp["fecha"].unique()):
+        dia = pp[pp["fecha"] == fecha]
+        for r in dia.itertuples(index=False):
+            l, v = r.local, r.visita
+            if l not in eqs or v not in eqs:
+                continue
+            pj[l] += 1; pj[v] += 1
+            gf[l] += r.goles_local; gf[v] += r.goles_visita
+            gc[l] += r.goles_visita; gc[v] += r.goles_local
+            if r.goles_local > r.goles_visita:
+                pts[l] += 3
+            elif r.goles_local == r.goles_visita:
+                pts[l] += 1; pts[v] += 1
+            else:
+                pts[v] += 3
+        filas_tab = []
+        for e in eqs:
+            filas_tab.append({"equipo": e, "pj": pj[e], "puntos": pts[e],
+                              "goles_contra": gc[e], "goles_favor": gf[e],
+                              "dif_goles": gf[e] - gc[e]})
+        tab = pd.DataFrame(filas_tab)
+        tab = tab.sort_values(by=["puntos", "dif_goles", "goles_favor"],
+                              ascending=False).reset_index(drop=True)
+        pos = {e: i + 1 for i, e in enumerate(tab["equipo"])}
+        for e in eqs:
+            if pj[e] >= 1:
+                filas.append({"fecha": fecha.date().isoformat(), "pj": pj[e],
+                              "equipo": e, "posicion": pos[e], "puntos": pts[e]})
+    return pd.DataFrame(filas)
+
 def obtener_tabla_actual(M):
     # Tabla real del torneo vigente (Apertura 2026), no del torneo anterior
     p_actuales, _ = _torneo_actual(M)
