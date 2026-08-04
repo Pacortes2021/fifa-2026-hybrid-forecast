@@ -1,9 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841477,2026-08-03 16:45:00,2026,10158,9744,Sarmiento,Independiente Rivadavia,,,pre
-401841474,2026-08-03 19:00:00,2026,7764,19,Platense,Talleres de Córdoba,,,pre
-401841465,2026-08-03 19:00:00,2026,21,11,Vélez Sarsfield,Independiente,,,pre
-401841468,2026-08-03 21:15:00,2026,11989,18,Central Córdoba,San Lorenzo,,,pre
-401841471,2026-08-03 21:15:00,2026,10,9785,Huracán,Atlético Tucumán,,,pre
 401841460,2026-08-05 19:00:00,2026,5,8,Boca Juniors,Estudiantes de La Plata,,,pre
 401841463,2026-08-05 21:15:00,2026,7767,4,Tigre,Belgrano,,,pre
 401841450,2026-08-06 19:00:00,2026,20,12,Unión de Santa Fe,Lanús,,,pre
