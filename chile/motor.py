@@ -852,6 +852,60 @@ def obtener_tabla_actual(M):
     return ordenar_tabla(tabla)
 
 
+def _simular_fixture_vec(M, PREDS, fijos, n_sims):
+    fix = pd.read_csv(DATA / "fixture.csv")
+    fix = fix[fix.temporada == _temporada_actual()]
+    partidos = M["partidos"]
+    p_actuales = partidos[partidos.temporada == _temporada_actual()]
+    eqs = sorted(set(p_actuales["local"]).union(set(p_actuales["visita"])).union(set(fix["local"])).union(set(fix["visita"])))
+    n_eq = len(eqs)
+    ix = {e: i for i, e in enumerate(eqs)}
+    PTS = np.zeros((n_eq, n_sims))
+    GF = np.zeros_like(PTS)
+    GC = np.zeros_like(PTS)
+    PG = np.zeros_like(PTS)
+    for r in p_actuales.itertuples(index=False):
+        l, v = ix[r.local], ix[r.visita]
+        gl, gv = float(r.goles_local), float(r.goles_visita)
+        GF[l] += gl
+        GC[l] += gv
+        GF[v] += gv
+        GC[v] += gl
+        if gl > gv:
+            PTS[l] += 3
+            PG[l] += 1
+        elif gl == gv:
+            PTS[l] += 1
+            PTS[v] += 1
+        else:
+            PTS[v] += 3
+            PG[v] += 1
+    for r in fix.itertuples(index=False):
+        l, v = r.local, r.visita
+        if fijos and (l, v) in fijos:
+            gl = np.full(n_sims, float(fijos[(l, v)][0]))
+            gv = np.full(n_sims, float(fijos[(l, v)][1]))
+        else:
+            p, la, lb = PREDS.get((l, v), (None, 1.2, 1.2))
+            gl = np.random.poisson(la, size=n_sims).astype(float)
+            gv = np.random.poisson(lb, size=n_sims).astype(float)
+        li, vi = ix[l], ix[v]
+        win_l = gl > gv
+        draw = gl == gv
+        PTS[li] += np.where(win_l, 3.0, np.where(draw, 1.0, 0.0))
+        PTS[vi] += np.where(gv > gl, 3.0, np.where(draw, 1.0, 0.0))
+        PG[li] += win_l.astype(float)
+        PG[vi] += (gv > gl).astype(float)
+        GF[li] += gl
+        GF[vi] += gv
+        GC[li] += gv
+        GC[vi] += gl
+    DG = GF - GC
+    key = (PTS * 1_000_000_000 + DG * 1_000_000 + PG * 1_000 + GF).astype(np.int64)
+    order = np.argsort(-key, axis=0)
+    return eqs, order, PTS
+
+
 def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
     if seed is not None:
         np.random.seed(seed)
@@ -897,25 +951,20 @@ def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
     resultados_descenso = defaultdict(int)             # Bottom 2 (15º y 16º)
     resultados_puntos = defaultdict(list)
     
-    for _ in range(n_sims):
-        tabla = simular_fixture_regular(M, PREDS, fijos)
-        df_ord = ordenar_tabla(tabla)
-        
-        for idx, r in enumerate(df_ord.itertuples()):
-            eq = r.Selección
-            pos = idx + 1
-            resultados_puntos[eq].append(r.PTS)
-            
-            if pos == 1:
-                resultados_campeon[eq] += 1
-            if pos <= 2:
-                resultados_libertadores_directo[eq] += 1
-            if pos <= 3:
-                resultados_libertadores_total[eq] += 1
-            if 4 <= pos <= 7:
-                resultados_sudamericana[eq] += 1
-            if pos >= len(df_ord) - 1:
-                resultados_descenso[eq] += 1
+    eqs, order, PTS = _simular_fixture_vec(M, PREDS, fijos, n_sims)
+    n_eq = len(eqs)
+    campeon_c = np.bincount(order[0], minlength=n_eq)
+    lib_d_c = np.bincount(order[:2].ravel(), minlength=n_eq)
+    lib_t_c = np.bincount(order[:3].ravel(), minlength=n_eq)
+    sud_c = np.bincount(order[3:7].ravel(), minlength=n_eq)
+    des_c = np.bincount(order[-2:].ravel(), minlength=n_eq)
+    puntos = PTS.mean(axis=1)
+    resultados_campeon = {e: int(campeon_c[i]) for i, e in enumerate(eqs)}
+    resultados_libertadores_directo = {e: int(lib_d_c[i]) for i, e in enumerate(eqs)}
+    resultados_libertadores_total = {e: int(lib_t_c[i]) for i, e in enumerate(eqs)}
+    resultados_sudamericana = {e: int(sud_c[i]) for i, e in enumerate(eqs)}
+    resultados_descenso = {e: int(des_c[i]) for i, e in enumerate(eqs)}
+    resultados_puntos = {e: [float(puntos[i])] for i, e in enumerate(eqs)}
                 
     filas = []
     for eq in todos_activos:

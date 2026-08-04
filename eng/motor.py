@@ -868,6 +868,53 @@ def obtener_tabla_actual(M, temporada=None):
     return ordenar_tabla(pd.DataFrame(filas))
 
 
+def _simular_fixture_vec(M, PREDS, fijos, n_sims, modelo_tipo="rf"):
+    fix_path = DATA / "fixture.csv"
+    fix = pd.read_csv(fix_path)
+    fix["temporada"] = pd.to_datetime(fix["fecha"]).apply(lambda x: x.year if x.month >= 7 else x.year - 1)
+    temporada_sim = fix["temporada"].mode().iloc[0]
+    fix = fix[fix.temporada == temporada_sim]
+    tabla = obtener_tabla_actual(M, temporada=temporada_sim)
+    seed = dict(zip(tabla["equipo"], zip(tabla["puntos"], tabla["goles_favor"], tabla["goles_contra"])))
+    eqs = sorted(set(seed).union(set(fix["local"])).union(set(fix["visita"])))
+    n_eq = len(eqs)
+    ix = {e: i for i, e in enumerate(eqs)}
+    PTS = np.zeros((n_eq, n_sims))
+    GF = np.zeros_like(PTS)
+    GC = np.zeros_like(PTS)
+    for e in eqs:
+        if e in seed:
+            pts, gf_, gc_ = seed[e]
+            PTS[ix[e]] = pts
+            GF[ix[e]] = gf_
+            GC[ix[e]] = gc_
+    for r in fix.itertuples(index=False):
+        local, visita = r.local, r.visita
+        if fijos and (local, visita) in fijos:
+            gl = np.full(n_sims, float(fijos[(local, visita)][0]))
+            gv = np.full(n_sims, float(fijos[(local, visita)][1]))
+        else:
+            p = PREDS.get((local, visita))
+            if p is None:
+                p = grilla_goles(M, local, visita, modelo_tipo=modelo_tipo)
+            k = np.random.choice(p.size, size=n_sims, p=p.ravel())
+            gl = (k // p.shape[1]).astype(float)
+            gv = (k % p.shape[1]).astype(float)
+        li, vi = ix[local], ix[visita]
+        win_l = gl > gv
+        draw = gl == gv
+        PTS[li] += np.where(win_l, 3.0, np.where(draw, 1.0, 0.0))
+        PTS[vi] += np.where(gv > gl, 3.0, np.where(draw, 1.0, 0.0))
+        GF[li] += gl
+        GF[vi] += gv
+        GC[li] += gv
+        GC[vi] += gl
+    DG = GF - GC
+    key = (PTS * 1_000_000 + DG * 1_000 + GF).astype(np.int64)
+    order = np.argsort(-key, axis=0)
+    return eqs, order
+
+
 def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
     # Corre simulación de Monte Carlo para obtener probabilidades de campeón, copas y descenso.
     # El resultado se persiste a disco (eng/data/simulacion_mc.pkl) y se reutiliza mientras
@@ -927,19 +974,14 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
     counts_copas = defaultdict(int)
     counts_descenso = defaultdict(int)
     
-    for _ in range(n_sims):
-        tabla_sim = simular_fixture_regular(M, PREDS, fijos, modelo_tipo=modelo_tipo)
-        
-        # Campeón
-        counts_campeon[tabla_sim.iloc[0]["equipo"]] += 1
-        
-        # Copas
-        for eq in tabla_sim.iloc[:CUPOS_COPA]["equipo"]:
-            counts_copas[eq] += 1
-            
-        # Descenso
-        for eq in tabla_sim.iloc[-DESCIENDEN:]["equipo"]:
-            counts_descenso[eq] += 1
+    eqs, order = _simular_fixture_vec(M, PREDS, fijos, n_sims, modelo_tipo=modelo_tipo)
+    n_eq = len(eqs)
+    campeon_c = np.bincount(order[0], minlength=n_eq)
+    copas_c = np.bincount(order[:CUPOS_COPA].ravel(), minlength=n_eq)
+    descenso_c = np.bincount(order[-DESCIENDEN:].ravel(), minlength=n_eq)
+    counts_campeon = {e: int(campeon_c[i]) for i, e in enumerate(eqs)}
+    counts_copas = {e: int(copas_c[i]) for i, e in enumerate(eqs)}
+    counts_descenso = {e: int(descenso_c[i]) for i, e in enumerate(eqs)}
             
     # Armar DataFrame resumen
     res = []

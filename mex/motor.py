@@ -1098,6 +1098,118 @@ def simular_play_in_y_liguilla(PREDS, df_tabla):
     }
 
 
+def _serie_vec(LA, LB, f1, f2, n_sims):
+    g_f2 = np.random.poisson(LA[f2, f1])
+    g_f1 = np.random.poisson(LB[f2, f1])
+    g_f1_v = np.random.poisson(LA[f1, f2])
+    g_f2_v = np.random.poisson(LB[f1, f2])
+    return np.where(g_f1 + g_f1_v >= g_f2 + g_f2_v, f1, f2)
+
+
+def _simular_fixture_vec(M, PREDS, fijos, n_sims):
+    p_actuales, fix = _torneo_actual(M)
+    eqs = sorted(ALTITUDES.keys())
+    n_eq = len(eqs)
+    ix = {e: i for i, e in enumerate(eqs)}
+    LA = np.full((n_eq, n_eq), 1.2)
+    LB = np.full((n_eq, n_eq), 1.2)
+    for (l, v), (p, la, lb) in PREDS.items():
+        LA[ix[l], ix[v]] = la
+        LB[ix[l], ix[v]] = lb
+    PTS = np.zeros((n_eq, n_sims))
+    GF = np.zeros_like(PTS)
+    GC = np.zeros_like(PTS)
+    for r in p_actuales.itertuples(index=False):
+        l, v = ix[r.local], ix[r.visita]
+        gl, gv = float(r.goles_local), float(r.goles_visita)
+        GF[l] += gl
+        GC[l] += gv
+        GF[v] += gv
+        GC[v] += gl
+        if gl > gv:
+            PTS[l] += 3
+        elif gl == gv:
+            PTS[l] += 1
+            PTS[v] += 1
+        else:
+            PTS[v] += 3
+    for r in fix.itertuples(index=False):
+        if r.estado != "pre" and pd.notna(r.goles_local) and pd.notna(r.goles_visita):
+            continue
+        l, v = r.local, r.visita
+        if fijos and (l, v) in fijos:
+            gl = np.full(n_sims, float(fijos[(l, v)][0]))
+            gv = np.full(n_sims, float(fijos[(l, v)][1]))
+        else:
+            p, la, lb = PREDS.get((l, v), (None, 1.2, 1.2))
+            gl = np.random.poisson(la, size=n_sims).astype(float)
+            gv = np.random.poisson(lb, size=n_sims).astype(float)
+        li, vi = ix[l], ix[v]
+        win_l = gl > gv
+        draw = gl == gv
+        PTS[li] += np.where(win_l, 3.0, np.where(draw, 1.0, 0.0))
+        PTS[vi] += np.where(gv > gl, 3.0, np.where(draw, 1.0, 0.0))
+        GF[li] += gl
+        GF[vi] += gv
+        GC[li] += gv
+        GC[vi] += gl
+    DG = GF - GC
+    key = (PTS * 1_000_000 + DG * 1_000 + GF).astype(np.int64)
+    order = np.argsort(-key, axis=0)
+    sims = np.arange(n_sims)
+    RANK = np.empty((n_eq, n_sims), dtype=np.int64)
+    RANK[order, sims[None, :]] = np.arange(n_eq)[:, None]
+    t7, t8, t9, t10 = order[6], order[7], order[8], order[9]
+    rnd = np.random.rand(n_sims)
+    gl = np.random.poisson(LA[t7, t8])
+    gv = np.random.poisson(LB[t7, t8])
+    ganador_a = np.where(gl == gv, np.where(rnd > 0.5, t7, t8), np.where(gl > gv, t7, t8))
+    perdedor_a = np.where(ganador_a == t7, t8, t7)
+    rnd = np.random.rand(n_sims)
+    gl = np.random.poisson(LA[t9, t10])
+    gv = np.random.poisson(LB[t9, t10])
+    ganador_b = np.where(gl == gv, np.where(rnd > 0.5, t9, t10), np.where(gl > gv, t9, t10))
+    rnd = np.random.rand(n_sims)
+    gl = np.random.poisson(LA[perdedor_a, ganador_b])
+    gv = np.random.poisson(LB[perdedor_a, ganador_b])
+    seed8 = np.where(gl == gv, np.where(rnd > 0.5, perdedor_a, ganador_b), np.where(gl > gv, perdedor_a, ganador_b))
+    seed7 = ganador_a
+    directos = order[:6]
+    finalistas = np.vstack([directos, seed7[None, :], seed8[None, :]])
+    rk = RANK[finalistas, sims[None, :]]
+    f_sorted = finalistas[np.argsort(rk, axis=0), sims[None, :]]
+    w1 = _serie_vec(LA, LB, f_sorted[0], f_sorted[7], n_sims)
+    w2 = _serie_vec(LA, LB, f_sorted[1], f_sorted[6], n_sims)
+    w3 = _serie_vec(LA, LB, f_sorted[2], f_sorted[5], n_sims)
+    w4 = _serie_vec(LA, LB, f_sorted[3], f_sorted[4], n_sims)
+    sf = np.vstack([w1, w2, w3, w4])
+    rk = RANK[sf, sims[None, :]]
+    sf_sorted = sf[np.argsort(rk, axis=0), sims[None, :]]
+    fg1 = _serie_vec(LA, LB, sf_sorted[0], sf_sorted[3], n_sims)
+    fg2 = _serie_vec(LA, LB, sf_sorted[1], sf_sorted[2], n_sims)
+    fg = np.vstack([fg1, fg2])
+    rk = RANK[fg, sims[None, :]]
+    fg_sorted = fg[np.argsort(rk, axis=0), sims[None, :]]
+    f1, f2 = fg_sorted[0], fg_sorted[1]
+    g_f2 = np.random.poisson(LA[f2, f1])
+    g_f1 = np.random.poisson(LB[f2, f1])
+    g_f1_v = np.random.poisson(LA[f1, f2])
+    g_f2_v = np.random.poisson(LB[f1, f2])
+    tot1 = g_f1 + g_f1_v
+    tot2 = g_f2 + g_f2_v
+    rnd = np.random.rand(n_sims)
+    campeon = np.where(tot1 == tot2, np.where(rnd > 0.5, f1, f2), np.where(tot1 > tot2, f1, f2))
+    subcampeon = np.where(campeon == f1, f2, f1)
+    return (
+        eqs,
+        np.bincount(campeon, minlength=n_eq),
+        np.bincount(subcampeon, minlength=n_eq),
+        np.bincount(directos.ravel(), minlength=n_eq),
+        np.bincount(finalistas.ravel(), minlength=n_eq),
+        PTS.mean(axis=1)
+    )
+
+
 def monte_carlo(M, n_sims=5000, fijos=None, modelo="rf", seed=42):
     """Ejecuta n simulaciones de Monte Carlo para calcular proyecciones finales precalculando las predicciones.
     El resultado se persiste a disco (simulacion_mc.pkl) y se reutiliza mientras los datos, el modelo
@@ -1139,31 +1251,12 @@ def monte_carlo(M, n_sims=5000, fijos=None, modelo="rf", seed=42):
     resultados_directo = defaultdict(int) # clasifica top 6 directo
     resultados_puntos = defaultdict(list)
     
-    for _ in range(n_sims):
-        # 1. Simular resto del fixture regular
-        tabla = simular_fixture_regular(M, PREDS, fijos)
-        
-        # 2. Ordenar tabla
-        df_ord = ordenar_tabla(tabla)
-        
-        # Registrar puntos finales
-        for r in df_ord.itertuples():
-            resultados_puntos[r.Selección].append(r.PTS)
-            
-        # Registrar clasificados directos (top-6)
-        for eq in df_ord.head(6)["Selección"]:
-            resultados_directo[eq] += 1
-            
-        # 3. Simular Play-In y Liguilla
-        res_lig = simular_play_in_y_liguilla(PREDS, df_ord)
-        
-        resultados_campeon[res_lig["campeon"]] += 1
-        resultados_finalista[res_lig["campeon"]] += 1
-        resultados_finalista[res_lig["subcampeon"]] = resultados_finalista.get(res_lig["subcampeon"], 0) + 1
-        
-        # Registrar clasificados a liguilla (los 8 finalistas)
-        for eq in res_lig["finalistas"]:
-            resultados_play_in[eq] += 1
+    eqs, campeon_c, sub_c, directo_c, play_in_c, puntos = _simular_fixture_vec(M, PREDS, fijos, n_sims)
+    equipos = eqs
+    resultados_directo = {e: int(directo_c[i]) for i, e in enumerate(eqs)}
+    resultados_play_in = {e: int(play_in_c[i]) for i, e in enumerate(eqs)}
+    resultados_campeon = {e: int(campeon_c[i]) for i, e in enumerate(eqs)}
+    resultados_puntos = {e: [float(puntos[i])] for i, e in enumerate(eqs)}
             
     # Compilar métricas agregadas
     filas = []

@@ -798,6 +798,61 @@ def simular_fixture_regular(M, PREDS, fijos=None):
     return tabla
 
 
+def _simular_fixture_vec(M, PREDS, fijos, n_sims):
+    p_actuales, fix = _torneo_actual(M)
+    partidos = M["partidos"]
+    eqs = set(p_actuales["local"]).union(set(p_actuales["visita"]))
+    if not fix.empty:
+        eqs = eqs.union(set(fix["local"])).union(set(fix["visita"]))
+    if not eqs:
+        eqs = set(partidos["local"].unique())
+    eqs = sorted(eqs)
+    n_eq = len(eqs)
+    ix = {e: i for i, e in enumerate(eqs)}
+    PTS = np.zeros((n_eq, n_sims))
+    GF = np.zeros_like(PTS)
+    GC = np.zeros_like(PTS)
+    for r in p_actuales.itertuples(index=False):
+        l, v = ix[r.local], ix[r.visita]
+        gl, gv = float(r.goles_local), float(r.goles_visita)
+        GF[l] += gl
+        GC[l] += gv
+        GF[v] += gv
+        GC[v] += gl
+        if gl > gv:
+            PTS[l] += 3
+        elif gl == gv:
+            PTS[l] += 1
+            PTS[v] += 1
+        else:
+            PTS[v] += 3
+    if not fix.empty:
+        for r in fix.itertuples(index=False):
+            if r.estado != "pre" and pd.notna(r.goles_local) and pd.notna(r.goles_visita):
+                continue
+            l, v = r.local, r.visita
+            if fijos and (l, v) in fijos:
+                gl = np.full(n_sims, float(fijos[(l, v)][0]))
+                gv = np.full(n_sims, float(fijos[(l, v)][1]))
+            else:
+                p, la, lb = PREDS.get((l, v), (None, 1.2, 1.2))
+                gl = np.random.poisson(la, size=n_sims).astype(float)
+                gv = np.random.poisson(lb, size=n_sims).astype(float)
+            li, vi = ix[l], ix[v]
+            win_l = gl > gv
+            draw = gl == gv
+            PTS[li] += np.where(win_l, 3.0, np.where(draw, 1.0, 0.0))
+            PTS[vi] += np.where(gv > gl, 3.0, np.where(draw, 1.0, 0.0))
+            GF[li] += gl
+            GF[vi] += gv
+            GC[li] += gv
+            GC[vi] += gl
+    DG = GF - GC
+    key = (PTS * 1_000_000 + DG * 1_000 + GF).astype(np.int64)
+    order = np.argsort(-key, axis=0)
+    return eqs, order, PTS
+
+
 def monte_carlo(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
     if seed is not None:
         np.random.seed(seed)
@@ -845,25 +900,17 @@ def monte_carlo(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
     resultados_copas = defaultdict(int)
     resultados_descenso = defaultdict(int)
     
-    for _ in range(n_sims):
-        tabla = simular_fixture_regular(M, PREDS, fijos)
-        filas = []
-        for eq, s in tabla.items():
-            filas.append({
-                "equipo": eq, "PTS": s["PTS"], "DG": s["GF"] - s["GC"], "GF": s["GF"]
-            })
-        df_t = pd.DataFrame(filas).sort_values(by=["PTS", "DG", "GF"], ascending=False).reset_index(drop=True)
-        
-        for idx, row in df_t.iterrows():
-            eq = row["equipo"]
-            pts = row["PTS"]
-            resultados_pts[eq].append(pts)
-            if idx == 0:
-                resultados_campeon[eq] += 1
-            if idx < 4:
-                resultados_copas[eq] += 1
-            if idx >= len(df_t) - 2:
-                resultados_descenso[eq] += 1
+    eqs, order, PTS = _simular_fixture_vec(M, PREDS, fijos, n_sims)
+    n_eq = len(eqs)
+    campeon_c = np.bincount(order[0], minlength=n_eq)
+    copas_c = np.bincount(order[:4].ravel(), minlength=n_eq)
+    descenso_c = np.bincount(order[-2:].ravel(), minlength=n_eq)
+    puntos = PTS.mean(axis=1)
+    todos_activos = eqs
+    resultados_pts = {e: [float(puntos[i])] for i, e in enumerate(eqs)}
+    resultados_campeon = {e: int(campeon_c[i]) for i, e in enumerate(eqs)}
+    resultados_copas = {e: int(copas_c[i]) for i, e in enumerate(eqs)}
+    resultados_descenso = {e: int(descenso_c[i]) for i, e in enumerate(eqs)}
                 
     filas_res = []
     for eq in todos_activos:
