@@ -30,20 +30,20 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882901,2026-08-31 19:30:00,2026,97,2922,CA Osasuna,Getafe,,,pre
 401882903,2026-08-31 21:30:00,2026,83,101,FC Barcelona,Rayo Vallecano,,,pre
 401882867,2026-09-03 21:00:00,2026,89,85,Real Sociedad,Celta de Vigo,,,pre
-401882887,2026-09-06 20:00:00,2026,102,90,Villarreal CF,Deportivo La Coruña,,,pre
-401882888,2026-09-06 20:00:00,2026,94,83,Valencia CF,FC Barcelona,,,pre
-401882894,2026-09-06 20:00:00,2026,244,86,Real Betis,Real Madrid,,,pre
-401882889,2026-09-06 20:00:00,2026,101,87,Rayo Vallecano,Racing Santander,,,pre
-401882890,2026-09-06 20:00:00,2026,99,1538,Málaga,Levante,,,pre
-401882892,2026-09-06 20:00:00,2026,88,243,Espanyol,Sevilla FC,,,pre
-401882893,2026-09-06 20:00:00,2026,3751,89,Elche CF,Real Sociedad,,,pre
-401882895,2026-09-06 20:00:00,2026,93,1068,Athletic Club,Atlético de Madrid,,,pre
-401882896,2026-09-06 20:00:00,2026,96,97,Alavés,CA Osasuna,,,pre
-401882891,2026-09-06 20:00:00,2026,2922,85,Getafe,Celta de Vigo,,,pre
-401882880,2026-09-13 20:00:00,2026,86,101,Real Madrid,Rayo Vallecano,,,pre
+401882894,2026-09-04 21:00:00,2026,244,86,Real Betis,Real Madrid,,,pre
+401882895,2026-09-05 16:15:00,2026,93,1068,Athletic Club,Atlético de Madrid,,,pre
+401882889,2026-09-05 18:30:00,2026,101,87,Rayo Vallecano,Racing Santander,,,pre
+401882887,2026-09-05 21:00:00,2026,102,90,Villarreal CF,Deportivo La Coruña,,,pre
+401882888,2026-09-06 16:15:00,2026,94,83,Valencia CF,FC Barcelona,,,pre
+401882890,2026-09-06 18:30:00,2026,99,1538,Málaga,Levante,,,pre
+401882896,2026-09-06 18:30:00,2026,96,97,Alavés,CA Osasuna,,,pre
+401882892,2026-09-06 21:00:00,2026,88,243,Espanyol,Sevilla FC,,,pre
+401882891,2026-09-07 19:00:00,2026,2922,85,Getafe,Celta de Vigo,,,pre
+401882893,2026-09-07 21:30:00,2026,3751,89,Elche CF,Real Sociedad,,,pre
 401882877,2026-09-13 20:00:00,2026,102,244,Villarreal CF,Real Betis,,,pre
 401882878,2026-09-13 20:00:00,2026,243,94,Sevilla FC,Valencia CF,,,pre
 401882879,2026-09-13 20:00:00,2026,89,1068,Real Sociedad,Atlético de Madrid,,,pre
+401882880,2026-09-13 20:00:00,2026,86,101,Real Madrid,Rayo Vallecano,,,pre
 401882881,2026-09-13 20:00:00,2026,87,96,Racing Santander,Alavés,,,pre
 401882882,2026-09-13 20:00:00,2026,97,88,CA Osasuna,Espanyol,,,pre
 401882883,2026-09-13 20:00:00,2026,1538,83,Levante,FC Barcelona,,,pre
