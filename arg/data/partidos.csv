@@ -2292,3 +2292,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841465,2026-08-03 19:00:00,2026,21,11,Vélez Sarsfield,Independiente,1.0,0.0,post
 401841468,2026-08-03 21:15:00,2026,11989,18,Central Córdoba,San Lorenzo,1.0,0.0,post
 401841471,2026-08-03 21:15:00,2026,10,9785,Huracán,Atlético Tucumán,0.0,0.0,post
+401841460,2026-08-05 19:00:00,2026,5,8,Boca Juniors,Estudiantes de La Plata,1.0,0.0,post
+401841463,2026-08-05 21:15:00,2026,7767,4,Tigre,Belgrano,0.0,0.0,post
