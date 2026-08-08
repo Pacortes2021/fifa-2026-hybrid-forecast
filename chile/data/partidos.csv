@@ -1447,3 +1447,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850605,2026-08-02 12:30:00,2026,8110,885,Deportes Concepción,Universidad Católica,3.0,0.0,post
 401850609,2026-08-02 15:00:00,2026,4137,6072,Deportes La Serena,O'Higgins,1.0,2.0,post
 401850607,2026-08-02 17:30:00,2026,4139,4134,Universidad de Chile,Huachipato,2.0,0.0,post
+401850614,2026-08-07 20:30:00,2026,885,4133,Universidad Católica,Cobresal,2.0,0.0,post

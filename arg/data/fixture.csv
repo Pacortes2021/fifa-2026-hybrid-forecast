@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841491,2026-08-07 19:30:00,2026,17,9739,Rosario Central,Aldosivi,,,pre
-401841493,2026-08-07 21:45:00,2026,9744,19685,Independiente Rivadavia,Estudiantes de Río Cuarto,,,pre
 401841484,2026-08-08 14:45:00,2026,9785,10158,Atlético Tucumán,Sarmiento,,,pre
 401841480,2026-08-08 14:45:00,2026,17702,8,Deportivo Riestra,Estudiantes de La Plata,,,pre
 401841488,2026-08-08 17:00:00,2026,7767,16,Tigre,River Plate,,,pre

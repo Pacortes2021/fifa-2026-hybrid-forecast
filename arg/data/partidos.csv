@@ -2295,3 +2295,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841460,2026-08-05 19:00:00,2026,5,8,Boca Juniors,Estudiantes de La Plata,1.0,0.0,post
 401841463,2026-08-05 21:15:00,2026,7767,4,Tigre,Belgrano,0.0,0.0,post
 401841450,2026-08-06 19:00:00,2026,20,12,Unión de Santa Fe,Lanús,2.0,1.0,post
+401841491,2026-08-07 19:30:00,2026,17,9739,Rosario Central,Aldosivi,2.0,1.0,post
+401841493,2026-08-07 21:45:00,2026,9744,19685,Independiente Rivadavia,Estudiantes de Río Cuarto,2.0,1.0,post
