@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401850616,2026-08-08 15:00:00,2026,4134,4129,Huachipato,Everton,,,pre
-401850618,2026-08-08 17:30:00,2026,8186,4137,Coquimbo Unido,Deportes La Serena,,,pre
 401850617,2026-08-09 12:30:00,2026,8110,5362,Deportes Concepción,Universidad de Concepción,,,pre
 401850615,2026-08-09 15:00:00,2026,6072,19195,O'Higgins,Deportes Limache,,,pre
 401850619,2026-08-09 17:30:00,2026,10144,2688,Unión La Calera,Colo Colo,,,pre
