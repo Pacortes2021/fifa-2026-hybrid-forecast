@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841490,2026-08-09 15:00:00,2026,18,10,San Lorenzo,Huracán,,,pre
-401841479,2026-08-09 17:45:00,2026,9,10060,Gimnasia La Plata,Barracas Central,,,pre
-401841481,2026-08-09 17:45:00,2026,8950,14,Defensa y Justicia,Newell's Old Boys,,,pre
-401841485,2026-08-09 20:15:00,2026,3,15,Argentinos Juniors,Racing Club,,,pre
 401841483,2026-08-10 19:00:00,2026,235,4,Banfield,Belgrano,,,pre
 401841487,2026-08-10 21:15:00,2026,20,11989,Unión de Santa Fe,Central Córdoba,,,pre
 401841489,2026-08-11 21:00:00,2026,19,12,Talleres de Córdoba,Lanús,,,pre

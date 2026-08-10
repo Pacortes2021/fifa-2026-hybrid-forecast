@@ -2303,3 +2303,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841482,2026-08-08 19:15:00,2026,5,21,Boca Juniors,Vélez Sarsfield,1.0,1.0,post
 401841486,2026-08-08 21:30:00,2026,11,7764,Independiente,Platense,0.0,1.0,post
 401841492,2026-08-08 21:30:00,2026,2975,11972,Instituto,Gimnasia Mendoza,1.0,0.0,post
+401841490,2026-08-09 15:00:00,2026,18,10,San Lorenzo,Huracán,0.0,2.0,post
+401841479,2026-08-09 17:45:00,2026,9,10060,Gimnasia La Plata,Barracas Central,2.0,0.0,post
+401841481,2026-08-09 17:45:00,2026,8950,14,Defensa y Justicia,Newell's Old Boys,2.0,1.0,post
+401841485,2026-08-09 20:15:00,2026,3,15,Argentinos Juniors,Racing Club,2.0,1.0,post
