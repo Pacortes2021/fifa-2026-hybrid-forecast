@@ -1,10 +1,10 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
 401877018,2026-08-15 17:00:00,2026,226,223,Atlante,Toluca,,,pre
-401877017,2026-08-15 19:00:00,2026,220,17851,Monterrey,FC Juárez,,,pre
-401877016,2026-08-15 21:00:00,2026,216,232,Atlas,Tigres UANL,,,pre
+401877017,2026-08-15 19:10:00,2026,220,17851,Monterrey,FC Juárez,,,pre
+401877016,2026-08-15 21:10:00,2026,216,232,Atlas,Tigres UANL,,,pre
 401877015,2026-08-16 12:00:00,2026,233,222,Pumas UNAM,Querétaro,,,pre
 401877014,2026-08-16 17:00:00,2026,227,15720,América,Atlético San Luis,,,pre
-401877013,2026-08-16 19:00:00,2026,225,219,Santos Laguna,Guadalajara,,,pre
+401877013,2026-08-16 19:10:00,2026,225,219,Santos Laguna,Guadalajara,,,pre
 401877012,2026-08-16 21:00:00,2026,10125,218,Tijuana,Cruz Azul,,,pre
 401877011,2026-08-17 19:00:00,2026,229,228,Necaxa,León,,,pre
 401877010,2026-08-17 21:00:00,2026,234,231,Pachuca,Puebla,,,pre
