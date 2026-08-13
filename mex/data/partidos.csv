@@ -511,7 +511,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635189,2022-05-22 20:06:00,2022,234,227,Pachuca,América,3.0,0.0,post
 635252,2022-05-26 21:00:00,2022,216,234,Atlas,Pachuca,2.0,0.0,post
 635253,2022-05-29 20:10:00,2022,234,216,Pachuca,Atlas,2.0,1.0,post
-636012,2022-07-01 21:05:00,2022,20702,231,Mazatlán FC,Puebla,2.0,4.0,post
 636013,2022-07-02 17:00:00,2022,219,17851,Guadalajara,FC Juárez,0.0,0.0,post
 636011,2022-07-02 17:00:00,2022,229,223,Necaxa,Toluca,1.0,3.0,post
 636014,2022-07-02 19:05:00,2022,232,218,Tigres UANL,Cruz Azul,2.0,3.0,post
@@ -582,8 +581,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 636081,2022-08-13 21:05:00,2022,219,216,Guadalajara,Atlas,1.0,1.0,post
 636082,2022-08-14 17:00:00,2022,218,223,Cruz Azul,Toluca,2.0,3.0,post
 636083,2022-08-14 19:05:00,2022,232,225,Tigres UANL,Santos Laguna,2.0,0.0,post
-636085,2022-08-16 19:00:00,2022,20702,222,Mazatlán FC,Querétaro,1.0,1.0,post
 636084,2022-08-16 19:00:00,2022,216,17851,Atlas,FC Juárez,0.0,1.0,post
+636085,2022-08-16 19:00:00,2022,20702,222,Mazatlán FC,Querétaro,1.0,1.0,post
 636086,2022-08-16 21:05:00,2022,231,229,Puebla,Necaxa,2.0,2.0,post
 636087,2022-08-17 19:00:00,2022,223,220,Toluca,Monterrey,1.0,1.0,post
 636089,2022-08-17 21:05:00,2022,218,10125,Cruz Azul,Tijuana,1.0,2.0,post
@@ -802,8 +801,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 657689,2023-04-07 19:05:00,2023,231,223,Puebla,Toluca,1.0,2.0,post
 657690,2023-04-07 21:10:00,2023,10125,222,Tijuana,Querétaro,1.0,2.0,post
 657692,2023-04-08 17:00:00,2023,219,229,Guadalajara,Necaxa,1.0,0.0,post
-657693,2023-04-08 19:05:00,2023,232,20702,Tigres UANL,Mazatlán FC,1.0,2.0,post
 657691,2023-04-08 19:05:00,2023,228,218,León,Cruz Azul,0.0,0.0,post
+657693,2023-04-08 19:05:00,2023,232,20702,Tigres UANL,Mazatlán FC,1.0,2.0,post
 657694,2023-04-08 21:10:00,2023,227,220,América,Monterrey,2.0,1.0,post
 657695,2023-04-09 12:00:00,2023,233,15720,Pumas UNAM,Atlético San Luis,3.0,1.0,post
 657696,2023-04-09 18:05:00,2023,225,234,Santos Laguna,Pachuca,1.0,4.0,post
@@ -818,8 +817,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 657705,2023-04-16 17:00:00,2023,222,232,Querétaro,Tigres UANL,0.0,0.0,post
 657706,2023-04-16 19:10:00,2023,220,225,Monterrey,Santos Laguna,1.0,2.0,post
 657707,2023-04-20 20:05:00,2023,232,231,Tigres UANL,Puebla,1.0,0.0,post
-657709,2023-04-21 19:05:00,2023,229,216,Necaxa,Atlas,1.0,3.0,post
 657708,2023-04-21 19:05:00,2023,20702,220,Mazatlán FC,Monterrey,0.0,2.0,post
+657709,2023-04-21 19:05:00,2023,229,216,Necaxa,Atlas,1.0,3.0,post
 657710,2023-04-21 21:05:00,2023,10125,228,Tijuana,León,0.0,0.0,post
 657711,2023-04-22 17:00:00,2023,234,15720,Pachuca,Atlético San Luis,2.0,1.0,post
 657712,2023-04-22 19:05:00,2023,219,218,Guadalajara,Cruz Azul,2.0,1.0,post
