@@ -3,7 +3,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882918,2026-08-15 21:30:00,2026,243,101,Sevilla FC,Rayo Vallecano,,,pre
 401882920,2026-08-16 17:00:00,2026,87,102,Racing Santander,Villarreal CF,,,pre
 401882922,2026-08-16 19:00:00,2026,88,1538,Espanyol,Levante,,,pre
-401882924,2026-08-16 21:30:00,2026,85,97,Celta de Vigo,CA Osasuna,,,pre
 401882923,2026-08-17 21:00:00,2026,90,3751,Deportivo,Elche CF,,,pre
 401882925,2026-08-19 21:00:00,2026,1068,99,Atlético de Madrid,Málaga,,,pre
 401882908,2026-08-20 21:00:00,2026,101,96,Rayo Vallecano,Alavés,,,pre
@@ -18,6 +17,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882910,2026-08-24 21:30:00,2026,99,90,Málaga,Deportivo,,,pre
 401882917,2026-08-25 21:00:00,2026,94,244,Valencia CF,Real Betis,,,pre
 401882919,2026-08-26 21:00:00,2026,86,89,Real Madrid,Real Sociedad,,,pre
+401882924,2026-08-27 20:30:00,2026,85,97,Celta de Vigo,CA Osasuna,,,pre
 401882921,2026-08-27 21:00:00,2026,83,93,FC Barcelona,Athletic Club,,,pre
 401882900,2026-08-28 19:00:00,2026,87,3751,Racing Santander,Elche CF,,,pre
 401882906,2026-08-28 21:30:00,2026,96,102,Alavés,Villarreal CF,,,pre
