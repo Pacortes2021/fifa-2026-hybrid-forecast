@@ -1,10 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841494,2026-08-15 14:30:00,2026,9739,7767,Aldosivi,Tigre,,,pre
-401841502,2026-08-15 14:30:00,2026,18,20,San Lorenzo,Unión de Santa Fe,,,pre
-401841499,2026-08-15 16:45:00,2026,8,9,Estudiantes de La Plata,Gimnasia La Plata,,,pre
-401841506,2026-08-15 19:00:00,2026,14,17702,Newell's Old Boys,Deportivo Riestra,,,pre
-401841496,2026-08-15 19:00:00,2026,4,9744,Belgrano,Independiente Rivadavia,,,pre
-401841505,2026-08-15 21:15:00,2026,7764,5,Platense,Boca Juniors,,,pre
 401841501,2026-08-16 15:00:00,2026,10158,10,Sarmiento,Huracán,,,pre
 401841503,2026-08-16 18:00:00,2026,16,3,River Plate,Argentinos Juniors,,,pre
 401841508,2026-08-16 20:15:00,2026,10060,17,Barracas Central,Rosario Central,,,pre

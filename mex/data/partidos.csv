@@ -1897,3 +1897,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401877021,2026-08-01 21:00:00,2026,218,226,Cruz Azul,Atlante,2.0,3.0,post
 401877020,2026-08-02 17:00:00,2026,227,225,América,Santos Laguna,3.0,0.0,post
 401877019,2026-08-02 19:05:00,2026,223,229,Toluca,Necaxa,3.0,1.0,post
+401877018,2026-08-15 17:00:00,2026,226,223,Atlante,Toluca,0.0,0.0,post
+401877017,2026-08-15 19:10:00,2026,220,17851,Monterrey,FC Juárez,6.0,1.0,post
+401877016,2026-08-15 21:10:00,2026,216,232,Atlas,Tigres UANL,2.0,1.0,post

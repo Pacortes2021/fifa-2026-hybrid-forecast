@@ -1456,3 +1456,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850613,2026-08-09 20:00:00,2026,4139,4422,Universidad de Chile,Palestino,2.0,1.0,post
 401850612,2026-08-10 20:00:00,2026,4138,7427,Audax Italiano,Ñublense,2.0,2.0,post
 401850625,2026-08-14 19:00:00,2026,5362,4137,Universidad de Concepción,Deportes La Serena,0.0,2.0,post
+401850623,2026-08-15 17:30:00,2026,19195,4139,Deportes Limache,Universidad de Chile,1.0,3.0,post
+401850627,2026-08-15 20:00:00,2026,4129,4138,Everton,Audax Italiano,1.0,1.0,post
