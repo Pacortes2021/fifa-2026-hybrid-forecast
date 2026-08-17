@@ -1458,3 +1458,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850625,2026-08-14 19:00:00,2026,5362,4137,Universidad de Concepción,Deportes La Serena,0.0,2.0,post
 401850623,2026-08-15 17:30:00,2026,19195,4139,Deportes Limache,Universidad de Chile,1.0,3.0,post
 401850627,2026-08-15 20:00:00,2026,4129,4138,Everton,Audax Italiano,1.0,1.0,post
+401850624,2026-08-16 12:30:00,2026,7427,10144,Ñublense,Unión La Calera,2.0,1.0,post
+401850622,2026-08-16 15:00:00,2026,4133,8110,Cobresal,Deportes Concepción,0.0,2.0,post
+401850621,2026-08-16 17:30:00,2026,2688,6072,Colo Colo,O'Higgins,2.0,2.0,post

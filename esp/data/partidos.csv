@@ -2121,3 +2121,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 748515,2026-05-24 21:00:00,2026,102,1068,Villarreal CF,Atlético de Madrid,5.0,1.0,post
 401882926,2026-08-15 19:30:00,2026,96,2922,Alavés,Getafe,3.0,0.0,post
 401882918,2026-08-15 21:30:00,2026,243,101,Sevilla FC,Rayo Vallecano,2.0,1.0,post
+401882920,2026-08-16 17:00:00,2026,87,102,Racing Santander,Villarreal CF,2.0,2.0,post
+401882922,2026-08-16 19:00:00,2026,88,1538,Espanyol,Levante,3.0,0.0,post

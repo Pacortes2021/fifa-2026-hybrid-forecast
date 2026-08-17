@@ -2317,3 +2317,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841506,2026-08-15 19:00:00,2026,14,17702,Newell's Old Boys,Deportivo Riestra,2.0,0.0,post
 401841496,2026-08-15 19:00:00,2026,4,9744,Belgrano,Independiente Rivadavia,2.0,0.0,post
 401841505,2026-08-15 21:15:00,2026,7764,5,Platense,Boca Juniors,1.0,1.0,post
+401841501,2026-08-16 15:00:00,2026,10158,10,Sarmiento,Huracán,2.0,0.0,post
+401841503,2026-08-16 18:00:00,2026,16,3,River Plate,Argentinos Juniors,2.0,0.0,post
+401841508,2026-08-16 20:15:00,2026,10060,17,Barracas Central,Rosario Central,0.0,1.0,post
+401841497,2026-08-16 20:15:00,2026,11989,2975,Central Córdoba,Instituto,0.0,1.0,post
