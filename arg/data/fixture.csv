@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841522,2026-08-21 14:30:00,2026,9739,20,Aldosivi,Unión de Santa Fe,,,pre
-401841511,2026-08-21 20:00:00,2026,19685,18,Estudiantes de Río Cuarto,San Lorenzo,,,pre
 401841523,2026-08-22 16:00:00,2026,9785,2975,Atlético Tucumán,Instituto,,,pre
 401841512,2026-08-22 16:00:00,2026,9,11972,Gimnasia La Plata,Gimnasia Mendoza,,,pre
 401841514,2026-08-22 18:30:00,2026,11,9744,Independiente,Independiente Rivadavia,,,pre
