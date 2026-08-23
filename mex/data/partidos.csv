@@ -1910,3 +1910,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401877004,2026-08-21 19:00:00,2026,232,226,Tigres UANL,Atlante,2.0,0.0,post
 401877008,2026-08-21 21:10:00,2026,17851,227,FC Juárez,América,1.0,2.0,post
 401877007,2026-08-21 21:10:00,2026,222,223,Querétaro,Toluca,1.0,2.0,post
+401877006,2026-08-22 17:07:00,2026,219,10125,Guadalajara,Tijuana,5.0,2.0,post
+401877009,2026-08-22 19:00:00,2026,231,225,Puebla,Santos Laguna,3.0,2.0,post
+401877003,2026-08-22 21:00:00,2026,218,216,Cruz Azul,Atlas,0.0,2.0,post

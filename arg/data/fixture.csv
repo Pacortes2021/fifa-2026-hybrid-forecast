@@ -1,9 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841523,2026-08-22 16:00:00,2026,9785,2975,Atlético Tucumán,Instituto,,,pre
-401841512,2026-08-22 16:00:00,2026,9,11972,Gimnasia La Plata,Gimnasia Mendoza,,,pre
-401841514,2026-08-22 18:30:00,2026,11,9744,Independiente,Independiente Rivadavia,,,pre
-401841513,2026-08-22 21:00:00,2026,10,17702,Huracán,Deportivo Riestra,,,pre
-401841516,2026-08-22 21:00:00,2026,14,235,Newell's Old Boys,Banfield,,,pre
 401841509,2026-08-23 14:45:00,2026,10060,7764,Barracas Central,Platense,,,pre
 401841519,2026-08-23 14:45:00,2026,10158,8,Sarmiento,Estudiantes de La Plata,,,pre
 401841510,2026-08-23 17:00:00,2026,4,8950,Belgrano,Defensa y Justicia,,,pre

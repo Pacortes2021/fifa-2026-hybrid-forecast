@@ -1463,3 +1463,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850621,2026-08-16 17:30:00,2026,2688,6072,Colo Colo,O'Higgins,2.0,2.0,post
 401850626,2026-08-17 20:30:00,2026,4422,4134,Palestino,Huachipato,5.0,1.0,post
 401850628,2026-08-21 20:30:00,2026,4138,10144,Audax Italiano,Unión La Calera,0.0,0.0,post
+401850634,2026-08-22 17:30:00,2026,4134,19195,Huachipato,Deportes Limache,1.0,3.0,post
+401850631,2026-08-22 20:00:00,2026,885,7427,Universidad Católica,Ñublense,1.0,2.0,post

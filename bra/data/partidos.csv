@@ -1777,10 +1777,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 732744,2025-07-23 21:30:00,2025,2674,1936,Santos,Internacional,1.0,2.0,post
 732742,2025-07-23 21:30:00,2025,3457,7635,Vitória,Sport,2.0,2.0,post
 732746,2025-07-24 19:00:00,2025,6270,2026,Juventude,São Paulo,0.0,1.0,post
-732758,2025-07-26 18:30:00,2025,6086,874,Botafogo,Corinthians,1.0,1.0,post
-732751,2025-07-26 18:30:00,2025,6272,6079,Fortaleza,Red Bull Bragantino,3.0,1.0,post
-732753,2025-07-26 18:30:00,2025,9169,3457,Mirassol,Vitória,1.0,1.0,post
 732755,2025-07-26 18:30:00,2025,7635,2674,Sport,Santos,2.0,2.0,post
+732753,2025-07-26 18:30:00,2025,9169,3457,Mirassol,Vitória,1.0,1.0,post
+732751,2025-07-26 18:30:00,2025,6272,6079,Fortaleza,Red Bull Bragantino,3.0,1.0,post
+732758,2025-07-26 18:30:00,2025,6086,874,Botafogo,Corinthians,1.0,1.0,post
 732759,2025-07-26 21:00:00,2025,2029,6273,Palmeiras,Grêmio,1.0,0.0,post
 732757,2025-07-27 16:00:00,2025,2022,9969,Cruzeiro,Ceará,1.0,2.0,post
 732754,2025-07-27 16:00:00,2025,2026,3445,São Paulo,Fluminense,3.0,1.0,post
@@ -1798,9 +1798,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 732764,2025-08-03 19:30:00,2025,3457,2029,Vitória,Palmeiras,2.0,2.0,post
 732765,2025-08-03 20:30:00,2025,1936,2026,Internacional,São Paulo,1.0,2.0,post
 732767,2025-08-04 20:00:00,2025,2674,6270,Santos,Juventude,3.0,1.0,post
+732778,2025-08-09 18:30:00,2025,2026,3457,São Paulo,Vitória,2.0,0.0,post
 732772,2025-08-09 18:30:00,2025,819,9169,Flamengo,Mirassol,2.0,1.0,post
 732777,2025-08-09 18:30:00,2025,6079,1936,Red Bull Bragantino,Internacional,1.0,3.0,post
-732778,2025-08-09 18:30:00,2025,2026,3457,São Paulo,Vitória,2.0,0.0,post
 732773,2025-08-09 20:30:00,2025,6272,6086,Fortaleza,Botafogo,0.0,5.0,post
 732770,2025-08-09 21:00:00,2025,9967,3445,Bahia,Fluminense,3.0,3.0,post
 732776,2025-08-10 16:00:00,2025,2029,9969,Palmeiras,Ceará,2.0,1.0,post
@@ -1938,8 +1938,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 732895,2025-11-02 18:30:00,2025,6270,2029,Juventude,Palmeiras,0.0,2.0,post
 732892,2025-11-02 20:30:00,2025,3454,2026,Vasco da Gama,São Paulo,0.0,2.0,post
 732904,2025-11-05 19:00:00,2025,3457,1936,Vitória,Internacional,1.0,0.0,post
-732903,2025-11-05 19:00:00,2025,6079,874,Red Bull Bragantino,Corinthians,2.0,1.0,post
 732902,2025-11-05 19:00:00,2025,7635,6270,Sport,Juventude,0.0,2.0,post
+732903,2025-11-05 19:00:00,2025,6079,874,Red Bull Bragantino,Corinthians,2.0,1.0,post
 732908,2025-11-05 19:30:00,2025,6086,3454,Botafogo,Vasco da Gama,3.0,0.0,post
 732900,2025-11-05 20:00:00,2025,7632,9967,Atlético Mineiro,Bahia,3.0,0.0,post
 732905,2025-11-05 20:00:00,2025,6273,2022,Grêmio,Cruzeiro,0.0,1.0,post
@@ -1963,9 +1963,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 732957,2025-11-16 19:00:00,2025,6079,7632,Red Bull Bragantino,Atlético Mineiro,2.0,0.0,post
 732927,2025-11-18 20:30:00,2025,6086,7635,Botafogo,Sport,3.0,2.0,post
 732958,2025-11-19 19:30:00,2025,2029,3457,Palmeiras,Vitória,0.0,0.0,post
-732924,2025-11-19 21:30:00,2025,2674,9169,Santos,Mirassol,1.0,1.0,post
-732923,2025-11-19 21:30:00,2025,6273,3454,Grêmio,Vasco da Gama,2.0,0.0,post
 732929,2025-11-19 21:30:00,2025,3445,819,Fluminense,Flamengo,2.0,1.0,post
+732923,2025-11-19 21:30:00,2025,6273,3454,Grêmio,Vasco da Gama,2.0,0.0,post
+732924,2025-11-19 21:30:00,2025,2674,9169,Santos,Mirassol,1.0,1.0,post
 732922,2025-11-20 16:00:00,2025,6270,2022,Juventude,Cruzeiro,3.0,3.0,post
 732928,2025-11-20 18:00:00,2025,9967,6272,Bahia,Fortaleza,2.0,3.0,post
 732925,2025-11-20 19:30:00,2025,874,2026,Corinthians,São Paulo,3.0,1.0,post
@@ -1973,8 +1973,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 732937,2025-11-22 19:30:00,2025,6086,6273,Botafogo,Grêmio,3.0,2.0,post
 732935,2025-11-22 21:30:00,2025,819,6079,Flamengo,Red Bull Bragantino,3.0,0.0,post
 732931,2025-11-22 21:30:00,2025,2029,3445,Palmeiras,Fluminense,0.0,0.0,post
-732938,2025-11-23 16:00:00,2025,9967,3454,Bahia,Vasco da Gama,1.0,0.0,post
 732939,2025-11-23 16:00:00,2025,2026,6270,São Paulo,Juventude,2.0,1.0,post
+732938,2025-11-23 16:00:00,2025,9967,3454,Bahia,Vasco da Gama,1.0,0.0,post
 732930,2025-11-23 18:30:00,2025,7635,3457,Sport,Vitória,1.0,3.0,post
 732936,2025-11-23 20:30:00,2025,2022,874,Cruzeiro,Corinthians,3.0,0.0,post
 732932,2025-11-24 19:00:00,2025,9169,9969,Mirassol,Ceará,3.0,0.0,post
@@ -2001,17 +2001,17 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 732951,2025-12-03 21:30:00,2025,819,9969,Flamengo,Ceará,1.0,0.0,post
 732952,2025-12-04 19:30:00,2025,2022,6086,Cruzeiro,Botafogo,2.0,2.0,post
 732966,2025-12-06 18:30:00,2025,9169,819,Mirassol,Flamengo,3.0,3.0,post
-732961,2025-12-07 16:00:00,2025,6086,6272,Botafogo,Fortaleza,4.0,2.0,post
+732969,2025-12-07 16:00:00,2025,7635,6273,Sport,Grêmio,0.0,4.0,post
 732965,2025-12-07 16:00:00,2025,2674,2022,Santos,Cruzeiro,3.0,0.0,post
 732967,2025-12-07 16:00:00,2025,1936,6079,Internacional,Red Bull Bragantino,3.0,1.0,post
 732968,2025-12-07 16:00:00,2025,3445,9967,Fluminense,Bahia,2.0,0.0,post
-732960,2025-12-07 16:00:00,2025,7632,3454,Atlético Mineiro,Vasco da Gama,5.0,0.0,post
-732962,2025-12-07 16:00:00,2025,9969,2029,Ceará,Palmeiras,1.0,3.0,post
-732969,2025-12-07 16:00:00,2025,7635,6273,Sport,Grêmio,0.0,4.0,post
-732963,2025-12-07 16:00:00,2025,874,6270,Corinthians,Juventude,1.0,1.0,post
 732964,2025-12-07 16:00:00,2025,3457,2026,Vitória,São Paulo,1.0,0.0,post
-401840812,2026-01-28 19:00:00,2026,3457,4936,Vitória,Remo,2.0,0.0,post
+732962,2025-12-07 16:00:00,2025,9969,2029,Ceará,Palmeiras,1.0,3.0,post
+732961,2025-12-07 16:00:00,2025,6086,6272,Botafogo,Fortaleza,4.0,2.0,post
+732960,2025-12-07 16:00:00,2025,7632,3454,Atlético Mineiro,Vasco da Gama,5.0,0.0,post
+732963,2025-12-07 16:00:00,2025,874,6270,Corinthians,Juventude,1.0,1.0,post
 401840814,2026-01-28 19:00:00,2026,1936,3458,Internacional,Athletico Paranaense,0.0,1.0,post
+401840812,2026-01-28 19:00:00,2026,3457,4936,Vitória,Remo,2.0,0.0,post
 401840808,2026-01-28 19:00:00,2026,7632,2029,Atlético Mineiro,Palmeiras,2.0,2.0,post
 401840977,2026-01-28 19:00:00,2026,3456,6079,Coritiba,Red Bull Bragantino,0.0,1.0,post
 401840813,2026-01-28 19:30:00,2026,3445,6273,Fluminense,Grêmio,2.0,1.0,post
@@ -2020,8 +2020,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401840976,2026-01-28 21:30:00,2026,2026,819,São Paulo,Flamengo,2.0,1.0,post
 401840975,2026-01-29 20:00:00,2026,9169,3454,Mirassol,Vasco da Gama,2.0,1.0,post
 401840809,2026-01-29 21:30:00,2026,6086,2022,Botafogo,Cruzeiro,4.0,0.0,post
-401840978,2026-02-04 19:00:00,2026,819,1936,Flamengo,Internacional,1.0,1.0,post
 401840984,2026-02-04 19:00:00,2026,6079,7632,Red Bull Bragantino,Atlético Mineiro,1.0,0.0,post
+401840978,2026-02-04 19:00:00,2026,819,1936,Flamengo,Internacional,1.0,1.0,post
 401840985,2026-02-04 20:00:00,2026,4936,9169,Remo,Mirassol,2.0,2.0,post
 401840986,2026-02-04 20:00:00,2026,2674,2026,Santos,São Paulo,1.0,1.0,post
 401840987,2026-02-04 21:30:00,2026,6273,6086,Grêmio,Botafogo,5.0,3.0,post
@@ -2030,8 +2030,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401840982,2026-02-05 20:00:00,2026,3454,9318,Vasco da Gama,Chapecoense,1.0,1.0,post
 401840979,2026-02-05 21:30:00,2026,2022,3456,Cruzeiro,Coritiba,1.0,2.0,post
 401840993,2026-02-10 21:30:00,2026,3457,819,Vitória,Flamengo,1.0,2.0,post
-401840989,2026-02-11 19:00:00,2026,9318,3456,Chapecoense,Coritiba,3.0,3.0,post
 401840996,2026-02-11 19:00:00,2026,9169,2022,Mirassol,Cruzeiro,2.0,2.0,post
+401840989,2026-02-11 19:00:00,2026,9318,3456,Chapecoense,Coritiba,3.0,3.0,post
 401840990,2026-02-11 20:00:00,2026,7632,4936,Atlético Mineiro,Remo,3.0,3.0,post
 401840995,2026-02-11 21:30:00,2026,2026,6273,São Paulo,Grêmio,2.0,0.0,post
 401840994,2026-02-11 21:30:00,2026,3454,9967,Vasco da Gama,Bahia,0.0,1.0,post
@@ -2040,8 +2040,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401840988,2026-02-12 20:00:00,2026,874,6079,Corinthians,Red Bull Bragantino,2.0,0.0,post
 401840997,2026-02-12 21:30:00,2026,1936,2029,Internacional,Palmeiras,1.0,3.0,post
 401840981,2026-02-19 19:30:00,2026,3458,874,Athletico Paranaense,Corinthians,0.0,1.0,post
-401841003,2026-02-25 19:00:00,2026,6079,3458,Red Bull Bragantino,Athletico Paranaense,1.0,1.0,post
 401841007,2026-02-25 19:00:00,2026,4936,1936,Remo,Internacional,1.0,1.0,post
+401841003,2026-02-25 19:00:00,2026,6079,3458,Red Bull Bragantino,Athletico Paranaense,1.0,1.0,post
 401841000,2026-02-25 19:30:00,2026,3456,2026,Coritiba,São Paulo,0.0,1.0,post
 401841001,2026-02-25 20:00:00,2026,2022,874,Cruzeiro,Corinthians,1.0,1.0,post
 401841005,2026-02-25 21:30:00,2026,6273,7632,Grêmio,Atlético Mineiro,2.0,1.0,post
@@ -2058,13 +2058,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841011,2026-03-12 21:30:00,2026,6273,6079,Grêmio,Red Bull Bragantino,1.0,1.0,post
 401841027,2026-03-14 18:30:00,2026,3457,7632,Vitória,Atlético Mineiro,2.0,0.0,post
 401841026,2026-03-14 20:30:00,2026,6086,819,Botafogo,Flamengo,0.0,3.0,post
+401841018,2026-03-15 16:00:00,2026,2674,874,Santos,Corinthians,1.0,1.0,post
 401841022,2026-03-15 16:00:00,2026,3445,3458,Fluminense,Athletico Paranaense,3.0,2.0,post
 401841021,2026-03-15 16:00:00,2026,1936,9967,Internacional,Bahia,0.0,1.0,post
-401841018,2026-03-15 16:00:00,2026,2674,874,Santos,Corinthians,1.0,1.0,post
 401841024,2026-03-15 18:30:00,2026,3456,4936,Coritiba,Remo,1.0,0.0,post
 401841020,2026-03-15 18:30:00,2026,2029,9169,Palmeiras,Mirassol,1.0,0.0,post
-401841019,2026-03-15 20:30:00,2026,6079,2026,Red Bull Bragantino,São Paulo,1.0,2.0,post
 401841023,2026-03-15 20:30:00,2026,2022,3454,Cruzeiro,Vasco da Gama,3.0,3.0,post
+401841019,2026-03-15 20:30:00,2026,6079,2026,Red Bull Bragantino,São Paulo,1.0,2.0,post
 401841025,2026-03-16 20:00:00,2026,9318,6273,Chapecoense,Grêmio,1.0,1.0,post
 401841037,2026-03-18 19:00:00,2026,9967,6079,Bahia,Red Bull Bragantino,2.0,0.0,post
 401841032,2026-03-18 19:00:00,2026,2029,6086,Palmeiras,Botafogo,2.0,1.0,post
@@ -2079,16 +2079,16 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841047,2026-03-21 16:00:00,2026,6079,6086,Red Bull Bragantino,Botafogo,1.0,2.0,post
 401841044,2026-03-21 18:30:00,2026,3445,7632,Fluminense,Atlético Mineiro,1.0,0.0,post
 401841040,2026-03-21 21:00:00,2026,2026,2029,São Paulo,Palmeiras,0.0,1.0,post
+401841038,2026-03-22 16:00:00,2026,3458,3456,Athletico Paranaense,Coritiba,2.0,0.0,post
 401841045,2026-03-22 16:00:00,2026,2022,2674,Cruzeiro,Santos,0.0,0.0,post
 401841041,2026-03-22 16:00:00,2026,4936,9967,Remo,Bahia,4.0,1.0,post
-401841038,2026-03-22 16:00:00,2026,3458,3456,Athletico Paranaense,Coritiba,2.0,0.0,post
 401841039,2026-03-22 16:00:00,2026,3454,6273,Vasco da Gama,Grêmio,2.0,1.0,post
-401841042,2026-03-22 18:30:00,2026,3457,9169,Vitória,Mirassol,1.0,0.0,post
 401841043,2026-03-22 18:30:00,2026,1936,9318,Internacional,Chapecoense,2.0,0.0,post
+401841042,2026-03-22 18:30:00,2026,3457,9169,Vitória,Mirassol,1.0,0.0,post
 401841046,2026-03-22 20:30:00,2026,874,819,Corinthians,Flamengo,1.0,1.0,post
 401841016,2026-03-29 19:30:00,2026,3458,6086,Athletico Paranaense,Botafogo,4.0,1.0,post
-401841057,2026-04-01 19:30:00,2026,6086,9169,Botafogo,Mirassol,3.0,2.0,post
 401841053,2026-04-01 19:30:00,2026,1936,2026,Internacional,São Paulo,1.0,1.0,post
+401841057,2026-04-01 19:30:00,2026,6086,9169,Botafogo,Mirassol,3.0,2.0,post
 401841056,2026-04-01 20:00:00,2026,9967,3458,Bahia,Athletico Paranaense,3.0,0.0,post
 401841055,2026-04-01 20:00:00,2026,2022,3457,Cruzeiro,Vitória,3.0,0.0,post
 401841048,2026-04-01 20:30:00,2026,3456,3454,Coritiba,Vasco da Gama,1.0,1.0,post
@@ -2103,8 +2103,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841065,2026-04-05 16:00:00,2026,9318,3457,Chapecoense,Vitória,1.0,1.0,post
 401841058,2026-04-05 17:30:00,2026,7632,3458,Atlético Mineiro,Athletico Paranaense,2.0,1.0,post
 401841067,2026-04-05 17:30:00,2026,819,2674,Flamengo,Santos,3.0,1.0,post
-401841064,2026-04-05 19:30:00,2026,874,1936,Corinthians,Internacional,0.0,1.0,post
 401841066,2026-04-05 19:30:00,2026,9967,2029,Bahia,Palmeiras,1.0,2.0,post
+401841064,2026-04-05 19:30:00,2026,874,1936,Corinthians,Internacional,0.0,1.0,post
 401841060,2026-04-05 20:00:00,2026,9169,6079,Mirassol,Red Bull Bragantino,0.0,1.0,post
 401841061,2026-04-05 20:30:00,2026,6273,4936,Grêmio,Remo,0.0,0.0,post
 401841075,2026-04-11 16:30:00,2026,4936,3454,Remo,Vasco da Gama,1.0,1.0,post
@@ -2115,17 +2115,17 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841071,2026-04-12 11:00:00,2026,3458,9318,Athletico Paranaense,Chapecoense,2.0,0.0,post
 401841070,2026-04-12 16:00:00,2026,6086,3456,Botafogo,Coritiba,2.0,2.0,post
 401841072,2026-04-12 18:00:00,2026,3445,819,Fluminense,Flamengo,1.0,2.0,post
-401841069,2026-04-12 18:30:00,2026,874,2029,Corinthians,Palmeiras,0.0,0.0,post
 401841068,2026-04-12 18:30:00,2026,2022,6079,Cruzeiro,Red Bull Bragantino,2.0,1.0,post
+401841069,2026-04-12 18:30:00,2026,874,2029,Corinthians,Palmeiras,0.0,0.0,post
 401841078,2026-04-18 18:30:00,2026,9318,6086,Chapecoense,Botafogo,1.0,4.0,post
 401841081,2026-04-18 18:30:00,2026,3454,2026,Vasco da Gama,São Paulo,2.0,1.0,post
 401841080,2026-04-18 20:00:00,2026,3457,874,Vitória,Corinthians,0.0,0.0,post
 401841087,2026-04-18 20:30:00,2026,2022,6273,Cruzeiro,Grêmio,2.0,0.0,post
 401841085,2026-04-19 11:00:00,2026,1936,9169,Internacional,Mirassol,1.0,2.0,post
-401841082,2026-04-19 16:00:00,2026,2674,3445,Santos,Fluminense,2.0,3.0,post
 401841079,2026-04-19 16:00:00,2026,3456,7632,Coritiba,Atlético Mineiro,2.0,0.0,post
-401841084,2026-04-19 18:30:00,2026,2029,3458,Palmeiras,Athletico Paranaense,1.0,0.0,post
+401841082,2026-04-19 16:00:00,2026,2674,3445,Santos,Fluminense,2.0,3.0,post
 401841083,2026-04-19 18:30:00,2026,6079,4936,Red Bull Bragantino,Remo,4.0,2.0,post
+401841084,2026-04-19 18:30:00,2026,2029,3458,Palmeiras,Athletico Paranaense,1.0,0.0,post
 401841086,2026-04-19 19:30:00,2026,819,9967,Flamengo,Bahia,2.0,0.0,post
 401841095,2026-04-25 18:30:00,2026,9967,2674,Bahia,Santos,2.0,2.0,post
 401841094,2026-04-25 18:30:00,2026,6086,1936,Botafogo,Internacional,2.0,2.0,post
@@ -2133,17 +2133,17 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841092,2026-04-25 21:00:00,2026,2026,9169,São Paulo,Mirassol,1.0,0.0,post
 401841089,2026-04-26 16:00:00,2026,874,3454,Corinthians,Vasco da Gama,1.0,0.0,post
 401841091,2026-04-26 16:00:00,2026,6273,3456,Grêmio,Coritiba,1.0,0.0,post
-401841088,2026-04-26 18:30:00,2026,3458,3457,Athletico Paranaense,Vitória,3.0,1.0,post
 401841097,2026-04-26 18:30:00,2026,6079,2029,Red Bull Bragantino,Palmeiras,0.0,1.0,post
+401841088,2026-04-26 18:30:00,2026,3458,3457,Athletico Paranaense,Vitória,3.0,1.0,post
 401841096,2026-04-26 20:30:00,2026,7632,819,Atlético Mineiro,Flamengo,0.0,4.0,post
 401841090,2026-04-26 20:30:00,2026,3445,9318,Fluminense,Chapecoense,2.0,1.0,post
 401841107,2026-05-02 16:00:00,2026,6086,4936,Botafogo,Remo,1.0,2.0,post
-401841100,2026-05-02 18:30:00,2026,3457,3456,Vitória,Coritiba,4.0,1.0,post
 401841102,2026-05-02 18:30:00,2026,2029,2674,Palmeiras,Santos,1.0,1.0,post
+401841100,2026-05-02 18:30:00,2026,3457,3456,Vitória,Coritiba,4.0,1.0,post
 401841106,2026-05-02 20:30:00,2026,3458,6273,Athletico Paranaense,Grêmio,0.0,0.0,post
 401841098,2026-05-02 21:00:00,2026,2022,7632,Cruzeiro,Atlético Mineiro,1.0,3.0,post
-401841105,2026-05-03 16:00:00,2026,819,3454,Flamengo,Vasco da Gama,2.0,2.0,post
 401841101,2026-05-03 16:00:00,2026,2026,9967,São Paulo,Bahia,2.0,2.0,post
+401841105,2026-05-03 16:00:00,2026,819,3454,Flamengo,Vasco da Gama,2.0,2.0,post
 401841099,2026-05-03 18:30:00,2026,9318,6079,Chapecoense,Red Bull Bragantino,1.0,2.0,post
 401841104,2026-05-03 18:30:00,2026,1936,3445,Internacional,Fluminense,2.0,0.0,post
 401841103,2026-05-03 20:30:00,2026,9169,874,Mirassol,Corinthians,2.0,1.0,post
@@ -2152,35 +2152,35 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841116,2026-05-09 21:00:00,2026,9967,2022,Bahia,Cruzeiro,1.0,2.0,post
 401841108,2026-05-10 16:00:00,2026,7632,6086,Atlético Mineiro,Botafogo,1.0,1.0,post
 401841110,2026-05-10 16:00:00,2026,4936,2029,Remo,Palmeiras,1.0,1.0,post
+401841109,2026-05-10 18:30:00,2026,2674,6079,Santos,Red Bull Bragantino,2.0,0.0,post
 401841115,2026-05-10 18:30:00,2026,874,2026,Corinthians,São Paulo,3.0,2.0,post
 401841111,2026-05-10 18:30:00,2026,9169,9318,Mirassol,Chapecoense,1.0,1.0,post
-401841109,2026-05-10 18:30:00,2026,2674,6079,Santos,Red Bull Bragantino,2.0,0.0,post
 401841117,2026-05-10 19:30:00,2026,6273,819,Grêmio,Flamengo,0.0,1.0,post
 401841112,2026-05-10 20:30:00,2026,3454,3458,Vasco da Gama,Athletico Paranaense,1.0,0.0,post
-401841126,2026-05-16 18:30:00,2026,1936,3454,Internacional,Vasco da Gama,4.0,1.0,post
 401841120,2026-05-16 18:30:00,2026,7632,9169,Atlético Mineiro,Mirassol,3.0,1.0,post
+401841126,2026-05-16 18:30:00,2026,1936,3454,Internacional,Vasco da Gama,4.0,1.0,post
 401841127,2026-05-16 19:00:00,2026,3445,2026,Fluminense,São Paulo,2.0,1.0,post
 401841125,2026-05-16 21:00:00,2026,2029,2022,Palmeiras,Cruzeiro,1.0,1.0,post
 401841123,2026-05-17 11:00:00,2026,2674,3456,Santos,Coritiba,0.0,3.0,post
-401841119,2026-05-17 16:00:00,2026,9967,6273,Bahia,Grêmio,1.0,1.0,post
 401841118,2026-05-17 16:00:00,2026,6086,874,Botafogo,Corinthians,3.0,1.0,post
+401841119,2026-05-17 16:00:00,2026,9967,6273,Bahia,Grêmio,1.0,1.0,post
 401841122,2026-05-17 18:30:00,2026,9318,4936,Chapecoense,Remo,2.0,3.0,post
 401841124,2026-05-17 18:30:00,2026,6079,3457,Red Bull Bragantino,Vitória,2.0,0.0,post
 401841121,2026-05-17 19:30:00,2026,3458,819,Athletico Paranaense,Flamengo,1.0,1.0,post
 401841132,2026-05-23 17:00:00,2026,2026,6086,São Paulo,Botafogo,1.0,1.0,post
 401841130,2026-05-23 17:00:00,2026,3457,1936,Vitória,Internacional,2.0,0.0,post
-401841134,2026-05-23 19:00:00,2026,9169,3445,Mirassol,Fluminense,1.0,0.0,post
 401841135,2026-05-23 19:00:00,2026,6273,2674,Grêmio,Santos,3.0,2.0,post
+401841134,2026-05-23 19:00:00,2026,9169,3445,Mirassol,Fluminense,1.0,0.0,post
 401841136,2026-05-23 21:00:00,2026,819,2029,Flamengo,Palmeiras,0.0,3.0,post
-401841137,2026-05-24 16:00:00,2026,2022,9318,Cruzeiro,Chapecoense,2.0,1.0,post
 401841133,2026-05-24 16:00:00,2026,4936,3458,Remo,Athletico Paranaense,1.0,2.0,post
+401841137,2026-05-24 16:00:00,2026,2022,9318,Cruzeiro,Chapecoense,2.0,1.0,post
 401841128,2026-05-24 18:30:00,2026,874,7632,Corinthians,Atlético Mineiro,1.0,0.0,post
 401841131,2026-05-24 20:30:00,2026,3454,6079,Vasco da Gama,Red Bull Bragantino,0.0,3.0,post
 401841129,2026-05-25 20:00:00,2026,3456,9967,Coritiba,Bahia,3.0,2.0,post
-401841144,2026-05-30 16:00:00,2026,819,3456,Flamengo,Coritiba,3.0,0.0,post
 401841138,2026-05-30 16:00:00,2026,3458,9169,Athletico Paranaense,Mirassol,1.0,0.0,post
-401841139,2026-05-30 17:30:00,2026,6273,874,Grêmio,Corinthians,1.0,3.0,post
+401841144,2026-05-30 16:00:00,2026,819,3456,Flamengo,Coritiba,3.0,0.0,post
 401841146,2026-05-30 17:30:00,2026,9967,6086,Bahia,Botafogo,2.0,1.0,post
+401841139,2026-05-30 17:30:00,2026,6273,874,Grêmio,Corinthians,1.0,3.0,post
 401841143,2026-05-30 20:00:00,2026,2674,3457,Santos,Vitória,3.0,1.0,post
 401841141,2026-05-31 11:00:00,2026,6079,1936,Red Bull Bragantino,Internacional,3.0,1.0,post
 401841140,2026-05-31 16:00:00,2026,2029,9318,Palmeiras,Chapecoense,1.0,0.0,post
@@ -2190,17 +2190,17 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841149,2026-07-16 19:30:00,2026,6086,2674,Botafogo,Santos,2.0,1.0,post
 401841157,2026-07-16 19:30:00,2026,3457,3454,Vitória,Vasco da Gama,1.0,0.0,post
 401879459,2026-07-17 19:30:00,2026,9967,9318,Bahia,Chapecoense,2.0,0.0,post
-401841153,2026-07-17 20:00:00,2026,3445,6079,Fluminense,Red Bull Bragantino,1.0,1.0,post
 401841155,2026-07-17 20:00:00,2026,9169,6273,Mirassol,Grêmio,2.0,1.0,post
+401841153,2026-07-17 20:00:00,2026,3445,6079,Fluminense,Red Bull Bragantino,1.0,1.0,post
 401841148,2026-07-21 19:30:00,2026,7632,9967,Atlético Mineiro,Bahia,1.0,1.0,post
 401841152,2026-07-22 19:30:00,2026,3456,2029,Coritiba,Palmeiras,1.0,3.0,post
 401841150,2026-07-22 21:30:00,2026,9318,819,Chapecoense,Flamengo,0.0,4.0,post
 401841154,2026-07-22 21:30:00,2026,1936,2022,Internacional,Cruzeiro,1.0,2.0,post
 401841156,2026-07-22 21:30:00,2026,2026,3458,São Paulo,Athletico Paranaense,1.0,2.0,post
-401841151,2026-07-23 19:30:00,2026,874,4936,Corinthians,Remo,3.0,0.0,post
 401879458,2026-07-23 19:30:00,2026,6086,3457,Botafogo,Vitória,0.0,0.0,post
-401841158,2026-07-25 18:30:00,2026,3458,1936,Athletico Paranaense,Internacional,2.0,0.0,post
+401841151,2026-07-23 19:30:00,2026,874,4936,Corinthians,Remo,3.0,0.0,post
 401841161,2026-07-25 18:30:00,2026,2674,9318,Santos,Chapecoense,2.0,2.0,post
+401841158,2026-07-25 18:30:00,2026,3458,1936,Athletico Paranaense,Internacional,2.0,0.0,post
 401841160,2026-07-25 20:30:00,2026,3454,9169,Vasco da Gama,Mirassol,1.0,1.0,post
 401841159,2026-07-26 16:00:00,2026,9967,874,Bahia,Corinthians,1.0,1.0,post
 401841167,2026-07-26 16:00:00,2026,2022,6086,Cruzeiro,Botafogo,0.0,1.0,post
@@ -2235,3 +2235,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841197,2026-08-16 18:30:00,2026,3457,6086,Vitória,Botafogo,1.0,0.0,post
 401841193,2026-08-16 19:30:00,2026,874,2022,Corinthians,Cruzeiro,1.0,2.0,post
 401841191,2026-08-17 20:00:00,2026,1936,4936,Internacional,Remo,1.0,1.0,post
+401841205,2026-08-22 16:00:00,2026,3445,4936,Fluminense,Remo,2.0,1.0,post
+401841204,2026-08-22 18:30:00,2026,1936,7632,Internacional,Atlético Mineiro,0.0,0.0,post
+401841206,2026-08-22 20:30:00,2026,2022,819,Cruzeiro,Flamengo,2.0,1.0,post

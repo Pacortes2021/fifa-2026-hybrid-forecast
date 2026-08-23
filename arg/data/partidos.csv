@@ -2327,3 +2327,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841500,2026-08-17 21:30:00,2026,11972,19,Gimnasia Mendoza,Talleres de Córdoba,3.0,1.0,post
 401841522,2026-08-21 14:30:00,2026,9739,20,Aldosivi,Unión de Santa Fe,1.0,3.0,post
 401841511,2026-08-21 20:00:00,2026,19685,18,Estudiantes de Río Cuarto,San Lorenzo,0.0,0.0,post
+401841523,2026-08-22 16:00:00,2026,9785,2975,Atlético Tucumán,Instituto,0.0,0.0,post
+401841512,2026-08-22 16:00:00,2026,9,11972,Gimnasia La Plata,Gimnasia Mendoza,2.0,3.0,post
+401841514,2026-08-22 18:30:00,2026,11,9744,Independiente,Independiente Rivadavia,0.0,0.0,post
+401841513,2026-08-22 21:00:00,2026,10,17702,Huracán,Deportivo Riestra,0.0,0.0,post
+401841516,2026-08-22 21:00:00,2026,14,235,Newell's Old Boys,Banfield,2.0,1.0,post
