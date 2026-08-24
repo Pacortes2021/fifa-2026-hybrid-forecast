@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401850629,2026-08-23 12:00:00,2026,8110,8186,Deportes Concepción,Coquimbo Unido,,,pre
-401850633,2026-08-23 12:00:00,2026,4137,4133,Deportes La Serena,Cobresal,,,pre
-401850630,2026-08-23 15:00:00,2026,4139,2688,Universidad de Chile,Colo Colo,,,pre
-401850632,2026-08-23 19:00:00,2026,6072,4422,O'Higgins,Palestino,,,pre
 401850635,2026-08-24 19:30:00,2026,4129,5362,Everton,Universidad de Concepción,,,pre
 401850620,2026-08-26 18:00:00,2026,8186,885,Coquimbo Unido,Universidad Católica,,,pre
 401850636,2026-08-28 18:30:00,2026,4133,4422,Cobresal,Palestino,,,pre

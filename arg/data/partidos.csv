@@ -2332,3 +2332,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841514,2026-08-22 18:30:00,2026,11,9744,Independiente,Independiente Rivadavia,0.0,0.0,post
 401841513,2026-08-22 21:00:00,2026,10,17702,Huracán,Deportivo Riestra,0.0,0.0,post
 401841516,2026-08-22 21:00:00,2026,14,235,Newell's Old Boys,Banfield,2.0,1.0,post
+401841509,2026-08-23 14:45:00,2026,10060,7764,Barracas Central,Platense,1.0,2.0,post
+401841519,2026-08-23 14:45:00,2026,10158,8,Sarmiento,Estudiantes de La Plata,2.0,0.0,post
+401841510,2026-08-23 17:00:00,2026,4,8950,Belgrano,Defensa y Justicia,1.0,2.0,post
+401841518,2026-08-23 19:15:00,2026,16,21,River Plate,Vélez Sarsfield,2.0,2.0,post
+401841517,2026-08-23 21:30:00,2026,15,5,Racing Club,Boca Juniors,1.0,1.0,post

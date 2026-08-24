@@ -1,9 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841509,2026-08-23 14:45:00,2026,10060,7764,Barracas Central,Platense,,,pre
-401841519,2026-08-23 14:45:00,2026,10158,8,Sarmiento,Estudiantes de La Plata,,,pre
-401841510,2026-08-23 17:00:00,2026,4,8950,Belgrano,Defensa y Justicia,,,pre
-401841518,2026-08-23 19:15:00,2026,16,21,River Plate,Vélez Sarsfield,,,pre
-401841517,2026-08-23 21:30:00,2026,15,5,Racing Club,Boca Juniors,,,pre
 401841521,2026-08-24 19:00:00,2026,7767,11989,Tigre,Central Córdoba,,,pre
 401841515,2026-08-24 21:15:00,2026,12,3,Lanús,Argentinos Juniors,,,pre
 401841520,2026-08-24 21:15:00,2026,19,17,Talleres de Córdoba,Rosario Central,,,pre

@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401882915,2026-08-23 17:00:00,2026,1068,102,Atlético de Madrid,Villarreal CF,,,pre
-401882911,2026-08-23 19:30:00,2026,2922,87,Getafe,Racing Santander,,,pre
-401882913,2026-08-23 21:30:00,2026,3751,83,Elche CF,FC Barcelona,,,pre
 401882909,2026-08-24 19:30:00,2026,97,1538,CA Osasuna,Levante,,,pre
 401882910,2026-08-24 21:30:00,2026,99,90,Málaga,Deportivo,,,pre
 401882917,2026-08-25 21:00:00,2026,94,244,Valencia CF,Real Betis,,,pre

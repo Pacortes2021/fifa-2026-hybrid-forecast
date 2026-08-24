@@ -1,10 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841203,2026-08-23 16:00:00,2026,2029,3454,Palmeiras,Vasco da Gama,,,pre
-401841202,2026-08-23 16:00:00,2026,6079,6273,Red Bull Bragantino,Grêmio,,,pre
-401841200,2026-08-23 16:00:00,2026,3457,9967,Vitória,Bahia,,,pre
-401841199,2026-08-23 18:30:00,2026,9318,2026,Chapecoense,São Paulo,,,pre
-401841201,2026-08-23 18:30:00,2026,2674,9169,Santos,Mirassol,,,pre
-401841207,2026-08-23 19:30:00,2026,3456,874,Coritiba,Corinthians,,,pre
 401841198,2026-08-24 20:00:00,2026,6086,3458,Botafogo,Athletico Paranaense,,,pre
 401841216,2026-08-29 18:30:00,2026,7632,3457,Atlético Mineiro,Vitória,,,pre
 401841209,2026-08-29 20:00:00,2026,2026,6079,São Paulo,Red Bull Bragantino,,,pre

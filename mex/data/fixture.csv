@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401877002,2026-08-23 17:00:00,2026,15720,234,Atlético San Luis,Pachuca,,,pre
-401877001,2026-08-23 19:00:00,2026,233,229,Pumas UNAM,Necaxa,,,pre
 401876999,2026-08-28 19:00:00,2026,226,228,Atlante,León,,,pre
 401877000,2026-08-28 19:00:00,2026,229,218,Necaxa,Cruz Azul,,,pre
 401876998,2026-08-28 21:00:00,2026,10125,233,Tijuana,Pumas UNAM,,,pre

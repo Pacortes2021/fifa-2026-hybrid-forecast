@@ -1913,3 +1913,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401877006,2026-08-22 17:07:00,2026,219,10125,Guadalajara,Tijuana,5.0,2.0,post
 401877009,2026-08-22 19:00:00,2026,231,225,Puebla,Santos Laguna,3.0,2.0,post
 401877003,2026-08-22 21:00:00,2026,218,216,Cruz Azul,Atlas,0.0,2.0,post
+401877002,2026-08-23 17:00:00,2026,15720,234,Atlético San Luis,Pachuca,1.0,1.0,post
+401877001,2026-08-23 19:00:00,2026,233,229,Pumas UNAM,Necaxa,1.0,1.0,post
