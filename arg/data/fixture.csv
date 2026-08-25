@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841521,2026-08-24 19:00:00,2026,7767,11989,Tigre,Central Córdoba,,,pre
-401841515,2026-08-24 21:15:00,2026,12,3,Lanús,Argentinos Juniors,,,pre
-401841520,2026-08-24 21:15:00,2026,19,17,Talleres de Córdoba,Rosario Central,,,pre
 401841525,2026-08-28 19:00:00,2026,20,10158,Unión de Santa Fe,Sarmiento,,,pre
 401841527,2026-08-28 21:30:00,2026,5,12,Boca Juniors,Lanús,,,pre
 401841529,2026-08-29 14:45:00,2026,17702,21,Deportivo Riestra,Vélez Sarsfield,,,pre

@@ -1469,3 +1469,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850633,2026-08-23 12:00:00,2026,4137,4133,Deportes La Serena,Cobresal,3.0,3.0,post
 401850630,2026-08-23 15:00:00,2026,4139,2688,Universidad de Chile,Colo Colo,1.0,2.0,post
 401850632,2026-08-23 19:00:00,2026,6072,4422,O'Higgins,Palestino,0.0,1.0,post
+401850635,2026-08-24 19:30:00,2026,4129,5362,Everton,Universidad de Concepción,3.0,1.0,post

@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841198,2026-08-24 20:00:00,2026,6086,3458,Botafogo,Athletico Paranaense,,,pre
 401841216,2026-08-29 18:30:00,2026,7632,3457,Atlético Mineiro,Vitória,,,pre
 401841209,2026-08-29 20:00:00,2026,2026,6079,São Paulo,Red Bull Bragantino,,,pre
 401841212,2026-08-29 21:20:00,2026,3454,2022,Vasco da Gama,Cruzeiro,,,pre
@@ -12,9 +11,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841210,2026-08-31 20:00:00,2026,4936,3456,Remo,Coritiba,,,pre
 401913077,2026-09-02 19:30:00,2026,819,9169,Flamengo,Mirassol,,,pre
 401841224,2026-09-05 16:00:00,2026,6079,9967,Red Bull Bragantino,Bahia,,,pre
-401841219,2026-09-05 18:30:00,2026,3456,9169,Coritiba,Mirassol,,,pre
 401841226,2026-09-05 18:30:00,2026,2026,7632,São Paulo,Atlético Mineiro,,,pre
 401841227,2026-09-05 21:00:00,2026,3445,3454,Fluminense,Vasco da Gama,,,pre
+401841219,2026-09-06 11:00:00,2026,3456,9169,Coritiba,Mirassol,,,pre
 401841218,2026-09-06 16:00:00,2026,2022,3458,Cruzeiro,Athletico Paranaense,,,pre
 401841223,2026-09-06 16:00:00,2026,1936,2674,Internacional,Santos,,,pre
 401841225,2026-09-06 16:00:00,2026,4936,819,Remo,Flamengo,,,pre

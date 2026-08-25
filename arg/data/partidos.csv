@@ -2337,3 +2337,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841510,2026-08-23 17:00:00,2026,4,8950,Belgrano,Defensa y Justicia,1.0,2.0,post
 401841518,2026-08-23 19:15:00,2026,16,21,River Plate,Vélez Sarsfield,2.0,2.0,post
 401841517,2026-08-23 21:30:00,2026,15,5,Racing Club,Boca Juniors,1.0,1.0,post
+401841521,2026-08-24 19:00:00,2026,7767,11989,Tigre,Central Córdoba,2.0,1.0,post
+401841515,2026-08-24 21:15:00,2026,12,3,Lanús,Argentinos Juniors,1.0,1.0,post
+401841520,2026-08-24 21:15:00,2026,19,17,Talleres de Córdoba,Rosario Central,2.0,2.0,post

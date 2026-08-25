@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401882909,2026-08-24 19:30:00,2026,97,1538,CA Osasuna,Levante,,,pre
-401882910,2026-08-24 21:30:00,2026,99,90,Málaga,Deportivo,,,pre
 401882917,2026-08-25 21:00:00,2026,94,244,Valencia CF,Real Betis,,,pre
 401882919,2026-08-26 21:00:00,2026,86,89,Real Madrid,Real Sociedad,,,pre
 401882924,2026-08-27 20:30:00,2026,85,97,Celta de Vigo,CA Osasuna,,,pre
