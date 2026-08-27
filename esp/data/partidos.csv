@@ -2136,3 +2136,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882909,2026-08-24 19:30:00,2026,97,1538,CA Osasuna,Levante,0.0,0.0,post
 401882910,2026-08-24 21:30:00,2026,99,90,Málaga,Deportivo,1.0,1.0,post
 401882917,2026-08-25 21:00:00,2026,94,244,Valencia CF,Real Betis,0.0,1.0,post
+401882919,2026-08-26 21:00:00,2026,86,89,Real Madrid,Real Sociedad,4.0,1.0,post
