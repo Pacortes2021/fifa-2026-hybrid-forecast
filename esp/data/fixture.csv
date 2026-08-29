@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401882900,2026-08-28 19:00:00,2026,87,3751,Racing Santander,Elche CF,,,pre
-401882906,2026-08-28 21:30:00,2026,96,102,Alavés,Villarreal CF,,,pre
 401882902,2026-08-29 17:00:00,2026,1538,244,Levante,Real Betis,,,pre
 401882898,2026-08-29 19:00:00,2026,89,88,Real Sociedad,Espanyol,,,pre
 401882897,2026-08-29 21:30:00,2026,243,1068,Sevilla FC,Atlético de Madrid,,,pre

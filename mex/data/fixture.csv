@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401876999,2026-08-28 19:00:00,2026,226,228,Atlante,León,,,pre
-401877000,2026-08-28 19:00:00,2026,229,218,Necaxa,Cruz Azul,,,pre
-401876998,2026-08-28 21:10:00,2026,10125,233,Tijuana,Pumas UNAM,,,pre
 401876997,2026-08-29 17:00:00,2026,216,222,Atlas,Querétaro,,,pre
 401876996,2026-08-29 17:00:00,2026,234,219,Pachuca,Guadalajara,,,pre
 401876995,2026-08-29 19:05:00,2026,227,231,América,Puebla,,,pre

@@ -2139,3 +2139,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882919,2026-08-26 21:00:00,2026,86,89,Real Madrid,Real Sociedad,4.0,1.0,post
 401882924,2026-08-27 20:30:00,2026,85,97,Celta de Vigo,CA Osasuna,1.0,2.0,post
 401882921,2026-08-27 21:00:00,2026,83,93,FC Barcelona,Athletic Club,2.0,0.0,post
+401882900,2026-08-28 19:00:00,2026,87,3751,Racing Santander,Elche CF,3.0,2.0,post
+401882906,2026-08-28 21:30:00,2026,96,102,Alavés,Villarreal CF,1.0,0.0,post

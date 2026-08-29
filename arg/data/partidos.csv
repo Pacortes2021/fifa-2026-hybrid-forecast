@@ -2340,3 +2340,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841521,2026-08-24 19:00:00,2026,7767,11989,Tigre,Central Córdoba,2.0,1.0,post
 401841515,2026-08-24 21:15:00,2026,12,3,Lanús,Argentinos Juniors,1.0,1.0,post
 401841520,2026-08-24 21:15:00,2026,19,17,Talleres de Córdoba,Rosario Central,2.0,2.0,post
+401841525,2026-08-28 19:00:00,2026,20,10158,Unión de Santa Fe,Sarmiento,4.0,1.0,post
+401841527,2026-08-28 21:30:00,2026,5,12,Boca Juniors,Lanús,1.0,0.0,post
