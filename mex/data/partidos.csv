@@ -1918,3 +1918,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876999,2026-08-28 19:00:00,2026,226,228,Atlante,León,1.0,1.0,post
 401877000,2026-08-28 19:00:00,2026,229,218,Necaxa,Cruz Azul,1.0,3.0,post
 401876998,2026-08-28 21:10:00,2026,10125,233,Tijuana,Pumas UNAM,2.0,0.0,post
+401876997,2026-08-29 17:00:00,2026,216,222,Atlas,Querétaro,1.0,3.0,post
+401876996,2026-08-29 17:00:00,2026,234,219,Pachuca,Guadalajara,1.0,1.0,post
+401876995,2026-08-29 19:05:00,2026,227,231,América,Puebla,2.0,0.0,post
+401876994,2026-08-29 21:10:00,2026,225,232,Santos Laguna,Tigres UANL,0.0,0.0,post

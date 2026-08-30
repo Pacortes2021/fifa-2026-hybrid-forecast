@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401850637,2026-08-29 17:30:00,2026,19195,4129,Deportes Limache,Everton,,,pre
-401850643,2026-08-29 20:00:00,2026,7427,8110,Ñublense,Deportes Concepción,,,pre
 401850639,2026-08-30 15:00:00,2026,5362,4139,Universidad de Concepción,Universidad de Chile,,,pre
 401850642,2026-08-30 17:30:00,2026,2688,4138,Colo Colo,Audax Italiano,,,pre
 401850641,2026-08-30 20:00:00,2026,8186,4134,Coquimbo Unido,Huachipato,,,pre

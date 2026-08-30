@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841216,2026-08-29 18:30:00,2026,7632,3457,Atlético Mineiro,Vitória,,,pre
-401841209,2026-08-29 20:00:00,2026,2026,6079,São Paulo,Red Bull Bragantino,,,pre
-401841212,2026-08-29 21:20:00,2026,3454,2022,Vasco da Gama,Cruzeiro,,,pre
 401841208,2026-08-30 11:00:00,2026,3458,3445,Athletico Paranaense,Fluminense,,,pre
 401841214,2026-08-30 16:00:00,2026,874,2674,Corinthians,Santos,,,pre
 401841213,2026-08-30 16:00:00,2026,819,6086,Flamengo,Botafogo,,,pre

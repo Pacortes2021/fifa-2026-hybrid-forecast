@@ -1472,3 +1472,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850635,2026-08-24 19:30:00,2026,4129,5362,Everton,Universidad de Concepción,3.0,1.0,post
 401850620,2026-08-26 18:00:00,2026,8186,885,Coquimbo Unido,Universidad Católica,1.0,2.0,post
 401850636,2026-08-28 18:30:00,2026,4133,4422,Cobresal,Palestino,2.0,0.0,post
+401850637,2026-08-29 17:30:00,2026,19195,4129,Deportes Limache,Everton,0.0,3.0,post
+401850643,2026-08-29 20:00:00,2026,7427,8110,Ñublense,Deportes Concepción,0.0,1.0,post
