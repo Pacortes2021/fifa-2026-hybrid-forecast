@@ -2248,3 +2248,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841216,2026-08-29 18:30:00,2026,7632,3457,Atlético Mineiro,Vitória,2.0,1.0,post
 401841209,2026-08-29 20:00:00,2026,2026,6079,São Paulo,Red Bull Bragantino,2.0,1.0,post
 401841212,2026-08-29 21:20:00,2026,3454,2022,Vasco da Gama,Cruzeiro,3.0,1.0,post
+401841208,2026-08-30 11:00:00,2026,3458,3445,Athletico Paranaense,Fluminense,3.0,3.0,post
+401841214,2026-08-30 16:00:00,2026,874,2674,Corinthians,Santos,0.0,1.0,post
+401841213,2026-08-30 16:00:00,2026,819,6086,Flamengo,Botafogo,3.0,0.0,post
+401841217,2026-08-30 18:30:00,2026,6273,9318,Grêmio,Chapecoense,3.0,1.0,post
+401841211,2026-08-30 18:30:00,2026,9169,2029,Mirassol,Palmeiras,1.0,1.0,post
+401841215,2026-08-30 19:30:00,2026,9967,1936,Bahia,Internacional,3.0,2.0,post

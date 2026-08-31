@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401876993,2026-08-30 18:00:00,2026,223,17851,Toluca,FC Juárez,,,pre
-401876992,2026-08-30 20:10:00,2026,220,15720,Monterrey,Atlético San Luis,,,pre
 401876991,2026-09-04 19:00:00,2026,231,223,Puebla,Toluca,,,pre
 401876990,2026-09-04 21:00:00,2026,17851,234,FC Juárez,Pachuca,,,pre
 401876988,2026-09-05 17:00:00,2026,222,220,Querétaro,Monterrey,,,pre

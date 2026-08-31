@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841526,2026-08-30 15:00:00,2026,235,16,Banfield,River Plate,,,pre
-401841524,2026-08-30 17:00:00,2026,3,9739,Argentinos Juniors,Aldosivi,,,pre
-401841532,2026-08-30 19:15:00,2026,11,11972,Independiente,Gimnasia Mendoza,,,pre
-401841533,2026-08-30 21:30:00,2026,9744,15,Independiente Rivadavia,Racing Club,,,pre
 401841528,2026-08-31 19:00:00,2026,8950,7764,Defensa y Justicia,Platense,,,pre
 401841530,2026-08-31 19:00:00,2026,8,14,Estudiantes de La Plata,Newell's Old Boys,,,pre
 401841537,2026-08-31 21:15:00,2026,7767,10060,Tigre,Barracas Central,,,pre

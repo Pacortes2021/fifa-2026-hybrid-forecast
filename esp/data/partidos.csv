@@ -2144,3 +2144,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882902,2026-08-29 17:00:00,2026,1538,244,Levante,Real Betis,5.0,2.0,post
 401882898,2026-08-29 19:00:00,2026,89,88,Real Sociedad,Espanyol,2.0,1.0,post
 401882897,2026-08-29 21:30:00,2026,243,1068,Sevilla FC,Atlético de Madrid,1.0,3.0,post
+401882899,2026-08-30 17:00:00,2026,86,99,Real Madrid,Málaga,4.0,0.0,post
+401882904,2026-08-30 19:30:00,2026,90,94,Deportivo,Valencia CF,3.0,1.0,post
+401882905,2026-08-30 21:30:00,2026,85,93,Celta de Vigo,Athletic Club,0.0,2.0,post

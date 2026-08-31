@@ -2347,3 +2347,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841531,2026-08-29 19:00:00,2026,10,19685,Huracán,Estudiantes de Río Cuarto,1.0,1.0,post
 401841538,2026-08-29 21:30:00,2026,9785,4,Atlético Tucumán,Belgrano,0.0,0.0,post
 401841536,2026-08-29 21:30:00,2026,19,11989,Talleres de Córdoba,Central Córdoba,0.0,0.0,post
+401841526,2026-08-30 15:00:00,2026,235,16,Banfield,River Plate,2.0,3.0,post
+401841524,2026-08-30 17:00:00,2026,3,9739,Argentinos Juniors,Aldosivi,2.0,1.0,post
+401841532,2026-08-30 19:15:00,2026,11,11972,Independiente,Gimnasia Mendoza,0.0,3.0,post
+401841533,2026-08-30 21:30:00,2026,9744,15,Independiente Rivadavia,Racing Club,3.0,1.0,post

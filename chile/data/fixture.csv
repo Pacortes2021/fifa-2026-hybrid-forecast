@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401850639,2026-08-30 15:00:00,2026,5362,4139,Universidad de Concepción,Universidad de Chile,,,pre
-401850642,2026-08-30 17:30:00,2026,2688,4138,Colo Colo,Audax Italiano,,,pre
-401850641,2026-08-30 20:00:00,2026,8186,4134,Coquimbo Unido,Huachipato,,,pre
 401850640,2026-08-31 18:15:00,2026,10144,4137,Unión La Calera,Deportes La Serena,,,pre
 401850638,2026-08-31 20:45:00,2026,885,6072,Universidad Católica,O'Higgins,,,pre
 401850598,2026-09-02 18:00:00,2026,8186,5362,Coquimbo Unido,Universidad de Concepción,,,pre
