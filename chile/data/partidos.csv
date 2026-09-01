@@ -1476,3 +1476,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850643,2026-08-29 20:00:00,2026,7427,8110,Ñublense,Deportes Concepción,0.0,1.0,post
 401850639,2026-08-30 15:00:00,2026,5362,4139,Universidad de Concepción,Universidad de Chile,2.0,1.0,post
 401850642,2026-08-30 17:30:00,2026,2688,4138,Colo Colo,Audax Italiano,5.0,1.0,post
+401850640,2026-08-31 18:15:00,2026,10144,4137,Unión La Calera,Deportes La Serena,0.0,1.0,post
+401850638,2026-08-31 20:45:00,2026,885,6072,Universidad Católica,O'Higgins,3.0,2.0,post

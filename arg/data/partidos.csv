@@ -2351,3 +2351,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841524,2026-08-30 17:00:00,2026,3,9739,Argentinos Juniors,Aldosivi,2.0,1.0,post
 401841532,2026-08-30 19:15:00,2026,11,11972,Independiente,Gimnasia Mendoza,0.0,3.0,post
 401841533,2026-08-30 21:30:00,2026,9744,15,Independiente Rivadavia,Racing Club,3.0,1.0,post
+401841528,2026-08-31 19:00:00,2026,8950,7764,Defensa y Justicia,Platense,1.0,0.0,post
+401841530,2026-08-31 19:00:00,2026,8,14,Estudiantes de La Plata,Newell's Old Boys,0.0,0.0,post
+401841537,2026-08-31 21:15:00,2026,7767,10060,Tigre,Barracas Central,0.0,0.0,post
+401841534,2026-08-31 21:15:00,2026,2975,18,Instituto,San Lorenzo,1.0,0.0,post

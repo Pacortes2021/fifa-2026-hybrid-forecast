@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841528,2026-08-31 19:00:00,2026,8950,7764,Defensa y Justicia,Platense,,,pre
-401841530,2026-08-31 19:00:00,2026,8,14,Estudiantes de La Plata,Newell's Old Boys,,,pre
-401841537,2026-08-31 21:15:00,2026,7767,10060,Tigre,Barracas Central,,,pre
-401841534,2026-08-31 21:15:00,2026,2975,18,Instituto,San Lorenzo,,,pre
 401841541,2026-09-04 16:45:00,2026,19685,10158,Estudiantes de Río Cuarto,Sarmiento,,,pre
 401841543,2026-09-04 19:00:00,2026,4,10,Belgrano,Huracán,,,pre
 401841547,2026-09-04 19:00:00,2026,7764,17702,Platense,Deportivo Riestra,,,pre

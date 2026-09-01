@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401882901,2026-08-31 19:30:00,2026,97,2922,CA Osasuna,Getafe,,,pre
-401882903,2026-08-31 21:30:00,2026,83,101,FC Barcelona,Rayo Vallecano,,,pre
 401882867,2026-09-03 21:00:00,2026,89,85,Real Sociedad,Celta de Vigo,,,pre
 401882894,2026-09-04 21:00:00,2026,244,86,Real Betis,Real Madrid,,,pre
 401882895,2026-09-05 16:15:00,2026,93,1068,Athletic Club,Atlético de Madrid,,,pre
@@ -39,8 +37,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882861,2026-09-20 14:00:00,2026,2922,99,Getafe,Málaga,,,pre
 401882865,2026-09-20 16:15:00,2026,1068,86,Atlético de Madrid,Real Madrid,,,pre
 401882863,2026-09-20 18:30:00,2026,90,244,Deportivo,Real Betis,,,pre
-401882858,2026-09-20 20:00:00,2026,94,89,Valencia CF,Real Sociedad,,,pre
-401882857,2026-09-20 20:00:00,2026,102,1538,Villarreal CF,Levante,,,pre
+401882857,2026-09-20 18:30:00,2026,102,1538,Villarreal CF,Levante,,,pre
+401882858,2026-09-20 21:00:00,2026,94,89,Valencia CF,Real Sociedad,,,pre
 401882847,2026-10-11 20:00:00,2026,89,90,Real Sociedad,Deportivo,,,pre
 401882848,2026-10-11 20:00:00,2026,86,102,Real Madrid,Villarreal CF,,,pre
 401882849,2026-10-11 20:00:00,2026,101,93,Rayo Vallecano,Athletic Club,,,pre
