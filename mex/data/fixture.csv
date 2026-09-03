@@ -1,26 +1,24 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401876991,2026-09-04 19:00:00,2026,231,223,Puebla,Toluca,,,pre
 401876990,2026-09-04 21:00:00,2026,17851,234,FC Juárez,Pachuca,,,pre
-401876988,2026-09-05 17:00:00,2026,222,220,Querétaro,Monterrey,,,pre
 401876989,2026-09-05 17:00:00,2026,15720,219,Atlético San Luis,Guadalajara,,,pre
-401876986,2026-09-05 19:00:00,2026,227,10125,América,Tijuana,,,pre
 401876987,2026-09-05 19:00:00,2026,232,229,Tigres UANL,Necaxa,,,pre
 401876985,2026-09-05 21:00:00,2026,216,226,Atlas,Atlante,,,pre
-401876984,2026-09-06 12:00:00,2026,233,228,Pumas UNAM,León,,,pre
 401876983,2026-09-06 20:00:00,2026,218,225,Cruz Azul,Santos Laguna,,,pre
+401876984,2026-09-10 21:00:00,2026,233,228,Pumas UNAM,León,,,pre
 401876980,2026-09-11 19:00:00,2026,229,231,Necaxa,Puebla,,,pre
 401876979,2026-09-11 21:00:00,2026,226,234,Atlante,Pachuca,,,pre
 401876978,2026-09-11 21:00:00,2026,10125,222,Tijuana,Querétaro,,,pre
-401876981,2026-09-12 12:00:00,2026,218,227,Cruz Azul,América,,,pre
 401876982,2026-09-12 12:00:00,2026,223,216,Toluca,Atlas,,,pre
-401876977,2026-09-12 17:00:00,2026,228,15720,León,Atlético San Luis,,,pre
 401876974,2026-09-12 19:00:00,2026,220,232,Monterrey,Tigres UANL,,,pre
+401876981,2026-09-12 21:00:00,2026,218,227,Cruz Azul,América,,,pre
 401876976,2026-09-13 18:00:00,2026,225,17851,Santos Laguna,FC Juárez,,,pre
 401876975,2026-09-13 19:07:00,2026,219,233,Guadalajara,Pumas UNAM,,,pre
+401876977,2026-09-14 19:00:00,2026,228,15720,León,Atlético San Luis,,,pre
+401876991,2026-09-15 19:00:00,2026,231,223,Puebla,Toluca,,,pre
 401876973,2026-09-18 19:00:00,2026,231,226,Puebla,Atlante,,,pre
 401876972,2026-09-18 21:00:00,2026,17851,232,FC Juárez,Tigres UANL,,,pre
-401876971,2026-09-19 17:00:00,2026,216,233,Atlas,Pumas UNAM,,,pre
 401876970,2026-09-19 17:00:00,2026,15720,229,Atlético San Luis,Necaxa,,,pre
+401876971,2026-09-19 17:00:00,2026,216,233,Atlas,Pumas UNAM,,,pre
 401876969,2026-09-19 19:00:00,2026,220,218,Monterrey,Cruz Azul,,,pre
 401876968,2026-09-19 21:00:00,2026,227,219,América,Guadalajara,,,pre
 401876967,2026-09-20 18:00:00,2026,234,10125,Pachuca,Tijuana,,,pre
@@ -35,8 +33,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876958,2026-09-27 12:00:00,2026,233,15720,Pumas UNAM,Atlético San Luis,,,pre
 401876957,2026-09-27 19:00:00,2026,228,17851,León,FC Juárez,,,pre
 401876956,2026-09-27 21:00:00,2026,229,227,Necaxa,América,,,pre
-401876954,2026-10-09 19:00:00,2026,231,228,Puebla,León,,,pre
 401876955,2026-10-09 19:00:00,2026,222,226,Querétaro,Atlante,,,pre
+401876954,2026-10-09 19:00:00,2026,231,228,Puebla,León,,,pre
 401876953,2026-10-09 21:00:00,2026,232,223,Tigres UANL,Toluca,,,pre
 401876952,2026-10-10 17:00:00,2026,17851,10125,FC Juárez,Tijuana,,,pre
 401876951,2026-10-10 19:00:00,2026,216,219,Atlas,Guadalajara,,,pre
@@ -49,8 +47,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876944,2026-10-16 21:00:00,2026,10125,231,Tijuana,Puebla,,,pre
 401876943,2026-10-17 17:00:00,2026,219,232,Guadalajara,Tigres UANL,,,pre
 401876942,2026-10-17 17:00:00,2026,225,222,Santos Laguna,Querétaro,,,pre
-401876940,2026-10-17 19:00:00,2026,223,15720,Toluca,Atlético San Luis,,,pre
 401876941,2026-10-17 19:00:00,2026,228,227,León,América,,,pre
+401876940,2026-10-17 19:00:00,2026,223,15720,Toluca,Atlético San Luis,,,pre
 401876939,2026-10-17 21:00:00,2026,218,17851,Cruz Azul,FC Juárez,,,pre
 401876938,2026-10-18 19:00:00,2026,220,234,Monterrey,Pachuca,,,pre
 401876937,2026-10-20 19:00:00,2026,15720,222,Atlético San Luis,Querétaro,,,pre
@@ -67,10 +65,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876926,2026-10-24 17:00:00,2026,228,223,León,Toluca,,,pre
 401876925,2026-10-24 18:00:00,2026,220,219,Monterrey,Guadalajara,,,pre
 401876924,2026-10-24 21:00:00,2026,233,232,Pumas UNAM,Tigres UANL,,,pre
-401876922,2026-10-25 17:00:00,2026,227,234,América,Pachuca,,,pre
 401876923,2026-10-25 17:00:00,2026,216,231,Atlas,Puebla,,,pre
+401876922,2026-10-25 17:00:00,2026,227,234,América,Pachuca,,,pre
 401876921,2026-10-25 19:00:00,2026,222,218,Querétaro,Cruz Azul,,,pre
 401876920,2026-10-25 21:00:00,2026,10125,225,Tijuana,Santos Laguna,,,pre
+401876986,2026-10-28 21:00:00,2026,227,10125,América,Tijuana,,,pre
 401876919,2026-10-30 19:00:00,2026,15720,216,Atlético San Luis,Atlas,,,pre
 401876918,2026-10-30 19:00:00,2026,17851,222,FC Juárez,Querétaro,,,pre
 401876917,2026-10-30 21:00:00,2026,231,233,Puebla,Pumas UNAM,,,pre
@@ -89,6 +88,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876904,2026-11-07 21:00:00,2026,233,227,Pumas UNAM,América,,,pre
 401876903,2026-11-08 18:00:00,2026,222,231,Querétaro,Puebla,,,pre
 401876902,2026-11-08 19:00:00,2026,228,219,León,Guadalajara,,,pre
+401876988,2026-11-14 17:00:00,2026,222,220,Querétaro,Monterrey,,,pre
 401877054,2026-11-20 19:00:00,2026,231,15720,Puebla,Atlético San Luis,,,pre
 401877053,2026-11-20 21:00:00,2026,17851,216,FC Juárez,Atlas,,,pre
 401877052,2026-11-20 21:00:00,2026,10125,226,Tijuana,Atlante,,,pre

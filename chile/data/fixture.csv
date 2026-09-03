@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401850598,2026-09-02 18:00:00,2026,8186,5362,Coquimbo Unido,Universidad de Concepción,,,pre
-401850604,2026-09-02 20:30:00,2026,19195,7427,Deportes Limache,Ñublense,,,pre
 401850644,2026-09-04 20:30:00,2026,8110,4138,Deportes Concepción,Audax Italiano,,,pre
 401850651,2026-09-05 17:30:00,2026,4129,885,Everton,Universidad Católica,,,pre
 401850646,2026-09-05 20:00:00,2026,4139,8186,Universidad de Chile,Coquimbo Unido,,,pre
