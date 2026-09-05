@@ -2150,3 +2150,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882901,2026-08-31 19:30:00,2026,97,2922,CA Osasuna,Getafe,1.0,0.0,post
 401882903,2026-08-31 21:30:00,2026,83,101,FC Barcelona,Rayo Vallecano,5.0,2.0,post
 401882867,2026-09-03 21:00:00,2026,89,85,Real Sociedad,Celta de Vigo,0.0,0.0,post
+401882894,2026-09-04 21:00:00,2026,244,86,Real Betis,Real Madrid,1.0,0.0,post

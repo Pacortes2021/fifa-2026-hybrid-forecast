@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841541,2026-09-04 16:45:00,2026,19685,10158,Estudiantes de Río Cuarto,Sarmiento,,,pre
-401841543,2026-09-04 19:00:00,2026,4,10,Belgrano,Huracán,,,pre
-401841547,2026-09-04 19:00:00,2026,7764,17702,Platense,Deportivo Riestra,,,pre
 401841545,2026-09-05 13:30:00,2026,9739,235,Aldosivi,Banfield,,,pre
 401841553,2026-09-05 14:30:00,2026,9,7767,Gimnasia La Plata,Tigre,,,pre
 401841539,2026-09-05 16:30:00,2026,11972,5,Gimnasia Mendoza,Boca Juniors,,,pre

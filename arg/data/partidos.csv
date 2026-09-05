@@ -2355,3 +2355,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841530,2026-08-31 19:00:00,2026,8,14,Estudiantes de La Plata,Newell's Old Boys,0.0,0.0,post
 401841537,2026-08-31 21:15:00,2026,7767,10060,Tigre,Barracas Central,0.0,0.0,post
 401841534,2026-08-31 21:15:00,2026,2975,18,Instituto,San Lorenzo,1.0,0.0,post
+401841541,2026-09-04 16:45:00,2026,19685,10158,Estudiantes de Río Cuarto,Sarmiento,0.0,2.0,post
+401841543,2026-09-04 19:00:00,2026,4,10,Belgrano,Huracán,1.0,1.0,post
+401841547,2026-09-04 19:00:00,2026,7764,17702,Platense,Deportivo Riestra,1.0,1.0,post
