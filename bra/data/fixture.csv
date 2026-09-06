@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841224,2026-09-05 16:00:00,2026,6079,9967,Red Bull Bragantino,Bahia,,,pre
-401841226,2026-09-05 18:30:00,2026,2026,7632,São Paulo,Atlético Mineiro,,,pre
-401841227,2026-09-05 21:00:00,2026,3445,3454,Fluminense,Vasco da Gama,,,pre
 401841219,2026-09-06 11:00:00,2026,3456,9169,Coritiba,Mirassol,,,pre
 401841223,2026-09-06 16:00:00,2026,1936,2674,Internacional,Santos,,,pre
 401841225,2026-09-06 16:00:00,2026,4936,819,Remo,Flamengo,,,pre

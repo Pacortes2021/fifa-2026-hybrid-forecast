@@ -1925,3 +1925,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876993,2026-08-30 18:00:00,2026,223,17851,Toluca,FC Juárez,4.0,0.0,post
 401876992,2026-08-30 20:10:00,2026,220,15720,Monterrey,Atlético San Luis,1.0,3.0,post
 401876990,2026-09-04 21:00:00,2026,17851,234,FC Juárez,Pachuca,0.0,2.0,post
+401876989,2026-09-05 17:00:00,2026,15720,219,Atlético San Luis,Guadalajara,0.0,3.0,post
+401876987,2026-09-05 19:00:00,2026,232,229,Tigres UANL,Necaxa,1.0,1.0,post
+401876985,2026-09-05 21:00:00,2026,216,226,Atlas,Atlante,1.0,1.0,post

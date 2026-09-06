@@ -1,9 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841545,2026-09-05 13:30:00,2026,9739,235,Aldosivi,Banfield,,,pre
-401841553,2026-09-05 14:30:00,2026,9,7767,Gimnasia La Plata,Tigre,,,pre
-401841539,2026-09-05 16:30:00,2026,11972,5,Gimnasia Mendoza,Boca Juniors,,,pre
-401841551,2026-09-05 19:00:00,2026,18,19,San Lorenzo,Talleres de Córdoba,,,pre
-401841540,2026-09-05 21:15:00,2026,21,8,Vélez Sarsfield,Estudiantes de La Plata,,,pre
 401841550,2026-09-06 14:45:00,2026,17,14,Rosario Central,Newell's Old Boys,,,pre
 401841542,2026-09-06 17:00:00,2026,11989,11,Central Córdoba,Independiente,,,pre
 401841546,2026-09-06 17:00:00,2026,12,8950,Lanús,Defensa y Justicia,,,pre

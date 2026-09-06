@@ -2256,3 +2256,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841215,2026-08-30 19:30:00,2026,9967,1936,Bahia,Internacional,3.0,2.0,post
 401841210,2026-08-31 20:00:00,2026,4936,3456,Remo,Coritiba,2.0,3.0,post
 401913077,2026-09-02 19:30:00,2026,819,9169,Flamengo,Mirassol,2.0,0.0,post
+401841224,2026-09-05 16:00:00,2026,6079,9967,Red Bull Bragantino,Bahia,2.0,3.0,post
+401841226,2026-09-05 18:30:00,2026,2026,7632,São Paulo,Atlético Mineiro,2.0,0.0,post
+401841227,2026-09-05 21:00:00,2026,3445,3454,Fluminense,Vasco da Gama,1.0,0.0,post

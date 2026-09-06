@@ -2358,3 +2358,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841541,2026-09-04 16:45:00,2026,19685,10158,Estudiantes de Río Cuarto,Sarmiento,0.0,2.0,post
 401841543,2026-09-04 19:00:00,2026,4,10,Belgrano,Huracán,1.0,1.0,post
 401841547,2026-09-04 19:00:00,2026,7764,17702,Platense,Deportivo Riestra,1.0,1.0,post
+401841545,2026-09-05 13:30:00,2026,9739,235,Aldosivi,Banfield,3.0,1.0,post
+401841553,2026-09-05 14:30:00,2026,9,7767,Gimnasia La Plata,Tigre,2.0,1.0,post
+401841539,2026-09-05 16:30:00,2026,11972,5,Gimnasia Mendoza,Boca Juniors,2.0,2.0,post
+401841551,2026-09-05 19:00:00,2026,18,19,San Lorenzo,Talleres de Córdoba,1.0,0.0,post
+401841540,2026-09-05 21:15:00,2026,21,8,Vélez Sarsfield,Estudiantes de La Plata,1.0,0.0,post
