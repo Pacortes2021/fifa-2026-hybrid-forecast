@@ -78,12 +78,19 @@ COORDS_SPAIN = {
     "Espanyol": (41.3879, 2.1699), "Sevilla FC": (37.3891, -5.9845),
     "Real Betis": (37.3891, -5.9845), "Athletic Club": (43.2630, -2.9350),
     "Real Sociedad": (43.3183, -1.9812), "Deportivo Alavés": (42.8467, -2.6716),
-    "Valencia CF": (39.4699, -0.3763), "Villarreal CF": (39.9378, -0.1006),
-    "Celta de Vigo": (42.2406, -8.7207), "RCD Mallorca": (39.5696, 2.6502),
-    "UD Las Palmas": (28.1235, -15.4363), "CA Osasuna": (42.8125, -1.6458),
-    "Girona FC": (41.9794, 2.8214), "Cádiz CF": (36.5271, -6.2886),
-    "Granada CF": (37.1773, -3.5986), "UD Almería": (36.8340, -2.4637),
-    "Elche CF": (38.2669, -0.6983), "SD Eibar": (43.1843, -2.4716)
+    "Alavés": (42.8467, -2.6716), "Valencia CF": (39.4699, -0.3763),
+    "Villarreal CF": (39.9378, -0.1006), "Celta de Vigo": (42.2406, -8.7207),
+    "RCD Mallorca": (39.5696, 2.6502), "Mallorca": (39.5696, 2.6502),
+    "UD Las Palmas": (28.1235, -15.4363), "Las Palmas": (28.1235, -15.4363),
+    "CA Osasuna": (42.8125, -1.6458), "Girona FC": (41.9794, 2.8214),
+    "Cádiz CF": (36.5271, -6.2886), "Cádiz": (36.5271, -6.2886),
+    "Granada CF": (37.1773, -3.5986), "Granada": (37.1773, -3.5986),
+    "UD Almería": (36.8340, -2.4637), "Almería": (36.8340, -2.4637),
+    "Elche CF": (38.2669, -0.6983), "SD Eibar": (43.1843, -2.4716),
+    "Eibar": (43.1843, -2.4716), "Levante": (39.4699, -0.3763),
+    "Real Valladolid": (41.6523, -4.7245), "Málaga": (36.7213, -4.4214),
+    "Huesca": (42.1401, -0.4089), "Real Oviedo": (43.3619, -5.8494),
+    "Racing Santander": (43.4623, -3.8099), "Deportivo": (43.3623, -8.4115)
 }
 
 def haversine_km(lat1, lon1, lat2, lon2):

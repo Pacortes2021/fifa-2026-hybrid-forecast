@@ -124,7 +124,12 @@ def run_app():
     # Selector de modelo activo
     modelo_sel = st.sidebar.selectbox(
         "🤖 Modelo Predictivo:",
-        ["🌲 Random Forest (Recomendado)", "📐 LASSO L1 (Regresión)", "🔀 Stacking (Ensemble óptimo)"],
+        [
+            "🌲 Random Forest (Recomendado)",
+            "📐 LASSO L1 (Regresión)",
+            "🔀 Stacking (Ensemble óptimo)",
+            "🚀 XGBoost (Gradient Boosting)"
+        ],
         index=0
     )
     if "LASSO" in modelo_sel:

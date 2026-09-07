@@ -127,7 +127,12 @@ def run_app():
     # Selector de modelo activo
     modelo_sel = st.sidebar.selectbox(
         "🤖 Modelo Predictivo:",
-        ["🌲 Random Forest (Recomendado)", "📐 LASSO L1 (Regresión)", "🔀 Stacking (Ensemble óptimo)"],
+        [
+            "🌲 Random Forest (Recomendado)",
+            "📐 LASSO L1 (Regresión)",
+            "🔀 Stacking (Ensemble óptimo)",
+            "🚀 XGBoost (Gradient Boosting)"
+        ],
         index=0
     )
     if "LASSO" in modelo_sel:
@@ -189,13 +194,13 @@ def run_app():
         
         c1, cvs, c2 = st.columns([5, 1, 5])
         with c1:
-            a = st.selectbox("Equipo Local", opciones, index=opciones.index("Arsenal") if "Real Madrid" in opciones else 0, key="sel_a", format_func=lambda t: fmt_opcion(equipos, t))
-            st.markdown(f'<div style=\"text-align:center;margin-top:0.2rem;\">{logo_html(equipos, a, 64)}</div>', unsafe_allow_html=True)
+            a = st.selectbox("Equipo Local", opciones, index=opciones.index("Arsenal") if "Arsenal" in opciones else 0, key="sel_a", format_func=lambda t: fmt_opcion(equipos, t))
+            st.markdown(f'<div style="text-align:center;margin-top:0.2rem;">{logo_html(equipos, a, 64)}</div>', unsafe_allow_html=True)
         with cvs:
             st.markdown('<div class="vs-text">VS</div>', unsafe_allow_html=True)
         with c2:
-            b = st.selectbox("Equipo Visitante", opciones, index=opciones.index("Liverpool") if "Barcelona" in opciones else 0, key="sel_b", format_func=lambda t: fmt_opcion(equipos, t))
-            st.markdown(f'<div style=\"text-align:center;margin-top:0.2rem;\">{logo_html(equipos, b, 64)}</div>', unsafe_allow_html=True)
+            b = st.selectbox("Equipo Visitante", opciones, index=opciones.index("Liverpool") if "Liverpool" in opciones else (1 if len(opciones) > 1 else 0), key="sel_b", format_func=lambda t: fmt_opcion(equipos, t))
+            st.markdown(f'<div style="text-align:center;margin-top:0.2rem;">{logo_html(equipos, b, 64)}</div>', unsafe_allow_html=True)
             
         if a == b:
             st.error("Selecciona dos equipos distintos.")

@@ -183,12 +183,12 @@ def run_app():
         
         c1, cvs, c2 = st.columns([5, 1, 5])
         with c1:
-            a = st.selectbox("Equipo Local", opciones, index=opciones.index("América"), key="sel_a", format_func=lambda t: fmt_opcion(equipos, t))
-            st.markdown(f'<div style=\"text-align:center;margin-top:0.2rem;\">{logo_html(equipos, a, 64)}</div>', unsafe_allow_html=True)
+            a = st.selectbox("Equipo Local", opciones, index=opciones.index("América") if "América" in opciones else 0, key="sel_a", format_func=lambda t: fmt_opcion(equipos, t))
+            st.markdown(f'<div style="text-align:center;margin-top:0.2rem;">{logo_html(equipos, a, 64)}</div>', unsafe_allow_html=True)
         with cvs:
             st.markdown('<div class="vs-text">VS</div>', unsafe_allow_html=True)
         with c2:
-            b = st.selectbox("Equipo Visitante", opciones, index=opciones.index("Guadalajara"), key="sel_b", format_func=lambda t: fmt_opcion(equipos, t))
+            b = st.selectbox("Equipo Visitante", opciones, index=opciones.index("Guadalajara") if "Guadalajara" in opciones else (1 if len(opciones) > 1 else 0), key="sel_b", format_func=lambda t: fmt_opcion(equipos, t))
             st.markdown(f'<div style=\"text-align:center;margin-top:0.2rem;\">{logo_html(equipos, b, 64)}</div>', unsafe_allow_html=True)
             
         if a == b:

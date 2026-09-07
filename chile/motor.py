@@ -74,13 +74,15 @@ COORDS_CHILE = {
     "Cobreloa": (-22.4544, -68.9292), "Deportes Iquique": (-20.2307, -70.1357),
     "Coquimbo Unido": (-29.9533, -71.3436), "Deportes La Serena": (-29.9027, -71.2520),
     "Everton": (-33.0245, -71.5518), "Santiago Wanderers": (-33.0472, -71.6127),
-    "Huachipato": (-36.8270, -73.0503), "Deportes Concepción": (-36.8270, -73.0503),
-    "Universidad de Concepción": (-36.8270, -73.0503), "Ñublense": (-36.6067, -72.1034),
-    "Cobresal": (-26.2464, -69.6258), "O'Higgins": (-34.1701, -70.7444),
-    "Curicó Unido": (-34.9854, -71.2394), "Rangers": (-35.4264, -71.6554),
-    "Deportes Antofagasta": (-23.6509, -70.3975), "Deportes Copiapó": (-27.3668, -70.3323),
-    "Unión La Calera": (-32.7882, -71.1896), "San Luis": (-32.8804, -71.2483),
-    "Deportes Puerto Montt": (-41.4693, -72.9424)
+    "Unión Wanderers": (-33.0472, -71.6127), "Huachipato": (-36.8270, -73.0503),
+    "Deportes Concepción": (-36.8270, -73.0503), "Universidad de Concepción": (-36.8270, -73.0503),
+    "Ñublense": (-36.6067, -72.1034), "Cobresal": (-26.2464, -69.6258),
+    "O'Higgins": (-34.1701, -70.7444), "Curicó Unido": (-34.9854, -71.2394),
+    "Rangers": (-35.4264, -71.6554), "Deportes Antofagasta": (-23.6509, -70.3975),
+    "Antofagasta": (-23.6509, -70.3975), "Deportes Copiapó": (-27.3668, -70.3323),
+    "Copiapó": (-27.3668, -70.3323), "Unión La Calera": (-32.7882, -71.1896),
+    "San Luis": (-32.8804, -71.2483), "Deportes Puerto Montt": (-41.4693, -72.9424),
+    "Deportes Limache": (-33.0153, -71.2667), "Melipilla": (-33.6892, -71.2156)
 }
 
 def haversine_km(lat1, lon1, lat2, lon2):

@@ -103,7 +103,8 @@ COORDS_MEXICO = {
     "Tijuana": (32.5149, -117.0382), "FC Juárez": (31.6904, -106.4245),
     "Puebla": (19.0414, -98.2063), "Necaxa": (21.8853, -102.2916),
     "Querétaro": (20.5888, -100.3899), "Mazatlán FC": (23.2494, -106.4111),
-    "Atlético San Luis": (22.1565, -100.9855), "Morelia": (19.7060, -101.1950)
+    "Atlético San Luis": (22.1565, -100.9855), "Morelia": (19.7060, -101.1950),
+    "Atlante": (19.3833, -99.1833)
 }
 
 def haversine_km(lat1, lon1, lat2, lon2):

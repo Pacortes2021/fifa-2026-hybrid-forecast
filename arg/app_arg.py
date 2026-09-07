@@ -102,9 +102,14 @@ def simular_campeonato(_M, key, modelo):
 def run_app():
     st.sidebar.markdown("### 🛠️ Controles del Modelo (Argentina)")
 
-    OPCIONES_MOD = ["🌲 Random Forest (Recomendado)", "📐 LASSO L1 (Regresión)", "🔀 Stacking (Ensemble óptimo)"]
+    OPCIONES_MOD = [
+        "🌲 Random Forest (Recomendado)",
+        "📐 LASSO L1 (Regresión)",
+        "🔀 Stacking (Ensemble óptimo)",
+        "🚀 XGBoost (Gradient Boosting)"
+    ]
     modelo_sel = st.sidebar.selectbox("🤖 Modelo Predictivo:", OPCIONES_MOD, index=0)
-    modelo = "lasso" if "LASSO" in modelo_sel else ("stacking" if "Stacking" in modelo_sel else "rf")
+    modelo = "lasso" if "LASSO" in modelo_sel else ("stacking" if "Stacking" in modelo_sel else ("xgb" if "XGB" in modelo_sel else "rf"))
 
     if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", key="refresh_arg", type="primary"):
         with st.spinner("Descargando últimos resultados de la Liga Profesional de Argentina..."):
