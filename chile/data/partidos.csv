@@ -1483,3 +1483,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850644,2026-09-04 20:30:00,2026,8110,4138,Deportes Concepción,Audax Italiano,0.0,1.0,post
 401850651,2026-09-05 17:30:00,2026,4129,885,Everton,Universidad Católica,0.0,1.0,post
 401850646,2026-09-05 20:00:00,2026,4139,8186,Universidad de Chile,Coquimbo Unido,4.0,2.0,post
+401850649,2026-09-06 12:30:00,2026,4137,7427,Deportes La Serena,Ñublense,2.0,1.0,post
+401850648,2026-09-06 14:45:00,2026,6072,10144,O'Higgins,Unión La Calera,2.0,1.0,post
+401850650,2026-09-06 17:00:00,2026,4134,2688,Huachipato,Colo Colo,0.0,0.0,post
+401850647,2026-09-06 19:30:00,2026,4422,5362,Palestino,Universidad de Concepción,2.0,1.0,post

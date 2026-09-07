@@ -1,9 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841550,2026-09-06 14:45:00,2026,17,14,Rosario Central,Newell's Old Boys,,,pre
-401841542,2026-09-06 17:00:00,2026,11989,11,Central Córdoba,Independiente,,,pre
-401841546,2026-09-06 17:00:00,2026,12,8950,Lanús,Defensa y Justicia,,,pre
-401841549,2026-09-06 19:15:00,2026,16,9744,River Plate,Independiente Rivadavia,,,pre
-401841548,2026-09-06 21:30:00,2026,15,9785,Racing Club,Atlético Tucumán,,,pre
 401841544,2026-09-07 19:00:00,2026,10060,3,Barracas Central,Argentinos Juniors,,,pre
 401841552,2026-09-07 21:15:00,2026,20,2975,Unión de Santa Fe,Instituto,,,pre
 401841565,2026-09-11 17:00:00,2026,14,21,Newell's Old Boys,Vélez Sarsfield,,,pre

@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401882888,2026-09-06 16:15:00,2026,94,83,Valencia CF,FC Barcelona,,,pre
-401882896,2026-09-06 18:30:00,2026,96,97,Alavés,CA Osasuna,,,pre
-401882890,2026-09-06 18:30:00,2026,99,1538,Málaga,Levante,,,pre
-401882892,2026-09-06 21:00:00,2026,88,243,Espanyol,Sevilla FC,,,pre
 401882891,2026-09-07 19:00:00,2026,2922,85,Getafe,Celta de Vigo,,,pre
 401882893,2026-09-07 21:30:00,2026,3751,89,Elche CF,Real Sociedad,,,pre
 401882878,2026-09-11 21:00:00,2026,243,94,Sevilla FC,Valencia CF,,,pre

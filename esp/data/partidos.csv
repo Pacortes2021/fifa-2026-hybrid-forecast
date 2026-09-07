@@ -2154,3 +2154,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882895,2026-09-05 16:15:00,2026,93,1068,Athletic Club,Atlético de Madrid,3.0,0.0,post
 401882889,2026-09-05 18:30:00,2026,101,87,Rayo Vallecano,Racing Santander,3.0,2.0,post
 401882887,2026-09-05 21:00:00,2026,102,90,Villarreal CF,Deportivo,2.0,3.0,post
+401882888,2026-09-06 16:15:00,2026,94,83,Valencia CF,FC Barcelona,0.0,5.0,post
+401882896,2026-09-06 18:30:00,2026,96,97,Alavés,CA Osasuna,5.0,2.0,post
+401882890,2026-09-06 18:30:00,2026,99,1538,Málaga,Levante,0.0,0.0,post
+401882892,2026-09-06 21:00:00,2026,88,243,Espanyol,Sevilla FC,1.0,1.0,post

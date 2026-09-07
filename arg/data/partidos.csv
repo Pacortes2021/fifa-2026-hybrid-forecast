@@ -2363,3 +2363,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841539,2026-09-05 16:30:00,2026,11972,5,Gimnasia Mendoza,Boca Juniors,2.0,2.0,post
 401841551,2026-09-05 19:00:00,2026,18,19,San Lorenzo,Talleres de Córdoba,1.0,0.0,post
 401841540,2026-09-05 21:15:00,2026,21,8,Vélez Sarsfield,Estudiantes de La Plata,1.0,0.0,post
+401841550,2026-09-06 14:45:00,2026,17,14,Rosario Central,Newell's Old Boys,1.0,1.0,post
+401841542,2026-09-06 17:00:00,2026,11989,11,Central Córdoba,Independiente,0.0,1.0,post
+401841546,2026-09-06 17:00:00,2026,12,8950,Lanús,Defensa y Justicia,1.0,0.0,post
+401841549,2026-09-06 19:15:00,2026,16,9744,River Plate,Independiente Rivadavia,3.0,1.0,post
+401841548,2026-09-06 21:30:00,2026,15,9785,Racing Club,Atlético Tucumán,1.0,2.0,post

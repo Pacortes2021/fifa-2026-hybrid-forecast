@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401850649,2026-09-06 12:30:00,2026,4137,7427,Deportes La Serena,Ñublense,,,pre
-401850648,2026-09-06 14:45:00,2026,6072,10144,O'Higgins,Unión La Calera,,,pre
-401850650,2026-09-06 17:00:00,2026,4134,2688,Huachipato,Colo Colo,,,pre
-401850647,2026-09-06 19:30:00,2026,4422,5362,Palestino,Universidad de Concepción,,,pre
 401850645,2026-09-07 20:00:00,2026,19195,4133,Deportes Limache,Cobresal,,,pre
 401850659,2026-09-12 12:30:00,2026,7427,4129,Ñublense,Everton,,,pre
 401850658,2026-09-12 15:00:00,2026,4133,8186,Cobresal,Coquimbo Unido,,,pre
