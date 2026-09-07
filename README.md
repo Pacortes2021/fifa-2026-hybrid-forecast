@@ -1,129 +1,156 @@
-# 🏆 Pipeline de Datos y Elo Histórico: Mundial 2026
+# ⚽ FIFA 2026 & Domestic Leagues: Hybrid ML Forecasting Platform
 
-Este directorio contiene los datasets finales preparados para el entrenamiento y simulación del modelo de predicción del Mundial de la FIFA 2026, junto con una explicación técnica detallada del procedimiento realizado.
+Plataforma integral de analítica avanzada, modelado probabilístico y predicción de fútbol basada en **Machine Learning Híbrido**, **Matrices Bivariadas de Poisson / Dixon-Coles** y **Simulaciones Monte Carlo Vectorizadas**.
 
----
-
-## 🖥️ Aplicación Interactiva en Vivo (Streamlit)
-
-Hemos desplegado una aplicación interactiva en la nube de Streamlit para que puedas simular cualquier partido del Mundial de forma interactiva y comparar los modelos en tiempo real:
-
-👉 **[Simulador Web del Mundial 2026](https://pacortes2021-fifa-2026-hybrid-forecast-app-anrhbf.streamlit.app/)**
-
-### ¿Qué puedes hacer en la aplicación?
-* **Búsqueda Amigable en Español**: Selecciona las selecciones en tu idioma con banderas emoji (se mapean automáticamente a los nombres en inglés en el backend).
-* **Comparación Directa de Modelos**: Compara el **Modelo Base** (jerarquía, finanzas e historial de largo plazo) frente al **Modelo Híbrido** (que incorpora la forma y volumen de juego recientes).
-* **Pronósticos y Métricas**: Visualiza probabilidades de ganar/empatar/perder, el porcentaje para avanzar ronda si es eliminatoria, goles esperados (Poisson) y los 5 marcadores más probables.
-* **Matrices de Goles**: Analiza la matriz cruzada de probabilidad de marcadores (del 0-0 al 5-5) mediante mapas de calor interactivos.
+El sistema cuenta con un portal central en **Streamlit** que permite interactuar con **8 aplicaciones de predicción independientes**: la Copa Mundial de la FIFA 2026 y las **7 ligas domésticas más competitivas de Europa y América**.
 
 ---
 
-## 📂 Estructura del Repositorio
+## 🚀 Portal Web Interactivo en Vivo
+
+👉 **[Acceder a la Plataforma Streamlit](https://pacortes2021-fifa-2026-hybrid-forecast-app-anrhbf.streamlit.app/)**
+
+### Competiciones Disponibles
+1. 🏆 **Copa Mundial de la FIFA 2026**: Bracket oficial de 48 selecciones, Elo histórico (1872–2026) y Homología Persistente (TDA experimental).
+2. 🏴󠁧󠁢󠁥󠁮󠁧󠁿 **Premier League** (Inglaterra)
+3. 🇪🇸 **LaLiga EA Sports** (España)
+4. 🇩🇪 **Bundesliga** (Alemania)
+5. 🇧🇷 **Brasileirão Série A** (Brasil)
+6. 🇲🇽 **Liga MX** (México — Apertura / Clausura y Liguilla)
+7. 🇨🇱 **Primera División de Chile**
+8. 🇦🇷 **Liga Profesional de Fútbol Argentino** (Zonas, promedios y tabla anual)
+
+---
+
+## 🧠 Arquitectura del Sistema
+
+El proyecto está diseñado bajo un patrón modular homogéneo donde cada liga cuenta con su propio ecosistema de datos, recolectores, motor analítico e interfaz de usuario, orquestados desde un enrutador central:
 
 ```
-├── app.py                 # Aplicación Streamlit (Base vs Híbrido)
-├── requirements.txt
-├── data/                  # Datasets fuente
-│   ├── espn_stats.csv         # 5,659 partidos 2018–2026 con Elo pre-partido (100% cobertura)
-│   ├── modelado_espn.csv      # Dataset de entrenamiento: 5,023 partidos, 11 variables delta + target
-│   ├── team_states.csv        # Estado actual de las 336 selecciones (corte jun-2026) — inicializa el simulador
-│   └── results.csv            # Histórico 1872–2026 (martj42) — base del Elo y del head-to-head
-├── notebooks/             # Análisis y modelado
-│   ├── Mundial_2026_Metodologia.ipynb        # Entregable principal (v5): metodología completa
-│   ├── Mundial_2026_Metodologia_Limpio.ipynb # Misma metodología con redacción condensada
-│   ├── Mundial_2026_Hibrido.ipynb            # Modelo Híbrido: prior de calidad + forma reciente (6 vars)
-│   └── mundial_solo_stats.ipynb              # Experimento: ¿cuánto predice SOLO el box score? (7 vars)
-├── outputs/               # Salidas de los notebooks (CSV)
-│   ├── predicciones_fase_grupos*.csv         # Los 72 partidos de grupos: P(V/E/D) + goles esperados
-│   └── probabilidades_torneo*.csv            # P(octavos/semis/final/campeón) por modelo y motor
-└── archivo/               # Notebooks de versiones anteriores (referencia histórica)
+fifa-2026-hybrid-forecast/
+├── app.py                     # Enrutador principal del portal Streamlit
+├── requirements.txt           # Dependencias de producción
+├── tests/
+│   └── smoke.py              # Suite de smoke tests unificada (7 ligas)
+├── .github/workflows/
+│   └── refresh_data.yml      # Pipeline CI/CD: ingesta diaria automatizada (06:00 UTC)
+│
+├── [eng | esp | bund | bra | mex | chile | arg]/   # Módulos por liga
+│   ├── motor.py               # StateTracker, Poisson Dixon-Coles, ML Stacking y Monte Carlo
+│   ├── app_<liga>.py          # Interfaz Streamlit (Versus, H2H, Tabla MC, Mercados, Validación)
+│   ├── recolectar.py          # Scraper/ingestor de partidos y fixture desde ESPN API
+│   ├── recolectar_boxscore.py # Ingestor de estadísticas detalladas por cotejo
+│   └── data/                  # Almacenamiento local versionado
+│       ├── partidos.csv       # Historial de partidos disputados
+│       ├── fixture.csv        # Calendario oficial y próximos encuentros
+│       ├── equipos.csv        # Metadatos, colores y escudos
+│       ├── box_score.csv      # Estadísticas avanzadas de partido (tiros, corners, pases)
+│       └── advanced_features*.csv # Altitud, coordenadas geográficas y valor de plantilla
+│
+└── lab/                       # Laboratorio de I+D del Mundial 2026
+    ├── motor.py               # Motor base vs híbrido para selecciones nacionales
+    └── tda_motor.py           # Análisis Topológico de Datos (Vietoris-Rips / Ripser)
 ```
 
-### Los modelos del proyecto
+---
 
-| Modelo | Variables | Log-Loss test 2025–26 | Log-Loss CV temporal | Notebook |
-|---|---|---|---|---|
-| **Base (principal)** | `elo_diff`, `h2h_diff`, `squad_value_diff` | 0.8517 | **0.9064** | `Mundial_2026_Metodologia.ipynb` |
-| **Híbrido** | Base + `goles_anotados/recibidos_diff`, `tiros_arco_diff` | **0.8507** | 0.9096 | `Mundial_2026_Hibrido.ipynb` |
-| Solo juego (experimento) | Las 7 variables de box score | 1.0041 | 1.0281 | `mundial_solo_stats.ipynb` |
+## 🔬 Metodología de Modelado (Por Liga)
 
-> Base e Híbrido están **estadísticamente empatados** (el híbrido gana por 0.001 en test, el base gana
-> en CV; ambas diferencias muy por debajo del ruido) — por eso la app los muestra lado a lado. El
-> experimento "solo juego" cuantifica el valor de la fuerza acumulada: sin Elo/plantilla/H2H se pierde
-> ~0.15 de log-loss y el pronóstico del torneo se distorsiona (las stats crudas no ajustan por la
-> calidad del rival).
+Cada liga implementa un flujo riguroso para evitar fuga de información (*data leakage*) y garantizar calibración probabilística real:
 
-**Tipo de competición (§6c del notebook principal):** los amistosos son intrínsecamente menos
-predecibles (log-loss ~0.92 vs ~0.78 en partidos competitivos). Corolario importante: **el pronóstico
-del Mundial es mejor que la métrica titular** — el 0.85 global está arrastrado por amistosos; en
-partidos en serio (lo que es el Mundial) el modelo rinde ~0.78. Por eso todos los modelos de simulación
-se entrenan con **ponderación por K-factor** (Mundial 3× un amistoso), alineados con la filosofía del
-Elo. El efecto en el pronóstico es marginal (España pasa de 28.4% a 29.2%) pero la metodología es más
-coherente.
+### 1. Ingesta y `StateTracker` Cronológico
+A medida que se recorre el calendario en orden temporal estricto:
+- **Rating Elo Dinámico**: Adaptación continua con K-Factor ponderado y corrección por margen de victoria.
+- **Forma Reciente**: Ventana móvil de los últimos 5 encuentros (puntos logrados, goles a favor y goles en contra).
+- **Métricas de Rendimiento (Box Scores)**: Diferenciales de tiros al arco, bloqueos, centros efectivos, despejes e intercepciones.
+- **Factores de Contexto**: Ventaja de localía empírica (`HOME_ADV`), distancias de viaje logarítmicas (cálculo geodésico Haversine) y diferenciales de altitud sobre el nivel del mar.
+- **Jerarquía Financiera**: Logaritmo del valor de mercado de la plantilla extraído vía Transfermarkt.
 
-**El notebook principal** sigue el camino: EDA → selección de variables data-driven (VIF + forward + significancia, **solo con train y CV temporal**) → entrenamiento con split temporal (test = 2025–26) → matriz de confusión → tratamiento del empate (RPS) → ROC/calibración → comparación de 14 modelos con hiperparámetros por CV (lineales, Lasso/Ridge/Elastic Net, ordinal logit y probit, SVM, red neuronal, RF/GB/XGBoost) → simulación Monte Carlo (10,000 torneos, bracket oficial FIFA 48 con letras verificadas contra el calendario, simetrización de localía para cancha neutral) → **un Mundial de muestra por dentro** (tablas de grupo, terceros y bracket ronda a ronda con probabilidades) → **simulador manual `versus()`** (cualquier par de las 336 selecciones, con matriz de marcadores) → modelo Poisson de goles, ensamble y torneo re-simulado con motor Poisson como contraste.
+### 2. Validación Temporal Honesta (Walk-Forward Split)
+- **Train (Entrenamiento)**: Partidos de temporadas históricas (<= 2023).
+- **Calibration (Calibración OOS)**: Partidos de temporada 2024.
+- **Test (Prueba Ciega en Vivo)**: Partidos de temporadas >= 2025 y 2026.
+
+### 3. Ensamble de Modelos (Stacking)
+- **LASSO (Logistic Regression L1 via SAGA)**: Selección estricta de variables que anula coeficientes no informativos o redundantes.
+- **Random Forest Classifier**: Captura de interacciones no lineales complejas entre variables de forma y contexto.
+- **XGBoost**: Gradient Boosting calibrado.
+- **Meta-Modelo Stacking**: Ponderación óptima calculada mediante optimización acotada (Nelder-Mead) sobre el conjunto de calibración fuera de muestra.
+
+### 4. Modelo Bivariado de Goles (Dixon-Coles / Poisson)
+- Modelado GLM de tasas de anotación esperadas (lambdas) condicionadas por el diferencial de Elo y la ventaja de localía.
+- Generación de la **matriz bivariada de probabilidad 10x10** con ajuste de dependencia en marcadores bajos (0-0, 1-0, 0-1, 1-1).
+- Re-calibración exacta de la matriz contra las probabilidades 1X2 del modelo Stacking para proyectar mercados derivados:
+  - **1X2 Tradicional**
+  - **Draw No Bet (DNB / Apuesta sin Empate)**
+  - **Líneas Over / Under (1.5, 2.5, 3.5 goles)**
+  - **Both Teams To Score (Ambos Anotan - Sí/No)**
+  - **Cuotas Justas de Mercado** (1 / P).
+
+### 5. Simulación Monte Carlo Vectorizada
+- Simulación de **3,000 a 50,000 iteraciones de la temporada completa** utilizando vectorización pura en NumPy.
+- Pre-cálculo de la matriz completa de emparejamientos y resolución simultánea de miles de calendarios en milisegundos (~1,200x más rápida que iteraciones basadas en bucles).
+- Salida probabilística completa:
+  - Probabilidad de coronarse **Campeón**.
+  - Probabilidad de clasificación a **Copas Continentales** (Champions League, Europa League, Conference League, Copa Libertadores, Copa Sudamericana).
+  - Probabilidad de **Descenso**.
+  - Puntos esperados proyectados al final de la temporada.
 
 ---
 
-## 🛠️ Procedimiento y Metodología Realizada
+## ⚡ Automatización e Infraestructura (CI/CD)
 
-### 1. Cálculo de Elo Histórico
-Para medir de forma precisa la fuerza de cada selección, implementamos un motor de Elo cronológico que procesó **49,373 partidos históricos** de fútbol internacional desde el primer partido en **1872** hasta **junio de 2026** (`results.csv`).
-* **Parámetros**: Valor inicial de `1500.0` y ventaja de localía de `100.0` puntos (salvo en canchas neutrales).
-* **Pesos K-Factor**: Amistosos (20.0), Clasificatorias (40.0), Copas Continentales (50.0) y Mundiales (60.0).
-* **Multiplicador de Goles**: Amplifica el delta según la diferencia de goles para dar mayor peso a las goleadas.
-* **Filtro crítico**: Se eliminaron los 72 registros futuros sin marcador del fixture del Mundial 2026 para evitar que propaguen valores nulos (`NaN`) en el cálculo final de los equipos participantes.
-
-### 2. Normalización de Nombres de Selecciones
-Para lograr un cruce del 100% de cobertura entre los partidos de ESPN y los históricos de `results.csv`, mapeamos y corregimos las discrepancias de nombres de 9 selecciones en la base de ESPN:
-* `Chinese Taipei` ➡️ `Taiwan`
-* `Brunei Darussalam` ➡️ `Brunei`
-* `Kyrgyz Republic` ➡️ `Kyrgyzstan`
-* `Sao Tome and Principe` ➡️ `São Tomé and Príncipe`
-* `St. Kitts and Nevis` ➡️ `Saint Kitts and Nevis`
-* `St. Lucia` ➡️ `Saint Lucia`
-* `St. Martin` ➡️ `Saint Martin`
-* `St. Vincent and the Grenadines` ➡️ `Saint Vincent and the Grenadines`
-* `US Virgin Islands` ➡️ `United States Virgin Islands`
-
-### 3. Fusión en Cascada de Elo
-Asociamos a cada partido de ESPN su respectivo Elo pre-partido aplicando una búsqueda jerárquica:
-1. **Match Exacto** en la misma fecha y equipos.
-2. **Match Invertido** (para partidos en campo neutral donde ESPN y la base histórica difieren sobre quién es local y visitante).
-3. **Margen de ±1 día** (para resolver desfases de zona horaria).
-4. **Consulta Histórica Acumulada**: Si el partido no existe en el set histórico de resultados (ej. amistosos no oficiales), se busca el Elo del equipo justo después de su último partido registrado estrictamente antes de la fecha actual.
-
-**Resultado:** Cobertura del **100% (0 nulos en 5,659 filas)**.
-
-### 4. Pre-población de Historiales de Goles
-Para evitar que los partidos de los primeros años (2018) comenzaran con un promedio de goles acumulado de `0.0` (debido a la falta de historial previo en ESPN), pre-poblamos las colas de partidos móviles de cada selección con los **goles anotados y recibidos de sus últimos 8 partidos en results.csv** antes del 7 de enero de 2018. Esto dotó al inicio de la base de datos de un contexto histórico real e inmediato.
-
-### 5. Generación de Variables (Promedios Móviles y Deltas)
-Recorrimos los partidos cronológicamente y mantuvimos una **ventana móvil Walk-Forward de los últimos 8 partidos** por selección para calcular:
-* **Goles**: Promedio de anotados y recibidos (100% de cobertura).
-* **Estadísticas Detalladas**: Promedio de tiros, tiros al arco, córners, posesión y faltas.
-  * *Tratamiento de nulos*: ESPN no registra estadísticas de box score detallado en el 60.5% de su base de datos. Tratar los vacíos o valores de `0.0` como reales sesgaría los promedios (posesión del 0.0% no existe). El script los reemplaza por `NaN` y calcula un promedio móvil limpio (`np.nanmean`) sobre los partidos que sí tienen datos.
-  * *Fallback Global*: Si un equipo no tiene ningún partido con estadísticas en su ventana de 8 partidos, se le asigna la media global (ej. 50% de posesión, 11.5 tiros, 12.9 faltas).
-* **Cálculo de Diferencias (Deltas)**: Restamos el perfil de promedios del Local menos el Visitante. Esto genera variables simétricas directas del enfrentamiento (`elo_diff`, `tiros_diff`, etc.), que es lo que optimiza el entrenamiento de modelos supervisados.
-
-### 6. Filtrado de Entrenamiento (2019-01-01)
-Aunque usamos los datos de 2018 para calentar el historial y que los equipos acumularan estadísticas detalladas, **filtramos el dataset final de modelado a partir del 1 de enero de 2019**. Esto garantiza que las variables detalladas ya se encuentren estables, eliminando deltas en cero artificiales del periodo de inicio.
+- **Actualización Diaria**: Un GitHub Action programado (`06:00 UTC`) ejecuta los scripts de recolección de todas las ligas, capturando marcadores recientes y actualizando los fixtures futuros.
+- **Caché Criptográfico Inteligente**: Los motores calculan un hash SHA-256 (`_cache_key`) de los datasets y configuraciones. Si no existen datos nuevos, los modelos y simulaciones se cargan instantáneamente desde disco (`simulacion_mc.pkl`), evitando re-entrenamientos innecesarios.
 
 ---
 
-## 📈 Formato del Dataset de Entrenamiento (`modelado_espn.csv`)
+## 💻 Instalación y Uso Local
 
-El archivo cuenta con **5,023 filas** (partidos jugados entre el 02-01-2019 y el 09-06-2026) y las siguientes columnas:
-* **`fecha`**: Fecha del encuentro.
-* **`competicion`**: Nombre de la copa, torneo o amistoso.
-* **`local` / `visita`**: Nombres de las selecciones.
-* **`elo_diff`**: Diferencia de rating Elo pre-partido.
-* **`squad_value_diff`**: Diferencia en el logaritmo del valor de la plantilla (Point-in-Time).
-* **`ea_overall_diff`**: Diferencia de la media general en el videojuego FIFA/EA FC vigente.
-* **`h2h_diff`**: Diferencia de goles promedio acumulada en enfrentamientos directos previos (desde 1872).
-* **`goles_anotados_diff` / `goles_recibidos_diff`**: Diferencia de promedios de goles en los últimos 8 partidos.
-* **`tiros_diff` / `tiros_arco_diff` / `corners_diff` / `posesion_diff` / `faltas_diff`**: Diferenciales de estadísticas detalladas promedio de la ventana móvil.
-* **`resultado` (Target)**: Variable categórica a clasificar desde la perspectiva local:
-  * `2` = Victoria Local
-  * `1` = Empate
-  * `0` = Victoria Visitante
+### Prerrequisitos
+Python 3.10 o superior instalado.
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/Pacortes2021/fifa-2026-hybrid-forecast.git
+cd fifa-2026-hybrid-forecast
+```
+
+### 2. Crear entorno virtual e instalar dependencias
+```bash
+python3 -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 3. Ejecutar la aplicación
+```bash
+streamlit run app.py
+```
+
+### 4. Ejecutar la suite de pruebas (Smoke Tests)
+Para validar que los motores de las 7 ligas cargan, predicen y simulan sin errores:
+```bash
+python3 tests/smoke.py
+```
+O probar ligas específicas:
+```bash
+python3 tests/smoke.py eng esp bund
+```
+
+---
+
+## 🏆 Respaldo Metodológico: Mundial FIFA 2026
+
+Para la competición del Mundial de selecciones (`lab/`), el modelo procesó **49,373 partidos históricos internacionales desde 1872 hasta 2026**:
+- Fusión jerárquica de ratings Elo con cobertura del 100% (cero nulos en 5,659 partidos recientes).
+- Ponderación por K-factor de torneos oficiales FIFA frente a cotejos amistosos.
+- Modelado del bracket de 48 participantes con simetría de localía para sedes neutrales en Estados Unidos, México y Canadá.
+- Notebooks detallados y reproducibles en la carpeta [`notebooks/`](notebooks/).
+
+---
+
+## 📜 Licencia y Autoría
+
+Desarrollado y mantenido por **Pablo Cortés** ([@Pacortes2021](https://github.com/Pacortes2021)).  
+Diseñado con fines de investigación académica, ingeniería de machine learning y analítica deportiva avanzada.

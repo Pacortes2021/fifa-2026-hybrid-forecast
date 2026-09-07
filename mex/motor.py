@@ -726,10 +726,11 @@ def _temporada_actual():
     return int(pd.Timestamp.now().year)
 
 
-def predecir_match(M, local, visita, temporada=None, modelo="rf"):
+def predecir_match(M, local, visita, temporada=None, modelo=None, modelo_tipo=None):
     tracker = M["tracker"]
     features = M["features"]
     poisson_params = M["poisson_params"]
+    modelo = modelo or modelo_tipo or "rf"
     if temporada is None:
         temporada = _temporada_actual()
     feats = tracker.get_features_for_match(local, visita, temporada, reset_season=False)
@@ -757,7 +758,8 @@ def predecir_match(M, local, visita, temporada=None, modelo="rf"):
     return p, la, lb
 
 
-def grilla_goles(M, local, visita, modelo="rf"):
+def grilla_goles(M, local, visita, modelo=None, modelo_tipo=None):
+    modelo = modelo or modelo_tipo or "rf"
     p, la, lb = predecir_match(M, local, visita, modelo=modelo)
     GRID_MAX = 8
     gidx = np.arange(GRID_MAX + 1)
@@ -1211,10 +1213,11 @@ def _simular_fixture_vec(M, PREDS, fijos, n_sims):
     )
 
 
-def monte_carlo(M, n_sims=5000, fijos=None, modelo="rf", seed=42):
+def monte_carlo(M, n_sims=5000, fijos=None, modelo=None, modelo_tipo=None, seed=42):
     """Ejecuta n simulaciones de Monte Carlo para calcular proyecciones finales precalculando las predicciones.
     El resultado se persiste a disco (simulacion_mc.pkl) y se reutiliza mientras los datos, el modelo
     y n_sims no cambien: la simulación solo se ejecuta una vez."""
+    modelo = modelo or modelo_tipo or "rf"
     if seed is not None:
         np.random.seed(seed)
     import hashlib
@@ -1280,6 +1283,7 @@ def monte_carlo(M, n_sims=5000, fijos=None, modelo="rf", seed=42):
     except Exception as ex:
         print(f"No se pudo guardar el cache de simulación: {ex}")
     return df_res
+simular_campeonato = monte_carlo
 from sklearn.metrics import log_loss, accuracy_score
 
 def validacion_en_vivo(M, temporada_val=2026):

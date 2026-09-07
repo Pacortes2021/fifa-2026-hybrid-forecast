@@ -577,11 +577,12 @@ def _temporada_actual():
     return int(pd.Timestamp.now().year)
 
 
-def predecir_match(M, local, visita, temporada=None, modelo='stacking'):
+def predecir_match(M, local, visita, temporada=None, modelo=None, modelo_tipo=None):
     tracker = M["tracker"]
     pipe = M["pipe"]
     features = M["features"]
     poisson_params = M["poisson_params"]
+    modelo = modelo or modelo_tipo or 'stacking'
     if temporada is None:
         temporada = _temporada_actual()
     
@@ -617,7 +618,8 @@ def predecir_match(M, local, visita, temporada=None, modelo='stacking'):
     return p, la, lb
 
 
-def grilla_goles(M, local, visita, modelo="rf"):
+def grilla_goles(M, local, visita, modelo=None, modelo_tipo=None):
+    modelo = modelo or modelo_tipo or "rf"
     p, la, lb = predecir_match(M, local, visita, modelo=modelo)
     GRID_MAX = 8
     gidx = np.arange(GRID_MAX + 1)
@@ -860,7 +862,8 @@ def _simular_fixture_vec(M, PREDS, fijos, n_sims):
     return eqs, order, PTS
 
 
-def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
+def simular_campeonato(M, n_sims=4000, fijos=None, modelo=None, modelo_tipo=None, seed=42):
+    modelo = modelo or modelo_tipo or "rf"
     if seed is not None:
         np.random.seed(seed)
     import hashlib
@@ -941,6 +944,9 @@ def simular_campeonato(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
     except Exception as ex:
         print(f"No se pudo guardar el cache de simulación: {ex}")
     return df_res
+
+
+monte_carlo = simular_campeonato
 
 
 def validacion_en_vivo(M, temporada_val=2026):

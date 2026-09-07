@@ -574,8 +574,9 @@ def _temporada_actual():
     return int(hoy.year) if hoy.month >= 7 else int(hoy.year) - 1
 
 
-def predecir_match(M, local, visita, temporada=None, modelo_tipo="rf"):
+def predecir_match(M, local, visita, temporada=None, modelo_tipo=None, modelo=None):
     # Retorna P(Local), P(Empate), P(Visita) en base al modelo seleccionado
+    m = modelo_tipo or modelo or "rf"
     tracker = M["tracker"]
     cols = M["cols"]
     if temporada is None:
@@ -585,24 +586,25 @@ def predecir_match(M, local, visita, temporada=None, modelo_tipo="rf"):
     feats = tracker.get_features_for_match(local, visita, temporada, reset_season=False)
     df_test = pd.DataFrame([feats])[cols]
     
-    if modelo_tipo == "stacking":
+    if m == "stacking":
         w = M.get("stack_w", np.array([M.get("alpha_stack", 0.4), 1-M.get("alpha_stack", 0.4), 0.0]))
         p_l = M["pipe_lasso"].predict_proba(df_test)[0]
         p_r = M["pipe_rf"].predict_proba(df_test)[0]
         p_x = M["pipe_xgb"].predict_proba(df_test)[0]
         p_raw = w[0]*p_l + w[1]*p_r + w[2]*p_x; p_raw /= p_raw.sum()
-    elif modelo_tipo == "xgb":
+    elif m == "xgb":
         p_raw = M["pipe_xgb"].predict_proba(df_test)[0]
     else:
-        pipe = M["pipe_rf"] if modelo_tipo == "rf" else M["pipe_lasso"]
+        pipe = M["pipe_rf"] if m == "rf" else M["pipe_lasso"]
         p_raw = pipe.predict_proba(df_test)[0]
     p = np.array([p_raw[2], p_raw[1], p_raw[0]])
     return p  # Orden: [Local, Empate, Visita]
 
 
-def grilla_goles(M, local, visita, modelo_tipo="rf"):
+def grilla_goles(M, local, visita, modelo_tipo=None, modelo=None):
     # Retorna matriz 10x10 de goles esperados usando modelo Poisson y Dixon-Coles
-    p_1x2 = predecir_match(M, local, visita, modelo_tipo=modelo_tipo)
+    m = modelo_tipo or modelo or "rf"
+    p_1x2 = predecir_match(M, local, visita, modelo_tipo=m)
     
     tracker = M["tracker"]
     elo_diff = tracker.elos[local] - tracker.elos[visita]
@@ -867,8 +869,9 @@ def _simular_fixture_vec(M, PREDS, fijos, n_sims, modelo_tipo="rf"):
     return eqs, order
 
 
-def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
+def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo=None, modelo=None, seed=42):
     # Corre simulación de Monte Carlo para obtener probabilidades de campeón, copas y descenso.
+    modelo_tipo = modelo_tipo or modelo or "rf"
     # El resultado se persiste a disco (eng/data/simulacion_mc.pkl) y se reutiliza mientras
     # el fixture, el modelo y n_sims no cambien: la simulación solo se ejecuta una vez.
     if seed is not None:
@@ -954,6 +957,9 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo="rf", seed=42):
     except Exception as ex:
         print(f"No se pudo guardar el cache de simulación: {ex}")
     return df_res
+
+
+monte_carlo = simular_campeonato
 
 
 def validacion_en_vivo(M, temporada_val=None, modelo_tipo="rf"):

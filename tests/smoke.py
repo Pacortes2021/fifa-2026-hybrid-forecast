@@ -14,13 +14,13 @@ import pandas as pd
 REPO = Path(__file__).resolve().parent.parent
 
 LIGAS = {
-    "mex":   dict(sim="monte_carlo",   n_sims=5,  modelo="stacking"),
+    "mex":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "arg":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
-    "bra":   dict(sim="monte_carlo",   n_sims=5,  modelo="stacking"),
+    "bra":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "chile": dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
-    "esp":   dict(sim="simular_campeonato", n_sims=5, modelo_tipo="stacking"),
-    "eng":   dict(sim="simular_campeonato", n_sims=5, modelo_tipo="stacking"),
-    "bund":  dict(sim="simular_campeonato", n_sims=5, modelo_tipo="stacking"),
+    "esp":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
+    "eng":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
+    "bund":  dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
 }
 
 
@@ -42,22 +42,19 @@ def check_league(liga, cfg):
         raise AssertionError("fixture vacío")
     local, visita = fix.iloc[0]["local"], fix.iloc[0]["visita"]
 
-    if "modelo_tipo" in cfg:
-        p = motor.predecir_match(M, local, visita, modelo_tipo=cfg["modelo_tipo"])
-    else:
-        p, la, lb = motor.predecir_match(M, local, visita, modelo=cfg.get("modelo", "rf"))
+    res = motor.predecir_match(M, local, visita, modelo=cfg["modelo"])
+    if isinstance(res, tuple):
+        p = res[0]
+        la, lb = res[1], res[2]
         assert np.isfinite(la) and np.isfinite(lb) and la > 0 and lb > 0, f"lambdas inválidas: {la}, {lb}"
+    else:
+        p = res
     p = np.asarray(p, dtype=float)
     assert p.shape == (3,), f"predecir_match devolvió {p.shape}"
     assert np.isfinite(p).all() and 0.99 < p.sum() < 1.01, f"probabilidades inválidas: {p}"
 
     fn = getattr(motor, cfg["sim"])
-    sim_kwargs = {"n_sims": cfg["n_sims"]}
-    if "modelo_tipo" in cfg:
-        sim_kwargs["modelo_tipo"] = cfg["modelo_tipo"]
-    else:
-        sim_kwargs["modelo"] = cfg.get("modelo", "rf")
-    df = fn(M, **sim_kwargs)
+    df = fn(M, n_sims=cfg["n_sims"], modelo=cfg["modelo"])
     assert isinstance(df, pd.DataFrame) and len(df) > 0, "simulación vacía"
     num_cols = df.select_dtypes(include=[np.number]).columns
     assert num_cols.size > 0, "sin columnas numéricas en la simulación"

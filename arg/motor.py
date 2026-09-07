@@ -544,10 +544,11 @@ def _temporada_actual():
     return int(pd.Timestamp.now().year)
 
 
-def predecir_match(M, local, visita, temporada=None, modelo="rf"):
+def predecir_match(M, local, visita, temporada=None, modelo=None, modelo_tipo=None):
     tracker = M["tracker"]
     features = M["features"]
     poisson_params = M["poisson_params"]
+    modelo = modelo or modelo_tipo or "rf"
     if temporada is None:
         temporada = _temporada_actual()
     
@@ -581,7 +582,8 @@ def predecir_match(M, local, visita, temporada=None, modelo="rf"):
     return p, la, lb
 
 
-def grilla_goles(M, local, visita, max_goles=6, modelo="rf"):
+def grilla_goles(M, local, visita, max_goles=6, modelo=None, modelo_tipo=None):
+    modelo = modelo or modelo_tipo or "rf"
     p, la, lb = predecir_match(M, local, visita, modelo=modelo)
     
     px = poisson.pmf(np.arange(max_goles + 1), la)
@@ -805,7 +807,8 @@ def _simular_fixture_vec(M, PREDS, fijos, n_sims):
     return eqs, order, PTS
 
 
-def monte_carlo(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
+def monte_carlo(M, n_sims=4000, fijos=None, modelo=None, modelo_tipo=None, seed=42):
+    modelo = modelo or modelo_tipo or "rf"
     if seed is not None:
         np.random.seed(seed)
     import hashlib
@@ -887,8 +890,9 @@ def monte_carlo(M, n_sims=4000, fijos=None, modelo="rf", seed=42):
     return df_res
 
 
-def simular_campeonato(M, n_sims=4000, modelo="rf", seed=42):
-    return monte_carlo(M, n_sims=n_sims, modelo=modelo, seed=seed)
+def simular_campeonato(M, n_sims=4000, fijos=None, modelo=None, modelo_tipo=None, seed=42):
+    modelo = modelo or modelo_tipo or "rf"
+    return monte_carlo(M, n_sims=n_sims, fijos=fijos, modelo=modelo, seed=seed)
 
 
 def validacion_en_vivo(M, temporada_val=2026):
