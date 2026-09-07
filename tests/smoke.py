@@ -19,6 +19,8 @@ LIGAS = {
     "bra":   dict(sim="monte_carlo",   n_sims=5,  modelo="stacking"),
     "chile": dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "esp":   dict(sim="simular_campeonato", n_sims=5, modelo_tipo="stacking"),
+    "eng":   dict(sim="simular_campeonato", n_sims=5, modelo_tipo="stacking"),
+    "bund":  dict(sim="simular_campeonato", n_sims=5, modelo_tipo="stacking"),
 }
 
 

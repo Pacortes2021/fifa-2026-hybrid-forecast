@@ -1,6 +1,6 @@
 """
 Portal Maestro de Predicciones y Proyecciones Deportivas (Machine Learning).
-Enruta a los simuladores de la Copa Mundial 2026, Premier League, Liga MX, Brasileirão, Liga Chilena, LaLiga España y Liga Profesional Argentina.
+Enruta a los simuladores de la Copa Mundial 2026, Premier League, Bundesliga, Liga MX, Brasileirão, Liga Chilena, LaLiga España y Liga Profesional Argentina.
 """
 import os
 import sys

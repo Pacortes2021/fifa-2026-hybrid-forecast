@@ -1718,3 +1718,21 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 747016,2026-05-16 15:30:00,2026,598,3841,1. FC Union Berlin,FC Augsburg,4.0,0.0,post
 747015,2026-05-16 15:30:00,2026,6418,2950,1. FC Heidenheim 1846,Mainz,0.0,2.0,post
 747018,2026-05-16 15:30:00,2026,268,7911,Borussia Mönchengladbach,TSG Hoffenheim,4.0,0.0,post
+401884817,2026-08-28 20:30:00,2026,132,134,Bayern Munich,VfB Stuttgart,5.0,1.0,post
+401884809,2026-08-29 15:30:00,2026,10388,131,SV Elversberg,Bayer Leverkusen,3.0,2.0,post
+401884811,2026-08-29 15:30:00,2026,598,125,1. FC Union Berlin,Eintracht Frankfurt,3.0,3.0,post
+401884810,2026-08-29 15:30:00,2026,122,7911,FC Cologne,TSG Hoffenheim,3.0,2.0,post
+401884812,2026-08-29 15:30:00,2026,2950,3307,Mainz,SC Paderborn 07,0.0,0.0,post
+401884815,2026-08-29 15:30:00,2026,11420,268,RB Leipzig,Borussia Mönchengladbach,3.0,0.0,post
+401884816,2026-08-29 18:30:00,2026,124,127,Borussia Dortmund,Hamburg SV,2.0,0.0,post
+401884814,2026-08-30 15:30:00,2026,126,137,SC Freiburg,Werder Bremen,4.0,1.0,post
+401884813,2026-08-30 17:30:00,2026,3841,133,FC Augsburg,Schalke 04,3.0,0.0,post
+401884808,2026-09-04 20:30:00,2026,134,122,VfB Stuttgart,FC Cologne,4.0,1.0,post
+401884802,2026-09-05 15:30:00,2026,137,11420,Werder Bremen,RB Leipzig,3.0,1.0,post
+401884807,2026-09-05 15:30:00,2026,7911,124,TSG Hoffenheim,Borussia Dortmund,2.0,3.0,post
+401884806,2026-09-05 15:30:00,2026,131,598,Bayer Leverkusen,1. FC Union Berlin,4.0,0.0,post
+401884804,2026-09-05 15:30:00,2026,268,10388,Borussia Mönchengladbach,SV Elversberg,3.0,4.0,post
+401884800,2026-09-05 15:30:00,2026,3307,126,SC Paderborn 07,SC Freiburg,0.0,1.0,post
+401884801,2026-09-05 18:30:00,2026,133,132,Schalke 04,Bayern Munich,0.0,0.0,post
+401884803,2026-09-06 15:30:00,2026,127,2950,Hamburg SV,Mainz,0.0,5.0,post
+401884805,2026-09-06 17:30:00,2026,125,3841,Eintracht Frankfurt,FC Augsburg,1.0,4.0,post

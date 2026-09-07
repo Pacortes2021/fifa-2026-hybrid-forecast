@@ -2124,3 +2124,33 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740968,2026-05-24 16:00:00,2026,384,359,Crystal Palace,Arsenal,1.0,2.0,post
 740967,2026-05-24 16:00:00,2026,379,380,Burnley,Wolverhampton Wanderers,1.0,1.0,post
 740966,2026-05-24 16:00:00,2026,331,360,Brighton & Hove Albion,Manchester United,0.0,3.0,post
+401879301,2026-08-21 20:00:00,2026,359,388,Arsenal,Coventry City,3.0,0.0,post
+401879322,2026-08-22 12:30:00,2026,306,360,Hull City,Manchester United,2.0,0.0,post
+401879299,2026-08-22 15:00:00,2026,373,366,Ipswich Town,Sunderland,2.0,1.0,post
+401879298,2026-08-22 15:00:00,2026,393,357,Nottingham Forest,Leeds United,0.0,1.0,post
+401879300,2026-08-22 15:00:00,2026,368,384,Everton,Crystal Palace,2.0,0.0,post
+401879321,2026-08-22 17:30:00,2026,337,367,Brentford,Tottenham Hotspur,3.0,0.0,post
+401879297,2026-08-23 14:00:00,2026,331,362,Brighton & Hove Albion,Aston Villa,4.0,0.0,post
+401879320,2026-08-23 14:00:00,2026,382,349,Manchester City,AFC Bournemouth,2.0,1.0,post
+401879319,2026-08-23 16:30:00,2026,361,364,Newcastle United,Liverpool,2.0,2.0,post
+401879318,2026-08-24 20:00:00,2026,370,363,Fulham,Chelsea,2.0,3.0,post
+401879294,2026-08-28 20:00:00,2026,384,382,Crystal Palace,Manchester City,1.0,4.0,post
+401879314,2026-08-29 12:30:00,2026,364,393,Liverpool,Nottingham Forest,2.0,2.0,post
+401879316,2026-08-29 15:00:00,2026,388,306,Coventry City,Hull City,0.0,1.0,post
+401879296,2026-08-29 15:00:00,2026,349,368,AFC Bournemouth,Everton,1.0,1.0,post
+401879312,2026-08-29 17:30:00,2026,367,361,Tottenham Hotspur,Newcastle United,0.0,2.0,post
+401879317,2026-08-30 14:00:00,2026,363,331,Chelsea,Brighton & Hove Albion,4.0,3.0,post
+401879315,2026-08-30 14:00:00,2026,357,337,Leeds United,Brentford,1.0,1.0,post
+401879313,2026-08-30 14:00:00,2026,366,370,Sunderland,Fulham,1.0,0.0,post
+401879293,2026-08-30 16:30:00,2026,360,373,Manchester United,Ipswich Town,5.0,2.0,post
+401879295,2026-08-31 20:00:00,2026,362,359,Aston Villa,Arsenal,0.0,1.0,post
+401879288,2026-09-04 20:00:00,2026,373,364,Ipswich Town,Liverpool,0.0,2.0,post
+401879286,2026-09-05 12:30:00,2026,361,349,Newcastle United,AFC Bournemouth,2.0,2.0,post
+401879311,2026-09-05 15:00:00,2026,337,366,Brentford,Sunderland,1.0,1.0,post
+401879290,2026-09-05 15:00:00,2026,331,357,Brighton & Hove Albion,Leeds United,1.0,1.0,post
+401879289,2026-09-05 15:00:00,2026,370,384,Fulham,Crystal Palace,2.0,3.0,post
+401879287,2026-09-05 15:00:00,2026,382,388,Manchester City,Coventry City,1.0,0.0,post
+401878780,2026-09-05 15:00:00,2026,393,367,Nottingham Forest,Tottenham Hotspur,0.0,0.0,post
+401878781,2026-09-05 17:30:00,2026,306,362,Hull City,Aston Villa,0.0,0.0,post
+401879291,2026-09-06 14:00:00,2026,368,360,Everton,Manchester United,2.0,2.0,post
+401879292,2026-09-06 16:30:00,2026,359,363,Arsenal,Chelsea,2.0,1.0,post

@@ -1,22 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401884817,2026-08-28 20:30:00,2026,132,134,Bayern Munich,VfB Stuttgart,,,pre
-401884809,2026-08-29 15:30:00,2026,10388,131,SV Elversberg,Bayer Leverkusen,,,pre
-401884811,2026-08-29 15:30:00,2026,598,125,1. FC Union Berlin,Eintracht Frankfurt,,,pre
-401884810,2026-08-29 15:30:00,2026,122,7911,FC Cologne,TSG Hoffenheim,,,pre
-401884812,2026-08-29 15:30:00,2026,2950,3307,Mainz,SC Paderborn 07,,,pre
-401884815,2026-08-29 15:30:00,2026,11420,268,RB Leipzig,Borussia Mönchengladbach,,,pre
-401884816,2026-08-29 18:30:00,2026,124,127,Borussia Dortmund,Hamburg SV,,,pre
-401884814,2026-08-30 15:30:00,2026,126,137,SC Freiburg,Werder Bremen,,,pre
-401884813,2026-08-30 17:30:00,2026,3841,133,FC Augsburg,Schalke 04,,,pre
-401884808,2026-09-04 20:30:00,2026,134,122,VfB Stuttgart,FC Cologne,,,pre
-401884802,2026-09-05 15:30:00,2026,137,11420,Werder Bremen,RB Leipzig,,,pre
-401884807,2026-09-05 15:30:00,2026,7911,124,TSG Hoffenheim,Borussia Dortmund,,,pre
-401884806,2026-09-05 15:30:00,2026,131,598,Bayer Leverkusen,1. FC Union Berlin,,,pre
-401884804,2026-09-05 15:30:00,2026,268,10388,Borussia Mönchengladbach,SV Elversberg,,,pre
-401884800,2026-09-05 15:30:00,2026,3307,126,SC Paderborn 07,SC Freiburg,,,pre
-401884801,2026-09-05 18:30:00,2026,133,132,Schalke 04,Bayern Munich,,,pre
-401884803,2026-09-06 15:30:00,2026,127,2950,Hamburg SV,Mainz,,,pre
-401884805,2026-09-06 17:30:00,2026,125,3841,Eintracht Frankfurt,FC Augsburg,,,pre
 401884793,2026-09-11 20:30:00,2026,598,133,1. FC Union Berlin,Schalke 04,,,pre
 401884799,2026-09-12 15:30:00,2026,124,3307,Borussia Dortmund,SC Paderborn 07,,,pre
 401884795,2026-09-12 15:30:00,2026,3841,131,FC Augsburg,Bayer Leverkusen,,,pre
