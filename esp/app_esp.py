@@ -190,14 +190,44 @@ def run_app():
         # Filtrar opciones basadas en los equipos que existen en partidos.csv de 2026 o en el dataset
         opciones = sorted(list(M["df_features"]["local"].unique()))
         
+        fix_rec = pd.read_csv(mo.DATA / "fixture.csv") if (mo.DATA / "fixture.csv").exists() else pd.DataFrame()
+        if not fix_rec.empty:
+            df_fix_sorted = fix_rec.copy()
+            df_fix_sorted["fecha_dt"] = pd.to_datetime(df_fix_sorted["fecha"])
+            proximos = df_fix_sorted.sort_values("fecha_dt").head(25)
+            
+            fix_map = {}
+            opciones_fixture = ["— Seleccionar partido programado —"]
+            for _, r in proximos.iterrows():
+                f_str = r["fecha_dt"].strftime("%d/%m %H:%M")
+                lbl = f"📅 {f_str} | {r['local']} vs {r['visita']}"
+                opciones_fixture.append(lbl)
+                fix_map[lbl] = (r["local"], r["visita"])
+            
+            def _on_fixture_change_esp():
+                sel = st.session_state.get("sel_fix_esp")
+                if sel and sel in fix_map:
+                    l_sel, v_sel = fix_map[sel]
+                    if l_sel in opciones and v_sel in opciones:
+                        st.session_state["sel_a_esp"] = l_sel
+                        st.session_state["sel_b_esp"] = v_sel
+
+            st.selectbox(
+                "⚡ Cargar Partido de la Próxima Fecha:",
+                opciones_fixture,
+                key="sel_fix_esp",
+                on_change=_on_fixture_change_esp,
+                help="Elige un partido oficial programado para cargar ambos equipos automáticamente."
+            )
+
         c1, cvs, c2 = st.columns([5, 1, 5])
         with c1:
-            a = st.selectbox("Equipo Local", opciones, index=opciones.index("Real Madrid") if "Real Madrid" in opciones else 0, key="sel_a", format_func=lambda t: fmt_opcion(equipos, t))
-            st.markdown(f'<div style=\"text-align:center;margin-top:0.2rem;\">{logo_html(equipos, a, 64)}</div>', unsafe_allow_html=True)
+            a = st.selectbox("Equipo Local", opciones, index=opciones.index("Real Madrid") if "Real Madrid" in opciones else 0, key="sel_a_esp", format_func=lambda t: fmt_opcion(equipos, t))
+            st.markdown(f'<div style="text-align:center;margin-top:0.2rem;">{logo_html(equipos, a, 64)}</div>', unsafe_allow_html=True)
         with cvs:
             st.markdown('<div class="vs-text">VS</div>', unsafe_allow_html=True)
         with c2:
-            b = st.selectbox("Equipo Visitante", opciones, index=opciones.index("Barcelona") if "Barcelona" in opciones else 0, key="sel_b", format_func=lambda t: fmt_opcion(equipos, t))
+            b = st.selectbox("Equipo Visitante", opciones, index=opciones.index("FC Barcelona") if "FC Barcelona" in opciones else (1 if len(opciones) > 1 else 0), key="sel_b_esp", format_func=lambda t: fmt_opcion(equipos, t))
             st.markdown(f'<div style=\"text-align:center;margin-top:0.2rem;\">{logo_html(equipos, b, 64)}</div>', unsafe_allow_html=True)
             
         if a == b:
@@ -410,6 +440,60 @@ def run_app():
                 for j in range(6):
                     ax.text(j, i, f"{m6[i,j]:.1%}", ha="center", va="center", color="white" if m6[i,j] > m6.max()*0.6 else "black", fontsize=8)
             st.pyplot(fig)
+
+            # ── HISTORIAL HEAD-TO-HEAD (ENFRENTAMIENTOS DIRECTOS) ─────────
+            st.markdown("---")
+            st.markdown('<div class="sec-title">⚔️ Historial Head-to-Head (Enfrentamientos Directos)</div>', unsafe_allow_html=True)
+            
+            partidos_df_esp = pd.read_csv(mo.DATA / "partidos.csv")
+            mask_h2h = ((partidos_df_esp["local"] == a) & (partidos_df_esp["visita"] == b)) | \
+                       ((partidos_df_esp["local"] == b) & (partidos_df_esp["visita"] == a))
+            df_h2h = partidos_df_esp[mask_h2h].copy()
+            
+            if df_h2h.empty:
+                st.info(f"ℹ️ No se registran enfrentamientos directos oficiales entre **{a}** y **{b}** en el dataset reciente (2021-2026).")
+            else:
+                df_h2h["fecha_dt"] = pd.to_datetime(df_h2h["fecha"])
+                df_h2h = df_h2h.sort_values("fecha_dt", ascending=False)
+                
+                vic_a = sum(1 for _, r in df_h2h.iterrows() if (r["local"] == a and r["goles_local"] > r["goles_visita"]) or (r["visita"] == a and r["goles_visita"] > r["goles_local"]))
+                vic_b = sum(1 for _, r in df_h2h.iterrows() if (r["local"] == b and r["goles_local"] > r["goles_visita"]) or (r["visita"] == b and r["goles_visita"] > r["goles_local"]))
+                emp = len(df_h2h) - vic_a - vic_b
+                
+                gol_a = sum(int(r["goles_local"] if r["local"] == a else r["goles_visita"]) for _, r in df_h2h.iterrows())
+                gol_b = sum(int(r["goles_local"] if r["local"] == b else r["goles_visita"]) for _, r in df_h2h.iterrows())
+                
+                col_h1, col_h2, col_h3, col_h4 = st.columns(4)
+                with col_h1:
+                    st.metric("Total Duelos", len(df_h2h))
+                with col_h2:
+                    pct_a = (vic_a / len(df_h2h)) * 100
+                    st.metric(f"Victorias {a}", f"{vic_a} ({pct_a:.0f}%)", f"{gol_a} goles")
+                with col_h3:
+                    pct_e = (emp / len(df_h2h)) * 100
+                    st.metric("Empates", f"{emp} ({pct_e:.0f}%)")
+                with col_h4:
+                    pct_b = (vic_b / len(df_h2h)) * 100
+                    st.metric(f"Victorias {b}", f"{vic_b} ({pct_b:.0f}%)", f"{gol_b} goles")
+                
+                filas_hist = []
+                for _, r in df_h2h.head(8).iterrows():
+                    gl, gv = int(r["goles_local"]), int(r["goles_visita"])
+                    if gl > gv:
+                        ganador = f"🟢 Gana {r['local']}"
+                    elif gv > gl:
+                        ganador = f"🟢 Gana {r['visita']}"
+                    else:
+                        ganador = "⚪ Empate"
+                    filas_hist.append({
+                        "Fecha": r["fecha_dt"].strftime("%d/%m/%Y"),
+                        "Temporada": r["temporada"],
+                        "Local": r["local"],
+                        "Marcador": f"{gl} - {gv}",
+                        "Visitante": r["visita"],
+                        "Resultado": ganador
+                    })
+                st.dataframe(pd.DataFrame(filas_hist), hide_index=True, use_container_width=True)
             
     # ============================================================================
     # TAB 2: Tabla y Proyecciones de Monte Carlo
