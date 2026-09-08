@@ -26,6 +26,7 @@ LIGAS = {
     "ned":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "por":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "bel":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
+    "tur":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
 }
 
 

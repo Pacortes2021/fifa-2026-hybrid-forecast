@@ -130,6 +130,43 @@ BEL_TEAMS = {
     "RAAL La Louvière": {"val": 6.0, "cap": 12500, "att": 3000, "age": 25.0, "pct_for": 0.35}
 }
 
+# --- TURQUÍA ---
+TUR_TEAMS = {
+    "Galatasaray": {"val": 280.0, "cap": 52600, "att": 47000, "age": 26.8, "pct_for": 0.65},
+    "Fenerbahce": {"val": 260.0, "cap": 47834, "att": 43000, "age": 27.2, "pct_for": 0.64},
+    "Besiktas": {"val": 140.0, "cap": 42590, "att": 35000, "age": 26.5, "pct_for": 0.60},
+    "Trabzonspor": {"val": 95.0, "cap": 40782, "att": 28000, "age": 26.0, "pct_for": 0.55},
+    "Istanbul Basaksehir": {"val": 55.0, "cap": 17152, "att": 8000, "age": 26.4, "pct_for": 0.58},
+    "Samsunspor": {"val": 40.0, "cap": 33919, "att": 22000, "age": 25.8, "pct_for": 0.50},
+    "Eyupspor": {"val": 38.0, "cap": 14000, "att": 8000, "age": 27.5, "pct_for": 0.52},
+    "Kasimpasa": {"val": 35.0, "cap": 14234, "att": 4500, "age": 25.9, "pct_for": 0.58},
+    "Alanyaspor": {"val": 32.0, "cap": 10128, "att": 5500, "age": 26.2, "pct_for": 0.55},
+    "Goztepe": {"val": 32.0, "cap": 20040, "att": 18500, "age": 25.4, "pct_for": 0.52},
+    "Caykur Rizespor": {"val": 30.0, "cap": 15332, "att": 7500, "age": 25.7, "pct_for": 0.52},
+    "Antalyaspor": {"val": 28.0, "cap": 32537, "att": 14000, "age": 26.5, "pct_for": 0.50},
+    "Gaziantep FK": {"val": 26.0, "cap": 33502, "att": 11000, "age": 27.0, "pct_for": 0.52},
+    "Konyaspor": {"val": 26.0, "cap": 42000, "att": 18000, "age": 26.8, "pct_for": 0.48},
+    "Kayserispor": {"val": 25.0, "cap": 32864, "att": 12000, "age": 27.2, "pct_for": 0.48},
+    "Sivasspor": {"val": 24.0, "cap": 27532, "att": 9000, "age": 27.5, "pct_for": 0.50},
+    "Bodrum FK": {"val": 22.0, "cap": 4563, "att": 4000, "age": 26.0, "pct_for": 0.45},
+    "Adana Demirspor": {"val": 20.0, "cap": 33543, "att": 15000, "age": 25.5, "pct_for": 0.45},
+    "Hatayspor": {"val": 18.0, "cap": 25000, "att": 6000, "age": 26.4, "pct_for": 0.48},
+    "Fatih Karagümrük": {"val": 18.0, "cap": 76000, "att": 4000, "age": 26.2, "pct_for": 0.50},
+    "Ankaragucu": {"val": 16.0, "cap": 20560, "att": 14000, "age": 26.8, "pct_for": 0.45},
+    "Pendikspor": {"val": 15.0, "cap": 2500, "att": 2200, "age": 27.0, "pct_for": 0.48},
+    "Istanbulspor": {"val": 14.0, "cap": 4491, "att": 2500, "age": 25.0, "pct_for": 0.40},
+    "Giresunspor": {"val": 12.0, "cap": 22019, "att": 8000, "age": 25.2, "pct_for": 0.38},
+    "Umraniyespor": {"val": 12.0, "cap": 3513, "att": 2500, "age": 26.0, "pct_for": 0.42},
+    "Kocaelispor": {"val": 14.0, "cap": 34712, "att": 18000, "age": 25.8, "pct_for": 0.40},
+    "Genclerbirligi": {"val": 12.0, "cap": 20560, "att": 6000, "age": 25.5, "pct_for": 0.35},
+    "Corum FK": {"val": 10.0, "cap": 15000, "att": 7000, "age": 25.6, "pct_for": 0.30},
+    "Amed SFK": {"val": 10.0, "cap": 33000, "att": 15000, "age": 26.0, "pct_for": 0.35},
+    "Erzurum BB": {"val": 10.0, "cap": 21374, "att": 8000, "age": 26.5, "pct_for": 0.30},
+    "Altay Izmir": {"val": 8.0, "cap": 15000, "att": 6000, "age": 26.8, "pct_for": 0.30},
+    "Yeni Malatyaspor": {"val": 6.0, "cap": 27044, "att": 5000, "age": 25.0, "pct_for": 0.25},
+    "Denizlispor": {"val": 6.0, "cap": 18745, "att": 4000, "age": 26.0, "pct_for": 0.25}
+}
+
 
 def build_for_league(liga, team_dict):
     out_dir = BASE / liga / "data"
@@ -182,6 +219,7 @@ def main():
     build_for_league("ned", NED_TEAMS)
     build_for_league("por", POR_TEAMS)
     build_for_league("bel", BEL_TEAMS)
+    build_for_league("tur", TUR_TEAMS)
 
 
 if __name__ == "__main__":
