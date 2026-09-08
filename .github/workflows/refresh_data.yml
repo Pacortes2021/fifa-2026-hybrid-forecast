@@ -96,6 +96,30 @@ jobs:
           rec.recolectar()
           "
 
+      - name: 🇫🇷 Recolectar Francia (Ligue 1)
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'fra')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
+      - name: 🇳🇱 Recolectar Países Bajos (Eredivisie)
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'ned')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
+      - name: 🇵🇹 Recolectar Portugal (Primeira Liga)
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'por')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
       - name: 💾 Commit updated CSVs (if any changes)
         run: |
           git config user.name  "github-actions[bot]"
@@ -109,7 +133,10 @@ jobs:
                   esp/data/partidos.csv   esp/data/fixture.csv   \
                   eng/data/partidos.csv   eng/data/fixture.csv   \
                   bund/data/partidos.csv  bund/data/fixture.csv  \
-                  ita/data/partidos.csv   ita/data/fixture.csv
+                  ita/data/partidos.csv   ita/data/fixture.csv   \
+                  fra/data/partidos.csv   fra/data/fixture.csv   \
+                  ned/data/partidos.csv   ned/data/fixture.csv   \
+                  por/data/partidos.csv   por/data/fixture.csv
 
           # Only commit if there are actual changes
           if git diff --cached --quiet; then
@@ -119,7 +146,8 @@ jobs:
             git commit -m "data(auto): refresh all leagues [${TIMESTAMP}]
 
           Automated daily refresh from ESPN API via GitHub Actions.
-          CSVs updated: chile, arg, bra, mex, esp, eng, bund, ita."
+          CSVs updated: chile, arg, bra, mex, esp, eng, bund, ita, fra, ned, por."
             git push origin main
             echo "✅ Pushed updated CSVs to main."
           fi
+

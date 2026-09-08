@@ -1,0 +1,40 @@
+id,name,norm_name,short_name,abbreviation,slug,color,alternate_color,logo,is_active
+172,AJ Auxerre,Auxerre,Auxerre,AUX,fra.auxerre,ffffff,1a1a1a,https://a.espncdn.com/i/teamlogos/soccer/500-dark/172.png,True
+174,AS Monaco,Monaco,Monaco,MON,fra.monaco,E91514,004c37,https://a.espncdn.com/i/teamlogos/soccer/500-dark/174.png,True
+7868,Angers,Angers,Angers,ANG,fra.angers,1a1a1a,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500-dark/7868.png,True
+6997,Brest,Brest,Brest,BRE,fra.brest,ef2f24,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500-dark/6997.png,True
+3236,Le Havre AC,Le Havre,Le Havre AC,HAC,fra.le_havre_ac,011F68,ededed,https://a.espncdn.com/i/teamlogos/soccer/500-dark/3236.png,True
+2697,Le Mans,Le Mans,Le Mans,MNS,fra.le_mans,d62b11,d62b11,https://a.espncdn.com/i/teamlogos/soccer/500/2697.png,True
+175,Lens,Lens,Lens,RCL,fra.lens,E91514,004c37,https://a.espncdn.com/i/teamlogos/soccer/500-dark/175.png,True
+166,Lille,Lille,Lille,LILL,fra.lille,c2051b,e2d3d7,https://a.espncdn.com/i/teamlogos/soccer/500-dark/166.png,True
+273,Lorient,Lorient,Lorient,LOR,fra.lorient,f46100,1a1a1a,https://a.espncdn.com/i/teamlogos/soccer/500-dark/273.png,True
+167,Lyon,Lyon,Lyon,LYON,fra.lyon,ffffff,1a1a1a,https://a.espncdn.com/i/teamlogos/soccer/500-dark/167.png,True
+176,Marseille,Marseille,Marseille,OLM,fra.marseille,ffffff,011F68,https://a.espncdn.com/i/teamlogos/soccer/500-dark/176.png,True
+2502,Nice,Nice,Nice,NICE,fra.nice,ef2f24,e2d3d7,https://a.espncdn.com/i/teamlogos/soccer/500-dark/2502.png,True
+6851,Paris FC,Paris FC,Paris FC,PAR,betbrain.paris_fc,000000,000000,https://a.espncdn.com/i/teamlogos/soccer/500-dark/6851.png,True
+160,Paris Saint-Germain,Paris Saint-Germain,PSG,PSG,fra.psg,011F68,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500-dark/160.png,True
+169,Stade Rennais,Rennes,Rennes,REN,fra.rennes,ef2f24,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500-dark/169.png,True
+180,Strasbourg,Strasbourg,Strasbourg,STR,fra.strasbourg,0000bf,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500-dark/180.png,True
+179,Toulouse,Toulouse,Toulouse,TOU,fra.toulouse,560080,ffff00,https://a.espncdn.com/i/teamlogos/soccer/500-dark/179.png,True
+170,Troyes,Troyes,Troyes,TRY,fra.troyes,0000bf,fafafc,https://a.espncdn.com/i/teamlogos/soccer/500-dark/170.png,True
+3267,AS Nancy Lorraine,AS Nancy Lorraine,Nancy,ASNL,fra.as_nancy_lorraine,ef2f24,0000bf,https://a.espncdn.com/i/teamlogos/soccer/500-dark/3267.png,True
+18066,Annecy,Annecy,Annecy,ANN,fra.annecy,000000,C60000,https://a.espncdn.com/i/teamlogos/soccer/500-dark/18066.png,True
+7869,Boulogne,Boulogne,Boulogne,BOU,fra.boulogne,fb2e29,fb2e29,https://a.espncdn.com/i/teamlogos/soccer/500-dark/7869.png,True
+3171,Clermont Foot,Clermont,Clermont Foot,CLE,fra.clermont_foot,8C3140,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500/3171.png,True
+3170,Dijon FCO,Dijon FCO,Dijon FCO,DIJO,fra.dijon_fco,ef2f24,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500-dark/3170.png,True
+7732,Dunkerque,Dunkerque,Dunkerque,DUN,team.dunkerque,005a9c,000000,https://a.espncdn.com/i/teamlogos/soccer/500-dark/7732.png,True
+6994,Grenoble,Grenoble,Grenoble,GRE,fra.grenoble,005da3,000000,https://a.espncdn.com/i/teamlogos/soccer/500-dark/6994.png,True
+171,Guingamp,Guingamp,Guingamp,EAG,fra.guingamp,ef2f24,1a1a1a,https://a.espncdn.com/i/teamlogos/soccer/500-dark/171.png,True
+177,Metz,Metz,Metz,METZ,fra.metz,8C3140,e6c168,https://a.espncdn.com/i/teamlogos/soccer/500-dark/177.png,True
+274,Montpellier,Montpellier,Montpellier,MON,fra.montpellier,011F68,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500-dark/274.png,True
+165,Nantes,Nantes,Nantes,NAN,fra.nantes,ffff00,011F68,https://a.espncdn.com/i/teamlogos/soccer/500-dark/165.png,True
+10678,Pau,Pau,Pau,PAU,fra.pau,0070b1,f3cf56,https://a.espncdn.com/i/teamlogos/soccer/500-dark/10678.png,True
+11884,Red Star FC 93,Red Star FC 93,Red Star FC ,RSFC,fra.red_star_fc_93,000000,C60000,https://a.espncdn.com/i/teamlogos/soccer/500-dark/11884.png,True
+7719,Rodez Aveyron,Rodez Aveyron,Rodez Aveyron,AVE,team.rodez-aveyron,a5042b,a5042b,https://a.espncdn.com/i/teamlogos/soccer/500-dark/7719.png,True
+178,Saint-Étienne,Saint-Etienne,St. Étienne,ASSE,fra.st_etienne,51cc5f,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500-dark/178.png,True
+272,Sochaux,Sochaux,Sochaux,SOC,fra.sochaux,ffff00,000040,https://a.espncdn.com/i/teamlogos/soccer/500-dark/272.png,True
+3266,Stade Laval,Stade Laval,Stade Laval,SLFC,fra.stade_laval,1a1a1a,1a1a1a,https://a.espncdn.com/i/teamlogos/soccer/500/3266.png,True
+3243,Stade de Reims,Reims,Reims,REIM,fra.stade_de_reims,ef2f24,0000bf,https://a.espncdn.com/i/teamlogos/soccer/500-dark/3243.png,True
+2503,AC Ajaccio,AC Ajaccio,AC Ajaccio,ACA,fra.ac_ajaccio,ef2f24,87cced,https://a.espncdn.com/i/teamlogos/soccer/500-dark/2503.png,True
+159,Bordeaux,Bordeaux,Bordeaux,BOR,fra.bordeaux,011F68,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500-dark/159.png,True
+7730,Nimes,Nimes,Nimes,NIM,team.nimes,ef2f24,ffffff,https://a.espncdn.com/i/teamlogos/soccer/500-dark/7730.png,True

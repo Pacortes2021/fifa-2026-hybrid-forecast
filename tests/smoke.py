@@ -22,6 +22,9 @@ LIGAS = {
     "eng":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "bund":  dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "ita":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
+    "fra":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
+    "ned":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
+    "por":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
 }
 
 
