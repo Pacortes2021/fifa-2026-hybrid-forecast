@@ -2158,3 +2158,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882896,2026-09-06 18:30:00,2026,96,97,Alavés,CA Osasuna,5.0,2.0,post
 401882890,2026-09-06 18:30:00,2026,99,1538,Málaga,Levante,0.0,0.0,post
 401882892,2026-09-06 21:00:00,2026,88,243,Espanyol,Sevilla FC,1.0,1.0,post
+401882891,2026-09-07 19:00:00,2026,2922,85,Getafe,Celta de Vigo,1.0,1.0,post
+401882893,2026-09-07 21:30:00,2026,3751,89,Elche CF,Real Sociedad,2.0,3.0,post
