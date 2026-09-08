@@ -101,6 +101,35 @@ POR_TEAMS = {
     "Alverca": {"val": 10.0, "cap": 7705, "att": 2000, "age": 25.2, "pct_for": 0.35},
 }
 
+# --- BÉLGICA ---
+BEL_TEAMS = {
+    "Club Brugge": {"val": 140.0, "cap": 29062, "att": 24000, "age": 24.8, "pct_for": 0.65},
+    "Anderlecht": {"val": 110.0, "cap": 22500, "att": 20500, "age": 24.6, "pct_for": 0.58},
+    "Genk": {"val": 100.0, "cap": 23718, "att": 19000, "age": 24.2, "pct_for": 0.60},
+    "Union Saint-Gilloise": {"val": 90.0, "cap": 9400, "att": 8500, "age": 25.4, "pct_for": 0.70},
+    "Gent": {"val": 85.0, "cap": 20000, "att": 17500, "age": 25.2, "pct_for": 0.58},
+    "Antwerp": {"val": 75.0, "cap": 16144, "att": 14500, "age": 25.8, "pct_for": 0.55},
+    "Cercle Brugge": {"val": 55.0, "cap": 29062, "att": 6500, "age": 23.9, "pct_for": 0.62},
+    "Standard Liège": {"val": 50.0, "cap": 30023, "att": 21000, "age": 25.5, "pct_for": 0.52},
+    "KV Mechelen": {"val": 40.0, "cap": 16672, "att": 13500, "age": 25.6, "pct_for": 0.45},
+    "KVC Westerlo": {"val": 38.0, "cap": 8035, "att": 6500, "age": 24.5, "pct_for": 0.58},
+    "Sint-Truiden": {"val": 35.0, "cap": 14600, "att": 7500, "age": 25.2, "pct_for": 0.55},
+    "Charleroi": {"val": 35.0, "cap": 15000, "att": 9000, "age": 25.9, "pct_for": 0.60},
+    "OH Leuven": {"val": 32.0, "cap": 10020, "att": 7200, "age": 25.4, "pct_for": 0.52},
+    "KV Kortrijk": {"val": 22.0, "cap": 9399, "att": 7000, "age": 25.8, "pct_for": 0.50},
+    "Dender": {"val": 18.0, "cap": 6429, "att": 5000, "age": 26.2, "pct_for": 0.40},
+    "Beerschot": {"val": 15.0, "cap": 12771, "att": 7500, "age": 25.5, "pct_for": 0.45},
+    "Eupen": {"val": 14.0, "cap": 8363, "att": 4000, "age": 25.0, "pct_for": 0.65},
+    "RWDM": {"val": 14.0, "cap": 12266, "att": 6500, "age": 25.2, "pct_for": 0.60},
+    "Zulte-Waregem": {"val": 12.0, "cap": 12250, "att": 8000, "age": 26.0, "pct_for": 0.42},
+    "KV Oostende": {"val": 10.0, "cap": 8400, "att": 4500, "age": 25.6, "pct_for": 0.48},
+    "Seraing": {"val": 8.0, "cap": 8207, "att": 2500, "age": 24.8, "pct_for": 0.55},
+    "Waasland-Beveren": {"val": 8.0, "cap": 8100, "att": 3500, "age": 25.5, "pct_for": 0.45},
+    "Lommel SK": {"val": 8.0, "cap": 8000, "att": 2500, "age": 24.0, "pct_for": 0.55},
+    "Mouscron": {"val": 6.0, "cap": 10800, "att": 3500, "age": 25.5, "pct_for": 0.50},
+    "RAAL La Louvière": {"val": 6.0, "cap": 12500, "att": 3000, "age": 25.0, "pct_for": 0.35}
+}
+
 
 def build_for_league(liga, team_dict):
     out_dir = BASE / liga / "data"
@@ -111,7 +140,6 @@ def build_for_league(liga, team_dict):
     filas_sq = []
     
     for t in temporadas:
-        # factor de inflacion leve / crecimiento de mercado segun temporada
         factor = 1.0 + (t - 2026) * 0.035
         for eq, d in team_dict.items():
             val = round(max(5.0, d["val"] * factor), 1)
@@ -153,6 +181,7 @@ def main():
     build_for_league("fra", FRA_TEAMS)
     build_for_league("ned", NED_TEAMS)
     build_for_league("por", POR_TEAMS)
+    build_for_league("bel", BEL_TEAMS)
 
 
 if __name__ == "__main__":
