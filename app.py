@@ -31,7 +31,7 @@ def limpiar_cache_importacion():
     entre las distintas ligas que usan archivos con el mismo nombre (ej. motor.py)."""
     modulos_a_limpiar = [
         "motor", "recolectar", "recolectar_boxscore", 
-        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur"
+        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur", "app_sco"
     ]
     for mod in modulos_a_limpiar:
         if mod in sys.modules:
@@ -66,7 +66,8 @@ torneo_seleccionado = st.sidebar.selectbox(
         "🇳🇱 Eredivisie (Países Bajos)",
         "🇵🇹 Primeira Liga (Portugal)",
         "🇧🇪 Jupiler Pro League (Bélgica)",
-        "🇹🇷 Süper Lig (Turquía)"
+        "🇹🇷 Süper Lig (Turquía)",
+        "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Premiership (Escocia)"
     ]
 )
 
@@ -150,3 +151,8 @@ elif torneo_seleccionado == "🇹🇷 Süper Lig (Turquía)":
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "tur"))
     import tur.app_tur as tur_app
     tur_app.run_app()
+
+elif torneo_seleccionado == "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Premiership (Escocia)":
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "sco"))
+    import sco.app_sco as sco_app
+    sco_app.run_app()

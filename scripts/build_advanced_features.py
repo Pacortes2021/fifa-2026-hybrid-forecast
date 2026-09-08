@@ -167,6 +167,25 @@ TUR_TEAMS = {
     "Denizlispor": {"val": 6.0, "cap": 18745, "att": 4000, "age": 26.0, "pct_for": 0.25}
 }
 
+# --- ESCOCIA ---
+SCO_TEAMS = {
+    "Celtic": {"val": 140.0, "cap": 60411, "att": 58500, "age": 26.2, "pct_for": 0.65},
+    "Rangers": {"val": 110.0, "cap": 50817, "att": 49000, "age": 26.5, "pct_for": 0.62},
+    "Heart of Midlothian": {"val": 25.0, "cap": 19853, "att": 18500, "age": 26.0, "pct_for": 0.45},
+    "Aberdeen": {"val": 20.0, "cap": 20866, "att": 16500, "age": 25.5, "pct_for": 0.45},
+    "Hibernian": {"val": 18.0, "cap": 20421, "att": 17500, "age": 25.8, "pct_for": 0.48},
+    "Dundee United": {"val": 12.0, "cap": 14223, "att": 10500, "age": 25.6, "pct_for": 0.40},
+    "Kilmarnock": {"val": 12.0, "cap": 17889, "att": 7500, "age": 26.2, "pct_for": 0.38},
+    "Dundee": {"val": 10.0, "cap": 11775, "att": 7000, "age": 25.4, "pct_for": 0.42},
+    "Motherwell": {"val": 10.0, "cap": 13677, "att": 6500, "age": 26.0, "pct_for": 0.40},
+    "St Mirren": {"val": 11.0, "cap": 7937, "att": 6800, "age": 26.4, "pct_for": 0.38},
+    "St Johnstone": {"val": 9.0, "cap": 10696, "att": 5000, "age": 26.5, "pct_for": 0.35},
+    "Ross County": {"val": 8.0, "cap": 6541, "att": 4500, "age": 26.0, "pct_for": 0.35},
+    "Livingston": {"val": 7.0, "cap": 9512, "att": 4000, "age": 26.2, "pct_for": 0.35},
+    "Falkirk": {"val": 7.0, "cap": 7937, "att": 5500, "age": 25.5, "pct_for": 0.30},
+    "Hamilton Academical": {"val": 5.0, "cap": 6018, "att": 2500, "age": 25.0, "pct_for": 0.25}
+}
+
 
 def build_for_league(liga, team_dict):
     out_dir = BASE / liga / "data"
@@ -220,6 +239,7 @@ def main():
     build_for_league("por", POR_TEAMS)
     build_for_league("bel", BEL_TEAMS)
     build_for_league("tur", TUR_TEAMS)
+    build_for_league("sco", SCO_TEAMS)
 
 
 if __name__ == "__main__":

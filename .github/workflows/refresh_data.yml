@@ -136,6 +136,14 @@ jobs:
           rec.recolectar()
           "
 
+      - name: 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Recolectar Escocia (Scottish Premiership)
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'sco')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
       - name: 💾 Commit updated CSVs (if any changes)
         run: |
           git config user.name  "github-actions[bot]"
@@ -154,7 +162,8 @@ jobs:
                   ned/data/partidos.csv   ned/data/fixture.csv   \
                   por/data/partidos.csv   por/data/fixture.csv   \
                   bel/data/partidos.csv   bel/data/fixture.csv   \
-                  tur/data/partidos.csv   tur/data/fixture.csv
+                  tur/data/partidos.csv   tur/data/fixture.csv   \
+                  sco/data/partidos.csv   sco/data/fixture.csv
 
           # Only commit if there are actual changes
           if git diff --cached --quiet; then
@@ -164,7 +173,7 @@ jobs:
             git commit -m "data(auto): refresh all leagues [${TIMESTAMP}]
 
           Automated daily refresh from ESPN API via GitHub Actions.
-          CSVs updated: chile, arg, bra, mex, esp, eng, bund, ita, fra, ned, por, bel, tur."
+          CSVs updated: chile, arg, bra, mex, esp, eng, bund, ita, fra, ned, por, bel, tur, sco."
             git push origin main
             echo "✅ Pushed updated CSVs to main."
           fi
