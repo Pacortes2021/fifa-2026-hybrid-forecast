@@ -31,7 +31,7 @@ def limpiar_cache_importacion():
     entre las distintas ligas que usan archivos con el mismo nombre (ej. motor.py)."""
     modulos_a_limpiar = [
         "motor", "recolectar", "recolectar_boxscore", 
-        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund"
+        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita"
     ]
     for mod in modulos_a_limpiar:
         if mod in sys.modules:
@@ -60,7 +60,8 @@ torneo_seleccionado = st.sidebar.selectbox(
         "🇨🇱 Liga Chilena (Primera)",
         "🇪🇸 LaLiga (España)",
         "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League (Inglaterra)",
-        "🇩🇪 Bundesliga (Alemania)"
+        "🇩🇪 Bundesliga (Alemania)",
+        "🇮🇹 Serie A (Italia)"
     ]
 )
 
@@ -114,3 +115,8 @@ elif torneo_seleccionado == "🇩🇪 Bundesliga (Alemania)":
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "bund"))
     import bund.app_bund as bund_app
     bund_app.run_app()
+
+elif torneo_seleccionado == "🇮🇹 Serie A (Italia)":
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "ita"))
+    import ita.app_ita as ita_app
+    ita_app.run_app()
