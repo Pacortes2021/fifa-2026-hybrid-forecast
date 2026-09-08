@@ -28,6 +28,7 @@ LIGAS = {
     "bel":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "tur":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "sco":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
+    "aut":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
 }
 
 

@@ -186,6 +186,26 @@ SCO_TEAMS = {
     "Hamilton Academical": {"val": 5.0, "cap": 6018, "att": 2500, "age": 25.0, "pct_for": 0.25}
 }
 
+# --- AUSTRIA ---
+AUT_TEAMS = {
+    "RB Salzburg": {"val": 170.0, "cap": 30188, "att": 12000, "age": 23.2, "pct_for": 0.72},
+    "SK Sturm Graz": {"val": 65.0, "cap": 16364, "att": 15000, "age": 24.8, "pct_for": 0.55},
+    "Rapid Vienna": {"val": 35.0, "cap": 28000, "att": 19500, "age": 25.5, "pct_for": 0.42},
+    "LASK Linz": {"val": 35.0, "cap": 19080, "att": 14000, "age": 25.8, "pct_for": 0.48},
+    "Austria Vienna": {"val": 25.0, "cap": 17500, "att": 12500, "age": 25.2, "pct_for": 0.45},
+    "Wolfsberger": {"val": 16.0, "cap": 7300, "att": 4000, "age": 26.0, "pct_for": 0.40},
+    "TSV Hartberg": {"val": 14.0, "cap": 4635, "att": 3500, "age": 25.8, "pct_for": 0.35},
+    "SK Austria Klagenfurt": {"val": 12.0, "cap": 30000, "att": 5500, "age": 26.0, "pct_for": 0.40},
+    "SC Rheindorf Altach": {"val": 11.0, "cap": 8500, "att": 5000, "age": 26.2, "pct_for": 0.45},
+    "FC Blau-Weiß Linz": {"val": 11.0, "cap": 5595, "att": 5200, "age": 26.5, "pct_for": 0.38},
+    "WSG Swarovski Tirol": {"val": 10.0, "cap": 16008, "att": 3500, "age": 25.4, "pct_for": 0.45},
+    "Grazer AK": {"val": 10.0, "cap": 16364, "att": 7500, "age": 25.8, "pct_for": 0.38},
+    "Austria Lustenau": {"val": 8.0, "cap": 8800, "att": 4200, "age": 25.0, "pct_for": 0.50},
+    "SV Josko Ried": {"val": 8.0, "cap": 7334, "att": 4500, "age": 25.5, "pct_for": 0.35},
+    "FC Admira Wacker Modling": {"val": 6.0, "cap": 10600, "att": 2500, "age": 24.8, "pct_for": 0.30},
+    "St. Pölten": {"val": 6.0, "cap": 8000, "att": 3000, "age": 25.0, "pct_for": 0.30}
+}
+
 
 def build_for_league(liga, team_dict):
     out_dir = BASE / liga / "data"
@@ -240,6 +260,7 @@ def main():
     build_for_league("bel", BEL_TEAMS)
     build_for_league("tur", TUR_TEAMS)
     build_for_league("sco", SCO_TEAMS)
+    build_for_league("aut", AUT_TEAMS)
 
 
 if __name__ == "__main__":
