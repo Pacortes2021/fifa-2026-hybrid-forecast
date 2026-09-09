@@ -262,7 +262,7 @@ def run_app():
             # Matriz de calor marcador exacto
             with st.expander("🎲 Matriz de Marcador Exacto (Dixon-Coles)"):
                 mat = mo.matriz_marcador_exacto(la, lb, max_goles=5)
-                df_mat = pd.DataFrame(mat * 100, index=[f"{local} {i}" for i in range(5)], columns=[f"{visita} {j}" for j in range(5)])
+                df_mat = pd.DataFrame(mat * 100, index=[f"{local} {i}" for i in range(mat.shape[0])], columns=[f"{visita} {j}" for j in range(mat.shape[1])])
                 st.dataframe(df_mat.style.format("{:.1f}%").background_gradient(cmap="OrRd"), width='stretch')
 
             # Variables clave del duelo
