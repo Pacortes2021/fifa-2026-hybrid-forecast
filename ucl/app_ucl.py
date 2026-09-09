@@ -205,6 +205,19 @@ def run_app():
         with col_c2:
             es_neutral = st.checkbox("🏟️ Sede Neutral (Ej. Gran Final)", value=False)
 
+        es_vuelta = False
+        ventaja_local = 0
+        if es_knockout and not es_neutral:
+            col_k1, col_k2 = st.columns([1, 1])
+            with col_k1:
+                es_vuelta = st.checkbox("🔄 Partido de Vuelta (2nd Leg)", value=False, help="Activa el contexto táctico de la serie a doble partido.")
+            with col_k2:
+                if es_vuelta:
+                    ventaja_local = st.number_input(
+                        "Ventaja global local (Ida):", min_value=-10, max_value=10, value=0, step=1,
+                        help="Diferencia de goles a favor del local en la ida (ej: +2 si ganó 2-0 afuera, -1 si cayó 1-2 afuera)."
+                    )
+
         # Selección de Equipos
         c1, cvs, c2 = st.columns([5, 1, 5])
         with c1:
@@ -241,7 +254,9 @@ def run_app():
         else:
             p, la, lb = mo.predecir_match(
                 M, local, visita, temporada=mo._temporada_actual(),
-                modelo=modelo_tipo, is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0
+                modelo=modelo_tipo, is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0,
+                leg2_lead_local=float(ventaja_local) if (es_knockout and es_vuelta) else 0.0,
+                is_leg2=1 if (es_knockout and es_vuelta) else 0
             )
             mat_dc = mo.matriz_marcador_exacto(la, lb)
 
@@ -280,10 +295,10 @@ def run_app():
             # ── Comparativa Directa de los 4 Modelos ────────────────────────
             st.markdown("---")
             st.markdown('<div class="sec-title">🤖 Comparativa Directa entre Modelos para este Partido</div>', unsafe_allow_html=True)
-            p_lasso = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="lasso", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0)[0]
-            p_rf    = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="rf", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0)[0]
-            p_xgb   = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="xgb", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0)[0]
-            p_stk   = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="stacking", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0)[0]
+            p_lasso = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="lasso", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0, leg2_lead_local=float(ventaja_local) if (es_knockout and es_vuelta) else 0.0, is_leg2=1 if (es_knockout and es_vuelta) else 0)[0]
+            p_rf    = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="rf", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0, leg2_lead_local=float(ventaja_local) if (es_knockout and es_vuelta) else 0.0, is_leg2=1 if (es_knockout and es_vuelta) else 0)[0]
+            p_xgb   = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="xgb", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0, leg2_lead_local=float(ventaja_local) if (es_knockout and es_vuelta) else 0.0, is_leg2=1 if (es_knockout and es_vuelta) else 0)[0]
+            p_stk   = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="stacking", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0, leg2_lead_local=float(ventaja_local) if (es_knockout and es_vuelta) else 0.0, is_leg2=1 if (es_knockout and es_vuelta) else 0)[0]
 
             df_comp_mod = pd.DataFrame([
                 {

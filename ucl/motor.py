@@ -254,6 +254,196 @@ class PiRatingsTracker:
         self.r_away[away] -= err * self.lmb
         self.r_home[away] -= err * self.lmb * self.gamma
 
+MAPPING_UCL_A_LOCAL = {
+    'Athletic Club': ('esp', 'Athletic Club'), 'Atletico Madrid': ('esp', 'Atlético de Madrid'),
+    'FC Barcelona': ('esp', 'FC Barcelona'), 'Girona': ('esp', 'Girona FC'),
+    'Real Betis': ('esp', 'Real Betis'), 'Real Madrid': ('esp', 'Real Madrid'),
+    'Real Sociedad': ('esp', 'Real Sociedad'), 'Sevilla': ('esp', 'Sevilla FC'),
+    'Villarreal': ('esp', 'Villarreal CF'), 'Arsenal': ('eng', 'Arsenal'),
+    'Aston Villa': ('eng', 'Aston Villa'), 'Chelsea': ('eng', 'Chelsea'),
+    'Liverpool': ('eng', 'Liverpool'), 'Manchester City': ('eng', 'Manchester City'),
+    'Manchester United': ('eng', 'Manchester United'), 'Newcastle United': ('eng', 'Newcastle United'),
+    'Tottenham Hotspur': ('eng', 'Tottenham Hotspur'), 'Bayer Leverkusen': ('bund', 'Bayer Leverkusen'),
+    'Bayern Munich': ('bund', 'Bayern Munich'), 'Borussia Dortmund': ('bund', 'Borussia Dortmund'),
+    'Borussia Monchengladbach': ('bund', 'Borussia Mönchengladbach'), 'Eintracht Frankfurt': ('bund', 'Eintracht Frankfurt'),
+    'RB Leipzig': ('bund', 'RB Leipzig'), 'Union Berlin': ('bund', '1. FC Union Berlin'),
+    'VfB Stuttgart': ('bund', 'VfB Stuttgart'), 'VfL Wolfsburg': ('bund', 'VfL Wolfsburg'),
+    'AC Milan': ('ita', 'AC Milan'), 'AS Roma': ('ita', 'AS Roma'),
+    'Atalanta': ('ita', 'Atalanta'), 'Bologna': ('ita', 'Bologna'),
+    'Como': ('ita', 'Como'), 'Inter': ('ita', 'Inter'),
+    'Juventus': ('ita', 'Juventus'), 'Lazio': ('ita', 'Lazio'),
+    'Napoli': ('ita', 'Napoli'), 'AS Monaco': ('fra', 'Monaco'),
+    'Brest': ('fra', 'Brest'), 'Lens': ('fra', 'Lens'),
+    'Lille': ('fra', 'Lille'), 'Marseille': ('fra', 'Marseille'),
+    'PSG': ('fra', 'Paris Saint-Germain'), 'Benfica': ('por', 'Benfica'),
+    'Braga': ('por', 'Braga'), 'Porto': ('por', 'Porto'),
+    'Sporting CP': ('por', 'Sporting CP'), 'Ajax': ('ned', 'Ajax'),
+    'Feyenoord': ('ned', 'Feyenoord'), 'PSV': ('ned', 'PSV'),
+    'Celtic': ('sco', 'Celtic'), 'Rangers': ('sco', 'Rangers'),
+    'LASK Linz': ('aut', 'LASK Linz'), 'Salzburg': ('aut', 'RB Salzburg'),
+    'Sturm Graz': ('aut', 'SK Sturm Graz'), 'Antwerp': ('bel', 'Antwerp'),
+    'Club Brugge': ('bel', 'Club Brugge'), 'Union Saint-Gilloise': ('bel', 'Union Saint-Gilloise'),
+    'Besiktas': ('tur', 'Besiktas'), 'Fenerbahce': ('tur', 'Fenerbahce'),
+    'Galatasaray': ('tur', 'Galatasaray'), 'AEK Athens': ('gre', 'AEK Athens'),
+    'Olympiacos': ('gre', 'Olympiacos'), 'F.C. København': ('den', 'F.C. København'),
+    'Bodo/Glimt': ('nor', 'Bodo/Glimt'), 'Viking FK': ('nor', 'Viking FK'),
+    'Malmo FF': ('swe', 'Malmo FF'),
+}
+
+TIER_LIGA = {
+    'eng': 1.00, 'esp': 0.95, 'ita': 0.94, 'bund': 0.94, 'fra': 0.85,
+    'ned': 0.82, 'por': 0.80, 'bel': 0.75, 'tur': 0.70, 'sco': 0.65,
+    'aut': 0.64, 'den': 0.63, 'gre': 0.62, 'nor': 0.60, 'swe': 0.55,
+}
+
+class DomesticLeagueTracker:
+    def __init__(self, k=32.0, home_adv=50.0):
+        self.k = k
+        self.home_adv = home_adv
+        self.elos = defaultdict(_elo_default)
+        self.recent_results = defaultdict(deque)
+        self.recent_gf = defaultdict(deque)
+        self.recent_ga = defaultdict(deque)
+        self.season_pts = defaultdict(int)
+        self.season_matches = defaultdict(int)
+        self.season_gf = defaultdict(int)
+        self.season_ga = defaultdict(int)
+        self.last_match_date = defaultdict(_none_default)
+        self.recent_dates = defaultdict(deque)
+        self.curr_season = None
+
+    def get_state(self, team):
+        el = self.elos[team]
+        rr = list(self.recent_results[team])
+        form = np.mean(rr[-5:]) if rr else 0.5
+        gfl = list(self.recent_gf[team])
+        gf = np.mean(gfl[-5:]) if gfl else 1.3
+        gal = list(self.recent_ga[team])
+        ga = np.mean(gal[-5:]) if gal else 1.1
+        pts = self.season_pts[team]
+        m = self.season_matches[team]
+        ppg = (pts / m) if m > 0 else 1.5
+        gf_tot = self.season_gf[team]
+        ga_tot = self.season_ga[team]
+        gd_pm = ((gf_tot - ga_tot) / m) if m > 0 else 0.0
+        return {
+            'elo': el, 'form': form, 'gf': gf, 'ga': ga, 'ppg': ppg,
+            'gd_pm': gd_pm, 'matches': m,
+            'last_date': self.last_match_date[team],
+            'recent_dates': list(self.recent_dates[team])
+        }
+
+    def registrar(self, local, visita, gl, gv, season, fecha):
+        if season != self.curr_season:
+            self.curr_season = season
+            self.season_pts.clear()
+            self.season_matches.clear()
+            self.season_gf.clear()
+            self.season_ga.clear()
+
+        dr = (self.elos[local] + self.home_adv) - self.elos[visita]
+        we = 1.0 / (10.0 ** (-dr / 400.0) + 1.0)
+        w = 1.0 if gl > gv else (0.5 if gl == gv else 0.0)
+        g_diff = abs(gl - gv)
+        mult = 1.0 if g_diff <= 1 else (1.5 if g_diff == 2 else (1.75 + (g_diff - 3) / 8.0))
+        delta = self.k * mult * (w - we)
+        self.elos[local] += delta
+        self.elos[visita] -= delta
+
+        w_l = 1.0 if gl > gv else (0.5 if gl == gv else 0.0)
+        w_v = 1.0 - w_l if w_l != 0.5 else 0.5
+        self.recent_results[local].append(w_l)
+        self.recent_results[visita].append(w_v)
+        self.recent_gf[local].append(gl)
+        self.recent_gf[visita].append(gv)
+        self.recent_ga[local].append(gv)
+        self.recent_ga[visita].append(gl)
+
+        self.season_matches[local] += 1
+        self.season_matches[visita] += 1
+        self.season_gf[local] += gl
+        self.season_gf[visita] += gv
+        self.season_ga[local] += gv
+        self.season_ga[visita] += gl
+
+        f = pd.to_datetime(fecha)
+        self.last_match_date[local] = f
+        self.last_match_date[visita] = f
+        self.recent_dates[local].append(f)
+        self.recent_dates[visita].append(f)
+        while self.recent_dates[local] and (f - self.recent_dates[local][0]).days > 21:
+            self.recent_dates[local].popleft()
+        while self.recent_dates[visita] and (f - self.recent_dates[visita][0]).days > 21:
+            self.recent_dates[visita].popleft()
+
+        if gl > gv: self.season_pts[local] += 3
+        elif gl == gv: self.season_pts[local] += 1; self.season_pts[visita] += 1
+        else: self.season_pts[visita] += 3
+
+class MultiLeagueSystem:
+    def __init__(self):
+        self.trackers = {l: DomesticLeagueTracker() for l in TIER_LIGA.keys()}
+        self.league_matches = {}
+        self.ptrs = {l: 0 for l in TIER_LIGA.keys()}
+        base_dir = DATA.parent.parent
+
+        for l in TIER_LIGA.keys():
+            p = base_dir / l / "data" / "partidos.csv"
+            if p.exists():
+                df = pd.read_csv(p, parse_dates=['fecha']).sort_values('fecha').reset_index(drop=True)
+                self.league_matches[l] = df
+            else:
+                self.league_matches[l] = pd.DataFrame()
+
+    def advance_to(self, target_date):
+        for l, df in self.league_matches.items():
+            if df.empty: continue
+            idx = self.ptrs[l]
+            n = len(df)
+            tracker = self.trackers[l]
+            while idx < n:
+                row = df.iloc[idx]
+                if row['fecha'] >= target_date: break
+                tracker.registrar(
+                    row['local'], row['visita'],
+                    int(row['goles_local']), int(row['goles_visita']),
+                    int(row['temporada']), row['fecha']
+                )
+                idx += 1
+            self.ptrs[l] = idx
+
+    def get_team_domestic_features(self, ucl_team_name, ucl_match_date=None):
+        f = pd.to_datetime(ucl_match_date) if ucl_match_date is not None else None
+        if ucl_team_name in MAPPING_UCL_A_LOCAL:
+            league, local_name = MAPPING_UCL_A_LOCAL[ucl_team_name]
+            tier = TIER_LIGA.get(league, 0.60)
+            st = self.trackers[league].get_state(local_name)
+            last_d = st['last_date']
+            if f is not None and last_d is not None:
+                rest_d = float(np.clip((f - last_d).days, 2.0, 21.0))
+                cong_14d = float(sum(1 for d in st['recent_dates'] if 0 <= (f - d).days <= 14))
+            else:
+                rest_d = 6.0
+                cong_14d = 2.0
+            return {
+                'dom_elo': st['elo'],
+                'dom_elo_adj': st['elo'] * tier,
+                'dom_form': st['form'],
+                'dom_gf': st['gf'],
+                'dom_ga': st['ga'],
+                'dom_ppg': st['ppg'],
+                'dom_gd': st['gd_pm'],
+                'dom_tier': tier,
+                'real_rest_days': rest_d,
+                'real_cong_14d': cong_14d
+            }
+        else:
+            return {
+                'dom_elo': 1650.0, 'dom_elo_adj': 1650.0 * 0.58, 'dom_form': 0.70,
+                'dom_gf': 2.1, 'dom_ga': 0.8, 'dom_ppg': 2.2, 'dom_gd': 1.3, 'dom_tier': 0.58,
+                'real_rest_days': 6.0, 'real_cong_14d': 2.0
+            }
+
 class StateTracker:
     def __init__(self):
         self.elos = defaultdict(_elo_default)
@@ -271,8 +461,9 @@ class StateTracker:
         self.recent_gf = defaultdict(deque)
         self.recent_ga = defaultdict(deque)
         self.match_count = defaultdict(int)
+        self.multi_leagues = MultiLeagueSystem()
 
-    def get_features_for_match(self, local, visita, temporada, fecha=None, is_knockout=0, is_neutral=0, reset_season=False):
+    def get_features_for_match(self, local, visita, temporada, fecha=None, is_knockout=0, is_neutral=0, reset_season=False, leg2_lead_local=0.0, is_leg2=0):
         feats = {}
         el = self.elos[local]
         ev = self.elos[visita]
@@ -307,8 +498,15 @@ class StateTracker:
         feats["stadium_occupation_diff"] = float(feat_l["stadium_occupation"]) - float(feat_v["stadium_occupation"])
         feats["avg_attendance_diff"] = np.log(max(float(feat_l["avg_attendance"]), 1.0)) - np.log(max(float(feat_v["avg_attendance"]), 1.0))
 
+        # Concentración de plantilla: valor medio por jugador
+        sz_l = max(float(feat_l.get("squad_size", 28.0)), 15.0)
+        sz_v = max(float(feat_v.get("squad_size", 28.0)), 15.0)
+        feats["squad_val_per_player_diff"] = np.log(max(vl / sz_l, 0.01)) - np.log(max(vv / sz_v, 0.01))
+
         feats["is_knockout"] = float(is_knockout)
         feats["is_neutral"] = float(is_neutral)
+        feats["is_leg2"] = float(is_leg2)
+        feats["leg2_agg_lead"] = float(leg2_lead_local)
 
         N = 5
         rl = list(self.recent_results[local]); rv = list(self.recent_results[visita])
@@ -328,6 +526,16 @@ class StateTracker:
         ppg_l = (pl / ml) if ml > 0 else 1.5
         ppg_v = (pv / mv) if mv > 0 else 1.5
         feats["ppg_diff"] = ppg_l - ppg_v
+
+        # Variables domésticas y de descanso/congestión real
+        dom_l = self.multi_leagues.get_team_domestic_features(local, fecha)
+        dom_v = self.multi_leagues.get_team_domestic_features(visita, fecha)
+        feats["dom_elo_adj_diff"] = dom_l["dom_elo_adj"] - dom_v["dom_elo_adj"]
+        feats["dom_tier_diff"] = dom_l["dom_tier"] - dom_v["dom_tier"]
+        feats["dom_form_diff"] = dom_l["dom_form"] - dom_v["dom_form"]
+        feats["dom_gd_diff"] = dom_l["dom_gd"] - dom_v["dom_gd"]
+        feats["real_rest_days_diff"] = dom_l["real_rest_days"] - dom_v["real_rest_days"]
+        feats["real_congestion_14d_diff"] = dom_l["real_cong_14d"] - dom_v["real_cong_14d"]
 
         if fecha is not None:
             f = pd.to_datetime(fecha)
@@ -471,17 +679,37 @@ def cargar(force_retrain=False):
     filas_dataset = []
     filas_poisson = []
 
+    ko_stages = {'round-of-16', 'quarterfinals', 'knockout-round-playoffs', 'semifinals'}
+    leg1_matches = {}
+
     for _, r in df_partidos.iterrows():
         eid = r.get("event_id")
         l, v = r["local"], r["visita"]
         gl, gv = int(r["goles_local"]), int(r["goles_visita"])
         fecha = r["fecha"]
         temp = int(r["temporada"])
+        st = r.get("stage", "group-stage")
         is_knockout = int(r.get("is_knockout", 0))
         is_neutral = int(r.get("is_neutral", 0))
 
+        # Avanzar ligas locales estrictamente hasta antes del cotejo UCL
+        tracker.multi_leagues.advance_to(fecha)
+
+        is_leg2 = 0
+        leg2_lead_local = 0.0
+        if is_knockout and st in ko_stages:
+            tie_key = (temp, st, frozenset([l, v]))
+            if tie_key not in leg1_matches:
+                leg1_matches[tie_key] = (l, v, gl, gv, fecha)
+            else:
+                p_loc, p_vis, p_gl, p_gv, _ = leg1_matches[tie_key]
+                is_leg2 = 1
+                if l == p_vis and v == p_loc:
+                    leg2_lead_local = float(p_gv - p_gl)
+
         feats = tracker.get_features_for_match(
-            l, v, temp, fecha=fecha, is_knockout=is_knockout, is_neutral=is_neutral, reset_season=True
+            l, v, temp, fecha=fecha, is_knockout=is_knockout, is_neutral=is_neutral, reset_season=True,
+            leg2_lead_local=leg2_lead_local, is_leg2=is_leg2
         )
 
         res = 0 if gl > gv else (1 if gl == gv else 2)
@@ -555,10 +783,14 @@ def cargar(force_retrain=False):
     pipe_xgb = Pipeline([("sc", StandardScaler()), ("xgb", XGBClassifier(n_estimators=100, max_depth=3, learning_rate=0.05, eval_metric="mlogloss", random_state=42, n_jobs=-1))])
     pipe_xgb.fit(X_full, y_full)
 
-    # 4. Stacking Óptimo
-    p_l_cal = pipe_lasso.predict_proba(X_cal if len(X_cal) >= 10 else X_train)
-    p_r_cal = pipe_rf.predict_proba(X_cal if len(X_cal) >= 10 else X_train)
-    p_x_cal = pipe_xgb.predict_proba(X_cal if len(X_cal) >= 10 else X_train)
+    # 4. Stacking Óptimo sin fuga de datos (modelos base en X_train calibrados sobre X_cal)
+    p_l_base = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=2500, random_state=42))]).fit(X_train, y_train)
+    p_r_base = Pipeline([("sc", StandardScaler()), ("rf", RandomForestClassifier(n_estimators=200, max_depth=5, min_samples_split=15, random_state=42, n_jobs=-1))]).fit(X_train, y_train)
+    p_x_base = Pipeline([("sc", StandardScaler()), ("xgb", XGBClassifier(n_estimators=100, max_depth=3, learning_rate=0.05, eval_metric="mlogloss", random_state=42, n_jobs=-1))]).fit(X_train, y_train)
+
+    p_l_cal = p_l_base.predict_proba(X_cal if len(X_cal) >= 10 else X_train)
+    p_r_cal = p_r_base.predict_proba(X_cal if len(X_cal) >= 10 else X_train)
+    p_x_cal = p_x_base.predict_proba(X_cal if len(X_cal) >= 10 else X_train)
     y_cal_eval = y_cal if len(X_cal) >= 10 else y_train
 
     def _simplex_loss(weights):
@@ -640,9 +872,12 @@ def cargar(force_retrain=False):
     return salida
 
 
-def predecir_match(M, local, visita, temporada=2027, modelo="stacking", is_neutral=0, is_knockout=0):
+def predecir_match(M, local, visita, temporada=2027, modelo="stacking", is_neutral=0, is_knockout=0, leg2_lead_local=0.0, is_leg2=0):
     tracker = M["tracker"]
-    feats = tracker.get_features_for_match(local, visita, temporada, is_knockout=is_knockout, is_neutral=is_neutral)
+    feats = tracker.get_features_for_match(
+        local, visita, temporada, is_knockout=is_knockout, is_neutral=is_neutral,
+        leg2_lead_local=leg2_lead_local, is_leg2=is_leg2
+    )
     X = pd.DataFrame([feats])[M["features"]].fillna(0.0)
 
     if modelo == "lasso":
