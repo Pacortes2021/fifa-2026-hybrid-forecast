@@ -31,7 +31,7 @@ def limpiar_cache_importacion():
     entre las distintas ligas que usan archivos con el mismo nombre (ej. motor.py)."""
     modulos_a_limpiar = [
         "motor", "recolectar", "recolectar_boxscore", 
-        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur", "app_sco", "app_aut", "app_den", "app_gre", "app_nor"
+        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur", "app_sco", "app_aut", "app_den", "app_gre", "app_nor", "app_swe"
     ]
     for mod in modulos_a_limpiar:
         if mod in sys.modules:
@@ -71,7 +71,8 @@ torneo_seleccionado = st.sidebar.selectbox(
         "🇦🇹 Austrian Bundesliga (Austria)",
         "🇩🇰 Danish Superliga (Dinamarca)",
         "🇬🇷 Super League (Grecia)",
-        "🇳🇴 Eliteserien (Noruega)"
+        "🇳🇴 Eliteserien (Noruega)",
+        "🇸🇪 Allsvenskan (Suecia)"
     ]
 )
 
@@ -180,4 +181,10 @@ elif torneo_seleccionado == "🇳🇴 Eliteserien (Noruega)":
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "nor"))
     import nor.app_nor as nor_app
     nor_app.run_app()
+
+elif torneo_seleccionado == "🇸🇪 Allsvenskan (Suecia)":
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "swe"))
+    import swe.app_swe as swe_app
+    swe_app.run_app()
+
 

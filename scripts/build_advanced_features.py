@@ -280,6 +280,35 @@ NOR_TEAMS = {
 }
 
 
+# --- SUECIA ---
+SWE_TEAMS = {
+    "Malmo FF": {"val": 45.0, "cap": 22500, "att": 20000, "age": 26.0, "pct_for": 0.40},
+    "Djurgarden": {"val": 28.0, "cap": 30000, "att": 21000, "age": 25.5, "pct_for": 0.35},
+    "Hammarby": {"val": 26.0, "cap": 30000, "att": 24000, "age": 24.8, "pct_for": 0.35},
+    "AIK": {"val": 24.0, "cap": 50000, "att": 25000, "age": 25.8, "pct_for": 0.35},
+    "BK Hacken": {"val": 22.0, "cap": 6300, "att": 5500, "age": 25.0, "pct_for": 0.45},
+    "IF Elfsborg": {"val": 20.0, "cap": 16200, "att": 10000, "age": 24.8, "pct_for": 0.32},
+    "IFK Goteborg": {"val": 18.0, "cap": 18416, "att": 16500, "age": 25.2, "pct_for": 0.30},
+    "IFK Norrkoping": {"val": 14.0, "cap": 16000, "att": 8500, "age": 25.0, "pct_for": 0.28},
+    "Mjallby AIF": {"val": 12.0, "cap": 7000, "att": 4500, "age": 25.5, "pct_for": 0.22},
+    "IK Sirius": {"val": 12.0, "cap": 10250, "att": 7000, "age": 24.6, "pct_for": 0.25},
+    "GAIS": {"val": 11.0, "cap": 18416, "att": 9000, "age": 25.4, "pct_for": 0.25},
+    "Brommapojkarna": {"val": 10.0, "cap": 5000, "att": 2800, "age": 23.5, "pct_for": 0.25},
+    "Kalmar FF": {"val": 10.0, "cap": 12182, "att": 6500, "age": 25.8, "pct_for": 0.25},
+    "Halmstads BK": {"val": 9.0, "cap": 10875, "att": 6000, "age": 26.2, "pct_for": 0.20},
+    "IFK Varnamo": {"val": 8.0, "cap": 5000, "att": 3500, "age": 25.4, "pct_for": 0.22},
+    "Vasteras SK": {"val": 8.0, "cap": 7000, "att": 5000, "age": 25.2, "pct_for": 0.20},
+    "Degerfors IF": {"val": 7.0, "cap": 7500, "att": 4000, "age": 25.5, "pct_for": 0.22},
+    "Helsingborgs IF": {"val": 7.0, "cap": 16500, "att": 8000, "age": 25.0, "pct_for": 0.25},
+    "Varbergs BoIS": {"val": 6.0, "cap": 4500, "att": 3000, "age": 25.4, "pct_for": 0.22},
+    "Orebro SK": {"val": 6.0, "cap": 12645, "att": 5500, "age": 25.6, "pct_for": 0.20},
+    "Osters IF": {"val": 6.0, "cap": 12000, "att": 5000, "age": 25.0, "pct_for": 0.20},
+    "GIF Sundsvall": {"val": 5.0, "cap": 8000, "att": 3500, "age": 25.2, "pct_for": 0.20},
+    "Ostersunds FK": {"val": 5.0, "cap": 8466, "att": 3200, "age": 25.5, "pct_for": 0.30},
+    "Orgryte IS": {"val": 5.0, "cap": 18416, "att": 3500, "age": 25.0, "pct_for": 0.20}
+}
+
+
 def build_for_league(liga, team_dict):
     out_dir = BASE / liga / "data"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -337,8 +366,10 @@ def main():
     build_for_league("den", DEN_TEAMS)
     build_for_league("gre", GRE_TEAMS)
     build_for_league("nor", NOR_TEAMS)
+    build_for_league("swe", SWE_TEAMS)
 
 
 if __name__ == "__main__":
     main()
+
 
