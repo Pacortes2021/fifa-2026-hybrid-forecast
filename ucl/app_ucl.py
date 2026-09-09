@@ -20,18 +20,18 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
-.main-title { text-align:center; font-size:2.9rem; font-weight:900;
+.main-title { text-align:center; font-size:2.8rem; font-weight:800;
     background:linear-gradient(135deg,#001438,#00E5FF,#FFD700); -webkit-background-clip:text;
     -webkit-text-fill-color:transparent; margin-bottom:0.1rem; }
-.main-subtitle { text-align:center; font-size:1.15rem; color:#64748b; margin-bottom:1.8rem; }
+.main-subtitle { text-align:center; font-size:1.1rem; color:#64748b; margin-bottom:1.8rem; }
 .card-title { font-size:1.25rem; font-weight:700; color:#001438;
     border-bottom:2px solid #e2e8f0; padding-bottom:0.4rem; margin-bottom:0.8rem; }
 .sec-title { font-size:1.6rem; font-weight:800; color:#001438; margin:0.8rem 0 0.6rem 0; }
-.vs-text { text-align:center; font-size:2.2rem; font-weight:900; color:#00E5FF; margin-top:1.6rem; text-shadow:0 0 10px rgba(0,229,255,0.4); }
+.vs-text { text-align:center; font-size:2.2rem; font-weight:900; color:#cbd5e1; margin-top:1.6rem; }
 div[data-testid="stVerticalBlockBorderWrapper"] {
-    box-shadow:0 10px 15px -3px rgba(0, 20, 56, 0.08), 0 4px 6px -4px rgba(0, 20, 56, 0.05);
+    box-shadow:0 10px 15px -3px rgba(0, 20, 56, 0.05), 0 4px 6px -4px rgba(0, 20, 56, 0.05);
     border-radius:16px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #e2e8f0;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -52,7 +52,7 @@ def logo_html(equipos, team, size=64):
     url = logo_url(equipos, team)
     if not url:
         return ""
-    return f'<img src="{url}" width="{size}" style="border-radius:10px; box-shadow:0 3px 10px rgba(0,20,56,0.25);">'
+    return f'<img src="{url}" width="{size}" style="border-radius:10px; box-shadow:0 2px 8px rgba(0,20,56,.15);">'
 
 
 def fmt_opcion(equipos, team):
@@ -61,6 +61,11 @@ def fmt_opcion(equipos, team):
         for e in equipos.values():
             if e.get("norm_name") == team and e.get("abbreviation"):
                 return f"{e['abbreviation']} · {team}"
+    return team
+
+
+def label_tabla(equipos, team):
+    """Nombre en tablas: fallback estético limpio."""
     return team
 
 
@@ -75,7 +80,7 @@ def simular_ucl(_M, key, modelo_tipo):
 
 
 def run_app():
-    st.sidebar.markdown("### ⭐ Controles del Modelo UCL")
+    st.sidebar.markdown("### 🛠️ Controles del Modelo (UCL)")
 
     modelo_sel = st.sidebar.selectbox(
         "🤖 Modelo Predictivo:",
@@ -135,22 +140,25 @@ def run_app():
             w_str = f" (w={m['w']})" if clave == "stacking" and "w" in m else ""
             st.sidebar.caption(f"**{nombre}{w_str}{star}** — LL: `{m['logloss']:.4f}` | Acc: `{m['accuracy']:.1f}%`")
 
+    # Encabezado
     nombre_modelo = "✨ Stacking Óptimo" if modelo_tipo == "stacking" else ("🌲 Random Forest" if modelo_tipo == "rf" else ("🚀 XGBoost" if modelo_tipo == "xgb" else "🎯 LASSO L1"))
     st.markdown('<div class="main-title">⭐ UEFA Champions League Predictor</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — Fase de Liga de 36 Clubes · Play-offs y Cuadro Eliminatorio · Poisson Dixon-Coles & ML</div>', unsafe_allow_html=True)
 
+    # 4 Pestañas Canónicas
     tab1, tab2, tab3, tab4 = st.tabs([
-        "⚔️ Match Predictor (Versus)",
-        "🏆 Tabla 36 & Proyección Monte Carlo",
-        "🧠 Importancia de Variables",
-        "📈 Validación en Vivo"
+        "⚽ Predicción Versus",
+        "📊 Tabla y Proyecciones",
+        "🔬 Importancia de Variables",
+        "🎯 Validación vs Realidad"
     ])
 
-    # -------------------------------------------------------------
-    # TAB 1: MATCH PREDICTOR
-    # -------------------------------------------------------------
+    # ============================================================================
+    # TAB 1: Predicción Versus
+    # ============================================================================
     with tab1:
-        # Los 36 clubes activos de la Fase de Liga 2026-2027
+        st.markdown('<div class="sec-title">Analizador de Enfrentamientos</div>', unsafe_allow_html=True)
+
         fix_path = mo.DATA / "fixture.csv"
         fixture_disp = pd.DataFrame()
         equipos_activos = []
@@ -162,58 +170,71 @@ def run_app():
         if not equipos_activos:
             equipos_activos = sorted(list(tracker.elos.keys()))
 
-        def_local_idx = 0
-        def_visita_idx = 1 if len(equipos_activos) > 1 else 0
-
-        # Cargar partido programado desde el Fixture oficial de 136 cotejos
+        # Cargar partido programado de fixture
         if not fixture_disp.empty:
-            st.markdown("#### ⚡ Próximos Partidos Oficiales de Fase de Liga")
-            opciones_fixture = ["-- Seleccionar del calendario oficial UCL --"] + [
-                f"{r.local} vs {r.visita} ({pd.to_datetime(r.fecha).strftime('%d/%m %H:%M') if pd.notna(r.fecha) else 'Fecha TBD'})"
-                for _, r in fixture_disp.head(25).iterrows()
-            ]
-            partido_elegido = st.selectbox("Cargar cotejo programado:", opciones_fixture, index=0)
-            if partido_elegido != "-- Seleccionar del calendario oficial UCL --":
-                l_nom = partido_elegido.split(" vs ")[0]
-                v_nom = partido_elegido.split(" vs ")[1].split(" (")[0]
-                if l_nom in equipos_activos:
-                    def_local_idx = equipos_activos.index(l_nom)
-                if v_nom in equipos_activos:
-                    def_visita_idx = equipos_activos.index(v_nom)
+            fixture_disp["fecha_dt"] = pd.to_datetime(fixture_disp["fecha"])
+            proximos = fixture_disp.sort_values("fecha_dt").head(30)
+            fix_map = {}
+            opciones_fixture = ["— Seleccionar partido del calendario oficial UCL —"]
+            for _, r in proximos.iterrows():
+                f_str = r["fecha_dt"].strftime("%d/%m %H:%M") if pd.notna(r["fecha_dt"]) else "Fecha TBD"
+                lbl = f"📅 {f_str} | {r['local']} vs {r['visita']}"
+                opciones_fixture.append(lbl)
+                fix_map[lbl] = (r["local"], r["visita"])
 
-        st.markdown('<div class="sec-title">Configuración del Encuentro</div>', unsafe_allow_html=True)
+            def _on_fixture_change_ucl():
+                sel = st.session_state.get("sel_fix_ucl")
+                if sel and sel in fix_map:
+                    l_sel, v_sel = fix_map[sel]
+                    if l_sel in equipos_activos and v_sel in equipos_activos:
+                        st.session_state["sel_a_ucl"] = l_sel
+                        st.session_state["sel_b_ucl"] = v_sel
+
+            st.selectbox(
+                "⚡ Cargar Partido Programado de Fase de Liga:",
+                opciones_fixture,
+                key="sel_fix_ucl",
+                on_change=_on_fixture_change_ucl,
+                help="Elige un cotejo del fixture oficial UCL para autocompletar ambos clubes."
+            )
+
+        # Configuración de condiciones de partido
         col_c1, col_c2 = st.columns(2)
         with col_c1:
             es_knockout = st.checkbox("⚔️ Partido de Eliminatoria Directa (Knockout / Play-offs)", value=False)
         with col_c2:
             es_neutral = st.checkbox("🏟️ Sede Neutral (Ej. Gran Final)", value=False)
 
-        col_loc, col_mid, col_vis = st.columns([1.2, 0.4, 1.2])
-
-        with col_loc:
-            st.markdown('<div class="card-title">🏠 Club Local</div>', unsafe_allow_html=True)
-            local = st.selectbox("Selecciona Local:", equipos_activos, index=def_local_idx, format_func=lambda t: fmt_opcion(equipos_data, t), key="sb_loc")
-            escudo_l = logo_html(equipos_data, local, size=75)
-            if escudo_l:
-                st.markdown(f"<div style='text-align:center;margin-top:5px;'>{escudo_l}</div>", unsafe_allow_html=True)
+        # Selección de Equipos
+        c1, cvs, c2 = st.columns([5, 1, 5])
+        with c1:
+            def_a = "Real Madrid" if "Real Madrid" in equipos_activos else equipos_activos[0]
+            local = st.selectbox(
+                "Club Local", equipos_activos,
+                index=equipos_activos.index(def_a) if def_a in equipos_activos else 0,
+                key="sel_a_ucl",
+                format_func=lambda t: fmt_opcion(equipos_data, t)
+            )
+            st.markdown(f'<div style="text-align:center;margin-top:0.2rem;">{logo_html(equipos_data, local, 64)}</div>', unsafe_allow_html=True)
             elo_l = tracker.elos[local]
             val_l = mo.get_squad_value(local, mo._temporada_actual())
-            st.metric("ELO Rating", f"{elo_l:.0f} pts")
-            st.metric("Valor Plantilla", f"€{val_l:.1f}M")
+            st.caption(f"ELO: **{elo_l:.0f} pts** · Plantilla: **€{val_l:.1f}M**")
 
-        with col_mid:
+        with cvs:
             st.markdown('<div class="vs-text">VS</div>', unsafe_allow_html=True)
 
-        with col_vis:
-            st.markdown('<div class="card-title">✈️ Club Visitante</div>', unsafe_allow_html=True)
-            visita = st.selectbox("Selecciona Visitante:", equipos_activos, index=def_visita_idx, format_func=lambda t: fmt_opcion(equipos_data, t), key="sb_vis")
-            escudo_v = logo_html(equipos_data, visita, size=75)
-            if escudo_v:
-                st.markdown(f"<div style='text-align:center;margin-top:5px;'>{escudo_v}</div>", unsafe_allow_html=True)
+        with c2:
+            def_b = "Bayern Munich" if "Bayern Munich" in equipos_activos else (equipos_activos[1] if len(equipos_activos) > 1 else equipos_activos[0])
+            visita = st.selectbox(
+                "Club Visitante", equipos_activos,
+                index=equipos_activos.index(def_b) if def_b in equipos_activos else (1 if len(equipos_activos) > 1 else 0),
+                key="sel_b_ucl",
+                format_func=lambda t: fmt_opcion(equipos_data, t)
+            )
+            st.markdown(f'<div style="text-align:center;margin-top:0.2rem;">{logo_html(equipos_data, visita, 64)}</div>', unsafe_allow_html=True)
             elo_v = tracker.elos[visita]
             val_v = mo.get_squad_value(visita, mo._temporada_actual())
-            st.metric("ELO Rating", f"{elo_v:.0f} pts")
-            st.metric("Valor Plantilla", f"€{val_v:.1f}M")
+            st.caption(f"ELO: **{elo_v:.0f} pts** · Plantilla: **€{val_v:.1f}M**")
 
         if local == visita:
             st.warning("⚠️ Selecciona dos clubes distintos para pronosticar el partido.")
@@ -222,39 +243,115 @@ def run_app():
                 M, local, visita, temporada=mo._temporada_actual(),
                 modelo=modelo_tipo, is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0
             )
-
-            st.markdown("---")
-            st.markdown('<div class="sec-title">🎯 Probabilidades del Partido</div>', unsafe_allow_html=True)
-
-            c1, c2, c3 = st.columns(3)
-            with c1:
-                st.metric(f"Victoria {local}", f"{p[0]:.1%}")
-                st.progress(float(p[0]))
-            with c2:
-                st.metric("Empate", f"{p[1]:.1%}")
-                st.progress(float(p[1]))
-            with c3:
-                st.metric(f"Victoria {visita}", f"{p[2]:.1%}")
-                st.progress(float(p[2]))
-
-            st.markdown("#### ⚽ Goles Esperados (xG Bivariado Poisson Dixon-Coles)")
-            cx1, cx2 = st.columns(2)
-            cx1.metric(f"xG {local}", f"{la:.2f}")
-            cx2.metric(f"xG {visita}", f"{lb:.2f}")
-
-            # Cuotas implícitas y mercados
-            st.markdown("#### 💰 Mercados de Apuestas Probabilísticas")
-            cm1, cm2, cm3, cm4 = st.columns(4)
             mat_dc = mo.matriz_marcador_exacto(la, lb)
-            p_over25 = 1.0 - sum(mat_dc[i, j] for i in range(7) for j in range(7) if i + j <= 2)
-            p_btts = sum(mat_dc[i, j] for i in range(1, 7) for j in range(1, 7))
 
-            cm1.metric("Cuota 1X2 (Local)", f"{1/p[0]:.2f}" if p[0] > 0.01 else ">100")
-            cm2.metric("Cuota 1X2 (Empate)", f"{1/p[1]:.2f}" if p[1] > 0.01 else ">100")
-            cm3.metric("Más de 2.5 Goles", f"{p_over25:.1%}")
-            cm4.metric("Ambos Anotan (BTTS)", f"{p_btts:.1%}")
+            # Alertas de Heurísticas de Alta Efectividad
+            if p[0] > 0.55 and (la - lb) > 0.8:
+                st.success(f"🔥 **ALERTA DE ALTA CONFIANZA:** Consenso entre Machine Learning ({p[0]:.1%}) y modelo Poisson ({la:.2f} vs {lb:.2f} xG) a favor de **{local}**.")
+            elif p[0] > 0.60:
+                st.info(f"💪 **FAVORITO CLARO:** El modelo asigna más del 60% ({p[0]:.1%}) de probabilidad de victoria a **{local}**.")
+            elif p[2] > 0.50:
+                st.success(f"⚠️ **VISITA FUERTE:** Probabilidad superior al 50% ({p[2]:.1%}) para el club visitante (**{visita}**).")
 
-            # Gráfica de la matriz Dixon-Coles
+            # ── Probabilidades y Goles Esperados ─────────────────────────────
+            col_probs, col_stats = st.columns(2)
+
+            with col_probs:
+                st.markdown('<div class="card-title">Probabilidades de Victoria</div>', unsafe_allow_html=True)
+                for label, prob in [(f"Victoria {local}", p[0]), ("Empate", p[1]), (f"Victoria {visita}", p[2])]:
+                    st.markdown(f"**{label}: {prob:.1%}** (Cuota Justa: `{mo.cuota(prob):.2f}`)")
+                    st.progress(float(prob))
+
+                st.markdown("---")
+                p_avanza_l = p[0] + p[1] * 0.5
+                st.caption(f"Expectativa de pase en eliminatoria: **{local} {p_avanza_l:.1%}** / {visita} {1-p_avanza_l:.1%}")
+
+            with col_stats:
+                st.markdown('<div class="card-title">Goles Esperados y Marcadores</div>', unsafe_allow_html=True)
+                st.markdown(f"📈 **Goles esperados (Dixon-Coles):**")
+                st.markdown(f"*   {local}: `{la:.2f}` xG")
+                st.markdown(f"*   {visita}: `{lb:.2f}` xG")
+
+                st.markdown("🎯 **Marcadores más probables:**")
+                mk = mo.mercados(mat_dc)
+                for g1, g2, pr in mk["_top_marcadores"][:4]:
+                    st.markdown(f"*   `{g1} - {g2}`: **{pr:.1%}** (Cuota: `{mo.cuota(pr):.2f}`)")
+
+            # ── Comparativa Directa de los 4 Modelos ────────────────────────
+            st.markdown("---")
+            st.markdown('<div class="sec-title">🤖 Comparativa Directa entre Modelos para este Partido</div>', unsafe_allow_html=True)
+            p_lasso = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="lasso", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0)[0]
+            p_rf    = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="rf", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0)[0]
+            p_xgb   = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="xgb", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0)[0]
+            p_stk   = mo.predecir_match(M, local, visita, temporada=mo._temporada_actual(), modelo="stacking", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0)[0]
+
+            df_comp_mod = pd.DataFrame([
+                {
+                    "Modelo Predictivo": "🎯 LASSO L1 (Regresión SAGA)",
+                    f"Victoria {local}": f"{p_lasso[0]:.1%}",
+                    "Empate": f"{p_lasso[1]:.1%}",
+                    f"Victoria {visita}": f"{p_lasso[2]:.1%}",
+                    "Log-Loss Test (2026+)": f"{met_all.get('lasso',{}).get('logloss','-'):.4f}" if 'lasso' in met_all else "-",
+                    "Accuracy Test": f"{met_all.get('lasso',{}).get('accuracy','-'):.1f}%" if 'lasso' in met_all else "-"
+                },
+                {
+                    "Modelo Predictivo": "🌲 Random Forest",
+                    f"Victoria {local}": f"{p_rf[0]:.1%}",
+                    "Empate": f"{p_rf[1]:.1%}",
+                    f"Victoria {visita}": f"{p_rf[2]:.1%}",
+                    "Log-Loss Test (2026+)": f"{met_all.get('rf',{}).get('logloss','-'):.4f}" if 'rf' in met_all else "-",
+                    "Accuracy Test": f"{met_all.get('rf',{}).get('accuracy','-'):.1f}%" if 'rf' in met_all else "-"
+                },
+                {
+                    "Modelo Predictivo": "🚀 XGBoost",
+                    f"Victoria {local}": f"{p_xgb[0]:.1%}",
+                    "Empate": f"{p_xgb[1]:.1%}",
+                    f"Victoria {visita}": f"{p_xgb[2]:.1%}",
+                    "Log-Loss Test (2026+)": f"{met_all.get('xgb',{}).get('logloss','-'):.4f}" if 'xgb' in met_all else "-",
+                    "Accuracy Test": f"{met_all.get('xgb',{}).get('accuracy','-'):.1f}%" if 'xgb' in met_all else "-"
+                },
+                {
+                    "Modelo Predictivo": f"✨ Stacking (w={met_all.get('stacking',{}).get('w', [0.0, 0.0, 1.0])})" if 'w' in met_all.get('stacking', {}) else "✨ Stacking Óptimo",
+                    f"Victoria {local}": f"{p_stk[0]:.1%}",
+                    "Empate": f"{p_stk[1]:.1%}",
+                    f"Victoria {visita}": f"{p_stk[2]:.1%}",
+                    "Log-Loss Test (2026+)": f"{met_all.get('stacking',{}).get('logloss','-'):.4f}" if 'stacking' in met_all else "-",
+                    "Accuracy Test": f"{met_all.get('stacking',{}).get('accuracy','-'):.1f}%" if 'stacking' in met_all else "-"
+                }
+            ])
+            st.dataframe(df_comp_mod, hide_index=True, width='stretch')
+
+            # ── Mercados de Apuestas Derivados ───────────────────────────────
+            st.markdown("---")
+            st.markdown('<div class="sec-title">💰 Mercados de Apuestas Probabilísticas</div>', unsafe_allow_html=True)
+            filas_m = []
+            for ln in (1.5, 2.5, 3.5):
+                for lado in ("Over", "Under"):
+                    pr = mk[f"{lado} {ln}"]
+                    filas_m.append({"Mercado": f"{lado} {ln} goles", "Prob.": f"{pr:.1%}", "Cuota justa": f"{mo.cuota(pr):.2f}"})
+            for et, key in (("Ambos marcan: Sí", "Ambos marcan (BTTS sí)"), ("Ambos marcan: No", "BTTS no")):
+                filas_m.append({"Mercado": et, "Prob.": f"{mk[key]:.1%}", "Cuota justa": f"{mo.cuota(mk[key]):.2f}"})
+
+            # Doble Oportunidad
+            p_1x = p[0] + p[1]
+            p_x2 = p[2] + p[1]
+            p_12 = p[0] + p[2]
+            filas_m.append({"Mercado": f"Doble Oportunidad: {local} o Empate (1X)", "Prob.": f"{p_1x:.1%}", "Cuota justa": f"{mo.cuota(p_1x):.2f}"})
+            filas_m.append({"Mercado": f"Doble Oportunidad: {visita} o Empate (X2)", "Prob.": f"{p_x2:.1%}", "Cuota justa": f"{mo.cuota(p_x2):.2f}"})
+            filas_m.append({"Mercado": f"Doble Oportunidad: {local} o {visita} (12)", "Prob.": f"{p_12:.1%}", "Cuota justa": f"{mo.cuota(p_12):.2f}"})
+
+            # Sin Empate (DNB)
+            denom = p[0] + p[2]
+            p_dnb1 = p[0] / denom if denom > 0 else 0.5
+            p_dnb2 = p[2] / denom if denom > 0 else 0.5
+            filas_m.append({"Mercado": f"Sin Empate: {local} (DNB 1)", "Prob.": f"{p_dnb1:.1%}", "Cuota justa": f"{mo.cuota(p_dnb1):.2f}"})
+            filas_m.append({"Mercado": f"Sin Empate: {visita} (DNB 2)", "Prob.": f"{p_dnb2:.1%}", "Cuota justa": f"{mo.cuota(p_dnb2):.2f}"})
+
+            mc1, mc2 = st.columns(2)
+            mc1.dataframe(pd.DataFrame(filas_m[:7]), hide_index=True, width='stretch')
+            mc2.dataframe(pd.DataFrame(filas_m[7:]), hide_index=True, width='stretch')
+
+            # ── Gráfica de la matriz Dixon-Coles ─────────────────────────────
             st.markdown('<div class="sec-title">Matriz de Goles Exactos (Dixon-Coles)</div>', unsafe_allow_html=True)
             fig, ax = plt.subplots(figsize=(6, 4))
             m6 = mat_dc[:6, :6]
@@ -273,8 +370,61 @@ def run_app():
             st.pyplot(fig)
             plt.close(fig)
 
+            # ── HISTORIAL HEAD-TO-HEAD (ENFRENTAMIENTOS DIRECTOS) ─────────
+            st.markdown("---")
+            st.markdown('<div class="sec-title">⚔️ Historial Head-to-Head (Enfrentamientos Directos)</div>', unsafe_allow_html=True)
+
+            partidos_df_ucl = pd.read_csv(mo.DATA / "partidos.csv")
+            mask_h2h = ((partidos_df_ucl["local"] == local) & (partidos_df_ucl["visita"] == visita)) |                        ((partidos_df_ucl["local"] == visita) & (partidos_df_ucl["visita"] == local))
+            df_h2h = partidos_df_ucl[mask_h2h].copy()
+
+            if df_h2h.empty:
+                st.info(f"ℹ️ No se registran duelos directos oficiales entre **{local}** y **{visita}** en el dataset reciente de Champions League.")
+            else:
+                df_h2h["fecha_dt"] = pd.to_datetime(df_h2h["fecha"])
+                df_h2h = df_h2h.sort_values("fecha_dt", ascending=False)
+
+                vic_l = sum(1 for _, r in df_h2h.iterrows() if (r["local"] == local and r["goles_local"] > r["goles_visita"]) or (r["visita"] == local and r["goles_visita"] > r["goles_local"]))
+                vic_v = sum(1 for _, r in df_h2h.iterrows() if (r["local"] == visita and r["goles_local"] > r["goles_visita"]) or (r["visita"] == visita and r["goles_visita"] > r["goles_local"]))
+                emp = len(df_h2h) - vic_l - vic_v
+
+                gol_l = sum(int(r["goles_local"] if r["local"] == local else r["goles_visita"]) for _, r in df_h2h.iterrows())
+                gol_v = sum(int(r["goles_local"] if r["local"] == visita else r["goles_visita"]) for _, r in df_h2h.iterrows())
+
+                col_h1, col_h2, col_h3, col_h4 = st.columns(4)
+                with col_h1:
+                    st.metric("Total Duelos", len(df_h2h))
+                with col_h2:
+                    pct_l = (vic_l / len(df_h2h)) * 100
+                    st.metric(f"Victorias {local}", f"{vic_l} ({pct_l:.0f}%)", f"{gol_l} goles")
+                with col_h3:
+                    pct_e = (emp / len(df_h2h)) * 100
+                    st.metric("Empates", f"{emp} ({pct_e:.0f}%)")
+                with col_h4:
+                    pct_v = (vic_v / len(df_h2h)) * 100
+                    st.metric(f"Victorias {visita}", f"{vic_v} ({pct_v:.0f}%)", f"{gol_v} goles")
+
+                filas_hist = []
+                for _, r in df_h2h.head(8).iterrows():
+                    gl, gv = int(r["goles_local"]), int(r["goles_visita"])
+                    if gl > gv:
+                        ganador = f"🟢 Gana {r['local']}"
+                    elif gv > gl:
+                        ganador = f"🟢 Gana {r['visita']}"
+                    else:
+                        ganador = "⚪ Empate"
+                    filas_hist.append({
+                        "Fecha": r["fecha_dt"].strftime("%d/%m/%Y"),
+                        "Temporada": r["temporada"],
+                        "Local": r["local"],
+                        "Marcador": f"{gl} - {gv}",
+                        "Visitante": r["visita"],
+                        "Resultado": ganador
+                    })
+                st.dataframe(pd.DataFrame(filas_hist), hide_index=True, width='stretch')
+
             # Variables clave del duelo
-            with st.expander("🔍 Métricas y Variables del Enfrentamiento"):
+            with st.expander("🔍 Métricas Avanzadas del Enfrentamiento"):
                 feats = tracker.get_features_for_match(local, visita, mo._temporada_actual(), is_knockout=1 if es_knockout else 0, is_neutral=1 if es_neutral else 0)
                 col_f1, col_f2, col_f3 = st.columns(3)
                 col_f1.metric("Distancia de Viaje", f"{feats['distance_km']:.0f} km")
@@ -286,46 +436,70 @@ def run_app():
                 col_f5.metric("Diferencial Pi-Rating", f"{feats['pi_diff']:+.2f}")
                 col_f6.metric("Historial H2H (Goles Netos)", f"{feats['h2h_diff']:+.2f}")
 
-    # -------------------------------------------------------------
+    # ============================================================================
     # TAB 2: TABLA & MONTE CARLO
-    # -------------------------------------------------------------
+    # ============================================================================
     with tab2:
-        st.markdown('<div class="sec-title">🏆 Fase de Liga (36 Clubes) y Proyecciones Monte Carlo</div>', unsafe_allow_html=True)
-        tab_actual = mo.obtener_tabla_actual(M)
+        st.markdown('<div class="sec-title">Fase de Liga (36 Clubes) y Proyecciones Monte Carlo</div>', unsafe_allow_html=True)
+        col_act, col_proj = st.columns(2)
 
-        col_t1, col_t2 = st.columns([1, 1.3])
-        with col_t1:
-            st.markdown("#### Tabla Actual de Fase de Liga")
-            st.dataframe(tab_actual[["equipo", "pj", "puntos", "dg", "gf", "gc"]], hide_index=False, width='stretch')
+        # 1. Tabla Actual
+        df_actual = mo.obtener_tabla_actual(M)
+        df_actual_vis = df_actual.copy()
+        df_actual_vis["Escudo"] = df_actual_vis["equipo"].apply(lambda t: logo_url(equipos_data, t))
+        df_actual_vis["Equipo"] = df_actual_vis["equipo"].apply(lambda t: label_tabla(equipos_data, t))
+        df_actual_vis = df_actual_vis[["Escudo", "Equipo", "pj", "puntos", "dg", "gf"]]
+        df_actual_vis = df_actual_vis.rename(columns={"pj": "PJ", "puntos": "PTS", "dg": "DG", "gf": "GF"})
 
-        with col_t2:
-            st.markdown("#### Proyección Monte Carlo (Liga + Play-offs + Cuadro)")
-            df_mc = simular_ucl(M, "sim_key_ucl", modelo_tipo)
-            df_mc_disp = df_mc[["equipo", "Puntos esperados", "P_campeon", "P_final", "P_top8", "P_playoffs", "P_eliminado"]].copy()
-
+        with col_act:
+            st.markdown('<div class="card-title">Tabla de Posiciones Actual (Real)</div>', unsafe_allow_html=True)
             st.dataframe(
-                df_mc_disp.style.format({
-                    "Puntos esperados": "{:.1f}",
-                    "P_campeon": "{:.1%}",
-                    "P_final": "{:.1%}",
-                    "P_top8": "{:.1%}",
-                    "P_playoffs": "{:.1%}",
-                    "P_eliminado": "{:.1%}"
-                }).background_gradient(subset=["P_campeon"], cmap="YlOrRd")
-                  .background_gradient(subset=["P_top8"], cmap="Greens")
-                  .background_gradient(subset=["P_eliminado"], cmap="Blues"),
-                hide_index=True, width='stretch'
+                df_actual_vis, hide_index=True, width='stretch', height=520,
+                column_config={"Escudo": st.column_config.ImageColumn("", width="small")}
             )
 
-        st.info("ℹ️ **Nuevo Formato UEFA Champions League**: Los 36 clubes disputan 8 jornadas en una tabla única (4 cotejos de local y 4 de visitante). "
-                "Los puestos **1º al 8º** clasifican directamente a los **Octavos de Final**. Los puestos **9º al 24º** disputan la ronda de **Knockout Play-offs** a ida y vuelta para definir a los otros 8 clasificados. "
+        # 2. Proyecciones Monte Carlo
+        df_proy = simular_ucl(M, "sim_key_ucl", modelo_tipo)
+        df_proy_visual = df_proy.copy()
+        df_proy_visual["Escudo"] = df_proy_visual["equipo"].apply(lambda t: logo_url(equipos_data, t))
+        df_proy_visual["Equipo"] = df_proy_visual["equipo"].apply(lambda t: label_tabla(equipos_data, t))
+        df_proy_visual = df_proy_visual[["Escudo", "Equipo", "Puntos esperados", "P_campeon", "P_final", "P_top8", "P_playoffs", "P_eliminado"]]
+        df_proy_visual = df_proy_visual.rename(columns={
+            "Puntos esperados": "PTS Proy",
+            "P_campeon": "🏆 P(Campeón)",
+            "P_final": "🥈 P(Final)",
+            "P_top8": "⭐ P(Top 8)",
+            "P_playoffs": "⚔️ P(Playoffs)",
+            "P_eliminado": "🔻 P(Eliminado)"
+        })
+
+        with col_proj:
+            st.markdown('<div class="card-title">Proyección de la Temporada en Curso (Monte Carlo)</div>', unsafe_allow_html=True)
+            st.caption("10.000 simulaciones completas del formato suizo + playoffs y cuadro eliminatorio.")
+            st.dataframe(
+                df_proy_visual.style.format({
+                    "PTS Proy": "{:.1f}",
+                    "🏆 P(Campeón)": "{:.1%}",
+                    "🥈 P(Final)": "{:.1%}",
+                    "⭐ P(Top 8)": "{:.1%}",
+                    "⚔️ P(Playoffs)": "{:.1%}",
+                    "🔻 P(Eliminado)": "{:.1%}"
+                }).background_gradient(subset=["🏆 P(Campeón)"], cmap="YlOrRd")
+                  .background_gradient(subset=["⭐ P(Top 8)"], cmap="Greens")
+                  .background_gradient(subset=["🔻 P(Eliminado)"], cmap="Blues"),
+                hide_index=True, width='stretch', height=520,
+                column_config={"Escudo": st.column_config.ImageColumn("", width="small")}
+            )
+
+        st.info("ℹ️ **Nuevo Formato UEFA Champions League**: Los 36 clubes disputan 8 jornadas en una tabla única (4 de local y 4 de visitante). "
+                "Los puestos **1º al 8º** clasifican directamente a los **Octavos de Final**. Los puestos **9º al 24º** disputan los **Knockout Play-offs** a ida y vuelta para definir a los otros 8 clasificados. "
                 "Los clasificados del **25º al 36º** quedan eliminados definitivamente sin paso a Europa League.")
 
-    # -------------------------------------------------------------
+    # ============================================================================
     # TAB 3: IMPORTANCIA DE VARIABLES
-    # -------------------------------------------------------------
+    # ============================================================================
     with tab3:
-        st.markdown('<div class="sec-title">🧠 Arquitectura Analítica e Importancia de Variables</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sec-title">Arquitectura Analítica e Importancia de Variables</div>', unsafe_allow_html=True)
 
         met = M.get("metricas", {})
         if met:
@@ -343,57 +517,103 @@ def run_app():
             if "w" in stk:
                 st.caption(f"Pesos de ensemble: LASSO={stk['w'][0]} | RF={stk['w'][1]} | XGB={stk['w'][2]}")
 
-        rf_step = M["pipe_rf"].named_steps.get("rf")
-        feats_list = M["features"]
-        if rf_step and hasattr(rf_step, "feature_importances_"):
-            importances = rf_step.feature_importances_
-            df_imp = pd.DataFrame({"Variable": feats_list, "Importancia": importances}).sort_values("Importancia", ascending=False).head(15)
+        # Explicabilidad según el modelo activo
+        importancia = []
+        col_val_name = "Importancia Relativa"
+        title_graph = "Top 15 Características Predictoras (UEFA Champions League)"
 
-            fig, ax = plt.subplots(figsize=(10, 5))
-            ax.barh(df_imp["Variable"][::-1], df_imp["Importancia"][::-1], color="#001438")
-            ax.set_title("Top 15 Variables Predictivas Más Influyentes (UEFA Champions League)")
-            ax.set_xlabel("Importancia Relativa")
-            plt.tight_layout()
-            st.pyplot(fig)
+        if modelo_tipo == "lasso":
+            pipe = M["pipe_lasso"]
+            lr = pipe.named_steps["lr"]
+            coefs = lr.coef_
+            avg_coef = np.mean(np.abs(coefs), axis=0)
+            col_val_name = "Peso Absoluto Promedio"
+            title_graph = "Top 15 Predictores (LASSO L1 SAGA)"
+            for feat, val in zip(M["features"], avg_coef):
+                if val > 1e-4:
+                    importancia.append({"Variable": feat, col_val_name: round(float(val), 4)})
+        elif modelo_tipo == "xgb":
+            pipe = M["pipe_xgb"]
+            xgb_model = pipe.named_steps.get("xgb")
+            col_val_name = "Importancia (Gain/Weight)"
+            title_graph = "Top 15 Predictores (XGBoost)"
+            if xgb_model and hasattr(xgb_model, "feature_importances_"):
+                for feat, val in zip(M["features"], xgb_model.feature_importances_):
+                    importancia.append({"Variable": feat, col_val_name: round(float(val), 4)})
+        else:
+            pipe = M["pipe_rf"]
+            rf_model = pipe.named_steps.get("rf")
+            col_val_name = "Importancia (Gini)"
+            title_graph = "Top 15 Predictores (Random Forest)"
+            if rf_model and hasattr(rf_model, "feature_importances_"):
+                for feat, val in zip(M["features"], rf_model.feature_importances_):
+                    importancia.append({"Variable": feat, col_val_name: round(float(val), 4)})
 
-    # -------------------------------------------------------------
-    # TAB 4: VALIDACIÓN EN VIVO
-    # -------------------------------------------------------------
+        if importancia:
+            df_imp = pd.DataFrame(importancia).sort_values(by=col_val_name, ascending=False).reset_index(drop=True)
+            col_t, col_g = st.columns([5, 7])
+            with col_t:
+                st.dataframe(df_imp, hide_index=True, width='stretch')
+            with col_g:
+                fig, ax = plt.subplots(figsize=(6, 5))
+                top_n = df_imp.head(15)
+                ax.barh(top_n["Variable"][::-1], top_n[col_val_name][::-1], color="#001438")
+                ax.set_title(title_graph)
+                ax.set_xlabel(col_val_name)
+                plt.tight_layout()
+                st.pyplot(fig)
+                plt.close(fig)
+
+    # ============================================================================
+    # TAB 4: VALIDACIÓN VS REALIDAD
+    # ============================================================================
     with tab4:
-        st.markdown('<div class="sec-title">📈 Backtesting y Validación en Vivo</div>', unsafe_allow_html=True)
-        st.caption("Evaluación de calibración y acierto match por match en cotejos disputados de la temporada actual.")
+        st.markdown('<div class="sec-title">El Modelo contra la Realidad (Out-of-sample)</div>', unsafe_allow_html=True)
+        st.caption("Comparación de la predicción pre-partido del modelo contra el resultado real para cotejos jugados.")
 
         df_val, met_val, df_evol = mo.validacion_en_vivo(M, modelo_tipo=modelo_tipo)
-        if df_val.empty:
-            st.warning("No hay suficientes partidos jugados en la temporada actual para validar.")
+        if df_val is None or df_val.empty:
+            st.info("ℹ️ Aún no hay partidos finalizados en la temporada actual para validar.")
         else:
-            c_v1, c_v2, c_v3 = st.columns(3)
-            c_v1.metric("Partidos Evaluados", f"{met_val['n']}")
-            c_v2.metric("Tasa de Acierto (Accuracy)", f"{met_val['acierto']:.1%}")
-            c_v3.metric("Log-Loss del Modelo", f"{met_val['logloss']:.3f}", f"Baseline: {met_val['logloss_base']:.3f}", delta_color="inverse")
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("Partidos Evaluados", f"{met_val['n']}")
+            c2.metric("Acierto (1X2)", f"{met_val['acierto']:.1%}")
+            c3.metric("Log-Loss Modelo", f"{met_val['logloss']:.3f}",
+                      f"{met_val['logloss'] - met_val['logloss_base']:+.3f} vs baseline", delta_color="inverse")
+            c4.metric("Log-Loss Baseline", f"{met_val['logloss_base']:.3f}")
 
-            if not df_evol.empty:
-                st.markdown("#### Evolución de Rendimiento Acumulado")
-                st.line_chart(df_evol.set_index("partido_n")[["acierto_acumulado"]])
+            if met_val["logloss"] < met_val["logloss_base"]:
+                st.success(f"El modelo supera al baseline histórico en los {met_val['n']} cotejos reales evaluados. 👍")
+            else:
+                st.warning("⚠️ El modelo se mantiene cercano al baseline histórico.")
 
-            with st.expander("📋 Ver detalle de predicciones partido a partido"):
-                df_val_show = df_val[["fecha", "local", "visita", "goles_local", "goles_visita", "Prob_Local", "Prob_Empate", "Prob_Visita", "Prediccion"]].copy()
-                map_res = {0: "Local", 1: "Empate", 2: "Visita"}
-                df_val_show["Resultado Real"] = df_val_show.apply(
-                    lambda r: "Local" if r["goles_local"] > r["goles_visita"] else ("Empate" if r["goles_local"] == r["goles_visita"] else "Visita"), axis=1
-                )
-                df_val_show["Predicción"] = df_val_show["Prediccion"].map(map_res)
-                df_val_show["Acierto"] = df_val_show["Resultado Real"] == df_val_show["Predicción"]
+            st.markdown("##### Historial Detallado de Predicciones")
+            df_val_show = df_val[["fecha", "local", "visita", "goles_local", "goles_visita", "Prob_Local", "Prob_Empate", "Prob_Visita", "Prediccion"]].copy()
+            map_res = {0: "Local", 1: "Empate", 2: "Visita"}
+            df_val_show["Resultado Real"] = df_val_show.apply(
+                lambda r: "Local" if r["goles_local"] > r["goles_visita"] else ("Empate" if r["goles_local"] == r["goles_visita"] else "Visita"), axis=1
+            )
+            df_val_show["Predicción"] = df_val_show["Prediccion"].map(map_res)
+            df_val_show["Acierto"] = (df_val_show["Resultado Real"] == df_val_show["Predicción"]).replace({True: "✅", False: "❌"})
+            df_val_show["Marcador"] = df_val_show.apply(lambda r: f"{int(r['goles_local'])} - {int(r['goles_visita'])}", axis=1)
 
-                st.dataframe(
-                    df_val_show[["fecha", "local", "visita", "goles_local", "goles_visita", "Resultado Real", "Predicción", "Acierto", "Prob_Local", "Prob_Empate", "Prob_Visita"]].style.format({
-                        "Prob_Local": "{:.1%}",
-                        "Prob_Empate": "{:.1%}",
-                        "Prob_Visita": "{:.1%}"
-                    }),
-                    hide_index=True, width='stretch'
-                )
+            st.dataframe(
+                df_val_show[["fecha", "local", "Marcador", "visita", "Resultado Real", "Predicción", "Acierto", "Prob_Local", "Prob_Empate", "Prob_Visita"]].style.format({
+                    "Prob_Local": "{:.1%}",
+                    "Prob_Empate": "{:.1%}",
+                    "Prob_Visita": "{:.1%}"
+                }),
+                hide_index=True, width='stretch'
+            )
 
-
-if __name__ == "__main__":
-    run_app()
+            if not df_evol.empty and len(df_evol) >= 3:
+                fig, ax = plt.subplots(figsize=(7, 3.5))
+                ax.plot(df_evol["partido_n"], df_evol["acierto_acumulado"], "o-", color="#001438", label="Acierto Acumulado")
+                ax.set_xlabel("Partidos Jugados (Cronológico)")
+                ax.set_ylabel("Tasa de Acierto")
+                ax.set_title("Evolución de Tasa de Acierto en Champions League")
+                ax.set_ylim(0, 1.0)
+                ax.legend()
+                plt.tight_layout()
+                st.pyplot(fig)
+                plt.close(fig)

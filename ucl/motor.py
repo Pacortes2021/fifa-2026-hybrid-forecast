@@ -43,6 +43,26 @@ else:
     ])
 DF_SQUAD_VALUES = DF_ADV_FEATURES
 
+_SQUAD_VALUES_DICT = {
+    (str(r["equipo"]), int(r["temporada"])): float(r["squad_value"])
+    for _, r in DF_SQUAD_VALUES.iterrows()
+    if pd.notna(r.get("squad_value"))
+} if not DF_SQUAD_VALUES.empty else {}
+
+_ADV_FEATURES_DICT = {
+    (str(r["equipo"]), int(r["temporada"])): {
+        "squad_size": float(r.get("squad_size", 28.0)),
+        "avg_age": float(r.get("avg_age", 25.8)),
+        "foreigners": float(r.get("foreigners", 16.0)),
+        "pct_foreigners": float(r.get("pct_foreigners", 0.58)),
+        "squad_value": float(r.get("squad_value", 150.0)),
+        "stadium_capacity": float(r.get("stadium_capacity", 45000.0)),
+        "avg_attendance": float(r.get("avg_attendance", 38000.0)),
+        "stadium_occupation": float(r.get("stadium_occupation", 0.85))
+    }
+    for _, r in DF_ADV_FEATURES.iterrows()
+} if not DF_ADV_FEATURES.empty else {}
+
 STATS = [
     "totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCommitted",
     "yellowCards", "redCards", "offsides", "saves", "blockedShots"
@@ -189,23 +209,21 @@ def get_altitude_diff(local, visita):
     return float(al - av)
 
 def get_squad_value(equipo, temporada):
-    if not DF_SQUAD_VALUES.empty:
-        sub = DF_SQUAD_VALUES[(DF_SQUAD_VALUES["equipo"] == equipo) & (DF_SQUAD_VALUES["temporada"] == temporada)]
-        if not sub.empty:
-            return float(sub.iloc[0]["squad_value"])
+    val = _SQUAD_VALUES_DICT.get((str(equipo), int(temporada)))
+    if val is not None:
+        return val
+    for (eq, _), v in _SQUAD_VALUES_DICT.items():
+        if eq == str(equipo):
+            return v
     return 150.0
 
 def get_advanced_features(equipo, temporada):
-    if not DF_ADV_FEATURES.empty:
-        sub = DF_ADV_FEATURES[(DF_ADV_FEATURES["equipo"] == equipo) & (DF_ADV_FEATURES["temporada"] == temporada)]
-        if not sub.empty:
-            r = sub.iloc[0]
-            return {
-                "squad_size": float(r["squad_size"]), "avg_age": float(r["avg_age"]),
-                "foreigners": float(r["foreigners"]), "pct_foreigners": float(r["pct_foreigners"]),
-                "squad_value": float(r["squad_value"]), "stadium_capacity": float(r["stadium_capacity"]),
-                "avg_attendance": float(r["avg_attendance"]), "stadium_occupation": float(r["stadium_occupation"])
-            }
+    val = _ADV_FEATURES_DICT.get((str(equipo), int(temporada)))
+    if val is not None:
+        return val
+    for (eq, _), v in _ADV_FEATURES_DICT.items():
+        if eq == str(equipo):
+            return v
     return {
         "squad_size": 28.0, "avg_age": 25.8, "foreigners": 16.0, "pct_foreigners": 0.58,
         "squad_value": 150.0, "stadium_capacity": 45000.0,
@@ -683,6 +701,38 @@ def matriz_marcador_exacto(la, lb, max_goles=7, rho=-0.08):
     return mat
 
 
+def cuota(p):
+    return 1 / p if p > 0 else 99.0
+
+
+def mercados(mix):
+    mk = {}
+    max_g = mix.shape[0]
+    for line in [1.5, 2.5, 3.5]:
+        p_over = 0.0
+        for i in range(max_g):
+            for j in range(max_g):
+                if i + j > line:
+                    p_over += mix[i, j]
+        mk[f"Over {line}"] = p_over
+        mk[f"Under {line}"] = 1.0 - p_over
+
+    p_btts_si = 0.0
+    for i in range(1, max_g):
+        for j in range(1, max_g):
+            p_btts_si += mix[i, j]
+    mk["Ambos marcan (BTTS sí)"] = p_btts_si
+    mk["BTTS no"] = 1.0 - p_btts_si
+
+    list_m = []
+    for i in range(max_g):
+        for j in range(max_g):
+            list_m.append((i, j, mix[i, j]))
+    list_m = sorted(list_m, key=lambda x: x[2], reverse=True)
+    mk["_top_marcadores"] = list_m
+    return mk
+
+
 def obtener_tabla_actual(M):
     partidos_csv = DATA / "partidos.csv"
     fixture_csv = DATA / "fixture.csv"
@@ -816,9 +866,12 @@ def _simular_fixture_vec(M, preds_dict, n_sims=1000):
     return eq_list, order, pts_sims
 
 
-def _simular_cruce(M, team_a, team_b, preds_dict, is_neutral=False):
+def _simular_cruce(team_a, team_b, preds_dict, preds_neu=None, is_neutral=False):
     if is_neutral:
-        p, la, lb = predecir_match(M, team_a, team_b, is_neutral=1, is_knockout=1)
+        if preds_neu and (team_a, team_b) in preds_neu:
+            la, lb = preds_neu[(team_a, team_b)]
+        else:
+            la, lb = 1.3, 1.2
         ga = np.random.poisson(la)
         gb = np.random.poisson(lb)
         if ga > gb:
@@ -829,25 +882,12 @@ def _simular_cruce(M, team_a, team_b, preds_dict, is_neutral=False):
             return team_a if np.random.rand() > 0.5 else team_b
 
     # Ida: team_b local, team_a visita
-    pair_ida = (team_b, team_a)
-    if pair_ida in preds_dict:
-        p1, lb1, la1 = preds_dict[pair_ida]
-    else:
-        p1, lb1, la1 = predecir_match(M, team_b, team_a, is_knockout=1)
-    gb1 = np.random.poisson(lb1)
-    ga1 = np.random.poisson(la1)
-
+    _, lb1, la1 = preds_dict.get((team_b, team_a), (None, 1.2, 1.2))
     # Vuelta: team_a local, team_b visita
-    pair_vuelta = (team_a, team_b)
-    if pair_vuelta in preds_dict:
-        p2, la2, lb2 = preds_dict[pair_vuelta]
-    else:
-        p2, la2, lb2 = predecir_match(M, team_a, team_b, is_knockout=1)
-    ga2 = np.random.poisson(la2)
-    gb2 = np.random.poisson(lb2)
+    _, la2, lb2 = preds_dict.get((team_a, team_b), (None, 1.2, 1.2))
 
-    total_a = ga1 + ga2
-    total_b = gb1 + gb2
+    total_a = np.random.poisson(la1 + la2)
+    total_b = np.random.poisson(lb1 + lb2)
 
     if total_a > total_b:
         return team_a
@@ -857,7 +897,7 @@ def _simular_cruce(M, team_a, team_b, preds_dict, is_neutral=False):
         return team_a if np.random.rand() > 0.5 else team_b
 
 
-def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tipo=None):
+def simular_campeonato(M, n_sims=10000, fijos=None, modelo="stacking", modelo_tipo=None):
     if modelo_tipo is not None:
         modelo = modelo_tipo
     modelo_tipo = modelo or "stacking"
@@ -869,9 +909,9 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
     import hashlib
     fp = hashlib.md5()
     fp.update(str(n_sims).encode())
-    fp.update(modelo_tipo.encode())
     try:
         fp.update(str(Path(fix_path).stat().st_mtime).encode())
+        fp.update(str(Path(fix_path).stat().st_size).encode())
     except Exception:
         pass
 
@@ -892,12 +932,46 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
     fix = pd.read_csv(fix_path)
     fix = fix[fix.temporada == _temporada_actual()]
     todos = sorted(list(set(fix["local"]).union(set(fix["visita"]))))
-    
+
+    pairs = [(l, v) for l in todos for v in todos if l != v]
+    tracker = M["tracker"]
+    temporada_sim = _temporada_actual()
+    feats_list = [tracker.get_features_for_match(l, v, temporada_sim) for l, v in pairs]
+    df_feat = pd.DataFrame(feats_list)[M["features"]].fillna(0.0)
+
+    if modelo_tipo == "lasso":
+        probs_all = M["pipe_lasso"].predict_proba(df_feat)
+    elif modelo_tipo == "rf":
+        probs_all = M["pipe_rf"].predict_proba(df_feat)
+    elif modelo_tipo == "xgb":
+        probs_all = M["pipe_xgb"].predict_proba(df_feat)
+    else:
+        w = M["weights_stacking"]
+        pl = M["pipe_lasso"].predict_proba(df_feat)
+        pr = M["pipe_rf"].predict_proba(df_feat)
+        px = M["pipe_xgb"].predict_proba(df_feat)
+        probs_all = w[0] * pl + w[1] * pr + w[2] * px
+        probs_all = probs_all / probs_all.sum(axis=1, keepdims=True)
+
+    pp = M["poisson_params"]
+    elo_diffs = np.array([f["elo_diff"] for f in feats_list])
+    alt_diffs = np.array([f["altitude_diff"] for f in feats_list])
+    squad_diffs = np.array([f["squad_value_diff"] for f in feats_list])
+
+    la_arr = np.clip(np.exp(pp["const"] + pp["is_home"] * 1.0 + pp["elo"] * elo_diffs + pp["alt"] * alt_diffs + pp["squad"] * squad_diffs), 0.2, 5.5)
+    lb_arr = np.clip(np.exp(pp["const"] + pp["is_home"] * 0.0 - pp["elo"] * elo_diffs - pp["alt"] * alt_diffs - pp["squad"] * squad_diffs), 0.2, 5.5)
+
+    la_neu_arr = np.clip(np.exp(pp["const"] + pp["is_home"] * 0.5 + pp["elo"] * elo_diffs + pp["alt"] * alt_diffs + pp["squad"] * squad_diffs), 0.2, 5.5)
+    lb_neu_arr = np.clip(np.exp(pp["const"] + pp["is_home"] * 0.5 - pp["elo"] * elo_diffs - pp["alt"] * alt_diffs - pp["squad"] * squad_diffs), 0.2, 5.5)
+
     PREDS = {}
-    for l in todos:
-        for v in todos:
-            if l != v:
-                PREDS[(l, v)] = predecir_match(M, l, v, modelo=modelo_tipo)
+    PREDS_NEU = {}
+    for idx, pair in enumerate(pairs):
+        p = probs_all[idx]
+        p = np.clip(p, 1e-6, 1.0 - 1e-6)
+        p = p / p.sum()
+        PREDS[pair] = (p, float(la_arr[idx]), float(lb_arr[idx]))
+        PREDS_NEU[pair] = (float(la_neu_arr[idx]), float(lb_neu_arr[idx]))
 
     eqs, order, pts_sims = _simular_fixture_vec(M, PREDS, n_sims)
     n_eq = len(eqs)
@@ -931,7 +1005,7 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
         for i in range(8):
             seed_high = playoff_teams[i]        # Puestos 9 a 16
             seed_low = playoff_teams[15 - i]    # Puestos 24 a 17
-            winner = _simular_cruce(M, seed_high, seed_low, PREDS)
+            winner = _simular_cruce(seed_high, seed_low, PREDS)
             po_winners.append(winner)
             counts_octavos[winner] += 1
 
@@ -939,7 +1013,7 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
         np.random.shuffle(po_winners)
         qf_teams = []
         for i in range(8):
-            winner = _simular_cruce(M, top8[i], po_winners[i], PREDS)
+            winner = _simular_cruce(top8[i], po_winners[i], PREDS)
             qf_teams.append(winner)
             counts_cuartos[winner] += 1
 
@@ -947,22 +1021,21 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
         np.random.shuffle(qf_teams)
         sf_teams = []
         for i in range(0, 8, 2):
-            winner = _simular_cruce(M, qf_teams[i], qf_teams[i + 1], PREDS)
+            winner = _simular_cruce(qf_teams[i], qf_teams[i + 1], PREDS)
             sf_teams.append(winner)
             counts_semi[winner] += 1
 
         # 5. Semifinals (Semifinales)
         finalists = []
         for i in range(0, 4, 2):
-            winner = _simular_cruce(M, sf_teams[i], sf_teams[i + 1], PREDS)
+            winner = _simular_cruce(sf_teams[i], sf_teams[i + 1], PREDS)
             finalists.append(winner)
             counts_final[winner] += 1
 
         # 6. Gran Final (Sede neutral única)
-        champion = _simular_cruce(M, finalists[0], finalists[1], PREDS, is_neutral=True)
+        champion = _simular_cruce(finalists[0], finalists[1], PREDS, preds_neu=PREDS_NEU, is_neutral=True)
         counts_campeon[champion] += 1
 
-    tab = obtener_tabla_actual(M)
     res = []
     for idx_e, eq in enumerate(eqs):
         mean_pts = float(np.mean(pts_sims[idx_e, :]))
