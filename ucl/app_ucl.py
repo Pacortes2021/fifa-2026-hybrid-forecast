@@ -222,23 +222,33 @@ def run_app():
             # Cuotas implícitas y mercados
             st.markdown("#### 💰 Mercados de Apuestas Probabilísticas")
             cm1, cm2, cm3, cm4 = st.columns(4)
-            p_over25 = 1.0 - sum(mo.matriz_marcador_exacto(la, lb)[i, j] for i in range(7) for j in range(7) if i + j <= 2)
-            p_btts = sum(mo.matriz_marcador_exacto(la, lb)[i, j] for i in range(1, 7) for j in range(1, 7))
+            mat_dc = mo.matriz_marcador_exacto(la, lb)
+            p_over25 = 1.0 - sum(mat_dc[i, j] for i in range(7) for j in range(7) if i + j <= 2)
+            p_btts = sum(mat_dc[i, j] for i in range(1, 7) for j in range(1, 7))
 
             cm1.metric("Cuota 1X2 (Local)", f"{1/p[0]:.2f}" if p[0] > 0.01 else ">100")
             cm2.metric("Cuota 1X2 (Empate)", f"{1/p[1]:.2f}" if p[1] > 0.01 else ">100")
             cm3.metric("Más de 2.5 Goles", f"{p_over25:.1%}")
             cm4.metric("Ambos Anotan (BTTS)", f"{p_btts:.1%}")
 
-            # Matriz de calor marcador exacto
-            with st.expander("🎲 Matriz de Marcador Exacto (Dixon-Coles)"):
-                mat = mo.matriz_marcador_exacto(la, lb, max_goles=5)
-                df_mat = pd.DataFrame(
-                    mat * 100,
-                    index=[f"{local} {i}" for i in range(mat.shape[0])],
-                    columns=[f"{visita} {j}" for j in range(mat.shape[1])]
-                )
-                st.dataframe(df_mat.style.format("{:.1f}%").background_gradient(cmap="Blues"), width='stretch')
+            # Gráfica de la matriz Dixon-Coles
+            st.markdown('<div class="sec-title">Matriz de Goles Exactos (Dixon-Coles)</div>', unsafe_allow_html=True)
+            fig, ax = plt.subplots(figsize=(6, 4))
+            m6 = mat_dc[:6, :6]
+            im = ax.imshow(m6, cmap="Blues")
+            ax.set_xticks(range(6)); ax.set_xticklabels(range(6))
+            ax.set_yticks(range(6)); ax.set_yticklabels(range(6))
+            ax.set_xlabel(f"Goles de {visita}", fontsize=9)
+            ax.set_ylabel(f"Goles de {local}", fontsize=9)
+            fig.colorbar(im, ax=ax, label="Probabilidad")
+
+            for i in range(6):
+                for j in range(6):
+                    ax.text(j, i, f"{m6[i, j]:.1%}", ha="center", va="center",
+                            color="white" if m6[i, j] > m6.max() * 0.6 else "black", fontsize=8)
+            plt.tight_layout()
+            st.pyplot(fig)
+            plt.close(fig)
 
             # Variables clave del duelo
             with st.expander("🔍 Métricas y Variables del Enfrentamiento"):
