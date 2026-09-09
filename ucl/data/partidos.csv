@@ -1,0 +1,791 @@
+event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
+590726,2021-02-16 21:00:00,2021,round-of-16,1,0,83,160,FC Barcelona,PSG,1,4,post,STATUS_FULL_TIME
+590724,2021-02-16 21:00:00,2021,round-of-16,1,0,11420,364,RB Leipzig,Liverpool,0,2,post,STATUS_FULL_TIME
+590723,2021-02-17 21:00:00,2021,round-of-16,1,0,437,111,Porto,Juventus,2,1,post,STATUS_FULL_TIME
+590721,2021-02-17 21:00:00,2021,round-of-16,1,0,243,124,Sevilla,Borussia Dortmund,2,3,post,STATUS_FULL_TIME
+590722,2021-02-23 21:00:00,2021,round-of-16,1,0,1068,363,Atletico Madrid,Chelsea,0,1,post,STATUS_FULL_TIME
+590720,2021-02-23 21:00:00,2021,round-of-16,1,0,112,132,Lazio,Bayern Munich,1,4,post,STATUS_FULL_TIME
+590727,2021-02-24 21:00:00,2021,round-of-16,1,0,105,86,Atalanta,Real Madrid,0,1,post,STATUS_FULL_TIME
+590725,2021-02-24 21:00:00,2021,round-of-16,1,0,268,382,Borussia Monchengladbach,Manchester City,0,2,post,STATUS_FULL_TIME
+590719,2021-03-09 21:00:00,2021,round-of-16,1,0,124,243,Borussia Dortmund,Sevilla,2,2,post,STATUS_FULL_TIME
+590716,2021-03-09 21:00:00,2021,round-of-16,1,0,111,437,Juventus,Porto,3,2,post,STATUS_FINAL_AET
+590718,2021-03-10 21:00:00,2021,round-of-16,1,0,364,11420,Liverpool,RB Leipzig,2,0,post,STATUS_FULL_TIME
+590714,2021-03-10 21:00:00,2021,round-of-16,1,0,160,83,PSG,FC Barcelona,1,1,post,STATUS_FULL_TIME
+590712,2021-03-16 21:00:00,2021,round-of-16,1,0,86,105,Real Madrid,Atalanta,3,1,post,STATUS_FULL_TIME
+590715,2021-03-16 21:00:00,2021,round-of-16,1,0,382,268,Manchester City,Borussia Monchengladbach,2,0,post,STATUS_FULL_TIME
+590717,2021-03-17 21:00:00,2021,round-of-16,1,0,132,112,Bayern Munich,Lazio,2,1,post,STATUS_FULL_TIME
+590713,2021-03-17 21:00:00,2021,round-of-16,1,0,363,1068,Chelsea,Atletico Madrid,2,0,post,STATUS_FULL_TIME
+596888,2021-04-06 21:00:00,2021,quarterfinals,1,0,382,124,Manchester City,Borussia Dortmund,2,1,post,STATUS_FULL_TIME
+596890,2021-04-06 21:00:00,2021,quarterfinals,1,0,86,364,Real Madrid,Liverpool,3,1,post,STATUS_FULL_TIME
+596891,2021-04-07 21:00:00,2021,quarterfinals,1,0,132,160,Bayern Munich,PSG,2,3,post,STATUS_FULL_TIME
+596889,2021-04-07 21:00:00,2021,quarterfinals,1,0,437,363,Porto,Chelsea,0,2,post,STATUS_FULL_TIME
+596885,2021-04-13 21:00:00,2021,quarterfinals,1,0,363,437,Chelsea,Porto,0,1,post,STATUS_FULL_TIME
+596884,2021-04-13 21:00:00,2021,quarterfinals,1,0,160,132,PSG,Bayern Munich,0,1,post,STATUS_FULL_TIME
+596886,2021-04-14 21:00:00,2021,quarterfinals,1,0,124,382,Borussia Dortmund,Manchester City,1,2,post,STATUS_FULL_TIME
+596887,2021-04-14 21:00:00,2021,quarterfinals,1,0,364,86,Liverpool,Real Madrid,0,0,post,STATUS_FULL_TIME
+600629,2021-04-27 21:00:00,2021,semifinals,1,0,86,363,Real Madrid,Chelsea,1,1,post,STATUS_FULL_TIME
+600630,2021-04-28 21:00:00,2021,semifinals,1,0,160,382,PSG,Manchester City,1,2,post,STATUS_FULL_TIME
+600627,2021-05-04 21:00:00,2021,semifinals,1,0,382,160,Manchester City,PSG,2,0,post,STATUS_FULL_TIME
+600628,2021-05-05 21:00:00,2021,semifinals,1,0,363,86,Chelsea,Real Madrid,2,0,post,STATUS_FULL_TIME
+600626,2021-05-29 21:00:00,2021,final,1,1,382,363,Manchester City,Chelsea,0,1,post,STATUS_FULL_TIME
+618791,2021-09-14 18:45:00,2022,group-stage,0,0,243,2790,Sevilla,Salzburg,1,1,post,STATUS_FULL_TIME
+618790,2021-09-14 18:45:00,2022,group-stage,0,0,2722,360,Young Boys,Manchester United,2,1,post,STATUS_FULL_TIME
+618785,2021-09-14 21:00:00,2022,group-stage,0,0,83,132,FC Barcelona,Bayern Munich,0,3,post,STATUS_FULL_TIME
+618789,2021-09-14 21:00:00,2022,group-stage,0,0,363,2533,Chelsea,Zenit St Petersburg,1,0,post,STATUS_FULL_TIME
+618786,2021-09-14 21:00:00,2022,group-stage,0,0,440,1929,Dynamo Kyiv,Benfica,0,0,post,STATUS_FULL_TIME
+618788,2021-09-14 21:00:00,2022,group-stage,0,0,166,138,Lille,VfL Wolfsburg,0,0,post,STATUS_FULL_TIME
+618787,2021-09-14 21:00:00,2022,group-stage,0,0,2720,111,Malmo FF,Juventus,0,3,post,STATUS_FULL_TIME
+618784,2021-09-14 21:00:00,2022,group-stage,0,0,102,105,Villarreal,Atalanta,2,2,post,STATUS_FULL_TIME
+618782,2021-09-15 18:45:00,2022,group-stage,0,0,1895,124,Besiktas,Borussia Dortmund,1,2,post,STATUS_FULL_TIME
+618783,2021-09-15 18:45:00,2022,group-stage,0,0,614,493,Sheriff,Shakhtar Donetsk,2,0,post,STATUS_FULL_TIME
+618776,2021-09-15 21:00:00,2022,group-stage,0,0,2250,139,Sporting CP,Ajax,1,5,post,STATUS_FULL_TIME
+618778,2021-09-15 21:00:00,2022,group-stage,0,0,364,103,Liverpool,AC Milan,3,2,post,STATUS_FULL_TIME
+618780,2021-09-15 21:00:00,2022,group-stage,0,0,382,11420,Manchester City,RB Leipzig,6,3,post,STATUS_FULL_TIME
+618779,2021-09-15 21:00:00,2022,group-stage,0,0,570,160,Club Brugge,PSG,1,1,post,STATUS_FULL_TIME
+618777,2021-09-15 21:00:00,2022,group-stage,0,0,1068,437,Atletico Madrid,Porto,0,0,post,STATUS_FULL_TIME
+618781,2021-09-15 21:00:00,2022,group-stage,0,0,110,86,Inter,Real Madrid,0,1,post,STATUS_FULL_TIME
+618774,2021-09-28 18:45:00,2022,group-stage,0,0,139,1895,Ajax,Besiktas,2,0,post,STATUS_FULL_TIME
+618775,2021-09-28 18:45:00,2022,group-stage,0,0,493,110,Shakhtar Donetsk,Inter,0,0,post,STATUS_FULL_TIME
+618768,2021-09-28 21:00:00,2022,group-stage,0,0,103,1068,AC Milan,Atletico Madrid,1,2,post,STATUS_FULL_TIME
+618773,2021-09-28 21:00:00,2022,group-stage,0,0,124,2250,Borussia Dortmund,Sporting CP,1,0,post,STATUS_FULL_TIME
+618771,2021-09-28 21:00:00,2022,group-stage,0,0,437,364,Porto,Liverpool,1,5,post,STATUS_FULL_TIME
+618772,2021-09-28 21:00:00,2022,group-stage,0,0,160,382,PSG,Manchester City,2,0,post,STATUS_FULL_TIME
+618769,2021-09-28 21:00:00,2022,group-stage,0,0,11420,570,RB Leipzig,Club Brugge,1,2,post,STATUS_FULL_TIME
+618770,2021-09-28 21:00:00,2022,group-stage,0,0,86,614,Real Madrid,Sheriff,1,2,post,STATUS_FULL_TIME
+618767,2021-09-29 18:45:00,2022,group-stage,0,0,105,2722,Atalanta,Young Boys,1,0,post,STATUS_FULL_TIME
+618766,2021-09-29 18:45:00,2022,group-stage,0,0,2533,2720,Zenit St Petersburg,Malmo FF,4,0,post,STATUS_FULL_TIME
+618763,2021-09-29 21:00:00,2022,group-stage,0,0,2790,166,Salzburg,Lille,2,1,post,STATUS_FULL_TIME
+618764,2021-09-29 21:00:00,2022,group-stage,0,0,138,243,VfL Wolfsburg,Sevilla,1,1,post,STATUS_FULL_TIME
+618765,2021-09-29 21:00:00,2022,group-stage,0,0,360,102,Manchester United,Villarreal,2,1,post,STATUS_FULL_TIME
+618760,2021-09-29 21:00:00,2022,group-stage,0,0,1929,83,Benfica,FC Barcelona,3,0,post,STATUS_FULL_TIME
+618761,2021-09-29 21:00:00,2022,group-stage,0,0,111,363,Juventus,Chelsea,1,0,post,STATUS_FULL_TIME
+618762,2021-09-29 21:00:00,2022,group-stage,0,0,132,440,Bayern Munich,Dynamo Kyiv,5,0,post,STATUS_FULL_TIME
+618759,2021-10-19 18:45:00,2022,group-stage,0,0,1895,2250,Besiktas,Sporting CP,1,4,post,STATUS_FULL_TIME
+618758,2021-10-19 18:45:00,2022,group-stage,0,0,570,382,Club Brugge,Manchester City,1,5,post,STATUS_FULL_TIME
+618752,2021-10-19 21:00:00,2022,group-stage,0,0,139,124,Ajax,Borussia Dortmund,4,0,post,STATUS_FULL_TIME
+618754,2021-10-19 21:00:00,2022,group-stage,0,0,1068,364,Atletico Madrid,Liverpool,2,3,post,STATUS_FULL_TIME
+618755,2021-10-19 21:00:00,2022,group-stage,0,0,437,103,Porto,AC Milan,1,0,post,STATUS_FULL_TIME
+618753,2021-10-19 21:00:00,2022,group-stage,0,0,110,614,Inter,Sheriff,3,1,post,STATUS_FULL_TIME
+618756,2021-10-19 21:00:00,2022,group-stage,0,0,160,11420,PSG,RB Leipzig,3,2,post,STATUS_FULL_TIME
+618757,2021-10-19 21:00:00,2022,group-stage,0,0,493,86,Shakhtar Donetsk,Real Madrid,0,5,post,STATUS_FULL_TIME
+618750,2021-10-20 18:45:00,2022,group-stage,0,0,83,440,FC Barcelona,Dynamo Kyiv,1,0,post,STATUS_FULL_TIME
+618751,2021-10-20 18:45:00,2022,group-stage,0,0,2790,138,Salzburg,VfL Wolfsburg,3,1,post,STATUS_FULL_TIME
+618746,2021-10-20 21:00:00,2022,group-stage,0,0,2533,111,Zenit St Petersburg,Juventus,0,1,post,STATUS_FULL_TIME
+618749,2021-10-20 21:00:00,2022,group-stage,0,0,2722,102,Young Boys,Villarreal,1,4,post,STATUS_FULL_TIME
+618744,2021-10-20 21:00:00,2022,group-stage,0,0,360,105,Manchester United,Atalanta,3,2,post,STATUS_FULL_TIME
+618747,2021-10-20 21:00:00,2022,group-stage,0,0,363,2720,Chelsea,Malmo FF,4,0,post,STATUS_FULL_TIME
+618745,2021-10-20 21:00:00,2022,group-stage,0,0,1929,132,Benfica,Bayern Munich,0,4,post,STATUS_FULL_TIME
+618748,2021-10-20 21:00:00,2022,group-stage,0,0,166,243,Lille,Sevilla,0,0,post,STATUS_FULL_TIME
+618742,2021-11-02 18:45:00,2022,group-stage,0,0,2720,363,Malmo FF,Chelsea,0,1,post,STATUS_FULL_TIME
+618743,2021-11-02 18:45:00,2022,group-stage,0,0,138,2790,VfL Wolfsburg,Salzburg,2,1,post,STATUS_FULL_TIME
+618739,2021-11-02 21:00:00,2022,group-stage,0,0,105,360,Atalanta,Manchester United,2,2,post,STATUS_FULL_TIME
+618737,2021-11-02 21:00:00,2022,group-stage,0,0,132,1929,Bayern Munich,Benfica,5,2,post,STATUS_FULL_TIME
+618736,2021-11-02 21:00:00,2022,group-stage,0,0,440,83,Dynamo Kyiv,FC Barcelona,0,1,post,STATUS_FULL_TIME
+618741,2021-11-02 21:00:00,2022,group-stage,0,0,111,2533,Juventus,Zenit St Petersburg,4,2,post,STATUS_FULL_TIME
+618738,2021-11-02 21:00:00,2022,group-stage,0,0,243,166,Sevilla,Lille,1,2,post,STATUS_FULL_TIME
+618740,2021-11-02 21:00:00,2022,group-stage,0,0,102,2722,Villarreal,Young Boys,2,0,post,STATUS_FULL_TIME
+618735,2021-11-03 18:45:00,2022,group-stage,0,0,86,493,Real Madrid,Shakhtar Donetsk,2,1,post,STATUS_FULL_TIME
+618734,2021-11-03 18:45:00,2022,group-stage,0,0,103,437,AC Milan,Porto,1,1,post,STATUS_FULL_TIME
+618728,2021-11-03 21:00:00,2022,group-stage,0,0,124,139,Borussia Dortmund,Ajax,1,3,post,STATUS_FULL_TIME
+618729,2021-11-03 21:00:00,2022,group-stage,0,0,364,1068,Liverpool,Atletico Madrid,2,0,post,STATUS_FULL_TIME
+618731,2021-11-03 21:00:00,2022,group-stage,0,0,382,570,Manchester City,Club Brugge,4,1,post,STATUS_FULL_TIME
+618733,2021-11-03 21:00:00,2022,group-stage,0,0,11420,160,RB Leipzig,PSG,2,2,post,STATUS_FULL_TIME
+618732,2021-11-03 21:00:00,2022,group-stage,0,0,614,110,Sheriff,Inter,1,3,post,STATUS_FULL_TIME
+618730,2021-11-03 21:00:00,2022,group-stage,0,0,2250,1895,Sporting CP,Besiktas,4,0,post,STATUS_FULL_TIME
+618726,2021-11-23 18:45:00,2022,group-stage,0,0,440,132,Dynamo Kyiv,Bayern Munich,1,2,post,STATUS_FULL_TIME
+618727,2021-11-23 18:45:00,2022,group-stage,0,0,102,360,Villarreal,Manchester United,0,2,post,STATUS_FULL_TIME
+618720,2021-11-23 21:00:00,2022,group-stage,0,0,2722,105,Young Boys,Atalanta,3,3,post,STATUS_FULL_TIME
+618724,2021-11-23 21:00:00,2022,group-stage,0,0,243,138,Sevilla,VfL Wolfsburg,2,0,post,STATUS_FULL_TIME
+618725,2021-11-23 21:00:00,2022,group-stage,0,0,2720,2533,Malmo FF,Zenit St Petersburg,1,1,post,STATUS_FULL_TIME
+618722,2021-11-23 21:00:00,2022,group-stage,0,0,363,111,Chelsea,Juventus,4,0,post,STATUS_FULL_TIME
+618721,2021-11-23 21:00:00,2022,group-stage,0,0,83,1929,FC Barcelona,Benfica,0,0,post,STATUS_FULL_TIME
+618723,2021-11-23 21:00:00,2022,group-stage,0,0,166,2790,Lille,Salzburg,1,0,post,STATUS_FULL_TIME
+618718,2021-11-24 18:45:00,2022,group-stage,0,0,1895,139,Besiktas,Ajax,1,2,post,STATUS_FULL_TIME
+618719,2021-11-24 18:45:00,2022,group-stage,0,0,110,493,Inter,Shakhtar Donetsk,2,0,post,STATUS_FULL_TIME
+618714,2021-11-24 21:00:00,2022,group-stage,0,0,1068,103,Atletico Madrid,AC Milan,0,1,post,STATUS_FULL_TIME
+618716,2021-11-24 21:00:00,2022,group-stage,0,0,570,11420,Club Brugge,RB Leipzig,0,5,post,STATUS_FULL_TIME
+618713,2021-11-24 21:00:00,2022,group-stage,0,0,364,437,Liverpool,Porto,2,0,post,STATUS_FULL_TIME
+618715,2021-11-24 21:00:00,2022,group-stage,0,0,382,160,Manchester City,PSG,2,1,post,STATUS_FULL_TIME
+618717,2021-11-24 21:00:00,2022,group-stage,0,0,614,86,Sheriff,Real Madrid,0,3,post,STATUS_FULL_TIME
+618712,2021-11-24 21:00:00,2022,group-stage,0,0,2250,124,Sporting CP,Borussia Dortmund,3,1,post,STATUS_FULL_TIME
+618710,2021-12-07 18:45:00,2022,group-stage,0,0,160,570,PSG,Club Brugge,4,1,post,STATUS_FULL_TIME
+618711,2021-12-07 18:45:00,2022,group-stage,0,0,11420,382,RB Leipzig,Manchester City,2,1,post,STATUS_FULL_TIME
+618706,2021-12-07 21:00:00,2022,group-stage,0,0,493,614,Shakhtar Donetsk,Sheriff,1,1,post,STATUS_FULL_TIME
+618707,2021-12-07 21:00:00,2022,group-stage,0,0,86,110,Real Madrid,Inter,2,0,post,STATUS_FULL_TIME
+618704,2021-12-07 21:00:00,2022,group-stage,0,0,437,1068,Porto,Atletico Madrid,1,3,post,STATUS_FULL_TIME
+618705,2021-12-07 21:00:00,2022,group-stage,0,0,124,1895,Borussia Dortmund,Besiktas,5,0,post,STATUS_FULL_TIME
+618709,2021-12-07 21:00:00,2022,group-stage,0,0,139,2250,Ajax,Sporting CP,4,2,post,STATUS_FULL_TIME
+618708,2021-12-07 21:00:00,2022,group-stage,0,0,103,364,AC Milan,Liverpool,1,2,post,STATUS_FULL_TIME
+618703,2021-12-08 18:45:00,2022,group-stage,0,0,111,2720,Juventus,Malmo FF,1,0,post,STATUS_FULL_TIME
+618702,2021-12-08 18:45:00,2022,group-stage,0,0,2533,363,Zenit St Petersburg,Chelsea,3,3,post,STATUS_FULL_TIME
+618696,2021-12-08 21:00:00,2022,group-stage,0,0,132,83,Bayern Munich,FC Barcelona,3,0,post,STATUS_FULL_TIME
+618697,2021-12-08 21:00:00,2022,group-stage,0,0,1929,440,Benfica,Dynamo Kyiv,2,0,post,STATUS_FULL_TIME
+618701,2021-12-08 21:00:00,2022,group-stage,0,0,360,2722,Manchester United,Young Boys,1,1,post,STATUS_FULL_TIME
+618699,2021-12-08 21:00:00,2022,group-stage,0,0,2790,243,Salzburg,Sevilla,1,0,post,STATUS_FULL_TIME
+618698,2021-12-08 21:00:00,2022,group-stage,0,0,138,166,VfL Wolfsburg,Lille,1,3,post,STATUS_FULL_TIME
+618700,2021-12-09 19:00:00,2022,group-stage,0,0,105,102,Atalanta,Villarreal,2,3,post,STATUS_FULL_TIME
+623001,2022-02-15 21:00:00,2022,round-of-16,1,0,160,86,PSG,Real Madrid,1,0,post,STATUS_FULL_TIME
+622999,2022-02-15 21:00:00,2022,round-of-16,1,0,2250,382,Sporting CP,Manchester City,0,5,post,STATUS_FULL_TIME
+622995,2022-02-16 21:00:00,2022,round-of-16,1,0,2790,132,Salzburg,Bayern Munich,1,1,post,STATUS_FULL_TIME
+622998,2022-02-16 21:00:00,2022,round-of-16,1,0,110,364,Inter,Liverpool,0,2,post,STATUS_FULL_TIME
+622997,2022-02-22 21:00:00,2022,round-of-16,1,0,363,166,Chelsea,Lille,2,0,post,STATUS_FULL_TIME
+622996,2022-02-22 21:00:00,2022,round-of-16,1,0,102,111,Villarreal,Juventus,1,1,post,STATUS_FULL_TIME
+623000,2022-02-23 21:00:00,2022,round-of-16,1,0,1068,360,Atletico Madrid,Manchester United,1,1,post,STATUS_FULL_TIME
+622994,2022-02-23 21:00:00,2022,round-of-16,1,0,1929,139,Benfica,Ajax,2,2,post,STATUS_FULL_TIME
+622991,2022-03-08 21:00:00,2022,round-of-16,1,0,132,2790,Bayern Munich,Salzburg,7,1,post,STATUS_FULL_TIME
+622989,2022-03-08 21:00:00,2022,round-of-16,1,0,364,110,Liverpool,Inter,0,1,post,STATUS_FULL_TIME
+622992,2022-03-09 21:00:00,2022,round-of-16,1,0,382,2250,Manchester City,Sporting CP,0,0,post,STATUS_FULL_TIME
+622990,2022-03-09 21:00:00,2022,round-of-16,1,0,86,160,Real Madrid,PSG,3,1,post,STATUS_FULL_TIME
+622987,2022-03-15 21:00:00,2022,round-of-16,1,0,139,1929,Ajax,Benfica,0,1,post,STATUS_FULL_TIME
+622986,2022-03-15 21:00:00,2022,round-of-16,1,0,360,1068,Manchester United,Atletico Madrid,0,1,post,STATUS_FULL_TIME
+622993,2022-03-16 21:00:00,2022,round-of-16,1,0,111,102,Juventus,Villarreal,0,3,post,STATUS_FULL_TIME
+622988,2022-03-16 21:00:00,2022,round-of-16,1,0,166,363,Lille,Chelsea,1,2,post,STATUS_FULL_TIME
+633244,2022-04-05 21:00:00,2022,quarterfinals,1,0,382,1068,Manchester City,Atletico Madrid,1,0,post,STATUS_FULL_TIME
+633246,2022-04-05 21:00:00,2022,quarterfinals,1,0,1929,364,Benfica,Liverpool,1,3,post,STATUS_FULL_TIME
+633247,2022-04-06 21:00:00,2022,quarterfinals,1,0,363,86,Chelsea,Real Madrid,1,3,post,STATUS_FULL_TIME
+633245,2022-04-06 21:00:00,2022,quarterfinals,1,0,102,132,Villarreal,Bayern Munich,1,0,post,STATUS_FULL_TIME
+633243,2022-04-12 21:00:00,2022,quarterfinals,1,0,132,102,Bayern Munich,Villarreal,1,1,post,STATUS_FULL_TIME
+633241,2022-04-12 21:00:00,2022,quarterfinals,1,0,86,363,Real Madrid,Chelsea,2,3,post,STATUS_FINAL_AET
+633242,2022-04-13 21:00:00,2022,quarterfinals,1,0,1068,382,Atletico Madrid,Manchester City,0,0,post,STATUS_FULL_TIME
+633240,2022-04-13 21:00:00,2022,quarterfinals,1,0,364,1929,Liverpool,Benfica,3,3,post,STATUS_FULL_TIME
+634246,2022-04-26 21:00:00,2022,semifinals,1,0,382,86,Manchester City,Real Madrid,4,3,post,STATUS_FULL_TIME
+634247,2022-04-27 21:00:00,2022,semifinals,1,0,364,102,Liverpool,Villarreal,2,0,post,STATUS_FULL_TIME
+634248,2022-05-03 21:00:00,2022,semifinals,1,0,102,364,Villarreal,Liverpool,2,3,post,STATUS_FULL_TIME
+634249,2022-05-04 21:00:00,2022,semifinals,1,0,86,382,Real Madrid,Manchester City,3,1,post,STATUS_FINAL_AET
+634861,2022-05-28 21:36:00,2022,final,1,1,364,86,Liverpool,Real Madrid,0,1,post,STATUS_FULL_TIME
+652587,2022-09-06 18:45:00,2023,group-stage,0,0,124,909,Borussia Dortmund,F.C. København,3,0,post,STATUS_FULL_TIME
+652586,2022-09-06 18:45:00,2023,group-stage,0,0,597,363,Dinamo Zagreb,Chelsea,1,0,post,STATUS_FULL_TIME
+652589,2022-09-06 21:00:00,2023,group-stage,0,0,2790,103,Salzburg,AC Milan,1,1,post,STATUS_FULL_TIME
+652592,2022-09-06 21:00:00,2023,group-stage,0,0,243,382,Sevilla,Manchester City,0,4,post,STATUS_FULL_TIME
+652591,2022-09-06 21:00:00,2023,group-stage,0,0,11420,493,RB Leipzig,Shakhtar Donetsk,1,4,post,STATUS_FULL_TIME
+652593,2022-09-06 21:00:00,2023,group-stage,0,0,1929,611,Benfica,Maccabi Haifa,2,0,post,STATUS_FULL_TIME
+652590,2022-09-06 21:00:00,2023,group-stage,0,0,256,86,Celtic,Real Madrid,0,3,post,STATUS_FULL_TIME
+652588,2022-09-06 21:00:00,2023,group-stage,0,0,160,111,PSG,Juventus,2,1,post,STATUS_FULL_TIME
+652594,2022-09-07 18:45:00,2023,group-stage,0,0,139,257,Ajax,Rangers,4,0,post,STATUS_FULL_TIME
+652595,2022-09-07 18:45:00,2023,group-stage,0,0,125,2250,Eintracht Frankfurt,Sporting CP,0,3,post,STATUS_FULL_TIME
+652600,2022-09-07 21:00:00,2023,group-stage,0,0,114,364,Napoli,Liverpool,4,1,post,STATUS_FULL_TIME
+652601,2022-09-07 21:00:00,2023,group-stage,0,0,110,132,Inter,Bayern Munich,0,2,post,STATUS_FULL_TIME
+652599,2022-09-07 21:00:00,2023,group-stage,0,0,367,176,Tottenham Hotspur,Marseille,2,0,post,STATUS_FULL_TIME
+652596,2022-09-07 21:00:00,2023,group-stage,0,0,83,11706,FC Barcelona,Viktoria Plzen,5,1,post,STATUS_FULL_TIME
+652597,2022-09-07 21:00:00,2023,group-stage,0,0,1068,437,Atletico Madrid,Porto,2,1,post,STATUS_FULL_TIME
+652598,2022-09-07 21:00:00,2023,group-stage,0,0,570,131,Club Brugge,Bayer Leverkusen,1,0,post,STATUS_FULL_TIME
+652603,2022-09-13 18:45:00,2023,group-stage,0,0,11706,110,Viktoria Plzen,Inter,0,2,post,STATUS_FULL_TIME
+652602,2022-09-13 18:45:00,2023,group-stage,0,0,2250,367,Sporting CP,Tottenham Hotspur,2,0,post,STATUS_FULL_TIME
+652608,2022-09-13 21:00:00,2023,group-stage,0,0,131,1068,Bayer Leverkusen,Atletico Madrid,2,0,post,STATUS_FULL_TIME
+652607,2022-09-13 21:00:00,2023,group-stage,0,0,132,83,Bayern Munich,FC Barcelona,2,0,post,STATUS_FULL_TIME
+652606,2022-09-13 21:00:00,2023,group-stage,0,0,437,570,Porto,Club Brugge,0,4,post,STATUS_FULL_TIME
+652605,2022-09-13 21:00:00,2023,group-stage,0,0,364,139,Liverpool,Ajax,2,1,post,STATUS_FULL_TIME
+652609,2022-09-13 21:00:00,2023,group-stage,0,0,176,125,Marseille,Eintracht Frankfurt,0,1,post,STATUS_FULL_TIME
+652610,2022-09-14 18:45:00,2023,group-stage,0,0,103,597,AC Milan,Dinamo Zagreb,3,1,post,STATUS_FULL_TIME
+652611,2022-09-14 18:45:00,2023,group-stage,0,0,493,256,Shakhtar Donetsk,Celtic,1,1,post,STATUS_FULL_TIME
+652613,2022-09-14 21:00:00,2023,group-stage,0,0,86,11420,Real Madrid,RB Leipzig,2,0,post,STATUS_FULL_TIME
+652612,2022-09-14 21:00:00,2023,group-stage,0,0,382,124,Manchester City,Borussia Dortmund,2,1,post,STATUS_FULL_TIME
+652614,2022-09-14 21:00:00,2023,group-stage,0,0,611,160,Maccabi Haifa,PSG,1,3,post,STATUS_FULL_TIME
+652604,2022-09-14 21:00:00,2023,group-stage,0,0,257,114,Rangers,Napoli,0,3,post,STATUS_FULL_TIME
+652617,2022-09-14 21:00:00,2023,group-stage,0,0,909,243,F.C. København,Sevilla,0,0,post,STATUS_FULL_TIME
+652615,2022-09-14 21:00:00,2023,group-stage,0,0,363,2790,Chelsea,Salzburg,1,1,post,STATUS_FULL_TIME
+652616,2022-09-14 21:00:00,2023,group-stage,0,0,111,1929,Juventus,Benfica,1,2,post,STATUS_FULL_TIME
+652619,2022-10-04 18:45:00,2023,group-stage,0,0,132,11706,Bayern Munich,Viktoria Plzen,5,0,post,STATUS_FULL_TIME
+652618,2022-10-04 19:00:00,2023,group-stage,0,0,176,2250,Marseille,Sporting CP,4,1,post,STATUS_FULL_TIME
+652620,2022-10-04 21:00:00,2023,group-stage,0,0,139,114,Ajax,Napoli,1,6,post,STATUS_FULL_TIME
+652624,2022-10-04 21:00:00,2023,group-stage,0,0,570,1068,Club Brugge,Atletico Madrid,2,0,post,STATUS_FULL_TIME
+652623,2022-10-04 21:00:00,2023,group-stage,0,0,125,367,Eintracht Frankfurt,Tottenham Hotspur,0,0,post,STATUS_FULL_TIME
+652622,2022-10-04 21:00:00,2023,group-stage,0,0,437,131,Porto,Bayer Leverkusen,2,0,post,STATUS_FULL_TIME
+652621,2022-10-04 21:00:00,2023,group-stage,0,0,110,83,Inter,FC Barcelona,1,0,post,STATUS_FULL_TIME
+652625,2022-10-04 21:00:00,2023,group-stage,0,0,364,257,Liverpool,Rangers,2,0,post,STATUS_FULL_TIME
+652626,2022-10-05 18:45:00,2023,group-stage,0,0,11420,256,RB Leipzig,Celtic,3,1,post,STATUS_FULL_TIME
+652627,2022-10-05 18:45:00,2023,group-stage,0,0,2790,597,Salzburg,Dinamo Zagreb,1,0,post,STATUS_FULL_TIME
+652629,2022-10-05 21:00:00,2023,group-stage,0,0,243,124,Sevilla,Borussia Dortmund,1,4,post,STATUS_FULL_TIME
+652633,2022-10-05 21:00:00,2023,group-stage,0,0,86,493,Real Madrid,Shakhtar Donetsk,2,1,post,STATUS_FULL_TIME
+652628,2022-10-05 21:00:00,2023,group-stage,0,0,382,909,Manchester City,F.C. København,5,0,post,STATUS_FULL_TIME
+652631,2022-10-05 21:00:00,2023,group-stage,0,0,363,103,Chelsea,AC Milan,3,0,post,STATUS_FULL_TIME
+652630,2022-10-05 21:00:00,2023,group-stage,0,0,1929,160,Benfica,PSG,1,1,post,STATUS_FULL_TIME
+652632,2022-10-05 21:00:00,2023,group-stage,0,0,111,611,Juventus,Maccabi Haifa,3,1,post,STATUS_FULL_TIME
+652634,2022-10-11 18:45:00,2023,group-stage,0,0,909,382,F.C. København,Manchester City,0,0,post,STATUS_FULL_TIME
+652635,2022-10-11 18:45:00,2023,group-stage,0,0,611,111,Maccabi Haifa,Juventus,2,0,post,STATUS_FULL_TIME
+652639,2022-10-11 21:00:00,2023,group-stage,0,0,103,363,AC Milan,Chelsea,0,2,post,STATUS_FULL_TIME
+652637,2022-10-11 21:00:00,2023,group-stage,0,0,124,243,Borussia Dortmund,Sevilla,1,1,post,STATUS_FULL_TIME
+652636,2022-10-11 21:00:00,2023,group-stage,0,0,256,11420,Celtic,RB Leipzig,0,2,post,STATUS_FULL_TIME
+652638,2022-10-11 21:00:00,2023,group-stage,0,0,597,2790,Dinamo Zagreb,Salzburg,1,1,post,STATUS_FULL_TIME
+652640,2022-10-11 21:00:00,2023,group-stage,0,0,160,1929,PSG,Benfica,1,1,post,STATUS_FULL_TIME
+652641,2022-10-11 21:00:00,2023,group-stage,0,0,493,86,Shakhtar Donetsk,Real Madrid,1,1,post,STATUS_FULL_TIME
+652642,2022-10-12 18:45:00,2023,group-stage,0,0,1068,570,Atletico Madrid,Club Brugge,0,0,post,STATUS_FULL_TIME
+652643,2022-10-12 18:45:00,2023,group-stage,0,0,114,139,Napoli,Ajax,4,2,post,STATUS_FULL_TIME
+652645,2022-10-12 21:00:00,2023,group-stage,0,0,131,437,Bayer Leverkusen,Porto,0,3,post,STATUS_FULL_TIME
+652646,2022-10-12 21:00:00,2023,group-stage,0,0,11706,132,Viktoria Plzen,Bayern Munich,2,4,post,STATUS_FULL_TIME
+652649,2022-10-12 21:00:00,2023,group-stage,0,0,367,125,Tottenham Hotspur,Eintracht Frankfurt,3,2,post,STATUS_FULL_TIME
+652644,2022-10-12 21:00:00,2023,group-stage,0,0,83,110,FC Barcelona,Inter,3,3,post,STATUS_FULL_TIME
+652647,2022-10-12 21:00:00,2023,group-stage,0,0,257,364,Rangers,Liverpool,1,7,post,STATUS_FULL_TIME
+652648,2022-10-12 21:00:00,2023,group-stage,0,0,2250,176,Sporting CP,Marseille,0,2,post,STATUS_FULL_TIME
+652650,2022-10-25 18:45:00,2023,group-stage,0,0,2790,363,Salzburg,Chelsea,1,2,post,STATUS_FULL_TIME
+652651,2022-10-25 18:45:00,2023,group-stage,0,0,243,909,Sevilla,F.C. København,3,0,post,STATUS_FULL_TIME
+652654,2022-10-25 21:00:00,2023,group-stage,0,0,160,611,PSG,Maccabi Haifa,7,2,post,STATUS_FULL_TIME
+652652,2022-10-25 21:00:00,2023,group-stage,0,0,1929,111,Benfica,Juventus,4,3,post,STATUS_FULL_TIME
+652653,2022-10-25 21:00:00,2023,group-stage,0,0,124,382,Borussia Dortmund,Manchester City,0,0,post,STATUS_FULL_TIME
+652656,2022-10-25 21:00:00,2023,group-stage,0,0,256,493,Celtic,Shakhtar Donetsk,1,1,post,STATUS_FULL_TIME
+652657,2022-10-25 21:00:00,2023,group-stage,0,0,597,103,Dinamo Zagreb,AC Milan,0,4,post,STATUS_FULL_TIME
+652655,2022-10-25 21:00:00,2023,group-stage,0,0,11420,86,RB Leipzig,Real Madrid,3,2,post,STATUS_FULL_TIME
+652658,2022-10-26 18:45:00,2023,group-stage,0,0,570,437,Club Brugge,Porto,0,4,post,STATUS_FULL_TIME
+652659,2022-10-26 18:45:00,2023,group-stage,0,0,110,11706,Inter,Viktoria Plzen,4,0,post,STATUS_FULL_TIME
+652664,2022-10-26 21:00:00,2023,group-stage,0,0,367,2250,Tottenham Hotspur,Sporting CP,1,1,post,STATUS_FULL_TIME
+652663,2022-10-26 21:00:00,2023,group-stage,0,0,114,257,Napoli,Rangers,3,0,post,STATUS_FULL_TIME
+652660,2022-10-26 21:00:00,2023,group-stage,0,0,125,176,Eintracht Frankfurt,Marseille,2,1,post,STATUS_FULL_TIME
+652661,2022-10-26 21:00:00,2023,group-stage,0,0,1068,131,Atletico Madrid,Bayer Leverkusen,2,2,post,STATUS_FULL_TIME
+652662,2022-10-26 21:00:00,2023,group-stage,0,0,139,364,Ajax,Liverpool,0,3,post,STATUS_FULL_TIME
+652665,2022-10-26 21:00:00,2023,group-stage,0,0,83,132,FC Barcelona,Bayern Munich,0,3,post,STATUS_FULL_TIME
+652667,2022-11-01 18:45:00,2023,group-stage,0,0,131,570,Bayer Leverkusen,Club Brugge,0,0,post,STATUS_FULL_TIME
+652666,2022-11-01 18:45:00,2023,group-stage,0,0,437,1068,Porto,Atletico Madrid,2,1,post,STATUS_FULL_TIME
+652668,2022-11-01 21:00:00,2023,group-stage,0,0,132,110,Bayern Munich,Inter,2,0,post,STATUS_FULL_TIME
+652669,2022-11-01 21:00:00,2023,group-stage,0,0,364,114,Liverpool,Napoli,2,0,post,STATUS_FULL_TIME
+652670,2022-11-01 21:00:00,2023,group-stage,0,0,176,367,Marseille,Tottenham Hotspur,1,2,post,STATUS_FULL_TIME
+652671,2022-11-01 21:00:00,2023,group-stage,0,0,257,139,Rangers,Ajax,1,3,post,STATUS_FULL_TIME
+652672,2022-11-01 21:00:00,2023,group-stage,0,0,2250,125,Sporting CP,Eintracht Frankfurt,1,2,post,STATUS_FULL_TIME
+652673,2022-11-01 21:00:00,2023,group-stage,0,0,11706,83,Viktoria Plzen,FC Barcelona,2,4,post,STATUS_FULL_TIME
+652675,2022-11-02 18:45:00,2023,group-stage,0,0,86,256,Real Madrid,Celtic,5,1,post,STATUS_FULL_TIME
+652674,2022-11-02 18:45:00,2023,group-stage,0,0,493,11420,Shakhtar Donetsk,RB Leipzig,0,4,post,STATUS_FULL_TIME
+652676,2022-11-02 21:00:00,2023,group-stage,0,0,363,597,Chelsea,Dinamo Zagreb,2,1,post,STATUS_FULL_TIME
+652681,2022-11-02 21:00:00,2023,group-stage,0,0,382,243,Manchester City,Sevilla,3,1,post,STATUS_FULL_TIME
+652679,2022-11-02 21:00:00,2023,group-stage,0,0,611,1929,Maccabi Haifa,Benfica,1,6,post,STATUS_FULL_TIME
+652678,2022-11-02 21:00:00,2023,group-stage,0,0,103,2790,AC Milan,Salzburg,4,0,post,STATUS_FULL_TIME
+652677,2022-11-02 21:00:00,2023,group-stage,0,0,909,124,F.C. København,Borussia Dortmund,1,1,post,STATUS_FULL_TIME
+652680,2022-11-02 21:00:00,2023,group-stage,0,0,111,160,Juventus,PSG,1,2,post,STATUS_FULL_TIME
+656857,2023-02-14 21:00:00,2023,round-of-16,1,0,103,367,AC Milan,Tottenham Hotspur,1,0,post,STATUS_FULL_TIME
+656858,2023-02-14 21:00:00,2023,round-of-16,1,0,160,132,PSG,Bayern Munich,0,1,post,STATUS_FULL_TIME
+656852,2023-02-15 21:00:00,2023,round-of-16,1,0,124,363,Borussia Dortmund,Chelsea,1,0,post,STATUS_FULL_TIME
+656853,2023-02-15 21:00:00,2023,round-of-16,1,0,570,1929,Club Brugge,Benfica,0,2,post,STATUS_FULL_TIME
+656854,2023-02-21 21:00:00,2023,round-of-16,1,0,125,114,Eintracht Frankfurt,Napoli,0,2,post,STATUS_FULL_TIME
+656856,2023-02-21 21:00:00,2023,round-of-16,1,0,364,86,Liverpool,Real Madrid,2,5,post,STATUS_FULL_TIME
+656859,2023-02-22 21:00:00,2023,round-of-16,1,0,11420,382,RB Leipzig,Manchester City,1,1,post,STATUS_FULL_TIME
+656855,2023-02-22 21:00:00,2023,round-of-16,1,0,110,437,Inter,Porto,1,0,post,STATUS_FULL_TIME
+656860,2023-03-07 21:00:00,2023,round-of-16,1,0,1929,570,Benfica,Club Brugge,5,1,post,STATUS_FULL_TIME
+656861,2023-03-07 21:10:00,2023,round-of-16,1,0,363,124,Chelsea,Borussia Dortmund,2,0,post,STATUS_FULL_TIME
+656862,2023-03-08 21:00:00,2023,round-of-16,1,0,132,160,Bayern Munich,PSG,2,0,post,STATUS_FULL_TIME
+656867,2023-03-08 21:10:00,2023,round-of-16,1,0,367,103,Tottenham Hotspur,AC Milan,0,0,post,STATUS_FULL_TIME
+656865,2023-03-14 21:00:00,2023,round-of-16,1,0,437,110,Porto,Inter,0,0,post,STATUS_FULL_TIME
+656866,2023-03-14 21:00:00,2023,round-of-16,1,0,382,11420,Manchester City,RB Leipzig,7,0,post,STATUS_FULL_TIME
+656863,2023-03-15 21:00:00,2023,round-of-16,1,0,114,125,Napoli,Eintracht Frankfurt,3,0,post,STATUS_FULL_TIME
+656864,2023-03-15 21:00:00,2023,round-of-16,1,0,86,364,Real Madrid,Liverpool,1,0,post,STATUS_FULL_TIME
+667467,2023-04-11 21:00:00,2023,quarterfinals,1,0,1929,110,Benfica,Inter,0,2,post,STATUS_FULL_TIME
+667466,2023-04-11 21:00:00,2023,quarterfinals,1,0,382,132,Manchester City,Bayern Munich,3,0,post,STATUS_FULL_TIME
+667468,2023-04-12 21:00:00,2023,quarterfinals,1,0,103,114,AC Milan,Napoli,1,0,post,STATUS_FULL_TIME
+667469,2023-04-12 21:00:00,2023,quarterfinals,1,0,86,363,Real Madrid,Chelsea,2,0,post,STATUS_FULL_TIME
+667471,2023-04-18 21:00:00,2023,quarterfinals,1,0,363,86,Chelsea,Real Madrid,0,2,post,STATUS_FULL_TIME
+667472,2023-04-18 21:00:00,2023,quarterfinals,1,0,114,103,Napoli,AC Milan,1,1,post,STATUS_FULL_TIME
+667470,2023-04-19 21:00:00,2023,quarterfinals,1,0,132,382,Bayern Munich,Manchester City,1,1,post,STATUS_FULL_TIME
+667473,2023-04-19 21:00:00,2023,quarterfinals,1,0,110,1929,Inter,Benfica,3,3,post,STATUS_FULL_TIME
+668473,2023-05-09 21:00:00,2023,semifinals,1,0,86,382,Real Madrid,Manchester City,1,1,post,STATUS_FULL_TIME
+668474,2023-05-10 21:00:00,2023,semifinals,1,0,103,110,AC Milan,Inter,0,2,post,STATUS_FULL_TIME
+668476,2023-05-16 21:00:00,2023,semifinals,1,0,110,103,Inter,AC Milan,1,0,post,STATUS_FULL_TIME
+668475,2023-05-17 21:00:00,2023,semifinals,1,0,382,86,Manchester City,Real Madrid,4,0,post,STATUS_FULL_TIME
+668516,2023-06-10 21:00:00,2023,final,1,1,382,110,Manchester City,Inter,1,0,post,STATUS_FULL_TIME
+687537,2023-09-19 18:45:00,2024,group-stage,0,0,103,361,AC Milan,Newcastle United,0,0,post,STATUS_FULL_TIME
+687536,2023-09-19 18:45:00,2024,group-stage,0,0,2722,11420,Young Boys,RB Leipzig,1,3,post,STATUS_FULL_TIME
+687543,2023-09-19 21:00:00,2024,group-stage,0,0,83,17544,FC Barcelona,Antwerp,5,0,post,STATUS_FULL_TIME
+687542,2023-09-19 21:00:00,2024,group-stage,0,0,142,256,Feyenoord,Celtic,2,0,post,STATUS_FULL_TIME
+687541,2023-09-19 21:00:00,2024,group-stage,0,0,112,1068,Lazio,Atletico Madrid,1,1,post,STATUS_FULL_TIME
+687540,2023-09-19 21:00:00,2024,group-stage,0,0,382,2290,Manchester City,Crvena Zvezda,3,1,post,STATUS_FULL_TIME
+687539,2023-09-19 21:00:00,2024,group-stage,0,0,160,124,PSG,Borussia Dortmund,2,0,post,STATUS_FULL_TIME
+687538,2023-09-19 21:00:00,2024,group-stage,0,0,493,437,Shakhtar Donetsk,Porto,1,3,post,STATUS_FULL_TIME
+687544,2023-09-20 18:45:00,2024,group-stage,0,0,86,598,Real Madrid,Union Berlin,1,0,post,STATUS_FULL_TIME
+687545,2023-09-20 18:45:00,2024,group-stage,0,0,432,909,Galatasaray,F.C. København,2,2,post,STATUS_FULL_TIME
+687548,2023-09-20 21:00:00,2024,group-stage,0,0,89,110,Real Sociedad,Inter,1,1,post,STATUS_FULL_TIME
+687547,2023-09-20 21:00:00,2024,group-stage,0,0,243,175,Sevilla,Lens,1,1,post,STATUS_FULL_TIME
+687546,2023-09-20 21:00:00,2024,group-stage,0,0,2994,114,Braga,Napoli,1,2,post,STATUS_FULL_TIME
+687549,2023-09-20 21:00:00,2024,group-stage,0,0,359,148,Arsenal,PSV,4,0,post,STATUS_FULL_TIME
+687551,2023-09-20 21:00:00,2024,group-stage,0,0,132,360,Bayern Munich,Manchester United,4,3,post,STATUS_FULL_TIME
+687550,2023-09-20 21:00:00,2024,group-stage,0,0,1929,2790,Benfica,Salzburg,0,2,post,STATUS_FULL_TIME
+687553,2023-10-03 18:45:00,2024,group-stage,0,0,598,2994,Union Berlin,Braga,2,3,post,STATUS_FULL_TIME
+687552,2023-10-03 18:45:00,2024,group-stage,0,0,2790,89,Salzburg,Real Sociedad,0,2,post,STATUS_FULL_TIME
+687555,2023-10-03 21:00:00,2024,group-stage,0,0,909,132,F.C. København,Bayern Munich,1,2,post,STATUS_FULL_TIME
+687558,2023-10-03 21:00:00,2024,group-stage,0,0,110,1929,Inter,Benfica,1,0,post,STATUS_FULL_TIME
+687557,2023-10-03 21:00:00,2024,group-stage,0,0,175,359,Lens,Arsenal,2,1,post,STATUS_FULL_TIME
+687556,2023-10-03 21:00:00,2024,group-stage,0,0,360,432,Manchester United,Galatasaray,2,3,post,STATUS_FULL_TIME
+687554,2023-10-03 21:00:00,2024,group-stage,0,0,114,86,Napoli,Real Madrid,2,3,post,STATUS_FULL_TIME
+687559,2023-10-03 21:00:00,2024,group-stage,0,0,148,243,PSV,Sevilla,2,2,post,STATUS_FULL_TIME
+687561,2023-10-04 18:45:00,2024,group-stage,0,0,1068,142,Atletico Madrid,Feyenoord,3,2,post,STATUS_FULL_TIME
+687560,2023-10-04 18:45:00,2024,group-stage,0,0,17544,493,Antwerp,Shakhtar Donetsk,2,3,post,STATUS_FULL_TIME
+687565,2023-10-04 21:00:00,2024,group-stage,0,0,124,103,Borussia Dortmund,AC Milan,0,0,post,STATUS_FULL_TIME
+687567,2023-10-04 21:00:00,2024,group-stage,0,0,256,112,Celtic,Lazio,1,2,post,STATUS_FULL_TIME
+687562,2023-10-04 21:00:00,2024,group-stage,0,0,437,83,Porto,FC Barcelona,0,1,post,STATUS_FULL_TIME
+687563,2023-10-04 21:00:00,2024,group-stage,0,0,361,160,Newcastle United,PSG,4,1,post,STATUS_FULL_TIME
+687564,2023-10-04 21:00:00,2024,group-stage,0,0,11420,382,RB Leipzig,Manchester City,1,3,post,STATUS_FULL_TIME
+687566,2023-10-04 21:00:00,2024,group-stage,0,0,2290,2722,Crvena Zvezda,Young Boys,2,2,post,STATUS_FULL_TIME
+687569,2023-10-24 18:45:00,2024,group-stage,0,0,432,132,Galatasaray,Bayern Munich,1,3,post,STATUS_FULL_TIME
+687568,2023-10-24 18:45:00,2024,group-stage,0,0,110,2790,Inter,Salzburg,2,1,post,STATUS_FULL_TIME
+687574,2023-10-24 21:00:00,2024,group-stage,0,0,360,909,Manchester United,F.C. København,1,0,post,STATUS_FULL_TIME
+687575,2023-10-24 21:00:00,2024,group-stage,0,0,175,148,Lens,PSV,1,1,post,STATUS_FULL_TIME
+687573,2023-10-24 21:00:00,2024,group-stage,0,0,243,359,Sevilla,Arsenal,1,2,post,STATUS_FULL_TIME
+687570,2023-10-24 21:00:00,2024,group-stage,0,0,1929,89,Benfica,Real Sociedad,0,1,post,STATUS_FULL_TIME
+687571,2023-10-24 21:00:00,2024,group-stage,0,0,598,114,Union Berlin,Napoli,0,1,post,STATUS_FULL_TIME
+687572,2023-10-24 21:00:00,2024,group-stage,0,0,2994,86,Braga,Real Madrid,1,2,post,STATUS_FULL_TIME
+687577,2023-10-25 18:45:00,2024,group-stage,0,0,83,493,FC Barcelona,Shakhtar Donetsk,2,1,post,STATUS_FULL_TIME
+687576,2023-10-25 18:45:00,2024,group-stage,0,0,142,112,Feyenoord,Lazio,3,1,post,STATUS_FULL_TIME
+687579,2023-10-25 21:00:00,2024,group-stage,0,0,17544,437,Antwerp,Porto,1,4,post,STATUS_FULL_TIME
+687578,2023-10-25 21:00:00,2024,group-stage,0,0,256,1068,Celtic,Atletico Madrid,2,2,post,STATUS_FULL_TIME
+687582,2023-10-25 21:00:00,2024,group-stage,0,0,361,124,Newcastle United,Borussia Dortmund,0,1,post,STATUS_FULL_TIME
+687581,2023-10-25 21:00:00,2024,group-stage,0,0,160,103,PSG,AC Milan,3,0,post,STATUS_FULL_TIME
+687583,2023-10-25 21:00:00,2024,group-stage,0,0,11420,2290,RB Leipzig,Crvena Zvezda,3,1,post,STATUS_FULL_TIME
+687580,2023-10-25 21:00:00,2024,group-stage,0,0,2722,382,Young Boys,Manchester City,1,3,post,STATUS_FULL_TIME
+687585,2023-11-07 18:45:00,2024,group-stage,0,0,124,361,Borussia Dortmund,Newcastle United,2,0,post,STATUS_FULL_TIME
+687584,2023-11-07 18:45:00,2024,group-stage,0,0,493,83,Shakhtar Donetsk,FC Barcelona,1,0,post,STATUS_FULL_TIME
+687590,2023-11-07 21:00:00,2024,group-stage,0,0,2290,11420,Crvena Zvezda,RB Leipzig,1,2,post,STATUS_FULL_TIME
+687587,2023-11-07 21:00:00,2024,group-stage,0,0,382,2722,Manchester City,Young Boys,3,0,post,STATUS_FULL_TIME
+687588,2023-11-07 21:00:00,2024,group-stage,0,0,112,142,Lazio,Feyenoord,1,0,post,STATUS_FULL_TIME
+687591,2023-11-07 21:00:00,2024,group-stage,0,0,1068,256,Atletico Madrid,Celtic,6,0,post,STATUS_FULL_TIME
+687586,2023-11-07 21:00:00,2024,group-stage,0,0,103,160,AC Milan,PSG,2,1,post,STATUS_FULL_TIME
+687589,2023-11-07 21:00:00,2024,group-stage,0,0,437,17544,Porto,Antwerp,2,0,post,STATUS_FULL_TIME
+687593,2023-11-08 18:45:00,2024,group-stage,0,0,114,598,Napoli,Union Berlin,1,1,post,STATUS_FULL_TIME
+687592,2023-11-08 18:45:00,2024,group-stage,0,0,89,1929,Real Sociedad,Benfica,3,1,post,STATUS_FULL_TIME
+687595,2023-11-08 21:00:00,2024,group-stage,0,0,359,243,Arsenal,Sevilla,2,0,post,STATUS_FULL_TIME
+687594,2023-11-08 21:00:00,2024,group-stage,0,0,132,432,Bayern Munich,Galatasaray,2,1,post,STATUS_FULL_TIME
+687596,2023-11-08 21:00:00,2024,group-stage,0,0,909,360,F.C. København,Manchester United,4,3,post,STATUS_FULL_TIME
+687598,2023-11-08 21:00:00,2024,group-stage,0,0,148,175,PSV,Lens,1,0,post,STATUS_FULL_TIME
+687599,2023-11-08 21:00:00,2024,group-stage,0,0,2790,110,Salzburg,Inter,0,1,post,STATUS_FULL_TIME
+687597,2023-11-08 21:00:00,2024,group-stage,0,0,86,2994,Real Madrid,Braga,3,0,post,STATUS_FULL_TIME
+687601,2023-11-28 18:45:00,2024,group-stage,0,0,112,256,Lazio,Celtic,2,0,post,STATUS_FULL_TIME
+687600,2023-11-28 18:45:00,2024,group-stage,0,0,493,17544,Shakhtar Donetsk,Antwerp,1,0,post,STATUS_FULL_TIME
+687607,2023-11-28 21:00:00,2024,group-stage,0,0,83,437,FC Barcelona,Porto,2,1,post,STATUS_FULL_TIME
+687602,2023-11-28 21:00:00,2024,group-stage,0,0,2722,2290,Young Boys,Crvena Zvezda,2,0,post,STATUS_FULL_TIME
+687603,2023-11-28 21:00:00,2024,group-stage,0,0,160,361,PSG,Newcastle United,1,1,post,STATUS_FULL_TIME
+687604,2023-11-28 21:00:00,2024,group-stage,0,0,103,124,AC Milan,Borussia Dortmund,1,3,post,STATUS_FULL_TIME
+687606,2023-11-28 21:00:00,2024,group-stage,0,0,142,1068,Feyenoord,Atletico Madrid,1,3,post,STATUS_FULL_TIME
+687605,2023-11-28 21:00:00,2024,group-stage,0,0,382,11420,Manchester City,RB Leipzig,3,2,post,STATUS_FULL_TIME
+687609,2023-11-29 18:45:00,2024,group-stage,0,0,432,360,Galatasaray,Manchester United,3,3,post,STATUS_FULL_TIME
+687608,2023-11-29 18:45:00,2024,group-stage,0,0,243,148,Sevilla,PSV,2,3,post,STATUS_FULL_TIME
+687611,2023-11-29 21:00:00,2024,group-stage,0,0,359,175,Arsenal,Lens,6,0,post,STATUS_FULL_TIME
+687615,2023-11-29 21:00:00,2024,group-stage,0,0,132,909,Bayern Munich,F.C. København,0,0,post,STATUS_FULL_TIME
+687614,2023-11-29 21:00:00,2024,group-stage,0,0,1929,110,Benfica,Inter,3,3,post,STATUS_FULL_TIME
+687610,2023-11-29 21:00:00,2024,group-stage,0,0,2994,598,Braga,Union Berlin,1,1,post,STATUS_FULL_TIME
+687613,2023-11-29 21:00:00,2024,group-stage,0,0,86,114,Real Madrid,Napoli,4,2,post,STATUS_FULL_TIME
+687612,2023-11-29 21:00:00,2024,group-stage,0,0,89,2790,Real Sociedad,Salzburg,0,0,post,STATUS_FULL_TIME
+687617,2023-12-12 18:45:00,2024,group-stage,0,0,175,243,Lens,Sevilla,2,1,post,STATUS_FULL_TIME
+687616,2023-12-12 18:45:00,2024,group-stage,0,0,148,359,PSV,Arsenal,1,1,post,STATUS_FULL_TIME
+687620,2023-12-12 21:00:00,2024,group-stage,0,0,2790,1929,Salzburg,Benfica,1,3,post,STATUS_FULL_TIME
+687622,2023-12-12 21:00:00,2024,group-stage,0,0,114,2994,Napoli,Braga,2,0,post,STATUS_FULL_TIME
+687621,2023-12-12 21:00:00,2024,group-stage,0,0,360,132,Manchester United,Bayern Munich,0,1,post,STATUS_FULL_TIME
+687623,2023-12-12 21:00:00,2024,group-stage,0,0,909,432,F.C. København,Galatasaray,1,0,post,STATUS_FULL_TIME
+687619,2023-12-12 21:00:00,2024,group-stage,0,0,598,86,Union Berlin,Real Madrid,2,3,post,STATUS_FULL_TIME
+687618,2023-12-12 21:00:00,2024,group-stage,0,0,110,89,Inter,Real Sociedad,0,0,post,STATUS_FULL_TIME
+687624,2023-12-13 18:45:00,2024,group-stage,0,0,11420,2722,RB Leipzig,Young Boys,2,1,post,STATUS_FULL_TIME
+687625,2023-12-13 18:45:00,2024,group-stage,0,0,2290,382,Crvena Zvezda,Manchester City,2,3,post,STATUS_FULL_TIME
+687630,2023-12-13 21:00:00,2024,group-stage,0,0,437,493,Porto,Shakhtar Donetsk,5,3,post,STATUS_FULL_TIME
+687627,2023-12-13 21:00:00,2024,group-stage,0,0,17544,83,Antwerp,FC Barcelona,3,2,post,STATUS_FULL_TIME
+687626,2023-12-13 21:00:00,2024,group-stage,0,0,1068,112,Atletico Madrid,Lazio,2,0,post,STATUS_FULL_TIME
+687628,2023-12-13 21:00:00,2024,group-stage,0,0,124,160,Borussia Dortmund,PSG,1,1,post,STATUS_FULL_TIME
+687629,2023-12-13 21:00:00,2024,group-stage,0,0,256,142,Celtic,Feyenoord,2,1,post,STATUS_FULL_TIME
+687631,2023-12-13 21:00:00,2024,group-stage,0,0,361,103,Newcastle United,AC Milan,1,2,post,STATUS_FULL_TIME
+691514,2024-02-13 21:00:00,2024,round-of-16,1,0,11420,86,RB Leipzig,Real Madrid,0,1,post,STATUS_FULL_TIME
+691512,2024-02-13 21:00:00,2024,round-of-16,1,0,909,382,F.C. København,Manchester City,1,3,post,STATUS_FULL_TIME
+691513,2024-02-14 21:00:00,2024,round-of-16,1,0,112,132,Lazio,Bayern Munich,1,0,post,STATUS_FULL_TIME
+691515,2024-02-14 21:00:00,2024,round-of-16,1,0,160,89,PSG,Real Sociedad,2,0,post,STATUS_FULL_TIME
+691510,2024-02-20 21:00:00,2024,round-of-16,1,0,110,1068,Inter,Atletico Madrid,1,0,post,STATUS_FULL_TIME
+691516,2024-02-20 21:00:00,2024,round-of-16,1,0,148,124,PSV,Borussia Dortmund,1,1,post,STATUS_FULL_TIME
+691511,2024-02-21 21:00:00,2024,round-of-16,1,0,437,359,Porto,Arsenal,1,0,post,STATUS_FULL_TIME
+691517,2024-02-21 21:00:00,2024,round-of-16,1,0,114,83,Napoli,FC Barcelona,1,1,post,STATUS_FULL_TIME
+691521,2024-03-05 21:00:00,2024,round-of-16,1,0,132,112,Bayern Munich,Lazio,3,0,post,STATUS_FULL_TIME
+691523,2024-03-05 21:00:00,2024,round-of-16,1,0,89,160,Real Sociedad,PSG,1,2,post,STATUS_FULL_TIME
+691522,2024-03-06 21:00:00,2024,round-of-16,1,0,382,909,Manchester City,F.C. København,3,1,post,STATUS_FULL_TIME
+691525,2024-03-06 21:00:00,2024,round-of-16,1,0,86,11420,Real Madrid,RB Leipzig,1,1,post,STATUS_FULL_TIME
+691518,2024-03-12 21:00:00,2024,round-of-16,1,0,359,437,Arsenal,Porto,1,0,post,STATUS_FINAL_PEN
+691520,2024-03-12 21:00:00,2024,round-of-16,1,0,83,114,FC Barcelona,Napoli,3,1,post,STATUS_FULL_TIME
+691524,2024-03-13 21:00:00,2024,round-of-16,1,0,124,148,Borussia Dortmund,PSV,2,0,post,STATUS_FULL_TIME
+691519,2024-03-13 21:00:00,2024,round-of-16,1,0,1068,110,Atletico Madrid,Inter,2,1,post,STATUS_FINAL_PEN
+700719,2024-04-09 21:00:00,2024,quarterfinals,1,0,359,132,Arsenal,Bayern Munich,2,2,post,STATUS_FULL_TIME
+700716,2024-04-09 21:00:00,2024,quarterfinals,1,0,86,382,Real Madrid,Manchester City,3,3,post,STATUS_FULL_TIME
+700718,2024-04-10 21:00:00,2024,quarterfinals,1,0,1068,124,Atletico Madrid,Borussia Dortmund,2,1,post,STATUS_FULL_TIME
+700717,2024-04-10 21:00:00,2024,quarterfinals,1,0,160,83,PSG,FC Barcelona,2,3,post,STATUS_FULL_TIME
+700723,2024-04-16 21:00:00,2024,quarterfinals,1,0,83,160,FC Barcelona,PSG,1,4,post,STATUS_FULL_TIME
+700720,2024-04-16 21:00:00,2024,quarterfinals,1,0,124,1068,Borussia Dortmund,Atletico Madrid,4,2,post,STATUS_FULL_TIME
+700721,2024-04-17 21:00:00,2024,quarterfinals,1,0,132,359,Bayern Munich,Arsenal,1,0,post,STATUS_FULL_TIME
+700722,2024-04-17 21:00:00,2024,quarterfinals,1,0,382,86,Manchester City,Real Madrid,1,1,post,STATUS_FINAL_PEN
+702056,2024-04-30 21:00:00,2024,semifinals,1,0,132,86,Bayern Munich,Real Madrid,2,2,post,STATUS_FULL_TIME
+701984,2024-05-01 21:00:00,2024,semifinals,1,0,124,160,Borussia Dortmund,PSG,1,0,post,STATUS_FULL_TIME
+701985,2024-05-07 21:00:00,2024,semifinals,1,0,160,124,PSG,Borussia Dortmund,0,1,post,STATUS_FULL_TIME
+702057,2024-05-08 21:00:00,2024,semifinals,1,0,86,132,Real Madrid,Bayern Munich,2,1,post,STATUS_FULL_TIME
+702410,2024-06-01 21:00:00,2024,final,1,1,124,86,Borussia Dortmund,Real Madrid,0,2,post,STATUS_FULL_TIME
+720419,2024-09-17 18:45:00,2025,league-phase,0,0,2722,362,Young Boys,Aston Villa,0,3,post,STATUS_FULL_TIME
+720418,2024-09-17 18:45:00,2025,league-phase,0,0,111,148,Juventus,PSV,3,1,post,STATUS_FULL_TIME
+720365,2024-09-17 21:00:00,2025,league-phase,0,0,103,364,AC Milan,Liverpool,1,3,post,STATUS_FULL_TIME
+720422,2024-09-17 21:00:00,2025,league-phase,0,0,132,597,Bayern Munich,Dinamo Zagreb,9,2,post,STATUS_FULL_TIME
+720420,2024-09-17 21:00:00,2025,league-phase,0,0,86,134,Real Madrid,VfB Stuttgart,3,1,post,STATUS_FULL_TIME
+720421,2024-09-17 21:00:00,2025,league-phase,0,0,2250,166,Sporting CP,Lille,2,0,post,STATUS_FULL_TIME
+720424,2024-09-18 18:45:00,2025,league-phase,0,0,107,493,Bologna,Shakhtar Donetsk,0,0,post,STATUS_FULL_TIME
+720423,2024-09-18 18:45:00,2025,league-phase,0,0,433,2790,Sparta Praga,Salzburg,3,0,post,STATUS_FULL_TIME
+720427,2024-09-18 21:00:00,2025,league-phase,0,0,256,521,Celtic,Slovan Bratislava,5,1,post,STATUS_FULL_TIME
+720428,2024-09-18 21:00:00,2025,league-phase,0,0,570,124,Club Brugge,Borussia Dortmund,0,3,post,STATUS_FULL_TIME
+720426,2024-09-18 21:00:00,2025,league-phase,0,0,382,110,Manchester City,Inter,0,0,post,STATUS_FULL_TIME
+720425,2024-09-18 21:00:00,2025,league-phase,0,0,160,9812,PSG,Girona,1,0,post,STATUS_FULL_TIME
+720430,2024-09-19 18:45:00,2025,league-phase,0,0,142,131,Feyenoord,Bayer Leverkusen,0,4,post,STATUS_FULL_TIME
+720429,2024-09-19 18:45:00,2025,league-phase,0,0,2290,1929,Crvena Zvezda,Benfica,1,2,post,STATUS_FULL_TIME
+720433,2024-09-19 21:00:00,2025,league-phase,0,0,6997,3746,Brest,Sturm Graz,2,1,post,STATUS_FULL_TIME
+720432,2024-09-19 21:00:00,2025,league-phase,0,0,1068,11420,Atletico Madrid,RB Leipzig,2,1,post,STATUS_FULL_TIME
+720434,2024-09-19 21:00:00,2025,league-phase,0,0,174,83,AS Monaco,FC Barcelona,2,1,post,STATUS_FULL_TIME
+720431,2024-09-19 21:00:00,2025,league-phase,0,0,105,359,Atalanta,Arsenal,0,0,post,STATUS_FULL_TIME
+720435,2024-10-01 18:45:00,2025,league-phase,0,0,2790,6997,Salzburg,Brest,0,4,post,STATUS_FULL_TIME
+720436,2024-10-01 18:45:00,2025,league-phase,0,0,134,433,VfB Stuttgart,Sparta Praga,1,1,post,STATUS_FULL_TIME
+720441,2024-10-01 21:00:00,2025,league-phase,0,0,148,2250,PSV,Sporting CP,1,1,post,STATUS_FULL_TIME
+720443,2024-10-01 21:00:00,2025,league-phase,0,0,359,160,Arsenal,PSG,2,0,post,STATUS_FULL_TIME
+720442,2024-10-01 21:00:00,2025,league-phase,0,0,83,2722,FC Barcelona,Young Boys,5,0,post,STATUS_FULL_TIME
+720437,2024-10-01 21:00:00,2025,league-phase,0,0,131,103,Bayer Leverkusen,AC Milan,1,0,post,STATUS_FULL_TIME
+720438,2024-10-01 21:00:00,2025,league-phase,0,0,124,256,Borussia Dortmund,Celtic,7,1,post,STATUS_FULL_TIME
+720440,2024-10-01 21:00:00,2025,league-phase,0,0,110,2290,Inter,Crvena Zvezda,4,0,post,STATUS_FULL_TIME
+720439,2024-10-01 21:00:00,2025,league-phase,0,0,521,382,Slovan Bratislava,Manchester City,0,4,post,STATUS_FULL_TIME
+720444,2024-10-02 18:45:00,2025,league-phase,0,0,493,105,Shakhtar Donetsk,Atalanta,0,3,post,STATUS_FULL_TIME
+720445,2024-10-02 18:45:00,2025,league-phase,0,0,9812,142,Girona,Feyenoord,2,3,post,STATUS_FULL_TIME
+720451,2024-10-02 21:00:00,2025,league-phase,0,0,362,132,Aston Villa,Bayern Munich,1,0,post,STATUS_FULL_TIME
+720447,2024-10-02 21:00:00,2025,league-phase,0,0,1929,1068,Benfica,Atletico Madrid,4,0,post,STATUS_FULL_TIME
+720446,2024-10-02 21:00:00,2025,league-phase,0,0,597,174,Dinamo Zagreb,AS Monaco,2,2,post,STATUS_FULL_TIME
+720448,2024-10-02 21:00:00,2025,league-phase,0,0,166,86,Lille,Real Madrid,1,0,post,STATUS_FULL_TIME
+720366,2024-10-02 21:00:00,2025,league-phase,0,0,364,107,Liverpool,Bologna,2,0,post,STATUS_FULL_TIME
+720449,2024-10-02 21:00:00,2025,league-phase,0,0,11420,111,RB Leipzig,Juventus,2,3,post,STATUS_FULL_TIME
+720450,2024-10-02 21:00:00,2025,league-phase,0,0,3746,570,Sturm Graz,Club Brugge,0,1,post,STATUS_FULL_TIME
+720453,2024-10-22 18:45:00,2025,league-phase,0,0,103,570,AC Milan,Club Brugge,3,1,post,STATUS_FULL_TIME
+720452,2024-10-22 18:45:00,2025,league-phase,0,0,174,2290,AS Monaco,Crvena Zvezda,5,1,post,STATUS_FULL_TIME
+720456,2024-10-22 21:00:00,2025,league-phase,0,0,111,134,Juventus,VfB Stuttgart,0,1,post,STATUS_FULL_TIME
+720458,2024-10-22 21:00:00,2025,league-phase,0,0,3746,2250,Sturm Graz,Sporting CP,0,2,post,STATUS_FULL_TIME
+720459,2024-10-22 21:00:00,2025,league-phase,0,0,86,124,Real Madrid,Borussia Dortmund,5,2,post,STATUS_FULL_TIME
+720460,2024-10-22 21:00:00,2025,league-phase,0,0,160,148,PSG,PSV,1,1,post,STATUS_FULL_TIME
+720454,2024-10-22 21:00:00,2025,league-phase,0,0,9812,521,Girona,Slovan Bratislava,2,0,post,STATUS_FULL_TIME
+720457,2024-10-22 21:00:00,2025,league-phase,0,0,362,107,Aston Villa,Bologna,2,0,post,STATUS_FULL_TIME
+720455,2024-10-22 21:00:00,2025,league-phase,0,0,359,493,Arsenal,Shakhtar Donetsk,1,0,post,STATUS_FULL_TIME
+720461,2024-10-23 18:45:00,2025,league-phase,0,0,105,256,Atalanta,Celtic,0,0,post,STATUS_FULL_TIME
+720462,2024-10-23 18:45:00,2025,league-phase,0,0,6997,131,Brest,Bayer Leverkusen,1,1,post,STATUS_FULL_TIME
+720373,2024-10-23 21:00:00,2025,league-phase,0,0,1068,166,Atletico Madrid,Lille,1,3,post,STATUS_FULL_TIME
+720372,2024-10-23 21:00:00,2025,league-phase,0,0,83,132,FC Barcelona,Bayern Munich,4,1,post,STATUS_FULL_TIME
+720463,2024-10-23 21:00:00,2025,league-phase,0,0,1929,142,Benfica,Feyenoord,1,3,post,STATUS_FULL_TIME
+720374,2024-10-23 21:00:00,2025,league-phase,0,0,382,433,Manchester City,Sparta Praga,5,0,post,STATUS_FULL_TIME
+720367,2024-10-23 21:00:00,2025,league-phase,0,0,11420,364,RB Leipzig,Liverpool,0,1,post,STATUS_FULL_TIME
+720464,2024-10-23 21:00:00,2025,league-phase,0,0,2790,597,Salzburg,Dinamo Zagreb,0,2,post,STATUS_FULL_TIME
+720371,2024-10-23 21:00:00,2025,league-phase,0,0,2722,110,Young Boys,Inter,0,1,post,STATUS_FULL_TIME
+720376,2024-11-05 18:45:00,2025,league-phase,0,0,148,9812,PSV,Girona,4,0,post,STATUS_FULL_TIME
+720375,2024-11-05 18:45:00,2025,league-phase,0,0,521,597,Slovan Bratislava,Dinamo Zagreb,1,4,post,STATUS_FULL_TIME
+720380,2024-11-05 21:00:00,2025,league-phase,0,0,86,103,Real Madrid,AC Milan,1,3,post,STATUS_FULL_TIME
+720379,2024-11-05 21:00:00,2025,league-phase,0,0,2250,382,Sporting CP,Manchester City,4,1,post,STATUS_FULL_TIME
+720368,2024-11-05 21:00:00,2025,league-phase,0,0,364,131,Liverpool,Bayer Leverkusen,4,0,post,STATUS_FULL_TIME
+720377,2024-11-05 21:00:00,2025,league-phase,0,0,256,11420,Celtic,RB Leipzig,3,1,post,STATUS_FULL_TIME
+720378,2024-11-05 21:00:00,2025,league-phase,0,0,166,111,Lille,Juventus,1,1,post,STATUS_FULL_TIME
+720381,2024-11-05 21:00:00,2025,league-phase,0,0,124,3746,Borussia Dortmund,Sturm Graz,1,0,post,STATUS_FULL_TIME
+720382,2024-11-05 21:00:00,2025,league-phase,0,0,107,174,Bologna,AS Monaco,0,1,post,STATUS_FULL_TIME
+720383,2024-11-06 18:45:00,2025,league-phase,0,0,570,362,Club Brugge,Aston Villa,1,0,post,STATUS_FULL_TIME
+720384,2024-11-06 18:45:00,2025,league-phase,0,0,493,2722,Shakhtar Donetsk,Young Boys,2,1,post,STATUS_FULL_TIME
+720386,2024-11-06 21:00:00,2025,league-phase,0,0,142,2790,Feyenoord,Salzburg,1,3,post,STATUS_FULL_TIME
+720387,2024-11-06 21:00:00,2025,league-phase,0,0,110,359,Inter,Arsenal,1,0,post,STATUS_FULL_TIME
+720388,2024-11-06 21:00:00,2025,league-phase,0,0,160,1068,PSG,Atletico Madrid,1,2,post,STATUS_FULL_TIME
+720385,2024-11-06 21:00:00,2025,league-phase,0,0,2290,83,Crvena Zvezda,FC Barcelona,2,5,post,STATUS_FULL_TIME
+720390,2024-11-06 21:00:00,2025,league-phase,0,0,433,6997,Sparta Praga,Brest,1,2,post,STATUS_FULL_TIME
+720391,2024-11-06 21:00:00,2025,league-phase,0,0,134,105,VfB Stuttgart,Atalanta,0,2,post,STATUS_FULL_TIME
+720389,2024-11-06 21:15:00,2025,league-phase,0,0,132,1929,Bayern Munich,Benfica,1,0,post,STATUS_FULL_TIME
+720392,2024-11-26 18:45:00,2025,league-phase,0,0,433,1068,Sparta Praga,Atletico Madrid,0,6,post,STATUS_FULL_TIME
+720393,2024-11-26 18:45:00,2025,league-phase,0,0,521,103,Slovan Bratislava,AC Milan,2,3,post,STATUS_FULL_TIME
+720394,2024-11-26 21:00:00,2025,league-phase,0,0,83,6997,FC Barcelona,Brest,3,0,post,STATUS_FULL_TIME
+720395,2024-11-26 21:00:00,2025,league-phase,0,0,131,2790,Bayer Leverkusen,Salzburg,5,0,post,STATUS_FULL_TIME
+720396,2024-11-26 21:00:00,2025,league-phase,0,0,132,160,Bayern Munich,PSG,1,0,post,STATUS_FULL_TIME
+720397,2024-11-26 21:00:00,2025,league-phase,0,0,110,11420,Inter,RB Leipzig,1,0,post,STATUS_FULL_TIME
+720398,2024-11-26 21:00:00,2025,league-phase,0,0,382,142,Manchester City,Feyenoord,3,3,post,STATUS_FULL_TIME
+720399,2024-11-26 21:00:00,2025,league-phase,0,0,2250,359,Sporting CP,Arsenal,1,5,post,STATUS_FULL_TIME
+720400,2024-11-26 21:00:00,2025,league-phase,0,0,2722,105,Young Boys,Atalanta,1,6,post,STATUS_FULL_TIME
+720402,2024-11-27 18:45:00,2025,league-phase,0,0,2290,134,Crvena Zvezda,VfB Stuttgart,5,1,post,STATUS_FULL_TIME
+720401,2024-11-27 18:45:00,2025,league-phase,0,0,3746,9812,Sturm Graz,Girona,1,0,post,STATUS_FULL_TIME
+720408,2024-11-27 21:00:00,2025,league-phase,0,0,148,493,PSV,Shakhtar Donetsk,3,2,post,STATUS_FULL_TIME
+720406,2024-11-27 21:00:00,2025,league-phase,0,0,597,124,Dinamo Zagreb,Borussia Dortmund,0,3,post,STATUS_FULL_TIME
+720404,2024-11-27 21:00:00,2025,league-phase,0,0,256,570,Celtic,Club Brugge,1,1,post,STATUS_FULL_TIME
+720369,2024-11-27 21:00:00,2025,league-phase,0,0,364,86,Liverpool,Real Madrid,2,0,post,STATUS_FULL_TIME
+720405,2024-11-27 21:00:00,2025,league-phase,0,0,362,111,Aston Villa,Juventus,0,0,post,STATUS_FULL_TIME
+720403,2024-11-27 21:00:00,2025,league-phase,0,0,107,166,Bologna,Lille,1,2,post,STATUS_FULL_TIME
+720407,2024-11-27 21:00:00,2025,league-phase,0,0,174,1929,AS Monaco,Benfica,2,3,post,STATUS_FULL_TIME
+720409,2024-12-10 18:45:00,2025,league-phase,0,0,597,256,Dinamo Zagreb,Celtic,0,0,post,STATUS_FULL_TIME
+720370,2024-12-10 18:45:00,2025,league-phase,0,0,9812,364,Girona,Liverpool,0,1,post,STATUS_FULL_TIME
+720415,2024-12-10 21:00:00,2025,league-phase,0,0,493,132,Shakhtar Donetsk,Bayern Munich,1,5,post,STATUS_FULL_TIME
+720414,2024-12-10 21:00:00,2025,league-phase,0,0,2790,160,Salzburg,PSG,0,3,post,STATUS_FULL_TIME
+720416,2024-12-10 21:00:00,2025,league-phase,0,0,11420,362,RB Leipzig,Aston Villa,2,3,post,STATUS_FULL_TIME
+720410,2024-12-10 21:00:00,2025,league-phase,0,0,570,2250,Club Brugge,Sporting CP,2,1,post,STATUS_FULL_TIME
+720411,2024-12-10 21:00:00,2025,league-phase,0,0,6997,148,Brest,PSV,1,0,post,STATUS_FULL_TIME
+720412,2024-12-10 21:00:00,2025,league-phase,0,0,131,110,Bayer Leverkusen,Inter,1,0,post,STATUS_FULL_TIME
+720413,2024-12-10 21:00:00,2025,league-phase,0,0,105,86,Atalanta,Real Madrid,2,3,post,STATUS_FULL_TIME
+720321,2024-12-11 18:45:00,2025,league-phase,0,0,1068,521,Atletico Madrid,Slovan Bratislava,3,1,post,STATUS_FULL_TIME
+720417,2024-12-11 18:45:00,2025,league-phase,0,0,166,3746,Lille,Sturm Graz,3,2,post,STATUS_FULL_TIME
+720327,2024-12-11 21:00:00,2025,league-phase,0,0,134,2722,VfB Stuttgart,Young Boys,5,1,post,STATUS_FULL_TIME
+720326,2024-12-11 21:00:00,2025,league-phase,0,0,111,382,Juventus,Manchester City,2,0,post,STATUS_FULL_TIME
+720323,2024-12-11 21:00:00,2025,league-phase,0,0,142,433,Feyenoord,Sparta Praga,4,2,post,STATUS_FULL_TIME
+720328,2024-12-11 21:00:00,2025,league-phase,0,0,103,2290,AC Milan,Crvena Zvezda,2,1,post,STATUS_FULL_TIME
+720324,2024-12-11 21:00:00,2025,league-phase,0,0,1929,107,Benfica,Bologna,0,0,post,STATUS_FULL_TIME
+720325,2024-12-11 21:00:00,2025,league-phase,0,0,359,174,Arsenal,AS Monaco,3,0,post,STATUS_FULL_TIME
+720322,2024-12-11 21:00:00,2025,league-phase,0,0,124,83,Borussia Dortmund,FC Barcelona,2,3,post,STATUS_FULL_TIME
+720330,2025-01-21 18:45:00,2025,league-phase,0,0,174,362,AS Monaco,Aston Villa,1,0,post,STATUS_FULL_TIME
+720329,2025-01-21 18:45:00,2025,league-phase,0,0,105,3746,Atalanta,Sturm Graz,5,0,post,STATUS_FULL_TIME
+720332,2025-01-21 21:00:00,2025,league-phase,0,0,2290,148,Crvena Zvezda,PSV,2,3,post,STATUS_FULL_TIME
+720335,2025-01-21 21:00:00,2025,league-phase,0,0,1068,131,Atletico Madrid,Bayer Leverkusen,2,1,post,STATUS_FULL_TIME
+720334,2025-01-21 21:00:00,2025,league-phase,0,0,1929,83,Benfica,FC Barcelona,4,5,post,STATUS_FULL_TIME
+720333,2025-01-21 21:00:00,2025,league-phase,0,0,107,124,Bologna,Borussia Dortmund,2,1,post,STATUS_FULL_TIME
+720336,2025-01-21 21:00:00,2025,league-phase,0,0,570,111,Club Brugge,Juventus,0,0,post,STATUS_FULL_TIME
+720331,2025-01-21 21:00:00,2025,league-phase,0,0,364,166,Liverpool,Lille,2,1,post,STATUS_FULL_TIME
+720337,2025-01-21 21:00:00,2025,league-phase,0,0,521,134,Slovan Bratislava,VfB Stuttgart,1,3,post,STATUS_FULL_TIME
+720338,2025-01-22 18:45:00,2025,league-phase,0,0,493,6997,Shakhtar Donetsk,Brest,2,0,post,STATUS_FULL_TIME
+720339,2025-01-22 18:45:00,2025,league-phase,0,0,11420,2250,RB Leipzig,Sporting CP,2,1,post,STATUS_FULL_TIME
+720346,2025-01-22 21:00:00,2025,league-phase,0,0,103,9812,AC Milan,Girona,1,0,post,STATUS_FULL_TIME
+720343,2025-01-22 21:00:00,2025,league-phase,0,0,359,597,Arsenal,Dinamo Zagreb,3,0,post,STATUS_FULL_TIME
+720342,2025-01-22 21:00:00,2025,league-phase,0,0,256,2722,Celtic,Young Boys,1,0,post,STATUS_FULL_TIME
+720341,2025-01-22 21:00:00,2025,league-phase,0,0,142,132,Feyenoord,Bayern Munich,3,0,post,STATUS_FULL_TIME
+720344,2025-01-22 21:00:00,2025,league-phase,0,0,160,382,PSG,Manchester City,4,2,post,STATUS_FULL_TIME
+720345,2025-01-22 21:00:00,2025,league-phase,0,0,86,2790,Real Madrid,Salzburg,5,1,post,STATUS_FULL_TIME
+720340,2025-01-22 21:00:00,2025,league-phase,0,0,433,110,Sparta Praga,Inter,0,1,post,STATUS_FULL_TIME
+720350,2025-01-29 21:00:00,2025,league-phase,0,0,382,570,Manchester City,Club Brugge,3,1,post,STATUS_FULL_TIME
+720351,2025-01-29 21:00:00,2025,league-phase,0,0,148,364,PSV,Liverpool,3,2,post,STATUS_FULL_TIME
+720356,2025-01-29 21:00:00,2025,league-phase,0,0,2790,1068,Salzburg,Atletico Madrid,1,4,post,STATUS_FULL_TIME
+720359,2025-01-29 21:00:00,2025,league-phase,0,0,2722,2290,Young Boys,Crvena Zvezda,0,1,post,STATUS_FULL_TIME
+720353,2025-01-29 21:00:00,2025,league-phase,0,0,2250,107,Sporting CP,Bologna,1,1,post,STATUS_FULL_TIME
+720354,2025-01-29 21:00:00,2025,league-phase,0,0,134,160,VfB Stuttgart,PSG,1,4,post,STATUS_FULL_TIME
+720349,2025-01-29 21:00:00,2025,league-phase,0,0,166,142,Lille,Feyenoord,6,1,post,STATUS_FULL_TIME
+720352,2025-01-29 21:00:00,2025,league-phase,0,0,3746,11420,Sturm Graz,RB Leipzig,1,0,post,STATUS_FULL_TIME
+720348,2025-01-29 21:00:00,2025,league-phase,0,0,111,1929,Juventus,Benfica,0,2,post,STATUS_FULL_TIME
+720364,2025-01-29 21:00:00,2025,league-phase,0,0,6997,86,Brest,Real Madrid,0,3,post,STATUS_FULL_TIME
+720355,2025-01-29 21:00:00,2025,league-phase,0,0,9812,359,Girona,Arsenal,1,2,post,STATUS_FULL_TIME
+720358,2025-01-29 21:00:00,2025,league-phase,0,0,597,103,Dinamo Zagreb,AC Milan,2,1,post,STATUS_FULL_TIME
+720360,2025-01-29 21:00:00,2025,league-phase,0,0,124,493,Borussia Dortmund,Shakhtar Donetsk,3,1,post,STATUS_FULL_TIME
+720357,2025-01-29 21:00:00,2025,league-phase,0,0,132,521,Bayern Munich,Slovan Bratislava,3,1,post,STATUS_FULL_TIME
+720361,2025-01-29 21:00:00,2025,league-phase,0,0,131,433,Bayer Leverkusen,Sparta Praga,2,0,post,STATUS_FULL_TIME
+720362,2025-01-29 21:00:00,2025,league-phase,0,0,83,105,FC Barcelona,Atalanta,2,2,post,STATUS_FULL_TIME
+720363,2025-01-29 21:00:00,2025,league-phase,0,0,362,256,Aston Villa,Celtic,4,2,post,STATUS_FULL_TIME
+720347,2025-01-29 21:00:00,2025,league-phase,0,0,110,174,Inter,AS Monaco,3,0,post,STATUS_FULL_TIME
+732185,2025-02-11 18:45:00,2025,knockout-round-playoffs,1,0,6997,160,Brest,PSG,0,3,post,STATUS_FULL_TIME
+732187,2025-02-11 21:00:00,2025,knockout-round-playoffs,1,0,382,86,Manchester City,Real Madrid,2,3,post,STATUS_FULL_TIME
+732189,2025-02-11 21:00:00,2025,knockout-round-playoffs,1,0,2250,124,Sporting CP,Borussia Dortmund,0,3,post,STATUS_FULL_TIME
+732190,2025-02-11 21:00:00,2025,knockout-round-playoffs,1,0,111,148,Juventus,PSV,2,1,post,STATUS_FULL_TIME
+732192,2025-02-12 18:45:00,2025,knockout-round-playoffs,1,0,570,105,Club Brugge,Atalanta,2,1,post,STATUS_FULL_TIME
+732188,2025-02-12 21:00:00,2025,knockout-round-playoffs,1,0,174,1929,AS Monaco,Benfica,0,1,post,STATUS_FULL_TIME
+732186,2025-02-12 21:00:00,2025,knockout-round-playoffs,1,0,256,132,Celtic,Bayern Munich,1,2,post,STATUS_FULL_TIME
+732191,2025-02-12 21:00:00,2025,knockout-round-playoffs,1,0,142,103,Feyenoord,AC Milan,1,0,post,STATUS_FULL_TIME
+732194,2025-02-18 18:45:00,2025,knockout-round-playoffs,1,0,103,142,AC Milan,Feyenoord,1,1,post,STATUS_FULL_TIME
+732197,2025-02-18 21:00:00,2025,knockout-round-playoffs,1,0,105,570,Atalanta,Club Brugge,1,3,post,STATUS_FULL_TIME
+732193,2025-02-18 21:00:00,2025,knockout-round-playoffs,1,0,132,256,Bayern Munich,Celtic,1,1,post,STATUS_FULL_TIME
+732198,2025-02-18 21:00:00,2025,knockout-round-playoffs,1,0,1929,174,Benfica,AS Monaco,3,3,post,STATUS_FULL_TIME
+732199,2025-02-19 18:45:00,2025,knockout-round-playoffs,1,0,124,2250,Borussia Dortmund,Sporting CP,0,0,post,STATUS_FULL_TIME
+732195,2025-02-19 21:00:00,2025,knockout-round-playoffs,1,0,148,111,PSV,Juventus,3,1,post,STATUS_FINAL_AET
+732200,2025-02-19 21:00:00,2025,knockout-round-playoffs,1,0,86,382,Real Madrid,Manchester City,3,1,post,STATUS_FULL_TIME
+732196,2025-02-19 21:00:00,2025,knockout-round-playoffs,1,0,160,6997,PSG,Brest,7,0,post,STATUS_FULL_TIME
+733145,2025-03-04 18:45:00,2025,round-of-16,1,0,570,362,Club Brugge,Aston Villa,1,3,post,STATUS_FULL_TIME
+733601,2025-03-04 21:00:00,2025,round-of-16,1,0,124,166,Borussia Dortmund,Lille,1,1,post,STATUS_FULL_TIME
+733603,2025-03-04 21:00:00,2025,round-of-16,1,0,148,359,PSV,Arsenal,1,7,post,STATUS_FULL_TIME
+733602,2025-03-04 21:00:00,2025,round-of-16,1,0,86,1068,Real Madrid,Atletico Madrid,2,1,post,STATUS_FULL_TIME
+733149,2025-03-05 18:45:00,2025,round-of-16,1,0,142,110,Feyenoord,Inter,0,2,post,STATUS_FULL_TIME
+733147,2025-03-05 21:00:00,2025,round-of-16,1,0,132,131,Bayern Munich,Bayer Leverkusen,3,0,post,STATUS_FULL_TIME
+733143,2025-03-05 21:00:00,2025,round-of-16,1,0,1929,83,Benfica,FC Barcelona,0,1,post,STATUS_FULL_TIME
+733600,2025-03-05 21:00:00,2025,round-of-16,1,0,160,364,PSG,Liverpool,0,1,post,STATUS_FULL_TIME
+733144,2025-03-11 18:45:00,2025,round-of-16,1,0,83,1929,FC Barcelona,Benfica,3,1,post,STATUS_FULL_TIME
+733150,2025-03-11 21:00:00,2025,round-of-16,1,0,110,142,Inter,Feyenoord,2,1,post,STATUS_FULL_TIME
+733605,2025-03-11 21:00:00,2025,round-of-16,1,0,364,160,Liverpool,PSG,0,1,post,STATUS_FINAL_PEN
+733148,2025-03-11 21:00:00,2025,round-of-16,1,0,131,132,Bayer Leverkusen,Bayern Munich,0,2,post,STATUS_FULL_TIME
+733604,2025-03-12 18:45:00,2025,round-of-16,1,0,166,124,Lille,Borussia Dortmund,1,2,post,STATUS_FULL_TIME
+733607,2025-03-12 21:00:00,2025,round-of-16,1,0,359,148,Arsenal,PSV,2,2,post,STATUS_FULL_TIME
+733146,2025-03-12 21:00:00,2025,round-of-16,1,0,362,570,Aston Villa,Club Brugge,3,0,post,STATUS_FULL_TIME
+733606,2025-03-12 21:00:00,2025,round-of-16,1,0,1068,86,Atletico Madrid,Real Madrid,1,0,post,STATUS_FINAL_PEN
+733611,2025-04-08 21:00:00,2025,quarterfinals,1,0,132,110,Bayern Munich,Inter,1,2,post,STATUS_FULL_TIME
+733608,2025-04-08 21:00:00,2025,quarterfinals,1,0,359,86,Arsenal,Real Madrid,3,0,post,STATUS_FULL_TIME
+733610,2025-04-09 21:00:00,2025,quarterfinals,1,0,83,124,FC Barcelona,Borussia Dortmund,4,0,post,STATUS_FULL_TIME
+733609,2025-04-09 21:00:00,2025,quarterfinals,1,0,160,362,PSG,Aston Villa,3,1,post,STATUS_FULL_TIME
+733613,2025-04-15 21:00:00,2025,quarterfinals,1,0,362,160,Aston Villa,PSG,3,2,post,STATUS_FULL_TIME
+733614,2025-04-15 21:00:00,2025,quarterfinals,1,0,124,83,Borussia Dortmund,FC Barcelona,3,1,post,STATUS_FULL_TIME
+733615,2025-04-16 21:00:00,2025,quarterfinals,1,0,110,132,Inter,Bayern Munich,2,2,post,STATUS_FULL_TIME
+733612,2025-04-16 21:00:00,2025,quarterfinals,1,0,86,359,Real Madrid,Arsenal,1,2,post,STATUS_FULL_TIME
+733616,2025-04-29 21:00:00,2025,semifinals,1,0,359,160,Arsenal,PSG,0,1,post,STATUS_FULL_TIME
+733617,2025-04-30 21:00:00,2025,semifinals,1,0,83,110,FC Barcelona,Inter,3,3,post,STATUS_FULL_TIME
+733619,2025-05-06 21:00:00,2025,semifinals,1,0,110,83,Inter,FC Barcelona,4,3,post,STATUS_FINAL_AET
+733618,2025-05-07 21:00:00,2025,semifinals,1,0,160,359,PSG,Arsenal,2,1,post,STATUS_FULL_TIME
+733620,2025-05-31 21:00:00,2025,final,1,1,160,110,PSG,Inter,5,0,post,STATUS_FULL_TIME
+757653,2025-09-16 18:45:00,2026,league-phase,0,0,93,359,Athletic Club,Arsenal,0,2,post,STATUS_FULL_TIME
+757654,2025-09-16 18:45:00,2026,league-phase,0,0,148,5807,PSV,Union Saint-Gilloise,1,3,post,STATUS_FULL_TIME
+757658,2025-09-16 21:00:00,2026,league-phase,0,0,367,102,Tottenham Hotspur,Villarreal,1,0,post,STATUS_FULL_TIME
+757655,2025-09-16 21:00:00,2026,league-phase,0,0,86,176,Real Madrid,Marseille,2,1,post,STATUS_FULL_TIME
+757657,2025-09-16 21:00:00,2026,league-phase,0,0,1929,10414,Benfica,Qarabag,2,3,post,STATUS_FULL_TIME
+757656,2025-09-16 21:00:00,2026,league-phase,0,0,111,124,Juventus,Borussia Dortmund,4,4,post,STATUS_FULL_TIME
+757659,2025-09-17 18:45:00,2026,league-phase,0,0,435,22281,Olympiacos,Pafos,0,0,post,STATUS_FULL_TIME
+757660,2025-09-17 18:45:00,2026,league-phase,0,0,494,2980,Slavia Praga,Bodo/Glimt,2,2,post,STATUS_FULL_TIME
+757664,2025-09-17 21:00:00,2026,league-phase,0,0,139,110,Ajax,Inter,0,2,post,STATUS_FULL_TIME
+757663,2025-09-17 21:00:00,2026,league-phase,0,0,132,363,Bayern Munich,Chelsea,3,1,post,STATUS_FULL_TIME
+757662,2025-09-17 21:00:00,2026,league-phase,0,0,364,1068,Liverpool,Atletico Madrid,3,2,post,STATUS_FULL_TIME
+757661,2025-09-17 21:00:00,2026,league-phase,0,0,160,105,PSG,Atalanta,4,0,post,STATUS_FULL_TIME
+757665,2025-09-18 18:45:00,2026,league-phase,0,0,570,174,Club Brugge,AS Monaco,4,1,post,STATUS_FULL_TIME
+757666,2025-09-18 18:45:00,2026,league-phase,0,0,909,131,F.C. København,Bayer Leverkusen,2,2,post,STATUS_FULL_TIME
+757670,2025-09-18 21:00:00,2026,league-phase,0,0,2250,2528,Sporting CP,Kairat Almaty,4,1,post,STATUS_FULL_TIME
+757669,2025-09-18 21:00:00,2026,league-phase,0,0,361,83,Newcastle United,FC Barcelona,1,2,post,STATUS_FULL_TIME
+757668,2025-09-18 21:00:00,2026,league-phase,0,0,125,432,Eintracht Frankfurt,Galatasaray,5,1,post,STATUS_FULL_TIME
+757667,2025-09-18 21:00:00,2026,league-phase,0,0,382,114,Manchester City,Napoli,2,0,post,STATUS_FULL_TIME
+757672,2025-09-30 18:45:00,2026,league-phase,0,0,105,570,Atalanta,Club Brugge,2,1,post,STATUS_FULL_TIME
+757671,2025-09-30 18:45:00,2026,league-phase,0,0,2528,86,Kairat Almaty,Real Madrid,0,5,post,STATUS_FULL_TIME
+757673,2025-09-30 21:00:00,2026,league-phase,0,0,1068,125,Atletico Madrid,Eintracht Frankfurt,5,1,post,STATUS_FULL_TIME
+757674,2025-09-30 21:00:00,2026,league-phase,0,0,2980,367,Bodo/Glimt,Tottenham Hotspur,2,2,post,STATUS_FULL_TIME
+757675,2025-09-30 21:00:00,2026,league-phase,0,0,363,1929,Chelsea,Benfica,1,0,post,STATUS_FULL_TIME
+757676,2025-09-30 21:00:00,2026,league-phase,0,0,432,364,Galatasaray,Liverpool,1,0,post,STATUS_FULL_TIME
+757678,2025-09-30 21:00:00,2026,league-phase,0,0,110,494,Inter,Slavia Praga,3,0,post,STATUS_FULL_TIME
+757679,2025-09-30 21:00:00,2026,league-phase,0,0,176,139,Marseille,Ajax,4,0,post,STATUS_FULL_TIME
+757677,2025-09-30 21:00:00,2026,league-phase,0,0,22281,132,Pafos,Bayern Munich,1,5,post,STATUS_FULL_TIME
+757681,2025-10-01 18:45:00,2026,league-phase,0,0,5807,361,Union Saint-Gilloise,Newcastle United,0,4,post,STATUS_FULL_TIME
+757680,2025-10-01 18:45:00,2026,league-phase,0,0,10414,909,Qarabag,F.C. København,2,0,post,STATUS_FULL_TIME
+757688,2025-10-01 21:00:00,2026,league-phase,0,0,359,435,Arsenal,Olympiacos,2,0,post,STATUS_FULL_TIME
+757686,2025-10-01 21:00:00,2026,league-phase,0,0,174,382,AS Monaco,Manchester City,2,2,post,STATUS_FULL_TIME
+757687,2025-10-01 21:00:00,2026,league-phase,0,0,83,160,FC Barcelona,PSG,1,2,post,STATUS_FULL_TIME
+757684,2025-10-01 21:00:00,2026,league-phase,0,0,131,148,Bayer Leverkusen,PSV,1,1,post,STATUS_FULL_TIME
+757683,2025-10-01 21:00:00,2026,league-phase,0,0,124,93,Borussia Dortmund,Athletic Club,4,1,post,STATUS_FULL_TIME
+757685,2025-10-01 21:00:00,2026,league-phase,0,0,114,2250,Napoli,Sporting CP,2,1,post,STATUS_FULL_TIME
+757682,2025-10-01 21:00:00,2026,league-phase,0,0,102,111,Villarreal,Juventus,2,2,post,STATUS_FULL_TIME
+757690,2025-10-21 18:45:00,2026,league-phase,0,0,83,435,FC Barcelona,Olympiacos,6,1,post,STATUS_FULL_TIME
+757689,2025-10-21 18:45:00,2026,league-phase,0,0,2528,22281,Kairat Almaty,Pafos,0,0,post,STATUS_FULL_TIME
+757692,2025-10-21 21:00:00,2026,league-phase,0,0,5807,110,Union Saint-Gilloise,Inter,0,4,post,STATUS_FULL_TIME
+757694,2025-10-21 21:00:00,2026,league-phase,0,0,102,382,Villarreal,Manchester City,0,2,post,STATUS_FULL_TIME
+757691,2025-10-21 21:00:00,2026,league-phase,0,0,148,114,PSV,Napoli,6,2,post,STATUS_FULL_TIME
+757696,2025-10-21 21:00:00,2026,league-phase,0,0,361,1929,Newcastle United,Benfica,3,0,post,STATUS_FULL_TIME
+757695,2025-10-21 21:00:00,2026,league-phase,0,0,909,124,F.C. København,Borussia Dortmund,2,4,post,STATUS_FULL_TIME
+757693,2025-10-21 21:00:00,2026,league-phase,0,0,131,160,Bayer Leverkusen,PSG,2,7,post,STATUS_FULL_TIME
+757697,2025-10-21 21:00:00,2026,league-phase,0,0,359,1068,Arsenal,Atletico Madrid,4,0,post,STATUS_FULL_TIME
+757699,2025-10-22 18:45:00,2026,league-phase,0,0,93,10414,Athletic Club,Qarabag,3,1,post,STATUS_FULL_TIME
+757698,2025-10-22 18:45:00,2026,league-phase,0,0,432,2980,Galatasaray,Bodo/Glimt,3,1,post,STATUS_FULL_TIME
+757704,2025-10-22 21:00:00,2026,league-phase,0,0,174,367,AS Monaco,Tottenham Hotspur,0,0,post,STATUS_FULL_TIME
+757700,2025-10-22 21:00:00,2026,league-phase,0,0,105,494,Atalanta,Slavia Praga,0,0,post,STATUS_FULL_TIME
+757703,2025-10-22 21:00:00,2026,league-phase,0,0,132,570,Bayern Munich,Club Brugge,4,0,post,STATUS_FULL_TIME
+757701,2025-10-22 21:00:00,2026,league-phase,0,0,363,139,Chelsea,Ajax,5,1,post,STATUS_FULL_TIME
+757702,2025-10-22 21:00:00,2026,league-phase,0,0,125,364,Eintracht Frankfurt,Liverpool,1,5,post,STATUS_FULL_TIME
+757705,2025-10-22 21:00:00,2026,league-phase,0,0,86,111,Real Madrid,Juventus,1,0,post,STATUS_FULL_TIME
+757706,2025-10-22 21:00:00,2026,league-phase,0,0,2250,176,Sporting CP,Marseille,2,1,post,STATUS_FULL_TIME
+757707,2025-11-04 18:45:00,2026,league-phase,0,0,494,359,Slavia Praga,Arsenal,0,3,post,STATUS_FULL_TIME
+757708,2025-11-04 18:45:00,2026,league-phase,0,0,114,125,Napoli,Eintracht Frankfurt,0,0,post,STATUS_FULL_TIME
+757711,2025-11-04 21:00:00,2026,league-phase,0,0,1068,5807,Atletico Madrid,Union Saint-Gilloise,3,1,post,STATUS_FULL_TIME
+757712,2025-11-04 21:00:00,2026,league-phase,0,0,2980,174,Bodo/Glimt,AS Monaco,0,1,post,STATUS_FULL_TIME
+757710,2025-11-04 21:00:00,2026,league-phase,0,0,111,2250,Juventus,Sporting CP,1,1,post,STATUS_FULL_TIME
+757714,2025-11-04 21:00:00,2026,league-phase,0,0,364,86,Liverpool,Real Madrid,1,0,post,STATUS_FULL_TIME
+757713,2025-11-04 21:00:00,2026,league-phase,0,0,435,148,Olympiacos,PSV,1,1,post,STATUS_FULL_TIME
+757709,2025-11-04 21:00:00,2026,league-phase,0,0,160,132,PSG,Bayern Munich,1,2,post,STATUS_FULL_TIME
+757715,2025-11-04 21:00:00,2026,league-phase,0,0,367,909,Tottenham Hotspur,F.C. København,4,0,post,STATUS_FULL_TIME
+757716,2025-11-05 18:45:00,2026,league-phase,0,0,10414,363,Qarabag,Chelsea,2,2,post,STATUS_FULL_TIME
+757717,2025-11-05 18:45:00,2026,league-phase,0,0,22281,102,Pafos,Villarreal,1,0,post,STATUS_FULL_TIME
+757719,2025-11-05 21:00:00,2026,league-phase,0,0,361,93,Newcastle United,Athletic Club,2,0,post,STATUS_FULL_TIME
+757724,2025-11-05 21:00:00,2026,league-phase,0,0,176,105,Marseille,Atalanta,0,1,post,STATUS_FULL_TIME
+757718,2025-11-05 21:00:00,2026,league-phase,0,0,382,124,Manchester City,Borussia Dortmund,4,1,post,STATUS_FULL_TIME
+757722,2025-11-05 21:00:00,2026,league-phase,0,0,110,2528,Inter,Kairat Almaty,2,1,post,STATUS_FULL_TIME
+757723,2025-11-05 21:00:00,2026,league-phase,0,0,570,83,Club Brugge,FC Barcelona,3,3,post,STATUS_FULL_TIME
+757720,2025-11-05 21:00:00,2026,league-phase,0,0,1929,131,Benfica,Bayer Leverkusen,0,1,post,STATUS_FULL_TIME
+757721,2025-11-05 21:00:00,2026,league-phase,0,0,139,432,Ajax,Galatasaray,0,3,post,STATUS_FULL_TIME
+757725,2025-11-25 18:45:00,2026,league-phase,0,0,139,1929,Ajax,Benfica,0,2,post,STATUS_FULL_TIME
+757726,2025-11-25 18:45:00,2026,league-phase,0,0,432,5807,Galatasaray,Union Saint-Gilloise,0,1,post,STATUS_FULL_TIME
+757731,2025-11-25 21:00:00,2026,league-phase,0,0,2980,111,Bodo/Glimt,Juventus,2,3,post,STATUS_FULL_TIME
+757727,2025-11-25 21:00:00,2026,league-phase,0,0,124,102,Borussia Dortmund,Villarreal,4,0,post,STATUS_FULL_TIME
+757732,2025-11-25 21:00:00,2026,league-phase,0,0,363,83,Chelsea,FC Barcelona,3,0,post,STATUS_FULL_TIME
+757730,2025-11-25 21:00:00,2026,league-phase,0,0,382,131,Manchester City,Bayer Leverkusen,0,2,post,STATUS_FULL_TIME
+757729,2025-11-25 21:00:00,2026,league-phase,0,0,176,361,Marseille,Newcastle United,2,1,post,STATUS_FULL_TIME
+757728,2025-11-25 21:00:00,2026,league-phase,0,0,114,10414,Napoli,Qarabag,2,0,post,STATUS_FULL_TIME
+757733,2025-11-25 21:00:00,2026,league-phase,0,0,494,93,Slavia Praga,Athletic Club,0,0,post,STATUS_FULL_TIME
+757734,2025-11-26 18:45:00,2026,league-phase,0,0,22281,174,Pafos,AS Monaco,2,2,post,STATUS_FULL_TIME
+757735,2025-11-26 18:45:00,2026,league-phase,0,0,909,2528,F.C. København,Kairat Almaty,3,2,post,STATUS_FULL_TIME
+757742,2025-11-26 21:00:00,2026,league-phase,0,0,359,132,Arsenal,Bayern Munich,3,1,post,STATUS_FULL_TIME
+757740,2025-11-26 21:00:00,2026,league-phase,0,0,1068,110,Atletico Madrid,Inter,2,1,post,STATUS_FULL_TIME
+757739,2025-11-26 21:00:00,2026,league-phase,0,0,125,105,Eintracht Frankfurt,Atalanta,0,3,post,STATUS_FULL_TIME
+757738,2025-11-26 21:00:00,2026,league-phase,0,0,364,148,Liverpool,PSV,1,4,post,STATUS_FULL_TIME
+757737,2025-11-26 21:00:00,2026,league-phase,0,0,435,86,Olympiacos,Real Madrid,3,4,post,STATUS_FULL_TIME
+757736,2025-11-26 21:00:00,2026,league-phase,0,0,160,367,PSG,Tottenham Hotspur,5,3,post,STATUS_FULL_TIME
+757741,2025-11-26 21:00:00,2026,league-phase,0,0,2250,570,Sporting CP,Club Brugge,3,0,post,STATUS_FULL_TIME
+757743,2025-12-09 16:30:00,2026,league-phase,0,0,2528,435,Kairat Almaty,Olympiacos,0,1,post,STATUS_FULL_TIME
+757744,2025-12-09 18:45:00,2026,league-phase,0,0,132,2250,Bayern Munich,Sporting CP,3,1,post,STATUS_FULL_TIME
+757748,2025-12-09 21:00:00,2026,league-phase,0,0,5807,176,Union Saint-Gilloise,Marseille,2,3,post,STATUS_FULL_TIME
+757749,2025-12-09 21:00:00,2026,league-phase,0,0,367,494,Tottenham Hotspur,Slavia Praga,3,0,post,STATUS_FULL_TIME
+757745,2025-12-09 21:00:00,2026,league-phase,0,0,110,364,Inter,Liverpool,0,1,post,STATUS_FULL_TIME
+757750,2025-12-09 21:00:00,2026,league-phase,0,0,148,1068,PSV,Atletico Madrid,2,3,post,STATUS_FULL_TIME
+757747,2025-12-09 21:00:00,2026,league-phase,0,0,105,363,Atalanta,Chelsea,2,1,post,STATUS_FULL_TIME
+757751,2025-12-09 21:00:00,2026,league-phase,0,0,174,432,AS Monaco,Galatasaray,1,0,post,STATUS_FULL_TIME
+757746,2025-12-09 21:00:00,2026,league-phase,0,0,83,125,FC Barcelona,Eintracht Frankfurt,2,1,post,STATUS_FULL_TIME
+757752,2025-12-10 18:45:00,2026,league-phase,0,0,10414,139,Qarabag,Ajax,2,4,post,STATUS_FULL_TIME
+757753,2025-12-10 18:45:00,2026,league-phase,0,0,102,909,Villarreal,F.C. København,2,3,post,STATUS_FULL_TIME
+757760,2025-12-10 21:00:00,2026,league-phase,0,0,86,382,Real Madrid,Manchester City,1,2,post,STATUS_FULL_TIME
+757756,2025-12-10 21:00:00,2026,league-phase,0,0,111,22281,Juventus,Pafos,2,0,post,STATUS_FULL_TIME
+757757,2025-12-10 21:00:00,2026,league-phase,0,0,570,359,Club Brugge,Arsenal,0,3,post,STATUS_FULL_TIME
+757759,2025-12-10 21:00:00,2026,league-phase,0,0,93,160,Athletic Club,PSG,0,0,post,STATUS_FULL_TIME
+757754,2025-12-10 21:00:00,2026,league-phase,0,0,1929,114,Benfica,Napoli,2,0,post,STATUS_FULL_TIME
+757755,2025-12-10 21:00:00,2026,league-phase,0,0,124,2980,Borussia Dortmund,Bodo/Glimt,2,2,post,STATUS_FULL_TIME
+757758,2025-12-10 21:00:00,2026,league-phase,0,0,131,361,Bayer Leverkusen,Newcastle United,2,2,post,STATUS_FULL_TIME
+757761,2026-01-20 16:30:00,2026,league-phase,0,0,2528,570,Kairat Almaty,Club Brugge,1,4,post,STATUS_FULL_TIME
+757762,2026-01-20 18:45:00,2026,league-phase,0,0,2980,382,Bodo/Glimt,Manchester City,3,1,post,STATUS_FULL_TIME
+757767,2026-01-20 21:00:00,2026,league-phase,0,0,909,114,F.C. København,Napoli,1,1,post,STATUS_FULL_TIME
+757763,2026-01-20 21:00:00,2026,league-phase,0,0,110,359,Inter,Arsenal,1,3,post,STATUS_FULL_TIME
+757765,2026-01-20 21:00:00,2026,league-phase,0,0,435,131,Olympiacos,Bayer Leverkusen,2,0,post,STATUS_FULL_TIME
+757764,2026-01-20 21:00:00,2026,league-phase,0,0,86,174,Real Madrid,AS Monaco,6,1,post,STATUS_FULL_TIME
+757768,2026-01-20 21:00:00,2026,league-phase,0,0,2250,160,Sporting CP,PSG,2,1,post,STATUS_FULL_TIME
+757769,2026-01-20 21:00:00,2026,league-phase,0,0,367,124,Tottenham Hotspur,Borussia Dortmund,2,0,post,STATUS_FULL_TIME
+757766,2026-01-20 21:00:00,2026,league-phase,0,0,102,139,Villarreal,Ajax,1,2,post,STATUS_FULL_TIME
+757770,2026-01-21 18:45:00,2026,league-phase,0,0,10414,125,Qarabag,Eintracht Frankfurt,3,2,post,STATUS_FULL_TIME
+757771,2026-01-21 18:45:00,2026,league-phase,0,0,432,1068,Galatasaray,Atletico Madrid,1,1,post,STATUS_FULL_TIME
+757778,2026-01-21 21:00:00,2026,league-phase,0,0,494,83,Slavia Praga,FC Barcelona,2,4,post,STATUS_FULL_TIME
+757777,2026-01-21 21:00:00,2026,league-phase,0,0,361,148,Newcastle United,PSV,3,0,post,STATUS_FULL_TIME
+757776,2026-01-21 21:00:00,2026,league-phase,0,0,176,364,Marseille,Liverpool,0,3,post,STATUS_FULL_TIME
+757774,2026-01-21 21:00:00,2026,league-phase,0,0,132,5807,Bayern Munich,Union Saint-Gilloise,2,0,post,STATUS_FULL_TIME
+757773,2026-01-21 21:00:00,2026,league-phase,0,0,363,22281,Chelsea,Pafos,1,0,post,STATUS_FULL_TIME
+757772,2026-01-21 21:00:00,2026,league-phase,0,0,105,93,Atalanta,Athletic Club,2,3,post,STATUS_FULL_TIME
+757775,2026-01-21 21:00:00,2026,league-phase,0,0,111,1929,Juventus,Benfica,2,0,post,STATUS_FULL_TIME
+757792,2026-01-28 21:00:00,2026,league-phase,0,0,114,363,Napoli,Chelsea,2,3,post,STATUS_FULL_TIME
+757790,2026-01-28 21:00:00,2026,league-phase,0,0,382,432,Manchester City,Galatasaray,2,0,post,STATUS_FULL_TIME
+757794,2026-01-28 21:00:00,2026,league-phase,0,0,22281,494,Pafos,Slavia Praga,4,1,post,STATUS_FULL_TIME
+757784,2026-01-28 21:00:00,2026,league-phase,0,0,131,102,Bayer Leverkusen,Villarreal,3,0,post,STATUS_FULL_TIME
+757793,2026-01-28 21:00:00,2026,league-phase,0,0,148,132,PSV,Bayern Munich,1,2,post,STATUS_FULL_TIME
+757796,2026-01-28 21:00:00,2026,league-phase,0,0,5807,105,Union Saint-Gilloise,Atalanta,1,0,post,STATUS_FULL_TIME
+757789,2026-01-28 21:00:00,2026,league-phase,0,0,364,10414,Liverpool,Qarabag,6,0,post,STATUS_FULL_TIME
+757795,2026-01-28 21:00:00,2026,league-phase,0,0,160,361,PSG,Newcastle United,1,1,post,STATUS_FULL_TIME
+757788,2026-01-28 21:00:00,2026,league-phase,0,0,125,367,Eintracht Frankfurt,Tottenham Hotspur,0,2,post,STATUS_FULL_TIME
+757783,2026-01-28 21:00:00,2026,league-phase,0,0,83,909,FC Barcelona,F.C. København,4,1,post,STATUS_FULL_TIME
+757786,2026-01-28 21:00:00,2026,league-phase,0,0,124,110,Borussia Dortmund,Inter,0,2,post,STATUS_FULL_TIME
+757785,2026-01-28 21:00:00,2026,league-phase,0,0,1929,86,Benfica,Real Madrid,4,2,post,STATUS_FULL_TIME
+757787,2026-01-28 21:00:00,2026,league-phase,0,0,570,176,Club Brugge,Marseille,3,0,post,STATUS_FULL_TIME
+757782,2026-01-28 21:00:00,2026,league-phase,0,0,1068,2980,Atletico Madrid,Bodo/Glimt,1,2,post,STATUS_FULL_TIME
+757781,2026-01-28 21:00:00,2026,league-phase,0,0,93,2250,Athletic Club,Sporting CP,2,3,post,STATUS_FULL_TIME
+757791,2026-01-28 21:00:00,2026,league-phase,0,0,174,111,AS Monaco,Juventus,0,0,post,STATUS_FULL_TIME
+757780,2026-01-28 21:00:00,2026,league-phase,0,0,359,2528,Arsenal,Kairat Almaty,3,2,post,STATUS_FULL_TIME
+757779,2026-01-28 21:00:00,2026,league-phase,0,0,139,435,Ajax,Olympiacos,1,2,post,STATUS_FULL_TIME
+401858759,2026-02-17 18:45:00,2026,knockout-round-playoffs,1,0,432,111,Galatasaray,Juventus,5,2,post,STATUS_FULL_TIME
+401858735,2026-02-17 21:00:00,2026,knockout-round-playoffs,1,0,1929,86,Benfica,Real Madrid,0,1,post,STATUS_FULL_TIME
+401858758,2026-02-17 21:00:00,2026,knockout-round-playoffs,1,0,174,160,AS Monaco,PSG,2,3,post,STATUS_FULL_TIME
+401858761,2026-02-17 21:15:00,2026,knockout-round-playoffs,1,0,124,105,Borussia Dortmund,Atalanta,2,0,post,STATUS_FULL_TIME
+401858736,2026-02-18 18:45:00,2026,knockout-round-playoffs,1,0,10414,361,Qarabag,Newcastle United,1,6,post,STATUS_FULL_TIME
+401858734,2026-02-18 21:00:00,2026,knockout-round-playoffs,1,0,2980,110,Bodo/Glimt,Inter,3,1,post,STATUS_FULL_TIME
+401858760,2026-02-18 21:00:00,2026,knockout-round-playoffs,1,0,570,1068,Club Brugge,Atletico Madrid,3,3,post,STATUS_FULL_TIME
+401858737,2026-02-18 21:00:00,2026,knockout-round-playoffs,1,0,435,131,Olympiacos,Bayer Leverkusen,0,2,post,STATUS_FULL_TIME
+401858768,2026-02-24 18:45:00,2026,knockout-round-playoffs,1,0,1068,570,Atletico Madrid,Club Brugge,4,1,post,STATUS_FULL_TIME
+401858767,2026-02-24 21:00:00,2026,knockout-round-playoffs,1,0,131,435,Bayer Leverkusen,Olympiacos,0,0,post,STATUS_FULL_TIME
+401858766,2026-02-24 21:00:00,2026,knockout-round-playoffs,1,0,110,2980,Inter,Bodo/Glimt,1,2,post,STATUS_FULL_TIME
+401858764,2026-02-24 21:00:00,2026,knockout-round-playoffs,1,0,361,10414,Newcastle United,Qarabag,3,2,post,STATUS_FULL_TIME
+401858762,2026-02-25 18:45:00,2026,knockout-round-playoffs,1,0,105,124,Atalanta,Borussia Dortmund,4,1,post,STATUS_FULL_TIME
+401858769,2026-02-25 21:00:00,2026,knockout-round-playoffs,1,0,86,1929,Real Madrid,Benfica,2,1,post,STATUS_FULL_TIME
+401858763,2026-02-25 21:00:00,2026,knockout-round-playoffs,1,0,160,174,PSG,AS Monaco,2,2,post,STATUS_FULL_TIME
+401858765,2026-02-25 21:00:00,2026,knockout-round-playoffs,1,0,111,432,Juventus,Galatasaray,3,2,post,STATUS_FINAL_AET
+401862667,2026-03-10 18:45:00,2026,round-of-16,1,0,432,364,Galatasaray,Liverpool,1,0,post,STATUS_FULL_TIME
+401862641,2026-03-10 21:00:00,2026,round-of-16,1,0,105,132,Atalanta,Bayern Munich,1,6,post,STATUS_FULL_TIME
+401862579,2026-03-10 21:00:00,2026,round-of-16,1,0,1068,367,Atletico Madrid,Tottenham Hotspur,5,2,post,STATUS_FULL_TIME
+401862577,2026-03-10 21:00:00,2026,round-of-16,1,0,361,83,Newcastle United,FC Barcelona,1,1,post,STATUS_FULL_TIME
+401862578,2026-03-11 18:45:00,2026,round-of-16,1,0,131,359,Bayer Leverkusen,Arsenal,1,1,post,STATUS_FULL_TIME
+401862583,2026-03-11 21:00:00,2026,round-of-16,1,0,2980,2250,Bodo/Glimt,Sporting CP,3,0,post,STATUS_FULL_TIME
+401862646,2026-03-11 21:00:00,2026,round-of-16,1,0,160,363,PSG,Chelsea,5,2,post,STATUS_FULL_TIME
+401862645,2026-03-11 21:00:00,2026,round-of-16,1,0,86,382,Real Madrid,Manchester City,3,0,post,STATUS_FULL_TIME
+401862584,2026-03-17 18:45:00,2026,round-of-16,1,0,2250,2980,Sporting CP,Bodo/Glimt,5,0,post,STATUS_FINAL_AET
+401862647,2026-03-17 21:00:00,2026,round-of-16,1,0,382,86,Manchester City,Real Madrid,1,2,post,STATUS_FULL_TIME
+401862648,2026-03-17 21:00:00,2026,round-of-16,1,0,363,160,Chelsea,PSG,0,3,post,STATUS_FULL_TIME
+401862581,2026-03-17 21:00:00,2026,round-of-16,1,0,359,131,Arsenal,Bayer Leverkusen,2,0,post,STATUS_FULL_TIME
+401862582,2026-03-18 18:45:00,2026,round-of-16,1,0,83,361,FC Barcelona,Newcastle United,7,2,post,STATUS_FULL_TIME
+401862642,2026-03-18 21:00:00,2026,round-of-16,1,0,132,105,Bayern Munich,Atalanta,4,1,post,STATUS_FULL_TIME
+401862668,2026-03-18 21:00:00,2026,round-of-16,1,0,364,432,Liverpool,Galatasaray,4,0,post,STATUS_FULL_TIME
+401862580,2026-03-18 21:00:00,2026,round-of-16,1,0,367,1068,Tottenham Hotspur,Atletico Madrid,3,2,post,STATUS_FULL_TIME
+401862886,2026-04-07 21:00:00,2026,quarterfinals,1,0,86,132,Real Madrid,Bayern Munich,1,2,post,STATUS_FULL_TIME
+401862888,2026-04-07 21:00:00,2026,quarterfinals,1,0,2250,359,Sporting CP,Arsenal,0,1,post,STATUS_FULL_TIME
+401862887,2026-04-08 21:00:00,2026,quarterfinals,1,0,83,1068,FC Barcelona,Atletico Madrid,0,2,post,STATUS_FULL_TIME
+401862885,2026-04-08 21:00:00,2026,quarterfinals,1,0,160,364,PSG,Liverpool,2,0,post,STATUS_FULL_TIME
+401862892,2026-04-14 21:00:00,2026,quarterfinals,1,0,1068,83,Atletico Madrid,FC Barcelona,1,2,post,STATUS_FULL_TIME
+401862889,2026-04-14 21:00:00,2026,quarterfinals,1,0,364,160,Liverpool,PSG,0,2,post,STATUS_FULL_TIME
+401862891,2026-04-15 21:00:00,2026,quarterfinals,1,0,132,86,Bayern Munich,Real Madrid,4,3,post,STATUS_FULL_TIME
+401862890,2026-04-15 21:00:00,2026,quarterfinals,1,0,359,2250,Arsenal,Sporting CP,0,0,post,STATUS_FULL_TIME
+401862893,2026-04-28 21:00:00,2026,semifinals,1,0,160,132,PSG,Bayern Munich,5,4,post,STATUS_FULL_TIME
+401862894,2026-04-29 21:00:00,2026,semifinals,1,0,1068,359,Atletico Madrid,Arsenal,1,1,post,STATUS_FULL_TIME
+401862896,2026-05-05 21:00:00,2026,semifinals,1,0,359,1068,Arsenal,Atletico Madrid,1,0,post,STATUS_FULL_TIME
+401862895,2026-05-06 21:00:00,2026,semifinals,1,0,132,160,Bayern Munich,PSG,1,1,post,STATUS_FULL_TIME
+401862897,2026-05-30 18:00:00,2026,final,1,1,160,359,PSG,Arsenal,1,1,post,STATUS_FINAL_PEN
+401915452,2026-09-08 18:45:00,2027,league-phase,0,0,887,4411,AEK Athens,LASK Linz,1,0,post,STATUS_FULL_TIME
+401915426,2026-09-08 18:45:00,2027,league-phase,0,0,570,362,Club Brugge,Aston Villa,2,3,post,STATUS_FULL_TIME
+401915449,2026-09-08 21:00:00,2027,league-phase,0,0,124,102,Borussia Dortmund,Villarreal,3,2,post,STATUS_FULL_TIME
+401915425,2026-09-08 21:00:00,2027,league-phase,0,0,437,382,Porto,Manchester City,0,2,post,STATUS_FULL_TIME
+401915450,2026-09-08 21:00:00,2027,league-phase,0,0,166,244,Lille,Real Betis,2,3,post,STATUS_FULL_TIME
+401915451,2026-09-08 21:00:00,2027,league-phase,0,0,86,110,Real Madrid,Inter,2,1,post,STATUS_FULL_TIME
+401915424,2026-09-09 18:45:00,2027,league-phase,0,0,83,142,FC Barcelona,Feyenoord,5,1,post,STATUS_FULL_TIME
+401915448,2026-09-09 18:45:00,2027,league-phase,0,0,134,510,VfB Stuttgart,Viking FK,3,1,post,STATUS_FULL_TIME

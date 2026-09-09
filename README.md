@@ -2,7 +2,7 @@
 
 Plataforma integral de analítica avanzada, modelado probabilístico y predicción de fútbol basada en **Machine Learning Híbrido**, **Matrices Bivariadas de Poisson / Dixon-Coles** y **Simulaciones Monte Carlo Vectorizadas**.
 
-El sistema cuenta con un portal central en **Streamlit** que permite interactuar con **20 aplicaciones de predicción independientes**: la Copa Mundial de la FIFA 2026 y las **19 ligas domésticas más competitivas de Europa y América**.
+El sistema cuenta con un portal central en **Streamlit** que permite interactuar con **21 aplicaciones de predicción independientes**: la Copa Mundial de la FIFA 2026, la **UEFA Champions League (formato suizo de 36 clubes)** y las **19 ligas domésticas más competitivas de Europa y América**.
 
 ---
 
@@ -12,25 +12,26 @@ El sistema cuenta con un portal central en **Streamlit** que permite interactuar
 
 ### Competiciones Disponibles
 1. 🏆 **Copa Mundial de la FIFA 2026**: Bracket oficial de 48 selecciones, Elo histórico (1872–2026) y Homología Persistente (TDA experimental).
-2. 🏴󠁧󠁢󠁥󠁮󠁧󠁿 **Premier League** (Inglaterra)
-3. 🇪🇸 **LaLiga EA Sports** (España)
-4. 🇩🇪 **Bundesliga** (Alemania)
-5. 🇮🇹 **Serie A** (Italia)
-6. 🇫🇷 **Ligue 1** (Francia)
-7. 🇳🇱 **Eredivisie** (Países Bajos)
-8. 🇵🇹 **Primeira Liga** (Portugal)
-9. 🇧🇪 **Jupiler Pro League** (Bélgica)
-10. 🇹🇷 **Trendyol Süper Lig** (Turquía)
-11. 🏴󠁧󠁢󠁳󠁣󠁴󠁿 **Scottish Premiership** (Escocia)
-12. 🇦🇹 **Austrian Bundesliga** (Austria)
-13. 🇩🇰 **Danish Superliga** (Dinamarca)
-14. 🇬🇷 **Super League** (Grecia)
-15. 🇳🇴 **Eliteserien** (Noruega)
-16. 🇸🇪 **Allsvenskan** (Suecia)
-17. 🇧🇷 **Brasileirão Série A** (Brasil)
-18. 🇲🇽 **Liga MX** (México — Apertura / Clausura y Liguilla)
-19. 🇨🇱 **Primera División de Chile**
-20. 🇦🇷 **Liga Profesional de Fútbol Argentino** (Zonas, promedios y tabla anual)
+2. ⭐ **UEFA Champions League**: Nuevo formato suizo de 36 clubes en tabla única, knockout play-offs y cuadro eliminatorio completo hacia la Gran Final.
+3. 🏴󠁧󠁢󠁥󠁮󠁧󠁿 **Premier League** (Inglaterra)
+4. 🇪🇸 **LaLiga EA Sports** (España)
+5. 🇩🇪 **Bundesliga** (Alemania)
+6. 🇮🇹 **Serie A** (Italia)
+7. 🇫🇷 **Ligue 1** (Francia)
+8. 🇳🇱 **Eredivisie** (Países Bajos)
+9. 🇵🇹 **Primeira Liga** (Portugal)
+10. 🇧🇪 **Jupiler Pro League** (Bélgica)
+11. 🇹🇷 **Trendyol Süper Lig** (Turquía)
+12. 🏴󠁧󠁢󠁳󠁣󠁴󠁿 **Scottish Premiership** (Escocia)
+13. 🇦🇹 **Austrian Bundesliga** (Austria)
+14. 🇩🇰 **Danish Superliga** (Dinamarca)
+15. 🇬🇷 **Super League** (Grecia)
+16. 🇳🇴 **Eliteserien** (Noruega)
+17. 🇸🇪 **Allsvenskan** (Suecia)
+18. 🇧🇷 **Brasileirão Série A** (Brasil)
+19. 🇲🇽 **Liga MX** (México — Apertura / Clausura y Liguilla)
+20. 🇨🇱 **Primera División de Chile**
+21. 🇦🇷 **Liga Profesional de Fútbol Argentino** (Zonas, promedios y tabla anual)
 
 ---
 
@@ -43,11 +44,11 @@ fifa-2026-hybrid-forecast/
 ├── app.py                     # Enrutador principal del portal Streamlit
 ├── requirements.txt           # Dependencias de producción
 ├── tests/
-│   └── smoke.py              # Suite de smoke tests unificada (19 ligas)
+│   └── smoke.py              # Suite de smoke tests unificada (20 competiciones)
 ├── .github/workflows/
 │   └── refresh_data.yml      # Pipeline CI/CD: ingesta diaria automatizada (06:00 UTC)
 │
-├── [eng | esp | bund | ita | fra | ned | por | bel | tur | sco | aut | den | gre | nor | swe | bra | mex | chile | arg]/   # Módulos por liga
+├── [ucl | eng | esp | bund | ita | fra | ned | por | bel | tur | sco | aut | den | gre | nor | swe | bra | mex | chile | arg]/   # Módulos por liga
 │   ├── motor.py               # StateTracker, Poisson Dixon-Coles, ML Stacking y Monte Carlo
 │   ├── app_<liga>.py          # Interfaz Streamlit (Versus, H2H, Tabla MC, Mercados, Validación)
 │   ├── recolectar.py          # Scraper/ingestor de partidos y fixture desde ESPN API

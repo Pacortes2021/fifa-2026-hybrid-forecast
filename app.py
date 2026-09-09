@@ -31,7 +31,7 @@ def limpiar_cache_importacion():
     entre las distintas ligas que usan archivos con el mismo nombre (ej. motor.py)."""
     modulos_a_limpiar = [
         "motor", "recolectar", "recolectar_boxscore", 
-        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur", "app_sco", "app_aut", "app_den", "app_gre", "app_nor", "app_swe"
+        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur", "app_sco", "app_aut", "app_den", "app_gre", "app_nor", "app_swe", "app_ucl"
     ]
     for mod in modulos_a_limpiar:
         if mod in sys.modules:
@@ -54,6 +54,7 @@ torneo_seleccionado = st.sidebar.selectbox(
     "Selecciona el Torneo:",
     [
         "🏆 Copa Mundial 2026",
+        "⭐ UEFA Champions League",
         "🇦🇷 Liga Profesional (Argentina)",
         "🇲🇽 Liga MX (México)",
         "🇧🇷 Brasileirão (Brasil)",
@@ -91,6 +92,11 @@ if torneo_seleccionado == "🏆 Copa Mundial 2026":
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lab"))
     import lab.app_lab as lab_app
     lab_app.run_app()
+
+elif torneo_seleccionado == "⭐ UEFA Champions League":
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "ucl"))
+    import ucl.app_ucl as ucl_app
+    ucl_app.run_app()
 
 elif torneo_seleccionado == "🇦🇷 Liga Profesional (Argentina)":
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "arg"))

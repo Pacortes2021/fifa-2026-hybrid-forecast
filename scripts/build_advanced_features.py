@@ -308,12 +308,97 @@ SWE_TEAMS = {
     "Orgryte IS": {"val": 5.0, "cap": 18416, "att": 3500, "age": 25.0, "pct_for": 0.20}
 }
 
+# --- UEFA CHAMPIONS LEAGUE ---
+UCL_TEAMS = {
+    'AC Milan': {'val': 620.0, 'cap': 75923, 'att': 71500, 'age': 26.0, 'pct_for': 0.65},
+    'AEK Athens': {'val': 80.0, 'cap': 32500, 'att': 26000, 'age': 27.5, 'pct_for': 0.64},
+    'AS Monaco': {'val': 340.0, 'cap': 18523, 'att': 10000, 'age': 24.8, 'pct_for': 0.64},
+    'AS Roma': {'val': 360.0, 'cap': 70634, 'att': 62000, 'age': 27.0, 'pct_for': 0.59},
+    'Ajax': {'val': 230.0, 'cap': 55865, 'att': 53500, 'age': 24.2, 'pct_for': 0.54},
+    'Antwerp': {'val': 75.0, 'cap': 16144, 'att': 14500, 'age': 25.8, 'pct_for': 0.54},
+    'Arsenal': {'val': 1340.0, 'cap': 60704, 'att': 60217, 'age': 26.0, 'pct_for': 0.6552},
+    'Aston Villa': {'val': 524.0, 'cap': 43205, 'att': 41977, 'age': 27.5, 'pct_for': 0.7692},
+    'Atalanta': {'val': 470.0, 'cap': 24950, 'att': 23500, 'age': 26.8, 'pct_for': 0.67},
+    'Athletic Club': {'val': 250.9, 'cap': 53289, 'att': 47617, 'age': 26.8, 'pct_for': 0.129},
+    'Atletico Madrid': {'val': 612.8, 'cap': 70460, 'att': 60855, 'age': 27.3, 'pct_for': 0.6},
+    'Bayer Leverkusen': {'val': 513.45, 'cap': 30210, 'att': 30016, 'age': 24.7, 'pct_for': 0.7429},
+    'Bayern Munich': {'val': 1080.0, 'cap': 75000, 'att': 75000, 'age': 26.5, 'pct_for': 0.5172},
+    'Benfica': {'val': 360.0, 'cap': 64642, 'att': 56000, 'age': 25.6, 'pct_for': 0.64},
+    'Besiktas': {'val': 140.0, 'cap': 42590, 'att': 35000, 'age': 26.5, 'pct_for': 0.61},
+    'Bodo/Glimt': {'val': 45.0, 'cap': 8270, 'att': 7200, 'age': 25.5, 'pct_for': 0.36},
+    'Bologna': {'val': 310.0, 'cap': 36462, 'att': 26000, 'age': 25.5, 'pct_for': 0.61},
+    'Borussia Dortmund': {'val': 464.2, 'cap': 81365, 'att': 81365, 'age': 25.0, 'pct_for': 0.5926},
+    'Borussia Monchengladbach': {'val': 136.0, 'cap': 54042, 'att': 51100, 'age': 26.7, 'pct_for': 0.5862},
+    'Braga': {'val': 140.0, 'cap': 30286, 'att': 17000, 'age': 25.8, 'pct_for': 0.57},
+    'Brest': {'val': 120.0, 'cap': 15220, 'att': 14500, 'age': 26.2, 'pct_for': 0.46},
+    'Celtic': {'val': 140.0, 'cap': 60411, 'att': 58500, 'age': 26.2, 'pct_for': 0.64},
+    'Chelsea': {'val': 1370.0, 'cap': 41631, 'att': 39661, 'age': 23.9, 'pct_for': 0.7179},
+    'Club Brugge': {'val': 140.0, 'cap': 29062, 'att': 24000, 'age': 24.8, 'pct_for': 0.64},
+    'Como': {'val': 150.0, 'cap': 13602, 'att': 10500, 'age': 26.0, 'pct_for': 0.64},
+    'Crvena Zvezda': {'val': 75.0, 'cap': 51755, 'att': 25000, 'age': 25.8, 'pct_for': 0.45},
+    'Dinamo Zagreb': {'val': 80.0, 'cap': 35123, 'att': 12000, 'age': 24.8, 'pct_for': 0.35},
+    'Dynamo Kyiv': {'val': 85.0, 'cap': 70050, 'att': 20000, 'age': 24.5, 'pct_for': 0.2},
+    'Eintracht Frankfurt': {'val': 338.85, 'cap': 59500, 'att': 59071, 'age': 25.1, 'pct_for': 0.625},
+    'F.C. København': {'val': 80.0, 'cap': 38065, 'att': 28000, 'age': 25.2, 'pct_for': 0.61},
+    'FC Barcelona': {'val': 1190.0, 'cap': 62657, 'att': 45099, 'age': 24.3, 'pct_for': 0.3571},
+    'Fenerbahce': {'val': 260.0, 'cap': 47834, 'att': 43000, 'age': 27.2, 'pct_for': 0.64},
+    'Feyenoord': {'val': 290.0, 'cap': 47500, 'att': 47000, 'age': 24.5, 'pct_for': 0.61},
+    'Galatasaray': {'val': 280.0, 'cap': 52600, 'att': 47000, 'age': 26.8, 'pct_for': 0.64},
+    'Girona': {'val': 199.2, 'cap': 14624, 'att': 11931, 'age': 26.9, 'pct_for': 0.5714},
+    'Inter': {'val': 700.0, 'cap': 75923, 'att': 72000, 'age': 28.5, 'pct_for': 0.61},
+    'Juventus': {'val': 610.0, 'cap': 41507, 'att': 39500, 'age': 26.5, 'pct_for': 0.57},
+    'Kairat Almaty': {'val': 15.0, 'cap': 23804, 'att': 14000, 'age': 25.8, 'pct_for': 0.4},
+    'LASK Linz': {'val': 35.0, 'cap': 19080, 'att': 14000, 'age': 25.8, 'pct_for': 0.46},
+    'Lazio': {'val': 260.0, 'cap': 70634, 'att': 44000, 'age': 28.0, 'pct_for': 0.57},
+    'Lens': {'val': 180.0, 'cap': 38223, 'att': 37500, 'age': 26.0, 'pct_for': 0.5},
+    'Lille': {'val': 250.0, 'cap': 50186, 'att': 40000, 'age': 25.2, 'pct_for': 0.61},
+    'Liverpool': {'val': 979.5, 'cap': 61276, 'att': 60389, 'age': 25.5, 'pct_for': 0.7586},
+    'Maccabi Haifa': {'val': 30.0, 'cap': 30858, 'att': 28000, 'age': 26.2, 'pct_for': 0.35},
+    'Malmo FF': {'val': 45.0, 'cap': 22500, 'att': 20000, 'age': 26.0, 'pct_for': 0.39},
+    'Manchester City': {'val': 1500.0, 'cap': 61000, 'att': 52640, 'age': 25.3, 'pct_for': 0.625},
+    'Manchester United': {'val': 885.3, 'cap': 74879, 'att': 73975, 'age': 25.8, 'pct_for': 0.6562},
+    'Marseille': {'val': 320.0, 'cap': 67394, 'att': 63000, 'age': 26.1, 'pct_for': 0.64},
+    'Napoli': {'val': 480.0, 'cap': 54726, 'att': 47000, 'age': 27.0, 'pct_for': 0.59},
+    'Newcastle United': {'val': 619.8, 'cap': 52258, 'att': 52095, 'age': 25.7, 'pct_for': 0.5385},
+    'Olympiacos': {'val': 110.0, 'cap': 32115, 'att': 25000, 'age': 26.8, 'pct_for': 0.68},
+    'PSG': {'val': 950.0, 'cap': 48583, 'att': 47000, 'age': 25.4, 'pct_for': 0.68},
+    'PSV': {'val': 330.0, 'cap': 35000, 'att': 34500, 'age': 24.8, 'pct_for': 0.57},
+    'Pafos': {'val': 22.0, 'cap': 9394, 'att': 5500, 'age': 27.5, 'pct_for': 0.7},
+    'Porto': {'val': 340.0, 'cap': 50033, 'att': 42000, 'age': 25.5, 'pct_for': 0.61},
+    'Qarabag': {'val': 25.0, 'cap': 31200, 'att': 20000, 'age': 26.8, 'pct_for': 0.55},
+    'RB Leipzig': {'val': 604.8, 'cap': 47069, 'att': 44164, 'age': 23.9, 'pct_for': 0.6571},
+    'Rangers': {'val': 110.0, 'cap': 50817, 'att': 49000, 'age': 26.5, 'pct_for': 0.61},
+    'Real Betis': {'val': 232.4, 'cap': 71374, 'att': 57427, 'age': 27.4, 'pct_for': 0.48},
+    'Real Madrid': {'val': 1370.0, 'cap': 83186, 'att': 71549, 'age': 25.5, 'pct_for': 0.6667},
+    'Real Sociedad': {'val': 253.5, 'cap': 40000, 'att': 30698, 'age': 25.8, 'pct_for': 0.2963},
+    'Sabah FK': {'val': 14.0, 'cap': 13000, 'att': 5000, 'age': 26.0, 'pct_for': 0.5},
+    'Salzburg': {'val': 170.0, 'cap': 30188, 'att': 12000, 'age': 23.2, 'pct_for': 0.71},
+    'Sevilla': {'val': 154.4, 'cap': 43883, 'att': 35688, 'age': 27.1, 'pct_for': 0.44},
+    'Shakhtar Donetsk': {'val': 160.0, 'cap': 33000, 'att': 25000, 'age': 24.2, 'pct_for': 0.4},
+    'Sheriff': {'val': 12.0, 'cap': 12746, 'att': 6500, 'age': 25.5, 'pct_for': 0.75},
+    'Slavia Praga': {'val': 95.0, 'cap': 19370, 'att': 18500, 'age': 25.4, 'pct_for': 0.38},
+    'Slovan Bratislava': {'val': 28.0, 'cap': 22500, 'att': 16000, 'age': 27.2, 'pct_for': 0.55},
+    'Sparta Praga': {'val': 90.0, 'cap': 18349, 'att': 17500, 'age': 25.0, 'pct_for': 0.45},
+    'Sporting CP': {'val': 410.0, 'cap': 50095, 'att': 40000, 'age': 25.2, 'pct_for': 0.61},
+    'Sturm Graz': {'val': 65.0, 'cap': 16364, 'att': 15000, 'age': 24.8, 'pct_for': 0.54},
+    'Tottenham Hotspur': {'val': 920.5, 'cap': 62850, 'att': 61003, 'age': 25.7, 'pct_for': 0.75},
+    'Union Berlin': {'val': 109.88, 'cap': 22012, 'att': 21996, 'age': 25.9, 'pct_for': 0.5667},
+    'Union Saint-Gilloise': {'val': 90.0, 'cap': 9400, 'att': 8500, 'age': 25.4, 'pct_for': 0.71},
+    'VfB Stuttgart': {'val': 420.15, 'cap': 60449, 'att': 59265, 'age': 24.4, 'pct_for': 0.5135},
+    'VfL Wolfsburg': {'val': 234.1, 'cap': 28917, 'att': 24716, 'age': 24.9, 'pct_for': 0.7},
+    'Viking FK': {'val': 22.0, 'cap': 15900, 'att': 13000, 'age': 25.2, 'pct_for': 0.29},
+    'Viktoria Plzen': {'val': 45.0, 'cap': 11700, 'att': 10500, 'age': 25.8, 'pct_for': 0.35},
+    'Villarreal': {'val': 324.2, 'cap': 23500, 'att': 17989, 'age': 25.5, 'pct_for': 0.5385},
+    'Young Boys': {'val': 65.0, 'cap': 31500, 'att': 28500, 'age': 24.9, 'pct_for': 0.55},
+    'Zenit St Petersburg': {'val': 180.0, 'cap': 68000, 'att': 45000, 'age': 26.5, 'pct_for': 0.45},
+}
+
 
 def build_for_league(liga, team_dict):
     out_dir = BASE / liga / "data"
     out_dir.mkdir(parents=True, exist_ok=True)
     
-    temporadas = list(range(2020, 2027))
+    temporadas = list(range(2020, 2028))
     filas_adv = []
     filas_sq = []
     
@@ -367,6 +452,7 @@ def main():
     build_for_league("gre", GRE_TEAMS)
     build_for_league("nor", NOR_TEAMS)
     build_for_league("swe", SWE_TEAMS)
+    build_for_league("ucl", UCL_TEAMS)
 
 
 if __name__ == "__main__":
