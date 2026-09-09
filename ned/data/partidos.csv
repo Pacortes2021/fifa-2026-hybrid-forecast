@@ -1774,3 +1774,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401875615,2026-09-06 14:30:00,2026,146,140,Heerenveen,AZ Alkmaar,2.0,3.0,post
 401875614,2026-09-06 14:30:00,2026,3735,3736,Telstar,SC Cambuur,2.0,2.0,post
 401875613,2026-09-06 16:45:00,2026,2726,143,ADO Den Haag,Fortuna Sittard,2.0,3.0,post
+401875619,2026-09-08 14:00:00,2026,153,3706,Utrecht,Go Ahead Eagles,3.0,3.0,post
+401875636,2026-09-08 18:45:00,2026,147,2566,NEC,Excelsior,2.0,2.0,post
