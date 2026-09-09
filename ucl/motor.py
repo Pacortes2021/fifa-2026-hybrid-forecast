@@ -399,8 +399,15 @@ class StateTracker:
 
 class CustomUnpickler(pickle.Unpickler):
     def find_class(self, module, name):
-        if name in ("StateTracker", "PiRatingsTracker", "_elo_default", "_none_default"):
-            return globals().get(name, super().find_class(module, name))
+        if module == "motor" or module.endswith(".motor"):
+            if name in globals():
+                return globals()[name]
+            import sys
+            mod = sys.modules.get("ucl.motor") or sys.modules.get("motor")
+            if mod and hasattr(mod, name):
+                return getattr(mod, name)
+        if name in globals():
+            return globals()[name]
         return super().find_class(module, name)
 
 _MOTOR_CACHE = None
@@ -569,9 +576,10 @@ def cargar(force_retrain=False):
     metricas = {
         "lasso": _met(p_l_test, y_test),
         "rf": _met(p_r_test, y_test),
+        "xgb": _met(p_x_test, y_test),
         "stacking": {**_met(p_st_test, y_test), "w": [round(float(x), 3) for x in w_opt]}
     }
-    print(f"Metricas UCL Test>=2026: LASSO={metricas['lasso']} RF={metricas['rf']} Stacking={metricas['stacking']}")
+    print(f"Metricas UCL Test>=2026: LASSO={metricas['lasso']} RF={metricas['rf']} XGB={metricas['xgb']} Stacking={metricas['stacking']}")
 
     # 5. Modelo Poisson con corrección Dixon-Coles
     df_p = pd.DataFrame(filas_poisson)

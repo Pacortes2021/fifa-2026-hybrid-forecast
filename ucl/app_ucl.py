@@ -113,8 +113,31 @@ def run_app():
     tracker = M["tracker"]
     equipos_data = M.get("equipos", {})
 
+    try:
+        _partidos_df = pd.read_csv(mo.DATA / "partidos.csv", parse_dates=["fecha"])
+        _ult_fecha = pd.to_datetime(_partidos_df["fecha"].max()).date().strftime("%d/%m/%Y")
+        st.sidebar.caption(f"🗓️ Datos actualizados: {_ult_fecha} · {len(_partidos_df)} partidos")
+    except Exception:
+        pass
+
+    # ── Métricas por modelo (sidebar)
+    met_all = M.get("metricas", {})
+    if met_all:
+        st.sidebar.markdown("---")
+        st.sidebar.markdown("#### 📊 Métricas Out-of-Sample (2026+)")
+        valid_lls = [met_all[k]["logloss"] for k in met_all if isinstance(met_all[k], dict) and "logloss" in met_all[k]]
+        mejor_ll = min(valid_lls) if valid_lls else None
+        for nombre, clave in [("LASSO", "lasso"), ("RF", "rf"), ("XGB", "xgb"), ("Stacking", "stacking")]:
+            if clave not in met_all:
+                continue
+            m = met_all[clave]
+            star = " ⭐" if mejor_ll is not None and m.get("logloss") == mejor_ll else ""
+            w_str = f" (w={m['w']})" if clave == "stacking" and "w" in m else ""
+            st.sidebar.caption(f"**{nombre}{w_str}{star}** — LL: `{m['logloss']:.4f}` | Acc: `{m['accuracy']:.1f}%`")
+
+    nombre_modelo = "✨ Stacking Óptimo" if modelo_tipo == "stacking" else ("🌲 Random Forest" if modelo_tipo == "rf" else ("🚀 XGBoost" if modelo_tipo == "xgb" else "🎯 LASSO L1"))
     st.markdown('<div class="main-title">⭐ UEFA Champions League Predictor</div>', unsafe_allow_html=True)
-    st.markdown('<div class="main-subtitle">Fase de Liga de 36 Clubes · Play-offs y Cuadro Eliminatorio · Poisson Dixon-Coles & ML</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — Fase de Liga de 36 Clubes · Play-offs y Cuadro Eliminatorio · Poisson Dixon-Coles & ML</div>', unsafe_allow_html=True)
 
     tab1, tab2, tab3, tab4 = st.tabs([
         "⚔️ Match Predictor (Versus)",
@@ -307,11 +330,16 @@ def run_app():
         met = M.get("metricas", {})
         if met:
             st.markdown("#### Rendimiento Out-of-Sample (Test $\ge$ 2026)")
-            col_m1, col_m2, col_m3 = st.columns(3)
-            col_m1.metric("LASSO (L1)", f"Acc: {met['lasso']['accuracy']}%", f"LogLoss: {met['lasso']['logloss']}")
-            col_m2.metric("Random Forest", f"Acc: {met['rf']['accuracy']}%", f"LogLoss: {met['rf']['logloss']}")
+            col_m1, col_m2, col_m3, col_m4 = st.columns(4)
+            if "lasso" in met:
+                col_m1.metric("LASSO (L1)", f"Acc: {met['lasso']['accuracy']}%", f"LogLoss: {met['lasso']['logloss']}")
+            if "rf" in met:
+                col_m2.metric("Random Forest", f"Acc: {met['rf']['accuracy']}%", f"LogLoss: {met['rf']['logloss']}")
+            if "xgb" in met:
+                col_m3.metric("XGBoost", f"Acc: {met['xgb']['accuracy']}%", f"LogLoss: {met['xgb']['logloss']}")
             stk = met.get("stacking", {})
-            col_m3.metric("Stacking Óptimo", f"Acc: {stk.get('accuracy', 0)}%", f"LogLoss: {stk.get('logloss', 0)}")
+            if stk:
+                col_m4.metric("Stacking Óptimo", f"Acc: {stk.get('accuracy', 0)}%", f"LogLoss: {stk.get('logloss', 0)}")
             if "w" in stk:
                 st.caption(f"Pesos de ensemble: LASSO={stk['w'][0]} | RF={stk['w'][1]} | XGB={stk['w'][2]}")
 
