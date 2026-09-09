@@ -206,6 +206,26 @@ AUT_TEAMS = {
     "St. Pölten": {"val": 6.0, "cap": 8000, "att": 3000, "age": 25.0, "pct_for": 0.30}
 }
 
+# --- DINAMARCA ---
+DEN_TEAMS = {
+    "F.C. København": {"val": 80.0, "cap": 38065, "att": 28000, "age": 25.2, "pct_for": 0.60},
+    "FC Midtjylland": {"val": 65.0, "cap": 12152, "att": 10500, "age": 24.8, "pct_for": 0.58},
+    "Brøndby IF": {"val": 45.0, "cap": 28000, "att": 21000, "age": 25.5, "pct_for": 0.52},
+    "FC Nordsjælland": {"val": 40.0, "cap": 10300, "att": 5500, "age": 23.0, "pct_for": 0.55},
+    "AGF": {"val": 22.0, "cap": 19433, "att": 12500, "age": 25.8, "pct_for": 0.45},
+    "Silkeborg IF": {"val": 16.0, "cap": 10000, "att": 6500, "age": 25.4, "pct_for": 0.35},
+    "Randers FC": {"val": 14.0, "cap": 10300, "att": 5200, "age": 25.6, "pct_for": 0.40},
+    "Viborg FF": {"val": 14.0, "cap": 10000, "att": 6800, "age": 25.2, "pct_for": 0.45},
+    "AaB": {"val": 12.0, "cap": 13600, "att": 8500, "age": 24.8, "pct_for": 0.42},
+    "Odense Boldklub": {"val": 12.0, "cap": 15790, "att": 9000, "age": 25.5, "pct_for": 0.45},
+    "Vejle Boldklub": {"val": 10.0, "cap": 11060, "att": 7500, "age": 25.9, "pct_for": 0.50},
+    "Lyngby Boldklub": {"val": 9.0, "cap": 10100, "att": 5500, "age": 25.6, "pct_for": 0.38},
+    "Sønderjyske Fodbold": {"val": 9.0, "cap": 10100, "att": 5000, "age": 25.8, "pct_for": 0.45},
+    "AC Horsens": {"val": 7.0, "cap": 10400, "att": 3800, "age": 25.2, "pct_for": 0.35},
+    "Hvidovre IF": {"val": 5.0, "cap": 12000, "att": 3000, "age": 26.2, "pct_for": 0.25},
+    "FC Fredericia": {"val": 5.0, "cap": 6000, "att": 2200, "age": 24.8, "pct_for": 0.25}
+}
+
 
 def build_for_league(liga, team_dict):
     out_dir = BASE / liga / "data"
@@ -261,6 +281,7 @@ def main():
     build_for_league("tur", TUR_TEAMS)
     build_for_league("sco", SCO_TEAMS)
     build_for_league("aut", AUT_TEAMS)
+    build_for_league("den", DEN_TEAMS)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 
 Plataforma integral de analítica avanzada, modelado probabilístico y predicción de fútbol basada en **Machine Learning Híbrido**, **Matrices Bivariadas de Poisson / Dixon-Coles** y **Simulaciones Monte Carlo Vectorizadas**.
 
-El sistema cuenta con un portal central en **Streamlit** que permite interactuar con **16 aplicaciones de predicción independientes**: la Copa Mundial de la FIFA 2026 y las **15 ligas domésticas más competitivas de Europa y América**.
+El sistema cuenta con un portal central en **Streamlit** que permite interactuar con **17 aplicaciones de predicción independientes**: la Copa Mundial de la FIFA 2026 y las **16 ligas domésticas más competitivas de Europa y América**.
 
 ---
 
@@ -23,10 +23,11 @@ El sistema cuenta con un portal central en **Streamlit** que permite interactuar
 10. 🇹🇷 **Trendyol Süper Lig** (Turquía)
 11. 🏴󠁧󠁢󠁳󠁣󠁴󠁿 **Scottish Premiership** (Escocia)
 12. 🇦🇹 **Austrian Bundesliga** (Austria)
-13. 🇧🇷 **Brasileirão Série A** (Brasil)
-14. 🇲🇽 **Liga MX** (México — Apertura / Clausura y Liguilla)
-15. 🇨🇱 **Primera División de Chile**
-16. 🇦🇷 **Liga Profesional de Fútbol Argentino** (Zonas, promedios y tabla anual)
+13. 🇩🇰 **Danish Superliga** (Dinamarca)
+14. 🇧🇷 **Brasileirão Série A** (Brasil)
+15. 🇲🇽 **Liga MX** (México — Apertura / Clausura y Liguilla)
+16. 🇨🇱 **Primera División de Chile**
+17. 🇦🇷 **Liga Profesional de Fútbol Argentino** (Zonas, promedios y tabla anual)
 
 ---
 
@@ -39,11 +40,11 @@ fifa-2026-hybrid-forecast/
 ├── app.py                     # Enrutador principal del portal Streamlit
 ├── requirements.txt           # Dependencias de producción
 ├── tests/
-│   └── smoke.py              # Suite de smoke tests unificada (15 ligas)
+│   └── smoke.py              # Suite de smoke tests unificada (16 ligas)
 ├── .github/workflows/
 │   └── refresh_data.yml      # Pipeline CI/CD: ingesta diaria automatizada (06:00 UTC)
 │
-├── [eng | esp | bund | ita | fra | ned | por | bel | tur | sco | aut | bra | mex | chile | arg]/   # Módulos por liga
+├── [eng | esp | bund | ita | fra | ned | por | bel | tur | sco | aut | den | bra | mex | chile | arg]/   # Módulos por liga
 │   ├── motor.py               # StateTracker, Poisson Dixon-Coles, ML Stacking y Monte Carlo
 │   ├── app_<liga>.py          # Interfaz Streamlit (Versus, H2H, Tabla MC, Mercados, Validación)
 │   ├── recolectar.py          # Scraper/ingestor de partidos y fixture desde ESPN API
