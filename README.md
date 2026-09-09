@@ -2,7 +2,7 @@
 
 Plataforma integral de analítica avanzada, modelado probabilístico y predicción de fútbol basada en **Machine Learning Híbrido**, **Matrices Bivariadas de Poisson / Dixon-Coles** y **Simulaciones Monte Carlo Vectorizadas**.
 
-El sistema cuenta con un portal central en **Streamlit** que permite interactuar con **18 aplicaciones de predicción independientes**: la Copa Mundial de la FIFA 2026 y las **17 ligas domésticas más competitivas de Europa y América**.
+El sistema cuenta con un portal central en **Streamlit** que permite interactuar con **19 aplicaciones de predicción independientes**: la Copa Mundial de la FIFA 2026 y las **18 ligas domésticas más competitivas de Europa y América**.
 
 ---
 
@@ -25,10 +25,11 @@ El sistema cuenta con un portal central en **Streamlit** que permite interactuar
 12. 🇦🇹 **Austrian Bundesliga** (Austria)
 13. 🇩🇰 **Danish Superliga** (Dinamarca)
 14. 🇬🇷 **Super League** (Grecia)
-15. 🇧🇷 **Brasileirão Série A** (Brasil)
-16. 🇲🇽 **Liga MX** (México — Apertura / Clausura y Liguilla)
-17. 🇨🇱 **Primera División de Chile**
-18. 🇦🇷 **Liga Profesional de Fútbol Argentino** (Zonas, promedios y tabla anual)
+15. 🇳🇴 **Eliteserien** (Noruega)
+16. 🇧🇷 **Brasileirão Série A** (Brasil)
+17. 🇲🇽 **Liga MX** (México — Apertura / Clausura y Liguilla)
+18. 🇨🇱 **Primera División de Chile**
+19. 🇦🇷 **Liga Profesional de Fútbol Argentino** (Zonas, promedios y tabla anual)
 
 ---
 
@@ -41,7 +42,7 @@ fifa-2026-hybrid-forecast/
 ├── app.py                     # Enrutador principal del portal Streamlit
 ├── requirements.txt           # Dependencias de producción
 ├── tests/
-│   └── smoke.py              # Suite de smoke tests unificada (17 ligas)
+│   └── smoke.py              # Suite de smoke tests unificada (18 ligas)
 ├── .github/workflows/
 │   └── refresh_data.yml      # Pipeline CI/CD: ingesta diaria automatizada (06:00 UTC)
 │

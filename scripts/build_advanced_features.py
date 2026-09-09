@@ -252,6 +252,34 @@ GRE_TEAMS = {
 }
 
 
+# --- NORUEGA ---
+NOR_TEAMS = {
+    "Bodo/Glimt": {"val": 45.0, "cap": 8270, "att": 7200, "age": 25.5, "pct_for": 0.35},
+    "Molde": {"val": 30.0, "cap": 11249, "att": 8000, "age": 25.8, "pct_for": 0.38},
+    "SK Brann": {"val": 25.0, "cap": 16750, "att": 15500, "age": 25.0, "pct_for": 0.30},
+    "Rosenborg": {"val": 25.0, "cap": 21421, "att": 16000, "age": 24.5, "pct_for": 0.32},
+    "Viking FK": {"val": 22.0, "cap": 15900, "att": 13000, "age": 25.2, "pct_for": 0.30},
+    "Lillestrom": {"val": 15.0, "cap": 10540, "att": 7500, "age": 25.2, "pct_for": 0.32},
+    "Vålerenga": {"val": 15.0, "cap": 16555, "att": 11000, "age": 25.0, "pct_for": 0.35},
+    "Tromso": {"val": 14.0, "cap": 6691, "att": 4800, "age": 24.8, "pct_for": 0.28},
+    "Fredrikstad": {"val": 12.0, "cap": 12500, "att": 9000, "age": 25.4, "pct_for": 0.28},
+    "Stromsgodset": {"val": 12.0, "cap": 8935, "att": 5200, "age": 25.6, "pct_for": 0.30},
+    "Sarpsborg FK": {"val": 11.0, "cap": 8022, "att": 5000, "age": 25.8, "pct_for": 0.35},
+    "Sandefjord": {"val": 10.0, "cap": 6582, "att": 3800, "age": 25.2, "pct_for": 0.32},
+    "Hamarkameratene": {"val": 9.0, "cap": 7800, "att": 4500, "age": 25.5, "pct_for": 0.25},
+    "Kristiansund BK": {"val": 9.0, "cap": 4444, "att": 3800, "age": 25.7, "pct_for": 0.25},
+    "Haugesund": {"val": 9.0, "cap": 8754, "att": 4500, "age": 25.3, "pct_for": 0.30},
+    "KFUM Oslo": {"val": 8.0, "cap": 3300, "att": 2500, "age": 25.4, "pct_for": 0.20},
+    "Odds BK": {"val": 8.0, "cap": 11767, "att": 5000, "age": 25.2, "pct_for": 0.25},
+    "Aalesund": {"val": 7.0, "cap": 10778, "att": 5000, "age": 25.1, "pct_for": 0.28},
+    "Stabaek": {"val": 7.0, "cap": 4938, "att": 3500, "age": 24.8, "pct_for": 0.30},
+    "Bryne": {"val": 6.0, "cap": 4000, "att": 2200, "age": 25.0, "pct_for": 0.20},
+    "IK Start": {"val": 6.0, "cap": 14448, "att": 4500, "age": 25.2, "pct_for": 0.25},
+    "Mjondalen IF": {"val": 5.0, "cap": 4350, "att": 2000, "age": 25.8, "pct_for": 0.20},
+    "FK Jerv": {"val": 5.0, "cap": 3300, "att": 2000, "age": 25.5, "pct_for": 0.25}
+}
+
+
 def build_for_league(liga, team_dict):
     out_dir = BASE / liga / "data"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -308,7 +336,9 @@ def main():
     build_for_league("aut", AUT_TEAMS)
     build_for_league("den", DEN_TEAMS)
     build_for_league("gre", GRE_TEAMS)
+    build_for_league("nor", NOR_TEAMS)
 
 
 if __name__ == "__main__":
     main()
+
