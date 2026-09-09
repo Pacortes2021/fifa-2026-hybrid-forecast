@@ -30,6 +30,7 @@ LIGAS = {
     "sco":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "aut":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
     "den":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
+    "gre":   dict(sim="simular_campeonato", n_sims=5, modelo="stacking"),
 }
 
 

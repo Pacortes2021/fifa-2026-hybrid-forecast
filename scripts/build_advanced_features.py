@@ -226,6 +226,31 @@ DEN_TEAMS = {
     "FC Fredericia": {"val": 5.0, "cap": 6000, "att": 2200, "age": 24.8, "pct_for": 0.25}
 }
 
+# --- GRECIA ---
+GRE_TEAMS = {
+    "Olympiacos": {"val": 110.0, "cap": 32115, "att": 25000, "age": 26.8, "pct_for": 0.68},
+    "Panathinaikos": {"val": 95.0, "cap": 69618, "att": 22000, "age": 27.2, "pct_for": 0.65},
+    "PAOK": {"val": 90.0, "cap": 28703, "att": 20000, "age": 26.5, "pct_for": 0.64},
+    "AEK Athens": {"val": 80.0, "cap": 32500, "att": 26000, "age": 27.5, "pct_for": 0.66},
+    "Aris": {"val": 35.0, "cap": 22800, "att": 12000, "age": 27.0, "pct_for": 0.70},
+    "OFI Crete": {"val": 18.0, "cap": 9088, "att": 5500, "age": 26.2, "pct_for": 0.55},
+    "Asteras Tripoli": {"val": 16.0, "cap": 7442, "att": 3500, "age": 26.8, "pct_for": 0.58},
+    "Atromitos": {"val": 14.0, "cap": 8969, "att": 3000, "age": 26.5, "pct_for": 0.52},
+    "Panetolikos": {"val": 12.0, "cap": 7323, "att": 3200, "age": 26.4, "pct_for": 0.50},
+    "Volos NFC": {"val": 12.0, "cap": 22700, "att": 2500, "age": 26.0, "pct_for": 0.60},
+    "Panserraikos FC": {"val": 11.0, "cap": 9500, "att": 3500, "age": 26.2, "pct_for": 0.52},
+    "Levadiakos": {"val": 11.0, "cap": 5915, "att": 2500, "age": 26.6, "pct_for": 0.50},
+    "Lamia": {"val": 10.0, "cap": 5500, "att": 2800, "age": 27.0, "pct_for": 0.48},
+    "Athens Kallithea": {"val": 9.0, "cap": 6300, "att": 2000, "age": 25.8, "pct_for": 0.55},
+    "Pas Giannina": {"val": 8.0, "cap": 7652, "att": 3500, "age": 25.5, "pct_for": 0.45},
+    "Kifisia": {"val": 8.0, "cap": 3200, "att": 1500, "age": 26.0, "pct_for": 0.50},
+    "Ionikos FC": {"val": 7.0, "cap": 4999, "att": 2200, "age": 26.5, "pct_for": 0.45},
+    "Apollon Smyrni": {"val": 6.0, "cap": 14200, "att": 2000, "age": 26.8, "pct_for": 0.45},
+    "Larissa FC": {"val": 6.0, "cap": 16118, "att": 4000, "age": 25.5, "pct_for": 0.35},
+    "Iraklis": {"val": 5.0, "cap": 27770, "att": 3000, "age": 25.2, "pct_for": 0.35},
+    "Kalamata": {"val": 5.0, "cap": 5613, "att": 2000, "age": 25.0, "pct_for": 0.30}
+}
+
 
 def build_for_league(liga, team_dict):
     out_dir = BASE / liga / "data"
@@ -282,6 +307,7 @@ def main():
     build_for_league("sco", SCO_TEAMS)
     build_for_league("aut", AUT_TEAMS)
     build_for_league("den", DEN_TEAMS)
+    build_for_league("gre", GRE_TEAMS)
 
 
 if __name__ == "__main__":
