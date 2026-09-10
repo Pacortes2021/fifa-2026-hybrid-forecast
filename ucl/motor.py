@@ -872,10 +872,10 @@ def cargar(force_retrain=False):
     return salida
 
 
-def predecir_match(M, local, visita, temporada=2027, modelo="stacking", is_neutral=0, is_knockout=0, leg2_lead_local=0.0, is_leg2=0):
+def predecir_match(M, local, visita, temporada=2027, modelo="stacking", is_neutral=0, is_knockout=0, leg2_lead_local=0.0, is_leg2=0, fecha=None):
     tracker = M["tracker"]
     feats = tracker.get_features_for_match(
-        local, visita, temporada, is_knockout=is_knockout, is_neutral=is_neutral,
+        local, visita, temporada, fecha=fecha, is_knockout=is_knockout, is_neutral=is_neutral,
         leg2_lead_local=leg2_lead_local, is_leg2=is_leg2
     )
     X = pd.DataFrame([feats])[M["features"]].fillna(0.0)
@@ -1363,6 +1363,110 @@ def validacion_en_vivo(M, temporada_val=None, modelo="rf", modelo_tipo=None):
     df_evol = pd.DataFrame(evol)
 
     return val_df, met, df_evol
+
+
+def generar_reporte_partidos_ia(M, df_matches=None, modelo="stacking"):
+    """
+    Genera un DataFrame enriquecido con todas las métricas predictivas, xG Poisson,
+    diferenciales de ELO, valor de plantilla, forma y descanso para exportación
+    a CSV y análisis con modelos de IA (ChatGPT, Claude, Gemini, etc.).
+    """
+    if df_matches is None:
+        p_fix = DATA / "fixture.csv"
+        if p_fix.exists():
+            df_matches = pd.read_csv(p_fix, parse_dates=["fecha"])
+            df_matches = df_matches[df_matches["temporada"] == _temporada_actual()]
+        else:
+            return pd.DataFrame()
+
+    tracker = M["tracker"]
+    temp_actual = _temporada_actual()
+    filas = []
+
+    for _, r in df_matches.iterrows():
+        l, v = r["local"], r["visita"]
+        f = pd.to_datetime(r["fecha"]) if pd.notna(r.get("fecha")) else None
+        st_name = r.get("stage", "league-phase")
+        is_ko = int(r.get("is_knockout", 0))
+        is_neu = int(r.get("is_neutral", 0))
+
+        p_main, la, lb = predecir_match(M, l, v, temporada=temp_actual, modelo=modelo, is_neutral=is_neu, is_knockout=is_ko, fecha=f)
+        p_lasso = predecir_match(M, l, v, temporada=temp_actual, modelo="lasso", is_neutral=is_neu, is_knockout=is_ko, fecha=f)[0]
+        p_rf    = predecir_match(M, l, v, temporada=temp_actual, modelo="rf", is_neutral=is_neu, is_knockout=is_ko, fecha=f)[0]
+        p_xgb   = predecir_match(M, l, v, temporada=temp_actual, modelo="xgb", is_neutral=is_neu, is_knockout=is_ko, fecha=f)[0]
+        p_stk   = predecir_match(M, l, v, temporada=temp_actual, modelo="stacking", is_neutral=is_neu, is_knockout=is_ko, fecha=f)[0]
+
+        mat = matriz_marcador_exacto(la, lb)
+        mk = mercados(mat)
+        top_sc = mk.get("_top_marcadores", [])
+
+        elo_l = tracker.elos[l]
+        elo_v = tracker.elos[v]
+        val_l = get_squad_value(l, temp_actual)
+        val_v = get_squad_value(v, temp_actual)
+
+        dom_l = tracker.multi_leagues.get_team_domestic_features(l, f)
+        dom_v = tracker.multi_leagues.get_team_domestic_features(v, f)
+
+        # Alerta Heurística
+        if p_main[0] > 0.55 and (la - lb) > 0.8:
+            alerta = "🔥 Alta Confianza Local"
+        elif p_main[0] > 0.60:
+            alerta = "💪 Favorito Claro Local"
+        elif p_main[2] > 0.50:
+            alerta = "⚠️ Visita Fuerte"
+        elif max(p_main) < 0.44:
+            alerta = "⚖️ Partido Muy Parejo"
+        elif p_main[1] > 0.28:
+            alerta = "🤝 Alta Probabilidad Empate"
+        else:
+            alerta = "🎯 Pronóstico Estándar"
+
+        filas.append({
+            "id_partido": r.get("event_id", ""),
+            "fecha": f.strftime("%Y-%m-%d %H:%M") if f is not None else "",
+            "fase": st_name,
+            "local": l,
+            "visita": v,
+            "prob_victoria_local_%": round(float(p_main[0] * 100), 1),
+            "prob_empate_%": round(float(p_main[1] * 100), 1),
+            "prob_victoria_visita_%": round(float(p_main[2] * 100), 1),
+            "cuota_justa_local": round(float(cuota(p_main[0])), 2),
+            "cuota_justa_empate": round(float(cuota(p_main[1])), 2),
+            "cuota_justa_visita": round(float(cuota(p_main[2])), 2),
+            "xg_local": round(float(la), 2),
+            "xg_visita": round(float(lb), 2),
+            "marcador_mas_probable": f"{top_sc[0][0]}-{top_sc[0][1]} ({top_sc[0][2]:.1%})" if len(top_sc) > 0 else "",
+            "marcador_alternativo": f"{top_sc[1][0]}-{top_sc[1][1]} ({top_sc[1][2]:.1%})" if len(top_sc) > 1 else "",
+            "prob_over_2_5_%": round(float(mk.get("Over 2.5", 0.5) * 100), 1),
+            "prob_ambos_marcan_%": round(float(mk.get("Ambos marcan (BTTS sí)", 0.5) * 100), 1),
+            "elo_local": round(float(elo_l), 1),
+            "elo_visita": round(float(elo_v), 1),
+            "elo_diff_con_localia": round(float(elo_l + (0.0 if is_neu else HOME_ADV) - elo_v), 1),
+            "plantilla_local_M€": round(float(val_l), 1),
+            "plantilla_visita_M€": round(float(val_v), 1),
+            "ratio_plantilla_local_vs_visita": round(float(val_l / max(val_v, 0.1)), 2),
+            "liga_local": MAPPING_UCL_A_LOCAL.get(l, ("Otro", ""))[0].upper(),
+            "liga_visita": MAPPING_UCL_A_LOCAL.get(v, ("Otro", ""))[0].upper(),
+            "elo_domestico_adj_local": round(float(dom_l["dom_elo_adj"]), 1),
+            "elo_domestico_adj_visita": round(float(dom_v["dom_elo_adj"]), 1),
+            "forma_liga_5p_local_%": round(float(dom_l["dom_form"] * 100), 1),
+            "forma_liga_5p_visita_%": round(float(dom_v["dom_form"] * 100), 1),
+            "ppg_liga_local": round(float(dom_l["dom_ppg"]), 2),
+            "ppg_liga_visita": round(float(dom_v["dom_ppg"]), 2),
+            "descanso_dias_local": int(dom_l["real_rest_days"]),
+            "descanso_dias_visita": int(dom_v["real_rest_days"]),
+            "ventaja_descanso_dias": int(dom_l["real_rest_days"] - dom_v["real_rest_days"]),
+            "partidos_ultimos_14d_local": int(dom_l["real_cong_14d"]),
+            "partidos_ultimos_14d_visita": int(dom_v["real_cong_14d"]),
+            "consenso_lasso_L_D_V": f"{p_lasso[0]:.1%}/{p_lasso[1]:.1%}/{p_lasso[2]:.1%}",
+            "consenso_rf_L_D_V": f"{p_rf[0]:.1%}/{p_rf[1]:.1%}/{p_rf[2]:.1%}",
+            "consenso_xgb_L_D_V": f"{p_xgb[0]:.1%}/{p_xgb[1]:.1%}/{p_xgb[2]:.1%}",
+            "consenso_stacking_L_D_V": f"{p_stk[0]:.1%}/{p_stk[1]:.1%}/{p_stk[2]:.1%}",
+            "alerta_modelo": alerta
+        })
+
+    return pd.DataFrame(filas)
 
 
 if __name__ == "__main__":

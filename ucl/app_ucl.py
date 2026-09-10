@@ -145,10 +145,11 @@ def run_app():
     st.markdown('<div class="main-title">⭐ UEFA Champions League Predictor</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — Fase de Liga de 36 Clubes · Play-offs y Cuadro Eliminatorio · Poisson Dixon-Coles & ML</div>', unsafe_allow_html=True)
 
-    # 4 Pestañas Canónicas
-    tab1, tab2, tab3, tab4 = st.tabs([
+    # 5 Pestañas Canónicas
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "⚽ Predicción Versus",
         "📊 Tabla y Proyecciones",
+        "📥 Exportar para IA (CSV)",
         "🔬 Importancia de Variables",
         "🎯 Validación vs Realidad"
     ])
@@ -511,9 +512,217 @@ def run_app():
                 "Los clasificados del **25º al 36º** quedan eliminados definitivamente sin paso a Europa League.")
 
     # ============================================================================
-    # TAB 3: IMPORTANCIA DE VARIABLES
+    # TAB 3: EXPORTAR PARA IA (CSV)
     # ============================================================================
     with tab3:
+        st.markdown('<div class="sec-title">📥 Exportación Cuantitativa para Análisis con IA</div>', unsafe_allow_html=True)
+        st.markdown(
+            "Genera y descarga un dataset enriquecido con **41 variables analíticas** por partido "
+            "(probabilidades 1X2, xG Poisson, cuotas justas, diferenciales de ELO y plantillas, descanso y congestión, "
+            "forma en ligas locales y consenso multi-modelo). Ideal para alimentar a **ChatGPT, Claude o Gemini** "
+            "y obtener análisis cualitativos, tácticos y detección de sorpresas de alto valor."
+        )
+
+        fix_path = mo.DATA / "fixture.csv"
+        if not fix_path.exists():
+            st.warning("⚠️ No se encontró el archivo de fixture oficial de la UEFA Champions League.")
+        else:
+            df_fix_full = pd.read_csv(fix_path)
+            temp_ucl = mo._temporada_actual()
+            df_fix_act = df_fix_full[df_fix_full["temporada"] == temp_ucl].copy()
+            df_fix_act["fecha_dt"] = pd.to_datetime(df_fix_act["fecha"])
+            df_fix_act["dia"] = df_fix_act["fecha_dt"].dt.strftime("%Y-%m-%d")
+
+            # Agrupar fechas en jornadas oficiales
+            dias_unicos = sorted(df_fix_act["dia"].dropna().unique())
+            jornadas_map = {}
+            if dias_unicos:
+                j_idx = 1
+                curr_j = [dias_unicos[0]]
+                for d in dias_unicos[1:]:
+                    diff = (pd.to_datetime(d) - pd.to_datetime(curr_j[-1])).days
+                    if diff <= 2:
+                        curr_j.append(d)
+                    else:
+                        lbl = f"Jornada {j_idx} ({pd.to_datetime(curr_j[0]).strftime('%d/%m')} - {pd.to_datetime(curr_j[-1]).strftime('%d/%m/%Y')}) · {len(df_fix_act[df_fix_act['dia'].isin(curr_j)])} partidos"
+                        jornadas_map[lbl] = curr_j
+                        j_idx += 1
+                        curr_j = [d]
+                lbl = f"Jornada {j_idx} ({pd.to_datetime(curr_j[0]).strftime('%d/%m/%Y')}) · {len(df_fix_act[df_fix_act['dia'].isin(curr_j)])} partidos"
+                jornadas_map[lbl] = curr_j
+
+            # Filtros interactivos
+            col_f1, col_f2, col_f3 = st.columns([4, 4, 3])
+
+            with col_f1:
+                filtro_modo = st.radio(
+                    "🎯 Seleccionar Grupo de Partidos:",
+                    [
+                        "⚡ Próximos Partidos (Restantes de Hoy + Mañana)",
+                        "📅 Por Jornada Oficial UCL",
+                        "📆 Por Fecha Específica",
+                        "🌐 Fixture Completo (36 Clubes)"
+                    ],
+                    index=0
+                )
+
+            with col_f2:
+                df_filtrado = pd.DataFrame()
+                sufijo_archivo = "proximos"
+
+                if "Próximos" in filtro_modo:
+                    df_pend = df_fix_act[df_fix_act["estado"] != "post"]
+                    if df_pend.empty:
+                        df_pend = df_fix_act
+                    primer_dia = df_pend["dia"].min()
+                    dias_prox = [primer_dia]
+                    dia_sig = (pd.to_datetime(primer_dia) + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
+                    if dia_sig in dias_unicos:
+                        dias_prox.append(dia_sig)
+                    df_filtrado = df_fix_act[df_fix_act["dia"].isin(dias_prox)].copy()
+                    st.info(f"📅 Partidos seleccionados: **{', '.join(dias_prox)}** ({len(df_filtrado)} cotejos)")
+                    sufijo_archivo = f"proximos_{primer_dia}"
+
+                elif "Jornada" in filtro_modo:
+                    lista_jornadas = list(jornadas_map.keys())
+                    sel_jornada = st.selectbox("Elegir Jornada:", lista_jornadas, index=0)
+                    dias_sel = jornadas_map.get(sel_jornada, [])
+                    df_filtrado = df_fix_act[df_fix_act["dia"].isin(dias_sel)].copy()
+                    j_num = sel_jornada.split()[1] if len(sel_jornada.split()) > 1 else "ucl"
+                    sufijo_archivo = f"jornada_{j_num}"
+
+                elif "Fecha" in filtro_modo:
+                    sel_dia = st.selectbox("Elegir Fecha:", dias_unicos, index=0)
+                    df_filtrado = df_fix_act[df_fix_act["dia"] == sel_dia].copy()
+                    sufijo_archivo = f"fecha_{sel_dia}"
+
+                else:
+                    df_filtrado = df_fix_act.copy()
+                    st.info(f"🌐 Incluye los **{len(df_filtrado)}** partidos de la Fase de Liga.")
+                    sufijo_archivo = "fixture_completo"
+
+            with col_f3:
+                modelo_exp = st.selectbox(
+                    "🤖 Modelo para Probabilidades:",
+                    [
+                        "✨ Stacking Óptimo",
+                        "🌲 Random Forest",
+                        "🚀 XGBoost",
+                        "🎯 LASSO L1"
+                    ],
+                    index=0 if modelo_tipo == "stacking" else (1 if modelo_tipo == "rf" else (2 if modelo_tipo == "xgb" else 3))
+                )
+                if "Stacking" in modelo_exp:
+                    mod_code = "stacking"
+                elif "Random" in modelo_exp:
+                    mod_code = "rf"
+                elif "XGB" in modelo_exp:
+                    mod_code = "xgb"
+                else:
+                    mod_code = "lasso"
+
+                solo_pendientes = st.checkbox("Excluir partidos ya finalizados", value=False)
+                if solo_pendientes:
+                    df_filtrado = df_filtrado[df_filtrado["estado"] != "post"]
+
+            # Generación del Reporte Cuantitativo
+            if df_filtrado.empty:
+                st.warning("No hay partidos que coincidan con los filtros seleccionados.")
+            else:
+                with st.spinner("Calculando 41 métricas avanzadas (xG, descanso real, ELO, plantillas y consenso)..."):
+                    df_reporte = mo.generar_reporte_partidos_ia(M, df_matches=df_filtrado, modelo=mod_code)
+
+                # Métricas Resumen
+                m_c1, m_c2, m_c3, m_c4 = st.columns(4)
+                m_c1.metric("Partidos Seleccionados", f"{len(df_reporte)}")
+                xg_prom = (df_reporte["xg_local"] + df_reporte["xg_visita"]).mean() if not df_reporte.empty else 0.0
+                m_c2.metric("Promedio Goles Esperados (xG)", f"{xg_prom:.2f}")
+                favoritos_locales = (df_reporte["prob_victoria_local_%"] > 50).sum()
+                m_c3.metric("Favoritos Locales (>50%)", f"{favoritos_locales}")
+                alertas_destacadas = (df_reporte["alerta_modelo"] != "🎯 Pronóstico Estándar").sum()
+                m_c4.metric("Alertas Especiales", f"{alertas_destacadas}")
+
+                # Botón de Descarga prominente
+                csv_bytes = df_reporte.to_csv(index=False).encode("utf-8")
+                st.download_button(
+                    label=f"📥 Descargar CSV ({len(df_reporte)} partidos · 41 columnas) para IA",
+                    data=csv_bytes,
+                    file_name=f"pronosticos_ucl_{sufijo_archivo}.csv",
+                    mime="text/csv",
+                    use_container_width=True
+                )
+
+                # Vista Previa Interactiva
+                st.markdown("##### 🔍 Vista Previa del Dataset Enriquecido")
+                cols_preview = [
+                    "fecha", "local", "visita", "prob_victoria_local_%", "prob_empate_%", "prob_victoria_visita_%",
+                    "cuota_justa_local", "cuota_justa_empate", "cuota_justa_visita", "xg_local", "xg_visita",
+                    "marcador_mas_probable", "prob_over_2_5_%", "elo_local", "elo_visita",
+                    "plantilla_local_M€", "plantilla_visita_M€", "ventaja_descanso_dias", "alerta_modelo"
+                ]
+                cols_existentes = [c for c in cols_preview if c in df_reporte.columns]
+
+                fmt_dict = {
+                    "prob_victoria_local_%": "{:.1f}%",
+                    "prob_empate_%": "{:.1f}%",
+                    "prob_victoria_visita_%": "{:.1f}%",
+                    "cuota_justa_local": "{:.2f}",
+                    "cuota_justa_empate": "{:.2f}",
+                    "cuota_justa_visita": "{:.2f}",
+                    "xg_local": "{:.2f}",
+                    "xg_visita": "{:.2f}",
+                    "prob_over_2_5_%": "{:.1f}%",
+                    "elo_local": "{:.0f}",
+                    "elo_visita": "{:.0f}",
+                    "plantilla_local_M€": "{:.1f}M€",
+                    "plantilla_visita_M€": "{:.1f}M€",
+                    "ventaja_descanso_dias": "{:+d}d"
+                }
+                fmt_apply = {k: v for k, v in fmt_dict.items() if k in cols_existentes}
+
+                st.dataframe(
+                    df_reporte[cols_existentes].style.format(fmt_apply),
+                    hide_index=True,
+                    width='stretch',
+                    height=360
+                )
+
+                # Prompt estructurado listo para copiar
+                with st.expander("🤖 Prompt Maestro Recomendado para ChatGPT / Claude / Gemini", expanded=True):
+                    st.markdown(
+                        "Copia el siguiente prompt y adjunta o pega el archivo CSV descargado en tu modelo de lenguaje favorito "
+                        "(Claude 3.5 Sonnet, ChatGPT GPT-4o, Gemini 1.5 Pro o DeepSeek R1) para obtener un análisis exhaustivo:"
+                    )
+                    prompt_texto = f"""Actúa como un analista táctico sénior de fútbol europeo y especialista en modelado cuantitativo de apuestas deportivas.
+
+Te adjunto un archivo CSV con los pronósticos cuantitativos y métricas analíticas de {len(df_reporte)} partidos de la UEFA Champions League, generados por un modelo híbrido calibrado (Poisson Dixon-Coles bivariado + Machine Learning Stacking con Random Forest, LASSO L1 y XGBoost).
+
+El CSV contiene 41 columnas que detallan:
+- Probabilidades justas (1X2) y cuotas justas sin margen.
+- Goles esperados (xG Poisson) y marcadores más probables.
+- Métricas de jerarquía: ELO oficial de Champions, valor de mercado de plantillas (Transfermarkt) y ratio financiero.
+- Métricas de rendimiento doméstico: ELO ajustado por dificultad de su liga local, % de puntos obtenidos en los últimos 5 partidos y puntos por partido (PPG).
+- Factores físicos: días de descanso real y partidos jugados en los últimos 14 días (congestión de calendario).
+- Consenso independiente de cada modelo (LASSO, Random Forest, XGBoost y Stacking) y alertas de heurística.
+
+Con base en este dataset, realiza un análisis integral estructurado en:
+1. 📋 Resumen Ejecutivo de la Jornada: Tendencias clave, partidos trampa y grandes duelos.
+2. 🔬 Análisis Detallado Partido por Partido:
+   - Contraste cuantitativo: ¿Qué revelan los xG, el diferencial de ELO y el valor de plantilla?
+   - Factor contexto y fatiga: ¿Cómo influye el descanso relativo y la congestión de partidos?
+   - Comparación de modelos: ¿Hay discrepancia entre el modelo lineal (LASSO) y los árboles (RF/XGB)?
+   - Proyección táctica esperada y resultado estimado.
+3. 💎 Detección de Valor y Discrepancias:
+   - Partidos donde las cuotas del mercado suelen sobreestimar al favorito.
+   - Posibles sorpresas o empates de alta probabilidad.
+   - Oportunidades en mercados alternativos (Over/Under 2.5, Ambos Marcan).
+4. ⚠️ Factores de Riesgo Externos a Considerar: (Rotaciones previstas, lesiones clave o necesidad de puntos según la tabla suiza)."""
+                    st.code(prompt_texto, language="markdown")
+
+    # ============================================================================
+    # TAB 4: IMPORTANCIA DE VARIABLES
+    # ============================================================================
+    with tab4:
         st.markdown('<div class="sec-title">Arquitectura Analítica e Importancia de Variables</div>', unsafe_allow_html=True)
 
         met = M.get("metricas", {})
@@ -580,9 +789,9 @@ def run_app():
                 plt.close(fig)
 
     # ============================================================================
-    # TAB 4: VALIDACIÓN VS REALIDAD
+    # TAB 5: VALIDACIÓN VS REALIDAD
     # ============================================================================
-    with tab4:
+    with tab5:
         st.markdown('<div class="sec-title">El Modelo contra la Realidad (Out-of-sample)</div>', unsafe_allow_html=True)
         st.caption("Comparación de la predicción pre-partido del modelo contra el resultado real para cotejos jugados.")
 
