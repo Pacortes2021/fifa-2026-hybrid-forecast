@@ -688,35 +688,48 @@ def run_app():
                 )
 
                 # Prompt estructurado listo para copiar
-                with st.expander("🤖 Prompt Maestro Recomendado para ChatGPT / Claude / Gemini", expanded=True):
+                with st.expander("🤖 Prompt Maestro de Inteligencia Externa & Análisis Periodístico (Para ChatGPT / Claude / Gemini / Perplexity)", expanded=True):
                     st.markdown(
-                        "Copia el siguiente prompt y adjunta o pega el archivo CSV descargado en tu modelo de lenguaje favorito "
-                        "(Claude 3.5 Sonnet, ChatGPT GPT-4o, Gemini 1.5 Pro o DeepSeek R1) para obtener un análisis exhaustivo:"
+                        "Copia el siguiente prompt y adjunta el archivo CSV descargado en tu modelo de lenguaje preferido "
+                        "(**ChatGPT Plus con Web Search**, **Claude 3.5 Sonnet**, **Gemini 1.5 Pro** o **Perplexity**). "
+                        "El prompt incluye **instrucciones estrictas para que la IA NO repita el CSV** y busque activamente información de periodistas, "
+                        "partes médicos, ruedas de prensa UEFA, historial y claves tácticas de pizarra:"
                     )
-                    prompt_texto = f"""Actúa como un analista táctico sénior de fútbol europeo y especialista en modelado cuantitativo de apuestas deportivas.
+                    prompt_texto = f"""Actúa como un **Jefe de Inteligencia Deportiva y Analista Táctico Senior de Fútbol Europeo**, combinando la analítica cuantitativa avanzada con la cobertura periodística de investigación de élite (estilo The Athletic, L'Équipe, Sky Sports, Kicker, Marca, Fabrizio Romano).
 
-Te adjunto un archivo CSV con los pronósticos cuantitativos y métricas analíticas de {len(df_reporte)} partidos de la UEFA Champions League, generados por un modelo híbrido calibrado (Poisson Dixon-Coles bivariado + Machine Learning Stacking con Random Forest, LASSO L1 y XGBoost).
+Te adjunto un archivo CSV que contiene las predicciones cuantitativas y métricas probabilísticas de {len(df_reporte)} partidos de la UEFA Champions League, generadas por un modelo híbrido calibrado (Poisson Dixon-Coles bivariado + Machine Learning Stacking con Random Forest, LASSO L1 y XGBoost).
 
-El CSV contiene 41 columnas que detallan:
-- Probabilidades justas (1X2) y cuotas justas sin margen.
-- Goles esperados (xG Poisson) y marcadores más probables.
-- Métricas de jerarquía: ELO oficial de Champions, valor de mercado de plantillas (Transfermarkt) y ratio financiero.
-- Métricas de rendimiento doméstico: ELO ajustado por dificultad de su liga local, % de puntos obtenidos en los últimos 5 partidos y puntos por partido (PPG).
-- Factores físicos: días de descanso real y partidos jugados en los últimos 14 días (congestión de calendario).
-- Consenso independiente de cada modelo (LASSO, Random Forest, XGBoost y Stacking) y alertas de heurística.
+⚠️ REGLAS ESTRICTAS DE RESPUESTA (PROHIBIDO REPETIR EL CSV):
+1. ⛔ NO REPETIR NI RESUMIR LOS NÚMEROS DEL CSV: Ya dispongo de las 41 columnas y los porcentajes en mi pantalla. Queda estrictamente prohibido redactar respuestas como 'El equipo A tiene 65% de probabilidad y xG de 1.8'. Usa las probabilidades y los xG únicamente como un ancla cuantitativa silenciosa de fondo.
+2. 🔎 INVESTIGACIÓN EXTERNA Y PERIODÍSTICA OBLIGATORIA (Web Search / Tiempo Real / Prensa Especializada):
+   - Si tienes capacidad de navegación web o búsqueda en vivo (Google Search, Browsing), REALIZA BÚSQUEDAS de las últimas 24-48 horas sobre cada partido:
+     * Ruedas de prensa oficiales UEFA de ambos entrenadores (declaraciones de intenciones, quejas de calendario, rotaciones anunciadas).
+     * Partes médicos actualizados: bajas confirmadas por lesión o sanción, titulares indiscutidos entre algodones o que descansan para el torneo local.
+     * Reportes de periodistas confiables y enviados especiales sobre el probable XI inicial y el clima de vestuario.
+   - Si operas en modo offline o sin navegación, recurre a tu conocimiento táctico exhaustivo: modelos de juego de los técnicos, historial de enfrentamientos directos en Europa (H2H), debilidades estructurales (ej. vulnerabilidad a la contra, balón parado) y jerarquía histórica en Champions.
+3. 🥊 CONTRASTE 'MODELO MATEMÁTICO VS REALIDAD PERIODÍSTICA': Tu mayor valor agregado es detectar las contradicciones entre las matemáticas y el contexto humano. Si el modelo marca favorito a un equipo pero la prensa revela que el vestuario está dividido o que el DT reservará a sus figuras, ¡debes destacarlo como una alerta crítica!
 
-Con base en este dataset, realiza un análisis integral estructurado en:
-1. 📋 Resumen Ejecutivo de la Jornada: Tendencias clave, partidos trampa y grandes duelos.
-2. 🔬 Análisis Detallado Partido por Partido:
-   - Contraste cuantitativo: ¿Qué revelan los xG, el diferencial de ELO y el valor de plantilla?
-   - Factor contexto y fatiga: ¿Cómo influye el descanso relativo y la congestión de partidos?
-   - Comparación de modelos: ¿Hay discrepancia entre el modelo lineal (LASSO) y los árboles (RF/XGB)?
-   - Proyección táctica esperada y resultado estimado.
-3. 💎 Detección de Valor y Discrepancias:
-   - Partidos donde las cuotas del mercado suelen sobreestimar al favorito.
-   - Posibles sorpresas o empates de alta probabilidad.
-   - Oportunidades en mercados alternativos (Over/Under 2.5, Ambos Marcan).
-4. ⚠️ Factores de Riesgo Externos a Considerar: (Rotaciones previstas, lesiones clave o necesidad de puntos según la tabla suiza)."""
+---
+
+ESTRUCTURA OBLIGATORIA DE TU INFORME:
+
+1. 🚨 RADAR DE PARTIDOS TRAMPA Y POSIBLES SORPRESAS:
+   - Identifica los 2 o 3 partidos con mayor riesgo de romper el pronóstico del modelo y explica por qué las noticias periodísticas o el contexto del vestuario contradicen los números fríos.
+
+2. 📰 BOLETÍN DE PRENSA Y NOVEDADES DE ÚLTIMA HORA:
+   - Bajas confirmadas, dudas de última hora y rotaciones clave informadas por la prensa especializada para los cotejos de mayor cartel.
+   - Contexto motivacional: ¿Quién se juega la vida en la tabla suiza y quién puede especular con el resultado?
+
+3. ⚔️ RADIOGRAFÍA TÁCTICA PARTIDO POR PARTIDO:
+   Para cada partido analizado:
+   - Choque de Estilos & Pizarra: ¿Cómo atacará el local y cómo contrarrestará la visita? (ej. presión alta tras pérdida vs bloque bajo y transiciones rápidas; explotación de bandas vs sobrecarga interior).
+   - Historial y Factor Psicológico (H2H): Precedentes recientes entre ambos clubes en competiciones europeas, peso de la localía y antecedentes con el árbitro o en estadios hostiles.
+   - Duelo Individual Clave: El emparejamiento 1 vs 1 en el terreno que desequilibrará el trámite (ej. extremo desequilibrante vs lateral de perfil bajo, o mediocentro destructor vs mediapunta creativo).
+   - Veredicto Cualitativo del Analista: Tu lectura definitiva del desarrollo del juego y resultado más verosímil considerando los xG del modelo junto al factor humano.
+
+4. 💎 DETECCIÓN DE VALOR EN EL MERCADO (Value Insights):
+   - ¿Qué cuotas del mercado o percepciones de los aficionados parecen mal calibradas frente a la realidad táctica y médica?
+   - Oportunidades interesantes en mercados alternativos (Over/Under 2.5, Ambos Marcan, tarjetas o goles en el primer tiempo)."""
                     st.code(prompt_texto, language="markdown")
 
     # ============================================================================
