@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401878400,2026-09-09 19:45:00,2026,257,250,Rangers,St Mirren,,,pre,STATUS_SCHEDULED
-401878399,2026-09-09 20:00:00,2026,267,256,St Johnstone,Celtic,,,pre,STATUS_SCHEDULED
 401878403,2026-09-15 19:45:00,2026,254,262,Falkirk,Heart of Midlothian,,,pre,STATUS_SCHEDULED
 401878402,2026-09-15 19:45:00,2026,258,260,Hibernian,Kilmarnock,,,pre,STATUS_SCHEDULED
 401878401,2026-09-15 19:45:00,2026,266,263,Motherwell,Aberdeen,,,pre,STATUS_SCHEDULED

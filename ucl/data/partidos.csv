@@ -789,3 +789,7 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915451,2026-09-08 21:00:00,2027,league-phase,0,0,86,110,Real Madrid,Inter,2,1,post,STATUS_FULL_TIME
 401915424,2026-09-09 18:45:00,2027,league-phase,0,0,83,142,FC Barcelona,Feyenoord,5,1,post,STATUS_FULL_TIME
 401915448,2026-09-09 18:45:00,2027,league-phase,0,0,134,510,VfB Stuttgart,Viking FK,3,1,post,STATUS_FULL_TIME
+401915447,2026-09-09 21:00:00,2027,league-phase,0,0,2250,432,Sporting CP,Galatasaray,3,1,post,STATUS_FULL_TIME
+401915445,2026-09-09 21:00:00,2027,league-phase,0,0,160,521,PSG,Slovan Bratislava,6,1,post,STATUS_FULL_TIME
+401915446,2026-09-09 21:00:00,2027,league-phase,0,0,364,1068,Liverpool,Atletico Madrid,2,1,post,STATUS_FULL_TIME
+401915423,2026-09-09 21:00:00,2027,league-phase,0,0,114,359,Napoli,Arsenal,0,1,post,STATUS_FULL_TIME

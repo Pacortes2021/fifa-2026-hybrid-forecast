@@ -1,8 +1,4 @@
 event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401915447,2026-09-09 21:00:00,2027,league-phase,0,0,2250,432,Sporting CP,Galatasaray,,,pre,STATUS_IN_PROGRESS
-401915445,2026-09-09 21:00:00,2027,league-phase,0,0,160,521,PSG,Slovan Bratislava,,,pre,STATUS_FIRST_HALF
-401915446,2026-09-09 21:00:00,2027,league-phase,0,0,364,1068,Liverpool,Atletico Madrid,,,pre,STATUS_FIRST_HALF
-401915423,2026-09-09 21:00:00,2027,league-phase,0,0,114,359,Napoli,Arsenal,,,pre,STATUS_FIRST_HALF
 401915444,2026-09-10 18:45:00,2027,league-phase,0,0,436,104,Fenerbahce,AS Roma,,,pre,STATUS_SCHEDULED
 401915422,2026-09-10 18:45:00,2027,league-phase,0,0,148,493,PSV,Shakhtar Donetsk,,,pre,STATUS_SCHEDULED
 401915443,2026-09-10 21:00:00,2027,league-phase,0,0,132,2980,Bayern Munich,Bodo/Glimt,,,pre,STATUS_SCHEDULED

@@ -1103,3 +1103,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878381,2026-09-05 20:00:00,2026,250,256,St Mirren,Celtic,1,2,post,STATUS_FULL_TIME
 401878382,2026-09-06 15:00:00,2026,267,258,St Johnstone,Hibernian,2,1,post,STATUS_FULL_TIME
 401878384,2026-09-06 15:00:00,2026,262,261,Heart of Midlothian,Dundee,2,1,post,STATUS_FULL_TIME
+401878400,2026-09-09 19:45:00,2026,257,250,Rangers,St Mirren,1,0,post,STATUS_FULL_TIME
+401878399,2026-09-09 20:00:00,2026,267,256,St Johnstone,Celtic,0,1,post,STATUS_FULL_TIME
