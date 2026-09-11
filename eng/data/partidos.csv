@@ -1435,10 +1435,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704342,2024-10-06 14:00:00,2024,363,393,Chelsea,Nottingham Forest,1.0,1.0,post
 704341,2024-10-06 16:30:00,2024,331,367,Brighton & Hove Albion,Tottenham Hotspur,3.0,2.0,post
 704353,2024-10-19 12:30:00,2024,367,371,Tottenham Hotspur,West Ham United,4.0,1.0,post
-704349,2024-10-19 15:00:00,2024,376,375,Southampton,Leicester City,2.0,3.0,post
 704357,2024-10-19 15:00:00,2024,361,331,Newcastle United,Brighton & Hove Albion,0.0,1.0,post
-704352,2024-10-19 15:00:00,2024,360,337,Manchester United,Brentford,2.0,1.0,post
+704349,2024-10-19 15:00:00,2024,376,375,Southampton,Leicester City,2.0,3.0,post
 704356,2024-10-19 15:00:00,2024,370,362,Fulham,Aston Villa,1.0,3.0,post
+704352,2024-10-19 15:00:00,2024,360,337,Manchester United,Brentford,2.0,1.0,post
 704355,2024-10-19 15:15:00,2024,373,368,Ipswich Town,Everton,0.0,2.0,post
 704351,2024-10-19 17:30:00,2024,349,359,AFC Bournemouth,Arsenal,2.0,0.0,post
 704358,2024-10-20 14:00:00,2024,380,382,Wolverhampton Wanderers,Manchester City,1.0,2.0,post
@@ -1470,8 +1470,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704385,2024-11-09 15:00:00,2024,380,376,Wolverhampton Wanderers,Southampton,2.0,0.0,post
 704381,2024-11-09 17:30:00,2024,331,382,Brighton & Hove Albion,Manchester City,2.0,1.0,post
 704388,2024-11-09 20:00:00,2024,364,362,Liverpool,Aston Villa,2.0,0.0,post
-704383,2024-11-10 14:00:00,2024,367,373,Tottenham Hotspur,Ipswich Town,1.0,2.0,post
 704387,2024-11-10 14:00:00,2024,393,361,Nottingham Forest,Newcastle United,1.0,3.0,post
+704383,2024-11-10 14:00:00,2024,367,373,Tottenham Hotspur,Ipswich Town,1.0,2.0,post
 704386,2024-11-10 14:00:00,2024,360,375,Manchester United,Leicester City,3.0,0.0,post
 704380,2024-11-10 16:30:00,2024,363,359,Chelsea,Arsenal,1.0,1.0,post
 704392,2024-11-23 12:30:00,2024,375,363,Leicester City,Chelsea,1.0,2.0,post
@@ -1490,16 +1490,16 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704399,2024-11-30 15:00:00,2024,393,373,Nottingham Forest,Ipswich Town,1.0,0.0,post
 704403,2024-11-30 15:00:00,2024,380,349,Wolverhampton Wanderers,AFC Bournemouth,2.0,4.0,post
 704400,2024-11-30 17:30:00,2024,371,359,West Ham United,Arsenal,2.0,5.0,post
+704401,2024-12-01 13:30:00,2024,367,370,Tottenham Hotspur,Fulham,1.0,1.0,post
 704404,2024-12-01 13:30:00,2024,363,362,Chelsea,Aston Villa,3.0,0.0,post
 704407,2024-12-01 13:30:00,2024,360,368,Manchester United,Everton,4.0,0.0,post
-704401,2024-12-01 13:30:00,2024,367,370,Tottenham Hotspur,Fulham,1.0,1.0,post
 704406,2024-12-01 16:00:00,2024,364,382,Liverpool,Manchester City,2.0,0.0,post
 704412,2024-12-03 19:30:00,2024,373,384,Ipswich Town,Crystal Palace,0.0,1.0,post
 704411,2024-12-03 20:15:00,2024,375,371,Leicester City,West Ham United,3.0,1.0,post
-704418,2024-12-04 19:30:00,2024,376,363,Southampton,Chelsea,1.0,5.0,post
-704417,2024-12-04 19:30:00,2024,361,364,Newcastle United,Liverpool,3.0,3.0,post
 704415,2024-12-04 19:30:00,2024,368,380,Everton,Wolverhampton Wanderers,4.0,0.0,post
 704416,2024-12-04 19:30:00,2024,382,393,Manchester City,Nottingham Forest,3.0,0.0,post
+704417,2024-12-04 19:30:00,2024,361,364,Newcastle United,Liverpool,3.0,3.0,post
+704418,2024-12-04 19:30:00,2024,376,363,Southampton,Chelsea,1.0,5.0,post
 704410,2024-12-04 20:15:00,2024,359,360,Arsenal,Manchester United,2.0,0.0,post
 704409,2024-12-04 20:15:00,2024,362,337,Aston Villa,Brentford,3.0,1.0,post
 704413,2024-12-05 19:30:00,2024,370,331,Fulham,Brighton & Hove Albion,3.0,1.0,post
@@ -1508,15 +1508,15 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704422,2024-12-07 15:00:00,2024,362,376,Aston Villa,Southampton,1.0,0.0,post
 704424,2024-12-07 15:00:00,2024,384,382,Crystal Palace,Manchester City,2.0,2.0,post
 704419,2024-12-07 17:30:00,2024,360,393,Manchester United,Nottingham Forest,2.0,3.0,post
+704428,2024-12-08 14:00:00,2024,375,331,Leicester City,Brighton & Hove Albion,2.0,2.0,post
 704421,2024-12-08 14:00:00,2024,370,359,Fulham,Arsenal,1.0,1.0,post
 704427,2024-12-08 14:00:00,2024,373,349,Ipswich Town,AFC Bournemouth,1.0,2.0,post
-704428,2024-12-08 14:00:00,2024,375,331,Leicester City,Brighton & Hove Albion,2.0,2.0,post
 704420,2024-12-08 16:30:00,2024,367,363,Tottenham Hotspur,Chelsea,3.0,4.0,post
 704426,2024-12-09 20:00:00,2024,371,380,West Ham United,Wolverhampton Wanderers,2.0,1.0,post
-704435,2024-12-14 15:00:00,2024,361,375,Newcastle United,Leicester City,4.0,0.0,post
-704433,2024-12-14 15:00:00,2024,380,373,Wolverhampton Wanderers,Ipswich Town,1.0,2.0,post
 704429,2024-12-14 15:00:00,2024,359,368,Arsenal,Everton,0.0,0.0,post
 704438,2024-12-14 15:00:00,2024,364,370,Liverpool,Fulham,2.0,2.0,post
+704435,2024-12-14 15:00:00,2024,361,375,Newcastle United,Leicester City,4.0,0.0,post
+704433,2024-12-14 15:00:00,2024,380,373,Wolverhampton Wanderers,Ipswich Town,1.0,2.0,post
 704436,2024-12-14 17:30:00,2024,393,362,Nottingham Forest,Aston Villa,2.0,1.0,post
 704431,2024-12-15 14:00:00,2024,331,384,Brighton & Hove Albion,Crystal Palace,1.0,3.0,post
 704434,2024-12-15 16:30:00,2024,382,360,Manchester City,Manchester United,1.0,2.0,post
@@ -1524,9 +1524,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704437,2024-12-15 19:00:00,2024,376,367,Southampton,Tottenham Hotspur,0.0,5.0,post
 704430,2024-12-16 20:00:00,2024,349,371,AFC Bournemouth,West Ham United,1.0,1.0,post
 704444,2024-12-21 12:30:00,2024,362,382,Aston Villa,Manchester City,2.0,1.0,post
-704443,2024-12-21 15:00:00,2024,371,331,West Ham United,Brighton & Hove Albion,1.0,1.0,post
-704442,2024-12-21 15:00:00,2024,373,361,Ipswich Town,Newcastle United,0.0,4.0,post
 704445,2024-12-21 15:00:00,2024,337,393,Brentford,Nottingham Forest,0.0,2.0,post
+704442,2024-12-21 15:00:00,2024,373,361,Ipswich Town,Newcastle United,0.0,4.0,post
+704443,2024-12-21 15:00:00,2024,371,331,West Ham United,Brighton & Hove Albion,1.0,1.0,post
 704446,2024-12-21 17:30:00,2024,384,359,Crystal Palace,Arsenal,1.0,5.0,post
 704447,2024-12-22 14:00:00,2024,368,363,Everton,Chelsea,0.0,0.0,post
 704448,2024-12-22 14:00:00,2024,370,376,Fulham,Southampton,0.0,0.0,post
@@ -1536,18 +1536,18 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704451,2024-12-26 12:30:00,2024,382,368,Manchester City,Everton,1.0,1.0,post
 704454,2024-12-26 15:00:00,2024,376,371,Southampton,West Ham United,0.0,1.0,post
 704453,2024-12-26 15:00:00,2024,393,367,Nottingham Forest,Tottenham Hotspur,1.0,0.0,post
-704458,2024-12-26 15:00:00,2024,349,384,AFC Bournemouth,Crystal Palace,0.0,0.0,post
-704449,2024-12-26 15:00:00,2024,363,370,Chelsea,Fulham,1.0,2.0,post
 704452,2024-12-26 15:00:00,2024,361,362,Newcastle United,Aston Villa,3.0,0.0,post
+704449,2024-12-26 15:00:00,2024,363,370,Chelsea,Fulham,1.0,2.0,post
+704458,2024-12-26 15:00:00,2024,349,384,AFC Bournemouth,Crystal Palace,0.0,0.0,post
 704455,2024-12-26 17:30:00,2024,380,360,Wolverhampton Wanderers,Manchester United,2.0,0.0,post
 704456,2024-12-26 20:00:00,2024,364,375,Liverpool,Leicester City,3.0,1.0,post
 704450,2024-12-27 19:30:00,2024,331,337,Brighton & Hove Albion,Brentford,0.0,0.0,post
 704457,2024-12-27 20:15:00,2024,359,373,Arsenal,Ipswich Town,1.0,0.0,post
 704462,2024-12-29 14:30:00,2024,375,382,Leicester City,Manchester City,0.0,2.0,post
-704466,2024-12-29 15:00:00,2024,384,376,Crystal Palace,Southampton,2.0,1.0,post
-704465,2024-12-29 15:00:00,2024,368,393,Everton,Nottingham Forest,0.0,2.0,post
-704460,2024-12-29 15:00:00,2024,370,349,Fulham,AFC Bournemouth,2.0,2.0,post
 704463,2024-12-29 15:00:00,2024,367,380,Tottenham Hotspur,Wolverhampton Wanderers,2.0,2.0,post
+704460,2024-12-29 15:00:00,2024,370,349,Fulham,AFC Bournemouth,2.0,2.0,post
+704465,2024-12-29 15:00:00,2024,368,393,Everton,Nottingham Forest,0.0,2.0,post
+704466,2024-12-29 15:00:00,2024,384,376,Crystal Palace,Southampton,2.0,1.0,post
 704464,2024-12-29 17:15:00,2024,371,364,West Ham United,Liverpool,0.0,5.0,post
 704459,2024-12-30 19:45:00,2024,362,331,Aston Villa,Brighton & Hove Albion,2.0,2.0,post
 704461,2024-12-30 19:45:00,2024,373,363,Ipswich Town,Chelsea,2.0,0.0,post
@@ -1574,13 +1574,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704480,2025-01-16 19:30:00,2025,373,331,Ipswich Town,Brighton & Hove Albion,0.0,2.0,post
 704488,2025-01-16 20:00:00,2025,360,376,Manchester United,Southampton,3.0,1.0,post
 704496,2025-01-18 12:30:00,2025,361,349,Newcastle United,AFC Bournemouth,1.0,4.0,post
-704494,2025-01-18 15:00:00,2025,337,364,Brentford,Liverpool,0.0,2.0,post
 704498,2025-01-18 15:00:00,2025,375,370,Leicester City,Fulham,0.0,2.0,post
 704491,2025-01-18 15:00:00,2025,371,384,West Ham United,Crystal Palace,0.0,2.0,post
+704494,2025-01-18 15:00:00,2025,337,364,Brentford,Liverpool,0.0,2.0,post
 704493,2025-01-18 17:30:00,2025,359,362,Arsenal,Aston Villa,2.0,2.0,post
-704492,2025-01-19 14:00:00,2025,393,376,Nottingham Forest,Southampton,3.0,2.0,post
-704489,2025-01-19 14:00:00,2025,368,367,Everton,Tottenham Hotspur,3.0,2.0,post
 704497,2025-01-19 14:00:00,2025,360,331,Manchester United,Brighton & Hove Albion,1.0,3.0,post
+704489,2025-01-19 14:00:00,2025,368,367,Everton,Tottenham Hotspur,3.0,2.0,post
+704492,2025-01-19 14:00:00,2025,393,376,Nottingham Forest,Southampton,3.0,2.0,post
 704490,2025-01-19 16:30:00,2025,373,382,Ipswich Town,Manchester City,0.0,6.0,post
 704495,2025-01-20 20:00:00,2025,363,380,Chelsea,Wolverhampton Wanderers,3.0,1.0,post
 704507,2025-01-25 15:00:00,2025,349,393,AFC Bournemouth,Nottingham Forest,5.0,0.0,post
@@ -1589,39 +1589,39 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704501,2025-01-25 15:00:00,2025,376,361,Southampton,Newcastle United,1.0,3.0,post
 704504,2025-01-25 15:00:00,2025,380,359,Wolverhampton Wanderers,Arsenal,0.0,1.0,post
 704502,2025-01-25 17:30:00,2025,382,363,Manchester City,Chelsea,3.0,1.0,post
-704505,2025-01-26 14:00:00,2025,384,337,Crystal Palace,Brentford,1.0,2.0,post
 704500,2025-01-26 14:00:00,2025,367,375,Tottenham Hotspur,Leicester City,1.0,2.0,post
+704505,2025-01-26 14:00:00,2025,384,337,Crystal Palace,Brentford,1.0,2.0,post
 704499,2025-01-26 16:30:00,2025,362,371,Aston Villa,West Ham United,1.0,1.0,post
 704503,2025-01-26 19:00:00,2025,370,360,Fulham,Manchester United,0.0,1.0,post
 704518,2025-02-01 12:30:00,2025,393,331,Nottingham Forest,Brighton & Hove Albion,7.0,0.0,post
-704510,2025-02-01 15:00:00,2025,373,376,Ipswich Town,Southampton,1.0,2.0,post
 704517,2025-02-01 15:00:00,2025,361,370,Newcastle United,Fulham,1.0,2.0,post
 704511,2025-02-01 15:00:00,2025,349,364,AFC Bournemouth,Liverpool,0.0,2.0,post
 704509,2025-02-01 15:00:00,2025,368,375,Everton,Leicester City,4.0,0.0,post
+704510,2025-02-01 15:00:00,2025,373,376,Ipswich Town,Southampton,1.0,2.0,post
 704514,2025-02-01 17:30:00,2025,380,362,Wolverhampton Wanderers,Aston Villa,2.0,0.0,post
-704512,2025-02-02 14:00:00,2025,337,367,Brentford,Tottenham Hotspur,0.0,2.0,post
 704516,2025-02-02 14:00:00,2025,360,384,Manchester United,Crystal Palace,0.0,2.0,post
+704512,2025-02-02 14:00:00,2025,337,367,Brentford,Tottenham Hotspur,0.0,2.0,post
 704515,2025-02-02 16:30:00,2025,359,382,Arsenal,Manchester City,5.0,1.0,post
 704513,2025-02-03 20:00:00,2025,363,371,Chelsea,West Ham United,2.0,1.0,post
 704425,2025-02-12 19:30:00,2025,368,364,Everton,Liverpool,2.0,2.0,post
 704526,2025-02-14 20:00:00,2025,331,363,Brighton & Hove Albion,Chelsea,3.0,0.0,post
 704520,2025-02-15 12:30:00,2025,375,359,Leicester City,Arsenal,0.0,2.0,post
-704527,2025-02-15 15:00:00,2025,362,373,Aston Villa,Ipswich Town,1.0,1.0,post
-704519,2025-02-15 15:00:00,2025,370,393,Fulham,Nottingham Forest,2.0,1.0,post
-704522,2025-02-15 15:00:00,2025,382,361,Manchester City,Newcastle United,4.0,0.0,post
 704528,2025-02-15 15:00:00,2025,376,349,Southampton,AFC Bournemouth,1.0,3.0,post
 704523,2025-02-15 15:00:00,2025,371,337,West Ham United,Brentford,0.0,1.0,post
+704522,2025-02-15 15:00:00,2025,382,361,Manchester City,Newcastle United,4.0,0.0,post
+704519,2025-02-15 15:00:00,2025,370,393,Fulham,Nottingham Forest,2.0,1.0,post
+704527,2025-02-15 15:00:00,2025,362,373,Aston Villa,Ipswich Town,1.0,1.0,post
 704525,2025-02-15 17:30:00,2025,384,368,Crystal Palace,Everton,1.0,2.0,post
 704521,2025-02-16 14:00:00,2025,364,380,Liverpool,Wolverhampton Wanderers,2.0,1.0,post
 704524,2025-02-16 16:30:00,2025,367,360,Tottenham Hotspur,Manchester United,1.0,0.0,post
 704567,2025-02-19 19:30:00,2025,362,364,Aston Villa,Liverpool,2.0,2.0,post
 704535,2025-02-21 20:00:00,2025,375,337,Leicester City,Brentford,0.0,4.0,post
 704530,2025-02-22 12:30:00,2025,368,360,Everton,Manchester United,2.0,2.0,post
+704536,2025-02-22 15:00:00,2025,376,331,Southampton,Brighton & Hove Albion,0.0,4.0,post
+704532,2025-02-22 15:00:00,2025,373,367,Ipswich Town,Tottenham Hotspur,1.0,4.0,post
 704529,2025-02-22 15:00:00,2025,349,380,AFC Bournemouth,Wolverhampton Wanderers,0.0,1.0,post
 704538,2025-02-22 15:00:00,2025,359,371,Arsenal,West Ham United,0.0,1.0,post
 704531,2025-02-22 15:00:00,2025,370,384,Fulham,Crystal Palace,0.0,2.0,post
-704532,2025-02-22 15:00:00,2025,373,367,Ipswich Town,Tottenham Hotspur,1.0,4.0,post
-704536,2025-02-22 15:00:00,2025,376,331,Southampton,Brighton & Hove Albion,0.0,4.0,post
 704537,2025-02-22 17:30:00,2025,362,363,Aston Villa,Chelsea,2.0,1.0,post
 704533,2025-02-23 14:00:00,2025,361,393,Newcastle United,Nottingham Forest,4.0,3.0,post
 704534,2025-02-23 16:30:00,2025,382,364,Manchester City,Liverpool,0.0,2.0,post
@@ -1636,13 +1636,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704548,2025-02-26 20:15:00,2025,364,361,Liverpool,Newcastle United,2.0,0.0,post
 704543,2025-02-27 20:00:00,2025,371,375,West Ham United,Leicester City,2.0,0.0,post
 704554,2025-03-08 12:30:00,2025,393,382,Nottingham Forest,Manchester City,1.0,0.0,post
+704556,2025-03-08 15:00:00,2025,364,376,Liverpool,Southampton,3.0,1.0,post
 704550,2025-03-08 15:00:00,2025,331,370,Brighton & Hove Albion,Fulham,2.0,1.0,post
 704557,2025-03-08 15:00:00,2025,384,373,Crystal Palace,Ipswich Town,1.0,0.0,post
-704556,2025-03-08 15:00:00,2025,364,376,Liverpool,Southampton,3.0,1.0,post
 704549,2025-03-08 17:30:00,2025,337,362,Brentford,Aston Villa,0.0,1.0,post
 704551,2025-03-08 20:00:00,2025,380,368,Wolverhampton Wanderers,Everton,1.0,1.0,post
-704558,2025-03-09 14:00:00,2025,367,349,Tottenham Hotspur,AFC Bournemouth,2.0,2.0,post
 704553,2025-03-09 14:00:00,2025,363,375,Chelsea,Leicester City,1.0,0.0,post
+704558,2025-03-09 14:00:00,2025,367,349,Tottenham Hotspur,AFC Bournemouth,2.0,2.0,post
 704555,2025-03-09 16:30:00,2025,360,359,Manchester United,Arsenal,1.0,1.0,post
 704552,2025-03-10 20:00:00,2025,371,361,West Ham United,Newcastle United,0.0,1.0,post
 704565,2025-03-15 15:00:00,2025,368,371,Everton,West Ham United,1.0,1.0,post
@@ -1653,14 +1653,14 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704564,2025-03-16 13:30:00,2025,370,367,Fulham,Tottenham Hotspur,2.0,0.0,post
 704559,2025-03-16 13:30:00,2025,359,363,Arsenal,Chelsea,1.0,0.0,post
 704562,2025-03-16 19:00:00,2025,375,360,Leicester City,Manchester United,0.0,3.0,post
-704572,2025-04-01 19:45:00,2025,359,370,Arsenal,Fulham,2.0,1.0,post
 704573,2025-04-01 19:45:00,2025,380,371,Wolverhampton Wanderers,West Ham United,1.0,0.0,post
+704572,2025-04-01 19:45:00,2025,359,370,Arsenal,Fulham,2.0,1.0,post
 704569,2025-04-01 20:00:00,2025,393,360,Nottingham Forest,Manchester United,1.0,0.0,post
-704578,2025-04-02 19:45:00,2025,361,337,Newcastle United,Brentford,2.0,1.0,post
-704574,2025-04-02 19:45:00,2025,382,375,Manchester City,Leicester City,2.0,0.0,post
-704577,2025-04-02 19:45:00,2025,376,384,Southampton,Crystal Palace,1.0,1.0,post
 704570,2025-04-02 19:45:00,2025,349,373,AFC Bournemouth,Ipswich Town,1.0,2.0,post
 704571,2025-04-02 19:45:00,2025,331,362,Brighton & Hove Albion,Aston Villa,0.0,3.0,post
+704574,2025-04-02 19:45:00,2025,382,375,Manchester City,Leicester City,2.0,0.0,post
+704578,2025-04-02 19:45:00,2025,361,337,Newcastle United,Brentford,2.0,1.0,post
+704577,2025-04-02 19:45:00,2025,376,384,Southampton,Crystal Palace,1.0,1.0,post
 704575,2025-04-02 20:00:00,2025,364,368,Liverpool,Everton,1.0,0.0,post
 704576,2025-04-03 20:00:00,2025,363,367,Chelsea,Tottenham Hotspur,1.0,0.0,post
 704584,2025-04-05 12:30:00,2025,368,359,Everton,Arsenal,1.0,1.0,post
@@ -1668,9 +1668,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704585,2025-04-05 15:00:00,2025,373,380,Ipswich Town,Wolverhampton Wanderers,1.0,2.0,post
 704582,2025-04-05 15:00:00,2025,371,349,West Ham United,AFC Bournemouth,2.0,2.0,post
 704580,2025-04-05 17:30:00,2025,362,393,Aston Villa,Nottingham Forest,2.0,1.0,post
-704587,2025-04-06 14:00:00,2025,367,376,Tottenham Hotspur,Southampton,3.0,1.0,post
 704579,2025-04-06 14:00:00,2025,337,363,Brentford,Chelsea,0.0,0.0,post
 704586,2025-04-06 14:00:00,2025,370,364,Fulham,Liverpool,3.0,2.0,post
+704587,2025-04-06 14:00:00,2025,367,376,Tottenham Hotspur,Southampton,3.0,1.0,post
 704581,2025-04-06 16:30:00,2025,360,382,Manchester United,Manchester City,0.0,0.0,post
 704588,2025-04-07 20:00:00,2025,375,361,Leicester City,Newcastle United,0.0,3.0,post
 704591,2025-04-12 12:30:00,2025,382,384,Manchester City,Crystal Palace,5.0,2.0,post
@@ -1684,14 +1684,14 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704590,2025-04-13 16:30:00,2025,361,360,Newcastle United,Manchester United,4.0,1.0,post
 704596,2025-04-14 20:00:00,2025,349,370,AFC Bournemouth,Fulham,1.0,0.0,post
 704560,2025-04-16 19:30:00,2025,361,384,Newcastle United,Crystal Palace,5.0,0.0,post
-704603,2025-04-19 15:00:00,2025,371,376,West Ham United,Southampton,1.0,1.0,post
-704604,2025-04-19 15:00:00,2025,368,382,Everton,Manchester City,0.0,2.0,post
-704605,2025-04-19 15:00:00,2025,384,349,Crystal Palace,AFC Bournemouth,0.0,0.0,post
 704607,2025-04-19 15:00:00,2025,337,331,Brentford,Brighton & Hove Albion,4.0,2.0,post
+704605,2025-04-19 15:00:00,2025,384,349,Crystal Palace,AFC Bournemouth,0.0,0.0,post
+704604,2025-04-19 15:00:00,2025,368,382,Everton,Manchester City,0.0,2.0,post
+704603,2025-04-19 15:00:00,2025,371,376,West Ham United,Southampton,1.0,1.0,post
 704606,2025-04-19 17:30:00,2025,362,361,Aston Villa,Newcastle United,4.0,1.0,post
-704608,2025-04-20 14:00:00,2025,370,363,Fulham,Chelsea,1.0,2.0,post
-704602,2025-04-20 14:00:00,2025,373,359,Ipswich Town,Arsenal,0.0,4.0,post
 704600,2025-04-20 14:00:00,2025,360,380,Manchester United,Wolverhampton Wanderers,0.0,1.0,post
+704602,2025-04-20 14:00:00,2025,373,359,Ipswich Town,Arsenal,0.0,4.0,post
+704608,2025-04-20 14:00:00,2025,370,363,Fulham,Chelsea,1.0,2.0,post
 704601,2025-04-20 16:30:00,2025,375,364,Leicester City,Liverpool,0.0,1.0,post
 704599,2025-04-21 20:00:00,2025,367,393,Tottenham Hotspur,Nottingham Forest,1.0,2.0,post
 704615,2025-04-22 20:00:00,2025,382,362,Manchester City,Aston Villa,2.0,1.0,post
@@ -1720,9 +1720,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704638,2025-05-10 15:00:00,2025,380,331,Wolverhampton Wanderers,Brighton & Hove Albion,0.0,2.0,post
 704629,2025-05-10 17:30:00,2025,349,362,AFC Bournemouth,Aston Villa,0.0,1.0,post
 704634,2025-05-11 12:00:00,2025,361,363,Newcastle United,Chelsea,2.0,0.0,post
+704633,2025-05-11 14:15:00,2025,360,371,Manchester United,West Ham United,0.0,2.0,post
 704635,2025-05-11 14:15:00,2025,393,375,Nottingham Forest,Leicester City,2.0,2.0,post
 704637,2025-05-11 14:15:00,2025,367,384,Tottenham Hotspur,Crystal Palace,0.0,2.0,post
-704633,2025-05-11 14:15:00,2025,360,371,Manchester United,West Ham United,0.0,2.0,post
 704632,2025-05-11 16:30:00,2025,364,359,Liverpool,Arsenal,2.0,2.0,post
 704640,2025-05-16 19:30:00,2025,362,367,Aston Villa,Tottenham Hotspur,2.0,0.0,post
 704643,2025-05-16 20:15:00,2025,363,360,Chelsea,Manchester United,1.0,0.0,post
@@ -1738,9 +1738,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704656,2025-05-25 16:00:00,2025,376,359,Southampton,Arsenal,1.0,2.0,post
 704655,2025-05-25 16:00:00,2025,393,363,Nottingham Forest,Chelsea,0.0,1.0,post
 704653,2025-05-25 16:00:00,2025,361,368,Newcastle United,Everton,0.0,1.0,post
-704654,2025-05-25 16:00:00,2025,380,337,Wolverhampton Wanderers,Brentford,1.0,1.0,post
-704652,2025-05-25 16:00:00,2025,364,384,Liverpool,Crystal Palace,1.0,1.0,post
 704651,2025-05-25 16:00:00,2025,373,371,Ipswich Town,West Ham United,1.0,3.0,post
+704652,2025-05-25 16:00:00,2025,364,384,Liverpool,Crystal Palace,1.0,1.0,post
+704654,2025-05-25 16:00:00,2025,380,337,Wolverhampton Wanderers,Brentford,1.0,1.0,post
 704650,2025-05-25 16:00:00,2025,370,382,Fulham,Manchester City,0.0,2.0,post
 704649,2025-05-25 16:00:00,2025,349,375,AFC Bournemouth,Leicester City,2.0,0.0,post
 704658,2025-05-25 16:00:00,2025,360,362,Manchester United,Aston Villa,2.0,0.0,post
@@ -1760,8 +1760,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740608,2025-08-23 15:00:00,2025,337,362,Brentford,Aston Villa,1.0,0.0,post
 740609,2025-08-23 15:00:00,2025,379,366,Burnley,Sunderland,2.0,0.0,post
 740606,2025-08-23 17:30:00,2025,359,357,Arsenal,Leeds United,5.0,0.0,post
-740611,2025-08-24 14:00:00,2025,368,331,Everton,Brighton & Hove Albion,2.0,0.0,post
 740610,2025-08-24 14:00:00,2025,384,393,Crystal Palace,Nottingham Forest,1.0,1.0,post
+740611,2025-08-24 14:00:00,2025,368,331,Everton,Brighton & Hove Albion,2.0,0.0,post
 740612,2025-08-24 16:30:00,2025,370,360,Fulham,Manchester United,1.0,1.0,post
 740614,2025-08-25 20:00:00,2025,361,364,Newcastle United,Liverpool,2.0,3.0,post
 740618,2025-08-30 12:30:00,2025,363,370,Chelsea,Fulham,2.0,0.0,post
@@ -1775,11 +1775,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740625,2025-08-31 16:30:00,2025,364,359,Liverpool,Arsenal,1.0,0.0,post
 740616,2025-08-31 19:00:00,2025,362,384,Aston Villa,Crystal Palace,0.0,3.0,post
 740627,2025-09-13 12:30:00,2025,359,393,Arsenal,Nottingham Forest,3.0,0.0,post
+740635,2025-09-13 15:00:00,2025,349,331,AFC Bournemouth,Brighton & Hove Albion,2.0,1.0,post
+740628,2025-09-13 15:00:00,2025,384,366,Crystal Palace,Sunderland,0.0,0.0,post
+740632,2025-09-13 15:00:00,2025,368,362,Everton,Aston Villa,0.0,0.0,post
 740631,2025-09-13 15:00:00,2025,370,357,Fulham,Leeds United,1.0,0.0,post
 740629,2025-09-13 15:00:00,2025,361,380,Newcastle United,Wolverhampton Wanderers,1.0,0.0,post
-740632,2025-09-13 15:00:00,2025,368,362,Everton,Aston Villa,0.0,0.0,post
-740628,2025-09-13 15:00:00,2025,384,366,Crystal Palace,Sunderland,0.0,0.0,post
-740635,2025-09-13 15:00:00,2025,349,331,AFC Bournemouth,Brighton & Hove Albion,2.0,1.0,post
 740626,2025-09-13 17:30:00,2025,371,367,West Ham United,Tottenham Hotspur,0.0,3.0,post
 740634,2025-09-13 20:00:00,2025,337,363,Brentford,Chelsea,2.0,2.0,post
 740633,2025-09-14 14:00:00,2025,379,364,Burnley,Liverpool,0.0,1.0,post
@@ -1795,10 +1795,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740639,2025-09-21 14:00:00,2025,366,362,Sunderland,Aston Villa,1.0,1.0,post
 740643,2025-09-21 16:30:00,2025,359,382,Arsenal,Manchester City,1.0,1.0,post
 740649,2025-09-27 12:30:00,2025,337,360,Brentford,Manchester United,3.0,1.0,post
-740655,2025-09-27 15:00:00,2025,357,349,Leeds United,AFC Bournemouth,2.0,2.0,post
-740654,2025-09-27 15:00:00,2025,382,379,Manchester City,Burnley,5.0,1.0,post
 740648,2025-09-27 15:00:00,2025,363,331,Chelsea,Brighton & Hove Albion,1.0,3.0,post
 740647,2025-09-27 15:00:00,2025,384,364,Crystal Palace,Liverpool,2.0,1.0,post
+740655,2025-09-27 15:00:00,2025,357,349,Leeds United,AFC Bournemouth,2.0,2.0,post
+740654,2025-09-27 15:00:00,2025,382,379,Manchester City,Burnley,5.0,1.0,post
 740651,2025-09-27 17:30:00,2025,393,366,Nottingham Forest,Sunderland,0.0,1.0,post
 740646,2025-09-27 20:00:00,2025,367,380,Tottenham Hotspur,Wolverhampton Wanderers,1.0,1.0,post
 740650,2025-09-28 14:00:00,2025,362,370,Aston Villa,Fulham,3.0,1.0,post
@@ -1815,30 +1815,30 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740665,2025-10-05 14:00:00,2025,380,331,Wolverhampton Wanderers,Brighton & Hove Albion,1.0,1.0,post
 740659,2025-10-05 16:30:00,2025,337,382,Brentford,Manchester City,0.0,1.0,post
 740672,2025-10-18 12:30:00,2025,393,363,Nottingham Forest,Chelsea,0.0,3.0,post
-740666,2025-10-18 15:00:00,2025,331,361,Brighton & Hove Albion,Newcastle United,2.0,1.0,post
-740667,2025-10-18 15:00:00,2025,379,357,Burnley,Leeds United,2.0,0.0,post
-740668,2025-10-18 15:00:00,2025,384,349,Crystal Palace,AFC Bournemouth,3.0,3.0,post
-740671,2025-10-18 15:00:00,2025,382,368,Manchester City,Everton,2.0,0.0,post
 740673,2025-10-18 15:00:00,2025,366,380,Sunderland,Wolverhampton Wanderers,2.0,0.0,post
+740671,2025-10-18 15:00:00,2025,382,368,Manchester City,Everton,2.0,0.0,post
+740668,2025-10-18 15:00:00,2025,384,349,Crystal Palace,AFC Bournemouth,3.0,3.0,post
+740667,2025-10-18 15:00:00,2025,379,357,Burnley,Leeds United,2.0,0.0,post
+740666,2025-10-18 15:00:00,2025,331,361,Brighton & Hove Albion,Newcastle United,2.0,1.0,post
 740669,2025-10-18 17:30:00,2025,370,359,Fulham,Arsenal,0.0,1.0,post
 740674,2025-10-19 14:00:00,2025,367,362,Tottenham Hotspur,Aston Villa,1.0,2.0,post
 740670,2025-10-19 16:30:00,2025,364,360,Liverpool,Manchester United,1.0,2.0,post
 740675,2025-10-20 20:00:00,2025,371,337,West Ham United,Brentford,0.0,2.0,post
 740682,2025-10-24 20:00:00,2025,357,371,Leeds United,West Ham United,2.0,1.0,post
-740685,2025-10-25 15:00:00,2025,363,366,Chelsea,Sunderland,1.0,2.0,post
 740680,2025-10-25 15:00:00,2025,361,370,Newcastle United,Fulham,2.0,1.0,post
+740685,2025-10-25 15:00:00,2025,363,366,Chelsea,Sunderland,1.0,2.0,post
 740683,2025-10-25 17:30:00,2025,360,331,Manchester United,Brighton & Hove Albion,4.0,2.0,post
 740679,2025-10-25 20:00:00,2025,337,364,Brentford,Liverpool,3.0,2.0,post
-740677,2025-10-26 14:00:00,2025,362,382,Aston Villa,Manchester City,1.0,0.0,post
-740684,2025-10-26 14:00:00,2025,380,379,Wolverhampton Wanderers,Burnley,2.0,3.0,post
 740678,2025-10-26 14:00:00,2025,349,393,AFC Bournemouth,Nottingham Forest,2.0,0.0,post
 740676,2025-10-26 14:00:00,2025,359,384,Arsenal,Crystal Palace,1.0,0.0,post
+740677,2025-10-26 14:00:00,2025,362,382,Aston Villa,Manchester City,1.0,0.0,post
+740684,2025-10-26 14:00:00,2025,380,379,Wolverhampton Wanderers,Burnley,2.0,3.0,post
 740681,2025-10-26 16:30:00,2025,368,367,Everton,Tottenham Hotspur,0.0,3.0,post
-740686,2025-11-01 15:00:00,2025,331,357,Brighton & Hove Albion,Leeds United,3.0,0.0,post
-740687,2025-11-01 15:00:00,2025,379,359,Burnley,Arsenal,0.0,2.0,post
-740688,2025-11-01 15:00:00,2025,384,337,Crystal Palace,Brentford,2.0,0.0,post
-740689,2025-11-01 15:00:00,2025,370,380,Fulham,Wolverhampton Wanderers,3.0,0.0,post
 740692,2025-11-01 15:00:00,2025,393,360,Nottingham Forest,Manchester United,2.0,2.0,post
+740689,2025-11-01 15:00:00,2025,370,380,Fulham,Wolverhampton Wanderers,3.0,0.0,post
+740687,2025-11-01 15:00:00,2025,379,359,Burnley,Arsenal,0.0,2.0,post
+740686,2025-11-01 15:00:00,2025,331,357,Brighton & Hove Albion,Leeds United,3.0,0.0,post
+740688,2025-11-01 15:00:00,2025,384,337,Crystal Palace,Brentford,2.0,0.0,post
 740690,2025-11-01 17:30:00,2025,367,363,Tottenham Hotspur,Chelsea,0.0,1.0,post
 740694,2025-11-01 20:00:00,2025,364,362,Liverpool,Aston Villa,2.0,0.0,post
 740695,2025-11-02 14:00:00,2025,371,361,West Ham United,Newcastle United,3.0,1.0,post
@@ -1850,9 +1850,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740704,2025-11-08 17:30:00,2025,366,359,Sunderland,Arsenal,2.0,2.0,post
 740699,2025-11-08 20:00:00,2025,363,380,Chelsea,Wolverhampton Wanderers,3.0,0.0,post
 740703,2025-11-09 14:00:00,2025,393,357,Nottingham Forest,Leeds United,3.0,1.0,post
-740700,2025-11-09 14:00:00,2025,384,331,Crystal Palace,Brighton & Hove Albion,0.0,0.0,post
 740697,2025-11-09 14:00:00,2025,362,349,Aston Villa,AFC Bournemouth,4.0,0.0,post
 740698,2025-11-09 14:00:00,2025,337,361,Brentford,Newcastle United,3.0,1.0,post
+740700,2025-11-09 14:00:00,2025,384,331,Crystal Palace,Brighton & Hove Albion,0.0,0.0,post
 740702,2025-11-09 16:30:00,2025,382,364,Manchester City,Liverpool,3.0,0.0,post
 740707,2025-11-22 12:30:00,2025,379,363,Burnley,Chelsea,0.0,2.0,post
 740715,2025-11-22 15:00:00,2025,349,371,AFC Bournemouth,West Ham United,2.0,2.0,post
@@ -1870,26 +1870,26 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740721,2025-11-29 17:30:00,2025,368,361,Everton,Newcastle United,1.0,4.0,post
 740720,2025-11-29 20:00:00,2025,367,370,Tottenham Hotspur,Fulham,1.0,2.0,post
 740725,2025-11-30 12:00:00,2025,384,360,Crystal Palace,Manchester United,1.0,2.0,post
+740722,2025-11-30 14:05:00,2025,371,364,West Ham United,Liverpool,0.0,2.0,post
 740716,2025-11-30 14:05:00,2025,362,380,Aston Villa,Wolverhampton Wanderers,1.0,0.0,post
 740723,2025-11-30 14:05:00,2025,393,331,Nottingham Forest,Brighton & Hove Albion,0.0,2.0,post
-740722,2025-11-30 14:05:00,2025,371,364,West Ham United,Liverpool,0.0,2.0,post
 740719,2025-11-30 16:30:00,2025,363,359,Chelsea,Arsenal,1.0,1.0,post
 740733,2025-12-02 19:30:00,2025,349,368,AFC Bournemouth,Everton,0.0,1.0,post
 740730,2025-12-02 19:30:00,2025,370,382,Fulham,Manchester City,4.0,5.0,post
 740729,2025-12-02 20:15:00,2025,361,367,Newcastle United,Tottenham Hotspur,2.0,2.0,post
-740728,2025-12-03 19:30:00,2025,380,393,Wolverhampton Wanderers,Nottingham Forest,0.0,1.0,post
-740726,2025-12-03 19:30:00,2025,379,384,Burnley,Crystal Palace,0.0,1.0,post
-740727,2025-12-03 19:30:00,2025,331,362,Brighton & Hove Albion,Aston Villa,3.0,4.0,post
 740734,2025-12-03 19:30:00,2025,359,337,Arsenal,Brentford,2.0,0.0,post
+740727,2025-12-03 19:30:00,2025,331,362,Brighton & Hove Albion,Aston Villa,3.0,4.0,post
+740726,2025-12-03 19:30:00,2025,379,384,Burnley,Crystal Palace,0.0,1.0,post
+740728,2025-12-03 19:30:00,2025,380,393,Wolverhampton Wanderers,Nottingham Forest,0.0,1.0,post
 740732,2025-12-03 20:15:00,2025,357,363,Leeds United,Chelsea,3.0,1.0,post
 740731,2025-12-03 20:15:00,2025,364,366,Liverpool,Sunderland,1.0,1.0,post
 740735,2025-12-04 20:00:00,2025,360,371,Manchester United,West Ham United,1.0,1.0,post
 740745,2025-12-06 12:30:00,2025,362,359,Aston Villa,Arsenal,2.0,1.0,post
-740744,2025-12-06 15:00:00,2025,367,337,Tottenham Hotspur,Brentford,2.0,0.0,post
 740741,2025-12-06 15:00:00,2025,361,379,Newcastle United,Burnley,2.0,1.0,post
-740739,2025-12-06 15:00:00,2025,368,393,Everton,Nottingham Forest,3.0,0.0,post
-740743,2025-12-06 15:00:00,2025,349,363,AFC Bournemouth,Chelsea,0.0,0.0,post
 740736,2025-12-06 15:00:00,2025,382,366,Manchester City,Sunderland,3.0,0.0,post
+740744,2025-12-06 15:00:00,2025,367,337,Tottenham Hotspur,Brentford,2.0,0.0,post
+740743,2025-12-06 15:00:00,2025,349,363,AFC Bournemouth,Chelsea,0.0,0.0,post
+740739,2025-12-06 15:00:00,2025,368,393,Everton,Nottingham Forest,3.0,0.0,post
 740742,2025-12-06 17:30:00,2025,357,364,Leeds United,Liverpool,3.0,3.0,post
 740740,2025-12-07 14:00:00,2025,331,371,Brighton & Hove Albion,West Ham United,1.0,1.0,post
 740738,2025-12-07 16:30:00,2025,370,384,Fulham,Crystal Palace,1.0,2.0,post
@@ -1905,10 +1905,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740753,2025-12-14 16:30:00,2025,337,357,Brentford,Leeds United,1.0,1.0,post
 740751,2025-12-15 20:00:00,2025,360,349,Manchester United,AFC Bournemouth,4.0,4.0,post
 740763,2025-12-20 12:30:00,2025,361,363,Newcastle United,Chelsea,2.0,2.0,post
-740764,2025-12-20 15:00:00,2025,349,379,AFC Bournemouth,Burnley,1.0,1.0,post
-740756,2025-12-20 15:00:00,2025,331,366,Brighton & Hove Albion,Sunderland,0.0,0.0,post
-740760,2025-12-20 15:00:00,2025,382,371,Manchester City,West Ham United,3.0,0.0,post
 740761,2025-12-20 15:00:00,2025,380,337,Wolverhampton Wanderers,Brentford,0.0,2.0,post
+740760,2025-12-20 15:00:00,2025,382,371,Manchester City,West Ham United,3.0,0.0,post
+740756,2025-12-20 15:00:00,2025,331,366,Brighton & Hove Albion,Sunderland,0.0,0.0,post
+740764,2025-12-20 15:00:00,2025,349,379,AFC Bournemouth,Burnley,1.0,1.0,post
 740762,2025-12-20 17:30:00,2025,367,364,Tottenham Hotspur,Liverpool,1.0,2.0,post
 740757,2025-12-20 20:00:00,2025,368,359,Everton,Arsenal,0.0,1.0,post
 740759,2025-12-20 20:00:00,2025,357,384,Leeds United,Crystal Palace,4.0,1.0,post
@@ -1916,22 +1916,22 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740758,2025-12-22 20:00:00,2025,370,393,Fulham,Nottingham Forest,1.0,0.0,post
 740769,2025-12-26 20:00:00,2025,360,361,Manchester United,Newcastle United,1.0,0.0,post
 740770,2025-12-27 12:30:00,2025,393,382,Nottingham Forest,Manchester City,1.0,2.0,post
+740768,2025-12-27 15:00:00,2025,371,370,West Ham United,Fulham,0.0,1.0,post
+740775,2025-12-27 15:00:00,2025,364,380,Liverpool,Wolverhampton Wanderers,2.0,1.0,post
 740772,2025-12-27 15:00:00,2025,359,331,Arsenal,Brighton & Hove Albion,2.0,1.0,post
 740774,2025-12-27 15:00:00,2025,337,349,Brentford,AFC Bournemouth,4.0,1.0,post
 740773,2025-12-27 15:00:00,2025,379,368,Burnley,Everton,0.0,0.0,post
-740775,2025-12-27 15:00:00,2025,364,380,Liverpool,Wolverhampton Wanderers,2.0,1.0,post
-740768,2025-12-27 15:00:00,2025,371,370,West Ham United,Fulham,0.0,1.0,post
 740766,2025-12-27 17:30:00,2025,363,362,Chelsea,Aston Villa,1.0,2.0,post
 740767,2025-12-28 14:00:00,2025,366,357,Sunderland,Leeds United,1.0,1.0,post
 740771,2025-12-28 16:30:00,2025,384,367,Crystal Palace,Tottenham Hotspur,0.0,1.0,post
+740785,2025-12-30 19:30:00,2025,371,331,West Ham United,Brighton & Hove Albion,2.0,2.0,post
+740783,2025-12-30 19:30:00,2025,393,368,Nottingham Forest,Everton,0.0,2.0,post
 740778,2025-12-30 19:30:00,2025,379,361,Burnley,Newcastle United,1.0,3.0,post
 740779,2025-12-30 19:30:00,2025,363,349,Chelsea,AFC Bournemouth,2.0,2.0,post
-740783,2025-12-30 19:30:00,2025,393,368,Nottingham Forest,Everton,0.0,2.0,post
-740785,2025-12-30 19:30:00,2025,371,331,West Ham United,Brighton & Hove Albion,2.0,2.0,post
 740776,2025-12-30 20:15:00,2025,359,362,Arsenal,Aston Villa,4.0,1.0,post
 740782,2025-12-30 20:15:00,2025,360,380,Manchester United,Wolverhampton Wanderers,1.0,1.0,post
-740781,2026-01-01 17:30:00,2026,364,357,Liverpool,Leeds United,0.0,0.0,post
 740780,2026-01-01 17:30:00,2026,384,370,Crystal Palace,Fulham,1.0,1.0,post
+740781,2026-01-01 17:30:00,2026,364,357,Liverpool,Leeds United,0.0,0.0,post
 740777,2026-01-01 20:00:00,2026,337,367,Brentford,Tottenham Hotspur,0.0,0.0,post
 740784,2026-01-01 20:00:00,2026,366,382,Sunderland,Manchester City,0.0,0.0,post
 740789,2026-01-03 12:30:00,2026,362,393,Aston Villa,Nottingham Forest,3.0,1.0,post
@@ -1939,9 +1939,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740787,2026-01-03 15:00:00,2026,380,371,Wolverhampton Wanderers,West Ham United,3.0,0.0,post
 740788,2026-01-03 17:30:00,2026,349,359,AFC Bournemouth,Arsenal,2.0,3.0,post
 740791,2026-01-04 12:30:00,2026,357,360,Leeds United,Manchester United,1.0,1.0,post
-740786,2026-01-04 15:00:00,2026,367,366,Tottenham Hotspur,Sunderland,1.0,1.0,post
 740793,2026-01-04 15:00:00,2026,361,384,Newcastle United,Crystal Palace,2.0,0.0,post
 740794,2026-01-04 15:00:00,2026,368,337,Everton,Brentford,2.0,4.0,post
+740786,2026-01-04 15:00:00,2026,367,366,Tottenham Hotspur,Sunderland,1.0,1.0,post
 740790,2026-01-04 15:15:00,2026,370,364,Fulham,Liverpool,2.0,2.0,post
 740792,2026-01-04 17:30:00,2026,382,363,Manchester City,Chelsea,1.0,1.0,post
 740801,2026-01-06 20:00:00,2026,371,393,West Ham United,Nottingham Forest,1.0,2.0,post
@@ -1956,26 +1956,26 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740796,2026-01-08 20:00:00,2026,359,364,Arsenal,Liverpool,0.0,0.0,post
 740811,2026-01-17 12:30:00,2026,360,382,Manchester United,Manchester City,2.0,0.0,post
 740814,2026-01-17 15:00:00,2026,367,371,Tottenham Hotspur,West Ham United,1.0,2.0,post
-740813,2026-01-17 15:00:00,2026,366,384,Sunderland,Crystal Palace,2.0,1.0,post
 740810,2026-01-17 15:00:00,2026,364,379,Liverpool,Burnley,1.0,1.0,post
-740809,2026-01-17 15:00:00,2026,357,370,Leeds United,Fulham,1.0,0.0,post
+740813,2026-01-17 15:00:00,2026,366,384,Sunderland,Crystal Palace,2.0,1.0,post
 740808,2026-01-17 15:00:00,2026,363,337,Chelsea,Brentford,2.0,0.0,post
+740809,2026-01-17 15:00:00,2026,357,370,Leeds United,Fulham,1.0,0.0,post
 740812,2026-01-17 17:30:00,2026,393,359,Nottingham Forest,Arsenal,0.0,0.0,post
 740815,2026-01-18 14:00:00,2026,380,361,Wolverhampton Wanderers,Newcastle United,0.0,0.0,post
 740806,2026-01-18 16:30:00,2026,362,368,Aston Villa,Everton,0.0,1.0,post
 740807,2026-01-19 20:00:00,2026,331,349,Brighton & Hove Albion,AFC Bournemouth,1.0,1.0,post
 740825,2026-01-24 12:30:00,2026,371,366,West Ham United,Sunderland,3.0,1.0,post
-740823,2026-01-24 15:00:00,2026,382,380,Manchester City,Wolverhampton Wanderers,2.0,0.0,post
 740822,2026-01-24 15:00:00,2026,370,331,Fulham,Brighton & Hove Albion,2.0,1.0,post
 740819,2026-01-24 15:00:00,2026,379,367,Burnley,Tottenham Hotspur,2.0,2.0,post
+740823,2026-01-24 15:00:00,2026,382,380,Manchester City,Wolverhampton Wanderers,2.0,0.0,post
 740817,2026-01-24 17:30:00,2026,349,364,AFC Bournemouth,Liverpool,3.0,2.0,post
 740818,2026-01-25 14:00:00,2026,337,393,Brentford,Nottingham Forest,0.0,2.0,post
 740820,2026-01-25 14:00:00,2026,384,363,Crystal Palace,Chelsea,1.0,3.0,post
 740824,2026-01-25 14:00:00,2026,361,362,Newcastle United,Aston Villa,0.0,2.0,post
 740816,2026-01-25 16:30:00,2026,359,360,Arsenal,Manchester United,2.0,3.0,post
 740821,2026-01-26 20:00:00,2026,368,357,Everton,Leeds United,1.0,1.0,post
-740827,2026-01-31 15:00:00,2026,380,349,Wolverhampton Wanderers,AFC Bournemouth,0.0,2.0,post
 740829,2026-01-31 15:00:00,2026,357,359,Leeds United,Arsenal,0.0,4.0,post
+740827,2026-01-31 15:00:00,2026,380,349,Wolverhampton Wanderers,AFC Bournemouth,0.0,2.0,post
 740831,2026-01-31 15:00:00,2026,331,368,Brighton & Hove Albion,Everton,1.0,1.0,post
 740835,2026-01-31 17:30:00,2026,363,371,Chelsea,West Ham United,3.0,2.0,post
 740834,2026-01-31 20:00:00,2026,364,361,Liverpool,Newcastle United,4.0,1.0,post
@@ -2021,9 +2021,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740872,2026-02-28 15:00:00,2026,364,371,Liverpool,West Ham United,5.0,2.0,post
 740874,2026-02-28 15:00:00,2026,361,368,Newcastle United,Everton,2.0,3.0,post
 740869,2026-02-28 17:30:00,2026,357,382,Leeds United,Manchester City,0.0,1.0,post
-740875,2026-03-01 14:00:00,2026,360,384,Manchester United,Crystal Palace,2.0,1.0,post
 740866,2026-03-01 14:00:00,2026,331,393,Brighton & Hove Albion,Nottingham Forest,2.0,1.0,post
 740870,2026-03-01 14:00:00,2026,370,367,Fulham,Tottenham Hotspur,2.0,1.0,post
+740875,2026-03-01 14:00:00,2026,360,384,Manchester United,Crystal Palace,2.0,1.0,post
 740871,2026-03-01 16:30:00,2026,359,363,Arsenal,Chelsea,2.0,1.0,post
 740877,2026-03-03 19:30:00,2026,349,337,AFC Bournemouth,Brentford,0.0,0.0,post
 740879,2026-03-03 19:30:00,2026,368,379,Everton,Burnley,2.0,0.0,post
@@ -2058,9 +2058,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740906,2026-04-11 15:00:00,2026,337,368,Brentford,Everton,2.0,2.0,post
 740907,2026-04-11 15:00:00,2026,379,331,Burnley,Brighton & Hove Albion,0.0,2.0,post
 740911,2026-04-11 17:30:00,2026,364,370,Liverpool,Fulham,2.0,0.0,post
+740915,2026-04-12 14:00:00,2026,366,367,Sunderland,Tottenham Hotspur,1.0,0.0,post
 740910,2026-04-12 14:00:00,2026,384,361,Crystal Palace,Newcastle United,2.0,1.0,post
 740914,2026-04-12 14:00:00,2026,393,362,Nottingham Forest,Aston Villa,1.0,1.0,post
-740915,2026-04-12 14:00:00,2026,366,367,Sunderland,Tottenham Hotspur,1.0,0.0,post
 740909,2026-04-12 16:30:00,2026,363,382,Chelsea,Manchester City,0.0,3.0,post
 740912,2026-04-13 20:00:00,2026,360,357,Manchester United,Leeds United,1.0,2.0,post
 740921,2026-04-18 12:30:00,2026,337,370,Brentford,Fulham,0.0,0.0,post
@@ -2084,9 +2084,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740931,2026-04-25 17:30:00,2026,359,361,Arsenal,Newcastle United,1.0,0.0,post
 740932,2026-04-27 20:00:00,2026,360,337,Manchester United,Brentford,2.0,1.0,post
 740942,2026-05-01 20:00:00,2026,357,379,Leeds United,Burnley,3.0,1.0,post
-740939,2026-05-02 15:00:00,2026,337,371,Brentford,West Ham United,3.0,0.0,post
-740944,2026-05-02 15:00:00,2026,361,331,Newcastle United,Brighton & Hove Albion,3.0,1.0,post
 740945,2026-05-02 15:00:00,2026,380,366,Wolverhampton Wanderers,Sunderland,1.0,1.0,post
+740944,2026-05-02 15:00:00,2026,361,331,Newcastle United,Brighton & Hove Albion,3.0,1.0,post
+740939,2026-05-02 15:00:00,2026,337,371,Brentford,West Ham United,3.0,0.0,post
 740936,2026-05-02 17:30:00,2026,359,370,Arsenal,Fulham,3.0,0.0,post
 740938,2026-05-03 14:00:00,2026,349,384,AFC Bournemouth,Crystal Palace,3.0,0.0,post
 740943,2026-05-03 15:30:00,2026,360,364,Manchester United,Liverpool,3.0,2.0,post
@@ -2117,17 +2117,17 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 740971,2026-05-24 16:00:00,2026,371,357,West Ham United,Leeds United,3.0,0.0,post
 740974,2026-05-24 16:00:00,2026,367,368,Tottenham Hotspur,Everton,1.0,0.0,post
 740973,2026-05-24 16:00:00,2026,366,363,Sunderland,Chelsea,2.0,1.0,post
-740972,2026-05-24 16:00:00,2026,393,349,Nottingham Forest,AFC Bournemouth,1.0,1.0,post
 740970,2026-05-24 16:00:00,2026,382,362,Manchester City,Aston Villa,1.0,2.0,post
-740975,2026-05-24 16:00:00,2026,364,337,Liverpool,Brentford,1.0,1.0,post
+740972,2026-05-24 16:00:00,2026,393,349,Nottingham Forest,AFC Bournemouth,1.0,1.0,post
 740969,2026-05-24 16:00:00,2026,370,361,Fulham,Newcastle United,2.0,0.0,post
+740975,2026-05-24 16:00:00,2026,364,337,Liverpool,Brentford,1.0,1.0,post
 740968,2026-05-24 16:00:00,2026,384,359,Crystal Palace,Arsenal,1.0,2.0,post
 740967,2026-05-24 16:00:00,2026,379,380,Burnley,Wolverhampton Wanderers,1.0,1.0,post
 740966,2026-05-24 16:00:00,2026,331,360,Brighton & Hove Albion,Manchester United,0.0,3.0,post
 401879301,2026-08-21 20:00:00,2026,359,388,Arsenal,Coventry City,3.0,0.0,post
 401879322,2026-08-22 12:30:00,2026,306,360,Hull City,Manchester United,2.0,0.0,post
-401879299,2026-08-22 15:00:00,2026,373,366,Ipswich Town,Sunderland,2.0,1.0,post
 401879298,2026-08-22 15:00:00,2026,393,357,Nottingham Forest,Leeds United,0.0,1.0,post
+401879299,2026-08-22 15:00:00,2026,373,366,Ipswich Town,Sunderland,2.0,1.0,post
 401879300,2026-08-22 15:00:00,2026,368,384,Everton,Crystal Palace,2.0,0.0,post
 401879321,2026-08-22 17:30:00,2026,337,367,Brentford,Tottenham Hotspur,3.0,0.0,post
 401879297,2026-08-23 14:00:00,2026,331,362,Brighton & Hove Albion,Aston Villa,4.0,0.0,post
@@ -2146,11 +2146,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401879295,2026-08-31 20:00:00,2026,362,359,Aston Villa,Arsenal,0.0,1.0,post
 401879288,2026-09-04 20:00:00,2026,373,364,Ipswich Town,Liverpool,0.0,2.0,post
 401879286,2026-09-05 12:30:00,2026,361,349,Newcastle United,AFC Bournemouth,2.0,2.0,post
+401878780,2026-09-05 15:00:00,2026,393,367,Nottingham Forest,Tottenham Hotspur,0.0,0.0,post
+401879287,2026-09-05 15:00:00,2026,382,388,Manchester City,Coventry City,1.0,0.0,post
 401879311,2026-09-05 15:00:00,2026,337,366,Brentford,Sunderland,1.0,1.0,post
 401879290,2026-09-05 15:00:00,2026,331,357,Brighton & Hove Albion,Leeds United,1.0,1.0,post
 401879289,2026-09-05 15:00:00,2026,370,384,Fulham,Crystal Palace,2.0,3.0,post
-401879287,2026-09-05 15:00:00,2026,382,388,Manchester City,Coventry City,1.0,0.0,post
-401878780,2026-09-05 15:00:00,2026,393,367,Nottingham Forest,Tottenham Hotspur,0.0,0.0,post
 401878781,2026-09-05 17:30:00,2026,306,362,Hull City,Aston Villa,0.0,0.0,post
 401879291,2026-09-06 14:00:00,2026,368,360,Everton,Manchester United,2.0,2.0,post
 401879292,2026-09-06 16:30:00,2026,359,363,Arsenal,Chelsea,2.0,1.0,post
