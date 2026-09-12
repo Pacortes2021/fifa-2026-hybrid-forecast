@@ -1915,3 +1915,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876467,2026-09-06 15:00:00,2026,170,180,Troyes,Strasbourg,2.0,6.0,post
 401876475,2026-09-06 17:15:00,2026,7868,169,Angers,Rennes,1.0,2.0,post
 401876471,2026-09-06 20:45:00,2026,176,6851,Marseille,Paris FC,2.0,3.0,post
+401876459,2026-09-11 20:45:00,2026,169,176,Rennes,Marseille,1.0,0.0,post

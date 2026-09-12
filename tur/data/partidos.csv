@@ -2055,3 +2055,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401888305,2026-09-06 20:00:00,2026,997,996,Trabzonspor,Genclerbirligi,5,0,post,STATUS_FULL_TIME
 401888303,2026-09-07 20:00:00,2026,7656,9078,Caykur Rizespor,Alanyaspor,0,1,post,STATUS_FULL_TIME
 401888302,2026-09-07 20:00:00,2026,789,20070,Goztepe,Gaziantep FK,2,4,post,STATUS_FULL_TIME
+401888292,2026-09-11 20:00:00,2026,1895,19267,Besiktas,Erzurum BB,3,0,post,STATUS_FULL_TIME

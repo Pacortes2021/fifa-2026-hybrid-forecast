@@ -1128,3 +1128,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401881800,2026-09-01 19:30:00,2026,13294,4411,Wolfsberger,LASK Linz,1,3,post,STATUS_FULL_TIME
 401881799,2026-09-02 18:30:00,2026,1382,18794,Austria Vienna,WSG Swarovski Tirol,0,1,post,STATUS_FULL_TIME
 401881798,2026-09-02 20:30:00,2026,2790,519,RB Salzburg,Rapid Vienna,5,1,post,STATUS_FULL_TIME
+401881790,2026-09-11 19:30:00,2026,3759,2790,SV Josko Ried,RB Salzburg,1,1,post,STATUS_FULL_TIME

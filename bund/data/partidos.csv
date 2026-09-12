@@ -1736,3 +1736,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401884801,2026-09-05 18:30:00,2026,133,132,Schalke 04,Bayern Munich,0.0,0.0,post
 401884803,2026-09-06 15:30:00,2026,127,2950,Hamburg SV,Mainz,0.0,5.0,post
 401884805,2026-09-06 17:30:00,2026,125,3841,Eintracht Frankfurt,FC Augsburg,1.0,4.0,post
+401884793,2026-09-11 20:30:00,2026,598,133,1. FC Union Berlin,Schalke 04,1.0,3.0,post

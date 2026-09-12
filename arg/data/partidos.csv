@@ -2370,3 +2370,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841548,2026-09-06 21:30:00,2026,15,9785,Racing Club,Atlético Tucumán,1.0,2.0,post
 401841544,2026-09-07 19:00:00,2026,10060,3,Barracas Central,Argentinos Juniors,0.0,0.0,post
 401841552,2026-09-07 21:15:00,2026,20,2975,Unión de Santa Fe,Instituto,3.0,2.0,post
+401841565,2026-09-11 17:00:00,2026,14,21,Newell's Old Boys,Vélez Sarsfield,1.0,1.0,post
+401841556,2026-09-11 19:15:00,2026,8950,11972,Defensa y Justicia,Gimnasia Mendoza,2.0,0.0,post
+401841557,2026-09-11 21:30:00,2026,5,11989,Boca Juniors,Central Córdoba,3.0,1.0,post

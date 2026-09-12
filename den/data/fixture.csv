@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401874540,2026-09-11 19:00:00,2026,909,3585,F.C. København,AC Horsens,,,pre,STATUS_SCHEDULED
 401874525,2026-09-13 14:00:00,2026,7860,8118,Lyngby Boldklub,Sønderjyske Fodbold,,,pre,STATUS_SCHEDULED
 401874528,2026-09-13 14:00:00,2026,607,3153,Silkeborg IF,Viborg FF,,,pre,STATUS_SCHEDULED
 401874527,2026-09-13 16:00:00,2026,3132,11550,Randers FC,Odense Boldklub,,,pre,STATUS_SCHEDULED

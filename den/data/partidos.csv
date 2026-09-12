@@ -1121,3 +1121,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874532,2026-09-06 16:00:00,2026,11550,909,Odense Boldklub,F.C. København,0,5,post,STATUS_FULL_TIME
 401874530,2026-09-06 18:00:00,2026,575,3132,Brøndby IF,Randers FC,0,3,post,STATUS_FULL_TIME
 401874509,2026-09-07 19:00:00,2026,572,3101,FC Midtjylland,FC Nordsjælland,2,2,post,STATUS_FULL_TIME
+401874540,2026-09-11 19:00:00,2026,909,3585,F.C. København,AC Horsens,2,0,post,STATUS_FULL_TIME
