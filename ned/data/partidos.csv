@@ -1778,3 +1778,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401875636,2026-09-08 18:45:00,2026,147,2566,NEC,Excelsior,2.0,2.0,post
 401875612,2026-09-09 18:45:00,2026,152,3735,Twente,Telstar,1.0,0.0,post
 401875611,2026-09-11 20:00:00,2026,140,156,AZ Alkmaar,Willem II,1.0,1.0,post
+401875610,2026-09-12 16:30:00,2026,152,2726,Twente,ADO Den Haag,2.0,0.0,post
+401875609,2026-09-12 18:45:00,2026,3706,145,Go Ahead Eagles,Groningen,1.0,1.0,post
+401875608,2026-09-12 20:00:00,2026,143,139,Fortuna Sittard,Ajax,1.0,5.0,post
+401875604,2026-09-12 21:00:00,2026,3736,147,SC Cambuur,NEC,3.0,0.0,post

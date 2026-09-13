@@ -1774,3 +1774,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401885454,2026-09-07 20:15:00,2026,12216,15784,Estoril,Arouca,0.0,0.0,post
 401885470,2026-09-09 20:45:00,2026,3696,1929,Moreirense,Benfica,0.0,4.0,post
 401885474,2026-09-10 20:15:00,2026,21610,2994,Estrela,Braga,2.0,1.0,post
+401885441,2026-09-12 15:30:00,2026,3472,21613,Nacional,Alverca,1.0,3.0,post
+401885444,2026-09-12 18:00:00,2026,21581,437,Casa Pia,Porto,1.0,4.0,post
+401885447,2026-09-12 20:30:00,2026,21607,5309,Académico de Viseu,Vitoria de Guimaraes,2.0,1.0,post

@@ -1805,3 +1805,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878998,2026-09-06 18:30:00,2026,441,938,Anderlecht,Genk,0.0,0.0,post
 401878997,2026-09-06 19:15:00,2026,13450,5579,Waasland-Beveren,OH Leuven,3.0,0.0,post
 401878996,2026-09-11 20:45:00,2026,7879,441,KV Mechelen,Anderlecht,0.0,1.0,post
+401878995,2026-09-12 16:00:00,2026,13450,936,Waasland-Beveren,Sint-Truiden,2.0,0.0,post
+401878994,2026-09-12 18:15:00,2026,606,559,KVC Westerlo,Standard Liège,4.0,2.0,post
+401878993,2026-09-12 20:45:00,2026,5579,3610,OH Leuven,Cercle Brugge,1.0,1.0,post
+401878992,2026-09-12 20:45:00,2026,5807,22269,Union Saint-Gilloise,Lommel SK,5.0,0.0,post

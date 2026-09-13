@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401875610,2026-09-12 16:30:00,2026,152,2726,Twente,ADO Den Haag,,,pre
-401875609,2026-09-12 18:45:00,2026,3706,145,Go Ahead Eagles,Groningen,,,pre
-401875608,2026-09-12 20:00:00,2026,143,139,Fortuna Sittard,Ajax,,,pre
-401875604,2026-09-12 21:00:00,2026,3736,147,SC Cambuur,NEC,,,pre
 401875606,2026-09-13 12:15:00,2026,2566,153,Excelsior,Utrecht,,,pre
 401875607,2026-09-13 14:30:00,2026,146,3735,Heerenveen,Telstar,,,pre
 401875603,2026-09-13 16:45:00,2026,2565,142,PEC Zwolle,Feyenoord,,,pre

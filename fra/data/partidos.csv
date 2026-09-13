@@ -1916,3 +1916,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876475,2026-09-06 17:15:00,2026,7868,169,Angers,Rennes,1.0,2.0,post
 401876471,2026-09-06 20:45:00,2026,176,6851,Marseille,Paris FC,2.0,3.0,post
 401876459,2026-09-11 20:45:00,2026,169,176,Rennes,Marseille,1.0,0.0,post
+401876458,2026-09-12 17:15:00,2026,180,174,Strasbourg,Monaco,1.0,1.0,post
+401876460,2026-09-12 20:45:00,2026,6851,167,Paris FC,Lyon,0.0,0.0,post
+401876461,2026-09-12 20:45:00,2026,273,179,Lorient,Toulouse,2.0,2.0,post
+401876466,2026-09-12 20:45:00,2026,172,2502,Auxerre,Nice,1.0,0.0,post
+401876464,2026-09-12 20:45:00,2026,3236,7868,Le Havre,Angers,0.0,0.0,post

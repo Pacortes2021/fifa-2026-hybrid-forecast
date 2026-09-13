@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401888297,2026-09-12 17:00:00,2026,20729,7656,Eyupspor,Caykur Rizespor,,,pre,STATUS_SCHEDULED
-401888383,2026-09-12 17:00:00,2026,11429,132334,Samsunspor,Corum FK,,,pre,STATUS_SCHEDULED
-401888296,2026-09-12 20:00:00,2026,9078,789,Alanyaspor,Goztepe,,,pre,STATUS_SCHEDULED
-401888294,2026-09-12 20:00:00,2026,7648,997,Konyaspor,Trabzonspor,,,pre,STATUS_SCHEDULED
 401888295,2026-09-13 17:00:00,2026,996,6870,Genclerbirligi,Kasimpasa,,,pre,STATUS_SCHEDULED
 401888293,2026-09-13 20:00:00,2026,432,995,Galatasaray,Kocaelispor,,,pre,STATUS_SCHEDULED
 401888384,2026-09-13 20:00:00,2026,132335,7914,Amed SFK,Istanbul Basaksehir,,,pre,STATUS_SCHEDULED

@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841554,2026-09-12 14:45:00,2026,8,7764,Estudiantes de La Plata,Platense,,,pre
-401841567,2026-09-12 14:45:00,2026,9744,9739,Independiente Rivadavia,Aldosivi,,,pre
-401841559,2026-09-12 17:30:00,2026,9785,16,Atlético Tucumán,River Plate,,,pre
-401841563,2026-09-12 20:00:00,2026,19,20,Talleres de Córdoba,Unión de Santa Fe,,,pre
 401841564,2026-09-13 14:45:00,2026,10158,4,Sarmiento,Belgrano,,,pre
 401841562,2026-09-13 14:45:00,2026,7767,17,Tigre,Rosario Central,,,pre
 401841560,2026-09-13 17:00:00,2026,3,9,Argentinos Juniors,Gimnasia La Plata,,,pre

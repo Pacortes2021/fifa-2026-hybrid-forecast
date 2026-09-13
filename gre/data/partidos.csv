@@ -1366,3 +1366,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401896765,2026-09-06 21:30:00,2026,443,605,Panathinaikos,PAOK,3,1,post,STATUS_FULL_TIME
 401896794,2026-09-07 18:00:00,2026,8354,2575,Asteras Tripoli,Iraklis,0,2,post,STATUS_FULL_TIME
 401896777,2026-09-10 21:15:00,2026,443,21969,Panathinaikos,Kifisia,3,1,post,STATUS_FULL_TIME
+401896762,2026-09-12 19:00:00,2026,435,1010,Olympiacos,OFI Crete,0,1,post,STATUS_FULL_TIME
+401896822,2026-09-12 21:00:00,2026,2575,6790,Iraklis,Atromitos,1,1,post,STATUS_FULL_TIME

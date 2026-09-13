@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401885441,2026-09-12 15:30:00,2026,3472,21613,Nacional,Alverca,,,pre
-401885444,2026-09-12 18:00:00,2026,21581,437,Casa Pia,Porto,,,pre
-401885447,2026-09-12 20:30:00,2026,21607,5309,Académico de Viseu,Vitoria de Guimaraes,,,pre
 401885446,2026-09-13 18:00:00,2026,15784,12215,Arouca,Santa Clara,,,pre
 401885439,2026-09-13 18:00:00,2026,1929,3699,Benfica,Gil Vicente,,,pre
 401885443,2026-09-13 20:30:00,2026,12698,2250,Famalicao,Sporting CP,,,pre

@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401896762,2026-09-12 19:00:00,2026,435,1010,Olympiacos,OFI Crete,,,pre,STATUS_SCHEDULED
-401896822,2026-09-12 21:00:00,2026,2575,6790,Iraklis,Atromitos,,,pre,STATUS_SCHEDULED
 401896823,2026-09-13 18:00:00,2026,132429,20043,Kalamata,Volos NFC,,,pre,STATUS_SCHEDULED
 401896764,2026-09-13 19:00:00,2026,8354,887,Asteras Tripoli,AEK Athens,,,pre,STATUS_SCHEDULED
 401896763,2026-09-13 21:00:00,2026,21969,5276,Kifisia,Levadiakos,,,pre,STATUS_SCHEDULED

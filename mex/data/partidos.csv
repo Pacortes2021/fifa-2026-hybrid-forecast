@@ -1933,3 +1933,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876980,2026-09-11 19:00:00,2026,229,231,Necaxa,Puebla,0.0,1.0,post
 401876979,2026-09-11 21:00:00,2026,226,234,Atlante,Pachuca,0.0,3.0,post
 401876978,2026-09-11 21:10:00,2026,10125,222,Tijuana,Querétaro,0.0,1.0,post
+401876982,2026-09-12 17:05:00,2026,223,216,Toluca,Atlas,5.0,2.0,post
+401876974,2026-09-12 19:10:00,2026,220,232,Monterrey,Tigres UANL,0.0,0.0,post
+401876981,2026-09-12 21:15:00,2026,218,227,Cruz Azul,América,4.0,3.0,post

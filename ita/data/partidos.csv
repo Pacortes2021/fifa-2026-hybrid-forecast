@@ -2173,3 +2173,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874943,2026-09-07 18:30:00,2026,2925,113,Cagliari,Lecce,1.0,0.0,post
 401874962,2026-09-07 20:45:00,2026,118,112,Udinese,Lazio,1.0,2.0,post
 401874759,2026-09-11 20:45:00,2026,17530,109,Venezia,Fiorentina,2.0,4.0,post
+401874991,2026-09-12 15:00:00,2026,3263,4057,Genoa,Frosinone,1.0,1.0,post
+401874941,2026-09-12 18:00:00,2026,112,103,Lazio,AC Milan,2.0,2.0,post
+401874979,2026-09-12 20:45:00,2026,105,2925,Atalanta,Cagliari,1.0,2.0,post

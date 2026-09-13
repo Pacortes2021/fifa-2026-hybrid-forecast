@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401878995,2026-09-12 16:00:00,2026,13450,936,Waasland-Beveren,Sint-Truiden,,,pre
-401878994,2026-09-12 18:15:00,2026,606,559,KVC Westerlo,Standard Liège,,,pre
-401878993,2026-09-12 20:45:00,2026,5579,3610,OH Leuven,Cercle Brugge,,,pre
-401878992,2026-09-12 20:45:00,2026,5807,22269,Union Saint-Gilloise,Lommel SK,,,pre
 401878991,2026-09-13 13:30:00,2026,570,17544,Club Brugge,Antwerp,,,pre
 401878990,2026-09-13 16:00:00,2026,938,3611,Genk,Gent,,,pre
 401878989,2026-09-13 18:30:00,2026,4691,3616,Zulte-Waregem,Charleroi,,,pre

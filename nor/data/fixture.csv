@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401873905,2026-09-12 16:00:00,2026,987,2791,Lillestrom,Vålerenga,,,pre,STATUS_SCHEDULED
-401873926,2026-09-12 18:00:00,2026,438,5270,Rosenborg,Tromso,,,pre,STATUS_SCHEDULED
 401843437,2026-09-13 14:30:00,2026,510,6672,Viking FK,Kristiansund BK,,,pre,STATUS_SCHEDULED
 401843441,2026-09-13 17:00:00,2026,22165,3278,KFUM Oslo,Aalesund,,,pre,STATUS_SCHEDULED
 401843438,2026-09-13 17:00:00,2026,6750,620,IK Start,SK Brann,,,pre,STATUS_SCHEDULED

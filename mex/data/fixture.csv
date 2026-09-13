@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401876982,2026-09-12 17:05:00,2026,223,216,Toluca,Atlas,,,pre
-401876974,2026-09-12 19:10:00,2026,220,232,Monterrey,Tigres UANL,,,pre
-401876981,2026-09-12 21:15:00,2026,218,227,Cruz Azul,América,,,pre
 401876976,2026-09-13 19:00:00,2026,225,17851,Santos Laguna,FC Juárez,,,pre
 401876975,2026-09-13 19:07:00,2026,219,233,Guadalajara,Pumas UNAM,,,pre
 401876977,2026-09-14 19:00:00,2026,228,15720,León,Atlético San Luis,,,pre

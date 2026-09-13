@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401874086,2026-09-12 15:00:00,2026,994,22163,AIK,Vasteras SK,,,pre,STATUS_SCHEDULED
-401874088,2026-09-12 17:30:00,2026,2556,3017,IFK Goteborg,Halmstads BK,,,pre,STATUS_SCHEDULED
 401842821,2026-09-13 14:00:00,2026,2495,8221,Hammarby,Brommapojkarna,,,pre,STATUS_SCHEDULED
 401842818,2026-09-13 14:00:00,2026,529,3052,IF Elfsborg,Kalmar FF,,,pre,STATUS_SCHEDULED
 401842823,2026-09-13 16:30:00,2026,2720,131552,Malmo FF,Orgryte IS,,,pre,STATUS_SCHEDULED
