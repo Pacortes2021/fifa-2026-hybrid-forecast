@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401879282,2026-09-13 14:00:00,2026,388,331,Coventry City,Brighton & Hove Albion,,,pre
-401879278,2026-09-13 16:30:00,2026,360,382,Manchester United,Manchester City,,,pre
 401879280,2026-09-14 20:00:00,2026,357,361,Leeds United,Newcastle United,,,pre
 401879275,2026-09-18 20:00:00,2026,337,363,Brentford,Chelsea,,,pre
 401879269,2026-09-19 12:30:00,2026,367,362,Tottenham Hotspur,Aston Villa,,,pre

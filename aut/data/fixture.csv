@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401881788,2026-09-13 14:30:00,2026,1382,21540,Austria Vienna,Austria Lustenau,,,pre,STATUS_SCHEDULED
-401881786,2026-09-13 14:30:00,2026,18794,6907,WSG Swarovski Tirol,TSV Hartberg,,,pre,STATUS_SCHEDULED
-401881791,2026-09-13 17:00:00,2026,3746,4411,SK Sturm Graz,LASK Linz,,,pre,STATUS_SCHEDULED
 401881784,2026-09-18 19:30:00,2026,519,18794,Rapid Vienna,WSG Swarovski Tirol,,,pre,STATUS_SCHEDULED
 401881780,2026-09-19 17:00:00,2026,21540,4405,Austria Lustenau,SC Rheindorf Altach,,,pre,STATUS_SCHEDULED
 401881781,2026-09-19 19:30:00,2026,21846,1382,Grazer AK,Austria Vienna,,,pre,STATUS_SCHEDULED

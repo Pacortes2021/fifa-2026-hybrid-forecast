@@ -1809,3 +1809,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878994,2026-09-12 18:15:00,2026,606,559,KVC Westerlo,Standard Liège,4.0,2.0,post
 401878993,2026-09-12 20:45:00,2026,5579,3610,OH Leuven,Cercle Brugge,1.0,1.0,post
 401878992,2026-09-12 20:45:00,2026,5807,22269,Union Saint-Gilloise,Lommel SK,5.0,0.0,post
+401878991,2026-09-13 13:30:00,2026,570,17544,Club Brugge,Antwerp,3.0,1.0,post
+401878990,2026-09-13 16:00:00,2026,938,3611,Genk,Gent,1.0,1.0,post
+401878989,2026-09-13 18:30:00,2026,4691,3616,Zulte-Waregem,Charleroi,0.0,1.0,post
+401878988,2026-09-13 19:15:00,2026,131235,5786,RAAL La Louvière,KV Kortrijk,3.0,0.0,post

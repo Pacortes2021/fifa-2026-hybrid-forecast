@@ -2060,3 +2060,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401888383,2026-09-12 17:00:00,2026,11429,132334,Samsunspor,Corum FK,1,5,post,STATUS_FULL_TIME
 401888296,2026-09-12 20:00:00,2026,9078,789,Alanyaspor,Goztepe,2,2,post,STATUS_FULL_TIME
 401888294,2026-09-12 20:00:00,2026,7648,997,Konyaspor,Trabzonspor,1,0,post,STATUS_FULL_TIME
+401888295,2026-09-13 17:00:00,2026,996,6870,Genclerbirligi,Kasimpasa,1,2,post,STATUS_FULL_TIME
+401888293,2026-09-13 20:00:00,2026,432,995,Galatasaray,Kocaelispor,1,0,post,STATUS_FULL_TIME
+401888384,2026-09-13 20:00:00,2026,132335,7914,Amed SFK,Istanbul Basaksehir,5,0,post,STATUS_FULL_TIME

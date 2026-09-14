@@ -2165,3 +2165,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882882,2026-09-12 16:15:00,2026,97,88,CA Osasuna,Espanyol,0.0,2.0,post
 401882886,2026-09-12 18:30:00,2026,93,3751,Athletic Club,Elche CF,1.0,1.0,post
 401882880,2026-09-12 21:00:00,2026,86,101,Real Madrid,Rayo Vallecano,4.0,1.0,post
+401882885,2026-09-13 14:00:00,2026,85,99,Celta de Vigo,Málaga,1.0,1.0,post
+401882883,2026-09-13 16:15:00,2026,1538,83,Levante,FC Barcelona,2.0,4.0,post
+401882884,2026-09-13 18:30:00,2026,2922,90,Getafe,Deportivo,1.0,1.0,post
+401882879,2026-09-13 21:00:00,2026,89,1068,Real Sociedad,Atlético de Madrid,0.0,3.0,post

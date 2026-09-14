@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401878991,2026-09-13 13:30:00,2026,570,17544,Club Brugge,Antwerp,,,pre
-401878990,2026-09-13 16:00:00,2026,938,3611,Genk,Gent,,,pre
-401878989,2026-09-13 18:30:00,2026,4691,3616,Zulte-Waregem,Charleroi,,,pre
-401878988,2026-09-13 19:15:00,2026,131235,5786,RAAL La Louvière,KV Kortrijk,,,pre
 401878987,2026-09-18 20:45:00,2026,3611,559,Gent,Standard Liège,,,pre
 401878986,2026-09-19 16:00:00,2026,5579,131235,OH Leuven,RAAL La Louvière,,,pre
 401878985,2026-09-19 18:15:00,2026,3616,3610,Charleroi,Cercle Brugge,,,pre

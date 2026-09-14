@@ -1743,3 +1743,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401884796,2026-09-12 15:30:00,2026,126,268,SC Freiburg,Borussia Mönchengladbach,5.0,0.0,post
 401884797,2026-09-12 15:30:00,2026,7911,134,TSG Hoffenheim,VfB Stuttgart,2.0,1.0,post
 401884792,2026-09-12 18:30:00,2026,122,137,FC Cologne,Werder Bremen,1.0,1.0,post
+401884798,2026-09-13 15:30:00,2026,11420,127,RB Leipzig,Hamburg SV,5.0,0.0,post
+401884791,2026-09-13 17:30:00,2026,10388,132,SV Elversberg,Bayern Munich,1.0,2.0,post

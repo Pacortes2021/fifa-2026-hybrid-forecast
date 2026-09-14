@@ -2161,3 +2161,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401879284,2026-09-12 15:00:00,2026,362,393,Aston Villa,Nottingham Forest,1.0,2.0,post
 401879277,2026-09-12 17:30:00,2026,367,368,Tottenham Hotspur,Everton,0.0,0.0,post
 401878779,2026-09-12 20:00:00,2026,366,359,Sunderland,Arsenal,0.0,2.0,post
+401879282,2026-09-13 14:00:00,2026,388,331,Coventry City,Brighton & Hove Albion,0.0,5.0,post
+401879278,2026-09-13 16:30:00,2026,360,382,Manchester United,Manchester City,0.0,1.0,post

@@ -1921,3 +1921,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876461,2026-09-12 20:45:00,2026,273,179,Lorient,Toulouse,2.0,2.0,post
 401876466,2026-09-12 20:45:00,2026,172,2502,Auxerre,Nice,1.0,0.0,post
 401876464,2026-09-12 20:45:00,2026,3236,7868,Le Havre,Angers,0.0,0.0,post
+401876462,2026-09-13 15:00:00,2026,166,170,Lille,Troyes,2.0,0.0,post
+401876463,2026-09-13 17:15:00,2026,2697,175,Le Mans,Lens,2.0,2.0,post
+401876465,2026-09-13 20:45:00,2026,6997,160,Brest,Paris Saint-Germain,0.0,1.0,post

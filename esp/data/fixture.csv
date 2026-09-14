@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401882885,2026-09-13 14:00:00,2026,85,99,Celta de Vigo,Málaga,,,pre
-401882883,2026-09-13 16:15:00,2026,1538,83,Levante,FC Barcelona,,,pre
-401882884,2026-09-13 18:30:00,2026,2922,90,Getafe,Deportivo,,,pre
-401882879,2026-09-13 21:00:00,2026,89,1068,Real Sociedad,Atlético de Madrid,,,pre
 401882877,2026-09-14 21:00:00,2026,102,244,Villarreal CF,Real Betis,,,pre
 401882868,2026-09-15 19:00:00,2026,101,88,Rayo Vallecano,Espanyol,,,pre
 401882876,2026-09-15 20:00:00,2026,96,94,Alavés,Valencia CF,,,pre

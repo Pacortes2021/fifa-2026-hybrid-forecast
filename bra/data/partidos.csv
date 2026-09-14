@@ -2273,3 +2273,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841234,2026-09-12 18:30:00,2026,2029,2026,Palmeiras,São Paulo,2.0,0.0,post
 401841229,2026-09-12 20:30:00,2026,6086,6079,Botafogo,Red Bull Bragantino,1.0,1.0,post
 401841233,2026-09-12 21:00:00,2026,2674,2022,Santos,Cruzeiro,2.0,1.0,post
+401841235,2026-09-13 16:00:00,2026,9169,3457,Mirassol,Vitória,2.0,2.0,post
+401841237,2026-09-13 17:30:00,2026,819,874,Flamengo,Corinthians,2.0,1.0,post
