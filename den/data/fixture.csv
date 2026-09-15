@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401874539,2026-09-14 19:00:00,2026,572,575,FC Midtjylland,Brøndby IF,,,pre,STATUS_SCHEDULED
 401874503,2026-09-18 19:00:00,2026,7860,607,Lyngby Boldklub,Silkeborg IF,,,pre,STATUS_SCHEDULED
 401874536,2026-09-19 18:00:00,2026,11550,572,Odense Boldklub,FC Midtjylland,,,pre,STATUS_SCHEDULED
 401874554,2026-09-20 14:00:00,2026,575,909,Brøndby IF,F.C. København,,,pre,STATUS_SCHEDULED

@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401874933,2026-09-14 18:30:00,2026,2572,115,Como,Parma,,,pre
-401874950,2026-09-14 18:30:00,2026,239,104,Torino,AS Roma,,,pre
-401874966,2026-09-14 20:45:00,2026,110,118,Inter,Udinese,,,pre
 401874756,2026-09-18 20:45:00,2026,4007,3997,Monza,Sassuolo,,,pre
 401874767,2026-09-19 15:00:00,2026,107,239,Bologna,Torino,,,pre
 401874964,2026-09-19 15:00:00,2026,118,2925,Udinese,Cagliari,,,pre

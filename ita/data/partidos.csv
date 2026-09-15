@@ -2179,3 +2179,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874936,2026-09-13 15:00:00,2026,113,4007,Lecce,Monza,3.0,2.0,post
 401874792,2026-09-13 18:00:00,2026,114,107,Napoli,Bologna,1.0,0.0,post
 401874750,2026-09-13 20:45:00,2026,3997,111,Sassuolo,Juventus,3.0,2.0,post
+401874933,2026-09-14 18:30:00,2026,2572,115,Como,Parma,2.0,1.0,post
+401874950,2026-09-14 18:30:00,2026,239,104,Torino,AS Roma,0.0,2.0,post
+401874966,2026-09-14 20:45:00,2026,110,118,Inter,Udinese,5.0,3.0,post

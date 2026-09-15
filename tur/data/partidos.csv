@@ -2063,3 +2063,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401888295,2026-09-13 17:00:00,2026,996,6870,Genclerbirligi,Kasimpasa,1,2,post,STATUS_FULL_TIME
 401888293,2026-09-13 20:00:00,2026,432,995,Galatasaray,Kocaelispor,1,0,post,STATUS_FULL_TIME
 401888384,2026-09-13 20:00:00,2026,132335,7914,Amed SFK,Istanbul Basaksehir,5,0,post,STATUS_FULL_TIME
+401888298,2026-09-14 20:00:00,2026,20070,436,Gaziantep FK,Fenerbahce,0,0,post,STATUS_FULL_TIME

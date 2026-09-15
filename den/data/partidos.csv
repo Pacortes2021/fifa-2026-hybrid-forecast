@@ -1126,3 +1126,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874528,2026-09-13 14:00:00,2026,607,3153,Silkeborg IF,Viborg FF,1,1,post,STATUS_FULL_TIME
 401874527,2026-09-13 16:00:00,2026,3132,11550,Randers FC,Odense Boldklub,1,2,post,STATUS_FULL_TIME
 401874487,2026-09-13 18:00:00,2026,3101,7853,FC Nordsjælland,AGF,2,0,post,STATUS_FULL_TIME
+401874539,2026-09-14 19:00:00,2026,572,575,FC Midtjylland,Brøndby IF,4,1,post,STATUS_FULL_TIME

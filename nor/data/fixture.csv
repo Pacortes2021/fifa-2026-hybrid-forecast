@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401843435,2026-09-14 19:00:00,2026,2980,3279,Bodo/Glimt,Sandefjord,,,pre,STATUS_SCHEDULED
 401873932,2026-09-18 19:00:00,2026,5002,22165,Sarpsborg FK,KFUM Oslo,,,pre,STATUS_SCHEDULED
 401873922,2026-09-19 16:00:00,2026,6672,438,Kristiansund BK,Rosenborg,,,pre,STATUS_SCHEDULED
 401873903,2026-09-19 18:00:00,2026,2715,3278,Molde,Aalesund,,,pre,STATUS_SCHEDULED

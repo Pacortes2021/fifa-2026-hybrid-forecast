@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401888298,2026-09-14 20:00:00,2026,20070,436,Gaziantep FK,Fenerbahce,,,pre,STATUS_SCHEDULED
 401888290,2026-09-18 20:00:00,2026,6870,7648,Kasimpasa,Konyaspor,,,pre,STATUS_SCHEDULED
 401888381,2026-09-19 17:00:00,2026,132334,9078,Corum FK,Alanyaspor,,,pre,STATUS_SCHEDULED
 401888286,2026-09-19 17:00:00,2026,995,20070,Kocaelispor,Gaziantep FK,,,pre,STATUS_SCHEDULED

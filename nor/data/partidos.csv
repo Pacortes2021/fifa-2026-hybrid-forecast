@@ -1358,3 +1358,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401843438,2026-09-13 17:00:00,2026,6750,620,IK Start,SK Brann,2,0,post,STATUS_FULL_TIME
 401843442,2026-09-13 17:00:00,2026,21380,2715,Hamarkameratene,Molde,1,5,post,STATUS_FULL_TIME
 401843436,2026-09-13 19:15:00,2026,3039,5002,Fredrikstad,Sarpsborg FK,1,1,post,STATUS_FULL_TIME
+401843435,2026-09-14 19:00:00,2026,2980,3279,Bodo/Glimt,Sandefjord,3,2,post,STATUS_FULL_TIME

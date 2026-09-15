@@ -2382,3 +2382,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841560,2026-09-13 17:00:00,2026,3,9,Argentinos Juniors,Gimnasia La Plata,1.0,1.0,post
 401841568,2026-09-13 19:15:00,2026,11,18,Independiente,San Lorenzo,1.0,1.0,post
 401841561,2026-09-13 21:30:00,2026,10,15,Huracán,Racing Club,2.0,1.0,post
+401841558,2026-09-14 19:00:00,2026,235,10060,Banfield,Barracas Central,1.0,1.0,post
+401841555,2026-09-14 19:00:00,2026,17702,12,Deportivo Riestra,Lanús,0.0,3.0,post
+401841566,2026-09-14 21:15:00,2026,2975,19685,Instituto,Estudiantes de Río Cuarto,2.0,1.0,post

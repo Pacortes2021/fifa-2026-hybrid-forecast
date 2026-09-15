@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401885440,2026-09-14 18:45:00,2026,3822,21610,Rio Ave,Estrela,,,pre
-401885442,2026-09-14 20:15:00,2026,3696,552,Moreirense,Maritimo,,,pre
-401885445,2026-09-14 20:45:00,2026,2994,12216,Braga,Estoril,,,pre
 401885434,2026-09-19 15:30:00,2026,3472,12698,Nacional,Famalicao,,,pre
 401885435,2026-09-19 15:30:00,2026,3699,552,Gil Vicente,Maritimo,,,pre
 401885438,2026-09-19 18:00:00,2026,21613,3822,Alverca,Rio Ave,,,pre
@@ -52,10 +49,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401885388,2026-11-28 15:30:00,2026,3696,12215,Moreirense,Santa Clara,,,pre
 401885393,2026-11-28 18:00:00,2026,21607,21613,Académico de Viseu,Alverca,,,pre
 401885385,2026-11-28 20:30:00,2026,5309,21610,Vitoria de Guimaraes,Estrela,,,pre
-401885390,2026-11-29 20:00:00,2026,3699,12216,Gil Vicente,Estoril,,,pre
+401885390,2026-11-29 18:00:00,2026,3699,12216,Gil Vicente,Estoril,,,pre
 401885387,2026-11-29 20:30:00,2026,437,2250,Porto,Sporting CP,,,pre
-401885391,2026-11-30 20:00:00,2026,21581,2994,Casa Pia,Braga,,,pre
 401885386,2026-11-30 20:15:00,2026,1929,12698,Benfica,Famalicao,,,pre
+401885391,2026-11-30 20:15:00,2026,21581,2994,Casa Pia,Braga,,,pre
 401885376,2026-12-06 20:00:00,2026,2250,552,Sporting CP,Maritimo,,,pre
 401885378,2026-12-06 20:00:00,2026,3822,21581,Rio Ave,Casa Pia,,,pre
 401885380,2026-12-06 20:00:00,2026,12698,21607,Famalicao,Académico de Viseu,,,pre
