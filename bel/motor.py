@@ -803,6 +803,7 @@ def validacion_en_vivo(M, temporada_val=None, modelo_tipo="rf"):
     val_df["Prob_Empate"] = probs[:, 1]
     val_df["Prob_Visita"] = probs[:, 2]
     val_df["Prediccion"] = preds
+    val_df["resultado"] = y_true
 
     evol = []
     for i in range(1, len(val_df)+1):

@@ -558,8 +558,16 @@ def run_app():
                 st.warning(f"⚠️ El modelo va por debajo del baseline, pero puede ser por la baja cantidad de partidos.")
 
             st.markdown("##### Historial de Predicciones")
+            if "resultado" not in df_val.columns:
+                df_val["resultado"] = df_val.apply(
+                    lambda r: 0 if r["goles_local"] > r["goles_visita"] else (1 if r["goles_local"] == r["goles_visita"] else 2),
+                    axis=1
+                )
             df_show = df_val[["fecha", "local", "visita", "goles_local", "goles_visita", "resultado", "Prediccion", "Prob_Local", "Prob_Empate", "Prob_Visita"]].copy()
             df_show["Acierto"] = (df_show["resultado"] == df_show["Prediccion"]).replace({True: "✅", False: "❌"})
+            map_res = {0: "Local", 1: "Empate", 2: "Visita"}
+            df_show["resultado"] = df_show["resultado"].map(lambda x: map_res.get(x, x))
+            df_show["Prediccion"] = df_show["Prediccion"].map(lambda x: map_res.get(x, x))
             df_show["Prob_Local"] = df_show["Prob_Local"].apply(lambda x: f"{x:.1%}")
             df_show["Prob_Empate"] = df_show["Prob_Empate"].apply(lambda x: f"{x:.1%}")
             df_show["Prob_Visita"] = df_show["Prob_Visita"].apply(lambda x: f"{x:.1%}")
