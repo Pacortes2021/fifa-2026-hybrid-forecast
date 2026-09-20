@@ -32,13 +32,23 @@ def norm_team(name):
 
 def _temporada(anio):
     eventos = []
-    for ini, fin in ((f"{anio}0101", f"{anio}0630"), (f"{anio}0701", f"{anio}1231")):
-        try:
-            r = requests.get(f"{SCOREBOARD}?dates={ini}-{fin}&limit=400", timeout=40)
-            r.raise_for_status()
-            eventos += r.json().get("events", [])
-        except Exception as ex:
-            print(f"  Error obteniendo rango {ini}-{fin}: {ex}")
+    # 1. Intentar por año completo (formato preferido por la API de ESPN: dates=YYYY&limit=1000)
+    try:
+        r = requests.get(f"{SCOREBOARD}?dates={anio}&limit=1000", timeout=40)
+        if r.status_code == 200:
+            eventos = r.json().get("events", [])
+    except Exception as ex:
+        print(f"  Error obteniendo año {anio}: {ex}")
+
+    # 2. Fallback semestral por compatibilidad
+    if not eventos:
+        for ini, fin in ((f"{anio}0101", f"{anio}0630"), (f"{anio}0701", f"{anio}1231")):
+            try:
+                r = requests.get(f"{SCOREBOARD}?dates={ini}-{fin}&limit=400", timeout=40)
+                r.raise_for_status()
+                eventos += r.json().get("events", [])
+            except Exception as ex:
+                print(f"  Error obteniendo rango {ini}-{fin}: {ex}")
 
     filas = []
     for e in eventos:
