@@ -1,14 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401879275,2026-09-18 20:00:00,2026,337,363,Brentford,Chelsea,,,pre
-401879269,2026-09-19 12:30:00,2026,367,362,Tottenham Hotspur,Aston Villa,,,pre
-401879271,2026-09-19 15:00:00,2026,361,306,Newcastle United,Hull City,,,pre
-401878778,2026-09-19 15:00:00,2026,368,373,Everton,Ipswich Town,,,pre
-401879274,2026-09-19 15:00:00,2026,331,359,Brighton & Hove Albion,Arsenal,,,pre
-401879270,2026-09-19 17:30:00,2026,393,388,Nottingham Forest,Coventry City,,,pre
-401879276,2026-09-20 14:00:00,2026,349,364,AFC Bournemouth,Liverpool,,,pre
-401879273,2026-09-20 14:00:00,2026,357,384,Leeds United,Crystal Palace,,,pre
-401879272,2026-09-20 14:00:00,2026,382,366,Manchester City,Sunderland,,,pre
-401878777,2026-09-20 16:30:00,2026,370,360,Fulham,Manchester United,,,pre
 401879268,2026-10-10 12:30:00,2026,359,357,Arsenal,Leeds United,,,pre
 401878772,2026-10-10 15:00:00,2026,366,331,Sunderland,Brighton & Hove Albion,,,pre
 401879265,2026-10-10 15:00:00,2026,373,370,Ipswich Town,Fulham,,,pre
