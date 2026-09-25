@@ -72,7 +72,7 @@ def _cargar_equipos():
 
 class StateTracker:
     """Rastreador de estado temporal e histórico de selecciones en Nations League."""
-    def __init__(self, df_states=None):
+    def __init__(self, df_states=None, initial_elos=None):
         self.elo = defaultdict(lambda: 1500.0)
         self.squad_value = defaultdict(lambda: 100.0)
         self.recent_results = defaultdict(lambda: deque(maxlen=5))
@@ -82,10 +82,17 @@ class StateTracker:
         self.h2h_partidos = defaultdict(int)
         self.last_date = {}
 
+        # 1. Priors de Elo histórico (2018 al inicio de la Nations League)
+        if initial_elos:
+            for team, e in initial_elos.items():
+                self.elo[team] = float(e)
+
+        # 2. Priors de plantilla y fallback de Elo
         if df_states is not None and not df_states.empty:
             for _, r in df_states.iterrows():
                 team = r["team"]
-                self.elo[team] = float(r.get("elo", 1500.0))
+                if team not in self.elo or not initial_elos:
+                    self.elo[team] = float(r.get("elo", 1500.0))
                 sv = float(r.get("squad_value", 100.0))
                 self.squad_value[team] = (sv / 1e6) if sv > 1000.0 else sv
 
@@ -190,11 +197,28 @@ def cargar():
 
     equipos_info = _cargar_equipos()
 
-    # Cargar team states base para priors
-    states_path = DATA.parent / "data" / "team_states.csv"
+    # Cargar team states base para priors de plantilla y elo
+    root_data = Path(__file__).resolve().parent.parent / "data"
+    states_path = DATA / "team_states.csv"
+    if not states_path.exists():
+        states_path = root_data / "team_states.csv"
     df_states = pd.read_csv(states_path) if states_path.exists() else pd.DataFrame()
 
-    tracker = StateTracker(df_states)
+    # Cargar elos históricos base en 2018 para las selecciones
+    espn_path = root_data / "espn_stats.csv"
+    initial_elos = {}
+    if espn_path.exists():
+        try:
+            df_espn = pd.read_csv(espn_path)
+            for t in set(df_espn["local"]).union(set(df_espn["visita"])):
+                sub = df_espn[(df_espn["local"] == t) | (df_espn["visita"] == t)]
+                if len(sub):
+                    first = sub.iloc[0]
+                    initial_elos[t] = float(first["elo_local"] if first["local"] == t else first["elo_visita"])
+        except Exception:
+            pass
+
+    tracker = StateTracker(df_states, initial_elos=initial_elos)
 
     partidos_path = DATA / "partidos.csv"
     if not partidos_path.exists():
@@ -305,28 +329,25 @@ def cargar():
     }
 
     # Modelo Poisson Bivariado Dixon-Coles
-    # Estimación de parámetros base de ataque y defensa por diferencia de elo y squad value
+    # Estimación de parámetros base de ataque y defensa por diferencia de elo y localía
     d_elos = df_dataset["elo_diff"].values
-    d_svs = df_dataset["log_sv_diff"].values
     gls = df_dataset["gl"].values
     gvs = df_dataset["gv"].values
 
-    # Regresiones Poisson simples para lambda_local y lambda_visita
     from statsmodels.genmod.families import Poisson
     import statsmodels.api as sm
 
     try:
-        X_pois = sm.add_constant(np.column_stack([d_elos, d_svs]))
-        mod_l = sm.GLM(gls, X_pois, family=Poisson()).fit()
-        mod_v = sm.GLM(gvs, X_pois, family=Poisson()).fit()
+        mod_l = sm.GLM(gls, sm.add_constant(d_elos), family=Poisson()).fit()
+        mod_v = sm.GLM(gvs, sm.add_constant(-d_elos), family=Poisson()).fit()
         poisson_params = {
-            "const_l": float(mod_l.params[0]), "b_elo_l": float(mod_l.params[1]), "b_sv_l": float(mod_l.params[2]),
-            "const_v": float(mod_v.params[0]), "b_elo_v": float(mod_v.params[1]), "b_sv_v": float(mod_v.params[2])
+            "const_l": float(mod_l.params[0]), "b_elo_l": float(mod_l.params[1]), "b_sv_l": 0.0,
+            "const_v": float(mod_v.params[0]), "b_elo_v": -float(mod_v.params[1]), "b_sv_v": 0.0
         }
     except Exception:
         poisson_params = {
-            "const_l": 0.35, "b_elo_l": 0.0018, "b_sv_l": 0.12,
-            "const_v": 0.10, "b_elo_v": -0.0018, "b_sv_v": -0.12
+            "const_l": 0.28, "b_elo_l": 0.0020, "b_sv_l": 0.0,
+            "const_v": 0.03, "b_elo_v": -0.0019, "b_sv_v": 0.0
         }
 
     _MOTOR_CACHE = {
@@ -338,7 +359,9 @@ def cargar():
         "poisson_params": poisson_params,
         "metricas": metricas,
         "equipos_info": equipos_info,
-        "df_partidos": df_partidos
+        "df_partidos": df_partidos,
+        "features": cols_feat,
+        "active_features": [col for col, val in zip(cols_feat, np.mean(np.abs(pipe_lasso.named_steps["lr"].coef_), axis=0)) if val > 0.001]
     }
     return _MOTOR_CACHE
 
