@@ -754,7 +754,8 @@ def validacion_en_vivo(M, resultados, modelo="base"):
     met = {"n": n, "acierto": aciertos / n,
            "logloss": log_loss(y, P, labels=[0, 1, 2]),
            "logloss_base": log_loss(y, base, labels=[0, 1, 2]),
-           "p_empate_pred": float(P[:, 1].mean()), "empates_reales": float((y == 1).mean())}
+           "p_empate_pred": float(P[:, 1].mean()), "empates_reales": float((y == 1).mean()),
+           "P": P, "y": y}
     # evolución del log-loss acumulado (para ver si mejora conforme avanza el torneo)
     evol = [log_loss(y[:i + 1], P[:i + 1], labels=[0, 1, 2]) for i in range(n)]
     evolucion = pd.DataFrame({"partido": range(1, n + 1), "logloss_acum": evol,

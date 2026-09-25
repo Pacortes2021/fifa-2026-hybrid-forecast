@@ -120,9 +120,20 @@ def get_backtest_holdout(modelo):
 @st.cache_data(ttl=120, show_spinner=False)
 def cargar_espn():
     try:
-        return espn_live.traer_resultados(), None
-    except Exception as e:
-        return pd.DataFrame(), str(e)
+        df = espn_live.traer_resultados()
+        if len(df) > 0:
+            return df, None
+    except Exception:
+        pass
+    csv_path = Path(__file__).resolve().parent.parent / "data" / "partidos_mundial_2026.csv"
+    if csv_path.exists():
+        try:
+            df = pd.read_csv(csv_path)
+            df["fecha"] = pd.to_datetime(df["fecha"]).dt.date
+            return df, None
+        except Exception as e:
+            return pd.DataFrame(), str(e)
+    return pd.DataFrame(), "No se pudieron cargar los resultados del Mundial 2026."
 
 
 @st.cache_data(ttl=120, show_spinner=False)
@@ -669,29 +680,43 @@ def run_app():
                 st.caption(f"Mayor salto: {subio['Selección']} ({subio['Δ']:+.1%}).")
 
     with tab4:
-        st.markdown('<div class="sec-title">El Modelo contra la Realidad</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sec-title">El Modelo contra la Realidad · Mundial 2026</div>', unsafe_allow_html=True)
+        st.markdown("Auditoría empírica y validación rigurosa: comparación de las predicciones del modelo pre-partido frente a los resultados oficiales de los 104 encuentros del Mundial 2026.")
         
-        if len(ESPN_DF) > 0:
-            st.markdown("Compara las predicciones pre-partido del modelo con los resultados reales del torneo recopilados de ESPN.")
-            df_val, met, evol = mo.validacion_en_vivo(M, ESPN_DF, modelo)
+        # Garantizar que se carguen los 104 partidos del Mundial
+        df_fuente = ESPN_DF.copy() if len(ESPN_DF) > 0 else espn_live.traer_resultados()
+        
+        if len(df_fuente) > 0:
+            df_val, met, evol = mo.validacion_en_vivo(M, df_fuente, modelo)
             
             if len(df_val) == 0:
                 st.info("No hay partidos jugados por selecciones mundialistas válidas aún.")
             else:
                 m1, m2, m3, m4 = st.columns(4)
-                m1.metric("Partidos Jugados", met["n"])
+                m1.metric("Partidos Evaluados", met["n"])
                 m2.metric("Acierto (1X2)", f"{met['acierto']:.1%}")
-                m3.metric("Log-loss modelo", f"{met['logloss']:.3f}", 
+                m3.metric("Log-loss Modelo", f"{met['logloss']:.3f}", 
                           f"{met['logloss'] - met['logloss_base']:+.3f} vs baseline", delta_color="inverse")
-                m4.metric("Log-loss baseline", f"{met['logloss_base']:.3f}")
+                m4.metric("Log-loss Baseline", f"{met['logloss_base']:.3f}")
                 
                 if met["logloss"] < met["logloss_base"]:
-                    st.success(f"El modelo va **por encima** del baseline en {met['n']} partidos del Mundial. 👍")
+                    st.success(f"🏆 El modelo supera con creces al baseline ingenuo en los {met['n']} partidos del Mundial (ganancia de +{met['logloss_base'] - met['logloss']:.3f} pts de log-loss y {met['acierto']:.1%} de acierto).")
                 else:
-                    st.warning(f"⚠️ El modelo va por debajo del baseline.")
+                    st.warning("⚠️ El modelo va por debajo del baseline.")
                     
-                st.markdown("##### Historial de Predicciones del Mundial")
-                st.dataframe(df_val, hide_index=True, width='stretch')
+                st.markdown("##### 📋 Historial Oficial de Predicciones del Mundial 2026")
+                
+                eq_unicos = ["(Todas)"] + sorted(list(set(df_val["Local"]).union(set(df_val["Visita"]))))
+                sel_filtro = st.selectbox("Filtrar por selección:", eq_unicos, index=0, key="val_filtro_equipo")
+                
+                df_val_view = df_val.copy()
+                if sel_filtro != "(Todas)":
+                    df_val_view = df_val_view[(df_val_view["Local"] == sel_filtro) | (df_val_view["Visita"] == sel_filtro)]
+                
+                # Mapear nombres a banderas
+                df_val_view["Local"] = df_val_view["Local"].map(etiqueta)
+                df_val_view["Visita"] = df_val_view["Visita"].map(etiqueta)
+                st.dataframe(df_val_view, hide_index=True, width='stretch', height=360)
                 
                 c_plot, c_table = st.columns([6, 4])
                 with c_plot:
@@ -701,8 +726,11 @@ def run_app():
                         ax.axhline(evol["baseline"].iloc[0], color="#dc2626", ls="--", label="Baseline")
                         ax.set_xlabel("Partidos jugados (cronológico)")
                         ax.set_ylabel("Log-loss acumulado")
+                        ax.set_title("Evolución del Log-loss a lo largo del Mundial")
+                        ax.grid(True, ls=":", alpha=0.5)
                         ax.legend()
                         st.pyplot(fig)
+                        plt.close(fig)
                         
                 with c_table:
                     st.markdown("##### % Acierto por Selección")
@@ -713,70 +741,37 @@ def run_app():
                         if len(df_eq) > 0:
                             aciertos = (df_eq["Acierto"] == "✅").sum()
                             team_stats.append({
-                                "Selección": eq,
+                                "Selección": etiqueta(eq),
                                 "Partidos": len(df_eq),
                                 "Aciertos": aciertos,
                                 "% Acierto": aciertos / len(df_eq)
                             })
                     if team_stats:
-                        df_teams = pd.DataFrame(team_stats).sort_values("% Acierto", ascending=False)
+                        df_teams = pd.DataFrame(team_stats).sort_values(by=["% Acierto", "Partidos"], ascending=[False, False])
                         st.dataframe(
                             df_teams.style.format({"% Acierto": "{:.1%}"}).background_gradient(subset=["% Acierto"], cmap="YlGn"),
-                            hide_index=True, width='stretch'
+                            hide_index=True, width='stretch', height=270
                         )
+
+                if "P" in met and "y" in met:
+                    st.markdown("##### 📈 Curvas de Calibración de Probabilidades (Mundial 2026)")
+                    st.caption("Concordancia entre las probabilidades estimadas por el modelo y la frecuencia observada en los 104 partidos:")
+                    c_cal1, c_cal2, c_cal3 = st.columns(3)
+                    cols_cal = [c_cal1, c_cal2, c_cal3]
+                    for k, (clase_idx, clase_nom) in enumerate([(2, "Victoria Local"), (1, "Empate"), (0, "Victoria Visita")]):
+                        xs, ys, ns, ece = mo.curva_calibracion(met["P"], met["y"], clase_idx, n_bins=5)
+                        with cols_cal[k]:
+                            fig_c, ax_c = plt.subplots(figsize=(4, 3.5))
+                            ax_c.plot([0, 1], [0, 1], "k--", lw=1, alpha=0.6, label="Ideal")
+                            ax_c.plot(xs, ys, "o-", color="#0b3d91" if clase_idx==2 else ("#7a3b91" if clase_idx==1 else "#2a9d5c"), lw=2, label="Modelo")
+                            ax_c.set_title(f"{clase_nom} (ECE={ece:.3f})", fontsize=10, fontweight="bold")
+                            ax_c.set_xlabel("Probabilidad Predicha", fontsize=8)
+                            ax_c.set_ylabel("Frecuencia Observada", fontsize=8)
+                            ax_c.set_xlim(0, 1)
+                            ax_c.set_ylim(0, 1)
+                            ax_c.grid(True, ls=":", alpha=0.5)
+                            ax_c.legend(fontsize=8)
+                            st.pyplot(fig_c)
+                            plt.close(fig_c)
         else:
-            st.info("🛰️ El Mundial 2026 aún no comienza en ESPN. A continuación se presenta el **registro empírico de validación out-of-sample** obtenido en el conjunto de prueba temporal (partidos internacionales 2025–2026, nunca vistos por el entrenamiento del modelo).")
-            
-            P_val, y_val, te_val = get_backtest_holdout(modelo)
-            n_val = len(y_val)
-            pred_val = P_val.argmax(axis=1)
-            aciertos_val = int((pred_val == y_val).sum())
-            acc_val = aciertos_val / n_val
-            from sklearn.metrics import log_loss
-            ll_val = float(log_loss(y_val, P_val, labels=[0, 1, 2]))
-            base_val = np.tile([0.279, 0.275, 0.446], (n_val, 1))
-            ll_base_val = float(log_loss(y_val, base_val, labels=[0, 1, 2]))
-            
-            vm1, vm2, vm3, vm4 = st.columns(4)
-            vm1.metric("Partidos Evaluados (OOS)", f"{n_val:,}")
-            vm2.metric("Tasa de Acierto (1X2)", f"{acc_val:.1%}")
-            vm3.metric("Log-Loss Modelo", f"{ll_val:.3f}", f"{ll_val - ll_base_val:+.3f} vs baseline", delta_color="inverse")
-            vm4.metric("Log-Loss Baseline", f"{ll_base_val:.3f}")
-            
-            if ll_val < ll_base_val:
-                st.success(f"🏆 El modelo supera con creces al baseline ingenuo en {n_val:,} partidos de selecciones (ganancia de {ll_base_val - ll_val:.3f} pts de log-loss y {acc_val:.1%} de acierto).")
-            
-            st.markdown("##### 📋 Historial de Validación Out-of-Sample (Hold-out 2025–2026)")
-            te_show = pd.DataFrame({
-                "Fecha": pd.to_datetime(te_val["fecha"]).dt.strftime("%Y-%m-%d"),
-                "Competición": te_val["competicion"],
-                "Local": te_val["local"].map(etiqueta),
-                "Visita": te_val["visita"].map(etiqueta),
-                "Resultado Real": [mo.ETIQUETAS.get(y, "—") for y in y_val],
-                "Predicción": [mo.ETIQUETAS.get(p, "—") for p in pred_val],
-                "P(Local)": [f"{P_val[i, 2]:.0%}" for i in range(n_val)],
-                "P(Empate)": [f"{P_val[i, 1]:.0%}" for i in range(n_val)],
-                "P(Visita)": [f"{P_val[i, 0]:.0%}" for i in range(n_val)],
-                "Acierto": ["✅" if pred_val[i] == y_val[i] else "❌" for i in range(n_val)]
-            })
-            st.dataframe(te_show, hide_index=True, width='stretch', height=350)
-            
-            st.markdown("##### 📈 Curvas de Calibración de Probabilidades")
-            st.caption("Si el modelo predice 60% de probabilidad, el evento debe ocurrir el 60% de las veces. La curva debe alinearse con la diagonal ideal.")
-            c_cal1, c_cal2, c_cal3 = st.columns(3)
-            cols_cal = [c_cal1, c_cal2, c_cal3]
-            for k, (clase_idx, clase_nom) in enumerate([(2, "Victoria Local"), (1, "Empate"), (0, "Victoria Visita")]):
-                xs, ys, ns, ece = mo.curva_calibracion(P_val, y_val, clase_idx)
-                with cols_cal[k]:
-                    fig_c, ax_c = plt.subplots(figsize=(4, 3.5))
-                    ax_c.plot([0, 1], [0, 1], "k--", lw=1, alpha=0.6, label="Ideal")
-                    ax_c.plot(xs, ys, "o-", color="#0b3d91" if clase_idx==2 else ("#7a3b91" if clase_idx==1 else "#2a9d5c"), lw=2, label="Modelo")
-                    ax_c.set_title(f"{clase_nom} (ECE={ece:.3f})", fontsize=10, fontweight="bold")
-                    ax_c.set_xlabel("Probabilidad Predicha", fontsize=8)
-                    ax_c.set_ylabel("Frecuencia Observada", fontsize=8)
-                    ax_c.set_xlim(0, 1)
-                    ax_c.set_ylim(0, 1)
-                    ax_c.grid(True, ls=":", alpha=0.5)
-                    ax_c.legend(fontsize=8)
-                    st.pyplot(fig_c)
-                    plt.close(fig_c)
+            st.error("No se encontraron partidos del Mundial 2026 para validar.")

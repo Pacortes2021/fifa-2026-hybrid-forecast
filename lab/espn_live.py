@@ -5,6 +5,8 @@ día a día. Alimenta el modo "torneo en vivo" de app_lab.py.
 Endpoint: site.api.espn.com (scoreboard del torneo 'fifa.world'). No requiere API key.
 """
 from datetime import date
+import json
+from pathlib import Path
 import re
 import requests
 import pandas as pd
@@ -13,6 +15,9 @@ SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/sc
 INICIO_MUNDIAL = "20260611"
 INICIO_KO      = "20260628"   # inicio fase eliminatoria (fin grupos = 27-jun)
 FIN_GRUPOS     = "20260627"   # último día de la fase de grupos
+
+LOCAL_CSV = Path(__file__).resolve().parent.parent / "data" / "partidos_mundial_2026.csv"
+LOCAL_JSON = Path(__file__).resolve().parent.parent / "data" / "espn_mundial_2026_events.json"
 
 # ESPN usa algunos nombres distintos a team_states.csv -> normalización
 NORM = {
@@ -33,34 +38,38 @@ def _norm(nombre):
     return NORM.get(nombre, nombre)
 
 
+def _fetch_events():
+    """Obtiene los 104 eventos del Mundial 2026 desde ESPN (dates=2026&limit=1000).
+    Si la API de ESPN falla o no hay conexión, recurre al respaldo local persistente."""
+    try:
+        url = f"{SCOREBOARD}?dates=2026&limit=1000"
+        r = requests.get(url, timeout=12)
+        r.raise_for_status()
+        evs = r.json().get("events", [])
+        if len(evs) >= 1:
+            try:
+                LOCAL_JSON.parent.mkdir(parents=True, exist_ok=True)
+                with open(LOCAL_JSON, "w", encoding="utf-8") as f:
+                    json.dump(r.json(), f)
+            except Exception:
+                pass
+            return evs
+    except Exception:
+        pass
+    if LOCAL_JSON.exists():
+        try:
+            with open(LOCAL_JSON, "r", encoding="utf-8") as f:
+                return json.load(f).get("events", [])
+        except Exception:
+            pass
+    return []
+
+
 def traer_resultados(desde=INICIO_MUNDIAL, hasta=None, solo_finalizados=True):
     """Devuelve un DataFrame de partidos del Mundial 2026 con columnas
        fecha, local, visita, goles_local, goles_visita, estado, ronda.
        Nombres ya normalizados a los de team_states.csv."""
-    if hasta is None:
-        hasta = date.today().strftime("%Y%m%d")
-    
-    # La API de ESPN limita a 100 eventos por llamada. El Mundial 2026 tiene 104 partidos
-    # (72 grupos + 32 eliminatorias), así que se divide en dos rangos para no truncar.
-    rangos = []
-    if desde <= FIN_GRUPOS:
-        rangos.append((desde, min(hasta, FIN_GRUPOS)))
-    if hasta >= INICIO_KO:
-        rangos.append((max(desde, INICIO_KO), hasta))
-
-    seen = set()
-    eventos = []
-    for d_inicio, d_fin in rangos:
-        if d_inicio > d_fin:
-            continue
-        url = f"{SCOREBOARD}?dates={d_inicio}-{d_fin}"
-        r = requests.get(url, timeout=20)
-        r.raise_for_status()
-        for ev in r.json().get("events", []):
-            if ev["id"] not in seen:   # evitar duplicados si los rangos se solapan
-                seen.add(ev["id"])
-                eventos.append(ev)
-
+    eventos = _fetch_events()
     filas = []
     for e in eventos:
         comp = e["competitions"][0]
@@ -68,24 +77,52 @@ def traer_resultados(desde=INICIO_MUNDIAL, hasta=None, solo_finalizados=True):
         if solo_finalizados and estado != "post":
             continue
         cs = comp["competitors"]
-        h = next(x for x in cs if x["homeAway"] == "home")
-        a = next(x for x in cs if x["homeAway"] == "away")
+        h = next((x for x in cs if x["homeAway"] == "home"), None)
+        a = next((x for x in cs if x["homeAway"] == "away"), None)
+        if not h or not a:
+            continue
         try:
             gl, gv = int(h.get("score")), int(a.get("score"))
         except (TypeError, ValueError):
             continue
+        f_dt = pd.to_datetime(e["date"]).date()
+        ronda = (e.get("season", {}).get("slug", "") or 
+                 (comp.get("notes", [{}])[0].get("headline", "") if comp.get("notes") else ""))
         filas.append({
-            "fecha": pd.to_datetime(e["date"]).date(),
+            "fecha": f_dt,
             "local": _norm(h["team"]["displayName"]),
             "visita": _norm(a["team"]["displayName"]),
             "goles_local": gl,
             "goles_visita": gv,
             "estado": estado,
-            "ronda": e.get("season", {}).get("slug", "") or comp.get("notes", [{}])[0].get("headline", "") if comp.get("notes") else "",
+            "ronda": ronda,
         })
     df = pd.DataFrame(filas)
+    if len(df) == 0 and LOCAL_CSV.exists():
+        try:
+            df = pd.read_csv(LOCAL_CSV)
+            df["fecha"] = pd.to_datetime(df["fecha"]).dt.date
+        except Exception:
+            pass
     if len(df):
         df = df.sort_values("fecha").reset_index(drop=True)
+        if desde:
+            try:
+                d_desde = pd.to_datetime(desde).date()
+                df = df[df["fecha"] >= d_desde]
+            except Exception:
+                pass
+        if hasta:
+            try:
+                d_hasta = pd.to_datetime(hasta).date()
+                df = df[df["fecha"] <= d_hasta]
+            except Exception:
+                pass
+        try:
+            LOCAL_CSV.parent.mkdir(parents=True, exist_ok=True)
+            df.to_csv(LOCAL_CSV, index=False)
+        except Exception:
+            pass
     return df
 
 
@@ -146,8 +183,9 @@ def bracket_eliminatorias(desde="20260628", hasta="20260720"):
     OJO: la numeración interna de ESPN para R32 NO es cronológica (es por posición de llave:
     N de ESPN = nº de partido FIFA − 72), así que aquí solo se exponen los emparejamientos, sin
     intentar reconstruir el árbol desde esa numeración."""
-    evs = requests.get(f"{SCOREBOARD}?dates={desde}-{hasta}", timeout=20).json().get("events", [])
-    E = sorted((_ko_evento(e) for e in evs), key=lambda x: (x["dt"], x["id"]))
+    evs = _fetch_events()
+    ko_evs = evs[72:] if len(evs) >= 88 else evs
+    E = sorted((_ko_evento(e) for e in ko_evs), key=lambda x: (x["dt"], x["id"]))
 
     por_ronda = {r: [] for r in _ORDEN_RONDAS}
     sin_ph = []
@@ -174,9 +212,10 @@ def ganadores_ko(desde="20260628", hasta="20260720"):
        resuelto. Usa el flag `winner` de ESPN, así que **respeta los penales** (un 1-1 que se define
        en la tanda queda fijado al que realmente pasó, no al marcador). La ventana arranca el 28-jun,
        cuando empiezan las eliminatorias (la fase de grupos terminó el 27-jun)."""
-    evs = requests.get(f"{SCOREBOARD}?dates={desde}-{hasta}", timeout=20).json().get("events", [])
+    evs = _fetch_events()
+    ko_evs = evs[72:] if len(evs) >= 88 else evs
     out = {}
-    for e in evs:
+    for e in ko_evs:
         m = _ko_evento(e)
         if m["state"] == "post" and m["winner"]:
             out[frozenset({m["home"], m["away"]})] = m["winner"]
@@ -185,12 +224,9 @@ def ganadores_ko(desde="20260628", hasta="20260720"):
 
 def partidos_en_vivo(desde=INICIO_MUNDIAL, hasta=None):
     """Partidos actualmente en juego (estado 'in'), para mostrarlos aparte."""
-    if hasta is None:
-        hasta = date.today().strftime("%Y%m%d")
-    r = requests.get(f"{SCOREBOARD}?dates={desde}-{hasta}", timeout=20)
-    r.raise_for_status()
+    evs = _fetch_events()
     filas = []
-    for e in r.json().get("events", []):
+    for e in evs:
         if e["status"]["type"]["state"] != "in":
             continue
         comp = e["competitions"][0]; cs = comp["competitors"]
@@ -200,3 +236,4 @@ def partidos_en_vivo(desde=INICIO_MUNDIAL, hasta=None):
                       "marcador": f"{h.get('score','?')}-{a.get('score','?')}",
                       "minuto": e["status"].get("displayClock", "")})
     return pd.DataFrame(filas)
+
