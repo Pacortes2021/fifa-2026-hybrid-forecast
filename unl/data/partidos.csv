@@ -1,0 +1,671 @@
+event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
+505509,2018-09-06 16:00:00,2018,league-d,0,0,2619,584,Kazakhstan,Georgia,0,2,post,STATUS_FULL_TIME
+505508,2018-09-06 18:00:00,2018,league-d,0,0,579,589,Armenia,Liechtenstein,2,1,post,STATUS_FULL_TIME
+505556,2018-09-06 20:45:00,2018,league-b,0,0,450,457,Czech Republic,Ukraine,1,2,post,STATUS_FULL_TIME
+505532,2018-09-06 20:45:00,2018,league-a,0,0,481,478,Germany,France,0,0,post,STATUS_FULL_TIME
+505507,2018-09-06 20:45:00,2018,league-d,0,0,16721,463,Gibraltar,North Macedonia,0,2,post,STATUS_FULL_TIME
+505506,2018-09-06 20:45:00,2018,league-d,0,0,456,587,Latvia,Andorra,0,0,post,STATUS_FULL_TIME
+505598,2018-09-06 20:45:00,2018,league-c,0,0,464,445,Norway,Cyprus,2,0,post,STATUS_FULL_TIME
+505597,2018-09-06 20:45:00,2018,league-c,0,0,472,462,Slovenia,Bulgaria,1,2,post,STATUS_FULL_TIME
+505555,2018-09-06 20:45:00,2018,league-b,0,0,578,476,Wales,Republic of Ireland,4,1,post,STATUS_FULL_TIME
+505505,2018-09-07 18:00:00,2018,league-d,0,0,581,18272,Azerbaijan,Kosovo,0,0,post,STATUS_FULL_TIME
+505554,2018-09-07 20:45:00,2018,league-b,0,0,465,454,Turkey,Russia,1,2,post,STATUS_FULL_TIME
+505595,2018-09-07 20:45:00,2018,league-c,0,0,473,6775,Romania,Montenegro,0,0,post,STATUS_FULL_TIME
+505596,2018-09-07 20:45:00,2018,league-c,0,0,460,6757,Lithuania,Serbia,0,1,post,STATUS_FULL_TIME
+505594,2018-09-07 20:45:00,2018,league-c,0,0,585,461,Albania,Israel,1,0,post,STATUS_FULL_TIME
+505504,2018-09-07 20:45:00,2018,league-d,0,0,447,453,Faroe Islands,Malta,3,1,post,STATUS_FULL_TIME
+505531,2018-09-07 20:45:00,2018,league-a,0,0,162,471,Italy,Poland,1,1,post,STATUS_FULL_TIME
+505553,2018-09-08 15:00:00,2018,league-b,0,0,586,452,Northern Ireland,Bosnia and Herzegovina,1,2,post,STATUS_FULL_TIME
+505530,2018-09-08 18:00:00,2018,league-a,0,0,475,470,Switzerland,Iceland,6,0,post,STATUS_FULL_TIME
+505503,2018-09-08 18:00:00,2018,league-d,0,0,583,588,Belarus,San Marino,5,0,post,STATUS_FULL_TIME
+505593,2018-09-08 18:00:00,2018,league-c,0,0,458,480,Finland,Hungary,1,0,post,STATUS_FULL_TIME
+505502,2018-09-08 20:45:00,2018,league-d,0,0,582,483,Luxembourg,Moldova,4,0,post,STATUS_FULL_TIME
+505529,2018-09-08 20:45:00,2018,league-a,0,0,448,164,England,Spain,1,2,post,STATUS_FULL_TIME
+505592,2018-09-08 20:45:00,2018,league-c,0,0,444,455,Estonia,Greece,0,1,post,STATUS_FULL_TIME
+505552,2018-09-09 15:00:00,2018,league-b,0,0,457,468,Ukraine,Slovakia,1,0,post,STATUS_FULL_TIME
+505591,2018-09-09 18:00:00,2018,league-c,0,0,462,464,Bulgaria,Norway,1,0,post,STATUS_FULL_TIME
+505551,2018-09-09 18:00:00,2018,league-b,0,0,479,578,Denmark,Wales,2,0,post,STATUS_FULL_TIME
+505501,2018-09-09 18:00:00,2018,league-d,0,0,584,456,Georgia,Latvia,1,0,post,STATUS_FULL_TIME
+505500,2018-09-09 18:00:00,2018,league-d,0,0,463,579,North Macedonia,Armenia,2,0,post,STATUS_FULL_TIME
+505499,2018-09-09 20:45:00,2018,league-d,0,0,589,16721,Liechtenstein,Gibraltar,2,0,post,STATUS_FULL_TIME
+505590,2018-09-09 20:45:00,2018,league-c,0,0,445,472,Cyprus,Slovenia,2,1,post,STATUS_FULL_TIME
+505528,2018-09-09 20:45:00,2018,league-a,0,0,478,449,France,Netherlands,2,1,post,STATUS_FULL_TIME
+505587,2018-09-10 20:45:00,2018,league-c,0,0,580,585,Scotland,Albania,2,0,post,STATUS_FULL_TIME
+505527,2018-09-10 20:45:00,2018,league-a,0,0,482,162,Portugal,Italy,1,0,post,STATUS_FULL_TIME
+505588,2018-09-10 20:45:00,2018,league-c,0,0,6775,460,Montenegro,Lithuania,2,0,post,STATUS_FULL_TIME
+505498,2018-09-10 20:45:00,2018,league-d,0,0,587,2619,Andorra,Kazakhstan,1,1,post,STATUS_FULL_TIME
+505497,2018-09-10 20:45:00,2018,league-d,0,0,18272,447,Kosovo,Faroe Islands,2,0,post,STATUS_FULL_TIME
+505589,2018-09-10 20:45:00,2018,league-c,0,0,6757,473,Serbia,Romania,2,2,post,STATUS_FULL_TIME
+505496,2018-09-10 20:45:00,2018,league-d,0,0,453,581,Malta,Azerbaijan,1,1,post,STATUS_FULL_TIME
+505550,2018-09-10 20:45:00,2018,league-b,0,0,466,465,Sweden,Turkey,2,3,post,STATUS_FULL_TIME
+505495,2018-09-11 20:45:00,2018,league-d,0,0,588,582,San Marino,Luxembourg,0,3,post,STATUS_FULL_TIME
+505526,2018-09-11 20:45:00,2018,league-a,0,0,164,477,Spain,Croatia,6,0,post,STATUS_FULL_TIME
+505494,2018-09-11 20:45:00,2018,league-d,0,0,483,583,Moldova,Belarus,0,0,post,STATUS_FULL_TIME
+505586,2018-09-11 20:45:00,2018,league-c,0,0,480,455,Hungary,Greece,2,1,post,STATUS_FULL_TIME
+505525,2018-09-11 20:45:00,2018,league-a,0,0,470,459,Iceland,Belgium,0,3,post,STATUS_FULL_TIME
+505585,2018-09-11 20:45:00,2018,league-c,0,0,458,444,Finland,Estonia,1,0,post,STATUS_FULL_TIME
+505549,2018-09-11 20:45:00,2018,league-b,0,0,452,474,Bosnia and Herzegovina,Austria,1,0,post,STATUS_FULL_TIME
+505492,2018-10-11 20:45:00,2018,league-d,0,0,447,581,Faroe Islands,Azerbaijan,0,3,post,STATUS_FULL_TIME
+505583,2018-10-11 20:45:00,2018,league-c,0,0,461,580,Israel,Scotland,2,1,post,STATUS_FULL_TIME
+505493,2018-10-11 20:45:00,2018,league-d,0,0,18272,453,Kosovo,Malta,3,1,post,STATUS_FULL_TIME
+505582,2018-10-11 20:45:00,2018,league-c,0,0,460,473,Lithuania,Romania,1,2,post,STATUS_FULL_TIME
+505584,2018-10-11 20:45:00,2018,league-c,0,0,6775,6757,Montenegro,Serbia,0,2,post,STATUS_FULL_TIME
+505524,2018-10-11 20:45:00,2018,league-a,0,0,471,482,Poland,Portugal,2,3,post,STATUS_FULL_TIME
+505548,2018-10-11 21:45:00,2018,league-b,0,0,454,466,Russia,Sweden,0,0,post,STATUS_FULL_TIME
+505547,2018-10-12 20:45:00,2018,league-b,0,0,474,586,Austria,Northern Ireland,1,0,post,STATUS_FULL_TIME
+505490,2018-10-12 20:45:00,2018,league-d,0,0,583,582,Belarus,Luxembourg,1,0,post,STATUS_FULL_TIME
+505523,2018-10-12 20:45:00,2018,league-a,0,0,459,475,Belgium,Switzerland,2,1,post,STATUS_FULL_TIME
+505522,2018-10-12 20:45:00,2018,league-a,0,0,477,448,Croatia,England,0,0,post,STATUS_FULL_TIME
+505580,2018-10-12 20:45:00,2018,league-c,0,0,444,458,Estonia,Finland,0,1,post,STATUS_FULL_TIME
+505581,2018-10-12 20:45:00,2018,league-c,0,0,455,480,Greece,Hungary,1,0,post,STATUS_FULL_TIME
+505491,2018-10-12 20:45:00,2018,league-d,0,0,483,588,Moldova,San Marino,2,0,post,STATUS_FULL_TIME
+505546,2018-10-13 15:00:00,2018,league-b,0,0,468,450,Slovakia,Czech Republic,1,2,post,STATUS_FULL_TIME
+505579,2018-10-13 18:00:00,2018,league-c,0,0,464,472,Norway,Slovenia,1,0,post,STATUS_FULL_TIME
+505489,2018-10-13 18:00:00,2018,league-d,0,0,456,2619,Latvia,Kazakhstan,1,1,post,STATUS_FULL_TIME
+505487,2018-10-13 18:00:00,2018,league-d,0,0,584,587,Georgia,Andorra,3,0,post,STATUS_FULL_TIME
+505488,2018-10-13 18:00:00,2018,league-d,0,0,579,16721,Armenia,Gibraltar,0,1,post,STATUS_FULL_TIME
+505578,2018-10-13 20:45:00,2018,league-c,0,0,462,445,Bulgaria,Cyprus,2,1,post,STATUS_FULL_TIME
+505521,2018-10-13 20:45:00,2018,league-a,0,0,449,481,Netherlands,Germany,3,0,post,STATUS_FULL_TIME
+505486,2018-10-13 20:45:00,2018,league-d,0,0,463,589,North Macedonia,Liechtenstein,4,1,post,STATUS_FULL_TIME
+505545,2018-10-13 20:45:00,2018,league-b,0,0,476,479,Republic of Ireland,Denmark,0,0,post,STATUS_FULL_TIME
+505577,2018-10-14 15:00:00,2018,league-c,0,0,473,6757,Romania,Serbia,0,0,post,STATUS_FULL_TIME
+505485,2018-10-14 18:00:00,2018,league-d,0,0,581,453,Azerbaijan,Malta,1,1,post,STATUS_FULL_TIME
+505484,2018-10-14 18:00:00,2018,league-d,0,0,447,18272,Faroe Islands,Kosovo,1,1,post,STATUS_FULL_TIME
+505544,2018-10-14 18:00:00,2018,league-b,0,0,454,465,Russia,Turkey,2,0,post,STATUS_FULL_TIME
+505575,2018-10-14 20:45:00,2018,league-c,0,0,461,585,Israel,Albania,2,0,post,STATUS_FULL_TIME
+505576,2018-10-14 20:45:00,2018,league-c,0,0,460,6775,Lithuania,Montenegro,1,4,post,STATUS_FULL_TIME
+505520,2018-10-14 20:45:00,2018,league-a,0,0,471,162,Poland,Italy,0,1,post,STATUS_FULL_TIME
+505519,2018-10-15 20:45:00,2018,league-a,0,0,470,475,Iceland,Switzerland,1,2,post,STATUS_FULL_TIME
+505573,2018-10-15 20:45:00,2018,league-c,0,0,458,455,Finland,Greece,2,0,post,STATUS_FULL_TIME
+505483,2018-10-15 20:45:00,2018,league-d,0,0,582,588,Luxembourg,San Marino,3,0,post,STATUS_FULL_TIME
+505543,2018-10-15 20:45:00,2018,league-b,0,0,452,586,Bosnia and Herzegovina,Northern Ireland,2,0,post,STATUS_FULL_TIME
+505482,2018-10-15 20:45:00,2018,league-d,0,0,583,483,Belarus,Moldova,0,0,post,STATUS_FULL_TIME
+505574,2018-10-15 20:45:00,2018,league-c,0,0,444,480,Estonia,Hungary,3,3,post,STATUS_FULL_TIME
+505518,2018-10-15 20:45:00,2018,league-a,0,0,164,448,Spain,England,2,3,post,STATUS_FULL_TIME
+505481,2018-10-16 16:00:00,2018,league-d,0,0,2619,587,Kazakhstan,Andorra,4,0,post,STATUS_FULL_TIME
+505480,2018-10-16 18:00:00,2018,league-d,0,0,579,463,Armenia,North Macedonia,4,0,post,STATUS_FULL_TIME
+505517,2018-10-16 20:45:00,2018,league-a,0,0,478,481,France,Germany,2,1,post,STATUS_FULL_TIME
+505479,2018-10-16 20:45:00,2018,league-d,0,0,16721,589,Gibraltar,Liechtenstein,2,1,post,STATUS_FULL_TIME
+505478,2018-10-16 20:45:00,2018,league-d,0,0,456,584,Latvia,Georgia,0,3,post,STATUS_FULL_TIME
+505571,2018-10-16 20:45:00,2018,league-c,0,0,464,462,Norway,Bulgaria,1,0,post,STATUS_FULL_TIME
+505542,2018-10-16 20:45:00,2018,league-b,0,0,476,578,Republic of Ireland,Wales,0,1,post,STATUS_FULL_TIME
+505572,2018-10-16 20:45:00,2018,league-c,0,0,472,445,Slovenia,Cyprus,1,1,post,STATUS_FULL_TIME
+505541,2018-10-16 20:45:00,2018,league-b,0,0,457,450,Ukraine,Czech Republic,1,0,post,STATUS_FULL_TIME
+505477,2018-11-15 16:00:00,2018,league-d,0,0,2619,456,Kazakhstan,Latvia,1,1,post,STATUS_FULL_TIME
+505476,2018-11-15 20:45:00,2018,league-d,0,0,588,483,San Marino,Moldova,0,1,post,STATUS_FULL_TIME
+505475,2018-11-15 20:45:00,2018,league-d,0,0,582,583,Luxembourg,Belarus,0,2,post,STATUS_FULL_TIME
+505569,2018-11-15 20:45:00,2018,league-c,0,0,480,444,Hungary,Estonia,2,0,post,STATUS_FULL_TIME
+505570,2018-11-15 20:45:00,2018,league-c,0,0,455,458,Greece,Finland,1,0,post,STATUS_FULL_TIME
+505474,2018-11-15 20:45:00,2018,league-d,0,0,587,584,Andorra,Georgia,1,1,post,STATUS_FULL_TIME
+505515,2018-11-15 20:45:00,2018,league-a,0,0,459,470,Belgium,Iceland,2,0,post,STATUS_FULL_TIME
+505540,2018-11-15 20:45:00,2018,league-b,0,0,474,452,Austria,Bosnia and Herzegovina,0,0,post,STATUS_FULL_TIME
+505516,2018-11-15 20:45:00,2018,league-a,0,0,477,164,Croatia,Spain,3,2,post,STATUS_FULL_TIME
+505568,2018-11-16 20:45:00,2018,league-c,0,0,472,464,Slovenia,Norway,1,1,post,STATUS_FULL_TIME
+505538,2018-11-16 20:45:00,2018,league-b,0,0,578,479,Wales,Denmark,1,2,post,STATUS_FULL_TIME
+505514,2018-11-16 20:45:00,2018,league-a,0,0,449,478,Netherlands,France,2,0,post,STATUS_FULL_TIME
+505539,2018-11-16 20:45:00,2018,league-b,0,0,468,457,Slovakia,Ukraine,4,1,post,STATUS_FULL_TIME
+505472,2018-11-16 20:45:00,2018,league-d,0,0,16721,579,Gibraltar,Armenia,2,6,post,STATUS_FULL_TIME
+505567,2018-11-16 20:45:00,2018,league-c,0,0,445,462,Cyprus,Bulgaria,1,1,post,STATUS_FULL_TIME
+505473,2018-11-16 20:45:00,2018,league-d,0,0,589,463,Liechtenstein,North Macedonia,0,2,post,STATUS_FULL_TIME
+505566,2018-11-17 15:00:00,2018,league-c,0,0,6757,6775,Serbia,Montenegro,2,1,post,STATUS_FULL_TIME
+505470,2018-11-17 18:00:00,2018,league-d,0,0,581,447,Azerbaijan,Faroe Islands,2,0,post,STATUS_FULL_TIME
+505471,2018-11-17 18:00:00,2018,league-d,0,0,453,18272,Malta,Kosovo,0,5,post,STATUS_FULL_TIME
+505537,2018-11-17 18:00:00,2018,league-b,0,0,465,466,Turkey,Sweden,0,1,post,STATUS_FULL_TIME
+505564,2018-11-17 20:45:00,2018,league-c,0,0,473,460,Romania,Lithuania,3,0,post,STATUS_FULL_TIME
+505565,2018-11-17 20:45:00,2018,league-c,0,0,585,580,Albania,Scotland,0,4,post,STATUS_FULL_TIME
+505513,2018-11-17 20:45:00,2018,league-a,0,0,162,482,Italy,Portugal,0,0,post,STATUS_FULL_TIME
+505512,2018-11-18 15:00:00,2018,league-a,0,0,448,477,England,Croatia,2,1,post,STATUS_FULL_TIME
+505469,2018-11-18 18:00:00,2018,league-d,0,0,483,582,Moldova,Luxembourg,1,1,post,STATUS_FULL_TIME
+505536,2018-11-18 18:00:00,2018,league-b,0,0,586,474,Northern Ireland,Austria,1,2,post,STATUS_FULL_TIME
+505468,2018-11-18 18:00:00,2018,league-d,0,0,588,583,San Marino,Belarus,0,2,post,STATUS_FULL_TIME
+505562,2018-11-18 20:45:00,2018,league-c,0,0,455,444,Greece,Estonia,0,1,post,STATUS_FULL_TIME
+505563,2018-11-18 20:45:00,2018,league-c,0,0,480,458,Hungary,Finland,2,0,post,STATUS_FULL_TIME
+505511,2018-11-18 20:45:00,2018,league-a,0,0,475,459,Switzerland,Belgium,5,2,post,STATUS_FULL_TIME
+505467,2018-11-19 18:00:00,2018,league-d,0,0,587,456,Andorra,Latvia,0,0,post,STATUS_FULL_TIME
+505466,2018-11-19 18:00:00,2018,league-d,0,0,584,2619,Georgia,Kazakhstan,2,1,post,STATUS_FULL_TIME
+505464,2018-11-19 20:45:00,2018,league-d,0,0,589,579,Liechtenstein,Armenia,2,2,post,STATUS_FULL_TIME
+505465,2018-11-19 20:45:00,2018,league-d,0,0,463,16721,North Macedonia,Gibraltar,4,0,post,STATUS_FULL_TIME
+505510,2018-11-19 20:45:00,2018,league-a,0,0,481,449,Germany,Netherlands,2,2,post,STATUS_FULL_TIME
+505560,2018-11-19 20:45:00,2018,league-c,0,0,445,464,Cyprus,Norway,0,2,post,STATUS_FULL_TIME
+505535,2018-11-19 20:45:00,2018,league-b,0,0,450,468,Czech Republic,Slovakia,1,0,post,STATUS_FULL_TIME
+505561,2018-11-19 20:45:00,2018,league-c,0,0,462,472,Bulgaria,Slovenia,1,1,post,STATUS_FULL_TIME
+505534,2018-11-19 20:45:00,2018,league-b,0,0,479,476,Denmark,Republic of Ireland,0,0,post,STATUS_FULL_TIME
+505462,2018-11-20 20:45:00,2018,league-d,0,0,18272,581,Kosovo,Azerbaijan,4,0,post,STATUS_FULL_TIME
+505463,2018-11-20 20:45:00,2018,league-d,0,0,453,447,Malta,Faroe Islands,1,1,post,STATUS_FULL_TIME
+505559,2018-11-20 20:45:00,2018,league-c,0,0,6775,473,Montenegro,Romania,0,1,post,STATUS_FULL_TIME
+505599,2018-11-20 20:45:00,2018,league-a,0,0,482,471,Portugal,Poland,1,1,post,STATUS_FULL_TIME
+505557,2018-11-20 20:45:00,2018,league-c,0,0,580,461,Scotland,Israel,3,2,post,STATUS_FULL_TIME
+505558,2018-11-20 20:45:00,2018,league-c,0,0,6757,460,Serbia,Lithuania,4,1,post,STATUS_FULL_TIME
+505533,2018-11-20 20:45:00,2018,league-b,0,0,466,454,Sweden,Russia,2,0,post,STATUS_FULL_TIME
+529096,2019-06-05 20:45:00,2018,semifinals,1,0,482,475,Portugal,Switzerland,3,1,post,STATUS_FULL_TIME
+529095,2019-06-06 20:45:00,2018,semifinals,1,0,449,448,Netherlands,England,3,1,post,STATUS_FINAL_AET
+540882,2019-06-09 15:00:00,2018,third-place-match,0,0,475,448,Switzerland,England,0,0,post,STATUS_FINAL_PEN
+540881,2019-06-09 20:45:00,2018,final,1,0,482,449,Portugal,Netherlands,1,0,post,STATUS_FULL_TIME
+570786,2020-09-03 18:00:00,2020,group-stage,0,0,456,587,Latvia,Andorra,0,0,post,STATUS_FULL_TIME
+570792,2020-09-03 20:45:00,2020,group-stage,0,0,454,6757,Russia,Serbia,3,1,post,STATUS_FULL_TIME
+570788,2020-09-03 20:45:00,2020,group-stage,0,0,465,480,Turkey,Hungary,0,1,post,STATUS_FULL_TIME
+570787,2020-09-03 20:45:00,2020,group-stage,0,0,472,455,Slovenia,Greece,0,0,post,STATUS_FULL_TIME
+570794,2020-09-03 20:45:00,2020,group-stage,0,0,457,475,Ukraine,Switzerland,2,1,post,STATUS_FULL_TIME
+570789,2020-09-03 20:45:00,2020,group-stage,0,0,483,18272,Moldova,Kosovo,1,1,post,STATUS_FULL_TIME
+570795,2020-09-03 20:45:00,2020,group-stage,0,0,458,578,Finland,Wales,0,1,post,STATUS_FULL_TIME
+570790,2020-09-03 20:45:00,2020,group-stage,0,0,447,453,Faroe Islands,Malta,3,2,post,STATUS_FULL_TIME
+570791,2020-09-03 20:45:00,2020,group-stage,0,0,462,476,Bulgaria,Republic of Ireland,1,1,post,STATUS_FULL_TIME
+570793,2020-09-03 20:45:00,2020,group-stage,0,0,481,164,Germany,Spain,1,1,post,STATUS_FULL_TIME
+570783,2020-09-04 18:00:00,2020,group-stage,0,0,460,2619,Lithuania,Kazakhstan,0,2,post,STATUS_FULL_TIME
+570781,2020-09-04 20:45:00,2020,group-stage,0,0,468,450,Slovakia,Czech Republic,1,3,post,STATUS_FULL_TIME
+570782,2020-09-04 20:45:00,2020,group-stage,0,0,580,461,Scotland,Israel,1,1,post,STATUS_FULL_TIME
+570779,2020-09-04 20:45:00,2020,group-stage,0,0,464,474,Norway,Austria,1,2,post,STATUS_FULL_TIME
+570784,2020-09-04 20:45:00,2020,group-stage,0,0,473,586,Romania,Northern Ireland,1,1,post,STATUS_FULL_TIME
+570780,2020-09-04 20:45:00,2020,group-stage,0,0,162,452,Italy,Bosnia and Herzegovina,1,1,post,STATUS_FULL_TIME
+570778,2020-09-04 20:45:00,2020,group-stage,0,0,583,585,Belarus,Albania,0,2,post,STATUS_FULL_TIME
+570785,2020-09-04 20:45:00,2020,group-stage,0,0,449,471,Netherlands,Poland,1,0,post,STATUS_FULL_TIME
+570777,2020-09-05 15:00:00,2020,group-stage,0,0,16721,588,Gibraltar,San Marino,1,0,post,STATUS_FULL_TIME
+570776,2020-09-05 15:00:00,2020,group-stage,0,0,463,579,North Macedonia,Armenia,2,1,post,STATUS_FULL_TIME
+570772,2020-09-05 18:00:00,2020,group-stage,0,0,470,448,Iceland,England,0,1,post,STATUS_FULL_TIME
+570774,2020-09-05 18:00:00,2020,group-stage,0,0,581,582,Azerbaijan,Luxembourg,1,2,post,STATUS_FULL_TIME
+570775,2020-09-05 18:00:00,2020,group-stage,0,0,445,6775,Cyprus,Montenegro,0,2,post,STATUS_FULL_TIME
+570773,2020-09-05 18:00:00,2020,group-stage,0,0,444,584,Estonia,Georgia,0,1,post,STATUS_FULL_TIME
+570771,2020-09-05 20:45:00,2020,group-stage,0,0,466,478,Sweden,France,0,1,post,STATUS_FULL_TIME
+570770,2020-09-05 20:45:00,2020,group-stage,0,0,482,477,Portugal,Croatia,4,1,post,STATUS_FULL_TIME
+570769,2020-09-05 20:45:00,2020,group-stage,0,0,479,459,Denmark,Belgium,0,2,post,STATUS_FULL_TIME
+570768,2020-09-06 15:00:00,2020,group-stage,0,0,587,447,Andorra,Faroe Islands,0,1,post,STATUS_FULL_TIME
+570767,2020-09-06 15:00:00,2020,group-stage,0,0,578,462,Wales,Bulgaria,1,0,post,STATUS_FULL_TIME
+570766,2020-09-06 18:00:00,2020,group-stage,0,0,480,454,Hungary,Russia,2,3,post,STATUS_FULL_TIME
+570764,2020-09-06 18:00:00,2020,group-stage,0,0,476,458,Republic of Ireland,Finland,0,1,post,STATUS_FULL_TIME
+570765,2020-09-06 18:00:00,2020,group-stage,0,0,472,483,Slovenia,Moldova,1,0,post,STATUS_FULL_TIME
+570759,2020-09-06 20:45:00,2020,group-stage,0,0,475,481,Switzerland,Germany,1,1,post,STATUS_FULL_TIME
+570762,2020-09-06 20:45:00,2020,group-stage,0,0,6757,465,Serbia,Turkey,0,0,post,STATUS_FULL_TIME
+570763,2020-09-06 20:45:00,2020,group-stage,0,0,164,457,Spain,Ukraine,4,0,post,STATUS_FULL_TIME
+570760,2020-09-06 20:45:00,2020,group-stage,0,0,18272,455,Kosovo,Greece,1,2,post,STATUS_FULL_TIME
+570761,2020-09-06 20:45:00,2020,group-stage,0,0,453,456,Malta,Latvia,1,1,post,STATUS_FULL_TIME
+570758,2020-09-07 16:00:00,2020,group-stage,0,0,2619,583,Kazakhstan,Belarus,1,2,post,STATUS_FULL_TIME
+570751,2020-09-07 20:45:00,2020,group-stage,0,0,449,162,Netherlands,Italy,0,1,post,STATUS_FULL_TIME
+570752,2020-09-07 20:45:00,2020,group-stage,0,0,585,460,Albania,Lithuania,0,1,post,STATUS_FULL_TIME
+570755,2020-09-07 20:45:00,2020,group-stage,0,0,474,473,Austria,Romania,2,3,post,STATUS_FULL_TIME
+570754,2020-09-07 20:45:00,2020,group-stage,0,0,452,471,Bosnia and Herzegovina,Poland,1,2,post,STATUS_FULL_TIME
+570756,2020-09-07 20:45:00,2020,group-stage,0,0,450,580,Czech Republic,Scotland,1,2,post,STATUS_FULL_TIME
+570757,2020-09-07 20:45:00,2020,group-stage,0,0,461,468,Israel,Slovakia,1,1,post,STATUS_FULL_TIME
+570753,2020-09-07 20:45:00,2020,group-stage,0,0,586,464,Northern Ireland,Norway,1,5,post,STATUS_FULL_TIME
+570750,2020-09-08 18:00:00,2020,group-stage,0,0,584,463,Georgia,North Macedonia,1,1,post,STATUS_FULL_TIME
+570749,2020-09-08 18:00:00,2020,group-stage,0,0,579,444,Armenia,Estonia,2,0,post,STATUS_FULL_TIME
+570745,2020-09-08 20:45:00,2020,group-stage,0,0,459,470,Belgium,Iceland,5,1,post,STATUS_FULL_TIME
+570742,2020-09-08 20:45:00,2020,group-stage,0,0,445,581,Cyprus,Azerbaijan,0,1,post,STATUS_FULL_TIME
+570744,2020-09-08 20:45:00,2020,group-stage,0,0,479,448,Denmark,England,0,0,post,STATUS_FULL_TIME
+570743,2020-09-08 20:45:00,2020,group-stage,0,0,478,477,France,Croatia,4,2,post,STATUS_FULL_TIME
+570747,2020-09-08 20:45:00,2020,group-stage,0,0,582,6775,Luxembourg,Montenegro,0,1,post,STATUS_FULL_TIME
+570746,2020-09-08 20:45:00,2020,group-stage,0,0,588,589,San Marino,Liechtenstein,0,2,post,STATUS_FULL_TIME
+570748,2020-09-08 20:45:00,2020,group-stage,0,0,466,482,Sweden,Portugal,0,2,post,STATUS_FULL_TIME
+570725,2020-10-10 15:00:00,2020,group-stage,0,0,582,445,Luxembourg,Cyprus,2,0,post,STATUS_FULL_TIME
+570723,2020-10-10 15:00:00,2020,group-stage,0,0,6775,581,Montenegro,Azerbaijan,2,0,post,STATUS_FULL_TIME
+570735,2020-10-10 18:00:00,2020,group-stage,0,0,589,16721,Liechtenstein,Gibraltar,0,1,post,STATUS_FULL_TIME
+570728,2020-10-10 18:00:00,2020,group-stage,0,0,447,456,Faroe Islands,Latvia,1,1,post,STATUS_FULL_TIME
+570729,2020-10-10 20:45:00,2020,group-stage,0,0,587,453,Andorra,Malta,0,0,post,STATUS_FULL_TIME
+570718,2020-10-10 20:45:00,2020,group-stage,0,0,164,475,Spain,Switzerland,1,0,post,STATUS_FULL_TIME
+570715,2020-10-10 20:45:00,2020,group-stage,0,0,457,481,Ukraine,Germany,1,2,post,STATUS_FULL_TIME
+570721,2020-10-11 15:00:00,2020,group-stage,0,0,2619,585,Kazakhstan,Albania,0,0,post,STATUS_FULL_TIME
+570722,2020-10-11 15:00:00,2020,group-stage,0,0,476,578,Republic of Ireland,Wales,0,0,post,STATUS_FULL_TIME
+570719,2020-10-11 18:00:00,2020,group-stage,0,0,460,583,Lithuania,Belarus,2,2,post,STATUS_FULL_TIME
+570720,2020-10-11 18:00:00,2020,group-stage,0,0,458,462,Finland,Bulgaria,2,0,post,STATUS_FULL_TIME
+570739,2020-10-11 18:00:00,2020,group-stage,0,0,464,473,Norway,Romania,4,0,post,STATUS_FULL_TIME
+570738,2020-10-11 18:00:00,2020,group-stage,0,0,444,463,Estonia,North Macedonia,3,3,post,STATUS_FULL_TIME
+570724,2020-10-11 18:00:00,2020,group-stage,0,0,448,459,England,Belgium,2,1,post,STATUS_FULL_TIME
+570731,2020-10-11 18:00:00,2020,group-stage,0,0,477,466,Croatia,Sweden,2,1,post,STATUS_FULL_TIME
+570737,2020-10-11 18:00:00,2020,group-stage,0,0,452,449,Bosnia and Herzegovina,Netherlands,0,0,post,STATUS_FULL_TIME
+570741,2020-10-11 18:00:00,2020,group-stage,0,0,579,584,Armenia,Georgia,2,2,post,STATUS_FULL_TIME
+570727,2020-10-11 20:45:00,2020,group-stage,0,0,6757,480,Serbia,Hungary,0,1,post,STATUS_FULL_TIME
+570740,2020-10-11 20:45:00,2020,group-stage,0,0,580,468,Scotland,Slovakia,1,0,post,STATUS_FULL_TIME
+570732,2020-10-11 20:45:00,2020,group-stage,0,0,454,465,Russia,Turkey,1,1,post,STATUS_FULL_TIME
+570736,2020-10-11 20:45:00,2020,group-stage,0,0,471,162,Poland,Italy,0,0,post,STATUS_FULL_TIME
+570733,2020-10-11 20:45:00,2020,group-stage,0,0,586,474,Northern Ireland,Austria,0,1,post,STATUS_FULL_TIME
+570734,2020-10-11 20:45:00,2020,group-stage,0,0,461,450,Israel,Czech Republic,1,2,post,STATUS_FULL_TIME
+570726,2020-10-11 20:45:00,2020,group-stage,0,0,470,479,Iceland,Denmark,0,3,post,STATUS_FULL_TIME
+570716,2020-10-11 20:45:00,2020,group-stage,0,0,455,483,Greece,Moldova,2,0,post,STATUS_FULL_TIME
+570730,2020-10-11 20:45:00,2020,group-stage,0,0,478,482,France,Portugal,0,0,post,STATUS_FULL_TIME
+570717,2020-10-11 20:45:00,2020,group-stage,0,0,18272,472,Kosovo,Slovenia,0,1,post,STATUS_FULL_TIME
+570705,2020-10-13 18:00:00,2020,group-stage,0,0,581,445,Azerbaijan,Cyprus,0,0,post,STATUS_FULL_TIME
+570702,2020-10-13 18:00:00,2020,group-stage,0,0,456,453,Latvia,Malta,0,1,post,STATUS_FULL_TIME
+570701,2020-10-13 20:45:00,2020,group-stage,0,0,6775,582,Montenegro,Luxembourg,1,2,post,STATUS_FULL_TIME
+570713,2020-10-13 20:45:00,2020,group-stage,0,0,589,588,Liechtenstein,San Marino,0,0,post,STATUS_FULL_TIME
+570693,2020-10-13 20:45:00,2020,group-stage,0,0,457,164,Ukraine,Spain,1,0,post,STATUS_FULL_TIME
+570696,2020-10-13 20:45:00,2020,group-stage,0,0,447,587,Faroe Islands,Andorra,2,0,post,STATUS_FULL_TIME
+570694,2020-10-13 20:45:00,2020,group-stage,0,0,481,475,Germany,Switzerland,3,3,post,STATUS_FULL_TIME
+570691,2020-10-14 18:00:00,2020,group-stage,0,0,458,476,Finland,Republic of Ireland,1,0,post,STATUS_FULL_TIME
+570688,2020-10-14 18:00:00,2020,group-stage,0,0,460,585,Lithuania,Albania,0,0,post,STATUS_FULL_TIME
+570714,2020-10-14 20:45:00,2020,group-stage,0,0,580,450,Scotland,Czech Republic,1,0,post,STATUS_FULL_TIME
+570700,2020-10-14 20:45:00,2020,group-stage,0,0,454,480,Russia,Hungary,0,0,post,STATUS_FULL_TIME
+570706,2020-10-14 20:45:00,2020,group-stage,0,0,473,474,Romania,Austria,0,1,post,STATUS_FULL_TIME
+570704,2020-10-14 20:45:00,2020,group-stage,0,0,482,466,Portugal,Sweden,3,0,post,STATUS_FULL_TIME
+570707,2020-10-14 20:45:00,2020,group-stage,0,0,471,452,Poland,Bosnia and Herzegovina,3,0,post,STATUS_FULL_TIME
+570712,2020-10-14 20:45:00,2020,group-stage,0,0,464,586,Norway,Northern Ireland,1,0,post,STATUS_FULL_TIME
+570711,2020-10-14 20:45:00,2020,group-stage,0,0,463,584,North Macedonia,Georgia,1,1,post,STATUS_FULL_TIME
+570692,2020-10-14 20:45:00,2020,group-stage,0,0,483,472,Moldova,Slovenia,0,4,post,STATUS_FULL_TIME
+570697,2020-10-14 20:45:00,2020,group-stage,0,0,470,459,Iceland,Belgium,1,2,post,STATUS_FULL_TIME
+570690,2020-10-14 20:45:00,2020,group-stage,0,0,455,18272,Greece,Kosovo,0,0,post,STATUS_FULL_TIME
+570710,2020-10-14 20:45:00,2020,group-stage,0,0,444,579,Estonia,Armenia,1,1,post,STATUS_FULL_TIME
+570698,2020-10-14 20:45:00,2020,group-stage,0,0,448,479,England,Denmark,0,1,post,STATUS_FULL_TIME
+570699,2020-10-14 20:45:00,2020,group-stage,0,0,477,478,Croatia,France,1,2,post,STATUS_FULL_TIME
+570695,2020-10-14 20:45:00,2020,group-stage,0,0,462,578,Bulgaria,Wales,0,1,post,STATUS_FULL_TIME
+570689,2020-10-14 20:45:00,2020,group-stage,0,0,583,2619,Belarus,Kazakhstan,2,0,post,STATUS_FULL_TIME
+570708,2020-10-14 20:45:00,2020,group-stage,0,0,468,461,Slovakia,Israel,2,3,post,STATUS_FULL_TIME
+570709,2020-10-14 20:45:00,2020,group-stage,0,0,162,449,Italy,Netherlands,1,1,post,STATUS_FULL_TIME
+570703,2020-10-14 20:45:00,2020,group-stage,0,0,465,6757,Turkey,Serbia,2,2,post,STATUS_FULL_TIME
+570673,2020-11-14 15:00:00,2020,group-stage,0,0,588,16721,San Marino,Gibraltar,0,0,post,STATUS_FULL_TIME
+570669,2020-11-14 15:00:00,2020,group-stage,0,0,453,587,Malta,Andorra,3,1,post,STATUS_FULL_TIME
+570687,2020-11-14 18:00:00,2020,group-stage,0,0,581,6775,Azerbaijan,Montenegro,0,0,post,STATUS_FULL_TIME
+570685,2020-11-14 18:00:00,2020,group-stage,0,0,445,582,Cyprus,Luxembourg,2,1,post,STATUS_FULL_TIME
+570665,2020-11-14 18:00:00,2020,group-stage,0,0,456,447,Latvia,Faroe Islands,1,1,post,STATUS_FULL_TIME
+570678,2020-11-14 20:45:00,2020,group-stage,0,0,481,457,Germany,Ukraine,3,1,post,STATUS_FULL_TIME
+570682,2020-11-14 20:45:00,2020,group-stage,0,0,482,478,Portugal,France,0,1,post,STATUS_FULL_TIME
+570680,2020-11-14 20:45:00,2020,group-stage,0,0,466,477,Sweden,Croatia,2,1,post,STATUS_FULL_TIME
+570677,2020-11-14 20:45:00,2020,group-stage,0,0,475,164,Switzerland,Spain,1,1,post,STATUS_FULL_TIME
+570671,2020-11-15 15:00:00,2020,group-stage,0,0,463,444,North Macedonia,Estonia,2,1,post,STATUS_FULL_TIME
+570668,2020-11-15 15:00:00,2020,group-stage,0,0,468,580,Slovakia,Scotland,1,0,post,STATUS_FULL_TIME
+570676,2020-11-15 18:00:00,2020,group-stage,0,0,578,476,Wales,Republic of Ireland,1,0,post,STATUS_FULL_TIME
+570667,2020-11-15 18:00:00,2020,group-stage,0,0,465,454,Turkey,Russia,3,2,post,STATUS_FULL_TIME
+570661,2020-11-15 18:00:00,2020,group-stage,0,0,449,452,Netherlands,Bosnia and Herzegovina,3,1,post,STATUS_FULL_TIME
+570684,2020-11-15 18:00:00,2020,group-stage,0,0,585,2619,Albania,Kazakhstan,3,1,post,STATUS_FULL_TIME
+570672,2020-11-15 18:00:00,2020,group-stage,0,0,462,458,Bulgaria,Finland,1,2,post,STATUS_FULL_TIME
+570686,2020-11-15 18:00:00,2020,group-stage,0,0,583,460,Belarus,Lithuania,2,0,post,STATUS_FULL_TIME
+570679,2020-11-15 18:00:00,2020,group-stage,0,0,584,579,Georgia,Armenia,1,2,post,STATUS_FULL_TIME
+570674,2020-11-15 20:45:00,2020,group-stage,0,0,483,455,Moldova,Greece,0,2,post,STATUS_FULL_TIME
+570675,2020-11-15 20:45:00,2020,group-stage,0,0,472,18272,Slovenia,Kosovo,2,1,post,STATUS_FULL_TIME
+570666,2020-11-15 20:45:00,2020,group-stage,0,0,473,464,Romania,Norway,3,0,post,STATUS_FULL_TIME
+570664,2020-11-15 20:45:00,2020,group-stage,0,0,480,6757,Hungary,Serbia,1,1,post,STATUS_FULL_TIME
+570663,2020-11-15 20:45:00,2020,group-stage,0,0,162,471,Italy,Poland,2,0,post,STATUS_FULL_TIME
+570683,2020-11-15 20:45:00,2020,group-stage,0,0,479,470,Denmark,Iceland,2,1,post,STATUS_FULL_TIME
+570670,2020-11-15 20:45:00,2020,group-stage,0,0,450,461,Czech Republic,Israel,1,0,post,STATUS_FULL_TIME
+570681,2020-11-15 20:45:00,2020,group-stage,0,0,459,448,Belgium,England,2,0,post,STATUS_FULL_TIME
+570662,2020-11-15 20:45:00,2020,group-stage,0,0,474,586,Austria,Northern Ireland,2,1,post,STATUS_FULL_TIME
+570650,2020-11-17 20:45:00,2020,group-stage,0,0,475,457,Switzerland,Ukraine,3,0,post,STATUS_FULL_TIME
+570646,2020-11-17 20:45:00,2020,group-stage,0,0,164,481,Spain,Germany,6,0,post,STATUS_FULL_TIME
+570654,2020-11-17 20:45:00,2020,group-stage,0,0,6775,445,Montenegro,Cyprus,4,0,post,STATUS_FULL_TIME
+570653,2020-11-17 20:45:00,2020,group-stage,0,0,582,581,Luxembourg,Azerbaijan,0,0,post,STATUS_FULL_TIME
+570634,2020-11-17 20:45:00,2020,group-stage,0,0,453,447,Malta,Faroe Islands,1,1,post,STATUS_FULL_TIME
+570656,2020-11-17 20:45:00,2020,group-stage,0,0,478,466,France,Sweden,4,2,post,STATUS_FULL_TIME
+570655,2020-11-17 20:45:00,2020,group-stage,0,0,477,482,Croatia,Portugal,2,3,post,STATUS_FULL_TIME
+570636,2020-11-17 20:45:00,2020,group-stage,0,0,587,456,Andorra,Latvia,0,5,post,STATUS_FULL_TIME
+570647,2020-11-17 20:45:00,2020,group-stage,0,0,16721,589,Gibraltar,Liechtenstein,1,1,post,STATUS_FULL_TIME
+570659,2020-11-18 16:00:00,2020,group-stage,0,0,585,583,Albania,Belarus,3,2,post,STATUS_FULL_TIME
+570660,2020-11-18 16:00:00,2020,group-stage,0,0,2619,460,Kazakhstan,Lithuania,1,2,post,STATUS_FULL_TIME
+570652,2020-11-18 18:00:00,2020,group-stage,0,0,579,463,Armenia,North Macedonia,1,0,post,STATUS_FULL_TIME
+570651,2020-11-18 18:00:00,2020,group-stage,0,0,584,444,Georgia,Estonia,0,0,post,STATUS_FULL_TIME
+570644,2020-11-18 20:45:00,2020,group-stage,0,0,476,462,Republic of Ireland,Bulgaria,0,0,post,STATUS_FULL_TIME
+570637,2020-11-18 20:45:00,2020,group-stage,0,0,471,449,Poland,Netherlands,1,2,post,STATUS_FULL_TIME
+570635,2020-11-18 20:45:00,2020,group-stage,0,0,452,162,Bosnia and Herzegovina,Italy,0,2,post,STATUS_FULL_TIME
+570645,2020-11-18 20:45:00,2020,group-stage,0,0,578,458,Wales,Finland,3,1,post,STATUS_FULL_TIME
+570639,2020-11-18 20:45:00,2020,group-stage,0,0,586,473,Northern Ireland,Romania,1,1,post,STATUS_FULL_TIME
+570640,2020-11-18 20:45:00,2020,group-stage,0,0,6757,454,Serbia,Russia,5,0,post,STATUS_FULL_TIME
+570648,2020-11-18 20:45:00,2020,group-stage,0,0,18272,483,Kosovo,Moldova,1,0,post,STATUS_FULL_TIME
+570657,2020-11-18 20:45:00,2020,group-stage,0,0,459,479,Belgium,Denmark,4,2,post,STATUS_FULL_TIME
+570643,2020-11-18 20:45:00,2020,group-stage,0,0,480,465,Hungary,Turkey,2,0,post,STATUS_FULL_TIME
+570638,2020-11-18 20:45:00,2020,group-stage,0,0,474,464,Austria,Norway,1,1,post,STATUS_FULL_TIME
+570642,2020-11-18 20:45:00,2020,group-stage,0,0,450,468,Czech Republic,Slovakia,2,0,post,STATUS_FULL_TIME
+570641,2020-11-18 20:45:00,2020,group-stage,0,0,461,580,Israel,Scotland,1,0,post,STATUS_FULL_TIME
+570649,2020-11-18 20:45:00,2020,group-stage,0,0,455,472,Greece,Slovenia,0,0,post,STATUS_FULL_TIME
+570658,2020-11-18 20:45:00,2020,group-stage,0,0,448,470,England,Iceland,4,0,post,STATUS_FULL_TIME
+589987,2021-10-06 20:45:00,2020,semifinals,1,0,162,164,Italy,Spain,1,2,post,STATUS_FULL_TIME
+589986,2021-10-07 20:45:00,2020,semifinals,1,0,459,478,Belgium,France,2,3,post,STATUS_FULL_TIME
+589984,2021-10-10 15:00:00,2020,3rd-place-match,1,0,162,459,Italy,Belgium,2,1,post,STATUS_FULL_TIME
+589985,2021-10-10 20:45:00,2020,final,1,0,164,478,Spain,France,1,2,post,STATUS_FULL_TIME
+622105,2022-03-24 18:00:00,2022,relegation-playoffs,1,0,444,445,Estonia,Cyprus,0,0,post,STATUS_FULL_TIME
+622106,2022-03-24 18:00:00,2022,relegation-playoffs,1,0,483,2619,Moldova,Kazakhstan,1,2,post,STATUS_FULL_TIME
+622104,2022-03-29 16:00:00,2022,relegation-playoffs,1,0,2619,483,Kazakhstan,Moldova,0,1,post,STATUS_FINAL_PEN
+622103,2022-03-29 18:00:00,2022,relegation-playoffs,1,0,445,444,Cyprus,Estonia,2,0,post,STATUS_FULL_TIME
+624153,2022-06-01 18:00:00,2022,group-stage,0,0,471,578,Poland,Wales,2,1,post,STATUS_FULL_TIME
+624164,2022-06-02 18:00:00,2022,group-stage,0,0,584,16721,Georgia,Gibraltar,4,0,post,STATUS_FULL_TIME
+624161,2022-06-02 18:00:00,2022,group-stage,0,0,444,588,Estonia,San Marino,2,0,post,STATUS_FULL_TIME
+624156,2022-06-02 18:00:00,2022,group-stage,0,0,445,18272,Cyprus,Kosovo,0,2,post,STATUS_FULL_TIME
+624157,2022-06-02 18:00:00,2022,group-stage,0,0,462,463,Bulgaria,North Macedonia,1,1,post,STATUS_FULL_TIME
+624163,2022-06-02 20:45:00,2022,group-stage,0,0,450,475,Czech Republic,Switzerland,2,1,post,STATUS_FULL_TIME
+624155,2022-06-02 20:45:00,2022,group-stage,0,0,461,470,Israel,Iceland,2,2,post,STATUS_FULL_TIME
+624154,2022-06-02 20:45:00,2022,group-stage,0,0,586,455,Northern Ireland,Greece,0,1,post,STATUS_FULL_TIME
+624158,2022-06-02 20:45:00,2022,group-stage,0,0,6757,464,Serbia,Norway,0,1,post,STATUS_FULL_TIME
+624162,2022-06-02 20:45:00,2022,group-stage,0,0,472,466,Slovenia,Sweden,0,2,post,STATUS_FULL_TIME
+624159,2022-06-02 20:45:00,2022,group-stage,0,0,164,482,Spain,Portugal,1,1,post,STATUS_FULL_TIME
+624165,2022-06-03 16:00:00,2022,group-stage,0,0,2619,581,Kazakhstan,Azerbaijan,2,0,post,STATUS_FULL_TIME
+624147,2022-06-03 18:00:00,2022,group-stage,0,0,456,587,Latvia,Andorra,3,0,post,STATUS_FULL_TIME
+624027,2022-06-03 20:45:00,2022,group-stage,0,0,583,468,Belarus,Slovakia,0,1,post,STATUS_FULL_TIME
+624151,2022-06-03 20:45:00,2022,group-stage,0,0,459,449,Belgium,Netherlands,1,4,post,STATUS_FULL_TIME
+624148,2022-06-03 20:45:00,2022,group-stage,0,0,477,474,Croatia,Austria,0,3,post,STATUS_FULL_TIME
+624150,2022-06-03 20:45:00,2022,group-stage,0,0,478,479,France,Denmark,1,2,post,STATUS_FULL_TIME
+624152,2022-06-03 20:45:00,2022,group-stage,0,0,589,483,Liechtenstein,Moldova,0,2,post,STATUS_FULL_TIME
+624119,2022-06-04 15:00:00,2022,group-stage,0,0,579,476,Armenia,Republic of Ireland,1,0,post,STATUS_FULL_TIME
+624142,2022-06-04 18:00:00,2022,group-stage,0,0,480,448,Hungary,England,1,0,post,STATUS_FULL_TIME
+624143,2022-06-04 18:00:00,2022,group-stage,0,0,460,582,Lithuania,Luxembourg,0,2,post,STATUS_FULL_TIME
+624141,2022-06-04 18:00:00,2022,group-stage,0,0,458,452,Finland,Bosnia and Herzegovina,1,1,post,STATUS_FULL_TIME
+624137,2022-06-04 20:45:00,2022,group-stage,0,0,465,447,Turkey,Faroe Islands,4,0,post,STATUS_FULL_TIME
+624138,2022-06-04 20:45:00,2022,group-stage,0,0,162,481,Italy,Germany,1,1,post,STATUS_FULL_TIME
+624139,2022-06-04 20:45:00,2022,group-stage,0,0,6775,473,Montenegro,Romania,2,0,post,STATUS_FULL_TIME
+624145,2022-06-05 15:00:00,2022,group-stage,0,0,588,453,San Marino,Malta,0,2,post,STATUS_FULL_TIME
+624146,2022-06-05 18:00:00,2022,group-stage,0,0,445,586,Cyprus,Northern Ireland,0,0,post,STATUS_FULL_TIME
+624136,2022-06-05 18:00:00,2022,group-stage,0,0,16721,463,Gibraltar,North Macedonia,0,2,post,STATUS_FULL_TIME
+624133,2022-06-05 20:45:00,2022,group-stage,0,0,6757,472,Serbia,Slovenia,4,1,post,STATUS_FULL_TIME
+624135,2022-06-05 20:45:00,2022,group-stage,0,0,482,475,Portugal,Switzerland,4,0,post,STATUS_FULL_TIME
+624132,2022-06-05 20:45:00,2022,group-stage,0,0,466,464,Sweden,Norway,1,2,post,STATUS_FULL_TIME
+624134,2022-06-05 20:45:00,2022,group-stage,0,0,450,164,Czech Republic,Spain,2,2,post,STATUS_FULL_TIME
+624130,2022-06-05 20:45:00,2022,group-stage,0,0,462,584,Bulgaria,Georgia,2,5,post,STATUS_FULL_TIME
+624131,2022-06-05 20:45:00,2022,group-stage,0,0,18272,455,Kosovo,Greece,0,1,post,STATUS_FULL_TIME
+624124,2022-06-06 18:00:00,2022,group-stage,0,0,456,589,Latvia,Liechtenstein,1,0,post,STATUS_FULL_TIME
+624128,2022-06-06 20:45:00,2022,group-stage,0,0,587,483,Andorra,Moldova,0,0,post,STATUS_FULL_TIME
+624121,2022-06-06 20:45:00,2022,group-stage,0,0,583,581,Belarus,Azerbaijan,0,0,post,STATUS_FULL_TIME
+624123,2022-06-06 20:45:00,2022,group-stage,0,0,477,478,Croatia,France,1,1,post,STATUS_FULL_TIME
+624120,2022-06-06 20:45:00,2022,group-stage,0,0,470,585,Iceland,Albania,1,1,post,STATUS_FULL_TIME
+624129,2022-06-06 20:45:00,2022,group-stage,0,0,468,2619,Slovakia,Kazakhstan,0,1,post,STATUS_FULL_TIME
+624122,2022-06-06 22:15:00,2022,group-stage,0,0,474,479,Austria,Denmark,1,2,post,STATUS_FULL_TIME
+624115,2022-06-07 18:00:00,2022,group-stage,0,0,458,6775,Finland,Montenegro,2,0,post,STATUS_FULL_TIME
+624117,2022-06-07 20:45:00,2022,group-stage,0,0,460,465,Lithuania,Turkey,0,6,post,STATUS_FULL_TIME
+624113,2022-06-07 20:45:00,2022,group-stage,0,0,162,480,Italy,Hungary,2,1,post,STATUS_FULL_TIME
+624114,2022-06-07 20:45:00,2022,group-stage,0,0,447,582,Faroe Islands,Luxembourg,0,1,post,STATUS_FULL_TIME
+624116,2022-06-07 20:45:00,2022,group-stage,0,0,452,473,Bosnia and Herzegovina,Romania,1,0,post,STATUS_FULL_TIME
+624112,2022-06-07 20:45:00,2022,group-stage,0,0,481,448,Germany,England,1,1,post,STATUS_FULL_TIME
+624126,2022-06-08 20:45:00,2022,group-stage,0,0,459,471,Belgium,Poland,6,1,post,STATUS_FULL_TIME
+624140,2022-06-08 20:45:00,2022,group-stage,0,0,476,457,Republic of Ireland,Ukraine,0,1,post,STATUS_FULL_TIME
+624144,2022-06-08 20:45:00,2022,group-stage,0,0,580,579,Scotland,Armenia,2,0,post,STATUS_FULL_TIME
+624125,2022-06-08 20:45:00,2022,group-stage,0,0,578,449,Wales,Netherlands,1,2,post,STATUS_FULL_TIME
+624110,2022-06-09 20:45:00,2022,group-stage,0,0,453,444,Malta,Estonia,1,2,post,STATUS_FULL_TIME
+624108,2022-06-09 20:45:00,2022,group-stage,0,0,475,164,Switzerland,Spain,0,1,post,STATUS_FULL_TIME
+624106,2022-06-09 20:45:00,2022,group-stage,0,0,466,6757,Sweden,Serbia,0,1,post,STATUS_FULL_TIME
+624103,2022-06-09 20:45:00,2022,group-stage,0,0,482,450,Portugal,Czech Republic,2,0,post,STATUS_FULL_TIME
+624107,2022-06-09 20:45:00,2022,group-stage,0,0,464,472,Norway,Slovenia,0,0,post,STATUS_FULL_TIME
+624105,2022-06-09 20:45:00,2022,group-stage,0,0,18272,586,Kosovo,Northern Ireland,3,2,post,STATUS_FULL_TIME
+624109,2022-06-09 20:45:00,2022,group-stage,0,0,455,445,Greece,Cyprus,3,0,post,STATUS_FULL_TIME
+624102,2022-06-09 20:45:00,2022,group-stage,0,0,16721,462,Gibraltar,Bulgaria,1,1,post,STATUS_FULL_TIME
+624104,2022-06-09 20:45:00,2022,group-stage,0,0,463,584,North Macedonia,Georgia,0,3,post,STATUS_FULL_TIME
+624101,2022-06-10 18:00:00,2022,group-stage,0,0,581,468,Azerbaijan,Slovakia,0,1,post,STATUS_FULL_TIME
+624111,2022-06-10 18:00:00,2022,group-stage,0,0,483,456,Moldova,Latvia,2,4,post,STATUS_FULL_TIME
+624100,2022-06-10 20:45:00,2022,group-stage,0,0,583,2619,Belarus,Kazakhstan,1,1,post,STATUS_FULL_TIME
+624095,2022-06-10 20:45:00,2022,group-stage,0,0,474,478,Austria,France,1,1,post,STATUS_FULL_TIME
+624094,2022-06-10 20:45:00,2022,group-stage,0,0,479,477,Denmark,Croatia,0,1,post,STATUS_FULL_TIME
+624097,2022-06-10 20:45:00,2022,group-stage,0,0,585,461,Albania,Israel,1,2,post,STATUS_FULL_TIME
+624098,2022-06-10 20:45:00,2022,group-stage,0,0,587,589,Andorra,Liechtenstein,2,1,post,STATUS_FULL_TIME
+624085,2022-06-11 15:00:00,2022,group-stage,0,0,457,579,Ukraine,Armenia,3,0,post,STATUS_FULL_TIME
+624090,2022-06-11 18:00:00,2022,group-stage,0,0,447,460,Faroe Islands,Lithuania,2,1,post,STATUS_FULL_TIME
+624091,2022-06-11 18:00:00,2022,group-stage,0,0,476,580,Republic of Ireland,Scotland,3,0,post,STATUS_FULL_TIME
+624093,2022-06-11 20:45:00,2022,group-stage,0,0,578,459,Wales,Belgium,1,1,post,STATUS_FULL_TIME
+624099,2022-06-11 20:45:00,2022,group-stage,0,0,449,471,Netherlands,Poland,2,2,post,STATUS_FULL_TIME
+624092,2022-06-11 20:45:00,2022,group-stage,0,0,6775,452,Montenegro,Bosnia and Herzegovina,1,1,post,STATUS_FULL_TIME
+624086,2022-06-11 20:45:00,2022,group-stage,0,0,473,458,Romania,Finland,1,0,post,STATUS_FULL_TIME
+624087,2022-06-11 20:45:00,2022,group-stage,0,0,480,481,Hungary,Germany,1,1,post,STATUS_FULL_TIME
+624088,2022-06-11 20:45:00,2022,group-stage,0,0,448,162,England,Italy,0,0,post,STATUS_FULL_TIME
+624089,2022-06-11 20:45:00,2022,group-stage,0,0,582,465,Luxembourg,Turkey,0,2,post,STATUS_FULL_TIME
+624083,2022-06-12 15:00:00,2022,group-stage,0,0,586,445,Northern Ireland,Cyprus,2,2,post,STATUS_FULL_TIME
+624080,2022-06-12 18:00:00,2022,group-stage,0,0,584,462,Georgia,Bulgaria,0,0,post,STATUS_FULL_TIME
+624081,2022-06-12 18:00:00,2022,group-stage,0,0,463,16721,North Macedonia,Gibraltar,4,0,post,STATUS_FULL_TIME
+624082,2022-06-12 18:00:00,2022,group-stage,0,0,464,466,Norway,Sweden,3,2,post,STATUS_FULL_TIME
+624077,2022-06-12 20:45:00,2022,group-stage,0,0,475,482,Switzerland,Portugal,1,0,post,STATUS_FULL_TIME
+624076,2022-06-12 20:45:00,2022,group-stage,0,0,455,18272,Greece,Kosovo,2,0,post,STATUS_FULL_TIME
+624078,2022-06-12 20:45:00,2022,group-stage,0,0,453,588,Malta,San Marino,1,0,post,STATUS_FULL_TIME
+624079,2022-06-12 20:45:00,2022,group-stage,0,0,472,6757,Slovenia,Serbia,2,2,post,STATUS_FULL_TIME
+624075,2022-06-12 20:45:00,2022,group-stage,0,0,164,450,Spain,Czech Republic,2,0,post,STATUS_FULL_TIME
+624084,2022-06-13 16:00:00,2022,group-stage,0,0,2619,468,Kazakhstan,Slovakia,2,1,post,STATUS_FULL_TIME
+624073,2022-06-13 18:00:00,2022,group-stage,0,0,581,583,Azerbaijan,Belarus,2,0,post,STATUS_FULL_TIME
+624068,2022-06-13 20:45:00,2022,group-stage,0,0,479,474,Denmark,Austria,2,0,post,STATUS_FULL_TIME
+624070,2022-06-13 20:45:00,2022,group-stage,0,0,478,477,France,Croatia,0,1,post,STATUS_FULL_TIME
+624071,2022-06-13 20:45:00,2022,group-stage,0,0,470,461,Iceland,Israel,2,2,post,STATUS_FULL_TIME
+624066,2022-06-14 18:00:00,2022,group-stage,0,0,579,580,Armenia,Scotland,1,4,post,STATUS_FULL_TIME
+624074,2022-06-14 18:00:00,2022,group-stage,0,0,483,587,Moldova,Andorra,2,1,post,STATUS_FULL_TIME
+624065,2022-06-14 20:45:00,2022,group-stage,0,0,457,476,Ukraine,Republic of Ireland,1,1,post,STATUS_FULL_TIME
+624063,2022-06-14 20:45:00,2022,group-stage,0,0,465,460,Turkey,Lithuania,2,0,post,STATUS_FULL_TIME
+624064,2022-06-14 20:45:00,2022,group-stage,0,0,473,6775,Romania,Montenegro,0,3,post,STATUS_FULL_TIME
+624069,2022-06-14 20:45:00,2022,group-stage,0,0,471,459,Poland,Belgium,0,1,post,STATUS_FULL_TIME
+624072,2022-06-14 20:45:00,2022,group-stage,0,0,449,578,Netherlands,Wales,3,2,post,STATUS_FULL_TIME
+624062,2022-06-14 20:45:00,2022,group-stage,0,0,589,456,Liechtenstein,Latvia,0,2,post,STATUS_FULL_TIME
+624061,2022-06-14 20:45:00,2022,group-stage,0,0,481,162,Germany,Italy,5,2,post,STATUS_FULL_TIME
+624060,2022-06-14 20:45:00,2022,group-stage,0,0,448,480,England,Hungary,0,4,post,STATUS_FULL_TIME
+624059,2022-06-14 20:45:00,2022,group-stage,0,0,452,458,Bosnia and Herzegovina,Finland,3,2,post,STATUS_FULL_TIME
+624058,2022-06-14 20:45:00,2022,group-stage,0,0,582,447,Luxembourg,Faroe Islands,2,2,post,STATUS_FULL_TIME
+624118,2022-09-21 20:45:00,2022,group-stage,0,0,580,457,Scotland,Ukraine,3,0,post,STATUS_FULL_TIME
+624057,2022-09-22 16:00:00,2022,group-stage,0,0,2619,583,Kazakhstan,Belarus,2,1,post,STATUS_FULL_TIME
+624055,2022-09-22 18:00:00,2022,group-stage,0,0,456,483,Latvia,Moldova,1,2,post,STATUS_FULL_TIME
+624054,2022-09-22 20:45:00,2022,group-stage,0,0,471,449,Poland,Netherlands,0,2,post,STATUS_FULL_TIME
+624053,2022-09-22 20:45:00,2022,group-stage,0,0,465,582,Turkey,Luxembourg,3,3,post,STATUS_FULL_TIME
+624050,2022-09-22 20:45:00,2022,group-stage,0,0,468,581,Slovakia,Azerbaijan,1,2,post,STATUS_FULL_TIME
+624052,2022-09-22 20:45:00,2022,group-stage,0,0,460,447,Lithuania,Faroe Islands,1,1,post,STATUS_FULL_TIME
+624051,2022-09-22 20:45:00,2022,group-stage,0,0,477,479,Croatia,Denmark,2,1,post,STATUS_FULL_TIME
+624049,2022-09-22 20:45:00,2022,group-stage,0,0,478,474,France,Austria,2,0,post,STATUS_FULL_TIME
+624056,2022-09-22 20:45:00,2022,group-stage,0,0,459,578,Belgium,Wales,2,1,post,STATUS_FULL_TIME
+624048,2022-09-22 20:45:00,2022,group-stage,0,0,589,587,Liechtenstein,Andorra,0,2,post,STATUS_FULL_TIME
+624042,2022-09-23 18:00:00,2022,group-stage,0,0,444,453,Estonia,Malta,2,1,post,STATUS_FULL_TIME
+624046,2022-09-23 18:00:00,2022,group-stage,0,0,584,463,Georgia,North Macedonia,2,0,post,STATUS_FULL_TIME
+624043,2022-09-23 20:45:00,2022,group-stage,0,0,452,6775,Bosnia and Herzegovina,Montenegro,1,0,post,STATUS_FULL_TIME
+624040,2022-09-23 20:45:00,2022,group-stage,0,0,462,16721,Bulgaria,Gibraltar,5,1,post,STATUS_FULL_TIME
+624045,2022-09-23 20:45:00,2022,group-stage,0,0,458,473,Finland,Romania,1,1,post,STATUS_FULL_TIME
+624041,2022-09-23 20:45:00,2022,group-stage,0,0,481,480,Germany,Hungary,0,1,post,STATUS_FULL_TIME
+624039,2022-09-23 20:45:00,2022,group-stage,0,0,162,448,Italy,England,1,0,post,STATUS_FULL_TIME
+624047,2022-09-24 15:00:00,2022,group-stage,0,0,579,457,Armenia,Ukraine,0,5,post,STATUS_FULL_TIME
+624037,2022-09-24 18:00:00,2022,group-stage,0,0,472,464,Slovenia,Norway,2,1,post,STATUS_FULL_TIME
+624036,2022-09-24 18:00:00,2022,group-stage,0,0,586,18272,Northern Ireland,Kosovo,2,1,post,STATUS_FULL_TIME
+624032,2022-09-24 20:45:00,2022,group-stage,0,0,445,455,Cyprus,Greece,1,0,post,STATUS_FULL_TIME
+624033,2022-09-24 20:45:00,2022,group-stage,0,0,450,482,Czech Republic,Portugal,0,4,post,STATUS_FULL_TIME
+624031,2022-09-24 20:45:00,2022,group-stage,0,0,461,585,Israel,Albania,2,1,post,STATUS_FULL_TIME
+624044,2022-09-24 20:45:00,2022,group-stage,0,0,580,476,Scotland,Republic of Ireland,2,1,post,STATUS_FULL_TIME
+624034,2022-09-24 20:45:00,2022,group-stage,0,0,6757,466,Serbia,Sweden,4,1,post,STATUS_FULL_TIME
+624035,2022-09-24 20:45:00,2022,group-stage,0,0,164,475,Spain,Switzerland,1,2,post,STATUS_FULL_TIME
+624030,2022-09-25 15:00:00,2022,group-stage,0,0,483,589,Moldova,Liechtenstein,2,0,post,STATUS_FULL_TIME
+624029,2022-09-25 15:00:00,2022,group-stage,0,0,587,456,Andorra,Latvia,1,1,post,STATUS_FULL_TIME
+624028,2022-09-25 18:00:00,2022,group-stage,0,0,581,2619,Azerbaijan,Kazakhstan,3,0,post,STATUS_FULL_TIME
+624149,2022-09-25 18:00:00,2022,group-stage,0,0,468,583,Slovakia,Belarus,1,1,post,STATUS_FULL_TIME
+624022,2022-09-25 20:45:00,2022,group-stage,0,0,474,477,Austria,Croatia,1,3,post,STATUS_FULL_TIME
+624023,2022-09-25 20:45:00,2022,group-stage,0,0,479,478,Denmark,France,2,0,post,STATUS_FULL_TIME
+624026,2022-09-25 20:45:00,2022,group-stage,0,0,447,465,Faroe Islands,Turkey,2,1,post,STATUS_FULL_TIME
+624024,2022-09-25 20:45:00,2022,group-stage,0,0,582,460,Luxembourg,Lithuania,1,0,post,STATUS_FULL_TIME
+624021,2022-09-25 20:45:00,2022,group-stage,0,0,449,459,Netherlands,Belgium,1,0,post,STATUS_FULL_TIME
+624025,2022-09-25 20:45:00,2022,group-stage,0,0,578,471,Wales,Poland,0,1,post,STATUS_FULL_TIME
+624020,2022-09-26 20:45:00,2022,group-stage,0,0,588,444,San Marino,Estonia,0,4,post,STATUS_FULL_TIME
+624013,2022-09-26 20:45:00,2022,group-stage,0,0,473,452,Romania,Bosnia and Herzegovina,4,1,post,STATUS_FULL_TIME
+624014,2022-09-26 20:45:00,2022,group-stage,0,0,463,462,North Macedonia,Bulgaria,0,1,post,STATUS_FULL_TIME
+624016,2022-09-26 20:45:00,2022,group-stage,0,0,16721,584,Gibraltar,Georgia,1,2,post,STATUS_FULL_TIME
+624018,2022-09-26 20:45:00,2022,group-stage,0,0,480,162,Hungary,Italy,0,2,post,STATUS_FULL_TIME
+624017,2022-09-26 20:45:00,2022,group-stage,0,0,448,481,England,Germany,3,3,post,STATUS_FULL_TIME
+624015,2022-09-26 20:45:00,2022,group-stage,0,0,6775,458,Montenegro,Finland,0,2,post,STATUS_FULL_TIME
+624012,2022-09-27 20:45:00,2022,group-stage,0,0,476,579,Republic of Ireland,Armenia,3,2,post,STATUS_FULL_TIME
+624004,2022-09-27 20:45:00,2022,group-stage,0,0,475,450,Switzerland,Czech Republic,2,1,post,STATUS_FULL_TIME
+624009,2022-09-27 20:45:00,2022,group-stage,0,0,466,472,Sweden,Slovenia,1,1,post,STATUS_FULL_TIME
+624019,2022-09-27 20:45:00,2022,group-stage,0,0,457,580,Ukraine,Scotland,0,0,post,STATUS_FULL_TIME
+624008,2022-09-27 20:45:00,2022,group-stage,0,0,464,6757,Norway,Serbia,0,2,post,STATUS_FULL_TIME
+624011,2022-09-27 20:45:00,2022,group-stage,0,0,18272,445,Kosovo,Cyprus,5,1,post,STATUS_FULL_TIME
+624007,2022-09-27 20:45:00,2022,group-stage,0,0,455,586,Greece,Northern Ireland,3,1,post,STATUS_FULL_TIME
+624005,2022-09-27 20:45:00,2022,group-stage,0,0,585,470,Albania,Iceland,1,1,post,STATUS_FULL_TIME
+624010,2022-09-27 20:45:00,2022,group-stage,0,0,482,164,Portugal,Spain,0,1,post,STATUS_FULL_TIME
+654360,2023-06-14 20:45:00,2022,semifinals,1,0,449,477,Netherlands,Croatia,2,4,post,STATUS_FINAL_AET
+663883,2023-06-15 20:45:00,2022,semifinals,1,0,164,162,Spain,Italy,2,1,post,STATUS_FULL_TIME
+654362,2023-06-18 15:00:00,2022,3rd-place-match,1,0,449,162,Netherlands,Italy,2,3,post,STATUS_FULL_TIME
+654361,2023-06-18 20:45:00,2022,final,1,0,477,164,Croatia,Spain,0,0,post,STATUS_FINAL_PEN
+663885,2024-03-21 20:45:00,2024,relegation-playoffs,1,0,16721,460,Gibraltar,Lithuania,0,1,post,STATUS_FULL_TIME
+663887,2024-03-26 18:00:00,2024,relegation-playoffs,1,0,460,16721,Lithuania,Gibraltar,1,0,post,STATUS_FULL_TIME
+698882,2024-09-05 18:00:00,2024,group-stage,0,0,581,466,Azerbaijan,Sweden,1,3,post,STATUS_FULL_TIME
+698883,2024-09-05 20:45:00,2024,group-stage,0,0,583,462,Belarus,Bulgaria,0,0,post,STATUS_FULL_TIME
+698884,2024-09-05 20:45:00,2024,group-stage,0,0,479,475,Denmark,Switzerland,2,0,post,STATUS_FULL_TIME
+698890,2024-09-05 20:45:00,2024,group-stage,0,0,444,468,Estonia,Slovakia,0,1,post,STATUS_FULL_TIME
+698889,2024-09-05 20:45:00,2024,group-stage,0,0,586,582,Northern Ireland,Luxembourg,2,0,post,STATUS_FULL_TIME
+698888,2024-09-05 20:45:00,2024,group-stage,0,0,482,477,Portugal,Croatia,2,1,post,STATUS_FULL_TIME
+698887,2024-09-05 20:45:00,2024,group-stage,0,0,588,589,San Marino,Liechtenstein,1,0,post,STATUS_FULL_TIME
+698886,2024-09-05 20:45:00,2024,group-stage,0,0,580,471,Scotland,Poland,2,3,post,STATUS_FULL_TIME
+698885,2024-09-05 20:45:00,2024,group-stage,0,0,6757,164,Serbia,Spain,0,0,post,STATUS_FULL_TIME
+698891,2024-09-06 16:00:00,2024,group-stage,0,0,2619,464,Kazakhstan,Norway,0,0,post,STATUS_FULL_TIME
+698894,2024-09-06 18:00:00,2024,group-stage,0,0,460,445,Lithuania,Cyprus,0,1,post,STATUS_FULL_TIME
+698897,2024-09-06 20:45:00,2024,group-stage,0,0,459,461,Belgium,Israel,3,1,post,STATUS_FULL_TIME
+698898,2024-09-06 20:45:00,2024,group-stage,0,0,478,162,France,Italy,1,3,post,STATUS_FULL_TIME
+698893,2024-09-06 20:45:00,2024,group-stage,0,0,470,6775,Iceland,Montenegro,2,0,post,STATUS_FULL_TIME
+698895,2024-09-06 20:45:00,2024,group-stage,0,0,18272,473,Kosovo,Romania,0,3,post,STATUS_FULL_TIME
+698896,2024-09-06 20:45:00,2024,group-stage,0,0,472,474,Slovenia,Austria,1,1,post,STATUS_FULL_TIME
+698892,2024-09-06 20:45:00,2024,group-stage,0,0,578,465,Wales,Turkey,0,0,post,STATUS_FULL_TIME
+698899,2024-09-07 15:00:00,2024,group-stage,0,0,447,463,Faroe Islands,North Macedonia,1,1,post,STATUS_FULL_TIME
+698903,2024-09-07 18:00:00,2024,group-stage,0,0,476,448,Republic of Ireland,England,0,2,post,STATUS_FULL_TIME
+698902,2024-09-07 18:00:00,2024,group-stage,0,0,483,453,Moldova,Malta,2,0,post,STATUS_FULL_TIME
+698901,2024-09-07 18:00:00,2024,group-stage,0,0,584,450,Georgia,Czech Republic,4,1,post,STATUS_FULL_TIME
+698900,2024-09-07 18:00:00,2024,group-stage,0,0,579,456,Armenia,Latvia,4,1,post,STATUS_FULL_TIME
+698906,2024-09-07 20:45:00,2024,group-stage,0,0,481,480,Germany,Hungary,5,0,post,STATUS_FULL_TIME
+698905,2024-09-07 20:45:00,2024,group-stage,0,0,455,458,Greece,Finland,3,0,post,STATUS_FULL_TIME
+698904,2024-09-07 20:45:00,2024,group-stage,0,0,449,452,Netherlands,Bosnia and Herzegovina,5,2,post,STATUS_FULL_TIME
+698907,2024-09-07 20:45:00,2024,group-stage,0,0,457,585,Ukraine,Albania,1,2,post,STATUS_FULL_TIME
+698908,2024-09-08 15:00:00,2024,group-stage,0,0,582,583,Luxembourg,Belarus,0,1,post,STATUS_FULL_TIME
+698911,2024-09-08 18:00:00,2024,group-stage,0,0,468,581,Slovakia,Azerbaijan,2,0,post,STATUS_FULL_TIME
+698912,2024-09-08 18:00:00,2024,group-stage,0,0,16721,589,Gibraltar,Liechtenstein,2,2,post,STATUS_FULL_TIME
+698910,2024-09-08 18:00:00,2024,group-stage,0,0,479,6757,Denmark,Serbia,2,0,post,STATUS_FULL_TIME
+698909,2024-09-08 18:00:00,2024,group-stage,0,0,462,586,Bulgaria,Northern Ireland,1,0,post,STATUS_FULL_TIME
+698915,2024-09-08 20:45:00,2024,group-stage,0,0,477,471,Croatia,Poland,1,0,post,STATUS_FULL_TIME
+698916,2024-09-08 20:45:00,2024,group-stage,0,0,482,580,Portugal,Scotland,2,1,post,STATUS_FULL_TIME
+698914,2024-09-08 20:45:00,2024,group-stage,0,0,466,444,Sweden,Estonia,3,0,post,STATUS_FULL_TIME
+698913,2024-09-08 20:45:00,2024,group-stage,0,0,475,164,Switzerland,Spain,1,4,post,STATUS_FULL_TIME
+698919,2024-09-09 18:00:00,2024,group-stage,0,0,445,18272,Cyprus,Kosovo,0,4,post,STATUS_FULL_TIME
+698921,2024-09-09 20:45:00,2024,group-stage,0,0,465,470,Turkey,Iceland,3,1,post,STATUS_FULL_TIME
+698922,2024-09-09 20:45:00,2024,group-stage,0,0,472,2619,Slovenia,Kazakhstan,3,0,post,STATUS_FULL_TIME
+698923,2024-09-09 20:45:00,2024,group-stage,0,0,473,460,Romania,Lithuania,3,1,post,STATUS_FULL_TIME
+698920,2024-09-09 20:45:00,2024,group-stage,0,0,6775,578,Montenegro,Wales,1,2,post,STATUS_FULL_TIME
+698917,2024-09-09 20:45:00,2024,group-stage,0,0,461,162,Israel,Italy,1,2,post,STATUS_FULL_TIME
+698918,2024-09-09 20:45:00,2024,group-stage,0,0,478,459,France,Belgium,2,0,post,STATUS_FULL_TIME
+698924,2024-09-09 20:45:00,2024,group-stage,0,0,464,474,Norway,Austria,2,1,post,STATUS_FULL_TIME
+698931,2024-09-10 18:00:00,2024,group-stage,0,0,456,447,Latvia,Faroe Islands,1,0,post,STATUS_FULL_TIME
+698930,2024-09-10 20:45:00,2024,group-stage,0,0,449,481,Netherlands,Germany,2,2,post,STATUS_FULL_TIME
+698929,2024-09-10 20:45:00,2024,group-stage,0,0,476,455,Republic of Ireland,Greece,0,2,post,STATUS_FULL_TIME
+698933,2024-09-10 20:45:00,2024,group-stage,0,0,463,579,North Macedonia,Armenia,2,0,post,STATUS_FULL_TIME
+698932,2024-09-10 20:45:00,2024,group-stage,0,0,480,452,Hungary,Bosnia and Herzegovina,0,0,post,STATUS_FULL_TIME
+698928,2024-09-10 20:45:00,2024,group-stage,0,0,448,458,England,Finland,2,0,post,STATUS_FULL_TIME
+698927,2024-09-10 20:45:00,2024,group-stage,0,0,450,457,Czech Republic,Ukraine,3,2,post,STATUS_FULL_TIME
+698926,2024-09-10 20:45:00,2024,group-stage,0,0,587,453,Andorra,Malta,0,1,post,STATUS_FULL_TIME
+698925,2024-09-10 20:45:00,2024,group-stage,0,0,585,584,Albania,Georgia,0,1,post,STATUS_FULL_TIME
+698940,2024-10-10 18:00:00,2024,group-stage,0,0,456,463,Latvia,North Macedonia,0,3,post,STATUS_FULL_TIME
+698941,2024-10-10 18:00:00,2024,group-stage,0,0,483,587,Moldova,Andorra,2,0,post,STATUS_FULL_TIME
+698942,2024-10-10 20:45:00,2024,group-stage,0,0,464,472,Norway,Slovenia,3,0,post,STATUS_FULL_TIME
+698939,2024-10-10 20:45:00,2024,group-stage,0,0,162,459,Italy,Belgium,2,2,post,STATUS_FULL_TIME
+698943,2024-10-10 20:45:00,2024,group-stage,0,0,461,478,Israel,France,1,4,post,STATUS_FULL_TIME
+698938,2024-10-10 20:45:00,2024,group-stage,0,0,16721,588,Gibraltar,San Marino,1,0,post,STATUS_FULL_TIME
+698937,2024-10-10 20:45:00,2024,group-stage,0,0,458,476,Finland,Republic of Ireland,1,2,post,STATUS_FULL_TIME
+698934,2024-10-10 20:45:00,2024,group-stage,0,0,447,579,Faroe Islands,Armenia,2,2,post,STATUS_FULL_TIME
+698935,2024-10-10 20:45:00,2024,group-stage,0,0,448,455,England,Greece,1,2,post,STATUS_FULL_TIME
+698936,2024-10-10 20:45:00,2024,group-stage,0,0,474,2619,Austria,Kazakhstan,4,0,post,STATUS_FULL_TIME
+698944,2024-10-11 18:00:00,2024,group-stage,0,0,444,581,Estonia,Azerbaijan,3,1,post,STATUS_FULL_TIME
+698948,2024-10-11 20:45:00,2024,group-stage,0,0,457,584,Ukraine,Georgia,1,0,post,STATUS_FULL_TIME
+698950,2024-10-11 20:45:00,2024,group-stage,0,0,468,466,Slovakia,Sweden,2,2,post,STATUS_FULL_TIME
+698951,2024-10-11 20:45:00,2024,group-stage,0,0,470,578,Iceland,Wales,2,2,post,STATUS_FULL_TIME
+698949,2024-10-11 20:45:00,2024,group-stage,0,0,465,6775,Turkey,Montenegro,1,0,post,STATUS_FULL_TIME
+698945,2024-10-11 20:45:00,2024,group-stage,0,0,450,585,Czech Republic,Albania,2,0,post,STATUS_FULL_TIME
+698947,2024-10-11 20:45:00,2024,group-stage,0,0,480,449,Hungary,Netherlands,1,1,post,STATUS_FULL_TIME
+698946,2024-10-11 20:45:00,2024,group-stage,0,0,452,481,Bosnia and Herzegovina,Germany,1,2,post,STATUS_FULL_TIME
+698952,2024-10-12 15:00:00,2024,group-stage,0,0,460,18272,Lithuania,Kosovo,1,2,post,STATUS_FULL_TIME
+698953,2024-10-12 18:00:00,2024,group-stage,0,0,462,582,Bulgaria,Luxembourg,0,0,post,STATUS_FULL_TIME
+698954,2024-10-12 18:00:00,2024,group-stage,0,0,477,580,Croatia,Scotland,2,1,post,STATUS_FULL_TIME
+698956,2024-10-12 20:45:00,2024,group-stage,0,0,164,479,Spain,Denmark,1,0,post,STATUS_FULL_TIME
+698958,2024-10-12 20:45:00,2024,group-stage,0,0,471,482,Poland,Portugal,1,3,post,STATUS_FULL_TIME
+698957,2024-10-12 20:45:00,2024,group-stage,0,0,6757,475,Serbia,Switzerland,2,0,post,STATUS_FULL_TIME
+698959,2024-10-12 20:45:00,2024,group-stage,0,0,583,586,Belarus,Northern Ireland,0,0,post,STATUS_FULL_TIME
+698955,2024-10-12 20:45:00,2024,group-stage,0,0,445,473,Cyprus,Romania,0,3,post,STATUS_FULL_TIME
+698960,2024-10-13 15:00:00,2024,group-stage,0,0,2619,472,Kazakhstan,Slovenia,0,1,post,STATUS_FULL_TIME
+698961,2024-10-13 18:00:00,2024,group-stage,0,0,579,463,Armenia,North Macedonia,0,2,post,STATUS_FULL_TIME
+698962,2024-10-13 18:00:00,2024,group-stage,0,0,458,448,Finland,England,1,3,post,STATUS_FULL_TIME
+698963,2024-10-13 18:00:00,2024,group-stage,0,0,589,16721,Liechtenstein,Gibraltar,0,0,post,STATUS_FULL_TIME
+698964,2024-10-13 18:00:00,2024,group-stage,0,0,453,483,Malta,Moldova,1,0,post,STATUS_FULL_TIME
+698967,2024-10-13 20:45:00,2024,group-stage,0,0,447,456,Faroe Islands,Latvia,1,1,post,STATUS_FULL_TIME
+698965,2024-10-13 20:45:00,2024,group-stage,0,0,474,464,Austria,Norway,5,1,post,STATUS_FULL_TIME
+698966,2024-10-13 20:45:00,2024,group-stage,0,0,455,476,Greece,Republic of Ireland,2,0,post,STATUS_FULL_TIME
+698969,2024-10-14 18:00:00,2024,group-stage,0,0,584,585,Georgia,Albania,0,1,post,STATUS_FULL_TIME
+698968,2024-10-14 18:00:00,2024,group-stage,0,0,581,468,Azerbaijan,Slovakia,1,3,post,STATUS_FULL_TIME
+698974,2024-10-14 20:45:00,2024,group-stage,0,0,459,478,Belgium,France,1,2,post,STATUS_FULL_TIME
+698973,2024-10-14 20:45:00,2024,group-stage,0,0,452,480,Bosnia and Herzegovina,Hungary,0,2,post,STATUS_FULL_TIME
+698972,2024-10-14 20:45:00,2024,group-stage,0,0,444,466,Estonia,Sweden,0,3,post,STATUS_FULL_TIME
+698971,2024-10-14 20:45:00,2024,group-stage,0,0,481,449,Germany,Netherlands,1,0,post,STATUS_FULL_TIME
+698970,2024-10-14 20:45:00,2024,group-stage,0,0,470,465,Iceland,Turkey,2,4,post,STATUS_FULL_TIME
+698975,2024-10-14 20:45:00,2024,group-stage,0,0,162,461,Italy,Israel,4,1,post,STATUS_FULL_TIME
+698977,2024-10-14 20:45:00,2024,group-stage,0,0,457,450,Ukraine,Czech Republic,1,1,post,STATUS_FULL_TIME
+698976,2024-10-14 20:45:00,2024,group-stage,0,0,578,6775,Wales,Montenegro,1,0,post,STATUS_FULL_TIME
+698979,2024-10-15 20:45:00,2024,group-stage,0,0,18272,445,Kosovo,Cyprus,3,0,post,STATUS_FULL_TIME
+698983,2024-10-15 20:45:00,2024,group-stage,0,0,475,479,Switzerland,Denmark,2,2,post,STATUS_FULL_TIME
+698984,2024-10-15 20:45:00,2024,group-stage,0,0,164,6757,Spain,Serbia,3,0,post,STATUS_FULL_TIME
+698982,2024-10-15 20:45:00,2024,group-stage,0,0,580,482,Scotland,Portugal,0,0,post,STATUS_FULL_TIME
+698978,2024-10-15 20:45:00,2024,group-stage,0,0,583,582,Belarus,Luxembourg,1,1,post,STATUS_FULL_TIME
+698980,2024-10-15 20:45:00,2024,group-stage,0,0,586,462,Northern Ireland,Bulgaria,5,0,post,STATUS_FULL_TIME
+698985,2024-10-15 20:45:00,2024,group-stage,0,0,460,473,Lithuania,Romania,1,2,post,STATUS_FULL_TIME
+698981,2024-10-15 20:45:00,2024,group-stage,0,0,471,477,Poland,Croatia,3,3,post,STATUS_FULL_TIME
+698986,2024-11-14 16:00:00,2024,group-stage,0,0,2619,474,Kazakhstan,Austria,0,2,post,STATUS_FULL_TIME
+698987,2024-11-14 18:00:00,2024,group-stage,0,0,579,447,Armenia,Faroe Islands,0,1,post,STATUS_FULL_TIME
+698993,2024-11-14 20:45:00,2024,group-stage,0,0,472,464,Slovenia,Norway,1,4,post,STATUS_FULL_TIME
+698992,2024-11-14 20:45:00,2024,group-stage,0,0,476,458,Republic of Ireland,Finland,1,0,post,STATUS_FULL_TIME
+698991,2024-11-14 20:45:00,2024,group-stage,0,0,463,456,North Macedonia,Latvia,1,0,post,STATUS_FULL_TIME
+698990,2024-11-14 20:45:00,2024,group-stage,0,0,455,448,Greece,England,0,3,post,STATUS_FULL_TIME
+698989,2024-11-14 20:45:00,2024,group-stage,0,0,478,461,France,Israel,0,0,post,STATUS_FULL_TIME
+698988,2024-11-14 20:45:00,2024,group-stage,0,0,459,162,Belgium,Italy,0,1,post,STATUS_FULL_TIME
+698994,2024-11-15 18:00:00,2024,group-stage,0,0,445,460,Cyprus,Lithuania,2,1,post,STATUS_FULL_TIME
+699002,2024-11-15 20:45:00,2024,group-stage,0,0,475,6757,Switzerland,Serbia,1,1,post,STATUS_FULL_TIME
+699001,2024-11-15 20:45:00,2024,group-stage,0,0,580,477,Scotland,Croatia,1,0,post,STATUS_FULL_TIME
+699000,2024-11-15 20:45:00,2024,group-stage,0,0,588,16721,San Marino,Gibraltar,1,1,post,STATUS_FULL_TIME
+698999,2024-11-15 20:45:00,2024,group-stage,0,0,473,18272,Romania,Kosovo,3,0,post,STATUS_FULL_TIME
+698997,2024-11-15 20:45:00,2024,group-stage,0,0,586,583,Northern Ireland,Belarus,2,0,post,STATUS_FULL_TIME
+698996,2024-11-15 20:45:00,2024,group-stage,0,0,582,462,Luxembourg,Bulgaria,0,1,post,STATUS_FULL_TIME
+698995,2024-11-15 20:45:00,2024,group-stage,0,0,479,164,Denmark,Spain,1,2,post,STATUS_FULL_TIME
+698998,2024-11-15 20:45:00,2024,group-stage,0,0,482,471,Portugal,Poland,5,1,post,STATUS_FULL_TIME
+699003,2024-11-16 15:00:00,2024,group-stage,0,0,581,444,Azerbaijan,Estonia,0,0,post,STATUS_FULL_TIME
+699005,2024-11-16 18:00:00,2024,group-stage,0,0,465,578,Turkey,Wales,0,0,post,STATUS_FULL_TIME
+699004,2024-11-16 18:00:00,2024,group-stage,0,0,587,483,Andorra,Moldova,0,1,post,STATUS_FULL_TIME
+699007,2024-11-16 18:00:00,2024,group-stage,0,0,584,457,Georgia,Ukraine,1,1,post,STATUS_FULL_TIME
+699006,2024-11-16 18:00:00,2024,group-stage,0,0,6775,470,Montenegro,Iceland,0,2,post,STATUS_FULL_TIME
+699008,2024-11-16 20:45:00,2024,group-stage,0,0,466,468,Sweden,Slovakia,2,1,post,STATUS_FULL_TIME
+699010,2024-11-16 20:45:00,2024,group-stage,0,0,449,480,Netherlands,Hungary,4,0,post,STATUS_FULL_TIME
+699009,2024-11-16 20:45:00,2024,group-stage,0,0,585,450,Albania,Czech Republic,0,0,post,STATUS_FULL_TIME
+699011,2024-11-16 20:45:00,2024,group-stage,0,0,481,452,Germany,Bosnia and Herzegovina,7,0,post,STATUS_FULL_TIME
+699012,2024-11-17 15:00:00,2024,group-stage,0,0,456,579,Latvia,Armenia,1,2,post,STATUS_FULL_TIME
+699013,2024-11-17 15:00:00,2024,group-stage,0,0,463,447,North Macedonia,Faroe Islands,1,0,post,STATUS_FULL_TIME
+699016,2024-11-17 18:00:00,2024,group-stage,0,0,474,472,Austria,Slovenia,1,1,post,STATUS_FULL_TIME
+699017,2024-11-17 18:00:00,2024,group-stage,0,0,448,476,England,Republic of Ireland,5,0,post,STATUS_FULL_TIME
+699014,2024-11-17 18:00:00,2024,group-stage,0,0,458,455,Finland,Greece,0,2,post,STATUS_FULL_TIME
+699015,2024-11-17 18:00:00,2024,group-stage,0,0,464,2619,Norway,Kazakhstan,5,0,post,STATUS_FULL_TIME
+699019,2024-11-17 20:45:00,2024,group-stage,0,0,162,478,Italy,France,1,3,post,STATUS_FULL_TIME
+699018,2024-11-17 20:45:00,2024,group-stage,0,0,461,459,Israel,Belgium,1,0,post,STATUS_FULL_TIME
+699021,2024-11-18 20:45:00,2024,group-stage,0,0,462,583,Bulgaria,Belarus,1,1,post,STATUS_FULL_TIME
+699020,2024-11-18 20:45:00,2024,group-stage,0,0,477,482,Croatia,Portugal,1,1,post,STATUS_FULL_TIME
+699022,2024-11-18 20:45:00,2024,group-stage,0,0,18272,460,Kosovo,Lithuania,1,0,post,STATUS_FULL_TIME
+699028,2024-11-18 20:45:00,2024,group-stage,0,0,589,588,Liechtenstein,San Marino,1,3,post,STATUS_FULL_TIME
+699027,2024-11-18 20:45:00,2024,group-stage,0,0,582,586,Luxembourg,Northern Ireland,2,2,post,STATUS_FULL_TIME
+699026,2024-11-18 20:45:00,2024,group-stage,0,0,471,580,Poland,Scotland,1,2,post,STATUS_FULL_TIME
+699025,2024-11-18 20:45:00,2024,group-stage,0,0,473,445,Romania,Cyprus,4,1,post,STATUS_FULL_TIME
+699024,2024-11-18 20:45:00,2024,group-stage,0,0,6757,479,Serbia,Denmark,0,0,post,STATUS_FULL_TIME
+699023,2024-11-18 20:45:00,2024,group-stage,0,0,164,475,Spain,Switzerland,3,2,post,STATUS_FULL_TIME
+699041,2024-11-19 20:45:00,2024,group-stage,0,0,466,581,Sweden,Azerbaijan,6,0,post,STATUS_FULL_TIME
+699030,2024-11-19 20:45:00,2024,group-stage,0,0,452,449,Bosnia and Herzegovina,Netherlands,1,1,post,STATUS_FULL_TIME
+699031,2024-11-19 20:45:00,2024,group-stage,0,0,468,444,Slovakia,Estonia,1,0,post,STATUS_FULL_TIME
+699042,2024-11-19 20:45:00,2024,group-stage,0,0,578,470,Wales,Iceland,4,1,post,STATUS_FULL_TIME
+699046,2024-11-19 20:45:00,2024,group-stage,0,0,6775,465,Montenegro,Turkey,3,1,post,STATUS_FULL_TIME
+699029,2024-11-19 20:45:00,2024,group-stage,0,0,585,457,Albania,Ukraine,1,2,post,STATUS_FULL_TIME
+699044,2024-11-19 20:45:00,2024,group-stage,0,0,480,481,Hungary,Germany,1,1,post,STATUS_FULL_TIME
+699045,2024-11-19 20:45:00,2024,group-stage,0,0,450,584,Czech Republic,Georgia,2,1,post,STATUS_FULL_TIME
+699043,2024-11-19 20:45:00,2024,group-stage,0,0,453,587,Malta,Andorra,0,0,post,STATUS_FULL_TIME
+723727,2025-03-20 18:00:00,2024,relegation-playoffs,1,0,579,584,Armenia,Georgia,0,3,post,STATUS_FULL_TIME
+723715,2025-03-20 18:00:00,2024,relegation-playoffs,1,0,465,480,Turkey,Hungary,3,1,post,STATUS_FULL_TIME
+723717,2025-03-20 20:45:00,2024,relegation-playoffs,1,0,457,459,Ukraine,Belgium,3,1,post,STATUS_FULL_TIME
+723729,2025-03-20 20:45:00,2024,relegation-playoffs,1,0,468,472,Slovakia,Slovenia,0,0,post,STATUS_FULL_TIME
+723707,2025-03-20 20:45:00,2024,quarterfinals,1,0,449,164,Netherlands,Spain,2,2,post,STATUS_FULL_TIME
+723723,2025-03-20 20:45:00,2024,relegation-playoffs,1,0,18272,470,Kosovo,Iceland,2,1,post,STATUS_FULL_TIME
+723713,2025-03-20 20:45:00,2024,quarterfinals,1,0,162,481,Italy,Germany,1,2,post,STATUS_FULL_TIME
+723711,2025-03-20 20:45:00,2024,quarterfinals,1,0,479,482,Denmark,Portugal,1,0,post,STATUS_FULL_TIME
+723709,2025-03-20 20:45:00,2024,quarterfinals,1,0,477,478,Croatia,France,2,0,post,STATUS_FULL_TIME
+723725,2025-03-20 20:45:00,2024,relegation-playoffs,1,0,462,476,Bulgaria,Republic of Ireland,1,2,post,STATUS_FULL_TIME
+723719,2025-03-20 20:45:00,2024,relegation-playoffs,1,0,474,6757,Austria,Serbia,1,1,post,STATUS_FULL_TIME
+723721,2025-03-20 20:45:00,2024,relegation-playoffs,1,0,455,580,Greece,Scotland,0,1,post,STATUS_FULL_TIME
+723728,2025-03-23 15:00:00,2024,relegation-playoffs,1,0,584,579,Georgia,Armenia,6,1,post,STATUS_FULL_TIME
+723730,2025-03-23 18:00:00,2024,relegation-playoffs,1,0,472,468,Slovenia,Slovakia,1,0,post,STATUS_FINAL_AET
+723720,2025-03-23 18:00:00,2024,relegation-playoffs,1,0,6757,474,Serbia,Austria,2,0,post,STATUS_FULL_TIME
+723716,2025-03-23 18:00:00,2024,relegation-playoffs,1,0,480,465,Hungary,Turkey,0,3,post,STATUS_FULL_TIME
+723724,2025-03-23 18:00:00,2024,relegation-playoffs,1,0,470,18272,Iceland,Kosovo,1,3,post,STATUS_FULL_TIME
+723722,2025-03-23 18:00:00,2024,relegation-playoffs,1,0,580,455,Scotland,Greece,0,3,post,STATUS_FULL_TIME
+723718,2025-03-23 20:45:00,2024,relegation-playoffs,1,0,459,457,Belgium,Ukraine,3,0,post,STATUS_FULL_TIME
+723710,2025-03-23 20:45:00,2024,quarterfinals,1,0,478,477,France,Croatia,2,0,post,STATUS_FINAL_PEN
+723714,2025-03-23 20:45:00,2024,quarterfinals,1,0,481,162,Germany,Italy,3,3,post,STATUS_FULL_TIME
+723712,2025-03-23 20:45:00,2024,quarterfinals,1,0,482,479,Portugal,Denmark,5,2,post,STATUS_FINAL_AET
+723726,2025-03-23 20:45:00,2024,relegation-playoffs,1,0,476,462,Republic of Ireland,Bulgaria,2,1,post,STATUS_FULL_TIME
+723708,2025-03-23 20:45:00,2024,quarterfinals,1,0,164,449,Spain,Netherlands,3,3,post,STATUS_FINAL_PEN
+723735,2025-06-04 21:10:00,2024,semifinals,1,0,481,482,Germany,Portugal,1,2,post,STATUS_FULL_TIME
+723736,2025-06-05 21:00:00,2024,semifinals,1,0,164,478,Spain,France,5,4,post,STATUS_FULL_TIME
+723737,2025-06-08 15:00:00,2024,3rd-place-match,1,0,481,478,Germany,France,0,2,post,STATUS_FULL_TIME
+723738,2025-06-08 21:00:00,2024,final,1,0,482,164,Portugal,Spain,2,2,post,STATUS_FINAL_PEN
+723731,2026-03-26 18:00:00,2026,relegation-playoffs,1,0,16721,456,Gibraltar,Latvia,0,1,post,STATUS_FULL_TIME
+723733,2026-03-26 18:00:00,2026,relegation-playoffs,1,0,453,582,Malta,Luxembourg,0,2,post,STATUS_FULL_TIME
+723734,2026-03-31 18:00:00,2026,relegation-playoffs,1,0,582,453,Luxembourg,Malta,3,0,post,STATUS_FULL_TIME
+723732,2026-03-31 18:00:00,2026,relegation-playoffs,1,0,456,16721,Latvia,Gibraltar,1,0,post,STATUS_FULL_TIME
+401861047,2026-09-24 18:00:00,2026,group-stage,0,0,587,453,Andorra,Malta,1,2,post,STATUS_FULL_TIME
+401861046,2026-09-24 20:45:00,2026,group-stage,0,0,464,479,Norway,Denmark,3,2,post,STATUS_FULL_TIME
+401861041,2026-09-24 20:45:00,2026,group-stage,0,0,449,481,Netherlands,Germany,1,1,post,STATUS_FULL_TIME
+401861044,2026-09-24 20:45:00,2026,group-stage,0,0,482,578,Portugal,Wales,1,0,post,STATUS_FULL_TIME
+401861045,2026-09-24 20:45:00,2026,group-stage,0,0,18272,476,Kosovo,Republic of Ireland,1,0,post,STATUS_FULL_TIME
+401861048,2026-09-24 20:45:00,2026,group-stage,0,0,474,461,Austria,Israel,3,1,post,STATUS_FULL_TIME
+401861043,2026-09-24 20:45:00,2026,group-stage,0,0,589,460,Liechtenstein,Lithuania,0,2,post,STATUS_FULL_TIME
+401861042,2026-09-24 20:45:00,2026,group-stage,0,0,6757,455,Serbia,Greece,1,2,post,STATUS_FULL_TIME

@@ -31,7 +31,7 @@ def limpiar_cache_importacion():
     entre las distintas ligas que usan archivos con el mismo nombre (ej. motor.py)."""
     modulos_a_limpiar = [
         "motor", "recolectar", "recolectar_boxscore", 
-        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur", "app_sco", "app_aut", "app_den", "app_gre", "app_nor", "app_swe", "app_ucl"
+        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur", "app_sco", "app_aut", "app_den", "app_gre", "app_nor", "app_swe", "app_ucl", "app_unl"
     ]
     for mod in modulos_a_limpiar:
         if mod in sys.modules:
@@ -55,6 +55,7 @@ torneo_seleccionado = st.sidebar.selectbox(
     [
         "🏆 Copa Mundial 2026",
         "⭐ UEFA Champions League",
+        "🇪🇺 UEFA Nations League",
         "🇦🇷 Liga Profesional (Argentina)",
         "🇲🇽 Liga MX (México)",
         "🇧🇷 Brasileirão (Brasil)",
@@ -97,6 +98,11 @@ elif torneo_seleccionado == "⭐ UEFA Champions League":
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "ucl"))
     import ucl.app_ucl as ucl_app
     ucl_app.run_app()
+
+elif torneo_seleccionado == "🇪🇺 UEFA Nations League":
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "unl"))
+    import unl.app_unl as unl_app
+    unl_app.run_app()
 
 elif torneo_seleccionado == "🇦🇷 Liga Profesional (Argentina)":
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "arg"))

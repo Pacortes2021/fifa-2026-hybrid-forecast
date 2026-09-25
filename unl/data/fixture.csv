@@ -1,0 +1,149 @@
+event_id,fecha,temporada,round,local,visita,local_id,visita_id,group,league,estado
+401861050,2026-09-25 18:00:00,2026,group-stage,Armenia,Latvia,579,456,Group C2,C,pre
+401861049,2026-09-25 18:00:00,2026,group-stage,Georgia,Northern Ireland,584,586,Group B2,B,pre
+401861054,2026-09-25 20:45:00,2026,group-stage,Hungary,Ukraine,480,457,Group B2,B,pre
+401861052,2026-09-25 20:45:00,2026,group-stage,Italy,Belgium,162,459,Group A1,A,pre
+401861056,2026-09-25 20:45:00,2026,group-stage,Montenegro,Cyprus,6775,445,Group C2,C,pre
+401861055,2026-09-25 20:45:00,2026,group-stage,Poland,Bosnia and Herzegovina,471,452,Group B4,B,pre
+401861051,2026-09-25 20:45:00,2026,group-stage,Sweden,Romania,466,473,Group B4,B,pre
+401861053,2026-09-25 20:45:00,2026,group-stage,Turkey,France,465,478,Group A1,A,pre
+401861057,2026-09-26 15:00:00,2026,group-stage,Slovenia,Scotland,472,580,Group B1,B,pre
+401861059,2026-09-26 18:00:00,2026,group-stage,San Marino,Finland,588,458,Group C1,C,pre
+401861058,2026-09-26 18:00:00,2026,group-stage,Iceland,Estonia,470,444,Group C4,C,pre
+401861060,2026-09-26 18:00:00,2026,group-stage,Faroe Islands,Kazakhstan,447,2619,Group C3,C,pre
+401861061,2026-09-26 18:00:00,2026,group-stage,Bulgaria,Luxembourg,462,582,Group C4,C,pre
+401861062,2026-09-26 20:45:00,2026,group-stage,Albania,Belarus,585,583,Group C1,C,pre
+401861063,2026-09-26 20:45:00,2026,group-stage,Czech Republic,Croatia,450,477,Group A3,A,pre
+401861066,2026-09-26 20:45:00,2026,group-stage,England,Spain,448,164,Group A3,A,pre
+401861065,2026-09-26 20:45:00,2026,group-stage,North Macedonia,Switzerland,463,475,Group B1,B,pre
+401861064,2026-09-26 20:45:00,2026,group-stage,Slovakia,Moldova,468,483,Group C3,C,pre
+401861067,2026-09-27 15:00:00,2026,group-stage,Lithuania,Azerbaijan,460,581,Group D2,D,pre
+401861068,2026-09-27 18:00:00,2026,group-stage,Serbia,Netherlands,6757,449,Group A2,A,pre
+401861069,2026-09-27 18:00:00,2026,group-stage,Gibraltar,Andorra,16721,587,Group D1,D,pre
+401861071,2026-09-27 18:00:00,2026,group-stage,Austria,Kosovo,474,18272,Group B3,B,pre
+401861070,2026-09-27 18:00:00,2026,group-stage,Denmark,Wales,479,578,Group A4,A,pre
+401861074,2026-09-27 20:45:00,2026,group-stage,Germany,Greece,481,455,Group A2,A,pre
+401861072,2026-09-27 20:45:00,2026,group-stage,Israel,Republic of Ireland,461,476,Group B3,B,pre
+401861073,2026-09-27 20:45:00,2026,group-stage,Norway,Portugal,464,482,Group A4,A,pre
+401861076,2026-09-28 18:00:00,2026,group-stage,Armenia,Montenegro,579,6775,Group C2,C,pre
+401861075,2026-09-28 18:00:00,2026,group-stage,Georgia,Ukraine,584,457,Group B2,B,pre
+401861082,2026-09-28 18:00:00,2026,group-stage,Latvia,Cyprus,456,445,Group C2,C,pre
+401861079,2026-09-28 20:45:00,2026,group-stage,Northern Ireland,Hungary,586,480,Group B2,B,pre
+401861081,2026-09-28 20:45:00,2026,group-stage,Belgium,France,459,478,Group A1,A,pre
+401861078,2026-09-28 20:45:00,2026,group-stage,Romania,Bosnia and Herzegovina,473,452,Group B4,B,pre
+401861080,2026-09-28 20:45:00,2026,group-stage,Sweden,Poland,466,471,Group B4,B,pre
+401861077,2026-09-28 20:45:00,2026,group-stage,Turkey,Italy,465,162,Group A1,A,pre
+401861089,2026-09-29 18:00:00,2026,group-stage,Finland,Belarus,458,583,Group C1,C,pre
+401861090,2026-09-29 18:00:00,2026,group-stage,Moldova,Faroe Islands,483,447,Group C3,C,pre
+401861087,2026-09-29 20:45:00,2026,group-stage,Slovenia,North Macedonia,472,463,Group B1,B,pre
+401861085,2026-09-29 20:45:00,2026,group-stage,Slovakia,Kazakhstan,468,2619,Group C3,C,pre
+401861084,2026-09-29 20:45:00,2026,group-stage,Spain,Croatia,164,477,Group A3,A,pre
+401861091,2026-09-29 20:45:00,2026,group-stage,Scotland,Switzerland,580,475,Group B1,B,pre
+401861092,2026-09-29 20:45:00,2026,group-stage,Czech Republic,England,450,448,Group A3,A,pre
+401861086,2026-09-29 20:45:00,2026,group-stage,Luxembourg,Iceland,582,470,Group C4,C,pre
+401861083,2026-09-29 20:45:00,2026,group-stage,Bulgaria,Estonia,462,444,Group C4,C,pre
+401861088,2026-09-29 20:45:00,2026,group-stage,San Marino,Albania,588,585,Group C1,C,pre
+401861093,2026-10-01 18:00:00,2026,group-stage,Azerbaijan,Liechtenstein,581,589,Group D2,D,pre
+401861096,2026-10-01 20:45:00,2026,group-stage,Denmark,Portugal,479,482,Group A4,A,pre
+401861097,2026-10-01 20:45:00,2026,group-stage,Germany,Serbia,481,6757,Group A2,A,pre
+401861098,2026-10-01 20:45:00,2026,group-stage,Greece,Netherlands,455,449,Group A2,A,pre
+401861095,2026-10-01 20:45:00,2026,group-stage,Israel,Kosovo,461,18272,Group B3,B,pre
+401861094,2026-10-01 20:45:00,2026,group-stage,Republic of Ireland,Austria,476,474,Group B3,B,pre
+401861100,2026-10-01 20:45:00,2026,group-stage,Wales,Norway,578,464,Group A4,A,pre
+401861099,2026-10-01 20:45:00,2026,group-stage,Malta,Gibraltar,453,16721,Group D1,D,pre
+401861101,2026-10-02 16:00:00,2026,group-stage,Kazakhstan,Moldova,2619,483,Group C3,C,pre
+401861104,2026-10-02 18:00:00,2026,group-stage,Cyprus,Armenia,445,579,Group C2,C,pre
+401861105,2026-10-02 18:00:00,2026,group-stage,Latvia,Montenegro,456,6775,Group C2,C,pre
+401861102,2026-10-02 20:45:00,2026,group-stage,Hungary,Georgia,480,584,Group B2,B,pre
+401861108,2026-10-02 20:45:00,2026,group-stage,Poland,Romania,471,473,Group B4,B,pre
+401861106,2026-10-02 20:45:00,2026,group-stage,Ukraine,Northern Ireland,457,586,Group B2,B,pre
+401861110,2026-10-02 20:45:00,2026,group-stage,Faroe Islands,Slovakia,447,468,Group C3,C,pre
+401861107,2026-10-02 20:45:00,2026,group-stage,Bosnia and Herzegovina,Sweden,452,466,Group B4,B,pre
+401861109,2026-10-02 20:45:00,2026,group-stage,Belgium,Turkey,459,465,Group A1,A,pre
+401861103,2026-10-02 20:45:00,2026,group-stage,France,Italy,478,162,Group A1,A,pre
+401861111,2026-10-03 15:00:00,2026,group-stage,Finland,Albania,458,585,Group C1,C,pre
+401861114,2026-10-03 18:00:00,2026,group-stage,Belarus,San Marino,583,588,Group C1,C,pre
+401861113,2026-10-03 18:00:00,2026,group-stage,Croatia,England,477,448,Group A3,A,pre
+401861115,2026-10-03 18:00:00,2026,group-stage,Estonia,Luxembourg,444,582,Group C4,C,pre
+401861112,2026-10-03 18:00:00,2026,group-stage,Iceland,Bulgaria,470,462,Group C4,C,pre
+401861116,2026-10-03 20:45:00,2026,group-stage,North Macedonia,Scotland,463,580,Group B1,B,pre
+401861118,2026-10-03 20:45:00,2026,group-stage,Spain,Czech Republic,164,450,Group A3,A,pre
+401861117,2026-10-03 20:45:00,2026,group-stage,Switzerland,Slovenia,475,472,Group B1,B,pre
+401861119,2026-10-04 15:00:00,2026,group-stage,Azerbaijan,Lithuania,581,460,Group D2,D,pre
+401861121,2026-10-04 18:00:00,2026,group-stage,Kosovo,Austria,18272,474,Group B3,B,pre
+401861120,2026-10-04 18:00:00,2026,group-stage,Malta,Andorra,453,587,Group D1,D,pre
+401861125,2026-10-04 20:45:00,2026,group-stage,Wales,Denmark,578,479,Group A4,A,pre
+401861124,2026-10-04 20:45:00,2026,group-stage,Republic of Ireland,Israel,476,461,Group B3,B,pre
+401861123,2026-10-04 20:45:00,2026,group-stage,Greece,Germany,455,481,Group A2,A,pre
+401861122,2026-10-04 20:45:00,2026,group-stage,Netherlands,Serbia,449,6757,Group A2,A,pre
+401861126,2026-10-04 20:45:00,2026,group-stage,Portugal,Norway,482,464,Group A4,A,pre
+401861127,2026-10-05 18:00:00,2026,group-stage,Cyprus,Latvia,445,456,Group C2,C,pre
+401861133,2026-10-05 20:45:00,2026,group-stage,Bosnia and Herzegovina,Poland,452,471,Group B4,B,pre
+401861129,2026-10-05 20:45:00,2026,group-stage,France,Belgium,478,459,Group A1,A,pre
+401861131,2026-10-05 20:45:00,2026,group-stage,Italy,Turkey,162,465,Group A1,A,pre
+401861130,2026-10-05 20:45:00,2026,group-stage,Montenegro,Armenia,6775,579,Group C2,C,pre
+401861132,2026-10-05 20:45:00,2026,group-stage,Northern Ireland,Georgia,586,584,Group B2,B,pre
+401861128,2026-10-05 20:45:00,2026,group-stage,Romania,Sweden,473,466,Group B4,B,pre
+401861134,2026-10-05 20:45:00,2026,group-stage,Ukraine,Hungary,457,480,Group B2,B,pre
+401861135,2026-10-06 16:00:00,2026,group-stage,Kazakhstan,Faroe Islands,2619,447,Group C3,C,pre
+401861139,2026-10-06 20:45:00,2026,group-stage,Switzerland,North Macedonia,475,463,Group B1,B,pre
+401861143,2026-10-06 20:45:00,2026,group-stage,Scotland,Slovenia,580,472,Group B1,B,pre
+401861144,2026-10-06 20:45:00,2026,group-stage,Moldova,Slovakia,483,468,Group C3,C,pre
+401861136,2026-10-06 20:45:00,2026,group-stage,Estonia,Iceland,444,470,Group C4,C,pre
+401861141,2026-10-06 20:45:00,2026,group-stage,Luxembourg,Bulgaria,582,462,Group C4,C,pre
+401861137,2026-10-06 20:45:00,2026,group-stage,Croatia,Spain,477,164,Group A3,A,pre
+401861138,2026-10-06 20:45:00,2026,group-stage,Belarus,Finland,583,458,Group C1,C,pre
+401861140,2026-10-06 20:45:00,2026,group-stage,Albania,San Marino,585,588,Group C1,C,pre
+401861142,2026-10-06 20:45:00,2026,group-stage,England,Czech Republic,448,450,Group A3,A,pre
+401861146,2026-11-12 18:00:00,2026,group-stage,Armenia,Cyprus,579,445,Group C2,C,pre
+401861145,2026-11-12 18:00:00,2026,group-stage,Turkey,Belgium,465,459,Group A1,A,pre
+401861150,2026-11-12 20:45:00,2026,group-stage,England,Croatia,448,477,Group A3,A,pre
+401861147,2026-11-12 20:45:00,2026,group-stage,Albania,Finland,585,458,Group C1,C,pre
+401861148,2026-11-12 20:45:00,2026,group-stage,Czech Republic,Spain,450,164,Group A3,A,pre
+401861151,2026-11-12 20:45:00,2026,group-stage,Italy,France,162,478,Group A1,A,pre
+401861152,2026-11-12 20:45:00,2026,group-stage,Montenegro,Latvia,6775,456,Group C2,C,pre
+401861149,2026-11-12 20:45:00,2026,group-stage,San Marino,Belarus,588,583,Group C1,C,pre
+401861162,2026-11-13 18:00:00,2026,group-stage,Moldova,Kazakhstan,483,2619,Group C3,C,pre
+401861156,2026-11-13 20:45:00,2026,group-stage,Slovenia,Switzerland,472,475,Group B1,B,pre
+401861161,2026-11-13 20:45:00,2026,group-stage,Scotland,North Macedonia,580,463,Group B1,B,pre
+401861160,2026-11-13 20:45:00,2026,group-stage,Slovakia,Faroe Islands,468,447,Group C3,C,pre
+401861159,2026-11-13 20:45:00,2026,group-stage,Netherlands,Greece,449,455,Group A2,A,pre
+401861158,2026-11-13 20:45:00,2026,group-stage,Serbia,Germany,6757,481,Group A2,A,pre
+401861153,2026-11-13 20:45:00,2026,group-stage,Liechtenstein,Azerbaijan,589,581,Group D2,D,pre
+401861155,2026-11-13 20:45:00,2026,group-stage,Andorra,Gibraltar,587,16721,Group D1,D,pre
+401861154,2026-11-13 20:45:00,2026,group-stage,Luxembourg,Estonia,582,444,Group C4,C,pre
+401861157,2026-11-13 20:45:00,2026,group-stage,Bulgaria,Iceland,462,470,Group C4,C,pre
+401861163,2026-11-14 15:00:00,2026,group-stage,Kosovo,Israel,18272,461,Group B3,B,pre
+401861164,2026-11-14 18:00:00,2026,group-stage,Georgia,Hungary,584,480,Group B2,B,pre
+401861165,2026-11-14 18:00:00,2026,group-stage,Norway,Wales,464,578,Group A4,A,pre
+401861170,2026-11-14 20:45:00,2026,group-stage,Austria,Republic of Ireland,474,476,Group B3,B,pre
+401861167,2026-11-14 20:45:00,2026,group-stage,Portugal,Denmark,482,479,Group A4,A,pre
+401861168,2026-11-14 20:45:00,2026,group-stage,Romania,Poland,473,471,Group B4,B,pre
+401861166,2026-11-14 20:45:00,2026,group-stage,Sweden,Bosnia and Herzegovina,466,452,Group B4,B,pre
+401861169,2026-11-14 20:45:00,2026,group-stage,Northern Ireland,Ukraine,586,457,Group B2,B,pre
+401861172,2026-11-15 15:00:00,2026,group-stage,Cyprus,Montenegro,445,6775,Group C2,C,pre
+401861171,2026-11-15 15:00:00,2026,group-stage,Latvia,Armenia,456,579,Group C2,C,pre
+401861174,2026-11-15 18:00:00,2026,group-stage,Finland,San Marino,458,588,Group C1,C,pre
+401861173,2026-11-15 18:00:00,2026,group-stage,Belarus,Albania,583,585,Group C1,C,pre
+401861175,2026-11-15 20:45:00,2026,group-stage,Spain,England,164,448,Group A3,A,pre
+401861177,2026-11-15 20:45:00,2026,group-stage,France,Turkey,478,465,Group A1,A,pre
+401861176,2026-11-15 20:45:00,2026,group-stage,Belgium,Italy,459,162,Group A1,A,pre
+401861178,2026-11-15 20:45:00,2026,group-stage,Croatia,Czech Republic,477,450,Group A3,A,pre
+401861180,2026-11-16 16:00:00,2026,group-stage,Faroe Islands,Moldova,447,483,Group C3,C,pre
+401861181,2026-11-16 16:00:00,2026,group-stage,Kazakhstan,Slovakia,2619,468,Group C3,C,pre
+401861183,2026-11-16 18:00:00,2026,group-stage,Estonia,Bulgaria,444,462,Group C4,C,pre
+401861182,2026-11-16 18:00:00,2026,group-stage,Iceland,Luxembourg,470,582,Group C4,C,pre
+401861184,2026-11-16 18:00:00,2026,group-stage,Lithuania,Liechtenstein,460,589,Group D2,D,pre
+401861186,2026-11-16 20:45:00,2026,group-stage,Switzerland,Scotland,475,580,Group B1,B,pre
+401861187,2026-11-16 20:45:00,2026,group-stage,North Macedonia,Slovenia,463,472,Group B1,B,pre
+401861188,2026-11-16 20:45:00,2026,group-stage,Greece,Serbia,455,6757,Group A2,A,pre
+401861185,2026-11-16 20:45:00,2026,group-stage,Germany,Netherlands,481,449,Group A2,A,pre
+401861179,2026-11-16 20:45:00,2026,group-stage,Gibraltar,Malta,16721,453,Group D1,D,pre
+401861190,2026-11-17 20:45:00,2026,group-stage,Ukraine,Georgia,457,584,Group B2,B,pre
+401861196,2026-11-17 20:45:00,2026,group-stage,Bosnia and Herzegovina,Romania,452,473,Group B4,B,pre
+401861194,2026-11-17 20:45:00,2026,group-stage,Denmark,Norway,479,464,Group A4,A,pre
+401861191,2026-11-17 20:45:00,2026,group-stage,Hungary,Northern Ireland,480,586,Group B2,B,pre
+401861193,2026-11-17 20:45:00,2026,group-stage,Israel,Austria,461,474,Group B3,B,pre
+401861195,2026-11-17 20:45:00,2026,group-stage,Poland,Sweden,471,466,Group B4,B,pre
+401861192,2026-11-17 20:45:00,2026,group-stage,Republic of Ireland,Kosovo,476,18272,Group B3,B,pre
+401861189,2026-11-17 20:45:00,2026,group-stage,Wales,Portugal,578,482,Group A4,A,pre

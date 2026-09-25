@@ -1,0 +1,55 @@
+id,name,norm_name,flag,abbreviation,group,league,color,alternate_color,logo,is_active
+459,Belgium,Belgium,🇧🇪,BEL,Group A1,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/bel.png,True
+478,France,France,🇫🇷,FRA,Group A1,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/fra.png,True
+162,Italy,Italy,🇮🇹,ITA,Group A1,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/ita.png,True
+465,Türkiye,Turkey,🇹🇷,TUR,Group A1,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/tur.png,True
+481,Germany,Germany,🇩🇪,GER,Group A2,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/ger.png,True
+455,Greece,Greece,🇬🇷,GRE,Group A2,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/gre.png,True
+449,Netherlands,Netherlands,🇳🇱,NED,Group A2,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/ned.png,True
+6757,Serbia,Serbia,🇷🇸,SRB,Group A2,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/sba.png,True
+477,Croatia,Croatia,🇭🇷,CRO,Group A3,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/cro.png,True
+450,Czechia,Czech Republic,🇨🇿,CZE,Group A3,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/cze.png,True
+448,England,England,🏴󠁧󠁢󠁥󠁮󠁧󠁿,ENG,Group A3,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/eng.png,True
+164,Spain,Spain,🇪🇸,ESP,Group A3,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/esp.png,True
+479,Denmark,Denmark,🇩🇰,DEN,Group A4,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/den.png,True
+464,Norway,Norway,🇳🇴,NOR,Group A4,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/nor.png,True
+482,Portugal,Portugal,🇵🇹,POR,Group A4,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/por.png,True
+578,Wales,Wales,🏴󠁧󠁢󠁷󠁬󠁳󠁿,WAL,Group A4,A,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/wal.png,True
+463,North Macedonia,North Macedonia,🇲🇰,MKD,Group B1,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/mkd.png,True
+580,Scotland,Scotland,🏴󠁧󠁢󠁳󠁣󠁴󠁿,SCO,Group B1,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/sco.png,True
+472,Slovenia,Slovenia,🇸🇮,SVN,Group B1,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/svn.png,True
+475,Switzerland,Switzerland,🇨🇭,SUI,Group B1,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/sui.png,True
+584,Georgia,Georgia,🇬🇪,GEO,Group B2,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/geo.png,True
+480,Hungary,Hungary,🇭🇺,HUN,Group B2,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/hun.png,True
+586,Northern Ireland,Northern Ireland,🏴󠁧󠁢󠁮󠁩󠁲󠁿,NIR,Group B2,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/nir.png,True
+457,Ukraine,Ukraine,🇺🇦,UKR,Group B2,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/ukr.png,True
+474,Austria,Austria,🇦🇹,AUT,Group B3,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/aut.png,True
+461,Israel,Israel,🇮🇱,ISR,Group B3,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/isr.png,True
+18272,Kosovo,Kosovo,🇽🇰,KOS,Group B3,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/kosovo.png,True
+476,Republic of Ireland,Republic of Ireland,🇮🇪,IRL,Group B3,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/irl.png,True
+452,Bosnia-Herzegovina,Bosnia and Herzegovina,🇧🇦,BIH,Group B4,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/bih.png,True
+471,Poland,Poland,🇵🇱,POL,Group B4,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/pol.png,True
+473,Romania,Romania,🇷🇴,ROU,Group B4,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/rom.png,True
+466,Sweden,Sweden,🇸🇪,SWE,Group B4,B,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/swe.png,True
+585,Albania,Albania,🇦🇱,ALB,Group C1,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/alb.png,True
+583,Belarus,Belarus,🇧🇾,BLR,Group C1,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/blr.png,True
+458,Finland,Finland,🇫🇮,FIN,Group C1,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/fin.png,True
+588,San Marino,San Marino,🇸🇲,SMR,Group C1,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/smr.png,True
+579,Armenia,Armenia,🇦🇲,ARM,Group C2,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/fifa.armenia.png,True
+445,Cyprus,Cyprus,🇨🇾,CYP,Group C2,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/cyp.png,True
+456,Latvia,Latvia,🇱🇻,LVA,Group C2,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/lva.png,True
+6775,Montenegro,Montenegro,🇲🇪,MNE,Group C2,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/mtg.png,True
+447,Faroe Islands,Faroe Islands,🇫🇴,FRO,Group C3,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/fro.png,True
+2619,Kazakhstan,Kazakhstan,🇰🇿,KAZ,Group C3,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/kaz.png,True
+483,Moldova,Moldova,🇲🇩,MDA,Group C3,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/mda.png,True
+468,Slovakia,Slovakia,🇸🇰,SVK,Group C3,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/svk.png,True
+462,Bulgaria,Bulgaria,🇧🇬,BUL,Group C4,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/bul.png,True
+444,Estonia,Estonia,🇪🇪,EST,Group C4,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/est.png,True
+470,Iceland,Iceland,🇮🇸,ISL,Group C4,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/isl.png,True
+582,Luxembourg,Luxembourg,🇱🇺,LUX,Group C4,C,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/lux.png,True
+587,Andorra,Andorra,🇦🇩,AND,Group D1,D,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/and.png,True
+16721,Gibraltar,Gibraltar,🇬🇮,GIB,Group D1,D,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/gib.png,True
+453,Malta,Malta,🇲🇹,MLT,Group D1,D,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/mlt.png,True
+581,Azerbaijan,Azerbaijan,🇦🇿,AZE,Group D2,D,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/aze.png,True
+589,Liechtenstein,Liechtenstein,🇱🇮,LIE,Group D2,D,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/lie.png,True
+460,Lithuania,Lithuania,🇱🇹,LTU,Group D2,D,001438,00E5FF,https://a.espncdn.com/i/teamlogos/countries/500/ltu.png,True
