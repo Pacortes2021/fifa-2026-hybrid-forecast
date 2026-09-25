@@ -4,6 +4,7 @@ Se integra como un módulo dentro del Portal Maestro.
 """
 import os
 import sys
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -76,6 +77,44 @@ def mc_vivo(modelo, key, ESPN_DF):
              for r in ESPN_DF.itertuples(index=False)
              if mo.GRUPO_DE.get(r.local) == mo.GRUPO_DE.get(r.visita)}
     return mo.monte_carlo(M, 6000, modelo, states=st2, fijos=fijos)
+
+
+@st.cache_data(show_spinner=False)
+def cargar_proyecciones_torneo(modelo):
+    """Carga las probabilidades del torneo simulado por Monte Carlo precalculado."""
+    OUTPUTS = Path(__file__).resolve().parent.parent / "outputs"
+    if modelo == "hyb" and (OUTPUTS / "probabilidades_torneo_hibrido.csv").exists():
+        return pd.read_csv(OUTPUTS / "probabilidades_torneo_hibrido.csv")
+    elif (OUTPUTS / "probabilidades_torneo.csv").exists():
+        return pd.read_csv(OUTPUTS / "probabilidades_torneo.csv")
+    return mc_base(modelo)
+
+
+@st.cache_data(show_spinner=False)
+def cargar_predicciones_grupos(modelo):
+    """Carga las predicciones de los 72 partidos de fase de grupos."""
+    OUTPUTS = Path(__file__).resolve().parent.parent / "outputs"
+    if modelo == "hyb" and (OUTPUTS / "predicciones_fase_grupos_hibrido.csv").exists():
+        return pd.read_csv(OUTPUTS / "predicciones_fase_grupos_hibrido.csv")
+    elif (OUTPUTS / "predicciones_fase_grupos.csv").exists():
+        return pd.read_csv(OUTPUTS / "predicciones_fase_grupos.csv")
+    return pd.DataFrame()
+
+
+@st.cache_data(show_spinner=False)
+def cargar_proyecciones_bracket_real():
+    """Carga la simulación del bracket de eliminatorias oficial."""
+    OUTPUTS = Path(__file__).resolve().parent.parent / "outputs"
+    if (OUTPUTS / "probabilidades_campeon_bracket_real.csv").exists():
+        return pd.read_csv(OUTPUTS / "probabilidades_campeon_bracket_real.csv")
+    return pd.DataFrame()
+
+
+@st.cache_data(show_spinner="Evaluando modelo en hold-out temporal...")
+def get_backtest_holdout(modelo):
+    M = get_motor()
+    mod_id = "base" if modelo == "base" else "hyb"
+    return mo.backtest_test(M, mod_id)
 
 
 @st.cache_data(ttl=120, show_spinner=False)
@@ -255,8 +294,9 @@ def run_app():
     if len(ESPN_DF):
         st.sidebar.success(f"🛰️ ESPN: {len(ESPN_DF)} partidos reales cargados.")
         
-    tab1, tabB, tab3, tab4 = st.tabs([
+    tab1, tab2, tabB, tab3, tab4 = st.tabs([
         "⚽ Partido + Mercados", 
+        "📊 Proyecciones y Grupos",
         "🗺️ Cuadro de eliminatorias", 
         "🔴 Torneo en vivo",
         "🎯 Validación vs Realidad"
@@ -393,6 +433,145 @@ def run_app():
                     ax.add_patch(plt.Rectangle((jmax-.5, imax-.5), 1, 1, fill=False, edgecolor="#d62728", lw=2))
                     st.pyplot(fig)
 
+    with tab2:
+        st.markdown('<div class="sec-title">Proyecciones del Torneo y Fase de Grupos</div>', unsafe_allow_html=True)
+        st.markdown(
+            "Registro cuantitativo de **10.000 simulaciones Monte Carlo** del torneo completo, "
+            "probabilidades de título y rondas eliminatorias para las 48 selecciones, junto a las predicciones de los 72 partidos de fase de grupos."
+        )
+
+        df_proy_raw = cargar_proyecciones_torneo(modelo)
+        df_proy = df_proy_raw.copy()
+        if "elo" not in df_proy.columns and "states" in M:
+            df_proy["elo"] = df_proy["Selección"].map(M["states"]["elo"]).fillna(1500).astype(int)
+
+        top_teams = df_proy.sort_values("P_campeon", ascending=False).reset_index(drop=True)
+
+        # Tarjetas de resumen métrico
+        m_col1, m_col2, m_col3, m_col4 = st.columns(4)
+        if len(top_teams) >= 4:
+            m_col1.metric("🥇 Máximo Favorito", f"{etiqueta(top_teams.loc[0, 'Selección'])}", f"{top_teams.loc[0, 'P_campeon']:.1%}")
+            m_col2.metric("🥈 Segundo Favorito", f"{etiqueta(top_teams.loc[1, 'Selección'])}", f"{top_teams.loc[1, 'P_campeon']:.1%}")
+            m_col3.metric("🥉 Tercer Favorito", f"{etiqueta(top_teams.loc[2, 'Selección'])}", f"{top_teams.loc[2, 'P_campeon']:.1%}")
+            m_col4.metric("⭐ Cuarto Candidato", f"{etiqueta(top_teams.loc[3, 'Selección'])}", f"{top_teams.loc[3, 'P_campeon']:.1%}")
+
+        st.markdown("---")
+
+        sub_tab1, sub_tab2, sub_tab3 = st.tabs([
+            "🏆 Probabilidades del Torneo (48 Selecciones)",
+            "🌐 Fase de Grupos (Grupos A a L)",
+            "📅 Pronóstico de Partidos (72 Encuentros)"
+        ])
+
+        with sub_tab1:
+            col_chart, col_tbl = st.columns([5, 6])
+            with col_chart:
+                st.markdown("##### 📊 Top 12 Candidatos al Título (IC 95%)")
+                top12 = top_teams.head(12).copy()
+                los, his = zip(*[mo.ic_montecarlo(p, 10000) for p in top12["P_campeon"]])
+                fig_bar, ax_bar = plt.subplots(figsize=(6, 6))
+                yp = np.arange(len(top12))[::-1]
+                err_low = (top12["P_campeon"] - np.array(los)) * 100
+                err_high = (np.array(his) - top12["P_campeon"]) * 100
+                ax_bar.barh(yp, top12["P_campeon"] * 100, color="#0b3d91", alpha=0.85,
+                            xerr=[err_low, err_high], capsize=3, ecolor="#d62728")
+                ax_bar.set_yticks(yp)
+                ax_bar.set_yticklabels([etiqueta(t) for t in top12["Selección"]], fontsize=9)
+                ax_bar.set_xlabel("P(Campeón) %", fontsize=9)
+                ax_bar.set_title("Probabilidad de Campeón ± Intervalo 95%", fontsize=10, fontweight="bold")
+                ax_bar.grid(axis="x", ls=":", alpha=0.6)
+                st.pyplot(fig_bar)
+                plt.close(fig_bar)
+
+            with col_tbl:
+                st.markdown("##### 📋 Registro Completo de Probabilidades")
+                df_disp = top_teams.copy()
+                df_disp["Equipo"] = df_disp["Selección"].map(etiqueta)
+                df_disp["ELO"] = df_disp["elo"]
+                cols_show = ["Equipo", "grupo", "ELO", "P_campeon", "P_final", "P_semi", "P_octavos"]
+                df_disp = df_disp[[c for c in cols_show if c in df_disp.columns]]
+                df_disp = df_disp.rename(columns={
+                    "grupo": "Grupo",
+                    "P_campeon": "🏆 P(Campeón)",
+                    "P_final": "🥈 P(Final)",
+                    "P_semi": "🥉 P(Semis)",
+                    "P_octavos": "⚔️ P(Avanzar)"
+                })
+                pct_cols = [c for c in ["🏆 P(Campeón)", "🥈 P(Final)", "🥉 P(Semis)", "⚔️ P(Avanzar)"] if c in df_disp.columns]
+                st.dataframe(
+                    df_disp.style.format({c: "{:.1%}" for c in pct_cols})
+                           .background_gradient(subset=["🏆 P(Campeón)"], cmap="YlOrRd"),
+                    hide_index=True, width='stretch', height=480
+                )
+
+        with sub_tab2:
+            st.markdown("##### 🌐 Estructura de Grupos y Chances de Clasificación")
+            st.caption("P(Avanzar) refleja la probabilidad de clasificar a Dieciseisavos (1º, 2º o los 8 mejores terceros).")
+            dict_oct = top_teams.set_index("Selección")["P_octavos"].to_dict()
+            letras = list(mo.GRUPOS.keys())
+            for fila in range(0, 12, 3):
+                cols_g = st.columns(3)
+                for k, g in enumerate(letras[fila:fila + 3]):
+                    with cols_g[k]:
+                        with st.container(border=True):
+                            st.markdown(f'<div class="card-title-base">Grupo {g}</div>', unsafe_allow_html=True)
+                            filas_g = []
+                            for eq in mo.GRUPOS[g]:
+                                elo_eq = int(M["states"].loc[eq, "elo"]) if eq in M["states"].index else 1500
+                                p_adv = dict_oct.get(eq, 0.0)
+                                filas_g.append({
+                                    "Selección": etiqueta(eq),
+                                    "ELO": elo_eq,
+                                    "P(Avanzar)": p_adv
+                                })
+                            df_g = pd.DataFrame(filas_g).sort_values("P(Avanzar)", ascending=False).reset_index(drop=True)
+                            df_g.insert(0, "Pos Proy", df_g.index + 1)
+                            st.dataframe(
+                                df_g.style.format({"P(Avanzar)": "{:.1%}"})
+                                          .background_gradient(subset=["P(Avanzar)"], cmap="Greens"),
+                                hide_index=True, width='stretch'
+                            )
+
+        with sub_tab3:
+            st.markdown("##### 📅 Pronóstico de los 72 Partidos de Fase de Grupos")
+            st.caption("Probabilidades pre-partido calculadas con el motor Dixon-Coles y features avanzadas.")
+            df_partidos_fg = cargar_predicciones_grupos(modelo)
+            if not df_partidos_fg.empty:
+                col_filtro1, col_filtro2 = st.columns([3, 4])
+                with col_filtro1:
+                    grupos_unicos = ["Todos"] + sorted(list(df_partidos_fg["grupo"].unique()))
+                    sel_grp = st.selectbox("Filtrar por Grupo", grupos_unicos, key="fg_grp_sel")
+                with col_filtro2:
+                    todas_sel = ["Todas"] + OPC
+                    sel_team_f = st.selectbox("Filtrar por Selección", todas_sel, key="fg_team_sel")
+
+                df_fg_show = df_partidos_fg.copy()
+                if sel_grp != "Todos":
+                    df_fg_show = df_fg_show[df_fg_show["grupo"] == sel_grp]
+                if sel_team_f != "Todas":
+                    en_sel = es2en(sel_team_f)
+                    df_fg_show = df_fg_show[(df_fg_show["equipo_1"] == en_sel) | (df_fg_show["equipo_2"] == en_sel)]
+
+                df_fg_show["Local"] = df_fg_show["equipo_1"].map(etiqueta)
+                df_fg_show["Visita"] = df_fg_show["equipo_2"].map(etiqueta)
+                df_fg_show["xG Local"] = df_fg_show["goles_esp_1"].map(lambda x: f"{x:.2f}")
+                df_fg_show["xG Visita"] = df_fg_show["goles_esp_2"].map(lambda x: f"{x:.2f}")
+                df_fg_show = df_fg_show.rename(columns={
+                    "grupo": "Grupo",
+                    "cancha": "Cancha",
+                    "P(gana 1)": "P(Local)",
+                    "P(empate)": "P(Empate)",
+                    "P(gana 2)": "P(Visita)"
+                })
+                cols_fg = ["Grupo", "Local", "xG Local", "P(Local)", "P(Empate)", "P(Visita)", "xG Visita", "Visita", "Cancha"]
+                st.dataframe(
+                    df_fg_show[[c for c in cols_fg if c in df_fg_show.columns]]
+                        .style.format({"P(Local)": "{:.1%}", "P(Empate)": "{:.1%}", "P(Visita)": "{:.1%}"})
+                        .background_gradient(subset=["P(Local)"], cmap="Blues")
+                        .background_gradient(subset=["P(Visita)"], cmap="Purples"),
+                    hide_index=True, width='stretch', height=450
+                )
+
     with tabB:
         st.markdown('<div class="sec-title">El cuadro de eliminatorias — camino al título</div>',
                     unsafe_allow_html=True)
@@ -401,7 +580,19 @@ def run_app():
                     "solo las eliminatorias.")
         payload = sim_bracket(ESPN_KEY, modelo, ESPN_DF)
         if payload is None:
-            st.info("El cuadro de eliminatorias aún no está publicado en ESPN.")
+            st.info("ℹ️ El cuadro oficial de eliminatorias de ESPN se activará automáticamente una vez concluyan los 72 partidos de la Fase de Grupos.")
+            df_br = cargar_proyecciones_bracket_real()
+            if not df_br.empty:
+                st.markdown("##### 🏆 Proyección Pre-Torneo del Cuadro de Eliminatorias")
+                st.caption("Simulación de 20.000 torneos jugando las eliminatorias con la estructura oficial del cuadro (FIFA 2026):")
+                df_br_show = df_br.copy()
+                df_br_show["Selección"] = df_br_show["Selección"].map(etiqueta)
+                df_br_show = df_br_show.rename(columns={"P_campeon": "🏆 P(Campeón en Cuadro)"})
+                st.dataframe(
+                    df_br_show.head(16).style.format({"🏆 P(Campeón en Cuadro)": "{:.1%}"})
+                                             .background_gradient(subset=["🏆 P(Campeón en Cuadro)"], cmap="Blues"),
+                    hide_index=True, width='stretch'
+                )
         else:
             br, sim = payload["bracket"], payload["sim"]
             tabla = sim["tabla"]
@@ -478,12 +669,10 @@ def run_app():
                 st.caption(f"Mayor salto: {subio['Selección']} ({subio['Δ']:+.1%}).")
 
     with tab4:
-        st.markdown('<div class="sec-title">El Modelo contra la Realidad (Mundial en vivo)</div>', unsafe_allow_html=True)
-        st.markdown("Compara las predicciones pre-partido del modelo con los resultados reales del torneo recopilados de ESPN.")
+        st.markdown('<div class="sec-title">El Modelo contra la Realidad</div>', unsafe_allow_html=True)
         
-        if len(ESPN_DF) == 0:
-            st.info("Aún no hay partidos reales finalizados en ESPN para validar.")
-        else:
+        if len(ESPN_DF) > 0:
+            st.markdown("Compara las predicciones pre-partido del modelo con los resultados reales del torneo recopilados de ESPN.")
             df_val, met, evol = mo.validacion_en_vivo(M, ESPN_DF, modelo)
             
             if len(df_val) == 0:
@@ -535,3 +724,59 @@ def run_app():
                             df_teams.style.format({"% Acierto": "{:.1%}"}).background_gradient(subset=["% Acierto"], cmap="YlGn"),
                             hide_index=True, width='stretch'
                         )
+        else:
+            st.info("🛰️ El Mundial 2026 aún no comienza en ESPN. A continuación se presenta el **registro empírico de validación out-of-sample** obtenido en el conjunto de prueba temporal (partidos internacionales 2025–2026, nunca vistos por el entrenamiento del modelo).")
+            
+            P_val, y_val, te_val = get_backtest_holdout(modelo)
+            n_val = len(y_val)
+            pred_val = P_val.argmax(axis=1)
+            aciertos_val = int((pred_val == y_val).sum())
+            acc_val = aciertos_val / n_val
+            from sklearn.metrics import log_loss
+            ll_val = float(log_loss(y_val, P_val, labels=[0, 1, 2]))
+            base_val = np.tile([0.279, 0.275, 0.446], (n_val, 1))
+            ll_base_val = float(log_loss(y_val, base_val, labels=[0, 1, 2]))
+            
+            vm1, vm2, vm3, vm4 = st.columns(4)
+            vm1.metric("Partidos Evaluados (OOS)", f"{n_val:,}")
+            vm2.metric("Tasa de Acierto (1X2)", f"{acc_val:.1%}")
+            vm3.metric("Log-Loss Modelo", f"{ll_val:.3f}", f"{ll_val - ll_base_val:+.3f} vs baseline", delta_color="inverse")
+            vm4.metric("Log-Loss Baseline", f"{ll_base_val:.3f}")
+            
+            if ll_val < ll_base_val:
+                st.success(f"🏆 El modelo supera con creces al baseline ingenuo en {n_val:,} partidos de selecciones (ganancia de {ll_base_val - ll_val:.3f} pts de log-loss y {acc_val:.1%} de acierto).")
+            
+            st.markdown("##### 📋 Historial de Validación Out-of-Sample (Hold-out 2025–2026)")
+            te_show = pd.DataFrame({
+                "Fecha": pd.to_datetime(te_val["fecha"]).dt.strftime("%Y-%m-%d"),
+                "Competición": te_val["competicion"],
+                "Local": te_val["local"].map(etiqueta),
+                "Visita": te_val["visita"].map(etiqueta),
+                "Resultado Real": [mo.ETIQUETAS.get(y, "—") for y in y_val],
+                "Predicción": [mo.ETIQUETAS.get(p, "—") for p in pred_val],
+                "P(Local)": [f"{P_val[i, 2]:.0%}" for i in range(n_val)],
+                "P(Empate)": [f"{P_val[i, 1]:.0%}" for i in range(n_val)],
+                "P(Visita)": [f"{P_val[i, 0]:.0%}" for i in range(n_val)],
+                "Acierto": ["✅" if pred_val[i] == y_val[i] else "❌" for i in range(n_val)]
+            })
+            st.dataframe(te_show, hide_index=True, width='stretch', height=350)
+            
+            st.markdown("##### 📈 Curvas de Calibración de Probabilidades")
+            st.caption("Si el modelo predice 60% de probabilidad, el evento debe ocurrir el 60% de las veces. La curva debe alinearse con la diagonal ideal.")
+            c_cal1, c_cal2, c_cal3 = st.columns(3)
+            cols_cal = [c_cal1, c_cal2, c_cal3]
+            for k, (clase_idx, clase_nom) in enumerate([(2, "Victoria Local"), (1, "Empate"), (0, "Victoria Visita")]):
+                xs, ys, ns, ece = mo.curva_calibracion(P_val, y_val, clase_idx)
+                with cols_cal[k]:
+                    fig_c, ax_c = plt.subplots(figsize=(4, 3.5))
+                    ax_c.plot([0, 1], [0, 1], "k--", lw=1, alpha=0.6, label="Ideal")
+                    ax_c.plot(xs, ys, "o-", color="#0b3d91" if clase_idx==2 else ("#7a3b91" if clase_idx==1 else "#2a9d5c"), lw=2, label="Modelo")
+                    ax_c.set_title(f"{clase_nom} (ECE={ece:.3f})", fontsize=10, fontweight="bold")
+                    ax_c.set_xlabel("Probabilidad Predicha", fontsize=8)
+                    ax_c.set_ylabel("Frecuencia Observada", fontsize=8)
+                    ax_c.set_xlim(0, 1)
+                    ax_c.set_ylim(0, 1)
+                    ax_c.grid(True, ls=":", alpha=0.5)
+                    ax_c.legend(fontsize=8)
+                    st.pyplot(fig_c)
+                    plt.close(fig_c)

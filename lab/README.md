@@ -18,17 +18,38 @@ tarjetas, comparación Base vs Híbrido lado a lado).
 
 | Pestaña | Qué hace |
 |---|---|
-| **⚽ Partido + Mercados** | Compara **Base vs Híbrido** lado a lado (estilo de la app principal): probabilidades V/E/D con barras + **cuota justa** (1/prob) de cada resultado y mercado, para detectar *value* contra una casa. Mercados: Over/Under (1.5/2.5/3.5), BTTS, hándicap, marcadores más probables y las dos matrices. Muestra los **últimos 6 partidos** de cada selección (historial + Mundial en curso). |
-| **📊 Fase de grupos** | Las 12 **tablas de posiciones** (PJ, G/E/P, GF, GC, DG, Pts) construidas con los resultados reales de ESPN, con la **probabilidad de clasificar** de cada equipo según el modelo ya actualizado. Verde = puestos de clasificación directa. |
-| **🔴 Torneo en vivo** | Trae los resultados **reales** del Mundial desde la **API de ESPN** (o carga manual): **actualiza el Elo y la forma**, **fija** los partidos de grupo jugados y **re-simula el resto**, mostrando cómo cambian las probabilidades de campeón. |
-| **🎯 Validación** | (1) **Calibración** en el hold-out temporal 2025–26 (curvas + ECE). (2) **Backtesting económico** de *value betting* contra un mercado sintético. |
-| **📈 Robustez** | (1) **Intervalos de confianza** del Monte Carlo (8.000 simulaciones). (2) **Análisis de sensibilidad**: mueve el Elo de una selección y observa el efecto inmediato. |
+| **⚽ Partido + Mercados** | Analizador de enfrentamiento directo entre 2 selecciones: probabilidades 1X2, cuota justa (1/prob), matriz bivariada Poisson Dixon-Coles (7x7) y estimación de estadísticas de partido (xG, tiros al arco, corners, faltas, posesión). |
+| **📊 Proyecciones y Grupos** | Registro cuantitativo de **10.000 simulaciones Monte Carlo**: probabilidades de Campeón, Final, Semis y Clasificación para las 48 selecciones (con intervalos de confianza al 95%), tablas de los 12 grupos (A a L) y pronóstico de los 72 partidos de fase de grupos con xG. |
+| **🗺️ Cuadro de eliminatorias** | Simulación del camino al título sobre los 16 cruces oficiales (15.000 simulaciones). Si el cuadro de ESPN aún no está publicado (pre-torneo), despliega la simulación precalculada de las eliminatorias oficiales FIFA (`probabilidades_campeon_bracket_real.csv`). |
+| **🔴 Torneo en vivo** | Ingesta en vivo de resultados de ESPN o carga manual de resultados para re-simular el torneo fijando cotejos disputados y actualizando el Elo en caliente. |
+| **🎯 Validación vs Realidad** | Evaluación empírica del modelo: durante el Mundial valida partido a partido contra ESPN; mientras no haya partidos jugados, despliega el **registro out-of-sample en el hold-out 2025–2026** (1.045 partidos, curvas de calibración y log-loss vs baseline). |
+
+## 📊 Registro de Resultados Cuantitativos
+
+### 1. Evaluación Out-of-Sample (Hold-out 2025–2026)
+- **Partidos evaluados**: 1.045 cotejos internacionales reales
+- **Tasa de acierto (1X2)**: **60.1%** (frente al 33.3% aleatorio)
+- **Log-Loss del modelo**: **0.848** (frente al **1.099** del baseline uniforme histórico, ganancia de -0.251)
+- **Calibración ECE**: Calibración monotónica alineada con la diagonal ideal en victorias locales, empates y visitas.
+
+### 2. Proyecciones Monte Carlo del Mundial (10.000 Torneos)
+| Selección | Grupo | ELO | P(Campeón) | P(Final) | P(Semis) | P(Avanzar) |
+|---|---|---|---|---|---|---|
+| 🇪🇸 España | H | 2223 | **30.1%** | 42.9% | 56.7% | 83.1% |
+| 🇦🇷 Argentina | J | 2189 | **18.2%** | 32.3% | 47.5% | 73.4% |
+| 🇫🇷 Francia | I | 2128 | **11.8%** | 21.6% | 39.5% | 78.3% |
+| 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra | L | 2090 | **10.0%** | 19.3% | 33.5% | 75.4% |
+| 🇧🇷 Brasil | C | 2069 | **6.5%** | 13.4% | 26.9% | 69.7% |
+| 🇵🇹 Portugal | K | 2056 | **4.4%** | 10.7% | 20.7% | 67.8% |
+| 🇳🇱 Países Bajos | F | 2004 | **2.8%** | 7.0% | 16.9% | 52.7% |
+| 🇩🇪 Alemania | E | 2000 | **2.8%** | 7.1% | 18.3% | 65.1% |
+| 🇨🇴 Colombia | K | 2064 | **2.2%** | 5.9% | 13.4% | 56.2% |
 
 ## Archivos
 
 - `motor.py` — toda la lógica (carga, modelos, Poisson, mercados, cuotas, modo vivo, simulación, validación). Importable y testeable.
 - `espn_live.py` — conector con la API pública de ESPN (resultados reales del Mundial, sin API key).
-- `app_lab.py` — la interfaz Streamlit (4 pestañas).
+- `app_lab.py` — interfaz Streamlit (5 pestañas canónicas).
 
 ## Notas de honestidad
 
