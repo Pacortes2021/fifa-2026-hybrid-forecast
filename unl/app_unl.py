@@ -51,29 +51,69 @@ def run_app():
     equipos_dict = M["equipos_info"]
     flags = rec_eq.FLAGS
 
-    st.markdown('<div class="main-title">🇪🇺 UEFA Nations League Predictor</div>', unsafe_allow_html=True)
-    st.markdown('<div class="main-subtitle">Edición Oficial 2026–27 · 54 Selecciones · 14 Grupos · Final Four, Ascensos y Descensos</div>', unsafe_allow_html=True)
-
-    # Sidebar: Configuración de Modelo
+    # Sidebar: Configuración de Modelo y Métricas
     st.sidebar.markdown("### ⚙️ Motor Predictivo")
+    met_all = M.get("metricas", {})
+    met_s = met_all.get("stacking", {"logloss": 0.7710, "accuracy": 75.0})
+    met_rf = met_all.get("rf", {"logloss": 0.7710, "accuracy": 75.0})
+    met_l = met_all.get("lasso", {"logloss": 0.7654, "accuracy": 66.7})
+
+    opciones_radio = [
+        f"✨ Stacking (LL: {met_s['logloss']:.4f} · Acc: {met_s['accuracy']:.1f}%)",
+        f"🌲 Random Forest (LL: {met_rf['logloss']:.4f} · Acc: {met_rf['accuracy']:.1f}%)",
+        f"🎯 LASSO L1 (LL: {met_l['logloss']:.4f} · Acc: {met_l['accuracy']:.1f}%)"
+    ]
+
     modelo_sel = st.sidebar.radio(
-        "Modelo Activo:",
-        ["✨ Stacking Óptimo (L1 + RF)", "🌲 Random Forest", "🎯 LASSO L1 (SAGA)"],
+        "Seleccionar Modelo:",
+        opciones_radio,
         index=0,
         key="unl_modelo_radio"
     )
+
     if "Stacking" in modelo_sel:
         mod_code = "stacking"
-        nombre_modelo = f"Stacking Óptimo (α={M['metricas']['alpha']})"
+        met_act = met_s
+        nombre_modelo = f"Stacking Óptimo (α={met_all.get('alpha', 0.0)})"
     elif "Random" in modelo_sel:
         mod_code = "rf"
-        nombre_modelo = "Random Forest"
+        met_act = met_rf
+        nombre_modelo = "Random Forest (Ensamble de Árboles)"
     else:
         mod_code = "lasso"
-        nombre_modelo = f"LASSO L1 (C={M['metricas']['best_c']})"
+        met_act = met_l
+        nombre_modelo = f"LASSO L1 SAGA (C={met_all.get('best_c', 1.0)})"
 
+    # Métricas del Modelo Seleccionado en Sidebar
+    c_side1, c_side2 = st.sidebar.columns(2)
+    c_side1.metric("Log-Loss", f"{met_act['logloss']:.4f}")
+    c_side2.metric("Acierto (Acc)", f"{met_act['accuracy']:.1f}%")
+
+    # Comparativa completa de modelos en Sidebar
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("#### 📊 Métricas Out-of-Sample (Test 2026)")
+    mejor_ll = min(met_all[k]["logloss"] for k in ["lasso", "rf", "stacking"] if k in met_all)
+    mejor_acc = max(met_all[k]["accuracy"] for k in ["lasso", "rf", "stacking"] if k in met_all)
+
+    for nombre, clave, param in [
+        ("LASSO L1", "lasso", f"C={met_all.get('best_c', 1.0)}"),
+        ("Random Forest", "rf", "Depth=5"),
+        ("Stacking", "stacking", f"α={met_all.get('alpha', 0.0)}")
+    ]:
+        if clave not in met_all:
+            continue
+        m = met_all[clave]
+        star_ll = " 🎯 Mejor LL" if m["logloss"] == mejor_ll else ""
+        star_acc = " 🏆 Mejor Acc" if m["accuracy"] == mejor_acc and star_ll == "" else ""
+        st.sidebar.markdown(f"**{nombre}** ({param}){star_ll}{star_acc}")
+        st.sidebar.caption(f"Log-Loss: `{m['logloss']:.4f}` | Acierto: `{m['accuracy']:.1f}%`")
+
+    st.sidebar.caption("📏 *Baseline Marginal*: `1.0309` (33.3% uniforme)")
     st.sidebar.markdown("---")
     st.sidebar.success(f"📊 Base de Datos: **54** Selecciones · **670** Partidos Históricos · **148** en Fixture")
+
+    st.markdown('<div class="main-title">🇪🇺 UEFA Nations League Predictor</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> · Test Log-Loss: <b>{met_act["logloss"]:.4f}</b> · Acierto: <b>{met_act["accuracy"]:.1f}%</b> · Edición Oficial 2026–27</div>', unsafe_allow_html=True)
 
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "⚽ Predicción Versus",
@@ -358,33 +398,42 @@ REGLAS OBLIGATORIAS DE ANÁLISIS (NO REPITAS EL CSV):
     # =========================================================================
     with tab4:
         st.markdown('<div class="sec-title">Explicabilidad del Modelo e Importancia de Variables</div>', unsafe_allow_html=True)
-        st.markdown("Análisis de pesos del clasificador lineal regularizado **LASSO (L1 SAGA)** que penaliza el ruido estadístico.")
-
-        pipe = M["pipe_lasso"]
         cols_feat = M["cols_features"]
-        coefs = pipe.named_steps["lr"].coef_
-        avg_weights = np.mean(np.abs(coefs), axis=0)
+
+        if mod_code == "rf":
+            st.markdown("Análisis de importancia de variables para **Random Forest** según la reducción promedio de impureza de Gini.")
+            importancias = M["pipe_rf"].named_steps["rf"].feature_importances_
+            label_imp = "Importancia Gini (Random Forest)"
+        else:
+            st.markdown("Análisis de pesos del clasificador lineal regularizado **LASSO (L1 SAGA)** que penaliza el ruido estadístico.")
+            importancias = np.mean(np.abs(M["pipe_lasso"].named_steps["lr"].coef_), axis=0)
+            label_imp = "Peso Absoluto Medio (LASSO L1 SAGA)"
 
         df_weights = pd.DataFrame({
             "Variable": cols_feat,
-            "Importancia": avg_weights
+            "Importancia": importancias
         }).sort_values("Importancia", ascending=True)
 
         col_w1, col_w2 = st.columns([7, 5])
         with col_w1:
             fig_w, ax_w = plt.subplots(figsize=(6, 4))
             ax_w.barh(df_weights["Variable"], df_weights["Importancia"], color="#0b3d91", alpha=0.85)
-            ax_w.set_xlabel("Peso Absoluto Medio (LASSO L1)")
+            ax_w.set_xlabel(label_imp, fontsize=9)
             ax_w.grid(axis="x", ls=":", alpha=0.6)
             st.pyplot(fig_w)
             plt.close(fig_w)
 
         with col_w2:
-            st.markdown("##### 📋 Métricas Out-of-Sample (Hold-out)")
+            st.markdown("##### 📋 Cuadro Comparativo de Modelos (Test 2026)")
             met = M["metricas"]
-            st.metric("Acierto Test (Stacking)", f"{met['stacking']['accuracy']:.1f}%")
-            st.metric("Log-Loss Modelo", f"{met['stacking']['logloss']:.4f}")
-            st.caption("El modelo penaliza variables redundantes mediante regularización L1, evitando el sobreajuste al ruido de baja frecuencia característico del fútbol de selecciones.")
+            df_comp_met = pd.DataFrame([
+                {"Modelo": "🎯 LASSO L1", "Log-Loss": f"{met['lasso']['logloss']:.4f}", "Acierto": f"{met['lasso']['accuracy']:.1f}%", "Config": f"C={met.get('best_c', 1.0)}"},
+                {"Modelo": "🌲 Random Forest", "Log-Loss": f"{met['rf']['logloss']:.4f}", "Acierto": f"{met['rf']['accuracy']:.1f}%", "Config": "Depth=5, N=200"},
+                {"Modelo": "✨ Stacking", "Log-Loss": f"{met['stacking']['logloss']:.4f}", "Acierto": f"{met['stacking']['accuracy']:.1f}%", "Config": f"α={met.get('alpha', 0.0)}"},
+                {"Modelo": "📏 Baseline", "Log-Loss": "1.0309", "Acierto": "33.3%", "Config": "Ingenuo Marginal"}
+            ])
+            st.dataframe(df_comp_met, hide_index=True, width='stretch')
+            st.caption("El modelo penaliza variables redundantes y captura efectos no lineales en la brecha entre divisiones europeas.")
 
     # =========================================================================
     # TAB 5: Validación vs Realidad
