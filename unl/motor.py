@@ -21,6 +21,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, log_loss
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVC
+from xgboost import XGBClassifier
 
 warnings.filterwarnings("ignore")
 
@@ -285,25 +287,37 @@ def cargar():
     X_train_full = df_dataset.loc[train_mask | cal_mask, cols_feat].fillna(0.0)
     y_train_full = df_dataset.loc[train_mask | cal_mask, "resultado"]
 
+    # 1. LASSO L1 (SAGA)
     pipe_lasso = Pipeline([("sc", StandardScaler()),
                            ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
     pipe_lasso.fit(X_train_full, y_train_full)
 
+    # 2. Random Forest
     pipe_rf = Pipeline([("sc", StandardScaler()),
                         ("rf", RandomForestClassifier(n_estimators=200, max_depth=5, min_samples_split=12, random_state=42, n_jobs=-1))])
     pipe_rf.fit(X_train_full, y_train_full)
 
-    # Stacking alpha óptimo en validación
-    p_l_cal = pipe_lasso.predict_proba(X_cal) if len(X_cal) else pipe_lasso.predict_proba(X_train_full)
+    # 3. XGBoost (Gradient Boosting)
+    pipe_xgb = Pipeline([("sc", StandardScaler()),
+                         ("xgb", XGBClassifier(n_estimators=100, max_depth=3, learning_rate=0.03, subsample=0.8, colsample_bytree=0.8, random_state=42, n_jobs=-1, eval_metric="mlogloss"))])
+    pipe_xgb.fit(X_train_full, y_train_full)
+
+    # 4. Support Vector Machine (SVM con Kernel RBF)
+    pipe_svm = Pipeline([("sc", StandardScaler()),
+                         ("svm", SVC(probability=True, C=0.5, kernel="rbf", random_state=42))])
+    pipe_svm.fit(X_train_full, y_train_full)
+
+    # Stacking ponderado óptimo en validación (XGBoost + Random Forest)
+    p_x_cal = pipe_xgb.predict_proba(X_cal) if len(X_cal) else pipe_xgb.predict_proba(X_train_full)
     p_r_cal = pipe_rf.predict_proba(X_cal) if len(X_cal) else pipe_rf.predict_proba(X_train_full)
     y_eval = y_cal if len(y_cal) else y_train_full
 
-    def _stack_loss(alpha):
-        blend = np.clip(alpha * p_l_cal + (1.0 - alpha) * p_r_cal, 1e-7, 1.0 - 1e-7)
+    def _stack_loss(w):
+        blend = np.clip(w * p_x_cal + (1.0 - w) * p_r_cal, 1e-7, 1.0 - 1e-7)
         return log_loss(y_eval, blend, labels=[0, 1, 2])
 
     res = minimize_scalar(_stack_loss, bounds=(0.0, 1.0), method="bounded")
-    alpha_opt = float(res.x)
+    w_opt = float(res.x)
 
     # Métricas en test
     def _met(proba, y_true):
@@ -317,14 +331,19 @@ def cargar():
 
     p_lasso_test = pipe_lasso.predict_proba(X_test) if len(X_test) else pipe_lasso.predict_proba(X_train_full[:20])
     p_rf_test = pipe_rf.predict_proba(X_test) if len(X_test) else pipe_rf.predict_proba(X_train_full[:20])
-    p_stack_test = np.clip(alpha_opt * p_lasso_test + (1.0 - alpha_opt) * p_rf_test, 1e-7, 1.0 - 1e-7)
+    p_xgb_test = pipe_xgb.predict_proba(X_test) if len(X_test) else pipe_xgb.predict_proba(X_train_full[:20])
+    p_svm_test = pipe_svm.predict_proba(X_test) if len(X_test) else pipe_svm.predict_proba(X_train_full[:20])
+    p_stack_test = np.clip(w_opt * p_xgb_test + (1.0 - w_opt) * p_rf_test, 1e-7, 1.0 - 1e-7)
     y_test_eval = y_test if len(y_test) else y_train_full[:20]
 
     metricas = {
         "lasso": _met(p_lasso_test, y_test_eval),
         "rf": _met(p_rf_test, y_test_eval),
+        "xgb": _met(p_xgb_test, y_test_eval),
+        "svm": _met(p_svm_test, y_test_eval),
         "stacking": _met(p_stack_test, y_test_eval),
-        "alpha": round(alpha_opt, 3),
+        "alpha": round(w_opt, 3),
+        "w": round(w_opt, 3),
         "best_c": best_c
     }
 
@@ -354,7 +373,9 @@ def cargar():
         "tracker": tracker,
         "pipe_lasso": pipe_lasso,
         "pipe_rf": pipe_rf,
-        "alpha_stack": alpha_opt,
+        "pipe_xgb": pipe_xgb,
+        "pipe_svm": pipe_svm,
+        "alpha_stack": w_opt,
         "cols_features": cols_feat,
         "poisson_params": poisson_params,
         "metricas": metricas,
@@ -366,22 +387,26 @@ def cargar():
     return _MOTOR_CACHE
 
 
-def predecir_match(M, local, visita, modelo="stacking"):
+def predecir_match(M, local, visita, modelo="rf"):
     tracker = M["tracker"]
     cols_feat = M["cols_features"]
     feats = tracker.get_features_for_match(local, visita)
     df_feat = pd.DataFrame([feats])[cols_feat].fillna(0.0)
 
-    if modelo == "lasso":
+    if modelo in ("lasso", "l1"):
         p_raw = M["pipe_lasso"].predict_proba(df_feat)[0]
-    elif modelo == "rf":
-        p_raw = M["pipe_rf"].predict_proba(df_feat)[0]
-    else:  # stacking
-        alpha = M.get("alpha_stack", 0.5)
-        p_l = M["pipe_lasso"].predict_proba(df_feat)[0]
+    elif modelo == "xgb":
+        p_raw = M["pipe_xgb"].predict_proba(df_feat)[0]
+    elif modelo == "svm":
+        p_raw = M["pipe_svm"].predict_proba(df_feat)[0]
+    elif modelo == "stacking":
+        w = M.get("alpha_stack", 0.5)
+        p_x = M["pipe_xgb"].predict_proba(df_feat)[0]
         p_r = M["pipe_rf"].predict_proba(df_feat)[0]
-        p_raw = alpha * p_l + (1.0 - alpha) * p_r
+        p_raw = w * p_x + (1.0 - w) * p_r
         p_raw = p_raw / p_raw.sum()
+    else:  # rf (default/recomendado)
+        p_raw = M["pipe_rf"].predict_proba(df_feat)[0]
 
     # Reordenar a [P(Local), P(Empate), P(Visita)] -> clases son [0: Gana Visita, 1: Empate, 2: Gana Local]
     p_1x2 = np.array([p_raw[2], p_raw[1], p_raw[0]])
@@ -391,8 +416,8 @@ def predecir_match(M, local, visita, modelo="stacking"):
     d_elo = feats["elo_diff"]
     d_sv = feats["log_sv_diff"]
 
-    log_la = pp["const_l"] + pp["b_elo_l"] * d_elo + pp["b_sv_l"] * d_sv
-    log_lb = pp["const_v"] + pp["b_elo_v"] * d_elo + pp["b_sv_v"] * d_sv
+    log_la = pp["const_l"] + pp["b_elo_l"] * d_elo + pp.get("b_sv_l", 0.0) * d_sv
+    log_lb = pp["const_v"] + pp["b_elo_v"] * d_elo + pp.get("b_sv_v", 0.0) * d_sv
     la = float(np.clip(np.exp(log_la), 0.2, 5.0))
     lb = float(np.clip(np.exp(log_lb), 0.1, 5.0))
 
