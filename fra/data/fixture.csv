@@ -1,6 +1,5 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
 746714,2026-05-17 21:00:00,2026,165,179,Nantes,Toulouse,,,pre
-401876447,2026-10-09 20:45:00,2026,175,167,Lens,Lyon,,,pre
 401876446,2026-10-10 17:15:00,2026,166,3236,Lille,Le Havre,,,pre
 401876444,2026-10-10 20:45:00,2026,174,179,Monaco,Toulouse,,,pre
 401876448,2026-10-10 20:45:00,2026,6997,7868,Brest,Angers,,,pre
