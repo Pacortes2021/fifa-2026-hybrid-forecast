@@ -2174,3 +2174,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401879273,2026-09-20 14:00:00,2026,357,384,Leeds United,Crystal Palace,0.0,0.0,post
 401879272,2026-09-20 14:00:00,2026,382,366,Manchester City,Sunderland,5.0,3.0,post
 401878777,2026-09-20 16:30:00,2026,370,360,Fulham,Manchester United,1.0,1.0,post
+401879268,2026-10-10 12:30:00,2026,359,357,Arsenal,Leeds United,2.0,1.0,post
+401878776,2026-10-10 15:00:00,2026,362,337,Aston Villa,Brentford,2.0,2.0,post
+401878775,2026-10-10 15:00:00,2026,363,349,Chelsea,AFC Bournemouth,5.0,1.0,post
+401879265,2026-10-10 15:00:00,2026,373,370,Ipswich Town,Fulham,2.0,1.0,post
+401878772,2026-10-10 15:00:00,2026,366,331,Sunderland,Brighton & Hove Albion,0.0,2.0,post
+401878773,2026-10-10 17:30:00,2026,360,367,Manchester United,Tottenham Hotspur,1.0,1.0,post

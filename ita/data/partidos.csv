@@ -2192,3 +2192,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874801,2026-09-20 15:00:00,2026,115,3263,Parma,Genoa,2.0,1.0,post
 401874757,2026-09-20 18:00:00,2026,111,105,Juventus,Atalanta,2.0,0.0,post
 401874944,2026-09-20 20:45:00,2026,103,113,AC Milan,Lecce,3.0,0.0,post
+401874947,2026-10-10 15:00:00,2026,3263,109,Genoa,Fiorentina,2.0,1.0,post
+401875021,2026-10-10 18:00:00,2026,110,115,Inter,Parma,3.0,0.0,post
+401874754,2026-10-10 20:45:00,2026,114,4057,Napoli,Frosinone,3.0,0.0,post
