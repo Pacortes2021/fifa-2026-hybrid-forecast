@@ -1761,3 +1761,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401884777,2026-10-10 15:30:00,2026,3841,132,FC Augsburg,Bayern Munich,2.0,2.0,post
 401884775,2026-10-10 15:30:00,2026,598,10388,1. FC Union Berlin,SV Elversberg,1.0,0.0,post
 401884780,2026-10-10 18:30:00,2026,11420,125,RB Leipzig,Eintracht Frankfurt,6.0,0.0,post
+401884774,2026-10-11 15:30:00,2026,122,268,FC Cologne,Borussia Mönchengladbach,2.0,1.0,post
+401884778,2026-10-11 17:30:00,2026,126,133,SC Freiburg,Schalke 04,2.0,1.0,post

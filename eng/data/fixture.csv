@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401879266,2026-10-11 14:00:00,2026,384,393,Crystal Palace,Nottingham Forest,,,pre
-401878774,2026-10-11 14:00:00,2026,306,368,Hull City,Everton,,,pre
-401879264,2026-10-11 16:30:00,2026,364,382,Liverpool,Manchester City,,,pre
 401879267,2026-10-12 20:00:00,2026,388,361,Coventry City,Newcastle United,,,pre
 401878771,2026-10-17 12:30:00,2026,368,363,Everton,Chelsea,,,pre
 401879262,2026-10-17 15:00:00,2026,337,364,Brentford,Liverpool,,,pre
