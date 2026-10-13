@@ -1,6 +1,5 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
 401882849,2026-10-10 14:00:00,2026,101,93,Rayo Vallecano,Athletic Club,,,pre
-401882852,2026-10-12 21:00:00,2026,1538,243,Levante,Sevilla FC,,,pre
 401882844,2026-10-16 21:00:00,2026,90,1538,Deportivo,Levante,,,pre
 401882843,2026-10-17 14:00:00,2026,88,1068,Espanyol,Atlético de Madrid,,,pre
 401882837,2026-10-17 16:15:00,2026,102,3751,Villarreal CF,Elche CF,,,pre
