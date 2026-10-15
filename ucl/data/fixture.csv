@@ -1,13 +1,4 @@
 event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401915416,2026-10-14 18:45:00,2027,league-phase,0,0,142,2572,Feyenoord,Como,,,pre,STATUS_SCHEDULED
-401915415,2026-10-14 18:45:00,2027,league-phase,0,0,4411,364,LASK Linz,Liverpool,,,pre,STATUS_SCHEDULED
-401915414,2026-10-14 21:00:00,2027,league-phase,0,0,104,86,AS Roma,Real Madrid,,,pre,STATUS_SCHEDULED
-401915409,2026-10-14 21:00:00,2027,league-phase,0,0,362,436,Aston Villa,Fenerbahce,,,pre,STATUS_SCHEDULED
-401915393,2026-10-14 21:00:00,2027,league-phase,0,0,2980,124,Bodo/Glimt,Borussia Dortmund,,,pre,STATUS_SCHEDULED
-401915407,2026-10-14 21:00:00,2027,league-phase,0,0,382,160,Manchester City,PSG,,,pre,STATUS_SCHEDULED
-401915408,2026-10-14 21:00:00,2027,league-phase,0,0,244,437,Real Betis,Porto,,,pre,STATUS_SCHEDULED
-401915406,2026-10-14 21:00:00,2027,league-phase,0,0,493,887,Shakhtar Donetsk,AEK Athens,,,pre,STATUS_SCHEDULED
-401915405,2026-10-14 21:00:00,2027,league-phase,0,0,521,134,Slovan Bratislava,VfB Stuttgart,,,pre,STATUS_SCHEDULED
 401915404,2026-10-20 18:45:00,2027,league-phase,0,0,21922,124,Sabah FK,Borussia Dortmund,,,pre,STATUS_SCHEDULED
 401915403,2026-10-20 18:45:00,2027,league-phase,0,0,436,494,Fenerbahce,Slavia Praga,,,pre,STATUS_SCHEDULED
 401915402,2026-10-20 21:00:00,2027,league-phase,0,0,104,521,AS Roma,Slovan Bratislava,,,pre,STATUS_SCHEDULED
@@ -24,7 +15,7 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915391,2026-10-21 21:00:00,2027,league-phase,0,0,2250,4411,Sporting CP,LASK Linz,,,pre,STATUS_SCHEDULED
 401915390,2026-10-21 21:00:00,2027,league-phase,0,0,110,493,Inter,Shakhtar Donetsk,,,pre,STATUS_SCHEDULED
 401915312,2026-10-21 21:00:00,2027,league-phase,0,0,132,359,Bayern Munich,Arsenal,,,pre,STATUS_SCHEDULED
-401915394,2026-10-21 21:00:00,2027,league-phase,0,0,362,510,Aston Villa,Viking FK,,,pre,STATUS_SCHEDULED
+401915394,2026-10-21 21:00:00,2027,league-phase,0,0,362,510,Aston Villa,VIKING FK,,,pre,STATUS_SCHEDULED
 401915388,2026-10-21 21:00:00,2027,league-phase,0,0,570,175,Club Brugge,Lens,,,pre,STATUS_SCHEDULED
 401915311,2026-11-03 18:45:00,2027,league-phase,0,0,432,134,Galatasaray,VfB Stuttgart,,,pre,STATUS_SCHEDULED
 401915310,2026-11-03 18:45:00,2027,league-phase,0,0,493,2250,Shakhtar Donetsk,Sporting CP,,,pre,STATUS_SCHEDULED
@@ -43,7 +34,7 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915303,2026-11-04 21:00:00,2027,league-phase,0,0,148,570,PSV,Club Brugge,,,pre,STATUS_SCHEDULED
 401915306,2026-11-04 21:00:00,2027,league-phase,0,0,11420,382,RB Leipzig,Manchester City,,,pre,STATUS_SCHEDULED
 401915381,2026-11-04 21:00:00,2027,league-phase,0,0,494,359,Slavia Praga,Arsenal,,,pre,STATUS_SCHEDULED
-401915302,2026-11-04 21:00:00,2027,league-phase,0,0,510,21922,Viking FK,Sabah FK,,,pre,STATUS_SCHEDULED
+401915302,2026-11-04 21:00:00,2027,league-phase,0,0,510,21922,VIKING FK,Sabah FK,,,pre,STATUS_SCHEDULED
 401915380,2026-11-24 18:45:00,2027,league-phase,0,0,2980,4411,Bodo/Glimt,LASK Linz,,,pre,STATUS_SCHEDULED
 401915300,2026-11-24 18:45:00,2027,league-phase,0,0,432,362,Galatasaray,Aston Villa,,,pre,STATUS_SCHEDULED
 401915298,2026-11-24 21:00:00,2027,league-phase,0,0,86,148,Real Madrid,PSV,,,pre,STATUS_SCHEDULED
@@ -55,7 +46,7 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915294,2026-11-24 21:00:00,2027,league-phase,0,0,142,437,Feyenoord,Porto,,,pre,STATUS_SCHEDULED
 401915378,2026-11-25 18:45:00,2027,league-phase,0,0,21922,83,Sabah FK,FC Barcelona,,,pre,STATUS_SCHEDULED
 401915293,2026-11-25 18:45:00,2027,league-phase,0,0,494,102,Slavia Praga,Villarreal,,,pre,STATUS_SCHEDULED
-401915291,2026-11-25 21:00:00,2027,league-phase,0,0,1068,510,Atletico Madrid,Viking FK,,,pre,STATUS_SCHEDULED
+401915291,2026-11-25 21:00:00,2027,league-phase,0,0,1068,510,Atletico Madrid,VIKING FK,,,pre,STATUS_SCHEDULED
 401915292,2026-11-25 21:00:00,2027,league-phase,0,0,570,364,Club Brugge,Liverpool,,,pre,STATUS_SCHEDULED
 401915376,2026-11-25 21:00:00,2027,league-phase,0,0,110,134,Inter,VfB Stuttgart,,,pre,STATUS_SCHEDULED
 401915377,2026-11-25 21:00:00,2027,league-phase,0,0,166,132,Lille,Bayern Munich,,,pre,STATUS_SCHEDULED
@@ -63,7 +54,7 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915375,2026-11-25 21:00:00,2027,league-phase,0,0,493,436,Shakhtar Donetsk,Fenerbahce,,,pre,STATUS_SCHEDULED
 401915373,2026-11-25 21:00:00,2027,league-phase,0,0,2250,360,Sporting CP,Manchester United,,,pre,STATUS_SCHEDULED
 401915372,2026-12-08 18:45:00,2027,league-phase,0,0,102,21922,Villarreal,Sabah FK,,,pre,STATUS_SCHEDULED
-401915290,2026-12-08 18:45:00,2027,league-phase,0,0,510,142,Viking FK,Feyenoord,,,pre,STATUS_SCHEDULED
+401915290,2026-12-08 18:45:00,2027,league-phase,0,0,510,142,VIKING FK,Feyenoord,,,pre,STATUS_SCHEDULED
 401915289,2026-12-08 21:00:00,2027,league-phase,0,0,887,432,AEK Athens,Galatasaray,,,pre,STATUS_SCHEDULED
 401915288,2026-12-08 21:00:00,2027,league-phase,0,0,104,2250,AS Roma,Sporting CP,,,pre,STATUS_SCHEDULED
 401915286,2026-12-08 21:00:00,2027,league-phase,0,0,362,160,Aston Villa,PSG,,,pre,STATUS_SCHEDULED
@@ -91,7 +82,7 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915362,2027-01-19 21:00:00,2027,league-phase,0,0,887,104,AEK Athens,AS Roma,,,pre,STATUS_SCHEDULED
 401915277,2027-01-20 18:45:00,2027,league-phase,0,0,436,102,Fenerbahce,Villarreal,,,pre,STATUS_SCHEDULED
 401915358,2027-01-20 18:45:00,2027,league-phase,0,0,21922,114,Sabah FK,Napoli,,,pre,STATUS_SCHEDULED
-401915272,2027-01-20 21:00:00,2027,league-phase,0,0,510,148,Viking FK,PSV,,,pre,STATUS_SCHEDULED
+401915272,2027-01-20 21:00:00,2027,league-phase,0,0,510,148,VIKING FK,PSV,,,pre,STATUS_SCHEDULED
 401915356,2027-01-20 21:00:00,2027,league-phase,0,0,2250,83,Sporting CP,FC Barcelona,,,pre,STATUS_SCHEDULED
 401915275,2027-01-20 21:00:00,2027,league-phase,0,0,244,359,Real Betis,Arsenal,,,pre,STATUS_SCHEDULED
 401915273,2027-01-20 21:00:00,2027,league-phase,0,0,2572,160,Como,PSG,,,pre,STATUS_SCHEDULED
@@ -103,7 +94,7 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915270,2027-01-27 21:00:00,2027,league-phase,0,0,493,86,Shakhtar Donetsk,Real Madrid,,,pre,STATUS_SCHEDULED
 401915350,2027-01-27 21:00:00,2027,league-phase,0,0,148,134,PSV,VfB Stuttgart,,,pre,STATUS_SCHEDULED
 401915267,2027-01-27 21:00:00,2027,league-phase,0,0,160,432,PSG,Galatasaray,,,pre,STATUS_SCHEDULED
-401915268,2027-01-27 21:00:00,2027,league-phase,0,0,114,510,Napoli,Viking FK,,,pre,STATUS_SCHEDULED
+401915268,2027-01-27 21:00:00,2027,league-phase,0,0,114,510,Napoli,VIKING FK,,,pre,STATUS_SCHEDULED
 401915352,2027-01-27 21:00:00,2027,league-phase,0,0,382,2250,Manchester City,Sporting CP,,,pre,STATUS_SCHEDULED
 401915355,2027-01-27 21:00:00,2027,league-phase,0,0,4411,437,LASK Linz,Porto,,,pre,STATUS_SCHEDULED
 401915269,2027-01-27 21:00:00,2027,league-phase,0,0,521,110,Slovan Bratislava,Inter,,,pre,STATUS_SCHEDULED

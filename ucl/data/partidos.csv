@@ -788,7 +788,7 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915450,2026-09-08 21:00:00,2027,league-phase,0,0,166,244,Lille,Real Betis,2,3,post,STATUS_FULL_TIME
 401915451,2026-09-08 21:00:00,2027,league-phase,0,0,86,110,Real Madrid,Inter,2,1,post,STATUS_FULL_TIME
 401915424,2026-09-09 18:45:00,2027,league-phase,0,0,83,142,FC Barcelona,Feyenoord,5,1,post,STATUS_FULL_TIME
-401915448,2026-09-09 18:45:00,2027,league-phase,0,0,134,510,VfB Stuttgart,Viking FK,3,1,post,STATUS_FULL_TIME
+401915448,2026-09-09 18:45:00,2027,league-phase,0,0,134,510,VfB Stuttgart,VIKING FK,3,1,post,STATUS_FULL_TIME
 401915447,2026-09-09 21:00:00,2027,league-phase,0,0,2250,432,Sporting CP,Galatasaray,3,1,post,STATUS_FULL_TIME
 401915445,2026-09-09 21:00:00,2027,league-phase,0,0,160,521,PSG,Slovan Bratislava,6,1,post,STATUS_FULL_TIME
 401915446,2026-09-09 21:00:00,2027,league-phase,0,0,364,1068,Liverpool,Atletico Madrid,2,1,post,STATUS_FULL_TIME
@@ -802,9 +802,18 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915418,2026-10-13 18:45:00,2027,league-phase,0,0,175,2250,Lens,Sporting CP,0,2,post,STATUS_FULL_TIME
 401915436,2026-10-13 18:45:00,2027,league-phase,0,0,21922,494,Sabah FK,Slavia Praga,2,0,post,STATUS_FULL_TIME
 401915410,2026-10-13 21:00:00,2027,league-phase,0,0,102,114,Villarreal,Napoli,3,1,post,STATUS_FULL_TIME
-401915411,2026-10-13 21:00:00,2027,league-phase,0,0,510,132,Viking FK,Bayern Munich,3,3,post,STATUS_FULL_TIME
+401915411,2026-10-13 21:00:00,2027,league-phase,0,0,510,132,VIKING FK,Bayern Munich,3,3,post,STATUS_FULL_TIME
 401915413,2026-10-13 21:00:00,2027,league-phase,0,0,110,570,Inter,Club Brugge,3,4,post,STATUS_FULL_TIME
 401915434,2026-10-13 21:00:00,2027,league-phase,0,0,11420,148,RB Leipzig,PSV,1,0,post,STATUS_FULL_TIME
 401915412,2026-10-13 21:00:00,2027,league-phase,0,0,1068,360,Atletico Madrid,Manchester United,2,0,post,STATUS_FULL_TIME
 401915435,2026-10-13 21:00:00,2027,league-phase,0,0,432,83,Galatasaray,FC Barcelona,1,4,post,STATUS_FULL_TIME
 401915417,2026-10-13 21:00:00,2027,league-phase,0,0,359,166,Arsenal,Lille,3,0,post,STATUS_FULL_TIME
+401915416,2026-10-14 18:45:00,2027,league-phase,0,0,142,2572,Feyenoord,Como,3,2,post,STATUS_FULL_TIME
+401915415,2026-10-14 18:45:00,2027,league-phase,0,0,4411,364,LASK Linz,Liverpool,3,6,post,STATUS_FULL_TIME
+401915414,2026-10-14 21:00:00,2027,league-phase,0,0,104,86,AS Roma,Real Madrid,3,4,post,STATUS_FULL_TIME
+401915409,2026-10-14 21:00:00,2027,league-phase,0,0,362,436,Aston Villa,Fenerbahce,6,0,post,STATUS_FULL_TIME
+401915393,2026-10-14 21:00:00,2027,league-phase,0,0,2980,124,Bodo/Glimt,Borussia Dortmund,1,0,post,STATUS_FULL_TIME
+401915407,2026-10-14 21:00:00,2027,league-phase,0,0,382,160,Manchester City,PSG,2,4,post,STATUS_FULL_TIME
+401915408,2026-10-14 21:00:00,2027,league-phase,0,0,244,437,Real Betis,Porto,3,2,post,STATUS_FULL_TIME
+401915406,2026-10-14 21:00:00,2027,league-phase,0,0,493,887,Shakhtar Donetsk,AEK Athens,3,1,post,STATUS_FULL_TIME
+401915405,2026-10-14 21:00:00,2027,league-phase,0,0,521,134,Slovan Bratislava,VfB Stuttgart,0,3,post,STATUS_FULL_TIME
