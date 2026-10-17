@@ -1942,3 +1942,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876443,2026-10-11 15:00:00,2026,2502,180,Nice,Strasbourg,2.0,1.0,post
 401876441,2026-10-11 17:15:00,2026,169,172,Rennes,Auxerre,4.0,1.0,post
 401876440,2026-10-11 20:45:00,2026,170,176,Troyes,Marseille,0.0,2.0,post
+401876437,2026-10-16 20:45:00,2026,2697,179,Le Mans,Toulouse,0.0,3.0,post
