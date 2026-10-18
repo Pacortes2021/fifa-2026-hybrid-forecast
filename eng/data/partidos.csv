@@ -2184,3 +2184,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878774,2026-10-11 14:00:00,2026,306,368,Hull City,Everton,2.0,2.0,post
 401879264,2026-10-11 16:30:00,2026,364,382,Liverpool,Manchester City,0.0,3.0,post
 401879267,2026-10-12 20:00:00,2026,388,361,Coventry City,Newcastle United,4.0,1.0,post
+401878771,2026-10-17 12:30:00,2026,368,363,Everton,Chelsea,0.0,2.0,post
+401879262,2026-10-17 15:00:00,2026,337,364,Brentford,Liverpool,1.0,2.0,post
+401878770,2026-10-17 15:00:00,2026,370,306,Fulham,Hull City,1.0,0.0,post
+401879259,2026-10-17 15:00:00,2026,382,373,Manchester City,Ipswich Town,3.0,2.0,post
+401879258,2026-10-17 17:30:00,2026,361,362,Newcastle United,Aston Villa,0.0,1.0,post

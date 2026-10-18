@@ -2203,3 +2203,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401875005,2026-10-12 18:30:00,2026,105,17530,Atalanta,Venezia,3.0,1.0,post
 401874763,2026-10-12 20:45:00,2026,239,118,Torino,Udinese,2.0,1.0,post
 401874959,2026-10-16 20:45:00,2026,4057,3997,Frosinone,Sassuolo,4.0,2.0,post
+401874760,2026-10-17 15:00:00,2026,17530,114,Venezia,Napoli,1.0,0.0,post
+401874953,2026-10-17 18:00:00,2026,107,110,Bologna,Inter,1.0,3.0,post
+401874935,2026-10-17 20:45:00,2026,104,3263,AS Roma,Genoa,2.0,0.0,post
