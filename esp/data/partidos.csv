@@ -2202,3 +2202,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882837,2026-10-17 16:15:00,2026,102,3751,Villarreal CF,Elche CF,0.0,0.0,post
 401882846,2026-10-17 18:30:00,2026,244,83,Real Betis,FC Barcelona,2.0,5.0,post
 401882838,2026-10-17 21:00:00,2026,94,93,Valencia CF,Athletic Club,0.0,0.0,post
+401882840,2026-10-18 14:00:00,2026,97,87,CA Osasuna,Racing Santander,2.0,0.0,post
+401882845,2026-10-18 16:15:00,2026,85,96,Celta de Vigo,Alavés,2.0,1.0,post
+401882841,2026-10-18 18:30:00,2026,99,89,Málaga,Real Sociedad,2.0,5.0,post
+401882839,2026-10-18 21:00:00,2026,86,243,Real Madrid,Sevilla FC,4.0,1.0,post

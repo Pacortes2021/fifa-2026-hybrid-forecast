@@ -2206,3 +2206,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874760,2026-10-17 15:00:00,2026,17530,114,Venezia,Napoli,1.0,0.0,post
 401874953,2026-10-17 18:00:00,2026,107,110,Bologna,Inter,1.0,3.0,post
 401874935,2026-10-17 20:45:00,2026,104,3263,AS Roma,Genoa,2.0,0.0,post
+401874771,2026-10-18 12:30:00,2026,118,113,Udinese,Lecce,0.0,3.0,post
+401874774,2026-10-18 15:00:00,2026,109,2572,Fiorentina,Como,1.0,3.0,post
+401874978,2026-10-18 18:00:00,2026,103,105,AC Milan,Atalanta,3.0,2.0,post
+401874765,2026-10-18 20:45:00,2026,111,112,Juventus,Lazio,0.0,3.0,post

@@ -1946,3 +1946,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876432,2026-10-17 17:15:00,2026,180,160,Strasbourg,Paris Saint-Germain,1.0,3.0,post
 401876436,2026-10-17 20:45:00,2026,166,6997,Lille,Brest,1.0,1.0,post
 401876431,2026-10-17 20:45:00,2026,170,175,Troyes,Lens,1.0,3.0,post
+401876439,2026-10-18 15:00:00,2026,7868,176,Angers,Marseille,2.0,5.0,post
+401876433,2026-10-18 17:15:00,2026,6851,169,Paris FC,Rennes,4.0,3.0,post
+401876435,2026-10-18 17:15:00,2026,273,174,Lorient,Monaco,1.0,0.0,post
+401876438,2026-10-18 17:15:00,2026,3236,172,Le Havre,Auxerre,1.0,3.0,post
+401876434,2026-10-18 20:45:00,2026,167,2502,Lyon,Nice,2.0,1.0,post
