@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401874762,2026-10-19 18:30:00,2026,4007,2925,Monza,Cagliari,,,pre
-401874784,2026-10-19 20:45:00,2026,115,239,Parma,Torino,,,pre
 401874957,2026-10-23 20:45:00,2026,239,4007,Torino,Monza,,,pre
 401874958,2026-10-24 15:00:00,2026,2925,107,Cagliari,Bologna,,,pre
 401874961,2026-10-24 15:00:00,2026,2572,3997,Como,Sassuolo,,,pre
