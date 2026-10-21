@@ -817,3 +817,12 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915408,2026-10-14 21:00:00,2027,league-phase,0,0,244,437,Real Betis,Porto,3,2,post,STATUS_FULL_TIME
 401915406,2026-10-14 21:00:00,2027,league-phase,0,0,493,887,Shakhtar Donetsk,AEK Athens,3,1,post,STATUS_FULL_TIME
 401915405,2026-10-14 21:00:00,2027,league-phase,0,0,521,134,Slovan Bratislava,VfB Stuttgart,0,3,post,STATUS_FULL_TIME
+401915404,2026-10-20 18:45:00,2027,league-phase,0,0,21922,124,Sabah FK,Borussia Dortmund,1,2,post,STATUS_FULL_TIME
+401915403,2026-10-20 18:45:00,2027,league-phase,0,0,436,494,Fenerbahce,Slavia Praga,2,2,post,STATUS_FULL_TIME
+401915402,2026-10-20 21:00:00,2027,league-phase,0,0,104,521,AS Roma,Slovan Bratislava,4,0,post,STATUS_FULL_TIME
+401915398,2026-10-20 21:00:00,2027,league-phase,0,0,437,148,Porto,PSV,0,1,post,STATUS_FULL_TIME
+401915397,2026-10-20 21:00:00,2027,league-phase,0,0,364,102,Liverpool,Villarreal,4,3,post,STATUS_FULL_TIME
+401915401,2026-10-20 21:00:00,2027,league-phase,0,0,382,887,Manchester City,AEK Athens,5,1,post,STATUS_FULL_TIME
+401915400,2026-10-20 21:00:00,2027,league-phase,0,0,114,2980,Napoli,Bodo/Glimt,4,3,post,STATUS_FULL_TIME
+401915399,2026-10-20 21:00:00,2027,league-phase,0,0,160,83,PSG,FC Barcelona,4,2,post,STATUS_FULL_TIME
+401915392,2026-10-20 21:00:00,2027,league-phase,0,0,134,1068,VfB Stuttgart,Atletico Madrid,1,1,post,STATUS_FULL_TIME

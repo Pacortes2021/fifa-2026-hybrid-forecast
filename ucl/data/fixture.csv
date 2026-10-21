@@ -1,13 +1,4 @@
 event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401915404,2026-10-20 18:45:00,2027,league-phase,0,0,21922,124,Sabah FK,Borussia Dortmund,,,pre,STATUS_SCHEDULED
-401915403,2026-10-20 18:45:00,2027,league-phase,0,0,436,494,Fenerbahce,Slavia Praga,,,pre,STATUS_SCHEDULED
-401915402,2026-10-20 21:00:00,2027,league-phase,0,0,104,521,AS Roma,Slovan Bratislava,,,pre,STATUS_SCHEDULED
-401915398,2026-10-20 21:00:00,2027,league-phase,0,0,437,148,Porto,PSV,,,pre,STATUS_SCHEDULED
-401915397,2026-10-20 21:00:00,2027,league-phase,0,0,364,102,Liverpool,Villarreal,,,pre,STATUS_SCHEDULED
-401915401,2026-10-20 21:00:00,2027,league-phase,0,0,382,887,Manchester City,AEK Athens,,,pre,STATUS_SCHEDULED
-401915400,2026-10-20 21:00:00,2027,league-phase,0,0,114,2980,Napoli,Bodo/Glimt,,,pre,STATUS_SCHEDULED
-401915399,2026-10-20 21:00:00,2027,league-phase,0,0,160,83,PSG,FC Barcelona,,,pre,STATUS_SCHEDULED
-401915392,2026-10-20 21:00:00,2027,league-phase,0,0,134,1068,VfB Stuttgart,Atletico Madrid,,,pre,STATUS_SCHEDULED
 401915395,2026-10-21 18:45:00,2027,league-phase,0,0,2572,360,Como,Manchester United,,,pre,STATUS_SCHEDULED
 401915396,2026-10-21 18:45:00,2027,league-phase,0,0,166,432,Lille,Galatasaray,,,pre,STATUS_SCHEDULED
 401915313,2026-10-21 21:00:00,2027,league-phase,0,0,86,11420,Real Madrid,RB Leipzig,,,pre,STATUS_SCHEDULED
