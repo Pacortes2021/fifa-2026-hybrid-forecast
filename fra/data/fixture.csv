@@ -51,7 +51,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876385,2026-12-05 21:00:00,2026,175,3236,Lens,Le Havre,,,pre
 401876384,2026-12-05 21:00:00,2026,166,172,Lille,Auxerre,,,pre
 401876379,2026-12-05 21:00:00,2026,180,273,Strasbourg,Lorient,,,pre
-401876377,2026-12-05 21:00:00,2026,170,167,Troyes,Lyon,,,pre
+401876377,2026-12-06 15:00:00,2026,170,167,Troyes,Lyon,,,pre
 401876380,2026-12-06 17:15:00,2026,169,6997,Rennes,Brest,,,pre
 401876383,2026-12-06 20:45:00,2026,176,2502,Marseille,Nice,,,pre
 401876376,2026-12-12 20:45:00,2026,7868,180,Angers,Strasbourg,,,pre

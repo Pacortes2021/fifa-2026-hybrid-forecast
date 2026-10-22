@@ -826,3 +826,12 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915400,2026-10-20 21:00:00,2027,league-phase,0,0,114,2980,Napoli,Bodo/Glimt,4,3,post,STATUS_FULL_TIME
 401915399,2026-10-20 21:00:00,2027,league-phase,0,0,160,83,PSG,FC Barcelona,4,2,post,STATUS_FULL_TIME
 401915392,2026-10-20 21:00:00,2027,league-phase,0,0,134,1068,VfB Stuttgart,Atletico Madrid,1,1,post,STATUS_FULL_TIME
+401915395,2026-10-21 18:45:00,2027,league-phase,0,0,2572,360,Como,Manchester United,4,1,post,STATUS_FULL_TIME
+401915396,2026-10-21 18:45:00,2027,league-phase,0,0,166,432,Lille,Galatasaray,2,4,post,STATUS_FULL_TIME
+401915313,2026-10-21 21:00:00,2027,league-phase,0,0,86,11420,Real Madrid,RB Leipzig,4,1,post,STATUS_FULL_TIME
+401915389,2026-10-21 21:00:00,2027,league-phase,0,0,244,142,Real Betis,Feyenoord,1,0,post,STATUS_FULL_TIME
+401915391,2026-10-21 21:00:00,2027,league-phase,0,0,2250,4411,Sporting CP,LASK Linz,2,3,post,STATUS_FULL_TIME
+401915390,2026-10-21 21:00:00,2027,league-phase,0,0,110,493,Inter,Shakhtar Donetsk,1,0,post,STATUS_FULL_TIME
+401915312,2026-10-21 21:00:00,2027,league-phase,0,0,132,359,Bayern Munich,Arsenal,2,2,post,STATUS_FULL_TIME
+401915394,2026-10-21 21:00:00,2027,league-phase,0,0,362,510,Aston Villa,Viking FK,3,1,post,STATUS_FULL_TIME
+401915388,2026-10-21 21:00:00,2027,league-phase,0,0,570,175,Club Brugge,Lens,3,0,post,STATUS_FULL_TIME
