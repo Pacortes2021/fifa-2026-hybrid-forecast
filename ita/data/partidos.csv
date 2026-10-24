@@ -2212,3 +2212,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874765,2026-10-18 20:45:00,2026,111,112,Juventus,Lazio,0.0,3.0,post
 401874762,2026-10-19 18:30:00,2026,4007,2925,Monza,Cagliari,4.0,0.0,post
 401874784,2026-10-19 20:45:00,2026,115,239,Parma,Torino,0.0,3.0,post
+401874957,2026-10-23 20:45:00,2026,239,4007,Torino,Monza,3.0,2.0,post

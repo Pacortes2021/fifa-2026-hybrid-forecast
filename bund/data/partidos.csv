@@ -1772,3 +1772,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401884772,2026-10-17 18:30:00,2026,132,11420,Bayern Munich,RB Leipzig,6.0,1.0,post
 401884771,2026-10-18 15:30:00,2026,131,126,Bayer Leverkusen,SC Freiburg,2.0,1.0,post
 401884768,2026-10-18 17:30:00,2026,268,7911,Borussia Mönchengladbach,TSG Hoffenheim,1.0,2.0,post
+401884761,2026-10-23 20:30:00,2026,134,268,VfB Stuttgart,Borussia Mönchengladbach,2.0,3.0,post

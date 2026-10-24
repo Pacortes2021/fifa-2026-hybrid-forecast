@@ -1951,3 +1951,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876435,2026-10-18 17:15:00,2026,273,174,Lorient,Monaco,1.0,0.0,post
 401876438,2026-10-18 17:15:00,2026,3236,172,Le Havre,Auxerre,1.0,3.0,post
 401876434,2026-10-18 20:45:00,2026,167,2502,Lyon,Nice,2.0,1.0,post
+401876428,2026-10-23 20:45:00,2026,6997,2502,Brest,Nice,1.0,2.0,post
