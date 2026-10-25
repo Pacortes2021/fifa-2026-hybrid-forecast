@@ -21,6 +21,19 @@ STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCom
 
 def _eventos(anio):
     out = []
+    # 1. Intentar por año completo (formato preferido por la API de ESPN)
+    try:
+        r = requests.get(f"{SB}?dates={anio}&limit=1000", timeout=40)
+        if r.status_code == 200:
+            for e in r.json().get("events", []):
+                if e.get("status", {}).get("type", {}).get("state") == "post":
+                    out.append((e["id"], pd.to_datetime(e["date"]).tz_localize(None), anio))
+            if out:
+                return out
+    except Exception as ex:
+        print(f"  scoreboard {anio} anual: {ex}")
+
+    # 2. Fallback semestral
     for ini, fin in ((f"{anio}0101", f"{anio}0630"), (f"{anio}0701", f"{anio}1231")):
         try:
             r = requests.get(f"{SB}?dates={ini}-{fin}&limit=400", timeout=40); r.raise_for_status()

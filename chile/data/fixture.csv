@@ -1,33 +1,21 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401850641,2026-09-16 18:00:00,2026,8186,4134,Coquimbo Unido,Huachipato,,,pre
-401850654,2026-10-02 20:00:00,2026,5362,4134,Universidad de Concepción,Huachipato,,,pre
-401850662,2026-10-09 20:00:00,2026,4139,7427,Universidad de Chile,Ñublense,,,pre
-401850660,2026-10-10 15:00:00,2026,4133,5362,Cobresal,Universidad de Concepción,,,pre
-401850664,2026-10-10 17:30:00,2026,4134,6072,Huachipato,O'Higgins,,,pre
-401850663,2026-10-10 20:00:00,2026,885,4138,Universidad Católica,Audax Italiano,,,pre
-401850665,2026-10-11 12:30:00,2026,4129,4137,Everton,Deportes La Serena,,,pre
-401850661,2026-10-11 15:00:00,2026,8186,2688,Coquimbo Unido,Colo Colo,,,pre
-401850667,2026-10-11 17:30:00,2026,8110,10144,Deportes Concepción,Unión La Calera,,,pre
-401850666,2026-10-11 20:00:00,2026,19195,4422,Deportes Limache,Palestino,,,pre
-401850671,2026-10-25 15:00:00,2026,4139,4129,Universidad de Chile,Everton,,,pre
+401850675,2026-10-25 12:00:00,2026,7427,8186,Ñublense,Coquimbo Unido,,,pre
 401850669,2026-10-25 15:00:00,2026,10144,885,Unión La Calera,Universidad Católica,,,pre
-401850672,2026-10-25 15:00:00,2026,4422,2688,Palestino,Colo Colo,,,pre
-401850670,2026-10-25 15:00:00,2026,5362,19195,Universidad de Concepción,Deportes Limache,,,pre
-401850675,2026-10-25 15:00:00,2026,7427,8186,Ñublense,Coquimbo Unido,,,pre
-401850674,2026-10-25 15:00:00,2026,4137,8110,Deportes La Serena,Deportes Concepción,,,pre
-401850668,2026-10-25 15:00:00,2026,4138,4134,Audax Italiano,Huachipato,,,pre
-401850673,2026-10-25 15:00:00,2026,6072,4133,O'Higgins,Cobresal,,,pre
-401850682,2026-11-01 17:00:00,2026,4133,4129,Cobresal,Everton,,,pre
-401850681,2026-11-01 17:00:00,2026,2688,5362,Colo Colo,Universidad de Concepción,,,pre
-401850680,2026-11-01 17:00:00,2026,8186,10144,Coquimbo Unido,Unión La Calera,,,pre
-401850679,2026-11-01 17:00:00,2026,8110,4422,Deportes Concepción,Palestino,,,pre
-401850678,2026-11-01 17:00:00,2026,19195,4138,Deportes Limache,Audax Italiano,,,pre
-401850677,2026-11-01 17:00:00,2026,4134,4137,Huachipato,Deportes La Serena,,,pre
-401850676,2026-11-01 17:00:00,2026,6072,7427,O'Higgins,Ñublense,,,pre
-401850683,2026-11-01 17:00:00,2026,885,4139,Universidad Católica,Universidad de Chile,,,pre
-401850687,2026-11-08 17:00:00,2026,885,19195,Universidad Católica,Deportes Limache,,,pre
+401850672,2026-10-25 17:30:00,2026,4422,2688,Palestino,Colo Colo,,,pre
+401850670,2026-10-25 20:00:00,2026,5362,19195,Universidad de Concepción,Deportes Limache,,,pre
+401850671,2026-10-26 18:00:00,2026,4139,4129,Universidad de Chile,Everton,,,pre
+401850663,2026-10-28 20:30:00,2026,885,4138,Universidad Católica,Audax Italiano,,,pre
+401850681,2026-10-30 19:00:00,2026,2688,5362,Colo Colo,Universidad de Concepción,,,pre
+401850680,2026-10-30 19:00:00,2026,8186,10144,Coquimbo Unido,Unión La Calera,,,pre
+401850676,2026-10-31 20:00:00,2026,6072,7427,O'Higgins,Ñublense,,,pre
+401850677,2026-11-01 12:00:00,2026,4134,4137,Huachipato,Deportes La Serena,,,pre
+401850682,2026-11-01 14:15:00,2026,4133,4129,Cobresal,Everton,,,pre
+401850683,2026-11-01 17:15:00,2026,885,4139,Universidad Católica,Universidad de Chile,,,pre
+401850678,2026-11-02 18:00:00,2026,19195,4138,Deportes Limache,Audax Italiano,,,pre
+401850679,2026-11-02 20:30:00,2026,8110,4422,Deportes Concepción,Palestino,,,pre
 401850685,2026-11-08 17:00:00,2026,5362,6072,Universidad de Concepción,O'Higgins,,,pre
 401850686,2026-11-08 17:00:00,2026,4139,4133,Universidad de Chile,Cobresal,,,pre
+401850687,2026-11-08 17:00:00,2026,885,19195,Universidad Católica,Deportes Limache,,,pre
 401850684,2026-11-08 17:00:00,2026,10144,4134,Unión La Calera,Huachipato,,,pre
 401850691,2026-11-08 17:00:00,2026,7427,2688,Ñublense,Colo Colo,,,pre
 401850688,2026-11-08 17:00:00,2026,4137,4422,Deportes La Serena,Palestino,,,pre
