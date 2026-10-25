@@ -2195,3 +2195,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878769,2026-10-18 16:30:00,2026,393,359,Nottingham Forest,Arsenal,0.0,1.0,post
 401879257,2026-10-19 20:00:00,2026,367,388,Tottenham Hotspur,Coventry City,3.0,1.0,post
 401879253,2026-10-23 20:00:00,2026,373,393,Ipswich Town,Nottingham Forest,1.0,1.0,post
+401879256,2026-10-24 12:30:00,2026,362,382,Aston Villa,Manchester City,2.0,1.0,post
+401878768,2026-10-24 15:00:00,2026,359,368,Arsenal,Everton,2.0,0.0,post
+401879255,2026-10-24 15:00:00,2026,388,370,Coventry City,Fulham,0.0,1.0,post
+401878767,2026-10-24 17:30:00,2026,363,367,Chelsea,Tottenham Hotspur,0.0,2.0,post

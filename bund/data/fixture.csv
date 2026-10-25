@@ -1,10 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401884758,2026-10-24 15:30:00,2026,3841,598,FC Augsburg,1. FC Union Berlin,,,pre
-401884756,2026-10-24 15:30:00,2026,122,133,FC Cologne,Schalke 04,,,pre
-401884757,2026-10-24 15:30:00,2026,2950,137,Mainz,Werder Bremen,,,pre
-401884762,2026-10-24 15:30:00,2026,11420,10388,RB Leipzig,SV Elversberg,,,pre
-401884755,2026-10-24 15:30:00,2026,3307,127,SC Paderborn 07,Hamburg SV,,,pre
-401884763,2026-10-24 18:30:00,2026,124,125,Borussia Dortmund,Eintracht Frankfurt,,,pre
 401884760,2026-10-25 15:30:00,2026,7911,131,TSG Hoffenheim,Bayer Leverkusen,,,pre
 401884759,2026-10-25 17:30:00,2026,126,132,SC Freiburg,Bayern Munich,,,pre
 401884746,2026-10-30 20:30:00,2026,10388,2950,SV Elversberg,Mainz,,,pre

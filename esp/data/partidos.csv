@@ -2209,3 +2209,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882842,2026-10-19 21:00:00,2026,2922,101,Getafe,Rayo Vallecano,1.0,1.0,post
 401882870,2026-10-21 20:00:00,2026,1538,93,Levante,Athletic Club,3.0,1.0,post
 401882836,2026-10-23 21:00:00,2026,96,99,Alavés,Málaga,1.0,1.0,post
+401882830,2026-10-24 14:00:00,2026,101,3751,Rayo Vallecano,Elche CF,0.0,3.0,post
+401882831,2026-10-24 16:15:00,2026,87,88,Racing Santander,Espanyol,2.0,1.0,post
+401882827,2026-10-24 18:30:00,2026,94,102,Valencia CF,Villarreal CF,1.0,2.0,post
+401882834,2026-10-24 21:00:00,2026,1068,90,Atlético de Madrid,Deportivo,1.0,0.0,post
