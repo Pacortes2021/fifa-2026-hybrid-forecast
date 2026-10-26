@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401850675,2026-10-25 12:30:00,2026,7427,8186,Ñublense,Coquimbo Unido,,,pre
-401850669,2026-10-25 15:00:00,2026,10144,885,Unión La Calera,Universidad Católica,,,pre
-401850672,2026-10-25 17:30:00,2026,4422,2688,Palestino,Colo Colo,,,pre
-401850670,2026-10-25 20:00:00,2026,5362,19195,Universidad de Concepción,Deportes Limache,,,pre
 401850671,2026-10-26 18:00:00,2026,4139,4129,Universidad de Chile,Everton,,,pre
 401850663,2026-10-28 20:30:00,2026,885,4138,Universidad Católica,Audax Italiano,,,pre
 401850681,2026-10-30 19:00:00,2026,2688,5362,Colo Colo,Universidad de Concepción,,,pre

@@ -1779,3 +1779,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401884762,2026-10-24 15:30:00,2026,11420,10388,RB Leipzig,SV Elversberg,4.0,0.0,post
 401884755,2026-10-24 15:30:00,2026,3307,127,SC Paderborn 07,Hamburg SV,1.0,0.0,post
 401884763,2026-10-24 18:30:00,2026,124,125,Borussia Dortmund,Eintracht Frankfurt,1.0,0.0,post
+401884760,2026-10-25 15:30:00,2026,7911,131,TSG Hoffenheim,Bayer Leverkusen,3.0,0.0,post
+401884759,2026-10-25 17:30:00,2026,126,132,SC Freiburg,Bayern Munich,1.0,3.0,post

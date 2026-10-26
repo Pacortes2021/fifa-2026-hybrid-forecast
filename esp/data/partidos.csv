@@ -2213,3 +2213,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882831,2026-10-24 16:15:00,2026,87,88,Racing Santander,Espanyol,2.0,1.0,post
 401882827,2026-10-24 18:30:00,2026,94,102,Valencia CF,Villarreal CF,1.0,2.0,post
 401882834,2026-10-24 21:00:00,2026,1068,90,Atlético de Madrid,Deportivo,1.0,0.0,post
+401882835,2026-10-25 14:00:00,2026,93,2922,Athletic Club,Getafe,4.0,0.0,post
+401882833,2026-10-25 16:15:00,2026,85,244,Celta de Vigo,Real Betis,0.0,0.0,post
+401882829,2026-10-25 18:30:00,2026,89,1538,Real Sociedad,Levante,2.0,1.0,post
+401882832,2026-10-25 21:00:00,2026,83,86,FC Barcelona,Real Madrid,1.0,2.0,post

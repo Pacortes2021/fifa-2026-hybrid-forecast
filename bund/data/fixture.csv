@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401884760,2026-10-25 15:30:00,2026,7911,131,TSG Hoffenheim,Bayer Leverkusen,,,pre
-401884759,2026-10-25 17:30:00,2026,126,132,SC Freiburg,Bayern Munich,,,pre
 401884746,2026-10-30 20:30:00,2026,10388,2950,SV Elversberg,Mainz,,,pre
 401884748,2026-10-31 15:30:00,2026,137,7911,Werder Bremen,TSG Hoffenheim,,,pre
 401884747,2026-10-31 15:30:00,2026,133,11420,Schalke 04,RB Leipzig,,,pre
