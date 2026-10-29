@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import motor as mo
 import recolectar as rec
 import recolectar_boxscore as rec_box
+from motor import cuota, cuota_americana
 
 # Estilizado CSS Premium para NBA
 st.markdown("""
@@ -302,7 +303,7 @@ def run_app():
                     filas_sp.append({
                         "Línea de Puntos": f"{home_team} {sign}{line}",
                         "Probabilidad de Cubrir": f"{p_cov:.1%}",
-                        "Cuota Justa": cuota(p_cov)
+                        "Cuota Justa": mo.cuota(p_cov)
                     })
                 st.dataframe(pd.DataFrame(filas_sp), use_container_width=True, hide_index=True)
 
@@ -314,9 +315,9 @@ def run_app():
                     filas_ou.append({
                         "Línea Total": f"{ou_line} Pts",
                         "Prob. Over": f"{p_over:.1%}",
-                        "Cuota Over": cuota(p_over),
+                        "Cuota Over": mo.cuota(p_over),
                         "Prob. Under": f"{p_under:.1%}",
-                        "Cuota Under": cuota(p_under)
+                        "Cuota Under": mo.cuota(p_under)
                     })
                 st.dataframe(pd.DataFrame(filas_ou), use_container_width=True, hide_index=True)
 
