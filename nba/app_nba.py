@@ -201,14 +201,43 @@ def run_app():
         if home_team == away_team:
             st.warning("Selecciona dos franquicias distintas para analizar el enfrentamiento.")
         else:
-            # Predicción con el motor NBA
-            pred_mc = mo.simular_partido_mc(M, home_team, away_team, n_sims=4000, modelo=modelo)
+            # Simulación interactiva de Bajas de Jugadores Estrella
+            stars_h = mo.NBA_FRANCHISE_STARS.get(home_team, ["Jugador Franquicia"])
+            stars_a = mo.NBA_FRANCHISE_STARS.get(away_team, ["Jugador Franquicia"])
+
+            with st.expander("🚑 Simulación de Bajas de Jugadores Estrella (Injury Impact)", expanded=False):
+                st.caption("Selecciona si una de las franquicias no contará con su estrella principal para calibrar el impacto en la probabilidad y hándicap:")
+                col_inj_h, col_inj_a = st.columns(2)
+                with col_inj_h:
+                    baja_h = st.checkbox(
+                        f"Baja de figura en {home_team} ({', '.join(stars_h)})",
+                        help=f"Simula la ausencia de figuras clave de {home_team}",
+                        key="inj_h_cb"
+                    )
+                with col_inj_a:
+                    baja_a = st.checkbox(
+                        f"Baja de figura en {away_team} ({', '.join(stars_a)})",
+                        help=f"Simula la ausencia de figuras clave de {away_team}",
+                        key="inj_a_cb"
+                    )
+
+            # Predicción con el motor NBA (incluyendo ajuste dinámico por bajas)
+            pred_mc = mo.simular_partido_mc(
+                M, home_team, away_team, n_sims=4000, modelo=modelo,
+                baja_estrella_local=baja_h, baja_estrella_visita=baja_a
+            )
             pred = pred_mc["pred"]
             p_h = pred["p_local"]
             p_a = pred["p_visita"]
             feats = pred["feats"]
 
-            # Alertas heurísticas de baloncesto
+            # Alertas heurísticas de bajas
+            if baja_h:
+                st.error(f"🚑 **BAJA CLAVE ({home_team}):** Simulando ausencia de figura estelar ({', '.join(stars_h)}). Se aplica penalización empírica de ~5.5 pts en Net Rating y -75 pts Elo.")
+            if baja_a:
+                st.error(f"🚑 **BAJA CLAVE ({away_team}):** Simulando ausencia de figura estelar ({', '.join(stars_a)}). Se aplica penalización empírica de ~5.5 pts en Net Rating y -75 pts Elo.")
+
+            # Alertas heurísticas de baloncesto (fatiga y favoritos)
             if feats["b2b_local"] and not feats["b2b_visita"]:
                 st.warning(f"⚠️ **ALERTA DE FATIGA (Back-to-Back):** {home_team} juega sin descanso (0 días), lo que históricamente reduce el ritmo y la efectividad en tiros de campo.")
             elif feats["b2b_visita"] and not feats["b2b_local"]:
@@ -291,19 +320,22 @@ def run_app():
                     })
                 st.dataframe(pd.DataFrame(filas_ou), use_container_width=True, hide_index=True)
 
-            # Four Factors de Dean Oliver (Comparativa Analítica)
-            st.markdown('<div class="card-title">🔬 Dean Oliver Four Factors (Eficiencia Rodante)</div>', unsafe_allow_html=True)
+            # Four Factors de Dean Oliver y Tendencias (Comparativa Analítica)
+            st.markdown('<div class="card-title">🔬 Four Factors, Tendencias y Métricas de Localía</div>', unsafe_allow_html=True)
             df_factors = pd.DataFrame({
-                "Factor": [
+                "Métrica / Factor": [
                     "Effective FG% (eFG% Ofensivo)",
                     "Opponent eFG% (eFG% Defensivo)",
                     "Offensive Rating (ORTG / 100 pos)",
                     "Defensive Rating (DRTG / 100 pos)",
-                    "Net Rating (NetRTG)",
+                    "Net Rating Global (NetRTG)",
                     "Ritmo de Posesiones (Pace)",
                     "Free Throw Rate (FTA / FGA)",
-                    "Racha de Partidos (Streak)",
-                    "Rating Elo Actualizado"
+                    "Tendencia Reciente (Momentum L5 vs L20)",
+                    "Récord Reciente Casa / Ruta",
+                    "Net Rating Reciente Casa / Ruta",
+                    "Rating Elo Puro (Sin Localía)",
+                    "Rating Elo con Localía"
                 ],
                 f"🏠 {home_team}": [
                     f"{feats['efg_local']:.1%}",
@@ -313,7 +345,10 @@ def run_app():
                     f"{feats['netrtg_local']:+.1f}",
                     f"{feats['pace_local']:.1f}",
                     f"{feats['ft_rate_local']:.3f}",
-                    f"{int(feats['streak_local']):+d}",
+                    f"{feats.get('trend_local', 0.0):+.1f} pts",
+                    f"{feats.get('l5_home_win_pct', 0.55):.0%} (en casa)",
+                    f"{feats.get('l5_home_netrtg', 2.5):+.1f} pts",
+                    f"{feats['elo_local'] - mo.ELO_HOME_ADV:.0f}",
                     f"{feats['elo_local']:.0f}"
                 ],
                 f"✈️ {away_team}": [
@@ -324,7 +359,10 @@ def run_app():
                     f"{feats['netrtg_visita']:+.1f}",
                     f"{feats['pace_visita']:.1f}",
                     f"{feats['ft_rate_visita']:.3f}",
-                    f"{int(feats['streak_visita']):+d}",
+                    f"{feats.get('trend_visita', 0.0):+.1f} pts",
+                    f"{feats.get('l5_away_win_pct', 0.45):.0%} (de visita)",
+                    f"{feats.get('l5_away_netrtg', -2.5):+.1f} pts",
+                    f"{feats['elo_visita']:.0f}",
                     f"{feats['elo_visita']:.0f}"
                 ]
             })

@@ -47,12 +47,51 @@ def _default_deque():
     return deque(maxlen=20)
 
 
+def _default_deque_10():
+    return deque(maxlen=10)
+
+
 def _default_h2h():
     return deque(maxlen=10)
 
 
 def _default_record():
     return [0, 0]
+
+
+# Figuras clave / Franquicia Stars de la NBA para simulación de bajas de peso
+NBA_FRANCHISE_STARS = {
+    "Atlanta Hawks": ["Trae Young", "Jalen Johnson"],
+    "Boston Celtics": ["Jayson Tatum", "Jaylen Brown"],
+    "Brooklyn Nets": ["Cam Thomas", "Dennis Schröder"],
+    "Charlotte Hornets": ["LaMelo Ball", "Brandon Miller"],
+    "Chicago Bulls": ["Zach LaVine", "Nikola Vučević"],
+    "Cleveland Cavaliers": ["Donovan Mitchell", "Darius Garland"],
+    "Dallas Mavericks": ["Luka Dončić", "Kyrie Irving"],
+    "Denver Nuggets": ["Nikola Jokić", "Jamal Murray"],
+    "Detroit Pistons": ["Cade Cunningham", "Jaden Ivey"],
+    "Golden State Warriors": ["Stephen Curry", "Draymond Green"],
+    "Houston Rockets": ["Alperen Şengün", "Jalen Green"],
+    "Indiana Pacers": ["Tyrese Haliburton", "Pascal Siakam"],
+    "LA Clippers": ["Kawhi Leonard", "James Harden"],
+    "Los Angeles Lakers": ["LeBron James", "Anthony Davis"],
+    "Memphis Grizzlies": ["Ja Morant", "Jaren Jackson Jr."],
+    "Miami Heat": ["Jimmy Butler", "Bam Adebayo"],
+    "Milwaukee Bucks": ["Giannis Antetokounmpo", "Damian Lillard"],
+    "Minnesota Timberwolves": ["Anthony Edwards", "Rudy Gobert"],
+    "New Orleans Pelicans": ["Zion Williamson", "Brandon Ingram"],
+    "New York Knicks": ["Jalen Brunson", "Karl-Anthony Towns"],
+    "Oklahoma City Thunder": ["Shai Gilgeous-Alexander", "Chet Holmgren"],
+    "Orlando Magic": ["Paolo Banchero", "Franz Wagner"],
+    "Philadelphia 76ers": ["Joel Embiid", "Paul George"],
+    "Phoenix Suns": ["Kevin Durant", "Devin Booker"],
+    "Portland Trail Blazers": ["Anfernee Simons", "Jerami Grant"],
+    "Sacramento Kings": ["De'Aaron Fox", "Domantas Sabonis"],
+    "San Antonio Spurs": ["Victor Wembanyama", "Chris Paul"],
+    "Toronto Raptors": ["Scottie Barnes", "RJ Barrett"],
+    "Utah Jazz": ["Lauri Markkanen", "Collin Sexton"],
+    "Washington Wizards": ["Jordan Poole", "Kyle Kuzma"]
+}
 
 
 def _cargar_equipos():
@@ -96,6 +135,9 @@ class FeatureTrackerNBA:
         self.elo = defaultdict(_default_elo)
         # Historial reciente de partidos por equipo
         self.history = defaultdict(_default_deque)
+        # Historial específico de partidos jugados como local y como visitante
+        self.home_history = defaultdict(_default_deque_10)
+        self.away_history = defaultdict(_default_deque_10)
         # Fecha del último partido disputado
         self.last_game_date = {}
         # Historial de enfrentamientos directos H2H
@@ -117,6 +159,8 @@ class FeatureTrackerNBA:
             self.streaks.clear()
             self.home_records.clear()
             self.away_records.clear()
+            self.home_history.clear()
+            self.away_history.clear()
         self.current_season = season
 
     def get_features_for_match(self, local, visita, fecha=None, temporada=None):
@@ -140,13 +184,14 @@ class FeatureTrackerNBA:
         b2b_a = 1.0 if rest_a <= 1 else 0.0
         rest_diff = float(rest_h - rest_a)
 
-        # 2. Rating Elo con ventaja de localía y ajuste por B2B
+        # 2. Rating Elo con ventaja de localía y Elo puro
         elo_h_base = self.elo[local]
         elo_a_base = self.elo[visita]
         
         elo_h_adj = elo_h_base + ELO_HOME_ADV - (ELO_B2B_PENALTY if b2b_h else 0.0)
         elo_a_adj = elo_a_base - (ELO_B2B_PENALTY if b2b_a else 0.0)
         elo_diff = elo_h_adj - elo_a_adj
+        elo_diff_pure = elo_h_base - elo_a_base
         elo_prob_h = 1.0 / (1.0 + 10.0 ** (-elo_diff / 400.0))
 
         # 3. Métricas rodantes (Four Factors y Ratings)
@@ -177,13 +222,29 @@ class FeatureTrackerNBA:
         # Ritmo de juego esperado para el partido
         exp_pace = st_h["pace"] + st_a["pace"] - LEAGUE_AVG_PACE
 
-        # 4. Récords en casa y visita
+        # 4. Récords en casa y visita globales
         hw, hl = self.home_records[local]
         home_win_pct = hw / (hw + hl) if (hw + hl) > 0 else 0.55
         aw, al = self.away_records[visita]
         away_win_pct = aw / (aw + al) if (aw + al) > 0 else 0.45
 
-        # 5. Historial directo (H2H)
+        # 5. Medias móviles específicas de localía reciente (L10 en casa vs L10 en ruta)
+        hh = self.home_history[local]
+        ah = self.away_history[visita]
+        l5_home_win_pct = float(np.mean([x["win"] for x in hh])) if len(hh) > 0 else 0.55
+        l5_away_win_pct = float(np.mean([x["win"] for x in ah])) if len(ah) > 0 else 0.45
+        l5_home_netrtg = float(np.mean([x["netrtg"] for x in hh])) if len(hh) > 0 else 2.5
+        l5_away_netrtg = float(np.mean([x["netrtg"] for x in ah])) if len(ah) > 0 else -2.5
+
+        # 6. Tendencias y Momentum (Rendimiento L5 vs L20 partidos)
+        all_h = list(self.history[local])
+        all_a = list(self.history[visita])
+        l5_h = all_h[-5:] if len(all_h) >= 5 else all_h
+        l5_a = all_a[-5:] if len(all_a) >= 5 else all_a
+        trend_local = (float(np.mean([x["netrtg"] for x in l5_h])) - float(np.mean([x["netrtg"] for x in all_h]))) if len(all_h) >= 5 else 0.0
+        trend_visita = (float(np.mean([x["netrtg"] for x in l5_a])) - float(np.mean([x["netrtg"] for x in all_a]))) if len(all_a) >= 5 else 0.0
+
+        # 7. Historial directo (H2H)
         h2h_matches = self.h2h.get((local, visita), deque())
         if h2h_matches:
             h2h_h_wins = sum(1 for w in h2h_matches if w == local)
@@ -196,6 +257,7 @@ class FeatureTrackerNBA:
             "elo_local": elo_h_adj,
             "elo_visita": elo_a_adj,
             "elo_diff": elo_diff,
+            "elo_diff_pure": elo_diff_pure,
             "elo_prob_local": elo_prob_h,
             # Descanso y fatiga
             "rest_local": float(rest_h),
@@ -203,6 +265,16 @@ class FeatureTrackerNBA:
             "b2b_local": b2b_h,
             "b2b_visita": b2b_a,
             "rest_diff": rest_diff,
+            # Medias móviles y tendencias de localía/visita
+            "l5_home_win_pct": l5_home_win_pct,
+            "l5_away_win_pct": l5_away_win_pct,
+            "l5_home_netrtg": l5_home_netrtg,
+            "l5_away_netrtg": l5_away_netrtg,
+            "trend_local": trend_local,
+            "trend_visita": trend_visita,
+            # Indicadores de ausencia de jugadores estrella
+            "star_missing_local": 0.0,
+            "star_missing_visita": 0.0,
             # Dean Oliver Four Factors & Ratings
             "ortg_local": st_h["ortg"],
             "drtg_local": st_h["drtg"],
@@ -299,6 +371,9 @@ class FeatureTrackerNBA:
             "tpa_rate": tpa_rate_v, "pace": pace, "win": 1.0 - win_h,
             "ast_to_tov": float(row.get("ast_visita") or 25.0) / 14.0
         })
+
+        self.home_history[l].append({"win": win_h, "netrtg": ortg_h - drtg_h})
+        self.away_history[v].append({"win": 1.0 - win_h, "netrtg": ortg_v - drtg_v})
 
         # Fechas, rachas y récords
         self.last_game_date[l] = fecha
@@ -581,15 +656,41 @@ def cargar(use_cache=True):
     return M
 
 
-def predecir_match(M, local, visita, fecha=None, temporada=None, modelo="stacking"):
+def predecir_match(M, local, visita, fecha=None, temporada=None, modelo="stacking",
+                   baja_estrella_local=False, baja_estrella_visita=False):
     """
     Predice el ganador, cuotas justas, margen esperado y totales de puntos
     para un enfrentamiento entre local y visita.
+    Permite simular el impacto analítico de la baja de figuras de peso (superstar absence).
     """
     tracker = M["tracker"]
     features = M["features"]
     
     feats = tracker.get_features_for_match(local, visita, fecha, temporada)
+
+    # Impacto de ausencia de figura estrella (ajuste empírico de ratings y Four Factors)
+    if baja_estrella_local:
+        feats["star_missing_local"] = 1.0
+        feats["elo_local"] = feats["elo_local"] - 75.0
+        feats["elo_diff"] = feats["elo_diff"] - 75.0
+        feats["elo_diff_pure"] = feats["elo_diff_pure"] - 75.0
+        feats["netrtg_local"] = feats["netrtg_local"] - 5.5
+        feats["netrtg_diff"] = feats["netrtg_diff"] - 5.5
+        feats["ortg_local"] = feats["ortg_local"] - 5.0
+        feats["l5_home_netrtg"] = feats["l5_home_netrtg"] - 5.5
+        feats["efg_local"] = max(0.40, feats["efg_local"] - 0.025)
+
+    if baja_estrella_visita:
+        feats["star_missing_visita"] = 1.0
+        feats["elo_visita"] = feats["elo_visita"] - 75.0
+        feats["elo_diff"] = feats["elo_diff"] + 75.0
+        feats["elo_diff_pure"] = feats["elo_diff_pure"] + 75.0
+        feats["netrtg_visita"] = feats["netrtg_visita"] - 5.5
+        feats["netrtg_diff"] = feats["netrtg_diff"] + 5.5
+        feats["ortg_visita"] = feats["ortg_visita"] - 5.0
+        feats["l5_away_netrtg"] = feats["l5_away_netrtg"] - 5.5
+        feats["efg_visita"] = max(0.40, feats["efg_visita"] - 0.025)
+
     df_feat = pd.DataFrame([feats])[features].fillna(0.0)
 
     # Probabilidades de victoria
@@ -626,11 +727,14 @@ def predecir_match(M, local, visita, fecha=None, temporada=None, modelo="stackin
         "proj_pts_visita": proj_pts_visita,
         "proj_spread": round(proj_spread, 1),
         "proj_total": round(proj_total, 1),
-        "feats": feats
+        "feats": feats,
+        "baja_estrella_local": baja_estrella_local,
+        "baja_estrella_visita": baja_estrella_visita
     }
 
 
-def simular_partido_mc(M, local, visita, n_sims=5000, modelo="stacking", seed=42):
+def simular_partido_mc(M, local, visita, n_sims=5000, modelo="stacking", seed=42,
+                       baja_estrella_local=False, baja_estrella_visita=False):
     """
     Simulación Monte Carlo de un partido de la NBA.
     Genera la distribución exacta de puntuaciones, probabilidades para
@@ -639,7 +743,11 @@ def simular_partido_mc(M, local, visita, n_sims=5000, modelo="stacking", seed=42
     if seed is not None:
         np.random.seed(seed)
 
-    pred = predecir_match(M, local, visita, modelo=modelo)
+    pred = predecir_match(
+        M, local, visita, modelo=modelo,
+        baja_estrella_local=baja_estrella_local,
+        baja_estrella_visita=baja_estrella_visita
+    )
     mu_spread = pred["proj_spread"]
     mu_total = pred["proj_total"]
     sigma_spread = M.get("sigma_spread", 12.5)
