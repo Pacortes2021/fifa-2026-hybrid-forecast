@@ -34,7 +34,7 @@ EQUIPOS_PATH = DATA / "equipos.csv"
 # Constantes del baloncesto NBA
 ELO_INIT = 1500.0
 ELO_HOME_ADV = 100.0        # Ventaja estándar de localía en la NBA (~3.0 - 3.5 puntos)
-ELO_B2B_PENALTY = 40.0       # Penalización por jugar Back-to-Back (0 días de descanso)
+ELO_B2B_PENALTY = 0.0       # El impacto de Back-to-Back y fatiga es aprendido empíricamente por los modelos ML vía variables binarias y rest_diff
 LEAGUE_AVG_PACE = 99.2       # Posesiones promedio por 48 minutos en la NBA moderna
 LEAGUE_AVG_ORTG = 114.5      # Puntos promedio por 100 posesiones en la NBA moderna
 
