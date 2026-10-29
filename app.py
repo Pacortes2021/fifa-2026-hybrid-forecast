@@ -31,7 +31,7 @@ def limpiar_cache_importacion():
     entre las distintas ligas que usan archivos con el mismo nombre (ej. motor.py)."""
     modulos_a_limpiar = [
         "motor", "recolectar", "recolectar_boxscore", 
-        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur", "app_sco", "app_aut", "app_den", "app_gre", "app_nor", "app_swe", "app_ucl", "app_unl", "app_nba"
+        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur", "app_sco", "app_aut", "app_den", "app_gre", "app_nor", "app_swe", "app_ucl", "app_unl", "app_nba", "nba"
     ]
     for mod in modulos_a_limpiar:
         if mod in sys.modules:
