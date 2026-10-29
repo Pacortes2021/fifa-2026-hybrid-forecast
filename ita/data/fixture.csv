@@ -1,9 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401874993,2026-10-28 18:30:00,2026,103,107,AC Milan,Bologna,,,pre
-401874965,2026-10-28 18:30:00,2026,115,118,Parma,Udinese,,,pre
-401874773,2026-10-28 18:30:00,2026,17530,110,Venezia,Inter,,,pre
-401874988,2026-10-28 20:45:00,2026,3263,111,Genoa,Juventus,,,pre
-401874799,2026-10-28 20:45:00,2026,4007,114,Monza,Napoli,,,pre
 401874976,2026-10-29 18:30:00,2026,4057,113,Frosinone,Lecce,,,pre
 401874969,2026-10-29 20:45:00,2026,109,105,Fiorentina,Atalanta,,,pre
 401874798,2026-10-31 15:00:00,2026,107,4007,Bologna,Monza,,,pre
