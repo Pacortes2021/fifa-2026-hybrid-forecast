@@ -49,34 +49,48 @@ if os.path.exists(logo_path):
 
 st.sidebar.markdown("## 🎮 Navegación")
 
+torneos_disponibles = [
+    "🏆 Copa Mundial 2026",
+    "⭐ UEFA Champions League",
+    "🇪🇺 UEFA Nations League",
+    "🏀 NBA (Estados Unidos)",
+    "🇦🇷 Liga Profesional (Argentina)",
+    "🇲🇽 Liga MX (México)",
+    "🇧🇷 Brasileirão (Brasil)",
+    "🇨🇱 Liga Chilena (Primera)",
+    "🇪🇸 LaLiga (España)",
+    "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League (Inglaterra)",
+    "🇩🇪 Bundesliga (Alemania)",
+    "🇮🇹 Serie A (Italia)",
+    "🇫🇷 Ligue 1 (Francia)",
+    "🇳🇱 Eredivisie (Países Bajos)",
+    "🇵🇹 Primeira Liga (Portugal)",
+    "🇧🇪 Jupiler Pro League (Bélgica)",
+    "🇹🇷 Süper Lig (Turquía)",
+    "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Premiership (Escocia)",
+    "🇦🇹 Austrian Bundesliga (Austria)",
+    "🇩🇰 Danish Superliga (Dinamarca)",
+    "🇬🇷 Super League (Grecia)",
+    "🇳🇴 Eliteserien (Noruega)",
+    "🇸🇪 Allsvenskan (Suecia)"
+]
+
+# Detección inteligente por parámetro URL (ej: ?torneo=nba)
+idx_def = 0
+qp_torneo = str(st.query_params.get("torneo", "")).lower().strip()
+if "nba" in qp_torneo or "basket" in qp_torneo:
+    idx_def = 3
+elif "chile" in qp_torneo or "chi" in qp_torneo:
+    idx_def = 7
+elif "ucl" in qp_torneo or "champions" in qp_torneo:
+    idx_def = 1
+elif "unl" in qp_torneo or "nations" in qp_torneo:
+    idx_def = 2
 
 torneo_seleccionado = st.sidebar.selectbox(
     "Selecciona el Torneo:",
-    [
-        "🏆 Copa Mundial 2026",
-        "⭐ UEFA Champions League",
-        "🇪🇺 UEFA Nations League",
-        "🏀 NBA (Estados Unidos)",
-        "🇦🇷 Liga Profesional (Argentina)",
-        "🇲🇽 Liga MX (México)",
-        "🇧🇷 Brasileirão (Brasil)",
-        "🇨🇱 Liga Chilena (Primera)",
-        "🇪🇸 LaLiga (España)",
-        "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League (Inglaterra)",
-        "🇩🇪 Bundesliga (Alemania)",
-        "🇮🇹 Serie A (Italia)",
-        "🇫🇷 Ligue 1 (Francia)",
-        "🇳🇱 Eredivisie (Países Bajos)",
-        "🇵🇹 Primeira Liga (Portugal)",
-        "🇧🇪 Jupiler Pro League (Bélgica)",
-        "🇹🇷 Süper Lig (Turquía)",
-        "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Premiership (Escocia)",
-        "🇦🇹 Austrian Bundesliga (Austria)",
-        "🇩🇰 Danish Superliga (Dinamarca)",
-        "🇬🇷 Super League (Grecia)",
-        "🇳🇴 Eliteserien (Noruega)",
-        "🇸🇪 Allsvenskan (Suecia)"
-    ]
+    torneos_disponibles,
+    index=idx_def
 )
 
 st.sidebar.markdown("---")
