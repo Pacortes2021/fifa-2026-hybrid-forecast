@@ -1,20 +1,20 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
 401850681,2026-10-30 19:00:00,2026,2688,5362,Colo Colo,Universidad de Concepción,,,pre
 401850680,2026-10-30 19:00:00,2026,8186,10144,Coquimbo Unido,Unión La Calera,,,pre
-401850676,2026-10-31 20:00:00,2026,6072,7427,O'Higgins,Ñublense,,,pre
+401850676,2026-10-31 18:00:00,2026,6072,7427,O'Higgins,Ñublense,,,pre
 401850677,2026-11-01 12:00:00,2026,4134,4137,Huachipato,Deportes La Serena,,,pre
 401850682,2026-11-01 14:15:00,2026,4133,4129,Cobresal,Everton,,,pre
 401850683,2026-11-01 17:15:00,2026,885,4139,Universidad Católica,Universidad de Chile,,,pre
 401850678,2026-11-02 18:00:00,2026,19195,4138,Deportes Limache,Audax Italiano,,,pre
 401850679,2026-11-02 20:30:00,2026,8110,4422,Deportes Concepción,Palestino,,,pre
-401850685,2026-11-08 17:00:00,2026,5362,6072,Universidad de Concepción,O'Higgins,,,pre
-401850686,2026-11-08 17:00:00,2026,4139,4133,Universidad de Chile,Cobresal,,,pre
-401850687,2026-11-08 17:00:00,2026,885,19195,Universidad Católica,Deportes Limache,,,pre
-401850684,2026-11-08 17:00:00,2026,10144,4134,Unión La Calera,Huachipato,,,pre
-401850691,2026-11-08 17:00:00,2026,7427,2688,Ñublense,Colo Colo,,,pre
-401850688,2026-11-08 17:00:00,2026,4137,4422,Deportes La Serena,Palestino,,,pre
-401850689,2026-11-08 17:00:00,2026,4129,8110,Everton,Deportes Concepción,,,pre
-401850690,2026-11-08 17:00:00,2026,4138,8186,Audax Italiano,Coquimbo Unido,,,pre
+401850685,2026-11-05 20:00:00,2026,5362,6072,Universidad de Concepción,O'Higgins,,,pre
+401850688,2026-11-07 15:00:00,2026,4137,4422,Deportes La Serena,Palestino,,,pre
+401850689,2026-11-07 17:30:00,2026,4129,8110,Everton,Deportes Concepción,,,pre
+401850690,2026-11-08 12:30:00,2026,4138,8186,Audax Italiano,Coquimbo Unido,,,pre
+401850691,2026-11-08 15:00:00,2026,7427,2688,Ñublense,Colo Colo,,,pre
+401850684,2026-11-08 17:30:00,2026,10144,4134,Unión La Calera,Huachipato,,,pre
+401850687,2026-11-08 20:00:00,2026,885,19195,Universidad Católica,Deportes Limache,,,pre
+401850686,2026-11-09 20:00:00,2026,4139,4133,Universidad de Chile,Cobresal,,,pre
 401850695,2026-11-22 17:00:00,2026,4422,10144,Palestino,Unión La Calera,,,pre
 401850696,2026-11-22 17:00:00,2026,6072,4139,O'Higgins,Universidad de Chile,,,pre
 401850697,2026-11-22 17:00:00,2026,4134,8110,Huachipato,Deportes Concepción,,,pre

@@ -32,8 +32,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401884721,2026-11-28 15:30:00,2026,122,10388,FC Cologne,SV Elversberg,,,pre
 401884722,2026-11-28 15:30:00,2026,127,132,Hamburg SV,Bayern Munich,,,pre
 401884726,2026-11-28 18:30:00,2026,134,125,VfB Stuttgart,Eintracht Frankfurt,,,pre
-401884725,2026-11-28 21:00:00,2026,7911,3841,TSG Hoffenheim,FC Augsburg,,,pre
 401884724,2026-11-29 15:30:00,2026,126,11420,SC Freiburg,RB Leipzig,,,pre
+401884725,2026-11-29 17:30:00,2026,7911,3841,TSG Hoffenheim,FC Augsburg,,,pre
 401884727,2026-11-29 19:30:00,2026,124,131,Borussia Dortmund,Bayer Leverkusen,,,pre
 401884710,2026-12-05 21:00:00,2026,10388,134,SV Elversberg,VfB Stuttgart,,,pre
 401884715,2026-12-05 21:00:00,2026,126,7911,SC Freiburg,TSG Hoffenheim,,,pre
