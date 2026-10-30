@@ -460,36 +460,143 @@ def run_app():
             st.dataframe(df_rf, use_container_width=True, hide_index=True)
 
     # ============================================================================
-    # TAB 4: Validación vs Realidad (Temporada 2026-27)
+    # TAB 4: Validación vs Realidad y Acierto por Franquicia
     # ============================================================================
     with tab4:
-        st.markdown('<div class="sec-title">Validación en Vivo: Temporada Actual (2026-27)</div>', unsafe_allow_html=True)
-        df_val, met_val, evol = mo.validacion_en_vivo(M, temporada=2027)
+        st.markdown('<div class="sec-title">Validación Empírica y Rendimiento por Franquicia</div>', unsafe_allow_html=True)
 
+        col_periodo, _ = st.columns([2, 1])
+        with col_periodo:
+            periodo = st.radio(
+                "Período a Evaluar:",
+                ["🏀 Temporada 2026-27 (En Vivo / Out-of-Sample)", "📚 Histórico Completo (2022-2027)"],
+                horizontal=True,
+                key="nba_val_periodo"
+            )
+
+        if "2026-27" in periodo:
+            df_val, met_val, evol = mo.validacion_en_vivo(M, temporada=2027)
+        else:
+            features = M["features"]
+            pipe = M["pipe_lasso"]
+            df_val = M["df_dataset"].copy()
+            X_all = df_val[features].fillna(0.0)
+            y_all = df_val["target_win_local"]
+            probs_all = pipe.predict_proba(X_all)
+            preds_all = pipe.predict(X_all)
+            df_val["Prob_Local"] = probs_all[:, 1]
+            df_val["Prob_Visita"] = probs_all[:, 0]
+            df_val["Prediccion"] = preds_all
+
+            from sklearn.metrics import log_loss, accuracy_score
+            ll = log_loss(y_all, probs_all)
+            acc = accuracy_score(y_all, preds_all)
+            freq = y_all.mean()
+            base_p = np.full_like(probs_all, 0.5)
+            base_p[:, 1] = freq
+            base_p[:, 0] = 1.0 - freq
+            ll_base = log_loss(y_all, base_p)
+            met_val = {
+                "n": len(df_val),
+                "acierto": round(float(acc * 100.0), 2),
+                "logloss": round(float(ll), 4),
+                "logloss_base": round(float(ll_base), 4)
+            }
+            evol = pd.DataFrame()
+
+        # Métricas superiores
         v1, v2, v3 = st.columns(3)
         with v1:
             st.metric("Partidos Evaluados", met_val["n"])
         with v2:
-            st.metric("Acierto en Vivo", f"{met_val['acierto']:.1f}%")
+            st.metric("% Acierto General", f"{met_val['acierto']:.1f}%")
         with v3:
-            st.metric("Log-Loss en Vivo", f"{met_val['logloss']:.4f}", delta=f"{(met_val['logloss'] - met_val['logloss_base']):.4f} vs base", delta_color="inverse")
+            st.metric("Log-Loss", f"{met_val['logloss']:.4f}", delta=f"{(met_val['logloss'] - met_val['logloss_base']):.4f} vs base", delta_color="inverse")
 
-        st.markdown('<div class="card-title">Historial de Partidos Disputados y Aciertos del Modelo</div>', unsafe_allow_html=True)
-        df_val_disp = df_val[[
-            "fecha", "local", "visita", "puntos_local", "puntos_visita",
-            "Prob_Local", "Prob_Visita", "Prediccion", "target_win_local"
-        ]].copy().sort_values("fecha", ascending=False)
+        # Columnas: Curva de Error y Tabla de Acierto por Equipo
+        c_graf, c_table = st.columns([1, 1])
 
-        df_val_disp["Resultado"] = df_val_disp.apply(lambda r: f"{int(r['puntos_local'])} - {int(r['puntos_visita'])}", axis=1)
-        df_val_disp["Pronóstico"] = df_val_disp["Prediccion"].apply(lambda p: "🏠 Local" if p == 1 else "✈️ Visita")
-        df_val_disp["Acierto"] = df_val_disp["Prediccion"] == df_val_disp["target_win_local"]
-        df_val_disp["Acierto Icono"] = df_val_disp["Acierto"].apply(lambda ok: "✅ Acierto" if ok else "❌ Fallo")
-        df_val_disp["Prob. Local"] = df_val_disp["Prob_Local"].apply(lambda p: f"{p:.1%}")
-        df_val_disp["Prob. Visita"] = df_val_disp["Prob_Visita"].apply(lambda p: f"{p:.1%}")
+        with c_graf:
+            st.markdown('<div class="card-title">📈 Curva de Log-Loss Acumulado</div>', unsafe_allow_html=True)
+            if not evol.empty and "logloss_acum" in evol.columns:
+                fig, ax = plt.subplots(figsize=(6, 4.4))
+                ax.plot(evol["partido"], evol["logloss_acum"], "o-", color="#1d428a", label="Modelo (acumulado)", markersize=4)
+                ax.axhline(met_val["logloss_base"], color="#c8102e", ls="--", lw=1.6, label=f"Baseline ({met_val['logloss_base']:.3f})")
+                ax.set_xlabel("Partidos Jugados (Cronológico)", fontsize=9)
+                ax.set_ylabel("Log-Loss Acumulado", fontsize=9)
+                ax.set_title("Evolución del Error Probabilístico", fontsize=10, fontweight="bold")
+                ax.legend(fontsize=9)
+                ax.grid(True, linestyle=":", alpha=0.6)
+                st.pyplot(fig)
+            else:
+                st.info("La curva acumulada cronológica se grafica en la evaluación de la temporada 2026-27 en vivo.")
 
-        st.dataframe(df_val_disp[[
-            "fecha", "local", "visita", "Resultado", "Pronóstico", "Prob. Local", "Prob. Visita", "Acierto Icono"
-        ]], use_container_width=True, hide_index=True)
+        with c_table:
+            st.markdown('<div class="card-title">🎯 Porcentaje de Acierto por Franquicia</div>', unsafe_allow_html=True)
+            eqs_official = sorted(list(equipos.keys())) if equipos else sorted(list(set(df_val["local"]).union(set(df_val["visita"]))))
+            team_stats = []
+            for eq in eqs_official:
+                df_eq = df_val[(df_val["local"] == eq) | (df_val["visita"] == eq)]
+                pj = len(df_eq)
+                if pj > 0:
+                    aciertos = int((df_eq["Prediccion"] == df_eq["target_win_local"]).sum())
+                    fallos = pj - aciertos
+                    acc = aciertos / pj
+
+                    df_h = df_val[df_val["local"] == eq]
+                    acc_h = (df_h["Prediccion"] == df_h["target_win_local"]).sum() / len(df_h) if len(df_h) > 0 else None
+
+                    df_a = df_val[df_val["visita"] == eq]
+                    acc_a = (df_a["Prediccion"] == df_a["target_win_local"]).sum() / len(df_a) if len(df_a) > 0 else None
+
+                    team_stats.append({
+                        "Equipo": eq,
+                        "PJ": pj,
+                        "Aciertos": aciertos,
+                        "Fallos": fallos,
+                        "% Acierto": acc,
+                        "% Casa": f"{acc_h:.0%}" if acc_h is not None else "—",
+                        "% Ruta": f"{acc_a:.0%}" if acc_a is not None else "—"
+                    })
+
+            if team_stats:
+                df_teams = pd.DataFrame(team_stats).sort_values(by=["% Acierto", "PJ"], ascending=[False, False])
+                st.dataframe(
+                    df_teams.style.format({"% Acierto": "{:.1%}"}).background_gradient(subset=["% Acierto"], cmap="YlGn"),
+                    use_container_width=True, hide_index=True
+                )
+
+        # Historial de partidos con filtro por franquicia
+        st.markdown('<div class="card-title">📜 Historial de Partidos y Pronósticos Realizados</div>', unsafe_allow_html=True)
+
+        filtro_eq = st.selectbox(
+            "🔍 Filtrar partidos disputados por franquicia:",
+            ["— Todas las franquicias —"] + sorted(list(equipos.keys())),
+            key="filtro_hist_nba"
+        )
+
+        df_disp = df_val.copy()
+        if filtro_eq != "— Todas las franquicias —":
+            df_disp = df_disp[(df_disp["local"] == filtro_eq) | (df_disp["visita"] == filtro_eq)]
+
+        if not df_disp.empty:
+            df_val_disp = df_disp[[
+                "fecha", "local", "visita", "puntos_local", "puntos_visita",
+                "Prob_Local", "Prob_Visita", "Prediccion", "target_win_local"
+            ]].copy().sort_values("fecha", ascending=False)
+
+            df_val_disp["Resultado"] = df_val_disp.apply(lambda r: f"{int(r['puntos_local'])} - {int(r['puntos_visita'])}", axis=1)
+            df_val_disp["Pronóstico"] = df_val_disp["Prediccion"].apply(lambda p: "🏠 Local" if p == 1 else "✈️ Visita")
+            df_val_disp["Acierto"] = df_val_disp["Prediccion"] == df_val_disp["target_win_local"]
+            df_val_disp["Acierto Icono"] = df_val_disp["Acierto"].apply(lambda ok: "✅ Acierto" if ok else "❌ Fallo")
+            df_val_disp["Prob. Local"] = df_val_disp["Prob_Local"].apply(lambda p: f"{p:.1%}")
+            df_val_disp["Prob. Visita"] = df_val_disp["Prob_Visita"].apply(lambda p: f"{p:.1%}")
+
+            st.dataframe(df_val_disp[[
+                "fecha", "local", "visita", "Resultado", "Pronóstico", "Prob. Local", "Prob. Visita", "Acierto Icono"
+            ]], use_container_width=True, hide_index=True)
+        else:
+            st.info("No se encontraron partidos para la selección.")
 
 
 if __name__ == "__main__":
