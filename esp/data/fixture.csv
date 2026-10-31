@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401882849,2026-10-10 14:00:00,2026,101,93,Rayo Vallecano,Athletic Club,,,pre
-401882817,2026-10-30 21:00:00,2026,102,88,Villarreal CF,Espanyol,,,pre
 401882820,2026-10-31 14:00:00,2026,1538,1068,Levante,Atlético de Madrid,,,pre
 401882818,2026-10-31 16:15:00,2026,101,85,Rayo Vallecano,Celta de Vigo,,,pre
 401882825,2026-10-31 18:30:00,2026,244,99,Real Betis,Málaga,,,pre
@@ -35,11 +33,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882789,2026-11-29 21:00:00,2026,86,96,Real Madrid,Alavés,,,pre
 401882796,2026-11-29 21:00:00,2026,244,101,Real Betis,Rayo Vallecano,,,pre
 401882790,2026-11-29 21:00:00,2026,99,93,Málaga,Athletic Club,,,pre
-401882791,2026-11-29 21:00:00,2026,1538,87,Levante,Racing Santander,,,pre
 401882792,2026-11-29 21:00:00,2026,88,2922,Espanyol,Getafe,,,pre
 401882793,2026-11-29 21:00:00,2026,3751,1068,Elche CF,Atlético de Madrid,,,pre
 401882794,2026-11-29 21:00:00,2026,90,83,Deportivo,FC Barcelona,,,pre
 401882795,2026-11-29 21:00:00,2026,85,102,Celta de Vigo,Villarreal CF,,,pre
+401882791,2026-11-29 21:00:00,2026,1538,87,Levante,Racing Santander,,,pre
 401882777,2026-12-06 21:00:00,2026,102,89,Villarreal CF,Real Sociedad,,,pre
 401882778,2026-12-06 21:00:00,2026,243,99,Sevilla FC,Málaga,,,pre
 401882779,2026-12-06 21:00:00,2026,101,1538,Rayo Vallecano,Levante,,,pre
@@ -50,23 +48,24 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882785,2026-12-06 21:00:00,2026,93,86,Athletic Club,Real Madrid,,,pre
 401882786,2026-12-06 21:00:00,2026,96,88,Alavés,Espanyol,,,pre
 401882782,2026-12-06 21:00:00,2026,2922,94,Getafe,Valencia CF,,,pre
+401882849,2026-12-09 20:00:00,2026,101,93,Rayo Vallecano,Athletic Club,,,pre
 401882775,2026-12-13 21:00:00,2026,244,87,Real Betis,Racing Santander,,,pre
 401882767,2026-12-13 21:00:00,2026,102,101,Villarreal CF,Rayo Vallecano,,,pre
 401882768,2026-12-13 21:00:00,2026,89,2922,Real Sociedad,Getafe,,,pre
 401882769,2026-12-13 21:00:00,2026,86,97,Real Madrid,CA Osasuna,,,pre
 401882770,2026-12-13 21:00:00,2026,99,83,Málaga,FC Barcelona,,,pre
-401882773,2026-12-13 21:00:00,2026,3751,243,Elche CF,Sevilla FC,,,pre
-401882772,2026-12-13 21:00:00,2026,88,85,Espanyol,Celta de Vigo,,,pre
 401882774,2026-12-13 21:00:00,2026,90,93,Deportivo,Athletic Club,,,pre
+401882772,2026-12-13 21:00:00,2026,88,85,Espanyol,Celta de Vigo,,,pre
+401882773,2026-12-13 21:00:00,2026,3751,243,Elche CF,Sevilla FC,,,pre
 401882776,2026-12-13 21:00:00,2026,1068,94,Atlético de Madrid,Valencia CF,,,pre
 401882771,2026-12-13 21:00:00,2026,1538,96,Levante,Alavés,,,pre
-401882758,2026-12-20 21:00:00,2026,243,87,Sevilla FC,Racing Santander,,,pre
-401882766,2026-12-20 21:00:00,2026,96,3751,Alavés,Elche CF,,,pre
-401882765,2026-12-20 21:00:00,2026,93,244,Athletic Club,Real Betis,,,pre
-401882762,2026-12-20 21:00:00,2026,83,89,FC Barcelona,Real Sociedad,,,pre
-401882764,2026-12-20 21:00:00,2026,85,1068,Celta de Vigo,Atlético de Madrid,,,pre
-401882763,2026-12-20 21:00:00,2026,90,86,Deportivo,Real Madrid,,,pre
 401882761,2026-12-20 21:00:00,2026,2922,1538,Getafe,Levante,,,pre
-401882760,2026-12-20 21:00:00,2026,97,102,CA Osasuna,Villarreal CF,,,pre
 401882759,2026-12-20 21:00:00,2026,101,99,Rayo Vallecano,Málaga,,,pre
+401882760,2026-12-20 21:00:00,2026,97,102,CA Osasuna,Villarreal CF,,,pre
+401882763,2026-12-20 21:00:00,2026,90,86,Deportivo,Real Madrid,,,pre
+401882758,2026-12-20 21:00:00,2026,243,87,Sevilla FC,Racing Santander,,,pre
+401882762,2026-12-20 21:00:00,2026,83,89,FC Barcelona,Real Sociedad,,,pre
+401882765,2026-12-20 21:00:00,2026,93,244,Athletic Club,Real Betis,,,pre
+401882766,2026-12-20 21:00:00,2026,96,3751,Alavés,Elche CF,,,pre
+401882764,2026-12-20 21:00:00,2026,85,1068,Celta de Vigo,Atlético de Madrid,,,pre
 401882757,2026-12-20 21:00:00,2026,94,88,Valencia CF,Espanyol,,,pre
