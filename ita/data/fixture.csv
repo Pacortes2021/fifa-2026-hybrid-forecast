@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401874798,2026-10-31 15:00:00,2026,107,4007,Bologna,Monza,,,pre
-401874990,2026-10-31 18:00:00,2026,118,104,Udinese,AS Roma,,,pre
-401874795,2026-10-31 20:45:00,2026,103,110,AC Milan,Inter,,,pre
 401875002,2026-11-01 12:30:00,2026,2572,17530,Como,Venezia,,,pre
 401874782,2026-11-01 15:00:00,2026,4057,239,Frosinone,Torino,,,pre
 401874983,2026-11-01 15:00:00,2026,112,2925,Lazio,Cagliari,,,pre

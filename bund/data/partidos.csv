@@ -1782,3 +1782,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401884760,2026-10-25 15:30:00,2026,7911,131,TSG Hoffenheim,Bayer Leverkusen,3.0,0.0,post
 401884759,2026-10-25 17:30:00,2026,126,132,SC Freiburg,Bayern Munich,1.0,3.0,post
 401884746,2026-10-30 20:30:00,2026,10388,2950,SV Elversberg,Mainz,4.0,1.0,post
+401884748,2026-10-31 15:30:00,2026,137,7911,Werder Bremen,TSG Hoffenheim,2.0,0.0,post
+401884747,2026-10-31 15:30:00,2026,133,11420,Schalke 04,RB Leipzig,0.0,2.0,post
+401884751,2026-10-31 15:30:00,2026,3841,126,FC Augsburg,SC Freiburg,1.0,2.0,post
+401884753,2026-10-31 15:30:00,2026,131,134,Bayer Leverkusen,VfB Stuttgart,2.0,4.0,post
+401884749,2026-10-31 15:30:00,2026,268,3307,Borussia Mönchengladbach,SC Paderborn 07,0.0,0.0,post
+401884754,2026-10-31 18:30:00,2026,132,124,Bayern Munich,Borussia Dortmund,2.0,2.0,post
