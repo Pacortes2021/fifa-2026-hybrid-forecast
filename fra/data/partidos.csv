@@ -1964,3 +1964,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876416,2026-10-30 19:00:00,2026,2502,169,Nice,Rennes,5.0,2.0,post
 401876420,2026-10-30 21:05:00,2026,166,175,Lille,Lens,1.0,0.0,post
 401876413,2026-10-31 20:45:00,2026,170,2697,Troyes,Le Mans,2.0,0.0,post
+401876414,2026-11-01 15:00:00,2026,180,172,Strasbourg,Auxerre,5.0,1.0,post
+401876415,2026-11-01 17:15:00,2026,6851,174,Paris FC,Monaco,3.0,1.0,post
+401876418,2026-11-01 17:15:00,2026,167,7868,Lyon,Angers,2.0,0.0,post
+401876417,2026-11-01 20:45:00,2026,176,179,Marseille,Toulouse,2.0,0.0,post

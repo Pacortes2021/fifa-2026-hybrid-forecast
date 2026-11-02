@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401884750,2026-11-01 15:30:00,2026,598,122,1. FC Union Berlin,FC Cologne,,,pre
-401884752,2026-11-01 17:30:00,2026,125,127,Eintracht Frankfurt,Hamburg SV,,,pre
 401884739,2026-11-06 20:30:00,2026,127,268,Hamburg SV,Borussia Mönchengladbach,,,pre
 401884745,2026-11-07 15:30:00,2026,124,10388,Borussia Dortmund,SV Elversberg,,,pre
 401884740,2026-11-07 15:30:00,2026,2950,132,Mainz,Bayern Munich,,,pre

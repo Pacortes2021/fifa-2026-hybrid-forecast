@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401882821,2026-11-01 14:00:00,2026,2922,243,Getafe,Sevilla FC,,,pre
-401882819,2026-11-01 16:15:00,2026,87,86,Racing Santander,Real Madrid,,,pre
-401882823,2026-11-01 18:30:00,2026,3751,94,Elche CF,Valencia CF,,,pre
-401882826,2026-11-01 21:00:00,2026,93,89,Athletic Club,Real Sociedad,,,pre
 401882824,2026-11-02 21:00:00,2026,90,97,Deportivo,CA Osasuna,,,pre
 401882809,2026-11-06 21:00:00,2026,243,96,Sevilla FC,Alavés,,,pre
 401882812,2026-11-07 14:00:00,2026,99,87,Málaga,Racing Santander,,,pre
