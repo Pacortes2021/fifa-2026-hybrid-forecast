@@ -2213,3 +2213,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878761,2026-10-31 17:30:00,2026,367,384,Tottenham Hotspur,Crystal Palace,2.0,0.0,post
 401879250,2026-10-31 20:00:00,2026,362,370,Aston Villa,Fulham,1.0,1.0,post
 401879246,2026-11-01 16:30:00,2026,364,359,Liverpool,Arsenal,0.0,1.0,post
+401878762,2026-11-02 20:00:00,2026,361,368,Newcastle United,Everton,0.0,1.0,post

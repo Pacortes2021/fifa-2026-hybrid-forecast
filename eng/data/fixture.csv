@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401878762,2026-11-02 20:00:00,2026,361,368,Newcastle United,Everton,,,pre
 401879242,2026-11-06 20:00:00,2026,368,388,Everton,Coventry City,,,pre
 401878758,2026-11-07 12:30:00,2026,357,367,Leeds United,Tottenham Hotspur,,,pre
 401879241,2026-11-07 15:00:00,2026,370,361,Fulham,Newcastle United,,,pre

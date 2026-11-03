@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401874963,2026-11-02 18:30:00,2026,3997,109,Sassuolo,Fiorentina,,,pre
-401874971,2026-11-02 20:45:00,2026,105,115,Atalanta,Parma,,,pre
 401874815,2026-11-06 20:45:00,2026,17530,118,Venezia,Udinese,,,pre
 401874791,2026-11-07 15:00:00,2026,2925,4057,Cagliari,Frosinone,,,pre
 401874811,2026-11-07 15:00:00,2026,239,113,Torino,Lecce,,,pre

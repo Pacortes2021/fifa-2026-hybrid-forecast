@@ -1519,3 +1519,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850677,2026-11-01 12:00:00,2026,4134,4137,Huachipato,Deportes La Serena,0.0,0.0,post
 401850683,2026-11-01 12:30:00,2026,885,4139,Universidad Católica,Universidad de Chile,1.0,0.0,post
 401850682,2026-11-01 15:00:00,2026,4133,4129,Cobresal,Everton,2.0,2.0,post
+401850678,2026-11-02 18:00:00,2026,19195,4138,Deportes Limache,Audax Italiano,2.0,0.0,post
+401850679,2026-11-02 20:30:00,2026,8110,4422,Deportes Concepción,Palestino,1.0,0.0,post

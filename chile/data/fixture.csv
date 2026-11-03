@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401850678,2026-11-02 18:00:00,2026,19195,4138,Deportes Limache,Audax Italiano,,,pre
-401850679,2026-11-02 20:30:00,2026,8110,4422,Deportes Concepción,Palestino,,,pre
 401850685,2026-11-05 20:00:00,2026,5362,6072,Universidad de Concepción,O'Higgins,,,pre
 401850688,2026-11-07 15:00:00,2026,4137,4422,Deportes La Serena,Palestino,,,pre
 401850689,2026-11-07 17:30:00,2026,4129,8110,Everton,Deportes Concepción,,,pre
