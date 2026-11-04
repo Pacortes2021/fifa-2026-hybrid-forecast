@@ -63,8 +63,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878740,2026-12-19 15:00:00,2026,349,388,AFC Bournemouth,Coventry City,,,pre
 401879201,2026-12-19 15:00:00,2026,357,370,Leeds United,Fulham,,,pre
 401879199,2026-12-19 15:00:00,2026,382,306,Manchester City,Hull City,,,pre
-401879198,2026-12-19 15:00:00,2026,393,368,Nottingham Forest,Everton,,,pre
 401879200,2026-12-19 17:30:00,2026,364,367,Liverpool,Tottenham Hotspur,,,pre
+401879198,2026-12-20 14:00:00,2026,393,368,Nottingham Forest,Everton,,,pre
 401878738,2026-12-20 14:00:00,2026,366,384,Sunderland,Crystal Palace,,,pre
 401878739,2026-12-20 14:00:00,2026,331,373,Brighton & Hove Albion,Ipswich Town,,,pre
 401879204,2026-12-20 16:30:00,2026,359,360,Arsenal,Manchester United,,,pre

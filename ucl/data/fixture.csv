@@ -1,13 +1,4 @@
 event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401915311,2026-11-03 18:45:00,2027,league-phase,0,0,432,134,Galatasaray,VfB Stuttgart,,,pre,STATUS_SCHEDULED
-401915310,2026-11-03 18:45:00,2027,league-phase,0,0,493,2250,Shakhtar Donetsk,Sporting CP,,,pre,STATUS_SCHEDULED
-401915386,2026-11-03 21:00:00,2027,league-phase,0,0,1068,132,Atletico Madrid,Bayern Munich,,,pre,STATUS_SCHEDULED
-401915387,2026-11-03 21:00:00,2027,league-phase,0,0,83,362,FC Barcelona,Aston Villa,,,pre,STATUS_SCHEDULED
-401915384,2026-11-03 21:00:00,2027,league-phase,0,0,2980,166,Bodo/Glimt,Lille,,,pre,STATUS_SCHEDULED
-401915307,2026-11-03 21:00:00,2027,league-phase,0,0,142,110,Feyenoord,Inter,,,pre,STATUS_SCHEDULED
-401915385,2026-11-03 21:00:00,2027,league-phase,0,0,4411,521,LASK Linz,Slovan Bratislava,,,pre,STATUS_SCHEDULED
-401915308,2026-11-03 21:00:00,2027,league-phase,0,0,360,104,Manchester United,AS Roma,,,pre,STATUS_SCHEDULED
-401915309,2026-11-03 21:00:00,2027,league-phase,0,0,102,160,Villarreal,PSG,,,pre,STATUS_SCHEDULED
 401915382,2026-11-04 18:45:00,2027,league-phase,0,0,436,364,Fenerbahce,Liverpool,,,pre,STATUS_SCHEDULED
 401915383,2026-11-04 18:45:00,2027,league-phase,0,0,887,86,AEK Athens,Real Madrid,,,pre,STATUS_SCHEDULED
 401915304,2026-11-04 21:00:00,2027,league-phase,0,0,124,244,Borussia Dortmund,Real Betis,,,pre,STATUS_SCHEDULED

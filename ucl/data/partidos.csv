@@ -835,3 +835,12 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915312,2026-10-21 21:00:00,2027,league-phase,0,0,132,359,Bayern Munich,Arsenal,2,2,post,STATUS_FULL_TIME
 401915394,2026-10-21 21:00:00,2027,league-phase,0,0,362,510,Aston Villa,Viking FK,3,1,post,STATUS_FULL_TIME
 401915388,2026-10-21 21:00:00,2027,league-phase,0,0,570,175,Club Brugge,Lens,3,0,post,STATUS_FULL_TIME
+401915311,2026-11-03 18:45:00,2027,league-phase,0,0,432,134,Galatasaray,VfB Stuttgart,2,0,post,STATUS_FULL_TIME
+401915310,2026-11-03 18:45:00,2027,league-phase,0,0,493,2250,Shakhtar Donetsk,Sporting CP,0,1,post,STATUS_FULL_TIME
+401915386,2026-11-03 21:00:00,2027,league-phase,0,0,1068,132,Atletico Madrid,Bayern Munich,0,2,post,STATUS_FULL_TIME
+401915387,2026-11-03 21:00:00,2027,league-phase,0,0,83,362,FC Barcelona,Aston Villa,3,0,post,STATUS_FULL_TIME
+401915384,2026-11-03 21:00:00,2027,league-phase,0,0,2980,166,Bodo/Glimt,Lille,0,0,post,STATUS_FULL_TIME
+401915307,2026-11-03 21:00:00,2027,league-phase,0,0,142,110,Feyenoord,Inter,0,3,post,STATUS_FULL_TIME
+401915385,2026-11-03 21:00:00,2027,league-phase,0,0,4411,521,LASK Linz,Slovan Bratislava,4,0,post,STATUS_FULL_TIME
+401915308,2026-11-03 21:00:00,2027,league-phase,0,0,360,104,Manchester United,AS Roma,3,2,post,STATUS_FULL_TIME
+401915309,2026-11-03 21:00:00,2027,league-phase,0,0,102,160,Villarreal,PSG,0,6,post,STATUS_FULL_TIME
