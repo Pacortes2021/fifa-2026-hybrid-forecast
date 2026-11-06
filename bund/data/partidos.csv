@@ -1640,8 +1640,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 746944,2026-03-13 20:30:00,2026,268,270,Borussia Mönchengladbach,St. Pauli,2.0,0.0,post
 746947,2026-03-14 15:30:00,2026,7911,138,TSG Hoffenheim,VfL Wolfsburg,1.0,1.0,post
 746943,2026-03-14 15:30:00,2026,125,6418,Eintracht Frankfurt,1. FC Heidenheim 1846,1.0,0.0,post
-746951,2026-03-14 15:30:00,2026,124,3841,Borussia Dortmund,FC Augsburg,2.0,0.0,post
 746950,2026-03-14 15:30:00,2026,131,132,Bayer Leverkusen,Bayern Munich,1.0,1.0,post
+746951,2026-03-14 15:30:00,2026,124,3841,Borussia Dortmund,FC Augsburg,2.0,0.0,post
 746949,2026-03-14 18:30:00,2026,127,122,Hamburg SV,FC Cologne,1.0,1.0,post
 746946,2026-03-15 15:30:00,2026,137,2950,Werder Bremen,Mainz,0.0,2.0,post
 746945,2026-03-15 17:30:00,2026,126,598,SC Freiburg,1. FC Union Berlin,0.0,1.0,post
@@ -1665,10 +1665,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 746961,2026-04-05 15:30:00,2026,598,270,1. FC Union Berlin,St. Pauli,1.0,1.0,post
 746965,2026-04-05 17:30:00,2026,125,122,Eintracht Frankfurt,FC Cologne,2.0,2.0,post
 746974,2026-04-10 20:30:00,2026,3841,7911,FC Augsburg,TSG Hoffenheim,2.0,2.0,post
-746976,2026-04-11 15:30:00,2026,11420,268,RB Leipzig,Borussia Mönchengladbach,1.0,0.0,post
-746978,2026-04-11 15:30:00,2026,138,125,VfL Wolfsburg,Eintracht Frankfurt,1.0,2.0,post
-746970,2026-04-11 15:30:00,2026,6418,598,1. FC Heidenheim 1846,1. FC Union Berlin,3.0,1.0,post
 746973,2026-04-11 15:30:00,2026,124,131,Borussia Dortmund,Bayer Leverkusen,0.0,1.0,post
+746976,2026-04-11 15:30:00,2026,11420,268,RB Leipzig,Borussia Mönchengladbach,1.0,0.0,post
+746970,2026-04-11 15:30:00,2026,6418,598,1. FC Heidenheim 1846,1. FC Union Berlin,3.0,1.0,post
+746978,2026-04-11 15:30:00,2026,138,125,VfL Wolfsburg,Eintracht Frankfurt,1.0,2.0,post
 746975,2026-04-11 18:30:00,2026,270,132,St. Pauli,Bayern Munich,0.0,5.0,post
 746971,2026-04-12 15:30:00,2026,122,137,FC Cologne,Werder Bremen,3.0,1.0,post
 746977,2026-04-12 17:30:00,2026,134,127,VfB Stuttgart,Hamburg SV,4.0,0.0,post
@@ -1685,9 +1685,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 746994,2026-04-24 20:30:00,2026,11420,598,RB Leipzig,1. FC Union Berlin,3.0,1.0,post
 746996,2026-04-25 15:30:00,2026,138,268,VfL Wolfsburg,Borussia Mönchengladbach,0.0,0.0,post
 746990,2026-04-25 15:30:00,2026,2950,132,Mainz,Bayern Munich,3.0,4.0,post
+746989,2026-04-25 15:30:00,2026,122,131,FC Cologne,Bayer Leverkusen,1.0,2.0,post
 746992,2026-04-25 15:30:00,2026,3841,125,FC Augsburg,Eintracht Frankfurt,1.0,1.0,post
 746988,2026-04-25 15:30:00,2026,6418,270,1. FC Heidenheim 1846,St. Pauli,2.0,0.0,post
-746989,2026-04-25 15:30:00,2026,122,131,FC Cologne,Bayer Leverkusen,1.0,2.0,post
 746993,2026-04-25 18:30:00,2026,127,7911,Hamburg SV,TSG Hoffenheim,1.0,2.0,post
 746995,2026-04-26 15:30:00,2026,134,137,VfB Stuttgart,Werder Bremen,1.0,1.0,post
 746991,2026-04-26 17:30:00,2026,124,126,Borussia Dortmund,SC Freiburg,4.0,0.0,post
@@ -1713,17 +1713,17 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 747021,2026-05-16 15:30:00,2026,270,138,St. Pauli,VfL Wolfsburg,1.0,3.0,post
 747019,2026-05-16 15:30:00,2026,126,11420,SC Freiburg,RB Leipzig,4.0,1.0,post
 747023,2026-05-16 15:30:00,2026,125,134,Eintracht Frankfurt,VfB Stuttgart,2.0,2.0,post
-747017,2026-05-16 15:30:00,2026,131,127,Bayer Leverkusen,Hamburg SV,1.0,1.0,post
+747018,2026-05-16 15:30:00,2026,268,7911,Borussia Mönchengladbach,TSG Hoffenheim,4.0,0.0,post
 747020,2026-05-16 15:30:00,2026,132,122,Bayern Munich,FC Cologne,5.0,1.0,post
+747017,2026-05-16 15:30:00,2026,131,127,Bayer Leverkusen,Hamburg SV,1.0,1.0,post
 747016,2026-05-16 15:30:00,2026,598,3841,1. FC Union Berlin,FC Augsburg,4.0,0.0,post
 747015,2026-05-16 15:30:00,2026,6418,2950,1. FC Heidenheim 1846,Mainz,0.0,2.0,post
-747018,2026-05-16 15:30:00,2026,268,7911,Borussia Mönchengladbach,TSG Hoffenheim,4.0,0.0,post
 401884817,2026-08-28 20:30:00,2026,132,134,Bayern Munich,VfB Stuttgart,5.0,1.0,post
-401884809,2026-08-29 15:30:00,2026,10388,131,SV Elversberg,Bayer Leverkusen,3.0,2.0,post
 401884811,2026-08-29 15:30:00,2026,598,125,1. FC Union Berlin,Eintracht Frankfurt,3.0,3.0,post
 401884810,2026-08-29 15:30:00,2026,122,7911,FC Cologne,TSG Hoffenheim,3.0,2.0,post
 401884812,2026-08-29 15:30:00,2026,2950,3307,Mainz,SC Paderborn 07,0.0,0.0,post
 401884815,2026-08-29 15:30:00,2026,11420,268,RB Leipzig,Borussia Mönchengladbach,3.0,0.0,post
+401884809,2026-08-29 15:30:00,2026,10388,131,SV Elversberg,Bayer Leverkusen,3.0,2.0,post
 401884816,2026-08-29 18:30:00,2026,124,127,Borussia Dortmund,Hamburg SV,2.0,0.0,post
 401884814,2026-08-30 15:30:00,2026,126,137,SC Freiburg,Werder Bremen,4.0,1.0,post
 401884813,2026-08-30 17:30:00,2026,3841,133,FC Augsburg,Schalke 04,3.0,0.0,post
@@ -1782,9 +1782,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401884760,2026-10-25 15:30:00,2026,7911,131,TSG Hoffenheim,Bayer Leverkusen,3.0,0.0,post
 401884759,2026-10-25 17:30:00,2026,126,132,SC Freiburg,Bayern Munich,1.0,3.0,post
 401884746,2026-10-30 20:30:00,2026,10388,2950,SV Elversberg,Mainz,4.0,1.0,post
-401884748,2026-10-31 15:30:00,2026,137,7911,Werder Bremen,TSG Hoffenheim,2.0,0.0,post
 401884747,2026-10-31 15:30:00,2026,133,11420,Schalke 04,RB Leipzig,0.0,2.0,post
 401884751,2026-10-31 15:30:00,2026,3841,126,FC Augsburg,SC Freiburg,1.0,2.0,post
+401884748,2026-10-31 15:30:00,2026,137,7911,Werder Bremen,TSG Hoffenheim,2.0,0.0,post
 401884753,2026-10-31 15:30:00,2026,131,134,Bayer Leverkusen,VfB Stuttgart,2.0,4.0,post
 401884749,2026-10-31 15:30:00,2026,268,3307,Borussia Mönchengladbach,SC Paderborn 07,0.0,0.0,post
 401884754,2026-10-31 18:30:00,2026,132,124,Bayern Munich,Borussia Dortmund,2.0,2.0,post
