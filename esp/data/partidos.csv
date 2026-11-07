@@ -2113,11 +2113,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 748522,2026-05-23 21:00:00,2026,244,1538,Real Betis,Levante,2.0,1.0,post
 748519,2026-05-23 21:00:00,2026,94,83,Valencia CF,FC Barcelona,3.0,1.0,post
 748521,2026-05-23 21:00:00,2026,84,92,Mallorca,Real Oviedo,3.0,0.0,post
-748523,2026-05-23 21:00:00,2026,96,101,Alavés,Rayo Vallecano,1.0,2.0,post
+748517,2026-05-23 21:00:00,2026,85,243,Celta de Vigo,Sevilla FC,1.0,0.0,post
 748518,2026-05-23 21:00:00,2026,2922,97,Getafe,CA Osasuna,1.0,0.0,post
 748516,2026-05-23 21:00:00,2026,88,89,Espanyol,Real Sociedad,1.0,1.0,post
-748517,2026-05-23 21:00:00,2026,85,243,Celta de Vigo,Sevilla FC,1.0,0.0,post
 748520,2026-05-23 21:00:00,2026,9812,3751,Girona FC,Elche CF,1.0,1.0,post
+748523,2026-05-23 21:00:00,2026,96,101,Alavés,Rayo Vallecano,1.0,2.0,post
 748515,2026-05-24 21:00:00,2026,102,1068,Villarreal CF,Atlético de Madrid,5.0,1.0,post
 401882926,2026-08-15 19:30:00,2026,96,2922,Alavés,Getafe,3.0,0.0,post
 401882918,2026-08-15 21:30:00,2026,243,101,Sevilla FC,Rayo Vallecano,2.0,1.0,post
@@ -2155,8 +2155,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882889,2026-09-05 18:30:00,2026,101,87,Rayo Vallecano,Racing Santander,3.0,2.0,post
 401882887,2026-09-05 21:00:00,2026,102,90,Villarreal CF,Deportivo,2.0,3.0,post
 401882888,2026-09-06 16:15:00,2026,94,83,Valencia CF,FC Barcelona,0.0,5.0,post
-401882896,2026-09-06 18:30:00,2026,96,97,Alavés,CA Osasuna,5.0,2.0,post
 401882890,2026-09-06 18:30:00,2026,99,1538,Málaga,Levante,0.0,0.0,post
+401882896,2026-09-06 18:30:00,2026,96,97,Alavés,CA Osasuna,5.0,2.0,post
 401882892,2026-09-06 21:00:00,2026,88,243,Espanyol,Sevilla FC,1.0,1.0,post
 401882891,2026-09-07 19:00:00,2026,2922,85,Getafe,Celta de Vigo,1.0,1.0,post
 401882893,2026-09-07 21:30:00,2026,3751,89,Elche CF,Real Sociedad,2.0,3.0,post
@@ -2173,8 +2173,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882868,2026-09-15 19:00:00,2026,101,88,Rayo Vallecano,Espanyol,2.0,1.0,post
 401882876,2026-09-15 20:00:00,2026,96,94,Alavés,Valencia CF,0.0,1.0,post
 401882872,2026-09-15 21:30:00,2026,3751,86,Elche CF,Real Madrid,2.0,3.0,post
-401882875,2026-09-16 19:00:00,2026,1068,97,Atlético de Madrid,CA Osasuna,4.0,0.0,post
 401882873,2026-09-16 19:00:00,2026,90,243,Deportivo,Sevilla FC,0.0,1.0,post
+401882875,2026-09-16 19:00:00,2026,1068,97,Atlético de Madrid,CA Osasuna,4.0,0.0,post
 401882871,2026-09-16 21:30:00,2026,83,87,FC Barcelona,Racing Santander,7.0,2.0,post
 401882874,2026-09-17 19:00:00,2026,244,2922,Real Betis,Getafe,1.0,0.0,post
 401882869,2026-09-17 21:30:00,2026,99,102,Málaga,Villarreal CF,1.0,3.0,post
@@ -2228,3 +2228,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882823,2026-11-01 18:30:00,2026,3751,94,Elche CF,Valencia CF,0.0,1.0,post
 401882826,2026-11-01 21:00:00,2026,93,89,Athletic Club,Real Sociedad,2.0,1.0,post
 401882824,2026-11-02 21:00:00,2026,90,97,Deportivo,CA Osasuna,2.0,1.0,post
+401882809,2026-11-06 21:00:00,2026,243,96,Sevilla FC,Alavés,0.0,0.0,post
