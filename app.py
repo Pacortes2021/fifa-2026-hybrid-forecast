@@ -1,9 +1,11 @@
 """
 Portal Maestro de Predicciones y Proyecciones Deportivas (Machine Learning).
-Enruta a los simuladores de la Copa Mundial 2026, Premier League, Bundesliga, Liga MX, Brasileirão, Liga Chilena, LaLiga España y Liga Profesional Argentina.
+Enruta a los simuladores de la Copa Mundial 2026, Champions y Nations League, NBA y las ligas domésticas (ver TORNEOS).
 """
+import importlib
 import os
 import sys
+import threading
 import streamlit as st
 
 # Configuración única de Streamlit (debe ser la primera llamada de st)
@@ -26,20 +28,75 @@ html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
 """, unsafe_allow_html=True)
 
 
-def limpiar_cache_importacion():
-    """Limpia los módulos compartidos de sys.modules para evitar colisiones
-    entre las distintas ligas que usan archivos con el mismo nombre (ej. motor.py)."""
-    modulos_a_limpiar = [
-        "motor", "recolectar", "recolectar_boxscore", 
-        "espn_live", "app_lab", "app_mex", "app_bra", "app_chile", "app_esp", "app_arg", "app_eng", "app_bund", "app_ita", "app_fra", "app_ned", "app_por", "app_bel", "app_tur", "app_sco", "app_aut", "app_den", "app_gre", "app_nor", "app_swe", "app_ucl", "app_unl", "app_nba", "nba"
-    ]
-    for mod in modulos_a_limpiar:
-        if mod in sys.modules:
-            del sys.modules[mod]
-        # También limpiar submódulos si los hay
-        keys_to_del = [k for k in sys.modules.keys() if k.startswith(mod + ".")]
-        for k in keys_to_del:
+BASE = os.path.dirname(os.path.abspath(__file__))
+
+# Torneo -> (carpeta, módulo de la app). Cada carpeta trae módulos con nombres repetidos
+# (motor.py, recolectar.py, ...), que Python guarda en sys.modules por nombre.
+TORNEOS = {
+    "🏆 Copa Mundial 2026": ("lab", "app_lab"),
+    "⭐ UEFA Champions League": ("ucl", "app_ucl"),
+    "🇪🇺 UEFA Nations League": ("unl", "app_unl"),
+    "🏀 NBA (Estados Unidos)": ("nba", "app_nba"),
+    "🇦🇷 Liga Profesional (Argentina)": ("arg", "app_arg"),
+    "🇲🇽 Liga MX (México)": ("mex", "app_mex"),
+    "🇧🇷 Brasileirão (Brasil)": ("bra", "app_bra"),
+    "🇨🇱 Liga Chilena (Primera)": ("chile", "app_chile"),
+    "🇪🇸 LaLiga (España)": ("esp", "app_esp"),
+    "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League (Inglaterra)": ("eng", "app_eng"),
+    "🇩🇪 Bundesliga (Alemania)": ("bund", "app_bund"),
+    "🇮🇹 Serie A (Italia)": ("ita", "app_ita"),
+    "🇫🇷 Ligue 1 (Francia)": ("fra", "app_fra"),
+    "🇳🇱 Eredivisie (Países Bajos)": ("ned", "app_ned"),
+    "🇵🇹 Primeira Liga (Portugal)": ("por", "app_por"),
+    "🇧🇪 Jupiler Pro League (Bélgica)": ("bel", "app_bel"),
+    "🇹🇷 Süper Lig (Turquía)": ("tur", "app_tur"),
+    "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Premiership (Escocia)": ("sco", "app_sco"),
+    "🇦🇹 Austrian Bundesliga (Austria)": ("aut", "app_aut"),
+    "🇩🇰 Danish Superliga (Dinamarca)": ("den", "app_den"),
+    "🇬🇷 Super League (Grecia)": ("gre", "app_gre"),
+    "🇳🇴 Eliteserien (Noruega)": ("nor", "app_nor"),
+    "🇸🇪 Allsvenskan (Suecia)": ("swe", "app_swe"),
+}
+MODULOS_COMPARTIDOS = ("motor", "recolectar", "recolectar_boxscore", "recolectar_equipos",
+                       "recolectar_squad_values", "espn_live", "tda_motor")
+_DIRS_TORNEOS = {os.path.join(BASE, carpeta) for carpeta, _ in TORNEOS.values()}
+
+
+def _estado_proceso():
+    """Estado compartido por todas las sesiones del proceso.
+
+    Streamlit atiende cada sesión en un hilo del mismo proceso, y sys.path / sys.modules son
+    globales. Antes, dos usuarios abriendo ligas distintas a la vez podían importar el
+    motor.py de la otra liga; además pickle resuelve las clases guardadas en caché por el
+    nombre global "motor". El lock serializa el ruteo y la ejecución de cada página, y el
+    registro guarda los módulos propios de cada torneo para reactivarlos en cada rerun.
+    Vive en `sys` (no en st.cache_resource) para sobrevivir a st.cache_resource.clear();
+    dict.setdefault es atómico, así que todos los hilos obtienen el mismo objeto.
+    """
+    return vars(sys).setdefault("_portal_predicciones_estado", {"lock": threading.RLock(), "modulos": {}})
+
+
+def _activar_torneo(carpeta, modulo):
+    """Deja sys.path y sys.modules como si solo existiera este torneo y devuelve su app.
+    Debe llamarse con el lock tomado."""
+    estado = _estado_proceso()
+    sys.path[:] = [p for p in sys.path if p not in _DIRS_TORNEOS]
+    if BASE not in sys.path:
+        sys.path.append(BASE)  # para importar "<carpeta>.<app>" como paquete
+    sys.path.insert(0, os.path.join(BASE, carpeta))
+    for nombre in MODULOS_COMPARTIDOS:
+        for k in [k for k in sys.modules if k == nombre or k.startswith(nombre + ".")]:
             del sys.modules[k]
+
+    nombre_app = f"{carpeta}.{modulo}"
+    if nombre_app not in estado["modulos"]:
+        sys.modules.pop(nombre_app, None)  # importarla de nuevo para capturar sus módulos propios
+        app_mod = importlib.import_module(nombre_app)
+        propios = {n: sys.modules[n] for n in MODULOS_COMPARTIDOS if n in sys.modules}
+        estado["modulos"][nombre_app] = (app_mod, propios)
+    app_mod, propios = estado["modulos"][nombre_app]
+    sys.modules.update(propios)
+    return app_mod
 
 
 # Barra lateral para navegación
@@ -49,31 +106,7 @@ if os.path.exists(logo_path):
 
 st.sidebar.markdown("## 🎮 Navegación")
 
-torneos_disponibles = [
-    "🏆 Copa Mundial 2026",
-    "⭐ UEFA Champions League",
-    "🇪🇺 UEFA Nations League",
-    "🏀 NBA (Estados Unidos)",
-    "🇦🇷 Liga Profesional (Argentina)",
-    "🇲🇽 Liga MX (México)",
-    "🇧🇷 Brasileirão (Brasil)",
-    "🇨🇱 Liga Chilena (Primera)",
-    "🇪🇸 LaLiga (España)",
-    "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League (Inglaterra)",
-    "🇩🇪 Bundesliga (Alemania)",
-    "🇮🇹 Serie A (Italia)",
-    "🇫🇷 Ligue 1 (Francia)",
-    "🇳🇱 Eredivisie (Países Bajos)",
-    "🇵🇹 Primeira Liga (Portugal)",
-    "🇧🇪 Jupiler Pro League (Bélgica)",
-    "🇹🇷 Süper Lig (Turquía)",
-    "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Premiership (Escocia)",
-    "🇦🇹 Austrian Bundesliga (Austria)",
-    "🇩🇰 Danish Superliga (Dinamarca)",
-    "🇬🇷 Super League (Grecia)",
-    "🇳🇴 Eliteserien (Noruega)",
-    "🇸🇪 Allsvenskan (Suecia)"
-]
+torneos_disponibles = list(TORNEOS)
 
 # Detección inteligente por parámetro URL (ej: ?torneo=nba)
 idx_def = 0
@@ -102,121 +135,6 @@ st.sidebar.caption(
 )
 
 # Enrutador
-limpiar_cache_importacion()
-
-if torneo_seleccionado == "🏆 Copa Mundial 2026":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lab"))
-    import lab.app_lab as lab_app
-    lab_app.run_app()
-
-elif torneo_seleccionado == "⭐ UEFA Champions League":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "ucl"))
-    import ucl.app_ucl as ucl_app
-    ucl_app.run_app()
-
-elif torneo_seleccionado == "🇪🇺 UEFA Nations League":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "unl"))
-    import unl.app_unl as unl_app
-    unl_app.run_app()
-
-elif torneo_seleccionado == "🏀 NBA (Estados Unidos)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "nba"))
-    import nba.app_nba as nba_app
-    nba_app.run_app()
-
-elif torneo_seleccionado == "🇦🇷 Liga Profesional (Argentina)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "arg"))
-    import arg.app_arg as arg_app
-    arg_app.run_app()
-
-elif torneo_seleccionado == "🇲🇽 Liga MX (México)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "mex"))
-    import mex.app_mex as mex_app
-    mex_app.run_app()
-
-elif torneo_seleccionado == "🇧🇷 Brasileirão (Brasil)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "bra"))
-    import bra.app_bra as bra_app
-    bra_app.run_app()
-
-elif torneo_seleccionado == "🇨🇱 Liga Chilena (Primera)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "chile"))
-    import chile.app_chile as chile_app
-    chile_app.run_app()
-
-elif torneo_seleccionado == "🇪🇸 LaLiga (España)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "esp"))
-    import esp.app_esp as esp_app
-    esp_app.run_app()
-
-elif torneo_seleccionado == "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League (Inglaterra)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "eng"))
-    import eng.app_eng as eng_app
-    eng_app.run_app()
-
-elif torneo_seleccionado == "🇩🇪 Bundesliga (Alemania)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "bund"))
-    import bund.app_bund as bund_app
-    bund_app.run_app()
-
-elif torneo_seleccionado == "🇮🇹 Serie A (Italia)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "ita"))
-    import ita.app_ita as ita_app
-    ita_app.run_app()
-
-elif torneo_seleccionado == "🇫🇷 Ligue 1 (Francia)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "fra"))
-    import fra.app_fra as fra_app
-    fra_app.run_app()
-
-elif torneo_seleccionado == "🇳🇱 Eredivisie (Países Bajos)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "ned"))
-    import ned.app_ned as ned_app
-    ned_app.run_app()
-
-elif torneo_seleccionado == "🇵🇹 Primeira Liga (Portugal)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "por"))
-    import por.app_por as por_app
-    por_app.run_app()
-
-elif torneo_seleccionado == "🇧🇪 Jupiler Pro League (Bélgica)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "bel"))
-    import bel.app_bel as bel_app
-    bel_app.run_app()
-
-elif torneo_seleccionado == "🇹🇷 Süper Lig (Turquía)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "tur"))
-    import tur.app_tur as tur_app
-    tur_app.run_app()
-
-elif torneo_seleccionado == "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Premiership (Escocia)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "sco"))
-    import sco.app_sco as sco_app
-    sco_app.run_app()
-
-elif torneo_seleccionado == "🇦🇹 Austrian Bundesliga (Austria)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "aut"))
-    import aut.app_aut as aut_app
-    aut_app.run_app()
-
-elif torneo_seleccionado == "🇩🇰 Danish Superliga (Dinamarca)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "den"))
-    import den.app_den as den_app
-    den_app.run_app()
-
-elif torneo_seleccionado == "🇬🇷 Super League (Grecia)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "gre"))
-    import gre.app_gre as gre_app
-    gre_app.run_app()
-
-elif torneo_seleccionado == "🇳🇴 Eliteserien (Noruega)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "nor"))
-    import nor.app_nor as nor_app
-    nor_app.run_app()
-
-elif torneo_seleccionado == "🇸🇪 Allsvenskan (Suecia)":
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "swe"))
-    import swe.app_swe as swe_app
-    swe_app.run_app()
-
-
+carpeta, modulo = TORNEOS[torneo_seleccionado]
+with _estado_proceso()["lock"]:
+    _activar_torneo(carpeta, modulo).run_app()

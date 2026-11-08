@@ -16,7 +16,10 @@ import recolectar as rec
 import recolectar_boxscore as rec_box
 
 # Estilizado CSS Premium UEFA Champions League (Azul Noche #001438, Cyan Neón, Oro Estelar)
-st.markdown("""
+# Se inyecta en cada ejecución de run_app(): a nivel de módulo solo corría al primer
+# import del proceso, y el CSS desaparecía en los reruns y para los demás usuarios.
+def _inyectar_estilos():
+    st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
@@ -80,6 +83,7 @@ def simular_ucl(_M, key, modelo_tipo):
 
 
 def run_app():
+    _inyectar_estilos()
     st.sidebar.markdown("### 🛠️ Controles del Modelo (UCL)")
 
     modelo_sel = st.sidebar.selectbox(
