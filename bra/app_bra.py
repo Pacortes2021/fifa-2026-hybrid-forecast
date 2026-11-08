@@ -81,7 +81,7 @@ def logo_url(equipos, team):
     if not equipos:
         return None
     for e in equipos.values():
-        if e.get("norm_name") == team and e.get("logo"):
+        if team in (e.get("norm_name"), e.get("name"), e.get("short_name")) and e.get("logo"):
             return e["logo"]
     return None
 
@@ -99,7 +99,7 @@ def fmt_opcion(equipos, team):
     Streamlit renderiza las opciones como texto plano (no admite HTML/emojis)."""
     if equipos:
         for e in equipos.values():
-            if e.get("norm_name") == team and e.get("abbreviation"):
+            if team in (e.get("norm_name"), e.get("name"), e.get("short_name")) and e.get("abbreviation"):
                 return f"{e['abbreviation']} · {team}"
     return team
 

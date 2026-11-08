@@ -78,7 +78,7 @@ def logo_url(equipos, team):
     if not equipos:
         return None
     for e in equipos.values():
-        if e.get("norm_name") == team and e.get("logo"):
+        if team in (e.get("norm_name"), e.get("name"), e.get("short_name")) and e.get("logo"):
             return e["logo"]
     return None
 
@@ -96,7 +96,7 @@ def fmt_opcion(equipos, team):
     Streamlit renderiza las opciones como texto plano (no admite HTML/emojis)."""
     if equipos:
         for e in equipos.values():
-            if e.get("norm_name") == team and e.get("abbreviation"):
+            if team in (e.get("norm_name"), e.get("name"), e.get("short_name")) and e.get("abbreviation"):
                 return f"{e['abbreviation']} · {team}"
     return team
 
@@ -271,8 +271,6 @@ def run_app():
                     st.progress(float(prob))
                     
                 st.markdown("---")
-                p_avanza_a = p[0] + p[1] * 0.5  # aproximación rápida
-                st.caption(f"Expectativa de clasificación en eliminación directa neutral: **{a} {p_avanza_a:.1%}** / {b} {1-p_avanza_a:.1%}")
                 
             with col_stats:
                 st.markdown(f'<div class="card-title">Goles Esperados y Marcadores</div>', unsafe_allow_html=True)
