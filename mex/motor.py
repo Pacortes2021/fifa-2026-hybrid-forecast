@@ -982,36 +982,27 @@ def simular_play_in_y_liguilla(PREDS, df_tabla):
     t9 = df_tabla.iloc[8]["Selección"]
     t10 = df_tabla.iloc[9]["Selección"]
     
-    # Play-In Serie A: 7º vs 8º
+    # Play-In Serie A: 7º vs 8º (empate favorece al mejor ubicado en la tabla: 7º)
     p_a, la_a, lb_a = PREDS.get((t7, t8), (None, 1.2, 1.2))
     gl_a = np.random.poisson(la_a)
     gv_a = np.random.poisson(lb_a)
-    if gl_a == gv_a:
-        ganador_a = t7 if np.random.rand() > 0.5 else t8
-    else:
-        ganador_a = t7 if gl_a > gv_a else t8
+    ganador_a = t7 if gl_a >= gv_a else t8
     perdedor_a = t8 if ganador_a == t7 else t7
     
     # Seed 7 de Liguilla es el ganador de Serie A
     seed7 = ganador_a
     
-    # Play-In Serie B: 9º vs 10º
+    # Play-In Serie B: 9º vs 10º (empate favorece al 9º)
     p_b, la_b, lb_b = PREDS.get((t9, t10), (None, 1.2, 1.2))
     gl_b = np.random.poisson(la_b)
     gv_b = np.random.poisson(lb_b)
-    if gl_b == gv_b:
-        ganador_b = t9 if np.random.rand() > 0.5 else t10
-    else:
-        ganador_b = t9 if gl_b > gv_b else t10
+    ganador_b = t9 if gl_b >= gv_b else t10
         
-    # Play-In Serie C: Perdedor Serie A vs Ganador Serie B
+    # Play-In Serie C: Perdedor Serie A vs Ganador Serie B (empate favorece al perdedor de 7º/8º)
     p_c, la_c, lb_c = PREDS.get((perdedor_a, ganador_b), (None, 1.2, 1.2))
     gl_c = np.random.poisson(la_c)
     gv_c = np.random.poisson(lb_c)
-    if gl_c == gv_c:
-        seed8 = perdedor_a if np.random.rand() > 0.5 else ganador_b
-    else:
-        seed8 = perdedor_a if gl_c > gv_c else ganador_b
+    seed8 = perdedor_a if gl_c >= gv_c else ganador_b
         
     # Los 8 finalistas ordenados por su siembra original de tabla regular
     finalistas = directos + [seed7, seed8]
@@ -1185,19 +1176,16 @@ def _simular_fixture_vec(M, PREDS, fijos, n_sims):
     RANK = np.empty((n_eq, n_sims), dtype=np.int64)
     RANK[order, sims[None, :]] = np.arange(n_eq)[:, None]
     t7, t8, t9, t10 = order[6], order[7], order[8], order[9]
-    rnd = np.random.rand(n_sims)
     gl = np.random.poisson(LA[t7, t8])
     gv = np.random.poisson(LB[t7, t8])
-    ganador_a = np.where(gl == gv, np.where(rnd > 0.5, t7, t8), np.where(gl > gv, t7, t8))
+    ganador_a = np.where(gl >= gv, t7, t8)
     perdedor_a = np.where(ganador_a == t7, t8, t7)
-    rnd = np.random.rand(n_sims)
     gl = np.random.poisson(LA[t9, t10])
     gv = np.random.poisson(LB[t9, t10])
-    ganador_b = np.where(gl == gv, np.where(rnd > 0.5, t9, t10), np.where(gl > gv, t9, t10))
-    rnd = np.random.rand(n_sims)
+    ganador_b = np.where(gl >= gv, t9, t10)
     gl = np.random.poisson(LA[perdedor_a, ganador_b])
     gv = np.random.poisson(LB[perdedor_a, ganador_b])
-    seed8 = np.where(gl == gv, np.where(rnd > 0.5, perdedor_a, ganador_b), np.where(gl > gv, perdedor_a, ganador_b))
+    seed8 = np.where(gl >= gv, perdedor_a, ganador_b)
     seed7 = ganador_a
     directos = order[:6]
     finalistas = np.vstack([directos, seed7[None, :], seed8[None, :]])
@@ -1308,26 +1296,37 @@ def monte_carlo(M, n_sims=5000, fijos=None, modelo=None, modelo_tipo=None, seed=
 simular_campeonato = monte_carlo
 from sklearn.metrics import log_loss, accuracy_score
 
-def validacion_en_vivo(M, temporada_val=2026):
+def validacion_en_vivo(M, temporada_val=2026, modelo=None, modelo_tipo=None):
     """
     Compara las predicciones point-in-time (del df_dataset) con los resultados reales 
     para una temporada dada y retorna métricas y tablas.
     """
     df = M["df_dataset"]
-    df_val = df[df["temporada"] == temporada_val].copy()
+    df_val = df[df["temporada"] == temporada_val].sort_values("fecha").reset_index(drop=True).copy()
     
     if len(df_val) == 0:
         return None, None, None
         
-    pipe = M["pipe_val"]  # out-of-sample: entrenado solo con temporadas <= 2024
     features = M["features"]
-    
     X_val = df_val[features].fillna(0.0)
     y_val = df_val["resultado"]
     
-    # Predecir
-    probs = pipe.predict_proba(X_val) # [visita, empate, local]
-    preds = pipe.predict(X_val)
+    mod = modelo or modelo_tipo or "lasso"
+    if mod == "rf" and "pipe_rf" in M:
+        probs = M["pipe_rf"].predict_proba(X_val)
+    elif mod == "xgb" and "pipe_xgb" in M:
+        probs = M["pipe_xgb"].predict_proba(X_val)
+    elif mod == "stacking" and "pipe_lasso" in M and "pipe_rf" in M and "pipe_xgb" in M:
+        w = M.get("stack_w", np.array([M.get("alpha_stack", 0.4), 1 - M.get("alpha_stack", 0.4), 0.0]))
+        probs = (w[0] * M["pipe_lasso"].predict_proba(X_val)
+                 + w[1] * M["pipe_rf"].predict_proba(X_val)
+                 + w[2] * M["pipe_xgb"].predict_proba(X_val))
+        probs = np.clip(probs, 1e-7, 1 - 1e-7)
+        probs = probs / probs.sum(axis=1, keepdims=True)
+    else:
+        pipe = M.get("pipe_val") or M["pipe_lasso"]
+        probs = pipe.predict_proba(X_val)
+    preds = probs.argmax(axis=1)
     
     # Calcular log-loss y accuracy global
     ll = log_loss(y_val, probs, labels=[0, 1, 2])
@@ -1354,9 +1353,6 @@ def validacion_en_vivo(M, temporada_val=2026):
     df_val["Prediccion"] = preds
     
     # Evolución
-    df_val = df_val.sort_values("fecha").reset_index(drop=True)
-    
-    evol_rows = []
     log_losses = []
     for i in range(1, len(df_val) + 1):
         sub_y = df_val["resultado"].iloc[:i]

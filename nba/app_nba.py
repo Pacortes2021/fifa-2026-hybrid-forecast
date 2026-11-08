@@ -90,10 +90,17 @@ def run_app():
         "🔀 Stacking (Ensemble Óptimo) [Recomendado]",
         "🚀 XGBoost (Gradient Boosting)",
         "🌲 Random Forest (Ensemble no lineal)",
-        "📐 LASSO L1 (Regresión Logística Esparsa)"
+        "📐 LASSO L1 (Regresión Logística Esparsa)",
+        "📈 Solo Elo (1 variable)"
     ]
     modelo_sel = st.sidebar.selectbox("🤖 Modelo Predictivo:", OPCIONES_MOD, index=0)
-    modelo = "stacking" if "Stacking" in modelo_sel else ("xgb" if "XGB" in modelo_sel else ("rf" if "Random Forest" in modelo_sel else "lasso"))
+    modelo = (
+        "stacking" if "Stacking" in modelo_sel
+        else "xgb" if "XGB" in modelo_sel
+        else "rf" if "Random Forest" in modelo_sel
+        else "lasso" if "LASSO" in modelo_sel
+        else "elo"
+    )
 
     if st.session_state.get("portal_admin", True) and st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", key="refresh_nba", type="primary"):
         with st.spinner("Descargando últimos resultados y box scores de la NBA..."):
@@ -118,8 +125,8 @@ def run_app():
     if met_all:
         st.sidebar.markdown("---")
         st.sidebar.markdown("#### 📊 Rendimiento Out-of-Sample (Test 2025-26+)")
-        mejor_ll = min(met_all[k]["logloss"] for k in ("lasso", "rf", "xgb", "stacking") if k in met_all)
-        for nombre, clave in [("Stacking", "stacking"), ("XGBoost", "xgb"), ("LASSO L1", "lasso"), ("Random Forest", "rf")]:
+        mejor_ll = min(met_all[k]["logloss"] for k in ("lasso", "rf", "xgb", "stacking", "elo") if k in met_all)
+        for nombre, clave in [("Stacking", "stacking"), ("XGBoost", "xgb"), ("LASSO L1", "lasso"), ("Random Forest", "rf"), ("Solo Elo", "elo")]:
             if clave not in met_all:
                 continue
             m = met_all[clave]
@@ -129,7 +136,13 @@ def run_app():
             st.sidebar.caption(f"🎯 Error Spread: `±{met_all['stacking']['mae_spread']:.1f} pts` | Totales: `±{met_all['stacking']['mae_totals']:.1f} pts`")
 
     # Encabezado principal
-    nombre_modelo = "🔀 Stacking Ensemble" if modelo == "stacking" else ("🚀 XGBoost" if modelo == "xgb" else ("🌲 Random Forest" if modelo == "rf" else "📐 LASSO L1"))
+    nombre_modelo = (
+        "🔀 Stacking Ensemble" if modelo == "stacking"
+        else "🚀 XGBoost" if modelo == "xgb"
+        else "🌲 Random Forest" if modelo == "rf"
+        else "📐 LASSO L1" if modelo == "lasso"
+        else "📈 Solo Elo"
+    )
     st.markdown('<div class="main-title">🏀 Portal de Simulación y Predicción NBA</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — Four Factors de Dean Oliver + Ratings de Posesión + Monte Carlo Playoff</div>', unsafe_allow_html=True)
 
@@ -316,7 +329,7 @@ def run_app():
                 f"🏠 {home_team}": pred_mc["cuartos_local"] + [pred["proj_pts_local"]],
                 f"✈️ {away_team}": pred_mc["cuartos_visita"] + [pred["proj_pts_visita"]]
             })
-            st.dataframe(df_cuartos.set_index("Cuarto"), use_container_width=True)
+            st.dataframe(df_cuartos.set_index("Cuarto"), width="stretch")
 
             # Distribuciones de Monte Carlo: Spreads y Totales
             col_spread, col_ou = st.columns(2)
@@ -330,7 +343,7 @@ def run_app():
                         "Probabilidad de Cubrir": f"{p_cov:.1%}",
                         "Cuota Justa": mo.cuota(p_cov)
                     })
-                st.dataframe(pd.DataFrame(filas_sp), use_container_width=True, hide_index=True)
+                st.dataframe(pd.DataFrame(filas_sp), width="stretch", hide_index=True)
 
             with col_ou:
                 st.markdown('<div class="card-title">📈 Probabilidades Over/Under (Totales)</div>', unsafe_allow_html=True)
@@ -344,7 +357,7 @@ def run_app():
                         "Prob. Under": f"{p_under:.1%}",
                         "Cuota Under": mo.cuota(p_under)
                     })
-                st.dataframe(pd.DataFrame(filas_ou), use_container_width=True, hide_index=True)
+                st.dataframe(pd.DataFrame(filas_ou), width="stretch", hide_index=True)
 
             # Four Factors de Dean Oliver y Tendencias (Comparativa Analítica)
             st.markdown('<div class="card-title">🔬 Four Factors, Tendencias y Métricas de Localía</div>', unsafe_allow_html=True)
@@ -392,7 +405,7 @@ def run_app():
                     f"{feats['elo_visita']:.0f}"
                 ]
             })
-            st.dataframe(df_factors, use_container_width=True, hide_index=True)
+            st.dataframe(df_factors, width="stretch", hide_index=True)
 
     # ============================================================================
     # TAB 2: Clasificación y Simulación Playoff (Monte Carlo)
@@ -415,7 +428,7 @@ def run_app():
             st.dataframe(df_east[[
                 "Posición Proyectada", "Equipo", "Victorias Esperadas", "Derrotas Esperadas",
                 "P_Playoff_Directo", "P_PlayIn", "P_Playoffs", "P_Finalista_Conf", "P_Campeon"
-            ]], use_container_width=True, hide_index=True)
+            ]], width="stretch", hide_index=True)
 
         with tab_west:
             st.markdown("#### 🤠 Western Conference (Proyección Final)")
@@ -426,7 +439,7 @@ def run_app():
             st.dataframe(df_west[[
                 "Posición Proyectada", "Equipo", "Victorias Esperadas", "Derrotas Esperadas",
                 "P_Playoff_Directo", "P_PlayIn", "P_Playoffs", "P_Finalista_Conf", "P_Campeon"
-            ]], use_container_width=True, hide_index=True)
+            ]], width="stretch", hide_index=True)
 
         with tab_champ:
             st.markdown("#### 🏆 Candidatos al Anillo de Campeón NBA 2026-27")
@@ -450,21 +463,23 @@ def run_app():
     # ============================================================================
     with tab3:
         st.markdown('<div class="sec-title">Importancia de Variables y Rendimiento de Modelos</div>', unsafe_allow_html=True)
-        
+        met_mod = met_all.get(modelo, met_all.get("stacking", {}))
+        ll_base_ref = met_all.get("stacking", {}).get("logloss_base", 0.69)
+
         c_m1, c_m2, c_m3 = st.columns(3)
         with c_m1:
             st.markdown(f"""
             <div class="metric-box">
-                <div class="metric-lbl">Log-Loss Ensamble</div>
-                <div class="metric-val">{met_all.get('stacking', {}).get('logloss', 0.60):.4f}</div>
-                <div style="color:#10b981;font-size:0.85rem;">vs Baseline: {met_all.get('stacking', {}).get('logloss_base', 0.69):.4f}</div>
+                <div class="metric-lbl">Log-Loss ({nombre_modelo})</div>
+                <div class="metric-val">{met_mod.get('logloss', 0.60):.4f}</div>
+                <div style="color:#10b981;font-size:0.85rem;">vs Baseline: {ll_base_ref:.4f}</div>
             </div>
             """, unsafe_allow_html=True)
         with c_m2:
             st.markdown(f"""
             <div class="metric-box">
                 <div class="metric-lbl">Acierto Ganador (Accuracy)</div>
-                <div class="metric-val">{met_all.get('stacking', {}).get('accuracy', 67.5):.1f}%</div>
+                <div class="metric-val">{met_mod.get('accuracy', 67.5):.1f}%</div>
                 <div style="color:#64748b;font-size:0.85rem;">Test Out-of-Sample ({int((M['df_dataset']['temporada'] >= 2026).sum())} partidos)</div>
             </div>
             """, unsafe_allow_html=True)
@@ -477,12 +492,31 @@ def run_app():
             </div>
             """, unsafe_allow_html=True)
 
+        if modelo == "elo" and "pipe_elo" in M:
+            st.markdown('<div class="card-title">📈 Curva del Modelo Solo Elo (elo_diff → P(Victoria Local))</div>', unsafe_allow_html=True)
+            st.caption("Modelo logístico de una sola variable (`elo_diff` con ventaja de localía) para contrastar el aporte de Four Factors, fatiga y ratings de posesión.")
+            pipe_elo = M["pipe_elo"]
+            xs = np.linspace(-350, 350, 201)
+            probs = pipe_elo.predict_proba(pd.DataFrame({"elo_diff": xs}))
+            fig_e, ax_e = plt.subplots(figsize=(8.5, 3.6))
+            ax_e.plot(xs, probs[:, 1] * 100, color="#1d428a", lw=2.2, label="Victoria Local")
+            ax_e.plot(xs, probs[:, 0] * 100, color="#c8102e", lw=2.2, label="Victoria Visita")
+            ax_e.axvline(0, color="#94a3b8", ls=":", lw=1)
+            ax_e.set_xlabel("Diferencia de Elo (Local + Home Adv − Visita)", fontweight="bold")
+            ax_e.set_ylabel("Probabilidad (%)", fontweight="bold")
+            ax_e.set_ylim(0, 100)
+            ax_e.legend()
+            ax_e.spines["top"].set_visible(False)
+            ax_e.spines["right"].set_visible(False)
+            st.pyplot(fig_e)
+            plt.close(fig_e)
+
         st.markdown('<div class="card-title">Ranking de Variables Más Influyentes (LASSO y Random Forest)</div>', unsafe_allow_html=True)
         feats_rank = met_all.get("features_rank", [])
         if feats_rank:
             df_rf = pd.DataFrame(feats_rank).head(15)
             df_rf.columns = ["Variable", "Coeficiente LASSO L1", "Importancia Random Forest"]
-            st.dataframe(df_rf, use_container_width=True, hide_index=True)
+            st.dataframe(df_rf, width="stretch", hide_index=True)
 
         st.markdown('<div class="card-title">💡 Heurísticas Empíricas de Decisión (Reglas de Alto Cumplimiento)</div>', unsafe_allow_html=True)
         st.caption("Patrones descubiertos sobre el histórico de 5.359 partidos de la NBA donde se cumplen tasas de acierto entre 80% y 96%:")
@@ -495,7 +529,7 @@ def run_app():
             {"Heurística / Patrón": "🔥 Colisión de Alto Ritmo (Pace Clash)", "Condición Cuantitativa": "Ambos con Pace ≥ 100 pos/partido", "Muestra (n)": "603 partidos", "Tasa Cumplimiento": "Promedio 237.1 pts", "Acción Recomendada": "Fuerte sesgo hacia Over de puntos"},
             {"Heurística / Patrón": "🛡️ Batalla de Media Cancha Lenta", "Condición Cuantitativa": "Ambos con Pace ≤ 97.5 pos/partido", "Muestra (n)": "685 partidos", "Tasa Cumplimiento": "Promedio 217.8 pts", "Acción Recomendada": "Fuerte sesgo hacia Under de puntos"}
         ])
-        st.dataframe(df_heur, use_container_width=True, hide_index=True)
+        st.dataframe(df_heur, width="stretch", hide_index=True)
 
     # ============================================================================
     # TAB 4: Validación vs Realidad y Acierto por Franquicia
@@ -602,7 +636,7 @@ def run_app():
                 df_teams = pd.DataFrame(team_stats).sort_values(by=["% Acierto", "PJ"], ascending=[False, False])
                 st.dataframe(
                     df_teams.style.format({"% Acierto": "{:.1%}"}).background_gradient(subset=["% Acierto"], cmap="YlGn"),
-                    use_container_width=True, hide_index=True
+                    width="stretch", hide_index=True
                 )
 
         # Historial de partidos con filtro por franquicia
@@ -633,7 +667,7 @@ def run_app():
 
             st.dataframe(df_val_disp[[
                 "fecha", "local", "visita", "Resultado", "Pronóstico", "Prob. Local", "Prob. Visita", "Acierto Icono"
-            ]], use_container_width=True, hide_index=True)
+            ]], width="stretch", hide_index=True)
         else:
             st.info("No se encontraron partidos para la selección.")
 

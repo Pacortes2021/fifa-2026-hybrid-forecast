@@ -524,7 +524,14 @@ def entrenar_modelos():
     stack_w = np.abs(res_opt.x)
     stack_w = stack_w / stack_w.sum()
 
-    # 5. Regresores de Margen (Spread) y Totales (Over/Under)
+    # 5. Baseline Solo Elo (1 variable: elo_diff)
+    pipe_elo = Pipeline([
+        ("sc", StandardScaler()),
+        ("lr", LogisticRegression(max_iter=1000, random_state=42))
+    ])
+    pipe_elo.fit(X_full[["elo_diff"]], y_full)
+
+    # 6. Regresores de Margen (Spread) y Totales (Over/Under)
     pipe_spread = Pipeline([
         ("sc", StandardScaler()),
         ("ridge", Ridge(alpha=15.0, random_state=42))
@@ -538,8 +545,9 @@ def entrenar_modelos():
     pipe_totals.fit(X_full, tot_full)
 
     # Evaluación y métricas Out-of-Sample (Test >= 2026)
-    def _eval_clf(pipe):
-        prob = np.clip(pipe.predict_proba(X_test), 1e-6, 1.0 - 1e-6)
+    def _eval_clf(pipe, cols=None):
+        X_ev = X_test[cols] if cols is not None else X_test
+        prob = np.clip(pipe.predict_proba(X_ev), 1e-6, 1.0 - 1e-6)
         pred = (prob[:, 1] >= 0.5).astype(int)
         return {
             "logloss": round(float(log_loss(y_test, prob)), 4),
@@ -550,6 +558,7 @@ def entrenar_modelos():
     met_lasso = _eval_clf(pipe_lasso)
     met_rf = _eval_clf(pipe_rf)
     met_xgb = _eval_clf(pipe_xgb)
+    met_elo = _eval_clf(pipe_elo, cols=["elo_diff"])
 
     p_lasso_t = pipe_lasso.predict_proba(X_test)[:, 1]
     p_rf_t = pipe_rf.predict_proba(X_test)[:, 1]
@@ -598,13 +607,14 @@ def entrenar_modelos():
         "rf": met_rf,
         "xgb": met_xgb,
         "stacking": met_stack,
+        "elo": met_elo,
         "n_train": len(X_train),
         "n_cal": len(X_cal),
         "n_test": len(X_test),
         "features_rank": features_rank
     }
 
-    print(f"Métricas Test (2025-26+): LASSO={met_lasso} | RF={met_rf} | XGB={met_xgb} | Stacking={met_stack}")
+    print(f"Métricas Test (2025-26+): LASSO={met_lasso} | RF={met_rf} | XGB={met_xgb} | Stacking={met_stack} | Elo={met_elo}")
 
     return {
         "tracker": tracker,
@@ -613,6 +623,7 @@ def entrenar_modelos():
         "pipe_lasso": pipe_lasso,
         "pipe_rf": pipe_rf,
         "pipe_xgb": pipe_xgb,
+        "pipe_elo": pipe_elo,
         "stack_w": stack_w,
         "pipe_spread": pipe_spread,
         "pipe_totals": pipe_totals,
@@ -700,6 +711,8 @@ def predecir_match(M, local, visita, fecha=None, temporada=None, modelo="stackin
         p_home = float(M["pipe_lasso"].predict_proba(df_feat)[0, 1])
     elif modelo == "xgb":
         p_home = float(M["pipe_xgb"].predict_proba(df_feat)[0, 1])
+    elif modelo == "elo":
+        p_home = float(M["pipe_elo"].predict_proba(df_feat[["elo_diff"]])[0, 1])
     else: # Stacking
         w = M["stack_w"]
         p_l = M["pipe_lasso"].predict_proba(df_feat)[0, 1]
@@ -1013,6 +1026,8 @@ def simular_temporada(M, n_sims=2000, seed=42, modelo="stacking"):
 
 def _proba_local_lote(M, X, modelo="stacking"):
     """P(gana local) para varias filas de variables, con la misma combinación que predecir_match."""
+    if modelo == "elo":
+        return M["pipe_elo"].predict_proba(X[["elo_diff"]])[:, 1]
     if modelo in ("rf", "lasso", "xgb"):
         return M[f"pipe_{modelo}"].predict_proba(X)[:, 1]
     w = M["stack_w"]
