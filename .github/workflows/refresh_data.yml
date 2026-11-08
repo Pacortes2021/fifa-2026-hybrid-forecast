@@ -37,8 +37,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'chile')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇦🇷 Recolectar Argentina
@@ -46,8 +47,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'arg')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇧🇷 Recolectar Brasil
@@ -55,8 +57,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'bra')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇲🇽 Recolectar México
@@ -64,8 +67,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'mex')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇪🇸 Recolectar España
@@ -73,8 +77,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'esp')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Recolectar Inglaterra (Premier League)
@@ -82,8 +87,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'eng')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇩🇪 Recolectar Alemania (Bundesliga)
@@ -91,8 +97,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'bund')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇮🇹 Recolectar Italia (Serie A)
@@ -100,8 +107,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'ita')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇫🇷 Recolectar Francia (Ligue 1)
@@ -109,8 +117,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'fra')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇳🇱 Recolectar Países Bajos (Eredivisie)
@@ -118,8 +127,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'ned')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇵🇹 Recolectar Portugal (Primeira Liga)
@@ -127,8 +137,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'por')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇧🇪 Recolectar Bélgica (Jupiler Pro League)
@@ -136,8 +147,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'bel')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇹🇷 Recolectar Turquía (Süper Lig)
@@ -145,8 +157,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'tur')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Recolectar Escocia (Scottish Premiership)
@@ -154,8 +167,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'sco')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇦🇹 Recolectar Austria (Austrian Bundesliga)
@@ -163,8 +177,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'aut')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇩🇰 Recolectar Dinamarca (Danish Superliga)
@@ -172,8 +187,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'den')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇬🇷 Recolectar Grecia (Super League)
@@ -181,8 +197,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'gre')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇳🇴 Recolectar Noruega (Eliteserien)
@@ -190,8 +207,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'nor')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇸🇪 Recolectar Suecia (Allsvenskan)
@@ -199,8 +217,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'swe')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: ⭐ Recolectar UEFA Champions League
@@ -208,8 +227,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'ucl')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🇪🇺 Recolectar UEFA Nations League
@@ -217,8 +237,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'unl')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 🏀 Recolectar NBA
@@ -226,8 +247,9 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'nba')
-          import recolectar as rec
+          import recolectar as rec, recolectar_boxscore as rec_box
           rec.recolectar()
+          rec_box.recolectar()  # incremental: solo pide los partidos nuevos
           "
 
       - name: 💾 Commit updated CSVs (if any changes)
@@ -237,28 +259,10 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Stage only data CSVs (never model code or notebooks)
-          git add chile/data/partidos.csv chile/data/fixture.csv \
-                  arg/data/partidos.csv   arg/data/fixture.csv   \
-                  bra/data/partidos.csv   bra/data/fixture.csv   \
-                  mex/data/partidos.csv   mex/data/fixture.csv   \
-                  esp/data/partidos.csv   esp/data/fixture.csv   \
-                  eng/data/partidos.csv   eng/data/fixture.csv   \
-                  bund/data/partidos.csv  bund/data/fixture.csv  \
-                  ita/data/partidos.csv   ita/data/fixture.csv   \
-                  fra/data/partidos.csv   fra/data/fixture.csv   \
-                  ned/data/partidos.csv   ned/data/fixture.csv   \
-                  por/data/partidos.csv   por/data/fixture.csv   \
-                  bel/data/partidos.csv   bel/data/fixture.csv   \
-                  tur/data/partidos.csv   tur/data/fixture.csv   \
-                  sco/data/partidos.csv   sco/data/fixture.csv   \
-                  aut/data/partidos.csv   aut/data/fixture.csv   \
-                  den/data/partidos.csv   den/data/fixture.csv   \
-                  gre/data/partidos.csv   gre/data/fixture.csv   \
-                  nor/data/partidos.csv   nor/data/fixture.csv   \
-                  swe/data/partidos.csv   swe/data/fixture.csv   \
-                  ucl/data/partidos.csv   ucl/data/fixture.csv   \
-                  unl/data/partidos.csv   unl/data/fixture.csv   \
-                  nba/data/partidos.csv   nba/data/fixture.csv
+          for liga in chile arg bra mex esp eng bund ita fra ned por bel tur sco aut den gre nor swe ucl unl nba; do
+            git add "$liga/data/partidos.csv" "$liga/data/fixture.csv"
+            if [ -f "$liga/data/box_score.csv" ]; then git add "$liga/data/box_score.csv"; fi
+          done
 
           # Only commit if there are actual changes.
           # Si alguna liga falló, sus CSV no se tocaron: se commitean las demás y el job
@@ -270,7 +274,7 @@ jobs:
             git commit -m "data(auto): refresh all leagues [${TIMESTAMP}]
 
           Automated daily refresh from ESPN API via GitHub Actions.
-          CSVs updated: chile, arg, bra, mex, esp, eng, bund, ita, fra, ned, por, bel, tur, sco, aut, den, gre, nor, swe, ucl, unl, nba."
+          CSVs (partidos, fixture, box score) updated: chile, arg, bra, mex, esp, eng, bund, ita, fra, ned, por, bel, tur, sco, aut, den, gre, nor, swe, ucl, unl, nba."
             git push origin main
             echo "✅ Pushed updated CSVs to main."
           fi

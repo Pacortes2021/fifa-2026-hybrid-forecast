@@ -16,17 +16,24 @@ STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCom
          "yellowCards", "redCards", "offsides", "saves", "blockedShots"]
 
 
-def _eventos(anio):
-    out = []
-    for ini, fin in ((f"{anio}0101", f"{anio}0630"), (f"{anio}0701", f"{anio}1231")):
+def _eventos(anio, intentos=3):
+    """Partidos terminados del año `anio`. Usa dates=AAAA: desde sep-2026 ESPN responde
+    HTTP 400 a los rangos AAAAMMDD-AAAAMMDD. Si falla tras los reintentos, lanza la
+    excepción y recolectar() no escribe nada."""
+    for intento in range(1, intentos + 1):
         try:
-            r = requests.get(f"{SB}?dates={ini}-{fin}&limit=400", timeout=40); r.raise_for_status()
-            for e in r.json().get("events", []):
-                st_name = e.get("status", {}).get("type", {}).get("name", "")
-                if st_name in ("STATUS_FULL_TIME", "STATUS_FINAL", "STATUS_FINAL_PEN", "STATUS_FINAL_AET"):
-                    out.append((e["id"], pd.to_datetime(e["date"]).tz_convert("America/Argentina/Buenos_Aires").tz_localize(None), anio))
+            r = requests.get(f"{SB}?dates={anio}&limit=1000", timeout=40)
+            r.raise_for_status()
+            break
         except Exception as ex:
-            print(f"  scoreboard {anio} {ini}: {ex}")
+            if intento == intentos:
+                raise RuntimeError(f"ESPN no respondió para {anio}: {ex}") from ex
+            time.sleep(2 * intento)
+    out = []
+    for e in r.json().get("events", []):
+        st_name = e.get("status", {}).get("type", {}).get("name", "")
+        if st_name in ("STATUS_FULL_TIME", "STATUS_FINAL", "STATUS_FINAL_PEN", "STATUS_FINAL_AET"):
+            out.append((e["id"], pd.to_datetime(e["date"]).tz_convert("America/Argentina/Buenos_Aires").tz_localize(None), anio))
     return out
 
 
