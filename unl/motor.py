@@ -2,7 +2,7 @@
 Motor predictivo de Machine Learning y Simulación Monte Carlo para la UEFA Nations League.
 Incluye:
 1. StateTracker point-in-time con Elo dinámico (K=32), forma reciente, H2H y distancias Haversine.
-2. Modelo Bivariado Poisson Dixon-Coles para goles esperados (xG) y probabilidades de marcador exacto.
+2. Modelo Poisson (independiente) para goles esperados (xG) y probabilidades de marcador exacto.
 3. Modelos Calibrados de Clasificación 1X2: LASSO L1 (SAGA), Random Forest y Stacking Óptimo.
 4. Simulador Monte Carlo de los 14 grupos (Ligas A, B, C, D), ascensos, descensos y Final Four de Liga A.
 """
@@ -348,7 +348,7 @@ def cargar():
         "best_c": best_c
     }
 
-    # Modelo Poisson Bivariado Dixon-Coles
+    # Modelo Poisson de goles (sin corrección Dixon-Coles)
     # Estimación de parámetros base de ataque y defensa por diferencia de elo y localía
     d_elos = df_dataset["elo_diff"].values
     gls = df_dataset["gl"].values

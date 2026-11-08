@@ -239,11 +239,11 @@ def run_app():
             
             # Alertas de Heurísticas de Alta Efectividad
             if p[0] > 0.55 and (la - lb) > 1.0:
-                st.success(f"🔥 **ALERTA DE ALTA CONFIANZA (Acierto 82.6% Histórico):** Consenso perfecto entre Machine Learning (>55%) y modelo Poisson (>1.0 goles dif) a favor de victoria de **{a}**.")
+                st.success(f"🔥 **ALERTA DE ALTA CONFIANZA:** Consenso perfecto entre Machine Learning (>55%) y modelo Poisson (>1.0 goles dif) a favor de victoria de **{a}**.")
             elif p[0] > 0.60:
-                st.info(f"💪 **FAVORITO CLARO (Acierto 71% Histórico):** El modelo de Machine Learning asigna más del 60% de probabilidad de victoria a **{a}**.")
+                st.info(f"💪 **FAVORITO CLARO:** El modelo de Machine Learning asigna más del 60% de probabilidad de victoria a **{a}**.")
             elif p[2] > 0.50:
-                st.success(f"⚠️ **VISITA FUERTE (Acierto 67% Histórico):** Probabilidad >50% para el equipo visitante (**{b}**). Es un evento raro y suele ser muy rentable.")
+                st.success(f"⚠️ **VISITA FUERTE:** Probabilidad >50% para el equipo visitante (**{b}**). Es un evento poco frecuente.")
     
             # Mostrar Probabilidades
             col_probs, col_stats = st.columns(2)

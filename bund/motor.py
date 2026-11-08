@@ -602,7 +602,7 @@ def predecir_match(M, local, visita, temporada=None, modelo_tipo=None, modelo=No
 
 
 def grilla_goles(M, local, visita, modelo_tipo=None, modelo=None):
-    # Retorna matriz 10x10 de goles esperados usando modelo Poisson y Dixon-Coles
+    # Retorna matriz 10x10 de goles esperados con Poisson independiente reescalado al 1X2 del modelo (sin corrección Dixon-Coles)
     m = modelo_tipo or modelo or "rf"
     p_1x2 = predecir_match(M, local, visita, modelo_tipo=m)
     
@@ -732,7 +732,7 @@ def simular_fixture_regular(M, PREDS, fijos=None, modelo_tipo="rf"):
             p = PREDS.get((local, visita))
             if p is None:
                 p = grilla_goles(M, local, visita, modelo_tipo=modelo_tipo)
-            # Muestrear marcador realista desde la grilla 10x10 calibrada (Dixon-Coles + 1X2)
+            # Muestrear marcador realista desde la grilla 10x10 calibrada (Poisson reescalado al 1X2)
             idx = np.random.choice(p.size, p=p.ravel())
             gl, gv = divmod(int(idx), p.shape[1])
                 

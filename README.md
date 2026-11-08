@@ -1,8 +1,8 @@
 # ⚽ FIFA 2026 & Domestic Leagues: Hybrid ML Forecasting Platform
 
-Plataforma integral de analítica avanzada, modelado probabilístico y predicción de fútbol basada en **Machine Learning Híbrido**, **Matrices Bivariadas de Poisson / Dixon-Coles** y **Simulaciones Monte Carlo Vectorizadas**.
+Plataforma integral de analítica avanzada, modelado probabilístico y predicción deportiva basada en **Machine Learning Híbrido**, **matrices de marcadores Poisson** y **Simulaciones Monte Carlo Vectorizadas**.
 
-El sistema cuenta con un portal central en **Streamlit** que permite interactuar con **21 aplicaciones de predicción independientes**: la Copa Mundial de la FIFA 2026, la **UEFA Champions League (formato suizo de 36 clubes)** y las **19 ligas domésticas más competitivas de Europa y América**.
+El sistema cuenta con un portal central en **Streamlit** que permite interactuar con **23 aplicaciones de predicción independientes**: la Copa Mundial de la FIFA 2026, la **UEFA Champions League (formato suizo de 36 clubes)**, la **UEFA Nations League**, la **NBA** y las **19 ligas domésticas más competitivas de Europa y América**.
 
 ---
 
@@ -13,6 +13,7 @@ El sistema cuenta con un portal central en **Streamlit** que permite interactuar
 ### Competiciones Disponibles
 1. 🏆 **Copa Mundial de la FIFA 2026**: Bracket oficial de 48 selecciones, Elo histórico (1872–2026) y Homología Persistente (TDA experimental).
 2. ⭐ **UEFA Champions League**: Nuevo formato suizo de 36 clubes en tabla única, knockout play-offs y cuadro eliminatorio completo hacia la Gran Final.
+   - 🇪🇺 **UEFA Nations League** y 🏀 **NBA** (Four Factors, Elo FiveThirtyEight, playoffs simulados): ver [`nba/README.md`](nba/README.md).
 3. 🏴󠁧󠁢󠁥󠁮󠁧󠁿 **Premier League** (Inglaterra)
 4. 🇪🇸 **LaLiga EA Sports** (España)
 5. 🇩🇪 **Bundesliga** (Alemania)
@@ -44,12 +45,12 @@ fifa-2026-hybrid-forecast/
 ├── app.py                     # Enrutador principal del portal Streamlit
 ├── requirements.txt           # Dependencias de producción
 ├── tests/
-│   └── smoke.py              # Suite de smoke tests unificada (20 competiciones)
+│   └── smoke.py              # Smoke tests de 20 competiciones (no cubre NBA, Nations League ni el Mundial)
 ├── .github/workflows/
 │   └── refresh_data.yml      # Pipeline CI/CD: ingesta diaria automatizada (06:00 UTC)
 │
-├── [ucl | eng | esp | bund | ita | fra | ned | por | bel | tur | sco | aut | den | gre | nor | swe | bra | mex | chile | arg]/   # Módulos por liga
-│   ├── motor.py               # StateTracker, Poisson Dixon-Coles, ML Stacking y Monte Carlo
+├── [ucl | unl | nba | eng | esp | bund | ita | fra | ned | por | bel | tur | sco | aut | den | gre | nor | swe | bra | mex | chile | arg]/   # Módulos por liga
+│   ├── motor.py               # StateTracker, Poisson, ML Stacking y Monte Carlo
 │   ├── app_<liga>.py          # Interfaz Streamlit (Versus, H2H, Tabla MC, Mercados, Validación)
 │   ├── recolectar.py          # Scraper/ingestor de partidos y fixture desde ESPN API
 │   ├── recolectar_boxscore.py # Ingestor de estadísticas detalladas por cotejo
@@ -84,15 +85,17 @@ A medida que se recorre el calendario en orden temporal estricto:
 - **Calibration (Calibración OOS)**: Partidos de temporada 2024.
 - **Test (Prueba Ciega en Vivo)**: Partidos de temporadas >= 2025 y 2026.
 
+- **Validación vs Realidad (app)**: cada partido se predice con las variables que existían antes de jugarlo (las mismas filas del entrenamiento), nunca con el estado final del tracker.
+
 ### 3. Ensamble de Modelos (Stacking)
 - **LASSO (Logistic Regression L1 via SAGA)**: Selección estricta de variables que anula coeficientes no informativos o redundantes.
 - **Random Forest Classifier**: Captura de interacciones no lineales complejas entre variables de forma y contexto.
-- **XGBoost**: Gradient Boosting calibrado.
+- **XGBoost**: Gradient Boosting (sin un paso de calibración adicional).
 - **Meta-Modelo Stacking**: Ponderación óptima calculada mediante optimización acotada (Nelder-Mead) sobre el conjunto de calibración fuera de muestra.
 
-### 4. Modelo Bivariado de Goles (Dixon-Coles / Poisson)
+### 4. Modelo de Goles (Poisson)
 - Modelado GLM de tasas de anotación esperadas (lambdas) condicionadas por el diferencial de Elo y la ventaja de localía.
-- Generación de la **matriz bivariada de probabilidad 10x10** con ajuste de dependencia en marcadores bajos (0-0, 1-0, 0-1, 1-1).
+- Generación de la **matriz de probabilidad 10x10** con goles de local y visita independientes. Solo Liga MX aplica una corrección aproximada tipo Dixon-Coles en marcadores bajos (0-0, 1-0, 0-1, 1-1).
 - Re-calibración exacta de la matriz contra las probabilidades 1X2 del modelo Stacking para proyectar mercados derivados:
   - **1X2 Tradicional**
   - **Draw No Bet (DNB / Apuesta sin Empate)**
@@ -113,7 +116,8 @@ A medida que se recorre el calendario en orden temporal estricto:
 
 ## ⚡ Automatización e Infraestructura (CI/CD)
 
-- **Actualización Diaria**: Un GitHub Action programado (`06:00 UTC`) ejecuta los scripts de recolección de todas las ligas, capturando marcadores recientes y actualizando los fixtures futuros.
+- **Actualización Diaria**: Un GitHub Action programado (`06:00 UTC`) ejecuta los recolectores de partidos, fixture y box score de todas las ligas (también se puede lanzar a mano desde *Actions → Run workflow*). Si ESPN falla en una liga, sus CSV no se tocan, las demás se actualizan igual y el run queda en rojo.
+- **Botón "Actualizar ESPN y Re-entrenar"**: oculto en el portal público. Aparece corriendo en local con `PORTAL_ADMIN=1 streamlit run app.py`, o en el portal con `?admin=<clave>` si `admin_key` está en los *secrets* de Streamlit.
 - **Caché Criptográfico Inteligente**: Los motores calculan un hash SHA-256 (`_cache_key`) de los datasets y configuraciones. Si no existen datos nuevos, los modelos y simulaciones se cargan instantáneamente desde disco (`simulacion_mc.pkl`), evitando re-entrenamientos innecesarios.
 
 ---
@@ -142,7 +146,7 @@ streamlit run app.py
 ```
 
 ### 4. Ejecutar la suite de pruebas (Smoke Tests)
-Para validar que los motores de las 11 ligas cargan, predicen y simulan sin errores:
+Para validar que los motores de las 20 competiciones cubiertas cargan, predicen y simulan sin errores:
 ```bash
 python3 tests/smoke.py
 ```

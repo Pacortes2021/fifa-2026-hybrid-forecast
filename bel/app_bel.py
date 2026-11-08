@@ -363,8 +363,8 @@ def run_app():
             mc1.dataframe(pd.DataFrame(filas[:7]), hide_index=True, width='stretch')
             mc2.dataframe(pd.DataFrame(filas[7:]), hide_index=True, width='stretch')
 
-            # Gráfica de la matriz Dixon-Coles
-            st.markdown('<div class="sec-title">Matriz de Goles Exactos (Dixon-Coles)</div>', unsafe_allow_html=True)
+            # Gráfica de la matriz de marcadores (Poisson ajustado al 1X2)
+            st.markdown('<div class="sec-title">Matriz de Goles Exactos (Poisson ajustado al 1X2)</div>', unsafe_allow_html=True)
             fig, ax = plt.subplots(figsize=(6, 4))
             m6 = mix[:6, :6]
             im = ax.imshow(m6, cmap="Blues")
