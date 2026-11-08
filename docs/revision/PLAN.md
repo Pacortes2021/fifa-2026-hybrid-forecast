@@ -20,7 +20,7 @@ Cada uno deja su reporte en `docs/revision/` cuando termina:
 | `ui_estandar.md` | Comparación de las 23 interfaces + propuesta de estándar + adaptador de motores |
 
 ## Pendiente (en orden)
-1. [ ] CI en PRs: `.github/workflows/ci.yml` con smoke tests + recorrido AppTest de los 23 torneos (`tests/ui_smoke.py`).
+1. [x] CI en PRs: `.github/workflows/ci.yml` con smoke tests + recorrido AppTest de los 23 torneos (`tests/ui_smoke.py`) y chequeo de frescura de datos en el refresh diario (`tests/frescura.py`) → **PR #3** (abierto, sin mergear).
 2. [ ] Arreglar los errores verificados de los reportes `qa_*.md` → PR "fix: hallazgos de QA".
 3. [ ] Estandarizar la interfaz de las 19 ligas domésticas según `ui_estandar.md` → módulo compartido + migración incremental, verificada liga por liga con AppTest → PR propio.
 4. [ ] Mejoras de modelos según `modelos.md` (solo las que mejoren log-loss en test de forma medible) → PR propio.
@@ -37,3 +37,4 @@ Recorrido de la UI headless: `streamlit.testing.v1.AppTest.from_file("app.py", d
 
 ## Registro
 - 04:40 UTC — agentes lanzados; rama `wip/revision-nocturna` creada; continuación programada para después del reinicio de la ventana (07:50 UTC).
+- 04:55 UTC — PR #3 (CI + frescura) abierto; su primer run de CI es la verificación en GitHub.
