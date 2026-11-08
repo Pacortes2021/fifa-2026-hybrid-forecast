@@ -155,6 +155,14 @@ O probar ligas específicas:
 python3 tests/smoke.py eng esp bund fra ned por
 ```
 
+### 5. Recorrido de la interfaz (23 torneos, headless)
+Abre cada página del portal con `streamlit.testing.AppTest`, hace un rerun y falla si alguna lanza una excepción:
+```bash
+python3 tests/ui_smoke.py            # todos
+python3 tests/ui_smoke.py NBA Chilena  # algunos
+```
+Ambas pruebas corren automáticamente en cada Pull Request (`.github/workflows/ci.yml`).
+
 ---
 
 ## 🏆 Respaldo Metodológico: Mundial FIFA 2026
