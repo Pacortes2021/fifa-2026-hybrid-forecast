@@ -697,7 +697,8 @@ def _simular_fixture_vec(M, PREDS, fijos, n_sims):
     score = pts_sims * 1000000.0 + dg_sims * 1000.0 + gf_sims + np.random.random(pts_sims.shape)  # el ruido < 1 solo rompe empates exactos (antes ganaba el primero en orden alfabético)
     order = np.argsort(-score, axis=0)
 
-    return eq_list, order
+    # media de puntos finales por equipo (puntos actuales + lo simulado del fixture)
+    return eq_list, order, pts_sims.mean(axis=1)
 
 def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tipo=None):
     if modelo_tipo is not None:
@@ -743,7 +744,9 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
             if l != v:
                 PREDS[(l, v)] = predecir_match(M, l, v, modelo=modelo_tipo)
 
-    eqs, order = _simular_fixture_vec(M, PREDS, fijos, n_sims)
+    eqs, order, pts_medios = _simular_fixture_vec(M, PREDS, fijos, n_sims)
+
+    pts_esp = dict(zip(eqs, pts_medios))
     n_eq = len(eqs)
     counts_campeon = {e: 0 for e in eqs}
     counts_champ = {e: 0 for e in eqs}
@@ -766,7 +769,7 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
         res.append({
             "equipo": eq,
             "Selección": eq,
-            "Puntos esperados": round(float(tab.loc[tab.equipo == eq, "puntos"].values[0]) + (32 - int(tab.loc[tab.equipo == eq, "pj"].values[0])) * 1.35, 1) if eq in tab["equipo"].values else 40.0,
+            "Puntos esperados": round(float(pts_esp[eq]), 1),
             "P_campeon": counts_campeon[eq] / n_sims,
             "P_champions": counts_champ[eq] / n_sims,
             "P_copas": counts_copas[eq] / n_sims,
