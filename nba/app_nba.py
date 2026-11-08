@@ -507,21 +507,22 @@ def run_app():
         with col_periodo:
             periodo = st.radio(
                 "Período a Evaluar:",
-                ["🏀 Temporada 2026-27 (En Vivo / Out-of-Sample)", "📚 Histórico Completo (2022-2027)"],
+                ["🏀 Temporada 2026-27 (En Vivo / Out-of-Sample)", "📚 Histórico Completo (2022-2027, incluye entrenamiento)"],
                 horizontal=True,
                 key="nba_val_periodo"
             )
 
         if "2026-27" in periodo:
-            df_val, met_val, evol = mo.validacion_en_vivo(M, temporada=2027)
+            df_val, met_val, evol = mo.validacion_en_vivo(M, temporada=2027, modelo=modelo)
         else:
+            st.caption("⚠️ Incluye las temporadas usadas para entrenar el modelo: estas métricas son optimistas. La validación honesta es la de la temporada en curso.")
             features = M["features"]
-            pipe = M["pipe_lasso"]
             df_val = M["df_dataset"].copy()
             X_all = df_val[features].fillna(0.0)
             y_all = df_val["target_win_local"]
-            probs_all = pipe.predict_proba(X_all)
-            preds_all = pipe.predict(X_all)
+            p_all = mo._proba_local_lote(M, X_all, modelo)
+            probs_all = np.column_stack([1.0 - p_all, p_all])
+            preds_all = (p_all >= 0.5).astype(int)
             df_val["Prob_Local"] = probs_all[:, 1]
             df_val["Prob_Visita"] = probs_all[:, 0]
             df_val["Prediccion"] = preds_all
