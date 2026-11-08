@@ -31,7 +31,9 @@ def main():
         if fix.empty or "fecha" not in fix.columns:
             continue
         fechas = pd.to_datetime(fix["fecha"], errors="coerce", format="mixed")
-        vencidos = int((fechas < limite).sum())
+        # los aplazados/suspendidos conservan su fecha original hasta que ESPN los reprograma
+        aplazado = fix["aplazado"].fillna(False).astype(bool) if "aplazado" in fix.columns else pd.Series(False, index=fix.index)
+        vencidos = int(((fechas < limite) & ~aplazado).sum())
         partidos = fix_path.parent / "partidos.csv"
         ultimo = pd.to_datetime(pd.read_csv(partidos)["fecha"], format="mixed").max() if partidos.exists() else None
         estado = "OK" if vencidos <= args.max_vencidos else "DESACTUALIZADA"
