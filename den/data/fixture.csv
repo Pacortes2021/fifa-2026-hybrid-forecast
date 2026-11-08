@@ -1,5 +1,5 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401874488,2026-11-08 12:00:00,2026,909,575,F.C. København,Brøndby IF,,,pre,STATUS_SCHEDULED
+401874488,2026-11-08 12:00:00,2026,909,575,F.C. København,Brøndby IF,,,pre,STATUS_SECOND_HALF
 401874570,2026-11-08 14:00:00,2026,7853,3585,AGF,AC Horsens,,,pre,STATUS_SCHEDULED
 401874562,2026-11-08 16:00:00,2026,3132,3101,Randers FC,FC Nordsjælland,,,pre,STATUS_SCHEDULED
 401874556,2026-11-08 18:00:00,2026,572,8118,FC Midtjylland,Sønderjyske Fodbold,,,pre,STATUS_SCHEDULED

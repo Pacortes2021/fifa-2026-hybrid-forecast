@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name
-401888253,2026-11-08 13:30:00,2026,7656,19267,Caykur Rizespor,Erzurum BB,,,pre,STATUS_SCHEDULED
 401888372,2026-11-08 16:00:00,2026,132334,436,Corum FK,Fenerbahce,,,pre,STATUS_SCHEDULED
 401888254,2026-11-08 18:30:00,2026,9078,997,Alanyaspor,Trabzonspor,,,pre,STATUS_SCHEDULED
 401888251,2026-11-08 21:00:00,2026,1895,996,Besiktas,Genclerbirligi,,,pre,STATUS_SCHEDULED
