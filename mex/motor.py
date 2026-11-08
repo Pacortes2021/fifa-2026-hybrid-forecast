@@ -27,6 +27,8 @@ warnings.filterwarnings("ignore")
 
 DATA = Path(__file__).resolve().parent / "data"
 EQUIPOS_PATH = DATA / "equipos.csv"
+CUPOS_COPA = 6
+DESCIENDEN = 0
 
 def _cargar_equipos():
     """Lee data/equipos.csv (id estable de ESPN -> info del club: nombre, abreviatura, colores, logo)."""
