@@ -1060,8 +1060,11 @@ def _simular_fixture_vec(M, preds_dict, n_sims=1000):
 
     for k, (_, r) in enumerate(fix.iterrows()):
         l, v = r["local"], r["visita"]
-        loc_idx[k] = eq2idx.get(l, 0)
-        vis_idx[k] = eq2idx.get(v, 0)
+        if l not in eq2idx or v not in eq2idx:
+            # antes se asignaba en silencio al equipo 0 y sumaba puntos a otro club
+            raise ValueError(f"Equipo del fixture sin fila en la tabla de la fase de liga: {l} / {v}")
+        loc_idx[k] = eq2idx[l]
+        vis_idx[k] = eq2idx[v]
         pair = (l, v)
         if pair in preds_dict:
             p, ml, mv = preds_dict[pair]
@@ -1147,11 +1150,13 @@ def simular_campeonato(M, n_sims=10000, fijos=None, modelo="stacking", modelo_ti
     import hashlib
     fp = hashlib.md5()
     fp.update(str(n_sims).encode())
-    try:
-        fp.update(str(Path(fix_path).stat().st_mtime).encode())
-        fp.update(str(Path(fix_path).stat().st_size).encode())
-    except Exception:
-        pass
+    # Contenido (no mtime: cambia en cada git clone/despliegue) del fixture, los partidos y el
+    # propio motor, para reutilizar la simulación solo si nada de eso cambió.
+    for _f in (Path(fix_path), DATA / "partidos.csv", Path(__file__)):
+        try:
+            fp.update(hashlib.md5(_f.read_bytes()).hexdigest().encode())
+        except Exception:
+            pass
 
     cache_path = DATA.parent / "simulacion_mc.pkl"
     resultados = {}
@@ -1238,39 +1243,60 @@ def simular_campeonato(M, n_sims=10000, fijos=None, modelo="stacking", modelo_ti
         for t in elim_teams:
             counts_elim[t] += 1
 
-        # 2. Knockout Play-offs (Puestos 9-16 vs 17-24)
-        po_winners = []
-        for i in range(8):
-            seed_high = playoff_teams[i]        # Puestos 9 a 16
-            seed_low = playoff_teams[15 - i]    # Puestos 24 a 17
-            winner = _simular_cruce(seed_high, seed_low, PREDS)
-            po_winners.append(winner)
-            counts_octavos[winner] += 1
+        # 2-6. Eliminatorias con el cuadro fijo de la UEFA (formato 2024/25 en adelante).
+        #  - Play-offs por pares de siembra: 9/10 vs 23/24, 11/12 vs 21/22, 13/14 vs 19/20, 15/16 vs 17/18.
+        #  - Octavos: 1/2 vs ganadores de 15/16-17/18; 3/4 vs 13/14-19/20; 5/6 vs 11/12-21/22; 7/8 vs 9/10-23/24.
+        #  - Cada par (1/2, 3/4, 5/6, 7/8) se reparte entre las dos mitades del cuadro (1º y 2º solo
+        #    pueden cruzarse en la final). En cada mitad: cuartos (1/2) vs (7/8) y (3/4) vs (5/6).
+        #  - Lo que en la realidad se sortea (quién va a cada mitad / qué cruce del par) se sortea aquí.
+        #  - El mejor clasificado en la fase de liga juega la vuelta de local (team_a de _simular_cruce).
+        rango = {t: i for i, t in enumerate(ranking_sim)}
+        def _cruce(t1, t2):
+            a, b = (t1, t2) if rango[t1] < rango[t2] else (t2, t1)
+            return _simular_cruce(a, b, PREDS)
 
-        # 3. Round of 16 (Octavos de Final)
-        np.random.shuffle(po_winners)
-        qf_teams = []
-        for i in range(8):
-            winner = _simular_cruce(top8[i], po_winners[i], PREDS)
-            qf_teams.append(winner)
-            counts_cuartos[winner] += 1
+        def _po_pareja(altos, bajos):
+            bajos = list(bajos)
+            if np.random.rand() < 0.5:
+                bajos.reverse()
+            return [_cruce(altos[0], bajos[0]), _cruce(altos[1], bajos[1])]
 
-        # 4. Quarterfinals (Cuartos de Final)
-        np.random.shuffle(qf_teams)
-        sf_teams = []
-        for i in range(0, 8, 2):
-            winner = _simular_cruce(qf_teams[i], qf_teams[i + 1], PREDS)
-            sf_teams.append(winner)
-            counts_semi[winner] += 1
+        pos = lambda k: ranking_sim[k - 1]
+        po_por_par = {
+            (1, 2): _po_pareja((pos(15), pos(16)), (pos(17), pos(18))),
+            (3, 4): _po_pareja((pos(13), pos(14)), (pos(19), pos(20))),
+            (5, 6): _po_pareja((pos(11), pos(12)), (pos(21), pos(22))),
+            (7, 8): _po_pareja((pos(9), pos(10)), (pos(23), pos(24))),
+        }
+        for ganadores in po_por_par.values():
+            for winner in ganadores:
+                counts_octavos[winner] += 1
 
-        # 5. Semifinals (Semifinales)
+        mitades = {"A": {}, "B": {}}
+        for (s1, s2), ganadores in po_por_par.items():
+            tops = [pos(s1), pos(s2)]
+            if np.random.rand() < 0.5:
+                tops.reverse()
+            rivales = list(ganadores)
+            if np.random.rand() < 0.5:
+                rivales.reverse()
+            mitades["A"][(s1, s2)] = (tops[0], rivales[0])
+            mitades["B"][(s1, s2)] = (tops[1], rivales[1])
+
         finalists = []
-        for i in range(0, 4, 2):
-            winner = _simular_cruce(sf_teams[i], sf_teams[i + 1], PREDS)
-            finalists.append(winner)
-            counts_final[winner] += 1
+        for mitad in ("A", "B"):
+            octavos = {par: _cruce(*duelo) for par, duelo in mitades[mitad].items()}
+            for winner in octavos.values():
+                counts_cuartos[winner] += 1
+            semi_1 = _cruce(octavos[(1, 2)], octavos[(7, 8)])
+            semi_2 = _cruce(octavos[(3, 4)], octavos[(5, 6)])
+            counts_semi[semi_1] += 1
+            counts_semi[semi_2] += 1
+            finalista = _cruce(semi_1, semi_2)
+            counts_final[finalista] += 1
+            finalists.append(finalista)
 
-        # 6. Gran Final (Sede neutral única)
+        # Gran Final (sede neutral única)
         champion = _simular_cruce(finalists[0], finalists[1], PREDS, preds_neu=PREDS_NEU, is_neutral=True)
         counts_campeon[champion] += 1
 
