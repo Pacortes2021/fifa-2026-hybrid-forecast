@@ -444,6 +444,7 @@ def run_app():
         partidos_rec = pd.read_csv(mo.DATA / "partidos.csv")
         last_key = f"{len(partidos_rec)}-{partidos_rec.fecha.max()}"
         df_proy = simular_liga(M, last_key, modelo_tipo)
+        st.caption("ℹ️ Proyección de la **fase regular**: el fixture de ESPN termina antes de la segunda fase (grupos de campeonato/descenso o playoffs), que no se simula. Campeón, copas y descenso se leen como “si la tabla final fuera la de la fase regular”.")
 
         df_proy_visual = df_proy.copy()
         df_proy_visual["Escudo"] = df_proy_visual["equipo"].apply(lambda t: logo_url(equipos, t))
