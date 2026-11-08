@@ -32,14 +32,13 @@ def recolectar():
         url = f"{SCOREBOARD}?dates={anio}&limit=1000"
         try:
             r = requests.get(url, timeout=25)
-            if r.status_code == 200:
-                evs = r.json().get("events", [])
-                for e in evs:
-                    if e["id"] not in seen_ids:
-                        seen_ids.add(e["id"])
-                        eventos.append((anio, e))
+            r.raise_for_status()
         except Exception as ex:
-            print(f"  Error en año {anio}: {ex}")
+            raise RuntimeError(f"No se pudieron recolectar partidos de la Nations League ({anio}): {ex}") from ex
+        for e in r.json().get("events", []):
+            if e["id"] not in seen_ids:
+                seen_ids.add(e["id"])
+                eventos.append((anio, e))
 
     partidos_filas = []
     fixture_filas = []

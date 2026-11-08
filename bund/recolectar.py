@@ -12,7 +12,10 @@ import numpy as np
 DATA = Path(__file__).resolve().parent / "data"
 SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard"
 TEAMS_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/teams"
-TEMPORADAS = list(range(2021, int(datetime.now().year) + 1))
+# Temporada julio–junio: desde julio también se pide el año siguiente, para que el
+# fixture incluya la segunda rueda (ene–may) y la simulación cubra la temporada completa.
+_HOY = datetime.now()
+TEMPORADAS = list(range(2021, _HOY.year + (2 if _HOY.month >= 7 else 1)))
 
 NORM_MAP = {
     "Bayern Munich": "Bayern Munich",
@@ -23,25 +26,26 @@ def norm_team(name):
     return NORM_MAP.get(name, name)
 
 
-def _temporada(anio):
-    eventos = []
-    # 1. Intentar por año completo (formato preferido por la API de ESPN: dates=YYYY&limit=1000)
-    try:
-        r = requests.get(f"{SCOREBOARD}?dates={anio}&limit=1000", timeout=40)
-        if r.status_code == 200:
-            eventos = r.json().get("events", [])
-    except Exception as ex:
-        print(f"  Error obteniendo año {anio}: {ex}")
+def _eventos_anio(anio, intentos=3):
+    """Eventos del año calendario `anio` desde el scoreboard de ESPN.
 
-    # 2. Fallback semestral por compatibilidad
-    if not eventos:
-        for ini, fin in ((f"{anio}0101", f"{anio}0630"), (f"{anio}0701", f"{anio}1231")):
-            try:
-                r = requests.get(f"{SCOREBOARD}?dates={ini}-{fin}&limit=400", timeout=40)
-                r.raise_for_status()
-                eventos += r.json().get("events", [])
-            except Exception as ex:
-                print(f"  Error obteniendo rango {ini}-{fin}: {ex}")
+    Usa `dates=AAAA`: desde sep-2026 ESPN responde HTTP 400 a los rangos
+    `dates=AAAAMMDD-AAAAMMDD`. Si tras los reintentos sigue fallando, lanza la
+    excepción para que recolectar() no sobrescriba los CSV con datos incompletos.
+    """
+    for intento in range(1, intentos + 1):
+        try:
+            r = requests.get(f"{SCOREBOARD}?dates={anio}&limit=1000", timeout=40)
+            r.raise_for_status()
+            return r.json().get("events", [])
+        except Exception as ex:
+            if intento == intentos:
+                raise RuntimeError(f"ESPN no respondió para {anio}: {ex}") from ex
+            time.sleep(2 * intento)
+
+
+def _temporada(anio):
+    eventos = _eventos_anio(anio)
 
     filas = []
     for e in eventos:
@@ -118,6 +122,7 @@ def _canonizar_por_id(df):
 def recolectar():
     DATA.mkdir(parents=True, exist_ok=True)
     todo = []
+    errores = []
     for anio in TEMPORADAS:
         try:
             f = _temporada(anio)
@@ -126,17 +131,22 @@ def recolectar():
             print(f"  {anio}: {len(f)} partidos ({jug} jugados)")
         except Exception as ex:
             print(f"  {anio}: error ({ex})")
+            errores.append(f"{anio}: {ex}")
         time.sleep(0.5)
 
-    if not todo:
-        print("No se pudieron recolectar partidos de Alemania.")
-        return
+    # Si falla algún año no se escriben los CSV (quedarían incompletos) y el error
+    # deja el workflow en rojo, en vez de seguir en verde con datos congelados.
+    if errores or not todo:
+        detalle = "; ".join(errores) or "ESPN no devolvió partidos"
+        raise RuntimeError(f"No se pudieron recolectar partidos de Alemania: {detalle}")
 
     df = _canonizar_por_id(pd.DataFrame(todo).sort_values("fecha"))
     df = df.drop_duplicates(subset=["event_id"], keep="last")
 
     jugados = df[df.estado == "post"].dropna(subset=["goles_local", "goles_visita"]).reset_index(drop=True)
-    fixture = df[df.estado == "pre"]
+    fixture = df[df.estado == "pre"].copy()
+    # Etiqueta de temporada julio–junio (ene–may 2027 = temporada 2026), la que usan los motores
+    fixture["temporada"] = fixture["fecha"].apply(lambda x: x.year if x.month >= 7 else x.year - 1)
     fixture = fixture[fixture.temporada == fixture.temporada.max()].reset_index(drop=True)
 
     jugados = jugados.drop(columns=["status_name"], errors="ignore")
