@@ -129,9 +129,11 @@ def _temporada(anio):
             # Sin este filtro, STATUS_POSTPONED y STATUS_CANCELED caen en el else→"pre"
             # y se guardan en fixture.csv como partidos futuros reales,
             # contaminando las 4000 iteraciones del simulador Monte Carlo.
-            if status_name in ("STATUS_POSTPONED", "STATUS_CANCELED",
-                               "STATUS_DELAYED",   "STATUS_SUSPENDED"):
+            # Los cancelados no se juegan; los aplazados/suspendidos sí, más adelante: quedan
+            # en el fixture marcados como aplazados para que la simulación los cuente.
+            if status_name == "STATUS_CANCELED":
                 continue
+            aplazado = status_name in ("STATUS_POSTPONED", "STATUS_DELAYED", "STATUS_SUSPENDED")
 
             is_finished = status_name in ("STATUS_FULL_TIME", "STATUS_FINAL", "STATUS_FINAL_PEN", "STATUS_FINAL_AET")
             estado = "post" if is_finished else "pre"
@@ -161,7 +163,7 @@ def _temporada(anio):
                 "goles_local": gl,
                 "goles_visita": gv,
                 "estado": estado,
-                "status_name": status_name
+                "status_name": status_name, "aplazado": aplazado
             })
         except (KeyError, IndexError, StopIteration):
             continue
@@ -211,12 +213,21 @@ def recolectar():
 
     df = _canonizar_por_id(pd.DataFrame(todo).sort_values("fecha"))
     df = df.drop_duplicates(subset=["event_id"], keep="last")
+    # Un aplazado que ESPN ya reprogramó (mismo local y visita, fecha posterior, otro event_id)
+    # es el mismo partido: se descarta el evento original para no contarlo dos veces.
+    if df["aplazado"].any():
+        def _reprogramado(r):
+            otros = df[(df.local == r.local) & (df.visita == r.visita) & (df.event_id != r.event_id) & (~df.aplazado)]
+            dias = (otros.fecha - r.fecha).dt.days
+            return bool(((dias > 0) & (dias <= 300)).any())
+        reprogramados = df[df.aplazado].apply(_reprogramado, axis=1)
+        df = df.drop(index=reprogramados[reprogramados].index)
 
     jugados = df[df.estado == "post"].dropna(subset=["goles_local", "goles_visita"]).reset_index(drop=True)
     fixture = df[df.estado == "pre"]
     fixture = fixture[fixture.temporada == fixture.temporada.max()].reset_index(drop=True)
 
-    jugados = jugados.drop(columns=["status_name"], errors="ignore")
+    jugados = jugados.drop(columns=["status_name", "aplazado"], errors="ignore")
     fixture = fixture.drop(columns=["status_name"], errors="ignore")
 
     jugados.to_csv(DATA / "partidos.csv", index=False)
