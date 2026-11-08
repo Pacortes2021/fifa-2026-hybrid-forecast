@@ -659,6 +659,15 @@ def mercados(mix):
     return mk
 
 
+def _inicio_torneo(primera_fecha_fixture):
+    """Inicio del torneo vigente. El primer torneo del año termina a fines de mayo y el
+    segundo arranca entre fines de junio y julio: si el fixture pendiente es posterior al
+    10 de junio, el torneo empezó ese día; si no, el 1 de enero. (Antes se usaba la fecha
+    del primer partido pendiente, con lo que la tabla dejaba fuera todo lo ya jugado.)"""
+    corte = pd.Timestamp(primera_fecha_fixture.year, 6, 10)
+    return corte if primera_fecha_fixture >= corte else pd.Timestamp(primera_fecha_fixture.year, 1, 1)
+
+
 def _torneo_actual(M):
     # En Argentina el año calendario contiene DOS torneos (Copa de la Liga ene-jul,
     # Liga Profesional ago-nov), ambos etiquetados como temporada 2026 en partidos.csv.
@@ -668,7 +677,7 @@ def _torneo_actual(M):
     fix = fix[fix.temporada == _temporada_actual()] if not fix.empty else fix
     if len(fix) == 0:
         return pd.DataFrame(), fix
-    inicio_torneo = fix["fecha"].min() - pd.Timedelta(days=1)
+    inicio_torneo = _inicio_torneo(fix["fecha"].min())
     partidos = M["partidos"].copy()
     partidos["fecha"] = pd.to_datetime(partidos["fecha"])
     p_actuales = partidos[(partidos["temporada"] == _temporada_actual()) & (partidos["fecha"] >= inicio_torneo)]
