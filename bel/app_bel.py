@@ -16,7 +16,10 @@ import recolectar as rec
 import recolectar_boxscore as rec_box
 
 # Estilizado CSS Premium
-st.markdown("""
+# Se inyecta en cada ejecución de run_app(): a nivel de módulo solo corría al primer
+# import del proceso, y el CSS desaparecía en los reruns y para los demás usuarios.
+def _inyectar_estilos():
+    st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
@@ -109,6 +112,7 @@ def simular_liga(_M, key, modelo_tipo):
     return mo.simular_campeonato(_M, n_sims=50000, modelo_tipo=modelo_tipo)
 
 def run_app():
+    _inyectar_estilos()
     st.sidebar.markdown("### 🛠️ Controles del Modelo")
 
     # Selector de modelo activo
@@ -132,7 +136,7 @@ def run_app():
         modelo_tipo = "rf"
 
     # Botón para actualizar resultados en vivo
-    if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
+    if st.session_state.get("portal_admin", True) and st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
         with st.spinner("Descargando últimos resultados de ESPN..."):
             rec.recolectar()
             rec_box.recolectar()
@@ -359,8 +363,8 @@ def run_app():
             mc1.dataframe(pd.DataFrame(filas[:7]), hide_index=True, width='stretch')
             mc2.dataframe(pd.DataFrame(filas[7:]), hide_index=True, width='stretch')
 
-            # Gráfica de la matriz Dixon-Coles
-            st.markdown('<div class="sec-title">Matriz de Goles Exactos (Dixon-Coles)</div>', unsafe_allow_html=True)
+            # Gráfica de la matriz de marcadores (Poisson ajustado al 1X2)
+            st.markdown('<div class="sec-title">Matriz de Goles Exactos (Poisson ajustado al 1X2)</div>', unsafe_allow_html=True)
             fig, ax = plt.subplots(figsize=(6, 4))
             m6 = mix[:6, :6]
             im = ax.imshow(m6, cmap="Blues")

@@ -2,3 +2,5 @@
 __pycache__/
 *.pyc
 simulacion_mc.pkl
+# Cachés de modelos que se regeneran solas (la clave depende de los CSV del día)
+modelo_*.pkl

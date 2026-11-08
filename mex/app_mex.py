@@ -18,7 +18,10 @@ import recolectar_boxscore as rec_box
 
 
 # Estilizado CSS Premium
-st.markdown("""
+# Se inyecta en cada ejecución de run_app(): a nivel de módulo solo corría al primer
+# import del proceso, y el CSS desaparecía en los reruns y para los demás usuarios.
+def _inyectar_estilos():
+    st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
@@ -115,6 +118,7 @@ def simular_liga(_M, key, modelo):
 
 # Sidebar de controles
 def run_app():
+    _inyectar_estilos()
     st.sidebar.markdown("### 🛠️ Controles del Modelo")
 
     # ── Selector de modelo ──────────────────────────────────────────────────
@@ -134,7 +138,7 @@ def run_app():
     else:
         modelo = "rf"
 
-    if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
+    if st.session_state.get("portal_admin", True) and st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
         with st.spinner("Descargando últimos resultados de ESPN..."):
             rec.recolectar()
             rec_box.recolectar()
@@ -232,11 +236,11 @@ def run_app():
             
             # Alertas de Heurísticas de Alta Efectividad
             if p[0] > 0.55 and (la - lb) > 1.0:
-                st.success(f"🔥 **ALERTA DE ALTA CONFIANZA (Acierto 82.6% Histórico):** Consenso perfecto entre Machine Learning (>55%) y modelo Poisson (>1.0 goles dif) a favor de victoria de **{a}**.")
+                st.success(f"🔥 **ALERTA DE ALTA CONFIANZA:** Consenso perfecto entre Machine Learning (>55%) y modelo Poisson (>1.0 goles dif) a favor de victoria de **{a}**.")
             elif p[0] > 0.60:
-                st.info(f"💪 **FAVORITO CLARO (Acierto 71% Histórico):** El modelo de Machine Learning asigna más del 60% de probabilidad de victoria a **{a}**.")
+                st.info(f"💪 **FAVORITO CLARO:** El modelo de Machine Learning asigna más del 60% de probabilidad de victoria a **{a}**.")
             elif p[2] > 0.50:
-                st.success(f"⚠️ **VISITA FUERTE (Acierto 67% Histórico):** Probabilidad >50% para el equipo visitante (**{b}**). Es un evento raro en México y suele ser muy rentable.")
+                st.success(f"⚠️ **VISITA FUERTE:** Probabilidad >50% para el equipo visitante (**{b}**). Es un evento poco frecuente en México.")
     
             
             # Mostrar Probabilidades

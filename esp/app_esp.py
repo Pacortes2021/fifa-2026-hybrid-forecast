@@ -16,7 +16,10 @@ import recolectar as rec
 import recolectar_boxscore as rec_box
 
 # Estilizado CSS Premium
-st.markdown("""
+# Se inyecta en cada ejecución de run_app(): a nivel de módulo solo corría al primer
+# import del proceso, y el CSS desaparecía en los reruns y para los demás usuarios.
+def _inyectar_estilos():
+    st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
@@ -120,6 +123,7 @@ def simular_liga(_M, key, modelo_tipo):
 
 
 def run_app():
+    _inyectar_estilos()
     st.sidebar.markdown("### 🛠️ Controles del Modelo")
     
     # Selector de modelo activo
@@ -143,7 +147,7 @@ def run_app():
         modelo_tipo = "rf"
     
     # Botón para actualizar resultados en vivo
-    if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
+    if st.session_state.get("portal_admin", True) and st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
         with st.spinner("Descargando últimos resultados de ESPN..."):
             rec.recolectar()
             rec_box.recolectar()
@@ -239,7 +243,7 @@ def run_app():
             
             tracker = M["tracker"]
             elo_diff = tracker.elos[a] - tracker.elos[b]
-            la = np.exp(M["g_const"] + M["g_d"] * elo_diff)
+            la = np.exp(M["g_const"] + M["g_d"] * elo_diff + M.get("g_home", 0.0))  # como en grilla_goles
             lb = np.exp(M["g_const"] - M["g_d"] * elo_diff)
             
             la_lbl = get_label(a)
@@ -247,11 +251,11 @@ def run_app():
             
             # Alertas de Heurísticas de Alta Efectividad
             if p[0] > 0.55 and (la - lb) > 1.0:
-                st.success(f"🔥 **ALERTA DE ALTA CONFIANZA (Acierto 81.4% Histórico):** Consenso perfecto entre Machine Learning (>55%) y modelo Poisson (>1.0 goles dif) a favor de victoria de **{a}**.")
+                st.success(f"🔥 **ALERTA DE ALTA CONFIANZA:** Consenso perfecto entre Machine Learning (>55%) y modelo Poisson (>1.0 goles dif) a favor de victoria de **{a}**.")
             elif p[0] > 0.60:
-                st.info(f"💪 **FAVORITO CLARO (Acierto 73% Histórico):** El modelo de Machine Learning asigna más del 60% de probabilidad de victoria a **{a}**.")
+                st.info(f"💪 **FAVORITO CLARO:** El modelo de Machine Learning asigna más del 60% de probabilidad de victoria a **{a}**.")
             elif p[2] > 0.50:
-                st.success(f"⚠️ **VISITA FUERTE (Acierto 68% Histórico):** Probabilidad >50% para el equipo visitante (**{b}**). Este tipo de predicciones en España son muy rentables.")
+                st.success(f"⚠️ **VISITA FUERTE:** Probabilidad >50% para el equipo visitante (**{b}**).")
             
             # Mostrar Probabilidades
             col_probs, col_stats = st.columns(2)
@@ -425,8 +429,8 @@ def run_app():
             mc1.dataframe(pd.DataFrame(filas[:7]), hide_index=True, width='stretch')
             mc2.dataframe(pd.DataFrame(filas[7:]), hide_index=True, width='stretch')
             
-            # Gráfica de la matriz Dixon-Coles
-            st.markdown('<div class="sec-title">Matriz de Goles Exactos (Dixon-Coles)</div>', unsafe_allow_html=True)
+            # Gráfica de la matriz de marcadores (Poisson ajustado al 1X2)
+            st.markdown('<div class="sec-title">Matriz de Goles Exactos (Poisson ajustado al 1X2)</div>', unsafe_allow_html=True)
             fig, ax = plt.subplots(figsize=(6, 4))
             m6 = mix[:6, :6]
             im = ax.imshow(m6, cmap="Reds")

@@ -27,17 +27,23 @@ STATS = [
 ]
 
 
-def _eventos(anio):
-    out = []
-    for ini, fin in ((f"{anio}0101", f"{anio}0630"), (f"{anio}0701", f"{anio}1231")):
+def _eventos(anio, intentos=3):
+    """Partidos terminados del año `anio`. Usa dates=AAAA: desde sep-2026 ESPN responde
+    HTTP 400 a los rangos AAAAMMDD-AAAAMMDD. Si falla tras los reintentos, lanza la
+    excepción y recolectar() no escribe nada."""
+    for intento in range(1, intentos + 1):
         try:
-            r = requests.get(f"{SB}?dates={ini}-{fin}&limit=400", timeout=40)
+            r = requests.get(f"{SB}?dates={anio}&limit=1000", timeout=40)
             r.raise_for_status()
-            for e in r.json().get("events", []):
-                if e.get("status", {}).get("type", {}).get("state") == "post":
-                    out.append((e["id"], pd.to_datetime(e["date"]).tz_localize(None), anio))
+            break
         except Exception as ex:
-            print(f"  scoreboard {anio} {ini}: {ex}")
+            if intento == intentos:
+                raise RuntimeError(f"ESPN no respondió para {anio}: {ex}") from ex
+            time.sleep(2 * intento)
+    out = []
+    for e in r.json().get("events", []):
+        if e.get("status", {}).get("type", {}).get("state") == "post":
+            out.append((e["id"], pd.to_datetime(e["date"]).tz_localize(None), anio))
     return out
 
 
@@ -107,6 +113,8 @@ def recolectar():
     if nuevos_resultados:
         df_nuevos = pd.DataFrame(nuevos_resultados)
         df_total = pd.concat([ya, df_nuevos], ignore_index=True)
+        # el CSV previo trae la fecha como texto y lo nuevo como Timestamp: unificar antes de ordenar
+        df_total["fecha"] = pd.to_datetime(df_total["fecha"], format="mixed")
         df_total = df_total.drop_duplicates(subset=["event_id"]).sort_values("fecha").reset_index(drop=True)
         df_total.to_csv(path, index=False)
         print(f"Completado: {len(df_nuevos)} nuevos partidos añadidos a box_score.csv. Total registros: {len(df_total)}.")

@@ -20,7 +20,10 @@ import recolectar_boxscore as rec_box
 from motor import cuota, cuota_americana
 
 # Estilizado CSS Premium para NBA
-st.markdown("""
+# Se inyecta en cada ejecución de run_app(): a nivel de módulo solo corría al primer
+# import del proceso, y el CSS desaparecía en los reruns y para los demás usuarios.
+def _inyectar_estilos():
+    st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
@@ -79,6 +82,7 @@ def simular_temporada_cached(_M, key):
 
 
 def run_app():
+    _inyectar_estilos()
     st.sidebar.markdown("### 🏀 Controles del Modelo NBA")
 
     # Selector de modelo predictivo
@@ -91,7 +95,7 @@ def run_app():
     modelo_sel = st.sidebar.selectbox("🤖 Modelo Predictivo:", OPCIONES_MOD, index=0)
     modelo = "stacking" if "Stacking" in modelo_sel else ("xgb" if "XGB" in modelo_sel else ("rf" if "Random Forest" in modelo_sel else "lasso"))
 
-    if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", key="refresh_nba", type="primary"):
+    if st.session_state.get("portal_admin", True) and st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", key="refresh_nba", type="primary"):
         with st.spinner("Descargando últimos resultados y box scores de la NBA..."):
             rec.recolectar()
             rec_box.recolectar(limite=200)
