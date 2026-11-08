@@ -64,3 +64,12 @@ Recorrido de la UI headless: `streamlit.testing.v1.AppTest.from_file("app.py", d
 - **Sigue**: la sesión programada a las 07:55 UTC (04:55 Chile) toma el backlog de arriba (errores restantes del QA, estandarización de la UI, mejoras de modelos).
 - 07:55 UTC — la sesión programada se detuvo en su primer comando esperando un permiso (modo por defecto): no avanzó.
 - 17:10 UTC — Pablo aprobó: PRs #3, #4, #5, #6, #7 y #8 mergeados a `main` (b27177e). CI lanzado sobre `main`.
+- 17:35–17:55 UTC — **Errores del QA** (pedido de Pablo). QA de los 6 torneos que faltaban → `qa_restantes.md`. PRs abiertos:
+  - #9 UCL: cuadro eliminatorio fijo de la UEFA (antes barajado al azar), caché por contenido, equipo desconocido = error. CI ✅.
+  - #10 NBA: la validación usa el modelo elegido; el histórico avisa que incluye entrenamiento.
+  - #11 Ligas europeas: DESCIENDEN ned/por 3→2, aviso "fase regular" en sco/aut/den/gre/bel, caché de Streamlit por datos.
+  - #12 Liga MX: 18 equipos del torneo vigente (Mazatlán salía por usar ALTITUDES como lista).
+  - #13 Recolectores: aplazados/suspendidos en el fixture sin duplicar reprogramados (LaLiga 379→380; Brasil 3 duplicados evitados).
+  - #14 Mundial: resultado real del torneo terminado y sin consultas a ESPN.
+  - #15 Argentina/Nations League: textos de la proyección y cifras calculadas.
+  Pendiente del QA: simular zonas/playoffs/promedios de Argentina y segundas fases (sco/aut/den/gre/bel); descensos de tur y formato de bel 2026-27; cupos de Champions de ned; UNL 1X2 vs xG en goleadas (E8); textos 'en vivo' restantes del Mundial (E11).
