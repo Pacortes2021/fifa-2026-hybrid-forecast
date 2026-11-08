@@ -20,11 +20,11 @@ Cada uno deja su reporte en `docs/revision/` cuando termina:
 | `ui_estandar.md` | Comparación de las 23 interfaces + propuesta de estándar + adaptador de motores |
 
 ## Pendiente (en orden) — backlog consolidado de los 5 reportes
-1. [x] CI en PRs + chequeo de frescura → **PR #3** (abierto).
+1. [x] CI en PRs + chequeo de frescura → **PR #3** (abierto; su primer run de CI en GitHub pasó: smoke de 20 motores + recorrido de 23 torneos).
 2. [x] **PR #4 `fix/qa-nba-ucl`** (abierto): NBA hándicap invertido (B1), desempate alfabético (B4), P_Playoff_Directo separado de P_Playoffs (B3), nº de partidos de test fijo (B9); ned "Schaal" → "Campeón". Verificado: spread monótono (débil local −11.5 = 6.2%, +11.5 = 50.1%), sumas por conferencia 6/8/4.
 3. [ ] **Errores pendientes de los QA** (verificar cada uno antes de arreglar):
    - NBA B2: el selector de modelo no afecta `simular_temporada` ni `validacion_en_vivo` (pasar `modelo`, incluirlo en la clave de caché). NBA B9: textos "Cumplimiento Histórico" in-sample; "Histórico Completo" mezcla train/test → rotular.
-   - UCL B5: cuadro eliminatorio con `np.random.shuffle` en vez del árbol fijo UEFA (`ucl/motor.py` ~1262-1285). B6: "Jornada 1…" debería ser 5–8 (`ucl/app_ucl.py:546-557`). B7: clave de caché por mtime. B8: goles simulados independientes del 1X2; `eq2idx.get(l, 0)` silencioso.
+   - UCL B5: cuadro eliminatorio con `np.random.shuffle` en vez del árbol fijo UEFA (`ucl/motor.py` ~1262-1285). ~~B6~~ → **PR #7** (abierto): jornadas 5–8. B7: clave de caché por mtime. B8: goles simulados independientes del 1X2; `eq2idx.get(l, 0)` silencioso.
    - ~~Top-5 E1~~ → **PR #6** (abierto): importancia de variables según el modelo en eng/esp/bund/ita (falta en las otras familias). E2/E3: esp "Deportivo" sin escudo (norm_name "Deportivo La Coruña"), claves de TEAM_DETAILS no coinciden. E4: fixture esp sin Rayo–Athletic (379/380); fra 2025 sin Nantes–Toulouse; ita 2022 Spezia–Verona duplicado → revisar recolector (aplazados, dedupe). E5: caption "eliminación directa neutral" en ligas (eng/esp/bund/ita). E9: selector de equipos lista equipos de temporadas pasadas.
    - ~~Europa E1~~ → **PR #5** (abierto): puntos esperados desde la simulación. Antes: "Puntos esperados" con nº de partidos fijo y 1.35 pts/partido fijo (bel `motor.py`:750, tur 789, sco 766, aut 769, den 787, gre 784) → usar PJ + restantes del fixture y las probabilidades del modelo. E2: sco/aut/den/gre(/bel) ignoran el split/playoffs → al menos rotular "tras fase regular". E3/E4: cupos (DESCIENDEN ned/por = 3, P_champions ned suma 3) → verificar reglamento 2026-27 y parametrizar. E6: por Sporting–Benfica xG incoherente con 1X2 (sin causa confirmada). E7: nor/swe stacking = solo XGB (el peor) rotulado "óptimo". E8: sco temporada 2023-24 con 52 partidos; bel 16→18 equipos.
    - QA sin terminar: lab, unl, bra, mex (causa de 19 equipos), chile, arg; y en europa/top-5 la pestaña de validación por temporada, pares extremos y textos.
@@ -47,3 +47,4 @@ Recorrido de la UI headless: `streamlit.testing.v1.AppTest.from_file("app.py", d
 - ~05:00 UTC — los 5 agentes terminaron (QA parciales por presupuesto); reportes en `docs/revision/`; backlog consolidado arriba. Ventana de 5 h al 81%.
 - ~05:10 UTC — PR #5 (puntos esperados de 10 ligas europeas desde el Monte Carlo) abierto. Ventana al 86%.
 - ~05:20 UTC — PR #6 (importancia de variables) abierto. Ventana casi agotada: sigue la sesión programada de las 07:55 UTC con el backlog de arriba.
+- ~05:30 UTC — PR #7 (jornadas UCL) abierto. PRs abiertos para revisión de Pablo: #3, #4, #5, #6, #7. Nada mergeado esta noche.
