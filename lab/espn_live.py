@@ -38,9 +38,47 @@ def _norm(nombre):
     return NORM.get(nombre, nombre)
 
 
+def _respaldo_local():
+    if LOCAL_JSON.exists():
+        try:
+            with open(LOCAL_JSON, "r", encoding="utf-8") as f:
+                return json.load(f).get("events", [])
+        except Exception:
+            pass
+    return []
+
+
+def _todos_terminados(eventos):
+    return len(eventos) >= 104 and all(e.get("status", {}).get("type", {}).get("completed") for e in eventos)
+
+
+def resultado_final():
+    """Si el Mundial ya terminó (los 104 partidos completados en el respaldo local), devuelve
+    campeón, subcampeón, marcador y fecha de la final; si no, None."""
+    eventos = _respaldo_local()
+    if not _todos_terminados(eventos):
+        return None
+    final = max(eventos, key=lambda e: e.get("date", ""))
+    cs = final["competitions"][0]["competitors"]
+    gan = next((c for c in cs if c.get("winner")), None)
+    per = next((c for c in cs if c is not gan), None)
+    if gan is None or per is None:
+        return None
+    return {
+        "campeon": _norm(gan["team"]["displayName"]),
+        "subcampeon": _norm(per["team"]["displayName"]),
+        "marcador": f"{gan.get('score', '?')}-{per.get('score', '?')}",
+        "fecha": final.get("date", "")[:10],
+    }
+
+
 def _fetch_events():
     """Obtiene los 104 eventos del Mundial 2026 desde ESPN (dates=2026&limit=1000).
+    Si el torneo ya terminó y el respaldo local está completo, no consulta la red.
     Si la API de ESPN falla o no hay conexión, recurre al respaldo local persistente."""
+    locales = _respaldo_local()
+    if _todos_terminados(locales):
+        return locales
     try:
         url = f"{SCOREBOARD}?dates=2026&limit=1000"
         r = requests.get(url, timeout=12)
@@ -56,13 +94,7 @@ def _fetch_events():
             return evs
     except Exception:
         pass
-    if LOCAL_JSON.exists():
-        try:
-            with open(LOCAL_JSON, "r", encoding="utf-8") as f:
-                return json.load(f).get("events", [])
-        except Exception:
-            pass
-    return []
+    return locales
 
 
 def traer_resultados(desde=INICIO_MUNDIAL, hasta=None, solo_finalizados=True):
