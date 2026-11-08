@@ -113,6 +113,8 @@ def recolectar():
     if nuevos_resultados:
         df_nuevos = pd.DataFrame(nuevos_resultados)
         df_total = pd.concat([ya, df_nuevos], ignore_index=True)
+        # el CSV previo trae la fecha como texto y lo nuevo como Timestamp: unificar antes de ordenar
+        df_total["fecha"] = pd.to_datetime(df_total["fecha"], format="mixed")
         df_total = df_total.drop_duplicates(subset=["event_id"]).sort_values("fecha").reset_index(drop=True)
         df_total.to_csv(path, index=False)
         print(f"Completado: {len(df_nuevos)} nuevos partidos añadidos a box_score.csv. Total registros: {len(df_total)}.")

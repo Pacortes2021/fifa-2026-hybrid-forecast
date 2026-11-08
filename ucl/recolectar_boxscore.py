@@ -111,6 +111,8 @@ def recolectar():
         else:
             df_final = df_nuevos
         df_final = df_final.drop_duplicates(subset=["event_id"], keep="last")
+        # el CSV previo trae la fecha como texto y lo nuevo como Timestamp: unificar antes de ordenar
+        df_final["fecha"] = pd.to_datetime(df_final["fecha"], format="mixed")
         df_final.sort_values("fecha", inplace=True)
         df_final.to_csv(path, index=False)
         print(f"Éxito: {len(df_final)} partidos totales de Champions guardados en {path}")
