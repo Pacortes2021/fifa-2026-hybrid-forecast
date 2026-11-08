@@ -391,7 +391,11 @@ def run_app():
     # TAB 2: Tabla y Proyecciones
     with tab2:
         st.markdown('<div class="sec-title">Proyección de Tabla Liga Profesional Argentina 2026</div>', unsafe_allow_html=True)
-        st.markdown("Simulación estocástica de Monte Carlo (4.000 iteraciones del torneo completo).")
+        st.markdown("Simulación de Monte Carlo (50.000 iteraciones) de los partidos que faltan del torneo vigente, sobre una tabla única. Las zonas, los playoffs y el descenso por promedios no se simulan.")
+        _, _fix_vig = mo._torneo_actual(M)
+        if len(_fix_vig) <= 1:
+            st.info(f"ℹ️ La fase regular está terminando ({len(_fix_vig)} partido(s) por jugar): la proyección es prácticamente la tabla final. "
+                    "Campeón = líder de la tabla general, copas = top 4 y descenso = los dos últimos del torneo; no reflejan los playoffs ni la tabla de promedios.")
 
         partidos_rec = M["partidos"]
         last_key = f"{len(partidos_rec)}-{partidos_rec.fecha.max()}"
