@@ -850,6 +850,17 @@ def _inicio_torneo(primera_fecha_fixture):
     return corte if primera_fecha_fixture >= corte else pd.Timestamp(primera_fecha_fixture.year, 1, 1)
 
 
+def _equipos_vigentes(M):
+    """Equipos del torneo en curso (jugados + fixture). ALTITUDES incluye clubes que ya no
+    están en la liga (p. ej. Mazatlán FC, reemplazado por Atlante), así que no sirve como lista."""
+    p_actuales, fix = _torneo_actual(M)
+    eqs = set()
+    for df in (p_actuales, fix):
+        if len(df):
+            eqs |= set(df["local"]) | set(df["visita"])
+    return eqs or set(ALTITUDES.keys())
+
+
 def _torneo_actual(M):
     # En México el año calendario contiene DOS torneos (Clausura ene-jun, Apertura
     # jul-nov), ambos etiquetados como temporada 2026 en partidos.csv. El torneo
@@ -878,7 +889,7 @@ def simular_fixture_regular(M, PREDS, fijos=None):
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
     
     # Equipos únicos
-    equipos = set(ALTITUDES.keys())
+    equipos = _equipos_vigentes(M)
     for eq in equipos:
         tabla[eq] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
         
@@ -1120,7 +1131,7 @@ def _serie_vec(LA, LB, f1, f2, n_sims):
 
 def _simular_fixture_vec(M, PREDS, fijos, n_sims):
     p_actuales, fix = _torneo_actual(M)
-    eqs = sorted(ALTITUDES.keys())
+    eqs = sorted(_equipos_vigentes(M))
     n_eq = len(eqs)
     ix = {e: i for i, e in enumerate(eqs)}
     LA = np.full((n_eq, n_eq), 1.2)
@@ -1250,7 +1261,7 @@ def monte_carlo(M, n_sims=5000, fijos=None, modelo=None, modelo_tipo=None, seed=
             print(f"Cache de simulación inválido ({ex}); re-simulando...")
 
     # Precalcular predicciones para todos los cruces posibles (18*17 = 306 combinaciones)
-    equipos = set(ALTITUDES.keys())
+    equipos = _equipos_vigentes(M)
     PREDS = {}
     for local in equipos:
         for visita in equipos:
@@ -1372,7 +1383,7 @@ def obtener_tabla_actual(M):
     tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
     
     # Equipos únicos
-    equipos = set(ALTITUDES.keys())
+    equipos = _equipos_vigentes(M)
     for eq in equipos:
         tabla[eq] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
         

@@ -183,7 +183,7 @@ def run_app():
     with tab1:
         st.markdown('<div class="sec-title">Analizador de Enfrentamientos</div>', unsafe_allow_html=True)
         
-        opciones = sorted(list(TEAM_DETAILS.keys()))
+        opciones = sorted(mo._equipos_vigentes(M))  # solo los clubes del torneo en curso
         
         fix_rec = pd.read_csv(mo.DATA / "fixture.csv") if (mo.DATA / "fixture.csv").exists() else pd.DataFrame()
         if not fix_rec.empty:
