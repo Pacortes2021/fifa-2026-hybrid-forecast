@@ -11,8 +11,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 574539,2021-01-12 18:45:00,2021,154,153,Vitesse,Utrecht,1.0,0.0,post
 574537,2021-01-12 21:00:00,2021,3708,3707,Heracles Almelo,FC Emmen,4.0,0.0,post
 574534,2021-01-13 18:45:00,2021,148,140,PSV,AZ Alkmaar,1.0,3.0,post
-574530,2021-01-13 20:00:00,2021,143,151,Fortuna Sittard,Sparta Rotterdam,0.0,1.0,post
 574532,2021-01-13 20:00:00,2021,2726,3731,ADO Den Haag,VVV-Venlo,1.0,4.0,post
+574530,2021-01-13 20:00:00,2021,143,151,Fortuna Sittard,Sparta Rotterdam,0.0,1.0,post
 574528,2021-01-13 21:00:00,2021,142,2565,Feyenoord,PEC Zwolle,1.0,0.0,post
 574526,2021-01-14 18:45:00,2021,146,155,Heerenveen,RKC Waalwijk,1.0,1.0,post
 574524,2021-01-14 20:00:00,2021,152,139,Twente,Ajax,1.0,3.0,post
@@ -56,8 +56,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 574443,2021-02-05 20:00:00,2021,143,3708,Fortuna Sittard,Heracles Almelo,0.0,1.0,post
 574437,2021-02-06 14:00:00,2021,3707,140,FC Emmen,AZ Alkmaar,0.0,1.0,post
 574439,2021-02-06 14:00:00,2021,2565,155,PEC Zwolle,RKC Waalwijk,1.0,1.0,post
-574441,2021-02-06 16:30:00,2021,148,152,PSV,Twente,3.0,0.0,post
 574435,2021-02-06 16:30:00,2021,146,154,Heerenveen,Vitesse,1.0,0.0,post
+574441,2021-02-06 16:30:00,2021,148,152,PSV,Twente,3.0,0.0,post
 574410,2021-02-12 18:45:00,2021,155,3707,RKC Waalwijk,FC Emmen,1.0,0.0,post
 574418,2021-02-13 12:00:00,2021,145,2565,Groningen,PEC Zwolle,1.0,0.0,post
 574414,2021-02-13 14:15:00,2021,151,143,Sparta Rotterdam,Fortuna Sittard,1.0,2.0,post
@@ -93,14 +93,14 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 574350,2021-03-06 20:00:00,2021,146,2726,Heerenveen,ADO Den Haag,3.0,0.0,post
 574357,2021-03-06 21:00:00,2021,155,153,RKC Waalwijk,Utrecht,1.0,2.0,post
 574355,2021-03-07 12:15:00,2021,139,145,Ajax,Groningen,3.0,1.0,post
-574361,2021-03-07 14:30:00,2021,143,148,Fortuna Sittard,PSV,1.0,3.0,post
 574359,2021-03-07 14:30:00,2021,3708,2565,Heracles Almelo,PEC Zwolle,2.0,1.0,post
+574361,2021-03-07 14:30:00,2021,143,148,Fortuna Sittard,PSV,1.0,3.0,post
 574353,2021-03-07 16:45:00,2021,154,140,Vitesse,AZ Alkmaar,2.0,1.0,post
 574426,2021-03-09 18:45:00,2021,3731,151,VVV-Venlo,Sparta Rotterdam,0.0,1.0,post
 574342,2021-03-13 16:30:00,2021,156,146,Willem II,Heerenveen,3.0,1.0,post
 574344,2021-03-13 18:45:00,2021,2726,3708,ADO Den Haag,Heracles Almelo,1.0,2.0,post
-574334,2021-03-13 20:00:00,2021,145,3707,Groningen,FC Emmen,1.0,1.0,post
 574336,2021-03-13 20:00:00,2021,140,152,AZ Alkmaar,Twente,4.0,1.0,post
+574334,2021-03-13 20:00:00,2021,145,3707,Groningen,FC Emmen,1.0,1.0,post
 574346,2021-03-13 21:00:00,2021,151,155,Sparta Rotterdam,RKC Waalwijk,2.0,0.0,post
 574340,2021-03-14 12:15:00,2021,3731,143,VVV-Venlo,Fortuna Sittard,1.0,3.0,post
 574348,2021-03-14 14:30:00,2021,153,154,Utrecht,Vitesse,1.0,3.0,post
@@ -126,8 +126,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 574295,2021-04-04 16:45:00,2021,146,139,Heerenveen,Ajax,1.0,2.0,post
 574275,2021-04-09 20:00:00,2021,154,2726,Vitesse,ADO Den Haag,0.0,0.0,post
 574291,2021-04-10 18:45:00,2021,3708,156,Heracles Almelo,Willem II,4.0,0.0,post
-574289,2021-04-10 20:00:00,2021,140,151,AZ Alkmaar,Sparta Rotterdam,2.0,0.0,post
 574279,2021-04-10 20:00:00,2021,143,3707,Fortuna Sittard,FC Emmen,1.0,3.0,post
+574289,2021-04-10 20:00:00,2021,140,151,AZ Alkmaar,Sparta Rotterdam,2.0,0.0,post
 574281,2021-04-10 21:00:00,2021,2565,152,PEC Zwolle,Twente,1.0,0.0,post
 574283,2021-04-11 12:15:00,2021,153,142,Utrecht,Feyenoord,1.0,2.0,post
 574285,2021-04-11 14:30:00,2021,145,146,Groningen,Heerenveen,0.0,2.0,post
@@ -170,9 +170,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 574215,2021-05-13 14:30:00,2021,148,2565,PSV,PEC Zwolle,4.0,2.0,post
 574211,2021-05-13 14:30:00,2021,155,152,RKC Waalwijk,Twente,2.0,1.0,post
 574212,2021-05-13 14:30:00,2021,151,153,Sparta Rotterdam,Utrecht,0.0,0.0,post
-574202,2021-05-16 14:30:00,2021,154,139,Vitesse,Ajax,1.0,3.0,post
 574205,2021-05-16 14:30:00,2021,156,143,Willem II,Fortuna Sittard,2.0,1.0,post
 574203,2021-05-16 14:30:00,2021,3731,3707,VVV-Venlo,FC Emmen,0.0,4.0,post
+574202,2021-05-16 14:30:00,2021,154,139,Vitesse,Ajax,1.0,3.0,post
 574204,2021-05-16 14:30:00,2021,2565,145,PEC Zwolle,Groningen,1.0,0.0,post
 574209,2021-05-16 14:30:00,2021,146,151,Heerenveen,Sparta Rotterdam,1.0,2.0,post
 574208,2021-05-16 14:30:00,2021,142,155,Feyenoord,RKC Waalwijk,3.0,0.0,post
@@ -188,8 +188,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603825,2021-08-14 20:00:00,2021,143,152,Fortuna Sittard,Twente,2.0,1.0,post
 603824,2021-08-14 21:00:00,2021,139,147,Ajax,NEC,5.0,0.0,post
 603823,2021-08-15 12:15:00,2021,3736,145,SC Cambuur,Groningen,1.0,2.0,post
-603822,2021-08-15 14:30:00,2021,2565,154,PEC Zwolle,Vitesse,0.0,1.0,post
 603821,2021-08-15 14:30:00,2021,153,151,Utrecht,Sparta Rotterdam,4.0,0.0,post
+603822,2021-08-15 14:30:00,2021,2565,154,PEC Zwolle,Vitesse,0.0,1.0,post
 603820,2021-08-15 16:45:00,2021,156,142,Willem II,Feyenoord,0.0,4.0,post
 603819,2021-08-20 20:00:00,2021,147,2565,NEC,PEC Zwolle,2.0,0.0,post
 603818,2021-08-21 18:45:00,2021,146,155,Heerenveen,RKC Waalwijk,3.0,2.0,post
@@ -205,8 +205,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603807,2021-08-28 20:00:00,2021,148,145,PSV,Groningen,5.0,2.0,post
 603806,2021-08-28 21:00:00,2021,156,2565,Willem II,PEC Zwolle,1.0,0.0,post
 603805,2021-08-29 12:15:00,2021,153,142,Utrecht,Feyenoord,3.0,1.0,post
-603804,2021-08-29 14:30:00,2021,139,154,Ajax,Vitesse,5.0,0.0,post
 603803,2021-08-29 14:30:00,2021,3708,147,Heracles Almelo,NEC,0.0,1.0,post
+603804,2021-08-29 14:30:00,2021,139,154,Ajax,Vitesse,5.0,0.0,post
 603802,2021-08-29 16:45:00,2021,146,140,Heerenveen,AZ Alkmaar,1.0,3.0,post
 603801,2021-09-11 16:30:00,2021,152,153,Twente,Utrecht,1.0,0.0,post
 603799,2021-09-11 18:45:00,2021,2565,139,PEC Zwolle,Ajax,0.0,2.0,post
@@ -237,8 +237,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603773,2021-09-25 16:30:00,2021,156,148,Willem II,PSV,2.0,1.0,post
 603774,2021-09-25 18:45:00,2021,139,145,Ajax,Groningen,3.0,0.0,post
 603772,2021-09-25 18:45:00,2021,154,143,Vitesse,Fortuna Sittard,1.0,1.0,post
-603766,2021-09-25 21:00:00,2021,153,2565,Utrecht,PEC Zwolle,5.0,1.0,post
 603770,2021-09-25 21:00:00,2021,142,147,Feyenoord,NEC,5.0,3.0,post
+603766,2021-09-25 21:00:00,2021,153,2565,Utrecht,PEC Zwolle,5.0,1.0,post
 603769,2021-09-26 12:15:00,2021,151,3736,Sparta Rotterdam,SC Cambuur,0.0,4.0,post
 603768,2021-09-26 14:30:00,2021,140,3706,AZ Alkmaar,Go Ahead Eagles,5.0,0.0,post
 603767,2021-09-26 14:30:00,2021,146,152,Heerenveen,Twente,2.0,3.0,post
@@ -253,8 +253,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603759,2021-10-03 16:45:00,2021,154,142,Vitesse,Feyenoord,2.0,1.0,post
 603757,2021-10-03 20:00:00,2021,148,151,PSV,Sparta Rotterdam,2.0,1.0,post
 603756,2021-10-16 16:30:00,2021,142,155,Feyenoord,RKC Waalwijk,2.0,2.0,post
-603755,2021-10-16 18:45:00,2021,3706,3708,Go Ahead Eagles,Heracles Almelo,4.0,2.0,post
 603754,2021-10-16 18:45:00,2021,146,139,Heerenveen,Ajax,0.0,2.0,post
+603755,2021-10-16 18:45:00,2021,3706,3708,Go Ahead Eagles,Heracles Almelo,4.0,2.0,post
 603753,2021-10-16 21:00:00,2021,143,3736,Fortuna Sittard,SC Cambuur,1.0,0.0,post
 603752,2021-10-16 21:00:00,2021,148,2565,PSV,PEC Zwolle,3.0,1.0,post
 603751,2021-10-17 12:15:00,2021,140,153,AZ Alkmaar,Utrecht,5.0,1.0,post
@@ -276,8 +276,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603738,2021-10-30 21:00:00,2021,140,2565,AZ Alkmaar,PEC Zwolle,3.0,2.0,post
 603733,2021-10-31 12:15:00,2021,151,142,Sparta Rotterdam,Feyenoord,0.0,1.0,post
 603731,2021-10-31 14:30:00,2021,147,145,NEC,Groningen,3.0,0.0,post
-603730,2021-10-31 16:45:00,2021,155,3736,RKC Waalwijk,SC Cambuur,0.0,1.0,post
 603732,2021-10-31 16:45:00,2021,153,156,Utrecht,Willem II,5.0,1.0,post
+603730,2021-10-31 16:45:00,2021,155,3736,RKC Waalwijk,SC Cambuur,0.0,1.0,post
 603735,2021-10-31 20:00:00,2021,3706,143,Go Ahead Eagles,Fortuna Sittard,4.0,3.0,post
 603729,2021-11-05 20:00:00,2021,152,3708,Twente,Heracles Almelo,1.0,0.0,post
 603725,2021-11-06 18:45:00,2021,147,146,NEC,Heerenveen,1.0,1.0,post
@@ -285,8 +285,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603728,2021-11-06 21:00:00,2021,2565,3736,PEC Zwolle,SC Cambuur,1.0,2.0,post
 603723,2021-11-07 12:15:00,2021,145,155,Groningen,RKC Waalwijk,1.0,1.0,post
 603722,2021-11-07 14:30:00,2021,143,148,Fortuna Sittard,PSV,1.0,4.0,post
-603721,2021-11-07 16:45:00,2021,142,140,Feyenoord,AZ Alkmaar,1.0,0.0,post
 603724,2021-11-07 16:45:00,2021,154,153,Vitesse,Utrecht,2.0,1.0,post
+603721,2021-11-07 16:45:00,2021,142,140,Feyenoord,AZ Alkmaar,1.0,0.0,post
 603726,2021-11-07 20:00:00,2021,139,3706,Ajax,Go Ahead Eagles,0.0,0.0,post
 603720,2021-11-20 16:30:00,2021,148,154,PSV,Vitesse,2.0,0.0,post
 603718,2021-11-20 18:45:00,2021,151,152,Sparta Rotterdam,Twente,0.0,1.0,post
@@ -332,8 +332,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603681,2021-12-18 20:00:00,2021,3708,145,Heracles Almelo,Groningen,4.0,2.0,post
 603680,2021-12-18 21:00:00,2021,2565,152,PEC Zwolle,Twente,1.0,3.0,post
 603679,2021-12-19 12:15:00,2021,3736,146,SC Cambuur,Heerenveen,1.0,2.0,post
-603677,2021-12-19 14:30:00,2021,142,139,Feyenoord,Ajax,0.0,2.0,post
 603678,2021-12-19 14:30:00,2021,3706,147,Go Ahead Eagles,NEC,0.0,2.0,post
+603677,2021-12-19 14:30:00,2021,142,139,Feyenoord,Ajax,0.0,2.0,post
 603676,2021-12-19 16:45:00,2021,155,148,RKC Waalwijk,PSV,1.0,4.0,post
 603675,2021-12-21 18:45:00,2021,154,2565,Vitesse,PEC Zwolle,1.0,0.0,post
 603674,2021-12-21 21:00:00,2021,140,145,AZ Alkmaar,Groningen,1.0,0.0,post
@@ -346,12 +346,12 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603672,2021-12-23 21:00:00,2021,151,155,Sparta Rotterdam,RKC Waalwijk,1.0,1.0,post
 603666,2022-01-14 20:00:00,2022,2565,156,PEC Zwolle,Willem II,2.0,0.0,post
 603664,2022-01-15 18:45:00,2022,147,3708,NEC,Heracles Almelo,0.0,0.0,post
-603659,2022-01-15 20:00:00,2022,152,146,Twente,Heerenveen,2.0,0.0,post
 603665,2022-01-15 20:00:00,2022,142,154,Feyenoord,Vitesse,0.0,1.0,post
+603659,2022-01-15 20:00:00,2022,152,146,Twente,Heerenveen,2.0,0.0,post
 603663,2022-01-15 21:00:00,2022,3706,155,Go Ahead Eagles,RKC Waalwijk,0.0,2.0,post
 603661,2022-01-16 12:15:00,2022,153,139,Utrecht,Ajax,0.0,3.0,post
-603660,2022-01-16 14:30:00,2022,3736,151,SC Cambuur,Sparta Rotterdam,1.0,1.0,post
 603662,2022-01-16 14:30:00,2022,145,148,Groningen,PSV,0.0,1.0,post
+603660,2022-01-16 14:30:00,2022,3736,151,SC Cambuur,Sparta Rotterdam,1.0,1.0,post
 603658,2022-01-16 16:45:00,2022,143,140,Fortuna Sittard,AZ Alkmaar,1.0,2.0,post
 603656,2022-01-22 18:45:00,2022,154,145,Vitesse,Groningen,1.0,3.0,post
 603655,2022-01-22 20:00:00,2022,140,3736,AZ Alkmaar,SC Cambuur,0.0,0.0,post
@@ -437,8 +437,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603575,2022-04-09 20:00:00,2022,139,151,Ajax,Sparta Rotterdam,2.0,1.0,post
 603570,2022-04-09 21:00:00,2022,147,152,NEC,Twente,0.0,2.0,post
 603569,2022-04-10 12:15:00,2022,146,145,Heerenveen,Groningen,3.0,1.0,post
-603574,2022-04-10 14:30:00,2022,154,3736,Vitesse,SC Cambuur,1.0,0.0,post
 603573,2022-04-10 14:30:00,2022,148,155,PSV,RKC Waalwijk,2.0,0.0,post
+603574,2022-04-10 14:30:00,2022,154,3736,Vitesse,SC Cambuur,1.0,0.0,post
 603571,2022-04-10 16:45:00,2022,3708,142,Heracles Almelo,Feyenoord,1.0,4.0,post
 603568,2022-04-10 20:00:00,2022,2565,140,PEC Zwolle,AZ Alkmaar,2.0,1.0,post
 603629,2022-04-16 18:45:00,2022,143,151,Fortuna Sittard,Sparta Rotterdam,3.0,0.0,post
@@ -470,24 +470,24 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603541,2022-05-08 14:30:00,2022,140,139,AZ Alkmaar,Ajax,2.0,2.0,post
 603545,2022-05-08 14:30:00,2022,154,146,Vitesse,Heerenveen,1.0,2.0,post
 603547,2022-05-08 16:45:00,2022,142,148,Feyenoord,PSV,2.0,2.0,post
-603535,2022-05-11 20:00:00,2022,139,146,Ajax,Heerenveen,5.0,0.0,post
-603533,2022-05-11 20:00:00,2022,152,145,Twente,Groningen,3.0,0.0,post
+603538,2022-05-11 20:00:00,2022,151,2565,Sparta Rotterdam,PEC Zwolle,2.0,0.0,post
+603540,2022-05-11 20:00:00,2022,3736,156,SC Cambuur,Willem II,1.0,1.0,post
+603537,2022-05-11 20:00:00,2022,148,147,PSV,NEC,3.0,2.0,post
+603534,2022-05-11 20:00:00,2022,3706,142,Go Ahead Eagles,Feyenoord,0.0,1.0,post
+603536,2022-05-11 20:00:00,2022,155,3708,RKC Waalwijk,Heracles Almelo,2.0,0.0,post
 603532,2022-05-11 20:00:00,2022,153,140,Utrecht,AZ Alkmaar,2.0,2.0,post
 603539,2022-05-11 20:00:00,2022,143,154,Fortuna Sittard,Vitesse,1.0,2.0,post
-603534,2022-05-11 20:00:00,2022,3706,142,Go Ahead Eagles,Feyenoord,0.0,1.0,post
-603537,2022-05-11 20:00:00,2022,148,147,PSV,NEC,3.0,2.0,post
-603536,2022-05-11 20:00:00,2022,155,3708,RKC Waalwijk,Heracles Almelo,2.0,0.0,post
-603540,2022-05-11 20:00:00,2022,3736,156,SC Cambuur,Willem II,1.0,1.0,post
-603538,2022-05-11 20:00:00,2022,151,2565,Sparta Rotterdam,PEC Zwolle,2.0,0.0,post
-603525,2022-05-15 14:30:00,2022,156,153,Willem II,Utrecht,3.0,0.0,post
-603523,2022-05-15 14:30:00,2022,154,139,Vitesse,Ajax,2.0,2.0,post
-603528,2022-05-15 14:30:00,2022,2565,148,PEC Zwolle,PSV,1.0,2.0,post
-603526,2022-05-15 14:30:00,2022,147,143,NEC,Fortuna Sittard,0.0,1.0,post
-603531,2022-05-15 14:30:00,2022,3708,151,Heracles Almelo,Sparta Rotterdam,1.0,3.0,post
-603527,2022-05-15 14:30:00,2022,146,3706,Heerenveen,Go Ahead Eagles,3.0,1.0,post
-603524,2022-05-15 14:30:00,2022,142,152,Feyenoord,Twente,1.0,2.0,post
-603530,2022-05-15 14:30:00,2022,145,3736,Groningen,SC Cambuur,2.0,3.0,post
+603533,2022-05-11 20:00:00,2022,152,145,Twente,Groningen,3.0,0.0,post
+603535,2022-05-11 20:00:00,2022,139,146,Ajax,Heerenveen,5.0,0.0,post
 603529,2022-05-15 14:30:00,2022,140,155,AZ Alkmaar,RKC Waalwijk,1.0,3.0,post
+603530,2022-05-15 14:30:00,2022,145,3736,Groningen,SC Cambuur,2.0,3.0,post
+603524,2022-05-15 14:30:00,2022,142,152,Feyenoord,Twente,1.0,2.0,post
+603527,2022-05-15 14:30:00,2022,146,3706,Heerenveen,Go Ahead Eagles,3.0,1.0,post
+603531,2022-05-15 14:30:00,2022,3708,151,Heracles Almelo,Sparta Rotterdam,1.0,3.0,post
+603526,2022-05-15 14:30:00,2022,147,143,NEC,Fortuna Sittard,0.0,1.0,post
+603528,2022-05-15 14:30:00,2022,2565,148,PEC Zwolle,PSV,1.0,2.0,post
+603523,2022-05-15 14:30:00,2022,154,139,Vitesse,Ajax,2.0,2.0,post
+603525,2022-05-15 14:30:00,2022,156,153,Willem II,Utrecht,3.0,0.0,post
 635175,2022-05-19 18:45:00,2022,146,140,Heerenveen,AZ Alkmaar,3.0,2.0,post
 635176,2022-05-19 21:00:00,2022,153,154,Utrecht,Vitesse,3.0,1.0,post
 635177,2022-05-22 14:30:00,2022,140,146,AZ Alkmaar,Heerenveen,2.0,0.0,post
@@ -524,8 +524,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 637224,2022-08-27 20:00:00,2022,142,3707,Feyenoord,FC Emmen,4.0,0.0,post
 637225,2022-08-27 21:00:00,2022,146,143,Heerenveen,Fortuna Sittard,2.0,1.0,post
 637226,2022-08-28 12:15:00,2022,153,139,Utrecht,Ajax,0.0,2.0,post
-637227,2022-08-28 14:30:00,2022,2566,148,Excelsior,PSV,1.0,6.0,post
 637228,2022-08-28 14:30:00,2022,2727,152,FC Volendam,Twente,1.0,0.0,post
+637227,2022-08-28 14:30:00,2022,2566,148,Excelsior,PSV,1.0,6.0,post
 637229,2022-08-28 16:45:00,2022,3736,140,SC Cambuur,AZ Alkmaar,0.0,1.0,post
 637215,2022-08-31 18:45:00,2022,148,2727,PSV,FC Volendam,7.0,1.0,post
 637230,2022-08-31 21:00:00,2022,152,2566,Twente,Excelsior,4.0,0.0,post
@@ -616,8 +616,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 637317,2022-11-12 18:45:00,2022,3707,139,FC Emmen,Ajax,3.0,3.0,post
 637320,2022-11-12 21:00:00,2022,148,140,PSV,AZ Alkmaar,0.0,1.0,post
 637316,2022-11-13 12:15:00,2022,147,155,NEC,RKC Waalwijk,6.0,1.0,post
-637314,2022-11-13 14:30:00,2022,146,3736,Heerenveen,SC Cambuur,2.0,1.0,post
 637312,2022-11-13 14:30:00,2022,145,143,Groningen,Fortuna Sittard,2.0,3.0,post
+637314,2022-11-13 14:30:00,2022,146,3736,Heerenveen,SC Cambuur,2.0,1.0,post
 637319,2022-11-13 16:45:00,2022,142,2566,Feyenoord,Excelsior,5.0,1.0,post
 637318,2022-11-13 20:00:00,2022,3706,154,Go Ahead Eagles,Vitesse,2.0,2.0,post
 637321,2023-01-06 20:00:00,2023,152,3707,Twente,FC Emmen,2.0,0.0,post
@@ -631,11 +631,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 637329,2023-01-08 16:45:00,2023,2566,145,Excelsior,Groningen,1.0,0.0,post
 637334,2023-01-14 18:45:00,2023,2727,155,FC Volendam,RKC Waalwijk,2.0,1.0,post
 637330,2023-01-14 18:45:00,2023,146,140,Heerenveen,AZ Alkmaar,0.0,2.0,post
-637332,2023-01-14 21:00:00,2023,151,2566,Sparta Rotterdam,Excelsior,1.0,0.0,post
 637333,2023-01-14 21:00:00,2023,139,152,Ajax,Twente,0.0,0.0,post
+637332,2023-01-14 21:00:00,2023,151,2566,Sparta Rotterdam,Excelsior,1.0,0.0,post
 637335,2023-01-15 12:15:00,2023,154,147,Vitesse,NEC,0.0,0.0,post
-637336,2023-01-15 14:30:00,2023,143,148,Fortuna Sittard,PSV,2.0,2.0,post
 637337,2023-01-15 14:30:00,2023,3706,153,Go Ahead Eagles,Utrecht,2.0,2.0,post
+637336,2023-01-15 14:30:00,2023,143,148,Fortuna Sittard,PSV,2.0,2.0,post
 637338,2023-01-15 16:45:00,2023,3707,3736,FC Emmen,SC Cambuur,0.0,0.0,post
 637331,2023-01-15 16:45:00,2023,145,142,Groningen,Feyenoord,0.0,3.0,post
 637339,2023-01-20 20:00:00,2023,2566,2727,Excelsior,FC Volendam,2.0,0.0,post
@@ -681,8 +681,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 637382,2023-02-12 12:15:00,2023,151,3706,Sparta Rotterdam,Go Ahead Eagles,2.0,1.0,post
 637375,2023-02-12 14:30:00,2023,146,142,Heerenveen,Feyenoord,1.0,2.0,post
 637383,2023-02-12 14:30:00,2023,154,153,Vitesse,Utrecht,2.0,0.0,post
-637377,2023-02-12 16:45:00,2023,139,155,Ajax,RKC Waalwijk,3.0,1.0,post
 637379,2023-02-12 16:45:00,2023,152,2727,Twente,FC Volendam,3.0,0.0,post
+637377,2023-02-12 16:45:00,2023,139,155,Ajax,RKC Waalwijk,3.0,1.0,post
 637389,2023-02-17 20:00:00,2023,155,143,RKC Waalwijk,Fortuna Sittard,3.0,1.0,post
 637392,2023-02-18 16:30:00,2023,2727,154,FC Volendam,Vitesse,2.0,0.0,post
 637384,2023-02-18 18:45:00,2023,145,3707,Groningen,FC Emmen,1.0,1.0,post
@@ -698,8 +698,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 637393,2023-02-25 20:00:00,2023,140,3736,AZ Alkmaar,SC Cambuur,2.0,1.0,post
 637400,2023-02-25 21:00:00,2023,147,2727,NEC,FC Volendam,3.0,0.0,post
 637401,2023-02-26 12:15:00,2023,143,142,Fortuna Sittard,Feyenoord,2.0,4.0,post
-637399,2023-02-26 14:30:00,2023,3707,3706,FC Emmen,Go Ahead Eagles,2.0,2.0,post
 637397,2023-02-26 14:30:00,2023,154,139,Vitesse,Ajax,1.0,2.0,post
+637399,2023-02-26 14:30:00,2023,3707,3706,FC Emmen,Go Ahead Eagles,2.0,2.0,post
 637395,2023-02-26 16:45:00,2023,148,152,PSV,Twente,3.0,1.0,post
 637406,2023-03-03 20:00:00,2023,153,143,Utrecht,Fortuna Sittard,1.0,2.0,post
 637405,2023-03-03 20:00:00,2023,154,140,Vitesse,AZ Alkmaar,0.0,1.0,post
@@ -729,12 +729,12 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 637424,2023-03-19 20:00:00,2023,152,140,Twente,AZ Alkmaar,2.0,1.0,post
 637429,2023-04-01 16:30:00,2023,140,146,AZ Alkmaar,Heerenveen,1.0,1.0,post
 637430,2023-04-01 18:45:00,2023,2566,152,Excelsior,Twente,0.0,0.0,post
-637434,2023-04-01 20:00:00,2023,147,148,NEC,PSV,2.0,4.0,post
 637436,2023-04-01 20:00:00,2023,3736,3707,SC Cambuur,FC Emmen,1.0,2.0,post
+637434,2023-04-01 20:00:00,2023,147,148,NEC,PSV,2.0,4.0,post
 637435,2023-04-01 21:00:00,2023,155,154,RKC Waalwijk,Vitesse,1.0,0.0,post
 637433,2023-04-02 12:15:00,2023,3706,139,Go Ahead Eagles,Ajax,0.0,0.0,post
-637437,2023-04-02 14:30:00,2023,151,142,Sparta Rotterdam,Feyenoord,1.0,3.0,post
 637431,2023-04-02 14:30:00,2023,153,2727,Utrecht,FC Volendam,0.0,0.0,post
+637437,2023-04-02 14:30:00,2023,151,142,Sparta Rotterdam,Feyenoord,1.0,3.0,post
 637432,2023-04-02 16:45:00,2023,143,145,Fortuna Sittard,Groningen,3.0,1.0,post
 637445,2023-04-07 20:00:00,2023,145,153,Groningen,Utrecht,1.0,2.0,post
 637446,2023-04-08 18:45:00,2023,154,3706,Vitesse,Go Ahead Eagles,2.0,0.0,post
@@ -795,9 +795,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 637500,2023-05-28 14:30:00,2023,146,3706,Heerenveen,Go Ahead Eagles,2.0,0.0,post
 637498,2023-05-28 14:30:00,2023,143,147,Fortuna Sittard,NEC,1.0,1.0,post
 637497,2023-05-28 14:30:00,2023,142,154,Feyenoord,Vitesse,0.0,1.0,post
-637494,2023-05-28 14:30:00,2023,152,139,Twente,Ajax,3.0,1.0,post
-637495,2023-05-28 14:30:00,2023,153,3707,Utrecht,FC Emmen,3.0,2.0,post
 637496,2023-05-28 14:30:00,2023,2727,2566,FC Volendam,Excelsior,3.0,2.0,post
+637495,2023-05-28 14:30:00,2023,153,3707,Utrecht,FC Emmen,3.0,2.0,post
+637494,2023-05-28 14:30:00,2023,152,139,Twente,Ajax,3.0,1.0,post
 637493,2023-05-28 14:30:00,2023,145,151,Groningen,Sparta Rotterdam,0.0,5.0,post
 637492,2023-05-28 14:30:00,2023,140,148,AZ Alkmaar,PSV,1.0,2.0,post
 669442,2023-06-01 18:45:00,2023,146,152,Heerenveen,Twente,1.0,2.0,post
@@ -853,8 +853,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 675367,2023-09-23 20:00:00,2023,5291,148,Almere City,PSV,0.0,4.0,post
 675368,2023-09-23 21:00:00,2023,146,2566,Heerenveen,Excelsior,0.0,3.0,post
 675369,2023-09-24 12:15:00,2023,151,154,Sparta Rotterdam,Vitesse,1.0,0.0,post
-675371,2023-09-24 16:45:00,2023,155,152,RKC Waalwijk,Twente,1.0,0.0,post
 675372,2023-09-24 16:45:00,2023,2565,140,PEC Zwolle,AZ Alkmaar,0.0,3.0,post
+675371,2023-09-24 16:45:00,2023,155,152,RKC Waalwijk,Twente,1.0,0.0,post
 675370,2023-09-27 14:00:00,2023,139,142,Ajax,Feyenoord,0.0,4.0,post
 675341,2023-09-27 18:45:00,2023,148,3706,PSV,Go Ahead Eagles,3.0,0.0,post
 675373,2023-09-27 20:00:00,2023,152,154,Twente,Vitesse,1.0,0.0,post
@@ -882,8 +882,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 675398,2023-10-21 21:00:00,2023,140,146,AZ Alkmaar,Heerenveen,3.0,0.0,post
 675394,2023-10-21 21:00:00,2023,142,154,Feyenoord,Vitesse,4.0,0.0,post
 675399,2023-10-22 12:15:00,2023,153,139,Utrecht,Ajax,4.0,3.0,post
-675400,2023-10-22 14:30:00,2023,3708,152,Heracles Almelo,Twente,2.0,2.0,post
 675401,2023-10-22 14:30:00,2023,2566,2565,Excelsior,PEC Zwolle,2.0,4.0,post
+675400,2023-10-22 14:30:00,2023,3708,152,Heracles Almelo,Twente,2.0,2.0,post
 675402,2023-10-22 16:45:00,2023,3706,151,Go Ahead Eagles,Sparta Rotterdam,0.0,0.0,post
 675403,2023-10-27 20:00:00,2023,154,2565,Vitesse,PEC Zwolle,1.0,1.0,post
 675405,2023-10-28 18:45:00,2023,146,3708,Heerenveen,Heracles Almelo,3.0,0.0,post
@@ -891,8 +891,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 675406,2023-10-28 20:00:00,2023,151,155,Sparta Rotterdam,RKC Waalwijk,2.0,0.0,post
 675407,2023-10-28 21:00:00,2023,143,153,Fortuna Sittard,Utrecht,0.0,0.0,post
 675408,2023-10-29 12:15:00,2023,152,142,Twente,Feyenoord,2.0,1.0,post
-675410,2023-10-29 14:30:00,2023,2727,2566,FC Volendam,Excelsior,3.0,1.0,post
 675409,2023-10-29 14:30:00,2023,148,139,PSV,Ajax,5.0,2.0,post
+675410,2023-10-29 14:30:00,2023,2727,2566,FC Volendam,Excelsior,3.0,1.0,post
 675374,2023-11-02 20:00:00,2023,139,2727,Ajax,FC Volendam,2.0,0.0,post
 675416,2023-11-04 16:30:00,2023,3708,148,Heracles Almelo,PSV,0.0,6.0,post
 675413,2023-11-04 18:45:00,2023,2566,140,Excelsior,AZ Alkmaar,1.0,1.0,post
@@ -908,8 +908,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 675426,2023-11-11 20:00:00,2023,152,147,Twente,NEC,3.0,3.0,post
 675422,2023-11-11 21:00:00,2023,154,146,Vitesse,Heerenveen,1.0,3.0,post
 675423,2023-11-12 12:15:00,2023,148,2565,PSV,PEC Zwolle,4.0,0.0,post
-675427,2023-11-12 14:30:00,2023,5291,139,Almere City,Ajax,2.0,2.0,post
 675425,2023-11-12 14:30:00,2023,2727,151,FC Volendam,Sparta Rotterdam,1.0,4.0,post
+675427,2023-11-12 14:30:00,2023,5291,139,Almere City,Ajax,2.0,2.0,post
 675428,2023-11-12 16:45:00,2023,142,140,Feyenoord,AZ Alkmaar,1.0,0.0,post
 675429,2023-11-12 20:00:00,2023,153,2566,Utrecht,Excelsior,2.0,2.0,post
 675430,2023-11-25 16:30:00,2023,2566,142,Excelsior,Feyenoord,2.0,4.0,post
@@ -923,8 +923,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 675438,2023-11-26 16:45:00,2023,151,153,Sparta Rotterdam,Utrecht,1.0,2.0,post
 675439,2023-12-01 20:00:00,2023,146,5291,Heerenveen,Almere City,3.0,0.0,post
 675441,2023-12-02 18:45:00,2023,2727,2565,FC Volendam,PEC Zwolle,0.0,5.0,post
-675442,2023-12-02 20:00:00,2023,143,154,Fortuna Sittard,Vitesse,3.0,1.0,post
 675443,2023-12-02 20:00:00,2023,155,2566,RKC Waalwijk,Excelsior,2.0,2.0,post
+675442,2023-12-02 20:00:00,2023,143,154,Fortuna Sittard,Vitesse,3.0,1.0,post
 675440,2023-12-02 21:00:00,2023,3708,151,Heracles Almelo,Sparta Rotterdam,0.0,1.0,post
 675444,2023-12-03 12:15:00,2023,142,148,Feyenoord,PSV,1.0,2.0,post
 675446,2023-12-03 14:30:00,2023,3706,152,Go Ahead Eagles,Twente,1.0,3.0,post
@@ -969,10 +969,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 675483,2024-01-21 16:45:00,2024,139,155,Ajax,RKC Waalwijk,4.0,1.0,post
 675479,2024-01-24 18:45:00,2024,5291,143,Almere City,Fortuna Sittard,0.0,0.0,post
 675484,2024-01-26 20:00:00,2024,2565,154,PEC Zwolle,Vitesse,1.0,0.0,post
-675485,2024-01-27 18:45:00,2024,155,151,RKC Waalwijk,Sparta Rotterdam,1.0,1.0,post
 675486,2024-01-27 18:45:00,2024,148,5291,PSV,Almere City,2.0,0.0,post
-675488,2024-01-27 21:00:00,2024,2566,153,Excelsior,Utrecht,1.0,1.0,post
+675485,2024-01-27 18:45:00,2024,155,151,RKC Waalwijk,Sparta Rotterdam,1.0,1.0,post
 675487,2024-01-27 21:00:00,2024,3708,139,Heracles Almelo,Ajax,2.0,4.0,post
+675488,2024-01-27 21:00:00,2024,2566,153,Excelsior,Utrecht,1.0,1.0,post
 675489,2024-01-28 12:15:00,2024,146,140,Heerenveen,AZ Alkmaar,2.0,2.0,post
 675490,2024-01-28 14:30:00,2024,142,152,Feyenoord,Twente,0.0,0.0,post
 675491,2024-01-28 14:30:00,2024,3706,147,Go Ahead Eagles,NEC,2.0,2.0,post
@@ -983,8 +983,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 675496,2024-02-03 20:00:00,2024,139,148,Ajax,PSV,1.0,1.0,post
 675497,2024-02-03 21:00:00,2024,147,3708,NEC,Heracles Almelo,3.0,1.0,post
 675498,2024-02-04 12:15:00,2024,154,3706,Vitesse,Go Ahead Eagles,0.0,2.0,post
-675501,2024-02-04 14:30:00,2024,153,2727,Utrecht,FC Volendam,4.0,2.0,post
 675499,2024-02-04 14:30:00,2024,140,142,AZ Alkmaar,Feyenoord,0.0,1.0,post
+675501,2024-02-04 14:30:00,2024,153,2727,Utrecht,FC Volendam,4.0,2.0,post
 675500,2024-02-04 16:45:00,2024,151,2565,Sparta Rotterdam,PEC Zwolle,0.0,2.0,post
 675506,2024-02-09 20:00:00,2024,155,147,RKC Waalwijk,NEC,2.0,0.0,post
 675504,2024-02-10 18:45:00,2024,2566,152,Excelsior,Twente,0.0,3.0,post
@@ -1018,8 +1018,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 675534,2024-03-02 20:00:00,2024,154,152,Vitesse,Twente,1.0,2.0,post
 675533,2024-03-02 21:00:00,2024,151,140,Sparta Rotterdam,AZ Alkmaar,1.0,1.0,post
 675536,2024-03-03 12:15:00,2024,139,153,Ajax,Utrecht,2.0,0.0,post
-675535,2024-03-03 14:30:00,2024,146,2565,Heerenveen,PEC Zwolle,2.0,0.0,post
 675532,2024-03-03 14:30:00,2024,148,142,PSV,Feyenoord,2.0,2.0,post
+675535,2024-03-03 14:30:00,2024,146,2565,Heerenveen,PEC Zwolle,2.0,0.0,post
 675529,2024-03-03 16:45:00,2024,143,2566,Fortuna Sittard,Excelsior,5.0,2.0,post
 675531,2024-03-03 20:00:00,2024,3708,5291,Heracles Almelo,Almere City,2.0,2.0,post
 675543,2024-03-08 20:00:00,2024,3706,148,Go Ahead Eagles,PSV,0.0,1.0,post
@@ -1072,8 +1072,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 675583,2024-04-13 18:45:00,2024,140,155,AZ Alkmaar,RKC Waalwijk,3.0,2.0,post
 675590,2024-04-13 21:00:00,2024,5291,151,Almere City,Sparta Rotterdam,2.0,3.0,post
 675587,2024-04-14 12:15:00,2024,3708,146,Heracles Almelo,Heerenveen,0.0,2.0,post
-675586,2024-04-14 14:30:00,2024,143,142,Fortuna Sittard,Feyenoord,0.0,1.0,post
 675585,2024-04-14 14:30:00,2024,153,3706,Utrecht,Go Ahead Eagles,2.0,1.0,post
+675586,2024-04-14 14:30:00,2024,143,142,Fortuna Sittard,Feyenoord,0.0,1.0,post
 675589,2024-04-14 16:45:00,2024,139,152,Ajax,Twente,2.0,1.0,post
 675588,2024-04-14 20:00:00,2024,147,2565,NEC,PEC Zwolle,2.0,2.0,post
 675595,2024-04-24 18:45:00,2024,152,5291,Twente,Almere City,3.0,1.0,post
@@ -1082,36 +1082,36 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 675594,2024-04-25 21:00:00,2024,3706,142,Go Ahead Eagles,Feyenoord,1.0,3.0,post
 675593,2024-04-28 12:15:00,2024,147,140,NEC,AZ Alkmaar,0.0,3.0,post
 675596,2024-04-28 12:15:00,2024,2565,3708,PEC Zwolle,Heracles Almelo,3.0,1.0,post
-675597,2024-04-28 14:30:00,2024,155,153,RKC Waalwijk,Utrecht,2.0,2.0,post
 675600,2024-04-28 14:30:00,2024,151,2727,Sparta Rotterdam,FC Volendam,1.0,0.0,post
+675597,2024-04-28 14:30:00,2024,155,153,RKC Waalwijk,Utrecht,2.0,2.0,post
 675599,2024-04-28 16:45:00,2024,154,143,Vitesse,Fortuna Sittard,3.0,2.0,post
 675602,2024-05-03 20:00:00,2024,5291,146,Almere City,Heerenveen,1.0,1.0,post
 675607,2024-05-03 20:00:00,2024,143,3706,Fortuna Sittard,Go Ahead Eagles,0.0,0.0,post
-675609,2024-05-05 12:15:00,2024,148,151,PSV,Sparta Rotterdam,4.0,2.0,post
 675608,2024-05-05 12:15:00,2024,3708,155,Heracles Almelo,RKC Waalwijk,0.0,5.0,post
+675609,2024-05-05 12:15:00,2024,148,151,PSV,Sparta Rotterdam,4.0,2.0,post
 675604,2024-05-05 14:30:00,2024,153,154,Utrecht,Vitesse,1.0,0.0,post
 675605,2024-05-05 14:30:00,2024,2727,139,FC Volendam,Ajax,1.0,4.0,post
 675601,2024-05-05 16:45:00,2024,140,152,AZ Alkmaar,Twente,2.0,1.0,post
 675606,2024-05-05 20:00:00,2024,142,2565,Feyenoord,PEC Zwolle,5.0,0.0,post
 675603,2024-05-06 20:00:00,2024,2566,147,Excelsior,NEC,0.0,3.0,post
 675617,2024-05-12 14:30:00,2024,155,2565,RKC Waalwijk,PEC Zwolle,1.0,1.0,post
+675616,2024-05-12 14:30:00,2024,147,142,NEC,Feyenoord,2.0,3.0,post
 675618,2024-05-12 14:30:00,2024,146,154,Heerenveen,Vitesse,1.0,3.0,post
 675615,2024-05-12 14:30:00,2024,3706,140,Go Ahead Eagles,AZ Alkmaar,0.0,3.0,post
 675614,2024-05-12 14:30:00,2024,143,148,Fortuna Sittard,PSV,1.0,1.0,post
-675616,2024-05-12 14:30:00,2024,147,142,NEC,Feyenoord,2.0,3.0,post
+675613,2024-05-12 14:30:00,2024,153,151,Utrecht,Sparta Rotterdam,0.0,1.0,post
 675612,2024-05-12 14:30:00,2024,152,2727,Twente,FC Volendam,7.0,2.0,post
 675611,2024-05-12 14:30:00,2024,2566,3708,Excelsior,Heracles Almelo,4.0,0.0,post
 675610,2024-05-12 14:30:00,2024,139,5291,Ajax,Almere City,3.0,0.0,post
-675613,2024-05-12 14:30:00,2024,153,151,Utrecht,Sparta Rotterdam,0.0,1.0,post
-675626,2024-05-19 14:30:00,2024,154,139,Vitesse,Ajax,2.0,2.0,post
-675623,2024-05-19 14:30:00,2024,151,146,Sparta Rotterdam,Heerenveen,2.0,1.0,post
-675625,2024-05-19 14:30:00,2024,148,155,PSV,RKC Waalwijk,3.0,1.0,post
-675624,2024-05-19 14:30:00,2024,2565,152,PEC Zwolle,Twente,1.0,2.0,post
-675627,2024-05-19 14:30:00,2024,3708,143,Heracles Almelo,Fortuna Sittard,0.0,0.0,post
-675621,2024-05-19 14:30:00,2024,2727,3706,FC Volendam,Go Ahead Eagles,1.0,2.0,post
-675619,2024-05-19 14:30:00,2024,140,153,AZ Alkmaar,Utrecht,3.0,3.0,post
 675620,2024-05-19 14:30:00,2024,5291,147,Almere City,NEC,1.0,4.0,post
+675619,2024-05-19 14:30:00,2024,140,153,AZ Alkmaar,Utrecht,3.0,3.0,post
+675621,2024-05-19 14:30:00,2024,2727,3706,FC Volendam,Go Ahead Eagles,1.0,2.0,post
 675622,2024-05-19 14:30:00,2024,142,2566,Feyenoord,Excelsior,4.0,0.0,post
+675627,2024-05-19 14:30:00,2024,3708,143,Heracles Almelo,Fortuna Sittard,0.0,0.0,post
+675624,2024-05-19 14:30:00,2024,2565,152,PEC Zwolle,Twente,1.0,2.0,post
+675625,2024-05-19 14:30:00,2024,148,155,PSV,RKC Waalwijk,3.0,1.0,post
+675623,2024-05-19 14:30:00,2024,151,146,Sparta Rotterdam,Heerenveen,2.0,1.0,post
+675626,2024-05-19 14:30:00,2024,154,139,Vitesse,Ajax,2.0,2.0,post
 702645,2024-05-23 18:45:00,2024,147,3706,NEC,Go Ahead Eagles,1.0,2.0,post
 702646,2024-05-23 21:00:00,2024,153,151,Utrecht,Sparta Rotterdam,3.0,1.0,post
 702701,2024-05-26 18:00:00,2024,153,3706,Utrecht,Go Ahead Eagles,1.0,2.0,post
@@ -1130,8 +1130,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705218,2024-08-17 20:00:00,2024,140,147,AZ Alkmaar,NEC,1.0,0.0,post
 705219,2024-08-17 21:00:00,2024,155,145,RKC Waalwijk,Groningen,1.0,2.0,post
 705220,2024-08-18 12:15:00,2024,3708,148,Heracles Almelo,PSV,1.0,3.0,post
-705221,2024-08-18 14:30:00,2024,2565,142,PEC Zwolle,Feyenoord,1.0,5.0,post
 705222,2024-08-18 14:30:00,2024,156,3706,Willem II,Go Ahead Eagles,2.0,0.0,post
+705221,2024-08-18 14:30:00,2024,2565,142,PEC Zwolle,Feyenoord,1.0,5.0,post
 705223,2024-08-18 16:45:00,2024,141,139,NAC Breda,Ajax,2.0,1.0,post
 705224,2024-08-24 18:45:00,2024,147,2565,NEC,PEC Zwolle,1.0,0.0,post
 705225,2024-08-24 20:00:00,2024,5291,148,Almere City,PSV,1.0,7.0,post
@@ -1148,8 +1148,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705238,2024-09-01 12:15:00,2024,153,152,Utrecht,Twente,2.0,1.0,post
 705240,2024-09-01 14:30:00,2024,2565,3708,PEC Zwolle,Heracles Almelo,3.0,0.0,post
 705241,2024-09-01 16:45:00,2024,148,3706,PSV,Go Ahead Eagles,3.0,0.0,post
-705246,2024-09-14 16:30:00,2024,148,147,PSV,NEC,2.0,0.0,post
 705242,2024-09-14 16:30:00,2024,152,2565,Twente,PEC Zwolle,1.0,1.0,post
+705246,2024-09-14 16:30:00,2024,148,147,PSV,NEC,2.0,0.0,post
 705243,2024-09-14 18:45:00,2024,145,142,Groningen,Feyenoord,2.0,2.0,post
 705244,2024-09-14 20:00:00,2024,141,143,NAC Breda,Fortuna Sittard,1.0,0.0,post
 705245,2024-09-14 21:00:00,2024,140,146,AZ Alkmaar,Heerenveen,9.0,1.0,post
@@ -1207,8 +1207,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705298,2024-11-02 16:30:00,2024,156,152,Willem II,Twente,0.0,1.0,post
 705299,2024-11-02 18:45:00,2024,139,148,Ajax,PSV,3.0,2.0,post
 705297,2024-11-02 18:45:00,2024,3708,141,Heracles Almelo,NAC Breda,2.0,0.0,post
-705300,2024-11-02 21:00:00,2024,143,146,Fortuna Sittard,Heerenveen,3.0,0.0,post
 705296,2024-11-02 21:00:00,2024,142,140,Feyenoord,AZ Alkmaar,3.0,2.0,post
+705300,2024-11-02 21:00:00,2024,143,146,Fortuna Sittard,Heerenveen,3.0,0.0,post
 705301,2024-11-03 12:15:00,2024,3706,2565,Go Ahead Eagles,PEC Zwolle,2.0,2.0,post
 705302,2024-11-03 14:30:00,2024,147,145,NEC,Groningen,6.0,0.0,post
 705303,2024-11-03 14:30:00,2024,151,153,Sparta Rotterdam,Utrecht,1.0,4.0,post
@@ -1225,8 +1225,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705315,2024-11-23 16:30:00,2024,3706,5291,Go Ahead Eagles,Almere City,3.0,0.0,post
 705317,2024-11-23 18:45:00,2024,142,146,Feyenoord,Heerenveen,3.0,0.0,post
 705316,2024-11-23 18:45:00,2024,3708,155,Heracles Almelo,RKC Waalwijk,2.0,2.0,post
-705318,2024-11-23 21:00:00,2024,143,152,Fortuna Sittard,Twente,1.0,2.0,post
 705314,2024-11-23 21:00:00,2024,148,145,PSV,Groningen,5.0,0.0,post
+705318,2024-11-23 21:00:00,2024,143,152,Fortuna Sittard,Twente,1.0,2.0,post
 705319,2024-11-24 12:15:00,2024,147,153,NEC,Utrecht,1.0,2.0,post
 705320,2024-11-24 14:30:00,2024,151,140,Sparta Rotterdam,AZ Alkmaar,1.0,2.0,post
 705321,2024-11-24 14:30:00,2024,156,141,Willem II,NAC Breda,2.0,2.0,post
@@ -1237,8 +1237,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705326,2024-11-30 20:00:00,2024,142,143,Feyenoord,Fortuna Sittard,1.0,1.0,post
 705327,2024-11-30 21:00:00,2024,2565,151,PEC Zwolle,Sparta Rotterdam,1.0,0.0,post
 705328,2024-12-01 12:15:00,2024,153,148,Utrecht,PSV,2.0,5.0,post
-705330,2024-12-01 14:30:00,2024,152,3706,Twente,Go Ahead Eagles,3.0,2.0,post
 705329,2024-12-01 14:30:00,2024,140,3708,AZ Alkmaar,Heracles Almelo,1.0,0.0,post
+705330,2024-12-01 14:30:00,2024,152,3706,Twente,Go Ahead Eagles,3.0,2.0,post
 705331,2024-12-01 16:45:00,2024,147,139,NEC,Ajax,1.0,2.0,post
 705249,2024-12-04 20:00:00,2024,139,153,Ajax,Utrecht,2.0,2.0,post
 705339,2024-12-06 20:00:00,2024,148,152,PSV,Twente,6.0,1.0,post
@@ -1273,16 +1273,16 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705366,2025-01-11 20:00:00,2025,2565,147,PEC Zwolle,NEC,0.0,1.0,post
 705367,2025-01-11 21:00:00,2025,148,140,PSV,AZ Alkmaar,2.0,2.0,post
 705361,2025-01-12 12:15:00,2025,152,156,Twente,Willem II,6.0,2.0,post
-705360,2025-01-12 14:30:00,2025,145,5291,Groningen,Almere City,0.0,0.0,post
 705362,2025-01-12 14:30:00,2025,142,153,Feyenoord,Utrecht,1.0,2.0,post
+705360,2025-01-12 14:30:00,2025,145,5291,Groningen,Almere City,0.0,0.0,post
 705365,2025-01-12 16:45:00,2025,141,146,NAC Breda,Heerenveen,2.0,4.0,post
 705373,2025-01-18 16:30:00,2025,2565,148,PEC Zwolle,PSV,3.0,1.0,post
 705369,2025-01-18 18:45:00,2025,153,140,Utrecht,AZ Alkmaar,0.0,0.0,post
 705375,2025-01-18 20:00:00,2025,156,142,Willem II,Feyenoord,1.0,1.0,post
 705370,2025-01-18 21:00:00,2025,3706,145,Go Ahead Eagles,Groningen,2.0,1.0,post
 705372,2025-01-19 12:15:00,2025,141,152,NAC Breda,Twente,2.0,1.0,post
-705376,2025-01-19 14:30:00,2025,146,139,Heerenveen,Ajax,0.0,2.0,post
 705368,2025-01-19 14:30:00,2025,5291,3708,Almere City,Heracles Almelo,0.0,2.0,post
+705376,2025-01-19 14:30:00,2025,146,139,Heerenveen,Ajax,0.0,2.0,post
 705371,2025-01-19 16:45:00,2025,147,143,NEC,Fortuna Sittard,4.0,1.0,post
 705374,2025-01-19 20:00:00,2025,151,155,Sparta Rotterdam,RKC Waalwijk,1.0,1.0,post
 705383,2025-01-24 20:00:00,2025,3708,153,Heracles Almelo,Utrecht,1.0,1.0,post
@@ -1297,8 +1297,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705394,2025-02-01 20:00:00,2025,146,143,Heerenveen,Fortuna Sittard,2.0,2.0,post
 705389,2025-02-01 21:00:00,2025,147,148,NEC,PSV,3.0,3.0,post
 705387,2025-02-02 12:15:00,2025,5291,155,Almere City,RKC Waalwijk,1.0,4.0,post
-705388,2025-02-02 14:30:00,2025,3706,152,Go Ahead Eagles,Twente,2.0,2.0,post
 705386,2025-02-02 14:30:00,2025,139,142,Ajax,Feyenoord,2.0,1.0,post
+705388,2025-02-02 14:30:00,2025,3706,152,Go Ahead Eagles,Twente,2.0,2.0,post
 705392,2025-02-02 16:45:00,2025,151,145,Sparta Rotterdam,Groningen,1.0,0.0,post
 705393,2025-02-02 20:00:00,2025,156,140,Willem II,AZ Alkmaar,0.0,2.0,post
 705400,2025-02-08 16:30:00,2025,3708,3706,Heracles Almelo,Go Ahead Eagles,4.0,2.0,post
@@ -1353,8 +1353,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705444,2025-03-29 21:00:00,2025,147,140,NEC,AZ Alkmaar,3.0,3.0,post
 705446,2025-03-29 21:00:00,2025,2565,155,PEC Zwolle,RKC Waalwijk,2.0,0.0,post
 705440,2025-03-30 12:15:00,2025,153,146,Utrecht,Heerenveen,2.0,0.0,post
-705443,2025-03-30 14:30:00,2025,3708,152,Heracles Almelo,Twente,2.0,1.0,post
 705447,2025-03-30 14:30:00,2025,148,139,PSV,Ajax,0.0,2.0,post
+705443,2025-03-30 14:30:00,2025,3708,152,Heracles Almelo,Twente,2.0,1.0,post
 705441,2025-03-30 16:45:00,2025,142,3706,Feyenoord,Go Ahead Eagles,3.0,2.0,post
 705422,2025-04-01 20:00:00,2025,140,155,AZ Alkmaar,RKC Waalwijk,2.0,2.0,post
 705424,2025-04-02 20:00:00,2025,142,145,Feyenoord,Groningen,4.0,1.0,post
@@ -1384,23 +1384,23 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705471,2025-04-25 18:45:00,2025,155,153,RKC Waalwijk,Utrecht,0.0,4.0,post
 705472,2025-04-25 21:00:00,2025,142,2565,Feyenoord,PEC Zwolle,4.0,0.0,post
 705473,2025-04-27 12:15:00,2025,143,156,Fortuna Sittard,Willem II,1.0,0.0,post
-705468,2025-04-27 14:30:00,2025,139,151,Ajax,Sparta Rotterdam,1.0,1.0,post
 705474,2025-04-27 14:30:00,2025,146,147,Heerenveen,NEC,1.0,0.0,post
+705468,2025-04-27 14:30:00,2025,139,151,Ajax,Sparta Rotterdam,1.0,1.0,post
 705469,2025-04-27 16:45:00,2025,5291,3706,Almere City,Go Ahead Eagles,0.0,0.0,post
 705484,2025-05-03 16:30:00,2025,147,156,NEC,Willem II,1.0,1.0,post
 705480,2025-05-03 18:45:00,2025,3708,142,Heracles Almelo,Feyenoord,1.0,4.0,post
 705476,2025-05-03 20:00:00,2025,145,155,Groningen,RKC Waalwijk,6.0,1.0,post
 705482,2025-05-03 21:00:00,2025,148,143,PSV,Fortuna Sittard,4.0,1.0,post
 705481,2025-05-04 12:15:00,2025,141,2565,NAC Breda,PEC Zwolle,1.0,3.0,post
-705478,2025-05-04 14:30:00,2025,3706,140,Go Ahead Eagles,AZ Alkmaar,0.0,3.0,post
 705483,2025-05-04 14:30:00,2025,151,152,Sparta Rotterdam,Twente,0.0,2.0,post
+705478,2025-05-04 14:30:00,2025,3706,140,Go Ahead Eagles,AZ Alkmaar,0.0,3.0,post
 705493,2025-05-09 20:00:00,2025,156,3708,Willem II,Heracles Almelo,1.0,2.0,post
 705492,2025-05-10 16:30:00,2025,155,146,RKC Waalwijk,Heerenveen,3.0,1.0,post
 705490,2025-05-10 18:45:00,2025,143,141,Fortuna Sittard,NAC Breda,1.0,0.0,post
 705487,2025-05-10 21:00:00,2025,5291,151,Almere City,Sparta Rotterdam,0.0,3.0,post
 705491,2025-05-11 12:15:00,2025,2565,3706,PEC Zwolle,Go Ahead Eagles,1.0,1.0,post
-705488,2025-05-11 14:30:00,2025,152,153,Twente,Utrecht,2.0,0.0,post
 705489,2025-05-11 14:30:00,2025,142,148,Feyenoord,PSV,2.0,3.0,post
+705488,2025-05-11 14:30:00,2025,152,153,Twente,Utrecht,2.0,0.0,post
 705485,2025-05-11 16:45:00,2025,140,145,AZ Alkmaar,Groningen,3.0,0.0,post
 705486,2025-05-11 16:45:00,2025,139,147,Ajax,NEC,0.0,3.0,post
 705494,2025-05-14 20:00:00,2025,5291,143,Almere City,Fortuna Sittard,1.0,1.0,post
@@ -1415,12 +1415,12 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705510,2025-05-18 14:30:00,2025,151,148,Sparta Rotterdam,PSV,1.0,3.0,post
 705509,2025-05-18 14:30:00,2025,155,3706,RKC Waalwijk,Go Ahead Eagles,5.0,3.0,post
 705508,2025-05-18 14:30:00,2025,2565,145,PEC Zwolle,Groningen,2.0,0.0,post
-705507,2025-05-18 14:30:00,2025,141,156,NAC Breda,Willem II,1.0,1.0,post
-705503,2025-05-18 14:30:00,2025,140,5291,AZ Alkmaar,Almere City,1.0,1.0,post
-705511,2025-05-18 14:30:00,2025,146,142,Heerenveen,Feyenoord,2.0,0.0,post
-705505,2025-05-18 14:30:00,2025,143,153,Fortuna Sittard,Utrecht,0.0,0.0,post
 705506,2025-05-18 14:30:00,2025,3708,147,Heracles Almelo,NEC,1.0,2.0,post
+705507,2025-05-18 14:30:00,2025,141,156,NAC Breda,Willem II,1.0,1.0,post
+705505,2025-05-18 14:30:00,2025,143,153,Fortuna Sittard,Utrecht,0.0,0.0,post
+705503,2025-05-18 14:30:00,2025,140,5291,AZ Alkmaar,Almere City,1.0,1.0,post
 705504,2025-05-18 14:30:00,2025,139,152,Ajax,Twente,2.0,0.0,post
+705511,2025-05-18 14:30:00,2025,146,142,Heerenveen,Feyenoord,2.0,0.0,post
 735819,2025-05-22 18:45:00,2025,140,146,AZ Alkmaar,Heerenveen,4.0,1.0,post
 735820,2025-05-22 21:00:00,2025,152,147,Twente,NEC,3.0,2.0,post
 735915,2025-05-25 18:00:00,2025,140,152,AZ Alkmaar,Twente,3.0,2.0,post
@@ -1464,8 +1464,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 741014,2025-09-13 21:00:00,2025,152,141,Twente,NAC Breda,2.0,2.0,post
 741015,2025-09-13 21:00:00,2025,142,146,Feyenoord,Heerenveen,1.0,0.0,post
 741016,2025-09-14 12:15:00,2025,2566,151,Excelsior,Sparta Rotterdam,0.0,1.0,post
-741017,2025-09-14 14:30:00,2025,153,145,Utrecht,Groningen,0.0,1.0,post
 741018,2025-09-14 14:30:00,2025,3708,140,Heracles Almelo,AZ Alkmaar,1.0,2.0,post
+741017,2025-09-14 14:30:00,2025,153,145,Utrecht,Groningen,0.0,1.0,post
 741019,2025-09-14 16:45:00,2025,3735,143,Telstar,Fortuna Sittard,1.0,3.0,post
 741020,2025-09-17 20:00:00,2025,142,143,Feyenoord,Fortuna Sittard,2.0,0.0,post
 741021,2025-09-19 20:00:00,2025,151,152,Sparta Rotterdam,Twente,1.0,5.0,post
@@ -1474,8 +1474,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 741024,2025-09-20 20:00:00,2025,143,153,Fortuna Sittard,Utrecht,1.0,0.0,post
 741025,2025-09-20 21:00:00,2025,141,3708,NAC Breda,Heracles Almelo,2.0,1.0,post
 741026,2025-09-21 12:15:00,2025,2565,3706,PEC Zwolle,Go Ahead Eagles,0.0,2.0,post
-741027,2025-09-21 14:30:00,2025,148,139,PSV,Ajax,2.0,2.0,post
 741028,2025-09-21 14:30:00,2025,146,147,Heerenveen,NEC,3.0,2.0,post
+741027,2025-09-21 14:30:00,2025,148,139,PSV,Ajax,2.0,2.0,post
 741029,2025-09-21 16:45:00,2025,140,142,AZ Alkmaar,Feyenoord,3.0,3.0,post
 740997,2025-09-24 20:00:00,2025,140,2565,AZ Alkmaar,PEC Zwolle,2.0,2.0,post
 741030,2025-09-26 20:00:00,2025,152,143,Twente,Fortuna Sittard,3.0,2.0,post
@@ -1533,8 +1533,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 741081,2025-11-09 16:45:00,2025,140,148,AZ Alkmaar,PSV,1.0,5.0,post
 741083,2025-11-09 20:00:00,2025,3706,142,Go Ahead Eagles,Feyenoord,2.0,1.0,post
 741088,2025-11-22 16:30:00,2025,141,148,NAC Breda,PSV,0.0,1.0,post
-741091,2025-11-22 18:45:00,2025,2727,152,FC Volendam,Twente,1.0,1.0,post
 741084,2025-11-22 18:45:00,2025,139,2566,Ajax,Excelsior,1.0,2.0,post
+741091,2025-11-22 18:45:00,2025,2727,152,FC Volendam,Twente,1.0,1.0,post
 741089,2025-11-22 21:00:00,2025,3708,3706,Heracles Almelo,Go Ahead Eagles,4.0,2.0,post
 741087,2025-11-22 21:00:00,2025,151,143,Sparta Rotterdam,Fortuna Sittard,1.0,1.0,post
 741085,2025-11-23 12:15:00,2025,146,140,Heerenveen,AZ Alkmaar,3.0,1.0,post
@@ -1607,8 +1607,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 741158,2026-01-31 18:45:00,2026,2565,3735,PEC Zwolle,Telstar,4.0,1.0,post
 741160,2026-01-31 21:00:00,2026,151,145,Sparta Rotterdam,Groningen,2.0,0.0,post
 741163,2026-02-01 12:15:00,2026,2566,139,Excelsior,Ajax,2.0,2.0,post
-741156,2026-02-01 14:30:00,2026,3708,143,Heracles Almelo,Fortuna Sittard,2.0,1.0,post
 741159,2026-02-01 14:30:00,2026,148,142,PSV,Feyenoord,3.0,0.0,post
+741156,2026-02-01 14:30:00,2026,3708,143,Heracles Almelo,Fortuna Sittard,2.0,1.0,post
 741161,2026-02-01 16:45:00,2026,146,153,Heerenveen,Utrecht,1.0,1.0,post
 741164,2026-02-01 20:00:00,2026,2727,3706,FC Volendam,Go Ahead Eagles,1.0,1.0,post
 741169,2026-02-06 20:00:00,2026,141,2566,NAC Breda,Excelsior,0.0,2.0,post
@@ -1664,23 +1664,23 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 741215,2026-03-14 20:00:00,2026,146,3735,Heerenveen,Telstar,3.0,0.0,post
 741212,2026-03-14 21:00:00,2026,139,151,Ajax,Sparta Rotterdam,4.0,0.0,post
 741211,2026-03-15 12:15:00,2026,152,153,Twente,Utrecht,0.0,2.0,post
-741214,2026-03-15 14:30:00,2026,142,2566,Feyenoord,Excelsior,2.0,1.0,post
 741213,2026-03-15 14:30:00,2026,140,3708,AZ Alkmaar,Heracles Almelo,4.0,0.0,post
+741214,2026-03-15 14:30:00,2026,142,2566,Feyenoord,Excelsior,2.0,1.0,post
 741218,2026-03-15 16:45:00,2026,3706,141,Go Ahead Eagles,NAC Breda,6.0,0.0,post
 741226,2026-03-20 20:00:00,2026,3708,2566,Heracles Almelo,Excelsior,1.0,1.0,post
 741222,2026-03-21 16:30:00,2026,143,152,Fortuna Sittard,Twente,1.0,2.0,post
 741227,2026-03-21 18:45:00,2026,151,2727,Sparta Rotterdam,FC Volendam,2.0,0.0,post
 741224,2026-03-21 21:00:00,2026,2565,141,PEC Zwolle,NAC Breda,2.0,1.0,post
 741225,2026-03-22 12:15:00,2026,147,146,NEC,Heerenveen,2.0,2.0,post
-741220,2026-03-22 14:30:00,2026,153,3706,Utrecht,Go Ahead Eagles,2.0,0.0,post
 741221,2026-03-22 14:30:00,2026,142,139,Feyenoord,Ajax,1.0,1.0,post
+741220,2026-03-22 14:30:00,2026,153,3706,Utrecht,Go Ahead Eagles,2.0,0.0,post
 741219,2026-03-22 16:45:00,2026,145,140,Groningen,AZ Alkmaar,3.0,0.0,post
 741223,2026-03-22 16:45:00,2026,3735,148,Telstar,PSV,3.0,1.0,post
 741234,2026-04-04 16:30:00,2026,148,153,PSV,Utrecht,4.0,3.0,post
 741235,2026-04-04 18:45:00,2026,3735,145,Telstar,Groningen,0.0,2.0,post
 741231,2026-04-04 19:00:00,2026,140,143,AZ Alkmaar,Fortuna Sittard,2.0,0.0,post
-741229,2026-04-04 21:00:00,2026,2566,147,Excelsior,NEC,0.0,2.0,post
 741230,2026-04-04 21:00:00,2026,139,152,Ajax,Twente,1.0,2.0,post
+741229,2026-04-04 21:00:00,2026,2566,147,Excelsior,NEC,0.0,2.0,post
 741236,2026-04-05 12:15:00,2026,3706,2565,Go Ahead Eagles,PEC Zwolle,5.0,0.0,post
 741228,2026-04-05 14:30:00,2026,2727,142,FC Volendam,Feyenoord,0.0,0.0,post
 741232,2026-04-05 14:30:00,2026,146,3708,Heerenveen,Heracles Almelo,4.0,1.0,post
@@ -1708,8 +1708,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 741256,2026-05-02 20:00:00,2026,139,148,Ajax,PSV,2.0,2.0,post
 741260,2026-05-02 21:00:00,2026,147,3735,NEC,Telstar,1.0,1.0,post
 741262,2026-05-03 12:15:00,2026,2727,146,FC Volendam,Heerenveen,0.0,2.0,post
-741263,2026-05-03 14:30:00,2026,2565,3708,PEC Zwolle,Heracles Almelo,1.0,0.0,post
 741261,2026-05-03 14:30:00,2026,143,142,Fortuna Sittard,Feyenoord,1.0,2.0,post
+741263,2026-05-03 14:30:00,2026,2565,3708,PEC Zwolle,Heracles Almelo,1.0,0.0,post
 741255,2026-05-03 16:45:00,2026,140,152,AZ Alkmaar,Twente,2.0,2.0,post
 741258,2026-05-03 16:45:00,2026,151,3706,Sparta Rotterdam,Go Ahead Eagles,2.0,2.0,post
 741272,2026-05-10 16:45:00,2026,139,153,Ajax,Utrecht,1.0,2.0,post
@@ -1721,15 +1721,15 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 741266,2026-05-10 16:45:00,2026,3706,148,Go Ahead Eagles,PSV,1.0,4.0,post
 741264,2026-05-10 16:45:00,2026,3735,3708,Telstar,Heracles Almelo,3.0,0.0,post
 741267,2026-05-11 14:30:00,2026,141,146,NAC Breda,Heerenveen,2.0,0.0,post
-741280,2026-05-17 14:30:00,2026,151,2566,Sparta Rotterdam,Excelsior,2.0,3.0,post
-741279,2026-05-17 14:30:00,2026,148,152,PSV,Twente,5.0,1.0,post
-741278,2026-05-17 14:30:00,2026,2565,142,PEC Zwolle,Feyenoord,0.0,2.0,post
-741281,2026-05-17 14:30:00,2026,147,3706,NEC,Go Ahead Eagles,2.0,1.0,post
+741275,2026-05-17 14:30:00,2026,140,141,AZ Alkmaar,NAC Breda,3.0,3.0,post
+741274,2026-05-17 14:30:00,2026,153,143,Utrecht,Fortuna Sittard,2.0,0.0,post
 741273,2026-05-17 14:30:00,2026,2727,3735,FC Volendam,Telstar,1.0,2.0,post
 741277,2026-05-17 14:30:00,2026,146,139,Heerenveen,Ajax,0.0,0.0,post
-741274,2026-05-17 14:30:00,2026,153,143,Utrecht,Fortuna Sittard,2.0,0.0,post
-741275,2026-05-17 14:30:00,2026,140,141,AZ Alkmaar,NAC Breda,3.0,3.0,post
 741276,2026-05-17 14:30:00,2026,3708,145,Heracles Almelo,Groningen,1.0,2.0,post
+741281,2026-05-17 14:30:00,2026,147,3706,NEC,Go Ahead Eagles,2.0,1.0,post
+741278,2026-05-17 14:30:00,2026,2565,142,PEC Zwolle,Feyenoord,0.0,2.0,post
+741279,2026-05-17 14:30:00,2026,148,152,PSV,Twente,5.0,1.0,post
+741280,2026-05-17 14:30:00,2026,151,2566,Sparta Rotterdam,Excelsior,2.0,3.0,post
 401873225,2026-05-21 18:45:00,2026,139,145,Ajax,Groningen,2.0,0.0,post
 401873226,2026-05-21 21:00:00,2026,153,146,Utrecht,Heerenveen,3.0,2.0,post
 401873227,2026-05-24 12:15:00,2026,139,153,Ajax,Utrecht,1.0,1.0,post
@@ -1786,3 +1786,53 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401875607,2026-09-13 14:30:00,2026,146,3735,Heerenveen,Telstar,0.0,0.0,post
 401875603,2026-09-13 16:45:00,2026,2565,142,PEC Zwolle,Feyenoord,0.0,7.0,post
 401875605,2026-09-13 20:00:00,2026,148,151,PSV,Sparta Rotterdam,4.0,1.0,post
+401875602,2026-09-15 20:00:00,2026,139,156,Ajax,Willem II,5.0,1.0,post
+401875599,2026-09-18 20:00:00,2026,145,2565,Groningen,PEC Zwolle,3.0,0.0,post
+401875600,2026-09-19 16:30:00,2026,2726,3736,ADO Den Haag,SC Cambuur,1.0,1.0,post
+401875601,2026-09-19 18:45:00,2026,151,146,Sparta Rotterdam,Heerenveen,0.0,4.0,post
+401875598,2026-09-19 20:00:00,2026,139,2566,Ajax,Excelsior,2.0,2.0,post
+401875597,2026-09-19 21:00:00,2026,156,143,Willem II,Fortuna Sittard,0.0,1.0,post
+401875596,2026-09-20 12:15:00,2026,142,153,Feyenoord,Utrecht,5.0,0.0,post
+401875595,2026-09-20 14:30:00,2026,140,3735,AZ Alkmaar,Telstar,1.0,0.0,post
+401875593,2026-09-20 14:30:00,2026,152,148,Twente,PSV,3.0,2.0,post
+401875594,2026-09-20 16:45:00,2026,147,3706,NEC,Go Ahead Eagles,1.0,1.0,post
+401875592,2026-10-09 20:00:00,2026,148,146,PSV,Heerenveen,2.0,0.0,post
+401875590,2026-10-10 16:30:00,2026,3706,151,Go Ahead Eagles,Sparta Rotterdam,3.0,3.0,post
+401875591,2026-10-10 18:45:00,2026,142,140,Feyenoord,AZ Alkmaar,2.0,0.0,post
+401875588,2026-10-10 20:00:00,2026,143,152,Fortuna Sittard,Twente,1.0,1.0,post
+401875589,2026-10-10 21:00:00,2026,139,147,Ajax,NEC,1.0,1.0,post
+401875587,2026-10-11 12:15:00,2026,153,156,Utrecht,Willem II,3.0,1.0,post
+401875586,2026-10-11 14:30:00,2026,2565,3736,PEC Zwolle,SC Cambuur,0.0,1.0,post
+401875585,2026-10-11 14:30:00,2026,3735,2726,Telstar,ADO Den Haag,2.0,2.0,post
+401875584,2026-10-11 16:45:00,2026,2566,145,Excelsior,Groningen,1.0,5.0,post
+401875583,2026-10-16 20:00:00,2026,146,2566,Heerenveen,Excelsior,4.0,0.0,post
+401875582,2026-10-17 16:30:00,2026,2726,148,ADO Den Haag,PSV,2.0,1.0,post
+401875580,2026-10-17 20:00:00,2026,3735,142,Telstar,Feyenoord,3.0,4.0,post
+401875579,2026-10-17 21:00:00,2026,151,156,Sparta Rotterdam,Willem II,3.0,2.0,post
+401875578,2026-10-18 12:15:00,2026,2565,3706,PEC Zwolle,Go Ahead Eagles,4.0,1.0,post
+401875576,2026-10-18 14:30:00,2026,3736,140,SC Cambuur,AZ Alkmaar,2.0,2.0,post
+401875575,2026-10-18 16:45:00,2026,145,139,Groningen,Ajax,2.0,5.0,post
+401875577,2026-10-18 20:00:00,2026,152,153,Twente,Utrecht,1.0,2.0,post
+401875581,2026-10-18 20:00:00,2026,147,143,NEC,Fortuna Sittard,2.0,2.0,post
+401875574,2026-10-23 20:00:00,2026,3706,3735,Go Ahead Eagles,Telstar,3.0,2.0,post
+401875573,2026-10-24 16:30:00,2026,153,2565,Utrecht,PEC Zwolle,1.0,1.0,post
+401875572,2026-10-24 18:45:00,2026,156,3736,Willem II,SC Cambuur,1.0,6.0,post
+401875571,2026-10-24 21:00:00,2026,2726,146,ADO Den Haag,Heerenveen,2.0,3.0,post
+401875570,2026-10-25 12:15:00,2026,143,2566,Fortuna Sittard,Excelsior,1.0,0.0,post
+401875569,2026-10-25 14:30:00,2026,147,145,NEC,Groningen,2.0,2.0,post
+401875568,2026-10-25 14:30:00,2026,148,142,PSV,Feyenoord,1.0,1.0,post
+401875567,2026-10-25 16:45:00,2026,151,139,Sparta Rotterdam,Ajax,1.0,2.0,post
+401875566,2026-10-25 20:00:00,2026,140,152,AZ Alkmaar,Twente,0.0,2.0,post
+401875565,2026-10-31 16:30:00,2026,142,143,Feyenoord,Fortuna Sittard,1.0,1.0,post
+401875563,2026-10-31 18:45:00,2026,146,147,Heerenveen,NEC,1.0,0.0,post
+401875564,2026-10-31 18:45:00,2026,148,156,PSV,Willem II,7.0,0.0,post
+401875562,2026-10-31 21:00:00,2026,139,140,Ajax,AZ Alkmaar,1.0,0.0,post
+401875561,2026-10-31 21:00:00,2026,3736,3706,SC Cambuur,Go Ahead Eagles,4.0,0.0,post
+401875560,2026-11-01 12:15:00,2026,2565,2726,PEC Zwolle,ADO Den Haag,1.0,0.0,post
+401875559,2026-11-01 14:30:00,2026,2566,152,Excelsior,Twente,0.0,9.0,post
+401875558,2026-11-01 14:30:00,2026,3735,153,Telstar,Utrecht,4.0,2.0,post
+401875557,2026-11-01 16:45:00,2026,145,151,Groningen,Sparta Rotterdam,2.0,3.0,post
+401875556,2026-11-06 20:00:00,2026,156,2565,Willem II,PEC Zwolle,1.0,1.0,post
+401875555,2026-11-07 16:30:00,2026,143,3735,Fortuna Sittard,Telstar,2.0,2.0,post
+401875552,2026-11-07 18:45:00,2026,2726,151,ADO Den Haag,Sparta Rotterdam,3.0,1.0,post
+401875554,2026-11-07 21:00:00,2026,2566,3706,Excelsior,Go Ahead Eagles,0.0,1.0,post

@@ -2385,3 +2385,107 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841558,2026-09-14 19:00:00,2026,235,10060,Banfield,Barracas Central,1.0,1.0,post
 401841555,2026-09-14 19:00:00,2026,17702,12,Deportivo Riestra,Lanús,0.0,3.0,post
 401841566,2026-09-14 21:15:00,2026,2975,19685,Instituto,Estudiantes de Río Cuarto,2.0,1.0,post
+401841572,2026-09-18 18:00:00,2026,11989,8950,Central Córdoba,Defensa y Justicia,2.0,2.0,post
+401841580,2026-09-18 21:15:00,2026,15,10158,Racing Club,Sarmiento,3.0,1.0,post
+401841574,2026-09-19 14:30:00,2026,11972,17702,Gimnasia Mendoza,Deportivo Riestra,0.0,0.0,post
+401841573,2026-09-19 14:30:00,2026,9,235,Gimnasia La Plata,Banfield,2.0,2.0,post
+401841576,2026-09-19 16:45:00,2026,20,11,Unión de Santa Fe,Independiente,1.0,2.0,post
+401841579,2026-09-19 19:00:00,2026,16,10,River Plate,Huracán,1.0,2.0,post
+401841575,2026-09-19 21:15:00,2026,2975,19,Instituto,Talleres de Córdoba,3.0,1.0,post
+401841577,2026-09-20 14:45:00,2026,18,5,San Lorenzo,Boca Juniors,0.0,2.0,post
+401841581,2026-09-20 17:00:00,2026,7764,14,Platense,Newell's Old Boys,0.0,1.0,post
+401841578,2026-09-20 17:00:00,2026,17,3,Rosario Central,Argentinos Juniors,1.0,0.0,post
+401841571,2026-09-20 19:15:00,2026,4,19685,Belgrano,Estudiantes de Río Cuarto,2.0,1.0,post
+401841570,2026-09-20 21:30:00,2026,21,7767,Vélez Sarsfield,Tigre,3.0,2.0,post
+401841569,2026-09-21 14:30:00,2026,9739,9785,Aldosivi,Atlético Tucumán,1.0,0.0,post
+401841583,2026-09-21 19:00:00,2026,10060,9744,Barracas Central,Independiente Rivadavia,0.0,1.0,post
+401841582,2026-09-21 21:15:00,2026,12,8,Lanús,Estudiantes de La Plata,2.0,1.0,post
+401841588,2026-10-02 19:15:00,2026,11,2975,Independiente,Instituto,1.0,4.0,post
+401841587,2026-10-02 21:30:00,2026,9744,9,Independiente Rivadavia,Gimnasia La Plata,1.0,1.0,post
+401841594,2026-10-02 21:30:00,2026,5,20,Boca Juniors,Unión de Santa Fe,3.0,0.0,post
+401841593,2026-10-03 14:45:00,2026,8950,18,Defensa y Justicia,San Lorenzo,3.0,0.0,post
+401841596,2026-10-03 17:00:00,2026,9785,10060,Atlético Tucumán,Barracas Central,2.0,3.0,post
+401841586,2026-10-03 17:00:00,2026,14,12,Newell's Old Boys,Lanús,0.0,0.0,post
+401841589,2026-10-04 14:45:00,2026,10,9739,Huracán,Aldosivi,1.0,0.0,post
+401841584,2026-10-04 17:00:00,2026,19,4,Talleres de Córdoba,Belgrano,0.0,1.0,post
+401841597,2026-10-04 19:15:00,2026,3,7767,Argentinos Juniors,Tigre,2.0,1.0,post
+401841591,2026-10-04 21:30:00,2026,19685,15,Estudiantes de Río Cuarto,Racing Club,1.0,2.0,post
+401841592,2026-10-05 16:45:00,2026,17702,11989,Deportivo Riestra,Central Córdoba,1.0,1.0,post
+401841585,2026-10-05 19:00:00,2026,21,7764,Vélez Sarsfield,Platense,2.0,2.0,post
+401841590,2026-10-05 19:00:00,2026,8,11972,Estudiantes de La Plata,Gimnasia Mendoza,3.0,0.0,post
+401841595,2026-10-05 21:15:00,2026,235,17,Banfield,Rosario Central,1.0,1.0,post
+401841612,2026-10-09 14:30:00,2026,9739,10158,Aldosivi,Sarmiento,1.0,3.0,post
+401841609,2026-10-09 18:00:00,2026,9,9785,Gimnasia La Plata,Atlético Tucumán,1.0,1.0,post
+401841607,2026-10-09 19:30:00,2026,2975,5,Instituto,Boca Juniors,2.0,2.0,post
+401841613,2026-10-09 21:45:00,2026,20,8950,Unión de Santa Fe,Defensa y Justicia,0.0,2.0,post
+401841611,2026-10-10 15:45:00,2026,10060,10,Barracas Central,Huracán,2.0,0.0,post
+401841610,2026-10-10 17:00:00,2026,11989,8,Central Córdoba,Estudiantes de La Plata,2.0,2.0,post
+401841599,2026-10-10 19:15:00,2026,7767,235,Tigre,Banfield,1.0,2.0,post
+401841603,2026-10-10 21:30:00,2026,16,19685,River Plate,Estudiantes de Río Cuarto,1.0,0.0,post
+401841601,2026-10-11 14:45:00,2026,18,17702,San Lorenzo,Deportivo Riestra,1.0,0.0,post
+401841605,2026-10-11 17:00:00,2026,7764,3,Platense,Argentinos Juniors,1.0,1.0,post
+401841602,2026-10-11 17:00:00,2026,17,9744,Rosario Central,Independiente Rivadavia,5.0,0.0,post
+401841604,2026-10-11 19:15:00,2026,15,4,Racing Club,Belgrano,0.0,2.0,post
+401841600,2026-10-11 21:30:00,2026,19,11,Talleres de Córdoba,Independiente,0.0,0.0,post
+401841606,2026-10-12 16:00:00,2026,12,21,Lanús,Vélez Sarsfield,2.0,0.0,post
+401841608,2026-10-12 18:30:00,2026,11972,14,Gimnasia Mendoza,Newell's Old Boys,1.0,0.0,post
+401841598,2026-10-14 19:00:00,2026,10158,16,Sarmiento,River Plate,1.0,1.0,post
+401841622,2026-10-15 20:00:00,2026,10,9,Huracán,Gimnasia La Plata,1.0,2.0,post
+401841626,2026-10-16 19:00:00,2026,8950,2975,Defensa y Justicia,Instituto,0.0,1.0,post
+401841627,2026-10-16 21:30:00,2026,5,19,Boca Juniors,Talleres de Córdoba,2.0,1.0,post
+401841615,2026-10-17 15:00:00,2026,235,3,Banfield,Argentinos Juniors,0.0,1.0,post
+401841621,2026-10-17 17:30:00,2026,9744,7767,Independiente Rivadavia,Tigre,2.0,2.0,post
+401841619,2026-10-17 17:30:00,2026,7764,12,Platense,Lanús,0.0,1.0,post
+401841614,2026-10-17 20:00:00,2026,9785,17,Atlético Tucumán,Rosario Central,2.0,3.0,post
+401841616,2026-10-17 20:00:00,2026,21,11972,Vélez Sarsfield,Gimnasia Mendoza,1.0,0.0,post
+401841618,2026-10-18 14:45:00,2026,15,11,Racing Club,Independiente,1.0,1.0,post
+401841624,2026-10-18 18:00:00,2026,19685,9739,Estudiantes de Río Cuarto,Aldosivi,2.0,1.0,post
+401841623,2026-10-18 18:00:00,2026,8,18,Estudiantes de La Plata,San Lorenzo,1.0,2.0,post
+401841628,2026-10-18 20:15:00,2026,4,16,Belgrano,River Plate,0.0,3.0,post
+401841620,2026-10-19 19:00:00,2026,14,11989,Newell's Old Boys,Central Córdoba,2.0,1.0,post
+401841617,2026-10-19 19:00:00,2026,10158,10060,Sarmiento,Barracas Central,1.0,1.0,post
+401841625,2026-10-19 21:15:00,2026,17702,20,Deportivo Riestra,Unión de Santa Fe,1.0,1.0,post
+401841638,2026-10-23 18:00:00,2026,9,10158,Gimnasia La Plata,Sarmiento,2.0,0.0,post
+401841637,2026-10-23 18:30:00,2026,11972,7764,Gimnasia Mendoza,Platense,1.0,2.0,post
+401841643,2026-10-23 21:15:00,2026,7767,9785,Tigre,Atlético Tucumán,0.0,1.0,post
+401841641,2026-10-24 14:45:00,2026,235,12,Banfield,Lanús,1.0,1.0,post
+401841631,2026-10-24 17:00:00,2026,19,8950,Talleres de Córdoba,Defensa y Justicia,1.0,2.0,post
+401841632,2026-10-24 19:15:00,2026,18,14,San Lorenzo,Newell's Old Boys,0.0,0.0,post
+401841633,2026-10-24 21:30:00,2026,17,10,Rosario Central,Huracán,2.0,0.0,post
+401841629,2026-10-25 14:45:00,2026,9739,4,Aldosivi,Belgrano,1.0,0.0,post
+401841636,2026-10-25 17:00:00,2026,11,5,Independiente,Boca Juniors,0.0,1.0,post
+401841634,2026-10-25 19:15:00,2026,16,15,River Plate,Racing Club,1.0,0.0,post
+401841640,2026-10-25 21:30:00,2026,10060,19685,Barracas Central,Estudiantes de Río Cuarto,2.0,1.0,post
+401841639,2026-10-25 21:30:00,2026,11989,21,Central Córdoba,Vélez Sarsfield,0.0,5.0,post
+401841630,2026-10-26 19:00:00,2026,20,8,Unión de Santa Fe,Estudiantes de La Plata,3.0,1.0,post
+401841635,2026-10-26 21:15:00,2026,2975,17702,Instituto,Deportivo Riestra,1.0,0.0,post
+401841642,2026-10-27 19:00:00,2026,3,9744,Argentinos Juniors,Independiente Rivadavia,1.0,0.0,post
+401841655,2026-10-30 19:00:00,2026,19685,9,Estudiantes de Río Cuarto,Gimnasia La Plata,1.0,2.0,post
+401841653,2026-10-30 19:00:00,2026,10,7767,Huracán,Tigre,0.0,2.0,post
+401841648,2026-10-30 21:15:00,2026,15,9739,Racing Club,Aldosivi,2.0,1.0,post
+401841647,2026-10-30 21:15:00,2026,10158,17,Sarmiento,Rosario Central,1.0,2.0,post
+401841656,2026-10-31 17:00:00,2026,17702,19,Deportivo Riestra,Talleres de Córdoba,0.0,3.0,post
+401841646,2026-10-31 19:15:00,2026,21,18,Vélez Sarsfield,San Lorenzo,2.0,2.0,post
+401841654,2026-10-31 21:30:00,2026,8,2975,Estudiantes de La Plata,Instituto,3.0,3.0,post
+401841658,2026-11-01 15:00:00,2026,5,16,Boca Juniors,River Plate,1.0,0.0,post
+401841650,2026-11-01 18:30:00,2026,14,20,Newell's Old Boys,Unión de Santa Fe,1.0,1.0,post
+401841645,2026-11-01 18:30:00,2026,4,10060,Belgrano,Barracas Central,2.0,2.0,post
+401841651,2026-11-01 20:45:00,2026,12,11972,Lanús,Gimnasia Mendoza,1.0,1.0,post
+401841657,2026-11-02 19:00:00,2026,8950,11,Defensa y Justicia,Independiente,1.0,1.0,post
+401841649,2026-11-02 19:00:00,2026,7764,11989,Platense,Central Córdoba,2.0,0.0,post
+401841644,2026-11-02 21:15:00,2026,9785,3,Atlético Tucumán,Argentinos Juniors,1.0,2.0,post
+401841652,2026-11-02 21:15:00,2026,9744,235,Independiente Rivadavia,Banfield,3.0,1.0,post
+401841659,2026-11-05 15:00:00,2026,9739,16,Aldosivi,River Plate,0.0,2.0,post
+401841667,2026-11-05 19:15:00,2026,9,4,Gimnasia La Plata,Belgrano,2.0,1.0,post
+401841670,2026-11-06 15:00:00,2026,10060,15,Barracas Central,Racing Club,2.0,0.0,post
+401841665,2026-11-06 19:15:00,2026,11,17702,Independiente,Deportivo Riestra,2.0,1.0,post
+401841662,2026-11-06 19:15:00,2026,18,7764,San Lorenzo,Platense,0.0,2.0,post
+401841660,2026-11-06 19:15:00,2026,20,21,Unión de Santa Fe,Vélez Sarsfield,2.0,0.0,post
+401841671,2026-11-06 22:00:00,2026,235,9785,Banfield,Atlético Tucumán,2.0,2.0,post
+401841673,2026-11-06 22:00:00,2026,7767,10158,Tigre,Sarmiento,1.0,0.0,post
+401841666,2026-11-07 15:00:00,2026,11972,9744,Gimnasia Mendoza,Independiente Rivadavia,1.0,1.0,post
+401841661,2026-11-07 15:00:00,2026,19,8,Talleres de Córdoba,Estudiantes de La Plata,1.0,1.0,post
+401841669,2026-11-07 17:30:00,2026,5,8950,Boca Juniors,Defensa y Justicia,1.0,0.0,post
+401841672,2026-11-07 17:30:00,2026,3,10,Argentinos Juniors,Huracán,0.0,2.0,post
+401841663,2026-11-07 17:30:00,2026,17,19685,Rosario Central,Estudiantes de Río Cuarto,2.0,0.0,post
+401841664,2026-11-07 22:00:00,2026,2975,14,Instituto,Newell's Old Boys,2.0,2.0,post

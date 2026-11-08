@@ -13,8 +13,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 576382,2021-01-13 18:30:00,2021,991,3610,Beerschot,Cercle Brugge,1.0,1.0,post
 576413,2021-01-15 20:45:00,2021,4689,441,Eupen,Anderlecht,2.0,0.0,post
 576411,2021-01-16 16:15:00,2021,3612,5786,KV Oostende,KV Kortrijk,2.0,1.0,post
-576410,2021-01-16 18:30:00,2021,12514,938,Mouscron,Genk,2.0,0.0,post
 576412,2021-01-16 18:30:00,2021,13450,4691,Waasland-Beveren,Zulte-Waregem,1.0,5.0,post
+576410,2021-01-16 18:30:00,2021,12514,938,Mouscron,Genk,2.0,0.0,post
 576408,2021-01-16 20:45:00,2021,3616,7879,Charleroi,KV Mechelen,0.0,1.0,post
 576414,2021-01-17 13:30:00,2021,3611,17544,Gent,Antwerp,0.0,1.0,post
 576415,2021-01-17 16:00:00,2021,3610,559,Cercle Brugge,Standard Liège,0.0,1.0,post
@@ -41,8 +41,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 576434,2021-01-26 18:45:00,2021,4689,17544,Eupen,Antwerp,0.0,2.0,post
 576428,2021-01-26 18:45:00,2021,13450,7879,Waasland-Beveren,KV Mechelen,2.0,3.0,post
 576430,2021-01-26 21:00:00,2021,12514,441,Mouscron,Anderlecht,1.0,1.0,post
-576432,2021-01-27 18:45:00,2021,938,4691,Genk,Zulte-Waregem,3.0,2.0,post
 576433,2021-01-27 18:45:00,2021,991,5786,Beerschot,KV Kortrijk,0.0,0.0,post
+576432,2021-01-27 18:45:00,2021,938,4691,Genk,Zulte-Waregem,3.0,2.0,post
 576427,2021-01-27 21:00:00,2021,3611,936,Gent,Sint-Truiden,1.0,1.0,post
 576429,2021-01-27 21:00:00,2021,3616,5579,Charleroi,OH Leuven,1.0,1.0,post
 576426,2021-01-28 18:45:00,2021,3610,570,Cercle Brugge,Club Brugge,1.0,2.0,post
@@ -130,13 +130,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 576531,2021-04-12 20:45:00,2021,12514,17544,Mouscron,Antwerp,2.0,3.0,post
 576536,2021-04-17 18:30:00,2021,3616,4689,Charleroi,Eupen,2.0,3.0,post
 576539,2021-04-17 20:45:00,2021,17544,938,Antwerp,Genk,3.0,2.0,post
-576538,2021-04-18 18:00:00,2021,4691,3611,Zulte-Waregem,Gent,2.0,7.0,post
-576535,2021-04-18 18:00:00,2021,559,991,Standard Liège,Beerschot,3.0,0.0,post
-576537,2021-04-18 18:00:00,2021,936,441,Sint-Truiden,Anderlecht,0.0,1.0,post
+576534,2021-04-18 18:00:00,2021,570,12514,Club Brugge,Mouscron,4.0,2.0,post
 576540,2021-04-18 18:00:00,2021,5786,7879,KV Kortrijk,KV Mechelen,1.0,4.0,post
 576541,2021-04-18 18:00:00,2021,3612,3610,KV Oostende,Cercle Brugge,1.0,1.0,post
-576534,2021-04-18 18:00:00,2021,570,12514,Club Brugge,Mouscron,4.0,2.0,post
 576542,2021-04-18 18:00:00,2021,5579,13450,OH Leuven,Waasland-Beveren,1.0,2.0,post
+576537,2021-04-18 18:00:00,2021,936,441,Sint-Truiden,Anderlecht,0.0,1.0,post
+576535,2021-04-18 18:00:00,2021,559,991,Standard Liège,Beerschot,3.0,0.0,post
+576538,2021-04-18 18:00:00,2021,4691,3611,Zulte-Waregem,Gent,2.0,7.0,post
 601465,2021-04-30 20:45:00,2021,17544,938,Antwerp,Genk,2.0,3.0,post
 601466,2021-05-01 20:45:00,2021,3612,559,KV Oostende,Standard Liège,6.0,2.0,post
 601467,2021-05-02 16:00:00,2021,3611,7879,Gent,KV Mechelen,2.0,2.0,post
@@ -157,8 +157,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 601482,2021-05-19 21:00:00,2021,3611,559,Gent,Standard Liège,2.0,0.0,post
 601483,2021-05-20 18:30:00,2021,938,17544,Genk,Antwerp,4.0,0.0,post
 601484,2021-05-20 21:00:00,2021,441,570,Anderlecht,Club Brugge,3.0,3.0,post
-601485,2021-05-22 20:00:00,2021,7879,3611,KV Mechelen,Gent,1.0,2.0,post
 601486,2021-05-22 20:00:00,2021,559,3612,Standard Liège,KV Oostende,1.0,3.0,post
+601485,2021-05-22 20:00:00,2021,7879,3611,KV Mechelen,Gent,1.0,2.0,post
 601488,2021-05-23 18:30:00,2021,17544,441,Antwerp,Anderlecht,1.0,0.0,post
 601487,2021-05-23 18:30:00,2021,570,938,Club Brugge,Genk,1.0,2.0,post
 603207,2021-07-23 20:45:00,2021,559,938,Standard Liège,Genk,1.0,1.0,post
@@ -172,8 +172,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603209,2021-07-27 20:00:00,2021,991,3610,Beerschot,Cercle Brugge,0.0,1.0,post
 603216,2021-07-30 20:45:00,2021,938,3612,Genk,KV Oostende,3.0,4.0,post
 603217,2021-07-31 16:15:00,2021,3616,936,Charleroi,Sint-Truiden,0.0,0.0,post
-603218,2021-07-31 18:30:00,2021,3610,5579,Cercle Brugge,OH Leuven,1.0,1.0,post
 603219,2021-07-31 18:30:00,2021,20946,7879,Seraing,KV Mechelen,1.0,0.0,post
+603218,2021-07-31 18:30:00,2021,3610,5579,Cercle Brugge,OH Leuven,1.0,1.0,post
 603220,2021-07-31 20:45:00,2021,4689,441,Eupen,Anderlecht,1.0,1.0,post
 603221,2021-08-01 13:30:00,2021,5807,570,Union Saint-Gilloise,Club Brugge,0.0,1.0,post
 603222,2021-08-01 16:00:00,2021,4691,559,Zulte-Waregem,Standard Liège,1.0,2.0,post
@@ -253,8 +253,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603294,2021-10-03 21:00:00,2021,4689,938,Eupen,Genk,3.0,2.0,post
 603303,2021-10-15 20:45:00,2021,570,5786,Club Brugge,KV Kortrijk,2.0,0.0,post
 603305,2021-10-16 16:15:00,2021,5807,20946,Union Saint-Gilloise,Seraing,4.0,2.0,post
-603301,2021-10-16 18:30:00,2021,3612,3610,KV Oostende,Cercle Brugge,2.0,1.0,post
 603300,2021-10-16 18:30:00,2021,4691,17544,Zulte-Waregem,Antwerp,2.0,1.0,post
+603301,2021-10-16 18:30:00,2021,3612,3610,KV Oostende,Cercle Brugge,2.0,1.0,post
 603297,2021-10-16 20:45:00,2021,559,5579,Standard Liège,OH Leuven,2.0,2.0,post
 603299,2021-10-17 13:30:00,2021,936,441,Sint-Truiden,Anderlecht,2.0,2.0,post
 603304,2021-10-17 16:00:00,2021,991,7879,Beerschot,KV Mechelen,0.0,1.0,post
@@ -271,8 +271,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603311,2021-10-24 21:00:00,2021,5579,936,OH Leuven,Sint-Truiden,4.0,1.0,post
 603320,2021-10-29 20:45:00,2021,3612,7879,KV Oostende,KV Mechelen,2.0,4.0,post
 603316,2021-10-30 16:15:00,2021,3616,4689,Charleroi,Eupen,3.0,0.0,post
-603315,2021-10-30 18:30:00,2021,991,20946,Beerschot,Seraing,3.0,0.0,post
 603319,2021-10-30 18:30:00,2021,559,5786,Standard Liège,KV Kortrijk,1.0,1.0,post
+603315,2021-10-30 18:30:00,2021,991,20946,Beerschot,Seraing,3.0,0.0,post
 603317,2021-10-30 20:45:00,2021,936,570,Sint-Truiden,Club Brugge,1.0,2.0,post
 603318,2021-10-31 13:30:00,2021,4691,938,Zulte-Waregem,Genk,2.0,6.0,post
 603322,2021-10-31 16:00:00,2021,3610,17544,Cercle Brugge,Antwerp,0.0,1.0,post
@@ -280,8 +280,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603321,2021-10-31 21:00:00,2021,3611,5807,Gent,Union Saint-Gilloise,0.0,2.0,post
 603329,2021-11-05 20:45:00,2021,5579,3612,OH Leuven,KV Oostende,1.0,0.0,post
 603326,2021-11-06 16:15:00,2021,4689,4691,Eupen,Zulte-Waregem,1.0,1.0,post
-603332,2021-11-06 18:30:00,2021,7879,936,KV Mechelen,Sint-Truiden,0.0,1.0,post
 603324,2021-11-06 18:30:00,2021,5786,991,KV Kortrijk,Beerschot,1.0,1.0,post
+603332,2021-11-06 18:30:00,2021,7879,936,KV Mechelen,Sint-Truiden,0.0,1.0,post
 603328,2021-11-06 20:45:00,2021,5807,3616,Union Saint-Gilloise,Charleroi,4.0,0.0,post
 603327,2021-11-07 13:30:00,2021,570,559,Club Brugge,Standard Liège,2.0,2.0,post
 603330,2021-11-07 16:00:00,2021,20946,3611,Seraing,Gent,0.0,0.0,post
@@ -324,8 +324,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603361,2021-12-12 18:30:00,2021,3611,938,Gent,Genk,1.0,0.0,post
 603360,2021-12-12 21:00:00,2021,570,4691,Club Brugge,Zulte-Waregem,3.0,0.0,post
 603372,2021-12-14 18:45:00,2021,3610,20946,Cercle Brugge,Seraing,2.0,0.0,post
-603370,2021-12-14 21:00:00,2021,3612,5786,KV Oostende,KV Kortrijk,0.0,2.0,post
 603374,2021-12-14 21:00:00,2021,441,936,Anderlecht,Sint-Truiden,2.0,0.0,post
+603370,2021-12-14 21:00:00,2021,3612,5786,KV Oostende,KV Kortrijk,0.0,2.0,post
 603369,2021-12-15 18:45:00,2021,7879,3611,KV Mechelen,Gent,4.0,3.0,post
 603376,2021-12-15 18:45:00,2021,4691,5807,Zulte-Waregem,Union Saint-Gilloise,0.0,2.0,post
 603377,2021-12-15 21:00:00,2021,5579,570,OH Leuven,Club Brugge,1.0,4.0,post
@@ -414,8 +414,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603451,2022-02-23 18:45:00,2022,3611,20946,Gent,Seraing,4.0,0.0,post
 603467,2022-02-25 20:45:00,2022,991,3616,Beerschot,Charleroi,2.0,3.0,post
 603466,2022-02-26 16:15:00,2022,5807,4689,Union Saint-Gilloise,Eupen,0.0,0.0,post
-603461,2022-02-26 18:30:00,2022,3612,936,KV Oostende,Sint-Truiden,0.0,0.0,post
 603462,2022-02-26 18:30:00,2022,7879,3610,KV Mechelen,Cercle Brugge,2.0,2.0,post
+603461,2022-02-26 18:30:00,2022,3612,936,KV Oostende,Sint-Truiden,0.0,0.0,post
 603463,2022-02-26 20:45:00,2022,5579,441,OH Leuven,Anderlecht,0.0,0.0,post
 603459,2022-02-27 13:30:00,2022,570,17544,Club Brugge,Antwerp,4.0,1.0,post
 603460,2022-02-27 16:00:00,2022,938,5786,Genk,KV Kortrijk,2.0,0.0,post
@@ -429,8 +429,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603472,2022-03-06 13:30:00,2022,17544,991,Antwerp,Beerschot,2.0,1.0,post
 603473,2022-03-06 16:00:00,2022,441,3612,Anderlecht,KV Oostende,3.0,0.0,post
 603470,2022-03-06 18:30:00,2022,3616,559,Charleroi,Standard Liège,0.0,0.0,post
-603476,2022-03-06 21:00:00,2022,3611,4691,Gent,Zulte-Waregem,2.0,1.0,post
 603469,2022-03-06 21:00:00,2022,4689,5579,Eupen,OH Leuven,3.0,1.0,post
+603476,2022-03-06 21:00:00,2022,3611,4691,Gent,Zulte-Waregem,2.0,1.0,post
 603480,2022-03-11 20:45:00,2022,5579,5807,OH Leuven,Union Saint-Gilloise,1.0,4.0,post
 603485,2022-03-12 16:15:00,2022,7879,3616,KV Mechelen,Charleroi,2.0,2.0,post
 603484,2022-03-12 18:30:00,2022,3610,5786,Cercle Brugge,KV Kortrijk,2.0,0.0,post
@@ -460,13 +460,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 603503,2022-04-03 21:00:00,2022,938,4689,Genk,Eupen,5.0,0.0,post
 603510,2022-04-09 18:30:00,2022,4689,3612,Eupen,KV Oostende,0.0,2.0,post
 603506,2022-04-09 20:45:00,2022,17544,3610,Antwerp,Cercle Brugge,1.0,1.0,post
-603504,2022-04-10 18:30:00,2022,570,7879,Club Brugge,KV Mechelen,2.0,0.0,post
+603508,2022-04-10 18:30:00,2022,5807,991,Union Saint-Gilloise,Beerschot,5.0,0.0,post
+603512,2022-04-10 18:30:00,2022,3616,4691,Charleroi,Zulte-Waregem,3.0,0.0,post
+603505,2022-04-10 18:30:00,2022,20946,938,Seraing,Genk,0.0,2.0,post
+603507,2022-04-10 18:30:00,2022,936,559,Sint-Truiden,Standard Liège,3.0,0.0,post
 603511,2022-04-10 18:30:00,2022,3611,5579,Gent,OH Leuven,5.0,0.0,post
 603509,2022-04-10 18:30:00,2022,5786,441,KV Kortrijk,Anderlecht,2.0,3.0,post
-603505,2022-04-10 18:30:00,2022,20946,938,Seraing,Genk,0.0,2.0,post
-603512,2022-04-10 18:30:00,2022,3616,4691,Charleroi,Zulte-Waregem,3.0,0.0,post
-603507,2022-04-10 18:30:00,2022,936,559,Sint-Truiden,Standard Liège,3.0,0.0,post
-603508,2022-04-10 18:30:00,2022,5807,991,Union Saint-Gilloise,Beerschot,5.0,0.0,post
+603504,2022-04-10 18:30:00,2022,570,7879,Club Brugge,KV Mechelen,2.0,0.0,post
 634210,2022-04-23 20:45:00,2022,7879,3616,KV Mechelen,Charleroi,1.0,0.0,post
 634211,2022-04-24 13:30:00,2022,570,17544,Club Brugge,Antwerp,1.0,0.0,post
 634212,2022-04-24 16:00:00,2022,3611,938,Gent,Genk,0.0,1.0,post
@@ -487,8 +487,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 634227,2022-05-15 13:30:00,2022,17544,570,Antwerp,Club Brugge,1.0,3.0,post
 634228,2022-05-15 16:00:00,2022,938,3611,Genk,Gent,0.0,2.0,post
 634229,2022-05-15 18:30:00,2022,441,5807,Anderlecht,Union Saint-Gilloise,0.0,2.0,post
-634231,2022-05-21 20:45:00,2022,7879,938,KV Mechelen,Genk,0.0,0.0,post
 634230,2022-05-21 20:45:00,2022,3611,3616,Gent,Charleroi,1.0,2.0,post
+634231,2022-05-21 20:45:00,2022,7879,938,KV Mechelen,Genk,0.0,0.0,post
 634232,2022-05-22 16:00:00,2022,5807,17544,Union Saint-Gilloise,Antwerp,0.0,1.0,post
 634233,2022-05-22 18:30:00,2022,570,441,Club Brugge,Anderlecht,1.0,1.0,post
 641345,2022-07-22 20:45:00,2022,559,3611,Standard Liège,Gent,2.0,2.0,post
@@ -502,8 +502,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 641353,2022-07-24 21:00:00,2022,606,3610,KVC Westerlo,Cercle Brugge,2.0,0.0,post
 641354,2022-07-29 20:45:00,2022,5807,3616,Union Saint-Gilloise,Charleroi,1.0,0.0,post
 641355,2022-07-30 16:00:00,2022,3610,441,Cercle Brugge,Anderlecht,1.0,0.0,post
-641357,2022-07-30 18:15:00,2022,5579,606,OH Leuven,KVC Westerlo,2.0,0.0,post
 641356,2022-07-30 18:15:00,2022,3612,7879,KV Oostende,KV Mechelen,2.0,1.0,post
+641357,2022-07-30 18:15:00,2022,5579,606,OH Leuven,KVC Westerlo,2.0,0.0,post
 641358,2022-07-30 20:45:00,2022,3611,936,Gent,Sint-Truiden,1.0,1.0,post
 641359,2022-07-31 13:30:00,2022,938,559,Genk,Standard Liège,3.0,1.0,post
 641360,2022-07-31 16:00:00,2022,4689,570,Eupen,Club Brugge,2.0,1.0,post
@@ -592,8 +592,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 641439,2022-10-09 21:00:00,2022,5807,3610,Union Saint-Gilloise,Cercle Brugge,2.0,1.0,post
 641446,2022-10-14 20:45:00,2022,606,20946,KVC Westerlo,Seraing,2.0,2.0,post
 641444,2022-10-15 16:00:00,2022,5786,4691,KV Kortrijk,Zulte-Waregem,1.0,3.0,post
-641451,2022-10-15 18:15:00,2022,936,3616,Sint-Truiden,Charleroi,2.0,1.0,post
 641452,2022-10-15 18:15:00,2022,3610,4689,Cercle Brugge,Eupen,5.0,1.0,post
+641451,2022-10-15 18:15:00,2022,936,3616,Sint-Truiden,Charleroi,2.0,1.0,post
 641449,2022-10-15 20:45:00,2022,5579,938,OH Leuven,Genk,0.0,1.0,post
 641448,2022-10-16 13:30:00,2022,559,17544,Standard Liège,Antwerp,3.0,0.0,post
 641445,2022-10-16 16:00:00,2022,3611,7879,Gent,KV Mechelen,3.0,0.0,post
@@ -610,8 +610,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 641454,2022-10-20 20:45:00,2022,4691,441,Zulte-Waregem,Anderlecht,3.0,2.0,post
 641462,2022-10-21 20:45:00,2022,3610,3616,Cercle Brugge,Charleroi,4.0,1.0,post
 641464,2022-10-22 16:00:00,2022,5786,606,KV Kortrijk,KVC Westerlo,0.0,2.0,post
-641470,2022-10-22 18:15:00,2022,7879,4689,KV Mechelen,Eupen,2.0,1.0,post
 641468,2022-10-22 18:15:00,2022,936,5579,Sint-Truiden,OH Leuven,0.0,0.0,post
+641470,2022-10-22 18:15:00,2022,7879,4689,KV Mechelen,Eupen,2.0,1.0,post
 641466,2022-10-22 20:45:00,2022,5807,570,Union Saint-Gilloise,Club Brugge,2.0,2.0,post
 641469,2022-10-23 13:30:00,2022,17544,938,Antwerp,Genk,1.0,3.0,post
 641465,2022-10-23 16:00:00,2022,3611,20946,Gent,Seraing,2.0,1.0,post
@@ -636,8 +636,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 641484,2022-11-06 21:00:00,2022,3612,5786,KV Oostende,KV Kortrijk,3.0,1.0,post
 641492,2022-11-11 20:45:00,2022,5579,20946,OH Leuven,Seraing,5.0,0.0,post
 641491,2022-11-12 16:00:00,2022,606,3612,KVC Westerlo,KV Oostende,6.0,0.0,post
-641494,2022-11-12 18:15:00,2022,4691,4689,Zulte-Waregem,Eupen,5.0,5.0,post
 641495,2022-11-12 18:15:00,2022,936,3610,Sint-Truiden,Cercle Brugge,0.0,1.0,post
+641494,2022-11-12 18:15:00,2022,4691,4689,Zulte-Waregem,Eupen,5.0,5.0,post
 641496,2022-11-12 20:45:00,2022,3616,7879,Charleroi,KV Mechelen,1.0,0.0,post
 641489,2022-11-13 13:30:00,2022,570,17544,Club Brugge,Antwerp,2.0,2.0,post
 641497,2022-11-13 16:00:00,2022,559,5807,Standard Liège,Union Saint-Gilloise,2.0,3.0,post
@@ -650,8 +650,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 641502,2022-12-26 16:00:00,2022,5807,3612,Union Saint-Gilloise,KV Oostende,3.0,0.0,post
 641500,2022-12-26 18:15:00,2022,5786,938,KV Kortrijk,Genk,1.0,0.0,post
 641505,2022-12-26 20:45:00,2022,3616,441,Charleroi,Anderlecht,0.0,1.0,post
-641504,2022-12-27 20:00:00,2022,936,4691,Sint-Truiden,Zulte-Waregem,2.0,0.0,post
 641501,2022-12-27 20:00:00,2022,606,17544,KVC Westerlo,Antwerp,3.0,3.0,post
+641504,2022-12-27 20:00:00,2022,936,4691,Sint-Truiden,Zulte-Waregem,2.0,0.0,post
 641509,2023-01-06 20:45:00,2023,559,936,Standard Liège,Sint-Truiden,1.0,1.0,post
 641515,2023-01-07 16:00:00,2023,4689,3616,Eupen,Charleroi,1.0,2.0,post
 641514,2023-01-07 18:15:00,2023,3610,606,Cercle Brugge,KVC Westerlo,0.0,1.0,post
@@ -675,13 +675,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 641528,2023-01-17 20:45:00,2023,559,7879,Standard Liège,KV Mechelen,2.0,0.0,post
 641530,2023-01-18 18:30:00,2023,3610,5807,Cercle Brugge,Union Saint-Gilloise,1.0,1.0,post
 641531,2023-01-18 18:30:00,2023,3612,17544,KV Oostende,Antwerp,0.0,3.0,post
-641526,2023-01-18 20:45:00,2023,441,4691,Anderlecht,Zulte-Waregem,2.0,3.0,post
 641532,2023-01-18 20:45:00,2023,5786,20946,KV Kortrijk,Seraing,3.0,2.0,post
+641526,2023-01-18 20:45:00,2023,441,4691,Anderlecht,Zulte-Waregem,2.0,3.0,post
 641533,2023-01-19 18:30:00,2023,3611,3616,Gent,Charleroi,0.0,0.0,post
 641527,2023-01-19 20:45:00,2023,936,570,Sint-Truiden,Club Brugge,1.0,1.0,post
 641539,2023-01-21 16:00:00,2023,4691,606,Zulte-Waregem,KVC Westerlo,1.0,1.0,post
-641534,2023-01-21 18:15:00,2023,3612,3610,KV Oostende,Cercle Brugge,1.0,2.0,post
 641542,2023-01-21 18:15:00,2023,7879,5786,KV Mechelen,KV Kortrijk,3.0,2.0,post
+641534,2023-01-21 18:15:00,2023,3612,3610,KV Oostende,Cercle Brugge,1.0,2.0,post
 641537,2023-01-21 20:45:00,2023,5807,5579,Union Saint-Gilloise,OH Leuven,1.0,0.0,post
 641540,2023-01-22 13:30:00,2023,17544,559,Antwerp,Standard Liège,4.0,1.0,post
 641541,2023-01-22 16:00:00,2023,20946,441,Seraing,Anderlecht,0.0,1.0,post
@@ -707,8 +707,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 641552,2023-02-05 18:30:00,2023,3611,938,Gent,Genk,2.0,3.0,post
 641559,2023-02-05 19:15:00,2023,5807,4691,Union Saint-Gilloise,Zulte-Waregem,4.0,0.0,post
 641564,2023-02-10 20:00:00,2023,5579,3610,OH Leuven,Cercle Brugge,0.0,0.0,post
-641569,2023-02-10 20:45:00,2023,570,5807,Club Brugge,Union Saint-Gilloise,1.0,1.0,post
 641561,2023-02-10 20:45:00,2023,4689,7879,Eupen,KV Mechelen,2.0,1.0,post
+641569,2023-02-10 20:45:00,2023,570,5807,Club Brugge,Union Saint-Gilloise,1.0,1.0,post
 641563,2023-02-11 16:00:00,2023,606,3611,KVC Westerlo,Gent,3.0,3.0,post
 641567,2023-02-11 18:15:00,2023,3616,20946,Charleroi,Seraing,3.0,0.0,post
 641562,2023-02-12 13:30:00,2023,938,17544,Genk,Antwerp,0.0,1.0,post
@@ -726,8 +726,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 641571,2023-02-19 19:15:00,2023,936,606,Sint-Truiden,KVC Westerlo,0.0,1.0,post
 641581,2023-02-24 20:45:00,2023,4691,5786,Zulte-Waregem,KV Kortrijk,3.0,3.0,post
 641583,2023-02-25 16:00:00,2023,20946,7879,Seraing,KV Mechelen,0.0,2.0,post
-641586,2023-02-25 18:15:00,2023,938,3612,Genk,KV Oostende,3.0,0.0,post
 641587,2023-02-25 18:15:00,2023,4689,3610,Eupen,Cercle Brugge,2.0,2.0,post
+641586,2023-02-25 18:15:00,2023,938,3612,Genk,KV Oostende,3.0,0.0,post
 641585,2023-02-25 20:45:00,2023,606,5807,KVC Westerlo,Union Saint-Gilloise,4.0,2.0,post
 641579,2023-02-26 13:30:00,2023,570,3611,Club Brugge,Gent,2.0,0.0,post
 641584,2023-02-26 16:00:00,2023,5579,17544,OH Leuven,Antwerp,1.0,1.0,post
@@ -770,8 +770,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 641620,2023-04-02 18:30:00,2023,7879,570,KV Mechelen,Club Brugge,0.0,3.0,post
 641617,2023-04-02 19:15:00,2023,5807,936,Union Saint-Gilloise,Sint-Truiden,2.0,1.0,post
 641630,2023-04-07 20:45:00,2023,570,20946,Club Brugge,Seraing,2.0,0.0,post
-641632,2023-04-08 16:00:00,2023,5579,7879,OH Leuven,KV Mechelen,4.0,1.0,post
 641631,2023-04-08 16:00:00,2023,5786,4689,KV Kortrijk,Eupen,0.0,0.0,post
+641632,2023-04-08 16:00:00,2023,5579,7879,OH Leuven,KV Mechelen,4.0,1.0,post
 641629,2023-04-08 18:15:00,2023,3616,4691,Charleroi,Zulte-Waregem,3.0,2.0,post
 641627,2023-04-08 20:45:00,2023,3611,5807,Gent,Union Saint-Gilloise,1.0,1.0,post
 641625,2023-04-09 13:30:00,2023,441,606,Anderlecht,KVC Westerlo,0.0,0.0,post
@@ -978,8 +978,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 674549,2023-12-26 18:30:00,2023,606,20981,KVC Westerlo,RWDM,3.0,0.0,post
 674544,2023-12-26 20:45:00,2023,570,5807,Club Brugge,Union Saint-Gilloise,1.0,1.0,post
 674551,2023-12-27 18:30:00,2023,559,936,Standard Liège,Sint-Truiden,1.0,1.0,post
-674545,2023-12-27 20:45:00,2023,3616,7879,Charleroi,KV Mechelen,3.0,1.0,post
 674546,2023-12-27 20:45:00,2023,441,3610,Anderlecht,Cercle Brugge,2.0,0.0,post
+674545,2023-12-27 20:45:00,2023,3616,7879,Charleroi,KV Mechelen,3.0,1.0,post
 674553,2024-01-19 20:45:00,2024,3611,7879,Gent,KV Mechelen,1.0,2.0,post
 674554,2024-01-20 16:00:00,2024,938,3610,Genk,Cercle Brugge,1.0,1.0,post
 674558,2024-01-20 18:15:00,2024,559,5786,Standard Liège,KV Kortrijk,0.0,1.0,post
@@ -998,8 +998,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 674564,2024-01-28 19:15:00,2024,7879,20981,KV Mechelen,RWDM,3.0,1.0,post
 674568,2024-01-30 20:30:00,2024,570,5786,Club Brugge,KV Kortrijk,3.0,3.0,post
 674569,2024-01-30 20:30:00,2024,606,3610,KVC Westerlo,Cercle Brugge,4.0,2.0,post
-674571,2024-01-31 18:45:00,2024,5579,938,OH Leuven,Genk,2.0,1.0,post
 674573,2024-01-31 18:45:00,2024,3616,4689,Charleroi,Eupen,1.0,0.0,post
+674571,2024-01-31 18:45:00,2024,5579,938,OH Leuven,Genk,2.0,1.0,post
 674574,2024-01-31 21:00:00,2024,559,17544,Standard Liège,Antwerp,0.0,1.0,post
 674575,2024-01-31 21:00:00,2024,5807,20981,Union Saint-Gilloise,RWDM,3.0,2.0,post
 674570,2024-02-01 20:30:00,2024,7879,441,KV Mechelen,Anderlecht,2.0,2.0,post
@@ -1126,8 +1126,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 700911,2024-05-19 13:30:00,2024,3610,5807,Cercle Brugge,Union Saint-Gilloise,1.0,2.0,post
 700853,2024-05-19 18:30:00,2024,441,570,Anderlecht,Club Brugge,0.0,1.0,post
 700862,2024-05-20 18:30:00,2024,938,17544,Genk,Antwerp,1.0,0.0,post
-700914,2024-05-25 20:30:00,2024,7879,559,KV Mechelen,Standard Liège,3.0,2.0,post
 700913,2024-05-25 20:30:00,2024,5579,606,OH Leuven,KVC Westerlo,1.0,2.0,post
+700914,2024-05-25 20:30:00,2024,7879,559,KV Mechelen,Standard Liège,3.0,2.0,post
 700912,2024-05-25 20:30:00,2024,3611,936,Gent,Sint-Truiden,2.0,0.0,post
 700854,2024-05-26 18:30:00,2024,17544,441,Antwerp,Anderlecht,3.0,1.0,post
 700915,2024-05-26 18:30:00,2024,570,3610,Club Brugge,Cercle Brugge,0.0,0.0,post
@@ -1262,8 +1262,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 703795,2024-12-01 18:30:00,2024,5807,17544,Union Saint-Gilloise,Antwerp,2.0,1.0,post
 703799,2024-12-01 19:15:00,2024,606,3611,KVC Westerlo,Gent,2.0,2.0,post
 703806,2024-12-07 16:00:00,2024,938,5786,Genk,KV Kortrijk,3.0,2.0,post
-703803,2024-12-07 18:15:00,2024,559,5579,Standard Liège,OH Leuven,1.0,1.0,post
 703807,2024-12-07 18:15:00,2024,7879,570,KV Mechelen,Club Brugge,1.0,2.0,post
+703803,2024-12-07 18:15:00,2024,559,5579,Standard Liège,OH Leuven,1.0,1.0,post
 703805,2024-12-07 20:45:00,2024,3611,936,Gent,Sint-Truiden,2.0,0.0,post
 703809,2024-12-08 13:30:00,2024,17544,3616,Antwerp,Charleroi,1.0,3.0,post
 703804,2024-12-08 16:00:00,2024,3610,5807,Cercle Brugge,Union Saint-Gilloise,0.0,0.0,post
@@ -1291,8 +1291,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 703826,2024-12-26 18:30:00,2024,7879,559,KV Mechelen,Standard Liège,0.0,0.0,post
 703832,2024-12-26 20:45:00,2024,3611,5807,Gent,Union Saint-Gilloise,1.0,3.0,post
 703830,2024-12-27 18:30:00,2024,5579,991,OH Leuven,Beerschot,2.0,0.0,post
-703833,2024-12-27 20:45:00,2024,936,3610,Sint-Truiden,Cercle Brugge,1.0,1.0,post
 703831,2024-12-27 20:45:00,2024,441,7878,Anderlecht,Dender,2.0,3.0,post
+703833,2024-12-27 20:45:00,2024,936,3610,Sint-Truiden,Cercle Brugge,1.0,1.0,post
 703835,2025-01-10 20:45:00,2025,559,5786,Standard Liège,KV Kortrijk,1.0,0.0,post
 703838,2025-01-11 16:00:00,2025,606,936,KVC Westerlo,Sint-Truiden,1.0,2.0,post
 703839,2025-01-11 18:15:00,2025,938,5579,Genk,OH Leuven,2.0,0.0,post
@@ -1370,9 +1370,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 703912,2025-03-16 18:30:00,2025,5579,936,OH Leuven,Sint-Truiden,3.0,2.0,post
 703913,2025-03-16 18:30:00,2025,7879,7878,KV Mechelen,Dender,2.0,1.0,post
 703910,2025-03-16 18:30:00,2025,3611,5786,Gent,KV Kortrijk,1.0,2.0,post
-703906,2025-03-16 18:30:00,2025,441,3610,Anderlecht,Cercle Brugge,3.0,0.0,post
-703907,2025-03-16 18:30:00,2025,991,606,Beerschot,KVC Westerlo,1.0,2.0,post
 703909,2025-03-16 18:30:00,2025,570,3616,Club Brugge,Charleroi,4.0,2.0,post
+703907,2025-03-16 18:30:00,2025,991,606,Beerschot,KVC Westerlo,1.0,2.0,post
+703906,2025-03-16 18:30:00,2025,441,3610,Anderlecht,Cercle Brugge,3.0,0.0,post
 734595,2025-03-28 20:45:00,2025,5579,3616,OH Leuven,Charleroi,0.0,0.0,post
 734607,2025-03-29 16:00:00,2025,991,936,Beerschot,Sint-Truiden,0.0,1.0,post
 734571,2025-03-29 18:15:00,2025,559,7879,Standard Liège,KV Mechelen,2.0,2.0,post
@@ -1412,8 +1412,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 734612,2025-04-25 21:00:00,2025,991,5786,Beerschot,KV Kortrijk,2.0,0.0,post
 734576,2025-04-26 16:00:00,2025,5579,559,OH Leuven,Standard Liège,1.0,1.0,post
 734585,2025-04-26 18:15:00,2025,606,7879,KVC Westerlo,KV Mechelen,2.0,2.0,post
-734597,2025-04-26 20:45:00,2025,3616,7878,Charleroi,Dender,4.0,1.0,post
 734604,2025-04-26 20:45:00,2025,3610,936,Cercle Brugge,Sint-Truiden,3.0,1.0,post
+734597,2025-04-26 20:45:00,2025,3616,7878,Charleroi,Dender,4.0,1.0,post
 734567,2025-04-27 13:30:00,2025,3611,441,Gent,Anderlecht,0.0,1.0,post
 734546,2025-04-27 16:00:00,2025,938,17544,Genk,Antwerp,0.0,1.0,post
 734555,2025-04-27 18:30:00,2025,5807,570,Union Saint-Gilloise,Club Brugge,0.0,0.0,post
@@ -1426,8 +1426,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 734577,2025-05-04 13:30:00,2025,559,3616,Standard Liège,Charleroi,0.0,1.0,post
 734609,2025-05-04 16:00:00,2025,936,991,Sint-Truiden,Beerschot,2.0,1.0,post
 734593,2025-05-09 20:45:00,2025,3616,606,Charleroi,KVC Westerlo,4.0,3.0,post
-734610,2025-05-10 16:00:00,2025,5786,936,KV Kortrijk,Sint-Truiden,2.0,2.0,post
 734606,2025-05-10 16:00:00,2025,991,3610,Beerschot,Cercle Brugge,4.0,2.0,post
+734610,2025-05-10 16:00:00,2025,5786,936,KV Kortrijk,Sint-Truiden,2.0,2.0,post
 734578,2025-05-10 18:15:00,2025,7879,559,KV Mechelen,Standard Liège,0.0,0.0,post
 734562,2025-05-10 20:45:00,2025,441,5807,Anderlecht,Union Saint-Gilloise,0.0,1.0,post
 734570,2025-05-11 13:30:00,2025,3611,17544,Gent,Antwerp,0.0,3.0,post
@@ -1439,9 +1439,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 734557,2025-05-18 13:30:00,2025,441,570,Anderlecht,Club Brugge,1.0,3.0,post
 734587,2025-05-18 16:00:00,2025,7879,3616,KV Mechelen,Charleroi,1.0,1.0,post
 734549,2025-05-18 18:30:00,2025,3611,938,Gent,Genk,1.0,4.0,post
+734588,2025-05-24 20:00:00,2025,7878,7879,Dender,KV Mechelen,2.0,2.0,post
 734580,2025-05-24 20:00:00,2025,606,559,KVC Westerlo,Standard Liège,0.0,0.0,post
 734598,2025-05-24 20:00:00,2025,3616,5579,Charleroi,OH Leuven,2.0,1.0,post
-734588,2025-05-24 20:00:00,2025,7878,7879,Dender,KV Mechelen,2.0,2.0,post
 734558,2025-05-25 18:30:00,2025,570,17544,Club Brugge,Antwerp,1.0,1.0,post
 734550,2025-05-25 18:30:00,2025,938,441,Genk,Anderlecht,2.0,1.0,post
 734564,2025-05-25 18:30:00,2025,5807,3611,Union Saint-Gilloise,Gent,3.0,1.0,post
@@ -1678,14 +1678,14 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 742758,2026-03-15 16:00:00,2026,17544,559,Antwerp,Standard Liège,1.0,1.0,post
 742763,2026-03-15 18:30:00,2026,7879,441,KV Mechelen,Anderlecht,1.0,0.0,post
 742759,2026-03-15 19:15:00,2026,3610,131235,Cercle Brugge,RAAL La Louvière,1.0,3.0,post
-742773,2026-03-22 18:30:00,2026,4691,3616,Zulte-Waregem,Charleroi,1.0,0.0,post
-742767,2026-03-22 18:30:00,2026,559,606,Standard Liège,KVC Westerlo,0.0,0.0,post
-742768,2026-03-22 18:30:00,2026,936,5807,Sint-Truiden,Union Saint-Gilloise,1.0,3.0,post
-742769,2026-03-22 18:30:00,2026,131235,938,RAAL La Louvière,Genk,5.0,5.0,post
+742766,2026-03-22 18:30:00,2026,441,3610,Anderlecht,Cercle Brugge,2.0,3.0,post
 742772,2026-03-22 18:30:00,2026,570,7879,Club Brugge,KV Mechelen,4.0,1.0,post
 742771,2026-03-22 18:30:00,2026,7878,3611,Dender,Gent,1.0,3.0,post
-742766,2026-03-22 18:30:00,2026,441,3610,Anderlecht,Cercle Brugge,2.0,3.0,post
 742770,2026-03-22 18:30:00,2026,5579,17544,OH Leuven,Antwerp,1.0,0.0,post
+742769,2026-03-22 18:30:00,2026,131235,938,RAAL La Louvière,Genk,5.0,5.0,post
+742768,2026-03-22 18:30:00,2026,936,5807,Sint-Truiden,Union Saint-Gilloise,1.0,3.0,post
+742767,2026-03-22 18:30:00,2026,559,606,Standard Liège,KVC Westerlo,0.0,0.0,post
+742773,2026-03-22 18:30:00,2026,4691,3616,Zulte-Waregem,Charleroi,1.0,0.0,post
 401866261,2026-04-03 20:45:00,2026,17544,938,Antwerp,Genk,1.0,2.0,post
 401866262,2026-04-04 16:00:00,2026,4691,3610,Zulte-Waregem,Cercle Brugge,2.0,2.0,post
 401866263,2026-04-04 18:15:00,2026,5579,559,OH Leuven,Standard Liège,1.0,3.0,post
@@ -1752,12 +1752,12 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401866326,2026-05-21 20:30:00,2026,441,936,Anderlecht,Sint-Truiden,3.0,1.0,post
 401866325,2026-05-21 20:30:00,2026,3611,5807,Gent,Union Saint-Gilloise,0.0,0.0,post
 401866324,2026-05-21 20:30:00,2026,7879,570,KV Mechelen,Club Brugge,2.0,2.0,post
+401866329,2026-05-23 20:45:00,2026,17544,606,Antwerp,KVC Westerlo,2.0,0.0,post
 401866327,2026-05-23 20:45:00,2026,5579,938,OH Leuven,Genk,0.0,2.0,post
 401866328,2026-05-23 20:45:00,2026,559,3616,Standard Liège,Charleroi,0.0,2.0,post
-401866329,2026-05-23 20:45:00,2026,17544,606,Antwerp,KVC Westerlo,2.0,0.0,post
-401866330,2026-05-24 18:30:00,2026,570,3611,Club Brugge,Gent,5.0,0.0,post
 401866331,2026-05-24 18:30:00,2026,936,7879,Sint-Truiden,KV Mechelen,3.0,0.0,post
 401866332,2026-05-24 18:30:00,2026,5807,441,Union Saint-Gilloise,Anderlecht,5.0,1.0,post
+401866330,2026-05-24 18:30:00,2026,570,3611,Club Brugge,Gent,5.0,0.0,post
 401873711,2026-05-31 18:30:00,2026,3611,938,Gent,Genk,1.0,1.0,post
 401879041,2026-08-07 20:45:00,2026,570,5786,Club Brugge,KV Kortrijk,3.0,0.0,post
 401879039,2026-08-08 18:15:00,2026,559,3610,Standard Liège,Cercle Brugge,2.0,2.0,post
@@ -1798,8 +1798,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401879005,2026-09-04 20:45:00,2026,22269,570,Lommel SK,Club Brugge,0.0,1.0,post
 401879004,2026-09-05 16:00:00,2026,3616,5807,Charleroi,Union Saint-Gilloise,2.0,3.0,post
 401879003,2026-09-05 18:15:00,2026,7879,606,KV Mechelen,KVC Westerlo,0.0,4.0,post
-401879002,2026-09-05 20:45:00,2026,559,17544,Standard Liège,Antwerp,1.0,0.0,post
 401879001,2026-09-05 20:45:00,2026,936,131235,Sint-Truiden,RAAL La Louvière,4.0,0.0,post
+401879002,2026-09-05 20:45:00,2026,559,17544,Standard Liège,Antwerp,1.0,0.0,post
 401879000,2026-09-06 13:30:00,2026,3610,3611,Cercle Brugge,Gent,0.0,3.0,post
 401878999,2026-09-06 16:00:00,2026,5786,4691,KV Kortrijk,Zulte-Waregem,0.0,2.0,post
 401878998,2026-09-06 18:30:00,2026,441,938,Anderlecht,Genk,0.0,0.0,post
@@ -1813,3 +1813,44 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878990,2026-09-13 16:00:00,2026,938,3611,Genk,Gent,1.0,1.0,post
 401878989,2026-09-13 18:30:00,2026,4691,3616,Zulte-Waregem,Charleroi,0.0,1.0,post
 401878988,2026-09-13 19:15:00,2026,131235,5786,RAAL La Louvière,KV Kortrijk,3.0,0.0,post
+401878987,2026-09-18 20:45:00,2026,3611,559,Gent,Standard Liège,2.0,1.0,post
+401878986,2026-09-19 16:00:00,2026,5579,131235,OH Leuven,RAAL La Louvière,2.0,0.0,post
+401878985,2026-09-19 18:15:00,2026,3616,3610,Charleroi,Cercle Brugge,3.0,2.0,post
+401878984,2026-09-19 20:45:00,2026,441,4691,Anderlecht,Zulte-Waregem,3.0,0.0,post
+401878983,2026-09-19 20:45:00,2026,22269,7879,Lommel SK,KV Mechelen,0.0,0.0,post
+401878982,2026-09-20 13:30:00,2026,17544,5807,Antwerp,Union Saint-Gilloise,0.0,2.0,post
+401878981,2026-09-20 16:00:00,2026,936,606,Sint-Truiden,KVC Westerlo,0.0,2.0,post
+401878980,2026-09-20 18:30:00,2026,570,938,Club Brugge,Genk,3.0,0.0,post
+401878979,2026-09-20 19:15:00,2026,5786,13450,KV Kortrijk,Waasland-Beveren,1.0,0.0,post
+401878976,2026-10-09 20:45:00,2026,13450,22269,Waasland-Beveren,Lommel SK,1.0,3.0,post
+401878977,2026-10-10 16:00:00,2026,3610,441,Cercle Brugge,Anderlecht,1.0,2.0,post
+401878978,2026-10-10 18:15:00,2026,131235,570,RAAL La Louvière,Club Brugge,1.0,4.0,post
+401878973,2026-10-10 20:45:00,2026,938,5786,Genk,KV Kortrijk,3.0,0.0,post
+401878974,2026-10-10 20:45:00,2026,4691,3611,Zulte-Waregem,Gent,0.0,2.0,post
+401878971,2026-10-11 13:30:00,2026,559,3616,Standard Liège,Charleroi,0.0,1.0,post
+401878975,2026-10-11 16:00:00,2026,5807,5579,Union Saint-Gilloise,OH Leuven,1.0,1.0,post
+401878970,2026-10-11 18:30:00,2026,606,17544,KVC Westerlo,Antwerp,5.0,1.0,post
+401878972,2026-10-11 19:15:00,2026,7879,936,KV Mechelen,Sint-Truiden,4.0,3.0,post
+401878968,2026-10-24 16:00:00,2026,17544,3616,Antwerp,Charleroi,3.0,0.0,post
+401878969,2026-10-24 18:15:00,2026,5579,22269,OH Leuven,Lommel SK,2.0,2.0,post
+401878965,2026-10-24 20:45:00,2026,606,13450,KVC Westerlo,Waasland-Beveren,4.0,4.0,post
+401878966,2026-10-24 20:45:00,2026,131235,4691,RAAL La Louvière,Zulte-Waregem,3.0,0.0,post
+401878963,2026-10-25 13:30:00,2026,938,559,Genk,Standard Liège,2.0,1.0,post
+401878964,2026-10-25 16:00:00,2026,570,936,Club Brugge,Sint-Truiden,3.0,2.0,post
+401878962,2026-10-25 18:30:00,2026,3611,441,Gent,Anderlecht,4.0,0.0,post
+401878961,2026-10-25 19:15:00,2026,5807,3610,Union Saint-Gilloise,Cercle Brugge,5.0,2.0,post
+401878956,2026-10-30 20:45:00,2026,4691,570,Zulte-Waregem,Club Brugge,2.0,4.0,post
+401878958,2026-10-31 16:00:00,2026,7879,938,KV Mechelen,Genk,1.0,0.0,post
+401878953,2026-10-31 18:15:00,2026,559,5786,Standard Liège,KV Kortrijk,1.0,1.0,post
+401878960,2026-10-31 20:45:00,2026,441,606,Anderlecht,KVC Westerlo,4.0,1.0,post
+401878957,2026-10-31 20:45:00,2026,13450,5807,Waasland-Beveren,Union Saint-Gilloise,1.0,2.0,post
+401878959,2026-11-01 13:30:00,2026,3610,17544,Cercle Brugge,Antwerp,2.0,1.0,post
+401878952,2026-11-01 16:00:00,2026,936,5579,Sint-Truiden,OH Leuven,1.0,2.0,post
+401878954,2026-11-01 18:30:00,2026,22269,3611,Lommel SK,Gent,2.0,0.0,post
+401878955,2026-11-01 19:15:00,2026,3616,131235,Charleroi,RAAL La Louvière,5.0,2.0,post
+401878967,2026-11-04 20:30:00,2026,5786,7879,KV Kortrijk,KV Mechelen,1.0,3.0,post
+401878951,2026-11-06 20:45:00,2026,559,13450,Standard Liège,Waasland-Beveren,3.0,0.0,post
+401878947,2026-11-07 16:00:00,2026,606,3616,KVC Westerlo,Charleroi,1.0,5.0,post
+401878949,2026-11-07 18:15:00,2026,5579,7879,OH Leuven,KV Mechelen,2.0,0.0,post
+401878950,2026-11-07 20:45:00,2026,17544,22269,Antwerp,Lommel SK,2.0,2.0,post
+401878948,2026-11-07 20:45:00,2026,131235,3610,RAAL La Louvière,Cercle Brugge,0.0,1.0,post

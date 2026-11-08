@@ -100,16 +100,16 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 581569,2021-03-09 21:45:00,2021,2994,5309,Braga,Vitoria de Guimaraes,3.0,0.0,post
 581560,2021-03-12 20:30:00,2021,3472,552,Nacional,Maritimo,1.0,2.0,post
 581556,2021-03-13 15:30:00,2021,20740,3519,SC Farense,Belenenses,0.0,1.0,post
-581562,2021-03-13 18:00:00,2021,12215,3719,Santa Clara,Portimonense,2.0,0.0,post
 581557,2021-03-13 18:00:00,2021,1929,2256,Benfica,Boavista,2.0,0.0,post
+581562,2021-03-13 18:00:00,2021,12215,3719,Santa Clara,Portimonense,2.0,0.0,post
 581564,2021-03-13 20:30:00,2021,12706,2250,Tondela,Sporting CP,0.0,1.0,post
 581563,2021-03-14 15:00:00,2021,3696,3822,Moreirense,Rio Ave,1.0,1.0,post
 581559,2021-03-14 17:30:00,2021,5309,3699,Vitoria de Guimaraes,Gil Vicente,2.0,4.0,post
 581561,2021-03-14 20:00:00,2021,437,3713,Porto,Paços de Ferreira,2.0,0.0,post
 581558,2021-03-15 20:15:00,2021,12698,2994,Famalicao,Braga,2.0,2.0,post
 581549,2021-03-19 20:30:00,2021,3699,3472,Gil Vicente,Nacional,2.0,0.0,post
-581553,2021-03-20 15:30:00,2021,3713,3696,Paços de Ferreira,Moreirense,3.0,0.0,post
 581555,2021-03-20 15:30:00,2021,12215,12706,Santa Clara,Tondela,1.0,1.0,post
+581553,2021-03-20 15:30:00,2021,3713,3696,Paços de Ferreira,Moreirense,3.0,0.0,post
 581550,2021-03-20 18:00:00,2021,3719,437,Portimonense,Porto,1.0,2.0,post
 581552,2021-03-20 20:30:00,2021,2250,5309,Sporting CP,Vitoria de Guimaraes,1.0,0.0,post
 581547,2021-03-21 15:00:00,2021,3822,3519,Rio Ave,Belenenses,0.0,0.0,post
@@ -156,9 +156,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 581506,2021-04-25 17:30:00,2021,3822,3713,Rio Ave,Paços de Ferreira,1.0,1.0,post
 581509,2021-04-25 20:00:00,2021,2994,2250,Braga,Sporting CP,0.0,1.0,post
 581503,2021-04-26 17:00:00,2021,3519,3699,Belenenses,Gil Vicente,2.0,1.0,post
-581508,2021-04-26 19:00:00,2021,1929,12215,Benfica,Santa Clara,2.0,1.0,post
-581504,2021-04-26 19:00:00,2021,3472,5309,Nacional,Vitoria de Guimaraes,1.0,0.0,post
 581510,2021-04-26 19:00:00,2021,12698,12706,Famalicao,Tondela,2.0,2.0,post
+581504,2021-04-26 19:00:00,2021,3472,5309,Nacional,Vitoria de Guimaraes,1.0,0.0,post
+581508,2021-04-26 19:00:00,2021,1929,12215,Benfica,Santa Clara,2.0,1.0,post
 581502,2021-04-26 21:15:00,2021,3696,437,Moreirense,Porto,1.0,1.0,post
 581507,2021-04-27 21:45:00,2021,20740,3719,SC Farense,Portimonense,1.0,1.0,post
 581496,2021-04-29 20:30:00,2021,552,2994,Maritimo,Braga,1.0,0.0,post
@@ -199,12 +199,12 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 581469,2021-05-16 20:00:00,2021,552,5309,Maritimo,Vitoria de Guimaraes,0.0,0.0,post
 581463,2021-05-18 20:15:00,2021,12706,3713,Tondela,Paços de Ferreira,2.0,3.0,post
 581457,2021-05-19 18:00:00,2021,437,3519,Porto,Belenenses,4.0,0.0,post
-581458,2021-05-19 20:00:00,2021,5309,1929,Vitoria de Guimaraes,Benfica,1.0,3.0,post
-581460,2021-05-19 20:00:00,2021,3719,2994,Portimonense,Braga,0.0,0.0,post
-581465,2021-05-19 20:00:00,2021,12215,20740,Santa Clara,SC Farense,4.0,0.0,post
+581464,2021-05-19 20:00:00,2021,3472,3822,Nacional,Rio Ave,1.0,2.0,post
 581459,2021-05-19 20:00:00,2021,3699,2256,Gil Vicente,Boavista,1.0,2.0,post
 581461,2021-05-19 20:00:00,2021,3696,12698,Moreirense,Famalicao,3.0,0.0,post
-581464,2021-05-19 20:00:00,2021,3472,3822,Nacional,Rio Ave,1.0,2.0,post
+581460,2021-05-19 20:00:00,2021,3719,2994,Portimonense,Braga,0.0,0.0,post
+581465,2021-05-19 20:00:00,2021,12215,20740,Santa Clara,SC Farense,4.0,0.0,post
+581458,2021-05-19 20:00:00,2021,5309,1929,Vitoria de Guimaraes,Benfica,1.0,3.0,post
 581462,2021-05-19 21:45:00,2021,2250,552,Sporting CP,Maritimo,5.0,1.0,post
 613400,2021-08-06 20:15:00,2021,2250,20995,Sporting CP,Vizela,3.0,0.0,post
 613406,2021-08-07 12:45:00,2021,15784,12216,Arouca,Estoril,0.0,2.0,post
@@ -246,8 +246,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 613440,2021-09-11 18:00:00,2021,12215,1929,Santa Clara,Benfica,0.0,5.0,post
 613441,2021-09-11 20:30:00,2021,2250,437,Sporting CP,Porto,1.0,1.0,post
 613435,2021-09-12 15:30:00,2021,3696,12698,Moreirense,Famalicao,2.0,2.0,post
-613437,2021-09-12 18:00:00,2021,3699,20995,Gil Vicente,Vizela,2.0,2.0,post
 613438,2021-09-12 18:00:00,2021,2256,3719,Boavista,Portimonense,1.0,1.0,post
+613437,2021-09-12 18:00:00,2021,3699,20995,Gil Vicente,Vizela,2.0,2.0,post
 613439,2021-09-12 20:30:00,2021,5309,3519,Vitoria de Guimaraes,Belenenses,0.0,0.0,post
 613436,2021-09-13 19:00:00,2021,552,15784,Maritimo,Arouca,2.0,2.0,post
 613442,2021-09-13 21:15:00,2021,12706,12216,Tondela,Estoril,1.0,2.0,post
@@ -275,8 +275,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 613465,2021-10-02 18:00:00,2021,437,3713,Porto,Paços de Ferreira,2.0,1.0,post
 613466,2021-10-02 20:30:00,2021,15784,2250,Arouca,Sporting CP,1.0,2.0,post
 613469,2021-10-03 15:30:00,2021,3519,12706,Belenenses,Tondela,0.0,2.0,post
-613467,2021-10-03 18:00:00,2021,12216,3699,Estoril,Gil Vicente,2.0,2.0,post
 613468,2021-10-03 18:00:00,2021,1929,3719,Benfica,Portimonense,0.0,1.0,post
+613467,2021-10-03 18:00:00,2021,12216,3699,Estoril,Gil Vicente,2.0,2.0,post
 613463,2021-10-03 20:30:00,2021,2994,2256,Braga,Boavista,2.0,2.0,post
 613472,2021-10-22 20:15:00,2021,5309,552,Vitoria de Guimaraes,Maritimo,2.0,1.0,post
 613475,2021-10-23 15:30:00,2021,12215,12698,Santa Clara,Famalicao,0.0,2.0,post
@@ -331,11 +331,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 613520,2021-12-13 20:15:00,2021,15784,20995,Arouca,Vizela,1.0,4.0,post
 613528,2021-12-17 19:00:00,2021,12215,5309,Santa Clara,Vitoria de Guimaraes,1.0,0.0,post
 613531,2021-12-17 21:15:00,2021,12216,12698,Estoril,Famalicao,2.0,2.0,post
-613529,2021-12-18 15:30:00,2021,3719,15784,Portimonense,Arouca,1.0,1.0,post
 613526,2021-12-18 15:30:00,2021,12706,3713,Tondela,Paços de Ferreira,0.0,1.0,post
+613529,2021-12-18 15:30:00,2021,3719,15784,Portimonense,Arouca,1.0,1.0,post
 613532,2021-12-18 20:30:00,2021,3699,2250,Gil Vicente,Sporting CP,0.0,3.0,post
-613530,2021-12-19 17:00:00,2021,2256,3696,Boavista,Moreirense,1.0,0.0,post
 613533,2021-12-19 17:00:00,2021,1929,552,Benfica,Maritimo,7.0,1.0,post
+613530,2021-12-19 17:00:00,2021,2256,3696,Boavista,Moreirense,1.0,0.0,post
 613525,2021-12-19 19:00:00,2021,20995,437,Vizela,Porto,0.0,4.0,post
 613527,2021-12-19 21:00:00,2021,2994,3519,Braga,Belenenses,1.0,0.0,post
 613541,2021-12-28 17:00:00,2021,12706,3699,Tondela,Gil Vicente,0.0,3.0,post
@@ -427,8 +427,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 613621,2022-03-05 20:30:00,2022,2250,15784,Sporting CP,Arouca,2.0,0.0,post
 613616,2022-03-06 15:30:00,2022,3696,552,Moreirense,Maritimo,0.0,1.0,post
 613615,2022-03-06 18:00:00,2022,3713,437,Paços de Ferreira,Porto,2.0,4.0,post
-613620,2022-03-06 20:30:00,2022,12215,20995,Santa Clara,Vizela,3.0,1.0,post
 613619,2022-03-06 20:30:00,2022,5309,12698,Vitoria de Guimaraes,Famalicao,2.0,1.0,post
+613620,2022-03-06 20:30:00,2022,12215,20995,Santa Clara,Vizela,3.0,1.0,post
 613622,2022-03-07 20:15:00,2022,12706,3519,Tondela,Belenenses,1.0,1.0,post
 613625,2022-03-11 20:15:00,2022,1929,20995,Benfica,Vizela,1.0,1.0,post
 613624,2022-03-12 15:30:00,2022,12216,3719,Estoril,Portimonense,2.0,0.0,post
@@ -443,8 +443,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 613638,2022-03-19 15:30:00,2022,12706,15784,Tondela,Arouca,2.0,2.0,post
 613639,2022-03-19 18:00:00,2022,12215,3519,Santa Clara,Belenenses,0.0,0.0,post
 613641,2022-03-19 20:30:00,2022,5309,2250,Vitoria de Guimaraes,Sporting CP,1.0,3.0,post
-613635,2022-03-20 15:30:00,2022,3699,552,Gil Vicente,Maritimo,1.0,1.0,post
 613636,2022-03-20 15:30:00,2022,3713,3696,Paços de Ferreira,Moreirense,2.0,1.0,post
+613635,2022-03-20 15:30:00,2022,3699,552,Gil Vicente,Maritimo,1.0,1.0,post
 613633,2022-03-20 18:00:00,2022,1929,12216,Benfica,Estoril,2.0,1.0,post
 613640,2022-03-20 20:00:00,2022,3719,2994,Portimonense,Braga,1.0,2.0,post
 613634,2022-03-20 20:45:00,2022,2256,437,Boavista,Porto,0.0,1.0,post
@@ -459,8 +459,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 613648,2022-04-04 20:15:00,2022,437,12215,Porto,Santa Clara,3.0,0.0,post
 613657,2022-04-08 20:15:00,2022,3699,3696,Gil Vicente,Moreirense,1.0,2.0,post
 613656,2022-04-09 15:30:00,2022,3713,552,Paços de Ferreira,Maritimo,2.0,0.0,post
-613651,2022-04-09 18:00:00,2022,1929,3519,Benfica,Belenenses,3.0,1.0,post
 613658,2022-04-09 18:00:00,2022,2256,15784,Boavista,Arouca,1.0,0.0,post
+613651,2022-04-09 18:00:00,2022,1929,3519,Benfica,Belenenses,3.0,1.0,post
 613653,2022-04-09 20:30:00,2022,12706,2250,Tondela,Sporting CP,1.0,3.0,post
 613659,2022-04-10 15:30:00,2022,3719,12698,Portimonense,Famalicao,1.0,0.0,post
 613654,2022-04-10 15:30:00,2022,12215,12216,Santa Clara,Estoril,2.0,0.0,post
@@ -571,8 +571,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 646732,2022-09-17 18:00:00,2022,12216,437,Estoril,Porto,1.0,1.0,post
 646726,2022-09-17 20:30:00,2022,2256,2250,Boavista,Sporting CP,2.0,1.0,post
 646724,2022-09-18 15:30:00,2022,15784,5309,Arouca,Vitoria de Guimaraes,2.0,2.0,post
-646725,2022-09-18 18:00:00,2022,1929,552,Benfica,Maritimo,5.0,0.0,post
 646727,2022-09-18 18:00:00,2022,21581,12698,Casa Pia,Famalicao,1.0,0.0,post
+646725,2022-09-18 18:00:00,2022,1929,552,Benfica,Maritimo,5.0,0.0,post
 646728,2022-09-18 20:30:00,2022,2994,20995,Braga,Vizela,2.0,0.0,post
 646738,2022-09-30 19:00:00,2022,2250,3699,Sporting CP,Gil Vicente,3.0,1.0,post
 646734,2022-09-30 21:15:00,2022,437,2994,Porto,Braga,4.0,1.0,post
@@ -768,8 +768,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 646922,2023-04-23 20:30:00,2023,15784,20995,Arouca,Vizela,1.0,0.0,post
 646924,2023-04-24 20:15:00,2023,5309,2250,Vitoria de Guimaraes,Sporting CP,0.0,2.0,post
 646933,2023-04-28 20:15:00,2023,3822,15784,Rio Ave,Arouca,1.0,0.0,post
-646932,2023-04-29 15:30:00,2023,552,5309,Maritimo,Vitoria de Guimaraes,1.0,2.0,post
 646934,2023-04-29 15:30:00,2023,2994,3719,Braga,Portimonense,4.0,1.0,post
+646932,2023-04-29 15:30:00,2023,552,5309,Maritimo,Vitoria de Guimaraes,1.0,2.0,post
 646931,2023-04-29 18:00:00,2023,12705,21581,GD Chaves,Casa Pia,1.0,0.0,post
 646935,2023-04-29 18:00:00,2023,20995,3713,Vizela,Paços de Ferreira,1.0,2.0,post
 646936,2023-04-29 20:30:00,2023,3699,1929,Gil Vicente,Benfica,0.0,2.0,post
@@ -806,8 +806,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 646969,2023-05-26 19:00:00,2023,3822,12698,Rio Ave,Famalicao,2.0,2.0,post
 646971,2023-05-26 21:15:00,2023,20995,2250,Vizela,Sporting CP,1.0,2.0,post
 646975,2023-05-27 12:45:00,2023,3699,21581,Gil Vicente,Casa Pia,1.0,0.0,post
-646973,2023-05-27 15:30:00,2023,12216,552,Estoril,Maritimo,3.0,1.0,post
 646974,2023-05-27 15:30:00,2023,12705,2256,GD Chaves,Boavista,1.0,4.0,post
+646973,2023-05-27 15:30:00,2023,12216,552,Estoril,Maritimo,3.0,1.0,post
 646967,2023-05-27 18:00:00,2023,1929,12215,Benfica,Santa Clara,3.0,0.0,post
 646972,2023-05-27 18:00:00,2023,437,5309,Porto,Vitoria de Guimaraes,3.0,0.0,post
 646970,2023-05-27 18:00:00,2023,3719,15784,Portimonense,Arouca,0.0,2.0,post
@@ -843,8 +843,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 680097,2023-09-02 18:00:00,2023,12698,20740,Famalicao,SC Farense,1.0,0.0,post
 680099,2023-09-02 18:00:00,2023,3719,21610,Portimonense,Estrela,1.0,1.0,post
 680093,2023-09-02 20:30:00,2023,1929,5309,Benfica,Vitoria de Guimaraes,4.0,0.0,post
-680095,2023-09-03 15:30:00,2023,12705,3696,GD Chaves,Moreirense,1.0,2.0,post
 680096,2023-09-03 15:30:00,2023,12216,2256,Estoril,Boavista,1.0,2.0,post
+680095,2023-09-03 15:30:00,2023,12705,3696,GD Chaves,Moreirense,1.0,2.0,post
 680098,2023-09-03 18:00:00,2023,437,15784,Porto,Arouca,1.0,1.0,post
 680100,2023-09-03 20:30:00,2023,2994,2250,Braga,Sporting CP,1.0,1.0,post
 680092,2023-09-09 18:00:00,2023,3696,2994,Moreirense,Braga,2.0,3.0,post
@@ -858,8 +858,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 680108,2023-09-17 20:30:00,2023,2250,3696,Sporting CP,Moreirense,3.0,0.0,post
 680103,2023-09-18 20:15:00,2023,2256,12705,Boavista,GD Chaves,4.0,1.0,post
 680114,2023-09-22 20:15:00,2023,12698,15784,Famalicao,Arouca,1.0,0.0,post
-680116,2023-09-23 15:30:00,2023,3696,20740,Moreirense,SC Farense,1.0,0.0,post
 680113,2023-09-23 15:30:00,2023,12216,20995,Estoril,Vizela,2.0,2.0,post
+680116,2023-09-23 15:30:00,2023,3696,20740,Moreirense,SC Farense,1.0,0.0,post
 680111,2023-09-23 18:00:00,2023,21581,5309,Casa Pia,Vitoria de Guimaraes,0.0,0.0,post
 680119,2023-09-23 20:30:00,2023,437,3699,Porto,Gil Vicente,2.0,1.0,post
 680112,2023-09-24 15:30:00,2023,12705,21610,GD Chaves,Estrela,2.0,2.0,post
@@ -933,8 +933,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 680187,2023-12-16 15:30:00,2023,3822,20995,Rio Ave,Vizela,1.0,1.0,post
 680186,2023-12-16 18:00:00,2023,15784,3699,Arouca,Gil Vicente,3.0,0.0,post
 680189,2023-12-16 20:30:00,2023,2256,5309,Boavista,Vitoria de Guimaraes,1.0,1.0,post
-680185,2023-12-17 15:30:00,2023,12705,21581,GD Chaves,Casa Pia,1.0,3.0,post
 680183,2023-12-17 15:30:00,2023,3696,3719,Moreirense,Portimonense,5.0,2.0,post
+680185,2023-12-17 15:30:00,2023,12705,21581,GD Chaves,Casa Pia,1.0,3.0,post
 680184,2023-12-17 18:00:00,2023,12698,12216,Famalicao,Estoril,1.0,1.0,post
 680190,2023-12-17 20:30:00,2023,2994,1929,Braga,Benfica,0.0,1.0,post
 680188,2023-12-18 20:15:00,2023,2250,437,Sporting CP,Porto,2.0,0.0,post
@@ -949,8 +949,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 680195,2023-12-30 20:30:00,2023,3719,2250,Portimonense,Sporting CP,1.0,2.0,post
 680206,2024-01-05 18:45:00,2024,2250,12216,Sporting CP,Estoril,5.0,1.0,post
 680207,2024-01-05 20:45:00,2024,2256,437,Boavista,Porto,1.0,1.0,post
-680205,2024-01-06 15:30:00,2024,21610,20995,Estrela,Vizela,1.0,1.0,post
 680204,2024-01-06 15:30:00,2024,20740,3699,SC Farense,Gil Vicente,1.0,0.0,post
+680205,2024-01-06 15:30:00,2024,21610,20995,Estrela,Vizela,1.0,1.0,post
 680208,2024-01-06 18:00:00,2024,15784,1929,Arouca,Benfica,0.0,3.0,post
 680209,2024-01-06 20:30:00,2024,2994,5309,Braga,Vitoria de Guimaraes,1.0,1.0,post
 680203,2024-01-07 18:00:00,2024,3822,3719,Rio Ave,Portimonense,2.0,0.0,post
@@ -961,8 +961,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 680211,2024-01-13 18:00:00,2024,12705,2250,GD Chaves,Sporting CP,0.0,3.0,post
 680212,2024-01-13 20:30:00,2024,12216,3696,Estoril,Moreirense,1.0,3.0,post
 680214,2024-01-14 15:30:00,2024,3699,21610,Gil Vicente,Estrela,1.0,1.0,post
-680213,2024-01-14 18:00:00,2024,20995,2256,Vizela,Boavista,1.0,4.0,post
 680217,2024-01-14 18:00:00,2024,1929,3822,Benfica,Rio Ave,4.0,1.0,post
+680213,2024-01-14 18:00:00,2024,20995,2256,Vizela,Boavista,1.0,4.0,post
 680218,2024-01-14 20:30:00,2024,437,2994,Porto,Braga,2.0,0.0,post
 680216,2024-01-15 20:15:00,2024,5309,15784,Vitoria de Guimaraes,Arouca,2.0,1.0,post
 680225,2024-01-18 18:45:00,2024,12698,2994,Famalicao,Braga,1.0,2.0,post
@@ -1014,8 +1014,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 680269,2024-02-24 18:00:00,2024,21610,12705,Estrela,GD Chaves,1.0,1.0,post
 680265,2024-02-24 20:30:00,2024,5309,21581,Vitoria de Guimaraes,Casa Pia,0.0,2.0,post
 680272,2024-02-25 15:30:00,2024,20995,12216,Vizela,Estoril,3.0,3.0,post
-680271,2024-02-25 18:00:00,2024,1929,3719,Benfica,Portimonense,4.0,0.0,post
 680268,2024-02-25 18:00:00,2024,3699,437,Gil Vicente,Porto,1.0,1.0,post
+680271,2024-02-25 18:00:00,2024,1929,3719,Benfica,Portimonense,4.0,0.0,post
 680267,2024-02-25 20:30:00,2024,3822,2250,Rio Ave,Sporting CP,3.0,3.0,post
 680270,2024-02-26 20:15:00,2024,2256,2994,Boavista,Braga,0.0,4.0,post
 680279,2024-03-01 20:15:00,2024,12705,15784,GD Chaves,Arouca,1.0,5.0,post
@@ -1030,8 +1030,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 680283,2024-03-08 18:45:00,2024,3719,437,Portimonense,Porto,0.0,3.0,post
 680286,2024-03-08 20:45:00,2024,21610,21581,Estrela,Casa Pia,3.0,1.0,post
 680287,2024-03-09 15:30:00,2024,20995,20740,Vizela,SC Farense,2.0,1.0,post
-680290,2024-03-09 18:00:00,2024,2256,3696,Boavista,Moreirense,1.0,0.0,post
 680284,2024-03-09 18:00:00,2024,3822,2994,Rio Ave,Braga,0.0,0.0,post
+680290,2024-03-09 18:00:00,2024,2256,3696,Boavista,Moreirense,1.0,0.0,post
 680285,2024-03-09 20:30:00,2024,5309,12698,Vitoria de Guimaraes,Famalicao,1.0,0.0,post
 680288,2024-03-10 18:00:00,2024,15784,2250,Arouca,Sporting CP,0.0,3.0,post
 680289,2024-03-10 20:30:00,2024,1929,12216,Benfica,Estoril,3.0,1.0,post
@@ -1048,8 +1048,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 680303,2024-03-29 15:30:00,2024,3699,12698,Gil Vicente,Famalicao,1.0,2.0,post
 680307,2024-03-29 18:00:00,2024,1929,12705,Benfica,GD Chaves,1.0,0.0,post
 680308,2024-03-29 20:30:00,2024,21610,2250,Estrela,Sporting CP,1.0,2.0,post
-680301,2024-03-30 15:30:00,2024,5309,3696,Vitoria de Guimaraes,Moreirense,1.0,0.0,post
 680300,2024-03-30 15:30:00,2024,15784,20740,Arouca,SC Farense,2.0,1.0,post
+680301,2024-03-30 15:30:00,2024,5309,3696,Vitoria de Guimaraes,Moreirense,1.0,0.0,post
 680306,2024-03-30 18:00:00,2024,2256,3822,Boavista,Rio Ave,0.0,0.0,post
 680305,2024-03-30 20:30:00,2024,12216,437,Estoril,Porto,1.0,0.0,post
 680304,2024-03-31 18:00:00,2024,20995,21581,Vizela,Casa Pia,0.0,4.0,post
@@ -1123,8 +1123,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 712610,2024-08-10 18:00:00,2024,21581,2256,Casa Pia,Boavista,0.0,1.0,post
 712612,2024-08-10 20:30:00,2024,437,3699,Porto,Gil Vicente,3.0,0.0,post
 712611,2024-08-11 15:30:00,2024,12216,12215,Estoril,Santa Clara,1.0,4.0,post
-712613,2024-08-11 18:00:00,2024,12698,1929,Famalicao,Benfica,2.0,0.0,post
 712614,2024-08-11 18:00:00,2024,20740,3696,SC Farense,Moreirense,1.0,2.0,post
+712613,2024-08-11 18:00:00,2024,12698,1929,Famalicao,Benfica,2.0,0.0,post
 712615,2024-08-11 20:30:00,2024,2994,21610,Braga,Estrela,1.0,1.0,post
 712609,2024-08-12 20:15:00,2024,15784,5309,Arouca,Vitoria de Guimaraes,0.0,1.0,post
 712624,2024-08-16 17:00:00,2024,12215,437,Santa Clara,Porto,0.0,2.0,post
@@ -1139,8 +1139,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 712630,2024-08-23 20:15:00,2024,20740,2250,SC Farense,Sporting CP,0.0,5.0,post
 712629,2024-08-24 15:30:00,2024,21581,12215,Casa Pia,Santa Clara,0.0,2.0,post
 712631,2024-08-24 18:00:00,2024,437,3822,Porto,Rio Ave,2.0,0.0,post
-712628,2024-08-24 20:30:00,2024,1929,21610,Benfica,Estrela,1.0,0.0,post
 712632,2024-08-24 20:30:00,2024,12698,2256,Famalicao,Boavista,1.0,0.0,post
+712628,2024-08-24 20:30:00,2024,1929,21610,Benfica,Estrela,1.0,0.0,post
 712627,2024-08-25 15:30:00,2024,15784,3472,Arouca,Nacional,1.0,0.0,post
 712634,2024-08-25 18:00:00,2024,12216,3699,Estoril,Gil Vicente,0.0,0.0,post
 712626,2024-08-25 20:30:00,2024,22064,5309,AVS,Vitoria de Guimaraes,1.0,0.0,post
@@ -1157,15 +1157,15 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 712645,2024-09-13 20:15:00,2024,15784,2250,Arouca,Sporting CP,0.0,3.0,post
 712647,2024-09-14 15:30:00,2024,21581,3696,Casa Pia,Moreirense,3.0,1.0,post
 712644,2024-09-14 18:00:00,2024,22064,3822,AVS,Rio Ave,1.0,0.0,post
-712646,2024-09-14 20:30:00,2024,1929,12215,Benfica,Santa Clara,4.0,1.0,post
 712651,2024-09-14 20:30:00,2024,12698,3699,Famalicao,Gil Vicente,1.0,1.0,post
+712646,2024-09-14 20:30:00,2024,1929,12215,Benfica,Santa Clara,4.0,1.0,post
 712650,2024-09-15 15:30:00,2024,437,20740,Porto,SC Farense,2.0,1.0,post
 712648,2024-09-15 18:00:00,2024,12216,3472,Estoril,Nacional,1.0,0.0,post
 712652,2024-09-15 20:30:00,2024,2994,5309,Braga,Vitoria de Guimaraes,0.0,2.0,post
 712649,2024-09-16 20:15:00,2024,21610,2256,Estrela,Boavista,2.0,2.0,post
 712654,2024-09-20 20:15:00,2024,3472,2994,Nacional,Braga,0.0,3.0,post
-712659,2024-09-21 15:30:00,2024,12215,21610,Santa Clara,Estrela,1.0,0.0,post
 712658,2024-09-21 15:30:00,2024,3822,12216,Rio Ave,Estoril,2.0,2.0,post
+712659,2024-09-21 15:30:00,2024,12215,21610,Santa Clara,Estrela,1.0,0.0,post
 712661,2024-09-21 18:00:00,2024,5309,437,Vitoria de Guimaraes,Porto,0.0,3.0,post
 712657,2024-09-21 20:30:00,2024,3696,12698,Moreirense,Famalicao,0.0,0.0,post
 712656,2024-09-22 15:30:00,2024,3699,21581,Gil Vicente,Casa Pia,1.0,1.0,post
@@ -1342,8 +1342,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 712827,2025-03-09 18:00:00,2025,21581,2250,Casa Pia,Sporting CP,1.0,3.0,post
 712826,2025-03-09 20:30:00,2025,2256,5309,Boavista,Vitoria de Guimaraes,1.0,2.0,post
 712830,2025-03-10 20:15:00,2025,12698,3822,Famalicao,Rio Ave,1.0,0.0,post
-712836,2025-03-15 15:30:00,2025,20740,2994,SC Farense,Braga,0.0,1.0,post
 712837,2025-03-15 15:30:00,2025,3699,12215,Gil Vicente,Santa Clara,0.0,1.0,post
+712836,2025-03-15 15:30:00,2025,20740,2994,SC Farense,Braga,0.0,1.0,post
 712835,2025-03-15 18:00:00,2025,437,22064,Porto,AVS,2.0,0.0,post
 712840,2025-03-15 20:30:00,2025,2250,12698,Sporting CP,Famalicao,3.0,1.0,post
 712833,2025-03-16 15:30:00,2025,15784,12216,Arouca,Estoril,1.0,1.0,post
@@ -1371,30 +1371,30 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 712857,2025-04-07 20:15:00,2025,3822,2256,Rio Ave,Boavista,0.0,2.0,post
 712858,2025-04-07 20:45:00,2025,2250,2994,Sporting CP,Braga,1.0,1.0,post
 712865,2025-04-11 20:15:00,2025,3699,5309,Gil Vicente,Vitoria de Guimaraes,0.0,1.0,post
-712864,2025-04-12 15:30:00,2025,12698,12216,Famalicao,Estoril,3.0,0.0,post
 712861,2025-04-12 15:30:00,2025,2256,3472,Boavista,Nacional,0.0,1.0,post
+712864,2025-04-12 15:30:00,2025,12698,12216,Famalicao,Estoril,3.0,0.0,post
 712867,2025-04-12 18:00:00,2025,12215,2250,Santa Clara,Sporting CP,0.0,1.0,post
 712862,2025-04-12 20:30:00,2025,21581,437,Casa Pia,Porto,0.0,1.0,post
 712863,2025-04-13 15:30:00,2025,21610,20740,Estrela,SC Farense,0.0,1.0,post
 712860,2025-04-13 18:00:00,2025,1929,15784,Benfica,Arouca,2.0,2.0,post
 712868,2025-04-13 18:00:00,2025,2994,22064,Braga,AVS,4.0,1.0,post
 712866,2025-04-13 20:30:00,2025,3696,3822,Moreirense,Rio Ave,0.0,2.0,post
-712875,2025-04-18 15:30:00,2025,3822,12215,Rio Ave,Santa Clara,1.0,1.0,post
 712874,2025-04-18 15:30:00,2025,20740,2256,SC Farense,Boavista,0.0,1.0,post
+712875,2025-04-18 15:30:00,2025,3822,12215,Rio Ave,Santa Clara,1.0,1.0,post
 712873,2025-04-18 18:00:00,2025,437,12698,Porto,Famalicao,2.0,1.0,post
 712876,2025-04-18 20:30:00,2025,2250,3696,Sporting CP,Moreirense,3.0,1.0,post
 712869,2025-04-19 15:30:00,2025,22064,21581,AVS,Casa Pia,1.0,1.0,post
 712871,2025-04-19 15:30:00,2025,3472,3699,Nacional,Gil Vicente,0.0,3.0,post
-712872,2025-04-19 18:00:00,2025,12216,2994,Estoril,Braga,0.0,2.0,post
 712870,2025-04-19 18:00:00,2025,15784,21610,Arouca,Estrela,1.0,0.0,post
+712872,2025-04-19 18:00:00,2025,12216,2994,Estoril,Braga,0.0,2.0,post
 712877,2025-04-19 20:30:00,2025,5309,1929,Vitoria de Guimaraes,Benfica,0.0,3.0,post
 712882,2025-04-25 20:30:00,2025,12698,2994,Famalicao,Braga,1.0,1.0,post
 712885,2025-04-26 15:30:00,2025,12215,15784,Santa Clara,Arouca,2.0,0.0,post
 712883,2025-04-26 18:00:00,2025,3699,20740,Gil Vicente,SC Farense,1.0,0.0,post
 712881,2025-04-26 20:30:00,2025,21610,437,Estrela,Porto,2.0,0.0,post
 712884,2025-04-27 15:30:00,2025,3696,3472,Moreirense,Nacional,1.0,1.0,post
-712878,2025-04-27 18:00:00,2025,1929,22064,Benfica,AVS,6.0,0.0,post
 712886,2025-04-27 18:00:00,2025,5309,3822,Vitoria de Guimaraes,Rio Ave,3.0,0.0,post
+712878,2025-04-27 18:00:00,2025,1929,22064,Benfica,AVS,6.0,0.0,post
 712879,2025-04-27 20:30:00,2025,2256,2250,Boavista,Sporting CP,0.0,5.0,post
 712880,2025-04-29 20:30:00,2025,21581,12216,Casa Pia,Estoril,1.0,3.0,post
 712895,2025-05-02 20:15:00,2025,437,3696,Porto,Moreirense,3.0,1.0,post
@@ -1415,8 +1415,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 712897,2025-05-11 18:00:00,2025,3696,12216,Moreirense,Estoril,2.0,2.0,post
 712899,2025-05-11 18:00:00,2025,5309,20740,Vitoria de Guimaraes,SC Farense,1.0,2.0,post
 712902,2025-05-11 20:30:00,2025,2256,437,Boavista,Porto,1.0,2.0,post
-712910,2025-05-16 19:00:00,2025,3822,3699,Rio Ave,Gil Vicente,1.0,1.0,post
 712912,2025-05-16 19:00:00,2025,12698,21581,Famalicao,Casa Pia,2.0,1.0,post
+712910,2025-05-16 19:00:00,2025,3822,3699,Rio Ave,Gil Vicente,1.0,1.0,post
 712907,2025-05-17 18:00:00,2025,15784,2256,Arouca,Boavista,4.0,1.0,post
 712908,2025-05-17 18:00:00,2025,22064,3696,AVS,Moreirense,0.0,3.0,post
 712909,2025-05-17 18:00:00,2025,2994,1929,Braga,Benfica,1.0,1.0,post
@@ -1456,8 +1456,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 750279,2025-08-30 20:30:00,2025,2250,437,Sporting CP,Porto,1.0,2.0,post
 750280,2025-08-31 15:30:00,2025,12706,12216,Tondela,Estoril,2.0,2.0,post
 750275,2025-08-31 18:00:00,2025,21613,1929,Alverca,Benfica,1.0,2.0,post
-750278,2025-08-31 20:30:00,2025,12215,21610,Santa Clara,Estrela,0.0,0.0,post
 750276,2025-08-31 20:30:00,2025,3822,2994,Rio Ave,Braga,2.0,2.0,post
+750278,2025-08-31 20:30:00,2025,12215,21610,Santa Clara,Estrela,0.0,0.0,post
 750268,2025-09-06 20:30:00,2025,12216,12215,Estoril,Santa Clara,0.0,1.0,post
 750289,2025-09-12 20:15:00,2025,1929,12215,Benfica,Santa Clara,1.0,1.0,post
 750287,2025-09-12 20:15:00,2025,21613,12706,Alverca,Tondela,1.0,0.0,post
@@ -1488,8 +1488,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 750306,2025-09-28 20:30:00,2025,12698,3822,Famalicao,Rio Ave,0.0,0.0,post
 750301,2025-09-29 20:00:00,2025,15784,437,Arouca,Porto,0.0,4.0,post
 750312,2025-10-03 20:15:00,2025,21581,12216,Casa Pia,Estoril,2.0,2.0,post
-750314,2025-10-04 15:30:00,2025,3699,21610,Gil Vicente,Estrela,2.0,0.0,post
 750311,2025-10-04 15:30:00,2025,3472,3696,Nacional,Moreirense,3.0,2.0,post
+750314,2025-10-04 15:30:00,2025,3699,21610,Gil Vicente,Estrela,2.0,0.0,post
 750309,2025-10-04 18:00:00,2025,22064,21613,AVS,Alverca,1.0,3.0,post
 750317,2025-10-04 20:30:00,2025,5309,12215,Vitoria de Guimaraes,Santa Clara,2.0,1.0,post
 750310,2025-10-05 15:30:00,2025,15784,12698,Arouca,Famalicao,1.0,1.0,post
@@ -1518,14 +1518,14 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 750340,2025-11-08 15:30:00,2025,21613,3822,Alverca,Rio Ave,1.0,1.0,post
 750343,2025-11-08 18:00:00,2025,12706,5309,Tondela,Vitoria de Guimaraes,0.0,1.0,post
 750336,2025-11-08 20:30:00,2025,12215,2250,Santa Clara,Sporting CP,1.0,2.0,post
-750342,2025-11-09 15:30:00,2025,21610,3472,Estrela,Nacional,1.0,1.0,post
 750341,2025-11-09 15:30:00,2025,22064,3699,AVS,Gil Vicente,1.0,1.0,post
+750342,2025-11-09 15:30:00,2025,21610,3472,Estrela,Nacional,1.0,1.0,post
 750338,2025-11-09 18:00:00,2025,12698,437,Famalicao,Porto,0.0,1.0,post
-750339,2025-11-09 20:30:00,2025,1929,21581,Benfica,Casa Pia,2.0,2.0,post
 750344,2025-11-09 20:30:00,2025,2994,3696,Braga,Moreirense,2.0,1.0,post
+750339,2025-11-09 20:30:00,2025,1929,21581,Benfica,Casa Pia,2.0,2.0,post
 750353,2025-11-28 20:15:00,2025,5309,22064,Vitoria de Guimaraes,AVS,4.0,0.0,post
-750351,2025-11-29 15:30:00,2025,21581,21613,Casa Pia,Alverca,0.0,2.0,post
 750347,2025-11-29 15:30:00,2025,3696,12698,Moreirense,Famalicao,2.0,2.0,post
+750351,2025-11-29 15:30:00,2025,21581,21613,Casa Pia,Alverca,0.0,2.0,post
 750352,2025-11-29 18:00:00,2025,3472,1929,Nacional,Benfica,1.0,2.0,post
 750345,2025-11-29 20:30:00,2025,3699,12706,Gil Vicente,Tondela,0.0,1.0,post
 750348,2025-11-30 15:30:00,2025,3822,12215,Rio Ave,Santa Clara,1.0,1.0,post
@@ -1561,8 +1561,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 750372,2025-12-23 20:45:00,2025,5309,2250,Vitoria de Guimaraes,Sporting CP,1.0,4.0,post
 750388,2025-12-27 18:00:00,2025,12698,21610,Famalicao,Estrela,2.0,3.0,post
 750384,2025-12-27 20:30:00,2025,12216,21613,Estoril,Alverca,4.0,1.0,post
-750383,2025-12-28 15:30:00,2025,21581,5309,Casa Pia,Vitoria de Guimaraes,0.0,0.0,post
 750381,2025-12-28 15:30:00,2025,15784,3699,Arouca,Gil Vicente,2.0,2.0,post
+750383,2025-12-28 15:30:00,2025,21581,5309,Casa Pia,Vitoria de Guimaraes,0.0,0.0,post
 750386,2025-12-28 18:00:00,2025,2994,1929,Braga,Benfica,2.0,2.0,post
 750385,2025-12-28 20:30:00,2025,2250,3822,Sporting CP,Rio Ave,4.0,0.0,post
 750389,2025-12-29 20:15:00,2025,437,22064,Porto,AVS,2.0,0.0,post
@@ -1591,8 +1591,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 750409,2026-01-24 18:00:00,2026,15784,2250,Arouca,Sporting CP,1.0,2.0,post
 750413,2026-01-24 20:30:00,2026,12216,5309,Estoril,Vitoria de Guimaraes,4.0,2.0,post
 750411,2026-01-25 15:30:00,2026,3472,3822,Nacional,Rio Ave,4.0,0.0,post
-750415,2026-01-25 18:00:00,2026,12698,12706,Famalicao,Tondela,3.0,0.0,post
 750410,2026-01-25 18:00:00,2026,1929,21610,Benfica,Estrela,4.0,0.0,post
+750415,2026-01-25 18:00:00,2026,12698,12706,Famalicao,Tondela,3.0,0.0,post
 750412,2026-01-25 20:30:00,2026,2994,21613,Braga,Alverca,5.0,0.0,post
 750416,2026-01-26 20:15:00,2026,437,3699,Porto,Gil Vicente,3.0,0.0,post
 750423,2026-01-30 20:45:00,2026,5309,3696,Vitoria de Guimaraes,Moreirense,1.0,0.0,post
@@ -1604,8 +1604,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 750417,2026-02-01 20:30:00,2026,12706,1929,Tondela,Benfica,0.0,0.0,post
 750420,2026-02-02 18:45:00,2026,22064,2994,AVS,Braga,0.0,4.0,post
 750422,2026-02-02 20:45:00,2026,21581,437,Casa Pia,Porto,2.0,1.0,post
-750431,2026-02-07 15:30:00,2026,21610,12215,Estrela,Santa Clara,1.0,0.0,post
 750426,2026-02-07 15:30:00,2026,3696,3699,Moreirense,Gil Vicente,1.0,2.0,post
+750431,2026-02-07 15:30:00,2026,21610,12215,Estrela,Santa Clara,1.0,0.0,post
 750427,2026-02-07 18:00:00,2026,12216,12706,Estoril,Tondela,2.0,2.0,post
 750434,2026-02-07 20:30:00,2026,15784,5309,Arouca,Vitoria de Guimaraes,3.0,2.0,post
 750428,2026-02-08 15:30:00,2026,3472,21581,Nacional,Casa Pia,0.0,0.0,post
@@ -1652,8 +1652,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 750479,2026-03-14 15:30:00,2026,5309,12698,Vitoria de Guimaraes,Famalicao,1.0,2.0,post
 750476,2026-03-14 18:00:00,2026,3699,21613,Gil Vicente,Alverca,2.0,2.0,post
 750472,2026-03-14 20:30:00,2026,15784,1929,Arouca,Benfica,1.0,2.0,post
-750471,2026-03-15 15:30:00,2026,22064,12215,AVS,Santa Clara,0.0,1.0,post
 750473,2026-03-15 15:30:00,2026,3472,12216,Nacional,Estoril,0.0,1.0,post
+750471,2026-03-15 15:30:00,2026,22064,12215,AVS,Santa Clara,0.0,1.0,post
 750477,2026-03-15 18:00:00,2026,3822,21610,Rio Ave,Estrela,2.0,1.0,post
 750475,2026-03-15 20:30:00,2026,437,3696,Porto,Moreirense,3.0,0.0,post
 750483,2026-03-20 20:15:00,2026,21610,21581,Estrela,Casa Pia,4.0,0.0,post
@@ -1669,8 +1669,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 750497,2026-04-03 18:00:00,2026,5309,12706,Vitoria de Guimaraes,Tondela,5.0,0.0,post
 750495,2026-04-03 20:30:00,2026,2250,12215,Sporting CP,Santa Clara,4.0,2.0,post
 750490,2026-04-04 15:30:00,2026,3472,21610,Nacional,Estrela,2.0,0.0,post
-750493,2026-04-04 18:00:00,2026,3696,2994,Moreirense,Braga,0.0,1.0,post
 750496,2026-04-04 18:00:00,2026,3822,21613,Rio Ave,Alverca,1.0,2.0,post
+750493,2026-04-04 18:00:00,2026,3696,2994,Moreirense,Braga,0.0,1.0,post
 750492,2026-04-04 20:30:00,2026,437,12698,Porto,Famalicao,2.0,2.0,post
 750489,2026-04-06 18:45:00,2026,15784,12216,Arouca,Estoril,3.0,2.0,post
 750491,2026-04-06 20:45:00,2026,21581,1929,Casa Pia,Benfica,1.0,1.0,post
@@ -1714,19 +1714,19 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 750530,2026-05-04 20:15:00,2026,2250,5309,Sporting CP,Vitoria de Guimaraes,5.0,1.0,post
 750537,2026-05-10 18:00:00,2026,22064,437,AVS,Porto,3.0,1.0,post
 750536,2026-05-10 20:30:00,2026,21613,12216,Alverca,Estoril,1.0,1.0,post
-750539,2026-05-11 20:15:00,2026,1929,2994,Benfica,Braga,2.0,2.0,post
+750535,2026-05-11 20:15:00,2026,5309,21581,Vitoria de Guimaraes,Casa Pia,0.0,1.0,post
+750534,2026-05-11 20:15:00,2026,12706,3696,Tondela,Moreirense,2.0,0.0,post
+750538,2026-05-11 20:15:00,2026,12215,3472,Santa Clara,Nacional,2.0,0.0,post
 750540,2026-05-11 20:15:00,2026,21610,12698,Estrela,Famalicao,0.0,0.0,post
 750541,2026-05-11 20:15:00,2026,3699,15784,Gil Vicente,Arouca,1.0,3.0,post
 750542,2026-05-11 20:15:00,2026,3822,2250,Rio Ave,Sporting CP,1.0,4.0,post
-750538,2026-05-11 20:15:00,2026,12215,3472,Santa Clara,Nacional,2.0,0.0,post
-750534,2026-05-11 20:15:00,2026,12706,3696,Tondela,Moreirense,2.0,0.0,post
-750535,2026-05-11 20:15:00,2026,5309,21581,Vitoria de Guimaraes,Casa Pia,0.0,1.0,post
+750539,2026-05-11 20:15:00,2026,1929,2994,Benfica,Braga,2.0,2.0,post
 750544,2026-05-16 15:30:00,2026,437,12215,Porto,Santa Clara,1.0,0.0,post
 750546,2026-05-16 15:30:00,2026,3696,22064,Moreirense,AVS,0.0,0.0,post
-750551,2026-05-16 18:00:00,2026,3472,5309,Nacional,Vitoria de Guimaraes,2.0,0.0,post
-750548,2026-05-16 18:00:00,2026,21581,3822,Casa Pia,Rio Ave,1.0,1.0,post
 750543,2026-05-16 18:00:00,2026,15784,12706,Arouca,Tondela,3.0,1.0,post
 750547,2026-05-16 18:00:00,2026,2994,21610,Braga,Estrela,2.0,2.0,post
+750551,2026-05-16 18:00:00,2026,3472,5309,Nacional,Vitoria de Guimaraes,2.0,0.0,post
+750548,2026-05-16 18:00:00,2026,21581,3822,Casa Pia,Rio Ave,1.0,1.0,post
 750549,2026-05-16 20:30:00,2026,12216,1929,Estoril,Benfica,1.0,3.0,post
 750545,2026-05-16 20:30:00,2026,12698,21613,Famalicao,Alverca,1.0,0.0,post
 750550,2026-05-16 20:30:00,2026,2250,3699,Sporting CP,Gil Vicente,3.0,0.0,post
@@ -1755,14 +1755,14 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401885469,2026-08-23 20:30:00,2026,437,15784,Porto,Arouca,2.0,0.0,post
 401885472,2026-08-24 20:15:00,2026,3699,21581,Gil Vicente,Casa Pia,2.0,0.0,post
 401885458,2026-08-28 20:15:00,2026,3822,2250,Rio Ave,Sporting CP,0.0,4.0,post
-401885463,2026-08-29 15:30:00,2026,15784,552,Arouca,Maritimo,2.0,1.0,post
 401885464,2026-08-29 15:30:00,2026,21613,12215,Alverca,Santa Clara,1.0,1.0,post
+401885463,2026-08-29 15:30:00,2026,15784,552,Arouca,Maritimo,2.0,1.0,post
 401885465,2026-08-29 18:00:00,2026,21607,437,Académico de Viseu,Porto,0.0,3.0,post
 401885459,2026-08-30 15:30:00,2026,3472,21610,Nacional,Estrela,2.0,3.0,post
 401885461,2026-08-30 18:00:00,2026,21581,3696,Casa Pia,Moreirense,0.0,1.0,post
 401885460,2026-08-30 20:30:00,2026,12698,3699,Famalicao,Gil Vicente,0.0,0.0,post
-401885457,2026-08-31 20:15:00,2026,1929,12216,Benfica,Estoril,2.0,1.0,post
 401885462,2026-08-31 20:15:00,2026,2994,5309,Braga,Vitoria de Guimaraes,1.0,0.0,post
+401885457,2026-08-31 20:15:00,2026,1929,12216,Benfica,Estoril,2.0,1.0,post
 401885451,2026-09-04 20:15:00,2026,437,3696,Porto,Moreirense,2.0,1.0,post
 401885455,2026-09-05 15:30:00,2026,21610,12698,Estrela,Famalicao,2.0,2.0,post
 401885456,2026-09-05 18:00:00,2026,21613,2994,Alverca,Braga,1.0,2.0,post
@@ -1783,3 +1783,43 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401885440,2026-09-14 18:45:00,2026,3822,21610,Rio Ave,Estrela,3.0,3.0,post
 401885442,2026-09-14 20:15:00,2026,3696,552,Moreirense,Maritimo,3.0,1.0,post
 401885445,2026-09-14 20:45:00,2026,2994,12216,Braga,Estoril,1.0,0.0,post
+401885434,2026-09-19 15:30:00,2026,3472,12698,Nacional,Famalicao,0.0,4.0,post
+401885435,2026-09-19 15:30:00,2026,3699,552,Gil Vicente,Maritimo,1.0,1.0,post
+401885438,2026-09-19 18:00:00,2026,21613,3822,Alverca,Rio Ave,1.0,0.0,post
+401885431,2026-09-19 20:30:00,2026,2250,15784,Sporting CP,Arouca,2.0,2.0,post
+401885437,2026-09-20 15:30:00,2026,21610,21607,Estrela,Académico de Viseu,0.0,2.0,post
+401885430,2026-09-20 15:30:00,2026,5309,3696,Vitoria de Guimaraes,Moreirense,1.0,1.0,post
+401885436,2026-09-20 18:00:00,2026,12216,21581,Estoril,Casa Pia,1.0,2.0,post
+401885432,2026-09-20 18:00:00,2026,12215,2994,Santa Clara,Braga,0.0,0.0,post
+401885433,2026-09-20 20:30:00,2026,437,1929,Porto,Benfica,3.0,1.0,post
+401885423,2026-10-09 18:45:00,2026,3696,3699,Moreirense,Gil Vicente,0.0,1.0,post
+401885427,2026-10-09 20:15:00,2026,2994,2250,Braga,Sporting CP,1.0,3.0,post
+401885424,2026-10-10 18:00:00,2026,552,437,Maritimo,Porto,1.0,2.0,post
+401885426,2026-10-10 20:30:00,2026,21581,12215,Casa Pia,Santa Clara,0.0,1.0,post
+401885429,2026-10-10 20:30:00,2026,21607,12216,Académico de Viseu,Estoril,2.0,1.0,post
+401885422,2026-10-11 15:30:00,2026,3822,3472,Rio Ave,Nacional,3.0,2.0,post
+401885421,2026-10-11 18:00:00,2026,1929,5309,Benfica,Vitoria de Guimaraes,2.0,0.0,post
+401885428,2026-10-11 20:30:00,2026,15784,21610,Arouca,Estrela,1.0,0.0,post
+401885425,2026-10-12 20:15:00,2026,12698,21613,Famalicao,Alverca,1.0,4.0,post
+401885480,2026-10-19 20:15:00,2026,2994,3699,Braga,Gil Vicente,1.0,2.0,post
+401885412,2026-10-23 20:45:00,2026,5309,552,Vitoria de Guimaraes,Maritimo,5.0,0.0,post
+401885419,2026-10-24 15:30:00,2026,21610,21581,Estrela,Casa Pia,0.0,2.0,post
+401885420,2026-10-24 18:00:00,2026,21613,15784,Alverca,Arouca,0.0,1.0,post
+401885417,2026-10-24 20:30:00,2026,3699,437,Gil Vicente,Porto,0.0,1.0,post
+401885418,2026-10-25 15:30:00,2026,12216,3696,Estoril,Moreirense,1.0,3.0,post
+401885416,2026-10-25 18:00:00,2026,3472,2994,Nacional,Braga,1.0,0.0,post
+401885415,2026-10-25 18:00:00,2026,3822,12698,Rio Ave,Famalicao,0.0,4.0,post
+401885413,2026-10-25 20:30:00,2026,2250,21607,Sporting CP,Académico de Viseu,1.0,2.0,post
+401885414,2026-10-26 18:45:00,2026,12215,1929,Santa Clara,Benfica,1.0,2.0,post
+401885408,2026-10-30 20:15:00,2026,21581,2250,Casa Pia,Sporting CP,0.0,2.0,post
+401885405,2026-10-31 15:30:00,2026,3696,21610,Moreirense,Estrela,2.0,1.0,post
+401885404,2026-10-31 20:30:00,2026,437,12216,Porto,Estoril,4.0,0.0,post
+401885410,2026-11-01 15:30:00,2026,15784,3472,Arouca,Nacional,1.0,0.0,post
+401885411,2026-11-01 18:00:00,2026,21607,3822,Académico de Viseu,Rio Ave,2.0,1.0,post
+401885406,2026-11-01 18:00:00,2026,552,12215,Maritimo,Santa Clara,0.0,2.0,post
+401885409,2026-11-01 20:30:00,2026,2994,12698,Braga,Famalicao,3.0,0.0,post
+401885403,2026-11-02 20:15:00,2026,1929,21613,Benfica,Alverca,1.0,0.0,post
+401885407,2026-11-02 20:15:00,2026,3699,5309,Gil Vicente,Vitoria de Guimaraes,0.0,0.0,post
+401885399,2026-11-06 20:45:00,2026,12698,15784,Famalicao,Arouca,1.0,0.0,post
+401885402,2026-11-07 18:00:00,2026,21613,21581,Alverca,Casa Pia,1.0,1.0,post
+401885395,2026-11-07 20:30:00,2026,2250,3696,Sporting CP,Moreirense,1.0,0.0,post

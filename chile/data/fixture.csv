@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401850688,2026-11-07 15:00:00,2026,4137,4422,Deportes La Serena,Palestino,,,pre
-401850689,2026-11-07 17:30:00,2026,4129,8110,Everton,Deportes Concepción,,,pre
 401850687,2026-11-08 12:30:00,2026,885,19195,Universidad Católica,Deportes Limache,,,pre
 401850690,2026-11-08 12:30:00,2026,4138,8186,Audax Italiano,Coquimbo Unido,,,pre
 401850691,2026-11-08 15:00:00,2026,7427,2688,Ñublense,Colo Colo,,,pre

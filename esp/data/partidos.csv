@@ -144,8 +144,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 581908,2021-04-11 18:30:00,2021,95,3747,Real Valladolid,Granada,1.0,2.0,post
 581904,2021-04-11 21:00:00,2021,244,1068,Real Betis,Atlético de Madrid,1.0,1.0,post
 581912,2021-04-12 21:00:00,2021,85,243,Celta de Vigo,Sevilla FC,3.0,4.0,post
-581875,2021-04-18 14:00:00,2021,97,3751,CA Osasuna,Elche CF,2.0,0.0,post
 581880,2021-04-18 14:00:00,2021,89,243,Real Sociedad,Sevilla FC,1.0,2.0,post
+581875,2021-04-18 14:00:00,2021,97,3751,CA Osasuna,Elche CF,2.0,0.0,post
 581879,2021-04-18 16:15:00,2021,96,5413,Alavés,Huesca,1.0,0.0,post
 581874,2021-04-18 16:15:00,2021,1068,3752,Atlético de Madrid,Eibar,5.0,0.0,post
 581873,2021-04-18 18:30:00,2021,3842,85,Cádiz,Celta de Vigo,0.0,0.0,post
@@ -204,11 +204,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 581852,2021-05-13 19:00:00,2021,95,102,Real Valladolid,Villarreal CF,0.0,2.0,post
 581848,2021-05-13 20:00:00,2021,3752,244,Eibar,Real Betis,1.0,1.0,post
 581849,2021-05-13 22:00:00,2021,3747,86,Granada,Real Madrid,1.0,4.0,post
-581834,2021-05-16 18:30:00,2021,94,3752,Valencia CF,Eibar,4.0,1.0,post
+581842,2021-05-16 18:30:00,2021,102,243,Villarreal CF,Sevilla FC,4.0,0.0,post
 581840,2021-05-16 18:30:00,2021,89,95,Real Sociedad,Real Valladolid,4.0,1.0,post
 581841,2021-05-16 18:30:00,2021,244,5413,Real Betis,Huesca,1.0,0.0,post
 581837,2021-05-16 18:30:00,2021,2922,1538,Getafe,Levante,2.0,1.0,post
-581842,2021-05-16 18:30:00,2021,102,243,Villarreal CF,Sevilla FC,4.0,0.0,post
+581834,2021-05-16 18:30:00,2021,94,3752,Valencia CF,Eibar,4.0,1.0,post
 581833,2021-05-16 18:30:00,2021,83,85,FC Barcelona,Celta de Vigo,1.0,2.0,post
 581838,2021-05-16 18:30:00,2021,1068,97,Atlético de Madrid,CA Osasuna,2.0,1.0,post
 581839,2021-05-16 18:30:00,2021,93,86,Athletic Club,Real Madrid,0.0,1.0,post
@@ -216,19 +216,19 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 581835,2021-05-16 18:30:00,2021,3842,3751,Cádiz,Elche CF,1.0,3.0,post
 581827,2021-05-21 21:00:00,2021,1538,3842,Levante,Cádiz,2.0,2.0,post
 581825,2021-05-22 18:00:00,2021,95,1068,Real Valladolid,Atlético de Madrid,1.0,2.0,post
-581832,2021-05-22 18:00:00,2021,86,102,Real Madrid,Villarreal CF,2.0,1.0,post
 581830,2021-05-22 18:00:00,2021,97,89,CA Osasuna,Real Sociedad,0.0,1.0,post
 581831,2021-05-22 18:00:00,2021,5413,94,Huesca,Valencia CF,0.0,0.0,post
-581824,2021-05-22 18:00:00,2021,3751,93,Elche CF,Athletic Club,2.0,0.0,post
+581832,2021-05-22 18:00:00,2021,86,102,Real Madrid,Villarreal CF,2.0,1.0,post
 581826,2021-05-22 18:00:00,2021,3752,83,Eibar,FC Barcelona,0.0,1.0,post
 581829,2021-05-22 18:00:00,2021,85,244,Celta de Vigo,Real Betis,2.0,3.0,post
+581824,2021-05-22 18:00:00,2021,3751,93,Elche CF,Athletic Club,2.0,0.0,post
 581828,2021-05-23 18:30:00,2021,3747,2922,Granada,Getafe,0.0,0.0,post
 581823,2021-05-23 21:00:00,2021,243,96,Sevilla FC,Alavés,1.0,0.0,post
 610763,2021-08-13 21:00:00,2021,94,2922,Valencia CF,Getafe,1.0,0.0,post
 610765,2021-08-14 19:30:00,2021,3842,1538,Cádiz,Levante,1.0,1.0,post
 610767,2021-08-14 19:30:00,2021,84,244,Mallorca,Real Betis,1.0,1.0,post
-610762,2021-08-14 22:00:00,2021,97,88,CA Osasuna,Espanyol,0.0,0.0,post
 610768,2021-08-14 22:00:00,2021,96,86,Alavés,Real Madrid,1.0,4.0,post
+610762,2021-08-14 22:00:00,2021,97,88,CA Osasuna,Espanyol,0.0,0.0,post
 610761,2021-08-15 17:30:00,2021,85,1068,Celta de Vigo,Atlético de Madrid,1.0,2.0,post
 610769,2021-08-15 20:00:00,2021,83,89,FC Barcelona,Real Sociedad,4.0,2.0,post
 610766,2021-08-15 22:15:00,2021,243,101,Sevilla FC,Rayo Vallecano,3.0,0.0,post
@@ -236,8 +236,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 610760,2021-08-16 22:00:00,2021,3751,93,Elche CF,Athletic Club,0.0,0.0,post
 610751,2021-08-20 21:00:00,2021,244,3842,Real Betis,Cádiz,1.0,1.0,post
 610754,2021-08-21 17:00:00,2021,96,84,Alavés,Mallorca,0.0,1.0,post
-610758,2021-08-21 19:30:00,2021,3747,94,Granada,Valencia CF,1.0,1.0,post
 610759,2021-08-21 19:30:00,2021,88,102,Espanyol,Villarreal CF,0.0,0.0,post
+610758,2021-08-21 19:30:00,2021,3747,94,Granada,Valencia CF,1.0,1.0,post
 610750,2021-08-21 22:00:00,2021,93,83,Athletic Club,FC Barcelona,1.0,1.0,post
 610755,2021-08-22 17:00:00,2021,89,101,Real Sociedad,Rayo Vallecano,1.0,0.0,post
 610753,2021-08-22 19:30:00,2021,1068,3751,Atlético de Madrid,Elche CF,1.0,0.0,post
@@ -251,8 +251,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 610745,2021-08-28 19:30:00,2021,89,1538,Real Sociedad,Levante,1.0,0.0,post
 610747,2021-08-28 22:00:00,2021,244,86,Real Betis,Real Madrid,0.0,1.0,post
 610743,2021-08-29 17:00:00,2021,83,2922,FC Barcelona,Getafe,2.0,1.0,post
-610746,2021-08-29 19:30:00,2021,3842,97,Cádiz,CA Osasuna,2.0,3.0,post
 610744,2021-08-29 19:30:00,2021,101,3747,Rayo Vallecano,Granada,4.0,0.0,post
+610746,2021-08-29 19:30:00,2021,3842,97,Cádiz,CA Osasuna,2.0,3.0,post
 610749,2021-08-29 22:00:00,2021,1068,102,Atlético de Madrid,Villarreal CF,2.0,2.0,post
 610736,2021-09-11 18:30:00,2021,1538,101,Levante,Rayo Vallecano,1.0,1.0,post
 610735,2021-09-11 21:00:00,2021,93,84,Athletic Club,Mallorca,2.0,0.0,post
@@ -275,8 +275,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 610711,2021-09-21 19:30:00,2021,2922,1068,Getafe,Atlético de Madrid,1.0,2.0,post
 610716,2021-09-21 22:00:00,2021,93,101,Athletic Club,Rayo Vallecano,1.0,2.0,post
 610713,2021-09-21 22:00:00,2021,1538,85,Levante,Celta de Vigo,0.0,2.0,post
-610719,2021-09-22 19:30:00,2021,243,94,Sevilla FC,Valencia CF,3.0,1.0,post
 610710,2021-09-22 19:30:00,2021,88,96,Espanyol,Alavés,1.0,0.0,post
+610719,2021-09-22 19:30:00,2021,243,94,Sevilla FC,Valencia CF,3.0,1.0,post
 610715,2021-09-22 22:00:00,2021,86,84,Real Madrid,Mallorca,6.0,1.0,post
 610714,2021-09-22 22:00:00,2021,102,3751,Villarreal CF,Elche CF,4.0,1.0,post
 610718,2021-09-23 19:30:00,2021,3747,89,Granada,Real Sociedad,2.0,3.0,post
@@ -347,8 +347,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 610647,2021-11-06 21:00:00,2021,86,101,Real Madrid,Rayo Vallecano,2.0,1.0,post
 610644,2021-11-07 14:00:00,2021,102,2922,Villarreal CF,Getafe,1.0,0.0,post
 610640,2021-11-07 16:15:00,2021,94,1068,Valencia CF,Atlético de Madrid,3.0,3.0,post
-610648,2021-11-07 18:30:00,2021,97,89,CA Osasuna,Real Sociedad,0.0,2.0,post
 610643,2021-11-07 18:30:00,2021,84,3751,Mallorca,Elche CF,2.0,2.0,post
+610648,2021-11-07 18:30:00,2021,97,89,CA Osasuna,Real Sociedad,0.0,2.0,post
 610649,2021-11-07 21:00:00,2021,244,243,Real Betis,Sevilla FC,0.0,2.0,post
 610631,2021-11-19 21:00:00,2021,1538,93,Levante,Athletic Club,0.0,0.0,post
 610639,2021-11-20 14:00:00,2021,85,102,Celta de Vigo,Villarreal CF,1.0,1.0,post
@@ -407,10 +407,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 610566,2021-12-22 21:30:00,2021,93,86,Athletic Club,Real Madrid,1.0,2.0,post
 610583,2021-12-31 16:15:00,2021,94,88,Valencia CF,Espanyol,1.0,2.0,post
 610587,2022-01-02 14:00:00,2022,2922,86,Getafe,Real Madrid,1.0,0.0,post
-610586,2022-01-02 16:15:00,2022,1068,101,Atlético de Madrid,Rayo Vallecano,2.0,0.0,post
 610584,2022-01-02 16:15:00,2022,3751,3747,Elche CF,Granada,0.0,0.0,post
-610582,2022-01-02 18:30:00,2022,244,85,Real Betis,Celta de Vigo,0.0,2.0,post
+610586,2022-01-02 16:15:00,2022,1068,101,Atlético de Madrid,Rayo Vallecano,2.0,0.0,post
 610588,2022-01-02 18:30:00,2022,96,89,Alavés,Real Sociedad,1.0,1.0,post
+610582,2022-01-02 18:30:00,2022,244,85,Real Betis,Celta de Vigo,0.0,2.0,post
 610581,2022-01-02 21:00:00,2022,84,83,Mallorca,FC Barcelona,0.0,1.0,post
 610585,2022-01-03 19:00:00,2022,102,1538,Villarreal CF,Levante,5.0,0.0,post
 610580,2022-01-03 21:00:00,2022,97,93,CA Osasuna,Athletic Club,1.0,3.0,post
@@ -509,8 +509,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 610484,2022-03-19 18:30:00,2022,97,1538,CA Osasuna,Levante,3.0,1.0,post
 610480,2022-03-19 21:00:00,2022,101,1068,Rayo Vallecano,Atlético de Madrid,0.0,1.0,post
 610485,2022-03-20 14:00:00,2022,88,84,Espanyol,Mallorca,1.0,0.0,post
-610486,2022-03-20 16:15:00,2022,85,244,Celta de Vigo,Real Betis,0.0,0.0,post
 610489,2022-03-20 16:15:00,2022,3842,102,Cádiz,Villarreal CF,1.0,0.0,post
+610486,2022-03-20 16:15:00,2022,85,244,Celta de Vigo,Real Betis,0.0,0.0,post
 610487,2022-03-20 18:30:00,2022,243,89,Sevilla FC,Real Sociedad,0.0,0.0,post
 610481,2022-03-20 21:00:00,2022,86,83,Real Madrid,FC Barcelona,0.0,4.0,post
 610474,2022-04-02 14:00:00,2022,2922,84,Getafe,Mallorca,1.0,0.0,post
@@ -585,22 +585,22 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 610419,2022-05-12 20:00:00,2022,101,102,Rayo Vallecano,Villarreal CF,1.0,5.0,post
 610416,2022-05-12 21:30:00,2022,86,1538,Real Madrid,Levante,6.0,0.0,post
 610409,2022-05-14 18:30:00,2022,88,94,Espanyol,Valencia CF,1.0,1.0,post
-610407,2022-05-15 19:30:00,2022,102,89,Villarreal CF,Real Sociedad,1.0,2.0,post
-610403,2022-05-15 19:30:00,2022,244,3747,Real Betis,Granada,2.0,0.0,post
-610405,2022-05-15 19:30:00,2022,84,101,Mallorca,Rayo Vallecano,2.0,1.0,post
-610400,2022-05-15 19:30:00,2022,1538,96,Levante,Alavés,3.0,1.0,post
-610401,2022-05-15 19:30:00,2022,2922,83,Getafe,FC Barcelona,0.0,0.0,post
-610402,2022-05-15 19:30:00,2022,85,3751,Celta de Vigo,Elche CF,1.0,0.0,post
-610406,2022-05-15 19:30:00,2022,3842,86,Cádiz,Real Madrid,1.0,1.0,post
-610408,2022-05-15 19:30:00,2022,1068,243,Atlético de Madrid,Sevilla FC,1.0,1.0,post
 610404,2022-05-15 19:30:00,2022,93,97,Athletic Club,CA Osasuna,2.0,0.0,post
-610396,2022-05-20 21:00:00,2022,101,1538,Rayo Vallecano,Levante,2.0,4.0,post
+610408,2022-05-15 19:30:00,2022,1068,243,Atlético de Madrid,Sevilla FC,1.0,1.0,post
+610406,2022-05-15 19:30:00,2022,3842,86,Cádiz,Real Madrid,1.0,1.0,post
+610402,2022-05-15 19:30:00,2022,85,3751,Celta de Vigo,Elche CF,1.0,0.0,post
+610401,2022-05-15 19:30:00,2022,2922,83,Getafe,FC Barcelona,0.0,0.0,post
+610400,2022-05-15 19:30:00,2022,1538,96,Levante,Alavés,3.0,1.0,post
+610405,2022-05-15 19:30:00,2022,84,101,Mallorca,Rayo Vallecano,2.0,1.0,post
+610403,2022-05-15 19:30:00,2022,244,3747,Real Betis,Granada,2.0,0.0,post
+610407,2022-05-15 19:30:00,2022,102,89,Villarreal CF,Real Sociedad,1.0,2.0,post
 610398,2022-05-20 21:00:00,2022,86,244,Real Madrid,Real Betis,0.0,0.0,post
+610396,2022-05-20 21:00:00,2022,101,1538,Rayo Vallecano,Levante,2.0,4.0,post
 610393,2022-05-21 17:30:00,2022,94,85,Valencia CF,Celta de Vigo,2.0,0.0,post
 610395,2022-05-22 17:30:00,2022,3751,2922,Elche CF,Getafe,3.0,1.0,post
-610397,2022-05-22 20:00:00,2022,97,84,CA Osasuna,Mallorca,0.0,2.0,post
 610392,2022-05-22 20:00:00,2022,96,3842,Alavés,Cádiz,0.0,1.0,post
 610394,2022-05-22 20:00:00,2022,3747,88,Granada,Espanyol,0.0,0.0,post
+610397,2022-05-22 20:00:00,2022,97,84,CA Osasuna,Mallorca,0.0,2.0,post
 610399,2022-05-22 22:00:00,2022,83,102,FC Barcelona,Villarreal CF,0.0,2.0,post
 610391,2022-05-22 22:00:00,2022,89,1068,Real Sociedad,Atlético de Madrid,1.0,2.0,post
 610390,2022-05-22 22:00:00,2022,243,93,Sevilla FC,Athletic Club,1.0,0.0,post
@@ -661,8 +661,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 643825,2022-09-17 21:00:00,2022,93,101,Athletic Club,Rayo Vallecano,3.0,2.0,post
 643827,2022-09-18 14:00:00,2022,97,2922,CA Osasuna,Getafe,0.0,2.0,post
 643823,2022-09-18 16:15:00,2022,102,243,Villarreal CF,Sevilla FC,1.0,1.0,post
-643830,2022-09-18 18:30:00,2022,89,88,Real Sociedad,Espanyol,2.0,1.0,post
 643826,2022-09-18 18:30:00,2022,244,9812,Real Betis,Girona FC,2.0,1.0,post
+643830,2022-09-18 18:30:00,2022,89,88,Real Sociedad,Espanyol,2.0,1.0,post
 643829,2022-09-18 21:00:00,2022,1068,86,Atlético de Madrid,Real Madrid,1.0,2.0,post
 643837,2022-09-30 21:00:00,2022,93,6832,Athletic Club,Almería,4.0,0.0,post
 643839,2022-10-01 14:00:00,2022,3842,102,Cádiz,Villarreal CF,0.0,0.0,post
@@ -697,8 +697,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 643863,2022-10-18 19:00:00,2022,243,94,Sevilla FC,Valencia CF,1.0,1.0,post
 643869,2022-10-18 20:00:00,2022,2922,93,Getafe,Athletic Club,2.0,2.0,post
 643870,2022-10-18 21:00:00,2022,1068,101,Atlético de Madrid,Rayo Vallecano,1.0,1.0,post
-643861,2022-10-19 19:00:00,2022,95,85,Real Valladolid,Celta de Vigo,4.0,1.0,post
 643867,2022-10-19 19:00:00,2022,3842,244,Cádiz,Real Betis,0.0,0.0,post
+643861,2022-10-19 19:00:00,2022,95,85,Real Valladolid,Celta de Vigo,4.0,1.0,post
 643862,2022-10-19 20:00:00,2022,89,84,Real Sociedad,Mallorca,1.0,0.0,post
 643868,2022-10-19 21:00:00,2022,3751,86,Elche CF,Real Madrid,0.0,3.0,post
 643864,2022-10-20 19:00:00,2022,6832,9812,Almería,Girona FC,3.0,2.0,post
@@ -710,8 +710,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 643874,2022-10-22 21:00:00,2022,86,243,Real Madrid,Sevilla FC,3.0,1.0,post
 643871,2022-10-23 14:00:00,2022,88,3751,Espanyol,Elche CF,2.0,2.0,post
 643880,2022-10-23 16:15:00,2022,244,1068,Real Betis,Atlético de Madrid,1.0,2.0,post
-643872,2022-10-23 18:30:00,2022,9812,97,Girona FC,CA Osasuna,1.0,1.0,post
 643877,2022-10-23 18:30:00,2022,102,6832,Villarreal CF,Almería,2.0,1.0,post
+643872,2022-10-23 18:30:00,2022,9812,97,Girona FC,CA Osasuna,1.0,1.0,post
 643879,2022-10-23 21:00:00,2022,83,93,FC Barcelona,Athletic Club,4.0,0.0,post
 643878,2022-10-24 21:00:00,2022,85,2922,Celta de Vigo,Getafe,1.0,1.0,post
 643889,2022-10-28 21:00:00,2022,84,88,Mallorca,Espanyol,1.0,1.0,post
@@ -892,18 +892,18 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 644069,2023-04-21 21:00:00,2023,88,3842,Espanyol,Cádiz,0.0,0.0,post
 644065,2023-04-22 14:00:00,2023,97,244,CA Osasuna,Real Betis,3.0,2.0,post
 644067,2023-04-22 16:15:00,2023,6832,93,Almería,Athletic Club,1.0,2.0,post
-644063,2023-04-22 18:30:00,2023,89,101,Real Sociedad,Rayo Vallecano,2.0,1.0,post
 644062,2023-04-22 18:30:00,2023,95,9812,Real Valladolid,Girona FC,1.0,0.0,post
+644063,2023-04-22 18:30:00,2023,89,101,Real Sociedad,Rayo Vallecano,2.0,1.0,post
 644064,2023-04-22 21:00:00,2023,86,85,Real Madrid,Celta de Vigo,2.0,0.0,post
 644070,2023-04-23 14:00:00,2023,3751,94,Elche CF,Valencia CF,0.0,2.0,post
 644068,2023-04-23 16:15:00,2023,83,1068,FC Barcelona,Atlético de Madrid,1.0,0.0,post
 644061,2023-04-23 18:30:00,2023,84,2922,Mallorca,Getafe,3.0,1.0,post
 644066,2023-04-23 21:00:00,2023,243,102,Sevilla FC,Villarreal CF,2.0,1.0,post
-644075,2023-04-25 19:30:00,2023,9812,86,Girona FC,Real Madrid,4.0,2.0,post
 644071,2023-04-25 19:30:00,2023,3842,97,Cádiz,CA Osasuna,0.0,1.0,post
+644075,2023-04-25 19:30:00,2023,9812,86,Girona FC,Real Madrid,4.0,2.0,post
 644078,2023-04-25 22:00:00,2023,244,89,Real Betis,Real Sociedad,0.0,0.0,post
-644073,2023-04-26 19:30:00,2023,1068,84,Atlético de Madrid,Mallorca,3.0,1.0,post
 644080,2023-04-26 19:30:00,2023,2922,6832,Getafe,Almería,1.0,2.0,post
+644073,2023-04-26 19:30:00,2023,1068,84,Atlético de Madrid,Mallorca,3.0,1.0,post
 644072,2023-04-26 22:00:00,2023,85,3751,Celta de Vigo,Elche CF,1.0,0.0,post
 644079,2023-04-26 22:00:00,2023,101,83,Rayo Vallecano,FC Barcelona,2.0,1.0,post
 644077,2023-04-27 19:30:00,2023,94,95,Valencia CF,Real Valladolid,2.0,1.0,post
@@ -925,8 +925,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 644093,2023-05-03 19:30:00,2023,94,102,Valencia CF,Villarreal CF,1.0,1.0,post
 644094,2023-05-03 22:00:00,2023,1068,3842,Atlético de Madrid,Cádiz,5.0,1.0,post
 644098,2023-05-03 22:00:00,2023,2922,85,Getafe,Celta de Vigo,1.0,0.0,post
-644091,2023-05-04 19:30:00,2023,243,88,Sevilla FC,Espanyol,3.0,2.0,post
 644099,2023-05-04 19:30:00,2023,9812,84,Girona FC,Mallorca,2.0,1.0,post
+644091,2023-05-04 19:30:00,2023,243,88,Sevilla FC,Espanyol,3.0,2.0,post
 644096,2023-05-04 22:00:00,2023,93,244,Athletic Club,Real Betis,0.0,1.0,post
 644100,2023-05-04 22:00:00,2023,101,95,Rayo Vallecano,Real Valladolid,2.0,1.0,post
 644107,2023-05-12 21:00:00,2023,84,3842,Mallorca,Cádiz,1.0,0.0,post
@@ -952,28 +952,28 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 644129,2023-05-23 19:30:00,2023,85,9812,Celta de Vigo,Girona FC,1.0,1.0,post
 644126,2023-05-23 19:30:00,2023,89,6832,Real Sociedad,Almería,1.0,0.0,post
 644127,2023-05-23 22:00:00,2023,95,83,Real Valladolid,FC Barcelona,3.0,1.0,post
+644128,2023-05-24 19:30:00,2023,3751,243,Elche CF,Sevilla FC,1.0,1.0,post
 644125,2023-05-24 19:30:00,2023,86,101,Real Madrid,Rayo Vallecano,2.0,1.0,post
 644130,2023-05-24 19:30:00,2023,102,3842,Villarreal CF,Cádiz,2.0,0.0,post
-644128,2023-05-24 19:30:00,2023,3751,243,Elche CF,Sevilla FC,1.0,1.0,post
 644121,2023-05-24 22:00:00,2023,88,1068,Espanyol,Atlético de Madrid,3.0,3.0,post
 644124,2023-05-24 22:00:00,2023,244,2922,Real Betis,Getafe,0.0,1.0,post
 644122,2023-05-25 19:30:00,2023,84,94,Mallorca,Valencia CF,1.0,0.0,post
 644123,2023-05-25 21:30:00,2023,97,93,CA Osasuna,Athletic Club,2.0,0.0,post
 644138,2023-05-27 19:00:00,2023,243,86,Sevilla FC,Real Madrid,1.0,2.0,post
-644131,2023-05-28 19:00:00,2023,9812,244,Girona FC,Real Betis,1.0,2.0,post
 644139,2023-05-28 19:00:00,2023,94,88,Valencia CF,Espanyol,2.0,2.0,post
 644140,2023-05-28 19:00:00,2023,101,102,Rayo Vallecano,Villarreal CF,2.0,1.0,post
+644131,2023-05-28 19:00:00,2023,9812,244,Girona FC,Real Betis,1.0,2.0,post
 644135,2023-05-28 19:00:00,2023,2922,97,Getafe,CA Osasuna,2.0,1.0,post
 644134,2023-05-28 19:00:00,2023,93,3751,Athletic Club,Elche CF,0.0,1.0,post
 644137,2023-05-28 19:00:00,2023,83,84,FC Barcelona,Mallorca,3.0,0.0,post
 644136,2023-05-28 19:00:00,2023,1068,89,Atlético de Madrid,Real Sociedad,2.0,1.0,post
-644132,2023-05-28 19:00:00,2023,3842,85,Cádiz,Celta de Vigo,1.0,0.0,post
 644133,2023-05-28 19:00:00,2023,6832,95,Almería,Real Valladolid,0.0,0.0,post
-644144,2023-06-04 18:30:00,2023,84,101,Mallorca,Rayo Vallecano,3.0,0.0,post
-644145,2023-06-04 18:30:00,2023,97,9812,CA Osasuna,Girona FC,2.0,1.0,post
-644147,2023-06-04 18:30:00,2023,86,93,Real Madrid,Athletic Club,1.0,1.0,post
-644148,2023-06-04 18:30:00,2023,89,243,Real Sociedad,Sevilla FC,2.0,1.0,post
+644132,2023-05-28 19:00:00,2023,3842,85,Cádiz,Celta de Vigo,1.0,0.0,post
 644150,2023-06-04 18:30:00,2023,102,1068,Villarreal CF,Atlético de Madrid,2.0,2.0,post
+644148,2023-06-04 18:30:00,2023,89,243,Real Sociedad,Sevilla FC,2.0,1.0,post
+644147,2023-06-04 18:30:00,2023,86,93,Real Madrid,Athletic Club,1.0,1.0,post
+644145,2023-06-04 18:30:00,2023,97,9812,CA Osasuna,Girona FC,2.0,1.0,post
+644144,2023-06-04 18:30:00,2023,84,101,Mallorca,Rayo Vallecano,3.0,0.0,post
 644141,2023-06-04 21:00:00,2023,85,83,Celta de Vigo,FC Barcelona,2.0,1.0,post
 644142,2023-06-04 21:00:00,2023,3751,3842,Elche CF,Cádiz,1.0,1.0,post
 644143,2023-06-04 21:00:00,2023,88,6832,Espanyol,Almería,3.0,3.0,post
@@ -1040,9 +1040,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 674064,2023-09-24 21:00:00,2023,1068,86,Atlético de Madrid,Real Madrid,3.0,1.0,post
 674071,2023-09-26 19:00:00,2023,243,6832,Sevilla FC,Almería,5.0,1.0,post
 674080,2023-09-26 21:30:00,2023,84,83,Mallorca,FC Barcelona,2.0,2.0,post
+674074,2023-09-27 19:00:00,2023,93,2922,Athletic Club,Getafe,2.0,2.0,post
 674078,2023-09-27 19:00:00,2023,86,98,Real Madrid,Las Palmas,2.0,0.0,post
 674073,2023-09-27 19:00:00,2023,102,9812,Villarreal CF,Girona FC,1.0,2.0,post
-674074,2023-09-27 19:00:00,2023,93,2922,Athletic Club,Getafe,2.0,2.0,post
 674076,2023-09-27 21:30:00,2023,3842,101,Cádiz,Rayo Vallecano,0.0,0.0,post
 674072,2023-09-27 21:30:00,2023,94,89,Valencia CF,Real Sociedad,0.0,1.0,post
 674075,2023-09-28 19:00:00,2023,85,96,Celta de Vigo,Alavés,1.0,1.0,post
@@ -1136,8 +1136,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 674162,2023-12-10 14:00:00,2023,1068,6832,Atlético de Madrid,Almería,2.0,1.0,post
 674164,2023-12-10 18:30:00,2023,3842,97,Cádiz,CA Osasuna,1.0,1.0,post
 674163,2023-12-10 21:00:00,2023,83,9812,FC Barcelona,Girona FC,2.0,4.0,post
-674166,2023-12-11 21:00:00,2023,3747,93,Granada,Athletic Club,1.0,1.0,post
 674168,2023-12-11 21:00:00,2023,101,85,Rayo Vallecano,Celta de Vigo,0.0,0.0,post
+674166,2023-12-11 21:00:00,2023,3747,93,Granada,Athletic Club,1.0,1.0,post
 674176,2023-12-15 21:00:00,2023,97,101,CA Osasuna,Rayo Vallecano,1.0,0.0,post
 674173,2023-12-16 14:00:00,2023,85,3747,Celta de Vigo,Granada,1.0,0.0,post
 674172,2023-12-16 16:15:00,2023,93,1068,Athletic Club,Atlético de Madrid,2.0,0.0,post
@@ -1156,8 +1156,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 674186,2023-12-20 21:30:00,2023,102,85,Villarreal CF,Celta de Vigo,3.0,2.0,post
 674190,2023-12-21 19:00:00,2023,3842,89,Cádiz,Real Sociedad,0.0,0.0,post
 674189,2023-12-21 19:00:00,2023,244,9812,Real Betis,Girona FC,1.0,1.0,post
-674181,2023-12-21 21:30:00,2023,96,86,Alavés,Real Madrid,0.0,1.0,post
 674187,2023-12-21 21:30:00,2023,84,97,Mallorca,CA Osasuna,3.0,2.0,post
+674181,2023-12-21 21:30:00,2023,96,86,Alavés,Real Madrid,0.0,1.0,post
 674046,2023-12-23 16:15:00,2023,1068,243,Atlético de Madrid,Sevilla FC,1.0,0.0,post
 674198,2024-01-02 17:00:00,2024,2922,101,Getafe,Rayo Vallecano,0.0,2.0,post
 674192,2024-01-02 19:15:00,2024,89,96,Real Sociedad,Alavés,1.0,1.0,post
@@ -1264,8 +1264,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 674293,2024-03-16 18:30:00,2024,2922,9812,Getafe,Girona FC,1.0,0.0,post
 674291,2024-03-16 21:00:00,2024,93,96,Athletic Club,Alavés,2.0,0.0,post
 674299,2024-03-17 14:00:00,2024,243,85,Sevilla FC,Celta de Vigo,1.0,2.0,post
-674294,2024-03-17 16:15:00,2024,98,6832,Las Palmas,Almería,0.0,1.0,post
 674300,2024-03-17 16:15:00,2024,102,94,Villarreal CF,Valencia CF,1.0,0.0,post
+674294,2024-03-17 16:15:00,2024,98,6832,Las Palmas,Almería,0.0,1.0,post
 674297,2024-03-17 18:30:00,2024,101,244,Rayo Vallecano,Real Betis,2.0,0.0,post
 674292,2024-03-17 21:00:00,2024,1068,83,Atlético de Madrid,FC Barcelona,0.0,3.0,post
 674310,2024-03-29 21:00:00,2024,3842,3747,Cádiz,Granada,1.0,0.0,post
@@ -1332,32 +1332,32 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 674370,2024-05-14 19:30:00,2024,97,84,CA Osasuna,Mallorca,1.0,1.0,post
 674367,2024-05-14 21:30:00,2024,86,96,Real Madrid,Alavés,5.0,0.0,post
 674361,2024-05-14 22:00:00,2024,9812,102,Girona FC,Villarreal CF,0.0,1.0,post
-674368,2024-05-15 19:30:00,2024,101,3747,Rayo Vallecano,Granada,2.0,1.0,post
 674365,2024-05-15 19:30:00,2024,243,3842,Sevilla FC,Cádiz,0.0,1.0,post
+674368,2024-05-15 19:30:00,2024,101,3747,Rayo Vallecano,Granada,2.0,1.0,post
 674362,2024-05-15 22:00:00,2024,85,93,Celta de Vigo,Athletic Club,2.0,1.0,post
 674369,2024-05-15 22:00:00,2024,2922,1068,Getafe,Atlético de Madrid,0.0,3.0,post
 674364,2024-05-16 19:30:00,2024,98,244,Las Palmas,Real Betis,2.0,2.0,post
 674363,2024-05-16 21:30:00,2024,6832,83,Almería,FC Barcelona,0.0,2.0,post
 674366,2024-05-16 22:00:00,2024,89,94,Real Sociedad,Valencia CF,1.0,0.0,post
 674371,2024-05-18 21:00:00,2024,96,2922,Alavés,Getafe,1.0,0.0,post
-674372,2024-05-19 19:00:00,2024,102,86,Villarreal CF,Real Madrid,4.0,4.0,post
 674374,2024-05-19 19:00:00,2024,244,89,Real Betis,Real Sociedad,0.0,2.0,post
-674375,2024-05-19 19:00:00,2024,84,6832,Mallorca,Almería,2.0,2.0,post
-674376,2024-05-19 19:00:00,2024,3747,85,Granada,Celta de Vigo,1.0,2.0,post
+674372,2024-05-19 19:00:00,2024,102,86,Villarreal CF,Real Madrid,4.0,4.0,post
 674373,2024-05-19 19:00:00,2024,94,9812,Valencia CF,Girona FC,1.0,3.0,post
+674375,2024-05-19 19:00:00,2024,84,6832,Mallorca,Almería,2.0,2.0,post
 674378,2024-05-19 19:00:00,2024,83,101,FC Barcelona,Rayo Vallecano,3.0,0.0,post
+674377,2024-05-19 19:00:00,2024,3842,98,Cádiz,Las Palmas,0.0,0.0,post
+674376,2024-05-19 19:00:00,2024,3747,85,Granada,Celta de Vigo,1.0,2.0,post
 674380,2024-05-19 19:00:00,2024,1068,97,Atlético de Madrid,CA Osasuna,1.0,4.0,post
 674379,2024-05-19 19:00:00,2024,93,243,Athletic Club,Sevilla FC,2.0,0.0,post
-674377,2024-05-19 19:00:00,2024,3842,98,Cádiz,Las Palmas,0.0,0.0,post
 674385,2024-05-24 21:00:00,2024,9812,3747,Girona FC,Granada,7.0,0.0,post
 674389,2024-05-25 14:00:00,2024,97,102,CA Osasuna,Villarreal CF,1.0,1.0,post
 674386,2024-05-25 16:15:00,2024,89,1068,Real Sociedad,Atlético de Madrid,0.0,2.0,post
-674381,2024-05-25 18:30:00,2024,6832,3842,Almería,Cádiz,6.0,1.0,post
 674390,2024-05-25 18:30:00,2024,101,93,Rayo Vallecano,Athletic Club,0.0,1.0,post
+674381,2024-05-25 18:30:00,2024,6832,3842,Almería,Cádiz,6.0,1.0,post
 674382,2024-05-25 21:00:00,2024,86,244,Real Madrid,Real Betis,0.0,0.0,post
 674384,2024-05-26 14:00:00,2024,2922,84,Getafe,Mallorca,1.0,2.0,post
-674388,2024-05-26 16:15:00,2024,98,96,Las Palmas,Alavés,1.0,1.0,post
 674383,2024-05-26 16:15:00,2024,85,94,Celta de Vigo,Valencia CF,2.0,2.0,post
+674388,2024-05-26 16:15:00,2024,98,96,Las Palmas,Alavés,1.0,1.0,post
 674387,2024-05-26 21:00:00,2024,243,83,Sevilla FC,FC Barcelona,1.0,2.0,post
 704660,2024-08-15 19:00:00,2024,93,2922,Athletic Club,Getafe,1.0,1.0,post
 704665,2024-08-15 21:30:00,2024,244,9812,Real Betis,Girona FC,1.0,1.0,post
@@ -1373,8 +1373,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704678,2024-08-23 21:30:00,2024,243,102,Sevilla FC,Villarreal CF,1.0,2.0,post
 704676,2024-08-24 17:00:00,2024,97,84,CA Osasuna,Mallorca,1.0,0.0,post
 704672,2024-08-24 19:00:00,2024,83,93,FC Barcelona,Athletic Club,2.0,1.0,post
-704674,2024-08-24 21:30:00,2024,2922,101,Getafe,Rayo Vallecano,0.0,0.0,post
 704679,2024-08-24 21:30:00,2024,88,89,Espanyol,Real Sociedad,0.0,1.0,post
+704674,2024-08-24 21:30:00,2024,2922,101,Getafe,Rayo Vallecano,0.0,0.0,post
 704677,2024-08-25 17:00:00,2024,86,95,Real Madrid,Real Valladolid,3.0,0.0,post
 704675,2024-08-25 19:00:00,2024,17534,98,Leganés,Las Palmas,2.0,1.0,post
 704670,2024-08-25 19:15:00,2024,96,244,Alavés,Real Betis,0.0,0.0,post
@@ -1537,8 +1537,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704830,2024-12-21 21:00:00,2024,83,1068,FC Barcelona,Atlético de Madrid,1.0,2.0,post
 704835,2024-12-22 14:00:00,2024,94,96,Valencia CF,Alavés,2.0,2.0,post
 704838,2024-12-22 16:15:00,2024,86,243,Real Madrid,Sevilla FC,4.0,2.0,post
-704839,2024-12-22 18:30:00,2024,98,88,Las Palmas,Espanyol,1.0,0.0,post
 704834,2024-12-22 18:30:00,2024,17534,102,Leganés,Villarreal CF,2.0,5.0,post
+704839,2024-12-22 18:30:00,2024,98,88,Las Palmas,Espanyol,1.0,0.0,post
 704837,2024-12-22 21:00:00,2024,244,101,Real Betis,Rayo Vallecano,1.0,1.0,post
 704778,2025-01-03 21:00:00,2025,94,86,Valencia CF,Real Madrid,1.0,2.0,post
 704845,2025-01-10 21:00:00,2025,101,85,Rayo Vallecano,Celta de Vigo,2.0,1.0,post
@@ -1634,8 +1634,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704931,2025-03-15 21:00:00,2025,9812,94,Girona FC,Valencia CF,1.0,1.0,post
 704933,2025-03-16 14:00:00,2025,17534,244,Leganés,Real Betis,2.0,3.0,post
 704938,2025-03-16 16:15:00,2025,243,93,Sevilla FC,Athletic Club,0.0,1.0,post
-704936,2025-03-16 18:30:00,2025,101,89,Rayo Vallecano,Real Sociedad,2.0,2.0,post
 704935,2025-03-16 18:30:00,2025,97,2922,CA Osasuna,Getafe,1.0,2.0,post
+704936,2025-03-16 18:30:00,2025,101,89,Rayo Vallecano,Real Sociedad,2.0,2.0,post
 704930,2025-03-16 21:00:00,2025,1068,83,Atlético de Madrid,FC Barcelona,2.0,4.0,post
 704922,2025-03-27 21:00:00,2025,83,97,FC Barcelona,CA Osasuna,3.0,0.0,post
 704947,2025-03-29 14:00:00,2025,89,95,Real Sociedad,Real Valladolid,2.0,1.0,post
@@ -1680,12 +1680,12 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 704979,2025-04-21 21:00:00,2025,9812,244,Girona FC,Real Betis,1.0,3.0,post
 704982,2025-04-22 19:00:00,2025,94,88,Valencia CF,Espanyol,1.0,1.0,post
 704988,2025-04-22 21:30:00,2025,83,84,FC Barcelona,Mallorca,1.0,0.0,post
-704987,2025-04-23 19:00:00,2025,85,102,Celta de Vigo,Villarreal CF,3.0,0.0,post
 704984,2025-04-23 19:00:00,2025,93,98,Athletic Club,Las Palmas,1.0,0.0,post
+704987,2025-04-23 19:00:00,2025,85,102,Celta de Vigo,Villarreal CF,3.0,0.0,post
 704986,2025-04-23 21:30:00,2025,96,89,Alavés,Real Sociedad,1.0,0.0,post
 704981,2025-04-23 21:30:00,2025,2922,86,Getafe,Real Madrid,0.0,1.0,post
-704983,2025-04-24 19:00:00,2025,17534,9812,Leganés,Girona FC,1.0,1.0,post
 704989,2025-04-24 19:00:00,2025,97,243,CA Osasuna,Sevilla FC,1.0,0.0,post
+704983,2025-04-24 19:00:00,2025,17534,9812,Leganés,Girona FC,1.0,1.0,post
 704980,2025-04-24 21:30:00,2025,1068,101,Atlético de Madrid,Rayo Vallecano,3.0,0.0,post
 704985,2025-04-24 21:30:00,2025,244,95,Real Betis,Real Valladolid,5.0,1.0,post
 704919,2025-04-27 16:15:00,2025,102,88,Villarreal CF,Espanyol,1.0,0.0,post
@@ -1715,15 +1715,15 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 705010,2025-05-14 19:00:00,2025,96,94,Alavés,Valencia CF,1.0,0.0,post
 705019,2025-05-14 19:00:00,2025,102,17534,Villarreal CF,Leganés,3.0,0.0,post
 705014,2025-05-14 21:30:00,2025,86,84,Real Madrid,Mallorca,2.0,1.0,post
-705013,2025-05-15 19:00:00,2025,101,244,Rayo Vallecano,Real Betis,2.0,2.0,post
 705012,2025-05-15 19:00:00,2025,97,1068,CA Osasuna,Atlético de Madrid,2.0,0.0,post
+705013,2025-05-15 19:00:00,2025,101,244,Rayo Vallecano,Real Betis,2.0,2.0,post
 705018,2025-05-15 21:30:00,2025,88,83,Espanyol,FC Barcelona,0.0,2.0,post
 705011,2025-05-15 21:30:00,2025,2922,93,Getafe,Athletic Club,0.0,2.0,post
 705029,2025-05-18 19:00:00,2025,94,93,Valencia CF,Athletic Club,0.0,1.0,post
 705028,2025-05-18 19:00:00,2025,243,86,Sevilla FC,Real Madrid,0.0,2.0,post
 705027,2025-05-18 19:00:00,2025,95,96,Real Valladolid,Alavés,0.0,1.0,post
-705025,2025-05-18 19:00:00,2025,97,88,CA Osasuna,Espanyol,2.0,0.0,post
 705026,2025-05-18 19:00:00,2025,89,9812,Real Sociedad,Girona FC,3.0,2.0,post
+705025,2025-05-18 19:00:00,2025,97,88,CA Osasuna,Espanyol,2.0,0.0,post
 705023,2025-05-18 19:00:00,2025,98,17534,Las Palmas,Leganés,0.0,1.0,post
 705022,2025-05-18 19:00:00,2025,85,101,Celta de Vigo,Rayo Vallecano,1.0,2.0,post
 705021,2025-05-18 19:00:00,2025,83,102,FC Barcelona,Villarreal CF,2.0,3.0,post
@@ -1742,8 +1742,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 748152,2025-08-15 19:00:00,2025,9812,101,Girona FC,Rayo Vallecano,1.0,3.0,post
 748151,2025-08-15 21:30:00,2025,102,92,Villarreal CF,Real Oviedo,2.0,0.0,post
 748153,2025-08-16 19:30:00,2025,84,83,Mallorca,FC Barcelona,0.0,3.0,post
-748150,2025-08-16 21:30:00,2025,96,1538,Alavés,Levante,2.0,1.0,post
 748144,2025-08-16 21:30:00,2025,94,89,Valencia CF,Real Sociedad,1.0,1.0,post
+748150,2025-08-16 21:30:00,2025,96,1538,Alavés,Levante,2.0,1.0,post
 748148,2025-08-17 17:00:00,2025,85,2922,Celta de Vigo,Getafe,0.0,2.0,post
 748149,2025-08-17 19:30:00,2025,93,243,Athletic Club,Sevilla FC,3.0,2.0,post
 748146,2025-08-17 21:30:00,2025,88,1068,Espanyol,Atlético de Madrid,2.0,1.0,post
@@ -1783,8 +1783,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 748185,2025-09-19 21:00:00,2025,244,89,Real Betis,Real Sociedad,3.0,1.0,post
 748193,2025-09-20 14:00:00,2025,9812,1538,Girona FC,Levante,0.0,4.0,post
 748186,2025-09-20 16:15:00,2025,86,88,Real Madrid,Espanyol,2.0,0.0,post
-748190,2025-09-20 18:30:00,2025,96,243,Alavés,Sevilla FC,1.0,2.0,post
 748189,2025-09-20 18:30:00,2025,102,97,Villarreal CF,CA Osasuna,2.0,1.0,post
+748190,2025-09-20 18:30:00,2025,96,243,Alavés,Sevilla FC,1.0,2.0,post
 748187,2025-09-20 21:00:00,2025,94,93,Valencia CF,Athletic Club,2.0,0.0,post
 748184,2025-09-21 14:00:00,2025,101,85,Rayo Vallecano,Celta de Vigo,1.0,1.0,post
 748188,2025-09-21 16:15:00,2025,84,1068,Mallorca,Atlético de Madrid,1.0,1.0,post
@@ -1792,11 +1792,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 748191,2025-09-21 21:00:00,2025,83,2922,FC Barcelona,Getafe,3.0,0.0,post
 748194,2025-09-23 19:00:00,2025,93,9812,Athletic Club,Girona FC,1.0,1.0,post
 748203,2025-09-23 19:00:00,2025,88,94,Espanyol,Valencia CF,2.0,2.0,post
-748200,2025-09-23 21:30:00,2025,1538,86,Levante,Real Madrid,1.0,4.0,post
 748196,2025-09-23 21:30:00,2025,243,102,Sevilla FC,Villarreal CF,1.0,2.0,post
+748200,2025-09-23 21:30:00,2025,1538,86,Levante,Real Madrid,1.0,4.0,post
 748199,2025-09-24 19:00:00,2025,2922,96,Getafe,Alavés,1.0,1.0,post
-748197,2025-09-24 21:30:00,2025,89,84,Real Sociedad,Mallorca,1.0,0.0,post
 748195,2025-09-24 21:30:00,2025,1068,101,Atlético de Madrid,Rayo Vallecano,3.0,2.0,post
+748197,2025-09-24 21:30:00,2025,89,84,Real Sociedad,Mallorca,1.0,0.0,post
 748201,2025-09-25 19:30:00,2025,97,3751,CA Osasuna,Elche CF,1.0,1.0,post
 748202,2025-09-25 21:30:00,2025,92,83,Real Oviedo,FC Barcelona,1.0,3.0,post
 748205,2025-09-26 21:00:00,2025,9812,88,Girona FC,Espanyol,0.0,0.0,post
@@ -2099,24 +2099,24 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 748502,2026-05-14 19:00:00,2026,94,101,Valencia CF,Rayo Vallecano,1.0,1.0,post
 748495,2026-05-14 20:00:00,2026,9812,89,Girona FC,Real Sociedad,1.0,1.0,post
 748503,2026-05-14 21:30:00,2026,86,92,Real Madrid,Real Oviedo,2.0,0.0,post
-748510,2026-05-17 19:00:00,2026,1538,84,Levante,Mallorca,2.0,0.0,post
+748512,2026-05-17 19:00:00,2026,101,102,Rayo Vallecano,Villarreal CF,2.0,0.0,post
 748504,2026-05-17 19:00:00,2026,243,86,Sevilla FC,Real Madrid,0.0,1.0,post
 748505,2026-05-17 19:00:00,2026,89,94,Real Sociedad,Valencia CF,3.0,4.0,post
+748511,2026-05-17 19:00:00,2026,97,88,CA Osasuna,Espanyol,1.0,2.0,post
 748513,2026-05-17 19:00:00,2026,92,96,Real Oviedo,Alavés,0.0,1.0,post
-748512,2026-05-17 19:00:00,2026,101,102,Rayo Vallecano,Villarreal CF,2.0,0.0,post
 748507,2026-05-17 19:00:00,2026,3751,2922,Elche CF,Getafe,1.0,0.0,post
+748510,2026-05-17 19:00:00,2026,1538,84,Levante,Mallorca,2.0,0.0,post
 748509,2026-05-17 19:00:00,2026,1068,9812,Atlético de Madrid,Girona FC,1.0,0.0,post
 748506,2026-05-17 19:00:00,2026,93,85,Athletic Club,Celta de Vigo,1.0,1.0,post
-748511,2026-05-17 19:00:00,2026,97,88,CA Osasuna,Espanyol,1.0,2.0,post
 748508,2026-05-17 21:15:00,2026,83,244,FC Barcelona,Real Betis,3.0,1.0,post
+748519,2026-05-23 21:00:00,2026,94,83,Valencia CF,FC Barcelona,3.0,1.0,post
 748514,2026-05-23 21:00:00,2026,86,93,Real Madrid,Athletic Club,4.0,2.0,post
 748522,2026-05-23 21:00:00,2026,244,1538,Real Betis,Levante,2.0,1.0,post
-748519,2026-05-23 21:00:00,2026,94,83,Valencia CF,FC Barcelona,3.0,1.0,post
 748521,2026-05-23 21:00:00,2026,84,92,Mallorca,Real Oviedo,3.0,0.0,post
-748517,2026-05-23 21:00:00,2026,85,243,Celta de Vigo,Sevilla FC,1.0,0.0,post
+748520,2026-05-23 21:00:00,2026,9812,3751,Girona FC,Elche CF,1.0,1.0,post
 748518,2026-05-23 21:00:00,2026,2922,97,Getafe,CA Osasuna,1.0,0.0,post
 748516,2026-05-23 21:00:00,2026,88,89,Espanyol,Real Sociedad,1.0,1.0,post
-748520,2026-05-23 21:00:00,2026,9812,3751,Girona FC,Elche CF,1.0,1.0,post
+748517,2026-05-23 21:00:00,2026,85,243,Celta de Vigo,Sevilla FC,1.0,0.0,post
 748523,2026-05-23 21:00:00,2026,96,101,Alavés,Rayo Vallecano,1.0,2.0,post
 748515,2026-05-24 21:00:00,2026,102,1068,Villarreal CF,Atlético de Madrid,5.0,1.0,post
 401882926,2026-08-15 19:30:00,2026,96,2922,Alavés,Getafe,3.0,0.0,post
@@ -2155,8 +2155,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882889,2026-09-05 18:30:00,2026,101,87,Rayo Vallecano,Racing Santander,3.0,2.0,post
 401882887,2026-09-05 21:00:00,2026,102,90,Villarreal CF,Deportivo,2.0,3.0,post
 401882888,2026-09-06 16:15:00,2026,94,83,Valencia CF,FC Barcelona,0.0,5.0,post
-401882890,2026-09-06 18:30:00,2026,99,1538,Málaga,Levante,0.0,0.0,post
 401882896,2026-09-06 18:30:00,2026,96,97,Alavés,CA Osasuna,5.0,2.0,post
+401882890,2026-09-06 18:30:00,2026,99,1538,Málaga,Levante,0.0,0.0,post
 401882892,2026-09-06 21:00:00,2026,88,243,Espanyol,Sevilla FC,1.0,1.0,post
 401882891,2026-09-07 19:00:00,2026,2922,85,Getafe,Celta de Vigo,1.0,1.0,post
 401882893,2026-09-07 21:30:00,2026,3751,89,Elche CF,Real Sociedad,2.0,3.0,post
@@ -2229,3 +2229,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882826,2026-11-01 21:00:00,2026,93,89,Athletic Club,Real Sociedad,2.0,1.0,post
 401882824,2026-11-02 21:00:00,2026,90,97,Deportivo,CA Osasuna,2.0,1.0,post
 401882809,2026-11-06 21:00:00,2026,243,96,Sevilla FC,Alavés,0.0,0.0,post
+401882812,2026-11-07 14:00:00,2026,99,87,Málaga,Racing Santander,1.0,2.0,post
+401882813,2026-11-07 16:15:00,2026,88,90,Espanyol,Deportivo,0.0,0.0,post
+401882811,2026-11-07 18:30:00,2026,97,93,CA Osasuna,Athletic Club,1.0,1.0,post
+401882808,2026-11-07 21:00:00,2026,94,86,Valencia CF,Real Madrid,0.0,3.0,post

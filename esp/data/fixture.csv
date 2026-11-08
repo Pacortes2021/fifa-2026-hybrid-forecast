@@ -1,12 +1,8 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401882812,2026-11-07 14:00:00,2026,99,87,Málaga,Racing Santander,,,pre
-401882813,2026-11-07 16:15:00,2026,88,90,Espanyol,Deportivo,,,pre
-401882811,2026-11-07 18:30:00,2026,97,93,CA Osasuna,Athletic Club,,,pre
-401882808,2026-11-07 21:00:00,2026,94,86,Valencia CF,Real Madrid,,,pre
 401882814,2026-11-08 14:00:00,2026,3751,244,Elche CF,Real Betis,,,pre
 401882810,2026-11-08 16:15:00,2026,89,101,Real Sociedad,Rayo Vallecano,,,pre
-401882807,2026-11-08 18:30:00,2026,102,2922,Villarreal CF,Getafe,,,pre
 401882815,2026-11-08 18:30:00,2026,85,1538,Celta de Vigo,Levante,,,pre
+401882807,2026-11-08 18:30:00,2026,102,2922,Villarreal CF,Getafe,,,pre
 401882816,2026-11-08 21:00:00,2026,1068,83,Atlético de Madrid,FC Barcelona,,,pre
 401882805,2026-11-20 21:00:00,2026,93,88,Athletic Club,Espanyol,,,pre
 401882806,2026-11-21 14:00:00,2026,96,90,Alavés,Deportivo,,,pre
@@ -45,18 +41,226 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882769,2026-12-13 21:00:00,2026,86,97,Real Madrid,CA Osasuna,,,pre
 401882775,2026-12-13 21:00:00,2026,244,87,Real Betis,Racing Santander,,,pre
 401882770,2026-12-13 21:00:00,2026,99,83,Málaga,FC Barcelona,,,pre
-401882773,2026-12-13 21:00:00,2026,3751,243,Elche CF,Sevilla FC,,,pre
+401882771,2026-12-13 21:00:00,2026,1538,96,Levante,Alavés,,,pre
 401882772,2026-12-13 21:00:00,2026,88,85,Espanyol,Celta de Vigo,,,pre
+401882773,2026-12-13 21:00:00,2026,3751,243,Elche CF,Sevilla FC,,,pre
 401882774,2026-12-13 21:00:00,2026,90,93,Deportivo,Athletic Club,,,pre
 401882776,2026-12-13 21:00:00,2026,1068,94,Atlético de Madrid,Valencia CF,,,pre
-401882771,2026-12-13 21:00:00,2026,1538,96,Levante,Alavés,,,pre
-401882758,2026-12-20 21:00:00,2026,243,87,Sevilla FC,Racing Santander,,,pre
-401882766,2026-12-20 21:00:00,2026,96,3751,Alavés,Elche CF,,,pre
-401882765,2026-12-20 21:00:00,2026,93,244,Athletic Club,Real Betis,,,pre
-401882762,2026-12-20 21:00:00,2026,83,89,FC Barcelona,Real Sociedad,,,pre
-401882764,2026-12-20 21:00:00,2026,85,1068,Celta de Vigo,Atlético de Madrid,,,pre
-401882763,2026-12-20 21:00:00,2026,90,86,Deportivo,Real Madrid,,,pre
-401882761,2026-12-20 21:00:00,2026,2922,1538,Getafe,Levante,,,pre
-401882760,2026-12-20 21:00:00,2026,97,102,CA Osasuna,Villarreal CF,,,pre
-401882759,2026-12-20 21:00:00,2026,101,99,Rayo Vallecano,Málaga,,,pre
 401882757,2026-12-20 21:00:00,2026,94,88,Valencia CF,Espanyol,,,pre
+401882758,2026-12-20 21:00:00,2026,243,87,Sevilla FC,Racing Santander,,,pre
+401882759,2026-12-20 21:00:00,2026,101,99,Rayo Vallecano,Málaga,,,pre
+401882760,2026-12-20 21:00:00,2026,97,102,CA Osasuna,Villarreal CF,,,pre
+401882761,2026-12-20 21:00:00,2026,2922,1538,Getafe,Levante,,,pre
+401882764,2026-12-20 21:00:00,2026,85,1068,Celta de Vigo,Atlético de Madrid,,,pre
+401882762,2026-12-20 21:00:00,2026,83,89,FC Barcelona,Real Sociedad,,,pre
+401882765,2026-12-20 21:00:00,2026,93,244,Athletic Club,Real Betis,,,pre
+401882766,2026-12-20 21:00:00,2026,96,3751,Alavés,Elche CF,,,pre
+401882763,2026-12-20 21:00:00,2026,90,86,Deportivo,Real Madrid,,,pre
+401882751,2027-01-03 21:00:00,2026,87,93,Racing Santander,Athletic Club,,,pre
+401882755,2027-01-03 21:00:00,2026,85,90,Celta de Vigo,Deportivo,,,pre
+401882754,2027-01-03 21:00:00,2026,88,83,Espanyol,FC Barcelona,,,pre
+401882753,2027-01-03 21:00:00,2026,1538,94,Levante,Valencia CF,,,pre
+401882752,2027-01-03 21:00:00,2026,99,3751,Málaga,Elche CF,,,pre
+401882750,2027-01-03 21:00:00,2026,101,1068,Rayo Vallecano,Atlético de Madrid,,,pre
+401882756,2027-01-03 21:00:00,2026,244,96,Real Betis,Alavés,,,pre
+401882749,2027-01-03 21:00:00,2026,86,2922,Real Madrid,Getafe,,,pre
+401882748,2027-01-03 21:00:00,2026,89,97,Real Sociedad,CA Osasuna,,,pre
+401882747,2027-01-03 21:00:00,2026,102,243,Villarreal CF,Sevilla FC,,,pre
+401882739,2027-01-10 21:00:00,2026,86,1538,Real Madrid,Levante,,,pre
+401882740,2027-01-10 21:00:00,2026,97,83,CA Osasuna,FC Barcelona,,,pre
+401882737,2027-01-10 21:00:00,2026,94,99,Valencia CF,Málaga,,,pre
+401882738,2027-01-10 21:00:00,2026,243,85,Sevilla FC,Celta de Vigo,,,pre
+401882741,2027-01-10 21:00:00,2026,88,244,Espanyol,Real Betis,,,pre
+401882742,2027-01-10 21:00:00,2026,3751,2922,Elche CF,Getafe,,,pre
+401882743,2027-01-10 21:00:00,2026,90,101,Deportivo,Rayo Vallecano,,,pre
+401882744,2027-01-10 21:00:00,2026,1068,87,Atlético de Madrid,Racing Santander,,,pre
+401882745,2027-01-10 21:00:00,2026,93,102,Athletic Club,Villarreal CF,,,pre
+401882746,2027-01-10 21:00:00,2026,96,89,Alavés,Real Sociedad,,,pre
+401882727,2027-01-17 21:00:00,2026,102,96,Villarreal CF,Alavés,,,pre
+401882735,2027-01-17 21:00:00,2026,244,90,Real Betis,Deportivo,,,pre
+401882728,2027-01-17 21:00:00,2026,101,243,Rayo Vallecano,Sevilla FC,,,pre
+401882729,2027-01-17 21:00:00,2026,87,97,Racing Santander,CA Osasuna,,,pre
+401882730,2027-01-17 21:00:00,2026,99,86,Málaga,Real Madrid,,,pre
+401882732,2027-01-17 21:00:00,2026,2922,93,Getafe,Athletic Club,,,pre
+401882734,2027-01-17 21:00:00,2026,85,94,Celta de Vigo,Valencia CF,,,pre
+401882733,2027-01-17 21:00:00,2026,83,3751,FC Barcelona,Elche CF,,,pre
+401882736,2027-01-17 21:00:00,2026,1068,89,Atlético de Madrid,Real Sociedad,,,pre
+401882731,2027-01-17 21:00:00,2026,1538,88,Levante,Espanyol,,,pre
+401882720,2027-01-24 21:00:00,2026,87,85,Racing Santander,Celta de Vigo,,,pre
+401882717,2027-01-24 21:00:00,2026,94,243,Valencia CF,Sevilla FC,,,pre
+401882718,2027-01-24 21:00:00,2026,89,99,Real Sociedad,Málaga,,,pre
+401882719,2027-01-24 21:00:00,2026,86,244,Real Madrid,Real Betis,,,pre
+401882721,2027-01-24 21:00:00,2026,2922,97,Getafe,CA Osasuna,,,pre
+401882722,2027-01-24 21:00:00,2026,88,102,Espanyol,Villarreal CF,,,pre
+401882723,2027-01-24 21:00:00,2026,3751,101,Elche CF,Rayo Vallecano,,,pre
+401882724,2027-01-24 21:00:00,2026,90,1068,Deportivo,Atlético de Madrid,,,pre
+401882725,2027-01-24 21:00:00,2026,93,1538,Athletic Club,Levante,,,pre
+401882726,2027-01-24 21:00:00,2026,96,83,Alavés,FC Barcelona,,,pre
+401882707,2027-01-31 21:00:00,2026,102,87,Villarreal CF,Racing Santander,,,pre
+401882708,2027-01-31 21:00:00,2026,243,93,Sevilla FC,Athletic Club,,,pre
+401882715,2027-01-31 21:00:00,2026,244,3751,Real Betis,Elche CF,,,pre
+401882709,2027-01-31 21:00:00,2026,101,86,Rayo Vallecano,Real Madrid,,,pre
+401882710,2027-01-31 21:00:00,2026,97,90,CA Osasuna,Deportivo,,,pre
+401882711,2027-01-31 21:00:00,2026,99,96,Málaga,Alavés,,,pre
+401882712,2027-01-31 21:00:00,2026,1538,89,Levante,Real Sociedad,,,pre
+401882714,2027-01-31 21:00:00,2026,85,2922,Celta de Vigo,Getafe,,,pre
+401882713,2027-01-31 21:00:00,2026,83,94,FC Barcelona,Valencia CF,,,pre
+401882716,2027-01-31 21:00:00,2026,1068,88,Atlético de Madrid,Espanyol,,,pre
+401882697,2027-02-07 21:00:00,2026,94,87,Valencia CF,Racing Santander,,,pre
+401882704,2027-02-07 21:00:00,2026,244,243,Real Betis,Sevilla FC,,,pre
+401882699,2027-02-07 21:00:00,2026,2922,102,Getafe,Villarreal CF,,,pre
+401882701,2027-02-07 21:00:00,2026,88,101,Espanyol,Rayo Vallecano,,,pre
+401882705,2027-02-07 21:00:00,2026,93,97,Athletic Club,CA Osasuna,,,pre
+401882703,2027-02-07 21:00:00,2026,90,99,Deportivo,Málaga,,,pre
+401882706,2027-02-07 21:00:00,2026,96,85,Alavés,Celta de Vigo,,,pre
+401882702,2027-02-07 21:00:00,2026,3751,1538,Elche CF,Levante,,,pre
+401882696,2027-02-14 21:00:00,2026,85,101,Celta de Vigo,Rayo Vallecano,,,pre
+401882695,2027-02-14 21:00:00,2026,3751,90,Elche CF,Deportivo,,,pre
+401882694,2027-02-14 21:00:00,2026,1538,99,Levante,Málaga,,,pre
+401882693,2027-02-14 21:00:00,2026,97,1068,CA Osasuna,Atlético de Madrid,,,pre
+401882692,2027-02-14 21:00:00,2026,87,2922,Racing Santander,Getafe,,,pre
+401882691,2027-02-14 21:00:00,2026,86,93,Real Madrid,Athletic Club,,,pre
+401882690,2027-02-14 21:00:00,2026,89,244,Real Sociedad,Real Betis,,,pre
+401882689,2027-02-14 21:00:00,2026,243,88,Sevilla FC,Espanyol,,,pre
+401882688,2027-02-14 21:00:00,2026,94,96,Valencia CF,Alavés,,,pre
+401882687,2027-02-14 21:00:00,2026,102,83,Villarreal CF,FC Barcelona,,,pre
+401882677,2027-02-21 21:00:00,2026,102,94,Villarreal CF,Valencia CF,,,pre
+401882678,2027-02-21 21:00:00,2026,243,86,Sevilla FC,Real Madrid,,,pre
+401882679,2027-02-21 21:00:00,2026,101,2922,Rayo Vallecano,Getafe,,,pre
+401882683,2027-02-21 21:00:00,2026,90,89,Deportivo,Real Sociedad,,,pre
+401882680,2027-02-21 21:00:00,2026,99,244,Málaga,Real Betis,,,pre
+401882682,2027-02-21 21:00:00,2026,88,97,Espanyol,CA Osasuna,,,pre
+401882684,2027-02-21 21:00:00,2026,1068,3751,Atlético de Madrid,Elche CF,,,pre
+401882685,2027-02-21 21:00:00,2026,93,85,Athletic Club,Celta de Vigo,,,pre
+401882686,2027-02-21 21:00:00,2026,96,87,Alavés,Racing Santander,,,pre
+401882681,2027-02-21 21:00:00,2026,83,1538,FC Barcelona,Levante,,,pre
+401882667,2027-02-28 21:00:00,2026,89,3751,Real Sociedad,Elche CF,,,pre
+401882668,2027-02-28 21:00:00,2026,86,94,Real Madrid,Valencia CF,,,pre
+401882675,2027-02-28 21:00:00,2026,244,102,Real Betis,Villarreal CF,,,pre
+401882669,2027-02-28 21:00:00,2026,87,101,Racing Santander,Rayo Vallecano,,,pre
+401882670,2027-02-28 21:00:00,2026,97,243,CA Osasuna,Sevilla FC,,,pre
+401882671,2027-02-28 21:00:00,2026,99,1068,Málaga,Atlético de Madrid,,,pre
+401882673,2027-02-28 21:00:00,2026,2922,96,Getafe,Alavés,,,pre
+401882674,2027-02-28 21:00:00,2026,85,88,Celta de Vigo,Espanyol,,,pre
+401882676,2027-02-28 21:00:00,2026,93,83,Athletic Club,FC Barcelona,,,pre
+401882672,2027-02-28 21:00:00,2026,1538,90,Levante,Deportivo,,,pre
+401882657,2027-03-07 21:00:00,2026,102,86,Villarreal CF,Real Madrid,,,pre
+401882658,2027-03-07 21:00:00,2026,94,1538,Valencia CF,Levante,,,pre
+401882659,2027-03-07 21:00:00,2026,243,89,Sevilla FC,Real Sociedad,,,pre
+401882660,2027-03-07 21:00:00,2026,101,97,Rayo Vallecano,CA Osasuna,,,pre
+401882662,2027-03-07 21:00:00,2026,88,87,Espanyol,Racing Santander,,,pre
+401882664,2027-03-07 21:00:00,2026,90,2922,Deportivo,Getafe,,,pre
+401882666,2027-03-07 21:00:00,2026,96,93,Alavés,Athletic Club,,,pre
+401882663,2027-03-07 21:00:00,2026,3751,99,Elche CF,Málaga,,,pre
+401882661,2027-03-07 21:00:00,2026,83,244,FC Barcelona,Real Betis,,,pre
+401882665,2027-03-07 21:00:00,2026,1068,85,Atlético de Madrid,Celta de Vigo,,,pre
+401882647,2027-03-14 19:00:00,2026,86,88,Real Madrid,Espanyol,,,pre
+401882654,2027-03-14 19:00:00,2026,244,1538,Real Betis,Levante,,,pre
+401882648,2027-03-14 19:00:00,2026,87,1068,Racing Santander,Atlético de Madrid,,,pre
+401882650,2027-03-14 19:00:00,2026,99,101,Málaga,Rayo Vallecano,,,pre
+401882649,2027-03-14 19:00:00,2026,97,85,CA Osasuna,Celta de Vigo,,,pre
+401882653,2027-03-14 19:00:00,2026,3751,102,Elche CF,Villarreal CF,,,pre
+401882652,2027-03-14 19:00:00,2026,83,90,FC Barcelona,Deportivo,,,pre
+401882655,2027-03-14 19:00:00,2026,93,94,Athletic Club,Valencia CF,,,pre
+401882656,2027-03-14 19:00:00,2026,96,243,Alavés,Sevilla FC,,,pre
+401882651,2027-03-14 19:00:00,2026,2922,89,Getafe,Real Sociedad,,,pre
+401882637,2027-03-21 19:00:00,2026,102,99,Villarreal CF,Málaga,,,pre
+401882638,2027-03-21 19:00:00,2026,94,90,Valencia CF,Deportivo,,,pre
+401882639,2027-03-21 19:00:00,2026,243,3751,Sevilla FC,Elche CF,,,pre
+401882640,2027-03-21 19:00:00,2026,89,96,Real Sociedad,Alavés,,,pre
+401882641,2027-03-21 19:00:00,2026,101,83,Rayo Vallecano,FC Barcelona,,,pre
+401882642,2027-03-21 19:00:00,2026,87,244,Racing Santander,Real Betis,,,pre
+401882644,2027-03-21 19:00:00,2026,88,93,Espanyol,Athletic Club,,,pre
+401882645,2027-03-21 19:00:00,2026,85,86,Celta de Vigo,Real Madrid,,,pre
+401882646,2027-03-21 19:00:00,2026,1068,2922,Atlético de Madrid,Getafe,,,pre
+401882643,2027-03-21 19:00:00,2026,1538,97,Levante,CA Osasuna,,,pre
+401882627,2027-04-04 20:00:00,2026,89,94,Real Sociedad,Valencia CF,,,pre
+401882628,2027-04-04 20:00:00,2026,86,1068,Real Madrid,Atlético de Madrid,,,pre
+401882635,2027-04-04 20:00:00,2026,244,85,Real Betis,Celta de Vigo,,,pre
+401882629,2027-04-04 20:00:00,2026,99,97,Málaga,CA Osasuna,,,pre
+401882630,2027-04-04 20:00:00,2026,1538,101,Levante,Rayo Vallecano,,,pre
+401882633,2027-04-04 20:00:00,2026,3751,96,Elche CF,Alavés,,,pre
+401882634,2027-04-04 20:00:00,2026,90,102,Deportivo,Villarreal CF,,,pre
+401882632,2027-04-04 20:00:00,2026,83,243,FC Barcelona,Sevilla FC,,,pre
+401882636,2027-04-04 20:00:00,2026,93,87,Athletic Club,Racing Santander,,,pre
+401882631,2027-04-04 20:00:00,2026,2922,88,Getafe,Espanyol,,,pre
+401882617,2027-04-11 20:00:00,2026,102,93,Villarreal CF,Athletic Club,,,pre
+401882618,2027-04-11 20:00:00,2026,94,2922,Valencia CF,Getafe,,,pre
+401882619,2027-04-11 20:00:00,2026,243,90,Sevilla FC,Deportivo,,,pre
+401882620,2027-04-11 20:00:00,2026,101,89,Rayo Vallecano,Real Sociedad,,,pre
+401882621,2027-04-11 20:00:00,2026,87,83,Racing Santander,FC Barcelona,,,pre
+401882623,2027-04-11 20:00:00,2026,88,99,Espanyol,Málaga,,,pre
+401882624,2027-04-11 20:00:00,2026,85,3751,Celta de Vigo,Elche CF,,,pre
+401882625,2027-04-11 20:00:00,2026,1068,1538,Atlético de Madrid,Levante,,,pre
+401882626,2027-04-11 20:00:00,2026,96,244,Alavés,Real Betis,,,pre
+401882622,2027-04-11 20:00:00,2026,97,86,CA Osasuna,Real Madrid,,,pre
+401882607,2027-04-18 20:00:00,2026,89,87,Real Sociedad,Racing Santander,,,pre
+401882614,2027-04-18 20:00:00,2026,244,93,Real Betis,Athletic Club,,,pre
+401882608,2027-04-18 20:00:00,2026,99,94,Málaga,Valencia CF,,,pre
+401882609,2027-04-18 20:00:00,2026,1538,102,Levante,Villarreal CF,,,pre
+401882610,2027-04-18 20:00:00,2026,2922,86,Getafe,Real Madrid,,,pre
+401882612,2027-04-18 20:00:00,2026,3751,97,Elche CF,CA Osasuna,,,pre
+401882613,2027-04-18 20:00:00,2026,90,85,Deportivo,Celta de Vigo,,,pre
+401882611,2027-04-18 20:00:00,2026,83,88,FC Barcelona,Espanyol,,,pre
+401882615,2027-04-18 20:00:00,2026,1068,243,Atlético de Madrid,Sevilla FC,,,pre
+401882616,2027-04-18 20:00:00,2026,96,101,Alavés,Rayo Vallecano,,,pre
+401882597,2027-04-21 20:00:00,2026,102,1068,Villarreal CF,Atlético de Madrid,,,pre
+401882598,2027-04-21 20:00:00,2026,94,101,Valencia CF,Rayo Vallecano,,,pre
+401882599,2027-04-21 20:00:00,2026,243,1538,Sevilla FC,Levante,,,pre
+401882600,2027-04-21 20:00:00,2026,86,3751,Real Madrid,Elche CF,,,pre
+401882601,2027-04-21 20:00:00,2026,87,99,Racing Santander,Málaga,,,pre
+401882603,2027-04-21 20:00:00,2026,2922,244,Getafe,Real Betis,,,pre
+401882604,2027-04-21 20:00:00,2026,88,89,Espanyol,Real Sociedad,,,pre
+401882605,2027-04-21 20:00:00,2026,85,83,Celta de Vigo,FC Barcelona,,,pre
+401882606,2027-04-21 20:00:00,2026,93,90,Athletic Club,Deportivo,,,pre
+401882602,2027-04-21 20:00:00,2026,97,96,CA Osasuna,Alavés,,,pre
+401882592,2027-05-02 20:00:00,2026,3751,88,Elche CF,Espanyol,,,pre
+401882596,2027-05-02 20:00:00,2026,1068,96,Atlético de Madrid,Alavés,,,pre
+401882591,2027-05-02 20:00:00,2026,83,97,FC Barcelona,CA Osasuna,,,pre
+401882594,2027-05-02 20:00:00,2026,85,243,Celta de Vigo,Sevilla FC,,,pre
+401882593,2027-05-02 20:00:00,2026,90,87,Deportivo,Racing Santander,,,pre
+401882590,2027-05-02 20:00:00,2026,1538,86,Levante,Real Madrid,,,pre
+401882589,2027-05-02 20:00:00,2026,99,2922,Málaga,Getafe,,,pre
+401882588,2027-05-02 20:00:00,2026,101,102,Rayo Vallecano,Villarreal CF,,,pre
+401882595,2027-05-02 20:00:00,2026,244,94,Real Betis,Valencia CF,,,pre
+401882587,2027-05-02 20:00:00,2026,89,93,Real Sociedad,Athletic Club,,,pre
+401882577,2027-05-09 20:00:00,2026,102,85,Villarreal CF,Celta de Vigo,,,pre
+401882584,2027-05-09 20:00:00,2026,244,88,Real Betis,Espanyol,,,pre
+401882578,2027-05-09 20:00:00,2026,94,1068,Valencia CF,Atlético de Madrid,,,pre
+401882579,2027-05-09 20:00:00,2026,86,83,Real Madrid,FC Barcelona,,,pre
+401882580,2027-05-09 20:00:00,2026,101,90,Rayo Vallecano,Deportivo,,,pre
+401882583,2027-05-09 20:00:00,2026,2922,3751,Getafe,Elche CF,,,pre
+401882582,2027-05-09 20:00:00,2026,97,89,CA Osasuna,Real Sociedad,,,pre
+401882585,2027-05-09 20:00:00,2026,93,99,Athletic Club,Málaga,,,pre
+401882586,2027-05-09 20:00:00,2026,96,1538,Alavés,Levante,,,pre
+401882581,2027-05-09 20:00:00,2026,87,243,Racing Santander,Sevilla FC,,,pre
+401882567,2027-05-16 20:00:00,2026,243,102,Sevilla FC,Villarreal CF,,,pre
+401882568,2027-05-16 20:00:00,2026,89,83,Real Sociedad,FC Barcelona,,,pre
+401882569,2027-05-16 20:00:00,2026,86,87,Real Madrid,Racing Santander,,,pre
+401882570,2027-05-16 20:00:00,2026,97,244,CA Osasuna,Real Betis,,,pre
+401882571,2027-05-16 20:00:00,2026,99,85,Málaga,Celta de Vigo,,,pre
+401882573,2027-05-16 20:00:00,2026,88,94,Espanyol,Valencia CF,,,pre
+401882574,2027-05-16 20:00:00,2026,3751,93,Elche CF,Athletic Club,,,pre
+401882575,2027-05-16 20:00:00,2026,90,96,Deportivo,Alavés,,,pre
+401882576,2027-05-16 20:00:00,2026,1068,101,Atlético de Madrid,Rayo Vallecano,,,pre
+401882572,2027-05-16 20:00:00,2026,1538,2922,Levante,Getafe,,,pre
+401882560,2027-05-23 20:00:00,2026,101,244,Rayo Vallecano,Real Betis,,,pre
+401882558,2027-05-23 20:00:00,2026,94,3751,Valencia CF,Elche CF,,,pre
+401882559,2027-05-23 20:00:00,2026,243,2922,Sevilla FC,Getafe,,,pre
+401882557,2027-05-23 20:00:00,2026,102,97,Villarreal CF,CA Osasuna,,,pre
+401882561,2027-05-23 20:00:00,2026,87,1538,Racing Santander,Levante,,,pre
+401882562,2027-05-23 20:00:00,2026,83,99,FC Barcelona,Málaga,,,pre
+401882564,2027-05-23 20:00:00,2026,85,89,Celta de Vigo,Real Sociedad,,,pre
+401882565,2027-05-23 20:00:00,2026,1068,93,Atlético de Madrid,Athletic Club,,,pre
+401882566,2027-05-23 20:00:00,2026,96,86,Alavés,Real Madrid,,,pre
+401882563,2027-05-23 20:00:00,2026,90,88,Deportivo,Espanyol,,,pre
+401882548,2027-05-30 20:00:00,2026,86,90,Real Madrid,Deportivo,,,pre
+401882556,2027-05-30 20:00:00,2026,93,101,Athletic Club,Rayo Vallecano,,,pre
+401882554,2027-05-30 20:00:00,2026,3751,87,Elche CF,Racing Santander,,,pre
+401882553,2027-05-30 20:00:00,2026,88,96,Espanyol,Alavés,,,pre
+401882552,2027-05-30 20:00:00,2026,2922,83,Getafe,FC Barcelona,,,pre
+401882551,2027-05-30 20:00:00,2026,1538,85,Levante,Celta de Vigo,,,pre
+401882550,2027-05-30 20:00:00,2026,99,243,Málaga,Sevilla FC,,,pre
+401882549,2027-05-30 20:00:00,2026,97,94,CA Osasuna,Valencia CF,,,pre
+401882555,2027-05-30 20:00:00,2026,244,1068,Real Betis,Atlético de Madrid,,,pre
+401882547,2027-05-30 20:00:00,2026,89,102,Real Sociedad,Villarreal CF,,,pre
