@@ -2,6 +2,7 @@
 Portal Maestro de Predicciones y Proyecciones Deportivas (Machine Learning).
 Enruta a los simuladores de la Copa Mundial 2026, Champions y Nations League, NBA y las ligas domésticas (ver TORNEOS).
 """
+import hmac
 import importlib
 import os
 import sys
@@ -133,6 +134,23 @@ st.sidebar.caption(
     "Random Forest y Stacking óptimo sobre variables de Pi-Ratings, Fatigue Factor, Distancia de Viajes (Haversine) "
     "y priors de ELO y Valor de Plantilla."
 )
+
+def _es_admin():
+    """El botón de actualizar/re-entrenar descarga de ESPN, re-entrena y borra la caché de
+    todas las ligas para todos los usuarios. En el portal público solo se muestra con
+    ?admin=<clave> (clave en st.secrets["admin_key"]) o con PORTAL_ADMIN=1 al correr en local.
+    Los datos se actualizan solos cada día con el workflow de GitHub Actions."""
+    if os.environ.get("PORTAL_ADMIN") == "1":
+        return True
+    try:
+        clave = str(st.secrets.get("admin_key", ""))
+    except Exception:  # sin secrets.toml
+        clave = ""
+    dada = str(st.query_params.get("admin", ""))
+    return bool(clave) and hmac.compare_digest(dada, clave)
+
+
+st.session_state["portal_admin"] = _es_admin()
 
 # Enrutador
 carpeta, modulo = TORNEOS[torneo_seleccionado]

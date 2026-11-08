@@ -106,7 +106,9 @@ def run_app():
         modelo_tipo = "stacking"
 
     with st.sidebar.expander("🔄 Actualización de Datos ESPN"):
-        if st.button("Descargar últimos partidos UCL"):
+        if not st.session_state.get("portal_admin", True):
+            st.caption("Los datos se actualizan automáticamente todos los días desde ESPN.")
+        elif st.button("Descargar últimos partidos UCL"):
             with st.spinner("Actualizando cotejos desde la API de ESPN..."):
                 rec.recolectar()
                 rec_box.recolectar()

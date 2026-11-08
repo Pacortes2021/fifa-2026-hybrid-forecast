@@ -91,7 +91,7 @@ def run_app():
         met_act = met_all.get("rf", {"logloss": 0.7710, "accuracy": 75.0})
         nombre_modelo = "🌲 Random Forest (Recomendado)"
 
-    if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", key="refresh_unl", type="primary"):
+    if st.session_state.get("portal_admin", True) and st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", key="refresh_unl", type="primary"):
         with st.spinner("Descargando últimos resultados de Nations League desde ESPN..."):
             rec.recolectar()
             rec_box.recolectar()

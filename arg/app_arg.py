@@ -111,7 +111,7 @@ def run_app():
     modelo_sel = st.sidebar.selectbox("🤖 Modelo Predictivo:", OPCIONES_MOD, index=0)
     modelo = "lasso" if "LASSO" in modelo_sel else ("stacking" if "Stacking" in modelo_sel else ("xgb" if "XGB" in modelo_sel else "rf"))
 
-    if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", key="refresh_arg", type="primary"):
+    if st.session_state.get("portal_admin", True) and st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", key="refresh_arg", type="primary"):
         with st.spinner("Descargando últimos resultados de la Liga Profesional de Argentina..."):
             rec.recolectar()
             rec_box.recolectar()

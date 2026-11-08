@@ -138,7 +138,7 @@ def run_app():
     else:
         modelo = "rf"
 
-    if st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
+    if st.session_state.get("portal_admin", True) and st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", type="primary"):
         with st.spinner("Descargando últimos resultados de ESPN..."):
             rec.recolectar()
             rec_box.recolectar()
