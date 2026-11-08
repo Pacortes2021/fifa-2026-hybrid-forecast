@@ -1,6 +1,6 @@
 # Plan de trabajo autónomo (noche del 8-nov-2026)
 
-Pablo (@Pacortes2021) autorizó trabajar de forma autónoma mientras duerme: usar la app con agentes, buscar errores y mejoras, arreglarlos, estandarizar las interfaces de las ligas y revisar los modelos. **Regla: todo va en ramas y PRs; no mergear a `main` sin su visto bueno** (la app pública se despliega desde `main`).
+Pablo (@Pacortes2021) autorizó trabajar de forma autónoma mientras duerme: usar la app con agentes, buscar errores y mejoras, arreglarlos, estandarizar las interfaces de las ligas y revisar los modelos. **Regla: todo va en ramas y PRs; no mergear a `main` sin su visto bueno** (el 8-nov a las 17:10 UTC aprobó y se mergearon #3–#8) (la app pública se despliega desde `main`).
 
 Este archivo es el estado compartido entre sesiones. **Actualízalo al terminar cada bloque de trabajo** (commit + push a `wip/revision-nocturna`).
 
@@ -62,3 +62,5 @@ Recorrido de la UI headless: `streamlit.testing.v1.AppTest.from_file("app.py", d
   - #8: escudos por nombre corto en 20 apps (p. ej. Deportivo) y fuera el caption de copa en las ligas.
 - **Hallazgo de modelos (importante)**: el ML casi no supera a una regresión logística solo con Elo (Δ log-loss −0.003, no significativo), el stacking es degenerado y XGBoost está subajustado. Ver `modelos.md`.
 - **Sigue**: la sesión programada a las 07:55 UTC (04:55 Chile) toma el backlog de arriba (errores restantes del QA, estandarización de la UI, mejoras de modelos).
+- 07:55 UTC — la sesión programada se detuvo en su primer comando esperando un permiso (modo por defecto): no avanzó.
+- 17:10 UTC — Pablo aprobó: PRs #3, #4, #5, #6, #7 y #8 mergeados a `main` (b27177e). CI lanzado sobre `main`.
