@@ -543,7 +543,16 @@ def run_app():
             dias_unicos = sorted(df_fix_act["dia"].dropna().unique())
             jornadas_map = {}
             if dias_unicos:
-                j_idx = 1
+                # Numerar a partir de las jornadas ya jugadas de la fase de liga (cada club juega una por jornada)
+                try:
+                    _pj = pd.read_csv(mo.DATA / "partidos.csv")
+                    _pj = _pj[_pj["temporada"] == temp_ucl]
+                    if "stage" in _pj.columns:
+                        _pj = _pj[_pj["stage"] == "league-phase"]
+                    jornadas_jugadas = int(pd.concat([_pj["local"], _pj["visita"]]).value_counts().max()) if len(_pj) else 0
+                except Exception:
+                    jornadas_jugadas = 0
+                j_idx = jornadas_jugadas + 1
                 curr_j = [dias_unicos[0]]
                 for d in dias_unicos[1:]:
                     diff = (pd.to_datetime(d) - pd.to_datetime(curr_j[-1])).days
@@ -604,7 +613,7 @@ def run_app():
 
                 else:
                     df_filtrado = df_fix_act.copy()
-                    st.info(f"🌐 Incluye los **{len(df_filtrado)}** partidos de la Fase de Liga.")
+                    st.info(f"🌐 Incluye los **{len(df_filtrado)}** partidos restantes de la Fase de Liga.")
                     sufijo_archivo = "fixture_completo"
 
             with col_f3:
