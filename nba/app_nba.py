@@ -410,22 +410,22 @@ def run_app():
             df_east = df_sim[df_sim["Conferencia"] == "East"].drop(columns=["Conferencia"]).reset_index(drop=True)
             df_east["Posición Proyectada"] = range(1, len(df_east) + 1)
             # Formatear porcentajes
-            for c in ["P_Playoff_Directo", "P_PlayIn", "P_Finalista_Conf", "P_Campeon"]:
+            for c in ["P_Playoff_Directo", "P_PlayIn", "P_Playoffs", "P_Finalista_Conf", "P_Campeon"]:
                 df_east[c] = df_east[c].apply(lambda x: f"{x:.1%}")
             st.dataframe(df_east[[
                 "Posición Proyectada", "Equipo", "Victorias Esperadas", "Derrotas Esperadas",
-                "P_Playoff_Directo", "P_PlayIn", "P_Finalista_Conf", "P_Campeon"
+                "P_Playoff_Directo", "P_PlayIn", "P_Playoffs", "P_Finalista_Conf", "P_Campeon"
             ]], use_container_width=True, hide_index=True)
 
         with tab_west:
             st.markdown("#### 🤠 Western Conference (Proyección Final)")
             df_west = df_sim[df_sim["Conferencia"] == "West"].drop(columns=["Conferencia"]).reset_index(drop=True)
             df_west["Posición Proyectada"] = range(1, len(df_west) + 1)
-            for c in ["P_Playoff_Directo", "P_PlayIn", "P_Finalista_Conf", "P_Campeon"]:
+            for c in ["P_Playoff_Directo", "P_PlayIn", "P_Playoffs", "P_Finalista_Conf", "P_Campeon"]:
                 df_west[c] = df_west[c].apply(lambda x: f"{x:.1%}")
             st.dataframe(df_west[[
                 "Posición Proyectada", "Equipo", "Victorias Esperadas", "Derrotas Esperadas",
-                "P_Playoff_Directo", "P_PlayIn", "P_Finalista_Conf", "P_Campeon"
+                "P_Playoff_Directo", "P_PlayIn", "P_Playoffs", "P_Finalista_Conf", "P_Campeon"
             ]], use_container_width=True, hide_index=True)
 
         with tab_champ:
@@ -465,7 +465,7 @@ def run_app():
             <div class="metric-box">
                 <div class="metric-lbl">Acierto Ganador (Accuracy)</div>
                 <div class="metric-val">{met_all.get('stacking', {}).get('accuracy', 67.5):.1f}%</div>
-                <div style="color:#64748b;font-size:0.85rem;">Test Out-of-Sample (1.394 partidos)</div>
+                <div style="color:#64748b;font-size:0.85rem;">Test Out-of-Sample ({int((M['df_dataset']['temporada'] >= 2026).sum())} partidos)</div>
             </div>
             """, unsafe_allow_html=True)
         with c_m3:
