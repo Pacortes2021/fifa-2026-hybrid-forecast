@@ -351,6 +351,8 @@ def cargar():
     fp.update(str(df_partidos["fecha"].iloc[-1]).encode() if len(df_partidos) else b"")
     if not df_box.empty:
         fp.update(str(df_box.shape).encode())
+    # El modelo también depende del código del motor: si cambia, se re-entrena
+    fp.update(hashlib.md5(Path(__file__).read_bytes()).hexdigest().encode())
     key_actual = fp.hexdigest()
 
     if cache_path.exists():
@@ -384,6 +386,7 @@ def cargar():
         f["goles_local"] = gl; f["goles_visita"] = gv
         f["temporada"] = r["temporada"]
         f["local"] = loc; f["visita"] = vis
+        f["fecha"] = r["fecha"]
         rows.append(f)
 
         tracker.registrar_partido(loc, vis, gl, gv, r["fecha"], stats)
@@ -400,7 +403,7 @@ def cargar():
     df_dataset = pd.DataFrame(rows)
     df_poisson = pd.DataFrame(poisson_rows)
 
-    cols_excluir = {"resultado", "goles_local", "goles_visita", "temporada", "local", "visita"}
+    cols_excluir = {"resultado", "goles_local", "goles_visita", "temporada", "local", "visita", "fecha"}
     cols_features = [c for c in df_dataset.columns if c not in cols_excluir]
 
     train_mask = df_dataset["temporada"] <= 2023
@@ -802,6 +805,41 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
 
 monte_carlo = simular_campeonato
 
+class _TrackerPrePartido:
+    """Tracker de solo lectura que entrega las variables calculadas ANTES de un partido
+    (las mismas filas usadas en el entrenamiento). La validación lo usa en vez del tracker
+    final, que ya incluye el resultado del partido evaluado y el de todos los posteriores."""
+
+    def __init__(self, tracker, feats):
+        self._tracker = tracker
+        self._feats = feats
+
+    def get_features_for_match(self, *args, **kwargs):
+        return dict(self._feats)
+
+    def __getattr__(self, nombre):
+        tracker = self.__dict__.get("_tracker")
+        if tracker is None or nombre.startswith("__"):
+            raise AttributeError(nombre)
+        return getattr(tracker, nombre)
+
+
+def _modelo_pre_partido(M, clave_dataset):
+    """Función (fecha, local, visita) -> copia de M con el tracker pre-partido de ese
+    encuentro, o None si el partido no está en el dataset de entrenamiento."""
+    df = M[clave_dataset]
+    filas = df.to_dict("records")
+    indice = {(pd.Timestamp(f["fecha"]), f["local"], f["visita"]): i for i, f in enumerate(filas)}
+
+    def obtener(fecha, local, visita):
+        i = indice.get((pd.Timestamp(fecha), local, visita))
+        if i is None:
+            return None
+        return {**M, "tracker": _TrackerPrePartido(M["tracker"], filas[i])}
+
+    return obtener
+
+
 def validacion_en_vivo(M, temporada_val=None, modelo="rf", modelo_tipo=None):
     if modelo_tipo is not None:
         modelo = modelo_tipo
@@ -814,9 +852,17 @@ def validacion_en_vivo(M, temporada_val=None, modelo="rf", modelo_tipo=None):
     if len(val_df) == 0:
         return pd.DataFrame(), {}, pd.DataFrame()
 
+    # Cada partido se predice con las variables que existían ANTES de jugarlo, no con el
+    # tracker final (que ya incluye su resultado y los de todos los partidos posteriores).
+    pre_partido = _modelo_pre_partido(M, "df_dataset")
+    val_df = val_df[[pre_partido(r.fecha, r.local, r.visita) is not None
+                     for r in val_df.itertuples(index=False)]].copy()
+    if len(val_df) == 0:
+        return pd.DataFrame(), {}, pd.DataFrame()
+
     probs = []
     for _, r in val_df.iterrows():
-        p = predecir_match(M, r["local"], r["visita"], temporada=temporada_val, modelo=modelo_tipo)
+        p = predecir_match(pre_partido(r["fecha"], r["local"], r["visita"]), r["local"], r["visita"], temporada=temporada_val, modelo=modelo_tipo)
         probs.append(p[0] if isinstance(p, tuple) else p)
     probs = np.array(probs)
 

@@ -962,6 +962,41 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo=None, modelo=None
 monte_carlo = simular_campeonato
 
 
+class _TrackerPrePartido:
+    """Tracker de solo lectura que entrega las variables calculadas ANTES de un partido
+    (las mismas filas usadas en el entrenamiento). La validación lo usa en vez del tracker
+    final, que ya incluye el resultado del partido evaluado y el de todos los posteriores."""
+
+    def __init__(self, tracker, feats):
+        self._tracker = tracker
+        self._feats = feats
+
+    def get_features_for_match(self, *args, **kwargs):
+        return dict(self._feats)
+
+    def __getattr__(self, nombre):
+        tracker = self.__dict__.get("_tracker")
+        if tracker is None or nombre.startswith("__"):
+            raise AttributeError(nombre)
+        return getattr(tracker, nombre)
+
+
+def _modelo_pre_partido(M, clave_dataset):
+    """Función (fecha, local, visita) -> copia de M con el tracker pre-partido de ese
+    encuentro, o None si el partido no está en el dataset de entrenamiento."""
+    df = M[clave_dataset]
+    filas = df.to_dict("records")
+    indice = {(pd.Timestamp(f["fecha"]), f["local"], f["visita"]): i for i, f in enumerate(filas)}
+
+    def obtener(fecha, local, visita):
+        i = indice.get((pd.Timestamp(fecha), local, visita))
+        if i is None:
+            return None
+        return {**M, "tracker": _TrackerPrePartido(M["tracker"], filas[i])}
+
+    return obtener
+
+
 def validacion_en_vivo(M, temporada_val=None, modelo_tipo="rf"):
     # Mismo reporte de validación en vivo para la Bundesliga
     partidos = pd.read_csv(DATA / "partidos.csv", parse_dates=["fecha"]).sort_values("fecha")
@@ -975,56 +1010,38 @@ def validacion_en_vivo(M, temporada_val=None, modelo_tipo="rf"):
     if len(val_df) == 0:
         return pd.DataFrame(), {}, pd.DataFrame()
         
-    # Re-inicializar tracker para evitar filtrado de futuro
-    box_path = DATA / "box_score.csv"
-    box = pd.read_csv(box_path) if box_path.exists() else pd.DataFrame(columns=["event_id"])
-    box_dict = {}
-    for r in box.itertuples(index=False):
-        sl = {}
-        sv = {}
-        for s in STATS:
-            sl[s] = getattr(r, f"local_{s}", None)
-            sv[s] = getattr(r, f"visita_{s}", None)
-        box_dict[str(r.event_id)] = (sl, sv)
-        
-    tracker = StateTracker()
+    # Cada partido se predice con las variables pre-partido del entrenamiento (incluyen
+    # descanso, congestión y box scores) y con el modelo elegido en la app, stacking incluido.
+    pre_partido = _modelo_pre_partido(M, "df_features")
     filas = []
     P_list = []
     y_list = []
-    
-    for r in partidos.itertuples(index=False):
+
+    for r in val_df.itertuples(index=False):
         local, visita, ga, gb = r.local, r.visita, int(r.goles_local), int(r.goles_visita)
-        eb_id = str(getattr(r, "event_id")) if hasattr(r, "event_id") else ""
-        
-        if r.temporada == temporada_val:
-            feats = tracker.get_features_for_match(local, visita, r.temporada)
-            df_test = pd.DataFrame([feats])[M["cols"]]
-            
-            pipe = M["pipe_xgb"] if modelo_tipo == "xgb" else (M["pipe_rf"] if modelo_tipo == "rf" else M["pipe_lasso"])
-            p = pipe.predict_proba(df_test)[0]
-            p_1x2 = np.array([p[2], p[1], p[0]])  # local, empate, visita
-            
-            real = 2 if ga > gb else (1 if ga == gb else 0)
-            pred = 2 if (p_1x2[0] >= p_1x2[1] and p_1x2[0] >= p_1x2[2]) else (1 if p_1x2[1] >= p_1x2[2] else 0)
-            
-            P_list.append([p_1x2[2], p_1x2[1], p_1x2[0]])  # orden clases sklearn: [0, 1, 2] -> [visita, empate, local]
-            y_list.append(real)
-            
-            filas.append({
-                "fecha": r.fecha.date().strftime("%Y-%m-%d"),
-                "local": local,
-                "visita": visita,
-                "goles_local": ga,
-                "goles_visita": gb,
-                "resultado": ["Gana visita", "Empate", "Gana local"][real],
-                "Prediccion": ["Gana visita", "Empate", "Gana local"][pred],
-                "Prob_Local": p_1x2[0],
-                "Prob_Empate": p_1x2[1],
-                "Prob_Visita": p_1x2[2]
-            })
-            
-        stats_l, stats_v = box_dict.get(eb_id, (None, None))
-        tracker.registrar_partido(local, visita, ga, gb, stats_l, stats_v)
+        Mp = pre_partido(r.fecha, local, visita)
+        if Mp is None:
+            continue
+        p_1x2 = predecir_match(Mp, local, visita, modelo_tipo=modelo_tipo)  # local, empate, visita
+
+        real = 2 if ga > gb else (1 if ga == gb else 0)
+        pred = 2 if (p_1x2[0] >= p_1x2[1] and p_1x2[0] >= p_1x2[2]) else (1 if p_1x2[1] >= p_1x2[2] else 0)
+
+        P_list.append([p_1x2[2], p_1x2[1], p_1x2[0]])  # orden clases sklearn: [0, 1, 2] -> [visita, empate, local]
+        y_list.append(real)
+
+        filas.append({
+            "fecha": r.fecha.date().strftime("%Y-%m-%d"),
+            "local": local,
+            "visita": visita,
+            "goles_local": ga,
+            "goles_visita": gb,
+            "resultado": ["Gana visita", "Empate", "Gana local"][real],
+            "Prediccion": ["Gana visita", "Empate", "Gana local"][pred],
+            "Prob_Local": p_1x2[0],
+            "Prob_Empate": p_1x2[1],
+            "Prob_Visita": p_1x2[2]
+        })
         
     df_val = pd.DataFrame(filas)
     if len(df_val) == 0:
@@ -1034,8 +1051,10 @@ def validacion_en_vivo(M, temporada_val=None, modelo_tipo="rf"):
     y_arr = np.array(y_list)
     n = len(y_arr)
     
-    # Baseline: frecuencias históricas típicas (44% local, 27% empate, 29% visita)
-    base = np.tile([0.29, 0.27, 0.44], (n, 1))
+    # Baseline: frecuencias de resultados en el entrenamiento (temporadas <= 2024)
+    _tr = M["df_features"]
+    _frec = _tr.loc[_tr["temporada"] <= 2024, "resultado"].value_counts(normalize=True)
+    base = np.tile([_frec.get(0, 1 / 3), _frec.get(1, 1 / 3), _frec.get(2, 1 / 3)], (n, 1))
     
     aciertos = sum(1 for i in range(n) if np.argmax(P_arr[i]) == y_arr[i])
     met = {
