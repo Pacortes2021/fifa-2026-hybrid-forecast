@@ -77,8 +77,8 @@ def get_motor():
 
 
 @st.cache_data(show_spinner="Corriendo simulaciones de Monte Carlo para la NBA (2.000 iteraciones)...")
-def simular_temporada_cached(_M, key):
-    return mo.simular_temporada(_M, n_sims=2000)
+def simular_temporada_cached(_M, key, modelo="stacking"):
+    return mo.simular_temporada(_M, n_sims=2000, modelo=modelo)
 
 
 def run_app():
@@ -401,7 +401,7 @@ def run_app():
         st.markdown('<div class="sec-title">Proyecciones de Temporada Regular, Play-In y Playoffs NBA</div>', unsafe_allow_html=True)
         st.markdown("Simulación estocástica de Monte Carlo (2.000 iteraciones) de los partidos restantes del calendario 2026-27, torneo Play-In y series al mejor de 7 partidos.")
 
-        df_sim = simular_temporada_cached(M, f"{len(df_fix)}_{modelo}")
+        df_sim = simular_temporada_cached(M, f"{len(df_fix)}_{modelo}", modelo)
 
         tab_east, tab_west, tab_champ = st.tabs(["🏛️ Conferencia Este", "🤠 Conferencia Oeste", "🏆 Probabilidades de Campeón"])
         

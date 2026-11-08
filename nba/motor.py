@@ -804,7 +804,7 @@ def simular_partido_mc(M, local, visita, n_sims=5000, modelo="stacking", seed=42
     }
 
 
-def simular_temporada(M, n_sims=2000, seed=42):
+def simular_temporada(M, n_sims=2000, seed=42, modelo="stacking"):
     """
     Simulación Monte Carlo completa de la temporada NBA, Play-In y Playoffs.
     Proyecta las victorias esperadas en Conferencia Este y Oeste,
@@ -813,6 +813,7 @@ def simular_temporada(M, n_sims=2000, seed=42):
     cache_path = Path(__file__).resolve().parent / "simulacion_mc.pkl"
     fp = hashlib.sha256()
     fp.update(str(n_sims).encode())
+    fp.update(str(modelo).encode())  # cada modelo tiene su propia simulación
     fp.update(_cache_key().encode())
     cache_key = fp.hexdigest()
 
@@ -858,7 +859,7 @@ def simular_temporada(M, n_sims=2000, seed=42):
     for eq1 in todos_equipos:
         for eq2 in todos_equipos:
             if eq1 != eq2:
-                h2h_probs[(eq1, eq2)] = predecir_match(M, eq1, eq2)["p_local"]
+                h2h_probs[(eq1, eq2)] = predecir_match(M, eq1, eq2, modelo=modelo)["p_local"]
 
     # Predecir probabilidades de cada partido restante del fixture (filtrando equipos válidos)
     preds_fixture = []
