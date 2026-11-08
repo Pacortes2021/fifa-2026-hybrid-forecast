@@ -280,3 +280,9 @@ jobs:
           fi
 
 
+
+      - name: 🩺 Frescura de los datos
+        # Falla si quedan partidos "por jugar" con fecha pasada: señal de que una liga dejó de
+        # actualizarse aunque ESPN responda (en sep-2026 13 ligas se congelaron sin ningún error).
+        if: ${{ !cancelled() }}
+        run: python3 tests/frescura.py

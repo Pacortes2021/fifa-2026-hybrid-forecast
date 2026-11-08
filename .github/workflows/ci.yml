@@ -1,0 +1,35 @@
+name: 🧪 CI (smoke tests)
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    name: Motores y UI
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🐍 Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: 📦 Dependencias
+        run: pip install -r requirements.txt
+
+      - name: ⚙️ Smoke test de los motores (20 competiciones)
+        run: python3 tests/smoke.py
+
+      - name: 🖥️ Recorrido de la UI (23 torneos con AppTest)
+        if: ${{ !cancelled() }}
+        run: python3 tests/ui_smoke.py
