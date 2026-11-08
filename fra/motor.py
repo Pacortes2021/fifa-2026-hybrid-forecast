@@ -673,7 +673,7 @@ def _simular_fixture_vec(M, PREDS, fijos, n_sims):
             GF[li]  += w_l * 1 + w_e * 1
             GF[vi]  += w_v * 1 + w_e * 1
 
-    key = (PTS * 1_000_000 + DG * 1_000 + GF).astype(np.int64)
+    key = PTS * 1_000_000 + DG * 1_000 + GF + np.random.random(PTS.shape)  # el ruido < 1 solo rompe empates exactos (antes ganaba el primero en orden alfabético)
     order = np.argsort(-key, axis=0)
     return eqs, order
 

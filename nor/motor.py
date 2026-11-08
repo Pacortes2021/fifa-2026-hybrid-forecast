@@ -714,7 +714,7 @@ def _simular_fixture_vec(M, preds_dict, fijos, n_sims=1000):
         gf_sims[li] += gh_sim[k]
         gf_sims[vi] += ga_sim[k]
 
-    score = pts_sims * 1000000.0 + dg_sims * 1000.0 + gf_sims
+    score = pts_sims * 1000000.0 + dg_sims * 1000.0 + gf_sims + np.random.random(pts_sims.shape)  # el ruido < 1 solo rompe empates exactos (antes ganaba el primero en orden alfabético)
     order = np.argsort(-score, axis=0)
 
     return eq_list, order
