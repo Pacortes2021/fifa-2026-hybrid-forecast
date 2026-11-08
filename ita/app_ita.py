@@ -590,7 +590,20 @@ def run_app():
                 importancia.append({"Variable": feat, "Importancia (Ganancia)": round(val, 4)})
             col_val_name = "Importancia (Ganancia)"
             title_graph = "Top 15 Características Predictoras (XGBoost)"
+        elif modelo_tipo == "xgb":
+            st.markdown('<div class="sec-title">Importancia de Características: XGBoost</div>', unsafe_allow_html=True)
+            st.markdown("La importancia en **XGBoost** mide cuánto mejora la función de pérdida, en promedio, cada vez que un árbol divide por esa variable (ganancia).")
+            xgb_model = M["pipe_xgb"].named_steps["xgb"]
+            importancia = [{"Variable": feat, "Importancia (XGB)": round(float(val), 4)}
+                           for feat, val in zip(M["cols"], xgb_model.feature_importances_)]
+            col_val_name = "Importancia (XGB)"
+            title_graph = "Top 15 Características Predictoras (XGBoost)"
         else:
+            if modelo_tipo == "stacking":
+                _w = M.get("metricas", {}).get("stacking", {}).get("w")
+                if _w is None and M.get("stack_w") is not None:
+                    _w = [round(float(x), 2) for x in M["stack_w"]]
+                st.info(f"El **Stacking** combina LASSO, Random Forest y XGBoost (pesos {_w}). Aquí se muestra la importancia del Random Forest; elige LASSO o XGBoost en la barra lateral para ver la de los otros modelos.")
             st.markdown('<div class="sec-title">Importancia de Características: Random Forest</div>', unsafe_allow_html=True)
             st.markdown("La importancia de características en **Random Forest** se calcula a partir de la reducción promedio de la impureza de Gini que aporta cada variable al realizar las divisiones tácticas en el ensamble de árboles.")
 
