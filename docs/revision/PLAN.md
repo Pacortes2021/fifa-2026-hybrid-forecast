@@ -73,3 +73,4 @@ Recorrido de la UI headless: `streamlit.testing.v1.AppTest.from_file("app.py", d
   - #14 Mundial: resultado real del torneo terminado y sin consultas a ESPN.
   - #15 Argentina/Nations League: textos de la proyección y cifras calculadas.
   Pendiente del QA: simular zonas/playoffs/promedios de Argentina y segundas fases (sco/aut/den/gre/bel); descensos de tur y formato de bel 2026-27; cupos de Champions de ned; UNL 1X2 vs xG en goleadas (E8); textos 'en vivo' restantes del Mundial (E11).
+- ~18:30 UTC — Pablo aprobó: PRs #9–#15 mergeados a `main` (85c15d3) con su CI en verde. CI lanzado sobre `main`.
