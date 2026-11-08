@@ -33,6 +33,7 @@ jobs:
           pip install --quiet requests pandas pytz
 
       - name: 🇨🇱 Recolectar Chile
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'chile')
@@ -41,6 +42,7 @@ jobs:
           "
 
       - name: 🇦🇷 Recolectar Argentina
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'arg')
@@ -49,6 +51,7 @@ jobs:
           "
 
       - name: 🇧🇷 Recolectar Brasil
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'bra')
@@ -57,6 +60,7 @@ jobs:
           "
 
       - name: 🇲🇽 Recolectar México
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'mex')
@@ -65,6 +69,7 @@ jobs:
           "
 
       - name: 🇪🇸 Recolectar España
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'esp')
@@ -73,6 +78,7 @@ jobs:
           "
 
       - name: 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Recolectar Inglaterra (Premier League)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'eng')
@@ -81,6 +87,7 @@ jobs:
           "
 
       - name: 🇩🇪 Recolectar Alemania (Bundesliga)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'bund')
@@ -89,6 +96,7 @@ jobs:
           "
 
       - name: 🇮🇹 Recolectar Italia (Serie A)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'ita')
@@ -97,6 +105,7 @@ jobs:
           "
 
       - name: 🇫🇷 Recolectar Francia (Ligue 1)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'fra')
@@ -105,6 +114,7 @@ jobs:
           "
 
       - name: 🇳🇱 Recolectar Países Bajos (Eredivisie)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'ned')
@@ -113,6 +123,7 @@ jobs:
           "
 
       - name: 🇵🇹 Recolectar Portugal (Primeira Liga)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'por')
@@ -121,6 +132,7 @@ jobs:
           "
 
       - name: 🇧🇪 Recolectar Bélgica (Jupiler Pro League)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'bel')
@@ -129,6 +141,7 @@ jobs:
           "
 
       - name: 🇹🇷 Recolectar Turquía (Süper Lig)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'tur')
@@ -137,6 +150,7 @@ jobs:
           "
 
       - name: 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Recolectar Escocia (Scottish Premiership)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'sco')
@@ -145,6 +159,7 @@ jobs:
           "
 
       - name: 🇦🇹 Recolectar Austria (Austrian Bundesliga)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'aut')
@@ -153,6 +168,7 @@ jobs:
           "
 
       - name: 🇩🇰 Recolectar Dinamarca (Danish Superliga)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'den')
@@ -161,6 +177,7 @@ jobs:
           "
 
       - name: 🇬🇷 Recolectar Grecia (Super League)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'gre')
@@ -169,6 +186,7 @@ jobs:
           "
 
       - name: 🇳🇴 Recolectar Noruega (Eliteserien)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'nor')
@@ -177,6 +195,7 @@ jobs:
           "
 
       - name: 🇸🇪 Recolectar Suecia (Allsvenskan)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'swe')
@@ -185,6 +204,7 @@ jobs:
           "
 
       - name: ⭐ Recolectar UEFA Champions League
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'ucl')
@@ -192,7 +212,26 @@ jobs:
           rec.recolectar()
           "
 
+      - name: 🇪🇺 Recolectar UEFA Nations League
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'unl')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
+      - name: 🏀 Recolectar NBA
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
+        run: |
+          python3 -c "
+          import sys; sys.path.insert(0, 'nba')
+          import recolectar as rec
+          rec.recolectar()
+          "
+
       - name: 💾 Commit updated CSVs (if any changes)
+        if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -217,9 +256,13 @@ jobs:
                   gre/data/partidos.csv   gre/data/fixture.csv   \
                   nor/data/partidos.csv   nor/data/fixture.csv   \
                   swe/data/partidos.csv   swe/data/fixture.csv   \
-                  ucl/data/partidos.csv   ucl/data/fixture.csv
+                  ucl/data/partidos.csv   ucl/data/fixture.csv   \
+                  unl/data/partidos.csv   unl/data/fixture.csv   \
+                  nba/data/partidos.csv   nba/data/fixture.csv
 
-          # Only commit if there are actual changes
+          # Only commit if there are actual changes.
+          # Si alguna liga falló, sus CSV no se tocaron: se commitean las demás y el job
+          # termina en rojo igual (GitHub marca el run como fallido por ese paso).
           if git diff --cached --quiet; then
             echo "✅ No new match data — nothing to commit."
           else
@@ -227,7 +270,7 @@ jobs:
             git commit -m "data(auto): refresh all leagues [${TIMESTAMP}]
 
           Automated daily refresh from ESPN API via GitHub Actions.
-          CSVs updated: chile, arg, bra, mex, esp, eng, bund, ita, fra, ned, por, bel, tur, sco, aut, den, gre, nor, swe, ucl."
+          CSVs updated: chile, arg, bra, mex, esp, eng, bund, ita, fra, ned, por, bel, tur, sco, aut, den, gre, nor, swe, ucl, unl, nba."
             git push origin main
             echo "✅ Pushed updated CSVs to main."
           fi

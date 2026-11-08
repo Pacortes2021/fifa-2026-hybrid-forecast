@@ -71,14 +71,18 @@ def _meses_temporada(season_year):
     return meses
 
 
-def _obtener_eventos_mes(ym):
-    try:
-        r = requests.get(f"{SCOREBOARD}?dates={ym}&limit=500", timeout=30)
-        if r.status_code == 200:
+def _obtener_eventos_mes(ym, intentos=3):
+    """Eventos del mes `ym` (AAAAMM). Si ESPN falla tras los reintentos, lanza la excepción
+    para que recolectar() no sobrescriba partidos.csv con un mes faltante."""
+    for intento in range(1, intentos + 1):
+        try:
+            r = requests.get(f"{SCOREBOARD}?dates={ym}&limit=500", timeout=30)
+            r.raise_for_status()
             return r.json().get("events", [])
-    except Exception as ex:
-        print(f"  Error obteniendo mes {ym}: {ex}")
-    return []
+        except Exception as ex:
+            if intento == intentos:
+                raise RuntimeError(f"ESPN no respondió para el mes {ym}: {ex}") from ex
+            time.sleep(2 * intento)
 
 
 def recolectar():
@@ -213,8 +217,7 @@ def recolectar():
         todo.extend(filas_temporada)
 
     if not todo:
-        print("No se pudieron recolectar partidos de la NBA.")
-        return None, None
+        raise RuntimeError("No se pudieron recolectar partidos de la NBA: ESPN no devolvió partidos")
 
     df = pd.DataFrame(todo).sort_values("fecha").drop_duplicates(subset=["event_id"], keep="last")
     
