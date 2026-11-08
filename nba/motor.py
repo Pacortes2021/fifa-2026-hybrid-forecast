@@ -1011,7 +1011,17 @@ def simular_temporada(M, n_sims=2000, seed=42, modelo="stacking"):
     return df_res
 
 
-def validacion_en_vivo(M, temporada=2027):
+def _proba_local_lote(M, X, modelo="stacking"):
+    """P(gana local) para varias filas de variables, con la misma combinación que predecir_match."""
+    if modelo in ("rf", "lasso", "xgb"):
+        return M[f"pipe_{modelo}"].predict_proba(X)[:, 1]
+    w = M["stack_w"]
+    p = (w[0] * M["pipe_lasso"].predict_proba(X)[:, 1] + w[1] * M["pipe_rf"].predict_proba(X)[:, 1]
+         + w[2] * M["pipe_xgb"].predict_proba(X)[:, 1])
+    return np.clip(p, 0.005, 0.995)
+
+
+def validacion_en_vivo(M, temporada=2027, modelo="stacking"):
     """
     Evalúa las predicciones del modelo frente a los partidos reales disputados
     en la temporada actual (validación continua out-of-sample).
@@ -1023,13 +1033,13 @@ def validacion_en_vivo(M, temporada=2027):
         df_val = df_dataset[df_dataset["temporada"] == df_dataset["temporada"].max()].copy()
 
     features = M["features"]
-    pipe = M["pipe_lasso"] # Modelo base de referencia calibrado temporalmente
-
     X_val = df_val[features].fillna(0.0)
     y_val = df_val["target_win_local"]
 
-    probs = pipe.predict_proba(X_val)
-    preds = pipe.predict(X_val)
+    # Antes siempre usaba LASSO, independiente del modelo elegido en la app
+    p_local = _proba_local_lote(M, X_val, modelo)
+    probs = np.column_stack([1.0 - p_local, p_local])
+    preds = (p_local >= 0.5).astype(int)
 
     ll = log_loss(y_val, probs)
     acc = accuracy_score(y_val, preds)
