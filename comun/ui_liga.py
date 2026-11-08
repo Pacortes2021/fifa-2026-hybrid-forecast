@@ -132,10 +132,17 @@ def _predecir(mo, M, a, b, modelo, temporada, elo=None):
         p = _proba_elo(elo, [_elo_diff(M, a, b, temporada)])[0]
         return p, _ajustar_a_1x2(grid, p), la, lb
     r = mo.predecir_match(M, a, b, temporada=temporada, modelo=modelo)
-    if isinstance(r, tuple):  # familia D
+    if isinstance(r, tuple):  # familias C y D
         p = np.asarray(r[0], dtype=float)
         la, lb = float(r[1]), float(r[2])
-        grid = _ajustar_a_1x2(mo.matriz_marcador_exacto(la, lb, 9), p)
+        if hasattr(mo, "grilla_goles"):
+            gr = mo.grilla_goles(M, a, b, modelo=modelo)
+            grid = gr[0] if isinstance(gr, tuple) else gr
+            grid = _ajustar_a_1x2(grid, p)
+        elif hasattr(mo, "matriz_marcador_exacto"):
+            grid = _ajustar_a_1x2(mo.matriz_marcador_exacto(la, lb, 9), p)
+        else:
+            grid = np.zeros((6, 6))
         return p, grid, la, lb
     p = np.asarray(r, dtype=float)
     la, lb = _xg(M, a, b)
@@ -144,7 +151,21 @@ def _predecir(mo, M, a, b, modelo, temporada, elo=None):
 
 def _tabla(mo, M):
     t = mo.obtener_tabla_actual(M).copy()
-    t = t.rename(columns={"dg": "dif_goles", "gf": "goles_favor"})
+    t = t.rename(columns={
+        "Selección": "equipo",
+        "PTS": "puntos",
+        "DG": "dif_goles",
+        "dg": "dif_goles",
+        "GF": "goles_favor",
+        "gf": "goles_favor",
+    })
+    if "pj" not in t.columns:
+        if {"PG", "PE", "PP"} <= set(t.columns):
+            t["pj"] = t["PG"] + t["PE"] + t["PP"]
+        elif {"g", "e", "p"} <= set(t.columns):
+            t["pj"] = t["g"] + t["e"] + t["p"]
+        else:
+            t["pj"] = 0
     return t.sort_values(["puntos", "dif_goles", "goles_favor"], ascending=False).reset_index(drop=True)
 
 
@@ -242,13 +263,20 @@ def _normalizar_validacion(df_val, met, evol):
     if df_val is None or len(df_val) == 0:
         return pd.DataFrame(), {}, pd.DataFrame()
     df = df_val.copy()
-    for col in ("resultado", "Prediccion"):
-        if col in df and pd.api.types.is_numeric_dtype(df[col]):
-            # familia E1b: 0 = local, 1 = empate, 2 = visita
-            df[col] = df[col].map(lambda v: RESULTADOS[int(v)] if pd.notna(v) else v)
-    if "resultado" not in df and {"goles_local", "goles_visita"} <= set(df.columns):
-        df["resultado"] = np.where(df.goles_local > df.goles_visita, RESULTADOS[0],
-                                   np.where(df.goles_local == df.goles_visita, RESULTADOS[1], RESULTADOS[2]))
+    if {"goles_local", "goles_visita"} <= set(df.columns):
+        df["resultado"] = np.where(df["goles_local"] > df["goles_visita"], RESULTADOS[0],
+                                   np.where(df["goles_local"] == df["goles_visita"], RESULTADOS[1], RESULTADOS[2]))
+    elif "resultado" in df and pd.api.types.is_numeric_dtype(df["resultado"]):
+        df["resultado"] = df["resultado"].map(lambda v: RESULTADOS[int(v)] if pd.notna(v) else v)
+
+    if "Prediccion" in df:
+        if {"Prob_Local", "Prob_Empate", "Prob_Visita"} <= set(df.columns):
+            pl, pe, pv = df["Prob_Local"].to_numpy(dtype=float), df["Prob_Empate"].to_numpy(dtype=float), df["Prob_Visita"].to_numpy(dtype=float)
+            pred_idx = np.where(pl >= np.maximum(pe, pv), 0, np.where(pe >= pv, 1, 2))
+            df["Prediccion"] = [RESULTADOS[i] for i in pred_idx]
+        elif pd.api.types.is_numeric_dtype(df["Prediccion"]):
+            df["Prediccion"] = df["Prediccion"].map(lambda v: RESULTADOS[int(v)] if pd.notna(v) else v)
+
     df["fecha"] = pd.to_datetime(df["fecha"]).dt.strftime("%Y-%m-%d")
     ev = evol.copy() if evol is not None else pd.DataFrame()
     ev = ev.rename(columns={"partidos": "partido", "logloss": "logloss_acum"})
@@ -305,12 +333,22 @@ def _cargar_motor(_mo, codigo):
 
 @st.cache_data(show_spinner="Corriendo la simulación de Monte Carlo...")
 def _simular(_mo, _M, codigo, clave_datos, modelo, n_sims):
-    return _mo.simular_campeonato(_M, n_sims=n_sims, modelo=modelo)
+    try:
+        df = _mo.simular_campeonato(_M, n_sims=n_sims, modelo=modelo)
+    except TypeError:
+        df = _mo.simular_campeonato(_M, n_sims=n_sims)
+    if "Selección" in df.columns and "equipo" not in df.columns:
+        df = df.rename(columns={"Selección": "equipo"})
+    return df
 
 
 @st.cache_data(show_spinner=False)
 def _validar(_mo, _M, codigo, clave_datos, temporada, modelo):
-    return _normalizar_validacion(*_mo.validacion_en_vivo(_M, temporada_val=temporada, modelo_tipo=modelo)[:3])
+    try:
+        res = _mo.validacion_en_vivo(_M, temporada_val=temporada, modelo_tipo=modelo)
+    except TypeError:
+        res = _mo.validacion_en_vivo(_M, temporada_val=temporada)
+    return _normalizar_validacion(*(res[:3] if res else (None, None, None)))
 
 
 # ─────────────────────────────── página ───────────────────────────────
@@ -546,7 +584,7 @@ def _tab_tabla(mo, M, cfg, modelo, equipos, clave_datos):
             st.caption(cfg["aviso_proyeccion"])
         st.dataframe(estilo, hide_index=True, width="stretch", height=560,
                      column_config={"Escudo": st.column_config.ImageColumn("", width="small")})
-    st.info(cfg.get("reglas") or f"Copas internacionales: top {mo.CUPOS_COPA} · Descenso: últimos {mo.DESCIENDEN}.")
+    st.info(cfg.get("reglas") or f"Copas internacionales: top {getattr(mo, 'CUPOS_COPA', '—')} · Descenso: últimos {getattr(mo, 'DESCIENDEN', '—')}.")
 
 
 def _tab_importancia_elo(M, elo, acento):

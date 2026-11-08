@@ -23,6 +23,8 @@ warnings.filterwarnings("ignore")
 
 DATA = Path(__file__).resolve().parent / "data"
 EQUIPOS_PATH = DATA / "equipos.csv"
+CUPOS_COPA = 4
+DESCIENDEN = 2
 
 def _cargar_equipos():
     """Lee data/equipos.csv (id estable de ESPN -> info del club: nombre, abreviatura, colores, logo)."""
@@ -814,6 +816,49 @@ def _simular_fixture_vec(M, PREDS, fijos, n_sims):
     key = PTS * 1_000_000 + DG * 1_000 + GF + np.random.random(PTS.shape)  # el ruido < 1 solo rompe empates exactos (antes ganaba el primero en orden alfabético)
     order = np.argsort(-key, axis=0)
     return eqs, order, PTS
+
+
+def obtener_tabla_actual(M):
+    p_actuales, fix = _torneo_actual(M)
+    partidos = M["partidos"]
+    todos_activos = set(p_actuales["local"]).union(set(p_actuales["visita"]))
+    if not fix.empty:
+        todos_activos = todos_activos.union(set(fix["local"])).union(set(fix["visita"]))
+    if not todos_activos:
+        todos_activos = set(partidos["local"].unique())
+
+    tabla = defaultdict(lambda: {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0})
+    for eq in todos_activos:
+        tabla[eq] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+
+    for r in p_actuales.itertuples(index=False):
+        l, v, gl, gv = r.local, r.visita, int(r.goles_local), int(r.goles_visita)
+        if l not in tabla: tabla[l] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        if v not in tabla: tabla[v] = {"PTS": 0, "GF": 0, "GC": 0, "PG": 0, "PE": 0, "PP": 0}
+        tabla[l]["GF"] += gl
+        tabla[l]["GC"] += gv
+        tabla[v]["GF"] += gv
+        tabla[v]["GC"] += gl
+        if gl > gv:
+            tabla[l]["PTS"] += 3; tabla[l]["PG"] += 1; tabla[v]["PP"] += 1
+        elif gl == gv:
+            tabla[l]["PTS"] += 1; tabla[v]["PTS"] += 1; tabla[l]["PE"] += 1; tabla[v]["PE"] += 1
+        else:
+            tabla[v]["PTS"] += 3; tabla[v]["PG"] += 1; tabla[l]["PP"] += 1
+
+    filas = []
+    for eq, s in tabla.items():
+        filas.append({
+            "Selección": eq,
+            "PTS": s["PTS"],
+            "DG": s["GF"] - s["GC"],
+            "GF": s["GF"],
+            "PG": s["PG"],
+            "PE": s["PE"],
+            "PP": s["PP"]
+        })
+    df_t = pd.DataFrame(filas).sort_values(by=["PTS", "DG", "GF"], ascending=[False, False, False]).reset_index(drop=True)
+    return df_t
 
 
 def monte_carlo(M, n_sims=4000, fijos=None, modelo=None, modelo_tipo=None, seed=42):
