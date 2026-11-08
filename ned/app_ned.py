@@ -170,7 +170,7 @@ def run_app():
     # Encabezado
     nombre_modelo = "🌲 Random Forest" if modelo_tipo == "rf" else ("🔀 Stacking" if modelo_tipo == "stacking" else ("🚀 XGBoost" if modelo_tipo == "xgb" else "📐 LASSO L1"))
     st.markdown('<div class="main-title">🇳🇱 Portal de Predicción Eredivisie</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — LASSO + RF + XGBoost + Simulación de Schaal, Champions y Descenso</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — LASSO + RF + XGBoost + Simulación de Campeón, Champions y Descenso</div>', unsafe_allow_html=True)
 
     # Tabs
     tab1, tab2, tab3, tab4 = st.tabs(["⚽ Predicción Versus", "📊 Tabla y Proyecciones", "🔬 Importancia de Variables", "🎯 Validación vs Realidad"])
@@ -451,7 +451,7 @@ def run_app():
         df_proy_visual["Equipo"] = df_proy_visual["equipo"].apply(lambda t: label_tabla(equipos, t))
         df_proy_visual = df_proy_visual[["Escudo", "Equipo", "P_campeon", "P_champions", "P_copas", "P_descenso"]]
         df_proy_visual = df_proy_visual.rename(columns={
-            "P_campeon": "🏆 P(Schaal/Campeón)",
+            "P_campeon": "🏆 P(Campeón)",
             "P_champions": "🌟 P(Champions)",
             "P_copas": "🇪🇺 P(Copas)",
             "P_descenso": "🔻 P(Descenso)"
@@ -462,11 +462,11 @@ def run_app():
             st.caption("Simula el resto de la temporada 2026/27 a partir del fixture oficial con 50.000 iteraciones.")
             st.dataframe(
                 df_proy_visual.style.format({
-                    "🏆 P(Schaal/Campeón)": "{:.1%}",
+                    "🏆 P(Campeón)": "{:.1%}",
                     "🌟 P(Champions)": "{:.1%}",
                     "🇪🇺 P(Copas)": "{:.1%}",
                     "🔻 P(Descenso)": "{:.1%}"
-                }).background_gradient(subset=["🏆 P(Schaal/Campeón)"], cmap="Greens")
+                }).background_gradient(subset=["🏆 P(Campeón)"], cmap="Greens")
                   .background_gradient(subset=["🔻 P(Descenso)"], cmap="OrRd"),
                 hide_index=True,
                 width='stretch',

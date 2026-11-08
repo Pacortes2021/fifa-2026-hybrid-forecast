@@ -77,8 +77,8 @@ def get_motor():
 
 
 @st.cache_data(show_spinner="Corriendo simulaciones de Monte Carlo para la NBA (2.000 iteraciones)...")
-def simular_temporada_cached(_M, key):
-    return mo.simular_temporada(_M, n_sims=2000)
+def simular_temporada_cached(_M, key, modelo="stacking"):
+    return mo.simular_temporada(_M, n_sims=2000, modelo=modelo)
 
 
 def run_app():
@@ -401,7 +401,7 @@ def run_app():
         st.markdown('<div class="sec-title">Proyecciones de Temporada Regular, Play-In y Playoffs NBA</div>', unsafe_allow_html=True)
         st.markdown("Simulación estocástica de Monte Carlo (2.000 iteraciones) de los partidos restantes del calendario 2026-27, torneo Play-In y series al mejor de 7 partidos.")
 
-        df_sim = simular_temporada_cached(M, f"{len(df_fix)}_{modelo}")
+        df_sim = simular_temporada_cached(M, f"{len(df_fix)}_{modelo}", modelo)
 
         tab_east, tab_west, tab_champ = st.tabs(["🏛️ Conferencia Este", "🤠 Conferencia Oeste", "🏆 Probabilidades de Campeón"])
         
@@ -410,22 +410,22 @@ def run_app():
             df_east = df_sim[df_sim["Conferencia"] == "East"].drop(columns=["Conferencia"]).reset_index(drop=True)
             df_east["Posición Proyectada"] = range(1, len(df_east) + 1)
             # Formatear porcentajes
-            for c in ["P_Playoff_Directo", "P_PlayIn", "P_Finalista_Conf", "P_Campeon"]:
+            for c in ["P_Playoff_Directo", "P_PlayIn", "P_Playoffs", "P_Finalista_Conf", "P_Campeon"]:
                 df_east[c] = df_east[c].apply(lambda x: f"{x:.1%}")
             st.dataframe(df_east[[
                 "Posición Proyectada", "Equipo", "Victorias Esperadas", "Derrotas Esperadas",
-                "P_Playoff_Directo", "P_PlayIn", "P_Finalista_Conf", "P_Campeon"
+                "P_Playoff_Directo", "P_PlayIn", "P_Playoffs", "P_Finalista_Conf", "P_Campeon"
             ]], use_container_width=True, hide_index=True)
 
         with tab_west:
             st.markdown("#### 🤠 Western Conference (Proyección Final)")
             df_west = df_sim[df_sim["Conferencia"] == "West"].drop(columns=["Conferencia"]).reset_index(drop=True)
             df_west["Posición Proyectada"] = range(1, len(df_west) + 1)
-            for c in ["P_Playoff_Directo", "P_PlayIn", "P_Finalista_Conf", "P_Campeon"]:
+            for c in ["P_Playoff_Directo", "P_PlayIn", "P_Playoffs", "P_Finalista_Conf", "P_Campeon"]:
                 df_west[c] = df_west[c].apply(lambda x: f"{x:.1%}")
             st.dataframe(df_west[[
                 "Posición Proyectada", "Equipo", "Victorias Esperadas", "Derrotas Esperadas",
-                "P_Playoff_Directo", "P_PlayIn", "P_Finalista_Conf", "P_Campeon"
+                "P_Playoff_Directo", "P_PlayIn", "P_Playoffs", "P_Finalista_Conf", "P_Campeon"
             ]], use_container_width=True, hide_index=True)
 
         with tab_champ:
@@ -465,7 +465,7 @@ def run_app():
             <div class="metric-box">
                 <div class="metric-lbl">Acierto Ganador (Accuracy)</div>
                 <div class="metric-val">{met_all.get('stacking', {}).get('accuracy', 67.5):.1f}%</div>
-                <div style="color:#64748b;font-size:0.85rem;">Test Out-of-Sample (1.394 partidos)</div>
+                <div style="color:#64748b;font-size:0.85rem;">Test Out-of-Sample ({int((M['df_dataset']['temporada'] >= 2026).sum())} partidos)</div>
             </div>
             """, unsafe_allow_html=True)
         with c_m3:

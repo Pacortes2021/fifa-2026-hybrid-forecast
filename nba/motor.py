@@ -775,7 +775,7 @@ def simular_partido_mc(M, local, visita, n_sims=5000, modelo="stacking", seed=42
     probs_spread = {}
     for line in lineas_spread:
         # Cubrir línea: (pts_local - pts_visita) > -line
-        cubierto = np.mean((pts_h_sims - pts_a_sims) > line)
+        cubierto = np.mean((pts_h_sims - pts_a_sims) > -line)
         probs_spread[line] = round(float(cubierto), 3)
 
     # Probabilidades de líneas de Over/Under comunes en NBA
@@ -804,7 +804,7 @@ def simular_partido_mc(M, local, visita, n_sims=5000, modelo="stacking", seed=42
     }
 
 
-def simular_temporada(M, n_sims=2000, seed=42):
+def simular_temporada(M, n_sims=2000, seed=42, modelo="stacking"):
     """
     Simulación Monte Carlo completa de la temporada NBA, Play-In y Playoffs.
     Proyecta las victorias esperadas en Conferencia Este y Oeste,
@@ -813,6 +813,7 @@ def simular_temporada(M, n_sims=2000, seed=42):
     cache_path = Path(__file__).resolve().parent / "simulacion_mc.pkl"
     fp = hashlib.sha256()
     fp.update(str(n_sims).encode())
+    fp.update(str(modelo).encode())  # cada modelo tiene su propia simulación
     fp.update(_cache_key().encode())
     cache_key = fp.hexdigest()
 
@@ -858,7 +859,7 @@ def simular_temporada(M, n_sims=2000, seed=42):
     for eq1 in todos_equipos:
         for eq2 in todos_equipos:
             if eq1 != eq2:
-                h2h_probs[(eq1, eq2)] = predecir_match(M, eq1, eq2)["p_local"]
+                h2h_probs[(eq1, eq2)] = predecir_match(M, eq1, eq2, modelo=modelo)["p_local"]
 
     # Predecir probabilidades de cada partido restante del fixture (filtrando equipos válidos)
     preds_fixture = []
@@ -877,7 +878,8 @@ def simular_temporada(M, n_sims=2000, seed=42):
     # Acumuladores de Monte Carlo
     tot_wins = defaultdict(list)
     playin_counts = defaultdict(int)       # 7º a 10º
-    playoff_counts = defaultdict(int)      # 1º a 6º directo + clasificación Play-In
+    playoff_counts = defaultdict(int)      # clasificación total a playoffs: 1º a 6º + ganadores del Play-In
+    directo_counts = defaultdict(int)      # solo 1º a 6º (clasificación directa)
     conf_final_counts = defaultdict(int)   # Finalistas de Conferencia
     champ_counts = defaultdict(int)        # Campeón NBA
 
@@ -899,13 +901,16 @@ def simular_temporada(M, n_sims=2000, seed=42):
             tot_wins[e].append(sim_wins[e])
 
         # Ranquear por conferencia (East y West)
-        east_teams = sorted([e for e in todos_equipos if conferencias[e] == "East"], key=lambda x: sim_wins[x], reverse=True)
-        west_teams = sorted([e for e in todos_equipos if conferencias[e] == "West"], key=lambda x: sim_wins[x], reverse=True)
+        # El ruido < 1 solo rompe empates en victorias (antes ganaba el primero en orden alfabético)
+        desempate = {e: np.random.random() for e in todos_equipos}
+        east_teams = sorted([e for e in todos_equipos if conferencias[e] == "East"], key=lambda x: sim_wins[x] + desempate[x], reverse=True)
+        west_teams = sorted([e for e in todos_equipos if conferencias[e] == "West"], key=lambda x: sim_wins[x] + desempate[x], reverse=True)
 
         for conf_ranked in (east_teams, west_teams):
             for i, eq in enumerate(conf_ranked):
                 if i < 6:
                     playoff_counts[eq] += 1
+                    directo_counts[eq] += 1
                 elif i < 10:
                     playin_counts[eq] += 1
 
@@ -989,7 +994,8 @@ def simular_temporada(M, n_sims=2000, seed=42):
             "Conferencia": conferencias[eq],
             "Victorias Esperadas": round(avg_w, 1),
             "Derrotas Esperadas": round(82.0 - avg_w, 1),
-            "P_Playoff_Directo": round(playoff_counts[eq] / n_sims, 3),
+            "P_Playoff_Directo": round(directo_counts[eq] / n_sims, 3),
+            "P_Playoffs": round(playoff_counts[eq] / n_sims, 3),
             "P_PlayIn": round(playin_counts[eq] / n_sims, 3),
             "P_Finalista_Conf": round(conf_final_counts[eq] / n_sims, 3),
             "P_Campeon": round(champ_counts[eq] / n_sims, 3)
