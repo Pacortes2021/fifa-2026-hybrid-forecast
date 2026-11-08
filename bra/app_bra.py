@@ -173,7 +173,7 @@ def run_app():
 
     # Encabezado
     nombre_modelo = "🌲 Random Forest" if modelo == "rf" else ("🔀 Stacking" if modelo == "stacking" else ("🚀 XGBoost" if modelo == "xgb" else "📐 LASSO L1"))
-    st.markdown('<div class="main-title">🇽🇷 Portal de Predicción Brasileirão</div>', unsafe_allow_html=True)
+    st.markdown('<div class="main-title">🇧🇷 Portal de Predicción Brasileirão</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — LASSO + RF + Simulación de Campeonato Completo</div>', unsafe_allow_html=True)
     
     # Tabs
