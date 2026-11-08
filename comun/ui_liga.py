@@ -6,10 +6,12 @@ Todas las ligas comparten así las mismas pestañas, el mismo orden de component
 cálculos de mercados; lo propio de cada liga (colores, equipos por defecto, columnas de la
 proyección) va en `CONFIG`.
 
-Motores soportados hoy (familias con la misma firma de funciones):
-  - E1  (eng, esp, bund): validación con textos ("Gana local"...), evolución partido/logloss_acum.
-  - E1b (ita, fra, ned, por, bel): validación con enteros 0=local/1=empate/2=visita, evolución
-    partidos/logloss; la simulación agrega P_champions y Puntos esperados.
+Motores soportados hoy:
+  - E1  (eng, esp, bund): predecir_match -> p [L,E,V]; grilla_goles; validación con textos.
+  - E1b (ita, fra, ned, por, bel): como E1, pero validación con enteros 0=local/1=empate/2=visita,
+    evolución partidos/logloss y simulación con P_champions y Puntos esperados.
+  - D   (tur, sco, aut, den, gre, nor, swe): predecir_match -> (p, la, lb) [L,E,V]; sin grilla_goles
+    (se usa matriz_marcador_exacto reescalada al 1X2); claves features/df_dataset; tabla con dg/gf.
 El adaptador (`_normalizar_*`) deja todo en un formato único para la UI.
 """
 import numpy as np
@@ -101,6 +103,45 @@ def _modelos_disponibles(M):
     return [(k, n) for k, n in MODELOS if k == "stacking" or f"pipe_{k}" in M]
 
 
+def _cols(M):
+    return M["cols"] if "cols" in M else M["features"]
+
+
+def _dataset(M):
+    return M["df_features"] if "df_features" in M else M["df_dataset"]
+
+
+def _ajustar_a_1x2(grid, p):
+    """Reescala las zonas local/empate/visita de la grilla Poisson para que sumen el 1X2 del modelo
+    (lo mismo que hace grilla_goles en las familias E1/E1b)."""
+    g = np.asarray(grid, dtype=float).copy()
+    i, j = np.indices(g.shape)
+    for zona, objetivo in ((i > j, p[0]), (i == j, p[1]), (i < j, p[2])):
+        s_zona = g[zona].sum()
+        if s_zona > 0:
+            g[zona] *= objetivo / s_zona
+    return g / g.sum()
+
+
+def _predecir(mo, M, a, b, modelo, temporada):
+    """(p [L,E,V], grilla, xG local, xG visita) con el contrato único de la UI."""
+    r = mo.predecir_match(M, a, b, temporada=temporada, modelo=modelo)
+    if isinstance(r, tuple):  # familia D
+        p = np.asarray(r[0], dtype=float)
+        la, lb = float(r[1]), float(r[2])
+        grid = _ajustar_a_1x2(mo.matriz_marcador_exacto(la, lb, 9), p)
+        return p, grid, la, lb
+    p = np.asarray(r, dtype=float)
+    la, lb = _xg(M, a, b)
+    return p, np.asarray(mo.grilla_goles(M, a, b, modelo=modelo), dtype=float), la, lb
+
+
+def _tabla(mo, M):
+    t = mo.obtener_tabla_actual(M).copy()
+    t = t.rename(columns={"dg": "dif_goles", "gf": "goles_favor"})
+    return t.sort_values(["puntos", "dif_goles", "goles_favor"], ascending=False).reset_index(drop=True)
+
+
 def _metricas(M):
     return {k: v for k, v in (M.get("metricas") or {}).items() if isinstance(v, dict) and "logloss" in v}
 
@@ -184,7 +225,7 @@ def _cargar_motor(_mo, codigo):
 
 @st.cache_data(show_spinner="Corriendo la simulación de Monte Carlo...")
 def _simular(_mo, _M, codigo, clave_datos, modelo, n_sims):
-    return _mo.simular_campeonato(_M, n_sims=n_sims, modelo_tipo=modelo)
+    return _mo.simular_campeonato(_M, n_sims=n_sims, modelo=modelo)
 
 
 @st.cache_data(show_spinner=False)
@@ -256,8 +297,8 @@ def _tab_versus(mo, M, cfg, modelo, equipos, met_all, disponibles, partidos, tem
     cod = cfg["codigo"]
     st.markdown('<div class="sec-title">Analizador de Enfrentamientos</div>', unsafe_allow_html=True)
 
-    tabla = mo.obtener_tabla_actual(M)
-    opciones = sorted(tabla["equipo"]) if len(tabla) else sorted(M["df_features"]["local"].unique())
+    tabla = _tabla(mo, M)
+    opciones = sorted(tabla["equipo"]) if len(tabla) else sorted(_dataset(M)["local"].unique())
 
     fix_path = mo.DATA / "fixture.csv"
     fix = pd.read_csv(fix_path) if fix_path.exists() else pd.DataFrame()
@@ -289,10 +330,8 @@ def _tab_versus(mo, M, cfg, modelo, equipos, met_all, disponibles, partidos, tem
         st.error("Selecciona dos equipos distintos.")
         return
 
-    p = np.asarray(mo.predecir_match(M, a, b, modelo_tipo=modelo), dtype=float)
-    grid = mo.grilla_goles(M, a, b, modelo_tipo=modelo)
+    p, grid, la, lb = _predecir(mo, M, a, b, modelo, temporada)
     mk = mercados_desde_grilla(grid)
-    la, lb = _xg(M, a, b)
 
     # Alertas cualitativas (sin porcentajes de acierto fijos)
     if p[0] > 0.55 and la is not None and (la - lb) > 1.0:
@@ -321,7 +360,7 @@ def _tab_versus(mo, M, cfg, modelo, equipos, met_all, disponibles, partidos, tem
     with st.expander("🤖 Comparativa de modelos para este partido", expanded=False):
         filas = []
         for k, nombre in disponibles:
-            pk = np.asarray(mo.predecir_match(M, a, b, modelo_tipo=k), dtype=float)
+            pk = _predecir(mo, M, a, b, k, temporada)[0]
             m = met_all.get(k, {})
             filas.append({"Modelo": nombre, f"Victoria {a}": f"{pk[0]:.1%}", "Empate": f"{pk[1]:.1%}",
                           f"Victoria {b}": f"{pk[2]:.1%}",
@@ -393,7 +432,7 @@ def _tab_versus(mo, M, cfg, modelo, equipos, met_all, disponibles, partidos, tem
 def _tab_tabla(mo, M, cfg, modelo, equipos, clave_datos):
     st.markdown('<div class="sec-title">Tabla y proyección de la temporada</div>', unsafe_allow_html=True)
     col_t, col_p = st.columns(2)
-    tabla = mo.obtener_tabla_actual(M).copy()
+    tabla = _tabla(mo, M)
     tabla.insert(0, "Pos", range(1, len(tabla) + 1))
     tabla["Escudo"] = tabla["equipo"].map(lambda t: logo_url(equipos, t))
     tabla["Equipo"] = tabla["equipo"].map(lambda t: label_tabla(equipos, t))
@@ -426,13 +465,14 @@ def _tab_tabla(mo, M, cfg, modelo, equipos, clave_datos):
 
 
 def _tab_importancia(M, modelo, acento, met_all):
-    cols = M["cols"]
+    cols = _cols(M)
     base = "rf" if modelo == "stacking" else modelo
     if modelo == "stacking":
         w = met_all.get("stacking", {}).get("w")
         st.info(f"El **Stacking** combina LASSO, Random Forest y XGBoost (pesos {w}). Se muestra la importancia del "
                 "Random Forest; elige otro modelo en la barra lateral para ver la suya.")
-    est = M[f"pipe_{base}"].steps[-1][1]
+    pipe = M[f"pipe_{base}"]
+    est = pipe.steps[-1][1] if hasattr(pipe, "steps") else pipe
     if hasattr(est, "coef_"):
         valores, etq = np.mean(np.abs(est.coef_), axis=0), "Peso absoluto (LASSO)"
         texto = "LASSO (L1) lleva a cero los coeficientes de las variables poco informativas: solo quedan las que pesan fuera de muestra."
@@ -460,7 +500,7 @@ def _tab_validacion(mo, M, cfg, modelo, clave_datos, acento):
     cod = cfg["codigo"]
     st.markdown('<div class="sec-title">El modelo contra la realidad (fuera de muestra)</div>', unsafe_allow_html=True)
     st.markdown(f"Cada partido se predice con **{NOMBRE_CORTO[modelo]}** usando solo la información disponible antes de jugarlo.")
-    temporadas = sorted([t for t in M["df_features"]["temporada"].unique() if t >= cfg.get("primer_test", 2025)], reverse=True)
+    temporadas = sorted([t for t in _dataset(M)["temporada"].unique() if t >= cfg.get("primer_test", 2025)], reverse=True)
     if not temporadas:
         st.info("Aún no hay temporadas fuera de muestra para validar.")
         return
