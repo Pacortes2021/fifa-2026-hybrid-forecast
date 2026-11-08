@@ -24,8 +24,9 @@ MODELOS = [
     ("rf", "🌲 Random Forest"),
     ("lasso", "📐 LASSO L1 (Regresión)"),
     ("xgb", "🚀 XGBoost (Gradient Boosting)"),
+    ("elo", "📈 Solo Elo (regresión logística)"),
 ]
-NOMBRE_CORTO = {"stacking": "Stacking", "rf": "Random Forest", "lasso": "LASSO L1", "xgb": "XGBoost"}
+NOMBRE_CORTO = {"stacking": "Stacking", "rf": "Random Forest", "lasso": "LASSO L1", "xgb": "XGBoost", "elo": "Solo Elo"}
 RESULTADOS = ["Gana local", "Empate", "Gana visita"]
 
 
@@ -100,7 +101,8 @@ def mercados_desde_grilla(grid):
 
 # ─────────────────────────────── adaptador del motor ───────────────────────────────
 def _modelos_disponibles(M):
-    return [(k, n) for k, n in MODELOS if k == "stacking" or f"pipe_{k}" in M]
+    return [(k, n) for k, n in MODELOS
+            if k == "stacking" or f"pipe_{k}" in M or (k == "elo" and "elo_diff" in _dataset(M).columns)]
 
 
 def _cols(M):
@@ -123,8 +125,12 @@ def _ajustar_a_1x2(grid, p):
     return g / g.sum()
 
 
-def _predecir(mo, M, a, b, modelo, temporada):
+def _predecir(mo, M, a, b, modelo, temporada, elo=None):
     """(p [L,E,V], grilla, xG local, xG visita) con el contrato único de la UI."""
+    if modelo == "elo":
+        _, grid, la, lb = _predecir(mo, M, a, b, "stacking", temporada)
+        p = _proba_elo(elo, [_elo_diff(M, a, b, temporada)])[0]
+        return p, _ajustar_a_1x2(grid, p), la, lb
     r = mo.predecir_match(M, a, b, temporada=temporada, modelo=modelo)
     if isinstance(r, tuple):  # familia D
         p = np.asarray(r[0], dtype=float)
@@ -140,6 +146,80 @@ def _tabla(mo, M):
     t = mo.obtener_tabla_actual(M).copy()
     t = t.rename(columns={"dg": "dif_goles", "gf": "goles_favor"})
     return t.sort_values(["puntos", "dif_goles", "goles_favor"], ascending=False).reset_index(drop=True)
+
+
+# ─────────────── modelo "Solo Elo": referencia simple para comparar y aprender ───────────────
+def _etiquetas_lev(df):
+    """0 = gana local, 1 = empate, 2 = gana visita, a partir de los goles (no depende del motor)."""
+    gl, gv = df["goles_local"].to_numpy(dtype=float), df["goles_visita"].to_numpy(dtype=float)
+    return np.where(gl > gv, 0, np.where(gl == gv, 1, 2))
+
+
+def _dataset_con_goles(M):
+    """Dataset pre-partido con goles. Algunos motores (den, gre) no guardan los goles en el dataset:
+    se toman de df_partidos cruzando por fecha, local y visita."""
+    d = _dataset(M)
+    if {"goles_local", "goles_visita"} <= set(d.columns) or "df_partidos" not in M:
+        return d
+    goles = M["df_partidos"][["fecha", "local", "visita", "goles_local", "goles_visita"]].copy()
+    d = d.copy()
+    d["_fk"], goles["_fk"] = pd.to_datetime(d["fecha"]), pd.to_datetime(goles["fecha"])
+    return d.merge(goles.drop(columns="fecha"), on=["_fk", "local", "visita"], how="left").drop(columns="_fk")
+
+
+@st.cache_resource(show_spinner=False)
+def _entrenar_elo(_M, codigo, clave_datos, ultima_train=2024):
+    """Regresión logística multinomial con una sola variable (elo_diff), entrenada con las mismas
+    temporadas que los modelos finales (<= 2024) y evaluada fuera de muestra (>= 2025)."""
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import log_loss
+    df = _dataset_con_goles(_M)
+    df = df[df["goles_local"].notna() & df["goles_visita"].notna() & df["elo_diff"].notna()]
+    tr, te = df[df["temporada"] <= ultima_train], df[df["temporada"] > ultima_train]
+    lr = LogisticRegression(max_iter=2000).fit(tr[["elo_diff"]].to_numpy(), _etiquetas_lev(tr))
+    frec = np.bincount(_etiquetas_lev(tr), minlength=3) / len(tr)
+    met = {}
+    if len(te):
+        pt = lr.predict_proba(te[["elo_diff"]].to_numpy())
+        y = _etiquetas_lev(te)
+        met = {"logloss": round(float(log_loss(y, pt, labels=[0, 1, 2])), 4),
+               "accuracy": round(float((pt.argmax(1) == y).mean() * 100), 2)}
+    return {"lr": lr, "met": met, "frec_train": frec}
+
+
+def _elo_diff(M, a, b, temporada):
+    """La misma variable elo_diff que usa el motor al entrenar (algunos motores incluyen la localía)."""
+    t = M["tracker"]
+    try:
+        f = t.get_features_for_match(a, b, temporada, reset_season=False)
+    except TypeError:
+        f = t.get_features_for_match(a, b, temporada)
+    return float(f["elo_diff"])
+
+
+def _proba_elo(elo, x):
+    return elo["lr"].predict_proba(np.asarray(x, dtype=float).reshape(-1, 1))  # columnas [L, E, V]
+
+
+def _validar_elo(M, elo, temporada):
+    df = _dataset_con_goles(M)
+    df = df[(df["temporada"] == temporada) & df["goles_local"].notna()].sort_values("fecha")
+    if not len(df):
+        return pd.DataFrame(), {}, pd.DataFrame()
+    P = _proba_elo(elo, df["elo_diff"].fillna(0.0))
+    y = _etiquetas_lev(df)
+    out = pd.DataFrame({"fecha": pd.to_datetime(df["fecha"]).dt.strftime("%Y-%m-%d").to_numpy(),
+                        "local": df["local"].to_numpy(), "visita": df["visita"].to_numpy(),
+                        "goles_local": df["goles_local"].astype(int).to_numpy(), "goles_visita": df["goles_visita"].astype(int).to_numpy(),
+                        "resultado": [RESULTADOS[k] for k in y], "Prediccion": [RESULTADOS[k] for k in P.argmax(1)],
+                        "Prob_Local": P[:, 0], "Prob_Empate": P[:, 1], "Prob_Visita": P[:, 2]})
+    pc = np.clip(P[np.arange(len(y)), y], 1e-7, 1)
+    base = np.clip(elo["frec_train"][y], 1e-7, 1)
+    met = {"n": len(y), "acierto": float((P.argmax(1) == y).mean()),
+           "logloss": float(-np.log(pc).mean()), "logloss_base": float(-np.log(base).mean())}
+    evol = pd.DataFrame({"partido": np.arange(1, len(y) + 1), "logloss_acum": np.cumsum(-np.log(pc)) / np.arange(1, len(y) + 1),
+                         "baseline": met["logloss_base"]})
+    return out, met, evol
 
 
 def _metricas(M):
@@ -249,6 +329,9 @@ def run_liga_app(mo, rec, rec_box, cfg):
     st.sidebar.markdown("### 🛠️ Controles del Modelo")
     disponibles = _modelos_disponibles(M)
     met_all = _metricas(M)
+    elo = _entrenar_elo(M, cod, clave_datos) if any(k == "elo" for k, _ in disponibles) else None
+    if elo and elo["met"]:
+        met_all["elo"] = elo["met"]
     con_met = [k for k, _ in disponibles if k in met_all]
     mejor = min(con_met, key=lambda k: met_all[k]["logloss"]) if con_met else "stacking"
     etiquetas = [n + (" ⭐" if k == mejor else "") for k, n in disponibles]
@@ -284,16 +367,16 @@ def run_liga_app(mo, rec, rec_box, cfg):
     tab1, tab2, tab3, tab4 = st.tabs(["⚽ Predicción Versus", "📊 Tabla y Proyecciones",
                                       "🔬 Importancia de Variables", "🎯 Validación vs Realidad"])
     with tab1:
-        _tab_versus(mo, M, cfg, modelo, equipos, met_all, disponibles, partidos, temporada)
+        _tab_versus(mo, M, cfg, modelo, equipos, met_all, disponibles, partidos, temporada, elo)
     with tab2:
         _tab_tabla(mo, M, cfg, modelo, equipos, clave_datos)
     with tab3:
-        _tab_importancia(M, modelo, acento, met_all)
+        _tab_importancia(M, modelo, acento, met_all, elo)
     with tab4:
-        _tab_validacion(mo, M, cfg, modelo, clave_datos, acento)
+        _tab_validacion(mo, M, cfg, modelo, clave_datos, acento, elo)
 
 
-def _tab_versus(mo, M, cfg, modelo, equipos, met_all, disponibles, partidos, temporada):
+def _tab_versus(mo, M, cfg, modelo, equipos, met_all, disponibles, partidos, temporada, elo=None):
     cod = cfg["codigo"]
     st.markdown('<div class="sec-title">Analizador de Enfrentamientos</div>', unsafe_allow_html=True)
 
@@ -330,7 +413,7 @@ def _tab_versus(mo, M, cfg, modelo, equipos, met_all, disponibles, partidos, tem
         st.error("Selecciona dos equipos distintos.")
         return
 
-    p, grid, la, lb = _predecir(mo, M, a, b, modelo, temporada)
+    p, grid, la, lb = _predecir(mo, M, a, b, modelo, temporada, elo)
     mk = mercados_desde_grilla(grid)
 
     # Alertas cualitativas (sin porcentajes de acierto fijos)
@@ -360,7 +443,7 @@ def _tab_versus(mo, M, cfg, modelo, equipos, met_all, disponibles, partidos, tem
     with st.expander("🤖 Comparativa de modelos para este partido", expanded=False):
         filas = []
         for k, nombre in disponibles:
-            pk = _predecir(mo, M, a, b, k, temporada)[0]
+            pk = _predecir(mo, M, a, b, k, temporada, elo)[0]
             m = met_all.get(k, {})
             filas.append({"Modelo": nombre, f"Victoria {a}": f"{pk[0]:.1%}", "Empate": f"{pk[1]:.1%}",
                           f"Victoria {b}": f"{pk[2]:.1%}",
@@ -444,7 +527,8 @@ def _tab_tabla(mo, M, cfg, modelo, equipos, clave_datos):
                      column_config={"Escudo": st.column_config.ImageColumn("", width="small")})
 
     n_sims = cfg.get("n_sims", 50000)
-    proy = _simular(mo, M, cfg["codigo"], clave_datos, modelo, n_sims).copy()
+    modelo_sim = "stacking" if modelo == "elo" else modelo  # la simulación del motor no conoce "Solo Elo"
+    proy = _simular(mo, M, cfg["codigo"], clave_datos, modelo_sim, n_sims).copy()
     cols = [(c, etq, cmap) for c, etq, cmap in cfg["columnas_proy"] if c in proy.columns]
     proy["Escudo"] = proy["equipo"].map(lambda t: logo_url(equipos, t))
     proy["Equipo"] = proy["equipo"].map(lambda t: label_tabla(equipos, t))
@@ -456,7 +540,8 @@ def _tab_tabla(mo, M, cfg, modelo, equipos, clave_datos):
             estilo = estilo.background_gradient(subset=[etq], cmap=cmap)
     with col_p:
         st.markdown('<div class="card-title">Proyección Monte Carlo</div>', unsafe_allow_html=True)
-        st.caption(f"{n_sims:,} simulaciones de los partidos que faltan con el modelo {NOMBRE_CORTO[modelo]}.".replace(",", "."))
+        st.caption(f"{n_sims:,} simulaciones de los partidos que faltan con el modelo {NOMBRE_CORTO[modelo_sim]}.".replace(",", ".")
+                   + (" (Solo Elo no está integrado en la simulación de temporada.)" if modelo == "elo" else ""))
         if cfg.get("aviso_proyeccion"):
             st.caption(cfg["aviso_proyeccion"])
         st.dataframe(estilo, hide_index=True, width="stretch", height=560,
@@ -464,7 +549,32 @@ def _tab_tabla(mo, M, cfg, modelo, equipos, clave_datos):
     st.info(cfg.get("reglas") or f"Copas internacionales: top {mo.CUPOS_COPA} · Descenso: últimos {mo.DESCIENDEN}.")
 
 
-def _tab_importancia(M, modelo, acento, met_all):
+def _tab_importancia_elo(M, elo, acento):
+    st.markdown('<div class="sec-title">Cómo decide el modelo "Solo Elo"</div>', unsafe_allow_html=True)
+    st.markdown("Usa **una sola variable**: la diferencia de Elo entre local y visita. Una regresión logística la convierte "
+                "en probabilidades de victoria local, empate y victoria visitante. Sirve de referencia: si un modelo con "
+                "decenas de variables no le gana, esas variables aportan poco.")
+    x = np.linspace(-500, 500, 201)
+    P = _proba_elo(elo, x)
+    fig, ax = plt.subplots(figsize=(8, 4))
+    for k, (etq, col) in enumerate((("Gana local", acento), ("Empate", "#94a3b8"), ("Gana visita", "#0f172a"))):
+        ax.plot(x, P[:, k], label=etq, color=col, lw=2)
+    ax.axvline(0, color="#cbd5e1", lw=1)
+    ax.set_xlabel("Diferencia de Elo (local − visita)"); ax.set_ylabel("Probabilidad"); ax.legend()
+    st.pyplot(fig)
+    plt.close(fig)
+    p0 = P[100]
+    st.caption(f"Con equipos parejos (diferencia 0): local {p0[0]:.0%}, empate {p0[1]:.0%}, visita {p0[2]:.0%}. "
+               "La ventaja de ser local aparece aunque el Elo sea igual.")
+    coef = pd.DataFrame({"Resultado": RESULTADOS, "Coeficiente de elo_diff": np.round(elo["lr"].coef_[:, 0], 5),
+                         "Intercepto": np.round(elo["lr"].intercept_, 3)})
+    st.dataframe(coef, hide_index=True, width="stretch")
+
+
+def _tab_importancia(M, modelo, acento, met_all, elo=None):
+    if modelo == "elo":
+        _tab_importancia_elo(M, elo, acento)
+        return
     cols = _cols(M)
     base = "rf" if modelo == "stacking" else modelo
     if modelo == "stacking":
@@ -496,7 +606,7 @@ def _tab_importancia(M, modelo, acento, met_all):
         plt.close(fig)
 
 
-def _tab_validacion(mo, M, cfg, modelo, clave_datos, acento):
+def _tab_validacion(mo, M, cfg, modelo, clave_datos, acento, elo=None):
     cod = cfg["codigo"]
     st.markdown('<div class="sec-title">El modelo contra la realidad (fuera de muestra)</div>', unsafe_allow_html=True)
     st.markdown(f"Cada partido se predice con **{NOMBRE_CORTO[modelo]}** usando solo la información disponible antes de jugarlo.")
@@ -505,7 +615,8 @@ def _tab_validacion(mo, M, cfg, modelo, clave_datos, acento):
         st.info("Aún no hay temporadas fuera de muestra para validar.")
         return
     temp = st.selectbox("Temporada a validar:", temporadas, key=f"val_temp_{cod}")
-    df, met, evol = _validar(mo, M, cod, clave_datos, int(temp), modelo)
+    df, met, evol = (_validar_elo(M, elo, int(temp)) if modelo == "elo"
+                     else _validar(mo, M, cod, clave_datos, int(temp), modelo))
     if len(df) == 0:
         st.info("Aún no hay partidos jugados en esta temporada.")
         return
