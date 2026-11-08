@@ -293,7 +293,13 @@ def run_app():
     ESPN_KEY = "" if len(ESPN_DF) == 0 else f"{len(ESPN_DF)}-{ESPN_DF.fecha.max()}"
     
     st.markdown('<div class="main-title">🏆 Simulador de la Copa Mundial 2026</div>', unsafe_allow_html=True)
-    st.markdown('<div class="main-subtitle">Predicción Versus · Cruces de eliminatorias reales · Simulación de campeonato en vivo</div>', unsafe_allow_html=True)
+    FINAL = espn_live.resultado_final()
+    if FINAL:
+        st.markdown('<div class="main-subtitle">Torneo finalizado · Resultados reales, simulaciones pre-torneo y validación del modelo</div>', unsafe_allow_html=True)
+        st.success(f"🏆 **Campeón: {etiqueta(FINAL['campeon'])}** — venció {FINAL['marcador']} a {etiqueta(FINAL['subcampeon'])} en la final ({FINAL['fecha']}). "
+                   "Las probabilidades de campeón de la app son las de la simulación **previa al torneo**.")
+    else:
+        st.markdown('<div class="main-subtitle">Predicción Versus · Cruces de eliminatorias reales · Simulación de campeonato en vivo</div>', unsafe_allow_html=True)
     
     modelo = st.sidebar.radio(
         "Modelo de predicción", 
@@ -460,7 +466,12 @@ def run_app():
 
         # Tarjetas de resumen métrico
         m_col1, m_col2, m_col3, m_col4 = st.columns(4)
-        if len(top_teams) >= 4:
+        if FINAL and len(top_teams) >= 2:
+            m_col1.metric("🏆 Campeón (real)", etiqueta(FINAL["campeon"]), f"pre-torneo: {float(top_teams.set_index('Selección')['P_campeon'].get(FINAL['campeon'], 0.0)):.1%}")
+            m_col2.metric("🥈 Subcampeón (real)", etiqueta(FINAL["subcampeon"]), f"pre-torneo: {float(top_teams.set_index('Selección')['P_campeon'].get(FINAL['subcampeon'], 0.0)):.1%}")
+            m_col3.metric("Favorito pre-torneo #1", f"{etiqueta(top_teams.loc[0, 'Selección'])}", f"{top_teams.loc[0, 'P_campeon']:.1%}")
+            m_col4.metric("Favorito pre-torneo #2", f"{etiqueta(top_teams.loc[1, 'Selección'])}", f"{top_teams.loc[1, 'P_campeon']:.1%}")
+        elif len(top_teams) >= 4:
             m_col1.metric("🥇 Máximo Favorito", f"{etiqueta(top_teams.loc[0, 'Selección'])}", f"{top_teams.loc[0, 'P_campeon']:.1%}")
             m_col2.metric("🥈 Segundo Favorito", f"{etiqueta(top_teams.loc[1, 'Selección'])}", f"{top_teams.loc[1, 'P_campeon']:.1%}")
             m_col3.metric("🥉 Tercer Favorito", f"{etiqueta(top_teams.loc[2, 'Selección'])}", f"{top_teams.loc[2, 'P_campeon']:.1%}")
@@ -607,10 +618,16 @@ def run_app():
         else:
             br, sim = payload["bracket"], payload["sim"]
             tabla = sim["tabla"]
-            st.markdown("##### 🏆 Campeón según la simulación")
-            c = st.columns(3)
-            for col, (_, r), md in zip(c, tabla.head(3).iterrows(), ["🥇", "🥈", "🥉"]):
-                col.metric(f"{md} {etiqueta(r['Selección'])}", f"{r['P_campeon']:.1%}")
+            if FINAL:
+                st.markdown("##### 🏆 Resultado final")
+                c = st.columns(2)
+                c[0].metric("🥇 Campeón", etiqueta(FINAL["campeon"]), FINAL["marcador"] + " en la final")
+                c[1].metric("🥈 Subcampeón", etiqueta(FINAL["subcampeon"]))
+            else:
+                st.markdown("##### 🏆 Campeón según la simulación")
+                c = st.columns(3)
+                for col, (_, r), md in zip(c, tabla.head(3).iterrows(), ["🥇", "🥈", "🥉"]):
+                    col.metric(f"{md} {etiqueta(r['Selección'])}", f"{r['P_campeon']:.1%}")
             components.html(bracket_completo_html(br, sim, tabla), height=1010, scrolling=True)
             with st.expander("📋 Probabilidades completas por ronda (las 32 selecciones)"):
                 show = tabla.copy()
