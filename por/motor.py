@@ -28,7 +28,7 @@ def _cargar_equipos():
             return {}
     return {}
 
-DESCIENDEN = 3
+DESCIENDEN = 2  # 17º y 18º bajan directo; el 16º juega la promoción ante la Liga 2 (no se simula)
 CUPOS_COPA = 5  # Champions (1-2), Europa League (3), Conference (4-5)
 
 SQUAD_VALUES = {

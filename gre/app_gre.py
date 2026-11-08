@@ -286,7 +286,8 @@ def run_app():
 
         with col_t2:
             st.markdown("#### Proyección de Final de Temporada (Monte Carlo)")
-            df_mc = simular_liga(M, "sim_key_gre", modelo_tipo)
+            st.caption("ℹ️ Proyección de la **fase regular**: el fixture de ESPN termina antes de la segunda fase (grupos de campeonato/descenso o playoffs), que no se simula. Campeón, copas y descenso se leen como “si la tabla final fuera la de la fase regular”.")
+            df_mc = simular_liga(M, f"{len(M['df_partidos'])}-{M['df_partidos']['fecha'].max()}", modelo_tipo)
             df_mc_disp = df_mc[["equipo", "Puntos esperados", "P_campeon", "P_champions", "P_copas", "P_descenso"]].copy()
 
             st.dataframe(
