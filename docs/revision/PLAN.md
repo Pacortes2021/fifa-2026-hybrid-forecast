@@ -21,7 +21,7 @@ Cada uno deja su reporte en `docs/revision/` cuando termina:
 
 ## Pendiente (en orden) — backlog consolidado de los 5 reportes
 1. [x] CI en PRs + chequeo de frescura → **PR #3** (abierto).
-2. [~] **PR #4 `fix/qa-nba-ucl`** (abierto o por abrir): NBA hándicap invertido (B1), desempate alfabético (B4), P_Playoff_Directo separado de P_Playoffs (B3), nº de partidos de test fijo (B9); ned "Schaal" → "Campeón". Verificado: spread monótono (débil local −11.5 = 6.2%, +11.5 = 50.1%), sumas por conferencia 6/8/4.
+2. [x] **PR #4 `fix/qa-nba-ucl`** (abierto): NBA hándicap invertido (B1), desempate alfabético (B4), P_Playoff_Directo separado de P_Playoffs (B3), nº de partidos de test fijo (B9); ned "Schaal" → "Campeón". Verificado: spread monótono (débil local −11.5 = 6.2%, +11.5 = 50.1%), sumas por conferencia 6/8/4.
 3. [ ] **Errores pendientes de los QA** (verificar cada uno antes de arreglar):
    - NBA B2: el selector de modelo no afecta `simular_temporada` ni `validacion_en_vivo` (pasar `modelo`, incluirlo en la clave de caché). NBA B9: textos "Cumplimiento Histórico" in-sample; "Histórico Completo" mezcla train/test → rotular.
    - UCL B5: cuadro eliminatorio con `np.random.shuffle` en vez del árbol fijo UEFA (`ucl/motor.py` ~1262-1285). B6: "Jornada 1…" debería ser 5–8 (`ucl/app_ucl.py:546-557`). B7: clave de caché por mtime. B8: goles simulados independientes del 1X2; `eq2idx.get(l, 0)` silencioso.
