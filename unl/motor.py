@@ -426,12 +426,19 @@ def predecir_match(M, local, visita, modelo="rf"):
     return p_1x2, la, lb
 
 
-def calcular_mercados(la, lb, max_goles=6):
+def calcular_mercados(la, lb, max_goles=6, p_1x2=None):
     mat = np.zeros((max_goles, max_goles))
     for i in range(max_goles):
         for j in range(max_goles):
             mat[i, j] = poisson.pmf(i, la) * poisson.pmf(j, lb)
     mat = mat / mat.sum()
+    if p_1x2 is not None:
+        gi, gj = np.indices(mat.shape)
+        for zona, obj in ((gi > gj, float(p_1x2[0])), (gi == gj, float(p_1x2[1])), (gi < gj, float(p_1x2[2]))):
+            s = mat[zona].sum()
+            if s > 0:
+                mat[zona] *= obj / s
+        mat = mat / mat.sum()
 
     over15 = float(mat[np.fromfunction(lambda i, j: i + j > 1, mat.shape)].sum())
     over25 = float(mat[np.fromfunction(lambda i, j: i + j > 2, mat.shape)].sum())
@@ -771,7 +778,7 @@ def generar_reporte_partidos_ia(M, df_matches=None, modelo="stacking"):
         p_lasso, _, _ = predecir_match(M, loc, vis, modelo="lasso")
         p_rf, _, _ = predecir_match(M, loc, vis, modelo="rf")
         
-        merc = calcular_mercados(la, lb)
+        merc = calcular_mercados(la, lb, p_1x2=p_main)
         top_sc = merc["top_marcadores"]
         
         feats = tracker.get_features_for_match(loc, vis, f_str)

@@ -77,6 +77,62 @@ def get_motor():
     return mo.cargar()
 
 
+@st.cache_resource(show_spinner=False)
+def _entrenar_elo(_M):
+    """Regresión logística multinomial con una sola variable (elo_diff), entrenada con <= 2025 y evaluada en >= 2026."""
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import log_loss
+    df = _M["df_dataset"]
+    df = df[df["goles_local"].notna() & df["goles_visita"].notna() & df["elo_diff"].notna()]
+    gl, gv = df["goles_local"].to_numpy(dtype=float), df["goles_visita"].to_numpy(dtype=float)
+    y_all = np.where(gl > gv, 0, np.where(gl == gv, 1, 2))
+    tr_mask = (df["temporada"] <= 2025).to_numpy()
+    te_mask = (df["temporada"] >= 2026).to_numpy()
+    tr_x, tr_y = df.loc[tr_mask, ["elo_diff"]].to_numpy(), y_all[tr_mask]
+    lr = LogisticRegression(max_iter=2000).fit(tr_x, tr_y)
+    frec = np.bincount(tr_y, minlength=3) / len(tr_y)
+    met = {}
+    if te_mask.sum() > 0:
+        pt = lr.predict_proba(df.loc[te_mask, ["elo_diff"]].to_numpy())
+        yt = y_all[te_mask]
+        met = {"logloss": round(float(log_loss(yt, pt, labels=[0, 1, 2])), 4),
+               "accuracy": round(float((pt.argmax(1) == yt).mean() * 100), 2)}
+    return {"lr": lr, "met": met, "frec_train": frec}
+
+
+def _proba_elo(elo, x):
+    return elo["lr"].predict_proba(np.asarray(x, dtype=float).reshape(-1, 1))
+
+
+def _validar_elo(M, elo):
+    from sklearn.metrics import log_loss, accuracy_score
+    df = M["df_dataset"]
+    temporada_val = int(df["temporada"].max())
+    val_df = df[df["temporada"] == temporada_val].sort_values("fecha").reset_index(drop=True).copy()
+    if len(val_df) == 0:
+        return pd.DataFrame(), {}, pd.DataFrame()
+    probs = _proba_elo(elo, val_df["elo_diff"].fillna(0.0))
+    gl, gv = val_df["goles_local"].to_numpy(dtype=float), val_df["goles_visita"].to_numpy(dtype=float)
+    y_true = np.where(gl > gv, 0, np.where(gl == gv, 1, 2))
+    p_clip = np.clip(probs, 1e-7, 1 - 1e-7)
+    ll = float(log_loss(y_true, p_clip, labels=[0, 1, 2]))
+    preds = p_clip.argmax(axis=1)
+    acc = float(accuracy_score(y_true, preds))
+    freqs = pd.Series(y_true).value_counts(normalize=True)
+    base_p = np.zeros_like(p_clip)
+    for c in [0, 1, 2]:
+        base_p[:, c] = freqs.get(c, 0.33)
+    ll_base = float(log_loss(y_true, base_p, labels=[0, 1, 2]))
+    met = {"n": len(val_df), "acierto": acc, "logloss": ll, "logloss_base": ll_base}
+    val_df["Prob_Local"] = probs[:, 0]
+    val_df["Prob_Empate"] = probs[:, 1]
+    val_df["Prob_Visita"] = probs[:, 2]
+    val_df["Prediccion"] = preds
+    evol = [{"partido_n": i, "acierto_acumulado": float(accuracy_score(y_true[:i], preds[:i]))}
+            for i in range(1, len(val_df) + 1)]
+    return val_df, met, pd.DataFrame(evol)
+
+
 @st.cache_data(show_spinner="Corriendo simulaciones Monte Carlo del formato suizo UCL (10.000 iteraciones)...")
 def simular_ucl(_M, key, modelo_tipo):
     return mo.simular_campeonato(_M, n_sims=10000, modelo_tipo=modelo_tipo)
@@ -92,7 +148,8 @@ def run_app():
             "✨ Stacking Óptimo (Ensemble Recomendado)",
             "🌲 Random Forest (Árboles)",
             "🎯 LASSO L1 (Regularización SAGA)",
-            "🚀 XGBoost (Gradient Boosting)"
+            "🚀 XGBoost (Gradient Boosting)",
+            "📈 Solo Elo (1 variable)"
         ],
         index=0
     )
@@ -102,6 +159,8 @@ def run_app():
         modelo_tipo = "rf"
     elif "XGB" in modelo_sel:
         modelo_tipo = "xgb"
+    elif "Solo Elo" in modelo_sel:
+        modelo_tipo = "elo"
     else:
         modelo_tipo = "stacking"
 
@@ -121,6 +180,7 @@ def run_app():
         st.error("No se encontraron datos históricos de la UEFA Champions League.")
         return
 
+    elo = _entrenar_elo(M)
     tracker = M["tracker"]
     equipos_data = M.get("equipos", {})
 
@@ -132,13 +192,15 @@ def run_app():
         pass
 
     # ── Métricas por modelo (sidebar)
-    met_all = M.get("metricas", {})
+    met_all = dict(M.get("metricas", {}))
+    if elo.get("met"):
+        met_all["elo"] = elo["met"]
     if met_all:
         st.sidebar.markdown("---")
         st.sidebar.markdown("#### 📊 Métricas Out-of-Sample (2026+)")
         valid_lls = [met_all[k]["logloss"] for k in met_all if isinstance(met_all[k], dict) and "logloss" in met_all[k]]
         mejor_ll = min(valid_lls) if valid_lls else None
-        for nombre, clave in [("LASSO", "lasso"), ("RF", "rf"), ("XGB", "xgb"), ("Stacking", "stacking")]:
+        for nombre, clave in [("LASSO", "lasso"), ("RF", "rf"), ("XGB", "xgb"), ("Stacking", "stacking"), ("Solo Elo", "elo")]:
             if clave not in met_all:
                 continue
             m = met_all[clave]
@@ -147,7 +209,7 @@ def run_app():
             st.sidebar.caption(f"**{nombre}{w_str}{star}** — LL: `{m['logloss']:.4f}` | Acc: `{m['accuracy']:.1f}%`")
 
     # Encabezado
-    nombre_modelo = "✨ Stacking Óptimo" if modelo_tipo == "stacking" else ("🌲 Random Forest" if modelo_tipo == "rf" else ("🚀 XGBoost" if modelo_tipo == "xgb" else "🎯 LASSO L1"))
+    nombre_modelo = "✨ Stacking Óptimo" if modelo_tipo == "stacking" else ("🌲 Random Forest" if modelo_tipo == "rf" else ("🚀 XGBoost" if modelo_tipo == "xgb" else ("📈 Solo Elo (1 variable)" if modelo_tipo == "elo" else "🎯 LASSO L1")))
     st.markdown('<div class="main-title">⭐ UEFA Champions League Predictor</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — Fase de Liga de 36 Clubes · Play-offs y Cuadro Eliminatorio · Poisson Dixon-Coles & ML</div>', unsafe_allow_html=True)
 
@@ -259,12 +321,28 @@ def run_app():
         if local == visita:
             st.warning("⚠️ Selecciona dos clubes distintos para pronosticar el partido.")
         else:
-            p, la, lb = mo.predecir_match(
-                M, local, visita, temporada=mo._temporada_actual(),
-                modelo=modelo_tipo, is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0,
+            feats_vs = tracker.get_features_for_match(
+                local, visita, mo._temporada_actual(),
+                is_knockout=1 if es_knockout else 0, is_neutral=1 if es_neutral else 0,
                 leg2_lead_local=float(ventaja_local) if (es_knockout and es_vuelta) else 0.0,
                 is_leg2=1 if (es_knockout and es_vuelta) else 0
             )
+            p_elo = _proba_elo(elo, [feats_vs["elo_diff"]])[0]
+            if modelo_tipo == "elo":
+                _, la, lb = mo.predecir_match(
+                    M, local, visita, temporada=mo._temporada_actual(),
+                    modelo="stacking", is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0,
+                    leg2_lead_local=float(ventaja_local) if (es_knockout and es_vuelta) else 0.0,
+                    is_leg2=1 if (es_knockout and es_vuelta) else 0
+                )
+                p = p_elo
+            else:
+                p, la, lb = mo.predecir_match(
+                    M, local, visita, temporada=mo._temporada_actual(),
+                    modelo=modelo_tipo, is_neutral=1 if es_neutral else 0, is_knockout=1 if es_knockout else 0,
+                    leg2_lead_local=float(ventaja_local) if (es_knockout and es_vuelta) else 0.0,
+                    is_leg2=1 if (es_knockout and es_vuelta) else 0
+                )
             mat_dc = mo.matriz_marcador_exacto(la, lb)
 
             # Alertas de Heurísticas de Alta Efectividad
@@ -339,6 +417,14 @@ def run_app():
                     f"Victoria {visita}": f"{p_stk[2]:.1%}",
                     "Log-Loss Test (2026+)": f"{met_all.get('stacking',{}).get('logloss','-'):.4f}" if 'stacking' in met_all else "-",
                     "Accuracy Test": f"{met_all.get('stacking',{}).get('accuracy','-'):.1f}%" if 'stacking' in met_all else "-"
+                },
+                {
+                    "Modelo Predictivo": "📈 Solo Elo (1 variable)",
+                    f"Victoria {local}": f"{p_elo[0]:.1%}",
+                    "Empate": f"{p_elo[1]:.1%}",
+                    f"Victoria {visita}": f"{p_elo[2]:.1%}",
+                    "Log-Loss Test (2026+)": f"{met_all.get('elo',{}).get('logloss','-'):.4f}" if 'elo' in met_all else "-",
+                    "Accuracy Test": f"{met_all.get('elo',{}).get('accuracy','-'):.1f}%" if 'elo' in met_all else "-"
                 }
             ])
             st.dataframe(df_comp_mod, hide_index=True, width='stretch')
@@ -481,7 +567,8 @@ def run_app():
             )
 
         # 2. Proyecciones Monte Carlo
-        df_proy = simular_ucl(M, "sim_key_ucl", modelo_tipo)
+        modelo_sim_ucl = "stacking" if modelo_tipo == "elo" else modelo_tipo
+        df_proy = simular_ucl(M, "sim_key_ucl", modelo_sim_ucl)
         df_proy_visual = df_proy.copy()
         df_proy_visual["Escudo"] = df_proy_visual["equipo"].apply(lambda t: logo_url(equipos_data, t))
         df_proy_visual["Equipo"] = df_proy_visual["equipo"].apply(lambda t: label_tabla(equipos_data, t))
@@ -664,7 +751,7 @@ def run_app():
                     data=csv_bytes,
                     file_name=f"pronosticos_ucl_{sufijo_archivo}.csv",
                     mime="text/csv",
-                    use_container_width=True
+                    width="stretch"
                 )
 
                 # Vista Previa Interactiva
@@ -753,10 +840,12 @@ ESTRUCTURA OBLIGATORIA DE TU INFORME:
     with tab4:
         st.markdown('<div class="sec-title">Arquitectura Analítica e Importancia de Variables</div>', unsafe_allow_html=True)
 
-        met = M.get("metricas", {})
+        met = dict(M.get("metricas", {}))
+        if elo.get("met"):
+            met["elo"] = elo["met"]
         if met:
             st.markdown("#### Rendimiento Out-of-Sample (Test $\ge$ 2026)")
-            col_m1, col_m2, col_m3, col_m4 = st.columns(4)
+            col_m1, col_m2, col_m3, col_m4, col_m5 = st.columns(5)
             if "lasso" in met:
                 col_m1.metric("LASSO (L1)", f"Acc: {met['lasso']['accuracy']}%", f"LogLoss: {met['lasso']['logloss']}")
             if "rf" in met:
@@ -766,55 +855,74 @@ ESTRUCTURA OBLIGATORIA DE TU INFORME:
             stk = met.get("stacking", {})
             if stk:
                 col_m4.metric("Stacking Óptimo", f"Acc: {stk.get('accuracy', 0)}%", f"LogLoss: {stk.get('logloss', 0)}")
+            if "elo" in met:
+                col_m5.metric("Solo Elo", f"Acc: {met['elo']['accuracy']}%", f"LogLoss: {met['elo']['logloss']}")
             if "w" in stk:
                 st.caption(f"Pesos de ensemble: LASSO={stk['w'][0]} | RF={stk['w'][1]} | XGB={stk['w'][2]}")
 
-        # Explicabilidad según el modelo activo
-        importancia = []
-        col_val_name = "Importancia Relativa"
-        title_graph = "Top 15 Características Predictoras (UEFA Champions League)"
-
-        if modelo_tipo == "lasso":
-            pipe = M["pipe_lasso"]
-            lr = pipe.named_steps["lr"]
-            coefs = lr.coef_
-            avg_coef = np.mean(np.abs(coefs), axis=0)
-            col_val_name = "Peso Absoluto Promedio"
-            title_graph = "Top 15 Predictores (LASSO L1 SAGA)"
-            for feat, val in zip(M["features"], avg_coef):
-                if val > 1e-4:
-                    importancia.append({"Variable": feat, col_val_name: round(float(val), 4)})
-        elif modelo_tipo == "xgb":
-            pipe = M["pipe_xgb"]
-            xgb_model = pipe.named_steps.get("xgb")
-            col_val_name = "Importancia (Gain/Weight)"
-            title_graph = "Top 15 Predictores (XGBoost)"
-            if xgb_model and hasattr(xgb_model, "feature_importances_"):
-                for feat, val in zip(M["features"], xgb_model.feature_importances_):
-                    importancia.append({"Variable": feat, col_val_name: round(float(val), 4)})
+        if modelo_tipo == "elo":
+            st.markdown("Usa **una sola variable**: la diferencia de Elo entre local y visita (`elo_diff`). "
+                        "Una regresión logística la convierte en probabilidades de victoria local, empate y victoria visitante.")
+            x_elo = np.linspace(-500, 500, 201)
+            P_elo = _proba_elo(elo, x_elo)
+            fig, ax = plt.subplots(figsize=(8, 4))
+            for k_e, (etq_e, col_e) in enumerate((("Gana local", "#001438"), ("Empate", "#94a3b8"), ("Gana visita", "#00E5FF"))):
+                ax.plot(x_elo, P_elo[:, k_e], label=etq_e, color=col_e, lw=2)
+            ax.axvline(0, color="#cbd5e1", lw=1)
+            ax.set_xlabel("Diferencia de Elo (local − visita)")
+            ax.set_ylabel("Probabilidad")
+            ax.legend()
+            st.pyplot(fig)
+            plt.close(fig)
+            p0 = P_elo[100]
+            st.caption(f"Con clubes parejos (diferencia 0): local {p0[0]:.0%}, empate {p0[1]:.0%}, visita {p0[2]:.0%}.")
         else:
-            pipe = M["pipe_rf"]
-            rf_model = pipe.named_steps.get("rf")
-            col_val_name = "Importancia (Gini)"
-            title_graph = "Top 15 Predictores (Random Forest)"
-            if rf_model and hasattr(rf_model, "feature_importances_"):
-                for feat, val in zip(M["features"], rf_model.feature_importances_):
-                    importancia.append({"Variable": feat, col_val_name: round(float(val), 4)})
+            # Explicabilidad según el modelo activo
+            importancia = []
+            col_val_name = "Importancia Relativa"
+            title_graph = "Top 15 Características Predictoras (UEFA Champions League)"
 
-        if importancia:
-            df_imp = pd.DataFrame(importancia).sort_values(by=col_val_name, ascending=False).reset_index(drop=True)
-            col_t, col_g = st.columns([5, 7])
-            with col_t:
-                st.dataframe(df_imp, hide_index=True, width='stretch')
-            with col_g:
-                fig, ax = plt.subplots(figsize=(6, 5))
-                top_n = df_imp.head(15)
-                ax.barh(top_n["Variable"][::-1], top_n[col_val_name][::-1], color="#001438")
-                ax.set_title(title_graph)
-                ax.set_xlabel(col_val_name)
-                plt.tight_layout()
-                st.pyplot(fig)
-                plt.close(fig)
+            if modelo_tipo == "lasso":
+                pipe = M["pipe_lasso"]
+                lr = pipe.named_steps["lr"]
+                coefs = lr.coef_
+                avg_coef = np.mean(np.abs(coefs), axis=0)
+                col_val_name = "Peso Absoluto Promedio"
+                title_graph = "Top 15 Predictores (LASSO L1 SAGA)"
+                for feat, val in zip(M["features"], avg_coef):
+                    if val > 1e-4:
+                        importancia.append({"Variable": feat, col_val_name: round(float(val), 4)})
+            elif modelo_tipo == "xgb":
+                pipe = M["pipe_xgb"]
+                xgb_model = pipe.named_steps.get("xgb")
+                col_val_name = "Importancia (Gain/Weight)"
+                title_graph = "Top 15 Predictores (XGBoost)"
+                if xgb_model and hasattr(xgb_model, "feature_importances_"):
+                    for feat, val in zip(M["features"], xgb_model.feature_importances_):
+                        importancia.append({"Variable": feat, col_val_name: round(float(val), 4)})
+            else:
+                pipe = M["pipe_rf"]
+                rf_model = pipe.named_steps.get("rf")
+                col_val_name = "Importancia (Gini)"
+                title_graph = "Top 15 Predictores (Random Forest)"
+                if rf_model and hasattr(rf_model, "feature_importances_"):
+                    for feat, val in zip(M["features"], rf_model.feature_importances_):
+                        importancia.append({"Variable": feat, col_val_name: round(float(val), 4)})
+
+            if importancia:
+                df_imp = pd.DataFrame(importancia).sort_values(by=col_val_name, ascending=False).reset_index(drop=True)
+                col_t, col_g = st.columns([5, 7])
+                with col_t:
+                    st.dataframe(df_imp, hide_index=True, width='stretch')
+                with col_g:
+                    fig, ax = plt.subplots(figsize=(6, 5))
+                    top_n = df_imp.head(15)
+                    ax.barh(top_n["Variable"][::-1], top_n[col_val_name][::-1], color="#001438")
+                    ax.set_title(title_graph)
+                    ax.set_xlabel(col_val_name)
+                    plt.tight_layout()
+                    st.pyplot(fig)
+                    plt.close(fig)
 
     # ============================================================================
     # TAB 5: VALIDACIÓN VS REALIDAD
@@ -823,7 +931,7 @@ ESTRUCTURA OBLIGATORIA DE TU INFORME:
         st.markdown('<div class="sec-title">El Modelo contra la Realidad (Out-of-sample)</div>', unsafe_allow_html=True)
         st.caption("Comparación de la predicción pre-partido del modelo contra el resultado real para cotejos jugados.")
 
-        df_val, met_val, df_evol = mo.validacion_en_vivo(M, modelo_tipo=modelo_tipo)
+        df_val, met_val, df_evol = (_validar_elo(M, elo) if modelo_tipo == "elo" else mo.validacion_en_vivo(M, modelo_tipo=modelo_tipo))
         if df_val is None or df_val.empty:
             st.info("ℹ️ Aún no hay partidos finalizados en la temporada actual para validar.")
         else:

@@ -949,20 +949,32 @@ def simular_campeonato(M, n_sims=4000, fijos=None, modelo=None, modelo_tipo=None
     return monte_carlo(M, n_sims=n_sims, fijos=fijos, modelo=modelo, seed=seed)
 
 
-def validacion_en_vivo(M, temporada_val=2026):
+def validacion_en_vivo(M, temporada_val=2026, modelo=None, modelo_tipo=None):
     df = M["df_dataset"]
-    df_val = df[df["temporada"] == temporada_val].copy()
+    df_val = df[df["temporada"] == temporada_val].sort_values("fecha").reset_index(drop=True).copy()
     if len(df_val) == 0:
         return None, None, None
         
-    pipe = M["pipe"]
     features = M["features"]
-    
     X_val = df_val[features].fillna(0.0)
     y_val = df_val["resultado"]
     
-    probs = pipe.predict_proba(X_val)
-    preds = pipe.predict(X_val)
+    mod = modelo or modelo_tipo or "lasso"
+    if mod == "rf" and "pipe_rf" in M:
+        probs = M["pipe_rf"].predict_proba(X_val)
+    elif mod == "xgb" and "pipe_xgb" in M:
+        probs = M["pipe_xgb"].predict_proba(X_val)
+    elif mod == "stacking" and "pipe_lasso" in M and "pipe_rf" in M and "pipe_xgb" in M:
+        w = M.get("stack_w", np.array([M.get("alpha_stack", 0.4), 1 - M.get("alpha_stack", 0.4), 0.0]))
+        probs = (w[0] * M["pipe_lasso"].predict_proba(X_val)
+                 + w[1] * M["pipe_rf"].predict_proba(X_val)
+                 + w[2] * M["pipe_xgb"].predict_proba(X_val))
+        probs = np.clip(probs, 1e-7, 1 - 1e-7)
+        probs = probs / probs.sum(axis=1, keepdims=True)
+    else:
+        pipe = M.get("pipe_lasso") or M["pipe"]
+        probs = pipe.predict_proba(X_val)
+    preds = probs.argmax(axis=1)
     
     ll = log_loss(y_val, probs, labels=[0, 1, 2])
     acc = accuracy_score(y_val, preds)
@@ -980,7 +992,6 @@ def validacion_en_vivo(M, temporada_val=2026):
     df_val["Prob_Local"] = probs[:, 2]
     df_val["Prediccion"] = preds
     
-    df_val = df_val.sort_values("fecha").reset_index(drop=True)
     log_losses = []
     for i in range(1, len(df_val) + 1):
         sub_y = df_val["resultado"].iloc[:i]

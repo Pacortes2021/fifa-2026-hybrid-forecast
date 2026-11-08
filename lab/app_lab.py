@@ -309,7 +309,8 @@ def run_app():
     )
     st.sidebar.info("Todos los modelos usan **ponderación K-factor**: los partidos oficiales pesan más que los amistosos.")
     if len(ESPN_DF):
-        st.sidebar.success(f"🛰️ ESPN: {len(ESPN_DF)} partidos reales cargados.")
+        msg_espn = f"📋 Resultados oficiales del Mundial 2026: {len(ESPN_DF)} partidos finalizados." if FINAL else f"🛰️ ESPN: {len(ESPN_DF)} partidos reales cargados."
+        st.sidebar.success(msg_espn)
         
     tab1, tab2, tabB, tab3, tab4 = st.tabs([
         "⚽ Partido + Mercados", 
@@ -652,13 +653,16 @@ def run_app():
                 res = pd.DataFrame()
             else:
                 res = ESPN_DF.copy()
-                st.success(f"{len(res)} partidos finalizados traídos de ESPN.")
+                st.success(f"{len(res)} partidos oficiales del Mundial 2026 finalizados." if FINAL else f"{len(res)} partidos finalizados traídos de ESPN.")
                 ev = cargar_envivo()
                 if len(ev):
                     st.caption("🔴 En juego: " + " · ".join(
                         f"{r.local} {r.marcador} {r.visita} ({r.minuto})" for r in ev.itertuples(index=False)))
-                st.dataframe(res[["fecha", "local", "goles_local", "goles_visita", "visita"]],
-                             hide_index=True, width='stretch', height=240)
+                res_show = res[["fecha", "local", "goles_local", "goles_visita", "visita"]].assign(
+                    local=res["local"].map(etiqueta),
+                    visita=res["visita"].map(etiqueta),
+                )
+                st.dataframe(res_show, hide_index=True, width='stretch', height=240)
         else:
             plantilla = pd.DataFrame({"local": pd.Series(dtype="str"), "visita": pd.Series(dtype="str"),
                                       "goles_local": pd.Series(dtype="int"), "goles_visita": pd.Series(dtype="int")})

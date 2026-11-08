@@ -103,23 +103,25 @@ def _activar_torneo(carpeta, modulo):
 # Barra lateral para navegación
 logo_path = os.path.join(os.path.dirname(__file__), "assets", "sidebar_logo.jpg")
 if os.path.exists(logo_path):
-    st.sidebar.image(logo_path, caption="Predicciones ML", use_container_width=True)
+    st.sidebar.image(logo_path, caption="Predicciones ML", width="stretch")
 
 st.sidebar.markdown("## 🎮 Navegación")
 
 torneos_disponibles = list(TORNEOS)
 
-# Detección inteligente por parámetro URL (ej: ?torneo=nba)
+# Detección inteligente por parámetro URL (ej: ?torneo=nba, ?torneo=mex, ?torneo=esp)
 idx_def = 0
 qp_torneo = str(st.query_params.get("torneo", "")).lower().strip()
-if "nba" in qp_torneo or "basket" in qp_torneo:
-    idx_def = 3
-elif "chile" in qp_torneo or "chi" in qp_torneo:
-    idx_def = 7
-elif "ucl" in qp_torneo or "champions" in qp_torneo:
-    idx_def = 1
-elif "unl" in qp_torneo or "nations" in qp_torneo:
-    idx_def = 2
+if qp_torneo:
+    _ALIAS_TORNEO = {
+        "mundial": "lab", "fifa": "lab", "champions": "ucl", "nations": "unl",
+        "basket": "nba", "chi": "chile",
+    }
+    qp_cod = _ALIAS_TORNEO.get(qp_torneo, qp_torneo)
+    for i, (etq, (carpeta, _)) in enumerate(TORNEOS.items()):
+        if qp_cod == carpeta or qp_torneo in etq.lower():
+            idx_def = i
+            break
 
 torneo_seleccionado = st.sidebar.selectbox(
     "Selecciona el Torneo:",
