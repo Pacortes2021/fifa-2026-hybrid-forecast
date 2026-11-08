@@ -128,7 +128,10 @@ def run_app():
         st.sidebar.caption("📏 *Baseline Marginal*: `1.0309` (33.3% uniforme)")
 
     st.sidebar.markdown("---")
-    st.sidebar.success(f"📊 Base de Datos: **54** Selecciones · **670** Partidos Históricos · **148** en Fixture")
+    _fix_unl = pd.read_csv(mo.DATA / "fixture.csv") if (mo.DATA / "fixture.csv").exists() else pd.DataFrame()
+    _part_unl = M.get("df_partidos", pd.DataFrame())
+    _sel_unl = set(_part_unl.get("local", [])) | set(_part_unl.get("visita", [])) | set(_fix_unl.get("local", [])) | set(_fix_unl.get("visita", []))
+    st.sidebar.success(f"📊 Base de Datos: **{len(_sel_unl)}** Selecciones · **{len(_part_unl)}** Partidos Históricos · **{len(_fix_unl)}** en Fixture")
 
     # Encabezado Canónico
     st.markdown('<div class="main-title">🇪🇺 UEFA Nations League Predictor</div>', unsafe_allow_html=True)
@@ -349,7 +352,7 @@ def run_app():
                 [
                     "⚡ Próximos Partidos (Hoy + Mañana)",
                     "📅 Por Grupo de Nations League",
-                    "🌐 Fixture Completo (148 Partidos)"
+                    f"🌐 Fixture Completo ({len(df_fix_all)} Partidos)"
                 ],
                 key="unl_filtro_ia"
             )
@@ -396,7 +399,7 @@ def run_app():
             st.caption("Copia este prompt y pégalo en tu IA favorita junto con el archivo CSV descargado:")
 
             prompt_texto = f"""Eres un analista táctico de fútbol internacional y modelador cuantitativo deportivo de alto nivel.
-Te adjunto un dataset CSV con las probabilidades oficiales de la UEFA Nations League 2026-27 generadas por nuestro modelo híbrido (Machine Learning LASSO/Random Forest + Poisson Dixon-Coles, Elo dinámico y valores de mercado).
+Te adjunto un dataset CSV con las probabilidades oficiales de la UEFA Nations League 2026-27 generadas por nuestro modelo híbrido (Machine Learning LASSO/Random Forest + Poisson, Elo dinámico y valores de mercado).
 
 REGLAS OBLIGATORIAS DE ANÁLISIS (NO REPITAS EL CSV):
 1. NO te limites a transcribir los porcentajes ni las cuotas que ya están en el archivo. El objetivo es complementar estos números con información cualitativa de analistas, periodistas deportivos y contexto táctico.
