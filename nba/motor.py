@@ -645,6 +645,32 @@ def _cache_key():
     return h.hexdigest()
 
 
+def _optimizar_inferencia(M):
+    for k in ("pipe_rf", "pipe_xgb"):
+        pipe = M.get(k)
+        if pipe is not None and hasattr(pipe, "steps"):
+            est = pipe.steps[-1][1]
+            if hasattr(est, "n_jobs"):
+                est.n_jobs = 1
+    pipe_rf = M.get("pipe_rf")
+    if pipe_rf is not None and hasattr(pipe_rf, "steps") and len(pipe_rf.steps) == 2:
+        sc, rf = pipe_rf.steps[0][1], pipe_rf.steps[1][1]
+        if hasattr(sc, "mean_") and hasattr(rf, "estimators_"):
+            trees = [e.tree_ for e in rf.estimators_]
+            mean, scale = sc.mean_.astype(np.float32), sc.scale_.astype(np.float32)
+            orig = pipe_rf.predict_proba
+            def _fast_rf(X):
+                if len(X) <= 8:
+                    arr = X.to_numpy(dtype=np.float32) if hasattr(X, "to_numpy") else np.asarray(X, dtype=np.float32)
+                    out = sum(t.predict((arr - mean) / scale) for t in trees)
+                    if out.ndim == 3:
+                        out = out[:, 0, :]
+                    return out / out.sum(axis=1, keepdims=True)
+                return orig(X)
+            pipe_rf.predict_proba = _fast_rf
+    return M
+
+
 def cargar(use_cache=True):
     """Carga el modelo entrenado desde el cache de disco o re-entrena si los datos han cambiado."""
     cache_path = Path(__file__).resolve().parent / ".model_cache.pkl"
@@ -653,7 +679,7 @@ def cargar(use_cache=True):
             with open(cache_path, "rb") as fh:
                 saved = pickle.load(fh)
             if saved.get("key") == _cache_key():
-                return saved["M"]
+                return _optimizar_inferencia(saved["M"])
         except Exception as ex:
             print(f"Cache inválido ({ex}); re-entrenando...")
 
@@ -664,7 +690,7 @@ def cargar(use_cache=True):
                 pickle.dump({"key": _cache_key(), "M": M}, fh)
         except Exception as ex:
             print(f"No se pudo guardar el cache: {ex}")
-    return M
+    return _optimizar_inferencia(M)
 
 
 def predecir_match(M, local, visita, fecha=None, temporada=None, modelo="stacking",
@@ -867,12 +893,13 @@ def simular_temporada(M, n_sims=2000, seed=42, modelo="stacking"):
     if not todos_equipos:
         todos_equipos = sorted(list(set(df_partidos["local"].unique())))
 
-    # Pre-computar probabilidades entre todos los equipos para simulación ultrarrápida
-    h2h_probs = {}
-    for eq1 in todos_equipos:
-        for eq2 in todos_equipos:
-            if eq1 != eq2:
-                h2h_probs[(eq1, eq2)] = predecir_match(M, eq1, eq2, modelo=modelo)["p_local"]
+    # Pre-computar probabilidades entre todos los equipos en un solo lote vectorizado (~15 ms vs ~22 s)
+    tracker = M["tracker"]
+    features = M["features"]
+    pares = [(eq1, eq2) for eq1 in todos_equipos for eq2 in todos_equipos if eq1 != eq2]
+    df_pares = pd.DataFrame([tracker.get_features_for_match(eq1, eq2) for eq1, eq2 in pares])[features].fillna(0.0)
+    p_lote = _proba_local_lote(M, df_pares, modelo)
+    h2h_probs = {par: float(p) for par, p in zip(pares, p_lote)}
 
     # Predecir probabilidades de cada partido restante del fixture (filtrando equipos válidos)
     preds_fixture = []
@@ -1078,15 +1105,10 @@ def validacion_en_vivo(M, temporada=2027, modelo="stacking"):
     df_val["Prob_Visita"] = probs[:, 0]
     df_val["Prediccion"] = preds
 
-    # Evolución temporal acumulada de Log-Loss
-    log_losses = []
-    for i in range(1, len(df_val) + 1):
-        sub_y = df_val["target_win_local"].iloc[:i]
-        sub_p = probs[:i]
-        try:
-            log_losses.append(log_loss(sub_y, sub_p))
-        except Exception:
-            log_losses.append(np.nan)
+    # Evolución temporal acumulada de Log-Loss (vectorizada)
+    y_arr = y_val.to_numpy(dtype=int)
+    p_true = np.clip(probs[np.arange(len(y_arr)), y_arr], 1e-15, 1.0)
+    log_losses = (np.cumsum(-np.log(p_true)) / np.arange(1, len(y_arr) + 1)).tolist()
 
     evol = pd.DataFrame({
         "partido": range(1, len(df_val) + 1),

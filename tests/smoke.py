@@ -48,6 +48,28 @@ def check_league(liga, cfg):
     M = motor.cargar()
     if not isinstance(M, dict) or "tracker" not in M:
         raise AssertionError("cargar() no devolvió el dict esperado")
+    for k in ("pipe_rf", "pipe_xgb", "pipe_lasso", "pipe"):
+        pipe = M.get(k)
+        if pipe is not None and hasattr(pipe, "steps"):
+            est = pipe.steps[-1][1]
+            if hasattr(est, "n_jobs"):
+                est.n_jobs = 1
+    pipe_rf = M.get("pipe_rf")
+    if pipe_rf is not None and hasattr(pipe_rf, "steps") and len(pipe_rf.steps) == 2:
+        sc, rf = pipe_rf.steps[0][1], pipe_rf.steps[1][1]
+        if hasattr(sc, "mean_") and hasattr(rf, "estimators_"):
+            trees = [e.tree_ for e in rf.estimators_]
+            mean, scale = sc.mean_.astype(np.float32), sc.scale_.astype(np.float32)
+            orig = pipe_rf.predict_proba
+            def _fast_rf(X):
+                if len(X) <= 8:
+                    arr = X.to_numpy(dtype=np.float32) if hasattr(X, "to_numpy") else np.asarray(X, dtype=np.float32)
+                    out = sum(t.predict((arr - mean) / scale) for t in trees)
+                    if out.ndim == 3:
+                        out = out[:, 0, :]
+                    return out / out.sum(axis=1, keepdims=True)
+                return orig(X)
+            pipe_rf.predict_proba = _fast_rf
 
     fix_path = REPO / liga / "data" / "fixture.csv"
     fix = pd.read_csv(fix_path)
@@ -67,7 +89,13 @@ def check_league(liga, cfg):
     assert np.isfinite(p).all() and 0.99 < p.sum() < 1.01, f"probabilidades inválidas: {p}"
 
     fn = getattr(motor, cfg["sim"])
-    df = fn(M, n_sims=cfg["n_sims"], modelo=cfg["modelo"])
+    mc_path = REPO / liga / "simulacion_mc.pkl"
+    mc_backup = mc_path.read_bytes() if mc_path.exists() else None
+    try:
+        df = fn(M, n_sims=cfg["n_sims"], modelo=cfg["modelo"])
+    finally:
+        if mc_backup is not None:
+            mc_path.write_bytes(mc_backup)
     assert isinstance(df, pd.DataFrame) and len(df) > 0, "simulación vacía"
     num_cols = df.select_dtypes(include=[np.number]).columns
     assert num_cols.size > 0, "sin columnas numéricas en la simulación"

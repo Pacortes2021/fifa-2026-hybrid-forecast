@@ -74,7 +74,78 @@ def label_tabla(equipos, team):
 
 @st.cache_resource
 def get_motor():
-    return mo.cargar()
+    M = mo.cargar()
+    if M is not None:
+        for k in ("pipe_rf", "pipe_xgb", "pipe_lasso"):
+            pipe = M.get(k)
+            if pipe is not None and hasattr(pipe, "steps"):
+                est = pipe.steps[-1][1]
+                if hasattr(est, "n_jobs"):
+                    est.n_jobs = 1
+        pipe_rf = M.get("pipe_rf")
+        if pipe_rf is not None and hasattr(pipe_rf, "steps") and len(pipe_rf.steps) == 2:
+            sc, rf = pipe_rf.steps[0][1], pipe_rf.steps[1][1]
+            if hasattr(sc, "mean_") and hasattr(rf, "estimators_"):
+                trees = [e.tree_ for e in rf.estimators_]
+                mean, scale = sc.mean_.astype(np.float32), sc.scale_.astype(np.float32)
+                orig = pipe_rf.predict_proba
+                def _fast_rf(X):
+                    if len(X) <= 8:
+                        arr = X.to_numpy(dtype=np.float32) if hasattr(X, "to_numpy") else np.asarray(X, dtype=np.float32)
+                        out = sum(t.predict((arr - mean) / scale) for t in trees)
+                        if out.ndim == 3:
+                            out = out[:, 0, :]
+                        return out / out.sum(axis=1, keepdims=True)
+                    return orig(X)
+                pipe_rf.predict_proba = _fast_rf
+    return M
+
+
+@st.cache_data(show_spinner=False)
+def _validar_ucl(_M, modelo_tipo):
+    from sklearn.metrics import log_loss, accuracy_score
+    df = _M["df_dataset"]
+    temporada_val = int(df["temporada"].max())
+    val_df = df[df["temporada"] == temporada_val].sort_values("fecha").reset_index(drop=True).copy()
+    if len(val_df) == 0:
+        return pd.DataFrame(), {}, pd.DataFrame()
+    X_val = val_df[_M["features"]].fillna(0.0)
+    if modelo_tipo == "lasso":
+        probs = _M["pipe_lasso"].predict_proba(X_val)
+    elif modelo_tipo == "rf":
+        probs = _M["pipe_rf"].predict_proba(X_val)
+    elif modelo_tipo == "xgb":
+        probs = _M["pipe_xgb"].predict_proba(X_val)
+    else:
+        w = _M["weights_stacking"]
+        probs = (w[0] * _M["pipe_lasso"].predict_proba(X_val)
+                 + w[1] * _M["pipe_rf"].predict_proba(X_val)
+                 + w[2] * _M["pipe_xgb"].predict_proba(X_val))
+    probs = np.clip(probs, 1e-6, 1.0 - 1e-6)
+    probs = probs / probs.sum(axis=1, keepdims=True)
+    gl, gv = val_df["goles_local"].to_numpy(dtype=float), val_df["goles_visita"].to_numpy(dtype=float)
+    y_true = np.where(gl > gv, 0, np.where(gl == gv, 1, 2))
+    p_clip = np.clip(probs, 1e-7, 1 - 1e-7)
+    ll = float(log_loss(y_true, p_clip, labels=[0, 1, 2]))
+    preds = p_clip.argmax(axis=1)
+    acc = float(accuracy_score(y_true, preds))
+    freqs = pd.Series(y_true).value_counts(normalize=True)
+    base_p = np.zeros_like(p_clip)
+    for c in [0, 1, 2]:
+        base_p[:, c] = freqs.get(c, 0.33)
+    ll_base = float(log_loss(y_true, base_p, labels=[0, 1, 2]))
+    met = {"n": len(val_df), "acierto": acc, "logloss": ll, "logloss_base": ll_base}
+    val_df["Prob_Local"] = probs[:, 0]
+    val_df["Prob_Empate"] = probs[:, 1]
+    val_df["Prob_Visita"] = probs[:, 2]
+    val_df["Prediccion"] = preds
+    acc_cum = np.cumsum(y_true == preds) / np.arange(1, len(val_df) + 1)
+    df_evol = pd.DataFrame({
+        "partido_n": np.arange(1, len(val_df) + 1),
+        "acierto_acumulado": acc_cum,
+        "fecha": val_df["fecha"].values
+    })
+    return val_df, met, df_evol
 
 
 @st.cache_resource(show_spinner=False)
@@ -931,7 +1002,7 @@ ESTRUCTURA OBLIGATORIA DE TU INFORME:
         st.markdown('<div class="sec-title">El Modelo contra la Realidad (Out-of-sample)</div>', unsafe_allow_html=True)
         st.caption("Comparación de la predicción pre-partido del modelo contra el resultado real para cotejos jugados.")
 
-        df_val, met_val, df_evol = (_validar_elo(M, elo) if modelo_tipo == "elo" else mo.validacion_en_vivo(M, modelo_tipo=modelo_tipo))
+        df_val, met_val, df_evol = (_validar_elo(M, elo) if modelo_tipo == "elo" else _validar_ucl(M, modelo_tipo))
         if df_val is None or df_val.empty:
             st.info("ℹ️ Aún no hay partidos finalizados en la temporada actual para validar.")
         else:
