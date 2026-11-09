@@ -17,7 +17,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import motor as mo
 import recolectar as rec
 import recolectar_boxscore as rec_box
+import motor_jugadores as mj
 from motor import cuota, cuota_americana
+from scipy.stats import norm
+
+
+@st.cache_data(show_spinner=False)
+def get_datos_jugadores():
+    return mj.cargar_dataset_jugadores()
 
 # Estilizado CSS Premium para NBA
 # Se inyecta en cada ejecución de run_app(): a nivel de módulo solo corría al primer
@@ -146,8 +153,9 @@ def run_app():
     st.markdown('<div class="main-title">🏀 Portal de Simulación y Predicción NBA</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="main-subtitle">Modelo activo: <b>{nombre_modelo}</b> — Four Factors de Dean Oliver + Ratings de Posesión + Monte Carlo Playoff</div>', unsafe_allow_html=True)
 
-    tab1, tab2, tab3, tab4 = st.tabs([
-        "🏀 Predicción Versus", "📊 Clasificación y Playoffs", "🔬 Factores e Importancia", "🎯 Validación vs Realidad"
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+        "🏀 Predicción Versus", "🌟 Proyecciones de Jugadores (Player Props)",
+        "📊 Clasificación y Playoffs", "🔬 Factores e Importancia", "🎯 Validación vs Realidad"
     ])
 
     # ============================================================================
@@ -219,9 +227,10 @@ def run_app():
         if home_team == away_team:
             st.warning("Selecciona dos franquicias distintas para analizar el enfrentamiento.")
         else:
-            # Simulación interactiva de Bajas de Jugadores Estrella
-            stars_h = mo.NBA_FRANCHISE_STARS.get(home_team, ["Jugador Franquicia"])
-            stars_a = mo.NBA_FRANCHISE_STARS.get(away_team, ["Jugador Franquicia"])
+            # Simulación interactiva de Bajas de Jugadores Estrella (dinámico según planteles activos reales)
+            df_box_j, df_rost_j = get_datos_jugadores()
+            stars_h = mj.obtener_estrellas_franquicia(df_box_j, df_rost_j, home_team) if not df_box_j.empty else mo.NBA_FRANCHISE_STARS.get(home_team, ["Jugador Franquicia"])
+            stars_a = mj.obtener_estrellas_franquicia(df_box_j, df_rost_j, away_team) if not df_box_j.empty else mo.NBA_FRANCHISE_STARS.get(away_team, ["Jugador Franquicia"])
 
             with st.expander("🚑 Simulación de Bajas de Jugadores Estrella (Injury Impact)", expanded=False):
                 st.caption("Selecciona si una de las franquicias no contará con su estrella principal para calibrar el impacto en la probabilidad y hándicap:")
@@ -408,9 +417,193 @@ def run_app():
             st.dataframe(df_factors, width="stretch", hide_index=True)
 
     # ============================================================================
-    # TAB 2: Clasificación y Simulación Playoff (Monte Carlo)
+    # TAB 2: Proyecciones de Jugadores & Matchup Lab (Player Props)
     # ============================================================================
     with tab2:
+        st.markdown('<div class="sec-title">🌟 Laboratorio de Proyecciones de Jugadores & Player Props</div>', unsafe_allow_html=True)
+        st.caption("Herramienta analítica para pronosticar Puntos, Rebotes, Asistencias, Triples y PRA (PTS+REB+AST) "
+                   "bajo condiciones especiales: bajas de compañeros (Usage Vacuum), minutos esperados, ritmo y defensa del rival.")
+
+        df_box_j, df_rosters_j = get_datos_jugadores()
+        if df_box_j.empty:
+            st.warning("No se encontraron registros de jugadores en nba/data/jugadores_boxscore.csv. Ejecute recolectar_jugadores.py.")
+        else:
+            c_eq, c_jug, c_riv = st.columns([1.2, 1.6, 1.2])
+            with c_eq:
+                equipos_disp = sorted(df_rosters_j["team_name"].unique()) if not df_rosters_j.empty else lista_equipos
+                idx_default_team = equipos_disp.index("Los Angeles Lakers") if "Los Angeles Lakers" in equipos_disp else 0
+                team_prop = st.selectbox("Franquicia del Jugador:", equipos_disp, index=idx_default_team, key="prop_team_sel")
+            with c_jug:
+                if not df_rosters_j.empty:
+                    roster_team = df_rosters_j[df_rosters_j["team_name"] == team_prop]
+                    jugadores_lista = roster_team["player_name"].tolist()
+                else:
+                    jugadores_lista = sorted(df_box_j[df_box_j["equipo"] == team_prop]["player_name"].unique())
+
+                if not jugadores_lista:
+                    jugadores_lista = sorted(df_box_j[df_box_j["equipo"] == team_prop]["player_name"].unique())
+
+                idx_default_p = 0
+                for fav in ("Luka Doncic", "Stephen Curry", "Jayson Tatum", "Jimmy Butler III", "LeBron James", "Giannis Antetokounmpo", "Shai Gilgeous-Alexander"):
+                    if fav in jugadores_lista:
+                        idx_default_p = jugadores_lista.index(fav)
+                        break
+
+                jugador_sel = st.selectbox("Jugador a Proyectar:", jugadores_lista, index=idx_default_p, key="prop_player_sel")
+
+            with c_riv:
+                rivales_disp = [t for t in lista_equipos if t != team_prop]
+                idx_riv = rivales_disp.index("Golden State Warriors") if "Golden State Warriors" in rivales_disp else 0
+                rival_sel = st.selectbox("Equipo Rival:", rivales_disp, index=idx_riv, key="prop_rival_sel")
+
+            perfil = mj.obtener_perfil_jugador(df_box_j, df_rosters_j, jugador_sel)
+            if perfil is None:
+                st.info(f"Aún no hay suficientes partidos registrados en la muestra para **{jugador_sel}**.")
+            else:
+                col_head, col_bio = st.columns([1.1, 4.9])
+                with col_head:
+                    head_url = perfil.get("headshot")
+                    if head_url and isinstance(head_url, str):
+                        st.markdown(f'<div style="text-align:center;"><img src="{head_url}" width="115" style="border-radius:14px; border:2px solid #e2e8f0; background:#f8fafc; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></div>', unsafe_allow_html=True)
+                    else:
+                        st.markdown('<div style="font-size:4rem; text-align:center; padding:10px;">🏀</div>', unsafe_allow_html=True)
+                with col_bio:
+                    pos = perfil.get("position", "G")
+                    jersey = f"#{perfil.get('jersey')}" if perfil.get("jersey") and not pd.isna(perfil.get('jersey')) else ""
+                    st.markdown(f"### {perfil['player_name']} <span style='font-size:1.05rem; color:#64748b; font-weight:600;'>{jersey} · {pos} · {perfil['equipo']}</span>", unsafe_allow_html=True)
+                    m1, m2, m3, m4, m5, m6 = st.columns(6)
+                    m1.metric("Minutos/G", f"{perfil['min_avg']:.1f}")
+                    m2.metric("Puntos", f"{perfil['pts_avg']:.1f}", f"L5: {perfil['pts_l5']:.1f}")
+                    m3.metric("Rebotes", f"{perfil['reb_avg']:.1f}", f"L5: {perfil['reb_l5']:.1f}")
+                    m4.metric("Asistencias", f"{perfil['ast_avg']:.1f}", f"L5: {perfil['ast_l5']:.1f}")
+                    m5.metric("Triples (3PM)", f"{perfil['tpm_avg']:.1f}", f"L5: {perfil['tpm_l5']:.1f}")
+                    m6.metric("PRA Total", f"{perfil['pra_avg']:.1f}")
+
+                st.markdown("---")
+                st.markdown("#### ⚙️ Simulador de Condiciones Especiales y Bajas de Compañeros")
+                c_cond1, c_cond2, c_cond3 = st.columns([2.2, 1.2, 0.8])
+                with c_cond1:
+                    companeros_todos = mj.obtener_companeros_equipo(df_box_j, df_rosters_j, team_prop, exclude_player=jugador_sel)
+                    nombres_comps = [c["player_name"] for c in companeros_todos[:8]]
+                    bajas_seleccionadas = st.multiselect(
+                        "🚑 Simular Bajas de Compañeros en su equipo (Aumenta su Usage % y Tiros):",
+                        options=nombres_comps,
+                        help="Al marcar que un compañero clave no juega, el modelo redistribuye sus tiros y posesiones vacantes incrementando el volumen proyectado del jugador.",
+                        key="prop_bajas_multisel"
+                    )
+                    bajas_objs = [c for c in companeros_todos if c["player_name"] in bajas_seleccionadas]
+
+                with c_cond2:
+                    min_proy = st.slider(
+                        "⏱️ Minutos Proyectados:",
+                        min_value=12.0, max_value=44.0,
+                        value=float(np.clip(perfil["min_l5"], 15.0, 42.0)),
+                        step=0.5,
+                        help="Ajusta el tiempo que el entrenador mantendrá al jugador en la pista."
+                    )
+                with c_cond3:
+                    es_local_prop = st.radio("Sede:", ["🏠 Local", "✈️ Visita"], index=0, horizontal=True) == "🏠 Local"
+
+                proy = mj.proyectar_jugador(
+                    perfil, rival_sel, minutos_proy=min_proy,
+                    es_local=es_local_prop, bajas_companeros=bajas_objs
+                )
+
+                if bajas_objs:
+                    boost_pct = (proy["factores"]["boost_bajas_pts"] - 1.0) * 100
+                    st.success(
+                        f"🔥 **Impacto de Bajas Activo:** Al simular la ausencia de **{', '.join(bajas_seleccionadas)}**, "
+                        f"el modelo redistribuye el uso vacante e incrementa el volumen proyectado en **+{boost_pct:.1f}%** (efecto *Usage Vacuum*)."
+                    )
+
+                st.markdown("#### 🎯 Proyecciones Analíticas para el Partido")
+                p1, p2, p3, p4, p5 = st.columns(5)
+                delta_pts = proy["pts"] - perfil["pts_avg"]
+                delta_reb = proy["reb"] - perfil["reb_avg"]
+                delta_ast = proy["ast"] - perfil["ast_avg"]
+                delta_tpm = proy["tpm"] - perfil["tpm_avg"]
+                delta_pra = proy["pra"] - perfil["pra_avg"]
+
+                p1.metric("🏀 Puntos", f"{proy['pts']:.1f}", f"{delta_pts:+.1f} vs media")
+                p2.metric("🧺 Rebotes", f"{proy['reb']:.1f}", f"{delta_reb:+.1f} vs media")
+                p3.metric("🎯 Asistencias", f"{proy['ast']:.1f}", f"{delta_ast:+.1f} vs media")
+                p4.metric("🏹 Triples (3PM)", f"{proy['tpm']:.1f}", f"{delta_tpm:+.1f} vs media")
+                p5.metric("👑 Total PRA", f"{proy['pra']:.1f}", f"{delta_pra:+.1f} vs media")
+
+                st.markdown("---")
+                st.markdown("#### 💰 Calculadora de Líneas y Probabilidades Over / Under (Player Props)")
+                st.caption("Compara la proyección matemática del modelo contra cualquier línea de apuesta de casas (DraftKings, FanDuel, etc.) para detectar valor (+EV):")
+
+                c_calc1, c_calc2, c_calc3 = st.columns([1.5, 1.4, 3.1])
+                with c_calc1:
+                    stat_prop_sel = st.selectbox(
+                        "Métrica a Evaluar:",
+                        ["Puntos (PTS)", "Rebotes (REB)", "Asistencias (AST)", "Triples (3PM)", "Total P+R+A (PRA)"],
+                        key="prop_stat_sel"
+                    )
+                clave_stat = (
+                    "pts" if "Puntos" in stat_prop_sel
+                    else "reb" if "Rebotes" in stat_prop_sel
+                    else "ast" if "Asistencias" in stat_prop_sel
+                    else "tpm" if "Triples" in stat_prop_sel
+                    else "pra"
+                )
+                media_eval = proy[clave_stat]
+                sigma_eval = proy["sigmas"][clave_stat]
+
+                with c_calc2:
+                    default_line = round(media_eval - 0.5) + 0.5
+                    linea_input = st.number_input(
+                        "Línea de la Casa (ej. 28.5):",
+                        value=float(default_line),
+                        step=0.5,
+                        format="%.1f",
+                        key="prop_linea_in"
+                    )
+
+                res_prop = mj.calcular_probabilidades_prop(media_eval, sigma_eval, linea_input)
+
+                with c_calc3:
+                    st.markdown(f"**Veredicto:** `{res_prop['recomendacion']}` (Línea: `{linea_input}` | Proyección: `{media_eval:.1f}`)")
+                    st.write(
+                        f"🟢 **OVER {linea_input}: {res_prop['prob_over']:.1%}** (Cuota justa `{res_prop['cuota_over']}`) &nbsp;|&nbsp; "
+                        f"🔴 **UNDER {linea_input}: {res_prop['prob_under']:.1%}** (Cuota justa `{res_prop['cuota_under']}`)"
+                    )
+                    st.progress(float(res_prop["prob_over"]))
+
+                fig_prop, ax_prop = plt.subplots(figsize=(7, 2.7))
+                x_vals = np.linspace(max(0, media_eval - 3.5 * sigma_eval), media_eval + 3.5 * sigma_eval, 200)
+                y_vals = norm.pdf(x_vals, loc=media_eval, scale=sigma_eval)
+                ax_prop.plot(x_vals, y_vals, color="#1d428a", lw=2.2, label=f"Distribución Modelo (μ={media_eval:.1f}, σ={sigma_eval:.1f})")
+                ax_prop.axvline(linea_input, color="#c8102e", ls="--", lw=2, label=f"Línea Casa ({linea_input})")
+                ax_prop.fill_between(x_vals, y_vals, where=(x_vals >= linea_input), color="#10b981", alpha=0.35, label=f"Over ({res_prop['prob_over']:.1%})")
+                ax_prop.fill_between(x_vals, y_vals, where=(x_vals < linea_input), color="#ef4444", alpha=0.25, label=f"Under ({res_prop['prob_under']:.1%})")
+                ax_prop.set_xlabel(stat_prop_sel, fontsize=8.5)
+                ax_prop.set_ylabel("Densidad", fontsize=8)
+                ax_prop.legend(fontsize=8, loc="upper right")
+                ax_prop.grid(True, ls=":", alpha=0.4)
+                plt.tight_layout()
+                st.pyplot(fig_prop)
+                plt.close(fig_prop)
+
+                with st.expander(f"📋 Historial Reciente de {perfil['player_name']} y duelos vs {rival_sel}", expanded=False):
+                    df_p_games = perfil["df_games"].copy()
+                    h2h_sub = df_p_games[df_p_games["rival"] == rival_sel]
+                    if not h2h_sub.empty:
+                        st.markdown(f"##### ⚔️ Enfrentamientos directos recientes contra {rival_sel}:")
+                        vis_h2h = h2h_sub[["fecha", "rival", "MIN", "PTS", "REB", "AST", "3PT", "+/-"]].copy()
+                        st.dataframe(vis_h2h, hide_index=True, width="stretch")
+                    else:
+                        st.info(f"No hay registros recientes de {perfil['player_name']} enfrentando a {rival_sel} en la muestra.")
+
+                    st.markdown("##### 📜 Últimos 8 partidos disputados:")
+                    vis_l8 = df_p_games[["fecha", "rival", "MIN", "PTS", "REB", "AST", "3PT", "FG", "+/-"]].head(8)
+                    st.dataframe(vis_l8, hide_index=True, width="stretch")
+
+    # ============================================================================
+    # TAB 3: Clasificación y Simulación Playoff (Monte Carlo)
+    # ============================================================================
+    with tab3:
         st.markdown('<div class="sec-title">Proyecciones de Temporada Regular, Play-In y Playoffs NBA</div>', unsafe_allow_html=True)
         st.markdown("Simulación estocástica de Monte Carlo (2.000 iteraciones) de los partidos restantes del calendario 2026-27, torneo Play-In y series al mejor de 7 partidos.")
 
@@ -459,9 +652,9 @@ def run_app():
             st.pyplot(fig)
 
     # ============================================================================
-    # TAB 3: Factores e Importancia
+    # TAB 4: Factores e Importancia
     # ============================================================================
-    with tab3:
+    with tab4:
         st.markdown('<div class="sec-title">Importancia de Variables y Rendimiento de Modelos</div>', unsafe_allow_html=True)
         met_mod = met_all.get(modelo, met_all.get("stacking", {}))
         ll_base_ref = met_all.get("stacking", {}).get("logloss_base", 0.69)
@@ -532,9 +725,9 @@ def run_app():
         st.dataframe(df_heur, width="stretch", hide_index=True)
 
     # ============================================================================
-    # TAB 4: Validación vs Realidad y Acierto por Franquicia
+    # TAB 5: Validación vs Realidad y Acierto por Franquicia
     # ============================================================================
-    with tab4:
+    with tab5:
         st.markdown('<div class="sec-title">Validación Empírica y Rendimiento por Franquicia</div>', unsafe_allow_html=True)
 
         col_periodo, _ = st.columns([2, 1])

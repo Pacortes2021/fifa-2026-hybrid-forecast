@@ -20,6 +20,9 @@ python3 nba/recolectar.py
 
 # Actualizar estadísticas detalladas de box score (robos, pérdidas, etc.)
 python3 nba/recolectar_boxscore.py
+
+# Actualizar planillas individuales de jugadores (Puntos, Rebotes, Asistencias, Triples)
+python3 nba/recolectar_jugadores.py
 ```
 
 ---
@@ -55,6 +58,12 @@ El baloncesto difiere radicalmente del fútbol: no existen los empates, el ritmo
 6. **Simulador de Monte Carlo**:
    - **Por Partido**: 4.000 simulaciones estocásticas con distribución bivariada gaussiana para proyectar coberturas de spread (hándicap) y líneas Over/Under.
    - **Por Temporada**: Simulación del fixture completo, clasificación Este/Oeste, torneo Play-In (7 al 10) y series al mejor de 7 partidos de Playoffs hasta coronar al Campeón de la NBA.
+
+7. **Proyecciones Individuales de Jugadores & Player Props (Matchup Lab)**:
+   - Extracción de planillas individuales por atleta (`MIN`, `PTS`, `REB`, `AST`, `3PM`, `STL`, `BLK`, `TO`, `+/-`).
+   - Planteles activos dinámicos en vivo para las 30 franquicias (`rosters_activos.csv`).
+   - Simulador de condiciones especiales: minutos proyectados, ritmo del rival y redistribución de uso por ausencias de compañeros (*Usage Vacuum Effect*).
+   - Calculadora analítica de probabilidades y cuotas Over/Under con distribución normal/continua contra líneas de apuestas.
 
 ---
 
