@@ -1,286 +1,281 @@
-event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401879244,2026-11-08 14:00:00,2026,331,337,Brighton & Hove Albion,Brentford,,,pre
-401879243,2026-11-08 14:00:00,2026,384,364,Crystal Palace,Liverpool,,,pre
-401878759,2026-11-08 14:00:00,2026,373,349,Ipswich Town,AFC Bournemouth,,,pre
-401879239,2026-11-08 14:00:00,2026,366,363,Sunderland,Chelsea,,,pre
-401879240,2026-11-08 16:30:00,2026,360,362,Manchester United,Aston Villa,,,pre
-401879233,2026-11-21 12:30:00,2026,382,370,Manchester City,Fulham,,,pre
-401879235,2026-11-21 15:00:00,2026,388,384,Coventry City,Crystal Palace,,,pre
-401879236,2026-11-21 15:00:00,2026,363,357,Chelsea,Leeds United,,,pre
-401878754,2026-11-21 15:00:00,2026,367,373,Tottenham Hotspur,Ipswich Town,,,pre
-401879238,2026-11-21 15:00:00,2026,349,393,AFC Bournemouth,Nottingham Forest,,,pre
-401878756,2026-11-21 15:00:00,2026,362,366,Aston Villa,Sunderland,,,pre
-401879232,2026-11-21 17:30:00,2026,361,359,Newcastle United,Arsenal,,,pre
-401879234,2026-11-22 14:00:00,2026,306,331,Hull City,Brighton & Hove Albion,,,pre
-401878755,2026-11-22 16:30:00,2026,364,360,Liverpool,Manchester United,,,pre
-401879237,2026-11-23 20:00:00,2026,337,368,Brentford,Everton,,,pre
-401879225,2026-11-27 20:00:00,2026,393,363,Nottingham Forest,Chelsea,,,pre
-401879226,2026-11-28 15:00:00,2026,360,337,Manchester United,Brentford,,,pre
-401879227,2026-11-28 15:00:00,2026,357,388,Leeds United,Coventry City,,,pre
-401878752,2026-11-28 17:30:00,2026,373,362,Ipswich Town,Aston Villa,,,pre
-401879229,2026-11-29 12:00:00,2026,368,364,Everton,Liverpool,,,pre
-401879231,2026-11-29 14:05:00,2026,331,361,Brighton & Hove Albion,Newcastle United,,,pre
-401879230,2026-11-29 14:05:00,2026,384,306,Crystal Palace,Hull City,,,pre
-401879228,2026-11-29 14:05:00,2026,370,349,Fulham,AFC Bournemouth,,,pre
-401879224,2026-11-29 14:05:00,2026,366,367,Sunderland,Tottenham Hotspur,,,pre
-401878753,2026-11-29 16:30:00,2026,359,382,Arsenal,Manchester City,,,pre
-401879221,2026-12-01 20:00:00,2026,388,373,Coventry City,Ipswich Town,,,pre
-401879219,2026-12-02 19:30:00,2026,364,366,Liverpool,Sunderland,,,pre
-401879218,2026-12-02 19:30:00,2026,382,357,Manchester City,Leeds United,,,pre
-401879222,2026-12-02 19:30:00,2026,363,384,Chelsea,Crystal Palace,,,pre
-401879220,2026-12-02 19:30:00,2026,306,393,Hull City,Nottingham Forest,,,pre
-401879223,2026-12-02 20:15:00,2026,349,331,AFC Bournemouth,Brighton & Hove Albion,,,pre
-401878751,2026-12-02 20:15:00,2026,362,368,Aston Villa,Everton,,,pre
-401878750,2026-12-02 20:15:00,2026,337,359,Brentford,Arsenal,,,pre
-401879217,2026-12-02 20:15:00,2026,361,360,Newcastle United,Manchester United,,,pre
-401878749,2026-12-03 20:00:00,2026,367,370,Tottenham Hotspur,Fulham,,,pre
-401879213,2026-12-05 12:30:00,2026,363,364,Chelsea,Liverpool,,,pre
-401879210,2026-12-05 15:00:00,2026,360,388,Manchester United,Coventry City,,,pre
-401879211,2026-12-05 15:00:00,2026,357,373,Leeds United,Ipswich Town,,,pre
-401879216,2026-12-05 15:00:00,2026,349,306,AFC Bournemouth,Hull City,,,pre
-401879215,2026-12-05 15:00:00,2026,362,384,Aston Villa,Crystal Palace,,,pre
-401878747,2026-12-05 17:30:00,2026,393,331,Nottingham Forest,Brighton & Hove Albion,,,pre
-401879214,2026-12-05 20:00:00,2026,337,382,Brentford,Manchester City,,,pre
-401879212,2026-12-06 14:00:00,2026,368,370,Everton,Fulham,,,pre
-401878748,2026-12-06 14:00:00,2026,361,366,Newcastle United,Sunderland,,,pre
-401879209,2026-12-06 16:30:00,2026,367,359,Tottenham Hotspur,Arsenal,,,pre
-401878744,2026-12-12 15:00:00,2026,373,361,Ipswich Town,Newcastle United,,,pre
-401878743,2026-12-12 15:00:00,2026,364,357,Liverpool,Leeds United,,,pre
-401879206,2026-12-12 15:00:00,2026,370,337,Fulham,Brentford,,,pre
-401878742,2026-12-12 17:30:00,2026,382,363,Manchester City,Chelsea,,,pre
-401878741,2026-12-13 14:00:00,2026,366,393,Sunderland,Nottingham Forest,,,pre
-401878745,2026-12-13 14:00:00,2026,331,368,Brighton & Hove Albion,Everton,,,pre
-401878746,2026-12-13 14:00:00,2026,359,349,Arsenal,AFC Bournemouth,,,pre
-401879208,2026-12-13 16:30:00,2026,388,362,Coventry City,Aston Villa,,,pre
-401879207,2026-12-13 19:00:00,2026,384,360,Crystal Palace,Manchester United,,,pre
-401879205,2026-12-14 20:00:00,2026,306,367,Hull City,Tottenham Hotspur,,,pre
-401879203,2026-12-19 12:30:00,2026,337,361,Brentford,Newcastle United,,,pre
-401878740,2026-12-19 15:00:00,2026,349,388,AFC Bournemouth,Coventry City,,,pre
-401879201,2026-12-19 15:00:00,2026,357,370,Leeds United,Fulham,,,pre
-401879199,2026-12-19 15:00:00,2026,382,306,Manchester City,Hull City,,,pre
-401879200,2026-12-19 17:30:00,2026,364,367,Liverpool,Tottenham Hotspur,,,pre
-401878739,2026-12-20 14:00:00,2026,331,373,Brighton & Hove Albion,Ipswich Town,,,pre
-401879198,2026-12-20 14:00:00,2026,393,368,Nottingham Forest,Everton,,,pre
-401878738,2026-12-20 14:00:00,2026,366,384,Sunderland,Crystal Palace,,,pre
-401879204,2026-12-20 16:30:00,2026,359,360,Arsenal,Manchester United,,,pre
-401879202,2026-12-21 20:00:00,2026,363,362,Chelsea,Aston Villa,,,pre
-401878737,2026-12-26 12:30:00,2026,362,357,Aston Villa,Leeds United,,,pre
-401878731,2026-12-26 15:00:00,2026,367,349,Tottenham Hotspur,AFC Bournemouth,,,pre
-401879196,2026-12-26 15:00:00,2026,373,337,Ipswich Town,Brentford,,,pre
-401878734,2026-12-26 15:00:00,2026,370,331,Fulham,Brighton & Hove Albion,,,pre
-401879197,2026-12-26 15:00:00,2026,368,366,Everton,Sunderland,,,pre
-401878733,2026-12-26 17:30:00,2026,306,364,Hull City,Liverpool,,,pre
-401878732,2026-12-26 20:00:00,2026,361,382,Newcastle United,Manchester City,,,pre
-401878736,2026-12-27 14:00:00,2026,388,363,Coventry City,Chelsea,,,pre
-401879195,2026-12-27 16:30:00,2026,360,393,Manchester United,Nottingham Forest,,,pre
-401878735,2026-12-27 19:00:00,2026,384,359,Crystal Palace,Arsenal,,,pre
-401879190,2026-12-29 19:30:00,2026,306,357,Hull City,Leeds United,,,pre
-401879186,2026-12-29 19:30:00,2026,367,331,Tottenham Hotspur,Brighton & Hove Albion,,,pre
-401879192,2026-12-29 20:15:00,2026,368,382,Everton,Manchester City,,,pre
-401878730,2026-12-30 19:30:00,2026,388,337,Coventry City,Brentford,,,pre
-401879193,2026-12-30 19:30:00,2026,384,349,Crystal Palace,AFC Bournemouth,,,pre
-401879191,2026-12-30 19:30:00,2026,370,359,Fulham,Arsenal,,,pre
-401879188,2026-12-30 19:30:00,2026,360,366,Manchester United,Sunderland,,,pre
-401879187,2026-12-30 19:30:00,2026,361,393,Newcastle United,Nottingham Forest,,,pre
-401879189,2026-12-30 20:15:00,2026,373,363,Ipswich Town,Chelsea,,,pre
-401879194,2026-12-30 20:15:00,2026,362,364,Aston Villa,Liverpool,,,pre
-401879182,2027-01-01 20:00:00,2026,357,368,Leeds United,Everton,,,pre
-401878728,2027-01-02 12:30:00,2026,331,360,Brighton & Hove Albion,Manchester United,,,pre
-401879185,2027-01-02 15:00:00,2026,359,373,Arsenal,Ipswich Town,,,pre
-401879184,2027-01-02 15:00:00,2026,337,384,Brentford,Crystal Palace,,,pre
-401879181,2027-01-02 15:00:00,2026,364,388,Liverpool,Coventry City,,,pre
-401879179,2027-01-02 15:00:00,2026,393,370,Nottingham Forest,Fulham,,,pre
-401879178,2027-01-02 15:00:00,2026,366,306,Sunderland,Hull City,,,pre
-401878729,2027-01-02 17:30:00,2026,349,362,AFC Bournemouth,Aston Villa,,,pre
-401879183,2027-01-03 14:00:00,2026,363,361,Chelsea,Newcastle United,,,pre
-401879180,2027-01-03 16:30:00,2026,382,367,Manchester City,Tottenham Hotspur,,,pre
-401879177,2027-01-05 19:30:00,2026,359,337,Arsenal,Brentford,,,pre
-401879176,2027-01-05 19:30:00,2026,331,349,Brighton & Hove Albion,AFC Bournemouth,,,pre
-401879174,2027-01-05 19:30:00,2026,368,362,Everton,Aston Villa,,,pre
-401879169,2027-01-05 19:30:00,2026,393,306,Nottingham Forest,Hull City,,,pre
-401878727,2027-01-05 20:15:00,2026,366,364,Sunderland,Liverpool,,,pre
-401879172,2027-01-06 19:30:00,2026,373,388,Ipswich Town,Coventry City,,,pre
-401879175,2027-01-06 19:30:00,2026,384,363,Crystal Palace,Chelsea,,,pre
-401879173,2027-01-06 19:30:00,2026,370,367,Fulham,Tottenham Hotspur,,,pre
-401879171,2027-01-06 20:15:00,2026,357,382,Leeds United,Manchester City,,,pre
-401879170,2027-01-07 20:00:00,2026,360,361,Manchester United,Newcastle United,,,pre
-401879165,2027-01-16 15:00:00,2026,367,357,Tottenham Hotspur,Leeds United,,,pre
-401878726,2027-01-16 15:00:00,2026,349,373,AFC Bournemouth,Ipswich Town,,,pre
-401878725,2027-01-16 15:00:00,2026,362,360,Aston Villa,Manchester United,,,pre
-401879168,2027-01-16 15:00:00,2026,337,331,Brentford,Brighton & Hove Albion,,,pre
-401879167,2027-01-16 15:00:00,2026,363,366,Chelsea,Sunderland,,,pre
-401878724,2027-01-16 15:00:00,2026,388,368,Coventry City,Everton,,,pre
-401878723,2027-01-16 15:00:00,2026,306,359,Hull City,Arsenal,,,pre
-401879166,2027-01-16 15:00:00,2026,364,384,Liverpool,Crystal Palace,,,pre
-401878722,2027-01-16 15:00:00,2026,382,393,Manchester City,Nottingham Forest,,,pre
-401878721,2027-01-16 15:00:00,2026,361,370,Newcastle United,Fulham,,,pre
-401878718,2027-01-23 15:00:00,2026,360,364,Manchester United,Liverpool,,,pre
-401879160,2027-01-23 15:00:00,2026,357,363,Leeds United,Chelsea,,,pre
-401879159,2027-01-23 15:00:00,2026,366,388,Sunderland,Coventry City,,,pre
-401879161,2027-01-23 15:00:00,2026,373,306,Ipswich Town,Hull City,,,pre
-401878717,2027-01-23 15:00:00,2026,393,349,Nottingham Forest,AFC Bournemouth,,,pre
-401879162,2027-01-23 15:00:00,2026,368,337,Everton,Brentford,,,pre
-401879163,2027-01-23 15:00:00,2026,384,367,Crystal Palace,Tottenham Hotspur,,,pre
-401879164,2027-01-23 15:00:00,2026,331,382,Brighton & Hove Albion,Manchester City,,,pre
-401878720,2027-01-23 15:00:00,2026,359,361,Arsenal,Newcastle United,,,pre
-401878719,2027-01-23 15:00:00,2026,370,362,Fulham,Aston Villa,,,pre
-401879153,2027-01-30 15:00:00,2026,367,366,Tottenham Hotspur,Sunderland,,,pre
-401879155,2027-01-30 15:00:00,2026,364,368,Liverpool,Everton,,,pre
-401878713,2027-01-30 15:00:00,2026,361,331,Newcastle United,Brighton & Hove Albion,,,pre
-401879154,2027-01-30 15:00:00,2026,382,359,Manchester City,Arsenal,,,pre
-401879156,2027-01-30 15:00:00,2026,306,384,Hull City,Crystal Palace,,,pre
-401879158,2027-01-30 15:00:00,2026,349,370,AFC Bournemouth,Fulham,,,pre
-401878714,2027-01-30 15:00:00,2026,363,393,Chelsea,Nottingham Forest,,,pre
-401878715,2027-01-30 15:00:00,2026,337,360,Brentford,Manchester United,,,pre
-401878716,2027-01-30 15:00:00,2026,362,373,Aston Villa,Ipswich Town,,,pre
-401879157,2027-01-30 15:00:00,2026,388,357,Coventry City,Leeds United,,,pre
-401879147,2027-02-06 15:00:00,2026,393,337,Nottingham Forest,Brentford,,,pre
-401879148,2027-02-06 15:00:00,2026,360,363,Manchester United,Chelsea,,,pre
-401878710,2027-02-06 15:00:00,2026,357,349,Leeds United,AFC Bournemouth,,,pre
-401879149,2027-02-06 15:00:00,2026,373,367,Ipswich Town,Tottenham Hotspur,,,pre
-401878709,2027-02-06 15:00:00,2026,366,362,Sunderland,Aston Villa,,,pre
-401879151,2027-02-06 15:00:00,2026,368,361,Everton,Newcastle United,,,pre
-401879152,2027-02-06 15:00:00,2026,384,388,Crystal Palace,Coventry City,,,pre
-401878711,2027-02-06 15:00:00,2026,331,306,Brighton & Hove Albion,Hull City,,,pre
-401878712,2027-02-06 15:00:00,2026,359,364,Arsenal,Liverpool,,,pre
-401879150,2027-02-06 15:00:00,2026,370,382,Fulham,Manchester City,,,pre
-401879140,2027-02-10 20:00:00,2026,367,382,Tottenham Hotspur,Manchester City,,,pre
-401879141,2027-02-10 20:00:00,2026,361,363,Newcastle United,Chelsea,,,pre
-401879142,2027-02-10 20:00:00,2026,360,331,Manchester United,Brighton & Hove Albion,,,pre
-401878706,2027-02-10 20:00:00,2026,373,359,Ipswich Town,Arsenal,,,pre
-401879143,2027-02-10 20:00:00,2026,306,366,Hull City,Sunderland,,,pre
-401879144,2027-02-10 20:00:00,2026,370,393,Fulham,Nottingham Forest,,,pre
-401878708,2027-02-10 20:00:00,2026,384,337,Crystal Palace,Brentford,,,pre
-401879145,2027-02-10 20:00:00,2026,388,364,Coventry City,Liverpool,,,pre
-401879146,2027-02-10 20:00:00,2026,362,349,Aston Villa,AFC Bournemouth,,,pre
-401878707,2027-02-10 20:00:00,2026,368,357,Everton,Leeds United,,,pre
-401878703,2027-02-20 15:00:00,2026,364,306,Liverpool,Hull City,,,pre
-401879134,2027-02-20 15:00:00,2026,393,360,Nottingham Forest,Manchester United,,,pre
-401879135,2027-02-20 15:00:00,2026,382,361,Manchester City,Newcastle United,,,pre
-401879136,2027-02-20 15:00:00,2026,357,362,Leeds United,Aston Villa,,,pre
-401878702,2027-02-20 15:00:00,2026,366,368,Sunderland,Everton,,,pre
-401879137,2027-02-20 15:00:00,2026,331,367,Brighton & Hove Albion,Tottenham Hotspur,,,pre
-401879139,2027-02-20 15:00:00,2026,349,384,AFC Bournemouth,Crystal Palace,,,pre
-401878704,2027-02-20 15:00:00,2026,363,373,Chelsea,Ipswich Town,,,pre
-401879138,2027-02-20 15:00:00,2026,337,388,Brentford,Coventry City,,,pre
-401878705,2027-02-20 15:00:00,2026,359,370,Arsenal,Fulham,,,pre
-401879129,2027-02-27 15:00:00,2026,367,364,Tottenham Hotspur,Liverpool,,,pre
-401879130,2027-02-27 15:00:00,2026,361,337,Newcastle United,Brentford,,,pre
-401878697,2027-02-27 15:00:00,2026,360,359,Manchester United,Arsenal,,,pre
-401878698,2027-02-27 15:00:00,2026,306,382,Hull City,Manchester City,,,pre
-401879131,2027-02-27 15:00:00,2026,373,331,Ipswich Town,Brighton & Hove Albion,,,pre
-401878700,2027-02-27 15:00:00,2026,368,393,Everton,Nottingham Forest,,,pre
-401878701,2027-02-27 15:00:00,2026,384,366,Crystal Palace,Sunderland,,,pre
-401879132,2027-02-27 15:00:00,2026,388,349,Coventry City,AFC Bournemouth,,,pre
-401879133,2027-02-27 15:00:00,2026,362,363,Aston Villa,Chelsea,,,pre
-401878699,2027-02-27 15:00:00,2026,370,357,Fulham,Leeds United,,,pre
-401879122,2027-03-03 20:00:00,2026,366,360,Sunderland,Manchester United,,,pre
-401879123,2027-03-03 20:00:00,2026,393,361,Nottingham Forest,Newcastle United,,,pre
-401879124,2027-03-03 20:00:00,2026,382,368,Manchester City,Everton,,,pre
-401879125,2027-03-03 20:00:00,2026,364,362,Liverpool,Aston Villa,,,pre
-401878694,2027-03-03 20:00:00,2026,357,306,Leeds United,Hull City,,,pre
-401879126,2027-03-03 20:00:00,2026,363,388,Chelsea,Coventry City,,,pre
-401879127,2027-03-03 20:00:00,2026,337,373,Brentford,Ipswich Town,,,pre
-401878696,2027-03-03 20:00:00,2026,359,384,Arsenal,Crystal Palace,,,pre
-401879128,2027-03-03 20:00:00,2026,349,367,AFC Bournemouth,Tottenham Hotspur,,,pre
-401878695,2027-03-03 20:00:00,2026,331,370,Brighton & Hove Albion,Fulham,,,pre
-401879116,2027-03-13 15:00:00,2026,367,393,Tottenham Hotspur,Nottingham Forest,,,pre
-401879117,2027-03-13 15:00:00,2026,366,337,Sunderland,Brentford,,,pre
-401879118,2027-03-13 15:00:00,2026,360,368,Manchester United,Everton,,,pre
-401878690,2027-03-13 15:00:00,2026,364,373,Liverpool,Ipswich Town,,,pre
-401879119,2027-03-13 15:00:00,2026,357,331,Leeds United,Brighton & Hove Albion,,,pre
-401878691,2027-03-13 15:00:00,2026,384,370,Crystal Palace,Fulham,,,pre
-401878693,2027-03-13 15:00:00,2026,363,359,Chelsea,Arsenal,,,pre
-401879120,2027-03-13 15:00:00,2026,362,306,Aston Villa,Hull City,,,pre
-401879121,2027-03-13 15:00:00,2026,349,361,AFC Bournemouth,Newcastle United,,,pre
-401878692,2027-03-13 15:00:00,2026,388,382,Coventry City,Manchester City,,,pre
-401879109,2027-03-20 15:00:00,2026,373,384,Ipswich Town,Crystal Palace,,,pre
-401878689,2027-03-20 15:00:00,2026,393,362,Nottingham Forest,Aston Villa,,,pre
-401879108,2027-03-20 15:00:00,2026,382,360,Manchester City,Manchester United,,,pre
-401879110,2027-03-20 15:00:00,2026,306,363,Hull City,Chelsea,,,pre
-401879107,2027-03-20 15:00:00,2026,361,357,Newcastle United,Leeds United,,,pre
-401879112,2027-03-20 15:00:00,2026,368,367,Everton,Tottenham Hotspur,,,pre
-401879113,2027-03-20 15:00:00,2026,331,388,Brighton & Hove Albion,Coventry City,,,pre
-401879114,2027-03-20 15:00:00,2026,337,349,Brentford,AFC Bournemouth,,,pre
-401879115,2027-03-20 15:00:00,2026,359,366,Arsenal,Sunderland,,,pre
-401879111,2027-03-20 15:00:00,2026,370,364,Fulham,Liverpool,,,pre
-401879099,2027-04-10 15:00:00,2026,367,337,Tottenham Hotspur,Brentford,,,pre
-401878687,2027-04-10 15:00:00,2026,366,373,Sunderland,Ipswich Town,,,pre
-401879100,2027-04-10 15:00:00,2026,360,306,Manchester United,Hull City,,,pre
-401879101,2027-04-10 15:00:00,2026,364,361,Liverpool,Newcastle United,,,pre
-401878688,2027-04-10 15:00:00,2026,357,393,Leeds United,Nottingham Forest,,,pre
-401879102,2027-04-10 15:00:00,2026,384,368,Crystal Palace,Everton,,,pre
-401879103,2027-04-10 15:00:00,2026,388,359,Coventry City,Arsenal,,,pre
-401879104,2027-04-10 15:00:00,2026,363,370,Chelsea,Fulham,,,pre
-401879105,2027-04-10 15:00:00,2026,362,331,Aston Villa,Brighton & Hove Albion,,,pre
-401879106,2027-04-10 15:00:00,2026,349,382,AFC Bournemouth,Manchester City,,,pre
-401878681,2027-04-17 15:00:00,2026,393,364,Nottingham Forest,Liverpool,,,pre
-401878682,2027-04-17 15:00:00,2026,361,367,Newcastle United,Tottenham Hotspur,,,pre
-401879095,2027-04-17 15:00:00,2026,382,384,Manchester City,Crystal Palace,,,pre
-401879096,2027-04-17 15:00:00,2026,373,360,Ipswich Town,Manchester United,,,pre
-401878683,2027-04-17 15:00:00,2026,306,388,Hull City,Coventry City,,,pre
-401879097,2027-04-17 15:00:00,2026,370,366,Fulham,Sunderland,,,pre
-401878684,2027-04-17 15:00:00,2026,368,349,Everton,AFC Bournemouth,,,pre
-401878685,2027-04-17 15:00:00,2026,331,363,Brighton & Hove Albion,Chelsea,,,pre
-401879098,2027-04-17 15:00:00,2026,337,357,Brentford,Leeds United,,,pre
-401878686,2027-04-17 15:00:00,2026,359,362,Arsenal,Aston Villa,,,pre
-401878677,2027-04-24 15:00:00,2026,367,306,Tottenham Hotspur,Hull City,,,pre
-401879089,2027-04-24 15:00:00,2026,393,366,Nottingham Forest,Sunderland,,,pre
-401879090,2027-04-24 15:00:00,2026,361,373,Newcastle United,Ipswich Town,,,pre
-401879091,2027-04-24 15:00:00,2026,360,384,Manchester United,Crystal Palace,,,pre
-401879092,2027-04-24 15:00:00,2026,357,364,Leeds United,Liverpool,,,pre
-401879094,2027-04-24 15:00:00,2026,363,382,Chelsea,Manchester City,,,pre
-401878678,2027-04-24 15:00:00,2026,337,370,Brentford,Fulham,,,pre
-401878679,2027-04-24 15:00:00,2026,362,388,Aston Villa,Coventry City,,,pre
-401878680,2027-04-24 15:00:00,2026,349,359,AFC Bournemouth,Arsenal,,,pre
-401879093,2027-04-24 15:00:00,2026,368,331,Everton,Brighton & Hove Albion,,,pre
-401879084,2027-05-01 15:00:00,2026,373,357,Ipswich Town,Leeds United,,,pre
-401879083,2027-05-01 15:00:00,2026,382,337,Manchester City,Brentford,,,pre
-401878674,2027-05-01 15:00:00,2026,364,363,Liverpool,Chelsea,,,pre
-401878673,2027-05-01 15:00:00,2026,366,361,Sunderland,Newcastle United,,,pre
-401879085,2027-05-01 15:00:00,2026,306,349,Hull City,AFC Bournemouth,,,pre
-401878675,2027-05-01 15:00:00,2026,388,360,Coventry City,Manchester United,,,pre
-401879087,2027-05-01 15:00:00,2026,384,362,Crystal Palace,Aston Villa,,,pre
-401879088,2027-05-01 15:00:00,2026,331,393,Brighton & Hove Albion,Nottingham Forest,,,pre
-401878676,2027-05-01 15:00:00,2026,359,367,Arsenal,Tottenham Hotspur,,,pre
-401879086,2027-05-01 15:00:00,2026,370,368,Fulham,Everton,,,pre
-401878666,2027-05-08 15:00:00,2026,367,363,Tottenham Hotspur,Chelsea,,,pre
-401878667,2027-05-08 15:00:00,2026,393,384,Nottingham Forest,Crystal Palace,,,pre
-401879080,2027-05-08 15:00:00,2026,361,388,Newcastle United,Coventry City,,,pre
-401878668,2027-05-08 15:00:00,2026,382,364,Manchester City,Liverpool,,,pre
-401879081,2027-05-08 15:00:00,2026,357,359,Leeds United,Arsenal,,,pre
-401878670,2027-05-08 15:00:00,2026,368,306,Everton,Hull City,,,pre
-401878671,2027-05-08 15:00:00,2026,331,366,Brighton & Hove Albion,Sunderland,,,pre
-401879082,2027-05-08 15:00:00,2026,337,362,Brentford,Aston Villa,,,pre
-401878672,2027-05-08 15:00:00,2026,349,360,AFC Bournemouth,Manchester United,,,pre
-401878669,2027-05-08 15:00:00,2026,370,373,Fulham,Ipswich Town,,,pre
-401879073,2027-05-15 15:00:00,2026,366,349,Sunderland,AFC Bournemouth,,,pre
-401879074,2027-05-15 15:00:00,2026,360,357,Manchester United,Leeds United,,,pre
-401878663,2027-05-15 15:00:00,2026,364,337,Liverpool,Brentford,,,pre
-401879075,2027-05-15 15:00:00,2026,373,382,Ipswich Town,Manchester City,,,pre
-401879076,2027-05-15 15:00:00,2026,306,370,Hull City,Fulham,,,pre
-401879077,2027-05-15 15:00:00,2026,388,367,Coventry City,Tottenham Hotspur,,,pre
-401879078,2027-05-15 15:00:00,2026,363,368,Chelsea,Everton,,,pre
-401878665,2027-05-15 15:00:00,2026,362,361,Aston Villa,Newcastle United,,,pre
-401879079,2027-05-15 15:00:00,2026,359,393,Arsenal,Nottingham Forest,,,pre
-401878664,2027-05-15 15:00:00,2026,384,331,Crystal Palace,Brighton & Hove Albion,,,pre
-401879065,2027-05-23 15:00:00,2026,367,360,Tottenham Hotspur,Manchester United,,,pre
-401879072,2027-05-23 15:00:00,2026,349,363,AFC Bournemouth,Chelsea,,,pre
-401879071,2027-05-23 15:00:00,2026,337,306,Brentford,Hull City,,,pre
-401878662,2027-05-23 15:00:00,2026,331,364,Brighton & Hove Albion,Liverpool,,,pre
-401879070,2027-05-23 15:00:00,2026,368,359,Everton,Arsenal,,,pre
-401879069,2027-05-23 15:00:00,2026,370,388,Fulham,Coventry City,,,pre
-401879068,2027-05-23 15:00:00,2026,357,366,Leeds United,Sunderland,,,pre
-401879067,2027-05-23 15:00:00,2026,382,362,Manchester City,Aston Villa,,,pre
-401879066,2027-05-23 15:00:00,2026,361,384,Newcastle United,Crystal Palace,,,pre
-401878661,2027-05-23 15:00:00,2026,393,373,Nottingham Forest,Ipswich Town,,,pre
-401879060,2027-05-30 16:00:00,2026,373,368,Ipswich Town,Everton,,,pre
-401879061,2027-05-30 16:00:00,2026,306,361,Hull City,Newcastle United,,,pre
-401879059,2027-05-30 16:00:00,2026,364,349,Liverpool,AFC Bournemouth,,,pre
-401879062,2027-05-30 16:00:00,2026,384,357,Crystal Palace,Leeds United,,,pre
-401879058,2027-05-30 16:00:00,2026,360,370,Manchester United,Fulham,,,pre
-401879063,2027-05-30 16:00:00,2026,363,337,Chelsea,Brentford,,,pre
-401879064,2027-05-30 16:00:00,2026,362,367,Aston Villa,Tottenham Hotspur,,,pre
-401878660,2027-05-30 16:00:00,2026,359,331,Arsenal,Brighton & Hove Albion,,,pre
-401878659,2027-05-30 16:00:00,2026,388,393,Coventry City,Nottingham Forest,,,pre
-401878658,2027-05-30 16:00:00,2026,366,382,Sunderland,Manchester City,,,pre
+event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
+401879233,2026-11-21 12:30:00,2026,382,370,Manchester City,Fulham,,,pre,False
+401879235,2026-11-21 15:00:00,2026,388,384,Coventry City,Crystal Palace,,,pre,False
+401879236,2026-11-21 15:00:00,2026,363,357,Chelsea,Leeds United,,,pre,False
+401878754,2026-11-21 15:00:00,2026,367,373,Tottenham Hotspur,Ipswich Town,,,pre,False
+401879238,2026-11-21 15:00:00,2026,349,393,AFC Bournemouth,Nottingham Forest,,,pre,False
+401878756,2026-11-21 15:00:00,2026,362,366,Aston Villa,Sunderland,,,pre,False
+401879232,2026-11-21 17:30:00,2026,361,359,Newcastle United,Arsenal,,,pre,False
+401879234,2026-11-22 14:00:00,2026,306,331,Hull City,Brighton & Hove Albion,,,pre,False
+401878755,2026-11-22 16:30:00,2026,364,360,Liverpool,Manchester United,,,pre,False
+401879237,2026-11-23 20:00:00,2026,337,368,Brentford,Everton,,,pre,False
+401879225,2026-11-27 20:00:00,2026,393,363,Nottingham Forest,Chelsea,,,pre,False
+401879226,2026-11-28 15:00:00,2026,360,337,Manchester United,Brentford,,,pre,False
+401879227,2026-11-28 15:00:00,2026,357,388,Leeds United,Coventry City,,,pre,False
+401878752,2026-11-28 17:30:00,2026,373,362,Ipswich Town,Aston Villa,,,pre,False
+401879229,2026-11-29 12:00:00,2026,368,364,Everton,Liverpool,,,pre,False
+401879231,2026-11-29 14:05:00,2026,331,361,Brighton & Hove Albion,Newcastle United,,,pre,False
+401879230,2026-11-29 14:05:00,2026,384,306,Crystal Palace,Hull City,,,pre,False
+401879228,2026-11-29 14:05:00,2026,370,349,Fulham,AFC Bournemouth,,,pre,False
+401879224,2026-11-29 14:05:00,2026,366,367,Sunderland,Tottenham Hotspur,,,pre,False
+401878753,2026-11-29 16:30:00,2026,359,382,Arsenal,Manchester City,,,pre,False
+401879221,2026-12-01 20:00:00,2026,388,373,Coventry City,Ipswich Town,,,pre,False
+401879219,2026-12-02 19:30:00,2026,364,366,Liverpool,Sunderland,,,pre,False
+401879218,2026-12-02 19:30:00,2026,382,357,Manchester City,Leeds United,,,pre,False
+401879222,2026-12-02 19:30:00,2026,363,384,Chelsea,Crystal Palace,,,pre,False
+401879220,2026-12-02 19:30:00,2026,306,393,Hull City,Nottingham Forest,,,pre,False
+401879223,2026-12-02 20:15:00,2026,349,331,AFC Bournemouth,Brighton & Hove Albion,,,pre,False
+401878751,2026-12-02 20:15:00,2026,362,368,Aston Villa,Everton,,,pre,False
+401878750,2026-12-02 20:15:00,2026,337,359,Brentford,Arsenal,,,pre,False
+401879217,2026-12-02 20:15:00,2026,361,360,Newcastle United,Manchester United,,,pre,False
+401878749,2026-12-03 20:00:00,2026,367,370,Tottenham Hotspur,Fulham,,,pre,False
+401879213,2026-12-05 12:30:00,2026,363,364,Chelsea,Liverpool,,,pre,False
+401879210,2026-12-05 15:00:00,2026,360,388,Manchester United,Coventry City,,,pre,False
+401879211,2026-12-05 15:00:00,2026,357,373,Leeds United,Ipswich Town,,,pre,False
+401879216,2026-12-05 15:00:00,2026,349,306,AFC Bournemouth,Hull City,,,pre,False
+401879215,2026-12-05 15:00:00,2026,362,384,Aston Villa,Crystal Palace,,,pre,False
+401878747,2026-12-05 17:30:00,2026,393,331,Nottingham Forest,Brighton & Hove Albion,,,pre,False
+401879214,2026-12-05 20:00:00,2026,337,382,Brentford,Manchester City,,,pre,False
+401879212,2026-12-06 14:00:00,2026,368,370,Everton,Fulham,,,pre,False
+401878748,2026-12-06 14:00:00,2026,361,366,Newcastle United,Sunderland,,,pre,False
+401879209,2026-12-06 16:30:00,2026,367,359,Tottenham Hotspur,Arsenal,,,pre,False
+401878744,2026-12-12 15:00:00,2026,373,361,Ipswich Town,Newcastle United,,,pre,False
+401878743,2026-12-12 15:00:00,2026,364,357,Liverpool,Leeds United,,,pre,False
+401879206,2026-12-12 15:00:00,2026,370,337,Fulham,Brentford,,,pre,False
+401878742,2026-12-12 17:30:00,2026,382,363,Manchester City,Chelsea,,,pre,False
+401878741,2026-12-13 14:00:00,2026,366,393,Sunderland,Nottingham Forest,,,pre,False
+401878745,2026-12-13 14:00:00,2026,331,368,Brighton & Hove Albion,Everton,,,pre,False
+401878746,2026-12-13 14:00:00,2026,359,349,Arsenal,AFC Bournemouth,,,pre,False
+401879208,2026-12-13 16:30:00,2026,388,362,Coventry City,Aston Villa,,,pre,False
+401879207,2026-12-13 19:00:00,2026,384,360,Crystal Palace,Manchester United,,,pre,False
+401879205,2026-12-14 20:00:00,2026,306,367,Hull City,Tottenham Hotspur,,,pre,False
+401879203,2026-12-19 12:30:00,2026,337,361,Brentford,Newcastle United,,,pre,False
+401878740,2026-12-19 15:00:00,2026,349,388,AFC Bournemouth,Coventry City,,,pre,False
+401879201,2026-12-19 15:00:00,2026,357,370,Leeds United,Fulham,,,pre,False
+401879199,2026-12-19 15:00:00,2026,382,306,Manchester City,Hull City,,,pre,False
+401879200,2026-12-19 17:30:00,2026,364,367,Liverpool,Tottenham Hotspur,,,pre,False
+401878739,2026-12-20 14:00:00,2026,331,373,Brighton & Hove Albion,Ipswich Town,,,pre,False
+401879198,2026-12-20 14:00:00,2026,393,368,Nottingham Forest,Everton,,,pre,False
+401878738,2026-12-20 14:00:00,2026,366,384,Sunderland,Crystal Palace,,,pre,False
+401879204,2026-12-20 16:30:00,2026,359,360,Arsenal,Manchester United,,,pre,False
+401879202,2026-12-21 20:00:00,2026,363,362,Chelsea,Aston Villa,,,pre,False
+401878737,2026-12-26 12:30:00,2026,362,357,Aston Villa,Leeds United,,,pre,False
+401878731,2026-12-26 15:00:00,2026,367,349,Tottenham Hotspur,AFC Bournemouth,,,pre,False
+401879196,2026-12-26 15:00:00,2026,373,337,Ipswich Town,Brentford,,,pre,False
+401878734,2026-12-26 15:00:00,2026,370,331,Fulham,Brighton & Hove Albion,,,pre,False
+401879197,2026-12-26 15:00:00,2026,368,366,Everton,Sunderland,,,pre,False
+401878733,2026-12-26 17:30:00,2026,306,364,Hull City,Liverpool,,,pre,False
+401878732,2026-12-26 20:00:00,2026,361,382,Newcastle United,Manchester City,,,pre,False
+401878736,2026-12-27 14:00:00,2026,388,363,Coventry City,Chelsea,,,pre,False
+401879195,2026-12-27 16:30:00,2026,360,393,Manchester United,Nottingham Forest,,,pre,False
+401878735,2026-12-27 19:00:00,2026,384,359,Crystal Palace,Arsenal,,,pre,False
+401879190,2026-12-29 19:30:00,2026,306,357,Hull City,Leeds United,,,pre,False
+401879186,2026-12-29 19:30:00,2026,367,331,Tottenham Hotspur,Brighton & Hove Albion,,,pre,False
+401879192,2026-12-29 20:15:00,2026,368,382,Everton,Manchester City,,,pre,False
+401878730,2026-12-30 19:30:00,2026,388,337,Coventry City,Brentford,,,pre,False
+401879193,2026-12-30 19:30:00,2026,384,349,Crystal Palace,AFC Bournemouth,,,pre,False
+401879191,2026-12-30 19:30:00,2026,370,359,Fulham,Arsenal,,,pre,False
+401879188,2026-12-30 19:30:00,2026,360,366,Manchester United,Sunderland,,,pre,False
+401879187,2026-12-30 19:30:00,2026,361,393,Newcastle United,Nottingham Forest,,,pre,False
+401879189,2026-12-30 20:15:00,2026,373,363,Ipswich Town,Chelsea,,,pre,False
+401879194,2026-12-30 20:15:00,2026,362,364,Aston Villa,Liverpool,,,pre,False
+401879182,2027-01-01 20:00:00,2026,357,368,Leeds United,Everton,,,pre,False
+401878728,2027-01-02 12:30:00,2026,331,360,Brighton & Hove Albion,Manchester United,,,pre,False
+401879185,2027-01-02 15:00:00,2026,359,373,Arsenal,Ipswich Town,,,pre,False
+401879184,2027-01-02 15:00:00,2026,337,384,Brentford,Crystal Palace,,,pre,False
+401879181,2027-01-02 15:00:00,2026,364,388,Liverpool,Coventry City,,,pre,False
+401879179,2027-01-02 15:00:00,2026,393,370,Nottingham Forest,Fulham,,,pre,False
+401879178,2027-01-02 15:00:00,2026,366,306,Sunderland,Hull City,,,pre,False
+401878729,2027-01-02 17:30:00,2026,349,362,AFC Bournemouth,Aston Villa,,,pre,False
+401879183,2027-01-03 14:00:00,2026,363,361,Chelsea,Newcastle United,,,pre,False
+401879180,2027-01-03 16:30:00,2026,382,367,Manchester City,Tottenham Hotspur,,,pre,False
+401879177,2027-01-05 19:30:00,2026,359,337,Arsenal,Brentford,,,pre,False
+401879176,2027-01-05 19:30:00,2026,331,349,Brighton & Hove Albion,AFC Bournemouth,,,pre,False
+401879174,2027-01-05 19:30:00,2026,368,362,Everton,Aston Villa,,,pre,False
+401879169,2027-01-05 19:30:00,2026,393,306,Nottingham Forest,Hull City,,,pre,False
+401878727,2027-01-05 20:15:00,2026,366,364,Sunderland,Liverpool,,,pre,False
+401879172,2027-01-06 19:30:00,2026,373,388,Ipswich Town,Coventry City,,,pre,False
+401879175,2027-01-06 19:30:00,2026,384,363,Crystal Palace,Chelsea,,,pre,False
+401879173,2027-01-06 19:30:00,2026,370,367,Fulham,Tottenham Hotspur,,,pre,False
+401879171,2027-01-06 20:15:00,2026,357,382,Leeds United,Manchester City,,,pre,False
+401879170,2027-01-07 20:00:00,2026,360,361,Manchester United,Newcastle United,,,pre,False
+401879165,2027-01-16 15:00:00,2026,367,357,Tottenham Hotspur,Leeds United,,,pre,False
+401878726,2027-01-16 15:00:00,2026,349,373,AFC Bournemouth,Ipswich Town,,,pre,False
+401878725,2027-01-16 15:00:00,2026,362,360,Aston Villa,Manchester United,,,pre,False
+401879168,2027-01-16 15:00:00,2026,337,331,Brentford,Brighton & Hove Albion,,,pre,False
+401879167,2027-01-16 15:00:00,2026,363,366,Chelsea,Sunderland,,,pre,False
+401878724,2027-01-16 15:00:00,2026,388,368,Coventry City,Everton,,,pre,False
+401878723,2027-01-16 15:00:00,2026,306,359,Hull City,Arsenal,,,pre,False
+401879166,2027-01-16 15:00:00,2026,364,384,Liverpool,Crystal Palace,,,pre,False
+401878722,2027-01-16 15:00:00,2026,382,393,Manchester City,Nottingham Forest,,,pre,False
+401878721,2027-01-16 15:00:00,2026,361,370,Newcastle United,Fulham,,,pre,False
+401878718,2027-01-23 15:00:00,2026,360,364,Manchester United,Liverpool,,,pre,False
+401879160,2027-01-23 15:00:00,2026,357,363,Leeds United,Chelsea,,,pre,False
+401879159,2027-01-23 15:00:00,2026,366,388,Sunderland,Coventry City,,,pre,False
+401879161,2027-01-23 15:00:00,2026,373,306,Ipswich Town,Hull City,,,pre,False
+401878717,2027-01-23 15:00:00,2026,393,349,Nottingham Forest,AFC Bournemouth,,,pre,False
+401879162,2027-01-23 15:00:00,2026,368,337,Everton,Brentford,,,pre,False
+401879163,2027-01-23 15:00:00,2026,384,367,Crystal Palace,Tottenham Hotspur,,,pre,False
+401879164,2027-01-23 15:00:00,2026,331,382,Brighton & Hove Albion,Manchester City,,,pre,False
+401878720,2027-01-23 15:00:00,2026,359,361,Arsenal,Newcastle United,,,pre,False
+401878719,2027-01-23 15:00:00,2026,370,362,Fulham,Aston Villa,,,pre,False
+401879153,2027-01-30 15:00:00,2026,367,366,Tottenham Hotspur,Sunderland,,,pre,False
+401879155,2027-01-30 15:00:00,2026,364,368,Liverpool,Everton,,,pre,False
+401878713,2027-01-30 15:00:00,2026,361,331,Newcastle United,Brighton & Hove Albion,,,pre,False
+401879154,2027-01-30 15:00:00,2026,382,359,Manchester City,Arsenal,,,pre,False
+401879156,2027-01-30 15:00:00,2026,306,384,Hull City,Crystal Palace,,,pre,False
+401879158,2027-01-30 15:00:00,2026,349,370,AFC Bournemouth,Fulham,,,pre,False
+401878714,2027-01-30 15:00:00,2026,363,393,Chelsea,Nottingham Forest,,,pre,False
+401878715,2027-01-30 15:00:00,2026,337,360,Brentford,Manchester United,,,pre,False
+401878716,2027-01-30 15:00:00,2026,362,373,Aston Villa,Ipswich Town,,,pre,False
+401879157,2027-01-30 15:00:00,2026,388,357,Coventry City,Leeds United,,,pre,False
+401879147,2027-02-06 15:00:00,2026,393,337,Nottingham Forest,Brentford,,,pre,False
+401879148,2027-02-06 15:00:00,2026,360,363,Manchester United,Chelsea,,,pre,False
+401878710,2027-02-06 15:00:00,2026,357,349,Leeds United,AFC Bournemouth,,,pre,False
+401879149,2027-02-06 15:00:00,2026,373,367,Ipswich Town,Tottenham Hotspur,,,pre,False
+401878709,2027-02-06 15:00:00,2026,366,362,Sunderland,Aston Villa,,,pre,False
+401879151,2027-02-06 15:00:00,2026,368,361,Everton,Newcastle United,,,pre,False
+401879152,2027-02-06 15:00:00,2026,384,388,Crystal Palace,Coventry City,,,pre,False
+401878711,2027-02-06 15:00:00,2026,331,306,Brighton & Hove Albion,Hull City,,,pre,False
+401878712,2027-02-06 15:00:00,2026,359,364,Arsenal,Liverpool,,,pre,False
+401879150,2027-02-06 15:00:00,2026,370,382,Fulham,Manchester City,,,pre,False
+401879140,2027-02-10 20:00:00,2026,367,382,Tottenham Hotspur,Manchester City,,,pre,False
+401879141,2027-02-10 20:00:00,2026,361,363,Newcastle United,Chelsea,,,pre,False
+401879142,2027-02-10 20:00:00,2026,360,331,Manchester United,Brighton & Hove Albion,,,pre,False
+401878706,2027-02-10 20:00:00,2026,373,359,Ipswich Town,Arsenal,,,pre,False
+401879143,2027-02-10 20:00:00,2026,306,366,Hull City,Sunderland,,,pre,False
+401879144,2027-02-10 20:00:00,2026,370,393,Fulham,Nottingham Forest,,,pre,False
+401878708,2027-02-10 20:00:00,2026,384,337,Crystal Palace,Brentford,,,pre,False
+401879145,2027-02-10 20:00:00,2026,388,364,Coventry City,Liverpool,,,pre,False
+401879146,2027-02-10 20:00:00,2026,362,349,Aston Villa,AFC Bournemouth,,,pre,False
+401878707,2027-02-10 20:00:00,2026,368,357,Everton,Leeds United,,,pre,False
+401878703,2027-02-20 15:00:00,2026,364,306,Liverpool,Hull City,,,pre,False
+401879134,2027-02-20 15:00:00,2026,393,360,Nottingham Forest,Manchester United,,,pre,False
+401879135,2027-02-20 15:00:00,2026,382,361,Manchester City,Newcastle United,,,pre,False
+401879136,2027-02-20 15:00:00,2026,357,362,Leeds United,Aston Villa,,,pre,False
+401878702,2027-02-20 15:00:00,2026,366,368,Sunderland,Everton,,,pre,False
+401879137,2027-02-20 15:00:00,2026,331,367,Brighton & Hove Albion,Tottenham Hotspur,,,pre,False
+401879139,2027-02-20 15:00:00,2026,349,384,AFC Bournemouth,Crystal Palace,,,pre,False
+401878704,2027-02-20 15:00:00,2026,363,373,Chelsea,Ipswich Town,,,pre,False
+401879138,2027-02-20 15:00:00,2026,337,388,Brentford,Coventry City,,,pre,False
+401878705,2027-02-20 15:00:00,2026,359,370,Arsenal,Fulham,,,pre,False
+401879129,2027-02-27 15:00:00,2026,367,364,Tottenham Hotspur,Liverpool,,,pre,False
+401879130,2027-02-27 15:00:00,2026,361,337,Newcastle United,Brentford,,,pre,False
+401878697,2027-02-27 15:00:00,2026,360,359,Manchester United,Arsenal,,,pre,False
+401878698,2027-02-27 15:00:00,2026,306,382,Hull City,Manchester City,,,pre,False
+401879131,2027-02-27 15:00:00,2026,373,331,Ipswich Town,Brighton & Hove Albion,,,pre,False
+401878700,2027-02-27 15:00:00,2026,368,393,Everton,Nottingham Forest,,,pre,False
+401878701,2027-02-27 15:00:00,2026,384,366,Crystal Palace,Sunderland,,,pre,False
+401879132,2027-02-27 15:00:00,2026,388,349,Coventry City,AFC Bournemouth,,,pre,False
+401879133,2027-02-27 15:00:00,2026,362,363,Aston Villa,Chelsea,,,pre,False
+401878699,2027-02-27 15:00:00,2026,370,357,Fulham,Leeds United,,,pre,False
+401879122,2027-03-03 20:00:00,2026,366,360,Sunderland,Manchester United,,,pre,False
+401879123,2027-03-03 20:00:00,2026,393,361,Nottingham Forest,Newcastle United,,,pre,False
+401879124,2027-03-03 20:00:00,2026,382,368,Manchester City,Everton,,,pre,False
+401879125,2027-03-03 20:00:00,2026,364,362,Liverpool,Aston Villa,,,pre,False
+401878694,2027-03-03 20:00:00,2026,357,306,Leeds United,Hull City,,,pre,False
+401879126,2027-03-03 20:00:00,2026,363,388,Chelsea,Coventry City,,,pre,False
+401879127,2027-03-03 20:00:00,2026,337,373,Brentford,Ipswich Town,,,pre,False
+401878696,2027-03-03 20:00:00,2026,359,384,Arsenal,Crystal Palace,,,pre,False
+401879128,2027-03-03 20:00:00,2026,349,367,AFC Bournemouth,Tottenham Hotspur,,,pre,False
+401878695,2027-03-03 20:00:00,2026,331,370,Brighton & Hove Albion,Fulham,,,pre,False
+401879116,2027-03-13 15:00:00,2026,367,393,Tottenham Hotspur,Nottingham Forest,,,pre,False
+401879117,2027-03-13 15:00:00,2026,366,337,Sunderland,Brentford,,,pre,False
+401879118,2027-03-13 15:00:00,2026,360,368,Manchester United,Everton,,,pre,False
+401878690,2027-03-13 15:00:00,2026,364,373,Liverpool,Ipswich Town,,,pre,False
+401879119,2027-03-13 15:00:00,2026,357,331,Leeds United,Brighton & Hove Albion,,,pre,False
+401878691,2027-03-13 15:00:00,2026,384,370,Crystal Palace,Fulham,,,pre,False
+401878693,2027-03-13 15:00:00,2026,363,359,Chelsea,Arsenal,,,pre,False
+401879120,2027-03-13 15:00:00,2026,362,306,Aston Villa,Hull City,,,pre,False
+401879121,2027-03-13 15:00:00,2026,349,361,AFC Bournemouth,Newcastle United,,,pre,False
+401878692,2027-03-13 15:00:00,2026,388,382,Coventry City,Manchester City,,,pre,False
+401879109,2027-03-20 15:00:00,2026,373,384,Ipswich Town,Crystal Palace,,,pre,False
+401878689,2027-03-20 15:00:00,2026,393,362,Nottingham Forest,Aston Villa,,,pre,False
+401879108,2027-03-20 15:00:00,2026,382,360,Manchester City,Manchester United,,,pre,False
+401879110,2027-03-20 15:00:00,2026,306,363,Hull City,Chelsea,,,pre,False
+401879107,2027-03-20 15:00:00,2026,361,357,Newcastle United,Leeds United,,,pre,False
+401879112,2027-03-20 15:00:00,2026,368,367,Everton,Tottenham Hotspur,,,pre,False
+401879113,2027-03-20 15:00:00,2026,331,388,Brighton & Hove Albion,Coventry City,,,pre,False
+401879114,2027-03-20 15:00:00,2026,337,349,Brentford,AFC Bournemouth,,,pre,False
+401879115,2027-03-20 15:00:00,2026,359,366,Arsenal,Sunderland,,,pre,False
+401879111,2027-03-20 15:00:00,2026,370,364,Fulham,Liverpool,,,pre,False
+401879099,2027-04-10 15:00:00,2026,367,337,Tottenham Hotspur,Brentford,,,pre,False
+401878687,2027-04-10 15:00:00,2026,366,373,Sunderland,Ipswich Town,,,pre,False
+401879100,2027-04-10 15:00:00,2026,360,306,Manchester United,Hull City,,,pre,False
+401879101,2027-04-10 15:00:00,2026,364,361,Liverpool,Newcastle United,,,pre,False
+401878688,2027-04-10 15:00:00,2026,357,393,Leeds United,Nottingham Forest,,,pre,False
+401879102,2027-04-10 15:00:00,2026,384,368,Crystal Palace,Everton,,,pre,False
+401879103,2027-04-10 15:00:00,2026,388,359,Coventry City,Arsenal,,,pre,False
+401879104,2027-04-10 15:00:00,2026,363,370,Chelsea,Fulham,,,pre,False
+401879105,2027-04-10 15:00:00,2026,362,331,Aston Villa,Brighton & Hove Albion,,,pre,False
+401879106,2027-04-10 15:00:00,2026,349,382,AFC Bournemouth,Manchester City,,,pre,False
+401878681,2027-04-17 15:00:00,2026,393,364,Nottingham Forest,Liverpool,,,pre,False
+401878682,2027-04-17 15:00:00,2026,361,367,Newcastle United,Tottenham Hotspur,,,pre,False
+401879095,2027-04-17 15:00:00,2026,382,384,Manchester City,Crystal Palace,,,pre,False
+401879096,2027-04-17 15:00:00,2026,373,360,Ipswich Town,Manchester United,,,pre,False
+401878683,2027-04-17 15:00:00,2026,306,388,Hull City,Coventry City,,,pre,False
+401879097,2027-04-17 15:00:00,2026,370,366,Fulham,Sunderland,,,pre,False
+401878684,2027-04-17 15:00:00,2026,368,349,Everton,AFC Bournemouth,,,pre,False
+401878685,2027-04-17 15:00:00,2026,331,363,Brighton & Hove Albion,Chelsea,,,pre,False
+401879098,2027-04-17 15:00:00,2026,337,357,Brentford,Leeds United,,,pre,False
+401878686,2027-04-17 15:00:00,2026,359,362,Arsenal,Aston Villa,,,pre,False
+401878677,2027-04-24 15:00:00,2026,367,306,Tottenham Hotspur,Hull City,,,pre,False
+401879089,2027-04-24 15:00:00,2026,393,366,Nottingham Forest,Sunderland,,,pre,False
+401879090,2027-04-24 15:00:00,2026,361,373,Newcastle United,Ipswich Town,,,pre,False
+401879091,2027-04-24 15:00:00,2026,360,384,Manchester United,Crystal Palace,,,pre,False
+401879092,2027-04-24 15:00:00,2026,357,364,Leeds United,Liverpool,,,pre,False
+401879094,2027-04-24 15:00:00,2026,363,382,Chelsea,Manchester City,,,pre,False
+401878678,2027-04-24 15:00:00,2026,337,370,Brentford,Fulham,,,pre,False
+401878679,2027-04-24 15:00:00,2026,362,388,Aston Villa,Coventry City,,,pre,False
+401878680,2027-04-24 15:00:00,2026,349,359,AFC Bournemouth,Arsenal,,,pre,False
+401879093,2027-04-24 15:00:00,2026,368,331,Everton,Brighton & Hove Albion,,,pre,False
+401879084,2027-05-01 15:00:00,2026,373,357,Ipswich Town,Leeds United,,,pre,False
+401879083,2027-05-01 15:00:00,2026,382,337,Manchester City,Brentford,,,pre,False
+401878674,2027-05-01 15:00:00,2026,364,363,Liverpool,Chelsea,,,pre,False
+401878673,2027-05-01 15:00:00,2026,366,361,Sunderland,Newcastle United,,,pre,False
+401879085,2027-05-01 15:00:00,2026,306,349,Hull City,AFC Bournemouth,,,pre,False
+401878675,2027-05-01 15:00:00,2026,388,360,Coventry City,Manchester United,,,pre,False
+401879087,2027-05-01 15:00:00,2026,384,362,Crystal Palace,Aston Villa,,,pre,False
+401879088,2027-05-01 15:00:00,2026,331,393,Brighton & Hove Albion,Nottingham Forest,,,pre,False
+401878676,2027-05-01 15:00:00,2026,359,367,Arsenal,Tottenham Hotspur,,,pre,False
+401879086,2027-05-01 15:00:00,2026,370,368,Fulham,Everton,,,pre,False
+401878666,2027-05-08 15:00:00,2026,367,363,Tottenham Hotspur,Chelsea,,,pre,False
+401878667,2027-05-08 15:00:00,2026,393,384,Nottingham Forest,Crystal Palace,,,pre,False
+401879080,2027-05-08 15:00:00,2026,361,388,Newcastle United,Coventry City,,,pre,False
+401878668,2027-05-08 15:00:00,2026,382,364,Manchester City,Liverpool,,,pre,False
+401879081,2027-05-08 15:00:00,2026,357,359,Leeds United,Arsenal,,,pre,False
+401878670,2027-05-08 15:00:00,2026,368,306,Everton,Hull City,,,pre,False
+401878671,2027-05-08 15:00:00,2026,331,366,Brighton & Hove Albion,Sunderland,,,pre,False
+401879082,2027-05-08 15:00:00,2026,337,362,Brentford,Aston Villa,,,pre,False
+401878672,2027-05-08 15:00:00,2026,349,360,AFC Bournemouth,Manchester United,,,pre,False
+401878669,2027-05-08 15:00:00,2026,370,373,Fulham,Ipswich Town,,,pre,False
+401879073,2027-05-15 15:00:00,2026,366,349,Sunderland,AFC Bournemouth,,,pre,False
+401879074,2027-05-15 15:00:00,2026,360,357,Manchester United,Leeds United,,,pre,False
+401878663,2027-05-15 15:00:00,2026,364,337,Liverpool,Brentford,,,pre,False
+401879075,2027-05-15 15:00:00,2026,373,382,Ipswich Town,Manchester City,,,pre,False
+401879076,2027-05-15 15:00:00,2026,306,370,Hull City,Fulham,,,pre,False
+401879077,2027-05-15 15:00:00,2026,388,367,Coventry City,Tottenham Hotspur,,,pre,False
+401879078,2027-05-15 15:00:00,2026,363,368,Chelsea,Everton,,,pre,False
+401878665,2027-05-15 15:00:00,2026,362,361,Aston Villa,Newcastle United,,,pre,False
+401879079,2027-05-15 15:00:00,2026,359,393,Arsenal,Nottingham Forest,,,pre,False
+401878664,2027-05-15 15:00:00,2026,384,331,Crystal Palace,Brighton & Hove Albion,,,pre,False
+401879065,2027-05-23 15:00:00,2026,367,360,Tottenham Hotspur,Manchester United,,,pre,False
+401879072,2027-05-23 15:00:00,2026,349,363,AFC Bournemouth,Chelsea,,,pre,False
+401879071,2027-05-23 15:00:00,2026,337,306,Brentford,Hull City,,,pre,False
+401878662,2027-05-23 15:00:00,2026,331,364,Brighton & Hove Albion,Liverpool,,,pre,False
+401879070,2027-05-23 15:00:00,2026,368,359,Everton,Arsenal,,,pre,False
+401879069,2027-05-23 15:00:00,2026,370,388,Fulham,Coventry City,,,pre,False
+401879068,2027-05-23 15:00:00,2026,357,366,Leeds United,Sunderland,,,pre,False
+401879067,2027-05-23 15:00:00,2026,382,362,Manchester City,Aston Villa,,,pre,False
+401879066,2027-05-23 15:00:00,2026,361,384,Newcastle United,Crystal Palace,,,pre,False
+401878661,2027-05-23 15:00:00,2026,393,373,Nottingham Forest,Ipswich Town,,,pre,False
+401879060,2027-05-30 16:00:00,2026,373,368,Ipswich Town,Everton,,,pre,False
+401879061,2027-05-30 16:00:00,2026,306,361,Hull City,Newcastle United,,,pre,False
+401879059,2027-05-30 16:00:00,2026,364,349,Liverpool,AFC Bournemouth,,,pre,False
+401879062,2027-05-30 16:00:00,2026,384,357,Crystal Palace,Leeds United,,,pre,False
+401879058,2027-05-30 16:00:00,2026,360,370,Manchester United,Fulham,,,pre,False
+401879063,2027-05-30 16:00:00,2026,363,337,Chelsea,Brentford,,,pre,False
+401879064,2027-05-30 16:00:00,2026,362,367,Aston Villa,Tottenham Hotspur,,,pre,False
+401878660,2027-05-30 16:00:00,2026,359,331,Arsenal,Brighton & Hove Albion,,,pre,False
+401878659,2027-05-30 16:00:00,2026,388,393,Coventry City,Nottingham Forest,,,pre,False
+401878658,2027-05-30 16:00:00,2026,366,382,Sunderland,Manchester City,,,pre,False

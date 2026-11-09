@@ -279,8 +279,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 610007,2021-11-06 15:45:00,2021,6756,19,Godoy Cruz,Talleres de Córdoba,0.0,2.0,post
 609997,2021-11-06 18:00:00,2021,11,2635,Independiente,Arsenal Sarandí,3.0,0.0,post
 610004,2021-11-06 20:15:00,2021,9785,15,Atlético Tucumán,Racing Club,0.0,2.0,post
-610000,2021-11-07 15:45:00,2021,10158,11989,Sarmiento,Central Córdoba,1.0,3.0,post
 609998,2021-11-07 15:45:00,2021,9,235,Gimnasia La Plata,Banfield,0.0,1.0,post
+610000,2021-11-07 15:45:00,2021,10158,11989,Sarmiento,Central Córdoba,1.0,3.0,post
 610006,2021-11-07 18:00:00,2021,21,18,Vélez Sarsfield,San Lorenzo,2.0,1.0,post
 610002,2021-11-07 20:15:00,2021,16,10374,River Plate,Patronato,5.0,0.0,post
 610008,2021-11-08 16:45:00,2021,14,20,Newell's Old Boys,Unión de Santa Fe,1.0,0.0,post
@@ -291,16 +291,16 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 609983,2021-11-18 21:30:00,2021,235,9739,Banfield,Aldosivi,0.0,2.0,post
 609990,2021-11-19 17:00:00,2021,8,10,Estudiantes de La Plata,Huracán,4.0,1.0,post
 609988,2021-11-19 19:15:00,2021,18,9,San Lorenzo,Gimnasia La Plata,0.0,1.0,post
-609989,2021-11-19 21:30:00,2021,3,6756,Argentinos Juniors,Godoy Cruz,0.0,0.0,post
 609995,2021-11-19 21:30:00,2021,19,21,Talleres de Córdoba,Vélez Sarsfield,1.0,1.0,post
+609989,2021-11-19 21:30:00,2021,3,6756,Argentinos Juniors,Godoy Cruz,0.0,0.0,post
 609984,2021-11-20 17:00:00,2021,17,9785,Rosario Central,Atlético Tucumán,3.0,1.0,post
 609994,2021-11-20 19:15:00,2021,5,10158,Boca Juniors,Sarmiento,2.0,0.0,post
 609985,2021-11-20 21:30:00,2021,11989,11,Central Córdoba,Independiente,1.0,0.0,post
 609992,2021-11-21 17:00:00,2021,2635,14,Arsenal Sarandí,Newell's Old Boys,3.0,1.0,post
 609986,2021-11-21 19:15:00,2021,15,7,Racing Club,Colón de Santa Fe,1.0,2.0,post
 609993,2021-11-21 21:30:00,2021,7764,16,Platense,River Plate,0.0,1.0,post
-609976,2021-11-23 17:00:00,2021,10,10374,Huracán,Patronato,1.0,0.0,post
 609981,2021-11-23 17:00:00,2021,9,19,Gimnasia La Plata,Talleres de Córdoba,5.0,2.0,post
+609976,2021-11-23 17:00:00,2021,10,10374,Huracán,Patronato,1.0,0.0,post
 609980,2021-11-23 19:15:00,2021,9739,18,Aldosivi,San Lorenzo,2.0,0.0,post
 609975,2021-11-23 21:30:00,2021,6756,8,Godoy Cruz,Estudiantes de La Plata,1.0,3.0,post
 609970,2021-11-23 21:30:00,2021,21,3,Vélez Sarsfield,Argentinos Juniors,2.0,0.0,post
@@ -309,8 +309,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 609974,2021-11-24 19:15:00,2021,9785,8950,Atlético Tucumán,Defensa y Justicia,0.0,4.0,post
 609972,2021-11-24 21:30:00,2021,11,5,Independiente,Boca Juniors,1.0,0.0,post
 609982,2021-11-25 17:00:00,2021,2635,20,Arsenal Sarandí,Unión de Santa Fe,0.0,1.0,post
-609977,2021-11-25 19:15:00,2021,12,7764,Lanús,Platense,3.0,3.0,post
 609979,2021-11-25 19:15:00,2021,7,17,Colón de Santa Fe,Rosario Central,1.0,4.0,post
+609977,2021-11-25 19:15:00,2021,12,7764,Lanús,Platense,3.0,3.0,post
 609978,2021-11-25 21:30:00,2021,16,15,River Plate,Racing Club,4.0,0.0,post
 609957,2021-11-27 17:00:00,2021,19,9739,Talleres de Córdoba,Aldosivi,2.0,0.0,post
 609963,2021-11-27 19:15:00,2021,10374,6756,Patronato,Godoy Cruz,0.0,3.0,post
@@ -367,10 +367,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635653,2022-06-06 21:30:00,2022,3,9739,Argentinos Juniors,Aldosivi,2.0,1.0,post
 635279,2022-06-09 20:00:00,2022,14,18,Newell's Old Boys,San Lorenzo,0.0,0.0,post
 635284,2022-06-10 16:30:00,2022,9,10374,Gimnasia La Plata,Patronato,2.0,0.0,post
-635280,2022-06-10 19:00:00,2022,12,8950,Lanús,Defensa y Justicia,1.0,1.0,post
 635288,2022-06-10 19:00:00,2022,9739,8,Aldosivi,Estudiantes de La Plata,0.0,1.0,post
-635282,2022-06-10 21:30:00,2022,10,17,Huracán,Rosario Central,2.0,0.0,post
+635280,2022-06-10 19:00:00,2022,12,8950,Lanús,Defensa y Justicia,1.0,1.0,post
 635281,2022-06-10 21:30:00,2022,11,19,Independiente,Talleres de Córdoba,1.0,0.0,post
+635282,2022-06-10 21:30:00,2022,10,17,Huracán,Rosario Central,2.0,0.0,post
 635287,2022-06-11 15:30:00,2022,2635,235,Arsenal Sarandí,Banfield,0.0,0.0,post
 635276,2022-06-11 15:30:00,2022,7767,10060,Tigre,Barracas Central,1.0,1.0,post
 635277,2022-06-11 18:00:00,2022,10158,3,Sarmiento,Argentinos Juniors,1.0,0.0,post
@@ -385,12 +385,12 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635299,2022-06-14 21:30:00,2022,8950,10,Defensa y Justicia,Huracán,1.0,1.0,post
 635298,2022-06-14 21:30:00,2022,8,10158,Estudiantes de La Plata,Sarmiento,2.0,1.0,post
 635302,2022-06-15 14:00:00,2022,10060,20,Barracas Central,Unión de Santa Fe,1.0,2.0,post
-635303,2022-06-15 16:30:00,2022,235,11989,Banfield,Central Córdoba,2.0,1.0,post
 635291,2022-06-15 16:30:00,2022,9785,12,Atlético Tucumán,Lanús,2.0,1.0,post
+635303,2022-06-15 16:30:00,2022,235,11989,Banfield,Central Córdoba,2.0,1.0,post
 635300,2022-06-15 19:00:00,2022,7,16,Colón de Santa Fe,River Plate,1.0,0.0,post
 635301,2022-06-15 21:30:00,2022,5,7767,Boca Juniors,Tigre,5.0,3.0,post
-635290,2022-06-16 19:00:00,2022,3,11,Argentinos Juniors,Independiente,2.0,1.0,post
 635294,2022-06-16 19:00:00,2022,17,6756,Rosario Central,Godoy Cruz,1.0,0.0,post
+635290,2022-06-16 19:00:00,2022,3,11,Argentinos Juniors,Independiente,2.0,1.0,post
 635296,2022-06-16 21:30:00,2022,7764,9,Platense,Gimnasia La Plata,1.0,1.0,post
 635295,2022-06-16 21:30:00,2022,15,21,Racing Club,Vélez Sarsfield,2.0,0.0,post
 635316,2022-06-18 18:00:00,2022,2635,19,Arsenal Sarandí,Talleres de Córdoba,1.0,1.0,post
@@ -407,8 +407,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635308,2022-06-20 21:30:00,2022,14,3,Newell's Old Boys,Argentinos Juniors,1.0,0.0,post
 635304,2022-06-21 19:00:00,2022,9739,7764,Aldosivi,Platense,0.0,0.0,post
 635314,2022-06-21 21:30:00,2022,11989,18,Central Córdoba,San Lorenzo,0.0,2.0,post
-635321,2022-06-24 19:00:00,2022,17,9,Rosario Central,Gimnasia La Plata,0.0,1.0,post
 635326,2022-06-24 19:00:00,2022,235,10060,Banfield,Barracas Central,1.0,1.0,post
+635321,2022-06-24 19:00:00,2022,17,9,Rosario Central,Gimnasia La Plata,0.0,1.0,post
 635327,2022-06-24 21:30:00,2022,5,20,Boca Juniors,Unión de Santa Fe,1.0,2.0,post
 635329,2022-06-25 15:30:00,2022,8950,21,Defensa y Justicia,Vélez Sarsfield,1.0,1.0,post
 635323,2022-06-25 15:30:00,2022,19,11989,Talleres de Córdoba,Central Córdoba,0.0,2.0,post
@@ -454,8 +454,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635360,2022-07-15 21:30:00,2022,9739,9785,Aldosivi,Atlético Tucumán,0.0,1.0,post
 635361,2022-07-15 21:30:00,2022,2635,7764,Arsenal Sarandí,Platense,1.0,1.0,post
 635372,2022-07-16 13:00:00,2022,10060,3,Barracas Central,Argentinos Juniors,1.0,3.0,post
-635369,2022-07-16 15:30:00,2022,9,7,Gimnasia La Plata,Colón de Santa Fe,0.0,0.0,post
 635367,2022-07-16 15:30:00,2022,11,17,Independiente,Rosario Central,0.0,0.0,post
+635369,2022-07-16 15:30:00,2022,9,7,Gimnasia La Plata,Colón de Santa Fe,0.0,0.0,post
 635366,2022-07-16 18:00:00,2022,14,15,Newell's Old Boys,Racing Club,0.0,0.0,post
 635371,2022-07-16 20:30:00,2022,5,19,Boca Juniors,Talleres de Córdoba,1.0,0.0,post
 635368,2022-07-17 13:00:00,2022,6756,12,Godoy Cruz,Lanús,2.0,1.0,post
@@ -465,8 +465,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635362,2022-07-17 20:30:00,2022,21,16,Vélez Sarsfield,River Plate,2.0,2.0,post
 635385,2022-07-19 16:30:00,2022,7,9739,Colón de Santa Fe,Aldosivi,1.0,1.0,post
 635379,2022-07-19 17:00:00,2022,7764,11989,Platense,Central Córdoba,2.0,0.0,post
-635378,2022-07-19 19:00:00,2022,15,2635,Racing Club,Arsenal Sarandí,1.0,1.0,post
 635386,2022-07-19 19:00:00,2022,9785,10158,Atlético Tucumán,Sarmiento,1.0,0.0,post
+635378,2022-07-19 19:00:00,2022,15,2635,Racing Club,Arsenal Sarandí,1.0,1.0,post
 635374,2022-07-19 21:30:00,2022,3,5,Argentinos Juniors,Boca Juniors,2.0,0.0,post
 635375,2022-07-20 14:00:00,2022,18,20,San Lorenzo,Unión de Santa Fe,2.0,2.0,post
 635387,2022-07-20 16:30:00,2022,10374,7767,Patronato,Tigre,1.0,0.0,post
@@ -501,12 +501,12 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635412,2022-07-31 15:30:00,2022,15,7767,Racing Club,Tigre,3.0,3.0,post
 635410,2022-07-31 18:00:00,2022,10374,5,Patronato,Boca Juniors,3.0,0.0,post
 635413,2022-07-31 20:30:00,2022,16,10158,River Plate,Sarmiento,1.0,2.0,post
-635414,2022-08-01 19:00:00,2022,17,11989,Rosario Central,Central Córdoba,0.0,3.0,post
 635405,2022-08-01 19:00:00,2022,8950,2635,Defensa y Justicia,Arsenal Sarandí,0.0,0.0,post
+635414,2022-08-01 19:00:00,2022,17,11989,Rosario Central,Central Córdoba,0.0,3.0,post
 635404,2022-08-01 21:30:00,2022,7,11,Colón de Santa Fe,Independiente,0.0,3.0,post
 635425,2022-08-05 19:00:00,2022,9,6756,Gimnasia La Plata,Godoy Cruz,2.0,0.0,post
-635429,2022-08-05 21:30:00,2022,235,10374,Banfield,Patronato,0.0,0.0,post
 635421,2022-08-05 21:30:00,2022,10158,12,Sarmiento,Lanús,2.0,1.0,post
+635429,2022-08-05 21:30:00,2022,235,10374,Banfield,Patronato,0.0,0.0,post
 635417,2022-08-06 13:00:00,2022,2635,9785,Arsenal Sarandí,Atlético Tucumán,3.0,1.0,post
 635428,2022-08-06 15:00:00,2022,10060,15,Barracas Central,Racing Club,0.0,0.0,post
 635420,2022-08-06 18:00:00,2022,19,3,Talleres de Córdoba,Argentinos Juniors,2.0,0.0,post
@@ -524,8 +524,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635437,2022-08-12 19:00:00,2022,10,10158,Huracán,Sarmiento,4.0,1.0,post
 635434,2022-08-12 19:00:00,2022,7764,235,Platense,Banfield,3.0,1.0,post
 635435,2022-08-12 21:30:00,2022,10374,18,Patronato,San Lorenzo,3.0,2.0,post
-635440,2022-08-13 15:30:00,2022,8950,7767,Defensa y Justicia,Tigre,0.0,0.0,post
 635431,2022-08-13 15:30:00,2022,17,10060,Rosario Central,Barracas Central,3.0,1.0,post
+635440,2022-08-13 15:30:00,2022,8950,7767,Defensa y Justicia,Tigre,0.0,0.0,post
 635443,2022-08-13 18:00:00,2022,12,11,Lanús,Independiente,1.0,1.0,post
 635432,2022-08-13 20:30:00,2022,16,14,River Plate,Newell's Old Boys,4.0,1.0,post
 635436,2022-08-14 15:30:00,2022,21,9,Vélez Sarsfield,Gimnasia La Plata,1.0,1.0,post
@@ -542,10 +542,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635449,2022-08-17 21:30:00,2022,5,17,Boca Juniors,Rosario Central,0.0,0.0,post
 635448,2022-08-18 14:30:00,2022,10060,8950,Barracas Central,Defensa y Justicia,3.0,1.0,post
 635444,2022-08-18 16:30:00,2022,9739,21,Aldosivi,Vélez Sarsfield,3.0,2.0,post
-635457,2022-08-18 19:00:00,2022,20,9,Unión de Santa Fe,Gimnasia La Plata,0.0,2.0,post
 635455,2022-08-18 19:00:00,2022,19,10374,Talleres de Córdoba,Patronato,3.0,3.0,post
-635445,2022-08-18 21:30:00,2022,3,8,Argentinos Juniors,Estudiantes de La Plata,1.0,0.0,post
+635457,2022-08-18 19:00:00,2022,20,9,Unión de Santa Fe,Gimnasia La Plata,0.0,2.0,post
 635447,2022-08-18 21:30:00,2022,235,15,Banfield,Racing Club,0.0,2.0,post
+635445,2022-08-18 21:30:00,2022,3,8,Argentinos Juniors,Estudiantes de La Plata,1.0,0.0,post
 635459,2022-08-20 18:00:00,2022,7,7767,Colón de Santa Fe,Tigre,2.0,1.0,post
 635467,2022-08-20 20:30:00,2022,10,14,Huracán,Newell's Old Boys,1.0,0.0,post
 635466,2022-08-21 13:00:00,2022,12,2635,Lanús,Arsenal Sarandí,1.0,0.0,post
@@ -563,8 +563,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635480,2022-08-26 18:00:00,2022,11989,12,Central Córdoba,Lanús,2.0,2.0,post
 635484,2022-08-26 21:00:00,2022,2635,10,Arsenal Sarandí,Huracán,1.0,1.0,post
 635476,2022-08-27 13:00:00,2022,18,17,San Lorenzo,Rosario Central,1.0,1.0,post
-635483,2022-08-27 15:30:00,2022,235,8950,Banfield,Defensa y Justicia,1.0,2.0,post
 635477,2022-08-27 15:30:00,2022,14,6756,Newell's Old Boys,Godoy Cruz,1.0,2.0,post
+635483,2022-08-27 15:30:00,2022,235,8950,Banfield,Defensa y Justicia,1.0,2.0,post
 635472,2022-08-27 18:00:00,2022,3,7764,Argentinos Juniors,Platense,0.0,2.0,post
 635474,2022-08-27 18:00:00,2022,19,15,Talleres de Córdoba,Racing Club,1.0,1.0,post
 635473,2022-08-27 20:30:00,2022,7767,16,Tigre,River Plate,1.0,1.0,post
@@ -593,8 +593,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635513,2022-09-08 20:30:00,2022,20,10158,Unión de Santa Fe,Sarmiento,1.0,0.0,post
 635509,2022-09-09 15:30:00,2022,10060,12,Barracas Central,Lanús,2.0,0.0,post
 635503,2022-09-09 18:00:00,2022,10374,7764,Patronato,Platense,1.0,0.0,post
-635506,2022-09-09 20:30:00,2022,8,15,Estudiantes de La Plata,Racing Club,1.0,0.0,post
 635500,2022-09-09 20:30:00,2022,7767,10,Tigre,Huracán,1.0,1.0,post
+635506,2022-09-09 20:30:00,2022,8,15,Estudiantes de La Plata,Racing Club,1.0,0.0,post
 635507,2022-09-10 15:30:00,2022,11989,6756,Central Córdoba,Godoy Cruz,3.0,0.0,post
 635502,2022-09-10 18:00:00,2022,18,9785,San Lorenzo,Atlético Tucumán,1.0,1.0,post
 635510,2022-09-10 20:30:00,2022,235,7,Banfield,Colón de Santa Fe,2.0,1.0,post
@@ -603,8 +603,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635508,2022-09-11 17:00:00,2022,5,16,Boca Juniors,River Plate,1.0,0.0,post
 635501,2022-09-11 20:00:00,2022,19,8950,Talleres de Córdoba,Defensa y Justicia,1.0,0.0,post
 635517,2022-09-12 17:00:00,2022,10158,11,Sarmiento,Independiente,1.0,2.0,post
-635524,2022-09-13 19:00:00,2022,6756,7767,Godoy Cruz,Tigre,1.0,1.0,post
 635523,2022-09-13 19:00:00,2022,10,10060,Huracán,Barracas Central,1.0,1.0,post
+635524,2022-09-13 19:00:00,2022,6756,7767,Godoy Cruz,Tigre,1.0,1.0,post
 635521,2022-09-13 21:30:00,2022,7764,20,Platense,Unión de Santa Fe,1.0,0.0,post
 635520,2022-09-13 21:30:00,2022,15,10374,Racing Club,Patronato,1.0,0.0,post
 635514,2022-09-14 14:00:00,2022,9739,14,Aldosivi,Newell's Old Boys,1.0,2.0,post
@@ -613,24 +613,24 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635522,2022-09-14 21:30:00,2022,12,5,Lanús,Boca Juniors,0.0,1.0,post
 635526,2022-09-15 19:00:00,2022,8950,3,Defensa y Justicia,Argentinos Juniors,2.0,1.0,post
 635518,2022-09-15 19:00:00,2022,17,8,Rosario Central,Estudiantes de La Plata,1.0,1.0,post
-635515,2022-09-15 21:30:00,2022,9785,19,Atlético Tucumán,Talleres de Córdoba,1.0,1.0,post
 635525,2022-09-15 21:30:00,2022,9,2635,Gimnasia La Plata,Arsenal Sarandí,2.0,0.0,post
+635515,2022-09-15 21:30:00,2022,9785,19,Atlético Tucumán,Talleres de Córdoba,1.0,1.0,post
 635538,2022-09-17 15:30:00,2022,10060,6756,Barracas Central,Godoy Cruz,3.0,1.0,post
 635541,2022-09-17 20:30:00,2022,14,10158,Newell's Old Boys,Sarmiento,0.0,1.0,post
 635529,2022-09-18 13:00:00,2022,7767,21,Tigre,Vélez Sarsfield,2.0,0.0,post
 635531,2022-09-18 15:30:00,2022,18,16,San Lorenzo,River Plate,0.0,1.0,post
 635539,2022-09-18 18:00:00,2022,235,12,Banfield,Lanús,1.0,2.0,post
-635530,2022-09-18 20:30:00,2022,19,7,Talleres de Córdoba,Colón de Santa Fe,2.0,0.0,post
 635532,2022-09-18 20:30:00,2022,7764,15,Platense,Racing Club,0.0,1.0,post
+635530,2022-09-18 20:30:00,2022,19,7,Talleres de Córdoba,Colón de Santa Fe,2.0,0.0,post
 635540,2022-09-19 16:30:00,2022,2635,9739,Arsenal Sarandí,Aldosivi,3.0,0.0,post
-635537,2022-09-19 19:00:00,2022,5,10,Boca Juniors,Huracán,0.0,0.0,post
 635534,2022-09-19 19:00:00,2022,20,11,Unión de Santa Fe,Independiente,0.0,1.0,post
+635537,2022-09-19 19:00:00,2022,5,10,Boca Juniors,Huracán,0.0,0.0,post
 635528,2022-09-19 21:30:00,2022,3,9785,Argentinos Juniors,Atlético Tucumán,1.0,2.0,post
 635535,2022-09-19 21:30:00,2022,8,8950,Estudiantes de La Plata,Defensa y Justicia,1.0,2.0,post
 635533,2022-09-20 18:00:00,2022,10374,17,Patronato,Rosario Central,0.0,0.0,post
 635536,2022-09-20 20:30:00,2022,11989,9,Central Córdoba,Gimnasia La Plata,1.0,0.0,post
-635554,2022-09-23 19:00:00,2022,10,235,Huracán,Banfield,3.0,1.0,post
 635553,2022-09-23 19:00:00,2022,6756,5,Godoy Cruz,Boca Juniors,0.0,1.0,post
+635554,2022-09-23 19:00:00,2022,10,235,Huracán,Banfield,3.0,1.0,post
 635551,2022-09-24 13:00:00,2022,8950,10374,Defensa y Justicia,Patronato,2.0,1.0,post
 635546,2022-09-24 13:00:00,2022,10158,2635,Sarmiento,Arsenal Sarandí,2.0,0.0,post
 635542,2022-09-24 15:30:00,2022,12,18,Lanús,San Lorenzo,2.0,0.0,post
@@ -639,8 +639,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635552,2022-09-25 15:30:00,2022,9,7767,Gimnasia La Plata,Tigre,0.0,1.0,post
 635545,2022-09-25 15:30:00,2022,17,7764,Rosario Central,Platense,1.0,1.0,post
 635543,2022-09-25 18:00:00,2022,15,20,Racing Club,Unión de Santa Fe,2.0,1.0,post
-635547,2022-09-25 20:30:00,2022,21,10060,Vélez Sarsfield,Barracas Central,1.0,0.0,post
 635549,2022-09-25 20:30:00,2022,9785,8,Atlético Tucumán,Estudiantes de La Plata,3.0,1.0,post
+635547,2022-09-25 20:30:00,2022,21,10060,Vélez Sarsfield,Barracas Central,1.0,0.0,post
 635548,2022-09-26 17:00:00,2022,9739,11989,Aldosivi,Central Córdoba,0.0,3.0,post
 635550,2022-09-26 17:00:00,2022,7,3,Colón de Santa Fe,Argentinos Juniors,0.0,4.0,post
 635565,2022-09-29 15:30:00,2022,10060,9,Barracas Central,Gimnasia La Plata,1.0,1.0,post
@@ -648,8 +648,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635556,2022-09-30 19:00:00,2022,7767,9739,Tigre,Aldosivi,3.0,0.0,post
 635559,2022-09-30 21:30:00,2022,15,17,Racing Club,Rosario Central,4.0,3.0,post
 635562,2022-09-30 21:30:00,2022,20,14,Unión de Santa Fe,Newell's Old Boys,0.0,1.0,post
-635560,2022-10-01 13:00:00,2022,7764,8950,Platense,Defensa y Justicia,0.0,0.0,post
 635563,2022-10-01 13:00:00,2022,11989,10158,Central Córdoba,Sarmiento,0.0,0.0,post
+635560,2022-10-01 13:00:00,2022,7764,8950,Platense,Defensa y Justicia,0.0,0.0,post
 635558,2022-10-01 15:30:00,2022,18,10,San Lorenzo,Huracán,1.0,0.0,post
 635566,2022-10-01 18:00:00,2022,235,6756,Banfield,Godoy Cruz,1.0,1.0,post
 635567,2022-10-01 20:30:00,2022,2635,11,Arsenal Sarandí,Independiente,0.0,1.0,post
@@ -659,8 +659,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635568,2022-10-02 20:30:00,2022,3,16,Argentinos Juniors,River Plate,0.0,3.0,post
 635571,2022-10-03 20:00:00,2022,17,20,Rosario Central,Unión de Santa Fe,1.0,1.0,post
 635582,2022-10-04 14:00:00,2022,9739,10060,Aldosivi,Barracas Central,2.0,0.0,post
-635573,2022-10-04 16:30:00,2022,14,2635,Newell's Old Boys,Arsenal Sarandí,0.0,0.0,post
 635577,2022-10-04 16:30:00,2022,6756,18,Godoy Cruz,San Lorenzo,0.0,0.0,post
+635573,2022-10-04 16:30:00,2022,14,2635,Newell's Old Boys,Arsenal Sarandí,0.0,0.0,post
 635570,2022-10-04 19:00:00,2022,10158,7767,Sarmiento,Tigre,2.0,2.0,post
 635583,2022-10-04 21:30:00,2022,21,235,Vélez Sarsfield,Banfield,1.0,0.0,post
 635580,2022-10-05 16:30:00,2022,7,10374,Colón de Santa Fe,Patronato,1.0,0.0,post
@@ -679,10 +679,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635588,2022-10-09 15:30:00,2022,19,6756,Talleres de Córdoba,Godoy Cruz,3.0,1.0,post
 635596,2022-10-09 18:00:00,2022,5,9739,Boca Juniors,Aldosivi,2.0,1.0,post
 635593,2022-10-09 20:30:00,2022,10374,16,Patronato,River Plate,0.0,1.0,post
-635590,2022-10-10 16:30:00,2022,17,8950,Rosario Central,Defensa y Justicia,0.0,0.0,post
 635584,2022-10-10 16:30:00,2022,3,10,Argentinos Juniors,Huracán,1.0,1.0,post
-635594,2022-10-10 19:00:00,2022,8,12,Estudiantes de La Plata,Lanús,3.0,1.0,post
+635590,2022-10-10 16:30:00,2022,17,8950,Rosario Central,Defensa y Justicia,0.0,0.0,post
 635591,2022-10-10 19:00:00,2022,15,9785,Racing Club,Atlético Tucumán,2.0,0.0,post
+635594,2022-10-10 19:00:00,2022,8,12,Estudiantes de La Plata,Lanús,3.0,1.0,post
 635595,2022-10-10 21:30:00,2022,11989,14,Central Córdoba,Newell's Old Boys,0.0,3.0,post
 635598,2022-10-12 14:00:00,2022,9739,235,Aldosivi,Banfield,0.0,1.0,post
 635606,2022-10-12 16:30:00,2022,9,18,Gimnasia La Plata,San Lorenzo,0.0,1.0,post
@@ -690,8 +690,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635603,2022-10-12 19:00:00,2022,11,10060,Independiente,Barracas Central,2.0,2.0,post
 635600,2022-10-12 21:30:00,2022,16,7764,River Plate,Platense,2.0,1.0,post
 635604,2022-10-13 16:30:00,2022,21,19,Vélez Sarsfield,Talleres de Córdoba,2.0,1.0,post
-635605,2022-10-13 19:00:00,2022,6756,3,Godoy Cruz,Argentinos Juniors,0.0,0.0,post
 635602,2022-10-13 19:00:00,2022,12,10374,Lanús,Patronato,0.0,1.0,post
+635605,2022-10-13 19:00:00,2022,6756,3,Godoy Cruz,Argentinos Juniors,0.0,0.0,post
 635609,2022-10-13 21:30:00,2022,9785,17,Atlético Tucumán,Rosario Central,1.0,1.0,post
 635601,2022-10-13 21:30:00,2022,14,7767,Newell's Old Boys,Tigre,0.0,2.0,post
 635608,2022-10-14 16:30:00,2022,7,15,Colón de Santa Fe,Racing Club,0.0,2.0,post
@@ -706,8 +706,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635619,2022-10-17 14:00:00,2022,2635,10060,Arsenal Sarandí,Barracas Central,1.0,2.0,post
 635623,2022-10-17 15:00:00,2022,9,3,Gimnasia La Plata,Argentinos Juniors,0.0,0.0,post
 635617,2022-10-17 16:30:00,2022,21,8,Vélez Sarsfield,Estudiantes de La Plata,4.0,0.0,post
-635616,2022-10-17 21:30:00,2022,10158,18,Sarmiento,San Lorenzo,2.0,4.0,post
 635620,2022-10-17 21:30:00,2022,9785,20,Atlético Tucumán,Unión de Santa Fe,1.0,1.0,post
+635616,2022-10-17 21:30:00,2022,10158,18,Sarmiento,San Lorenzo,2.0,4.0,post
 635622,2022-10-18 16:30:00,2022,7,8950,Colón de Santa Fe,Defensa y Justicia,1.0,2.0,post
 635613,2022-10-18 19:00:00,2022,12,15,Lanús,Racing Club,0.0,1.0,post
 635621,2022-10-18 21:30:00,2022,11989,7767,Central Córdoba,Tigre,1.0,2.0,post
@@ -715,15 +715,15 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 635408,2022-10-19 21:30:00,2022,19,20,Talleres de Córdoba,Unión de Santa Fe,2.0,2.0,post
 635578,2022-10-20 15:00:00,2022,9,5,Gimnasia La Plata,Boca Juniors,1.0,2.0,post
 635632,2022-10-22 14:00:00,2022,20,11989,Unión de Santa Fe,Central Córdoba,1.0,4.0,post
+635630,2022-10-22 16:30:00,2022,8950,9785,Defensa y Justicia,Atlético Tucumán,3.0,1.0,post
 635631,2022-10-22 16:30:00,2022,8,6756,Estudiantes de La Plata,Godoy Cruz,2.0,0.0,post
 635636,2022-10-22 16:30:00,2022,18,9739,San Lorenzo,Aldosivi,3.0,0.0,post
-635630,2022-10-22 16:30:00,2022,8950,9785,Defensa y Justicia,Atlético Tucumán,3.0,1.0,post
 635626,2022-10-22 19:30:00,2022,3,21,Argentinos Juniors,Vélez Sarsfield,2.0,0.0,post
 635627,2022-10-23 12:00:00,2022,235,10158,Banfield,Sarmiento,0.0,0.0,post
 635637,2022-10-23 14:30:00,2022,19,9,Talleres de Córdoba,Gimnasia La Plata,2.0,1.0,post
-635629,2022-10-23 17:00:00,2022,5,11,Boca Juniors,Independiente,2.0,2.0,post
-635639,2022-10-23 17:00:00,2022,10374,10,Patronato,Huracán,3.0,2.0,post
 635634,2022-10-23 17:00:00,2022,15,16,Racing Club,River Plate,1.0,2.0,post
+635639,2022-10-23 17:00:00,2022,10374,10,Patronato,Huracán,3.0,2.0,post
+635629,2022-10-23 17:00:00,2022,5,11,Boca Juniors,Independiente,2.0,2.0,post
 635628,2022-10-24 15:30:00,2022,10060,14,Barracas Central,Newell's Old Boys,1.0,1.0,post
 635635,2022-10-24 16:30:00,2022,17,7,Rosario Central,Colón de Santa Fe,1.0,1.0,post
 635638,2022-10-24 20:30:00,2022,7767,2635,Tigre,Arsenal Sarandí,1.0,4.0,post
@@ -732,17 +732,17 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656227,2023-01-27 19:15:00,2023,17,3,Rosario Central,Argentinos Juniors,1.0,0.0,post
 656223,2023-01-27 21:30:00,2023,8950,10,Defensa y Justicia,Huracán,2.0,4.0,post
 656228,2023-01-28 17:00:00,2023,18,2635,San Lorenzo,Arsenal Sarandí,1.0,0.0,post
-656224,2023-01-28 19:15:00,2023,8,7767,Estudiantes de La Plata,Tigre,1.0,2.0,post
 656229,2023-01-28 19:15:00,2023,19,11,Talleres de Córdoba,Independiente,0.0,1.0,post
+656224,2023-01-28 19:15:00,2023,8,7767,Estudiantes de La Plata,Tigre,1.0,2.0,post
 656221,2023-01-28 21:30:00,2023,11989,16,Central Córdoba,River Plate,0.0,2.0,post
 656225,2023-01-29 17:00:00,2023,7764,14,Platense,Newell's Old Boys,2.0,2.0,post
-656226,2023-01-29 19:15:00,2023,15,4,Racing Club,Belgrano,0.0,0.0,post
-657760,2023-01-29 19:15:00,2023,2975,10158,Instituto,Sarmiento,0.0,0.0,post
 656222,2023-01-29 19:15:00,2023,7,12,Colón de Santa Fe,Lanús,1.0,2.0,post
+657760,2023-01-29 19:15:00,2023,2975,10158,Instituto,Sarmiento,0.0,0.0,post
+656226,2023-01-29 19:15:00,2023,15,4,Racing Club,Belgrano,0.0,0.0,post
 656220,2023-01-29 21:30:00,2023,5,9785,Boca Juniors,Atlético Tucumán,1.0,0.0,post
 656219,2023-01-30 17:00:00,2023,10060,6756,Barracas Central,Godoy Cruz,0.0,1.0,post
-656218,2023-01-30 20:00:00,2023,235,20,Banfield,Unión de Santa Fe,0.0,0.0,post
 656230,2023-01-30 20:00:00,2023,21,9,Vélez Sarsfield,Gimnasia La Plata,3.0,1.0,post
+656218,2023-01-30 20:00:00,2023,235,20,Banfield,Unión de Santa Fe,0.0,0.0,post
 656241,2023-02-03 20:00:00,2023,14,21,Newell's Old Boys,Vélez Sarsfield,1.0,0.0,post
 656243,2023-02-03 20:00:00,2023,7767,17,Tigre,Rosario Central,2.0,2.0,post
 656232,2023-02-04 17:00:00,2023,2635,8,Arsenal Sarandí,Estudiantes de La Plata,1.0,1.0,post
@@ -757,8 +757,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656244,2023-02-05 21:30:00,2023,20,2975,Unión de Santa Fe,Instituto,0.0,2.0,post
 656236,2023-02-06 18:00:00,2023,9,8950,Gimnasia La Plata,Defensa y Justicia,0.0,2.0,post
 656238,2023-02-06 21:30:00,2023,10,235,Huracán,Banfield,3.0,2.0,post
-656248,2023-02-10 21:30:00,2023,7,10158,Colón de Santa Fe,Sarmiento,0.0,2.0,post
 656247,2023-02-10 21:30:00,2023,11989,4,Central Córdoba,Belgrano,0.0,1.0,post
+656248,2023-02-10 21:30:00,2023,7,10158,Colón de Santa Fe,Sarmiento,0.0,2.0,post
 656249,2023-02-11 17:00:00,2023,8950,14,Defensa y Justicia,Newell's Old Boys,1.0,0.0,post
 656255,2023-02-11 17:00:00,2023,18,6756,San Lorenzo,Godoy Cruz,1.0,0.0,post
 656251,2023-02-11 19:15:00,2023,7764,9785,Platense,Atlético Tucumán,1.0,1.0,post
@@ -767,8 +767,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656245,2023-02-12 17:00:00,2023,235,9,Banfield,Gimnasia La Plata,0.0,0.0,post
 656254,2023-02-12 17:00:00,2023,17,2635,Rosario Central,Arsenal Sarandí,2.0,1.0,post
 656253,2023-02-12 19:15:00,2023,16,3,River Plate,Argentinos Juniors,2.0,1.0,post
-656252,2023-02-12 21:30:00,2023,15,7767,Racing Club,Tigre,2.0,2.0,post
 656256,2023-02-12 21:30:00,2023,2975,10,Instituto,Huracán,0.0,0.0,post
+656252,2023-02-12 21:30:00,2023,15,7767,Racing Club,Tigre,2.0,2.0,post
 656246,2023-02-13 17:00:00,2023,10060,20,Barracas Central,Unión de Santa Fe,1.0,1.0,post
 656250,2023-02-13 20:00:00,2023,8,12,Estudiantes de La Plata,Lanús,0.0,2.0,post
 656263,2023-02-17 18:00:00,2023,9,2975,Gimnasia La Plata,Instituto,2.0,0.0,post
@@ -776,8 +776,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656265,2023-02-17 21:30:00,2023,10,10060,Huracán,Barracas Central,2.0,0.0,post
 656267,2023-02-18 17:00:00,2023,12,17,Lanús,Rosario Central,3.0,0.0,post
 656271,2023-02-18 18:00:00,2023,7767,16,Tigre,River Plate,0.0,1.0,post
-656264,2023-02-18 19:15:00,2023,6756,8,Godoy Cruz,Estudiantes de La Plata,0.0,1.0,post
 656259,2023-02-18 19:15:00,2023,3,4,Argentinos Juniors,Belgrano,3.0,0.0,post
+656264,2023-02-18 19:15:00,2023,6756,8,Godoy Cruz,Estudiantes de La Plata,0.0,1.0,post
 656268,2023-02-18 21:00:00,2023,14,235,Newell's Old Boys,Banfield,2.0,0.0,post
 656272,2023-02-19 17:00:00,2023,20,7,Unión de Santa Fe,Colón de Santa Fe,1.0,1.0,post
 656262,2023-02-19 19:15:00,2023,5,7764,Boca Juniors,Platense,3.0,1.0,post
@@ -785,8 +785,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656270,2023-02-19 21:30:00,2023,19,11989,Talleres de Córdoba,Central Córdoba,2.0,0.0,post
 656269,2023-02-20 19:15:00,2023,10158,18,Sarmiento,San Lorenzo,0.0,1.0,post
 656261,2023-02-20 21:30:00,2023,9785,21,Atlético Tucumán,Vélez Sarsfield,1.0,1.0,post
-656283,2023-02-24 21:00:00,2023,17,6756,Rosario Central,Godoy Cruz,1.0,0.0,post
 656275,2023-02-24 21:00:00,2023,4,7767,Belgrano,Tigre,0.0,2.0,post
+656283,2023-02-24 21:00:00,2023,17,6756,Rosario Central,Godoy Cruz,1.0,0.0,post
 656284,2023-02-25 17:00:00,2023,18,20,San Lorenzo,Unión de Santa Fe,1.0,0.0,post
 656286,2023-02-25 19:15:00,2023,8,10158,Estudiantes de La Plata,Sarmiento,1.0,1.0,post
 656279,2023-02-25 19:15:00,2023,7764,19,Platense,Talleres de Córdoba,2.0,4.0,post
@@ -799,8 +799,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656274,2023-02-27 17:00:00,2023,10060,9,Barracas Central,Gimnasia La Plata,1.0,0.0,post
 656281,2023-02-27 19:15:00,2023,15,12,Racing Club,Lanús,2.0,1.0,post
 656276,2023-02-27 21:30:00,2023,11989,3,Central Córdoba,Argentinos Juniors,1.0,0.0,post
-656297,2023-03-03 20:00:00,2023,10158,17,Sarmiento,Rosario Central,4.0,1.0,post
 656300,2023-03-03 20:00:00,2023,20,8,Unión de Santa Fe,Estudiantes de La Plata,2.0,0.0,post
+656297,2023-03-03 20:00:00,2023,10158,17,Sarmiento,Rosario Central,4.0,1.0,post
 656290,2023-03-04 17:00:00,2023,9,7,Gimnasia La Plata,Colón de Santa Fe,0.0,0.0,post
 656296,2023-03-04 17:00:00,2023,7764,11989,Platense,Central Córdoba,1.0,1.0,post
 656294,2023-03-04 19:15:00,2023,12,16,Lanús,River Plate,0.0,2.0,post
@@ -808,8 +808,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656295,2023-03-04 21:30:00,2023,14,10060,Newell's Old Boys,Barracas Central,1.0,0.0,post
 656293,2023-03-05 17:00:00,2023,11,2975,Independiente,Instituto,2.0,2.0,post
 656292,2023-03-05 19:15:00,2023,10,18,Huracán,San Lorenzo,1.0,1.0,post
-656298,2023-03-05 21:30:00,2023,19,21,Talleres de Córdoba,Vélez Sarsfield,1.0,2.0,post
 656299,2023-03-05 21:30:00,2023,7767,3,Tigre,Argentinos Juniors,0.0,1.0,post
+656298,2023-03-05 21:30:00,2023,19,21,Talleres de Córdoba,Vélez Sarsfield,1.0,2.0,post
 656287,2023-03-06 17:00:00,2023,2635,4,Arsenal Sarandí,Belgrano,0.0,1.0,post
 656291,2023-03-06 17:00:00,2023,6756,15,Godoy Cruz,Racing Club,2.0,0.0,post
 656289,2023-03-06 21:00:00,2023,5,8950,Boca Juniors,Defensa y Justicia,0.0,0.0,post
@@ -818,33 +818,33 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656313,2023-03-10 21:00:00,2023,2975,9785,Instituto,Atlético Tucumán,1.0,1.0,post
 656312,2023-03-11 17:00:00,2023,18,9,San Lorenzo,Gimnasia La Plata,4.0,0.0,post
 656307,2023-03-11 19:15:00,2023,8950,19,Defensa y Justicia,Talleres de Córdoba,1.0,1.0,post
-656304,2023-03-11 21:30:00,2023,4,12,Belgrano,Lanús,0.0,0.0,post
 656305,2023-03-11 21:30:00,2023,11989,7767,Central Córdoba,Tigre,2.0,0.0,post
+656304,2023-03-11 21:30:00,2023,4,12,Belgrano,Lanús,0.0,0.0,post
 656309,2023-03-12 17:00:00,2023,15,10158,Racing Club,Sarmiento,1.0,0.0,post
 656308,2023-03-12 19:15:00,2023,8,10,Estudiantes de La Plata,Huracán,2.0,1.0,post
 656310,2023-03-12 19:15:00,2023,16,6756,River Plate,Godoy Cruz,3.0,0.0,post
 656302,2023-03-12 21:30:00,2023,235,5,Banfield,Boca Juniors,1.0,0.0,post
 656311,2023-03-12 21:30:00,2023,17,20,Rosario Central,Unión de Santa Fe,1.0,1.0,post
-656314,2023-03-13 21:00:00,2023,21,7764,Vélez Sarsfield,Platense,1.0,1.0,post
 656306,2023-03-13 21:00:00,2023,7,14,Colón de Santa Fe,Newell's Old Boys,1.0,1.0,post
+656314,2023-03-13 21:00:00,2023,21,7764,Vélez Sarsfield,Platense,1.0,1.0,post
 656327,2023-03-17 21:00:00,2023,20,15,Unión de Santa Fe,Racing Club,1.0,3.0,post
 656315,2023-03-18 16:30:00,2023,2635,7767,Arsenal Sarandí,Tigre,2.0,0.0,post
-656321,2023-03-18 19:00:00,2023,11,7,Independiente,Colón de Santa Fe,2.0,2.0,post
 656324,2023-03-18 19:00:00,2023,7764,8950,Platense,Defensa y Justicia,1.0,0.0,post
+656321,2023-03-18 19:00:00,2023,11,7,Independiente,Colón de Santa Fe,2.0,2.0,post
 656316,2023-03-18 21:30:00,2023,9785,10060,Atlético Tucumán,Barracas Central,1.0,1.0,post
 656319,2023-03-18 21:30:00,2023,6756,4,Godoy Cruz,Belgrano,3.0,1.0,post
 656318,2023-03-19 16:30:00,2023,9,8,Gimnasia La Plata,Estudiantes de La Plata,2.0,1.0,post
 656317,2023-03-19 19:00:00,2023,5,2975,Boca Juniors,Instituto,2.0,3.0,post
-656326,2023-03-19 21:30:00,2023,19,235,Talleres de Córdoba,Banfield,0.0,1.0,post
 656325,2023-03-19 21:30:00,2023,10158,16,Sarmiento,River Plate,0.0,2.0,post
+656326,2023-03-19 21:30:00,2023,19,235,Talleres de Córdoba,Banfield,0.0,1.0,post
 656323,2023-03-20 18:30:00,2023,14,18,Newell's Old Boys,San Lorenzo,1.0,0.0,post
-656320,2023-03-20 21:00:00,2023,10,17,Huracán,Rosario Central,0.0,2.0,post
 656322,2023-03-20 21:00:00,2023,12,3,Lanús,Argentinos Juniors,0.0,0.0,post
+656320,2023-03-20 21:00:00,2023,10,17,Huracán,Rosario Central,0.0,2.0,post
 656328,2023-03-21 21:00:00,2023,21,11989,Vélez Sarsfield,Central Córdoba,4.0,0.0,post
 656342,2023-03-30 20:00:00,2023,8950,21,Defensa y Justicia,Vélez Sarsfield,0.0,0.0,post
 656329,2023-03-30 21:30:00,2023,3,6756,Argentinos Juniors,Godoy Cruz,3.0,0.0,post
-656339,2023-03-31 19:00:00,2023,17,9,Rosario Central,Gimnasia La Plata,3.0,1.0,post
 656335,2023-03-31 19:00:00,2023,8,14,Estudiantes de La Plata,Newell's Old Boys,3.0,0.0,post
+656339,2023-03-31 19:00:00,2023,17,9,Rosario Central,Gimnasia La Plata,3.0,1.0,post
 656338,2023-03-31 21:30:00,2023,16,20,River Plate,Unión de Santa Fe,1.0,0.0,post
 656331,2023-04-01 15:30:00,2023,10060,5,Barracas Central,Boca Juniors,0.0,3.0,post
 656340,2023-04-01 19:00:00,2023,18,11,San Lorenzo,Independiente,0.0,0.0,post
@@ -855,24 +855,24 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656330,2023-04-02 21:30:00,2023,235,7764,Banfield,Platense,0.0,2.0,post
 656332,2023-04-03 20:00:00,2023,4,10158,Belgrano,Sarmiento,0.0,0.0,post
 656333,2023-04-03 21:30:00,2023,11989,2635,Central Córdoba,Arsenal Sarandí,1.0,0.0,post
-656352,2023-04-07 19:00:00,2023,7764,2975,Platense,Instituto,1.0,0.0,post
 656350,2023-04-07 19:00:00,2023,12,2635,Lanús,Arsenal Sarandí,3.0,0.0,post
-656354,2023-04-07 21:30:00,2023,19,10060,Talleres de Córdoba,Barracas Central,3.0,0.0,post
+656352,2023-04-07 19:00:00,2023,7764,2975,Platense,Instituto,1.0,0.0,post
 656356,2023-04-07 21:30:00,2023,21,235,Vélez Sarsfield,Banfield,3.0,3.0,post
+656354,2023-04-07 21:30:00,2023,19,10060,Talleres de Córdoba,Barracas Central,3.0,0.0,post
 656353,2023-04-08 15:30:00,2023,10158,3,Sarmiento,Argentinos Juniors,2.0,0.0,post
 656346,2023-04-08 18:00:00,2023,9,15,Gimnasia La Plata,Racing Club,3.0,1.0,post
 656355,2023-04-08 18:00:00,2023,20,4,Unión de Santa Fe,Belgrano,0.0,3.0,post
 656343,2023-04-08 20:30:00,2023,9785,18,Atlético Tucumán,San Lorenzo,1.0,3.0,post
 656345,2023-04-08 20:30:00,2023,8950,11989,Defensa y Justicia,Central Córdoba,1.0,2.0,post
-656349,2023-04-09 14:00:00,2023,11,8,Independiente,Estudiantes de La Plata,1.0,2.0,post
 656347,2023-04-09 14:00:00,2023,6756,7767,Godoy Cruz,Tigre,1.0,1.0,post
+656349,2023-04-09 14:00:00,2023,11,8,Independiente,Estudiantes de La Plata,1.0,2.0,post
 656351,2023-04-09 16:30:00,2023,14,17,Newell's Old Boys,Rosario Central,0.0,0.0,post
 656348,2023-04-09 19:00:00,2023,10,16,Huracán,River Plate,0.0,3.0,post
 656344,2023-04-09 21:30:00,2023,5,7,Boca Juniors,Colón de Santa Fe,1.0,2.0,post
 656360,2023-04-11 14:00:00,2023,10060,7764,Barracas Central,Platense,1.0,0.0,post
 656357,2023-04-11 19:00:00,2023,3,20,Argentinos Juniors,Unión de Santa Fe,5.0,1.0,post
-656362,2023-04-11 21:30:00,2023,11989,12,Central Córdoba,Lanús,1.0,1.0,post
 656359,2023-04-11 21:30:00,2023,235,8950,Banfield,Defensa y Justicia,0.0,3.0,post
+656362,2023-04-11 21:30:00,2023,11989,12,Central Córdoba,Lanús,1.0,1.0,post
 656369,2023-04-11 21:30:00,2023,2975,21,Instituto,Vélez Sarsfield,1.0,0.0,post
 656368,2023-04-12 17:30:00,2023,18,5,San Lorenzo,Boca Juniors,1.0,0.0,post
 656361,2023-04-12 19:00:00,2023,4,10,Belgrano,Huracán,2.0,0.0,post
@@ -885,8 +885,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656370,2023-04-13 21:30:00,2023,7767,10158,Tigre,Sarmiento,1.0,0.0,post
 656374,2023-04-15 16:30:00,2023,8950,2975,Defensa y Justicia,Instituto,1.0,0.0,post
 656373,2023-04-15 19:00:00,2023,5,8,Boca Juniors,Estudiantes de La Plata,0.0,1.0,post
-656375,2023-04-15 21:30:00,2023,9,4,Gimnasia La Plata,Belgrano,0.0,2.0,post
 656377,2023-04-15 21:30:00,2023,10,3,Huracán,Argentinos Juniors,0.0,0.0,post
+656375,2023-04-15 21:30:00,2023,9,4,Gimnasia La Plata,Belgrano,0.0,2.0,post
 656383,2023-04-16 14:00:00,2023,20,7767,Unión de Santa Fe,Tigre,0.0,0.0,post
 656384,2023-04-16 14:00:00,2023,21,10060,Vélez Sarsfield,Barracas Central,0.0,0.0,post
 656378,2023-04-16 16:30:00,2023,11,15,Independiente,Racing Club,1.0,1.0,post
@@ -895,8 +895,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656380,2023-04-17 16:30:00,2023,7764,7,Platense,Colón de Santa Fe,0.0,0.0,post
 656381,2023-04-17 19:00:00,2023,10158,2635,Sarmiento,Arsenal Sarandí,1.0,0.0,post
 656372,2023-04-17 19:00:00,2023,235,11989,Banfield,Central Córdoba,1.0,0.0,post
-656371,2023-04-17 21:30:00,2023,9785,17,Atlético Tucumán,Rosario Central,2.0,2.0,post
 656376,2023-04-17 21:30:00,2023,6756,12,Godoy Cruz,Lanús,4.0,4.0,post
+656371,2023-04-17 21:30:00,2023,9785,17,Atlético Tucumán,Rosario Central,2.0,2.0,post
 656390,2023-04-21 20:30:00,2023,7,21,Colón de Santa Fe,Vélez Sarsfield,2.0,1.0,post
 656386,2023-04-22 15:30:00,2023,2635,20,Arsenal Sarandí,Unión de Santa Fe,2.0,1.0,post
 656391,2023-04-22 15:30:00,2023,12,10158,Lanús,Sarmiento,2.0,1.0,post
@@ -911,10 +911,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656393,2023-04-24 19:00:00,2023,15,9785,Racing Club,Atlético Tucumán,1.0,3.0,post
 656385,2023-04-24 21:30:00,2023,3,9,Argentinos Juniors,Gimnasia La Plata,2.0,4.0,post
 656392,2023-04-25 19:30:00,2023,7767,10,Tigre,Huracán,1.0,0.0,post
-656401,2023-04-27 20:00:00,2023,10158,6756,Sarmiento,Godoy Cruz,1.0,1.0,post
 656399,2023-04-27 20:00:00,2023,7764,8,Platense,Estudiantes de La Plata,1.0,2.0,post
-656412,2023-04-28 19:00:00,2023,14,3,Newell's Old Boys,Argentinos Juniors,0.0,0.0,post
+656401,2023-04-27 20:00:00,2023,10158,6756,Sarmiento,Godoy Cruz,1.0,1.0,post
 656410,2023-04-28 19:00:00,2023,10,2635,Huracán,Arsenal Sarandí,2.0,1.0,post
+656412,2023-04-28 19:00:00,2023,14,3,Newell's Old Boys,Argentinos Juniors,0.0,0.0,post
 656405,2023-04-28 21:30:00,2023,9785,16,Atlético Tucumán,River Plate,1.0,1.0,post
 656404,2023-04-29 14:00:00,2023,21,18,Vélez Sarsfield,San Lorenzo,0.0,0.0,post
 656409,2023-04-29 16:30:00,2023,9,7767,Gimnasia La Plata,Tigre,1.0,1.0,post
@@ -924,16 +924,16 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656408,2023-04-30 15:30:00,2023,8950,7,Defensa y Justicia,Colón de Santa Fe,2.0,0.0,post
 656411,2023-04-30 18:00:00,2023,11,4,Independiente,Belgrano,2.0,0.0,post
 656402,2023-04-30 20:30:00,2023,19,17,Talleres de Córdoba,Rosario Central,3.0,1.0,post
-656423,2023-05-05 15:30:00,2023,10060,2975,Barracas Central,Instituto,3.0,0.0,post
 656413,2023-05-05 15:30:00,2023,6756,20,Godoy Cruz,Unión de Santa Fe,0.0,0.0,post
+656423,2023-05-05 15:30:00,2023,10060,2975,Barracas Central,Instituto,3.0,0.0,post
 656414,2023-05-06 15:30:00,2023,12,10,Lanús,Huracán,1.0,0.0,post
 656422,2023-05-06 18:00:00,2023,4,9785,Belgrano,Atlético Tucumán,1.0,0.0,post
 656420,2023-05-06 18:00:00,2023,7,235,Colón de Santa Fe,Banfield,2.0,0.0,post
 656425,2023-05-06 20:30:00,2023,3,11,Argentinos Juniors,Independiente,2.0,2.0,post
 656417,2023-05-07 14:00:00,2023,17,7764,Rosario Central,Platense,4.0,0.0,post
 656416,2023-05-07 17:30:00,2023,16,5,River Plate,Boca Juniors,1.0,0.0,post
-656426,2023-05-07 21:00:00,2023,7767,14,Tigre,Newell's Old Boys,2.0,2.0,post
 656419,2023-05-07 21:00:00,2023,8,21,Estudiantes de La Plata,Vélez Sarsfield,2.0,0.0,post
+656426,2023-05-07 21:00:00,2023,7767,14,Tigre,Newell's Old Boys,2.0,2.0,post
 656424,2023-05-08 15:30:00,2023,2635,9,Arsenal Sarandí,Gimnasia La Plata,0.0,1.0,post
 656418,2023-05-08 17:00:00,2023,18,8950,San Lorenzo,Defensa y Justicia,0.0,0.0,post
 656415,2023-05-08 19:30:00,2023,15,19,Racing Club,Talleres de Córdoba,2.0,4.0,post
@@ -942,8 +942,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656435,2023-05-12 21:30:00,2023,9785,3,Atlético Tucumán,Argentinos Juniors,1.0,2.0,post
 656427,2023-05-13 15:30:00,2023,11,7767,Independiente,Tigre,2.0,1.0,post
 656436,2023-05-13 18:00:00,2023,235,18,Banfield,San Lorenzo,1.0,2.0,post
-656428,2023-05-13 20:30:00,2023,14,2635,Newell's Old Boys,Arsenal Sarandí,2.0,0.0,post
 656430,2023-05-13 20:30:00,2023,2975,7,Instituto,Colón de Santa Fe,1.0,0.0,post
+656428,2023-05-13 20:30:00,2023,14,2635,Newell's Old Boys,Arsenal Sarandí,2.0,0.0,post
 656439,2023-05-14 14:00:00,2023,8950,8,Defensa y Justicia,Estudiantes de La Plata,1.0,1.0,post
 656429,2023-05-14 16:30:00,2023,7764,15,Platense,Racing Club,3.0,0.0,post
 656438,2023-05-14 19:00:00,2023,5,4,Boca Juniors,Belgrano,2.0,0.0,post
@@ -954,13 +954,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656434,2023-05-15 20:30:00,2023,21,17,Vélez Sarsfield,Rosario Central,0.0,0.0,post
 656442,2023-05-18 21:00:00,2023,2635,11,Arsenal Sarandí,Independiente,2.0,1.0,post
 656450,2023-05-19 15:30:00,2023,6756,9,Godoy Cruz,Gimnasia La Plata,2.0,0.0,post
-656454,2023-05-19 19:00:00,2023,11989,20,Central Córdoba,Unión de Santa Fe,0.0,1.0,post
 656449,2023-05-19 19:00:00,2023,8,235,Estudiantes de La Plata,Banfield,1.0,0.0,post
 656446,2023-05-19 19:00:00,2023,17,8950,Rosario Central,Defensa y Justicia,2.0,1.0,post
+656454,2023-05-19 19:00:00,2023,11989,20,Central Córdoba,Unión de Santa Fe,0.0,1.0,post
 656441,2023-05-19 21:30:00,2023,3,5,Argentinos Juniors,Boca Juniors,0.0,1.0,post
 656445,2023-05-20 14:00:00,2023,18,2975,San Lorenzo,Instituto,2.0,0.0,post
-656443,2023-05-20 21:30:00,2023,7767,9785,Tigre,Atlético Tucumán,0.0,0.0,post
 656451,2023-05-20 21:30:00,2023,12,14,Lanús,Newell's Old Boys,1.0,0.0,post
+656443,2023-05-20 21:30:00,2023,7767,9785,Tigre,Atlético Tucumán,0.0,0.0,post
 656447,2023-05-21 15:30:00,2023,4,19,Belgrano,Talleres de Córdoba,1.0,1.0,post
 656448,2023-05-21 18:00:00,2023,7,10060,Colón de Santa Fe,Barracas Central,1.0,1.0,post
 656444,2023-05-21 18:00:00,2023,10158,10,Sarmiento,Huracán,0.0,0.0,post
@@ -970,13 +970,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656458,2023-05-27 18:00:00,2023,7764,4,Platense,Belgrano,1.0,0.0,post
 656460,2023-05-27 20:30:00,2023,11,12,Independiente,Lanús,1.0,1.0,post
 656466,2023-05-28 14:00:00,2023,10060,18,Barracas Central,San Lorenzo,1.0,0.0,post
-656456,2023-05-28 16:30:00,2023,19,3,Talleres de Córdoba,Argentinos Juniors,1.0,0.0,post
 656463,2023-05-28 16:30:00,2023,8950,15,Defensa y Justicia,Racing Club,1.0,1.0,post
+656456,2023-05-28 16:30:00,2023,19,3,Talleres de Córdoba,Argentinos Juniors,1.0,0.0,post
 656465,2023-05-28 19:00:00,2023,5,7767,Boca Juniors,Tigre,1.0,0.0,post
 656459,2023-05-28 21:30:00,2023,14,6756,Newell's Old Boys,Godoy Cruz,2.0,0.0,post
 656464,2023-05-29 16:30:00,2023,7,11989,Colón de Santa Fe,Central Córdoba,2.0,2.0,post
-656467,2023-05-29 19:00:00,2023,235,17,Banfield,Rosario Central,2.0,0.0,post
 656468,2023-05-29 19:00:00,2023,10,20,Huracán,Unión de Santa Fe,0.0,1.0,post
+656467,2023-05-29 19:00:00,2023,235,17,Banfield,Rosario Central,2.0,0.0,post
 656457,2023-05-29 20:00:00,2023,2975,8,Instituto,Estudiantes de La Plata,0.0,0.0,post
 656461,2023-05-29 21:30:00,2023,21,16,Vélez Sarsfield,River Plate,2.0,2.0,post
 656480,2023-06-01 20:00:00,2023,10158,14,Sarmiento,Newell's Old Boys,0.0,0.0,post
@@ -985,8 +985,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656469,2023-06-02 21:30:00,2023,3,7764,Argentinos Juniors,Platense,1.0,0.0,post
 656481,2023-06-02 21:30:00,2023,7767,19,Tigre,Talleres de Córdoba,1.0,3.0,post
 656471,2023-06-03 14:00:00,2023,4,21,Belgrano,Vélez Sarsfield,2.0,0.0,post
-656472,2023-06-03 19:00:00,2023,11989,10,Central Córdoba,Huracán,2.0,0.0,post
 656478,2023-06-03 19:00:00,2023,17,2975,Rosario Central,Instituto,4.0,1.0,post
+656472,2023-06-03 19:00:00,2023,11989,10,Central Córdoba,Huracán,2.0,0.0,post
 656476,2023-06-03 21:30:00,2023,15,235,Racing Club,Banfield,2.0,0.0,post
 656482,2023-06-04 11:00:00,2023,20,9,Unión de Santa Fe,Gimnasia La Plata,2.0,0.0,post
 656479,2023-06-04 14:00:00,2023,18,7,San Lorenzo,Colón de Santa Fe,0.0,0.0,post
@@ -1004,8 +1004,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656496,2023-06-12 21:45:00,2023,21,3,Vélez Sarsfield,Argentinos Juniors,0.0,1.0,post
 656487,2023-06-13 18:00:00,2023,7,8,Colón de Santa Fe,Estudiantes de La Plata,1.0,0.0,post
 656488,2023-06-13 18:00:00,2023,8950,4,Defensa y Justicia,Belgrano,2.0,0.0,post
-656483,2023-06-13 20:30:00,2023,9785,6756,Atlético Tucumán,Godoy Cruz,2.0,1.0,post
 656489,2023-06-13 20:30:00,2023,9,10,Gimnasia La Plata,Huracán,1.0,0.0,post
+656483,2023-06-13 20:30:00,2023,9785,6756,Atlético Tucumán,Godoy Cruz,2.0,1.0,post
 656403,2023-06-17 15:30:00,2023,20,12,Unión de Santa Fe,Lanús,1.0,1.0,post
 656452,2023-06-17 18:00:00,2023,15,21,Racing Club,Vélez Sarsfield,2.0,1.0,post
 656477,2023-06-17 21:00:00,2023,16,8950,River Plate,Defensa y Justicia,1.0,0.0,post
@@ -1033,8 +1033,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656517,2023-07-02 15:00:00,2023,11,10,Independiente,Huracán,1.0,0.0,post
 656515,2023-07-02 17:00:00,2023,7,15,Colón de Santa Fe,Racing Club,0.0,4.0,post
 656522,2023-07-02 19:00:00,2023,2975,4,Instituto,Belgrano,1.0,0.0,post
-656512,2023-07-02 19:30:00,2023,235,3,Banfield,Argentinos Juniors,1.0,0.0,post
 656516,2023-07-02 19:30:00,2023,8950,7767,Defensa y Justicia,Tigre,1.0,0.0,post
+656512,2023-07-02 19:30:00,2023,235,3,Banfield,Argentinos Juniors,1.0,0.0,post
 656514,2023-07-02 21:30:00,2023,5,10158,Boca Juniors,Sarmiento,2.0,0.0,post
 656519,2023-07-03 20:00:00,2023,14,9,Newell's Old Boys,Gimnasia La Plata,2.0,2.0,post
 656532,2023-07-04 20:00:00,2023,12,21,Lanús,Vélez Sarsfield,0.0,1.0,post
@@ -1047,17 +1047,17 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656538,2023-07-06 17:00:00,2023,20,5,Unión de Santa Fe,Boca Juniors,0.0,0.0,post
 656525,2023-07-06 19:00:00,2023,3,2975,Argentinos Juniors,Instituto,0.0,0.0,post
 656536,2023-07-06 19:00:00,2023,10158,19,Sarmiento,Talleres de Córdoba,0.0,1.0,post
-656531,2023-07-06 21:30:00,2023,10,9785,Huracán,Atlético Tucumán,0.0,1.0,post
 656527,2023-07-06 21:30:00,2023,4,10060,Belgrano,Barracas Central,0.0,2.0,post
+656531,2023-07-06 21:30:00,2023,10,9785,Huracán,Atlético Tucumán,0.0,1.0,post
 656529,2023-07-07 19:00:00,2023,9,11,Gimnasia La Plata,Independiente,1.0,1.0,post
 656528,2023-07-07 21:30:00,2023,11989,14,Central Córdoba,Newell's Old Boys,2.0,0.0,post
 656545,2023-07-08 18:00:00,2023,8,15,Estudiantes de La Plata,Racing Club,0.0,0.0,post
 656549,2023-07-08 20:30:00,2023,18,16,San Lorenzo,River Plate,0.0,0.0,post
-656550,2023-07-09 15:30:00,2023,2975,7767,Instituto,Tigre,0.0,1.0,post
 656547,2023-07-09 15:30:00,2023,7764,10158,Platense,Sarmiento,1.0,0.0,post
+656550,2023-07-09 15:30:00,2023,2975,7767,Instituto,Tigre,0.0,1.0,post
 656552,2023-07-09 18:00:00,2023,21,6756,Vélez Sarsfield,Godoy Cruz,1.0,1.0,post
-656544,2023-07-09 20:30:00,2023,8950,12,Defensa y Justicia,Lanús,2.0,2.0,post
 656540,2023-07-09 20:30:00,2023,235,2635,Banfield,Arsenal Sarandí,0.0,0.0,post
+656544,2023-07-09 20:30:00,2023,8950,12,Defensa y Justicia,Lanús,2.0,2.0,post
 656541,2023-07-10 14:00:00,2023,10060,3,Barracas Central,Argentinos Juniors,0.0,0.0,post
 656543,2023-07-10 16:30:00,2023,7,4,Colón de Santa Fe,Belgrano,0.0,0.0,post
 656542,2023-07-10 19:30:00,2023,5,10,Boca Juniors,Huracán,1.0,0.0,post
@@ -1076,8 +1076,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656560,2023-07-16 19:00:00,2023,12,235,Lanús,Banfield,2.0,2.0,post
 656553,2023-07-16 21:30:00,2023,3,7,Argentinos Juniors,Colón de Santa Fe,1.0,0.0,post
 656556,2023-07-16 21:30:00,2023,11989,11,Central Córdoba,Independiente,0.0,1.0,post
-656565,2023-07-17 18:00:00,2023,7767,10060,Tigre,Barracas Central,0.0,1.0,post
 656554,2023-07-17 18:00:00,2023,2635,2975,Arsenal Sarandí,Instituto,0.0,2.0,post
+656565,2023-07-17 18:00:00,2023,7767,10060,Tigre,Barracas Central,0.0,1.0,post
 656561,2023-07-17 20:30:00,2023,14,9785,Newell's Old Boys,Atlético Tucumán,0.0,0.0,post
 656577,2023-07-22 15:30:00,2023,18,3,San Lorenzo,Argentinos Juniors,0.0,2.0,post
 656580,2023-07-22 18:00:00,2023,8,4,Estudiantes de La Plata,Belgrano,4.0,0.0,post
@@ -1095,8 +1095,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 656578,2023-07-25 20:30:00,2023,2975,12,Instituto,Lanús,2.0,1.0,post
 656593,2023-07-28 16:30:00,2023,3,8,Argentinos Juniors,Estudiantes de La Plata,2.0,3.0,post
 656592,2023-07-28 16:30:00,2023,20,8950,Unión de Santa Fe,Defensa y Justicia,2.0,0.0,post
-656588,2023-07-28 19:00:00,2023,14,19,Newell's Old Boys,Talleres de Córdoba,1.0,1.0,post
 656581,2023-07-28 19:00:00,2023,4,17,Belgrano,Rosario Central,0.0,0.0,post
+656588,2023-07-28 19:00:00,2023,14,19,Newell's Old Boys,Talleres de Córdoba,1.0,1.0,post
 656589,2023-07-28 21:30:00,2023,16,15,River Plate,Racing Club,2.0,1.0,post
 656582,2023-07-29 14:30:00,2023,11989,9785,Central Córdoba,Atlético Tucumán,0.0,2.0,post
 656590,2023-07-29 15:00:00,2023,10158,235,Sarmiento,Banfield,0.0,0.0,post
@@ -1116,8 +1116,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694181,2024-05-11 19:45:00,2024,16,11989,River Plate,Central Córdoba,3.0,0.0,post
 694174,2024-05-12 15:30:00,2024,17702,18,Deportivo Riestra,San Lorenzo,1.0,0.0,post
 694183,2024-05-12 15:30:00,2024,7767,8,Tigre,Estudiantes de La Plata,0.0,1.0,post
-694179,2024-05-12 17:45:00,2024,12,9744,Lanús,Independiente Rivadavia,0.0,2.0,post
 694173,2024-05-12 17:45:00,2024,4,15,Belgrano,Racing Club,4.0,4.0,post
+694179,2024-05-12 17:45:00,2024,12,9744,Lanús,Independiente Rivadavia,0.0,2.0,post
 694172,2024-05-12 20:15:00,2024,9785,5,Atlético Tucumán,Boca Juniors,1.0,0.0,post
 694175,2024-05-13 19:00:00,2024,9,21,Gimnasia La Plata,Vélez Sarsfield,3.0,1.0,post
 694184,2024-05-13 21:00:00,2024,20,235,Unión de Santa Fe,Banfield,1.0,0.0,post
@@ -1130,8 +1130,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694185,2024-05-19 17:45:00,2024,235,10,Banfield,Huracán,1.0,1.0,post
 694197,2024-05-19 17:45:00,2024,19,9785,Talleres de Córdoba,Atlético Tucumán,2.0,0.0,post
 694187,2024-05-19 20:00:00,2024,11989,5,Central Córdoba,Boca Juniors,2.0,4.0,post
-694189,2024-05-20 19:00:00,2024,8,17702,Estudiantes de La Plata,Deportivo Riestra,2.0,0.0,post
 694196,2024-05-20 19:00:00,2024,18,12,San Lorenzo,Lanús,1.0,1.0,post
+694189,2024-05-20 19:00:00,2024,8,17702,Estudiantes de La Plata,Deportivo Riestra,2.0,0.0,post
 694193,2024-05-20 21:15:00,2024,15,3,Racing Club,Argentinos Juniors,3.0,0.0,post
 694195,2024-05-20 21:15:00,2024,17,7767,Rosario Central,Tigre,1.0,1.0,post
 694198,2024-05-21 20:00:00,2024,21,14,Vélez Sarsfield,Newell's Old Boys,1.0,0.0,post
@@ -1149,28 +1149,28 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694211,2024-05-27 19:00:00,2024,20,10060,Unión de Santa Fe,Barracas Central,2.0,0.0,post
 694200,2024-05-27 21:00:00,2024,9785,7764,Atlético Tucumán,Platense,1.0,1.0,post
 694222,2024-06-01 18:00:00,2024,15,17702,Racing Club,Deportivo Riestra,1.0,0.0,post
-694215,2024-06-01 20:15:00,2024,4,3,Belgrano,Argentinos Juniors,1.0,0.0,post
 694226,2024-06-01 20:15:00,2024,21,9785,Vélez Sarsfield,Atlético Tucumán,1.0,1.0,post
+694215,2024-06-01 20:15:00,2024,4,3,Belgrano,Argentinos Juniors,1.0,0.0,post
 694221,2024-06-02 14:30:00,2024,7764,5,Platense,Boca Juniors,1.0,0.0,post
 694216,2024-06-02 18:00:00,2024,11989,19,Central Córdoba,Talleres de Córdoba,2.0,4.0,post
 694224,2024-06-02 18:00:00,2024,17,12,Rosario Central,Lanús,1.0,1.0,post
-694223,2024-06-02 20:15:00,2024,16,7767,River Plate,Tigre,3.0,1.0,post
 694220,2024-06-02 20:15:00,2024,2975,9,Instituto,Gimnasia La Plata,2.0,1.0,post
+694223,2024-06-02 20:15:00,2024,16,7767,River Plate,Tigre,3.0,1.0,post
 694225,2024-06-03 19:00:00,2024,18,10158,San Lorenzo,Sarmiento,0.0,1.0,post
-694217,2024-06-03 21:15:00,2024,8950,11,Defensa y Justicia,Independiente,0.0,0.0,post
 694218,2024-06-03 21:15:00,2024,8,6756,Estudiantes de La Plata,Godoy Cruz,1.0,1.0,post
+694217,2024-06-03 21:15:00,2024,8950,11,Defensa y Justicia,Independiente,0.0,0.0,post
 694214,2024-06-04 15:00:00,2024,10060,10,Barracas Central,Huracán,0.0,2.0,post
 694213,2024-06-04 20:00:00,2024,235,14,Banfield,Newell's Old Boys,2.0,0.0,post
 694219,2024-06-04 20:00:00,2024,9744,20,Independiente Rivadavia,Unión de Santa Fe,0.0,1.0,post
 694232,2024-06-12 17:00:00,2024,6756,17,Godoy Cruz,Rosario Central,1.0,1.0,post
 694227,2024-06-12 19:00:00,2024,3,11989,Argentinos Juniors,Central Córdoba,2.0,1.0,post
-694233,2024-06-12 21:15:00,2024,11,235,Independiente,Banfield,2.0,1.0,post
 694231,2024-06-12 21:15:00,2024,9,10060,Gimnasia La Plata,Barracas Central,2.0,1.0,post
+694233,2024-06-12 21:15:00,2024,11,235,Independiente,Banfield,2.0,1.0,post
 694230,2024-06-13 15:00:00,2024,17702,16,Deportivo Riestra,River Plate,2.0,0.0,post
 694237,2024-06-13 19:00:00,2024,10158,8,Sarmiento,Estudiantes de La Plata,2.0,0.0,post
 694239,2024-06-13 19:00:00,2024,7767,4,Tigre,Belgrano,1.0,1.0,post
-694235,2024-06-13 21:15:00,2024,12,15,Lanús,Racing Club,2.0,0.0,post
 694236,2024-06-13 21:15:00,2024,14,2975,Newell's Old Boys,Instituto,0.0,2.0,post
+694235,2024-06-13 21:15:00,2024,12,15,Lanús,Racing Club,2.0,0.0,post
 694229,2024-06-14 19:00:00,2024,5,21,Boca Juniors,Vélez Sarsfield,1.0,0.0,post
 694238,2024-06-14 19:00:00,2024,19,7764,Talleres de Córdoba,Platense,2.0,1.0,post
 694234,2024-06-15 16:00:00,2024,20,18,Unión de Santa Fe,San Lorenzo,2.0,1.0,post
@@ -1188,8 +1188,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694251,2024-07-21 15:00:00,2024,16,12,River Plate,Lanús,2.0,2.0,post
 694245,2024-07-21 17:15:00,2024,11989,7764,Central Córdoba,Platense,0.0,2.0,post
 694247,2024-07-21 17:15:00,2024,8,20,Estudiantes de La Plata,Unión de Santa Fe,0.0,0.0,post
-694246,2024-07-21 20:00:00,2024,8950,5,Defensa y Justicia,Boca Juniors,2.0,2.0,post
 694254,2024-07-21 20:00:00,2024,21,19,Vélez Sarsfield,Talleres de Córdoba,3.0,0.0,post
+694246,2024-07-21 20:00:00,2024,8950,5,Defensa y Justicia,Boca Juniors,2.0,2.0,post
 694257,2024-07-23 15:00:00,2024,17702,3,Deportivo Riestra,Argentinos Juniors,2.0,0.0,post
 694258,2024-07-23 18:45:00,2024,9,18,Gimnasia La Plata,San Lorenzo,0.0,1.0,post
 694263,2024-07-23 18:45:00,2024,14,9744,Newell's Old Boys,Independiente Rivadavia,0.0,0.0,post
@@ -1198,8 +1198,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694265,2024-07-24 17:15:00,2024,10158,15,Sarmiento,Racing Club,1.0,0.0,post
 694259,2024-07-24 19:30:00,2024,6756,16,Godoy Cruz,River Plate,2.0,1.0,post
 694260,2024-07-24 19:30:00,2024,10,8,Huracán,Estudiantes de La Plata,0.0,0.0,post
-694262,2024-07-25 18:45:00,2024,12,4,Lanús,Belgrano,3.0,2.0,post
 694264,2024-07-25 18:45:00,2024,7764,21,Platense,Vélez Sarsfield,0.0,2.0,post
+694262,2024-07-25 18:45:00,2024,12,4,Lanús,Belgrano,3.0,2.0,post
 694255,2024-07-25 21:00:00,2024,9785,2975,Atlético Tucumán,Instituto,1.0,0.0,post
 694267,2024-07-25 21:00:00,2024,7767,11989,Tigre,Central Córdoba,1.0,1.0,post
 694276,2024-07-27 15:00:00,2024,9744,11,Independiente Rivadavia,Independiente,1.0,0.0,post
@@ -1212,8 +1212,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694277,2024-07-28 20:30:00,2024,2975,5,Instituto,Boca Juniors,0.0,0.0,post
 694271,2024-07-29 15:00:00,2024,10060,9785,Barracas Central,Atlético Tucumán,0.0,2.0,post
 694274,2024-07-29 16:30:00,2024,8950,7764,Defensa y Justicia,Platense,1.0,3.0,post
-694281,2024-07-29 18:45:00,2024,7767,17702,Tigre,Deportivo Riestra,2.0,1.0,post
 694273,2024-07-29 18:45:00,2024,11989,21,Central Córdoba,Vélez Sarsfield,0.0,2.0,post
+694281,2024-07-29 18:45:00,2024,7767,17702,Tigre,Deportivo Riestra,2.0,1.0,post
 694269,2024-07-29 21:00:00,2024,3,12,Argentinos Juniors,Lanús,2.0,0.0,post
 694272,2024-07-29 21:00:00,2024,4,6756,Belgrano,Godoy Cruz,1.0,0.0,post
 694268,2024-07-31 18:30:00,2024,20,17,Unión de Santa Fe,Rosario Central,1.0,0.0,post
@@ -1227,8 +1227,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694285,2024-08-04 15:00:00,2024,10158,4,Sarmiento,Belgrano,0.0,0.0,post
 694283,2024-08-04 15:00:00,2024,20,16,Unión de Santa Fe,River Plate,0.0,0.0,post
 694291,2024-08-04 17:30:00,2024,5,10060,Boca Juniors,Barracas Central,1.0,1.0,post
-694290,2024-08-04 20:00:00,2024,9785,9744,Atlético Tucumán,Independiente Rivadavia,2.0,1.0,post
 694288,2024-08-04 20:00:00,2024,12,7767,Lanús,Tigre,3.0,2.0,post
+694290,2024-08-04 20:00:00,2024,9785,9744,Atlético Tucumán,Independiente Rivadavia,2.0,1.0,post
 694292,2024-08-05 14:30:00,2024,17702,11989,Deportivo Riestra,Central Córdoba,1.0,0.0,post
 694293,2024-08-05 17:00:00,2024,9,17,Gimnasia La Plata,Rosario Central,0.0,1.0,post
 694286,2024-08-05 20:00:00,2024,7764,235,Platense,Banfield,0.0,1.0,post
@@ -1241,8 +1241,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694300,2024-08-10 16:30:00,2024,17,14,Rosario Central,Newell's Old Boys,1.0,0.0,post
 694310,2024-08-10 18:45:00,2024,9744,5,Independiente Rivadavia,Boca Juniors,1.0,1.0,post
 694299,2024-08-10 20:30:00,2024,16,10,River Plate,Huracán,1.0,1.0,post
-694297,2024-08-11 15:00:00,2024,2975,7764,Instituto,Platense,2.0,0.0,post
 694308,2024-08-11 15:00:00,2024,11989,8950,Central Córdoba,Defensa y Justicia,2.0,0.0,post
+694297,2024-08-11 15:00:00,2024,2975,7764,Instituto,Platense,2.0,0.0,post
 694305,2024-08-11 17:30:00,2024,235,21,Banfield,Vélez Sarsfield,2.0,2.0,post
 694303,2024-08-11 20:00:00,2024,8,11,Estudiantes de La Plata,Independiente,0.0,2.0,post
 694302,2024-08-12 19:00:00,2024,7767,6756,Tigre,Godoy Cruz,0.0,2.0,post
@@ -1257,8 +1257,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694311,2024-08-18 17:00:00,2024,9785,8,Atlético Tucumán,Estudiantes de La Plata,2.0,0.0,post
 694318,2024-08-18 17:00:00,2024,10158,7767,Sarmiento,Tigre,0.0,0.0,post
 694321,2024-08-18 20:30:00,2024,10,4,Huracán,Belgrano,1.0,0.0,post
-694322,2024-08-19 18:45:00,2024,6756,17702,Godoy Cruz,Deportivo Riestra,4.0,1.0,post
 694313,2024-08-19 18:45:00,2024,20,3,Unión de Santa Fe,Argentinos Juniors,3.0,0.0,post
+694322,2024-08-19 18:45:00,2024,6756,17702,Godoy Cruz,Deportivo Riestra,4.0,1.0,post
 694324,2024-08-19 21:00:00,2024,8950,235,Defensa y Justicia,Banfield,1.0,0.0,post
 694337,2024-08-23 18:00:00,2024,9744,7764,Independiente Rivadavia,Platense,0.0,2.0,post
 694331,2024-08-24 14:30:00,2024,17702,10158,Deportivo Riestra,Sarmiento,2.0,1.0,post
@@ -1276,8 +1276,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694325,2024-08-26 21:00:00,2024,8,5,Estudiantes de La Plata,Boca Juniors,1.0,1.0,post
 694341,2024-08-30 19:00:00,2024,10158,12,Sarmiento,Lanús,0.0,0.0,post
 694339,2024-08-30 21:00:00,2024,20,17702,Unión de Santa Fe,Deportivo Riestra,0.0,0.0,post
-694348,2024-08-31 15:00:00,2024,8950,10060,Defensa y Justicia,Barracas Central,1.0,0.0,post
 694343,2024-08-31 15:00:00,2024,14,4,Newell's Old Boys,Belgrano,0.0,0.0,post
+694348,2024-08-31 15:00:00,2024,8950,10060,Defensa y Justicia,Barracas Central,1.0,0.0,post
 694340,2024-08-31 18:00:00,2024,19,8,Talleres de Córdoba,Estudiantes de La Plata,1.0,0.0,post
 694352,2024-08-31 18:00:00,2024,21,9744,Vélez Sarsfield,Independiente Rivadavia,4.0,0.0,post
 694349,2024-08-31 21:00:00,2024,5,17,Boca Juniors,Rosario Central,2.0,1.0,post
@@ -1296,8 +1296,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694356,2024-09-14 17:30:00,2024,15,5,Racing Club,Boca Juniors,2.0,1.0,post
 694363,2024-09-14 20:00:00,2024,4,11,Belgrano,Independiente,1.0,1.0,post
 694366,2024-09-14 20:00:00,2024,7767,9,Tigre,Gimnasia La Plata,1.0,1.0,post
-694360,2024-09-15 15:00:00,2024,8,7764,Estudiantes de La Plata,Platense,1.0,1.0,post
 694359,2024-09-15 15:00:00,2024,6756,10158,Godoy Cruz,Sarmiento,1.0,1.0,post
+694360,2024-09-15 15:00:00,2024,8,7764,Estudiantes de La Plata,Platense,1.0,1.0,post
 694354,2024-09-15 17:30:00,2024,17,19,Rosario Central,Talleres de Córdoba,2.0,2.0,post
 694365,2024-09-15 20:00:00,2024,3,14,Argentinos Juniors,Newell's Old Boys,3.0,0.0,post
 694364,2024-09-16 15:00:00,2024,10060,235,Barracas Central,Banfield,0.0,1.0,post
@@ -1305,22 +1305,22 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694371,2024-09-20 17:30:00,2024,9,17702,Gimnasia La Plata,Deportivo Riestra,0.0,0.0,post
 694379,2024-09-20 20:00:00,2024,20,6756,Unión de Santa Fe,Godoy Cruz,3.0,1.0,post
 694369,2024-09-21 16:00:00,2024,5,16,Boca Juniors,River Plate,0.0,1.0,post
-694374,2024-09-21 19:00:00,2024,2975,10060,Instituto,Barracas Central,0.0,1.0,post
 694375,2024-09-21 19:00:00,2024,14,7767,Newell's Old Boys,Tigre,1.0,0.0,post
+694374,2024-09-21 19:00:00,2024,2975,10060,Instituto,Barracas Central,0.0,1.0,post
 694370,2024-09-21 21:15:00,2024,8950,18,Defensa y Justicia,San Lorenzo,0.0,0.0,post
 694372,2024-09-22 14:30:00,2024,10,12,Huracán,Lanús,3.0,0.0,post
 694373,2024-09-22 14:30:00,2024,11,3,Independiente,Argentinos Juniors,0.0,0.0,post
 694378,2024-09-22 17:00:00,2024,19,15,Talleres de Córdoba,Racing Club,2.0,0.0,post
-694376,2024-09-22 19:30:00,2024,7764,17,Platense,Rosario Central,1.0,0.0,post
 694367,2024-09-22 19:30:00,2024,9785,4,Atlético Tucumán,Belgrano,2.0,4.0,post
+694376,2024-09-22 19:30:00,2024,7764,17,Platense,Rosario Central,1.0,0.0,post
 694377,2024-09-23 18:45:00,2024,10158,11989,Sarmiento,Central Córdoba,1.0,3.0,post
-694368,2024-09-23 21:00:00,2024,235,9744,Banfield,Independiente Rivadavia,2.0,0.0,post
 694380,2024-09-23 21:00:00,2024,21,8,Vélez Sarsfield,Estudiantes de La Plata,2.0,0.0,post
+694368,2024-09-23 21:00:00,2024,235,9744,Banfield,Independiente Rivadavia,2.0,0.0,post
 694384,2024-09-27 15:00:00,2024,17702,14,Deportivo Riestra,Newell's Old Boys,3.0,3.0,post
 694394,2024-09-27 21:00:00,2024,9744,2975,Independiente Rivadavia,Instituto,1.0,1.0,post
 694392,2024-09-28 15:00:00,2024,18,235,San Lorenzo,Banfield,2.0,1.0,post
-694386,2024-09-28 17:30:00,2024,6756,10,Godoy Cruz,Huracán,1.0,1.0,post
 694385,2024-09-28 17:30:00,2024,8,8950,Estudiantes de La Plata,Defensa y Justicia,1.0,0.0,post
+694386,2024-09-28 17:30:00,2024,6756,10,Godoy Cruz,Huracán,1.0,1.0,post
 694382,2024-09-28 20:00:00,2024,4,5,Belgrano,Boca Juniors,2.0,0.0,post
 694383,2024-09-29 14:30:00,2024,11989,10060,Central Córdoba,Barracas Central,2.0,1.0,post
 694390,2024-09-29 18:15:00,2024,16,19,River Plate,Talleres de Córdoba,0.0,1.0,post
@@ -1355,14 +1355,14 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694421,2024-10-19 19:15:00,2024,7767,5,Tigre,Boca Juniors,3.0,0.0,post
 694422,2024-10-19 21:15:00,2024,20,10,Unión de Santa Fe,Huracán,0.0,1.0,post
 694409,2024-10-20 15:00:00,2024,3,19,Argentinos Juniors,Talleres de Córdoba,3.0,0.0,post
-694413,2024-10-20 17:15:00,2024,8,2975,Estudiantes de La Plata,Instituto,3.0,2.0,post
 694418,2024-10-20 17:15:00,2024,17,235,Rosario Central,Banfield,1.0,1.0,post
+694413,2024-10-20 17:15:00,2024,8,2975,Estudiantes de La Plata,Instituto,3.0,2.0,post
 694414,2024-10-20 19:30:00,2024,6756,14,Godoy Cruz,Newell's Old Boys,2.0,0.0,post
 694419,2024-10-20 19:30:00,2024,18,10060,San Lorenzo,Barracas Central,1.0,0.0,post
 694425,2024-10-25 15:00:00,2024,10060,8,Barracas Central,Estudiantes de La Plata,1.0,1.0,post
 694427,2024-10-25 21:00:00,2024,8950,16,Defensa y Justicia,River Plate,0.0,0.0,post
-694433,2024-10-26 17:15:00,2024,14,10158,Newell's Old Boys,Sarmiento,1.0,1.0,post
 694432,2024-10-26 17:15:00,2024,2975,17,Instituto,Rosario Central,0.0,0.0,post
+694433,2024-10-26 17:15:00,2024,14,10158,Newell's Old Boys,Sarmiento,1.0,1.0,post
 694430,2024-10-26 19:30:00,2024,11,6756,Independiente,Godoy Cruz,1.0,1.0,post
 694435,2024-10-26 21:00:00,2024,21,4,Vélez Sarsfield,Belgrano,1.0,1.0,post
 694431,2024-10-26 21:45:00,2024,9744,18,Independiente Rivadavia,San Lorenzo,1.0,0.0,post
@@ -1373,8 +1373,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694429,2024-10-27 21:15:00,2024,19,7767,Talleres de Córdoba,Tigre,1.0,1.0,post
 694428,2024-10-28 19:00:00,2024,9,20,Gimnasia La Plata,Unión de Santa Fe,2.0,3.0,post
 694436,2024-10-28 21:00:00,2024,10,11989,Huracán,Central Córdoba,0.0,0.0,post
-694441,2024-10-31 19:00:00,2024,8,9744,Estudiantes de La Plata,Independiente Rivadavia,1.0,1.0,post
 694448,2024-10-31 19:00:00,2024,10158,11,Sarmiento,Independiente,0.0,0.0,post
+694441,2024-10-31 19:00:00,2024,8,9744,Estudiantes de La Plata,Independiente Rivadavia,1.0,1.0,post
 694442,2024-10-31 21:15:00,2024,6756,9785,Godoy Cruz,Atlético Tucumán,1.0,1.0,post
 694447,2024-10-31 21:15:00,2024,17,10060,Rosario Central,Barracas Central,0.0,1.0,post
 694439,2024-11-01 19:00:00,2024,11989,18,Central Córdoba,San Lorenzo,0.0,1.0,post
@@ -1389,8 +1389,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694444,2024-11-03 19:30:00,2024,12,5,Lanús,Boca Juniors,1.0,0.0,post
 694451,2024-11-04 19:00:00,2024,9785,10158,Atlético Tucumán,Sarmiento,1.0,0.0,post
 694458,2024-11-04 21:00:00,2024,9744,17,Independiente Rivadavia,Rosario Central,1.0,1.0,post
-694462,2024-11-05 18:45:00,2024,18,8,San Lorenzo,Estudiantes de La Plata,1.0,1.0,post
 694456,2024-11-05 18:45:00,2024,9,11989,Gimnasia La Plata,Central Córdoba,0.0,0.0,post
+694462,2024-11-05 18:45:00,2024,18,8,San Lorenzo,Estudiantes de La Plata,1.0,1.0,post
 694457,2024-11-05 21:00:00,2024,11,20,Independiente,Unión de Santa Fe,3.0,0.0,post
 694460,2024-11-05 21:00:00,2024,14,10,Newell's Old Boys,Huracán,2.0,4.0,post
 694453,2024-11-06 16:00:00,2024,10060,15,Barracas Central,Racing Club,0.0,2.0,post
@@ -1413,17 +1413,17 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694468,2024-11-11 16:00:00,2024,17702,21,Deportivo Riestra,Vélez Sarsfield,1.0,1.0,post
 694472,2024-11-11 18:45:00,2024,12,7764,Lanús,Platense,0.0,0.0,post
 694477,2024-11-11 18:45:00,2024,7767,8950,Tigre,Defensa y Justicia,0.0,4.0,post
-694465,2024-11-11 21:00:00,2024,3,235,Argentinos Juniors,Banfield,1.0,0.0,post
 694466,2024-11-11 21:00:00,2024,4,2975,Belgrano,Instituto,3.0,1.0,post
+694465,2024-11-11 21:00:00,2024,3,235,Argentinos Juniors,Banfield,1.0,0.0,post
 694490,2024-11-17 17:30:00,2024,18,15,San Lorenzo,Racing Club,1.0,2.0,post
 694480,2024-11-18 17:00:00,2024,235,7767,Banfield,Tigre,0.0,1.0,post
 694483,2024-11-18 19:15:00,2024,8950,17702,Defensa y Justicia,Deportivo Riestra,1.0,1.0,post
 694489,2024-11-18 19:15:00,2024,7764,6756,Platense,Godoy Cruz,1.0,0.0,post
-694487,2024-11-18 21:30:00,2024,2975,3,Instituto,Argentinos Juniors,1.0,0.0,post
 694479,2024-11-18 21:30:00,2024,9785,10,Atlético Tucumán,Huracán,4.0,2.0,post
+694487,2024-11-18 21:30:00,2024,2975,3,Instituto,Argentinos Juniors,1.0,0.0,post
 694488,2024-11-20 17:00:00,2024,14,11989,Newell's Old Boys,Central Córdoba,2.0,3.0,post
-694484,2024-11-20 19:15:00,2024,8,17,Estudiantes de La Plata,Rosario Central,1.0,1.0,post
 694486,2024-11-20 19:15:00,2024,21,12,Vélez Sarsfield,Lanús,0.0,0.0,post
+694484,2024-11-20 19:15:00,2024,8,17,Estudiantes de La Plata,Rosario Central,1.0,1.0,post
 694482,2024-11-20 21:30:00,2024,5,20,Boca Juniors,Unión de Santa Fe,1.0,0.0,post
 694481,2024-11-21 17:00:00,2024,10060,4,Barracas Central,Belgrano,1.0,1.0,post
 694492,2024-11-21 19:15:00,2024,11,9,Independiente,Gimnasia La Plata,1.0,0.0,post
@@ -1431,8 +1431,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694485,2024-11-21 21:30:00,2024,9744,16,Independiente Rivadavia,River Plate,2.0,1.0,post
 694503,2024-11-23 19:30:00,2024,7767,2975,Tigre,Instituto,0.0,0.0,post
 694497,2024-11-23 21:45:00,2024,10,5,Huracán,Boca Juniors,0.0,0.0,post
-694494,2024-11-24 17:00:00,2024,17702,235,Deportivo Riestra,Banfield,1.0,1.0,post
 694495,2024-11-24 17:00:00,2024,9,9785,Gimnasia La Plata,Atlético Tucumán,1.0,0.0,post
+694494,2024-11-24 17:00:00,2024,17702,235,Deportivo Riestra,Banfield,1.0,1.0,post
 694496,2024-11-24 19:15:00,2024,6756,21,Godoy Cruz,Vélez Sarsfield,0.0,0.0,post
 694498,2024-11-24 21:30:00,2024,12,8950,Lanús,Defensa y Justicia,0.0,0.0,post
 694493,2024-11-25 19:00:00,2024,11989,17,Central Córdoba,Rosario Central,0.0,1.0,post
@@ -1467,29 +1467,29 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 694531,2024-12-08 19:15:00,2024,16,17,River Plate,Rosario Central,4.0,0.0,post
 694530,2024-12-08 21:00:00,2024,14,5,Newell's Old Boys,Boca Juniors,0.0,1.0,post
 694533,2024-12-09 17:00:00,2024,7767,9744,Tigre,Independiente Rivadavia,0.0,2.0,post
-694522,2024-12-09 19:15:00,2024,4,8,Belgrano,Estudiantes de La Plata,2.0,2.0,post
 694521,2024-12-09 19:15:00,2024,3,18,Argentinos Juniors,San Lorenzo,1.0,0.0,post
+694522,2024-12-09 19:15:00,2024,4,8,Belgrano,Estudiantes de La Plata,2.0,2.0,post
 694527,2024-12-09 21:30:00,2024,10,7764,Huracán,Platense,1.0,0.0,post
 694528,2024-12-09 21:30:00,2024,11,9785,Independiente,Atlético Tucumán,2.0,1.0,post
-694537,2024-12-13 19:00:00,2024,10060,12,Barracas Central,Lanús,3.0,3.0,post
 694540,2024-12-13 19:00:00,2024,8,3,Estudiantes de La Plata,Argentinos Juniors,2.0,2.0,post
+694537,2024-12-13 19:00:00,2024,10060,12,Barracas Central,Lanús,3.0,3.0,post
 694536,2024-12-13 21:15:00,2024,235,10158,Banfield,Sarmiento,1.0,1.0,post
 694546,2024-12-13 21:15:00,2024,18,7767,San Lorenzo,Tigre,0.0,1.0,post
-694545,2024-12-14 17:00:00,2024,17,4,Rosario Central,Belgrano,2.0,1.0,post
 694542,2024-12-14 17:00:00,2024,2975,6756,Instituto,Godoy Cruz,1.0,3.0,post
+694545,2024-12-14 17:00:00,2024,17,4,Rosario Central,Belgrano,2.0,1.0,post
 694538,2024-12-14 19:15:00,2024,5,11,Boca Juniors,Independiente,0.0,0.0,post
 694544,2024-12-14 21:15:00,2024,15,16,Racing Club,River Plate,1.0,0.0,post
 694539,2024-12-15 17:00:00,2024,8950,20,Defensa y Justicia,Unión de Santa Fe,0.0,0.0,post
 694543,2024-12-15 17:00:00,2024,7764,9,Platense,Gimnasia La Plata,1.0,0.0,post
-694541,2024-12-15 19:30:00,2024,19,14,Talleres de Córdoba,Newell's Old Boys,1.0,3.0,post
 694547,2024-12-15 19:30:00,2024,21,10,Vélez Sarsfield,Huracán,2.0,0.0,post
+694541,2024-12-15 19:30:00,2024,19,14,Talleres de Córdoba,Newell's Old Boys,1.0,3.0,post
 694535,2024-12-16 21:00:00,2024,9785,11989,Atlético Tucumán,Central Córdoba,2.0,0.0,post
 694548,2024-12-16 21:00:00,2024,9744,17702,Independiente Rivadavia,Deportivo Riestra,0.0,0.0,post
 727959,2025-01-23 19:00:00,2025,6756,17,Godoy Cruz,Rosario Central,0.0,3.0,post
 727967,2025-01-23 19:00:00,2025,7767,21,Tigre,Vélez Sarsfield,3.0,0.0,post
-727963,2025-01-23 21:30:00,2025,14,9744,Newell's Old Boys,Independiente Rivadavia,0.0,1.0,post
 727957,2025-01-23 21:30:00,2025,8950,235,Defensa y Justicia,Banfield,0.0,1.0,post
 727962,2025-01-23 21:30:00,2025,12,17702,Lanús,Deportivo Riestra,0.0,2.0,post
+727963,2025-01-23 21:30:00,2025,14,9744,Newell's Old Boys,Independiente Rivadavia,0.0,1.0,post
 727953,2025-01-24 17:00:00,2025,10060,15,Barracas Central,Racing Club,1.0,3.0,post
 727960,2025-01-24 19:15:00,2025,11,10158,Independiente,Sarmiento,2.0,1.0,post
 727954,2025-01-24 21:00:00,2025,4,10,Belgrano,Huracán,1.0,1.0,post
@@ -1506,8 +1506,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 727979,2025-01-28 19:15:00,2025,10158,6756,Sarmiento,Godoy Cruz,0.0,0.0,post
 727975,2025-01-28 21:30:00,2025,9744,10060,Independiente Rivadavia,Barracas Central,0.0,0.0,post
 727981,2025-01-28 21:30:00,2025,21,7764,Vélez Sarsfield,Platense,0.0,1.0,post
-727980,2025-01-29 17:00:00,2025,19,11,Talleres de Córdoba,Independiente,2.0,3.0,post
 727973,2025-01-29 17:00:00,2025,9,18,Gimnasia La Plata,San Lorenzo,0.0,2.0,post
+727980,2025-01-29 17:00:00,2025,19,11,Talleres de Córdoba,Independiente,2.0,3.0,post
 727974,2025-01-29 19:15:00,2025,10,8,Huracán,Estudiantes de La Plata,0.0,0.0,post
 727969,2025-01-29 19:15:00,2025,20,5,Unión de Santa Fe,Boca Juniors,1.0,1.0,post
 727977,2025-01-29 21:30:00,2025,16,2975,River Plate,Instituto,1.0,0.0,post
@@ -1519,15 +1519,15 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 727996,2025-02-01 19:00:00,2025,7845,17,San Martín San Juan,Rosario Central,0.0,0.0,post
 727993,2025-02-01 21:00:00,2025,12,10158,Lanús,Sarmiento,2.0,0.0,post
 727984,2025-02-02 17:00:00,2025,18,16,San Lorenzo,River Plate,0.0,0.0,post
-727987,2025-02-02 19:15:00,2025,5,10,Boca Juniors,Huracán,2.0,1.0,post
 727994,2025-02-02 19:15:00,2025,14,9739,Newell's Old Boys,Aldosivi,1.0,0.0,post
+727987,2025-02-02 19:15:00,2025,5,10,Boca Juniors,Huracán,2.0,1.0,post
 727991,2025-02-02 21:30:00,2025,11,9,Independiente,Gimnasia La Plata,2.0,0.0,post
 727992,2025-02-02 21:30:00,2025,2975,21,Instituto,Vélez Sarsfield,2.0,0.0,post
 727988,2025-02-03 17:00:00,2025,8950,11989,Defensa y Justicia,Central Córdoba,2.0,1.0,post
 727989,2025-02-03 19:15:00,2025,8,15,Estudiantes de La Plata,Racing Club,2.0,0.0,post
 727995,2025-02-03 19:15:00,2025,7767,20,Tigre,Unión de Santa Fe,1.0,0.0,post
-727986,2025-02-03 21:30:00,2025,4,9744,Belgrano,Independiente Rivadavia,0.0,3.0,post
 727983,2025-02-03 21:30:00,2025,3,7764,Argentinos Juniors,Platense,1.0,0.0,post
+727986,2025-02-03 21:30:00,2025,4,9744,Belgrano,Independiente Rivadavia,0.0,3.0,post
 727997,2025-02-04 21:00:00,2025,9785,17702,Atlético Tucumán,Deportivo Riestra,0.0,3.0,post
 727998,2025-02-06 17:00:00,2025,9739,10060,Aldosivi,Barracas Central,1.0,3.0,post
 728009,2025-02-06 20:00:00,2025,10158,7845,Sarmiento,San Martín San Juan,1.0,1.0,post
@@ -1545,23 +1545,23 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 728002,2025-02-09 19:15:00,2025,9,6756,Gimnasia La Plata,Godoy Cruz,3.0,0.0,post
 728010,2025-02-09 21:30:00,2025,19,12,Talleres de Córdoba,Lanús,0.0,1.0,post
 728015,2025-02-11 17:45:00,2025,10060,11989,Barracas Central,Central Córdoba,3.0,3.0,post
-728019,2025-02-11 20:00:00,2025,8,235,Estudiantes de La Plata,Banfield,1.0,0.0,post
 728017,2025-02-11 20:00:00,2025,5,9744,Boca Juniors,Independiente Rivadavia,2.0,0.0,post
-728016,2025-02-11 22:15:00,2025,4,9739,Belgrano,Aldosivi,2.0,0.0,post
+728019,2025-02-11 20:00:00,2025,8,235,Estudiantes de La Plata,Banfield,1.0,0.0,post
 728026,2025-02-11 22:15:00,2025,7767,15,Tigre,Racing Club,1.0,0.0,post
+728016,2025-02-11 22:15:00,2025,4,9739,Belgrano,Aldosivi,2.0,0.0,post
 728018,2025-02-12 17:00:00,2025,17702,17,Deportivo Riestra,Rosario Central,0.0,0.0,post
 728023,2025-02-12 17:45:00,2025,14,8950,Newell's Old Boys,Defensa y Justicia,0.0,1.0,post
 728013,2025-02-12 20:00:00,2025,3,10,Argentinos Juniors,Huracán,1.0,1.0,post
 728021,2025-02-12 20:00:00,2025,11,21,Independiente,Vélez Sarsfield,3.0,0.0,post
 728020,2025-02-12 22:15:00,2025,6756,16,Godoy Cruz,River Plate,0.0,0.0,post
 728022,2025-02-13 17:45:00,2025,12,9,Lanús,Gimnasia La Plata,0.0,0.0,post
-728025,2025-02-13 20:00:00,2025,7845,19,San Martín San Juan,Talleres de Córdoba,0.0,1.0,post
 728024,2025-02-13 20:00:00,2025,18,7764,San Lorenzo,Platense,2.0,1.0,post
-728014,2025-02-13 22:15:00,2025,9785,10158,Atlético Tucumán,Sarmiento,5.0,0.0,post
+728025,2025-02-13 20:00:00,2025,7845,19,San Martín San Juan,Talleres de Córdoba,0.0,1.0,post
 728027,2025-02-13 22:15:00,2025,20,2975,Unión de Santa Fe,Instituto,0.0,0.0,post
+728014,2025-02-13 22:15:00,2025,9785,10158,Atlético Tucumán,Sarmiento,5.0,0.0,post
 728042,2025-02-14 20:00:00,2025,235,5,Banfield,Boca Juniors,0.0,1.0,post
-728028,2025-02-15 17:00:00,2025,9739,8,Aldosivi,Estudiantes de La Plata,2.0,2.0,post
 728031,2025-02-15 17:00:00,2025,8950,10060,Defensa y Justicia,Barracas Central,1.0,1.0,post
+728028,2025-02-15 17:00:00,2025,9739,8,Aldosivi,Estudiantes de La Plata,2.0,2.0,post
 728030,2025-02-15 19:15:00,2025,11989,4,Central Córdoba,Belgrano,4.0,0.0,post
 728034,2025-02-15 19:15:00,2025,9744,7767,Independiente Rivadavia,Tigre,1.0,4.0,post
 728038,2025-02-15 21:30:00,2025,15,3,Racing Club,Argentinos Juniors,2.0,3.0,post
@@ -1569,34 +1569,34 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 728039,2025-02-16 19:15:00,2025,16,12,River Plate,Lanús,1.0,0.0,post
 728033,2025-02-16 21:30:00,2025,10,20,Huracán,Unión de Santa Fe,1.0,0.0,post
 728029,2025-02-16 21:30:00,2025,19,9785,Talleres de Córdoba,Atlético Tucumán,1.0,1.0,post
-728032,2025-02-17 17:00:00,2025,9,7845,Gimnasia La Plata,San Martín San Juan,1.0,0.0,post
 728040,2025-02-17 17:00:00,2025,10158,17702,Sarmiento,Deportivo Riestra,2.0,1.0,post
+728032,2025-02-17 17:00:00,2025,9,7845,Gimnasia La Plata,San Martín San Juan,1.0,0.0,post
 728037,2025-02-17 19:15:00,2025,7764,11,Platense,Independiente,1.0,1.0,post
 728035,2025-02-17 21:30:00,2025,2975,18,Instituto,San Lorenzo,0.0,1.0,post
 728041,2025-02-17 21:30:00,2025,21,6756,Vélez Sarsfield,Godoy Cruz,0.0,2.0,post
 728052,2025-02-21 17:00:00,2025,17702,19,Deportivo Riestra,Talleres de Córdoba,0.0,0.0,post
-728054,2025-02-21 19:15:00,2025,6756,7764,Godoy Cruz,Platense,1.0,1.0,post
 728053,2025-02-21 19:15:00,2025,8,11989,Estudiantes de La Plata,Central Córdoba,3.0,2.0,post
+728054,2025-02-21 19:15:00,2025,6756,7764,Godoy Cruz,Platense,1.0,1.0,post
 728057,2025-02-21 21:30:00,2025,12,21,Lanús,Vélez Sarsfield,0.0,0.0,post
 728056,2025-02-22 18:00:00,2025,11,2975,Independiente,Instituto,2.0,0.0,post
 728051,2025-02-22 19:30:00,2025,5,9739,Boca Juniors,Aldosivi,2.0,1.0,post
 728044,2025-02-22 21:30:00,2025,7845,16,San Martín San Juan,River Plate,0.0,2.0,post
 728043,2025-02-22 21:45:00,2025,17,10158,Rosario Central,Sarmiento,1.0,0.0,post
 728055,2025-02-23 18:00:00,2025,10,18,Huracán,San Lorenzo,2.0,0.0,post
-728050,2025-02-23 21:00:00,2025,4,8950,Belgrano,Defensa y Justicia,2.0,0.0,post
 728048,2025-02-23 21:00:00,2025,9785,9,Atlético Tucumán,Gimnasia La Plata,0.0,1.0,post
+728050,2025-02-23 21:00:00,2025,4,8950,Belgrano,Defensa y Justicia,2.0,0.0,post
 728049,2025-02-24 17:00:00,2025,10060,14,Barracas Central,Newell's Old Boys,2.0,0.0,post
 728047,2025-02-24 19:00:00,2025,3,9744,Argentinos Juniors,Independiente Rivadavia,0.0,0.0,post
 728045,2025-02-24 21:00:00,2025,7767,235,Tigre,Banfield,1.0,0.0,post
 728059,2025-02-28 20:00:00,2025,5,17,Boca Juniors,Rosario Central,1.0,0.0,post
-728071,2025-02-28 22:15:00,2025,11989,17702,Central Córdoba,Deportivo Riestra,0.0,0.0,post
 728060,2025-02-28 22:15:00,2025,7845,4,San Martín San Juan,Belgrano,3.0,1.0,post
+728071,2025-02-28 22:15:00,2025,11989,17702,Central Córdoba,Deportivo Riestra,0.0,0.0,post
 728065,2025-03-01 17:00:00,2025,9739,10158,Aldosivi,Sarmiento,2.0,2.0,post
 728062,2025-03-01 19:15:00,2025,16,8,River Plate,Estudiantes de La Plata,0.0,2.0,post
-728058,2025-03-01 21:30:00,2025,20,9,Unión de Santa Fe,Gimnasia La Plata,1.0,0.0,post
 728072,2025-03-01 21:30:00,2025,19,7767,Talleres de Córdoba,Tigre,1.0,2.0,post
-728064,2025-03-02 17:00:00,2025,9744,12,Independiente Rivadavia,Lanús,1.0,1.0,post
+728058,2025-03-01 21:30:00,2025,20,9,Unión de Santa Fe,Gimnasia La Plata,1.0,0.0,post
 728066,2025-03-02 17:00:00,2025,3,2975,Argentinos Juniors,Instituto,2.0,0.0,post
+728064,2025-03-02 17:00:00,2025,9744,12,Independiente Rivadavia,Lanús,1.0,1.0,post
 728070,2025-03-02 19:15:00,2025,21,10,Vélez Sarsfield,Huracán,0.0,2.0,post
 728069,2025-03-03 17:00:00,2025,10060,6756,Barracas Central,Godoy Cruz,1.0,2.0,post
 728061,2025-03-03 19:00:00,2025,18,15,San Lorenzo,Racing Club,3.0,2.0,post
@@ -1608,8 +1608,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 728082,2025-03-07 21:15:00,2025,11989,5,Central Córdoba,Boca Juniors,0.0,3.0,post
 728075,2025-03-08 17:00:00,2025,18,11,San Lorenzo,Independiente,1.0,2.0,post
 728073,2025-03-08 19:15:00,2025,15,10,Racing Club,Huracán,0.0,1.0,post
-728087,2025-03-08 21:30:00,2025,7764,12,Platense,Lanús,0.0,0.0,post
 728076,2025-03-08 21:30:00,2025,10158,10060,Sarmiento,Barracas Central,1.0,1.0,post
+728087,2025-03-08 21:30:00,2025,7764,12,Platense,Lanús,0.0,0.0,post
 728080,2025-03-09 17:00:00,2025,9739,7767,Aldosivi,Tigre,0.0,2.0,post
 728083,2025-03-09 17:00:00,2025,8950,8,Defensa y Justicia,Estudiantes de La Plata,1.0,0.0,post
 728074,2025-03-09 19:15:00,2025,16,9785,River Plate,Atlético Tucumán,1.0,0.0,post
@@ -1623,16 +1623,16 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 728100,2025-03-15 16:00:00,2025,17702,16,Deportivo Riestra,River Plate,0.0,0.0,post
 728099,2025-03-15 18:30:00,2025,8,14,Estudiantes de La Plata,Newell's Old Boys,1.0,1.0,post
 728094,2025-03-15 18:30:00,2025,17,9,Rosario Central,Gimnasia La Plata,2.0,1.0,post
-728096,2025-03-15 21:00:00,2025,10158,19,Sarmiento,Talleres de Córdoba,0.0,0.0,post
 728091,2025-03-15 21:00:00,2025,10,9744,Huracán,Independiente Rivadavia,2.0,0.0,post
+728096,2025-03-15 21:00:00,2025,10158,19,Sarmiento,Talleres de Córdoba,0.0,0.0,post
 728092,2025-03-16 16:00:00,2025,11,15,Independiente,Racing Club,1.0,1.0,post
 728101,2025-03-16 18:15:00,2025,5,8950,Boca Juniors,Defensa y Justicia,4.0,0.0,post
-728102,2025-03-16 21:00:00,2025,4,10060,Belgrano,Barracas Central,1.0,1.0,post
 728093,2025-03-16 21:00:00,2025,12,2975,Lanús,Instituto,4.0,1.0,post
+728102,2025-03-16 21:00:00,2025,4,10060,Belgrano,Barracas Central,1.0,1.0,post
 728097,2025-03-17 19:00:00,2025,7767,11989,Tigre,Central Córdoba,1.0,2.0,post
 728089,2025-03-17 19:00:00,2025,20,235,Unión de Santa Fe,Banfield,3.0,1.0,post
-728095,2025-03-17 21:15:00,2025,7845,7764,San Martín San Juan,Platense,0.0,2.0,post
 728090,2025-03-17 21:15:00,2025,9785,21,Atlético Tucumán,Vélez Sarsfield,1.0,2.0,post
+728095,2025-03-17 21:15:00,2025,7845,7764,San Martín San Juan,Platense,0.0,2.0,post
 728046,2025-03-20 21:00:00,2025,20,15,Unión de Santa Fe,Racing Club,0.0,1.0,post
 727990,2025-03-22 17:00:00,2025,6756,19,Godoy Cruz,Talleres de Córdoba,0.0,0.0,post
 728117,2025-03-27 15:30:00,2025,9739,20,Aldosivi,Unión de Santa Fe,2.0,1.0,post
@@ -1652,16 +1652,16 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 728109,2025-03-30 19:30:00,2025,14,5,Newell's Old Boys,Boca Juniors,2.0,0.0,post
 728122,2025-04-04 19:00:00,2025,8,4,Estudiantes de La Plata,Belgrano,0.0,1.0,post
 728128,2025-04-04 22:00:00,2025,7845,18,San Martín San Juan,San Lorenzo,0.0,1.0,post
-728127,2025-04-05 15:30:00,2025,17,21,Rosario Central,Vélez Sarsfield,2.0,1.0,post
 728123,2025-04-05 15:30:00,2025,6756,9744,Godoy Cruz,Independiente Rivadavia,1.0,1.0,post
+728127,2025-04-05 15:30:00,2025,17,21,Rosario Central,Vélez Sarsfield,2.0,1.0,post
 728124,2025-04-05 18:00:00,2025,10,9739,Huracán,Aldosivi,3.0,3.0,post
 728119,2025-04-05 18:00:00,2025,19,9,Talleres de Córdoba,Gimnasia La Plata,2.0,0.0,post
 728129,2025-04-05 20:30:00,2025,10158,16,Sarmiento,River Plate,1.0,1.0,post
-728125,2025-04-06 15:30:00,2025,12,11,Lanús,Independiente,1.0,1.0,post
 728130,2025-04-06 15:30:00,2025,20,11989,Unión de Santa Fe,Central Córdoba,1.0,0.0,post
+728125,2025-04-06 15:30:00,2025,12,11,Lanús,Independiente,1.0,1.0,post
 728120,2025-04-06 18:00:00,2025,5,10060,Boca Juniors,Barracas Central,1.0,0.0,post
-728126,2025-04-06 20:15:00,2025,15,235,Racing Club,Banfield,4.0,1.0,post
 728118,2025-04-06 20:15:00,2025,3,8950,Argentinos Juniors,Defensa y Justicia,4.0,1.0,post
+728126,2025-04-06 20:15:00,2025,15,235,Racing Club,Banfield,4.0,1.0,post
 728121,2025-04-07 15:30:00,2025,17702,7764,Deportivo Riestra,Platense,1.0,0.0,post
 728132,2025-04-07 21:00:00,2025,9785,2975,Atlético Tucumán,Instituto,3.0,2.0,post
 728131,2025-04-07 21:00:00,2025,7767,14,Tigre,Newell's Old Boys,0.0,2.0,post
@@ -1670,19 +1670,19 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 728146,2025-04-12 15:30:00,2025,18,9785,San Lorenzo,Atlético Tucumán,1.0,0.0,post
 728135,2025-04-12 18:00:00,2025,10060,7767,Barracas Central,Tigre,1.0,0.0,post
 728136,2025-04-12 20:30:00,2025,4,5,Belgrano,Boca Juniors,1.0,3.0,post
-728142,2025-04-13 15:30:00,2025,2975,17702,Instituto,Deportivo Riestra,3.0,0.0,post
 728139,2025-04-13 15:30:00,2025,9,8,Gimnasia La Plata,Estudiantes de La Plata,1.0,1.0,post
+728142,2025-04-13 15:30:00,2025,2975,17702,Instituto,Deportivo Riestra,3.0,0.0,post
 728141,2025-04-13 18:00:00,2025,11,7845,Independiente,San Martín San Juan,2.0,0.0,post
 728145,2025-04-13 20:15:00,2025,16,19,River Plate,Talleres de Córdoba,1.0,1.0,post
 728133,2025-04-14 15:30:00,2025,9739,15,Aldosivi,Racing Club,0.0,2.0,post
 728137,2025-04-14 18:00:00,2025,11989,10,Central Córdoba,Huracán,1.0,2.0,post
 728138,2025-04-14 19:00:00,2025,8950,20,Defensa y Justicia,Unión de Santa Fe,0.0,0.0,post
-728140,2025-04-14 21:15:00,2025,6756,12,Godoy Cruz,Lanús,0.0,0.0,post
 728147,2025-04-14 21:15:00,2025,21,10158,Vélez Sarsfield,Sarmiento,0.0,1.0,post
+728140,2025-04-14 21:15:00,2025,6756,12,Godoy Cruz,Lanús,0.0,0.0,post
 728144,2025-04-15 20:00:00,2025,7764,17,Platense,Rosario Central,0.0,0.0,post
 728152,2025-04-18 17:00:00,2025,9,16,Gimnasia La Plata,River Plate,0.0,3.0,post
-728160,2025-04-18 19:15:00,2025,19,21,Talleres de Córdoba,Vélez Sarsfield,0.0,1.0,post
 728156,2025-04-18 19:15:00,2025,15,11989,Racing Club,Central Córdoba,1.0,0.0,post
+728160,2025-04-18 19:15:00,2025,19,21,Talleres de Córdoba,Vélez Sarsfield,0.0,1.0,post
 728162,2025-04-18 21:30:00,2025,20,14,Unión de Santa Fe,Newell's Old Boys,1.0,1.0,post
 728155,2025-04-19 16:15:00,2025,12,235,Lanús,Banfield,1.0,1.0,post
 728153,2025-04-19 18:15:00,2025,10,8950,Huracán,Defensa y Justicia,1.0,1.0,post
@@ -1691,8 +1691,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 728158,2025-04-20 16:30:00,2025,7845,6756,San Martín San Juan,Godoy Cruz,1.0,0.0,post
 728159,2025-04-20 18:00:00,2025,10158,7764,Sarmiento,Platense,0.0,1.0,post
 728157,2025-04-20 20:30:00,2025,17,2975,Rosario Central,Instituto,3.0,0.0,post
-728161,2025-04-22 19:00:00,2025,7767,4,Tigre,Belgrano,0.0,0.0,post
 728148,2025-04-22 19:00:00,2025,3,10060,Argentinos Juniors,Barracas Central,3.0,0.0,post
+728161,2025-04-22 19:00:00,2025,7767,4,Tigre,Belgrano,0.0,0.0,post
 728154,2025-04-22 21:15:00,2025,9744,9739,Independiente Rivadavia,Aldosivi,1.0,0.0,post
 728163,2025-04-26 15:00:00,2025,9739,235,Aldosivi,Banfield,2.0,1.0,post
 728164,2025-04-26 17:00:00,2025,18,17,San Lorenzo,Rosario Central,0.0,1.0,post
@@ -1705,24 +1705,24 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 728169,2025-04-28 17:15:00,2025,6756,9785,Godoy Cruz,Atlético Tucumán,1.0,0.0,post
 728167,2025-04-28 19:30:00,2025,8950,15,Defensa y Justicia,Racing Club,1.0,2.0,post
 728168,2025-04-28 19:30:00,2025,8,7767,Estudiantes de La Plata,Tigre,0.0,0.0,post
-728166,2025-04-28 21:45:00,2025,11989,9744,Central Córdoba,Independiente Rivadavia,1.0,2.0,post
 728176,2025-04-28 21:45:00,2025,21,9,Vélez Sarsfield,Gimnasia La Plata,1.0,0.0,post
+728166,2025-04-28 21:45:00,2025,11989,9744,Central Córdoba,Independiente Rivadavia,1.0,2.0,post
 728173,2025-04-29 19:00:00,2025,14,10,Newell's Old Boys,Huracán,2.0,0.0,post
 728174,2025-04-29 19:00:00,2025,7764,19,Platense,Talleres de Córdoba,2.0,1.0,post
 728149,2025-04-30 21:00:00,2025,9785,11,Atlético Tucumán,Independiente,2.0,0.0,post
-728185,2025-05-02 15:30:00,2025,15,14,Racing Club,Newell's Old Boys,1.0,0.0,post
-728184,2025-05-02 15:30:00,2025,9744,8950,Independiente Rivadavia,Defensa y Justicia,3.0,2.0,post
-728180,2025-05-02 15:30:00,2025,235,11989,Banfield,Central Córdoba,3.0,1.0,post
 728178,2025-05-02 15:30:00,2025,3,8,Argentinos Juniors,Estudiantes de La Plata,4.0,0.0,post
+728180,2025-05-02 15:30:00,2025,235,11989,Banfield,Central Córdoba,3.0,1.0,post
+728184,2025-05-02 15:30:00,2025,9744,8950,Independiente Rivadavia,Defensa y Justicia,3.0,2.0,post
+728185,2025-05-02 15:30:00,2025,15,14,Racing Club,Newell's Old Boys,1.0,0.0,post
 728192,2025-05-02 18:00:00,2025,20,4,Unión de Santa Fe,Belgrano,1.0,1.0,post
-728181,2025-05-03 16:00:00,2025,17702,6756,Deportivo Riestra,Godoy Cruz,3.0,0.0,post
-728189,2025-05-03 16:00:00,2025,10158,18,Sarmiento,San Lorenzo,1.0,1.0,post
 728190,2025-05-03 16:00:00,2025,19,2975,Talleres de Córdoba,Instituto,1.0,2.0,post
+728189,2025-05-03 16:00:00,2025,10158,18,Sarmiento,San Lorenzo,1.0,1.0,post
+728181,2025-05-03 16:00:00,2025,17702,6756,Deportivo Riestra,Godoy Cruz,3.0,0.0,post
 728187,2025-05-03 18:30:00,2025,17,11,Rosario Central,Independiente,1.0,0.0,post
 728179,2025-05-03 21:00:00,2025,9785,12,Atlético Tucumán,Lanús,1.0,0.0,post
 728183,2025-05-03 21:00:00,2025,10,10060,Huracán,Barracas Central,0.0,1.0,post
-728188,2025-05-04 15:30:00,2025,7845,9739,San Martín San Juan,Aldosivi,0.0,3.0,post
 728182,2025-05-04 15:30:00,2025,9,7764,Gimnasia La Plata,Platense,1.0,0.0,post
+728188,2025-05-04 15:30:00,2025,7845,9739,San Martín San Juan,Aldosivi,0.0,3.0,post
 728191,2025-05-04 18:00:00,2025,7767,5,Tigre,Boca Juniors,1.0,1.0,post
 728186,2025-05-04 20:30:00,2025,16,21,River Plate,Vélez Sarsfield,4.0,1.0,post
 735658,2025-05-10 14:00:00,2025,18,7767,San Lorenzo,Tigre,2.0,1.0,post
@@ -1759,8 +1759,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729002,2025-07-18 21:30:00,2025,9785,11989,Atlético Tucumán,Central Córdoba,1.0,1.0,post
 729014,2025-07-19 14:30:00,2025,18,9,San Lorenzo,Gimnasia La Plata,0.0,0.0,post
 729011,2025-07-19 16:30:00,2025,12,17,Lanús,Rosario Central,0.0,1.0,post
-729013,2025-07-19 18:45:00,2025,7764,21,Platense,Vélez Sarsfield,0.0,0.0,post
 729008,2025-07-19 18:45:00,2025,6756,10158,Godoy Cruz,Sarmiento,0.0,0.0,post
+729013,2025-07-19 18:45:00,2025,7764,21,Platense,Vélez Sarsfield,0.0,0.0,post
 729010,2025-07-19 21:00:00,2025,2975,16,Instituto,River Plate,0.0,4.0,post
 729003,2025-07-20 14:30:00,2025,10060,9744,Barracas Central,Independiente Rivadavia,0.0,3.0,post
 729012,2025-07-20 16:45:00,2025,14,235,Newell's Old Boys,Banfield,1.0,2.0,post
@@ -1768,18 +1768,18 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729004,2025-07-20 19:00:00,2025,4,15,Belgrano,Racing Club,0.0,1.0,post
 729009,2025-07-20 21:00:00,2025,11,19,Independiente,Talleres de Córdoba,1.0,2.0,post
 729007,2025-07-21 19:00:00,2025,8,10,Estudiantes de La Plata,Huracán,2.0,1.0,post
-729015,2025-07-21 21:15:00,2025,7845,17702,San Martín San Juan,Deportivo Riestra,3.0,2.0,post
 729006,2025-07-21 21:15:00,2025,8950,9739,Defensa y Justicia,Aldosivi,2.0,0.0,post
+729015,2025-07-21 21:15:00,2025,7845,17702,San Martín San Juan,Deportivo Riestra,3.0,2.0,post
 729028,2025-07-25 19:00:00,2025,10158,12,Sarmiento,Lanús,0.0,2.0,post
 729023,2025-07-25 21:15:00,2025,9744,4,Independiente Rivadavia,Belgrano,0.0,0.0,post
 729030,2025-07-25 21:15:00,2025,20,7767,Unión de Santa Fe,Tigre,0.0,0.0,post
 729017,2025-07-26 14:30:00,2025,9739,14,Aldosivi,Newell's Old Boys,0.0,0.0,post
 729027,2025-07-26 17:00:00,2025,17,7845,Rosario Central,San Martín San Juan,0.0,0.0,post
-729024,2025-07-26 19:00:00,2025,7764,3,Platense,Argentinos Juniors,0.0,0.0,post
 729031,2025-07-26 19:00:00,2025,21,2975,Vélez Sarsfield,Instituto,0.0,0.0,post
+729024,2025-07-26 19:00:00,2025,7764,3,Platense,Argentinos Juniors,0.0,0.0,post
 729025,2025-07-26 21:15:00,2025,15,8,Racing Club,Estudiantes de La Plata,0.0,1.0,post
-729029,2025-07-27 16:00:00,2025,19,6756,Talleres de Córdoba,Godoy Cruz,0.0,0.0,post
 729021,2025-07-27 16:00:00,2025,9,11,Gimnasia La Plata,Independiente,1.0,0.0,post
+729029,2025-07-27 16:00:00,2025,19,6756,Talleres de Córdoba,Godoy Cruz,0.0,0.0,post
 729022,2025-07-27 18:30:00,2025,10,5,Huracán,Boca Juniors,1.0,0.0,post
 729026,2025-07-27 20:30:00,2025,16,18,River Plate,San Lorenzo,0.0,0.0,post
 729020,2025-07-28 16:00:00,2025,17702,9785,Deportivo Riestra,Atlético Tucumán,1.0,0.0,post
@@ -1794,8 +1794,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729045,2025-08-09 14:30:00,2025,7845,10158,San Martín San Juan,Sarmiento,0.0,1.0,post
 729036,2025-08-09 16:30:00,2025,5,15,Boca Juniors,Racing Club,1.0,1.0,post
 729040,2025-08-09 18:30:00,2025,11,16,Independiente,River Plate,0.0,0.0,post
-729046,2025-08-09 20:45:00,2025,9785,17,Atlético Tucumán,Rosario Central,0.0,0.0,post
 729035,2025-08-09 20:45:00,2025,4,235,Belgrano,Banfield,2.0,1.0,post
+729046,2025-08-09 20:45:00,2025,9785,17,Atlético Tucumán,Rosario Central,0.0,0.0,post
 729034,2025-08-10 15:00:00,2025,10060,9739,Barracas Central,Aldosivi,3.0,1.0,post
 729041,2025-08-10 17:00:00,2025,2975,7764,Instituto,Platense,1.0,1.0,post
 729032,2025-08-10 20:00:00,2025,3,20,Argentinos Juniors,Unión de Santa Fe,1.0,0.0,post
@@ -1807,8 +1807,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729052,2025-08-16 16:15:00,2025,10,3,Huracán,Argentinos Juniors,1.0,0.0,post
 729058,2025-08-16 18:30:00,2025,17,17702,Rosario Central,Deportivo Riestra,1.0,1.0,post
 729061,2025-08-16 20:30:00,2025,21,11,Vélez Sarsfield,Independiente,2.0,1.0,post
-729051,2025-08-17 14:00:00,2025,9,12,Gimnasia La Plata,Lanús,1.0,2.0,post
 729050,2025-08-17 14:00:00,2025,8950,14,Defensa y Justicia,Newell's Old Boys,1.0,1.0,post
+729051,2025-08-17 14:00:00,2025,9,12,Gimnasia La Plata,Lanús,1.0,2.0,post
 729048,2025-08-17 16:15:00,2025,235,8,Banfield,Estudiantes de La Plata,3.0,2.0,post
 729049,2025-08-17 16:15:00,2025,11989,10060,Central Córdoba,Barracas Central,1.0,1.0,post
 729057,2025-08-17 18:30:00,2025,16,6756,River Plate,Godoy Cruz,4.0,2.0,post
@@ -1833,31 +1833,31 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729084,2025-08-29 19:00:00,2025,14,10060,Newell's Old Boys,Barracas Central,1.0,2.0,post
 729083,2025-08-29 21:15:00,2025,2975,11,Instituto,Independiente,0.0,0.0,post
 729088,2025-08-30 14:45:00,2025,18,10,San Lorenzo,Huracán,0.0,0.0,post
-729079,2025-08-30 17:00:00,2025,11989,8,Central Córdoba,Estudiantes de La Plata,2.0,0.0,post
 729082,2025-08-30 17:00:00,2025,9744,3,Independiente Rivadavia,Argentinos Juniors,2.0,1.0,post
+729079,2025-08-30 17:00:00,2025,11989,8,Central Córdoba,Estudiantes de La Plata,2.0,0.0,post
 729090,2025-08-30 21:30:00,2025,21,12,Vélez Sarsfield,Lanús,3.0,0.0,post
 729077,2025-08-31 14:30:00,2025,9739,5,Aldosivi,Boca Juniors,0.0,2.0,post
-729078,2025-08-31 16:45:00,2025,19,17702,Talleres de Córdoba,Deportivo Riestra,0.0,1.0,post
 729080,2025-08-31 16:45:00,2025,8950,4,Defensa y Justicia,Belgrano,2.0,1.0,post
+729078,2025-08-31 16:45:00,2025,19,17702,Talleres de Córdoba,Deportivo Riestra,0.0,1.0,post
 729087,2025-08-31 19:15:00,2025,16,7845,River Plate,San Martín San Juan,2.0,0.0,post
 729086,2025-08-31 21:15:00,2025,15,20,Racing Club,Unión de Santa Fe,2.0,3.0,post
 729081,2025-09-01 17:00:00,2025,9,9785,Gimnasia La Plata,Atlético Tucumán,1.0,0.0,post
 729085,2025-09-01 19:15:00,2025,7764,6756,Platense,Godoy Cruz,1.0,3.0,post
 729092,2025-09-11 20:00:00,2025,4,7845,Belgrano,San Martín San Juan,0.0,0.0,post
 729094,2025-09-12 14:30:00,2025,17702,11989,Deportivo Riestra,Central Córdoba,2.0,0.0,post
-729103,2025-09-12 19:00:00,2025,15,18,Racing Club,San Lorenzo,2.0,0.0,post
 729098,2025-09-12 19:00:00,2025,10,21,Huracán,Vélez Sarsfield,0.0,0.0,post
-729102,2025-09-12 21:15:00,2025,14,9785,Newell's Old Boys,Atlético Tucumán,2.0,0.0,post
+729103,2025-09-12 19:00:00,2025,15,18,Racing Club,San Lorenzo,2.0,0.0,post
 729101,2025-09-12 21:15:00,2025,12,9744,Lanús,Independiente Rivadavia,1.0,0.0,post
+729102,2025-09-12 21:15:00,2025,14,9785,Newell's Old Boys,Atlético Tucumán,2.0,0.0,post
 729097,2025-09-13 14:30:00,2025,6756,10060,Godoy Cruz,Barracas Central,0.0,0.0,post
 729099,2025-09-13 16:45:00,2025,11,235,Independiente,Banfield,0.0,1.0,post
 729095,2025-09-13 19:00:00,2025,8,16,Estudiantes de La Plata,River Plate,1.0,2.0,post
 729105,2025-09-13 21:15:00,2025,10158,9739,Sarmiento,Aldosivi,2.0,0.0,post
-729096,2025-09-14 15:00:00,2025,9,20,Gimnasia La Plata,Unión de Santa Fe,1.0,3.0,post
 729100,2025-09-14 15:00:00,2025,2975,3,Instituto,Argentinos Juniors,2.0,0.0,post
+729096,2025-09-14 15:00:00,2025,9,20,Gimnasia La Plata,Unión de Santa Fe,1.0,3.0,post
 729104,2025-09-14 17:30:00,2025,17,5,Rosario Central,Boca Juniors,1.0,1.0,post
-729106,2025-09-14 20:00:00,2025,7767,19,Tigre,Talleres de Córdoba,0.0,0.0,post
 729093,2025-09-14 20:00:00,2025,8950,7764,Defensa y Justicia,Platense,1.0,2.0,post
+729106,2025-09-14 20:00:00,2025,7767,19,Tigre,Talleres de Córdoba,0.0,0.0,post
 729112,2025-09-19 17:00:00,2025,17702,9,Deportivo Riestra,Gimnasia La Plata,1.0,0.0,post
 729115,2025-09-19 19:00:00,2025,10,15,Huracán,Racing Club,0.0,2.0,post
 729119,2025-09-19 19:15:00,2025,7845,21,San Martín San Juan,Vélez Sarsfield,1.0,2.0,post
@@ -1873,11 +1873,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729111,2025-09-21 21:15:00,2025,5,11989,Boca Juniors,Central Córdoba,2.0,2.0,post
 729113,2025-09-22 19:00:00,2025,8,8950,Estudiantes de La Plata,Defensa y Justicia,1.0,0.0,post
 729110,2025-09-22 21:00:00,2025,4,14,Belgrano,Newell's Old Boys,3.0,0.0,post
-729123,2025-09-26 19:00:00,2025,235,20,Banfield,Unión de Santa Fe,0.0,0.0,post
 729131,2025-09-26 19:00:00,2025,7764,7845,Platense,San Martín San Juan,2.0,2.0,post
+729123,2025-09-26 19:00:00,2025,235,20,Banfield,Unión de Santa Fe,0.0,0.0,post
 729125,2025-09-26 21:15:00,2025,11989,7767,Central Córdoba,Tigre,0.0,1.0,post
-729127,2025-09-27 14:30:00,2025,9,17,Gimnasia La Plata,Rosario Central,0.0,3.0,post
 729122,2025-09-27 14:30:00,2025,9739,3,Aldosivi,Argentinos Juniors,0.0,2.0,post
+729127,2025-09-27 14:30:00,2025,9,17,Gimnasia La Plata,Rosario Central,0.0,3.0,post
 729134,2025-09-27 16:45:00,2025,18,6756,San Lorenzo,Godoy Cruz,2.0,0.0,post
 729126,2025-09-27 19:00:00,2025,8950,5,Defensa y Justicia,Boca Juniors,2.0,1.0,post
 729135,2025-09-27 21:15:00,2025,19,10158,Talleres de Córdoba,Sarmiento,1.0,0.0,post
@@ -1893,8 +1893,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729142,2025-10-03 21:15:00,2025,20,9739,Unión de Santa Fe,Aldosivi,0.0,2.0,post
 729148,2025-10-04 14:30:00,2025,10158,9,Sarmiento,Gimnasia La Plata,0.0,1.0,post
 729147,2025-10-04 16:45:00,2025,7845,2975,San Martín San Juan,Instituto,0.0,0.0,post
-729151,2025-10-04 19:00:00,2025,9785,7764,Atlético Tucumán,Platense,2.0,0.0,post
 729143,2025-10-04 19:00:00,2025,10,235,Huracán,Banfield,1.0,0.0,post
+729151,2025-10-04 19:00:00,2025,9785,7764,Atlético Tucumán,Platense,2.0,0.0,post
 729144,2025-10-04 21:15:00,2025,12,18,Lanús,San Lorenzo,2.0,1.0,post
 729138,2025-10-05 14:30:00,2025,6756,11,Godoy Cruz,Independiente,1.0,1.0,post
 729141,2025-10-05 16:30:00,2025,8,10060,Estudiantes de La Plata,Barracas Central,1.0,1.0,post
@@ -1912,8 +1912,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729155,2025-10-11 22:15:00,2025,4,8,Belgrano,Estudiantes de La Plata,1.0,1.0,post
 729166,2025-10-11 22:15:00,2025,21,17,Vélez Sarsfield,Rosario Central,1.0,2.0,post
 729152,2025-10-12 14:30:00,2025,9739,10,Aldosivi,Huracán,2.0,0.0,post
-729160,2025-10-12 16:45:00,2025,9744,6756,Independiente Rivadavia,Godoy Cruz,0.0,0.0,post
 729161,2025-10-12 16:45:00,2025,2975,9785,Instituto,Atlético Tucumán,2.0,0.0,post
+729160,2025-10-12 16:45:00,2025,9744,6756,Independiente Rivadavia,Godoy Cruz,0.0,0.0,post
 729164,2025-10-12 19:15:00,2025,16,10158,River Plate,Sarmiento,0.0,1.0,post
 729159,2025-10-12 21:15:00,2025,11,12,Independiente,Lanús,0.0,2.0,post
 729163,2025-10-13 18:30:00,2025,7764,17702,Platense,Deportivo Riestra,1.0,1.0,post
@@ -1923,8 +1923,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729173,2025-10-18 15:45:00,2025,9744,235,Independiente Rivadavia,Banfield,1.0,2.0,post
 729169,2025-10-18 18:00:00,2025,5,4,Boca Juniors,Belgrano,1.0,2.0,post
 729179,2025-10-18 20:30:00,2025,19,16,Talleres de Córdoba,River Plate,0.0,2.0,post
-729178,2025-10-19 15:00:00,2025,10158,21,Sarmiento,Vélez Sarsfield,0.0,2.0,post
 729171,2025-10-19 15:00:00,2025,8,9,Estudiantes de La Plata,Gimnasia La Plata,2.0,0.0,post
+729178,2025-10-19 15:00:00,2025,10158,21,Sarmiento,Vélez Sarsfield,0.0,2.0,post
 729176,2025-10-19 18:00:00,2025,17,7764,Rosario Central,Platense,1.0,0.0,post
 729177,2025-10-19 18:00:00,2025,7845,11,San Martín San Juan,Independiente,1.0,0.0,post
 729170,2025-10-20 19:00:00,2025,17702,2975,Deportivo Riestra,Instituto,1.0,0.0,post
@@ -1951,11 +1951,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729196,2025-11-03 21:15:00,2025,235,12,Banfield,Lanús,2.0,1.0,post
 729185,2025-11-03 21:15:00,2025,4,7767,Belgrano,Tigre,0.0,0.0,post
 729206,2025-11-07 21:00:00,2025,17,18,Rosario Central,San Lorenzo,0.0,0.0,post
-729203,2025-11-08 17:00:00,2025,10,14,Huracán,Newell's Old Boys,0.0,2.0,post
 729205,2025-11-08 17:00:00,2025,15,8950,Racing Club,Defensa y Justicia,1.0,0.0,post
+729203,2025-11-08 17:00:00,2025,10,14,Huracán,Newell's Old Boys,0.0,2.0,post
 729209,2025-11-08 19:15:00,2025,19,7764,Talleres de Córdoba,Platense,1.0,0.0,post
-729211,2025-11-08 21:30:00,2025,20,10060,Unión de Santa Fe,Barracas Central,0.0,0.0,post
 729207,2025-11-08 21:30:00,2025,7845,12,San Martín San Juan,Lanús,1.0,1.0,post
+729211,2025-11-08 21:30:00,2025,20,10060,Unión de Santa Fe,Barracas Central,0.0,0.0,post
 729200,2025-11-09 16:30:00,2025,5,16,Boca Juniors,River Plate,2.0,0.0,post
 729199,2025-11-09 19:20:00,2025,235,9739,Banfield,Aldosivi,0.0,1.0,post
 729208,2025-11-09 19:20:00,2025,10158,2975,Sarmiento,Instituto,2.0,1.0,post
@@ -1963,19 +1963,19 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 729210,2025-11-09 21:30:00,2025,7767,8,Tigre,Estudiantes de La Plata,1.0,0.0,post
 729202,2025-11-10 17:00:00,2025,9,21,Gimnasia La Plata,Vélez Sarsfield,2.0,0.0,post
 729201,2025-11-10 19:00:00,2025,17702,11,Deportivo Riestra,Independiente,0.0,1.0,post
-729204,2025-11-10 21:15:00,2025,9744,11989,Independiente Rivadavia,Central Córdoba,0.0,0.0,post
 729197,2025-11-10 21:15:00,2025,3,4,Argentinos Juniors,Belgrano,1.0,0.0,post
+729204,2025-11-10 21:15:00,2025,9744,11989,Independiente Rivadavia,Central Córdoba,0.0,0.0,post
 729222,2025-11-14 20:00:00,2025,12,9785,Lanús,Atlético Tucumán,3.0,1.0,post
 729212,2025-11-15 17:00:00,2025,9739,7845,Aldosivi,San Martín San Juan,4.0,2.0,post
 729219,2025-11-15 17:00:00,2025,6756,17702,Godoy Cruz,Deportivo Riestra,1.0,1.0,post
 729225,2025-11-15 19:30:00,2025,18,10158,San Lorenzo,Sarmiento,1.0,1.0,post
 729220,2025-11-15 21:30:00,2025,11,17,Independiente,Rosario Central,1.0,0.0,post
-729221,2025-11-16 17:00:00,2025,2975,19,Instituto,Talleres de Córdoba,0.0,0.0,post
 729226,2025-11-16 17:00:00,2025,21,16,Vélez Sarsfield,River Plate,0.0,0.0,post
-729223,2025-11-16 20:15:00,2025,14,15,Newell's Old Boys,Racing Club,0.0,1.0,post
-729218,2025-11-16 20:15:00,2025,8,3,Estudiantes de La Plata,Argentinos Juniors,1.0,2.0,post
-729216,2025-11-16 20:15:00,2025,11989,235,Central Córdoba,Banfield,1.0,1.0,post
+729221,2025-11-16 17:00:00,2025,2975,19,Instituto,Talleres de Córdoba,0.0,0.0,post
 729215,2025-11-16 20:15:00,2025,5,7767,Boca Juniors,Tigre,2.0,0.0,post
+729216,2025-11-16 20:15:00,2025,11989,235,Central Córdoba,Banfield,1.0,1.0,post
+729218,2025-11-16 20:15:00,2025,8,3,Estudiantes de La Plata,Argentinos Juniors,1.0,2.0,post
+729223,2025-11-16 20:15:00,2025,14,15,Newell's Old Boys,Racing Club,0.0,1.0,post
 729213,2025-11-17 17:00:00,2025,10060,10,Barracas Central,Huracán,1.0,1.0,post
 729214,2025-11-17 17:00:00,2025,4,20,Belgrano,Unión de Santa Fe,0.0,0.0,post
 729217,2025-11-17 17:00:00,2025,8950,9744,Defensa y Justicia,Independiente Rivadavia,0.0,2.0,post
@@ -1998,8 +1998,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762774,2026-01-22 17:00:00,2026,9739,8950,Aldosivi,Defensa y Justicia,0.0,0.0,post
 762776,2026-01-22 20:00:00,2026,235,10,Banfield,Huracán,1.0,1.0,post
 762788,2026-01-22 20:00:00,2026,20,7764,Unión de Santa Fe,Platense,0.0,0.0,post
-762779,2026-01-22 22:15:00,2026,11989,11972,Central Córdoba,Gimnasia Mendoza,0.0,1.0,post
 762783,2026-01-22 22:15:00,2026,2975,21,Instituto,Vélez Sarsfield,0.0,1.0,post
+762779,2026-01-22 22:15:00,2026,11989,11972,Central Córdoba,Gimnasia Mendoza,0.0,1.0,post
 762785,2026-01-23 19:00:00,2026,18,12,San Lorenzo,Lanús,2.0,3.0,post
 762781,2026-01-23 20:00:00,2026,11,8,Independiente,Estudiantes de La Plata,1.0,1.0,post
 762782,2026-01-23 22:15:00,2026,9744,9785,Independiente Rivadavia,Atlético Tucumán,2.0,1.0,post
@@ -2008,8 +2008,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762780,2026-01-24 19:30:00,2026,9,15,Gimnasia La Plata,Racing Club,2.0,1.0,post
 762784,2026-01-24 22:00:00,2026,17,4,Rosario Central,Belgrano,1.0,2.0,post
 762778,2026-01-25 18:30:00,2026,5,17702,Boca Juniors,Deportivo Riestra,1.0,0.0,post
-762775,2026-01-25 21:00:00,2026,3,10158,Argentinos Juniors,Sarmiento,1.0,0.0,post
 762787,2026-01-25 21:00:00,2026,7767,19685,Tigre,Estudiantes de Río Cuarto,2.0,0.0,post
+762775,2026-01-25 21:00:00,2026,3,10158,Argentinos Juniors,Sarmiento,1.0,0.0,post
 762799,2026-01-26 17:00:00,2026,7764,2975,Platense,Instituto,2.0,1.0,post
 762802,2026-01-27 17:45:00,2026,21,19,Vélez Sarsfield,Talleres de Córdoba,2.0,1.0,post
 762795,2026-01-27 20:00:00,2026,11972,18,Gimnasia Mendoza,San Lorenzo,0.0,1.0,post
@@ -2021,14 +2021,14 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762801,2026-01-28 20:00:00,2026,16,9,River Plate,Gimnasia La Plata,2.0,0.0,post
 762794,2026-01-28 22:15:00,2026,8,5,Estudiantes de La Plata,Boca Juniors,2.0,1.0,post
 762792,2026-01-29 17:00:00,2026,17702,8950,Deportivo Riestra,Defensa y Justicia,0.0,1.0,post
-762797,2026-01-29 19:15:00,2026,12,20,Lanús,Unión de Santa Fe,2.0,1.0,post
 762791,2026-01-29 19:15:00,2026,4,7767,Belgrano,Tigre,1.0,1.0,post
+762797,2026-01-29 19:15:00,2026,12,20,Lanús,Unión de Santa Fe,2.0,1.0,post
 762793,2026-01-29 21:30:00,2026,19685,3,Estudiantes de Río Cuarto,Argentinos Juniors,0.0,0.0,post
 762790,2026-01-29 21:30:00,2026,10158,235,Sarmiento,Banfield,1.0,0.0,post
 762815,2026-01-31 17:30:00,2026,18,11989,San Lorenzo,Central Córdoba,1.0,0.0,post
 762811,2026-01-31 19:45:00,2026,11,21,Independiente,Vélez Sarsfield,1.0,1.0,post
-762818,2026-01-31 22:00:00,2026,9785,10,Atlético Tucumán,Huracán,1.0,1.0,post
 762805,2026-01-31 22:00:00,2026,19,7764,Talleres de Córdoba,Platense,1.0,2.0,post
+762818,2026-01-31 22:00:00,2026,9785,10,Atlético Tucumán,Huracán,1.0,1.0,post
 762807,2026-02-01 17:00:00,2026,10060,17702,Barracas Central,Deportivo Riestra,1.0,1.0,post
 762808,2026-02-01 19:15:00,2026,5,14,Boca Juniors,Newell's Old Boys,2.0,0.0,post
 762814,2026-02-01 21:30:00,2026,17,16,Rosario Central,River Plate,0.0,0.0,post
@@ -2038,8 +2038,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762804,2026-02-02 22:00:00,2026,3,4,Argentinos Juniors,Belgrano,0.0,0.0,post
 762816,2026-02-02 22:00:00,2026,20,11972,Unión de Santa Fe,Gimnasia Mendoza,4.0,0.0,post
 762806,2026-02-03 19:00:00,2026,235,19685,Banfield,Estudiantes de Río Cuarto,2.0,1.0,post
-762812,2026-02-03 21:15:00,2026,9744,10158,Independiente Rivadavia,Sarmiento,2.0,1.0,post
 762813,2026-02-03 21:15:00,2026,2975,12,Instituto,Lanús,2.0,2.0,post
+762812,2026-02-03 21:15:00,2026,9744,10158,Independiente Rivadavia,Sarmiento,2.0,1.0,post
 762822,2026-02-06 21:00:00,2026,11989,20,Central Córdoba,Unión de Santa Fe,1.0,0.0,post
 762819,2026-02-07 17:00:00,2026,9739,17,Aldosivi,Rosario Central,1.0,1.0,post
 762830,2026-02-07 18:00:00,2026,15,3,Racing Club,Argentinos Juniors,2.0,1.0,post
@@ -2049,8 +2049,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762829,2026-02-08 17:00:00,2026,7764,11,Platense,Independiente,0.0,1.0,post
 762832,2026-02-08 17:00:00,2026,10158,9785,Sarmiento,Atlético Tucumán,2.0,1.0,post
 762826,2026-02-08 19:15:00,2026,10,18,Huracán,San Lorenzo,1.0,0.0,post
-762833,2026-02-08 22:15:00,2026,21,5,Vélez Sarsfield,Boca Juniors,2.0,1.0,post
 762825,2026-02-08 22:15:00,2026,11972,2975,Gimnasia Mendoza,Instituto,1.0,0.0,post
+762833,2026-02-08 22:15:00,2026,21,5,Vélez Sarsfield,Boca Juniors,2.0,1.0,post
 762820,2026-02-09 17:00:00,2026,10060,9,Barracas Central,Gimnasia La Plata,2.0,0.0,post
 762824,2026-02-09 19:15:00,2026,8,17702,Estudiantes de La Plata,Deportivo Riestra,1.0,0.0,post
 762827,2026-02-09 19:15:00,2026,12,19,Lanús,Talleres de Córdoba,1.0,1.0,post
@@ -2067,8 +2067,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762843,2026-02-14 22:00:00,2026,9744,4,Independiente Rivadavia,Belgrano,0.0,1.0,post
 762840,2026-02-15 17:00:00,2026,9,8,Gimnasia La Plata,Estudiantes de La Plata,0.0,0.0,post
 762837,2026-02-15 19:30:00,2026,5,7764,Boca Juniors,Platense,0.0,0.0,post
-762844,2026-02-15 22:00:00,2026,2975,11989,Instituto,Central Córdoba,2.0,0.0,post
 762845,2026-02-15 22:00:00,2026,17,10060,Rosario Central,Barracas Central,2.0,0.0,post
+762844,2026-02-15 22:00:00,2026,2975,11989,Instituto,Central Córdoba,2.0,0.0,post
 762839,2026-02-16 19:00:00,2026,17702,14,Deportivo Riestra,Newell's Old Boys,1.0,1.0,post
 762853,2026-02-20 17:15:00,2026,8950,4,Defensa y Justicia,Belgrano,1.0,1.0,post
 762855,2026-02-20 17:45:00,2026,8,10158,Estudiantes de La Plata,Sarmiento,1.0,0.0,post
@@ -2076,10 +2076,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762858,2026-02-20 20:00:00,2026,2975,9785,Instituto,Atlético Tucumán,2.0,1.0,post
 762856,2026-02-20 22:15:00,2026,11972,9,Gimnasia Mendoza,Gimnasia La Plata,0.0,1.0,post
 762860,2026-02-20 22:15:00,2026,17,19,Rosario Central,Talleres de Córdoba,0.0,1.0,post
-762857,2026-02-21 17:00:00,2026,9744,11,Independiente Rivadavia,Independiente,3.0,2.0,post
 762859,2026-02-21 17:00:00,2026,7764,10060,Platense,Barracas Central,1.0,0.0,post
-762854,2026-02-21 19:15:00,2026,17702,10,Deportivo Riestra,Huracán,0.0,0.0,post
+762857,2026-02-21 17:00:00,2026,9744,11,Independiente Rivadavia,Independiente,3.0,2.0,post
 762863,2026-02-21 19:15:00,2026,235,14,Banfield,Newell's Old Boys,3.0,0.0,post
+762854,2026-02-21 19:15:00,2026,17702,10,Deportivo Riestra,Huracán,0.0,0.0,post
 762852,2026-02-21 21:30:00,2026,11989,7767,Central Córdoba,Tigre,0.0,0.0,post
 762861,2026-02-22 17:00:00,2026,18,19685,San Lorenzo,Estudiantes de Río Cuarto,2.0,0.0,post
 762862,2026-02-22 19:15:00,2026,21,16,Vélez Sarsfield,River Plate,1.0,0.0,post
@@ -2095,8 +2095,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762870,2026-02-25 19:30:00,2026,21,17702,Vélez Sarsfield,Deportivo Riestra,0.0,0.0,post
 762866,2026-02-26 17:15:00,2026,15,9744,Racing Club,Independiente Rivadavia,1.0,1.0,post
 762869,2026-02-26 17:15:00,2026,10158,20,Sarmiento,Unión de Santa Fe,1.0,3.0,post
-762875,2026-02-26 19:30:00,2026,19685,10,Estudiantes de Río Cuarto,Huracán,2.0,0.0,post
 762867,2026-02-26 19:30:00,2026,16,235,River Plate,Banfield,3.0,1.0,post
+762875,2026-02-26 19:30:00,2026,19685,10,Estudiantes de Río Cuarto,Huracán,2.0,0.0,post
 762882,2026-02-28 17:45:00,2026,5,11972,Boca Juniors,Gimnasia Mendoza,1.0,1.0,post
 762887,2026-02-28 20:00:00,2026,11,11989,Independiente,Central Córdoba,2.0,0.0,post
 762892,2026-02-28 22:15:00,2026,19,18,Talleres de Córdoba,San Lorenzo,0.0,0.0,post
@@ -2186,8 +2186,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762982,2026-04-12 17:30:00,2026,9785,7767,Atlético Tucumán,Tigre,0.0,0.0,post
 762983,2026-04-12 17:30:00,2026,10,17,Huracán,Rosario Central,3.0,1.0,post
 762976,2026-04-12 20:00:00,2026,15,16,Racing Club,River Plate,0.0,2.0,post
-762971,2026-04-13 16:30:00,2026,8950,19,Defensa y Justicia,Talleres de Córdoba,1.0,2.0,post
 762975,2026-04-13 16:30:00,2026,10158,9,Sarmiento,Gimnasia La Plata,1.0,2.0,post
+762971,2026-04-13 16:30:00,2026,8950,19,Defensa y Justicia,Talleres de Córdoba,1.0,2.0,post
 762979,2026-04-13 19:00:00,2026,12,235,Lanús,Banfield,1.0,0.0,post
 762974,2026-04-13 21:30:00,2026,21,11989,Vélez Sarsfield,Central Córdoba,1.0,0.0,post
 762984,2026-04-17 20:30:00,2026,20,14,Unión de Santa Fe,Newell's Old Boys,2.0,3.0,post
@@ -2197,8 +2197,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762987,2026-04-18 21:45:00,2026,3,9785,Argentinos Juniors,Atlético Tucumán,1.0,0.0,post
 762986,2026-04-19 13:30:00,2026,9739,15,Aldosivi,Racing Club,1.0,1.0,post
 762995,2026-04-19 17:00:00,2026,16,5,River Plate,Boca Juniors,0.0,1.0,post
-762998,2026-04-19 20:30:00,2026,19,17702,Talleres de Córdoba,Deportivo Riestra,2.0,0.0,post
 762996,2026-04-19 20:30:00,2026,17,10158,Rosario Central,Sarmiento,2.0,1.0,post
+762998,2026-04-19 20:30:00,2026,19,17702,Talleres de Córdoba,Deportivo Riestra,2.0,0.0,post
 762989,2026-04-20 15:00:00,2026,10060,4,Barracas Central,Belgrano,0.0,0.0,post
 762988,2026-04-20 17:15:00,2026,235,9744,Banfield,Independiente Rivadavia,0.0,0.0,post
 762990,2026-04-20 17:15:00,2026,11989,7764,Central Córdoba,Platense,4.0,3.0,post
@@ -2207,16 +2207,16 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762985,2026-04-20 21:45:00,2026,7767,10,Tigre,Huracán,1.0,1.0,post
 763011,2026-04-23 20:00:00,2026,8950,5,Defensa y Justicia,Boca Juniors,0.0,4.0,post
 763010,2026-04-24 17:00:00,2026,17702,11,Deportivo Riestra,Independiente,2.0,0.0,post
-763005,2026-04-24 19:15:00,2026,12,11989,Lanús,Central Córdoba,0.0,0.0,post
 763009,2026-04-24 19:15:00,2026,19685,17,Estudiantes de Río Cuarto,Rosario Central,1.0,2.0,post
+763005,2026-04-24 19:15:00,2026,12,11989,Lanús,Central Córdoba,0.0,0.0,post
 763012,2026-04-24 21:30:00,2026,7764,18,Platense,San Lorenzo,0.0,1.0,post
 763013,2026-04-24 21:30:00,2026,15,10060,Racing Club,Barracas Central,1.0,1.0,post
 763008,2026-04-25 17:00:00,2026,8,19,Estudiantes de La Plata,Talleres de Córdoba,0.0,0.0,post
 763002,2026-04-25 19:15:00,2026,10158,7767,Sarmiento,Tigre,1.0,0.0,post
 763001,2026-04-25 21:30:00,2026,16,9739,River Plate,Aldosivi,3.0,1.0,post
 763006,2026-04-26 15:00:00,2026,9744,11972,Independiente Rivadavia,Gimnasia Mendoza,5.0,1.0,post
-763000,2026-04-26 17:30:00,2026,4,9,Belgrano,Gimnasia La Plata,0.0,1.0,post
 763004,2026-04-26 17:30:00,2026,14,2975,Newell's Old Boys,Instituto,1.0,1.0,post
+763000,2026-04-26 17:30:00,2026,4,9,Belgrano,Gimnasia La Plata,0.0,1.0,post
 762999,2026-04-26 20:00:00,2026,9785,235,Atlético Tucumán,Banfield,1.0,1.0,post
 763003,2026-04-27 18:45:00,2026,21,20,Vélez Sarsfield,Unión de Santa Fe,2.0,2.0,post
 763007,2026-04-27 21:00:00,2026,10,3,Huracán,Argentinos Juniors,1.0,2.0,post
@@ -2227,10 +2227,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 762902,2026-05-02 18:45:00,2026,20,19,Unión de Santa Fe,Talleres de Córdoba,1.0,1.0,post
 762897,2026-05-02 21:15:00,2026,7764,8,Platense,Estudiantes de La Plata,0.0,2.0,post
 762904,2026-05-03 13:30:00,2026,9739,9744,Aldosivi,Independiente Rivadavia,1.0,1.0,post
-762900,2026-05-03 16:00:00,2026,17,7767,Rosario Central,Tigre,1.0,1.0,post
-762898,2026-05-03 16:00:00,2026,15,10,Racing Club,Huracán,0.0,0.0,post
 762906,2026-05-03 16:00:00,2026,4,10158,Belgrano,Sarmiento,4.0,0.0,post
 762894,2026-05-03 16:00:00,2026,9,3,Gimnasia La Plata,Argentinos Juniors,2.0,0.0,post
+762898,2026-05-03 16:00:00,2026,15,10,Racing Club,Huracán,0.0,0.0,post
+762900,2026-05-03 16:00:00,2026,17,7767,Rosario Central,Tigre,1.0,1.0,post
 762899,2026-05-03 18:30:00,2026,16,9785,River Plate,Atlético Tucumán,0.0,1.0,post
 762895,2026-05-04 17:00:00,2026,11972,8950,Gimnasia Mendoza,Defensa y Justicia,2.0,1.0,post
 762903,2026-05-04 19:15:00,2026,21,14,Vélez Sarsfield,Newell's Old Boys,1.0,1.0,post
@@ -2254,10 +2254,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841437,2026-07-23 19:30:00,2026,10158,3,Sarmiento,Argentinos Juniors,2.0,3.0,post
 401841448,2026-07-23 21:45:00,2026,8950,9739,Defensa y Justicia,Aldosivi,1.0,1.0,post
 401841444,2026-07-24 16:45:00,2026,11972,11989,Gimnasia Mendoza,Central Córdoba,1.0,0.0,post
-401841439,2026-07-24 19:00:00,2026,15,9,Racing Club,Gimnasia La Plata,2.0,1.0,post
 401841436,2026-07-24 19:00:00,2026,21,2975,Vélez Sarsfield,Instituto,1.0,0.0,post
-401841440,2026-07-24 21:15:00,2026,7764,20,Platense,Unión de Santa Fe,2.0,2.0,post
+401841439,2026-07-24 19:00:00,2026,15,9,Racing Club,Gimnasia La Plata,2.0,1.0,post
 401841443,2026-07-24 21:15:00,2026,10,235,Huracán,Banfield,1.0,0.0,post
+401841440,2026-07-24 21:15:00,2026,7764,20,Platense,Unión de Santa Fe,2.0,2.0,post
 401841446,2026-07-25 14:45:00,2026,19685,7767,Estudiantes de Río Cuarto,Tigre,1.0,0.0,post
 401841441,2026-07-25 17:00:00,2026,14,19,Newell's Old Boys,Talleres de Córdoba,1.0,0.0,post
 401841438,2026-07-25 19:15:00,2026,16,10060,River Plate,Barracas Central,0.0,1.0,post
@@ -2265,33 +2265,33 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841434,2026-07-26 15:00:00,2026,9785,9744,Atlético Tucumán,Independiente Rivadavia,0.0,0.0,post
 401841445,2026-07-26 17:15:00,2026,8,11,Estudiantes de La Plata,Independiente,0.0,2.0,post
 401841447,2026-07-26 19:30:00,2026,17702,5,Deportivo Riestra,Boca Juniors,3.0,0.0,post
-401841452,2026-07-28 19:00:00,2026,18,11972,San Lorenzo,Gimnasia Mendoza,1.0,0.0,post
 401841462,2026-07-28 19:00:00,2026,235,10158,Banfield,Sarmiento,3.0,2.0,post
+401841452,2026-07-28 19:00:00,2026,18,11972,San Lorenzo,Gimnasia Mendoza,1.0,0.0,post
 401841449,2026-07-28 21:15:00,2026,3,19685,Argentinos Juniors,Estudiantes de Río Cuarto,3.0,0.0,post
 401841453,2026-07-28 21:15:00,2026,17,15,Rosario Central,Racing Club,0.0,0.0,post
 401841461,2026-07-29 14:30:00,2026,10060,9739,Barracas Central,Aldosivi,1.0,0.0,post
 401841458,2026-07-29 17:00:00,2026,8950,17702,Defensa y Justicia,Deportivo Riestra,2.0,1.0,post
 401841457,2026-07-29 19:15:00,2026,9,16,Gimnasia La Plata,River Plate,1.0,0.0,post
 401841454,2026-07-29 21:30:00,2026,2975,7764,Instituto,Platense,2.0,1.0,post
-401841455,2026-07-30 19:00:00,2026,9744,10,Independiente Rivadavia,Huracán,2.0,1.0,post
 401841451,2026-07-30 19:00:00,2026,19,21,Talleres de Córdoba,Vélez Sarsfield,1.0,3.0,post
-401841456,2026-07-30 21:15:00,2026,11,14,Independiente,Newell's Old Boys,1.0,0.0,post
+401841455,2026-07-30 19:00:00,2026,9744,10,Independiente Rivadavia,Huracán,2.0,1.0,post
 401841459,2026-07-30 21:15:00,2026,11989,9785,Central Córdoba,Atlético Tucumán,0.0,2.0,post
+401841456,2026-07-30 21:15:00,2026,11,14,Independiente,Newell's Old Boys,1.0,0.0,post
 401841466,2026-08-01 15:30:00,2026,19685,235,Estudiantes de Río Cuarto,Banfield,0.0,0.0,post
 401841464,2026-08-01 15:30:00,2026,11972,20,Gimnasia Mendoza,Unión de Santa Fe,2.0,0.0,post
 401841469,2026-08-01 18:00:00,2026,4,3,Belgrano,Argentinos Juniors,0.0,1.0,post
 401841478,2026-08-01 18:00:00,2026,8,8950,Estudiantes de La Plata,Defensa y Justicia,3.0,0.0,post
 401841475,2026-08-01 20:30:00,2026,15,7767,Racing Club,Tigre,1.0,3.0,post
-401841470,2026-08-02 14:30:00,2026,9739,9,Aldosivi,Gimnasia La Plata,1.0,2.0,post
 401841467,2026-08-02 14:30:00,2026,17702,10060,Deportivo Riestra,Barracas Central,0.0,1.0,post
+401841470,2026-08-02 14:30:00,2026,9739,9,Aldosivi,Gimnasia La Plata,1.0,2.0,post
 401841473,2026-08-02 17:00:00,2026,14,5,Newell's Old Boys,Boca Juniors,2.0,2.0,post
 401841476,2026-08-02 19:15:00,2026,16,17,River Plate,Rosario Central,0.0,1.0,post
 401841472,2026-08-02 21:30:00,2026,12,2975,Lanús,Instituto,0.0,1.0,post
 401841477,2026-08-03 16:45:00,2026,10158,9744,Sarmiento,Independiente Rivadavia,2.0,1.0,post
 401841474,2026-08-03 19:00:00,2026,7764,19,Platense,Talleres de Córdoba,0.0,4.0,post
 401841465,2026-08-03 19:00:00,2026,21,11,Vélez Sarsfield,Independiente,1.0,0.0,post
-401841468,2026-08-03 21:15:00,2026,11989,18,Central Córdoba,San Lorenzo,1.0,0.0,post
 401841471,2026-08-03 21:15:00,2026,10,9785,Huracán,Atlético Tucumán,0.0,0.0,post
+401841468,2026-08-03 21:15:00,2026,11989,18,Central Córdoba,San Lorenzo,1.0,0.0,post
 401841460,2026-08-05 19:00:00,2026,5,8,Boca Juniors,Estudiantes de La Plata,1.0,0.0,post
 401841463,2026-08-05 21:15:00,2026,7767,4,Tigre,Belgrano,0.0,0.0,post
 401841450,2026-08-06 19:00:00,2026,20,12,Unión de Santa Fe,Lanús,2.0,1.0,post
@@ -2304,23 +2304,23 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841486,2026-08-08 21:30:00,2026,11,7764,Independiente,Platense,0.0,1.0,post
 401841492,2026-08-08 21:30:00,2026,2975,11972,Instituto,Gimnasia Mendoza,1.0,0.0,post
 401841490,2026-08-09 15:00:00,2026,18,10,San Lorenzo,Huracán,0.0,2.0,post
-401841479,2026-08-09 17:45:00,2026,9,10060,Gimnasia La Plata,Barracas Central,2.0,0.0,post
 401841481,2026-08-09 17:45:00,2026,8950,14,Defensa y Justicia,Newell's Old Boys,2.0,1.0,post
+401841479,2026-08-09 17:45:00,2026,9,10060,Gimnasia La Plata,Barracas Central,2.0,0.0,post
 401841485,2026-08-09 20:15:00,2026,3,15,Argentinos Juniors,Racing Club,2.0,1.0,post
 401841483,2026-08-10 19:00:00,2026,235,4,Banfield,Belgrano,0.0,2.0,post
 401841487,2026-08-10 21:15:00,2026,20,11989,Unión de Santa Fe,Central Córdoba,1.0,2.0,post
 401841489,2026-08-11 21:00:00,2026,19,12,Talleres de Córdoba,Lanús,0.0,3.0,post
 401841504,2026-08-14 20:30:00,2026,15,235,Racing Club,Banfield,0.0,1.0,post
-401841494,2026-08-15 14:30:00,2026,9739,7767,Aldosivi,Tigre,0.0,0.0,post
 401841502,2026-08-15 14:30:00,2026,18,20,San Lorenzo,Unión de Santa Fe,1.0,0.0,post
+401841494,2026-08-15 14:30:00,2026,9739,7767,Aldosivi,Tigre,0.0,0.0,post
 401841499,2026-08-15 16:45:00,2026,8,9,Estudiantes de La Plata,Gimnasia La Plata,4.0,0.0,post
-401841506,2026-08-15 19:00:00,2026,14,17702,Newell's Old Boys,Deportivo Riestra,2.0,0.0,post
 401841496,2026-08-15 19:00:00,2026,4,9744,Belgrano,Independiente Rivadavia,2.0,0.0,post
+401841506,2026-08-15 19:00:00,2026,14,17702,Newell's Old Boys,Deportivo Riestra,2.0,0.0,post
 401841505,2026-08-15 21:15:00,2026,7764,5,Platense,Boca Juniors,1.0,1.0,post
 401841501,2026-08-16 15:00:00,2026,10158,10,Sarmiento,Huracán,2.0,0.0,post
 401841503,2026-08-16 18:00:00,2026,16,3,River Plate,Argentinos Juniors,2.0,0.0,post
-401841508,2026-08-16 20:15:00,2026,10060,17,Barracas Central,Rosario Central,0.0,1.0,post
 401841497,2026-08-16 20:15:00,2026,11989,2975,Central Córdoba,Instituto,0.0,1.0,post
+401841508,2026-08-16 20:15:00,2026,10060,17,Barracas Central,Rosario Central,0.0,1.0,post
 401841498,2026-08-17 14:45:00,2026,19685,9785,Estudiantes de Río Cuarto,Atlético Tucumán,0.0,1.0,post
 401841507,2026-08-17 17:00:00,2026,12,11,Lanús,Independiente,1.0,3.0,post
 401841495,2026-08-17 19:15:00,2026,21,8950,Vélez Sarsfield,Defensa y Justicia,1.0,1.0,post
@@ -2332,8 +2332,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841514,2026-08-22 18:30:00,2026,11,9744,Independiente,Independiente Rivadavia,0.0,0.0,post
 401841513,2026-08-22 21:00:00,2026,10,17702,Huracán,Deportivo Riestra,0.0,0.0,post
 401841516,2026-08-22 21:00:00,2026,14,235,Newell's Old Boys,Banfield,2.0,1.0,post
-401841509,2026-08-23 14:45:00,2026,10060,7764,Barracas Central,Platense,1.0,2.0,post
 401841519,2026-08-23 14:45:00,2026,10158,8,Sarmiento,Estudiantes de La Plata,2.0,0.0,post
+401841509,2026-08-23 14:45:00,2026,10060,7764,Barracas Central,Platense,1.0,2.0,post
 401841510,2026-08-23 17:00:00,2026,4,8950,Belgrano,Defensa y Justicia,1.0,2.0,post
 401841518,2026-08-23 19:15:00,2026,16,21,River Plate,Vélez Sarsfield,2.0,2.0,post
 401841517,2026-08-23 21:30:00,2026,15,5,Racing Club,Boca Juniors,1.0,1.0,post
@@ -2351,10 +2351,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841524,2026-08-30 17:00:00,2026,3,9739,Argentinos Juniors,Aldosivi,2.0,1.0,post
 401841532,2026-08-30 19:15:00,2026,11,11972,Independiente,Gimnasia Mendoza,0.0,3.0,post
 401841533,2026-08-30 21:30:00,2026,9744,15,Independiente Rivadavia,Racing Club,3.0,1.0,post
-401841528,2026-08-31 19:00:00,2026,8950,7764,Defensa y Justicia,Platense,1.0,0.0,post
 401841530,2026-08-31 19:00:00,2026,8,14,Estudiantes de La Plata,Newell's Old Boys,0.0,0.0,post
-401841537,2026-08-31 21:15:00,2026,7767,10060,Tigre,Barracas Central,0.0,0.0,post
+401841528,2026-08-31 19:00:00,2026,8950,7764,Defensa y Justicia,Platense,1.0,0.0,post
 401841534,2026-08-31 21:15:00,2026,2975,18,Instituto,San Lorenzo,1.0,0.0,post
+401841537,2026-08-31 21:15:00,2026,7767,10060,Tigre,Barracas Central,0.0,0.0,post
 401841541,2026-09-04 16:45:00,2026,19685,10158,Estudiantes de Río Cuarto,Sarmiento,0.0,2.0,post
 401841543,2026-09-04 19:00:00,2026,4,10,Belgrano,Huracán,1.0,1.0,post
 401841547,2026-09-04 19:00:00,2026,7764,17702,Platense,Deportivo Riestra,1.0,1.0,post
@@ -2401,8 +2401,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841583,2026-09-21 19:00:00,2026,10060,9744,Barracas Central,Independiente Rivadavia,0.0,1.0,post
 401841582,2026-09-21 21:15:00,2026,12,8,Lanús,Estudiantes de La Plata,2.0,1.0,post
 401841588,2026-10-02 19:15:00,2026,11,2975,Independiente,Instituto,1.0,4.0,post
-401841587,2026-10-02 21:30:00,2026,9744,9,Independiente Rivadavia,Gimnasia La Plata,1.0,1.0,post
 401841594,2026-10-02 21:30:00,2026,5,20,Boca Juniors,Unión de Santa Fe,3.0,0.0,post
+401841587,2026-10-02 21:30:00,2026,9744,9,Independiente Rivadavia,Gimnasia La Plata,1.0,1.0,post
 401841593,2026-10-03 14:45:00,2026,8950,18,Defensa y Justicia,San Lorenzo,3.0,0.0,post
 401841596,2026-10-03 17:00:00,2026,9785,10060,Atlético Tucumán,Barracas Central,2.0,3.0,post
 401841586,2026-10-03 17:00:00,2026,14,12,Newell's Old Boys,Lanús,0.0,0.0,post
@@ -2411,8 +2411,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841597,2026-10-04 19:15:00,2026,3,7767,Argentinos Juniors,Tigre,2.0,1.0,post
 401841591,2026-10-04 21:30:00,2026,19685,15,Estudiantes de Río Cuarto,Racing Club,1.0,2.0,post
 401841592,2026-10-05 16:45:00,2026,17702,11989,Deportivo Riestra,Central Córdoba,1.0,1.0,post
-401841585,2026-10-05 19:00:00,2026,21,7764,Vélez Sarsfield,Platense,2.0,2.0,post
 401841590,2026-10-05 19:00:00,2026,8,11972,Estudiantes de La Plata,Gimnasia Mendoza,3.0,0.0,post
+401841585,2026-10-05 19:00:00,2026,21,7764,Vélez Sarsfield,Platense,2.0,2.0,post
 401841595,2026-10-05 21:15:00,2026,235,17,Banfield,Rosario Central,1.0,1.0,post
 401841612,2026-10-09 14:30:00,2026,9739,10158,Aldosivi,Sarmiento,1.0,3.0,post
 401841609,2026-10-09 18:00:00,2026,9,9785,Gimnasia La Plata,Atlético Tucumán,1.0,1.0,post
@@ -2478,14 +2478,15 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841659,2026-11-05 15:00:00,2026,9739,16,Aldosivi,River Plate,0.0,2.0,post
 401841667,2026-11-05 19:15:00,2026,9,4,Gimnasia La Plata,Belgrano,2.0,1.0,post
 401841670,2026-11-06 15:00:00,2026,10060,15,Barracas Central,Racing Club,2.0,0.0,post
+401841660,2026-11-06 19:15:00,2026,20,21,Unión de Santa Fe,Vélez Sarsfield,2.0,0.0,post
 401841665,2026-11-06 19:15:00,2026,11,17702,Independiente,Deportivo Riestra,2.0,1.0,post
 401841662,2026-11-06 19:15:00,2026,18,7764,San Lorenzo,Platense,0.0,2.0,post
-401841660,2026-11-06 19:15:00,2026,20,21,Unión de Santa Fe,Vélez Sarsfield,2.0,0.0,post
 401841671,2026-11-06 22:00:00,2026,235,9785,Banfield,Atlético Tucumán,2.0,2.0,post
 401841673,2026-11-06 22:00:00,2026,7767,10158,Tigre,Sarmiento,1.0,0.0,post
 401841666,2026-11-07 15:00:00,2026,11972,9744,Gimnasia Mendoza,Independiente Rivadavia,1.0,1.0,post
 401841661,2026-11-07 15:00:00,2026,19,8,Talleres de Córdoba,Estudiantes de La Plata,1.0,1.0,post
-401841669,2026-11-07 17:30:00,2026,5,8950,Boca Juniors,Defensa y Justicia,1.0,0.0,post
 401841672,2026-11-07 17:30:00,2026,3,10,Argentinos Juniors,Huracán,0.0,2.0,post
+401841669,2026-11-07 17:30:00,2026,5,8950,Boca Juniors,Defensa y Justicia,1.0,0.0,post
 401841663,2026-11-07 17:30:00,2026,17,19685,Rosario Central,Estudiantes de Río Cuarto,2.0,0.0,post
 401841664,2026-11-07 22:00:00,2026,2975,14,Instituto,Newell's Old Boys,2.0,2.0,post
+401841668,2026-11-08 19:30:00,2026,11989,12,Central Córdoba,Lanús,1.0,1.0,post

@@ -1,42 +1,42 @@
-event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841311,2026-11-14 18:30:00,2026,9169,7632,Mirassol,Atlético Mineiro,,,pre
-401841175,2026-11-14 20:30:00,2026,9318,3454,Chapecoense,Vasco da Gama,,,pre
-401841315,2026-11-18 19:30:00,2026,3456,2674,Coritiba,Santos,,,pre
-401841310,2026-11-18 20:00:00,2026,4936,9318,Remo,Chapecoense,,,pre
-401841313,2026-11-18 20:30:00,2026,819,3458,Flamengo,Athletico Paranaense,,,pre
-401841314,2026-11-18 20:30:00,2026,2022,2029,Cruzeiro,Palmeiras,,,pre
-401841316,2026-11-18 21:30:00,2026,874,6086,Corinthians,Botafogo,,,pre
-401841312,2026-11-18 21:30:00,2026,6273,9967,Grêmio,Bahia,,,pre
-401841308,2026-11-19 19:30:00,2026,3454,1936,Vasco da Gama,Internacional,,,pre
-401841317,2026-11-19 19:30:00,2026,3457,6079,Vitória,Red Bull Bragantino,,,pre
-401841309,2026-11-19 21:30:00,2026,2026,3445,São Paulo,Fluminense,,,pre
-401841322,2026-11-21 16:30:00,2026,2029,819,Palmeiras,Flamengo,,,pre
-401841327,2026-11-21 17:30:00,2026,9967,3456,Bahia,Coritiba,,,pre
-401841325,2026-11-21 21:00:00,2026,9318,2022,Chapecoense,Cruzeiro,,,pre
-401841318,2026-11-22 16:00:00,2026,3458,4936,Athletico Paranaense,Remo,,,pre
-401841324,2026-11-22 18:30:00,2026,3445,9169,Fluminense,Mirassol,,,pre
-401841321,2026-11-22 19:30:00,2026,6079,3454,Red Bull Bragantino,Vasco da Gama,,,pre
-401841323,2026-11-23 19:30:00,2026,1936,3457,Internacional,Vitória,,,pre
-401841326,2026-11-23 20:00:00,2026,6086,2026,Botafogo,São Paulo,,,pre
-401841320,2026-11-23 21:00:00,2026,2674,6273,Santos,Grêmio,,,pre
-401841335,2026-11-24 18:00:00,2026,9318,2029,Chapecoense,Palmeiras,,,pre
-401841319,2026-11-25 20:00:00,2026,7632,874,Atlético Mineiro,Corinthians,,,pre
-401841329,2026-11-26 20:00:00,2026,2026,4936,São Paulo,Remo,,,pre
-401841337,2026-11-27 20:00:00,2026,3445,2022,Fluminense,Cruzeiro,,,pre
-401841336,2026-11-28 21:00:00,2026,6086,9967,Botafogo,Bahia,,,pre
-401841333,2026-11-29 16:00:00,2026,3456,819,Coritiba,Flamengo,,,pre
-401841332,2026-11-29 16:00:00,2026,3457,2674,Vitória,Santos,,,pre
-401841334,2026-11-29 18:30:00,2026,874,6273,Corinthians,Grêmio,,,pre
-401841331,2026-11-29 18:30:00,2026,1936,6079,Internacional,Red Bull Bragantino,,,pre
-401841330,2026-11-29 18:30:00,2026,9169,3458,Mirassol,Athletico Paranaense,,,pre
-401841328,2026-11-29 19:30:00,2026,7632,3454,Atlético Mineiro,Vasco da Gama,,,pre
-401841344,2026-12-02 21:30:00,2026,6079,3445,Red Bull Bragantino,Fluminense,,,pre
-401841343,2026-12-02 21:30:00,2026,2029,3456,Palmeiras,Coritiba,,,pre
-401841345,2026-12-02 21:30:00,2026,4936,874,Remo,Corinthians,,,pre
-401841347,2026-12-02 21:30:00,2026,6273,9169,Grêmio,Mirassol,,,pre
-401841346,2026-12-02 21:30:00,2026,2674,6086,Santos,Botafogo,,,pre
-401841340,2026-12-02 21:30:00,2026,2022,1936,Cruzeiro,Internacional,,,pre
-401841339,2026-12-02 21:30:00,2026,9967,7632,Bahia,Atlético Mineiro,,,pre
-401841338,2026-12-02 21:30:00,2026,3458,2026,Athletico Paranaense,São Paulo,,,pre
-401841341,2026-12-02 21:30:00,2026,819,9318,Flamengo,Chapecoense,,,pre
-401841342,2026-12-02 21:30:00,2026,3454,3457,Vasco da Gama,Vitória,,,pre
+event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
+401841311,2026-11-14 18:30:00,2026,9169,7632,Mirassol,Atlético Mineiro,,,pre,False
+401841175,2026-11-14 20:30:00,2026,9318,3454,Chapecoense,Vasco da Gama,,,pre,False
+401841315,2026-11-18 19:30:00,2026,3456,2674,Coritiba,Santos,,,pre,False
+401841310,2026-11-18 20:00:00,2026,4936,9318,Remo,Chapecoense,,,pre,False
+401841313,2026-11-18 20:30:00,2026,819,3458,Flamengo,Athletico Paranaense,,,pre,False
+401841314,2026-11-18 20:30:00,2026,2022,2029,Cruzeiro,Palmeiras,,,pre,False
+401841316,2026-11-18 21:30:00,2026,874,6086,Corinthians,Botafogo,,,pre,False
+401841312,2026-11-18 21:30:00,2026,6273,9967,Grêmio,Bahia,,,pre,False
+401841308,2026-11-19 19:30:00,2026,3454,1936,Vasco da Gama,Internacional,,,pre,False
+401841317,2026-11-19 19:30:00,2026,3457,6079,Vitória,Red Bull Bragantino,,,pre,False
+401841309,2026-11-19 21:30:00,2026,2026,3445,São Paulo,Fluminense,,,pre,False
+401841322,2026-11-21 16:30:00,2026,2029,819,Palmeiras,Flamengo,,,pre,False
+401841327,2026-11-21 17:30:00,2026,9967,3456,Bahia,Coritiba,,,pre,False
+401841325,2026-11-21 21:00:00,2026,9318,2022,Chapecoense,Cruzeiro,,,pre,False
+401841318,2026-11-22 16:00:00,2026,3458,4936,Athletico Paranaense,Remo,,,pre,False
+401841324,2026-11-22 18:30:00,2026,3445,9169,Fluminense,Mirassol,,,pre,False
+401841321,2026-11-22 19:30:00,2026,6079,3454,Red Bull Bragantino,Vasco da Gama,,,pre,False
+401841323,2026-11-23 19:30:00,2026,1936,3457,Internacional,Vitória,,,pre,False
+401841326,2026-11-23 20:00:00,2026,6086,2026,Botafogo,São Paulo,,,pre,False
+401841320,2026-11-23 21:00:00,2026,2674,6273,Santos,Grêmio,,,pre,False
+401841335,2026-11-24 18:00:00,2026,9318,2029,Chapecoense,Palmeiras,,,pre,False
+401841319,2026-11-25 20:00:00,2026,7632,874,Atlético Mineiro,Corinthians,,,pre,False
+401841329,2026-11-26 20:00:00,2026,2026,4936,São Paulo,Remo,,,pre,False
+401841337,2026-11-27 20:00:00,2026,3445,2022,Fluminense,Cruzeiro,,,pre,False
+401841336,2026-11-28 21:00:00,2026,6086,9967,Botafogo,Bahia,,,pre,False
+401841333,2026-11-29 16:00:00,2026,3456,819,Coritiba,Flamengo,,,pre,False
+401841332,2026-11-29 16:00:00,2026,3457,2674,Vitória,Santos,,,pre,False
+401841334,2026-11-29 18:30:00,2026,874,6273,Corinthians,Grêmio,,,pre,False
+401841331,2026-11-29 18:30:00,2026,1936,6079,Internacional,Red Bull Bragantino,,,pre,False
+401841330,2026-11-29 18:30:00,2026,9169,3458,Mirassol,Athletico Paranaense,,,pre,False
+401841328,2026-11-29 19:30:00,2026,7632,3454,Atlético Mineiro,Vasco da Gama,,,pre,False
+401841344,2026-12-02 21:30:00,2026,6079,3445,Red Bull Bragantino,Fluminense,,,pre,False
+401841343,2026-12-02 21:30:00,2026,2029,3456,Palmeiras,Coritiba,,,pre,False
+401841345,2026-12-02 21:30:00,2026,4936,874,Remo,Corinthians,,,pre,False
+401841347,2026-12-02 21:30:00,2026,6273,9169,Grêmio,Mirassol,,,pre,False
+401841346,2026-12-02 21:30:00,2026,2674,6086,Santos,Botafogo,,,pre,False
+401841340,2026-12-02 21:30:00,2026,2022,1936,Cruzeiro,Internacional,,,pre,False
+401841339,2026-12-02 21:30:00,2026,9967,7632,Bahia,Atlético Mineiro,,,pre,False
+401841338,2026-12-02 21:30:00,2026,3458,2026,Athletico Paranaense,São Paulo,,,pre,False
+401841341,2026-12-02 21:30:00,2026,819,9318,Flamengo,Chapecoense,,,pre,False
+401841342,2026-12-02 21:30:00,2026,3454,3457,Vasco da Gama,Vitória,,,pre,False

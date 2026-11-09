@@ -1854,3 +1854,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878949,2026-11-07 18:15:00,2026,5579,7879,OH Leuven,KV Mechelen,2.0,0.0,post
 401878950,2026-11-07 20:45:00,2026,17544,22269,Antwerp,Lommel SK,2.0,2.0,post
 401878948,2026-11-07 20:45:00,2026,131235,3610,RAAL La Louvière,Cercle Brugge,0.0,1.0,post
+401878946,2026-11-08 13:30:00,2026,570,441,Club Brugge,Anderlecht,1.0,1.0,post
+401878945,2026-11-08 16:00:00,2026,3611,5786,Gent,KV Kortrijk,1.0,0.0,post
+401878943,2026-11-08 18:30:00,2026,5807,938,Union Saint-Gilloise,Genk,1.0,0.0,post
+401878944,2026-11-08 19:15:00,2026,936,4691,Sint-Truiden,Zulte-Waregem,4.0,1.0,post

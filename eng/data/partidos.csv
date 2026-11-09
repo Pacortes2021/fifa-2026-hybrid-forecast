@@ -2219,3 +2219,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401879241,2026-11-07 15:00:00,2026,370,361,Fulham,Newcastle United,1.0,1.0,post
 401878760,2026-11-07 15:00:00,2026,359,306,Arsenal,Hull City,1.0,0.0,post
 401878757,2026-11-07 17:30:00,2026,393,382,Nottingham Forest,Manchester City,3.0,1.0,post
+401879244,2026-11-08 14:00:00,2026,331,337,Brighton & Hove Albion,Brentford,2.0,0.0,post
+401879243,2026-11-08 14:00:00,2026,384,364,Crystal Palace,Liverpool,1.0,3.0,post
+401878759,2026-11-08 14:00:00,2026,373,349,Ipswich Town,AFC Bournemouth,1.0,2.0,post
+401879239,2026-11-08 14:00:00,2026,366,363,Sunderland,Chelsea,1.0,0.0,post
+401879240,2026-11-08 16:30:00,2026,360,362,Manchester United,Aston Villa,4.0,4.0,post

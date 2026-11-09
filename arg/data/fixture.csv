@@ -1,2 +1,9 @@
-event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado
-401841668,2026-11-08 19:30:00,2026,11989,12,Central Córdoba,Lanús,,,pre
+event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
+401933761,2026-11-22 17:00:00,2026,16,12,River Plate,Lanús,,,pre,False
+401933762,2026-11-22 17:00:00,2026,2975,10,Instituto,Huracán,,,pre,False
+401933756,2026-11-22 17:00:00,2026,9,14,Gimnasia La Plata,Newell's Old Boys,,,pre,False
+401933759,2026-11-22 17:00:00,2026,17,11972,Rosario Central,Gimnasia Mendoza,,,pre,False
+401933757,2026-11-22 17:00:00,2026,5,9744,Boca Juniors,Independiente Rivadavia,,,pre,False
+401933755,2026-11-22 17:00:00,2026,3,11,Argentinos Juniors,Independiente,,,pre,False
+401933758,2026-11-22 17:00:00,2026,8950,10060,Defensa y Justicia,Barracas Central,,,pre,False
+401933760,2026-11-22 17:00:00,2026,21,4,Vélez Sarsfield,Belgrano,,,pre,False
