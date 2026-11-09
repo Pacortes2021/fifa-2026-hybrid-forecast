@@ -29,6 +29,28 @@ def get_datos_jugadores():
     return df_b, df_r, dvp
 
 
+@st.cache_data(show_spinner=False)
+def get_oportunidades_partido(
+    _df_box, _df_rosters, _dvp, local, visita,
+    pace_loc, pace_vis, drtg_loc, drtg_vis,
+    bajas_loc_tuple, bajas_vis_tuple, spread_esp
+):
+    feats_ctx = {
+        "pace_local": pace_loc,
+        "pace_visita": pace_vis,
+        "drtg_local": drtg_loc,
+        "drtg_visita": drtg_vis,
+    }
+    return mj.escanear_oportunidades_partido(
+        _df_box, _df_rosters, _dvp, local, visita,
+        feats_partido=feats_ctx,
+        bajas_local=list(bajas_loc_tuple),
+        bajas_visita=list(bajas_vis_tuple),
+        spread_esperado=spread_esp,
+        top_n_jugadores=6,
+    )
+
+
 @st.cache_data(show_spinner="Ejecutando validación Walk-Forward Out-of-Sample sobre +6.700 partidos de jugadores...")
 def get_backtest_jugadores(_df_box, _M, n_rows):
     tracker = _M["tracker"]
@@ -363,6 +385,34 @@ def run_app():
                 </div>
                 """, unsafe_allow_html=True)
 
+            # Escáner automático de Ventajas Tácticas y Jugadas de Valor (+EV) en Jugadores
+            st.markdown('<div class="card-title">🧠 Detector Automático de Ventajas Tácticas y Jugadas de Valor (+EV) del Partido</div>', unsafe_allow_html=True)
+            st.caption(
+                "Al simular el enfrentamiento, el motor inspecciona automáticamente la rotación activa de ambos equipos "
+                "(incorporando las bajas seleccionadas), cruzando el historial directo contra este rival (**H2H**), "
+                "los desajustes de **Defensa contra la Posición (DvP)**, el ritmo esperado y la consistencia reciente (**L10**):"
+            )
+            insights_duelo, df_jugadas_duelo = get_oportunidades_partido(
+                df_box_j, df_rost_j, dvp_data, home_team, away_team,
+                round(float(feats.get("pace_local", 99.2)), 2),
+                round(float(feats.get("pace_visita", 99.2)), 2),
+                round(float(feats.get("drtg_local", 114.5)), 2),
+                round(float(feats.get("drtg_visita", 114.5)), 2),
+                tuple(sorted(bajas_h_sel)),
+                tuple(sorted(bajas_a_sel)),
+                round(float(pred["proj_spread"]), 1),
+            )
+            if insights_duelo:
+                with st.container(border=True):
+                    st.markdown("##### ⚡ Insights Tácticos y Desajustes Detectados en el Duelo")
+                    for ins_txt in insights_duelo:
+                        st.markdown(f"- {ins_txt}")
+            if not df_jugadas_duelo.empty:
+                st.markdown("##### 🎯 Ranking de Jugadas de Valor (+EV) Detectadas en Ambos Equipos")
+                st.dataframe(df_jugadas_duelo, width="stretch", hide_index=True)
+            else:
+                st.info("No se detectaron desviaciones estadísticamente significativas (+EV) en los jugadores de este partido.")
+
             # Puntuación proyectada por cuartos
             st.markdown('<div class="card-title">🏀 Proyección de Anotación por Cuartos</div>', unsafe_allow_html=True)
             df_cuartos = pd.DataFrame({
@@ -605,6 +655,25 @@ def run_app():
                     f"Pace esperado: **`{fac['exp_pace']:.1f}` pos** · "
                     f"Spread proyectado del partido: **`{eq_loc} {pred_ctx['proj_spread']:+.1f}`**"
                 )
+
+                # Radar automático de todo el enfrentamiento en la pestaña de Jugadores
+                with st.expander(f"📡 Radar Automático de Jugadas de Valor (+EV) del Duelo: {team_prop} vs {rival_sel}", expanded=False):
+                    st.caption("Escaneo completo de ambos planteles bajo las condiciones y bajas seleccionadas:")
+                    ins_t2, df_jug_t2 = get_oportunidades_partido(
+                        df_box_j, df_rosters_j, dvp_data, eq_loc, eq_vis,
+                        round(float(feats_ctx.get("pace_local", 99.2)), 2),
+                        round(float(feats_ctx.get("pace_visita", 99.2)), 2),
+                        round(float(feats_ctx.get("drtg_local", 114.5)), 2),
+                        round(float(feats_ctx.get("drtg_visita", 114.5)), 2),
+                        tuple(sorted(bajas_seleccionadas if es_local_prop else bajas_riv_sel)),
+                        tuple(sorted(bajas_riv_sel if es_local_prop else bajas_seleccionadas)),
+                        round(float(pred_ctx["proj_spread"]), 1),
+                    )
+                    if ins_t2:
+                        for it2 in ins_t2:
+                            st.markdown(f"- {it2}")
+                    if not df_jug_t2.empty:
+                        st.dataframe(df_jug_t2, width="stretch", hide_index=True)
 
                 if bajas_objs:
                     boost_pct = (fac["boost_bajas_pts"] - 1.0) * 100

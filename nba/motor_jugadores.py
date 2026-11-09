@@ -700,18 +700,19 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
     ast_proy = a_per_min * minutos * factor_pace * factor_def_ast * factor_casa * boost_ast_baja * boost_rival_ast
     tpm_proy = t_per_min * minutos * factor_pace * factor_def_tpm * factor_casa * boost_tpm_baja * boost_rival_pts
 
-    # 9. Ajuste Bayesiano por Historial Directo (H2H contra el rival, normalizado a los minutos proyectados)
+    # 9. Ajuste Bayesiano por Historial Directo (H2H contra el rival, combinando promedio directo y tasa por minuto)
     n_h2h = 0
     if h2h_games is not None and not h2h_games.empty:
         h2h_valid = h2h_games[h2h_games["min_num"] >= 10.0]
         n_h2h = len(h2h_valid)
         if n_h2h >= 1:
-            w_h2h = min(0.20, n_h2h / (n_h2h + 10.0))
-            m_h2h = max(float(h2h_valid["min_num"].sum()), 1.0)
-            h2h_pts_scaled = (float(h2h_valid["pts_num"].sum()) / m_h2h) * minutos * boost_pts_baja
-            h2h_reb_scaled = (float(h2h_valid["reb_num"].sum()) / m_h2h) * minutos * boost_reb_baja
-            h2h_ast_scaled = (float(h2h_valid["ast_num"].sum()) / m_h2h) * minutos * boost_ast_baja
-            h2h_tpm_scaled = (float(h2h_valid["tpm"].sum()) / m_h2h) * minutos * boost_tpm_baja
+            w_h2h = min(0.26, n_h2h / (n_h2h + 6.0))
+            m_h2h_avg = max(float(h2h_valid["min_num"].mean()), 10.0)
+            scale_m = 0.55 * (minutos / m_h2h_avg) + 0.45
+            h2h_pts_scaled = float(h2h_valid["pts_num"].mean()) * scale_m * boost_pts_baja
+            h2h_reb_scaled = float(h2h_valid["reb_num"].mean()) * scale_m * boost_reb_baja
+            h2h_ast_scaled = float(h2h_valid["ast_num"].mean()) * scale_m * boost_ast_baja
+            h2h_tpm_scaled = float(h2h_valid["tpm"].mean()) * scale_m * boost_tpm_baja
 
             pts_proy = (1.0 - w_h2h) * pts_proy + w_h2h * h2h_pts_scaled
             reb_proy = (1.0 - w_h2h) * reb_proy + w_h2h * h2h_reb_scaled
@@ -1067,3 +1068,271 @@ def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70):
         "n_con_bajas": int(df_e["has_baja"].sum()),
     }
     return pd.DataFrame(resumen), meta
+
+
+def escanear_oportunidades_partido(
+    df_box, df_rosters, dvp_data, local, visita, feats_partido=None,
+    bajas_local=None, bajas_visita=None, spread_esperado=0.0, top_n_jugadores=6
+):
+    """
+    Escáner inteligente de oportunidades (+EV) e insights tácticos para un enfrentamiento NBA:
+      - Analiza automáticamente a los jugadores principales de la rotación de AMBOS equipos (local y visita).
+      - Detecta catalizadores: Dominancia/Freno en duelos directos H2H contra ese rival, desajustes
+        de Defensa contra la Posición (DvP), redistribución por bajas activas (Usage Vacuum + On/Off)
+        y convergencia con la tendencia reciente (Hit Rate L10).
+      - Devuelve una lista priorizada de Insights Narrativos y un DataFrame con el Ranking de Jugadas de Valor.
+    """
+    if df_box is None or df_box.empty:
+        return [], pd.DataFrame()
+
+    feats_partido = feats_partido or {}
+    bajas_local = list(bajas_local or [])
+    bajas_visita = list(bajas_visita or [])
+
+    pace_loc = float(feats_partido.get("pace_local", LEAGUE_AVG_PACE))
+    pace_vis = float(feats_partido.get("pace_visita", LEAGUE_AVG_PACE))
+    drtg_loc = float(feats_partido.get("drtg_local", LEAGUE_AVG_DRTG))
+    drtg_vis = float(feats_partido.get("drtg_visita", LEAGUE_AVG_DRTG))
+
+    rot_loc_all = obtener_companeros_equipo(df_box, df_rosters, local, solo_con_partidos=True)
+    rot_vis_all = obtener_companeros_equipo(df_box, df_rosters, visita, solo_con_partidos=True)
+
+    bajas_loc_objs = [c for c in rot_loc_all if c["player_name"] in bajas_local]
+    bajas_vis_objs = [c for c in rot_vis_all if c["player_name"] in bajas_visita]
+
+    activos_loc = [c for c in rot_loc_all if c["player_name"] not in bajas_local and c["min_avg"] >= 16.0][:top_n_jugadores]
+    activos_vis = [c for c in rot_vis_all if c["player_name"] not in bajas_visita and c["min_avg"] >= 16.0][:top_n_jugadores]
+
+    insights_candidatos = []
+    jugadas_valor = []
+
+    lados = [
+        (local, visita, True, activos_loc, bajas_loc_objs, bajas_vis_objs, pace_loc, pace_vis, drtg_vis),
+        (visita, local, False, activos_vis, bajas_vis_objs, bajas_loc_objs, pace_vis, pace_loc, drtg_loc),
+    ]
+
+    mercados_cfg = [
+        ("PTS", "Puntos (PTS)", "pts", "pts_avg", "pts_num", 10.5),
+        ("REB", "Rebotes (REB)", "reb", "reb_avg", "reb_num", 3.5),
+        ("AST", "Asistencias (AST)", "ast", "ast_avg", "ast_num", 2.5),
+        ("3PM", "Triples (3PM)", "tpm", "tpm_avg", "tpm", 1.2),
+        ("PRA", "Total PRA", "pra", "pra_avg", "pra", 18.0),
+    ]
+
+    for eq, riv, es_loc, activos, bajas_prop, bajas_riv, p_eq, p_riv, d_riv in lados:
+        for jug_meta in activos:
+            pname = jug_meta["player_name"]
+            perfil = obtener_perfil_jugador(df_box, df_rosters, pname)
+            if perfil is None or perfil["pj"] < 5:
+                continue
+
+            df_all_p = perfil["df_games"]
+            df_team_p = perfil["df_games_team"]
+            h2h_sub = df_all_p[(df_all_p["rival"] == riv) & (df_all_p["min_num"] >= 10.0)]
+            n_h2h = len(h2h_sub)
+
+            proy = proyectar_jugador(
+                perfil, riv, minutos_proy=None, es_local=es_loc,
+                bajas_companeros=bajas_prop, bajas_rivales=bajas_riv,
+                pace_rival=p_riv, pace_equipo=p_eq, drtg_rival=d_riv,
+                h2h_games=h2h_sub, dvp_data=dvp_data, df_box=df_box,
+                spread_esperado=spread_esperado
+            )
+            fac = proy["factores"]
+
+            # 1. Detectar Insights Narrativos de H2H directo (cuando tiene >= 2 duelos contra el rival)
+            if n_h2h >= 2:
+                h2h_pts_avg = float(h2h_sub["pts_num"].mean())
+                diff_h2h_pts = h2h_pts_avg - perfil["pts_avg"]
+                h2h_pra_avg = float(h2h_sub["pra"].mean())
+                diff_h2h_pra = h2h_pra_avg - perfil["pra_avg"]
+
+                if diff_h2h_pts >= 2.5 and perfil["pts_avg"] >= 12.0:
+                    insights_candidatos.append((
+                        abs(diff_h2h_pts) * 1.4,
+                        f"🔥 **Verdugo Histórico vs {riv}:** **{pname}** ({eq}) eleva notablemente su nivel frente a {riv}, "
+                        f"promediando **{h2h_pts_avg:.1f} PTS** ({h2h_pra_avg:.1f} PRA) en sus últimos **{n_h2h} duelos directos** "
+                        f"(**{diff_h2h_pts:+.1f} PTS** por encima de su media habitual de {perfil['pts_avg']:.1f} PTS). Proyección hoy: **{proy['pts']:.1f} PTS**."
+                    ))
+                elif diff_h2h_pts <= -3.0 and perfil["pts_avg"] >= 15.0:
+                    insights_candidatos.append((
+                        abs(diff_h2h_pts) * 1.2,
+                        f"🧊 **Kryptonita Defensiva ({riv}):** **{pname}** ({eq}) históricamente sufre ante el esquema de {riv}, "
+                        f"promediando **{h2h_pts_avg:.1f} PTS** en **{n_h2h} enfrentamientos directos** "
+                        f"(**{diff_h2h_pts:+.1f} PTS** respecto a su promedio de {perfil['pts_avg']:.1f} PTS). Proyección ajustada: **{proy['pts']:.1f} PTS**."
+                    ))
+                elif diff_h2h_pra >= 4.0 and perfil["pra_avg"] >= 20.0:
+                    insights_candidatos.append((
+                        abs(diff_h2h_pra) * 1.1,
+                        f"⚔️ **Dominio Integral H2H vs {riv}:** **{pname}** ({eq}) registra **{h2h_pra_avg:.1f} PRA** "
+                        f"(Puntos+Rebotes+Asistencias) en {n_h2h} choques contra {riv} (**{diff_h2h_pra:+.1f} PRA** sobre su media de {perfil['pra_avg']:.1f})."
+                    ))
+
+            # 2. Detectar Insights de Desajuste Posicional (DvP extremo)
+            rk_dvp = fac["dvp_rank_pts"]
+            if rk_dvp >= 25 and perfil["pts_avg"] >= 16.0:
+                insights_candidatos.append((
+                    (rk_dvp - 15) * 0.45 + (perfil["pts_avg"] / 10.0),
+                    f"🎯 **Explotación Posicional ({perfil['pos_group']}):** **{pname}** ({eq}) enfrenta a {riv}, la defensa **#{rk_dvp} de 30** "
+                    f"contra su posición (`{perfil['pos_group']}`, DRtg `{d_riv:.1f}`), otorgándole un impulso táctico hacia **{proy['pts']:.1f} PTS / {proy['pra']:.1f} PRA**."
+                ))
+            elif rk_dvp <= 5 and perfil["pts_avg"] >= 17.5:
+                insights_candidatos.append((
+                    (15 - rk_dvp) * 0.40 + (perfil["pts_avg"] / 12.0),
+                    f"🛡️ **Emparejamiento de Élite ({perfil['pos_group']}):** **{pname}** ({eq}) se mide ante {riv}, top **#{rk_dvp}/30** "
+                    f"defendiendo a `{perfil['pos_group']}` (DRtg `{d_riv:.1f}`), escenario de exigencia máxima para su línea de puntos."
+                ))
+
+            # 3. Detectar Insights de Bajas Activas (Usage Vacuum + On/Off)
+            if bajas_prop and (fac["boost_bajas_pts"] - 1.0) >= 0.045 and perfil["pts_avg"] >= 13.0:
+                b_names = ", ".join(b["player_name"] for b in bajas_prop)
+                pct_b = (fac["boost_bajas_pts"] - 1.0) * 100.0
+                insights_candidatos.append((
+                    pct_b * 1.5,
+                    f"🚑 **Efecto Vacío por Bajas ({eq}):** Sin **{b_names}**, **{pname}** absorbe la creación ofensiva vacante "
+                    f"(**+{pct_b:.1f}% PTS** y **+{(fac['boost_bajas_ast']-1.0)*100:.1f}% AST**), elevando su proyección a **{proy['pts']:.1f} PTS / {proy['pra']:.1f} PRA**."
+                ))
+
+            # 4. Evaluar los 5 mercados de apuestas para este jugador
+            l10_df = df_team_p[df_team_p["min_num"] >= 8.0].sort_values("fecha_dt", ascending=False).head(10)
+            for cod_m, lbl_m, st_k, avg_k, col_df, min_vol in mercados_cfg:
+                val_avg = float(perfil[avg_k])
+                if val_avg < min_vol:
+                    continue
+                val_l10 = float(l10_df[col_df].mean()) if not l10_df.empty else val_avg
+                ref_blend = 0.75 * val_avg + 0.25 * val_l10
+                # Línea justa más cercana en formato .5 respecto al nivel habitual del jugador
+                linea_ref = float(np.round(ref_blend - 0.5) + 0.5)
+                if linea_ref <= 0.5:
+                    continue
+
+                media_p = float(proy[st_k])
+                sigma_p = float(proy["sigmas"][st_k])
+
+                # Exigir coherencia direccional y desplazamiento real respecto a su promedio habitual:
+                # para recomendar OVER, la proyección del duelo debe superar tanto la línea como su media;
+                # para UNDER, debe ser inferior a ambos con un diferencial táctico tangible.
+                diff_vs_avg = media_p - val_avg
+                diff_vs_line = media_p - linea_ref
+                umbral_shift = max(0.25, 0.035 * val_avg)
+                if diff_vs_line >= 0 and diff_vs_avg < umbral_shift:
+                    continue
+                if diff_vs_line < 0 and diff_vs_avg > -umbral_shift:
+                    continue
+
+                res_p = calcular_probabilidades_prop(
+                    media_p, sigma_p, linea_ref, stat_key=st_k,
+                    df_games=df_team_p, df_all_games=df_all_p, rival=riv
+                )
+
+                es_over = diff_vs_line >= 0
+                p_side = float(res_p["prob_over"] if es_over else res_p["prob_under"])
+                cuota_justa = res_p["cuota_over"] if es_over else res_p["cuota_under"]
+                tipo_jugada = f"🟢 OVER {linea_ref}" if es_over else f"🔴 UNDER {linea_ref}"
+
+                hit_s = res_p["hit_season"] if res_p["hit_season"] is not None else 0.5
+                hit_10 = res_p["hit_l10"] if res_p["hit_l10"] is not None else 0.5
+                hit_s_side = hit_s if es_over else (1.0 - hit_s)
+                hit_10_side = hit_10 if es_over else (1.0 - hit_10)
+
+                hit_h2h_val = res_p.get("hit_h2h")
+                n_h2h_val = res_p.get("n_h2h", 0)
+                hit_h2h_side = (hit_h2h_val if es_over else (1.0 - hit_h2h_val)) if (hit_h2h_val is not None and n_h2h_val > 0) else None
+                media_h2h_m = float(h2h_sub[col_df].mean()) if n_h2h >= 2 else None
+                delta_h2h_m = (media_h2h_m - val_avg) if media_h2h_m is not None else 0.0
+
+                # Magnitud estandarizada del desplazamiento provocado por el matchup (z-shift)
+                z_shift = abs(diff_vs_avg) / max(sigma_p, 1.0)
+                consistencia_hist = 0.60 * hit_10_side + 0.40 * hit_s_side
+                if p_side < 0.545 or consistencia_hist < 0.50 or abs(diff_vs_line) < 0.30:
+                    continue
+
+                # Construir explicación concisa de los catalizadores que impulsan la jugada
+                motivos = []
+                h2h_favorable = False
+                if es_over:
+                    if n_h2h_val >= 2 and ((hit_h2h_side is not None and hit_h2h_side >= 0.65) or delta_h2h_m >= max(1.2, 0.07 * val_avg)):
+                        h2h_favorable = True
+                        motivos.append(f"Media H2H vs {riv}: {media_h2h_m:.1f} ({delta_h2h_m:+.1f} vs prom.)")
+                    if hit_10_side >= 0.60:
+                        motivos.append(f"Racha L10: {int(round(hit_10_side*res_p['n_l10']))}/{res_p['n_l10']} ({hit_10_side:.0%})")
+                    if rk_dvp >= 20 and cod_m in ("PTS", "3PM", "PRA"):
+                        motivos.append(f"DvP Favorable (#{rk_dvp}/30 vs {perfil['pos_group']})")
+                    if d_riv >= 115.0:
+                        motivos.append(f"Def. Rival Permisiva (DRtg {d_riv:.1f})")
+                    if fac["exp_pace"] >= 100.0:
+                        motivos.append(f"Pace Alto ({fac['exp_pace']:.1f})")
+                    if fac["boost_bajas_pts"] >= 1.04:
+                        motivos.append(f"Bajas (+{(fac['boost_bajas_pts']-1)*100:.1f}% uso)")
+                    if fac["boost_rival_reb"] >= 1.02 and cod_m in ("REB", "PRA"):
+                        motivos.append("Baja Interior Rival")
+                else:
+                    if n_h2h_val >= 2 and ((hit_h2h_side is not None and hit_h2h_side >= 0.65) or delta_h2h_m <= -max(1.2, 0.07 * val_avg)):
+                        h2h_favorable = True
+                        motivos.append(f"Media H2H vs {riv}: {media_h2h_m:.1f} ({delta_h2h_m:+.1f} vs prom.)")
+                    if hit_10_side >= 0.60:
+                        motivos.append(f"Tendencia Under L10: {int(round(hit_10_side*res_p['n_l10']))}/{res_p['n_l10']} ({hit_10_side:.0%})")
+                    if rk_dvp <= 10 and cod_m in ("PTS", "3PM", "PRA"):
+                        motivos.append(f"Def. Élite vs {perfil['pos_group']} (#{rk_dvp}/30)")
+                    if d_riv <= 113.0:
+                        motivos.append(f"Def. Férrea Rival (DRtg {d_riv:.1f})")
+                    if fac["exp_pace"] <= 98.5:
+                        motivos.append(f"Ritmo Lento ({fac['exp_pace']:.1f})")
+
+                if not motivos:
+                    motivos.append(f"Proy. {media_p:.1f} vs Media {val_avg:.1f}")
+
+                # Score compuesto: Probabilidad + Desplazamiento del Matchup (z_shift) + Consistencia + H2H
+                bonus_h2h = 0.05 if h2h_favorable else 0.0
+                bonus_star = 0.03 if (cod_m in ("PTS", "PRA") and val_avg >= 18.0) else 0.0
+                score_conv = 0.45 * p_side + 0.25 * min(z_shift, 0.60) + 0.20 * consistencia_hist + 0.10 * hit_s_side + bonus_h2h + bonus_star
+                roi_est = (p_side * 1.9091 - 1.0) * 100.0
+
+                if p_side >= 0.575 and (hit_10_side >= 0.60 or bonus_h2h > 0) and len(motivos) >= 2:
+                    sello = "💎 SELLO DE ORO"
+                elif p_side >= 0.56 and consistencia_hist >= 0.55:
+                    sello = "🔥 VALOR ALTO"
+                else:
+                    sello = "✅ VALOR (+EV)"
+
+                h2h_str = (
+                    f"{hit_h2h_side:.0%} ({int(round(hit_h2h_side*n_h2h_val))}/{n_h2h_val})"
+                    if (hit_h2h_side is not None and n_h2h_val > 0) else "—"
+                )
+
+                jugadas_valor.append({
+                    "_score": score_conv,
+                    "Nivel": sello,
+                    "Jugador": pname,
+                    "Equipo": eq,
+                    "Mercado": cod_m,
+                    "Jugada Recomendada": tipo_jugada,
+                    "Proyección": round(media_p, 1),
+                    "Media Hab.": round(val_avg, 1),
+                    "Prob. Modelo": f"{p_side:.1%}",
+                    "Cuota Justa": cuota_justa,
+                    "ROI (-110)": f"{roi_est:+.1f}%",
+                    "Acierto L10": f"{hit_10_side:.0%} ({int(round(hit_10_side*res_p['n_l10']))}/{res_p['n_l10']})",
+                    "Acierto H2H": h2h_str,
+                    "Catalizadores / Por qué tiene valor": " · ".join(motivos[:3]),
+                })
+
+    # Ordenar insights narrativos por relevancia y eliminar duplicados
+    insights_candidatos.sort(key=lambda x: x[0], reverse=True)
+    insights_unicos = []
+    vistos = set()
+    for _, txt in insights_candidatos:
+        if txt not in vistos:
+            insights_unicos.append(txt)
+            vistos.add(txt)
+        if len(insights_unicos) >= 6:
+            break
+
+    df_jugadas = pd.DataFrame(jugadas_valor)
+    if not df_jugadas.empty:
+        # Conservar las mejores jugadas diversificadas (máximo 2 por jugador para cubrir ambos planteles)
+        df_jugadas = df_jugadas.sort_values("_score", ascending=False)
+        df_jugadas = df_jugadas.groupby("Jugador", group_keys=False).head(2).sort_values("_score", ascending=False)
+        df_jugadas = df_jugadas.drop(columns=["_score"]).head(12).reset_index(drop=True)
+
+    return insights_unicos, df_jugadas
