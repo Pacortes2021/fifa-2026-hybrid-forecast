@@ -27,6 +27,12 @@ from sklearn.metrics import log_loss, accuracy_score, brier_score_loss, mean_abs
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
+import sys as _sys
+from pathlib import Path as _Path
+_ROOT = str(_Path(__file__).resolve().parent.parent)
+if _ROOT not in _sys.path:
+    _sys.path.insert(0, _ROOT)
+from comun.motor_comun import hash_modulos_comunes
 
 DATA = Path(__file__).resolve().parent / "data"
 EQUIPOS_PATH = DATA / "equipos.csv"
@@ -644,6 +650,7 @@ def _cache_key():
         h.update(f.name.encode())
         h.update(str(f.stat().st_size).encode())
         h.update(hashlib.sha256(f.read_bytes()).hexdigest().encode())
+    h.update(hash_modulos_comunes().encode())
     return h.hexdigest()
 
 

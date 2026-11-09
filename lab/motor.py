@@ -76,8 +76,11 @@ def tipo_competicion(c):
 # --------------------------------------------------------------------------- #
 def cargar():
     df = pd.read_csv(DATA / "modelado_espn.csv", parse_dates=["fecha"]).sort_values("fecha").reset_index(drop=True)
+    # Garantizar corte estricto pre-Mundial (11-06-2026) para impedir cualquier fuga si se agregan filas nuevas
+    df = df[df["fecha"] < "2026-06-11"].reset_index(drop=True)
     states = pd.read_csv(DATA / "team_states.csv").set_index("team")
     hist = pd.read_csv(DATA / "results.csv", parse_dates=["date"]).dropna(subset=["home_score", "away_score"])
+    hist = hist[hist["date"] < "2026-06-11"].reset_index(drop=True)
 
     m48 = set(MUNDIALISTAS)
     duelos = hist[hist.home_team.isin(m48) & hist.away_team.isin(m48)]
@@ -101,7 +104,7 @@ def cargar():
 
     # Poisson Elo -> goles esperados (motor de marcadores)
     espn = pd.read_csv(DATA / "espn_stats.csv", parse_dates=["fecha"])
-    espn = espn[(espn.fecha >= "2019-01-01") & espn.goles_local.notna()]
+    espn = espn[(espn.fecha >= "2019-01-01") & (espn.fecha < "2026-06-11") & espn.goles_local.notna()]
     largo = pd.concat([
         pd.DataFrame({"g": espn.goles_local.values, "d": (espn.elo_local - espn.elo_visita).values}),
         pd.DataFrame({"g": espn.goles_visita.values, "d": (espn.elo_visita - espn.elo_local).values})])
@@ -115,6 +118,7 @@ def cargar():
     # Modelo de stats del partido construido RIGUROSAMENTE (selección de variables + validación
     # temporal): dataset point-in-time, medias 'concedidas' por equipo y un modelo por estadística.
     espn_full = pd.read_csv(DATA / "espn_stats.csv", parse_dates=["fecha"]).sort_values("fecha")
+    espn_full = espn_full[espn_full["fecha"] < "2026-06-11"].reset_index(drop=True)
     Dstats, conc, glob = _features_stats(espn_full)
     modelos_stats = _entrenar_stats(Dstats)
 
@@ -726,17 +730,25 @@ def backtest_stats(M):
 # --------------------------------------------------------------------------- #
 #  Validación EN VIVO: el modelo contra los resultados reales del Mundial
 # --------------------------------------------------------------------------- #
-def validacion_en_vivo(M, resultados, modelo="base"):
-    """Compara la predicción pre-partido del modelo contra el resultado real de cada partido del
-       Mundial ya jugado. Devuelve (tabla detalle, métricas, evolución log-loss acumulado)."""
+def validacion_en_vivo(M, resultados, modelo="base", modo="walk_forward"):
+    """Compara la predicción del modelo contra el resultado real de cada partido del Mundial.
+       - modo='walk_forward' (por defecto): ordena cronológicamente los partidos, predice cada encuentro
+         con el estado disponible ANTES de su inicio y actualiza el Elo y forma tras cada partido.
+       - modo='pre_torneo': utiliza el snapshot de estados congelado antes del inicio del Mundial (10-06-2026).
+       Devuelve (tabla detalle, métricas, evolución log-loss acumulado)."""
     from sklearn.metrics import log_loss
-    st = M["states"]
+    st = M["states"].copy()
+    res_ord = resultados.copy()
+    if "fecha" in res_ord.columns:
+        res_ord["_fecha_sort"] = pd.to_datetime(res_ord["fecha"])
+        res_ord = res_ord.sort_values("_fecha_sort").reset_index(drop=True)
+
     filas, P, y = [], [], []
-    for r in resultados.itertuples(index=False):
+    for r in res_ord.itertuples(index=False):
         a, b = r.local, r.visita
         if a not in st.index or b not in st.index:
             continue
-        p = prob_partido(M, a, b, "auto", modelo)   # [P(gana local a), empate, P(gana visita b)]
+        p = prob_partido(M, a, b, "auto", modelo, states=st)   # [P(gana local a), empate, P(gana visita b)]
         ga, gb = int(r.goles_local), int(r.goles_visita)
         real = 2 if ga > gb else (1 if ga == gb else 0)   # 2=gana local, 1=empate, 0=gana visita
         P.append([p[2], p[1], p[0]]); y.append(real)      # orden de clases [0,1,2] para log_loss
@@ -745,6 +757,14 @@ def validacion_en_vivo(M, resultados, modelo="base"):
                       "P(local)": f"{p[0]:.0%}", "P(empate)": f"{p[1]:.0%}", "P(visita)": f"{p[2]:.0%}",
                       "Real": ["Gana visita", "Empate", "Gana local"][real],
                       "Acierto": "✅" if pred == real else "❌"})
+        if modo == "walk_forward":
+            ea, eb = _elo_update(st.loc[a, "elo"], st.loc[b, "elo"], ga, gb)
+            st.loc[a, "elo"], st.loc[b, "elo"] = ea, eb
+            st.loc[a, "goles_anotados_avg"] = st.loc[a, "goles_anotados_avg"] * 7 / 8 + ga / 8
+            st.loc[a, "goles_recibidos_avg"] = st.loc[a, "goles_recibidos_avg"] * 7 / 8 + gb / 8
+            st.loc[b, "goles_anotados_avg"] = st.loc[b, "goles_anotados_avg"] * 7 / 8 + gb / 8
+            st.loc[b, "goles_recibidos_avg"] = st.loc[b, "goles_recibidos_avg"] * 7 / 8 + ga / 8
+
     P, y = np.array(P), np.array(y)
     n = len(y)
     if n == 0:
@@ -755,6 +775,8 @@ def validacion_en_vivo(M, resultados, modelo="base"):
            "logloss": log_loss(y, P, labels=[0, 1, 2]),
            "logloss_base": log_loss(y, base, labels=[0, 1, 2]),
            "p_empate_pred": float(P[:, 1].mean()), "empates_reales": float((y == 1).mean()),
+           "modo": modo,
+           "fecha_corte_train": str(pd.to_datetime(M["df"]["fecha"].max()).date()),
            "P": P, "y": y}
     # evolución del log-loss acumulado (para ver si mejora conforme avanza el torneo)
     evol = [log_loss(y[:i + 1], P[:i + 1], labels=[0, 1, 2]) for i in range(n)]

@@ -584,7 +584,7 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
 
     rate_season_r = perfil["reb_avg"] / max(perfil["min_avg"], 1.0)
     rate_l5_r = perfil["reb_l5"] / max(perfil["min_l5"], 1.0)
-    r_per_min = 0.80 * rate_season_r + 0.20 * rate_l5_r
+    r_per_min = 0.86 * rate_season_r + 0.14 * rate_l5_r
 
     rate_season_a = perfil["ast_avg"] / max(perfil["min_avg"], 1.0)
     rate_l5_a = perfil["ast_l5"] / max(perfil["min_l5"], 1.0)
@@ -606,9 +606,9 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
     if dvp_data and rival in dvp_data and pos_grp in dvp_data[rival]:
         dvp_pos = dvp_data[rival][pos_grp]
 
-    # Combinamos el DRtg colectivo del rival (55%) con su DvP específico contra la posición del jugador (45%)
+    # Combinamos el DRtg colectivo del rival con su DvP específico (los rebotes dependen de DvP, no positivamente del DRtg)
     factor_def_pts = 0.55 * factor_drtg + 0.45 * dvp_pos["pts"]
-    factor_def_reb = 0.35 * factor_drtg + 0.65 * dvp_pos["reb"]
+    factor_def_reb = 1.0 + 0.45 * (dvp_pos["reb"] - 1.0)
     factor_def_ast = 0.50 * factor_drtg + 0.50 * dvp_pos["ast"]
     factor_def_tpm = 0.45 * factor_drtg + 0.55 * dvp_pos["tpm"]
 
@@ -888,52 +888,149 @@ def calcular_probabilidades_prop(media, sigma, linea, stat_key="pts", df_games=N
         "n_h2h": n_h2h,
         "ultimos_12": ultimos_12,
         "ultimos_h2h": ultimos_h2h,
-        "recomendacion": "🔥 OVER CON VALOR" if p_over >= 0.57 else ("🧊 UNDER CON VALOR" if p_under >= 0.57 else "⚖️ LÍNEA JUSTA")
+        "recomendacion": "📈 DESVIACIÓN OVER" if p_over >= 0.57 else ("📉 DESVIACIÓN UNDER" if p_under >= 0.57 else "⚖️ EN LÍNEA CON MEDIA")
     }
 
 
-def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70):
+def _precomputar_contexto_causal_equipos(df_sorted):
     """
-    Ejecuta una validación Walk-Forward Out-of-Sample (sin data leakage) sobre el dataset de jugadores:
+    Reconstruye de forma estrictamente causal (usando solo partidos con fecha < t):
+      1. `team_stats_pre[(eid, equipo)]`: Pace y DRtg acumulados del equipo ANTES de disputar `eid`.
+      2. `rot_pre[(eid, equipo)]`: Top-3 titulares del equipo según minutos/puntos acumulados ANTES de `eid`.
+      3. `ausentes_prev[(eid, equipo)]`: Titulares de `rot_pre` que faltaron en el partido INMEDIATAMENTE ANTERIOR
+         del equipo (proxy pre-partido 100% causal sin mirar quién jugó en `eid`).
+      4. `ausentes_eid[(eid, equipo)]`: Titulares de `rot_pre` que no participaron en `eid` (lista de inactivos al salto inicial).
+    """
+    # Agregar totales por (event_id, equipo) para estimar posesiones y puntos recibidos por partido
+    grp_eq = df_sorted.groupby(["event_id", "equipo"], as_index=False).agg(
+        fecha_dt=("fecha_dt", "first"),
+        temporada=("temporada", "first"),
+        rival=("rival", "first"),
+        pts=("pts_num", "sum"),
+        fga=("fga", "sum"),
+        fta=("fta", "sum"),
+        tov=("tov_num", "sum"),
+        reb=("reb_num", "sum"),
+    )
+    # Posesiones estimadas por fórmula estándar de Dean Oliver
+    grp_eq["poss"] = np.maximum(grp_eq["fga"] + 0.44 * grp_eq["fta"] + grp_eq["tov"] - 0.22 * grp_eq["reb"], 82.0)
+
+    opp_Lookup = grp_eq.set_index(["event_id", "equipo"])[["pts", "poss"]].rename(
+        columns={"pts": "pts_opp", "poss": "poss_opp"}
+    )
+    grp_eq = grp_eq.join(opp_Lookup, on=["event_id", "rival"])
+    grp_eq["pts_opp"] = grp_eq["pts_opp"].fillna(grp_eq["pts"])
+    grp_eq["poss_opp"] = grp_eq["poss_opp"].fillna(grp_eq["poss"])
+    grp_eq["pace_game"] = 0.5 * (grp_eq["poss"] + grp_eq["poss_opp"])
+    grp_eq["drtg_game"] = 100.0 * grp_eq["pts_opp"] / np.maximum(grp_eq["poss_opp"], 82.0)
+    grp_eq = grp_eq.sort_values(["fecha_dt", "event_id"]).reset_index(drop=True)
+
+    team_stats_pre = {}
+    hist_pace = {}
+    hist_drtg = {}
+    for r in grp_eq.itertuples(index=False):
+        eq = r.equipo
+        eid = r.event_id
+        p_list = hist_pace.get(eq, [])
+        d_list = hist_drtg.get(eq, [])
+        n_prev = len(p_list)
+        w = n_prev / (n_prev + 5.0)
+        pace_pre = w * float(np.mean(p_list[-20:])) + (1.0 - w) * LEAGUE_AVG_PACE if n_prev > 0 else LEAGUE_AVG_PACE
+        drtg_pre = w * float(np.mean(d_list[-20:])) + (1.0 - w) * LEAGUE_AVG_DRTG if n_prev > 0 else LEAGUE_AVG_DRTG
+        team_stats_pre[(eid, eq)] = {"pace": pace_pre, "drtg": drtg_pre}
+        p_list.append(float(r.pace_game))
+        d_list.append(float(r.drtg_game))
+        hist_pace[eq] = p_list
+        hist_drtg[eq] = d_list
+
+    # Rotación causal y detección de bajas previas vs observadas en el evento
+    df_act = df_sorted[df_sorted["min_num"] >= 5.0].sort_values(["fecha_dt", "event_id"])
+    by_eid_eq = {}
+    event_players = {}
+    for r_a in df_act[["event_id", "equipo", "player_name", "min_num", "pts_num", "reb_num", "ast_num", "pos_group", "position"]].itertuples(index=False):
+        k = (r_a.event_id, r_a.equipo)
+        by_eid_eq.setdefault(k, []).append(r_a)
+        event_players.setdefault(k, set()).add(r_a.player_name)
+
+    rot_pre = {}
+    ausentes_prev = {}
+    ausentes_eid = {}
+
+    for (temp, eq), grp_te in grp_eq.groupby(["temporada", "equipo"], sort=False):
+        acum_stats = {}  # player_name -> [pj, sum_min, sum_pts, sum_reb, sum_ast, pos_group, position]
+        prev_played = None
+        for r in grp_te.itertuples(index=False):
+            eid = r.event_id
+            # Construir top-3 titulares solo con partidos estrictamente anteriores (< eid)
+            candidatos = [
+                {
+                    "player_name": pn,
+                    "pj": st[0],
+                    "min_avg": st[1] / st[0],
+                    "pts_avg": st[2] / st[0],
+                    "reb_avg": st[3] / st[0],
+                    "ast_avg": st[4] / st[0],
+                    "pos_group": st[5],
+                    "position": st[6],
+                }
+                for pn, st in acum_stats.items() if st[0] >= 4
+            ]
+            candidatos.sort(key=lambda x: (x["min_avg"], x["pts_avg"]), reverse=True)
+            top3 = candidatos[:3]
+            rot_pre[(eid, eq)] = top3
+
+            curr_played = event_players.get((eid, eq), set())
+            # Bajas conocidas ANTES del partido (sin mirar curr_played): titulares ausentes en el partido previo
+            if prev_played is not None:
+                ausentes_prev[(eid, eq)] = [c for c in top3 if c["player_name"] not in prev_played]
+            else:
+                ausentes_prev[(eid, eq)] = []
+            # Bajas observadas en la planilla oficial del partido `eid`
+            ausentes_eid[(eid, eq)] = [c for c in top3 if c["player_name"] not in curr_played]
+            prev_played = curr_played
+
+            # Actualizar acumulado del equipo después de procesar `eid`
+            for pr in by_eid_eq.get((eid, eq), ()):
+                pn = pr.player_name
+                if pn not in acum_stats:
+                    acum_stats[pn] = [0, 0.0, 0.0, 0.0, 0.0, pr.pos_group, pr.position]
+                st = acum_stats[pn]
+                st[0] += 1
+                st[1] += float(pr.min_num)
+                st[2] += float(pr.pts_num)
+                st[3] += float(pr.reb_num)
+                st[4] += float(pr.ast_num)
+
+    return team_stats_pre, rot_pre, ausentes_prev, ausentes_eid
+
+
+def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70, modo_bajas="causal"):
+    """
+    Ejecuta una validación Walk-Forward Out-of-Sample estrictamente causal sobre el dataset de jugadores:
       - Para cada partido t del bloque de prueba (último 30% cronológico de partidos), construye el perfil
-        del jugador usando exclusivamente sus partidos anteriores (< t).
-      - Detecta de forma causal qué compañeros titulares de su equipo se perdieron el partido t (bajas reales).
-      - Evalúa MAE, RMSE, % Acierto Over/Under frente a la línea sintética de mercado (floor(media_previa) + 0.5)
-        y % Acierto en Picks de Valor (+EV, donde el modelo diverge de la línea de referencia).
+        del jugador, el Pace/DRtg de los equipos y la rotación titular usando exclusivamente partidos previos (< t).
+      - En `modo_bajas="causal"` (por defecto), solo asume como bajas conocidas a los titulares que ya estuvieron
+        ausentes en el partido anterior del equipo (proxy pre-partido sin mirar quién jugó en t).
+      - Reporta también `MAE (Con Bajas Observadas)` (sabiendo la lista de inactivos al salto inicial) para
+        separar transparentemente el efecto del reporte de lesiones en vivo.
     """
     if df_box is None or df_box.empty:
         return pd.DataFrame(), {}
 
-    df_sorted = df_box.sort_values("fecha_dt").reset_index(drop=True)
-    unique_events = df_sorted[["event_id", "fecha_dt", "temporada"]].drop_duplicates("event_id").sort_values("fecha_dt")
+    df_sorted = df_box.sort_values(["fecha_dt", "event_id"]).reset_index(drop=True)
+    unique_events = df_sorted[["event_id", "fecha_dt", "temporada"]].drop_duplicates("event_id").sort_values(["fecha_dt", "event_id"])
     split_idx = int(len(unique_events) * split_ratio)
     train_eids = set(unique_events.iloc[:split_idx]["event_id"])
     test_eids = set(unique_events.iloc[split_idx:]["event_id"])
 
     df_train_box = df_sorted[df_sorted["event_id"].isin(train_eids)]
     dvp_causal = calcular_defensa_vs_posicion(df_train_box)
-    event_players = df_sorted[df_sorted["min_num"] >= 5.0].groupby("event_id")["player_name"].apply(set).to_dict()
+    team_stats_pre, _, ausentes_prev, ausentes_eid = _precomputar_contexto_causal_equipos(df_sorted)
 
-    # Identificar top-3 titulares por (temporada, equipo) en el bloque previo
-    top_rot = {}
-    for (temp, eq), grp in df_train_box[df_train_box["min_num"] >= 5.0].groupby(["temporada", "equipo"]):
-        agg = grp.groupby("player_name").agg(
-            pj=("event_id", "count"),
-            min_avg=("min_num", "mean"),
-            pts_avg=("pts_num", "mean"),
-            reb_avg=("reb_num", "mean"),
-            ast_avg=("ast_num", "mean"),
-            pos_group=("pos_group", "first"),
-            position=("position", "first"),
-        ).reset_index()
-        agg = agg[agg["pj"] >= 5].sort_values(["min_avg", "pts_avg"], ascending=False).head(3)
-        top_rot[(temp, eq)] = agg.to_dict("records")
-
-    team_stats = team_stats or {}
     rows_eval = []
 
     for pname, p_df in df_sorted.groupby("player_name"):
-        p_df_act = p_df[p_df["min_num"] >= 8.0].sort_values("fecha_dt").reset_index(drop=True)
+        p_df_act = p_df[p_df["min_num"] >= 8.0].sort_values(["fecha_dt", "event_id"]).reset_index(drop=True)
         if len(p_df_act) < 12:
             continue
         for idx in range(10, len(p_df_act)):
@@ -941,9 +1038,12 @@ def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70):
             eid = row["event_id"]
             if eid not in test_eids:
                 continue
+            # Cortar estrictamente por fecha_dt < row["fecha_dt"] para impedir fuga entre filas del mismo día
             hist = p_df_act.iloc[:idx]
+            hist = hist[hist["fecha_dt"] < row["fecha_dt"]]
+            if len(hist) < 8:
+                continue
             eq = row["equipo"]
-            temp = row["temporada"]
             hist_team = hist[hist["equipo"] == eq]
             h_use = hist_team if len(hist_team) >= 5 else hist
             min_avg = float(h_use["min_num"].mean())
@@ -958,9 +1058,9 @@ def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70):
             tpm_base = float(h_use["tpm"].mean())
             pra_base = float(h_use["pra"].mean())
 
-            played_set = event_players.get(eid, set())
-            rot_team = top_rot.get((temp, eq), [])
-            bajas_comp = [c for c in rot_team if c["player_name"] != pname and c["player_name"] not in played_set]
+            bajas_pre = [c for c in ausentes_prev.get((eid, eq), []) if c["player_name"] != pname]
+            bajas_obs = [c for c in ausentes_eid.get((eid, eq), []) if c["player_name"] != pname]
+            bajas_usar = bajas_pre if modo_bajas == "causal" else bajas_obs
 
             perfil_t = {
                 "player_name": pname,
@@ -987,33 +1087,34 @@ def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70):
             }
 
             riv = row["rival"]
-            ts_riv = team_stats.get(riv, {"pace": LEAGUE_AVG_PACE, "drtg": LEAGUE_AVG_DRTG})
-            ts_eq = team_stats.get(eq, {"pace": LEAGUE_AVG_PACE, "drtg": LEAGUE_AVG_DRTG})
+            ts_riv = team_stats_pre.get((eid, riv), {"pace": LEAGUE_AVG_PACE, "drtg": LEAGUE_AVG_DRTG})
+            ts_eq = team_stats_pre.get((eid, eq), {"pace": LEAGUE_AVG_PACE, "drtg": LEAGUE_AVG_DRTG})
             h2h_prev = h_use[h_use["rival"] == riv]
 
             proy_pre = proyectar_jugador(
                 perfil_t, riv, minutos_proy=None, es_local=bool(row["es_local"]),
-                bajas_companeros=bajas_comp, pace_rival=ts_riv["pace"], pace_equipo=ts_eq["pace"],
+                bajas_companeros=bajas_usar, pace_rival=ts_riv["pace"], pace_equipo=ts_eq["pace"],
                 drtg_rival=ts_riv["drtg"], h2h_games=h2h_prev, dvp_data=dvp_causal
             )
-            proy_min = proyectar_jugador(
-                perfil_t, riv, minutos_proy=float(row["min_num"]), es_local=bool(row["es_local"]),
-                bajas_companeros=bajas_comp, pace_rival=ts_riv["pace"], pace_equipo=ts_eq["pace"],
+            proy_obs = proyectar_jugador(
+                perfil_t, riv, minutos_proy=None, es_local=bool(row["es_local"]),
+                bajas_companeros=bajas_obs, pace_rival=ts_riv["pace"], pace_equipo=ts_eq["pace"],
                 drtg_rival=ts_riv["drtg"], h2h_games=h2h_prev, dvp_data=dvp_causal
             )
 
             rows_eval.append({
-                "pts_real": float(row["pts_num"]), "pts_base": pts_base, "pts_pre": proy_pre["pts"], "pts_min": proy_min["pts"],
-                "reb_real": float(row["reb_num"]), "reb_base": reb_base, "reb_pre": proy_pre["reb"], "reb_min": proy_min["reb"],
-                "ast_real": float(row["ast_num"]), "ast_base": ast_base, "ast_pre": proy_pre["ast"], "ast_min": proy_min["ast"],
-                "tpm_real": float(row["tpm"]),     "tpm_base": tpm_base, "tpm_pre": proy_pre["tpm"], "tpm_min": proy_min["tpm"],
-                "pra_real": float(row["pra"]),     "pra_base": pra_base, "pra_pre": proy_pre["pra"], "pra_min": proy_min["pra"],
-                "line_pts": np.floor(0.70 * pts_base + 0.30 * float(l10["pts_num"].mean())) + 0.5,
-                "line_reb": np.floor(0.70 * reb_base + 0.30 * float(l10["reb_num"].mean())) + 0.5,
-                "line_ast": np.floor(0.70 * ast_base + 0.30 * float(l10["ast_num"].mean())) + 0.5,
-                "line_tpm": np.floor(0.70 * tpm_base + 0.30 * float(l10["tpm"].mean())) + 0.5,
-                "line_pra": np.floor(0.70 * pra_base + 0.30 * float(l10["pra"].mean())) + 0.5,
-                "has_baja": len(bajas_comp) > 0,
+                "pts_real": float(row["pts_num"]), "pts_base": pts_base, "pts_pre": proy_pre["pts"], "pts_obs": proy_obs["pts"],
+                "reb_real": float(row["reb_num"]), "reb_base": reb_base, "reb_pre": proy_pre["reb"], "reb_obs": proy_obs["reb"],
+                "ast_real": float(row["ast_num"]), "ast_base": ast_base, "ast_pre": proy_pre["ast"], "ast_obs": proy_obs["ast"],
+                "tpm_real": float(row["tpm"]),     "tpm_base": tpm_base, "tpm_pre": proy_pre["tpm"], "tpm_obs": proy_obs["tpm"],
+                "pra_real": float(row["pra"]),     "pra_base": pra_base, "pra_pre": proy_pre["pra"], "pra_obs": proy_obs["pra"],
+                "line_pts": np.round(0.75 * pts_base + 0.25 * float(l10["pts_num"].mean()) - 0.5) + 0.5,
+                "line_reb": np.round(0.75 * reb_base + 0.25 * float(l10["reb_num"].mean()) - 0.5) + 0.5,
+                "line_ast": np.round(0.75 * ast_base + 0.25 * float(l10["ast_num"].mean()) - 0.5) + 0.5,
+                "line_tpm": np.round(0.75 * tpm_base + 0.25 * float(l10["tpm"].mean()) - 0.5) + 0.5,
+                "line_pra": np.round(0.75 * pra_base + 0.25 * float(l10["pra"].mean()) - 0.5) + 0.5,
+                "has_baja_conocida": len(bajas_pre) > 0,
+                "has_baja_obs": len(bajas_obs) > 0,
             })
 
     df_e = pd.DataFrame(rows_eval)
@@ -1032,12 +1133,12 @@ def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70):
         real = df_e[f"{st_k}_real"]
         base = df_e[f"{st_k}_base"]
         pred = df_e[f"{st_k}_pre"]
-        pmin = df_e[f"{st_k}_min"]
+        pobs = df_e[f"{st_k}_obs"]
         line = df_e[f"line_{st_k}"]
 
         mae_b = float(np.mean(np.abs(real - base)))
         mae_p = float(np.mean(np.abs(real - pred)))
-        mae_m = float(np.mean(np.abs(real - pmin)))
+        mae_o = float(np.mean(np.abs(real - pobs)))
         rmse_b = float(np.sqrt(np.mean((real - base) ** 2)))
         rmse_p = float(np.sqrt(np.mean((real - pred) ** 2)))
 
@@ -1048,24 +1149,22 @@ def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70):
         mask_val = np.abs(pred - line) >= edge_thr
         n_val = int(mask_val.sum())
         acc_val = float(np.mean(pick_over[mask_val] == real_over[mask_val]) * 100.0) if n_val > 0 else acc_all
-        # ROI a cuota estándar de mercado -110 (1.909 decimal)
-        roi_val = (acc_val / 100.0) * 1.9091 - 1.0
 
         resumen.append({
             "Métrica (Prop)": label,
             "MAE Baseline": round(mae_b, 2),
-            "MAE Modelo (Pre-Partido)": round(mae_p, 2),
-            "MAE (Minutos Exactos)": round(mae_m, 2),
+            "MAE Modelo (Causal Pre-Partido)": round(mae_p, 2),
+            "MAE (Con Bajas Observadas)": round(mae_o, 2),
             "RMSE Baseline → Modelo": f"{rmse_b:.2f} → {rmse_p:.2f}",
-            "% Acierto O/U Global": f"{acc_all:.1f}%",
-            "% Acierto Picks Valor (+EV)": f"{acc_val:.1f}% (n={n_val})",
-            "ROI Estimado (-110)": f"{roi_val * 100:+.1f}%",
+            "% Acierto Dir. (Línea Est.)": f"{acc_all:.1f}%",
+            "% Acierto Desv. Fuerte": f"{acc_val:.1f}% (n={n_val})",
         })
 
     meta = {
         "n_evaluados": len(df_e),
         "n_partidos_test": len(test_eids),
-        "n_con_bajas": int(df_e["has_baja"].sum()),
+        "n_con_bajas": int(df_e["has_baja_conocida"].sum()),
+        "n_con_bajas_obs": int(df_e["has_baja_obs"].sum()),
     }
     return pd.DataFrame(resumen), meta
 
@@ -1075,12 +1174,13 @@ def escanear_oportunidades_partido(
     bajas_local=None, bajas_visita=None, spread_esperado=0.0, top_n_jugadores=6
 ):
     """
-    Escáner inteligente de oportunidades (+EV) e insights tácticos para un enfrentamiento NBA:
+    Escáner de desviaciones estadísticamente relevantes frente a una línea estimada e insights tácticos:
       - Analiza automáticamente a los jugadores principales de la rotación de AMBOS equipos (local y visita).
-      - Detecta catalizadores: Dominancia/Freno en duelos directos H2H contra ese rival, desajustes
+      - Detecta catalizadores tácticos: Dominancia/Freno en duelos directos H2H contra ese rival, desajustes
         de Defensa contra la Posición (DvP), redistribución por bajas activas (Usage Vacuum + On/Off)
-        y convergencia con la tendencia reciente (Hit Rate L10).
-      - Devuelve una lista priorizada de Insights Narrativos y un DataFrame con el Ranking de Jugadas de Valor.
+        y convergencia con la tendencia reciente (L10).
+      - Nota metodológica: las líneas de referencia se estiman internamente a partir de la media del jugador;
+        no provienen de una casa de apuestas ni implican un +EV real verificable sin cuotas externas.
     """
     if df_box is None or df_box.empty:
         return [], pd.DataFrame()
@@ -1150,21 +1250,21 @@ def escanear_oportunidades_partido(
                 if diff_h2h_pts >= 2.5 and perfil["pts_avg"] >= 12.0:
                     insights_candidatos.append((
                         abs(diff_h2h_pts) * 1.4,
-                        f"🔥 **Verdugo Histórico vs {riv}:** **{pname}** ({eq}) eleva notablemente su nivel frente a {riv}, "
+                        f"🔥 **Rendimiento Superior vs {riv} (H2H):** **{pname}** ({eq}) eleva su producción frente a {riv}, "
                         f"promediando **{h2h_pts_avg:.1f} PTS** ({h2h_pra_avg:.1f} PRA) en sus últimos **{n_h2h} duelos directos** "
                         f"(**{diff_h2h_pts:+.1f} PTS** por encima de su media habitual de {perfil['pts_avg']:.1f} PTS). Proyección hoy: **{proy['pts']:.1f} PTS**."
                     ))
                 elif diff_h2h_pts <= -3.0 and perfil["pts_avg"] >= 15.0:
                     insights_candidatos.append((
                         abs(diff_h2h_pts) * 1.2,
-                        f"🧊 **Kryptonita Defensiva ({riv}):** **{pname}** ({eq}) históricamente sufre ante el esquema de {riv}, "
+                        f"🧊 **Freno Defensivo Histórico ({riv}):** **{pname}** ({eq}) registra menor producción ante el esquema de {riv}, "
                         f"promediando **{h2h_pts_avg:.1f} PTS** en **{n_h2h} enfrentamientos directos** "
                         f"(**{diff_h2h_pts:+.1f} PTS** respecto a su promedio de {perfil['pts_avg']:.1f} PTS). Proyección ajustada: **{proy['pts']:.1f} PTS**."
                     ))
                 elif diff_h2h_pra >= 4.0 and perfil["pra_avg"] >= 20.0:
                     insights_candidatos.append((
                         abs(diff_h2h_pra) * 1.1,
-                        f"⚔️ **Dominio Integral H2H vs {riv}:** **{pname}** ({eq}) registra **{h2h_pra_avg:.1f} PRA** "
+                        f"⚔️ **Ventaja Integral H2H vs {riv}:** **{pname}** ({eq}) registra **{h2h_pra_avg:.1f} PRA** "
                         f"(Puntos+Rebotes+Asistencias) en {n_h2h} choques contra {riv} (**{diff_h2h_pra:+.1f} PRA** sobre su media de {perfil['pra_avg']:.1f})."
                     ))
 
@@ -1173,14 +1273,14 @@ def escanear_oportunidades_partido(
             if rk_dvp >= 25 and perfil["pts_avg"] >= 16.0:
                 insights_candidatos.append((
                     (rk_dvp - 15) * 0.45 + (perfil["pts_avg"] / 10.0),
-                    f"🎯 **Explotación Posicional ({perfil['pos_group']}):** **{pname}** ({eq}) enfrenta a {riv}, la defensa **#{rk_dvp} de 30** "
-                    f"contra su posición (`{perfil['pos_group']}`, DRtg `{d_riv:.1f}`), otorgándole un impulso táctico hacia **{proy['pts']:.1f} PTS / {proy['pra']:.1f} PRA**."
+                    f"🎯 **Desajuste Posicional ({perfil['pos_group']}):** **{pname}** ({eq}) enfrenta a {riv}, la defensa **#{rk_dvp} de 30** "
+                    f"contra su posición (`{perfil['pos_group']}`, DRtg `{d_riv:.1f}`), proyectando **{proy['pts']:.1f} PTS / {proy['pra']:.1f} PRA**."
                 ))
             elif rk_dvp <= 5 and perfil["pts_avg"] >= 17.5:
                 insights_candidatos.append((
                     (15 - rk_dvp) * 0.40 + (perfil["pts_avg"] / 12.0),
-                    f"🛡️ **Emparejamiento de Élite ({perfil['pos_group']}):** **{pname}** ({eq}) se mide ante {riv}, top **#{rk_dvp}/30** "
-                    f"defendiendo a `{perfil['pos_group']}` (DRtg `{d_riv:.1f}`), escenario de exigencia máxima para su línea de puntos."
+                    f"🛡️ **Emparejamiento Defensivo Exigente ({perfil['pos_group']}):** **{pname}** ({eq}) se mide ante {riv}, top **#{rk_dvp}/30** "
+                    f"defendiendo a `{perfil['pos_group']}` (DRtg `{d_riv:.1f}`), escenario restrictivo para su volumen de anotación."
                 ))
 
             # 3. Detectar Insights de Bajas Activas (Usage Vacuum + On/Off)
@@ -1189,11 +1289,11 @@ def escanear_oportunidades_partido(
                 pct_b = (fac["boost_bajas_pts"] - 1.0) * 100.0
                 insights_candidatos.append((
                     pct_b * 1.5,
-                    f"🚑 **Efecto Vacío por Bajas ({eq}):** Sin **{b_names}**, **{pname}** absorbe la creación ofensiva vacante "
+                    f"🚑 **Redistribución por Bajas ({eq}):** Sin **{b_names}**, **{pname}** absorbe volumen ofensivo adicional "
                     f"(**+{pct_b:.1f}% PTS** y **+{(fac['boost_bajas_ast']-1.0)*100:.1f}% AST**), elevando su proyección a **{proy['pts']:.1f} PTS / {proy['pra']:.1f} PRA**."
                 ))
 
-            # 4. Evaluar los 5 mercados de apuestas para este jugador
+            # 4. Evaluar desviaciones en las 5 métricas respecto a una línea estimada (media habitual del jugador)
             l10_df = df_team_p[df_team_p["min_num"] >= 8.0].sort_values("fecha_dt", ascending=False).head(10)
             for cod_m, lbl_m, st_k, avg_k, col_df, min_vol in mercados_cfg:
                 val_avg = float(perfil[avg_k])
@@ -1201,7 +1301,7 @@ def escanear_oportunidades_partido(
                     continue
                 val_l10 = float(l10_df[col_df].mean()) if not l10_df.empty else val_avg
                 ref_blend = 0.75 * val_avg + 0.25 * val_l10
-                # Línea justa más cercana en formato .5 respecto al nivel habitual del jugador
+                # Línea estimada en formato .5 a partir del propio historial del jugador (no es línea de casa de apuestas)
                 linea_ref = float(np.round(ref_blend - 0.5) + 0.5)
                 if linea_ref <= 0.5:
                     continue
@@ -1209,9 +1309,6 @@ def escanear_oportunidades_partido(
                 media_p = float(proy[st_k])
                 sigma_p = float(proy["sigmas"][st_k])
 
-                # Exigir coherencia direccional y desplazamiento real respecto a su promedio habitual:
-                # para recomendar OVER, la proyección del duelo debe superar tanto la línea como su media;
-                # para UNDER, debe ser inferior a ambos con un diferencial táctico tangible.
                 diff_vs_avg = media_p - val_avg
                 diff_vs_line = media_p - linea_ref
                 umbral_shift = max(0.25, 0.035 * val_avg)
@@ -1227,8 +1324,8 @@ def escanear_oportunidades_partido(
 
                 es_over = diff_vs_line >= 0
                 p_side = float(res_p["prob_over"] if es_over else res_p["prob_under"])
-                cuota_justa = res_p["cuota_over"] if es_over else res_p["cuota_under"]
-                tipo_jugada = f"🟢 OVER {linea_ref}" if es_over else f"🔴 UNDER {linea_ref}"
+                cuota_imp = res_p["cuota_over"] if es_over else res_p["cuota_under"]
+                tipo_jugada = f"🟢 OVER {linea_ref} (Est.)" if es_over else f"🔴 UNDER {linea_ref} (Est.)"
 
                 hit_s = res_p["hit_season"] if res_p["hit_season"] is not None else 0.5
                 hit_10 = res_p["hit_l10"] if res_p["hit_l10"] is not None else 0.5
@@ -1241,13 +1338,11 @@ def escanear_oportunidades_partido(
                 media_h2h_m = float(h2h_sub[col_df].mean()) if n_h2h >= 2 else None
                 delta_h2h_m = (media_h2h_m - val_avg) if media_h2h_m is not None else 0.0
 
-                # Magnitud estandarizada del desplazamiento provocado por el matchup (z-shift)
                 z_shift = abs(diff_vs_avg) / max(sigma_p, 1.0)
                 consistencia_hist = 0.60 * hit_10_side + 0.40 * hit_s_side
                 if p_side < 0.545 or consistencia_hist < 0.50 or abs(diff_vs_line) < 0.30:
                     continue
 
-                # Construir explicación concisa de los catalizadores que impulsan la jugada
                 motivos = []
                 h2h_favorable = False
                 if es_over:
@@ -1255,7 +1350,7 @@ def escanear_oportunidades_partido(
                         h2h_favorable = True
                         motivos.append(f"Media H2H vs {riv}: {media_h2h_m:.1f} ({delta_h2h_m:+.1f} vs prom.)")
                     if hit_10_side >= 0.60:
-                        motivos.append(f"Racha L10: {int(round(hit_10_side*res_p['n_l10']))}/{res_p['n_l10']} ({hit_10_side:.0%})")
+                        motivos.append(f"Frecuencia L10: {int(round(hit_10_side*res_p['n_l10']))}/{res_p['n_l10']} ({hit_10_side:.0%})")
                     if rk_dvp >= 20 and cod_m in ("PTS", "3PM", "PRA"):
                         motivos.append(f"DvP Favorable (#{rk_dvp}/30 vs {perfil['pos_group']})")
                     if d_riv >= 115.0:
@@ -1282,18 +1377,16 @@ def escanear_oportunidades_partido(
                 if not motivos:
                     motivos.append(f"Proy. {media_p:.1f} vs Media {val_avg:.1f}")
 
-                # Score compuesto: Probabilidad + Desplazamiento del Matchup (z_shift) + Consistencia + H2H
                 bonus_h2h = 0.05 if h2h_favorable else 0.0
                 bonus_star = 0.03 if (cod_m in ("PTS", "PRA") and val_avg >= 18.0) else 0.0
                 score_conv = 0.45 * p_side + 0.25 * min(z_shift, 0.60) + 0.20 * consistencia_hist + 0.10 * hit_s_side + bonus_h2h + bonus_star
-                roi_est = (p_side * 1.9091 - 1.0) * 100.0
 
                 if p_side >= 0.575 and (hit_10_side >= 0.60 or bonus_h2h > 0) and len(motivos) >= 2:
-                    sello = "💎 SELLO DE ORO"
+                    nivel_desv = "🔶 DESVIACIÓN FUERTE"
                 elif p_side >= 0.56 and consistencia_hist >= 0.55:
-                    sello = "🔥 VALOR ALTO"
+                    nivel_desv = "🔷 DESVIACIÓN MODERADA"
                 else:
-                    sello = "✅ VALOR (+EV)"
+                    nivel_desv = "🔹 DESVIACIÓN LEVE"
 
                 h2h_str = (
                     f"{hit_h2h_side:.0%} ({int(round(hit_h2h_side*n_h2h_val))}/{n_h2h_val})"
@@ -1302,19 +1395,19 @@ def escanear_oportunidades_partido(
 
                 jugadas_valor.append({
                     "_score": score_conv,
-                    "Nivel": sello,
+                    "Magnitud": nivel_desv,
                     "Jugador": pname,
                     "Equipo": eq,
-                    "Mercado": cod_m,
-                    "Jugada Recomendada": tipo_jugada,
+                    "Métrica": cod_m,
+                    "Dirección vs Línea Est.": tipo_jugada,
                     "Proyección": round(media_p, 1),
                     "Media Hab.": round(val_avg, 1),
+                    "Dif. vs Media": f"{diff_vs_avg:+.1f}",
                     "Prob. Modelo": f"{p_side:.1%}",
-                    "Cuota Justa": cuota_justa,
-                    "ROI (-110)": f"{roi_est:+.1f}%",
-                    "Acierto L10": f"{hit_10_side:.0%} ({int(round(hit_10_side*res_p['n_l10']))}/{res_p['n_l10']})",
-                    "Acierto H2H": h2h_str,
-                    "Catalizadores / Por qué tiene valor": " · ".join(motivos[:3]),
+                    "Cuota Implícita": cuota_imp,
+                    "Histórico L10": f"{hit_10_side:.0%} ({int(round(hit_10_side*res_p['n_l10']))}/{res_p['n_l10']})",
+                    "Histórico H2H": h2h_str,
+                    "Factores del Modelo (H2H / DvP / Bajas)": " · ".join(motivos[:3]),
                 })
 
     # Ordenar insights narrativos por relevancia y eliminar duplicados

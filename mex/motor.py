@@ -13,6 +13,7 @@ from comun.motor_comun import (
     _TrackerPrePartido,
     _modelo_pre_partido,
 )
+from comun.motor_comun import hash_modulos_comunes
 """
 Motor de simulación y predicción para la Liga MX de México (Apertura / Clausura).
 Implementa:
@@ -664,6 +665,7 @@ def _cache_key():
         h.update(f.name.encode())
         h.update(str(f.stat().st_size).encode())
         h.update(hashlib.sha256(f.read_bytes()).hexdigest().encode())
+    h.update(hash_modulos_comunes().encode())
     return h.hexdigest()
 
 

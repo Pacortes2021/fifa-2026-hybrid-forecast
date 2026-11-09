@@ -137,3 +137,72 @@ def _modelo_pre_partido(M, clave_dataset):
         return {**M, "tracker": _TrackerPrePartido(M["tracker"], filas[i])}
 
     return obtener
+
+
+# --------------------------------------------------------------------------- #
+#  Higiene de validación (auditoría nov-2026)
+# --------------------------------------------------------------------------- #
+# Variables de plantilla generadas por scripts/build_advanced_features.py: toman el valor de 2026
+# y lo proyectan hacia atrás con un factor fijo, de modo que el ranking de plantillas de 2026 se
+# usaría para predecir partidos de 2020 (fuga de información del futuro). Solo se conserva
+# `stadium_capacity`, que es prácticamente estática y conocida de antemano.
+_PREFIJOS_ESTIMADOS = ("squad_value", "squad_size", "avg_age", "pct_foreigners", "foreigners",
+                       "avg_attendance", "stadium_occupation", "attendance", "occupation")
+
+
+def excluir_variables_estimadas(cols):
+    """Quita de la lista de variables del modelo las columnas de plantilla sintéticas/retroactivas."""
+    return [c for c in cols if not any(c.startswith(p) for p in _PREFIJOS_ESTIMADOS)]
+
+
+def seleccionar_c_lasso(X_train, y_train, grid=(0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5),
+                        n_splits=4, labels=(0, 1, 2), max_iter=3000, c_default=0.05):
+    """Elige la regularización C de LASSO con validación cruzada TEMPORAL dentro del train.
+
+    No recibe X_test / y_test: la propia firma impide contaminar la evaluación final.
+    Cada fold entrena con el pasado y evalúa en el bloque inmediatamente posterior
+    (TimeSeriesSplit), respetando el orden cronológico de las filas.
+    Devuelve (mejor_C, log_loss_cv_medio)."""
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import log_loss
+    from sklearn.model_selection import TimeSeriesSplit
+    from sklearn.pipeline import Pipeline
+    from sklearn.preprocessing import StandardScaler
+
+    labels = list(labels)
+    y_arr = pd.Series(np.asarray(y_train)).reset_index(drop=True)
+    X_df = pd.DataFrame(X_train).reset_index(drop=True)
+    n_splits = int(max(2, min(n_splits, len(X_df) // 50))) if len(X_df) >= 100 else 2
+    tscv = TimeSeriesSplit(n_splits=n_splits)
+    best_c, best_loss = c_default, np.inf
+    for C in grid:
+        losses = []
+        for tr, va in tscv.split(X_df):
+            if y_arr.iloc[tr].nunique() < 2:
+                continue
+            pipe = Pipeline([("sc", StandardScaler()),
+                             ("lr", LogisticRegression(penalty="l1", solver="saga", C=C,
+                                                       max_iter=max_iter, random_state=42))])
+            pipe.fit(X_df.iloc[tr], y_arr.iloc[tr])
+            proba = pipe.predict_proba(X_df.iloc[va])
+            # Reordenar a `labels` por si algún fold no vio todas las clases
+            P = np.full((len(va), len(labels)), 1e-6)
+            for j, cls in enumerate(pipe.classes_):
+                if cls in labels:
+                    P[:, labels.index(cls)] = proba[:, j]
+            P = P / P.sum(axis=1, keepdims=True)
+            losses.append(log_loss(y_arr.iloc[va], P, labels=labels))
+        if losses and float(np.mean(losses)) < best_loss:
+            best_c, best_loss = C, float(np.mean(losses))
+    return best_c, best_loss
+
+
+def hash_modulos_comunes():
+    """Hash del código compartido en comun/: se incorpora a la clave de caché de cada motor para
+    que un cambio en la lógica común invalide los modelos serializados que dependen de ella."""
+    import hashlib
+    h = hashlib.sha256()
+    for f in sorted(Path(__file__).resolve().parent.glob("*.py")):
+        h.update(f.name.encode())
+        h.update(f.read_bytes())
+    return h.hexdigest()

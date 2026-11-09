@@ -13,6 +13,8 @@ from comun.motor_comun import (
     _TrackerPrePartido,
     _modelo_pre_partido,
 )
+from comun.motor_comun import hash_modulos_comunes
+from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas
 import sys
 import math
 import pickle
@@ -289,6 +291,9 @@ def _cache_key():
             fp.update(f.name.encode())
             fp.update(str(f.stat().st_mtime).encode())
             fp.update(str(f.stat().st_size).encode())
+    # El modelo depende del código del motor (auditoría: antes un cambio de código no re-entrenaba)
+    fp.update(Path(__file__).read_bytes())
+    fp.update(hash_modulos_comunes().encode())
     return fp.hexdigest()
 
 def cargar_y_entrenar():
@@ -336,6 +341,8 @@ def cargar_y_entrenar():
 
     df_features = pd.DataFrame(filas)
     cols_feat = [c for c in df_features.columns if c not in ["resultado", "goles_local", "goles_visita", "temporada", "local", "visita", "fecha"]]
+    # Fuera variables de plantilla sintéticas/retroactivas (scripts/build_advanced_features.py)
+    cols_feat = excluir_variables_estimadas(cols_feat)
 
     train_mask = df_features["temporada"] <= 2023
     cal_mask   = df_features["temporada"] == 2024
@@ -353,13 +360,8 @@ def cargar_y_entrenar():
     y_test = df_features.loc[test_mask, "resultado"]
 
     # Búsqueda de C óptimo para Lasso
-    best_c = 0.05; best_loss = 999.0
-    for C_cand in [0.005, 0.01, 0.02, 0.04, 0.05, 0.1, 0.2]:
-        _p = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=C_cand, max_iter=3000, random_state=42))])
-        _p.fit(X_train, y_train)
-        _l = log_loss(y_test, _p.predict_proba(X_test), labels=[0, 1, 2])
-        if _l < best_loss:
-            best_loss = _l; best_c = C_cand
+    # C de LASSO elegido con CV temporal dentro del train (auditoría: antes se elegía con el test)
+    best_c, _ = seleccionar_c_lasso(X_train, y_train, grid=[0.005, 0.01, 0.02, 0.04, 0.05, 0.1, 0.2])
 
     pipe_lasso_base = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=4000, random_state=42))])
     pipe_lasso_base.fit(X_train, y_train)

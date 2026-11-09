@@ -71,7 +71,7 @@ def _obtener_boxscore_jugadores(eid):
     return filas
 
 
-def recolectar(max_workers=12, limite_partidos=None):
+def recolectar(max_workers=12, limite_partidos=None, min_temporada=2026):
     DATA.mkdir(parents=True, exist_ok=True)
     out_path = DATA / "jugadores_boxscore.csv"
     p_path = DATA / "partidos.csv"
@@ -80,6 +80,8 @@ def recolectar(max_workers=12, limite_partidos=None):
         return None
 
     df_partidos = pd.read_csv(p_path)
+    if min_temporada is not None and "temporada" in df_partidos.columns:
+        df_partidos = df_partidos[df_partidos["temporada"] >= int(min_temporada)]
     ya = pd.read_csv(out_path) if out_path.exists() else pd.DataFrame()
     hechos = set(ya["event_id"].astype(str)) if len(ya) and "event_id" in ya.columns else set()
 

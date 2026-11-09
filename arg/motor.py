@@ -13,6 +13,7 @@ from comun.motor_comun import (
     _TrackerPrePartido,
     _modelo_pre_partido,
 )
+from comun.motor_comun import hash_modulos_comunes
 """
 Motor de Machine Learning e Inferencia Híbrida para la Liga Profesional de Fútbol de Argentina (arg.1).
 Modelo calibrado con Pi-Ratings, Fatigue Factor (Días de descanso y Congestión) y Distancia de Viaje (Haversine km).
@@ -486,6 +487,7 @@ def _cache_key():
         h.update(f.name.encode())
         h.update(str(f.stat().st_size).encode())
         h.update(hashlib.sha256(f.read_bytes()).hexdigest().encode())
+    h.update(hash_modulos_comunes().encode())
     return h.hexdigest()
 
 

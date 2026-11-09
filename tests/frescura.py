@@ -41,6 +41,23 @@ def main():
         if vencidos > args.max_vencidos:
             desactualizadas.append(liga)
 
+    # Verificar cobertura de box scores individuales de jugadores NBA para la temporada actual (>= 2026)
+    nba_partidos = REPO / "nba" / "data" / "partidos.csv"
+    nba_jugadores = REPO / "nba" / "data" / "jugadores_boxscore.csv"
+    if nba_partidos.exists() and nba_jugadores.exists():
+        df_np = pd.read_csv(nba_partidos)
+        df_nj = pd.read_csv(nba_jugadores, usecols=["event_id"])
+        df_np["fecha_dt"] = pd.to_datetime(df_np["fecha"], utc=True, errors="coerce")
+        corte_nba = pd.Timestamp.now(tz="UTC") - pd.Timedelta(days=2)
+        recientes = df_np[(df_np["temporada"] >= 2026) & (df_np["fecha_dt"] < corte_nba)]
+        eids_part = set(recientes["event_id"].dropna().astype(str))
+        eids_jug = set(df_nj["event_id"].dropna().astype(str))
+        faltantes_jug = len(eids_part - eids_jug)
+        estado_j = "OK" if faltantes_jug <= 5 else "DESACTUALIZADA"
+        print(f"{estado_j:15} nba_jug cobertura boxscore jugadores (>=2026): {len(eids_part) - faltantes_jug}/{len(eids_part)} | faltantes (>48h): {faltantes_jug}")
+        if faltantes_jug > 5:
+            desactualizadas.append("nba_jugadores")
+
     if desactualizadas:
         print(f"\n⚠️  Ligas sin actualizar: {', '.join(desactualizadas)}")
         sys.exit(1)

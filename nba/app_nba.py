@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import motor as mo
 import recolectar as rec
 import recolectar_boxscore as rec_box
+import recolectar_jugadores as rec_jug
 import motor_jugadores as mj
 from motor import cuota, cuota_americana
 from scipy.stats import norm
@@ -51,17 +52,9 @@ def get_oportunidades_partido(
     )
 
 
-@st.cache_data(show_spinner="Ejecutando validación Walk-Forward Out-of-Sample sobre +6.700 partidos de jugadores...")
-def get_backtest_jugadores(_df_box, _M, n_rows):
-    tracker = _M["tracker"]
-    t_stats = {}
-    for eq in _df_box["equipo"].dropna().unique():
-        hist = list(tracker.history[eq])
-        t_stats[eq] = {
-            "pace": float(np.mean([x["pace"] for x in hist])) if hist else 99.2,
-            "drtg": float(np.mean([x["drtg"] for x in hist])) if hist else 114.5,
-        }
-    return mj.backtest_walk_forward_jugadores(_df_box, team_stats=t_stats, split_ratio=0.70)
+@st.cache_data(show_spinner="Ejecutando validación Walk-Forward Out-of-Sample estrictamente causal sobre +6.700 partidos...")
+def get_backtest_jugadores(_df_box, n_rows):
+    return mj.backtest_walk_forward_jugadores(_df_box, split_ratio=0.70, modo_bajas="causal")
 
 # Estilizado CSS Premium para NBA
 # Se inyecta en cada ejecución de run_app(): a nivel de módulo solo corría al primer
@@ -147,9 +140,10 @@ def run_app():
     )
 
     if st.session_state.get("portal_admin", True) and st.sidebar.button("🔄 Actualizar ESPN y Re-entrenar", key="refresh_nba", type="primary"):
-        with st.spinner("Descargando últimos resultados y box scores de la NBA..."):
+        with st.spinner("Descargando últimos resultados y box scores de equipos y jugadores de la NBA..."):
             rec.recolectar()
             rec_box.recolectar(limite=200)
+            rec_jug.recolectar(limite_partidos=200, min_temporada=2026)
         st.cache_data.clear()
         st.cache_resource.clear()
         st.rerun()
@@ -385,12 +379,17 @@ def run_app():
                 </div>
                 """, unsafe_allow_html=True)
 
-            # Escáner automático de Ventajas Tácticas y Jugadas de Valor (+EV) en Jugadores
-            st.markdown('<div class="card-title">🧠 Detector Automático de Ventajas Tácticas y Jugadas de Valor (+EV) del Partido</div>', unsafe_allow_html=True)
+            # Detector automático de Ventajas Tácticas y Desviaciones respecto de Línea Estimada
+            st.markdown('<div class="card-title">🧠 Detector de Ventajas Tácticas y Desviaciones vs. Línea Estimada</div>', unsafe_allow_html=True)
             st.caption(
-                "Al simular el enfrentamiento, el motor inspecciona automáticamente la rotación activa de ambos equipos "
+                "Al simular el enfrentamiento, el motor inspecciona la rotación activa de ambos equipos "
                 "(incorporando las bajas seleccionadas), cruzando el historial directo contra este rival (**H2H**), "
-                "los desajustes de **Defensa contra la Posición (DvP)**, el ritmo esperado y la consistencia reciente (**L10**):"
+                "los desajustes de **Defensa contra la Posición (DvP)**, el ritmo esperado y la consistencia reciente (**L10**)."
+            )
+            st.warning(
+                "⚠️ **Nota metodológica:** Las líneas de referencia (`Est.`) se calculan a partir de la media histórica "
+                "del propio jugador (`0.75·Media + 0.25·L10`) y la cuota implícita es `1 / P(modelo)`. "
+                "No provienen de una casa de apuestas ni representan oportunidades `+EV` verificadas frente al mercado real."
             )
             insights_duelo, df_jugadas_duelo = get_oportunidades_partido(
                 df_box_j, df_rost_j, dvp_data, home_team, away_team,
@@ -408,10 +407,10 @@ def run_app():
                     for ins_txt in insights_duelo:
                         st.markdown(f"- {ins_txt}")
             if not df_jugadas_duelo.empty:
-                st.markdown("##### 🎯 Ranking de Jugadas de Valor (+EV) Detectadas en Ambos Equipos")
+                st.markdown("##### 🎯 Ranking de Desviaciones Respecto de Línea Estimada (Ambos Equipos)")
                 st.dataframe(df_jugadas_duelo, width="stretch", hide_index=True)
             else:
-                st.info("No se detectaron desviaciones estadísticamente significativas (+EV) en los jugadores de este partido.")
+                st.info("No se detectaron desviaciones estadísticamente relevantes respecto de las medias habituales en este partido.")
 
             # Puntuación proyectada por cuartos
             st.markdown('<div class="card-title">🏀 Proyección de Anotación por Cuartos</div>', unsafe_allow_html=True)
@@ -657,8 +656,8 @@ def run_app():
                 )
 
                 # Radar automático de todo el enfrentamiento en la pestaña de Jugadores
-                with st.expander(f"📡 Radar Automático de Jugadas de Valor (+EV) del Duelo: {team_prop} vs {rival_sel}", expanded=False):
-                    st.caption("Escaneo completo de ambos planteles bajo las condiciones y bajas seleccionadas:")
+                with st.expander(f"📡 Radar de Desviaciones vs. Línea Estimada del Duelo: {team_prop} vs {rival_sel}", expanded=False):
+                    st.caption("Escaneo de ambos planteles frente a líneas estimadas de su propio historial (no constituyen líneas ni cuotas reales de casas de apuestas):")
                     ins_t2, df_jug_t2 = get_oportunidades_partido(
                         df_box_j, df_rosters_j, dvp_data, eq_loc, eq_vis,
                         round(float(feats_ctx.get("pace_local", 99.2)), 2),
@@ -870,18 +869,19 @@ def run_app():
                     vis_l8 = df_p_games[["fecha", "rival", "MIN", "PTS", "REB", "AST", "3PT", "FG", "+/-"]].head(10)
                     st.dataframe(vis_l8, hide_index=True, width="stretch")
 
-                with st.expander("🧪 Validación Científica del Modelo (Backtesting Walk-Forward Out-of-Sample)", expanded=False):
+                with st.expander("🧪 Validación Científica del Modelo (Backtesting Walk-Forward Causal Out-of-Sample)", expanded=False):
                     st.markdown(
-                        "Evaluación **Walk-Forward estricta (cero *data leakage*)**: para cada actuación individual del bloque de prueba, "
-                        "el modelo utiliza únicamente los partidos previos del jugador (`< t`), detecta las bajas reales de titulares en ese partido "
-                        "y compara su proyección contra el **Baseline (Media Simple previa)** y frente a la **Línea Sintética de las Casas** (`floor(media) + 0.5`):"
+                        "Evaluación **Walk-Forward estrictamente causal (cero *data leakage*)**: para cada partido `t` del bloque de prueba, "
+                        "el perfil del jugador, el Pace/DRtg de los equipos y la rotación titular se reconstruyen únicamente con partidos `< t`. "
+                        "En el modo causal pre-partido solo se imputan como bajas conocidas los titulares que ya faltaron en el partido previo (`t-1`), "
+                        "y se muestra por separado el MAE con bajas observadas en la planilla oficial de `t`:"
                     )
-                    df_bt, meta_bt = get_backtest_jugadores(df_box_j, M, len(df_box_j))
+                    df_bt, meta_bt = get_backtest_jugadores(df_box_j, len(df_box_j))
                     if not df_bt.empty:
                         b1, b2, b3 = st.columns(3)
                         b1.metric("Actuaciones Evaluadas (Out-of-Sample)", f"{meta_bt['n_evaluados']:,}")
                         b2.metric("Partidos de Prueba Cronológicos", f"{meta_bt['n_partidos_test']:,}")
-                        b3.metric("Actuaciones con Baja de Titular", f"{meta_bt['n_con_bajas']:,}")
+                        b3.metric("Con Baja Previa Conocida / Observada", f"{meta_bt['n_con_bajas']:,} / {meta_bt.get('n_con_bajas_obs', 0):,}")
                         st.dataframe(df_bt, hide_index=True, width="stretch")
 
     # ============================================================================

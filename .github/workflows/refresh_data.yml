@@ -247,10 +247,15 @@ jobs:
         run: |
           python3 -c "
           import sys; sys.path.insert(0, 'nba')
-          import recolectar as rec, recolectar_boxscore as rec_box
+          import recolectar as rec, recolectar_boxscore as rec_box, recolectar_jugadores as rec_jug
           rec.recolectar()
           rec_box.recolectar()  # incremental: solo pide los partidos nuevos
+          rec_jug.recolectar(limite_partidos=200, min_temporada=2026)
           "
+
+      - name: 🗂️ Archivar predicciones pre-partido (próximos 7 días)
+        if: ${{ !cancelled() }}
+        run: python3 scripts/archivar_predicciones.py --dias 7
 
       - name: 💾 Commit updated CSVs (if any changes)
         if: ${{ !cancelled() }}  # una liga caída no debe impedir actualizar las demás
@@ -258,10 +263,13 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Stage only data CSVs (never model code or notebooks)
+          # Stage only data CSVs and immutable prediction log (never model code or notebooks)
           for liga in chile arg bra mex esp eng bund ita fra ned por bel tur sco aut den gre nor swe ucl unl nba; do
             git add "$liga/data/partidos.csv" "$liga/data/fixture.csv"
             if [ -f "$liga/data/box_score.csv" ]; then git add "$liga/data/box_score.csv"; fi
+          done
+          for extra_csv in nba/data/jugadores_boxscore.csv nba/data/rosters_activos.csv outputs/predicciones_log.csv; do
+            if [ -f "$extra_csv" ]; then git add "$extra_csv"; fi
           done
 
           # Only commit if there are actual changes.
