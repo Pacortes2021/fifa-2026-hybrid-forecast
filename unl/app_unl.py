@@ -43,7 +43,36 @@ div[data-testid="stVerticalBlockBorderWrapper"] {
 
 @st.cache_resource
 def get_motor():
-    return mo.cargar()
+    M = mo.cargar()
+    if M is not None:
+        for k in ("pipe_rf", "pipe_xgb", "pipe_lasso", "pipe_svm"):
+            pipe = M.get(k)
+            if pipe is not None and hasattr(pipe, "steps"):
+                est = pipe.steps[-1][1]
+                if hasattr(est, "n_jobs"):
+                    est.n_jobs = 1
+        pipe_rf = M.get("pipe_rf")
+        if pipe_rf is not None and hasattr(pipe_rf, "steps") and len(pipe_rf.steps) == 2:
+            sc, rf = pipe_rf.steps[0][1], pipe_rf.steps[1][1]
+            if hasattr(sc, "mean_") and hasattr(rf, "estimators_"):
+                trees = [e.tree_ for e in rf.estimators_]
+                mean, scale = sc.mean_.astype(np.float32), sc.scale_.astype(np.float32)
+                orig = pipe_rf.predict_proba
+                def _fast_rf(X):
+                    if len(X) <= 8:
+                        arr = X.to_numpy(dtype=np.float32) if hasattr(X, "to_numpy") else np.asarray(X, dtype=np.float32)
+                        out = sum(t.predict((arr - mean) / scale) for t in trees)
+                        if out.ndim == 3:
+                            out = out[:, 0, :]
+                        return out / out.sum(axis=1, keepdims=True)
+                    return orig(X)
+                pipe_rf.predict_proba = _fast_rf
+    return M
+
+
+@st.cache_data(show_spinner=False)
+def _validar_unl(_M, mod_code):
+    return mo.validacion_en_vivo(_M, modelo=mod_code)
 
 
 @st.cache_resource(show_spinner=False)
@@ -584,7 +613,7 @@ REGLAS OBLIGATORIAS DE ANÁLISIS (NO REPITAS EL CSV):
         st.markdown('<div class="sec-title">El Modelo contra la Realidad · Nations League 2026</div>', unsafe_allow_html=True)
         st.markdown("Auditoría empírica en tiempo real: cotejo de predicciones pre-partido contra los resultados de los partidos ya jugados en la edición 2026-27.")
 
-        df_val, met, evol = (_validar_elo(M, elo) if mod_code == "elo" else mo.validacion_en_vivo(M, modelo=mod_code))
+        df_val, met, evol = (_validar_elo(M, elo) if mod_code == "elo" else _validar_unl(M, mod_code))
 
         if df_val.empty:
             st.info("Aún no hay partidos finalizados reportados en la edición 2026.")
