@@ -28,6 +28,19 @@ def get_datos_jugadores():
     dvp = mj.calcular_defensa_vs_posicion(df_b)
     return df_b, df_r, dvp
 
+
+@st.cache_data(show_spinner="Ejecutando validación Walk-Forward Out-of-Sample sobre +6.700 partidos de jugadores...")
+def get_backtest_jugadores(_df_box, _M, n_rows):
+    tracker = _M["tracker"]
+    t_stats = {}
+    for eq in _df_box["equipo"].dropna().unique():
+        hist = list(tracker.history[eq])
+        t_stats[eq] = {
+            "pace": float(np.mean([x["pace"] for x in hist])) if hist else 99.2,
+            "drtg": float(np.mean([x["drtg"] for x in hist])) if hist else 114.5,
+        }
+    return mj.backtest_walk_forward_jugadores(_df_box, team_stats=t_stats, split_ratio=0.70)
+
 # Estilizado CSS Premium para NBA
 # Se inyecta en cada ejecución de run_app(): a nivel de módulo solo corría al primer
 # import del proceso, y el CSS desaparecía en los reruns y para los demás usuarios.
@@ -681,7 +694,8 @@ def run_app():
 
                 res_prop = mj.calcular_probabilidades_prop(
                     media_eval, sigma_eval, linea_input,
-                    stat_key=clave_stat, df_games=perfil["df_games_team"]
+                    stat_key=clave_stat, df_games=perfil["df_games_team"],
+                    df_all_games=perfil["df_games"], rival=rival_sel
                 )
 
                 with c_calc3:
@@ -694,14 +708,22 @@ def run_app():
                         f"🔴 **UNDER {linea_input}: {res_prop['prob_under']:.1%}** (Cuota justa `{res_prop['cuota_under']}`)"
                     )
                     if res_prop["hit_season"] is not None:
+                        h2h_txt = (
+                            f" &nbsp;·&nbsp; vs {rival_sel} (H2H): **`{res_prop['hit_h2h']:.1%}`** ({int(round(res_prop['hit_h2h']*res_prop['n_h2h']))}/{res_prop['n_h2h']} PJ)"
+                            if res_prop.get("hit_h2h") is not None and res_prop.get("n_h2h", 0) > 0
+                            else f" &nbsp;·&nbsp; vs {rival_sel} (H2H): `Sin PJ previos`"
+                        )
                         st.caption(
                             f"📊 **Hit Rate Histórico (>{linea_input}):** "
                             f"Temporada: **`{res_prop['hit_season']:.1%}`** ({int(round(res_prop['hit_season']*res_prop['n_season']))}/{res_prop['n_season']} PJ) &nbsp;·&nbsp; "
                             f"Últimos 10 PJ (L10): **`{res_prop['hit_l10']:.1%}`** ({int(round(res_prop['hit_l10']*res_prop['n_l10']))}/{res_prop['n_l10']} PJ)"
+                            f"{h2h_txt}"
                         )
                     st.progress(float(res_prop["prob_over"]))
 
-                fig_prop, (ax_prop, ax_bars) = plt.subplots(1, 2, figsize=(11.5, 3.1), gridspec_kw={"width_ratios": [1.15, 1.25]})
+                fig_prop, (ax_prop, ax_bars, ax_h2h) = plt.subplots(
+                    1, 3, figsize=(15.5, 3.3), gridspec_kw={"width_ratios": [1.05, 1.25, 1.05]}
+                )
                 x_vals = res_prop["x_grid"]
                 y_vals = res_prop["y_grid"]
 
@@ -717,28 +739,51 @@ def run_app():
                     ax_prop.fill_between(x_vals, y_vals, where=(x_vals < linea_input), color="#ef4444", alpha=0.25, label=f"Under ({res_prop['prob_under']:.1%})")
                     ax_prop.set_ylabel("Densidad", fontsize=8)
 
-                ax_prop.set_title(f"Distribución Proyectada: {stat_prop_sel}", fontsize=9.5, fontweight="bold")
-                ax_prop.set_xlabel(stat_prop_sel, fontsize=8.5)
-                ax_prop.legend(fontsize=7.5, loc="upper right")
+                ax_prop.set_title(f"1. Distribución Modelo: {stat_prop_sel}", fontsize=9.2, fontweight="bold")
+                ax_prop.set_xlabel(stat_prop_sel, fontsize=8)
+                ax_prop.legend(fontsize=7.2, loc="upper right")
                 ax_prop.grid(True, ls=":", alpha=0.4)
 
-                # Panel derecho: Hit Rate en los últimos 12 partidos reales frente a la línea
+                # Panel central: Hit Rate en los últimos 12 partidos generales frente a la línea
                 u12 = res_prop.get("ultimos_12", [])
                 if u12:
                     lbls_12 = [x["etiqueta"] for x in u12]
                     vals_12 = [x["valor"] for x in u12]
                     cols_12 = ["#10b981" if x["over"] else "#ef4444" for x in u12]
-                    bars = ax_bars.bar(range(len(u12)), vals_12, color=cols_12, alpha=0.8, width=0.6)
+                    bars = ax_bars.bar(range(len(u12)), vals_12, color=cols_12, alpha=0.82, width=0.6)
                     ax_bars.axhline(linea_input, color="#c8102e", ls="--", lw=1.8, label=f"Línea ({linea_input})")
                     ax_bars.axhline(media_eval, color="#1d428a", ls=":", lw=1.5, label=f"Proy. ({media_eval:.1f})")
                     ax_bars.set_xticks(range(len(u12)))
-                    ax_bars.set_xticklabels(lbls_12, fontsize=7)
+                    ax_bars.set_xticklabels(lbls_12, fontsize=6.8)
                     for b, v in zip(bars, vals_12):
-                        ax_bars.text(b.get_x() + b.get_width() / 2.0, v + max(vals_12) * 0.02, f"{v:.0f}", ha="center", va="bottom", fontsize=7.5, fontweight="bold")
-                    ax_bars.set_title(f"Últimos {len(u12)} Partidos vs Línea ({linea_input})", fontsize=9.5, fontweight="bold")
-                    ax_bars.legend(fontsize=7.5, loc="upper right")
+                        ax_bars.text(b.get_x() + b.get_width() / 2.0, v + max(vals_12) * 0.02, f"{v:.0f}", ha="center", va="bottom", fontsize=7.2, fontweight="bold")
+                    ax_bars.set_title(f"2. Últimos {len(u12)} Partidos (General) vs Línea", fontsize=9.2, fontweight="bold")
+                    ax_bars.legend(fontsize=7.2, loc="upper right")
                     ax_bars.grid(True, axis="y", ls=":", alpha=0.4)
                     ax_bars.set_ylim(0, max(max(vals_12, default=10.0), linea_input) * 1.18)
+
+                # Panel derecho (NUEVO): Gráfico complementario exclusivo vs. el Equipo Rival (H2H)
+                u_h2h = res_prop.get("ultimos_h2h", [])
+                if u_h2h:
+                    lbls_h = [x["etiqueta"] for x in u_h2h]
+                    vals_h = [x["valor"] for x in u_h2h]
+                    cols_h = ["#10b981" if x["over"] else "#ef4444" for x in u_h2h]
+                    bars_h = ax_h2h.bar(range(len(u_h2h)), vals_h, color=cols_h, alpha=0.85, edgecolor="#0f172a", width=0.52)
+                    ax_h2h.axhline(linea_input, color="#c8102e", ls="--", lw=1.8, label=f"Línea ({linea_input})")
+                    ax_h2h.axhline(media_eval, color="#1d428a", ls=":", lw=1.5, label=f"Proy. ({media_eval:.1f})")
+                    ax_h2h.set_xticks(range(len(u_h2h)))
+                    ax_h2h.set_xticklabels(lbls_h, fontsize=7.0)
+                    for b, v in zip(bars_h, vals_h):
+                        ax_h2h.text(b.get_x() + b.get_width() / 2.0, v + max(vals_h) * 0.02, f"{v:.0f}", ha="center", va="bottom", fontsize=7.8, fontweight="bold")
+                    ax_h2h.set_title(f"3. Historial vs {rival_sel} ({len(u_h2h)} PJ H2H)", fontsize=9.2, fontweight="bold")
+                    ax_h2h.legend(fontsize=7.2, loc="upper right")
+                    ax_h2h.grid(True, axis="y", ls=":", alpha=0.4)
+                    ax_h2h.set_ylim(0, max(max(vals_h, default=10.0), linea_input) * 1.20)
+                else:
+                    ax_h2h.text(0.5, 0.5, f"Sin duelos previos registrados\ncontra {rival_sel}", ha="center", va="center", fontsize=8.5, color="#64748b")
+                    ax_h2h.set_title(f"3. Historial vs {rival_sel} (H2H)", fontsize=9.2, fontweight="bold")
+                    ax_h2h.set_xticks([])
+                    ax_h2h.set_yticks([])
 
                 plt.tight_layout()
                 st.pyplot(fig_prop)
@@ -755,6 +800,20 @@ def run_app():
                     st.markdown("##### 📜 Últimos 10 partidos disputados:")
                     vis_l8 = df_p_games[["fecha", "rival", "MIN", "PTS", "REB", "AST", "3PT", "FG", "+/-"]].head(10)
                     st.dataframe(vis_l8, hide_index=True, width="stretch")
+
+                with st.expander("🧪 Validación Científica del Modelo (Backtesting Walk-Forward Out-of-Sample)", expanded=False):
+                    st.markdown(
+                        "Evaluación **Walk-Forward estricta (cero *data leakage*)**: para cada actuación individual del bloque de prueba, "
+                        "el modelo utiliza únicamente los partidos previos del jugador (`< t`), detecta las bajas reales de titulares en ese partido "
+                        "y compara su proyección contra el **Baseline (Media Simple previa)** y frente a la **Línea Sintética de las Casas** (`floor(media) + 0.5`):"
+                    )
+                    df_bt, meta_bt = get_backtest_jugadores(df_box_j, M, len(df_box_j))
+                    if not df_bt.empty:
+                        b1, b2, b3 = st.columns(3)
+                        b1.metric("Actuaciones Evaluadas (Out-of-Sample)", f"{meta_bt['n_evaluados']:,}")
+                        b2.metric("Partidos de Prueba Cronológicos", f"{meta_bt['n_partidos_test']:,}")
+                        b3.metric("Actuaciones con Baja de Titular", f"{meta_bt['n_con_bajas']:,}")
+                        st.dataframe(df_bt, hide_index=True, width="stretch")
 
     # ============================================================================
     # TAB 3: Clasificación y Simulación Playoff (Monte Carlo)

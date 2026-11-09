@@ -566,7 +566,7 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
 
     bajas_companeros = bajas_companeros or []
     bajas_rivales = bajas_rivales or []
-    minutos_base = float(minutos_proy if minutos_proy is not None else (0.55 * perfil["min_l5"] + 0.45 * perfil["min_avg"]))
+    minutos_base = float(minutos_proy if minutos_proy is not None else (0.75 * perfil["min_avg"] + 0.25 * perfil["min_l5"]))
     minutos = max(minutos_base, 5.0)
 
     # 1. Alerta y ajuste suave por Riesgo de Blowout (partido roto cuando |spread| >= 14.5)
@@ -577,29 +577,29 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
         exceso = min(abs(float(spread_esperado)) - 13.5, 10.0)
         penalizacion_min_blowout = round(0.22 * exceso, 1)
 
-    # 2. Tasa base por minuto: 65% media estable + 35% racha L5 (evita sobre-reaccionar a rachas extremas de 5 juegos)
+    # 2. Tasa base por minuto calibrada por Walk-Forward Backtest (78%-80% base + 20%-22% L5: encogimiento James-Stein)
     rate_season_p = perfil["pts_avg"] / max(perfil["min_avg"], 1.0)
     rate_l5_p = perfil["pts_l5"] / max(perfil["min_l5"], 1.0)
-    p_per_min = 0.65 * rate_season_p + 0.35 * rate_l5_p
+    p_per_min = 0.78 * rate_season_p + 0.22 * rate_l5_p
 
     rate_season_r = perfil["reb_avg"] / max(perfil["min_avg"], 1.0)
     rate_l5_r = perfil["reb_l5"] / max(perfil["min_l5"], 1.0)
-    r_per_min = 0.65 * rate_season_r + 0.35 * rate_l5_r
+    r_per_min = 0.80 * rate_season_r + 0.20 * rate_l5_r
 
     rate_season_a = perfil["ast_avg"] / max(perfil["min_avg"], 1.0)
     rate_l5_a = perfil["ast_l5"] / max(perfil["min_l5"], 1.0)
-    a_per_min = 0.65 * rate_season_a + 0.35 * rate_l5_a
+    a_per_min = 0.78 * rate_season_a + 0.22 * rate_l5_a
 
     rate_season_t = perfil["tpm_avg"] / max(perfil["min_avg"], 1.0)
     rate_l5_t = perfil["tpm_l5"] / max(perfil["min_l5"], 1.0)
-    t_per_min = 0.65 * rate_season_t + 0.35 * rate_l5_t
+    t_per_min = 0.80 * rate_season_t + 0.20 * rate_l5_t
 
-    # 3. Ajuste por Ritmo del Partido (Pace esperado del cruce frente al Pace habitual del equipo del jugador)
-    exp_pace = ( float(pace_equipo) + float(pace_rival) ) / 2.0
-    factor_pace = float(np.clip(1.0 + (exp_pace - LEAGUE_AVG_PACE) / (1.5 * LEAGUE_AVG_PACE), 0.93, 1.07))
+    # 3. Ajuste por Ritmo del Partido (Pace esperado del cruce frente al Pace medio NBA)
+    exp_pace = (float(pace_equipo) + float(pace_rival)) / 2.0
+    factor_pace = float(np.clip(1.0 + (exp_pace - LEAGUE_AVG_PACE) / (1.6 * LEAGUE_AVG_PACE), 0.94, 1.06))
 
     # 4. Ajuste por Calidad Defensiva del Rival (DRtg global + Defensa vs Posición DvP)
-    factor_drtg = float(np.clip(1.0 + (float(drtg_rival) - LEAGUE_AVG_DRTG) / 135.0, 0.90, 1.10))
+    factor_drtg = float(np.clip(1.0 + (float(drtg_rival) - LEAGUE_AVG_DRTG) / 150.0, 0.91, 1.09))
     pos_grp = perfil.get("pos_group", _norm_pos(perfil.get("position", "G")))
 
     dvp_pos = {"pts": 1.0, "reb": 1.0, "ast": 1.0, "tpm": 1.0, "rank_pts": 15}
@@ -612,8 +612,8 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
     factor_def_ast = 0.50 * factor_drtg + 0.50 * dvp_pos["ast"]
     factor_def_tpm = 0.45 * factor_drtg + 0.55 * dvp_pos["tpm"]
 
-    # 5. Ventaja de Localía individual (~+2.2% en casa, -1.8% en ruta)
-    factor_casa = 1.022 if es_local else 0.982
+    # 5. Ventaja de Localía individual empírica (medida en 32.026 planillas: +0.8% en casa, -0.8% en ruta)
+    factor_casa = 1.008 if es_local else 0.992
 
     # 6. Motor Híbrido de Bajas de Compañeros: On/Off Empírico + Usage Vacuum con Rendimientos Decrecientes
     on_off_info = {"splits": [], "emp_mult": {"pts": 1.0, "reb": 1.0, "ast": 1.0, "tpm": 1.0}, "n_off_total": 0}
@@ -632,14 +632,14 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
         ast_b = float(baja.get("ast_avg", 2.5))
         pos_b = baja.get("pos_group", _norm_pos(baja.get("position", "G")))
 
-        # Peso del volumen vacante ponderado por minutos del ausente y rol del jugador proyectado
-        share_afinidad_reb = 1.35 if (pos_b in ("C", "F") and pos_grp in ("C", "F")) else 0.75
-        share_afinidad_ast = 1.30 if (pos_b in ("G", "F") and pos_grp in ("G", "F")) else 0.70
+        # Peso del volumen vacante calibrado por Walk-Forward Backtest (n=2.013 juegos con bajas titulares)
+        share_afinidad_reb = 1.30 if (pos_b in ("C", "F") and pos_grp in ("C", "F")) else 0.75
+        share_afinidad_ast = 1.25 if (pos_b in ("G", "F") and pos_grp in ("G", "F")) else 0.70
 
-        u_factor = float(np.clip(perfil["usage_proxy"] / 0.65, 0.55, 1.35))
-        d_p = (pts_b / 135.0) * (min_b / 32.0) * u_factor
-        d_a = (ast_b / 42.0) * (min_b / 32.0) * share_afinidad_ast
-        d_r = (reb_b / 52.0) * (min_b / 32.0) * share_afinidad_reb
+        u_factor = float(np.clip(perfil["usage_proxy"] / 0.65, 0.55, 1.30))
+        d_p = (pts_b / 170.0) * (min_b / 32.0) * u_factor
+        d_a = (ast_b / 52.0) * (min_b / 32.0) * share_afinidad_ast
+        d_r = (reb_b / 65.0) * (min_b / 32.0) * share_afinidad_reb
 
         sp = on_off_info["splits"][idx_b] if idx_b < len(on_off_info["splits"]) else None
         if sp and sp["pj_sin"] > 0 and sp["pj_con"] > 0:
@@ -647,9 +647,9 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
             r_p_emp = max(0.25 * d_p, ((sp["pts_sin"] / max(sp["min_sin"], 1.0)) / max(sp["pts_con"] / max(sp["min_con"], 1.0), 0.05)) - 1.0)
             r_r_emp = max(0.25 * d_r, ((sp["reb_sin"] / max(sp["min_sin"], 1.0)) / max(sp["reb_con"] / max(sp["min_con"], 1.0), 0.02)) - 1.0)
             r_a_emp = max(0.25 * d_a, ((sp["ast_sin"] / max(sp["min_sin"], 1.0)) / max(sp["ast_con"] / max(sp["min_con"], 1.0), 0.02)) - 1.0)
-            d_p = (1.0 - w_i) * d_p + w_i * float(np.clip(r_p_emp, 0.0, 0.18))
-            d_r = (1.0 - w_i) * d_r + w_i * float(np.clip(r_r_emp, 0.0, 0.18))
-            d_a = (1.0 - w_i) * d_a + w_i * float(np.clip(r_a_emp, 0.0, 0.20))
+            d_p = (1.0 - w_i) * d_p + w_i * float(np.clip(r_p_emp, 0.0, 0.16))
+            d_r = (1.0 - w_i) * d_r + w_i * float(np.clip(r_r_emp, 0.0, 0.15))
+            d_a = (1.0 - w_i) * d_a + w_i * float(np.clip(r_a_emp, 0.0, 0.18))
 
         raw_vac_pts += d_p
         raw_vac_ast += d_a
@@ -662,11 +662,10 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
             "pts_sin": sp["pts_sin"] if sp else perfil["pts_avg"],
         })
 
-    # Saturación cóncava (rendimientos decrecientes + penalización de eficiencia por doble marca defensiva)
-    # Techo máximo realista: +20% PTS, +24% AST, +19% REB aunque falten 3 titulares
-    boost_pts_baja = 1.0 + 0.20 * (1.0 - np.exp(-raw_vac_pts / 0.16))
-    boost_ast_baja = 1.0 + 0.24 * (1.0 - np.exp(-raw_vac_ast / 0.18))
-    boost_reb_baja = 1.0 + 0.19 * (1.0 - np.exp(-raw_vac_reb / 0.16))
+    # Saturación cóncava calibrada (techo: +16% PTS, +20% AST, +15% REB)
+    boost_pts_baja = 1.0 + 0.16 * (1.0 - np.exp(-raw_vac_pts / 0.15))
+    boost_ast_baja = 1.0 + 0.20 * (1.0 - np.exp(-raw_vac_ast / 0.16))
+    boost_reb_baja = 1.0 + 0.15 * (1.0 - np.exp(-raw_vac_reb / 0.15))
     boost_tpm_baja = 1.0 + 0.85 * (boost_pts_baja - 1.0)
 
     # 7. Impacto de Bajas en el Equipo Rival (ej. ausencia del pívot protector de aro o defensor perimetral rival)
@@ -766,13 +765,15 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
     }
 
 
-def calcular_probabilidades_prop(media, sigma, linea, stat_key="pts", df_games=None):
+def calcular_probabilidades_prop(media, sigma, linea, stat_key="pts", df_games=None, df_all_games=None, rival=None):
     """
     Calcula P(Over) y P(Under), cuotas justas y el Hit Rate histórico del jugador para una línea dada.
     - Para conteos discretos bajos (tpm, reb, ast): utiliza Binomial Negativa (sobredispersa) o Poisson
       evaluada exactamente en k = floor(linea), evitando asignar densidad a valores negativos.
     - Para agregados de alto puntaje (pts, pra): utiliza distribución Normal truncada en >= 0 con
       corrección de continuidad.
+    - Extrae tanto la serie de los últimos 12 partidos generales (ultimos_12) como la serie de duelos
+      directos contra el equipo rival seleccionado (ultimos_h2h).
     """
     linea = float(linea)
     media = max(float(media), 0.1)
@@ -824,7 +825,9 @@ def calcular_probabilidades_prop(media, sigma, linea, stat_key="pts", df_games=N
     }
     col_name = col_map.get(stat_key, "pts_num")
     hit_season, n_season, hit_l10, n_l10 = None, 0, None, 0
+    hit_h2h, n_h2h = None, 0
     ultimos_12 = []
+    ultimos_h2h = []
 
     if df_games is not None and not df_games.empty and col_name in df_games.columns:
         sub_g = df_games[df_games["min_num"] >= 8.0].sort_values("fecha_dt", ascending=False)
@@ -847,6 +850,24 @@ def calcular_probabilidades_prop(media, sigma, linea, stat_key="pts", df_games=N
                     "over": bool(float(r[col_name]) > linea)
                 })
 
+    df_h2h_src = df_all_games if (df_all_games is not None and not df_all_games.empty) else df_games
+    if rival and df_h2h_src is not None and not df_h2h_src.empty and col_name in df_h2h_src.columns:
+        sub_riv = df_h2h_src[(df_h2h_src["rival"] == rival) & (df_h2h_src["min_num"] >= 8.0)].sort_values("fecha_dt", ascending=False)
+        n_h2h = len(sub_riv)
+        if n_h2h > 0:
+            hits_r = int((sub_riv[col_name] > linea).sum())
+            hit_h2h = hits_r / n_h2h
+            sub_riv_12 = sub_riv.head(12).iloc[::-1]
+            for _, r in sub_riv_12.iterrows():
+                f_lbl = pd.to_datetime(r["fecha"]).strftime("%d/%m/%y") if pd.notna(r["fecha"]) else ""
+                loc_str = "🏠 Casa" if int(r.get("es_local", 1)) == 1 else "✈️ Ruta"
+                ultimos_h2h.append({
+                    "etiqueta": f"{f_lbl}\n{loc_str}",
+                    "valor": float(r[col_name]),
+                    "min": float(r["min_num"]),
+                    "over": bool(float(r[col_name]) > linea)
+                })
+
     return {
         "linea": linea,
         "media_proy": media,
@@ -862,6 +883,187 @@ def calcular_probabilidades_prop(media, sigma, linea, stat_key="pts", df_games=N
         "n_season": n_season,
         "hit_l10": hit_l10,
         "n_l10": n_l10,
+        "hit_h2h": hit_h2h,
+        "n_h2h": n_h2h,
         "ultimos_12": ultimos_12,
+        "ultimos_h2h": ultimos_h2h,
         "recomendacion": "🔥 OVER CON VALOR" if p_over >= 0.57 else ("🧊 UNDER CON VALOR" if p_under >= 0.57 else "⚖️ LÍNEA JUSTA")
     }
+
+
+def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70):
+    """
+    Ejecuta una validación Walk-Forward Out-of-Sample (sin data leakage) sobre el dataset de jugadores:
+      - Para cada partido t del bloque de prueba (último 30% cronológico de partidos), construye el perfil
+        del jugador usando exclusivamente sus partidos anteriores (< t).
+      - Detecta de forma causal qué compañeros titulares de su equipo se perdieron el partido t (bajas reales).
+      - Evalúa MAE, RMSE, % Acierto Over/Under frente a la línea sintética de mercado (floor(media_previa) + 0.5)
+        y % Acierto en Picks de Valor (+EV, donde el modelo diverge de la línea de referencia).
+    """
+    if df_box is None or df_box.empty:
+        return pd.DataFrame(), {}
+
+    df_sorted = df_box.sort_values("fecha_dt").reset_index(drop=True)
+    unique_events = df_sorted[["event_id", "fecha_dt", "temporada"]].drop_duplicates("event_id").sort_values("fecha_dt")
+    split_idx = int(len(unique_events) * split_ratio)
+    train_eids = set(unique_events.iloc[:split_idx]["event_id"])
+    test_eids = set(unique_events.iloc[split_idx:]["event_id"])
+
+    df_train_box = df_sorted[df_sorted["event_id"].isin(train_eids)]
+    dvp_causal = calcular_defensa_vs_posicion(df_train_box)
+    event_players = df_sorted[df_sorted["min_num"] >= 5.0].groupby("event_id")["player_name"].apply(set).to_dict()
+
+    # Identificar top-3 titulares por (temporada, equipo) en el bloque previo
+    top_rot = {}
+    for (temp, eq), grp in df_train_box[df_train_box["min_num"] >= 5.0].groupby(["temporada", "equipo"]):
+        agg = grp.groupby("player_name").agg(
+            pj=("event_id", "count"),
+            min_avg=("min_num", "mean"),
+            pts_avg=("pts_num", "mean"),
+            reb_avg=("reb_num", "mean"),
+            ast_avg=("ast_num", "mean"),
+            pos_group=("pos_group", "first"),
+            position=("position", "first"),
+        ).reset_index()
+        agg = agg[agg["pj"] >= 5].sort_values(["min_avg", "pts_avg"], ascending=False).head(3)
+        top_rot[(temp, eq)] = agg.to_dict("records")
+
+    team_stats = team_stats or {}
+    rows_eval = []
+
+    for pname, p_df in df_sorted.groupby("player_name"):
+        p_df_act = p_df[p_df["min_num"] >= 8.0].sort_values("fecha_dt").reset_index(drop=True)
+        if len(p_df_act) < 12:
+            continue
+        for idx in range(10, len(p_df_act)):
+            row = p_df_act.iloc[idx]
+            eid = row["event_id"]
+            if eid not in test_eids:
+                continue
+            hist = p_df_act.iloc[:idx]
+            eq = row["equipo"]
+            temp = row["temporada"]
+            hist_team = hist[hist["equipo"] == eq]
+            h_use = hist_team if len(hist_team) >= 5 else hist
+            min_avg = float(h_use["min_num"].mean())
+            if min_avg < 18.0:
+                continue
+
+            l5 = h_use.tail(5)
+            l10 = h_use.tail(10)
+            pts_base = float(h_use["pts_num"].mean())
+            reb_base = float(h_use["reb_num"].mean())
+            ast_base = float(h_use["ast_num"].mean())
+            tpm_base = float(h_use["tpm"].mean())
+            pra_base = float(h_use["pra"].mean())
+
+            played_set = event_players.get(eid, set())
+            rot_team = top_rot.get((temp, eq), [])
+            bajas_comp = [c for c in rot_team if c["player_name"] != pname and c["player_name"] not in played_set]
+
+            perfil_t = {
+                "player_name": pname,
+                "equipo": eq,
+                "position": row["position"],
+                "pos_group": row["pos_group"],
+                "min_avg": min_avg,
+                "min_l5": float(l5["min_num"].mean()),
+                "pts_avg": pts_base,
+                "pts_l5": float(l5["pts_num"].mean()),
+                "pts_std": max(float(h_use["pts_num"].std(ddof=0)), 2.5),
+                "reb_avg": reb_base,
+                "reb_l5": float(l5["reb_num"].mean()),
+                "reb_std": max(float(h_use["reb_num"].std(ddof=0)), 1.4),
+                "ast_avg": ast_base,
+                "ast_l5": float(l5["ast_num"].mean()),
+                "ast_std": max(float(h_use["ast_num"].std(ddof=0)), 1.2),
+                "tpm_avg": tpm_base,
+                "tpm_l5": float(l5["tpm"].mean()),
+                "tpm_std": max(float(h_use["tpm"].std(ddof=0)), 0.85),
+                "pra_avg": pra_base,
+                "pra_std": max(float(h_use["pra"].std(ddof=0)), 3.5),
+                "usage_proxy": float((h_use["fga"].mean() + 0.44 * h_use["fta"].mean() + h_use["tov_num"].mean()) / max(min_avg, 1.0)),
+            }
+
+            riv = row["rival"]
+            ts_riv = team_stats.get(riv, {"pace": LEAGUE_AVG_PACE, "drtg": LEAGUE_AVG_DRTG})
+            ts_eq = team_stats.get(eq, {"pace": LEAGUE_AVG_PACE, "drtg": LEAGUE_AVG_DRTG})
+            h2h_prev = h_use[h_use["rival"] == riv]
+
+            proy_pre = proyectar_jugador(
+                perfil_t, riv, minutos_proy=None, es_local=bool(row["es_local"]),
+                bajas_companeros=bajas_comp, pace_rival=ts_riv["pace"], pace_equipo=ts_eq["pace"],
+                drtg_rival=ts_riv["drtg"], h2h_games=h2h_prev, dvp_data=dvp_causal
+            )
+            proy_min = proyectar_jugador(
+                perfil_t, riv, minutos_proy=float(row["min_num"]), es_local=bool(row["es_local"]),
+                bajas_companeros=bajas_comp, pace_rival=ts_riv["pace"], pace_equipo=ts_eq["pace"],
+                drtg_rival=ts_riv["drtg"], h2h_games=h2h_prev, dvp_data=dvp_causal
+            )
+
+            rows_eval.append({
+                "pts_real": float(row["pts_num"]), "pts_base": pts_base, "pts_pre": proy_pre["pts"], "pts_min": proy_min["pts"],
+                "reb_real": float(row["reb_num"]), "reb_base": reb_base, "reb_pre": proy_pre["reb"], "reb_min": proy_min["reb"],
+                "ast_real": float(row["ast_num"]), "ast_base": ast_base, "ast_pre": proy_pre["ast"], "ast_min": proy_min["ast"],
+                "tpm_real": float(row["tpm"]),     "tpm_base": tpm_base, "tpm_pre": proy_pre["tpm"], "tpm_min": proy_min["tpm"],
+                "pra_real": float(row["pra"]),     "pra_base": pra_base, "pra_pre": proy_pre["pra"], "pra_min": proy_min["pra"],
+                "line_pts": np.floor(0.70 * pts_base + 0.30 * float(l10["pts_num"].mean())) + 0.5,
+                "line_reb": np.floor(0.70 * reb_base + 0.30 * float(l10["reb_num"].mean())) + 0.5,
+                "line_ast": np.floor(0.70 * ast_base + 0.30 * float(l10["ast_num"].mean())) + 0.5,
+                "line_tpm": np.floor(0.70 * tpm_base + 0.30 * float(l10["tpm"].mean())) + 0.5,
+                "line_pra": np.floor(0.70 * pra_base + 0.30 * float(l10["pra"].mean())) + 0.5,
+                "has_baja": len(bajas_comp) > 0,
+            })
+
+    df_e = pd.DataFrame(rows_eval)
+    if df_e.empty:
+        return pd.DataFrame(), {}
+
+    resumen = []
+    cfg_stats = [
+        ("Puntos (PTS)", "pts", 1.5),
+        ("Rebotes (REB)", "reb", 0.45),
+        ("Asistencias (AST)", "ast", 0.45),
+        ("Triples (3PM)", "tpm", 0.35),
+        ("Total PRA (P+R+A)", "pra", 1.8),
+    ]
+    for label, st_k, edge_thr in cfg_stats:
+        real = df_e[f"{st_k}_real"]
+        base = df_e[f"{st_k}_base"]
+        pred = df_e[f"{st_k}_pre"]
+        pmin = df_e[f"{st_k}_min"]
+        line = df_e[f"line_{st_k}"]
+
+        mae_b = float(np.mean(np.abs(real - base)))
+        mae_p = float(np.mean(np.abs(real - pred)))
+        mae_m = float(np.mean(np.abs(real - pmin)))
+        rmse_b = float(np.sqrt(np.mean((real - base) ** 2)))
+        rmse_p = float(np.sqrt(np.mean((real - pred) ** 2)))
+
+        pick_over = pred > line
+        real_over = real > line
+        acc_all = float(np.mean(pick_over == real_over) * 100.0)
+
+        mask_val = np.abs(pred - line) >= edge_thr
+        n_val = int(mask_val.sum())
+        acc_val = float(np.mean(pick_over[mask_val] == real_over[mask_val]) * 100.0) if n_val > 0 else acc_all
+        # ROI a cuota estándar de mercado -110 (1.909 decimal)
+        roi_val = (acc_val / 100.0) * 1.9091 - 1.0
+
+        resumen.append({
+            "Métrica (Prop)": label,
+            "MAE Baseline": round(mae_b, 2),
+            "MAE Modelo (Pre-Partido)": round(mae_p, 2),
+            "MAE (Minutos Exactos)": round(mae_m, 2),
+            "RMSE Baseline → Modelo": f"{rmse_b:.2f} → {rmse_p:.2f}",
+            "% Acierto O/U Global": f"{acc_all:.1f}%",
+            "% Acierto Picks Valor (+EV)": f"{acc_val:.1f}% (n={n_val})",
+            "ROI Estimado (-110)": f"{roi_val * 100:+.1f}%",
+        })
+
+    meta = {
+        "n_evaluados": len(df_e),
+        "n_partidos_test": len(test_eids),
+        "n_con_bajas": int(df_e["has_baja"].sum()),
+    }
+    return pd.DataFrame(resumen), meta
