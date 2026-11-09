@@ -673,13 +673,21 @@ def _optimizar_inferencia(M):
     return M
 
 
+class _CompatUnpickler(pickle.Unpickler):
+    def find_class(self, module, name):
+        if module in ("motor", "nba.motor"):
+            import sys
+            return getattr(sys.modules[__name__], name)
+        return super().find_class(module, name)
+
+
 def cargar(use_cache=True):
     """Carga el modelo entrenado desde el cache de disco o re-entrena si los datos han cambiado."""
     cache_path = Path(__file__).resolve().parent / ".model_cache.pkl"
     if use_cache and cache_path.exists():
         try:
             with open(cache_path, "rb") as fh:
-                saved = pickle.load(fh)
+                saved = _CompatUnpickler(fh).load()
             if saved.get("key") == _cache_key():
                 return _optimizar_inferencia(saved["M"])
         except Exception as ex:
