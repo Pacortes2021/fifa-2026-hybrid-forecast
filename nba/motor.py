@@ -635,10 +635,12 @@ def entrenar_modelos():
 
 
 def _cache_key():
-    """Genera hash único dependiente del código del motor y de los archivos CSV de datos."""
+    """Genera hash único dependiente del código del motor y de los archivos CSV de equipos/partidos."""
     h = hashlib.sha256()
     h.update(hashlib.sha256(Path(__file__).read_bytes()).hexdigest().encode())
     for f in sorted(DATA.glob("*.csv")):
+        if f.name in ("jugadores_boxscore.csv", "rosters_activos.csv"):
+            continue
         h.update(f.name.encode())
         h.update(str(f.stat().st_size).encode())
         h.update(hashlib.sha256(f.read_bytes()).hexdigest().encode())
@@ -694,19 +696,35 @@ def cargar(use_cache=True):
 
 
 def predecir_match(M, local, visita, fecha=None, temporada=None, modelo="stacking",
-                   baja_estrella_local=False, baja_estrella_visita=False):
+                   baja_estrella_local=False, baja_estrella_visita=False,
+                   impacto_bajas_local=None, impacto_bajas_visita=None):
     """
     Predice el ganador, cuotas justas, margen esperado y totales de puntos
     para un enfrentamiento entre local y visita.
-    Permite simular el impacto analítico de la baja de figuras de peso (superstar absence).
+    Permite simular el impacto analítico de bajas específicas por jugador o de figura estelar.
     """
     tracker = M["tracker"]
     features = M["features"]
     
     feats = tracker.get_features_for_match(local, visita, fecha, temporada)
 
-    # Impacto de ausencia de figura estrella (ajuste empírico de ratings y Four Factors)
-    if baja_estrella_local:
+    # Impacto dinámico de ausencias de jugadores en equipo local
+    if impacto_bajas_local and impacto_bajas_local.get("delta_netrtg", 0.0) > 0:
+        d_elo = float(impacto_bajas_local["delta_elo"])
+        d_net = float(impacto_bajas_local["delta_netrtg"])
+        d_ortg = float(impacto_bajas_local["delta_ortg"])
+        d_drtg = float(impacto_bajas_local["delta_drtg"])
+        feats["star_missing_local"] = 1.0 if d_net >= 3.0 else 0.5
+        feats["elo_local"] -= d_elo
+        feats["elo_diff"] -= d_elo
+        feats["elo_diff_pure"] -= d_elo
+        feats["netrtg_local"] -= d_net
+        feats["netrtg_diff"] -= d_net
+        feats["ortg_local"] -= d_ortg
+        feats["drtg_local"] += d_drtg
+        feats["l5_home_netrtg"] -= d_net
+        feats["efg_local"] = max(0.40, feats["efg_local"] - 0.0045 * d_ortg)
+    elif baja_estrella_local:
         feats["star_missing_local"] = 1.0
         feats["elo_local"] = feats["elo_local"] - 75.0
         feats["elo_diff"] = feats["elo_diff"] - 75.0
@@ -717,7 +735,23 @@ def predecir_match(M, local, visita, fecha=None, temporada=None, modelo="stackin
         feats["l5_home_netrtg"] = feats["l5_home_netrtg"] - 5.5
         feats["efg_local"] = max(0.40, feats["efg_local"] - 0.025)
 
-    if baja_estrella_visita:
+    # Impacto dinámico de ausencias de jugadores en equipo visitante
+    if impacto_bajas_visita and impacto_bajas_visita.get("delta_netrtg", 0.0) > 0:
+        d_elo = float(impacto_bajas_visita["delta_elo"])
+        d_net = float(impacto_bajas_visita["delta_netrtg"])
+        d_ortg = float(impacto_bajas_visita["delta_ortg"])
+        d_drtg = float(impacto_bajas_visita["delta_drtg"])
+        feats["star_missing_visita"] = 1.0 if d_net >= 3.0 else 0.5
+        feats["elo_visita"] -= d_elo
+        feats["elo_diff"] += d_elo
+        feats["elo_diff_pure"] += d_elo
+        feats["netrtg_visita"] -= d_net
+        feats["netrtg_diff"] += d_net
+        feats["ortg_visita"] -= d_ortg
+        feats["drtg_visita"] += d_drtg
+        feats["l5_away_netrtg"] -= d_net
+        feats["efg_visita"] = max(0.40, feats["efg_visita"] - 0.0045 * d_ortg)
+    elif baja_estrella_visita:
         feats["star_missing_visita"] = 1.0
         feats["elo_visita"] = feats["elo_visita"] - 75.0
         feats["elo_diff"] = feats["elo_diff"] + 75.0
@@ -773,7 +807,8 @@ def predecir_match(M, local, visita, fecha=None, temporada=None, modelo="stackin
 
 
 def simular_partido_mc(M, local, visita, n_sims=5000, modelo="stacking", seed=42,
-                       baja_estrella_local=False, baja_estrella_visita=False):
+                       baja_estrella_local=False, baja_estrella_visita=False,
+                       impacto_bajas_local=None, impacto_bajas_visita=None):
     """
     Simulación Monte Carlo de un partido de la NBA.
     Genera la distribución exacta de puntuaciones, probabilidades para
@@ -785,7 +820,9 @@ def simular_partido_mc(M, local, visita, n_sims=5000, modelo="stacking", seed=42
     pred = predecir_match(
         M, local, visita, modelo=modelo,
         baja_estrella_local=baja_estrella_local,
-        baja_estrella_visita=baja_estrella_visita
+        baja_estrella_visita=baja_estrella_visita,
+        impacto_bajas_local=impacto_bajas_local,
+        impacto_bajas_visita=impacto_bajas_visita
     )
     mu_spread = pred["proj_spread"]
     mu_total = pred["proj_total"]
