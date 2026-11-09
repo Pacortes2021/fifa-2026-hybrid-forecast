@@ -10,7 +10,13 @@ from collections import defaultdict, deque
 from datetime import datetime
 import math
 from pathlib import Path
+import sys
 import warnings
+
+_ROOT = str(Path(__file__).resolve().parent.parent)
+if _ROOT not in sys.path:
+    sys.path.insert(0, _ROOT)
+from comun.motor_comun import _TrackerPrePartido, _modelo_pre_partido
 import numpy as np
 import pandas as pd
 from scipy.optimize import minimize_scalar
@@ -650,41 +656,6 @@ def simular_campeonato(_M, n_sims=3000, modelo_tipo="stacking", forzar=False):
     except Exception:
         pass
     return res_final
-
-
-class _TrackerPrePartido:
-    """Tracker de solo lectura que entrega las variables calculadas ANTES de un partido
-    (las mismas filas usadas en el entrenamiento). La validación lo usa en vez del tracker
-    final, que ya incluye el resultado del partido evaluado y el de todos los posteriores."""
-
-    def __init__(self, tracker, feats):
-        self._tracker = tracker
-        self._feats = feats
-
-    def get_features_for_match(self, *args, **kwargs):
-        return dict(self._feats)
-
-    def __getattr__(self, nombre):
-        tracker = self.__dict__.get("_tracker")
-        if tracker is None or nombre.startswith("__"):
-            raise AttributeError(nombre)
-        return getattr(tracker, nombre)
-
-
-def _modelo_pre_partido(M, clave_dataset):
-    """Función (fecha, local, visita) -> copia de M con el tracker pre-partido de ese
-    encuentro, o None si el partido no está en el dataset de entrenamiento."""
-    df = M[clave_dataset]
-    filas = df.to_dict("records")
-    indice = {(pd.Timestamp(f["fecha"]), f["local"], f["visita"]): i for i, f in enumerate(filas)}
-
-    def obtener(fecha, local, visita):
-        i = indice.get((pd.Timestamp(fecha), local, visita))
-        if i is None:
-            return None
-        return {**M, "tracker": _TrackerPrePartido(M["tracker"], filas[i])}
-
-    return obtener
 
 
 def validacion_en_vivo(M, resultados=None, modelo="stacking"):

@@ -3,88 +3,35 @@ Recolecta el BOX SCORE detallado de cada partido de la Liga Profesional de Argen
 """
 from datetime import datetime
 from pathlib import Path
-import time
-import requests
-import pandas as pd
-from concurrent.futures import ThreadPoolExecutor
+import sys
+
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from comun.recolectar_comun import (
+    STATS,
+    eventos_terminados_anio,
+    descargar_boxscore_evento,
+    recolectar_boxscore_liga,
+)
 
 DATA = Path(__file__).resolve().parent / "data"
 SB = "https://site.api.espn.com/apis/site/v2/sports/soccer/arg.1/scoreboard"
 SUM = "https://site.api.espn.com/apis/site/v2/sports/soccer/arg.1/summary"
 TEMPORADAS = list(range(2021, int(datetime.now().year) + 1))
-STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCommitted",
-         "yellowCards", "redCards", "offsides", "saves", "blockedShots"]
 
 
 def _eventos(anio, intentos=3):
-    """Partidos terminados del año `anio`. Usa dates=AAAA: desde sep-2026 ESPN responde
-    HTTP 400 a los rangos AAAAMMDD-AAAAMMDD. Si falla tras los reintentos, lanza la
-    excepción y recolectar() no escribe nada."""
-    for intento in range(1, intentos + 1):
-        try:
-            r = requests.get(f"{SB}?dates={anio}&limit=1000", timeout=40)
-            r.raise_for_status()
-            break
-        except Exception as ex:
-            if intento == intentos:
-                raise RuntimeError(f"ESPN no respondió para {anio}: {ex}") from ex
-            time.sleep(2 * intento)
-    out = []
-    for e in r.json().get("events", []):
-        st_name = e.get("status", {}).get("type", {}).get("name", "")
-        if st_name in ("STATUS_FULL_TIME", "STATUS_FINAL", "STATUS_FINAL_PEN", "STATUS_FINAL_AET"):
-            out.append((e["id"], pd.to_datetime(e["date"]).tz_convert("America/Argentina/Buenos_Aires").tz_localize(None), anio))
-    return out
+    return eventos_terminados_anio(SB, anio, intentos=intentos)
 
 
 def _box(eid):
-    s = requests.get(f"{SUM}?event={eid}", timeout=25).json()
-    teams = s.get("boxscore", {}).get("teams", [])
-    if len(teams) != 2:
-        return None
-    fila = {}
-    for t in teams:
-        pref = "local" if t.get("homeAway") == "home" else "visita"
-        fila[f"{pref}_equipo"] = t["team"]["displayName"]
-        sd = {st["name"]: st.get("displayValue") for st in t.get("statistics", [])}
-        for k in STATS:
-            try:
-                fila[f"{pref}_{k}"] = float(sd.get(k)) if sd.get(k) not in (None, "") else None
-            except (TypeError, ValueError):
-                fila[f"{pref}_{k}"] = None
-    return fila
+    return descargar_boxscore_evento(SUM, eid, stats=STATS)
 
 
 def recolectar():
-    DATA.mkdir(parents=True, exist_ok=True)
-    path = DATA / "box_score.csv"
-    ya = pd.read_csv(path) if path.exists() else pd.DataFrame()
-    hechos = set(ya["event_id"].astype(str)) if len(ya) else set()
-    eventos = [ev for a in TEMPORADAS for ev in _eventos(a)]
-    print(f"{len(eventos)} partidos jugados; {len(hechos)} ya recolectados en Argentina. Pidiendo el resto...")
-    filas = ya.to_dict("records") if len(ya) else []
-    nuevos = 0
-    pendientes = [(eid, fecha, anio) for eid, fecha, anio in eventos if str(eid) not in hechos]
-
-    def _box_seguro(eid):
-        try:
-            return _box(eid)
-        except Exception:
-            return None
-
-    with ThreadPoolExecutor(max_workers=8) as ex:
-        for eid, fecha, anio, b in ex.map(lambda ev: (ev[0], ev[1], ev[2], _box_seguro(ev[0])), pendientes):
-            if b:
-                b.update({"event_id": eid, "fecha": fecha, "temporada": anio})
-                filas.append(b); nuevos += 1
-            if nuevos and nuevos % 100 == 0:
-                pd.DataFrame(filas).to_csv(path, index=False)
-                print(f"  ...{nuevos} nuevos guardados")
-    df = pd.DataFrame(filas)
-    df.to_csv(path, index=False)
-    cob = df[[c for c in df.columns if c.endswith("totalShots")]].notna().mean().mean() if len(df) else 0
-    print(f"\nGuardado Argentina: box_score.csv ({len(df)} partidos, cobertura ~{cob:.0%})")
-    return df
+    return recolectar_boxscore_liga(DATA, SB, SUM, temporadas=TEMPORADAS)
 
 
 if __name__ == "__main__":

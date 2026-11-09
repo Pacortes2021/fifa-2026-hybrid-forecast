@@ -9,11 +9,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-# Insertar el directorio ucl en el path para asegurar la importación del motor
+# Insertar el directorio ucl y raíz del proyecto en el path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import motor as mo
 import recolectar as rec
 import recolectar_boxscore as rec_box
+from comun.ui_liga import brier_multiclase, tabla_acierto_equipos, render_curvas_calibracion
 
 # Estilizado CSS Premium UEFA Champions League (Azul Noche #001438, Cyan Neón, Oro Estelar)
 # Se inyecta en cada ejecución de run_app(): a nivel de módulo solo corría al primer
@@ -134,15 +136,25 @@ def _validar_ucl(_M, modelo_tipo):
     for c in [0, 1, 2]:
         base_p[:, c] = freqs.get(c, 0.33)
     ll_base = float(log_loss(y_true, base_p, labels=[0, 1, 2]))
-    met = {"n": len(val_df), "acierto": acc, "logloss": ll, "logloss_base": ll_base}
+    met = {
+        "n": len(val_df),
+        "acierto": acc,
+        "logloss": ll,
+        "logloss_base": ll_base,
+        "brier": brier_multiclase(p_clip, y_true),
+        "brier_base": brier_multiclase(base_p, y_true),
+    }
     val_df["Prob_Local"] = probs[:, 0]
     val_df["Prob_Empate"] = probs[:, 1]
     val_df["Prob_Visita"] = probs[:, 2]
     val_df["Prediccion"] = preds
     acc_cum = np.cumsum(y_true == preds) / np.arange(1, len(val_df) + 1)
+    pc = np.clip(p_clip[np.arange(len(y_true)), y_true], 1e-7, 1.0)
+    ll_cum = np.cumsum(-np.log(pc)) / np.arange(1, len(val_df) + 1)
     df_evol = pd.DataFrame({
         "partido_n": np.arange(1, len(val_df) + 1),
         "acierto_acumulado": acc_cum,
+        "logloss_acum": ll_cum,
         "fecha": val_df["fecha"].values
     })
     return val_df, met, df_evol
@@ -194,14 +206,27 @@ def _validar_elo(M, elo):
     for c in [0, 1, 2]:
         base_p[:, c] = freqs.get(c, 0.33)
     ll_base = float(log_loss(y_true, base_p, labels=[0, 1, 2]))
-    met = {"n": len(val_df), "acierto": acc, "logloss": ll, "logloss_base": ll_base}
+    met = {
+        "n": len(val_df),
+        "acierto": acc,
+        "logloss": ll,
+        "logloss_base": ll_base,
+        "brier": brier_multiclase(p_clip, y_true),
+        "brier_base": brier_multiclase(base_p, y_true),
+    }
     val_df["Prob_Local"] = probs[:, 0]
     val_df["Prob_Empate"] = probs[:, 1]
     val_df["Prob_Visita"] = probs[:, 2]
     val_df["Prediccion"] = preds
-    evol = [{"partido_n": i, "acierto_acumulado": float(accuracy_score(y_true[:i], preds[:i]))}
-            for i in range(1, len(val_df) + 1)]
-    return val_df, met, pd.DataFrame(evol)
+    acc_cum = np.cumsum(y_true == preds) / np.arange(1, len(val_df) + 1)
+    pc = np.clip(p_clip[np.arange(len(y_true)), y_true], 1e-7, 1.0)
+    ll_cum = np.cumsum(-np.log(pc)) / np.arange(1, len(val_df) + 1)
+    df_evol = pd.DataFrame({
+        "partido_n": np.arange(1, len(val_df) + 1),
+        "acierto_acumulado": acc_cum,
+        "logloss_acum": ll_cum,
+    })
+    return val_df, met, df_evol
 
 
 @st.cache_data(show_spinner="Corriendo simulaciones Monte Carlo del formato suizo UCL (10.000 iteraciones)...")
@@ -1006,12 +1031,21 @@ ESTRUCTURA OBLIGATORIA DE TU INFORME:
         if df_val is None or df_val.empty:
             st.info("ℹ️ Aún no hay partidos finalizados en la temporada actual para validar.")
         else:
-            c1, c2, c3, c4 = st.columns(4)
+            P_val = df_val[["Prob_Local", "Prob_Empate", "Prob_Visita"]].to_numpy(dtype=float)
+            gl_v, gv_v = df_val["goles_local"].to_numpy(dtype=float), df_val["goles_visita"].to_numpy(dtype=float)
+            y_val = np.where(gl_v > gv_v, 0, np.where(gl_v == gv_v, 1, 2))
+            brier_val = met_val.get("brier", brier_multiclase(P_val, y_val))
+            brier_base = met_val.get("brier_base")
+
+            c1, c2, c3, c4, c5 = st.columns(5)
             c1.metric("Partidos Evaluados", f"{met_val['n']}")
             c2.metric("Acierto (1X2)", f"{met_val['acierto']:.1%}")
             c3.metric("Log-Loss Modelo", f"{met_val['logloss']:.3f}",
                       f"{met_val['logloss'] - met_val['logloss_base']:+.3f} vs baseline", delta_color="inverse")
             c4.metric("Log-Loss Baseline", f"{met_val['logloss_base']:.3f}")
+            c5.metric("Brier Score", f"{brier_val:.3f}",
+                      f"{brier_val - brier_base:+.3f} vs baseline" if brier_base is not None else None,
+                      delta_color="inverse")
 
             if met_val["logloss"] < met_val["logloss_base"]:
                 st.success(f"El modelo supera al baseline histórico en los {met_val['n']} cotejos reales evaluados. 👍")
@@ -1028,8 +1062,15 @@ ESTRUCTURA OBLIGATORIA DE TU INFORME:
             df_val_show["Acierto"] = (df_val_show["Resultado Real"] == df_val_show["Predicción"]).replace({True: "✅", False: "❌"})
             df_val_show["Marcador"] = df_val_show.apply(lambda r: f"{int(r['goles_local'])} - {int(r['goles_visita'])}", axis=1)
 
+            clubes_val = sorted(set(df_val_show["local"]) | set(df_val_show["visita"]))
+            filtro_club = st.selectbox("Filtrar por club:", ["Todos"] + clubes_val, key="ucl_val_club")
+            df_tabla_partidos = (
+                df_val_show if filtro_club == "Todos"
+                else df_val_show[(df_val_show["local"] == filtro_club) | (df_val_show["visita"] == filtro_club)]
+            )
+
             st.dataframe(
-                df_val_show[["fecha", "local", "Marcador", "visita", "Resultado Real", "Predicción", "Acierto", "Prob_Local", "Prob_Empate", "Prob_Visita"]].style.format({
+                df_tabla_partidos[["fecha", "local", "Marcador", "visita", "Resultado Real", "Predicción", "Acierto", "Prob_Local", "Prob_Empate", "Prob_Visita"]].style.format({
                     "Prob_Local": "{:.1%}",
                     "Prob_Empate": "{:.1%}",
                     "Prob_Visita": "{:.1%}"
@@ -1037,14 +1078,35 @@ ESTRUCTURA OBLIGATORIA DE TU INFORME:
                 hide_index=True, width='stretch'
             )
 
-            if not df_evol.empty and len(df_evol) >= 3:
-                fig, ax = plt.subplots(figsize=(7, 3.5))
-                ax.plot(df_evol["partido_n"], df_evol["acierto_acumulado"], "o-", color="#001438", label="Acierto Acumulado")
-                ax.set_xlabel("Partidos Jugados (Cronológico)")
-                ax.set_ylabel("Tasa de Acierto")
-                ax.set_title("Evolución de Tasa de Acierto en Champions League")
-                ax.set_ylim(0, 1.0)
-                ax.legend()
-                plt.tight_layout()
-                st.pyplot(fig)
-                plt.close(fig)
+            c_plot, c_eq = st.columns([6, 4])
+            with c_plot:
+                st.markdown("##### 📈 Evolución de Log-Loss y Tasa de Acierto")
+                if not df_evol.empty and len(df_evol) >= 3:
+                    fig, ax = plt.subplots(figsize=(7, 3.8))
+                    if "logloss_acum" in df_evol.columns:
+                        ax.plot(df_evol["partido_n"], df_evol["logloss_acum"], "-", color="#001438", lw=2, label="Log-Loss Acumulado")
+                        ax.axhline(met_val["logloss_base"], color="#475569", ls="--", lw=1.5, label="Baseline")
+                        ax.set_ylabel("Log-Loss Acumulado")
+                    else:
+                        ax.plot(df_evol["partido_n"], df_evol["acierto_acumulado"], "o-", color="#001438", label="Acierto Acumulado")
+                        ax.set_ylabel("Tasa de Acierto")
+                    ax.set_xlabel("Partidos Jugados (Cronológico)")
+                    ax.grid(True, ls=":", alpha=0.5)
+                    ax.legend()
+                    plt.tight_layout()
+                    st.pyplot(fig)
+                    plt.close(fig)
+            with c_eq:
+                st.markdown("##### 🎯 % de Acierto por Club")
+                tab_club = tabla_acierto_equipos(
+                    df_val_show, col_local="local", col_visita="visita",
+                    col_res="Resultado Real", col_pred="Predicción", nombre_col="Club"
+                )
+                if not tab_club.empty:
+                    st.dataframe(
+                        tab_club.style.format({"% Acierto": "{:.1%}", "Local": "{:.0%}", "Visita": "{:.0%}"}, na_rep="—")
+                        .background_gradient(subset=["% Acierto"], cmap="YlGn"),
+                        hide_index=True, width="stretch", height=280
+                    )
+
+            render_curvas_calibracion(P_val, y_val, acento="#001438", n_bins=5)
