@@ -1,3 +1,18 @@
+import sys as _sys
+from pathlib import Path as _Path
+_ROOT = str(_Path(__file__).resolve().parent.parent)
+if _ROOT not in _sys.path:
+    _sys.path.insert(0, _ROOT)
+from comun.motor_comun import (
+    _elo_default,
+    _none_default,
+    cargar_equipos_csv,
+    haversine_km,
+    PiRatingTracker,
+    PiRatingsTracker,
+    _TrackerPrePartido,
+    _modelo_pre_partido,
+)
 """
 Motor predictivo de Machine Learning y simulación de Monte Carlo para la Serie A de Brasil (Brasileirão).
 Utiliza regresión logística multinomial con penalización L1 (LASSO) mediante el solver SAGA.
@@ -24,14 +39,7 @@ CUPOS_COPA = 6
 DESCIENDEN = 4
 
 def _cargar_equipos():
-    """Lee data/equipos.csv (id estable de ESPN -> info del club: nombre, abreviatura, colores, logo)."""
-    if EQUIPOS_PATH.exists():
-        try:
-            df = pd.read_csv(EQUIPOS_PATH).set_index("id")
-            return df.to_dict("index")
-        except Exception:
-            return {}
-    return {}
+    return cargar_equipos_csv(EQUIPOS_PATH)
 
 
 
@@ -56,12 +64,8 @@ STATS = [
 
 ELO_INIT = 1500.0
 
-def _elo_default():
-    return ELO_INIT
 
 
-def _none_default():
-    return None
 
 K_LIGA = 35.0
 HOME_ADV = 60.0  # ventaja Elo típica de localía
@@ -86,13 +90,6 @@ COORDS_BRAZIL = {
     "Remo": (-1.4558, -48.5039)
 }
 
-def haversine_km(lat1, lon1, lat2, lon2):
-    R = 6371.0088
-    phi1, phi2 = np.radians(lat1), np.radians(lat2)
-    dphi = np.radians(lat2 - lat1)
-    dlambda = np.radians(lon2 - lon1)
-    a = np.sin(dphi / 2.0)**2 + np.cos(phi1) * np.cos(phi2) * np.sin(dlambda / 2.0)**2
-    return 2.0 * R * np.arcsin(np.sqrt(a))
 
 def get_distance_km(local, visita):
     c_loc = COORDS_BRAZIL.get(local)
@@ -153,32 +150,6 @@ def actualizar_elo(ea, eb, ga, gb):
     return K_LIGA * mult * (w - we)
 
 
-class PiRatingTracker:
-    def __init__(self, lmb=0.035, gamma=0.70):
-        self.r_home = defaultdict(float)
-        self.r_away = defaultdict(float)
-        self.lmb = lmb
-        self.gamma = gamma
-
-    def get_features(self, home, away):
-        rh = self.r_home[home]
-        ra = self.r_away[away]
-        pi_overall_l = (self.r_home[home] + self.r_away[home]) / 2.0
-        pi_overall_v = (self.r_home[away] + self.r_away[away]) / 2.0
-        return {
-            "pi_diff": rh - ra,
-            "pi_overall_diff": pi_overall_l - pi_overall_v
-        }
-
-    def registrar_partido(self, home, away, ga, gb):
-        e_actual = ga - gb
-        rh = self.r_home[home]
-        ra = self.r_away[away]
-        err = e_actual - (rh - ra)
-        self.r_home[home] += self.lmb * err
-        self.r_away[home] += self.gamma * self.lmb * err
-        self.r_away[away] -= self.lmb * err
-        self.r_home[away] -= self.gamma * self.lmb * err
 
 
 class StateTracker:

@@ -1,3 +1,18 @@
+import sys as _sys
+from pathlib import Path as _Path
+_ROOT = str(_Path(__file__).resolve().parent.parent)
+if _ROOT not in _sys.path:
+    _sys.path.insert(0, _ROOT)
+from comun.motor_comun import (
+    _elo_default,
+    _none_default,
+    cargar_equipos_csv,
+    haversine_km,
+    PiRatingTracker,
+    PiRatingsTracker,
+    _TrackerPrePartido,
+    _modelo_pre_partido,
+)
 import sys
 import math
 import pickle
@@ -20,13 +35,7 @@ DATA = Path(__file__).resolve().parent / "data"
 EQUIPOS_PATH = DATA / "equipos.csv"
 
 def _cargar_equipos():
-    if EQUIPOS_PATH.exists():
-        try:
-            df = pd.read_csv(EQUIPOS_PATH).set_index("id")
-            return df.to_dict("index")
-        except Exception:
-            return {}
-    return {}
+    return cargar_equipos_csv(EQUIPOS_PATH)
 
 DESCIENDEN = 4
 CUPOS_COPA = 4  # Champions (1-2), Europa League (3), Conference (4)
@@ -60,11 +69,7 @@ STATS = ["totalShots", "shotsOnTarget", "wonCorners", "possessionPct", "foulsCom
 
 ELO_INIT = 1500.0
 
-def _elo_default():
-    return ELO_INIT
 
-def _none_default():
-    return None
 
 K_LIGA = 35.0      # ELO K-factor para la Süper Lig turca
 HOME_ADV = 60.0    # Fuerte ventaja de local en Turquía
@@ -101,13 +106,6 @@ ALTITUDES_TURKEY = {
     "Denizlispor": 350
 }
 
-def haversine_km(lat1, lon1, lat2, lon2):
-    R = 6371.0088
-    phi1, phi2 = np.radians(lat1), np.radians(lat2)
-    dphi = np.radians(lat2 - lat1)
-    dlambda = np.radians(lon2 - lon1)
-    a = np.sin(dphi / 2.0)**2 + np.cos(phi1) * np.cos(phi2) * np.sin(dlambda / 2.0)**2
-    return 2.0 * R * np.arcsin(np.clip(np.sqrt(a), 0.0, 1.0))
 
 def get_distance_km(local, visita):
     if local in COORDS_TURKEY and visita in COORDS_TURKEY:
@@ -144,29 +142,6 @@ def get_advanced_features(equipo, temporada):
         "avg_attendance": 15000.0, "stadium_occupation": 0.60
     }
 
-class PiRatingsTracker:
-    def __init__(self, lambda_param=0.035, gamma_param=0.55):
-        self.lmb = lambda_param
-        self.gamma = gamma_param
-        self.r_home = defaultdict(float)
-        self.r_away = defaultdict(float)
-
-    def get_features(self, home, away):
-        rh = self.r_home[home]
-        ra = self.r_away[away]
-        return {"pi_diff": rh - ra, "pi_overall_diff": (rh + self.r_away[home]) - (ra + self.r_home[away])}
-
-    def registrar_partido(self, home, away, gh, ga):
-        gd = gh - ga
-        rh = self.r_home[home]
-        ra = self.r_away[away]
-        diff = rh - ra
-        e_gd = (10.0 ** (abs(diff) / 3.0) - 1.0) * (1.0 if diff >= 0 else -1.0)
-        err = gd - e_gd
-        self.r_home[home] += err * self.lmb
-        self.r_away[home] += err * self.lmb * self.gamma
-        self.r_away[away] -= err * self.lmb
-        self.r_home[away] -= err * self.lmb * self.gamma
 
 class StateTracker:
     def __init__(self):
@@ -808,39 +783,8 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
 
 monte_carlo = simular_campeonato
 
-class _TrackerPrePartido:
-    """Tracker de solo lectura que entrega las variables calculadas ANTES de un partido
-    (las mismas filas usadas en el entrenamiento). La validación lo usa en vez del tracker
-    final, que ya incluye el resultado del partido evaluado y el de todos los posteriores."""
-
-    def __init__(self, tracker, feats):
-        self._tracker = tracker
-        self._feats = feats
-
-    def get_features_for_match(self, *args, **kwargs):
-        return dict(self._feats)
-
-    def __getattr__(self, nombre):
-        tracker = self.__dict__.get("_tracker")
-        if tracker is None or nombre.startswith("__"):
-            raise AttributeError(nombre)
-        return getattr(tracker, nombre)
 
 
-def _modelo_pre_partido(M, clave_dataset):
-    """Función (fecha, local, visita) -> copia de M con el tracker pre-partido de ese
-    encuentro, o None si el partido no está en el dataset de entrenamiento."""
-    df = M[clave_dataset]
-    filas = df.to_dict("records")
-    indice = {(pd.Timestamp(f["fecha"]), f["local"], f["visita"]): i for i, f in enumerate(filas)}
-
-    def obtener(fecha, local, visita):
-        i = indice.get((pd.Timestamp(fecha), local, visita))
-        if i is None:
-            return None
-        return {**M, "tracker": _TrackerPrePartido(M["tracker"], filas[i])}
-
-    return obtener
 
 
 def validacion_en_vivo(M, temporada_val=None, modelo="rf", modelo_tipo=None):

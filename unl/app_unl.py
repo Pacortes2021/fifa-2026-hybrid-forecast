@@ -11,11 +11,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import motor as mo
 import recolectar_equipos as rec_eq
 import recolectar as rec
 import recolectar_boxscore as rec_box
+from comun.ui_liga import brier_multiclase, tabla_acierto_equipos, render_curvas_calibracion
 
 # Se inyecta en cada ejecución de run_app(): a nivel de módulo solo corría al primer
 # import del proceso, y el CSS desaparecía en los reruns y para los demás usuarios.
@@ -618,11 +620,13 @@ REGLAS OBLIGATORIAS DE ANÁLISIS (NO REPITAS EL CSV):
         if df_val.empty:
             st.info("Aún no hay partidos finalizados reportados en la edición 2026.")
         else:
-            m1, m2, m3, m4 = st.columns(4)
+            brier_val = brier_multiclase(met["P"], met["y"]) if ("P" in met and "y" in met) else None
+            m1, m2, m3, m4, m5 = st.columns(5)
             m1.metric("Partidos Evaluados", met["n"])
             m2.metric("Tasa de Acierto (1X2)", f"{met['acierto']:.1%}")
             m3.metric("Log-loss Modelo", f"{met['logloss']:.3f}", f"{met['logloss'] - met['logloss_base']:+.3f} vs baseline", delta_color="inverse")
             m4.metric("Log-loss Baseline", f"{met['logloss_base']:.3f}")
+            m5.metric("Brier Score", f"{brier_val:.3f}" if brier_val is not None else "—")
 
             if met["logloss"] < met["logloss_base"]:
                 st.success(f"🏆 El modelo supera con creces al baseline ingenuo en los {met['n']} partidos jugados ({met['acierto']:.1%} de acierto).")
@@ -640,7 +644,7 @@ REGLAS OBLIGATORIAS DE ANÁLISIS (NO REPITAS EL CSV):
             df_val_show["Visita"] = df_val_show["Visita"].map(lambda t: f"{flags.get(t,'')} {t}")
             st.dataframe(df_val_show, hide_index=True, width='stretch', height=280)
 
-            c_plot, c_cal = st.columns([6, 5])
+            c_plot, c_eq = st.columns([6, 4])
             with c_plot:
                 st.markdown("##### 📈 Evolución del Log-loss Acumulado")
                 fig_ev, ax_ev = plt.subplots(figsize=(6, 3.8))
@@ -653,22 +657,24 @@ REGLAS OBLIGATORIAS DE ANÁLISIS (NO REPITAS EL CSV):
                 st.pyplot(fig_ev)
                 plt.close(fig_ev)
 
-            with c_cal:
-                if "P" in met and "y" in met and len(met["y"]) >= 5:
-                    st.markdown("##### 🎯 Curva de Calibración (Victoria Local)")
-                    xs, ys, ns, ece = mo.curva_calibracion(met["P"], met["y"], 2, n_bins=4)
-                    fig_c, ax_c = plt.subplots(figsize=(5, 3.8))
-                    ax_c.plot([0, 1], [0, 1], "k--", alpha=0.6, label="Ideal")
-                    ax_c.plot(xs, ys, "o-", color="#0b3d91", lw=2, label="Modelo")
-                    ax_c.set_title(f"Victoria Local (ECE={ece:.3f})", fontsize=10, fontweight="bold")
-                    ax_c.set_xlabel("Probabilidad Predicha", fontsize=8)
-                    ax_c.set_ylabel("Frecuencia Observada", fontsize=8)
-                    ax_c.set_xlim(0, 1)
-                    ax_c.set_ylim(0, 1)
-                    ax_c.grid(True, ls=":", alpha=0.5)
-                    ax_c.legend()
-                    st.pyplot(fig_c)
-                    plt.close(fig_c)
+            with c_eq:
+                st.markdown("##### 🎯 % de Acierto por Selección")
+                tab_sel = tabla_acierto_equipos(
+                    df_val, col_local="Local", col_visita="Visita",
+                    col_res="Real", col_pred="Pred", nombre_col="Selección"
+                )
+                if not tab_sel.empty:
+                    st.dataframe(
+                        tab_sel.style.format({"% Acierto": "{:.1%}", "Local": "{:.0%}", "Visita": "{:.0%}"}, na_rep="—")
+                        .background_gradient(subset=["% Acierto"], cmap="YlGn"),
+                        hide_index=True, width="stretch", height=280
+                    )
+
+            if "P" in met and "y" in met and len(met["y"]) >= 5:
+                # met["P"] en unl está ordenado como [0: Visita, 1: Empate, 2: Local]; invertimos a [0: Local, 1: Empate, 2: Visita]
+                P_lev = met["P"][:, ::-1]
+                y_lev = 2 - np.asarray(met["y"], dtype=int)
+                render_curvas_calibracion(P_lev, y_lev, acento="#0b3d91", n_bins=4)
 
 
 if __name__ == "__main__":

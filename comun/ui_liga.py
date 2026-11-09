@@ -222,6 +222,98 @@ def _proba_elo(elo, x):
     return elo["lr"].predict_proba(np.asarray(x, dtype=float).reshape(-1, 1))  # columnas [L, E, V]
 
 
+def brier_multiclase(P, y):
+    """Brier Score multiclase promedio: E[sum_k (p_k - y_k)^2]."""
+    P = np.asarray(P, dtype=float)
+    y = np.asarray(y, dtype=int)
+    if len(y) == 0:
+        return 0.0
+    Y_oh = np.eye(P.shape[1])[y]
+    return float(np.mean(np.sum((P - Y_oh) ** 2, axis=1)))
+
+
+def curva_calibracion(probs_k, y_bin, n_bins=5):
+    """Calcula los puntos del Reliability Diagram y el Expected Calibration Error (ECE)."""
+    p_k = np.asarray(probs_k, dtype=float)
+    y_k = np.asarray(y_bin, dtype=float)
+    N = len(y_k)
+    if N == 0:
+        return [], [], [], 0.0
+    bins = np.linspace(0.0, 1.0, n_bins + 1)
+    xs, ys, ns = [], [], []
+    ece = 0.0
+    for b0, b1 in zip(bins[:-1], bins[1:]):
+        mask = (p_k >= b0) & (p_k < b1 if b1 < 1.0 else p_k <= b1)
+        cnt = int(mask.sum())
+        if cnt > 0:
+            p_mean = float(p_k[mask].mean())
+            y_mean = float(y_k[mask].mean())
+            xs.append(p_mean)
+            ys.append(y_mean)
+            ns.append(cnt)
+            ece += (cnt / N) * abs(y_mean - p_mean)
+    return xs, ys, ns, float(ece)
+
+
+def tabla_acierto_equipos(df, col_local="local", col_visita="visita", col_res="resultado", col_pred="Prediccion", nombre_col="Equipo"):
+    """Construye la tabla desglosada de % de acierto por equipo (Partidos, Aciertos, % Acierto, Local, Visita)."""
+    equipos_val = sorted(set(df[col_local]) | set(df[col_visita]))
+    filas = []
+    for eq in equipos_val:
+        d = df[(df[col_local] == eq) | (df[col_visita] == eq)]
+        if not len(d):
+            continue
+        casa = d[d[col_local] == eq]
+        ruta = d[d[col_visita] == eq]
+        ac_tot = int((d[col_res] == d[col_pred]).sum())
+        filas.append({
+            nombre_col: eq,
+            "Partidos": len(d),
+            "Aciertos": ac_tot,
+            "% Acierto": ac_tot / len(d),
+            "Local": float((casa[col_res] == casa[col_pred]).mean()) if len(casa) else np.nan,
+            "Visita": float((ruta[col_res] == ruta[col_pred]).mean()) if len(ruta) else np.nan,
+        })
+    if not filas:
+        return pd.DataFrame()
+    return pd.DataFrame(filas).sort_values(["% Acierto", "Partidos"], ascending=[False, False]).reset_index(drop=True)
+
+
+def render_curvas_calibracion(P, y, acento="#0b3d91", n_bins=5):
+    """Renderiza los 3 diagramas de confiabilidad (Local, Empate, Visita) junto a su ECE."""
+    P = np.asarray(P, dtype=float)
+    y = np.asarray(y, dtype=int)
+    if len(y) < 5:
+        return
+    st.markdown("##### 🎯 Curvas de Calibración de Probabilidades (Reliability Diagram & ECE)")
+    cols_cal = st.columns(3)
+    colores = (acento, "#64748b", "#0f766e")
+    etiquetas = ("Victoria Local", "Empate", "Victoria Visita")
+    eces = []
+    for k, (nom, col) in enumerate(zip(etiquetas, colores)):
+        xs, ys, ns, ece = curva_calibracion(P[:, k], y == k, n_bins=n_bins)
+        eces.append(ece)
+        with cols_cal[k]:
+            fig_c, ax_c = plt.subplots(figsize=(4.2, 3.4))
+            ax_c.plot([0, 1], [0, 1], "k--", lw=1.1, alpha=0.6, label="Calibración ideal")
+            if xs:
+                ax_c.plot(xs, ys, "o-", color=col, lw=2, label="Modelo")
+            ax_c.set_title(f"{nom} (ECE={ece:.3f})", fontsize=9.5, fontweight="bold")
+            ax_c.set_xlabel("Probabilidad Predicha", fontsize=8)
+            ax_c.set_ylabel("Frecuencia Observada", fontsize=8)
+            ax_c.set_xlim(0, 1)
+            ax_c.set_ylim(0, 1)
+            ax_c.grid(True, ls=":", alpha=0.5)
+            ax_c.legend(fontsize=7.5)
+            plt.tight_layout()
+            st.pyplot(fig_c)
+            plt.close(fig_c)
+    st.caption(
+        f"📐 **Expected Calibration Error (ECE) medio: {np.mean(eces):.3f}** "
+        "(mide la desviación promedio entre la probabilidad asignada y la frecuencia empírica real; 0.000 es calibración perfecta)."
+    )
+
+
 def _validar_elo(M, elo, temporada):
     df = _dataset_con_goles(M)
     df = df[(df["temporada"] == temporada) & df["goles_local"].notna()].sort_values("fecha")
@@ -236,8 +328,10 @@ def _validar_elo(M, elo, temporada):
                         "Prob_Local": P[:, 0], "Prob_Empate": P[:, 1], "Prob_Visita": P[:, 2]})
     pc = np.clip(P[np.arange(len(y)), y], 1e-7, 1)
     base = np.clip(elo["frec_train"][y], 1e-7, 1)
+    P_base = np.tile(elo["frec_train"], (len(y), 1))
     met = {"n": len(y), "acierto": float((P.argmax(1) == y).mean()),
-           "logloss": float(-np.log(pc).mean()), "logloss_base": float(-np.log(base).mean())}
+           "logloss": float(-np.log(pc).mean()), "logloss_base": float(-np.log(base).mean()),
+           "brier": brier_multiclase(P, y), "brier_base": brier_multiclase(P_base, y)}
     evol = pd.DataFrame({"partido": np.arange(1, len(y) + 1), "logloss_acum": np.cumsum(-np.log(pc)) / np.arange(1, len(y) + 1),
                          "baseline": met["logloss_base"]})
     return out, met, evol
@@ -438,11 +532,14 @@ def _validar(_mo, _M, codigo, clave_datos, temporada, modelo):
         })
         pc = np.clip(P[np.arange(len(y)), y], 1e-7, 1.0)
         base = np.clip(frec_tr[y], 1e-7, 1.0)
+        P_base = np.tile(frec_tr, (len(y), 1))
         met = {
             "n": len(y),
             "acierto": float((P.argmax(1) == y).mean()),
             "logloss": float(-np.log(pc).mean()),
             "logloss_base": float(-np.log(base).mean()),
+            "brier": brier_multiclase(P, y),
+            "brier_base": brier_multiclase(P_base, y),
         }
         evol = pd.DataFrame({
             "partido": np.arange(1, len(y) + 1),
@@ -770,12 +867,21 @@ def _tab_validacion(mo, M, cfg, modelo, clave_datos, acento, elo=None):
     if len(df) == 0:
         st.info("Aún no hay partidos jugados en esta temporada.")
         return
-    k1, k2, k3, k4 = st.columns(4)
+
+    P_val = df[["Prob_Local", "Prob_Empate", "Prob_Visita"]].to_numpy(dtype=float)
+    y_val = _etiquetas_lev(df)
+    brier_val = met.get("brier", brier_multiclase(P_val, y_val))
+    brier_base = met.get("brier_base")
+
+    k1, k2, k3, k4, k5 = st.columns(5)
     k1.metric("Partidos", met["n"])
     k2.metric("Acierto (1X2)", f"{met['acierto']:.1%}")
     k3.metric("Log-loss del modelo", f"{met['logloss']:.3f}", f"{met['logloss'] - met['logloss_base']:+.3f} vs baseline",
               delta_color="inverse")
     k4.metric("Log-loss baseline", f"{met['logloss_base']:.3f}")
+    k5.metric("Brier Score", f"{brier_val:.3f}",
+              f"{brier_val - brier_base:+.3f} vs baseline" if brier_base is not None else None,
+              delta_color="inverse")
     if met["logloss"] < met["logloss_base"]:
         st.success(f"El modelo supera al baseline en {met['n']} partidos reales. 👍")
     else:
@@ -793,22 +899,24 @@ def _tab_validacion(mo, M, cfg, modelo, clave_datos, acento, elo=None):
 
     c_plot, c_eq = st.columns([6, 4])
     with c_plot:
+        st.markdown("##### 📈 Evolución del Log-loss acumulado")
         if len(evol) >= 3:
             fig, ax = plt.subplots(figsize=(7, 4))
-            ax.plot(evol["partido"], evol["logloss_acum"], "-", color=acento, label="Modelo (acumulado)")
+            ax.plot(evol["partido"], evol["logloss_acum"], "-", color=acento, lw=2, label="Modelo (acumulado)")
             ax.axhline(met["logloss_base"], color="#475569", ls="--", lw=1.5, label="Baseline")
             ax.set_xlabel("Partidos (orden cronológico)"); ax.set_ylabel("Log-loss acumulado")
+            ax.grid(True, ls=":", alpha=0.5)
             ax.legend()
             st.pyplot(fig)
             plt.close(fig)
     with c_eq:
-        st.markdown("##### % de acierto por equipo")
-        filas = []
-        for eq in equipos_val:
-            d = df[(df.local == eq) | (df.visita == eq)]
-            casa, ruta = d[d.local == eq], d[d.visita == eq]
-            ac = lambda x: (x.resultado == x.Prediccion).mean() if len(x) else np.nan
-            filas.append({"Equipo": eq, "Partidos": len(d), "% Acierto": ac(d), "Local": ac(casa), "Visita": ac(ruta)})
-        tab = pd.DataFrame(filas).sort_values("% Acierto", ascending=False)
-        st.dataframe(tab.style.format({"% Acierto": "{:.0%}", "Local": "{:.0%}", "Visita": "{:.0%}"}, na_rep="—"),
-                     hide_index=True, width="stretch")
+        st.markdown("##### 🎯 % de acierto por club")
+        tab = tabla_acierto_equipos(df, col_local="local", col_visita="visita", col_res="resultado", col_pred="Prediccion", nombre_col="Equipo")
+        if not tab.empty:
+            st.dataframe(
+                tab.style.format({"% Acierto": "{:.1%}", "Local": "{:.0%}", "Visita": "{:.0%}"}, na_rep="—")
+                .background_gradient(subset=["% Acierto"], cmap="YlGn"),
+                hide_index=True, width="stretch"
+            )
+
+    render_curvas_calibracion(P_val, y_val, acento=acento, n_bins=5)
