@@ -13,6 +13,7 @@ from comun.motor_comun import (
     _TrackerPrePartido,
     _modelo_pre_partido,
 )
+from comun.motor_comun import hash_modulos_comunes
 """
 Motor predictivo de Machine Learning y simulación de Monte Carlo para la Primera División de Chile.
 Utiliza regresión logística multinomial con penalización L1 (LASSO) mediante el solver SAGA.
@@ -516,6 +517,7 @@ def _cache_key():
         h.update(f.name.encode())
         h.update(str(f.stat().st_size).encode())
         h.update(hashlib.sha256(f.read_bytes()).hexdigest().encode())
+    h.update(hash_modulos_comunes().encode())
     return h.hexdigest()
 
 

@@ -920,3 +920,7 @@ def _tab_validacion(mo, M, cfg, modelo, clave_datos, acento, elo=None):
             )
 
     render_curvas_calibracion(P_val, y_val, acento=acento, n_bins=5)
+
+    from comun.archivo_ui import render_archivo_prospectivo
+    with st.expander("📜 Registro Prospectivo Inmutable (Predicciones Pre-Partido)", expanded=False):
+        render_archivo_prospectivo(competicion=cod, key_prefix=f"arch_{cod}")

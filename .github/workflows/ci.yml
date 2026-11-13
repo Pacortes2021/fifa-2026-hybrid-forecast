@@ -27,6 +27,9 @@ jobs:
       - name: 📦 Dependencias
         run: pip install -r requirements.txt
 
+      - name: 🛡️ Guardia de integridad científica y anti-fugas
+        run: python3 tests/fugas.py
+
       - name: ⚙️ Smoke test de los motores (20 competiciones)
         run: python3 tests/smoke.py
 

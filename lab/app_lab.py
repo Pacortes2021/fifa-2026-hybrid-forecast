@@ -702,13 +702,29 @@ def run_app():
 
     with tab4:
         st.markdown('<div class="sec-title">El Modelo contra la Realidad · Mundial 2026</div>', unsafe_allow_html=True)
-        st.markdown("Auditoría empírica y validación rigurosa: comparación de las predicciones del modelo pre-partido frente a los resultados oficiales de los 104 encuentros del Mundial 2026.")
-        
+        st.caption(
+            "Los pesos de los modelos y el estado inicial (`team_states.csv`) están congelados con corte estricto "
+            "al **09-06-2026** (previo al partido inaugural del Mundial el 11-06-2026). "
+            "Puedes evaluar las predicciones en modo **Walk-Forward Dinámico** (actualizando Elo y forma partido a partido "
+            "solo con encuentros ya finalizados) o con el **Snapshot Pre-Torneo Congelado**:"
+        )
+        modo_val_lbl = st.radio(
+            "Modo de Evaluación Temporal:",
+            [
+                "🔄 Walk-Forward Pre-Partido (actualiza Elo y forma tras cada partido jugado)",
+                "❄️ Snapshot Pre-Torneo Congelado (estados fijos antes del inicio del Mundial)",
+            ],
+            index=0,
+            horizontal=True,
+            key="wc_val_modo_radio",
+        )
+        modo_val = "walk_forward" if "Walk-Forward" in modo_val_lbl else "pre_torneo"
+
         # Garantizar que se carguen los 104 partidos del Mundial
         df_fuente = ESPN_DF.copy() if len(ESPN_DF) > 0 else espn_live.traer_resultados()
         
         if len(df_fuente) > 0:
-            df_val, met, evol = mo.validacion_en_vivo(M, df_fuente, modelo)
+            df_val, met, evol = mo.validacion_en_vivo(M, df_fuente, modelo, modo=modo_val)
             
             if len(df_val) == 0:
                 st.info("No hay partidos jugados por selecciones mundialistas válidas aún.")

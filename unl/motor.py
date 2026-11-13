@@ -17,6 +17,7 @@ _ROOT = str(Path(__file__).resolve().parent.parent)
 if _ROOT not in sys.path:
     sys.path.insert(0, _ROOT)
 from comun.motor_comun import _TrackerPrePartido, _modelo_pre_partido
+from comun.motor_comun import seleccionar_c_lasso
 import numpy as np
 import pandas as pd
 from scipy.optimize import minimize_scalar
@@ -276,19 +277,22 @@ def cargar():
     X_test = df_dataset.loc[test_mask, cols_feat].fillna(0.0)
     y_test = df_dataset.loc[test_mask, "resultado"]
 
-    # 1. Búsqueda de C para LASSO SAGA
+    # 1. Búsqueda de C para LASSO SAGA: con el bloque de calibración si existe; si no, CV temporal
+    #    dentro del train (antes caía a evaluar sobre el propio train, lo que siempre premia el C mayor).
+    grid_c = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0]
     best_c = 0.05
     best_loss = 999.0
-    for C in [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0]:
-        _pipe = Pipeline([("sc", StandardScaler()),
-                          ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=2500, random_state=42))])
-        _pipe.fit(X_train, y_train)
-        _loss = log_loss(y_cal if len(y_cal) > 0 else y_train,
-                         _pipe.predict_proba(X_cal if len(X_cal) > 0 else X_train),
-                         labels=[0, 1, 2])
-        if _loss < best_loss:
-            best_loss = _loss
-            best_c = C
+    if len(y_cal) > 0:
+        for C in grid_c:
+            _pipe = Pipeline([("sc", StandardScaler()),
+                              ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=2500, random_state=42))])
+            _pipe.fit(X_train, y_train)
+            _loss = log_loss(y_cal, _pipe.predict_proba(X_cal), labels=[0, 1, 2])
+            if _loss < best_loss:
+                best_loss = _loss
+                best_c = C
+    else:
+        best_c, best_loss = seleccionar_c_lasso(X_train, y_train, grid=grid_c, max_iter=2500)
 
     # Reentrenar sobre train + cal
     X_train_full = df_dataset.loc[train_mask | cal_mask, cols_feat].fillna(0.0)

@@ -27,6 +27,12 @@ from sklearn.metrics import log_loss, accuracy_score, brier_score_loss, mean_abs
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
+import sys as _sys
+from pathlib import Path as _Path
+_ROOT = str(_Path(__file__).resolve().parent.parent)
+if _ROOT not in _sys.path:
+    _sys.path.insert(0, _ROOT)
+from comun.motor_comun import hash_modulos_comunes
 
 DATA = Path(__file__).resolve().parent / "data"
 EQUIPOS_PATH = DATA / "equipos.csv"
@@ -171,6 +177,8 @@ class FeatureTrackerNBA:
         # 1. Días de descanso y banderas Back-to-Back (B2B)
         if fecha is not None:
             fecha_dt = pd.to_datetime(fecha)
+            if getattr(fecha_dt, "tzinfo", None) is not None:
+                fecha_dt = fecha_dt.tz_localize(None)
             last_h = self.last_game_date.get(local)
             last_a = self.last_game_date.get(visita)
             
@@ -644,6 +652,7 @@ def _cache_key():
         h.update(f.name.encode())
         h.update(str(f.stat().st_size).encode())
         h.update(hashlib.sha256(f.read_bytes()).hexdigest().encode())
+    h.update(hash_modulos_comunes().encode())
     return h.hexdigest()
 
 

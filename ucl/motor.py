@@ -18,6 +18,14 @@ from scipy.stats import poisson
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
+import sys as _sys
+from pathlib import Path as _Path
+_ROOT = str(_Path(__file__).resolve().parent.parent)
+if _ROOT not in _sys.path:
+    _sys.path.insert(0, _ROOT)
+from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas
+from comun.motor_comun import hash_modulos_comunes
+
 DATA = Path(__file__).resolve().parent / "data"
 EQUIPOS_PATH = DATA / "equipos.csv"
 
@@ -31,7 +39,9 @@ def _cargar_equipos():
     return {}
 
 def _temporada_actual():
-    return 2027
+    """En UEFA Champions League la temporada se identifica por el año de la final (2026/27 -> 2027)."""
+    hoy = pd.Timestamp.now()
+    return int(hoy.year) + 1 if hoy.month >= 7 else int(hoy.year)
 
 ADV_FEATURES_PATH = DATA / "advanced_features_historical.csv"
 if ADV_FEATURES_PATH.exists():
@@ -657,6 +667,8 @@ def cargar(force_retrain=False):
             h.update(str(p.stat().st_mtime).encode())
     # El modelo también depende del código del motor: si cambia, se re-entrena
     h.update(hashlib.md5(Path(__file__).read_bytes()).hexdigest().encode())
+    # y del código compartido en comun/ (auditoría: antes no invalidaba la caché)
+    h.update(hash_modulos_comunes().encode())
     key_actual = h.hexdigest()
 
     if cache_path.exists() and not force_retrain:
@@ -744,6 +756,8 @@ def cargar(force_retrain=False):
 
     cols_ignore = {"resultado", "goles_local", "goles_visita", "temporada", "fecha", "local", "visita"}
     cols_features = [c for c in df_dataset.columns if c not in cols_ignore]
+    # Fuera variables de plantilla sintéticas/retroactivas (scripts/build_advanced_features.py)
+    cols_features = excluir_variables_estimadas(cols_features)
 
     # Walk-forward splits
     train_mask = df_dataset["temporada"] <= 2024
@@ -761,15 +775,8 @@ def cargar(force_retrain=False):
     y_test  = df_dataset.loc[test_mask,  "resultado"]
 
     # 1. LASSO L1 con SAGA
-    best_c = 0.05
-    best_loss = 999.0
-    for C in [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5]:
-        _pipe = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=C, max_iter=2500, random_state=42))])
-        _pipe.fit(X_train, y_train)
-        _l = log_loss(y_test, _pipe.predict_proba(X_test), labels=[0, 1, 2])
-        if _l < best_loss:
-            best_loss = _l
-            best_c = C
+    # C de LASSO elegido con CV temporal dentro del train (auditoría: antes se elegía con el test)
+    best_c, _ = seleccionar_c_lasso(X_train, y_train, grid=[0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5])
 
     X_full = df_dataset.loc[train_mask | cal_mask, cols_features].fillna(0.0)
     y_full = df_dataset.loc[train_mask | cal_mask, "resultado"]
@@ -875,7 +882,9 @@ def cargar(force_retrain=False):
     return salida
 
 
-def predecir_match(M, local, visita, temporada=2027, modelo="stacking", is_neutral=0, is_knockout=0, leg2_lead_local=0.0, is_leg2=0, fecha=None):
+def predecir_match(M, local, visita, temporada=None, modelo="stacking", is_neutral=0, is_knockout=0, leg2_lead_local=0.0, is_leg2=0, fecha=None):
+    if temporada is None:
+        temporada = _temporada_actual()
     tracker = M["tracker"]
     feats = tracker.get_features_for_match(
         local, visita, temporada, fecha=fecha, is_knockout=is_knockout, is_neutral=is_neutral,
