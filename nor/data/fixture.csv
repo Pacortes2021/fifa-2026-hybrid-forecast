@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401843480,2026-11-09 19:00:00,2026,6672,2791,Kristiansund BK,Vålerenga,,,pre,STATUS_SCHEDULED,False
 401843486,2026-11-20 19:00:00,2026,2715,2980,Molde,Bodo/Glimt,,,pre,STATUS_SCHEDULED,False
 401843483,2026-11-21 14:00:00,2026,5270,510,Tromso,Viking FK,,,pre,STATUS_SCHEDULED,False
 401843489,2026-11-21 16:00:00,2026,21380,3039,Hamarkameratene,Fredrikstad,,,pre,STATUS_SCHEDULED,False

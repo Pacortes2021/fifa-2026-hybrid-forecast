@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401885400,2026-11-08 15:30:00,2026,12216,552,Estoril,Maritimo,,,pre,True
 401885389,2026-11-27 20:15:00,2026,552,3472,Maritimo,Nacional,,,pre,False
 401885392,2026-11-28 15:30:00,2026,15784,3822,Arouca,Rio Ave,,,pre,False
 401885388,2026-11-28 15:30:00,2026,3696,12215,Moreirense,Santa Clara,,,pre,False
@@ -27,54 +26,55 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401885367,2026-12-13 18:00:00,2026,5309,21613,Vitoria de Guimaraes,Alverca,,,pre,False
 401885369,2026-12-13 20:30:00,2026,437,21610,Porto,Estrela,,,pre,False
 401885368,2026-12-14 20:15:00,2026,1929,2994,Benfica,Braga,,,pre,False
-401885358,2026-12-20 20:00:00,2026,2250,12216,Sporting CP,Estoril,,,pre,False
 401885359,2026-12-20 20:00:00,2026,12215,5309,Santa Clara,Vitoria de Guimaraes,,,pre,False
 401885360,2026-12-20 20:00:00,2026,3822,1929,Rio Ave,Benfica,,,pre,False
+401885358,2026-12-20 20:00:00,2026,2250,12216,Sporting CP,Estoril,,,pre,False
 401885362,2026-12-20 20:00:00,2026,12698,437,Famalicao,Porto,,,pre,False
-401885365,2026-12-20 20:00:00,2026,21610,552,Estrela,Maritimo,,,pre,False
-401885361,2026-12-20 20:00:00,2026,3472,3696,Nacional,Moreirense,,,pre,False
 401885363,2026-12-20 20:00:00,2026,2994,21607,Braga,Académico de Viseu,,,pre,False
+401885361,2026-12-20 20:00:00,2026,3472,3696,Nacional,Moreirense,,,pre,False
 401885364,2026-12-20 20:00:00,2026,15784,21581,Arouca,Casa Pia,,,pre,False
 401885366,2026-12-20 20:00:00,2026,21613,3699,Alverca,Gil Vicente,,,pre,False
-401885349,2026-12-27 20:00:00,2026,5309,3822,Vitoria de Guimaraes,Rio Ave,,,pre,False
-401885351,2026-12-27 20:00:00,2026,12215,21610,Santa Clara,Estrela,,,pre,False
-401885353,2026-12-27 20:00:00,2026,3696,21607,Moreirense,Académico de Viseu,,,pre,False
+401885365,2026-12-20 20:00:00,2026,21610,552,Estrela,Maritimo,,,pre,False
 401885354,2026-12-27 20:00:00,2026,552,2994,Maritimo,Braga,,,pre,False
+401885353,2026-12-27 20:00:00,2026,3696,21607,Moreirense,Académico de Viseu,,,pre,False
 401885355,2026-12-27 20:00:00,2026,3699,15784,Gil Vicente,Arouca,,,pre,False
-401885352,2026-12-27 20:00:00,2026,437,3472,Porto,Nacional,,,pre,False
+401885351,2026-12-27 20:00:00,2026,12215,21610,Santa Clara,Estrela,,,pre,False
 401885356,2026-12-27 20:00:00,2026,12216,21613,Estoril,Alverca,,,pre,False
 401885357,2026-12-27 20:00:00,2026,21581,12698,Casa Pia,Famalicao,,,pre,False
 401885350,2026-12-27 20:00:00,2026,1929,2250,Benfica,Sporting CP,,,pre,False
-401885340,2027-01-10 20:00:00,2026,2250,12215,Sporting CP,Santa Clara,,,pre,False
-401885341,2027-01-10 20:00:00,2026,3822,3696,Rio Ave,Moreirense,,,pre,False
-401885343,2027-01-10 20:00:00,2026,12698,5309,Famalicao,Vitoria de Guimaraes,,,pre,False
-401885346,2027-01-10 20:00:00,2026,21610,12216,Estrela,Estoril,,,pre,False
+401885352,2026-12-27 20:00:00,2026,437,3472,Porto,Nacional,,,pre,False
+401885349,2026-12-27 20:00:00,2026,5309,3822,Vitoria de Guimaraes,Rio Ave,,,pre,False
+401885400,2027-01-04 20:15:00,2026,12216,552,Estoril,Maritimo,,,pre,False
 401885348,2027-01-10 20:00:00,2026,21607,21581,Académico de Viseu,Casa Pia,,,pre,False
-401885344,2027-01-10 20:00:00,2026,2994,437,Braga,Porto,,,pre,False
-401885345,2027-01-10 20:00:00,2026,15784,1929,Arouca,Benfica,,,pre,False
 401885347,2027-01-10 20:00:00,2026,21613,552,Alverca,Maritimo,,,pre,False
+401885345,2027-01-10 20:00:00,2026,15784,1929,Arouca,Benfica,,,pre,False
+401885344,2027-01-10 20:00:00,2026,2994,437,Braga,Porto,,,pre,False
 401885342,2027-01-10 20:00:00,2026,3472,3699,Nacional,Gil Vicente,,,pre,False
+401885346,2027-01-10 20:00:00,2026,21610,12216,Estrela,Estoril,,,pre,False
+401885343,2027-01-10 20:00:00,2026,12698,5309,Famalicao,Vitoria de Guimaraes,,,pre,False
+401885341,2027-01-10 20:00:00,2026,3822,3696,Rio Ave,Moreirense,,,pre,False
+401885340,2027-01-10 20:00:00,2026,2250,12215,Sporting CP,Santa Clara,,,pre,False
+401885339,2027-01-17 20:00:00,2026,2250,21610,Sporting CP,Estrela,,,pre,False
 401885337,2027-01-17 20:00:00,2026,3822,3699,Rio Ave,Gil Vicente,,,pre,False
 401885338,2027-01-17 20:00:00,2026,12698,12216,Famalicao,Estoril,,,pre,False
 401885336,2027-01-17 20:00:00,2026,21581,552,Casa Pia,Maritimo,,,pre,False
 401885333,2027-01-17 20:00:00,2026,3472,12215,Nacional,Santa Clara,,,pre,False
-401885339,2027-01-17 20:00:00,2026,2250,21610,Sporting CP,Estrela,,,pre,False
+401885335,2027-01-17 20:00:00,2026,2994,3696,Braga,Moreirense,,,pre,False
 401885331,2027-01-17 20:00:00,2026,15784,5309,Arouca,Vitoria de Guimaraes,,,pre,False
 401885334,2027-01-17 20:00:00,2026,21613,437,Alverca,Porto,,,pre,False
 401885332,2027-01-17 20:00:00,2026,21607,1929,Académico de Viseu,Benfica,,,pre,False
-401885335,2027-01-17 20:00:00,2026,2994,3696,Braga,Moreirense,,,pre,False
-401885322,2027-01-24 20:00:00,2026,5309,2250,Vitoria de Guimaraes,Sporting CP,,,pre,False
-401885330,2027-01-24 20:00:00,2026,12215,21607,Santa Clara,Académico de Viseu,,,pre,False
-401885328,2027-01-24 20:00:00,2026,3696,15784,Moreirense,Arouca,,,pre,False
-401885325,2027-01-24 20:00:00,2026,552,12698,Maritimo,Famalicao,,,pre,False
-401885327,2027-01-24 20:00:00,2026,3699,2994,Gil Vicente,Braga,,,pre,False
-401885329,2027-01-24 20:00:00,2026,21610,21613,Estrela,Alverca,,,pre,False
-401885324,2027-01-24 20:00:00,2026,12216,3472,Estoril,Nacional,,,pre,False
 401885326,2027-01-24 20:00:00,2026,1929,21581,Benfica,Casa Pia,,,pre,False
+401885324,2027-01-24 20:00:00,2026,12216,3472,Estoril,Nacional,,,pre,False
+401885329,2027-01-24 20:00:00,2026,21610,21613,Estrela,Alverca,,,pre,False
 401885323,2027-01-24 20:00:00,2026,437,3822,Porto,Rio Ave,,,pre,False
+401885327,2027-01-24 20:00:00,2026,3699,2994,Gil Vicente,Braga,,,pre,False
+401885325,2027-01-24 20:00:00,2026,552,12698,Maritimo,Famalicao,,,pre,False
+401885328,2027-01-24 20:00:00,2026,3696,15784,Moreirense,Arouca,,,pre,False
+401885330,2027-01-24 20:00:00,2026,12215,21607,Santa Clara,Académico de Viseu,,,pre,False
+401885322,2027-01-24 20:00:00,2026,5309,2250,Vitoria de Guimaraes,Sporting CP,,,pre,False
+401885315,2027-01-31 20:00:00,2026,12698,12215,Famalicao,Santa Clara,,,pre,False
 401885319,2027-01-31 20:00:00,2026,21581,3699,Casa Pia,Gil Vicente,,,pre,False
 401885320,2027-01-31 20:00:00,2026,3822,12216,Rio Ave,Estoril,,,pre,False
-401885315,2027-01-31 20:00:00,2026,12698,12215,Famalicao,Santa Clara,,,pre,False
 401885313,2027-01-31 20:00:00,2026,3472,5309,Nacional,Vitoria de Guimaraes,,,pre,False
 401885321,2027-01-31 20:00:00,2026,2994,21610,Braga,Estrela,,,pre,False
 401885317,2027-01-31 20:00:00,2026,1929,3696,Benfica,Moreirense,,,pre,False

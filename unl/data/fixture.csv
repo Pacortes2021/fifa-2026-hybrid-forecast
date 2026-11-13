@@ -1,53 +1,45 @@
 event_id,fecha,temporada,round,local,visita,local_id,visita_id,group,league,estado
-401861146,2026-11-12 18:00:00,2026,league-phase,Armenia,Cyprus,579,445,Group C2,C,pre
-401861145,2026-11-12 18:00:00,2026,league-phase,Turkey,Belgium,465,459,Group A1,A,pre
-401861147,2026-11-12 20:45:00,2026,league-phase,Albania,Finland,585,458,Group C1,C,pre
-401861148,2026-11-12 20:45:00,2026,league-phase,Czech Republic,Spain,450,164,Group A3,A,pre
-401861150,2026-11-12 20:45:00,2026,league-phase,England,Croatia,448,477,Group A3,A,pre
-401861151,2026-11-12 20:45:00,2026,league-phase,Italy,France,162,478,Group A1,A,pre
-401861152,2026-11-12 20:45:00,2026,league-phase,Montenegro,Latvia,6775,456,Group C2,C,pre
-401861149,2026-11-12 20:45:00,2026,league-phase,San Marino,Belarus,588,583,Group C1,C,pre
 401861162,2026-11-13 18:00:00,2026,league-phase,Moldova,Kazakhstan,483,2619,Group C3,C,pre
-401861156,2026-11-13 20:45:00,2026,league-phase,Slovenia,Switzerland,472,475,Group B1,B,pre
 401861160,2026-11-13 20:45:00,2026,league-phase,Slovakia,Faroe Islands,468,447,Group C3,C,pre
 401861158,2026-11-13 20:45:00,2026,league-phase,Serbia,Germany,6757,481,Group A2,A,pre
 401861161,2026-11-13 20:45:00,2026,league-phase,Scotland,North Macedonia,580,463,Group B1,B,pre
+401861159,2026-11-13 20:45:00,2026,league-phase,Netherlands,Greece,449,455,Group A2,A,pre
+401861156,2026-11-13 20:45:00,2026,league-phase,Slovenia,Switzerland,472,475,Group B1,B,pre
 401861153,2026-11-13 20:45:00,2026,league-phase,Liechtenstein,Azerbaijan,589,581,Group D2,D,pre
-401861154,2026-11-13 20:45:00,2026,league-phase,Luxembourg,Estonia,582,444,Group C4,C,pre
 401861157,2026-11-13 20:45:00,2026,league-phase,Bulgaria,Iceland,462,470,Group C4,C,pre
 401861155,2026-11-13 20:45:00,2026,league-phase,Andorra,Gibraltar,587,16721,Group D1,D,pre
-401861159,2026-11-13 20:45:00,2026,league-phase,Netherlands,Greece,449,455,Group A2,A,pre
+401861154,2026-11-13 20:45:00,2026,league-phase,Luxembourg,Estonia,582,444,Group C4,C,pre
 401861163,2026-11-14 15:00:00,2026,league-phase,Kosovo,Israel,18272,461,Group B3,B,pre
 401861164,2026-11-14 18:00:00,2026,league-phase,Georgia,Hungary,584,480,Group B2,B,pre
 401861165,2026-11-14 18:00:00,2026,league-phase,Norway,Wales,464,578,Group A4,A,pre
-401861168,2026-11-14 20:45:00,2026,league-phase,Romania,Poland,473,471,Group B4,B,pre
-401861167,2026-11-14 20:45:00,2026,league-phase,Portugal,Denmark,482,479,Group A4,A,pre
-401861166,2026-11-14 20:45:00,2026,league-phase,Sweden,Bosnia and Herzegovina,466,452,Group B4,B,pre
 401861170,2026-11-14 20:45:00,2026,league-phase,Austria,Republic of Ireland,474,476,Group B3,B,pre
 401861169,2026-11-14 20:45:00,2026,league-phase,Northern Ireland,Ukraine,586,457,Group B2,B,pre
+401861167,2026-11-14 20:45:00,2026,league-phase,Portugal,Denmark,482,479,Group A4,A,pre
+401861168,2026-11-14 20:45:00,2026,league-phase,Romania,Poland,473,471,Group B4,B,pre
+401861166,2026-11-14 20:45:00,2026,league-phase,Sweden,Bosnia and Herzegovina,466,452,Group B4,B,pre
 401861172,2026-11-15 15:00:00,2026,league-phase,Cyprus,Montenegro,445,6775,Group C2,C,pre
 401861171,2026-11-15 15:00:00,2026,league-phase,Latvia,Armenia,456,579,Group C2,C,pre
-401861173,2026-11-15 18:00:00,2026,league-phase,Belarus,Albania,583,585,Group C1,C,pre
 401861174,2026-11-15 18:00:00,2026,league-phase,Finland,San Marino,458,588,Group C1,C,pre
+401861173,2026-11-15 18:00:00,2026,league-phase,Belarus,Albania,583,585,Group C1,C,pre
 401861176,2026-11-15 20:45:00,2026,league-phase,Belgium,Italy,459,162,Group A1,A,pre
 401861178,2026-11-15 20:45:00,2026,league-phase,Croatia,Czech Republic,477,450,Group A3,A,pre
 401861177,2026-11-15 20:45:00,2026,league-phase,France,Turkey,478,465,Group A1,A,pre
 401861175,2026-11-15 20:45:00,2026,league-phase,Spain,England,164,448,Group A3,A,pre
 401861180,2026-11-16 16:00:00,2026,league-phase,Faroe Islands,Moldova,447,483,Group C3,C,pre
 401861181,2026-11-16 16:00:00,2026,league-phase,Kazakhstan,Slovakia,2619,468,Group C3,C,pre
-401861184,2026-11-16 18:00:00,2026,league-phase,Lithuania,Liechtenstein,460,589,Group D2,D,pre
 401861182,2026-11-16 18:00:00,2026,league-phase,Iceland,Luxembourg,470,582,Group C4,C,pre
 401861183,2026-11-16 18:00:00,2026,league-phase,Estonia,Bulgaria,444,462,Group C4,C,pre
-401861185,2026-11-16 20:45:00,2026,league-phase,Germany,Netherlands,481,449,Group A2,A,pre
-401861179,2026-11-16 20:45:00,2026,league-phase,Gibraltar,Malta,16721,453,Group D1,D,pre
-401861188,2026-11-16 20:45:00,2026,league-phase,Greece,Serbia,455,6757,Group A2,A,pre
-401861187,2026-11-16 20:45:00,2026,league-phase,North Macedonia,Slovenia,463,472,Group B1,B,pre
+401861184,2026-11-16 18:00:00,2026,league-phase,Lithuania,Liechtenstein,460,589,Group D2,D,pre
 401861186,2026-11-16 20:45:00,2026,league-phase,Switzerland,Scotland,475,580,Group B1,B,pre
-401861190,2026-11-17 20:45:00,2026,league-phase,Ukraine,Georgia,457,584,Group B2,B,pre
-401861196,2026-11-17 20:45:00,2026,league-phase,Bosnia and Herzegovina,Romania,452,473,Group B4,B,pre
-401861194,2026-11-17 20:45:00,2026,league-phase,Denmark,Norway,479,464,Group A4,A,pre
-401861191,2026-11-17 20:45:00,2026,league-phase,Hungary,Northern Ireland,480,586,Group B2,B,pre
-401861193,2026-11-17 20:45:00,2026,league-phase,Israel,Austria,461,474,Group B3,B,pre
+401861187,2026-11-16 20:45:00,2026,league-phase,North Macedonia,Slovenia,463,472,Group B1,B,pre
+401861179,2026-11-16 20:45:00,2026,league-phase,Gibraltar,Malta,16721,453,Group D1,D,pre
+401861185,2026-11-16 20:45:00,2026,league-phase,Germany,Netherlands,481,449,Group A2,A,pre
+401861188,2026-11-16 20:45:00,2026,league-phase,Greece,Serbia,455,6757,Group A2,A,pre
 401861195,2026-11-17 20:45:00,2026,league-phase,Poland,Sweden,471,466,Group B4,B,pre
 401861192,2026-11-17 20:45:00,2026,league-phase,Republic of Ireland,Kosovo,476,18272,Group B3,B,pre
+401861193,2026-11-17 20:45:00,2026,league-phase,Israel,Austria,461,474,Group B3,B,pre
+401861190,2026-11-17 20:45:00,2026,league-phase,Ukraine,Georgia,457,584,Group B2,B,pre
+401861194,2026-11-17 20:45:00,2026,league-phase,Denmark,Norway,479,464,Group A4,A,pre
+401861196,2026-11-17 20:45:00,2026,league-phase,Bosnia and Herzegovina,Romania,452,473,Group B4,B,pre
+401861191,2026-11-17 20:45:00,2026,league-phase,Hungary,Northern Ireland,480,586,Group B2,B,pre
 401861189,2026-11-17 20:45:00,2026,league-phase,Wales,Portugal,578,482,Group A4,A,pre
