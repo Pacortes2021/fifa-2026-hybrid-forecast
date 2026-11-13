@@ -570,9 +570,20 @@ REGLAS OBLIGATORIAS DE ANÁLISIS (NO REPITAS EL CSV):
                     importancias = np.mean(np.abs(M["pipe_lasso"].named_steps["lr"].coef_), axis=0)
                     label_imp = "Sensibilidad de Variables (SVM RBF)"
                 elif mod_code == "stacking":
-                    st.markdown("Importancia de variables ponderada en el ensamble **Stacking Óptimo** (XGBoost + Random Forest).")
-                    w = M.get("alpha_stack", 0.028)
-                    importancias = w * M["pipe_xgb"].named_steps["xgb"].feature_importances_ + (1.0 - w) * M["pipe_rf"].named_steps["rf"].feature_importances_
+                    sw = M.get("stack_w")
+                    if sw is not None and len(sw) == 3:
+                        st.markdown("Importancia de variables ponderada en el ensamble **Stacking Óptimo** (LASSO + Random Forest + XGBoost).")
+                        imp_l = np.mean(np.abs(M["pipe_lasso"].named_steps["lr"].coef_), axis=0)
+                        imp_l = imp_l / max(float(imp_l.sum()), 1e-9)
+                        importancias = (
+                            float(sw[0]) * imp_l
+                            + float(sw[1]) * M["pipe_rf"].named_steps["rf"].feature_importances_
+                            + float(sw[2]) * M["pipe_xgb"].named_steps["xgb"].feature_importances_
+                        )
+                    else:
+                        st.markdown("Importancia de variables ponderada en el ensamble **Stacking Óptimo** (XGBoost + Random Forest).")
+                        w = M.get("alpha_stack", 0.028)
+                        importancias = w * M["pipe_xgb"].named_steps["xgb"].feature_importances_ + (1.0 - w) * M["pipe_rf"].named_steps["rf"].feature_importances_
                     label_imp = "Importancia Ponderada (Stacking)"
                 else:
                     st.markdown("Análisis de pesos del clasificador lineal regularizado **LASSO (L1 SAGA)** que penaliza el ruido estadístico.")

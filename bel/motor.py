@@ -14,7 +14,7 @@ from comun.motor_comun import (
     _modelo_pre_partido,
 )
 from comun.motor_comun import hash_modulos_comunes
-from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas
+from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas, entrenar_stacking_oof
 import sys
 import math
 import pickle
@@ -364,47 +364,12 @@ def cargar_y_entrenar():
     # C de LASSO elegido con CV temporal dentro del train (auditoría: antes se elegía con el test)
     best_c, _ = seleccionar_c_lasso(X_train, y_train, grid=[0.005, 0.01, 0.02, 0.04, 0.05, 0.1, 0.2])
 
-    pipe_lasso_base = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=4000, random_state=42))])
-    pipe_lasso_base.fit(X_train, y_train)
-
-    pipe_rf_base = Pipeline([("scale", StandardScaler()), ("rf", RandomForestClassifier(max_depth=5, n_estimators=200, min_samples_split=15, random_state=42, n_jobs=-1))])
-    pipe_rf_base.fit(X_train, y_train)
-
-    pipe_xgb_base = Pipeline([("scale", StandardScaler()), ("xgb", XGBClassifier(max_depth=3, n_estimators=100, learning_rate=0.05, subsample=0.8, colsample_bytree=0.8, random_state=42, eval_metric="mlogloss"))])
-    pipe_xgb_base.fit(X_train, y_train)
-
-    # Optimización Stacking en Calibración (Nelder-Mead)
-    if len(X_cal) >= 20:
-        p_l_cal = pipe_lasso_base.predict_proba(X_cal)
-        p_r_cal = pipe_rf_base.predict_proba(X_cal)
-        p_x_cal = pipe_xgb_base.predict_proba(X_cal)
-
-        def _obj(w):
-            w = np.clip(w, 0.0, 1.0)
-            if w.sum() == 0: return 999.0
-            w = w / w.sum()
-            blend = np.clip(w[0]*p_l_cal + w[1]*p_r_cal + w[2]*p_x_cal, 1e-7, 1-1e-7)
-            blend = blend / blend.sum(axis=1, keepdims=True)
-            return log_loss(y_cal, blend, labels=[0, 1, 2])
-
-        opt_res = minimize(_obj, [0.4, 0.4, 0.2], method="Nelder-Mead")
-        stack_w = np.clip(opt_res.x, 0.0, 1.0)
-        stack_w = stack_w / stack_w.sum()
-    else:
-        stack_w = np.array([0.4, 0.4, 0.2])
-
-    # Reentrenar sobre train + cal
+    # Modelos finales regularizados + Stacking Out-Of-Fold temporal entrenados con train + cal
     X_full = df_features.loc[train_mask | cal_mask, cols_feat].fillna(0.0)
     y_full = df_features.loc[train_mask | cal_mask, "resultado"]
-
-    pipe_lasso = Pipeline([("scale", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=4000, random_state=42))])
-    pipe_lasso.fit(X_full, y_full)
-
-    pipe_rf = Pipeline([("scale", StandardScaler()), ("rf", RandomForestClassifier(max_depth=5, n_estimators=200, min_samples_split=15, random_state=42, n_jobs=-1))])
-    pipe_rf.fit(X_full, y_full)
-
-    pipe_xgb = Pipeline([("scale", StandardScaler()), ("xgb", XGBClassifier(max_depth=3, n_estimators=100, learning_rate=0.05, subsample=0.8, colsample_bytree=0.8, random_state=42, eval_metric="mlogloss"))])
-    pipe_xgb.fit(X_full, y_full)
+    pipe_lasso, pipe_rf, pipe_xgb, stack_w = entrenar_stacking_oof(
+        X_full, y_full, best_c, binario=False, n_splits=4, reg_l2=0.03, max_iter_lasso=4000
+    )
 
     # Métricas en test
     def _met(proba, y):
