@@ -77,7 +77,7 @@ def cargar_dataset_jugadores():
     if not box_p.exists():
         return pd.DataFrame(), pd.DataFrame()
 
-    df = pd.read_csv(box_p)
+    df = pd.read_csv(box_p, low_memory=False)
     df["event_id"] = df["event_id"].astype(str)
     df["min_num"] = df["MIN"].apply(_parse_min)
     df["pts_num"] = pd.to_numeric(df["PTS"], errors="coerce").fillna(0.0)
@@ -86,6 +86,7 @@ def cargar_dataset_jugadores():
     df["stl_num"] = pd.to_numeric(df["STL"], errors="coerce").fillna(0.0)
     df["blk_num"] = pd.to_numeric(df["BLK"], errors="coerce").fillna(0.0)
     df["tov_num"] = pd.to_numeric(df["TO"], errors="coerce").fillna(0.0)
+    df["oreb_num"] = pd.to_numeric(df["OREB"], errors="coerce").fillna(0.0) if "OREB" in df.columns else (0.22 * df["reb_num"])
     df["plus_minus_num"] = pd.to_numeric(df["+/-"], errors="coerce").fillna(0.0)
     df["pos_group"] = df["position"].apply(_norm_pos)
 
@@ -577,22 +578,22 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
         exceso = min(abs(float(spread_esperado)) - 13.5, 10.0)
         penalizacion_min_blowout = round(0.22 * exceso, 1)
 
-    # 2. Tasa base por minuto calibrada por Walk-Forward Backtest (78%-80% base + 20%-22% L5: encogimiento James-Stein)
+    # 2. Tasa base por minuto calibrada sobre validación causal interna (encogimiento hacia media de temporada)
     rate_season_p = perfil["pts_avg"] / max(perfil["min_avg"], 1.0)
     rate_l5_p = perfil["pts_l5"] / max(perfil["min_l5"], 1.0)
-    p_per_min = 0.78 * rate_season_p + 0.22 * rate_l5_p
+    p_per_min = 0.84 * rate_season_p + 0.16 * rate_l5_p
 
     rate_season_r = perfil["reb_avg"] / max(perfil["min_avg"], 1.0)
     rate_l5_r = perfil["reb_l5"] / max(perfil["min_l5"], 1.0)
-    r_per_min = 0.86 * rate_season_r + 0.14 * rate_l5_r
+    r_per_min = 0.90 * rate_season_r + 0.10 * rate_l5_r
 
     rate_season_a = perfil["ast_avg"] / max(perfil["min_avg"], 1.0)
     rate_l5_a = perfil["ast_l5"] / max(perfil["min_l5"], 1.0)
-    a_per_min = 0.78 * rate_season_a + 0.22 * rate_l5_a
+    a_per_min = 0.82 * rate_season_a + 0.18 * rate_l5_a
 
     rate_season_t = perfil["tpm_avg"] / max(perfil["min_avg"], 1.0)
     rate_l5_t = perfil["tpm_l5"] / max(perfil["min_l5"], 1.0)
-    t_per_min = 0.80 * rate_season_t + 0.20 * rate_l5_t
+    t_per_min = 0.85 * rate_season_t + 0.15 * rate_l5_t
 
     # 3. Ajuste por Ritmo del Partido (Pace esperado del cruce frente al Pace medio NBA)
     exp_pace = (float(pace_equipo) + float(pace_rival)) / 2.0
@@ -662,10 +663,10 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
             "pts_sin": sp["pts_sin"] if sp else perfil["pts_avg"],
         })
 
-    # Saturación cóncava calibrada (techo: +16% PTS, +20% AST, +15% REB)
-    boost_pts_baja = 1.0 + 0.16 * (1.0 - np.exp(-raw_vac_pts / 0.15))
-    boost_ast_baja = 1.0 + 0.20 * (1.0 - np.exp(-raw_vac_ast / 0.16))
-    boost_reb_baja = 1.0 + 0.15 * (1.0 - np.exp(-raw_vac_reb / 0.15))
+    # Saturación cóncava calibrada sobre validación causal interna (evita sesgo positivo sistemático)
+    boost_pts_baja = 1.0 + 0.055 * (1.0 - np.exp(-raw_vac_pts / 0.15))
+    boost_ast_baja = 1.0 + 0.065 * (1.0 - np.exp(-raw_vac_ast / 0.16))
+    boost_reb_baja = 1.0 + 0.035 * (1.0 - np.exp(-raw_vac_reb / 0.15))
     boost_tpm_baja = 1.0 + 0.85 * (boost_pts_baja - 1.0)
 
     # 7. Impacto de Bajas en el Equipo Rival (ej. ausencia del pívot protector de aro o defensor perimetral rival)
@@ -700,13 +701,13 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
     ast_proy = a_per_min * minutos * factor_pace * factor_def_ast * factor_casa * boost_ast_baja * boost_rival_ast
     tpm_proy = t_per_min * minutos * factor_pace * factor_def_tpm * factor_casa * boost_tpm_baja * boost_rival_pts
 
-    # 9. Ajuste Bayesiano por Historial Directo (H2H contra el rival, combinando promedio directo y tasa por minuto)
+    # 9. Ajuste Bayesiano suave por Historial Directo (H2H contra el rival con alto encogimiento)
     n_h2h = 0
     if h2h_games is not None and not h2h_games.empty:
         h2h_valid = h2h_games[h2h_games["min_num"] >= 10.0]
         n_h2h = len(h2h_valid)
         if n_h2h >= 1:
-            w_h2h = min(0.26, n_h2h / (n_h2h + 6.0))
+            w_h2h = min(0.06, n_h2h / (n_h2h + 16.0))
             m_h2h_avg = max(float(h2h_valid["min_num"].mean()), 10.0)
             scale_m = 0.55 * (minutos / m_h2h_avg) + 0.45
             h2h_pts_scaled = float(h2h_valid["pts_num"].mean()) * scale_m * boost_pts_baja
@@ -766,6 +767,29 @@ def proyectar_jugador(perfil, rival, minutos_proy=None, es_local=True,
     }
 
 
+def _prob_over_distribucion(media, sigma, linea, stat_key="pts"):
+    """Probabilidad analítica P(Over linea) sin construir grilla ni Hit Rate (reutilizada en backtest)."""
+    linea = float(linea)
+    media = max(float(media), 0.1)
+    sigma = max(float(sigma), 0.5)
+    k_floor = int(np.floor(linea))
+    if stat_key in ("tpm", "reb", "ast"):
+        var = sigma ** 2
+        if var > media * 1.08:
+            p_nb = float(np.clip(media / var, 0.05, 0.95))
+            n_nb = max(media * p_nb / (1.0 - p_nb), 0.5)
+            p_under = float(nbinom.cdf(k_floor, n_nb, p_nb))
+        else:
+            p_under = float(poisson.cdf(k_floor, mu=media))
+        p_over = 1.0 - p_under
+    else:
+        cdf_0 = float(norm.cdf(0.0, loc=media, scale=sigma))
+        cdf_l = float(norm.cdf(linea, loc=media, scale=sigma))
+        p_under = max(0.0, (cdf_l - cdf_0) / max(1.0 - cdf_0, 1e-6))
+        p_over = 1.0 - p_under
+    return float(np.clip(p_over, 0.02, 0.98))
+
+
 def calcular_probabilidades_prop(media, sigma, linea, stat_key="pts", df_games=None, df_all_games=None, rival=None):
     """
     Calcula P(Over) y P(Under), cuotas justas y el Hit Rate histórico del jugador para una línea dada.
@@ -780,38 +804,29 @@ def calcular_probabilidades_prop(media, sigma, linea, stat_key="pts", df_games=N
     media = max(float(media), 0.1)
     sigma = max(float(sigma), 0.5)
     k_floor = int(np.floor(linea))
+    p_over = _prob_over_distribucion(media, sigma, linea, stat_key=stat_key)
+    p_under = float(np.clip(1.0 - p_over, 0.02, 0.98))
 
     es_discreta = stat_key in ("tpm", "reb", "ast")
     if es_discreta:
         var = sigma ** 2
-        # En baloncesto los conteos suelen tener sobredispersión (varianza > media)
         if var > media * 1.08:
             p_nb = float(np.clip(media / var, 0.05, 0.95))
             n_nb = max(media * p_nb / (1.0 - p_nb), 0.5)
-            p_under = float(nbinom.cdf(k_floor, n_nb, p_nb))
             max_k = int(max(k_floor + 8, np.ceil(media + 3.5 * sigma)))
             x_grid = np.arange(0, max_k + 1)
             y_grid = nbinom.pmf(x_grid, n_nb, p_nb)
             dist_nombre = "Binomial Negativa (Conteo Discreto)"
         else:
-            p_under = float(poisson.cdf(k_floor, mu=media))
             max_k = int(max(k_floor + 8, np.ceil(media + 3.5 * sigma)))
             x_grid = np.arange(0, max_k + 1)
             y_grid = poisson.pmf(x_grid, mu=media)
             dist_nombre = "Poisson (Conteo Discreto)"
-        p_over = 1.0 - p_under
     else:
-        # Normal truncada en 0 con corrección de continuidad en líneas .5
         cdf_0 = float(norm.cdf(0.0, loc=media, scale=sigma))
-        cdf_l = float(norm.cdf(linea, loc=media, scale=sigma))
-        p_under = max(0.0, (cdf_l - cdf_0) / max(1.0 - cdf_0, 1e-6))
-        p_over = 1.0 - p_under
         x_grid = np.linspace(max(0.0, media - 3.5 * sigma), media + 3.5 * sigma, 200)
         y_grid = norm.pdf(x_grid, loc=media, scale=sigma) / max(1.0 - cdf_0, 1e-6)
         dist_nombre = "Gaussiana Continua"
-
-    p_over = float(np.clip(p_over, 0.02, 0.98))
-    p_under = float(np.clip(p_under, 0.02, 0.98))
 
     cuota_over = round(1.0 / p_over, 2)
     cuota_under = round(1.0 / p_under, 2)
@@ -902,7 +917,7 @@ def _precomputar_contexto_causal_equipos(df_sorted):
       4. `ausentes_eid[(eid, equipo)]`: Titulares de `rot_pre` que no participaron en `eid` (lista de inactivos al salto inicial).
     """
     # Agregar totales por (event_id, equipo) para estimar posesiones y puntos recibidos por partido
-    grp_eq = df_sorted.groupby(["event_id", "equipo"], as_index=False).agg(
+    agg_cols = dict(
         fecha_dt=("fecha_dt", "first"),
         temporada=("temporada", "first"),
         rival=("rival", "first"),
@@ -912,8 +927,12 @@ def _precomputar_contexto_causal_equipos(df_sorted):
         tov=("tov_num", "sum"),
         reb=("reb_num", "sum"),
     )
-    # Posesiones estimadas por fórmula estándar de Dean Oliver
-    grp_eq["poss"] = np.maximum(grp_eq["fga"] + 0.44 * grp_eq["fta"] + grp_eq["tov"] - 0.22 * grp_eq["reb"], 82.0)
+    if "oreb_num" in df_sorted.columns:
+        agg_cols["oreb"] = ("oreb_num", "sum")
+    grp_eq = df_sorted.groupby(["event_id", "equipo"], as_index=False).agg(**agg_cols)
+    oreb_term = grp_eq["oreb"] if "oreb" in grp_eq.columns else 0.22 * grp_eq["reb"]
+    # Posesiones estimadas por fórmula estándar de Dean Oliver (OREB real cuando está disponible)
+    grp_eq["poss"] = np.maximum(grp_eq["fga"] + 0.44 * grp_eq["fta"] + grp_eq["tov"] - oreb_term, 82.0)
 
     opp_Lookup = grp_eq.set_index(["event_id", "equipo"])[["pts", "poss"]].rename(
         columns={"pts": "pts_opp", "poss": "poss_opp"}
@@ -928,6 +947,8 @@ def _precomputar_contexto_causal_equipos(df_sorted):
     team_stats_pre = {}
     hist_pace = {}
     hist_drtg = {}
+    all_paces = []
+    all_drtgs = []
     for r in grp_eq.itertuples(index=False):
         eq = r.equipo
         eid = r.event_id
@@ -935,13 +956,20 @@ def _precomputar_contexto_causal_equipos(df_sorted):
         d_list = hist_drtg.get(eq, [])
         n_prev = len(p_list)
         w = n_prev / (n_prev + 5.0)
-        pace_pre = w * float(np.mean(p_list[-20:])) + (1.0 - w) * LEAGUE_AVG_PACE if n_prev > 0 else LEAGUE_AVG_PACE
-        drtg_pre = w * float(np.mean(d_list[-20:])) + (1.0 - w) * LEAGUE_AVG_DRTG if n_prev > 0 else LEAGUE_AVG_DRTG
+        lg_pace_pre = float(np.mean(all_paces[-300:])) if len(all_paces) >= 40 else LEAGUE_AVG_PACE
+        lg_drtg_pre = float(np.mean(all_drtgs[-300:])) if len(all_drtgs) >= 40 else LEAGUE_AVG_DRTG
+        pace_raw = w * float(np.mean(p_list[-20:])) + (1.0 - w) * lg_pace_pre if n_prev > 0 else lg_pace_pre
+        drtg_raw = w * float(np.mean(d_list[-20:])) + (1.0 - w) * lg_drtg_pre if n_prev > 0 else lg_drtg_pre
+        # Centrar respecto al baseline causal de la liga para eliminar deriva estructural de Pace/DRtg
+        pace_pre = LEAGUE_AVG_PACE + (pace_raw - lg_pace_pre)
+        drtg_pre = LEAGUE_AVG_DRTG + (drtg_raw - lg_drtg_pre)
         team_stats_pre[(eid, eq)] = {"pace": pace_pre, "drtg": drtg_pre}
         p_list.append(float(r.pace_game))
         d_list.append(float(r.drtg_game))
         hist_pace[eq] = p_list
         hist_drtg[eq] = d_list
+        all_paces.append(float(r.pace_game))
+        all_drtgs.append(float(r.drtg_game))
 
     # Rotación causal y detección de bajas previas vs observadas en el evento
     df_act = df_sorted[df_sorted["min_num"] >= 5.0].sort_values(["fecha_dt", "event_id"])
@@ -1102,20 +1130,28 @@ def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70, m
                 drtg_rival=ts_riv["drtg"], h2h_games=h2h_prev, dvp_data=dvp_causal
             )
 
-            rows_eval.append({
-                "pts_real": float(row["pts_num"]), "pts_base": pts_base, "pts_pre": proy_pre["pts"], "pts_obs": proy_obs["pts"],
-                "reb_real": float(row["reb_num"]), "reb_base": reb_base, "reb_pre": proy_pre["reb"], "reb_obs": proy_obs["reb"],
-                "ast_real": float(row["ast_num"]), "ast_base": ast_base, "ast_pre": proy_pre["ast"], "ast_obs": proy_obs["ast"],
-                "tpm_real": float(row["tpm"]),     "tpm_base": tpm_base, "tpm_pre": proy_pre["tpm"], "tpm_obs": proy_obs["tpm"],
-                "pra_real": float(row["pra"]),     "pra_base": pra_base, "pra_pre": proy_pre["pra"], "pra_obs": proy_obs["pra"],
-                "line_pts": np.round(0.75 * pts_base + 0.25 * float(l10["pts_num"].mean()) - 0.5) + 0.5,
-                "line_reb": np.round(0.75 * reb_base + 0.25 * float(l10["reb_num"].mean()) - 0.5) + 0.5,
-                "line_ast": np.round(0.75 * ast_base + 0.25 * float(l10["ast_num"].mean()) - 0.5) + 0.5,
-                "line_tpm": np.round(0.75 * tpm_base + 0.25 * float(l10["tpm"].mean()) - 0.5) + 0.5,
-                "line_pra": np.round(0.75 * pra_base + 0.25 * float(l10["pra"].mean()) - 0.5) + 0.5,
+            sig_pre = proy_pre["sigmas"]
+            eval_row = {
                 "has_baja_conocida": len(bajas_pre) > 0,
                 "has_baja_obs": len(bajas_obs) > 0,
-            })
+            }
+            for st_k, real_col, base_v in [
+                ("pts", "pts_num", pts_base),
+                ("reb", "reb_num", reb_base),
+                ("ast", "ast_num", ast_base),
+                ("tpm", "tpm",     tpm_base),
+                ("pra", "pra",     pra_base),
+            ]:
+                linea_est = float(np.round(0.75 * base_v + 0.25 * float(l10[real_col].mean()) - 0.5) + 0.5)
+                eval_row[f"{st_k}_real"] = float(row[real_col])
+                eval_row[f"{st_k}_base"] = base_v
+                eval_row[f"{st_k}_pre"] = proy_pre[st_k]
+                eval_row[f"{st_k}_obs"] = proy_obs[st_k]
+                eval_row[f"line_{st_k}"] = linea_est
+                eval_row[f"p_over_{st_k}"] = _prob_over_distribucion(
+                    proy_pre[st_k], sig_pre[st_k], linea_est, stat_key=st_k
+                )
+            rows_eval.append(eval_row)
 
     df_e = pd.DataFrame(rows_eval)
     if df_e.empty:
@@ -1129,42 +1165,91 @@ def backtest_walk_forward_jugadores(df_box, team_stats=None, split_ratio=0.70, m
         ("Triples (3PM)", "tpm", 0.35),
         ("Total PRA (P+R+A)", "pra", 1.8),
     ]
+    bucket_bins = [-0.01, 0.35, 0.45, 0.55, 0.65, 1.01]
+    bucket_labels = ["<35%", "35%–45%", "45%–55%", "55%–65%", "≥65%"]
+    cal_rows = []
+    all_p_list, all_y_list = [], []
+
+    def _ece_y_buckets(mercado_lbl, p_arr, y_arr):
+        b_cats = pd.cut(p_arr, bins=bucket_bins, labels=bucket_labels, right=False)
+        ece_val = 0.0
+        n_tot = len(p_arr)
+        for b_lbl in bucket_labels:
+            mask_b = (b_cats == b_lbl).values if hasattr(b_cats, "values") else (b_cats == b_lbl)
+            n_b = int(np.sum(mask_b))
+            if n_b == 0:
+                continue
+            p_m = float(np.mean(p_arr[mask_b]))
+            y_m = float(np.mean(y_arr[mask_b]))
+            ece_val += (n_b / n_tot) * abs(y_m - p_m)
+            cal_rows.append({
+                "Mercado": mercado_lbl,
+                "Bucket P(Over)": b_lbl,
+                "N": n_b,
+                "P(Over) Pred (%)": round(p_m * 100.0, 1),
+                "Frec. Real Over (%)": round(y_m * 100.0, 1),
+                "Error Cal. (pp)": round((y_m - p_m) * 100.0, 1),
+            })
+        return ece_val
+
     for label, st_k, edge_thr in cfg_stats:
-        real = df_e[f"{st_k}_real"]
-        base = df_e[f"{st_k}_base"]
-        pred = df_e[f"{st_k}_pre"]
-        pobs = df_e[f"{st_k}_obs"]
-        line = df_e[f"line_{st_k}"]
+        real = df_e[f"{st_k}_real"].values
+        base = df_e[f"{st_k}_base"].values
+        pred = df_e[f"{st_k}_pre"].values
+        pobs = df_e[f"{st_k}_obs"].values
+        line = df_e[f"line_{st_k}"].values
+        p_over = df_e[f"p_over_{st_k}"].values
 
         mae_b = float(np.mean(np.abs(real - base)))
         mae_p = float(np.mean(np.abs(real - pred)))
         mae_o = float(np.mean(np.abs(real - pobs)))
         rmse_b = float(np.sqrt(np.mean((real - base) ** 2)))
         rmse_p = float(np.sqrt(np.mean((real - pred) ** 2)))
+        sesgo_p = float(np.mean(pred - real))
 
         pick_over = pred > line
         real_over = real > line
+        y_over = real_over.astype(float)
         acc_all = float(np.mean(pick_over == real_over) * 100.0)
 
         mask_val = np.abs(pred - line) >= edge_thr
         n_val = int(mask_val.sum())
         acc_val = float(np.mean(pick_over[mask_val] == real_over[mask_val]) * 100.0) if n_val > 0 else acc_all
 
+        brier_ou = float(np.mean((p_over - y_over) ** 2))
+        ece_ou = _ece_y_buckets(label, p_over, y_over)
+        all_p_list.append(p_over)
+        all_y_list.append(y_over)
+
         resumen.append({
             "Métrica (Prop)": label,
             "MAE Baseline": round(mae_b, 2),
             "MAE Modelo (Causal Pre-Partido)": round(mae_p, 2),
             "MAE (Con Bajas Observadas)": round(mae_o, 2),
+            "Sesgo (Pred - Real)": round(sesgo_p, 2),
             "RMSE Baseline → Modelo": f"{rmse_b:.2f} → {rmse_p:.2f}",
+            "Brier O/U": round(brier_ou, 4),
+            "ECE O/U (%)": round(ece_ou * 100.0, 2),
             "% Acierto Dir. (Línea Est.)": f"{acc_all:.1f}%",
             "% Acierto Desv. Fuerte": f"{acc_val:.1f}% (n={n_val})",
         })
+
+    all_p = np.concatenate(all_p_list)
+    all_y = np.concatenate(all_y_list)
+    # Prepend buckets globales manteniendo orden cronológico por mercado debajo
+    cal_rows_per_market = list(cal_rows)
+    cal_rows.clear()
+    ece_global = _ece_y_buckets("Global (5 Props)", all_p, all_y)
+    cal_rows.extend(cal_rows_per_market)
 
     meta = {
         "n_evaluados": len(df_e),
         "n_partidos_test": len(test_eids),
         "n_con_bajas": int(df_e["has_baja_conocida"].sum()),
         "n_con_bajas_obs": int(df_e["has_baja_obs"].sum()),
+        "brier_ou_global": round(float(np.mean((all_p - all_y) ** 2)), 4),
+        "ece_ou_global": round(ece_global * 100.0, 2),
+        "df_calibracion": pd.DataFrame(cal_rows),
     }
     return pd.DataFrame(resumen), meta
 

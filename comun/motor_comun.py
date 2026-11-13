@@ -206,3 +206,135 @@ def hash_modulos_comunes():
         h.update(f.name.encode())
         h.update(f.read_bytes())
     return h.hexdigest()
+
+
+# --------------------------------------------------------------------------- #
+#  Evaluación uniforme e histórico baseline Elo (sin fuga del bloque test)
+# --------------------------------------------------------------------------- #
+def corte_test_temporada(liga=None, df=None):
+    """Devuelve la primera temporada perteneciente al bloque test fuera de muestra."""
+    if liga in ("ucl", "unl", "nba"):
+        return 2026
+    if df is not None and "temporada" in df.columns and int((df["temporada"] < 2025).sum()) < 50:
+        return 2026
+    return 2025
+
+
+def extraer_features_partido(M, local, visita, temporada=None, fecha=None):
+    """Obtiene el diccionario de features desde M['tracker'] tolerando firmas entre familias."""
+    t = M["tracker"]
+    for fn in (
+        lambda: t.get_features_for_match(local, visita, temporada, fecha=fecha, reset_season=False),
+        lambda: t.get_features_for_match(local, visita, temporada, reset_season=False),
+        lambda: t.get_features_for_match(local, visita, fecha=fecha, temporada=temporada),
+        lambda: t.get_features_for_match(local, visita, temporada),
+        lambda: t.get_features_for_match(local, visita, fecha),
+        lambda: t.get_features_for_match(local, visita),
+    ):
+        try:
+            return fn()
+        except TypeError:
+            continue
+    return t.get_features_for_match(local, visita)
+
+
+def etiquetas_y_orden_1x2(M, df=None):
+    """Devuelve (y_estandar, home_is_two).
+    En competiciones 1X2, `y_estandar` usa 0=Local, 1=Empate, 2=Visita y `home_is_two` indica si
+    `resultado` del motor codifica Victoria Local como 2 en vez de 0.
+    En competiciones binarias (NBA), devuelve `target_win_local` (0=Visita, 1=Local) y `False`."""
+    if df is None:
+        df = M["df_features"] if "df_features" in M else M["df_dataset"]
+    if "target_win_local" in df.columns:
+        return df["target_win_local"].to_numpy(dtype=int), False
+
+    if {"goles_local", "goles_visita"} <= set(df.columns):
+        gl = df["goles_local"].to_numpy(dtype=float)
+        gv = df["goles_visita"].to_numpy(dtype=float)
+    elif {"gl", "gv"} <= set(df.columns):
+        gl = df["gl"].to_numpy(dtype=float)
+        gv = df["gv"].to_numpy(dtype=float)
+    elif "df_partidos" in M and {"fecha", "local", "visita"} <= set(df.columns):
+        df_p = M["df_partidos"][["fecha", "local", "visita", "goles_local", "goles_visita"]].drop_duplicates(
+            subset=["fecha", "local", "visita"]
+        ).copy()
+        df_p["_f_key"] = pd.to_datetime(df_p["fecha"]).dt.strftime("%Y-%m-%d")
+        aux = pd.DataFrame({
+            "_f_key": pd.to_datetime(df["fecha"]).dt.strftime("%Y-%m-%d"),
+            "local": df["local"].values,
+            "visita": df["visita"].values,
+        }).merge(df_p[["_f_key", "local", "visita", "goles_local", "goles_visita"]],
+                 on=["_f_key", "local", "visita"], how="left")
+        gl = aux["goles_local"].to_numpy(dtype=float)
+        gv = aux["goles_visita"].to_numpy(dtype=float)
+    else:
+        y_raw = df["resultado"].to_numpy(dtype=int)
+        return y_raw, False
+
+    valid = np.isfinite(gl) & np.isfinite(gv)
+    y_lev = np.where(gl > gv, 0, np.where(gl == gv, 1, 2))
+    home_is_two = False
+    if "resultado" in df.columns and valid.any():
+        hw = valid & (gl > gv)
+        if hw.any():
+            home_is_two = bool(np.nanmedian(df.loc[hw, "resultado"]) == 2)
+    return y_lev, home_is_two
+
+
+def proba_pipe_1x2(pipe, X, home_is_two=False):
+    """Predice probabilidades en orden uniforme [P(Local), P(Empate), P(Visita)]."""
+    probs_raw = np.asarray(pipe.predict_proba(X), dtype=float)
+    clases = list(getattr(pipe, "classes_", [0, 1, 2]))
+    mapa = (2, 1, 0) if home_is_two else (0, 1, 2)
+    out = np.full((len(X), 3), 1e-7, dtype=float)
+    for col_out, cls_raw in enumerate(mapa):
+        if cls_raw in clases:
+            out[:, col_out] = probs_raw[:, clases.index(cls_raw)]
+    out = np.clip(out, 1e-7, 1.0 - 1e-7)
+    return out / out.sum(axis=1, keepdims=True)
+
+
+def entrenar_baseline_elo(M, liga=None, test_desde=None):
+    """Entrena un modelo logístico univariante (`elo_diff`) exclusivamente con filas anteriores al
+    corte `test_desde`, replicando la referencia Solo Elo sin fuga del conjunto test."""
+    from sklearn.linear_model import LogisticRegression
+
+    df = M["df_features"] if "df_features" in M else M["df_dataset"]
+    if test_desde is None:
+        test_desde = corte_test_temporada(liga, df)
+
+    tr_mask = (df["temporada"] < test_desde).to_numpy()
+    if not tr_mask.any():
+        tr_mask = np.arange(len(df)) < max(1, int(len(df) * 0.7))
+
+    if "target_win_local" in df.columns:
+        if "pipe_elo" in M:
+            return {"tipo": "binario", "lr": M["pipe_elo"], "test_desde": test_desde}
+        y_bin = df.loc[tr_mask, "target_win_local"].to_numpy(dtype=int)
+        X_tr = df.loc[tr_mask, ["elo_diff"]].fillna(0.0).to_numpy()
+        lr = LogisticRegression(max_iter=1000, random_state=42).fit(X_tr, y_bin)
+        return {"tipo": "binario", "lr": lr, "test_desde": test_desde}
+
+    y_lev, _ = etiquetas_y_orden_1x2(M, df)
+    valid = df["elo_diff"].notna().to_numpy() & tr_mask
+    X_tr = df.loc[valid, ["elo_diff"]].fillna(0.0).to_numpy()
+    y_tr = y_lev[valid]
+    lr = LogisticRegression(max_iter=2000).fit(X_tr, y_tr)
+    frec = np.bincount(y_tr, minlength=3) / max(len(y_tr), 1)
+    return {"tipo": "1x2", "lr": lr, "test_desde": test_desde, "frec_train": frec}
+
+
+def predecir_elo(M, elo_model, local, visita, temporada=None, fecha=None):
+    """Devuelve [P(Local), P(Empate), P(Visita)] del baseline Solo Elo (binario -> empate 0.0)."""
+    feats = extraer_features_partido(M, local, visita, temporada=temporada, fecha=fecha)
+    elo_diff = float(feats.get("elo_diff", 0.0))
+    if elo_model["tipo"] == "binario":
+        lr = elo_model["lr"]
+        # M['pipe_elo'] espera DataFrame con columna 'elo_diff'
+        X_in = pd.DataFrame([{"elo_diff": elo_diff}]) if hasattr(lr, "feature_names_in_") else np.array([[elo_diff]])
+        p_home = float(lr.predict_proba(X_in)[0, 1])
+        p_home = float(np.clip(p_home, 1e-6, 1.0 - 1e-6))
+        return np.array([p_home, 0.0, 1.0 - p_home], dtype=float)
+    p = np.asarray(elo_model["lr"].predict_proba(np.array([[elo_diff]])), dtype=float)[0]
+    p = np.clip(p, 1e-7, 1.0 - 1e-7)
+    return p / p.sum()

@@ -107,21 +107,24 @@ if os.path.exists(logo_path):
 
 st.sidebar.markdown("## 🎮 Navegación")
 
-torneos_disponibles = list(TORNEOS)
+torneos_disponibles = list(TORNEOS) + ["📜 Archivo Prospectivo (Ciego)"]
 
 # Detección inteligente por parámetro URL (ej: ?torneo=nba, ?torneo=mex, ?torneo=esp)
 idx_def = 0
 qp_torneo = str(st.query_params.get("torneo", "")).lower().strip()
 if qp_torneo:
-    _ALIAS_TORNEO = {
-        "mundial": "lab", "fifa": "lab", "champions": "ucl", "nations": "unl",
-        "basket": "nba", "chi": "chile",
-    }
-    qp_cod = _ALIAS_TORNEO.get(qp_torneo, qp_torneo)
-    for i, (etq, (carpeta, _)) in enumerate(TORNEOS.items()):
-        if qp_cod == carpeta or qp_torneo in etq.lower():
-            idx_def = i
-            break
+    if qp_torneo in ("archivo", "prospectivo", "log"):
+        idx_def = len(torneos_disponibles) - 1
+    else:
+        _ALIAS_TORNEO = {
+            "mundial": "lab", "fifa": "lab", "champions": "ucl", "nations": "unl",
+            "basket": "nba", "chi": "chile",
+        }
+        qp_cod = _ALIAS_TORNEO.get(qp_torneo, qp_torneo)
+        for i, (etq, (carpeta, _)) in enumerate(TORNEOS.items()):
+            if qp_cod == carpeta or qp_torneo in etq.lower():
+                idx_def = i
+                break
 
 torneo_seleccionado = st.sidebar.selectbox(
     "Selecciona el Torneo:",
@@ -155,6 +158,11 @@ def _es_admin():
 st.session_state["portal_admin"] = _es_admin()
 
 # Enrutador
-carpeta, modulo = TORNEOS[torneo_seleccionado]
-with _estado_proceso()["lock"]:
-    _activar_torneo(carpeta, modulo).run_app()
+if torneo_seleccionado == "📜 Archivo Prospectivo (Ciego)":
+    st.markdown("## 📜 Auditoría Prospectiva Ciega (Predicciones Pre-Partido Inmutables)")
+    from comun.archivo_ui import render_archivo_prospectivo
+    render_archivo_prospectivo(competicion=None, key_prefix="portal_arch")
+else:
+    carpeta, modulo = TORNEOS[torneo_seleccionado]
+    with _estado_proceso()["lock"]:
+        _activar_torneo(carpeta, modulo).run_app()

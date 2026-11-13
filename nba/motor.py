@@ -177,6 +177,8 @@ class FeatureTrackerNBA:
         # 1. Días de descanso y banderas Back-to-Back (B2B)
         if fecha is not None:
             fecha_dt = pd.to_datetime(fecha)
+            if getattr(fecha_dt, "tzinfo", None) is not None:
+                fecha_dt = fecha_dt.tz_localize(None)
             last_h = self.last_game_date.get(local)
             last_a = self.last_game_date.get(visita)
             

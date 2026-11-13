@@ -53,7 +53,7 @@ def get_oportunidades_partido(
 
 
 @st.cache_data(show_spinner="Ejecutando validación Walk-Forward Out-of-Sample estrictamente causal sobre +6.700 partidos...")
-def get_backtest_jugadores(_df_box, n_rows):
+def get_backtest_jugadores(_df_box, n_rows, version="v2_cal"):
     return mj.backtest_walk_forward_jugadores(_df_box, split_ratio=0.70, modo_bajas="causal")
 
 # Estilizado CSS Premium para NBA
@@ -876,13 +876,30 @@ def run_app():
                         "En el modo causal pre-partido solo se imputan como bajas conocidas los titulares que ya faltaron en el partido previo (`t-1`), "
                         "y se muestra por separado el MAE con bajas observadas en la planilla oficial de `t`:"
                     )
-                    df_bt, meta_bt = get_backtest_jugadores(df_box_j, len(df_box_j))
+                    df_bt, meta_bt = get_backtest_jugadores(df_box_j, len(df_box_j), "v2_cal")
                     if not df_bt.empty:
-                        b1, b2, b3 = st.columns(3)
-                        b1.metric("Actuaciones Evaluadas (Out-of-Sample)", f"{meta_bt['n_evaluados']:,}")
-                        b2.metric("Partidos de Prueba Cronológicos", f"{meta_bt['n_partidos_test']:,}")
-                        b3.metric("Con Baja Previa Conocida / Observada", f"{meta_bt['n_con_bajas']:,} / {meta_bt.get('n_con_bajas_obs', 0):,}")
+                        b1, b2, b3, b4, b5 = st.columns(5)
+                        b1.metric("Actuaciones Evaluadas (OOS)", f"{meta_bt['n_evaluados']:,}")
+                        b2.metric("Partidos Test Cronológicos", f"{meta_bt['n_partidos_test']:,}")
+                        b3.metric("Con Baja Previa / Obs.", f"{meta_bt['n_con_bajas']:,} / {meta_bt.get('n_con_bajas_obs', 0):,}")
+                        b4.metric("Brier O/U Global", f"{meta_bt.get('brier_ou_global', 0.0):.4f}")
+                        b5.metric("ECE O/U Global", f"{meta_bt.get('ece_ou_global', 0.0):.2f}%")
                         st.dataframe(df_bt, hide_index=True, width="stretch")
+                        df_cal = meta_bt.get("df_calibracion")
+                        if df_cal is not None and not df_cal.empty:
+                            st.markdown("**Calibración de Probabilidades Over/Under por Bucket (Línea Estimada Causal)**")
+                            mercados_cal = df_cal["Mercado"].drop_duplicates().tolist()
+                            sel_cal = st.selectbox(
+                                "Mercado de Calibración",
+                                mercados_cal,
+                                index=0,
+                                key="nba_props_cal_mercado",
+                            )
+                            st.dataframe(
+                                df_cal[df_cal["Mercado"] == sel_cal],
+                                hide_index=True,
+                                width="stretch",
+                            )
 
     # ============================================================================
     # TAB 3: Clasificación y Simulación Playoff (Monte Carlo)
@@ -1147,6 +1164,10 @@ def run_app():
             ]], width="stretch", hide_index=True)
         else:
             st.info("No se encontraron partidos para la selección.")
+
+        from comun.archivo_ui import render_archivo_prospectivo
+        with st.expander("📜 Registro Prospectivo Inmutable (Predicciones Pre-Partido NBA)", expanded=False):
+            render_archivo_prospectivo(competicion="nba", key_prefix="arch_nba")
 
 
 if __name__ == "__main__":

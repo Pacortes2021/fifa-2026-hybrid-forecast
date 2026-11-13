@@ -171,6 +171,36 @@ def test_registro_inmutable():
         assert n2 == 0, "El registro inmutable jamás debe sobrescribir un partido ya archivado"
         df_saved = cargar_registro(log_file)
         assert len(df_saved) == 1 and np.isclose(float(df_saved.iloc[0]["p_local"]), 0.50)
+
+        # Verificar evaluador pareado vs Solo Elo incluyendo columnas puntos_local/puntos_visita (NBA)
+        nba_p = REPO / "nba" / "data" / "partidos.csv"
+        if nba_p.exists():
+            import pandas as pd
+            from scripts.evaluar_archivo import evaluar_registro
+
+            df_nba_p = pd.read_csv(nba_p).dropna(subset=["puntos_local", "puntos_visita"]).tail(1)
+            if not df_nba_p.empty:
+                r0 = df_nba_p.iloc[0]
+                f_part = pd.to_datetime(r0["fecha"], utc=True)
+                gen_s = (f_part - pd.Timedelta(hours=2)).strftime("%Y-%m-%dT%H:%M:%SZ")
+                f_s = f_part.strftime("%Y-%m-%dT%H:%M:%SZ")
+                log_nba = Path(tmp) / "log_nba.csv"
+                registrar_predicciones([
+                    {
+                        "generado_utc": gen_s, "competicion": "nba", "partido_id": str(r0["event_id"]),
+                        "fecha_partido": f_s, "local": str(r0["local"]), "visita": str(r0["visita"]),
+                        "modelo": "stacking", "p_local": 0.62, "p_empate": 0.0, "p_visita": 0.38,
+                    },
+                    {
+                        "generado_utc": gen_s, "competicion": "nba", "partido_id": str(r0["event_id"]),
+                        "fecha_partido": f_s, "local": str(r0["local"]), "visita": str(r0["visita"]),
+                        "modelo": "elo", "p_local": 0.55, "p_empate": 0.0, "p_visita": 0.45,
+                    },
+                ], log_path=log_nba)
+                df_eval, _ = evaluar_registro(log_path=log_nba)
+                assert not df_eval.empty and set(df_eval["modelo"]) == {"stacking", "elo"}
+                row_stk = df_eval[df_eval["modelo"] == "stacking"].iloc[0]
+                assert pd.notna(row_stk["delta_elo_logloss"]), "Falta delta_elo_logloss pareado en evaluar_registro"
     print("✅ [4/5] Registro inmutable de predicciones pre-partido (append-only) OK.")
 
 
@@ -178,6 +208,7 @@ def test_corte_mundial_y_ucl():
     """Verifica el corte estricto pre-Mundial en lab/motor.py y temporada dinámica en ucl/motor.py."""
     src_lab = (REPO / "lab" / "motor.py").read_text()
     assert 'df["fecha"] < "2026-06-11"' in src_lab, "Falta filtro de corte pre-Mundial en lab/motor.py"
+    assert 'assert (df["fecha"] < "2026-06-11").all()' in src_lab, "Falta assert pre-Mundial en lab/motor.py"
     src_ucl = (REPO / "ucl" / "motor.py").read_text()
     assert "return 2027" not in src_ucl, "_temporada_actual() sigue fija en 2027 en ucl/motor.py"
     print("✅ [5/5] Corte pre-Mundial en lab/motor.py y temporada dinámica en ucl/motor.py OK.")

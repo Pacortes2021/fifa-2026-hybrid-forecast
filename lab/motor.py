@@ -77,6 +77,9 @@ def tipo_competicion(c):
 def cargar():
     df = pd.read_csv(DATA / "modelado_espn.csv", parse_dates=["fecha"]).sort_values("fecha").reset_index(drop=True)
     # Garantizar corte estricto pre-Mundial (11-06-2026) para impedir cualquier fuga si se agregan filas nuevas
+    assert (df["fecha"] < "2026-06-11").all(), (
+        f"Fuga detectada: modelado_espn.csv contiene fechas >= 2026-06-11 ({df['fecha'].max().date()})"
+    )
     df = df[df["fecha"] < "2026-06-11"].reset_index(drop=True)
     states = pd.read_csv(DATA / "team_states.csv").set_index("team")
     hist = pd.read_csv(DATA / "results.csv", parse_dates=["date"]).dropna(subset=["home_score", "away_score"])
