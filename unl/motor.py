@@ -18,6 +18,12 @@ if _ROOT not in sys.path:
     sys.path.insert(0, _ROOT)
 from comun.motor_comun import _TrackerPrePartido, _modelo_pre_partido
 from comun.motor_comun import seleccionar_c_lasso, entrenar_stacking_oof
+from comun.monte_carlo import (
+    clave_cache_liga,
+    desempate_y_orden,
+    simular_fixture_dinamico,
+    simular_partido_vec_estado,
+)
 import numpy as np
 import pandas as pd
 from scipy.optimize import minimize_scalar
@@ -464,16 +470,64 @@ def calcular_mercados(la, lb, max_goles=6, p_1x2=None):
     }
 
 
-def simular_campeonato(_M, n_sims=3000, modelo_tipo="stacking", forzar=False):
-    """Simula estocásticamente los partidos restantes de UEFA Nations League 2026-27."""
+def _predecir_lote_unl(M, pairs, modelo="rf"):
+    """Predice por lotes [P(Local), P(Empate), P(Visita)] y (la, lb) para una lista de pares."""
+    if not pairs:
+        return {}
+    tracker = M["tracker"]
+    cols_feat = M["cols_features"]
+    feats_list = [tracker.get_features_for_match(loc, vis) for loc, vis in pairs]
+    df_feat = pd.DataFrame(feats_list)[cols_feat].fillna(0.0)
+
+    if modelo in ("lasso", "l1"):
+        probs_raw = M["pipe_lasso"].predict_proba(df_feat)
+    elif modelo == "xgb":
+        probs_raw = M["pipe_xgb"].predict_proba(df_feat)
+    elif modelo == "svm":
+        probs_raw = M["pipe_svm"].predict_proba(df_feat)
+    elif modelo == "stacking":
+        sw = M.get("stack_w")
+        if sw is not None and len(sw) == 3:
+            probs_raw = (
+                float(sw[0]) * M["pipe_lasso"].predict_proba(df_feat)
+                + float(sw[1]) * M["pipe_rf"].predict_proba(df_feat)
+                + float(sw[2]) * M["pipe_xgb"].predict_proba(df_feat)
+            )
+        else:
+            w = M.get("alpha_stack", 0.5)
+            probs_raw = w * M["pipe_xgb"].predict_proba(df_feat) + (1.0 - w) * M["pipe_rf"].predict_proba(df_feat)
+    else:
+        probs_raw = M["pipe_rf"].predict_proba(df_feat)
+
+    probs_raw = np.clip(probs_raw, 1e-6, 1.0 - 1e-6)
+    probs_raw = probs_raw / probs_raw.sum(axis=1, keepdims=True)
+
+    pp = M["poisson_params"]
+    out = {}
+    for idx, (loc, vis) in enumerate(pairs):
+        p_raw = probs_raw[idx]
+        p_1x2 = np.array([p_raw[2], p_raw[1], p_raw[0]], dtype=np.float64)
+        feats = feats_list[idx]
+        d_elo = feats["elo_diff"]
+        d_sv = feats["log_sv_diff"]
+        la = float(np.clip(np.exp(pp["const_l"] + pp["b_elo_l"] * d_elo + pp.get("b_sv_l", 0.0) * d_sv), 0.2, 5.0))
+        lb = float(np.clip(np.exp(pp["const_v"] + pp["b_elo_v"] * d_elo + pp.get("b_sv_v", 0.0) * d_sv), 0.1, 5.0))
+        out[(loc, vis)] = (p_1x2, la, lb)
+    return out
+
+
+def simular_campeonato(_M, n_sims=3000, modelo_tipo="stacking", forzar=False, fijos=None, seed=42):
+    """Simula estocásticamente los partidos restantes de UEFA Nations League 2026-27 con Elo y forma dinámicos."""
+    import pickle
+
     cache_path = DATA.parent / "simulacion_mc.pkl"
-    if not forzar and cache_path.exists():
+    cache_key = clave_cache_liga(__file__, DATA, n_sims, f"{modelo_tipo}_s{seed}", fijos=fijos)
+    if not forzar and not fijos and cache_path.exists():
         try:
-            import pickle
             with open(cache_path, "rb") as fh:
                 res_cache = pickle.load(fh)
-                if isinstance(res_cache, dict) and "campeon" in res_cache:
-                    return res_cache
+            if isinstance(res_cache, dict) and res_cache.get("key") == cache_key and "data" in res_cache:
+                return res_cache["data"]
         except Exception:
             pass
 
@@ -481,13 +535,8 @@ def simular_campeonato(_M, n_sims=3000, modelo_tipo="stacking", forzar=False):
     p_2026 = df_partidos[df_partidos["temporada"] == 2026].copy()
 
     fix_path = DATA / "fixture.csv"
-    if not fix_path.exists():
-        df_fixture = pd.DataFrame()
-    else:
-        df_fixture = pd.read_csv(fix_path)
-
-    eq_path = DATA / "equipos.csv"
-    df_eq = pd.read_csv(eq_path)
+    df_fixture = pd.read_csv(fix_path) if fix_path.exists() else pd.DataFrame()
+    df_eq = pd.read_csv(DATA / "equipos.csv")
 
     # 1. Puntos y goles reales ya jugados en 2026
     grupos = sorted(df_eq["group"].unique())
@@ -496,8 +545,7 @@ def simular_campeonato(_M, n_sims=3000, modelo_tipo="stacking", forzar=False):
     for grp in grupos:
         equipos_grp = df_eq[df_eq["group"] == grp]["norm_name"].tolist()
         tab = {eq: {"PJ": 0, "PG": 0, "PE": 0, "PP": 0, "GF": 0, "GC": 0, "DG": 0, "Pts": 0} for eq in equipos_grp}
-        
-        # Partidos jugados en este grupo
+
         sub_p = p_2026[(p_2026["local"].isin(equipos_grp)) & (p_2026["visita"].isin(equipos_grp))]
         for _, r in sub_p.iterrows():
             loc, vis = r["local"], r["visita"]
@@ -519,77 +567,139 @@ def simular_campeonato(_M, n_sims=3000, modelo_tipo="stacking", forzar=False):
         ).reset_index(drop=True)
         tablas_actuales[grp] = df_tab
 
-    # 2. Monte Carlo de partidos pendientes
-    fixture_pend = df_fixture[df_fixture["estado"] != "post"].copy()
+    # 2. Monte Carlo vectorizado dinámico (Elo + DFORM evolucionan partido a partido)
+    fixture_pend = (
+        df_fixture[df_fixture["estado"] != "post"].copy()
+        if (df_fixture is not None and not df_fixture.empty and "estado" in df_fixture.columns)
+        else pd.DataFrame(columns=["local", "visita", "fecha"])
+    )
 
-    # Pre-calcular probabilidades para cada partido pendiente
-    match_probs = {}
-    for _, r in fixture_pend.iterrows():
-        pair = (r["local"], r["visita"])
-        if pair not in match_probs:
-            p, la, lb = predecir_match(_M, r["local"], r["visita"], modelo=modelo_tipo)
-            match_probs[pair] = (p, la, lb)
+    eqs = list(df_eq["norm_name"].unique())
+    seen_eq = set(eqs)
+    if not fixture_pend.empty:
+        for e in sorted(set(fixture_pend["local"]).union(set(fixture_pend["visita"]))):
+            if e not in seen_eq:
+                eqs.append(e)
+                seen_eq.add(e)
 
-    # Estructuras de acumulación
-    pts_sim = {grp: {eq: [] for eq in df_eq[df_eq["group"] == grp]["norm_name"]} for grp in grupos}
-    pos_sim = {grp: {eq: defaultdict(int) for eq in df_eq[df_eq["group"] == grp]["norm_name"]} for grp in grupos}
-    campeon_sim = defaultdict(int)
+    ix = {e: i for i, e in enumerate(eqs)}
+    n_eq = len(eqs)
+    init_pts = np.zeros(n_eq, dtype=np.float32)
+    init_gf = np.zeros(n_eq, dtype=np.float32)
+    init_gc = np.zeros(n_eq, dtype=np.float32)
+    for df_tab in tablas_actuales.values():
+        for r in df_tab.itertuples(index=False):
+            i = ix[r.Equipo]
+            init_pts[i] = float(r.Pts)
+            init_gf[i] = float(r.GF)
+            init_gc[i] = float(r.GC)
 
-    rng = np.random.default_rng(42)
+    # Precalcular predicciones base para partidos pendientes Y todos los cruces posibles de Final Four (Liga A)
+    teams_liga_a = df_eq[df_eq["league"] == "A"]["norm_name"].tolist()
+    pares_set = set()
+    if not fixture_pend.empty:
+        for r in fixture_pend.itertuples(index=False):
+            pares_set.add((r.local, r.visita))
+    for l in teams_liga_a:
+        for v in teams_liga_a:
+            if l != v:
+                pares_set.add((l, v))
 
-    for _ in range(n_sims):
-        sim_scores = {}
-        for grp in grupos:
-            # Copiar estado base
-            tab_copy = tablas_actuales[grp].set_index("Equipo").to_dict("index")
-            equipos_grp = list(tab_copy.keys())
+    match_probs = _predecir_lote_unl(_M, sorted(pares_set), modelo=modelo_tipo)
 
-            # Partidos pendientes de este grupo
-            sub_fix = fixture_pend[(fixture_pend["local"].isin(equipos_grp)) & (fixture_pend["visita"].isin(equipos_grp))]
-            for _, r in sub_fix.iterrows():
-                loc, vis = r["local"], r["visita"]
-                p, la, lb = match_probs.get((loc, vis), (np.array([0.45, 0.28, 0.27]), 1.4, 1.1))
-                
-                # Simular marcador estocásticamente vía Poisson
-                sim_gl = rng.poisson(la)
-                sim_gv = rng.poisson(lb)
-                
-                tab_copy[loc]["GF"] += sim_gl; tab_copy[loc]["GC"] += sim_gv
-                tab_copy[vis]["GF"] += sim_gv; tab_copy[vis]["GC"] += sim_gl
-                if sim_gl > sim_gv:
-                    tab_copy[loc]["Pts"] += 3
-                elif sim_gl == sim_gv:
-                    tab_copy[loc]["Pts"] += 1; tab_copy[vis]["Pts"] += 1
-                else:
-                    tab_copy[vis]["Pts"] += 3
+    sim_out = simular_fixture_dinamico(
+        _M,
+        fixture_pend,
+        eqs,
+        init_pts,
+        init_gf,
+        init_gc,
+        match_probs,
+        fijos=fijos,
+        n_sims=n_sims,
+        k_liga=32.0,
+        home_adv=45.0,
+        mov_mode="none",
+        liga="unl",
+        seed=seed,
+        track_terminal_states=True,
+    )
 
-            # Calcular orden final
-            sorted_teams = sorted(
-                equipos_grp,
-                key=lambda eq: (tab_copy[eq]["Pts"], tab_copy[eq]["GF"] - tab_copy[eq]["GC"], tab_copy[eq]["GF"]),
-                reverse=True
+    PTS = sim_out["PTS"]
+    GF = sim_out["GF"]
+    GC = sim_out["GC"]
+    ELO = sim_out["ELO"]
+    DFORM = sim_out["DFORM"]
+    elo0 = sim_out["elo0"]
+    sens = sim_out["sens"]
+
+    rng_out = np.random.default_rng(None if seed is None else int(seed) + 77)
+    pos_sim = {grp: {} for grp in grupos}
+    mean_pts_grp = {grp: {} for grp in grupos}
+    winners = {}
+
+    for grp in grupos:
+        equipos_grp = tablas_actuales[grp]["Equipo"].tolist()
+        g_idx = np.array([ix[e] for e in equipos_grp], dtype=np.int32)
+        n_g = len(g_idx)
+        order_g = desempate_y_orden(
+            PTS[g_idx], GF[g_idx], GC[g_idx], rng=rng_out,
+            peso_pts=1e6, peso_dg=1e3, peso_gf=1.0,
+        )
+        winners[grp] = g_idx[order_g[0]]
+        for local_i, eq in enumerate(equipos_grp):
+            mean_pts_grp[grp][eq] = float(PTS[g_idx[local_i]].mean())
+            pos_sim[grp][eq] = defaultdict(int)
+        for rank_0 in range(n_g):
+            bc = np.bincount(order_g[rank_0], minlength=n_g)
+            for local_i, eq in enumerate(equipos_grp):
+                pos_sim[grp][eq][rank_0 + 1] = int(bc[local_i])
+
+    # Simular Final Four de Liga A en sede neutral usando ELO y DFORM evolucionados (simetrizando local/visita)
+    campeon_counts = np.zeros(n_eq, dtype=np.int64)
+    if all(grp in winners for grp in ("Group A1", "Group A2", "Group A3", "Group A4")):
+        P0_F4 = np.full((n_eq, n_eq, 3), np.array([0.40, 0.28, 0.32], dtype=np.float32), dtype=np.float32)
+        LA_F4 = np.full((n_eq, n_eq), 1.30, dtype=np.float32)
+        LB_F4 = np.full((n_eq, n_eq), 1.30, dtype=np.float32)
+        for l in teams_liga_a:
+            il = ix[l]
+            for v in teams_liga_a:
+                if l == v:
+                    continue
+                iv = ix[v]
+                p_ab, la_ab, lb_ab = match_probs[(l, v)]
+                p_ba, la_ba, lb_ba = match_probs[(v, l)]
+                p_neu = np.array([
+                    0.5 * (p_ab[0] + p_ba[2]),
+                    0.5 * (p_ab[1] + p_ba[1]),
+                    0.5 * (p_ab[2] + p_ba[0]),
+                ], dtype=np.float32)
+                p_neu /= p_neu.sum()
+                P0_F4[il, iv] = p_neu
+                LA_F4[il, iv] = np.float32(0.5 * (la_ab + lb_ba))
+                LB_F4[il, iv] = np.float32(0.5 * (lb_ab + la_ba))
+
+        def _preds_f4(ia, ib):
+            return P0_F4[ia, ib], LA_F4[ia, ib], LB_F4[ia, ib]
+
+        a1, a2 = winners["Group A1"], winners["Group A2"]
+        a3, a4 = winners["Group A3"], winners["Group A4"]
+        sims = np.arange(n_sims)
+
+        def _f4_duelo(t_a, t_b):
+            ga, gb, w_a, w_e, _ = simular_partido_vec_estado(
+                rng_out, ELO, DFORM, elo0, t_a, t_b, _preds_f4, sens,
+                k_liga=32.0, home_adv=0.0, mov_mode="none",
             )
-            for idx, eq in enumerate(sorted_teams, 1):
-                pos_sim[grp][eq][idx] += 1
-                pts_sim[grp][eq].append(tab_copy[eq]["Pts"])
+            # Prórroga/penales ponderada suavemente por Elo vigente si termina empatado en 90'
+            p_tie_a = 1.0 / (1.0 + np.power(10.0, -(ELO[t_a, sims] - ELO[t_b, sims]) / 400.0))
+            win_tie = rng_out.random(n_sims) < p_tie_a
+            return np.where(w_a | (w_e & win_tie), t_a, t_b)
 
-            sim_scores[grp] = sorted_teams
-
-        # Simular Final Four de Liga A (los 4 ganadores de A1, A2, A3, A4)
-        if all(grp in sim_scores for grp in ["Group A1", "Group A2", "Group A3", "Group A4"]):
-            top_a = [sim_scores["Group A1"][0], sim_scores["Group A2"][0], sim_scores["Group A3"][0], sim_scores["Group A4"][0]]
-            # Semifinal 1: top_a[0] vs top_a[1]
-            p_s1, _, _ = match_probs.get((top_a[0], top_a[1]), (np.array([0.45, 0.25, 0.30]), 1.4, 1.2))
-            adv1 = top_a[0] if rng.random() < (p_s1[0] / (p_s1[0] + p_s1[2])) else top_a[1]
-
-            # Semifinal 2: top_a[2] vs top_a[3]
-            p_s2, _, _ = match_probs.get((top_a[2], top_a[3]), (np.array([0.45, 0.25, 0.30]), 1.4, 1.2))
-            adv2 = top_a[2] if rng.random() < (p_s2[0] / (p_s2[0] + p_s2[2])) else top_a[3]
-
-            # Final
-            p_fin, _, _ = match_probs.get((adv1, adv2), (np.array([0.45, 0.25, 0.30]), 1.4, 1.2))
-            champ = adv1 if rng.random() < (p_fin[0] / (p_fin[0] + p_fin[2])) else adv2
-            campeon_sim[champ] += 1
+        adv1 = _f4_duelo(a1, a2)
+        adv2 = _f4_duelo(a3, a4)
+        champ = _f4_duelo(adv1, adv2)
+        campeon_counts = np.bincount(champ, minlength=n_eq)
 
     # Resumen de proyecciones
     proyecciones_grupos = {}
@@ -600,26 +710,25 @@ def simular_campeonato(_M, n_sims=3000, modelo_tipo="stacking", forzar=False):
             n_4 = pos_sim[grp][eq][4] if len(tablas_actuales[grp]) >= 4 else pos_sim[grp][eq][3]
             filas.append({
                 "Equipo": eq,
-                "Pts_Proy": round(float(np.mean(pts_sim[grp][eq])), 1),
+                "Pts_Proy": round(mean_pts_grp[grp][eq], 1),
                 "P(1°)": n_1 / n_sims,
                 "P(2°)": pos_sim[grp][eq][2] / n_sims,
                 "P(3°)": pos_sim[grp][eq][3] / n_sims,
-                "P(Descenso)": n_4 / n_sims if grp.startswith("Group A") or grp.startswith("Group B") or grp.startswith("Group C") else 0.0
+                "P(Descenso)": n_4 / n_sims if grp.startswith(("Group A", "Group B", "Group C")) else 0.0,
             })
         proyecciones_grupos[grp] = pd.DataFrame(filas).sort_values("Pts_Proy", ascending=False).reset_index(drop=True)
 
     # DataFrame de Campeón (Liga A)
     filas_camp = []
-    teams_liga_a = df_eq[df_eq["league"] == "A"]["norm_name"].tolist()
     for eq in teams_liga_a:
         grp = df_eq[df_eq["norm_name"] == eq]["group"].values[0]
         p_f4 = pos_sim[grp][eq][1] / n_sims
-        p_champ = campeon_sim[eq] / n_sims
+        p_champ = float(campeon_counts[ix[eq]]) / n_sims
         filas_camp.append({
             "Selección": eq,
             "Grupo": grp,
             "P_FinalFour": p_f4,
-            "P_Campeon": p_champ
+            "P_Campeon": p_champ,
         })
     df_campeon = pd.DataFrame(filas_camp).sort_values("P_Campeon", ascending=False).reset_index(drop=True)
 
@@ -633,7 +742,7 @@ def simular_campeonato(_M, n_sims=3000, modelo_tipo="stacking", forzar=False):
             "Selección": eq,
             "Liga_Actual": df_eq[df_eq["norm_name"] == eq]["league"].values[0],
             "Grupo": grp,
-            "P_Ascenso": p_asc
+            "P_Ascenso": p_asc,
         })
     df_ascensos = pd.DataFrame(filas_asc).sort_values("P_Ascenso", ascending=False).reset_index(drop=True)
 
@@ -642,14 +751,14 @@ def simular_campeonato(_M, n_sims=3000, modelo_tipo="stacking", forzar=False):
         "proyecciones_grupos": proyecciones_grupos,
         "campeon": df_campeon,
         "ascensos": df_ascensos,
-        "n_sims": n_sims
+        "n_sims": n_sims,
     }
-    try:
-        import pickle
-        with open(cache_path, "wb") as fh:
-            pickle.dump(res_final, fh)
-    except Exception:
-        pass
+    if not fijos:
+        try:
+            with open(cache_path, "wb") as fh:
+                pickle.dump({"key": cache_key, "data": res_final}, fh)
+        except Exception:
+            pass
     return res_final
 
 

@@ -14,6 +14,12 @@ from comun.motor_comun import (
     _modelo_pre_partido,
 )
 from comun.motor_comun import hash_modulos_comunes
+from comun.monte_carlo import (
+    MC_DINAMICO_VERSION,
+    estado_inicial_desde_partidos,
+    paso_poisson_dinamico_vec,
+    simular_fixture_dinamico,
+)
 """
 Motor de simulación y predicción para la Liga MX de México (Apertura / Clausura).
 Implementa:
@@ -1087,103 +1093,80 @@ def simular_play_in_y_liguilla(PREDS, df_tabla):
     }
 
 
-def _serie_vec(LA, LB, f1, f2, n_sims):
-    g_f2 = np.random.poisson(LA[f2, f1])
-    g_f1 = np.random.poisson(LB[f2, f1])
-    g_f1_v = np.random.poisson(LA[f1, f2])
-    g_f2_v = np.random.poisson(LB[f1, f2])
-    return np.where(g_f1 + g_f1_v >= g_f2 + g_f2_v, f1, f2)
+def _serie_dinamica_vec(rng, LA, LB, ELO, elo0, f1, f2, b_gol):
+    g_f2, g_f1 = paso_poisson_dinamico_vec(
+        rng, LA, LB, ELO, elo0, f2, f1, b_gol, k_liga=K_LIGA, home_adv=HOME_ADV, mov_mode="std",
+    )
+    g_f1_v, g_f2_v = paso_poisson_dinamico_vec(
+        rng, LA, LB, ELO, elo0, f1, f2, b_gol, k_liga=K_LIGA, home_adv=HOME_ADV, mov_mode="std",
+    )
+    return np.where((g_f1 + g_f1_v) >= (g_f2 + g_f2_v), f1, f2)
 
 
-def _simular_fixture_vec(M, PREDS, fijos, n_sims):
+def _simular_fixture_vec(M, PREDS, fijos, n_sims, seed=None):
     p_actuales, fix = _torneo_actual(M)
     eqs = sorted(_equipos_vigentes(M))
     n_eq = len(eqs)
     ix = {e: i for i, e in enumerate(eqs)}
-    LA = np.full((n_eq, n_eq), 1.2)
-    LB = np.full((n_eq, n_eq), 1.2)
-    for (l, v), (p, la, lb) in PREDS.items():
-        LA[ix[l], ix[v]] = la
-        LB[ix[l], ix[v]] = lb
-    PTS = np.zeros((n_eq, n_sims))
-    GF = np.zeros_like(PTS)
-    GC = np.zeros_like(PTS)
-    for r in p_actuales.itertuples(index=False):
-        l, v = ix[r.local], ix[r.visita]
-        gl, gv = float(r.goles_local), float(r.goles_visita)
-        GF[l] += gl
-        GC[l] += gv
-        GF[v] += gv
-        GC[v] += gl
-        if gl > gv:
-            PTS[l] += 3
-        elif gl == gv:
-            PTS[l] += 1
-            PTS[v] += 1
-        else:
-            PTS[v] += 3
-    for r in fix.itertuples(index=False):
-        if r.estado != "pre" and pd.notna(r.goles_local) and pd.notna(r.goles_visita):
-            continue
-        l, v = r.local, r.visita
-        if fijos and (l, v) in fijos:
-            gl = np.full(n_sims, float(fijos[(l, v)][0]))
-            gv = np.full(n_sims, float(fijos[(l, v)][1]))
-        else:
-            p, la, lb = PREDS.get((l, v), (None, 1.2, 1.2))
-            gl = np.random.poisson(la, size=n_sims).astype(float)
-            gv = np.random.poisson(lb, size=n_sims).astype(float)
-        li, vi = ix[l], ix[v]
-        win_l = gl > gv
-        draw = gl == gv
-        PTS[li] += np.where(win_l, 3.0, np.where(draw, 1.0, 0.0))
-        PTS[vi] += np.where(gv > gl, 3.0, np.where(draw, 1.0, 0.0))
-        GF[li] += gl
-        GF[vi] += gv
-        GC[li] += gv
-        GC[vi] += gl
-    DG = GF - GC
-    key = PTS * 1_000_000 + DG * 1_000 + GF + np.random.random(PTS.shape)  # el ruido < 1 solo rompe empates exactos (antes ganaba el primero en orden alfabético)
-    order = np.argsort(-key, axis=0)
+    LA = np.full((n_eq, n_eq), 1.2, dtype=np.float32)
+    LB = np.full((n_eq, n_eq), 1.2, dtype=np.float32)
+    for (l, v), (_, la, lb) in PREDS.items():
+        if l in ix and v in ix:
+            LA[ix[l], ix[v]] = la
+            LB[ix[l], ix[v]] = lb
+
+    fix_pend = (
+        fix[(fix["estado"] == "pre") | fix["goles_local"].isna() | fix["goles_visita"].isna()].copy()
+        if not fix.empty else fix
+    )
+    init_pts, init_gf, init_gc, _ = estado_inicial_desde_partidos(p_actuales, eqs)
+    res = simular_fixture_dinamico(
+        M, fix_pend, eqs, init_pts, init_gf, init_gc, PREDS,
+        fijos=fijos, n_sims=n_sims, k_liga=K_LIGA, home_adv=HOME_ADV,
+        mov_mode="std", use_poisson_direct=True,
+        liga=Path(__file__).resolve().parent.name, seed=seed, track_terminal_states=True,
+    )
+    PTS = res["PTS"]
+    order = res["order"]
+    ELO = res["ELO"]
+    elo0 = res["elo0"]
+    b_gol = float(res["sens"]["b_gol"])
+
+    rng = np.random.default_rng(None if seed is None else int(seed) + 101)
     sims = np.arange(n_sims)
     RANK = np.empty((n_eq, n_sims), dtype=np.int64)
     RANK[order, sims[None, :]] = np.arange(n_eq)[:, None]
     t7, t8, t9, t10 = order[6], order[7], order[8], order[9]
-    gl = np.random.poisson(LA[t7, t8])
-    gv = np.random.poisson(LB[t7, t8])
+    gl, gv = paso_poisson_dinamico_vec(rng, LA, LB, ELO, elo0, t7, t8, b_gol, k_liga=K_LIGA, home_adv=HOME_ADV)
     ganador_a = np.where(gl >= gv, t7, t8)
     perdedor_a = np.where(ganador_a == t7, t8, t7)
-    gl = np.random.poisson(LA[t9, t10])
-    gv = np.random.poisson(LB[t9, t10])
+    gl, gv = paso_poisson_dinamico_vec(rng, LA, LB, ELO, elo0, t9, t10, b_gol, k_liga=K_LIGA, home_adv=HOME_ADV)
     ganador_b = np.where(gl >= gv, t9, t10)
-    gl = np.random.poisson(LA[perdedor_a, ganador_b])
-    gv = np.random.poisson(LB[perdedor_a, ganador_b])
+    gl, gv = paso_poisson_dinamico_vec(rng, LA, LB, ELO, elo0, perdedor_a, ganador_b, b_gol, k_liga=K_LIGA, home_adv=HOME_ADV)
     seed8 = np.where(gl >= gv, perdedor_a, ganador_b)
     seed7 = ganador_a
     directos = order[:6]
     finalistas = np.vstack([directos, seed7[None, :], seed8[None, :]])
     rk = RANK[finalistas, sims[None, :]]
     f_sorted = finalistas[np.argsort(rk, axis=0), sims[None, :]]
-    w1 = _serie_vec(LA, LB, f_sorted[0], f_sorted[7], n_sims)
-    w2 = _serie_vec(LA, LB, f_sorted[1], f_sorted[6], n_sims)
-    w3 = _serie_vec(LA, LB, f_sorted[2], f_sorted[5], n_sims)
-    w4 = _serie_vec(LA, LB, f_sorted[3], f_sorted[4], n_sims)
+    w1 = _serie_dinamica_vec(rng, LA, LB, ELO, elo0, f_sorted[0], f_sorted[7], b_gol)
+    w2 = _serie_dinamica_vec(rng, LA, LB, ELO, elo0, f_sorted[1], f_sorted[6], b_gol)
+    w3 = _serie_dinamica_vec(rng, LA, LB, ELO, elo0, f_sorted[2], f_sorted[5], b_gol)
+    w4 = _serie_dinamica_vec(rng, LA, LB, ELO, elo0, f_sorted[3], f_sorted[4], b_gol)
     sf = np.vstack([w1, w2, w3, w4])
     rk = RANK[sf, sims[None, :]]
     sf_sorted = sf[np.argsort(rk, axis=0), sims[None, :]]
-    fg1 = _serie_vec(LA, LB, sf_sorted[0], sf_sorted[3], n_sims)
-    fg2 = _serie_vec(LA, LB, sf_sorted[1], sf_sorted[2], n_sims)
+    fg1 = _serie_dinamica_vec(rng, LA, LB, ELO, elo0, sf_sorted[0], sf_sorted[3], b_gol)
+    fg2 = _serie_dinamica_vec(rng, LA, LB, ELO, elo0, sf_sorted[1], sf_sorted[2], b_gol)
     fg = np.vstack([fg1, fg2])
     rk = RANK[fg, sims[None, :]]
     fg_sorted = fg[np.argsort(rk, axis=0), sims[None, :]]
     f1, f2 = fg_sorted[0], fg_sorted[1]
-    g_f2 = np.random.poisson(LA[f2, f1])
-    g_f1 = np.random.poisson(LB[f2, f1])
-    g_f1_v = np.random.poisson(LA[f1, f2])
-    g_f2_v = np.random.poisson(LB[f1, f2])
+    g_f2, g_f1 = paso_poisson_dinamico_vec(rng, LA, LB, ELO, elo0, f2, f1, b_gol, k_liga=K_LIGA, home_adv=HOME_ADV)
+    g_f1_v, g_f2_v = paso_poisson_dinamico_vec(rng, LA, LB, ELO, elo0, f1, f2, b_gol, k_liga=K_LIGA, home_adv=HOME_ADV)
     tot1 = g_f1 + g_f1_v
     tot2 = g_f2 + g_f2_v
-    rnd = np.random.rand(n_sims)
+    rnd = rng.random(n_sims)
     campeon = np.where(tot1 == tot2, np.where(rnd > 0.5, f1, f2), np.where(tot1 > tot2, f1, f2))
     subcampeon = np.where(campeon == f1, f2, f1)
     return (
@@ -1192,7 +1175,7 @@ def _simular_fixture_vec(M, PREDS, fijos, n_sims):
         np.bincount(subcampeon, minlength=n_eq),
         np.bincount(directos.ravel(), minlength=n_eq),
         np.bincount(finalistas.ravel(), minlength=n_eq),
-        PTS.mean(axis=1)
+        PTS.mean(axis=1),
     )
 
 
@@ -1207,6 +1190,7 @@ def monte_carlo(M, n_sims=5000, fijos=None, modelo=None, modelo_tipo=None, seed=
     fp = hashlib.sha256()
     fp.update(str(n_sims).encode())
     fp.update(_cache_key().encode())
+    fp.update(MC_DINAMICO_VERSION.encode())
     if fijos is not None:
         fp.update(repr(sorted(fijos.items())).encode())
     cache_path = Path(__file__).resolve().parent / "simulacion_mc.pkl"
@@ -1238,7 +1222,7 @@ def monte_carlo(M, n_sims=5000, fijos=None, modelo=None, modelo_tipo=None, seed=
     resultados_directo = defaultdict(int) # clasifica top 6 directo
     resultados_puntos = defaultdict(list)
     
-    eqs, campeon_c, sub_c, directo_c, play_in_c, puntos = _simular_fixture_vec(M, PREDS, fijos, n_sims)
+    eqs, campeon_c, sub_c, directo_c, play_in_c, puntos = _simular_fixture_vec(M, PREDS, fijos, n_sims, seed=seed)
     equipos = eqs
     resultados_directo = {e: int(directo_c[i]) for i, e in enumerate(eqs)}
     resultados_play_in = {e: int(play_in_c[i]) for i, e in enumerate(eqs)}
