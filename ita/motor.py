@@ -14,6 +14,7 @@ from comun.motor_comun import (
     _modelo_pre_partido,
 )
 from comun.motor_comun import hash_modulos_comunes
+from comun.monte_carlo import MC_DINAMICO_VERSION, simular_fixture_desde_tabla
 from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas
 import sys
 import math
@@ -603,60 +604,19 @@ def obtener_tabla_actual(M):
     df_t = pd.DataFrame(filas).sort_values(by=["puntos", "dif_goles", "goles_favor"], ascending=False).reset_index(drop=True)
     return df_t
 
-def _simular_fixture_vec(M, PREDS, fijos, n_sims):
+def _simular_fixture_vec(M, PREDS, fijos, n_sims, modelo_tipo="stacking", seed=None):
     fix_path = DATA / "fixture.csv"
     fix = pd.read_csv(fix_path) if fix_path.exists() else pd.DataFrame()
-    fix = fix[fix.temporada == _temporada_actual()] if not fix.empty else fix
+    fix = fix[fix.temporada == _temporada_actual()].copy() if not fix.empty else fix
     tab = obtener_tabla_actual(M)
-    eqs = list(tab["equipo"])
-    idx = {e: i for i, e in enumerate(eqs)}
-    n_eq = len(eqs)
-
-    base_pts = np.array([tab.loc[tab.equipo == e, "puntos"].values[0] for e in eqs], dtype=np.int32)
-    base_dg  = np.array([tab.loc[tab.equipo == e, "dif_goles"].values[0] for e in eqs], dtype=np.int32)
-    base_gf  = np.array([tab.loc[tab.equipo == e, "goles_favor"].values[0] for e in eqs], dtype=np.int32)
-
-    PTS = np.tile(base_pts[:, None], (1, n_sims))
-    DG  = np.tile(base_dg[:, None],  (1, n_sims))
-    GF  = np.tile(base_gf[:, None],  (1, n_sims))
-
-    if not fix.empty:
-        for r in fix.itertuples(index=False):
-            l, v = r.local, r.visita
-            if l not in idx or v not in idx: continue
-            li, vi = idx[l], idx[v]
-            if fijos and (l, v) in fijos:
-                gl, gv = fijos[(l, v)]
-                if gl > gv: PTS[li] += 3
-                elif gl == gv: PTS[li] += 1; PTS[vi] += 1
-                else: PTS[vi] += 3
-                DG[li] += (gl - gv); DG[vi] += (gv - gl)
-                GF[li] += gl; GF[vi] += gv
-                continue
-
-            p = PREDS.get((l, v))
-            if p is None:
-                p = predecir_match(M, l, v, modelo="stacking")
-                PREDS[(l, v)] = p
-
-            u = np.random.rand(n_sims)
-            p_l, p_e = p[0], p[1]
-
-            w_l = u < p_l
-            w_e = (u >= p_l) & (u < (p_l + p_e))
-            w_v = u >= (p_l + p_e)
-
-            PTS[li] += w_l * 3 + w_e * 1
-            PTS[vi] += w_v * 3 + w_e * 1
-            DG[li]  += w_l * 1 - w_v * 1
-            DG[vi]  += w_v * 1 - w_l * 1
-            GF[li]  += w_l * 1 + w_e * 1
-            GF[vi]  += w_v * 1 + w_e * 1
-
-    key = PTS * 1_000_000 + DG * 1_000 + GF + np.random.random(PTS.shape)  # el ruido < 1 solo rompe empates exactos (antes ganaba el primero en orden alfabético)
-    order = np.argsort(-key, axis=0)
-    # media de puntos finales por equipo (puntos actuales + lo simulado del fixture)
-    return eqs, order, PTS.mean(axis=1)
+    res = simular_fixture_desde_tabla(
+        M, fix, tab, PREDS, fijos=fijos, n_sims=n_sims,
+        k_liga=K_LIGA, home_adv=HOME_ADV, mov_mode="std",
+        usar_lambdas_elo=True,
+        predecir_fallback=lambda l, v: predecir_match(M, l, v, modelo=modelo_tipo),
+        liga=Path(__file__).resolve().parent.name, seed=seed,
+    )
+    return res["eqs"], res["order"], res["PTS"].mean(axis=1)
 
 def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo=None, modelo=None, seed=42):
     modelo_tipo = modelo_tipo or modelo or "rf"
@@ -682,6 +642,7 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo=None, modelo=None
     fp = hashlib.sha256()
     fp.update(str(n_sims).encode())
     fp.update(_cache_key().encode())
+    fp.update(MC_DINAMICO_VERSION.encode())
     if fijos is not None:
         fp.update(repr(sorted(fijos.items())).encode())
 
@@ -709,7 +670,7 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo=None, modelo=None
             if l != v:
                 PREDS[(l, v)] = predecir_match(M, l, v, modelo=modelo_tipo)
 
-    eqs, order, pts_medios = _simular_fixture_vec(M, PREDS, fijos, n_sims)
+    eqs, order, pts_medios = _simular_fixture_vec(M, PREDS, fijos, n_sims, modelo_tipo=modelo_tipo, seed=seed)
 
     pts_esp = dict(zip(eqs, pts_medios))
     n_eq = len(eqs)

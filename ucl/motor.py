@@ -25,6 +25,11 @@ if _ROOT not in _sys.path:
     _sys.path.insert(0, _ROOT)
 from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas, entrenar_stacking_oof
 from comun.motor_comun import hash_modulos_comunes
+from comun.monte_carlo import (
+    clave_cache_liga,
+    simular_fixture_desde_tabla,
+    simular_partido_vec_estado,
+)
 
 DATA = Path(__file__).resolve().parent / "data"
 EQUIPOS_PATH = DATA / "equipos.csv"
@@ -1003,160 +1008,9 @@ def obtener_tabla_actual(M):
     return df_res
 
 
-def _simular_fixture_vec(M, preds_dict, n_sims=1000):
-    fix_path = DATA / "fixture.csv"
-    fix = pd.read_csv(fix_path)
-    fix = fix[fix.temporada == _temporada_actual()]
-
-    tab_act = obtener_tabla_actual(M)
-    eq_set = set(fix["local"]).union(set(fix["visita"])).union(set(tab_act["equipo"]))
-    eq_list = sorted(list(eq_set))
-    eq2idx = {e: i for i, e in enumerate(eq_list)}
-    n_eq = len(eq_list)
-
-    init_pts = np.zeros(n_eq, dtype=np.float32)
-    init_dg = np.zeros(n_eq, dtype=np.float32)
-    init_gf = np.zeros(n_eq, dtype=np.float32)
-
-    for _, r in tab_act.iterrows():
-        e = r["equipo"]
-        if e in eq2idx:
-            i = eq2idx[e]
-            init_pts[i] = r["puntos"]
-            init_dg[i] = r["dg"]
-            init_gf[i] = r["gf"]
-
-    n_partidos = len(fix)
-    loc_idx = np.zeros(n_partidos, dtype=np.int32)
-    vis_idx = np.zeros(n_partidos, dtype=np.int32)
-    probs = np.zeros((n_partidos, 3), dtype=np.float32)
-    mu_local = np.zeros(n_partidos, dtype=np.float32)
-    mu_vis = np.zeros(n_partidos, dtype=np.float32)
-
-    for k, (_, r) in enumerate(fix.iterrows()):
-        l, v = r["local"], r["visita"]
-        if l not in eq2idx or v not in eq2idx:
-            # antes se asignaba en silencio al equipo 0 y sumaba puntos a otro club
-            raise ValueError(f"Equipo del fixture sin fila en la tabla de la fase de liga: {l} / {v}")
-        loc_idx[k] = eq2idx[l]
-        vis_idx[k] = eq2idx[v]
-        pair = (l, v)
-        if pair in preds_dict:
-            p, ml, mv = preds_dict[pair]
-        else:
-            p, ml, mv = predecir_match(M, l, v)
-        probs[k, :] = p
-        mu_local[k] = ml
-        mu_vis[k] = mv
-
-    pts_sims = np.tile(init_pts[:, None], (1, n_sims))
-    dg_sims = np.tile(init_dg[:, None], (1, n_sims))
-    gf_sims = np.tile(init_gf[:, None], (1, n_sims))
-
-    rands = np.random.rand(n_partidos, n_sims).astype(np.float32)
-    cum_h = probs[:, 0:1]
-    cum_d = probs[:, 0:1] + probs[:, 1:2]
-
-    res_sim = np.where(rands < cum_h, 0, np.where(rands < cum_d, 1, 2))
-
-    gh_sim = np.random.poisson(np.tile(mu_local[:, None], (1, n_sims)))
-    ga_sim = np.random.poisson(np.tile(mu_vis[:, None], (1, n_sims)))
-
-    pts_l = np.where(res_sim == 0, 3, np.where(res_sim == 1, 1, 0))
-    pts_v = np.where(res_sim == 2, 3, np.where(res_sim == 1, 1, 0))
-    dg_diff = gh_sim - ga_sim
-
-    for k in range(n_partidos):
-        li = loc_idx[k]
-        vi = vis_idx[k]
-        pts_sims[li] += pts_l[k]
-        pts_sims[vi] += pts_v[k]
-        dg_sims[li] += dg_diff[k]
-        dg_sims[vi] -= dg_diff[k]
-        gf_sims[li] += gh_sim[k]
-        gf_sims[vi] += ga_sim[k]
-
-    score = pts_sims * 1000000.0 + dg_sims * 1000.0 + gf_sims + np.random.random(pts_sims.shape)  # el ruido < 1 solo rompe empates exactos (antes ganaba el primero en orden alfabético)
-    order = np.argsort(-score, axis=0)
-
-    return eq_list, order, pts_sims
-
-
-def _simular_cruce(team_a, team_b, preds_dict, preds_neu=None, is_neutral=False):
-    if is_neutral:
-        if preds_neu and (team_a, team_b) in preds_neu:
-            la, lb = preds_neu[(team_a, team_b)]
-        else:
-            la, lb = 1.3, 1.2
-        ga = np.random.poisson(la)
-        gb = np.random.poisson(lb)
-        if ga > gb:
-            return team_a
-        elif gb > ga:
-            return team_b
-        else:
-            return team_a if np.random.rand() > 0.5 else team_b
-
-    # Ida: team_b local, team_a visita
-    _, lb1, la1 = preds_dict.get((team_b, team_a), (None, 1.2, 1.2))
-    # Vuelta: team_a local, team_b visita
-    _, la2, lb2 = preds_dict.get((team_a, team_b), (None, 1.2, 1.2))
-
-    total_a = np.random.poisson(la1 + la2)
-    total_b = np.random.poisson(lb1 + lb2)
-
-    if total_a > total_b:
-        return team_a
-    elif total_b > total_a:
-        return team_b
-    else:
-        return team_a if np.random.rand() > 0.5 else team_b
-
-
-def simular_campeonato(M, n_sims=10000, fijos=None, modelo="stacking", modelo_tipo=None):
-    if modelo_tipo is not None:
-        modelo = modelo_tipo
-    modelo_tipo = modelo or "stacking"
-
-    fix_path = DATA / "fixture.csv"
-    if not fix_path.exists():
-        return obtener_tabla_actual(M)
-
-    import hashlib
-    fp = hashlib.md5()
-    fp.update(str(n_sims).encode())
-    # Contenido (no mtime: cambia en cada git clone/despliegue) del fixture, los partidos y el
-    # propio motor, para reutilizar la simulación solo si nada de eso cambió.
-    for _f in (Path(fix_path), DATA / "partidos.csv", Path(__file__)):
-        try:
-            fp.update(hashlib.md5(_f.read_bytes()).hexdigest().encode())
-        except Exception:
-            pass
-
-    cache_path = DATA.parent / "simulacion_mc.pkl"
-    resultados = {}
-    if cache_path.exists():
-        try:
-            with open(cache_path, "rb") as fh:
-                saved = CustomUnpickler(fh).load()
-            if saved.get("key") == fp.hexdigest():
-                resultados = saved.get("results", {})
-                if modelo_tipo in resultados:
-                    print("Simulación UCL Monte Carlo cargada desde cache de disco")
-                    return resultados[modelo_tipo]
-        except Exception:
-            pass
-
-    fix = pd.read_csv(fix_path)
-    fix = fix[fix.temporada == _temporada_actual()]
-    todos = sorted(list(set(fix["local"]).union(set(fix["visita"]))))
-
-    pairs = [(l, v) for l in todos for v in todos if l != v]
-    tracker = M["tracker"]
-    temporada_sim = _temporada_actual()
-    feats_list = [tracker.get_features_for_match(l, v, temporada_sim) for l, v in pairs]
+def _predecir_lote_ucl(M, feats_list, modelo_tipo, is_neutral=False):
+    """Calcula probabilidades 1X2 y lambdas Poisson para un lote de features de cruces UCL."""
     df_feat = pd.DataFrame(feats_list)[M["features"]].fillna(0.0)
-
     if modelo_tipo == "lasso":
         probs_all = M["pipe_lasso"].predict_proba(df_feat)
     elif modelo_tipo == "rf":
@@ -1171,109 +1025,226 @@ def simular_campeonato(M, n_sims=10000, fijos=None, modelo="stacking", modelo_ti
         probs_all = w[0] * pl + w[1] * pr + w[2] * px
         probs_all = probs_all / probs_all.sum(axis=1, keepdims=True)
 
+    probs_all = np.clip(probs_all, 1e-6, 1.0 - 1e-6)
+    probs_all = probs_all / probs_all.sum(axis=1, keepdims=True)
+
     pp = M["poisson_params"]
-    elo_diffs = np.array([f["elo_diff"] for f in feats_list])
-    alt_diffs = np.array([f["altitude_diff"] for f in feats_list])
-    squad_diffs = np.array([f["squad_value_diff"] for f in feats_list])
+    elo_diffs = np.array([f["elo_diff"] for f in feats_list], dtype=np.float64)
+    alt_diffs = np.array([f["altitude_diff"] for f in feats_list], dtype=np.float64)
+    squad_diffs = np.array([f["squad_value_diff"] for f in feats_list], dtype=np.float64)
+    h_val = 0.5 if is_neutral else 1.0
+    a_val = 0.5 if is_neutral else 0.0
+    eta_delta = pp["elo"] * elo_diffs + pp["alt"] * alt_diffs + pp["squad"] * squad_diffs
+    la_arr = np.clip(np.exp(pp["const"] + pp["is_home"] * h_val + eta_delta), 0.2, 5.5)
+    lb_arr = np.clip(np.exp(pp["const"] + pp["is_home"] * a_val - eta_delta), 0.2, 5.5)
+    return probs_all, la_arr, lb_arr
 
-    la_arr = np.clip(np.exp(pp["const"] + pp["is_home"] * 1.0 + pp["elo"] * elo_diffs + pp["alt"] * alt_diffs + pp["squad"] * squad_diffs), 0.2, 5.5)
-    lb_arr = np.clip(np.exp(pp["const"] + pp["is_home"] * 0.0 - pp["elo"] * elo_diffs - pp["alt"] * alt_diffs - pp["squad"] * squad_diffs), 0.2, 5.5)
 
-    la_neu_arr = np.clip(np.exp(pp["const"] + pp["is_home"] * 0.5 + pp["elo"] * elo_diffs + pp["alt"] * alt_diffs + pp["squad"] * squad_diffs), 0.2, 5.5)
-    lb_neu_arr = np.clip(np.exp(pp["const"] + pp["is_home"] * 0.5 - pp["elo"] * elo_diffs - pp["alt"] * alt_diffs - pp["squad"] * squad_diffs), 0.2, 5.5)
+def simular_campeonato(M, n_sims=10000, fijos=None, modelo="stacking", modelo_tipo=None, seed=42):
+    if modelo_tipo is not None:
+        modelo = modelo_tipo
+    modelo_tipo = modelo or "stacking"
 
-    PREDS = {}
-    PREDS_NEU = {}
-    for idx, pair in enumerate(pairs):
-        p = probs_all[idx]
-        p = np.clip(p, 1e-6, 1.0 - 1e-6)
-        p = p / p.sum()
-        PREDS[pair] = (p, float(la_arr[idx]), float(lb_arr[idx]))
-        PREDS_NEU[pair] = (float(la_neu_arr[idx]), float(lb_neu_arr[idx]))
+    fix_path = DATA / "fixture.csv"
+    if not fix_path.exists():
+        return obtener_tabla_actual(M)
 
-    eqs, order, pts_sims = _simular_fixture_vec(M, PREDS, n_sims)
+    cache_path = DATA.parent / "simulacion_mc.pkl"
+    cache_key = clave_cache_liga(__file__, DATA, n_sims, f"ucl_s{seed}", fijos=fijos)
+    resultados = {}
+    if not fijos and cache_path.exists():
+        try:
+            with open(cache_path, "rb") as fh:
+                saved = CustomUnpickler(fh).load()
+            if saved.get("key") == cache_key:
+                resultados = saved.get("results", {})
+                if modelo_tipo in resultados:
+                    print("Simulación UCL Monte Carlo cargada desde cache de disco")
+                    return resultados[modelo_tipo]
+        except Exception:
+            pass
+
+    fix = pd.read_csv(fix_path)
+    fix = fix[fix.temporada == _temporada_actual()]
+    tab_act = obtener_tabla_actual(M)
+    eqs_all = sorted(set(fix["local"]).union(set(fix["visita"])).union(set(tab_act["equipo"])))
+
+    pairs = [(l, v) for l in eqs_all for v in eqs_all if l != v]
+    tracker = M["tracker"]
+    temporada_sim = _temporada_actual()
+
+    feats_liga = [tracker.get_features_for_match(l, v, temporada_sim) for l, v in pairs]
+    probs_liga, la_liga, lb_liga = _predecir_lote_ucl(M, feats_liga, modelo_tipo, is_neutral=False)
+
+    feats_ko = [
+        tracker.get_features_for_match(l, v, temporada_sim, is_knockout=1, is_neutral=0)
+        for l, v in pairs
+    ]
+    probs_ko, la_ko, lb_ko = _predecir_lote_ucl(M, feats_ko, modelo_tipo, is_neutral=False)
+
+    feats_neu = [
+        tracker.get_features_for_match(l, v, temporada_sim, is_knockout=1, is_neutral=1)
+        for l, v in pairs
+    ]
+    probs_neu, la_neu, lb_neu = _predecir_lote_ucl(M, feats_neu, modelo_tipo, is_neutral=True)
+
+    PREDS = {
+        pair: (probs_liga[idx], float(la_liga[idx]), float(lb_liga[idx]))
+        for idx, pair in enumerate(pairs)
+    }
+
+    # Fase de Liga dinámica: evoluciona Elo y DFORM cronológicamente y preserva estado terminal para KO
+    sim_out = simular_fixture_desde_tabla(
+        M,
+        fix,
+        tab_act,
+        PREDS,
+        fijos=fijos,
+        n_sims=n_sims,
+        k_liga=K_LIGA,
+        home_adv=HOME_ADV,
+        mov_mode="std",
+        col_pts="puntos",
+        col_dg="dg",
+        col_gf="gf",
+        peso_pts=1e6,
+        peso_dg=1e3,
+        peso_gf=1.0,
+        liga="ucl",
+        seed=seed,
+        track_terminal_states=True,
+    )
+
+    eqs = sim_out["eqs"]
+    ix = sim_out["ix"]
+    order = sim_out["order"]
+    pts_sims = sim_out["PTS"]
+    ELO = sim_out["ELO"]
+    DFORM = sim_out["DFORM"]
+    elo0 = sim_out["elo0"]
+    sens = sim_out["sens"]
     n_eq = len(eqs)
 
-    counts_campeon = {e: 0 for e in eqs}
-    counts_final = {e: 0 for e in eqs}
-    counts_semi = {e: 0 for e in eqs}
-    counts_cuartos = {e: 0 for e in eqs}
-    counts_octavos = {e: 0 for e in eqs}
-    counts_top8 = {e: 0 for e in eqs}
-    counts_playoffs = {e: 0 for e in eqs}
-    counts_elim = {e: 0 for e in eqs}
+    # Tensores densos O(1) para todas las eliminatorias con estado dinámico
+    P0_KO = np.full((n_eq, n_eq, 3), np.array([0.42, 0.27, 0.31], dtype=np.float32), dtype=np.float32)
+    LA_KO = np.full((n_eq, n_eq), 1.35, dtype=np.float32)
+    LB_KO = np.full((n_eq, n_eq), 1.15, dtype=np.float32)
+    P0_NEU = np.full((n_eq, n_eq, 3), np.array([0.36, 0.28, 0.36], dtype=np.float32), dtype=np.float32)
+    LA_NEU = np.full((n_eq, n_eq), 1.25, dtype=np.float32)
+    LB_NEU = np.full((n_eq, n_eq), 1.25, dtype=np.float32)
 
-    for sim in range(n_sims):
-        # 1. Clasificación Fase de Liga (36 clubes)
-        ranking_sim = [eqs[order[rank, sim]] for rank in range(n_eq)]
-        top8 = list(ranking_sim[0:8])
-        playoff_teams = list(ranking_sim[8:24])
-        elim_teams = list(ranking_sim[24:])
+    for idx, (l, v) in enumerate(pairs):
+        il, iv = ix[l], ix[v]
+        P0_KO[il, iv] = probs_ko[idx]
+        LA_KO[il, iv] = la_ko[idx]
+        LB_KO[il, iv] = lb_ko[idx]
+        P0_NEU[il, iv] = probs_neu[idx]
+        LA_NEU[il, iv] = la_neu[idx]
+        LB_NEU[il, iv] = lb_neu[idx]
 
-        for t in top8:
-            counts_top8[t] += 1
-            counts_octavos[t] += 1
-        for t in playoff_teams:
-            counts_playoffs[t] += 1
-        for t in elim_teams:
-            counts_elim[t] += 1
+    def _preds_ko(ia, ib):
+        return P0_KO[ia, ib], LA_KO[ia, ib], LB_KO[ia, ib]
 
-        # 2-6. Eliminatorias con el cuadro fijo de la UEFA (formato 2024/25 en adelante).
-        #  - Play-offs por pares de siembra: 9/10 vs 23/24, 11/12 vs 21/22, 13/14 vs 19/20, 15/16 vs 17/18.
-        #  - Octavos: 1/2 vs ganadores de 15/16-17/18; 3/4 vs 13/14-19/20; 5/6 vs 11/12-21/22; 7/8 vs 9/10-23/24.
-        #  - Cada par (1/2, 3/4, 5/6, 7/8) se reparte entre las dos mitades del cuadro (1º y 2º solo
-        #    pueden cruzarse en la final). En cada mitad: cuartos (1/2) vs (7/8) y (3/4) vs (5/6).
-        #  - Lo que en la realidad se sortea (quién va a cada mitad / qué cruce del par) se sortea aquí.
-        #  - El mejor clasificado en la fase de liga juega la vuelta de local (team_a de _simular_cruce).
-        rango = {t: i for i, t in enumerate(ranking_sim)}
-        def _cruce(t1, t2):
-            a, b = (t1, t2) if rango[t1] < rango[t2] else (t2, t1)
-            return _simular_cruce(a, b, PREDS)
+    def _preds_final_neu(ia, ib):
+        return P0_NEU[ia, ib], LA_NEU[ia, ib], LB_NEU[ia, ib]
 
-        def _po_pareja(altos, bajos):
-            bajos = list(bajos)
-            if np.random.rand() < 0.5:
-                bajos.reverse()
-            return [_cruce(altos[0], bajos[0]), _cruce(altos[1], bajos[1])]
+    rng = np.random.default_rng(None if seed is None else int(seed) + 101)
+    sims = np.arange(n_sims)
 
-        pos = lambda k: ranking_sim[k - 1]
+    counts_campeon = np.zeros(n_eq, dtype=np.int64)
+    counts_final = np.zeros(n_eq, dtype=np.int64)
+    counts_semi = np.zeros(n_eq, dtype=np.int64)
+    counts_cuartos = np.zeros(n_eq, dtype=np.int64)
+    counts_octavos = np.zeros(n_eq, dtype=np.int64)
+    counts_top8 = np.zeros(n_eq, dtype=np.int64)
+    counts_playoffs = np.zeros(n_eq, dtype=np.int64)
+    counts_elim = np.zeros(n_eq, dtype=np.int64)
+
+    # 1. Clasificación Fase de Liga (top 8 directo, 9-24 playoffs, 25+ eliminados)
+    top8_n = min(8, n_eq)
+    po_end = min(24, n_eq)
+    if top8_n > 0:
+        bc_top8 = np.bincount(order[:top8_n, :].ravel(), minlength=n_eq)
+        counts_top8 += bc_top8
+        counts_octavos += bc_top8
+    if po_end > top8_n:
+        counts_playoffs += np.bincount(order[top8_n:po_end, :].ravel(), minlength=n_eq)
+    if n_eq > po_end:
+        counts_elim += np.bincount(order[po_end:, :].ravel(), minlength=n_eq)
+
+    if n_eq >= 24:
+        # Permutación inversa vectorizada: rank_of[team_idx, sim] = ranking en Fase de Liga (0..n_eq-1)
+        rank_of = np.argsort(order, axis=0)
+
+        def _cruce_vec(t1, t2):
+            t1_mejor = rank_of[t1, sims] < rank_of[t2, sims]
+            a = np.where(t1_mejor, t1, t2)
+            b = np.where(t1_mejor, t2, t1)
+            # Ida: peor clasificado (b) juega en casa; Vuelta: mejor clasificado (a) juega en casa
+            gb1, ga1, _, _, _ = simular_partido_vec_estado(
+                rng, ELO, DFORM, elo0, b, a, _preds_ko, sens,
+                k_liga=K_LIGA, home_adv=HOME_ADV, mov_mode="std",
+            )
+            ga2, gb2, _, _, _ = simular_partido_vec_estado(
+                rng, ELO, DFORM, elo0, a, b, _preds_ko, sens,
+                k_liga=K_LIGA, home_adv=HOME_ADV, mov_mode="std",
+            )
+            tot_a = ga1 + ga2
+            tot_b = gb1 + gb2
+            tie_a = rng.random(n_sims) > 0.5
+            gana_a = (tot_a > tot_b) | ((tot_a == tot_b) & tie_a)
+            return np.where(gana_a, a, b)
+
+        pos = lambda k: order[k - 1, :]
+
+        def _po_pareja_vec(altos, bajos):
+            swap = rng.random(n_sims) < 0.5
+            b0 = np.where(swap, bajos[1], bajos[0])
+            b1 = np.where(swap, bajos[0], bajos[1])
+            return [_cruce_vec(altos[0], b0), _cruce_vec(altos[1], b1)]
+
         po_por_par = {
-            (1, 2): _po_pareja((pos(15), pos(16)), (pos(17), pos(18))),
-            (3, 4): _po_pareja((pos(13), pos(14)), (pos(19), pos(20))),
-            (5, 6): _po_pareja((pos(11), pos(12)), (pos(21), pos(22))),
-            (7, 8): _po_pareja((pos(9), pos(10)), (pos(23), pos(24))),
+            (1, 2): _po_pareja_vec((pos(15), pos(16)), (pos(17), pos(18))),
+            (3, 4): _po_pareja_vec((pos(13), pos(14)), (pos(19), pos(20))),
+            (5, 6): _po_pareja_vec((pos(11), pos(12)), (pos(21), pos(22))),
+            (7, 8): _po_pareja_vec((pos(9), pos(10)), (pos(23), pos(24))),
         }
         for ganadores in po_por_par.values():
-            for winner in ganadores:
-                counts_octavos[winner] += 1
+            for w in ganadores:
+                counts_octavos += np.bincount(w, minlength=n_eq)
 
-        mitades = {"A": {}, "B": {}}
+        mitad_A, mitad_B = {}, {}
         for (s1, s2), ganadores in po_por_par.items():
-            tops = [pos(s1), pos(s2)]
-            if np.random.rand() < 0.5:
-                tops.reverse()
-            rivales = list(ganadores)
-            if np.random.rand() < 0.5:
-                rivales.reverse()
-            mitades["A"][(s1, s2)] = (tops[0], rivales[0])
-            mitades["B"][(s1, s2)] = (tops[1], rivales[1])
+            t0, t1 = pos(s1), pos(s2)
+            swap_t = rng.random(n_sims) < 0.5
+            top_a = np.where(swap_t, t1, t0)
+            top_b = np.where(swap_t, t0, t1)
+            swap_r = rng.random(n_sims) < 0.5
+            riv_a = np.where(swap_r, ganadores[1], ganadores[0])
+            riv_b = np.where(swap_r, ganadores[0], ganadores[1])
+            mitad_A[(s1, s2)] = (top_a, riv_a)
+            mitad_B[(s1, s2)] = (top_b, riv_b)
 
         finalists = []
-        for mitad in ("A", "B"):
-            octavos = {par: _cruce(*duelo) for par, duelo in mitades[mitad].items()}
-            for winner in octavos.values():
-                counts_cuartos[winner] += 1
-            semi_1 = _cruce(octavos[(1, 2)], octavos[(7, 8)])
-            semi_2 = _cruce(octavos[(3, 4)], octavos[(5, 6)])
-            counts_semi[semi_1] += 1
-            counts_semi[semi_2] += 1
-            finalista = _cruce(semi_1, semi_2)
-            counts_final[finalista] += 1
+        for mitad in (mitad_A, mitad_B):
+            octavos = {par: _cruce_vec(*duelo) for par, duelo in mitad.items()}
+            for w in octavos.values():
+                counts_cuartos += np.bincount(w, minlength=n_eq)
+            semi_1 = _cruce_vec(octavos[(1, 2)], octavos[(7, 8)])
+            semi_2 = _cruce_vec(octavos[(3, 4)], octavos[(5, 6)])
+            counts_semi += np.bincount(semi_1, minlength=n_eq) + np.bincount(semi_2, minlength=n_eq)
+            finalista = _cruce_vec(semi_1, semi_2)
+            counts_final += np.bincount(finalista, minlength=n_eq)
             finalists.append(finalista)
 
-        # Gran Final (sede neutral única)
-        champion = _simular_cruce(finalists[0], finalists[1], PREDS, preds_neu=PREDS_NEU, is_neutral=True)
-        counts_campeon[champion] += 1
+        # Gran Final en sede neutral (home_adv=0.0, P0_NEU/LA_NEU/LB_NEU)
+        ga_f, gb_f, _, _, _ = simular_partido_vec_estado(
+            rng, ELO, DFORM, elo0, finalists[0], finalists[1], _preds_final_neu, sens,
+            k_liga=K_LIGA, home_adv=0.0, mov_mode="std",
+        )
+        tie_f = rng.random(n_sims) > 0.5
+        champion = np.where((ga_f > gb_f) | ((ga_f == gb_f) & tie_f), finalists[0], finalists[1])
+        counts_campeon += np.bincount(champion, minlength=n_eq)
 
     res = []
     for idx_e, eq in enumerate(eqs):
@@ -1282,14 +1253,14 @@ def simular_campeonato(M, n_sims=10000, fijos=None, modelo="stacking", modelo_ti
             "equipo": eq,
             "Selección": eq,
             "Puntos esperados": round(mean_pts, 1),
-            "P_campeon": counts_campeon[eq] / n_sims,
-            "P_final": counts_final[eq] / n_sims,
-            "P_semi": counts_semi[eq] / n_sims,
-            "P_cuartos": counts_cuartos[eq] / n_sims,
-            "P_octavos": counts_octavos[eq] / n_sims,
-            "P_top8": counts_top8[eq] / n_sims,
-            "P_playoffs": counts_playoffs[eq] / n_sims,
-            "P_eliminado": counts_elim[eq] / n_sims
+            "P_campeon": float(counts_campeon[idx_e]) / n_sims,
+            "P_final": float(counts_final[idx_e]) / n_sims,
+            "P_semi": float(counts_semi[idx_e]) / n_sims,
+            "P_cuartos": float(counts_cuartos[idx_e]) / n_sims,
+            "P_octavos": float(counts_octavos[idx_e]) / n_sims,
+            "P_top8": float(counts_top8[idx_e]) / n_sims,
+            "P_playoffs": float(counts_playoffs[idx_e]) / n_sims,
+            "P_eliminado": float(counts_elim[idx_e]) / n_sims,
         })
 
     df_res = pd.DataFrame(res).sort_values(
@@ -1297,13 +1268,14 @@ def simular_campeonato(M, n_sims=10000, fijos=None, modelo="stacking", modelo_ti
     ).reset_index(drop=True)
     df_res.index = df_res.index + 1
 
-    resultados[modelo_tipo] = df_res
-    try:
-        with open(cache_path, "wb") as fh:
-            pickle.dump({"key": fp.hexdigest(), "results": resultados}, fh)
-        print("Simulación UCL guardada en cache de disco")
-    except Exception as ex:
-        print(f"No se pudo guardar el cache de simulación: {ex}")
+    if not fijos:
+        resultados[modelo_tipo] = df_res
+        try:
+            with open(cache_path, "wb") as fh:
+                pickle.dump({"key": cache_key, "results": resultados}, fh)
+            print("Simulación UCL guardada en cache de disco")
+        except Exception as ex:
+            print(f"No se pudo guardar el cache de simulación: {ex}")
     return df_res
 
 monte_carlo = simular_campeonato

@@ -33,6 +33,13 @@ _ROOT = str(_Path(__file__).resolve().parent.parent)
 if _ROOT not in _sys.path:
     _sys.path.insert(0, _ROOT)
 from comun.motor_comun import hash_modulos_comunes, seleccionar_c_lasso, entrenar_stacking_oof
+from comun.monte_carlo import (
+    calibrar_sensibilidad_dinamica,
+    clave_cache_simulacion,
+    extraer_elo_base,
+    paso_binario_dinamico_vec,
+    simular_serie_best_of_n_vec,
+)
 
 DATA = Path(__file__).resolve().parent / "data"
 EQUIPOS_PATH = DATA / "equipos.csv"
@@ -853,20 +860,16 @@ def simular_partido_mc(M, local, visita, n_sims=5000, modelo="stacking", seed=42
     }
 
 
-def simular_temporada(M, n_sims=2000, seed=42, modelo="stacking"):
+def simular_temporada(M, n_sims=2000, seed=42, modelo="stacking", fijos=None):
     """
-    Simulación Monte Carlo completa de la temporada NBA, Play-In y Playoffs.
-    Proyecta las victorias esperadas en Conferencia Este y Oeste,
-    posibilidades de Play-In (7-10), Playoff directo (1-6) y Campeón de la NBA.
+    Simulación Monte Carlo dinámica de la temporada NBA, Play-In y Playoffs.
+    Evoluciona Elo (FiveThirtyEight MOV) y forma reciente (DFORM) partido a partido
+    de manera vectorizada tanto en fase regular como en Play-In y series al mejor de 7.
     """
     cache_path = Path(__file__).resolve().parent / "simulacion_mc.pkl"
-    fp = hashlib.sha256()
-    fp.update(str(n_sims).encode())
-    fp.update(str(modelo).encode())  # cada modelo tiene su propia simulación
-    fp.update(_cache_key().encode())
-    cache_key = fp.hexdigest()
+    cache_key = clave_cache_simulacion(n_sims, modelo, seed, _cache_key(), fijos)
 
-    if cache_path.exists():
+    if not fijos and cache_path.exists():
         try:
             with open(cache_path, "rb") as fh:
                 saved = pickle.load(fh)
@@ -875,8 +878,7 @@ def simular_temporada(M, n_sims=2000, seed=42, modelo="stacking"):
         except Exception:
             pass
 
-    if seed is not None:
-        np.random.seed(seed)
+    rng = np.random.default_rng(seed)
 
     fixture_path = DATA / "fixture.csv"
     partidos_path = DATA / "partidos.csv"
@@ -886,177 +888,215 @@ def simular_temporada(M, n_sims=2000, seed=42, modelo="stacking"):
     temp_actual = df_partidos["temporada"].max()
     partidos_curr = df_partidos[df_partidos["temporada"] == temp_actual]
     df_fix = pd.read_csv(fixture_path) if fixture_path.exists() else pd.DataFrame()
+    if not df_fix.empty and "fecha" in df_fix.columns:
+        df_fix = df_fix.copy()
+        df_fix["_fecha_ord"] = pd.to_datetime(df_fix["fecha"], errors="coerce")
+        df_fix = df_fix.sort_values("_fecha_ord", kind="mergesort").drop(columns=["_fecha_ord"]).reset_index(drop=True)
 
     # Récords actuales reales de la temporada
     wins_actual = defaultdict(int)
-    losses_actual = defaultdict(int)
     for r in partidos_curr.itertuples():
         if r.puntos_local > r.puntos_visita:
             wins_actual[r.local] += 1
-            losses_actual[r.visita] += 1
         else:
             wins_actual[r.visita] += 1
-            losses_actual[r.local] += 1
 
     # Todos los equipos activos
     todos_equipos = sorted(list(equipos.keys()))
     if not todos_equipos:
         todos_equipos = sorted(list(set(df_partidos["local"].unique())))
+    ix = {e: i for i, e in enumerate(todos_equipos)}
+    n_eq = len(todos_equipos)
 
-    # Pre-computar probabilidades entre todos los equipos en un solo lote vectorizado (~15 ms vs ~22 s)
+    # Pre-computar matriz densa P0[local, visita] en un solo lote vectorizado (~15 ms)
     tracker = M["tracker"]
     features = M["features"]
     pares = [(eq1, eq2) for eq1 in todos_equipos for eq2 in todos_equipos if eq1 != eq2]
-    df_pares = pd.DataFrame([tracker.get_features_for_match(eq1, eq2) for eq1, eq2 in pares])[features].fillna(0.0)
-    p_lote = _proba_local_lote(M, df_pares, modelo)
-    h2h_probs = {par: float(p) for par, p in zip(pares, p_lote)}
-
-    # Predecir probabilidades de cada partido restante del fixture (filtrando equipos válidos)
-    preds_fixture = []
-    for r in df_fix.itertuples():
-        loc = getattr(r, "local", "")
-        vis = getattr(r, "visita", "")
-        if loc in todos_equipos and vis in todos_equipos:
-            p_local = h2h_probs.get((loc, vis), 0.55)
-            preds_fixture.append((loc, vis, p_local))
+    P0 = np.full((n_eq, n_eq), 0.55, dtype=np.float32)
+    if pares:
+        df_pares = pd.DataFrame([tracker.get_features_for_match(eq1, eq2) for eq1, eq2 in pares])[features].fillna(0.0)
+        p_lote = _proba_local_lote(M, df_pares, modelo)
+        for (eq1, eq2), p in zip(pares, p_lote):
+            P0[ix[eq1], ix[eq2]] = np.float32(p)
 
     conferencias = {}
     for eq in todos_equipos:
         conf = equipos.get(eq, {}).get("conference", "Eastern Conference")
         conferencias[eq] = "East" if "East" in conf else "West"
 
-    # Acumuladores de Monte Carlo
-    tot_wins = defaultdict(list)
-    playin_counts = defaultdict(int)       # 7º a 10º
-    playoff_counts = defaultdict(int)      # clasificación total a playoffs: 1º a 6º + ganadores del Play-In
-    directo_counts = defaultdict(int)      # solo 1º a 6º (clasificación directa)
-    conf_final_counts = defaultdict(int)   # Finalistas de Conferencia
-    champ_counts = defaultdict(int)        # Campeón NBA
+    east_idx = np.array([ix[e] for e in todos_equipos if conferencias[e] == "East"], dtype=np.int32)
+    west_idx = np.array([ix[e] for e in todos_equipos if conferencias[e] == "West"], dtype=np.int32)
 
-    for s_idx in range(n_sims):
-        sim_wins = {e: wins_actual[e] for e in todos_equipos}
-        
-        # Simular partidos del fixture
-        if preds_fixture:
-            probs = np.array([p for _, _, p in preds_fixture])
-            rnd = np.random.uniform(size=len(probs))
-            home_wins = rnd < probs
-            for i, (loc, vis, _) in enumerate(preds_fixture):
-                if home_wins[i]:
-                    sim_wins[loc] += 1
-                else:
-                    sim_wins[vis] += 1
+    sens = calibrar_sensibilidad_dinamica(M, liga="nba", es_binario=True)
+    b_elo_bin = float(sens["b_elo_bin"])
+    sigma_margin = float(M.get("sigma_spread", 12.5))
 
-        for e in todos_equipos:
-            tot_wins[e].append(sim_wins[e])
+    elo0 = extraer_elo_base(M, todos_equipos, default=ELO_INIT).astype(np.float32)
+    ELO = np.tile(elo0[:, None], (1, n_sims))
+    DFORM = np.zeros((n_eq, n_sims), dtype=np.float32)
+    init_w = np.array([wins_actual[e] for e in todos_equipos], dtype=np.float32)
+    WINS = np.tile(init_w[:, None], (1, n_sims))
+    sims = np.arange(n_sims)
 
-        # Ranquear por conferencia (East y West)
-        # El ruido < 1 solo rompe empates en victorias (antes ganaba el primero en orden alfabético)
-        desempate = {e: np.random.random() for e in todos_equipos}
-        east_teams = sorted([e for e in todos_equipos if conferencias[e] == "East"], key=lambda x: sim_wins[x] + desempate[x], reverse=True)
-        west_teams = sorted([e for e in todos_equipos if conferencias[e] == "West"], key=lambda x: sim_wins[x] + desempate[x], reverse=True)
+    # Normalizar `fijos` opcional (soporta bool/int win_local o tupla (pts_l, pts_v))
+    fijos_map = {}
+    if fijos:
+        for pair, val in fijos.items():
+            if isinstance(val, (tuple, list)) and len(val) == 2:
+                fijos_map[pair] = bool(float(val[0]) > float(val[1]))
+            elif isinstance(val, str):
+                fijos_map[pair] = (val.upper() == "L")
+            else:
+                fijos_map[pair] = bool(val)
 
-        for conf_ranked in (east_teams, west_teams):
-            for i, eq in enumerate(conf_ranked):
-                if i < 6:
-                    playoff_counts[eq] += 1
-                    directo_counts[eq] += 1
-                elif i < 10:
-                    playin_counts[eq] += 1
+    # 1. Temporada regular restante cronológica (evoluciona Elo FiveThirtyEight + DFORM)
+    if not df_fix.empty:
+        for r in df_fix.itertuples(index=False):
+            loc = getattr(r, "local", "")
+            vis = getattr(r, "visita", "")
+            if loc not in ix or vis not in ix:
+                continue
+            li, vi = ix[loc], ix[vis]
+            idx_l_vec = np.full(n_sims, li, dtype=np.int32)
+            idx_v_vec = np.full(n_sims, vi, dtype=np.int32)
+            fixed_w = fijos_map.get((loc, vis))
+            win_l = paso_binario_dinamico_vec(
+                rng, ELO, DFORM, elo0, idx_l_vec, idx_v_vec, sims, P0,
+                b_elo_bin=b_elo_bin, b_form_bin=0.25,
+                home_adv=ELO_HOME_ADV, sigma_margin=sigma_margin, mov_mode="538",
+                fixed_win_l=fixed_w,
+            )
+            WINS[li] += win_l.astype(np.float32)
+            WINS[vi] += (~win_l).astype(np.float32)
 
-        # Simular Play-In Tournament
-        def _sim_playin(ranked):
-            t7, t8, t9, t10 = ranked[6], ranked[7], ranked[8], ranked[9]
-            # 7 vs 8 (ganador = seed 7)
-            p78 = h2h_probs.get((t7, t8), 0.55)
-            w_78 = t7 if np.random.random() < p78 else t8
-            l_78 = t8 if w_78 == t7 else t7
-            # 9 vs 10 (perdedor eliminado)
-            p910 = h2h_probs.get((t9, t10), 0.55)
-            w_910 = t9 if np.random.random() < p910 else t10
-            # Partido final por seed 8: l_78 vs w_910
-            p_final = h2h_probs.get((l_78, w_910), 0.55)
-            w_seed8 = l_78 if np.random.random() < p_final else w_910
-            return ranked[:6] + [w_78, w_seed8]
+    mean_wins = WINS.mean(axis=1)
 
-        east_playoffs = _sim_playin(east_teams)
-        west_playoffs = _sim_playin(west_teams)
+    playin_counts = np.zeros(n_eq, dtype=np.int64)
+    playoff_counts = np.zeros(n_eq, dtype=np.int64)
+    directo_counts = np.zeros(n_eq, dtype=np.int64)
+    conf_final_counts = np.zeros(n_eq, dtype=np.int64)
+    champ_counts = np.zeros(n_eq, dtype=np.int64)
 
-        for eq in [east_playoffs[6], east_playoffs[7], west_playoffs[6], west_playoffs[7]]:
-            playoff_counts[eq] += 1
+    def _duelo_simple(idx_h, idx_a):
+        win_h = paso_binario_dinamico_vec(
+            rng, ELO, DFORM, elo0, idx_h, idx_a, sims, P0,
+            b_elo_bin=b_elo_bin, b_form_bin=0.25,
+            home_adv=ELO_HOME_ADV, sigma_margin=sigma_margin, mov_mode="538",
+        )
+        return np.where(win_h, idx_h, idx_a), np.where(win_h, idx_a, idx_h)
 
-        # Simular Serie al Mejor de 7
-        def _sim_serie_7(t_home, t_away):
-            p_h = h2h_probs.get((t_home, t_away), 0.55)
-            p_a_opp = 1.0 - h2h_probs.get((t_away, t_home), 0.55)
-            # Formato 2-2-1-1-1 (Home juega 1, 2, 5, 7 en casa)
-            w_h = 0
-            w_a = 0
-            for g in range(7):
-                is_home = g in (0, 1, 4, 6)
-                p = p_h if is_home else p_a_opp
-                if np.random.random() < p:
-                    w_h += 1
-                else:
-                    w_a += 1
-                if w_h == 4:
-                    return t_home
-                if w_a == 4:
-                    return t_away
-            return t_home
+    def _ranking_y_playin(conf_eq_idx):
+        score_c = WINS[conf_eq_idx] + rng.random((len(conf_eq_idx), n_sims)) * 0.01
+        ord_c = np.argsort(-score_c, axis=0)
+        ranked = conf_eq_idx[ord_c]  # shape (n_conf, n_sims)
 
-        def _sim_conf_playoffs(seeds):
-            # 1 vs 8, 4 vs 5, 2 vs 7, 3 vs 6
-            r1 = _sim_serie_7(seeds[0], seeds[7])
-            r2 = _sim_serie_7(seeds[3], seeds[4])
-            r3 = _sim_serie_7(seeds[1], seeds[6])
-            r4 = _sim_serie_7(seeds[2], seeds[5])
-            # Semifinales
-            sem1 = _sim_serie_7(r1, r2)
-            sem2 = _sim_serie_7(r3, r4)
-            # Final de Conferencia
-            conf_champ = _sim_serie_7(sem1, sem2)
-            return conf_champ, sem1, sem2
+        top6_n = min(6, len(conf_eq_idx))
+        bc_dir = np.bincount(ranked[:top6_n, :].ravel(), minlength=n_eq)
+        directo_counts[:] += bc_dir
+        playoff_counts[:] += bc_dir
 
-        east_champ, e_f1, e_f2 = _sim_conf_playoffs(east_playoffs)
-        west_champ, w_f1, w_f2 = _sim_conf_playoffs(west_playoffs)
+        if len(conf_eq_idx) < 10:
+            return ranked[:8]
 
-        conf_final_counts[e_f1] += 1
-        conf_final_counts[e_f2] += 1
-        conf_final_counts[w_f1] += 1
-        conf_final_counts[w_f2] += 1
+        playin_counts[:] += np.bincount(ranked[6:10, :].ravel(), minlength=n_eq)
 
-        # Finales de la NBA: East Champion vs West Champion
-        # Ventaja de localía para el de más victorias
-        if sim_wins[east_champ] >= sim_wins[west_champ]:
-            nba_champ = _sim_serie_7(east_champ, west_champ)
-        else:
-            nba_champ = _sim_serie_7(west_champ, east_champ)
+        t7, t8, t9, t10 = ranked[6], ranked[7], ranked[8], ranked[9]
+        w_78, l_78 = _duelo_simple(t7, t8)
+        w_910, _ = _duelo_simple(t9, t10)
+        w_seed8, _ = _duelo_simple(l_78, w_910)
 
-        champ_counts[nba_champ] += 1
+        playoff_counts[:] += np.bincount(w_78, minlength=n_eq) + np.bincount(w_seed8, minlength=n_eq)
+        seeds = [ranked[k] for k in range(6)] + [w_78, w_seed8]
+        return seeds
+
+    east_seeds = _ranking_y_playin(east_idx)
+    west_seeds = _ranking_y_playin(west_idx)
+
+    # Mapa vectorizado team_idx -> seed (0..7) dentro de cada conferencia para asignar localía real
+    seed_rank = np.full((n_eq, n_sims), 99, dtype=np.int32)
+    for conf_seeds in (east_seeds, west_seeds):
+        if len(conf_seeds) >= 8:
+            for s_pos, team_vec in enumerate(conf_seeds):
+                seed_rank[team_vec, sims] = s_pos
+
+    def _serie_seeded(t_a, t_b):
+        a_mejor = seed_rank[t_a, sims] <= seed_rank[t_b, sims]
+        th = np.where(a_mejor, t_a, t_b)
+        ta = np.where(a_mejor, t_b, t_a)
+        return simular_serie_best_of_n_vec(
+            rng, ELO, DFORM, elo0, th, ta, P0,
+            b_elo_bin=b_elo_bin, b_form_bin=0.25,
+            home_adv=ELO_HOME_ADV, sigma_margin=sigma_margin,
+        )
+
+    def _sim_conf_playoffs(seeds):
+        r1 = simular_serie_best_of_n_vec(
+            rng, ELO, DFORM, elo0, seeds[0], seeds[7], P0,
+            b_elo_bin=b_elo_bin, b_form_bin=0.25, home_adv=ELO_HOME_ADV, sigma_margin=sigma_margin,
+        )
+        r2 = simular_serie_best_of_n_vec(
+            rng, ELO, DFORM, elo0, seeds[3], seeds[4], P0,
+            b_elo_bin=b_elo_bin, b_form_bin=0.25, home_adv=ELO_HOME_ADV, sigma_margin=sigma_margin,
+        )
+        r3 = simular_serie_best_of_n_vec(
+            rng, ELO, DFORM, elo0, seeds[1], seeds[6], P0,
+            b_elo_bin=b_elo_bin, b_form_bin=0.25, home_adv=ELO_HOME_ADV, sigma_margin=sigma_margin,
+        )
+        r4 = simular_serie_best_of_n_vec(
+            rng, ELO, DFORM, elo0, seeds[2], seeds[5], P0,
+            b_elo_bin=b_elo_bin, b_form_bin=0.25, home_adv=ELO_HOME_ADV, sigma_margin=sigma_margin,
+        )
+        sem1 = _serie_seeded(r1, r2)
+        sem2 = _serie_seeded(r3, r4)
+        conf_champ = _serie_seeded(sem1, sem2)
+        return conf_champ, sem1, sem2
+
+    if len(east_seeds) >= 8 and len(west_seeds) >= 8:
+        east_champ, e_f1, e_f2 = _sim_conf_playoffs(east_seeds)
+        west_champ, w_f1, w_f2 = _sim_conf_playoffs(west_seeds)
+
+        conf_final_counts += (
+            np.bincount(e_f1, minlength=n_eq)
+            + np.bincount(e_f2, minlength=n_eq)
+            + np.bincount(w_f1, minlength=n_eq)
+            + np.bincount(w_f2, minlength=n_eq)
+        )
+
+        # Finales NBA: localía para el equipo con más victorias de fase regular
+        east_hosts = WINS[east_champ, sims] >= WINS[west_champ, sims]
+        fin_h = np.where(east_hosts, east_champ, west_champ)
+        fin_a = np.where(east_hosts, west_champ, east_champ)
+        nba_champ = simular_serie_best_of_n_vec(
+            rng, ELO, DFORM, elo0, fin_h, fin_a, P0,
+            b_elo_bin=b_elo_bin, b_form_bin=0.25,
+            home_adv=ELO_HOME_ADV, sigma_margin=sigma_margin,
+        )
+        champ_counts += np.bincount(nba_champ, minlength=n_eq)
 
     # Compilar resultados finales
     filas = []
     for eq in todos_equipos:
-        avg_w = float(np.mean(tot_wins[eq]))
+        i_e = ix[eq]
+        avg_w = float(mean_wins[i_e])
         filas.append({
             "Equipo": eq,
             "Conferencia": conferencias[eq],
             "Victorias Esperadas": round(avg_w, 1),
             "Derrotas Esperadas": round(82.0 - avg_w, 1),
-            "P_Playoff_Directo": round(directo_counts[eq] / n_sims, 3),
-            "P_Playoffs": round(playoff_counts[eq] / n_sims, 3),
-            "P_PlayIn": round(playin_counts[eq] / n_sims, 3),
-            "P_Finalista_Conf": round(conf_final_counts[eq] / n_sims, 3),
-            "P_Campeon": round(champ_counts[eq] / n_sims, 3)
+            "P_Playoff_Directo": round(float(directo_counts[i_e]) / n_sims, 3),
+            "P_Playoffs": round(float(playoff_counts[i_e]) / n_sims, 3),
+            "P_PlayIn": round(float(playin_counts[i_e]) / n_sims, 3),
+            "P_Finalista_Conf": round(float(conf_final_counts[i_e]) / n_sims, 3),
+            "P_Campeon": round(float(champ_counts[i_e]) / n_sims, 3),
         })
 
     df_res = pd.DataFrame(filas).sort_values(by="Victorias Esperadas", ascending=False).reset_index(drop=True)
-    try:
-        with open(cache_path, "wb") as fh:
-            pickle.dump({"key": cache_key, "resultados": df_res}, fh)
-    except Exception:
-        pass
+    if not fijos:
+        try:
+            with open(cache_path, "wb") as fh:
+                pickle.dump({"key": cache_key, "resultados": df_res}, fh)
+        except Exception:
+            pass
 
     return df_res
 

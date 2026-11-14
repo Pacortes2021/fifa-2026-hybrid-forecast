@@ -14,6 +14,11 @@ from comun.motor_comun import (
     _modelo_pre_partido,
 )
 from comun.motor_comun import hash_modulos_comunes
+from comun.monte_carlo import (
+    MC_DINAMICO_VERSION,
+    estado_inicial_desde_partidos,
+    simular_fixture_dinamico,
+)
 """
 Motor de Machine Learning e Inferencia Híbrida para la Liga Profesional de Fútbol de Argentina (arg.1).
 Modelo calibrado con Pi-Ratings, Fatigue Factor (Días de descanso y Congestión) y Distancia de Viaje (Haversine km).
@@ -736,7 +741,7 @@ def simular_fixture_regular(M, PREDS, fijos=None):
     return tabla
 
 
-def _simular_fixture_vec(M, PREDS, fijos, n_sims):
+def _simular_fixture_vec(M, PREDS, fijos, n_sims, seed=None):
     p_actuales, fix = _torneo_actual(M)
     partidos = M["partidos"]
     eqs = set(p_actuales["local"]).union(set(p_actuales["visita"]))
@@ -745,50 +750,18 @@ def _simular_fixture_vec(M, PREDS, fijos, n_sims):
     if not eqs:
         eqs = set(partidos["local"].unique())
     eqs = sorted(eqs)
-    n_eq = len(eqs)
-    ix = {e: i for i, e in enumerate(eqs)}
-    PTS = np.zeros((n_eq, n_sims))
-    GF = np.zeros_like(PTS)
-    GC = np.zeros_like(PTS)
-    for r in p_actuales.itertuples(index=False):
-        l, v = ix[r.local], ix[r.visita]
-        gl, gv = float(r.goles_local), float(r.goles_visita)
-        GF[l] += gl
-        GC[l] += gv
-        GF[v] += gv
-        GC[v] += gl
-        if gl > gv:
-            PTS[l] += 3
-        elif gl == gv:
-            PTS[l] += 1
-            PTS[v] += 1
-        else:
-            PTS[v] += 3
-    if not fix.empty:
-        for r in fix.itertuples(index=False):
-            if r.estado != "pre" and pd.notna(r.goles_local) and pd.notna(r.goles_visita):
-                continue
-            l, v = r.local, r.visita
-            if fijos and (l, v) in fijos:
-                gl = np.full(n_sims, float(fijos[(l, v)][0]))
-                gv = np.full(n_sims, float(fijos[(l, v)][1]))
-            else:
-                p, la, lb = PREDS.get((l, v), (None, 1.2, 1.2))
-                gl = np.random.poisson(la, size=n_sims).astype(float)
-                gv = np.random.poisson(lb, size=n_sims).astype(float)
-            li, vi = ix[l], ix[v]
-            win_l = gl > gv
-            draw = gl == gv
-            PTS[li] += np.where(win_l, 3.0, np.where(draw, 1.0, 0.0))
-            PTS[vi] += np.where(gv > gl, 3.0, np.where(draw, 1.0, 0.0))
-            GF[li] += gl
-            GF[vi] += gv
-            GC[li] += gv
-            GC[vi] += gl
-    DG = GF - GC
-    key = PTS * 1_000_000 + DG * 1_000 + GF + np.random.random(PTS.shape)  # el ruido < 1 solo rompe empates exactos (antes ganaba el primero en orden alfabético)
-    order = np.argsort(-key, axis=0)
-    return eqs, order, PTS
+    fix_pend = (
+        fix[(fix["estado"] == "pre") | fix["goles_local"].isna() | fix["goles_visita"].isna()].copy()
+        if not fix.empty else fix
+    )
+    init_pts, init_gf, init_gc, _ = estado_inicial_desde_partidos(p_actuales, eqs)
+    res = simular_fixture_dinamico(
+        M, fix_pend, eqs, init_pts, init_gf, init_gc, PREDS,
+        fijos=fijos, n_sims=n_sims, k_liga=K_LIGA, home_adv=HOME_ADV,
+        mov_mode="arg", use_poisson_direct=True,
+        liga=Path(__file__).resolve().parent.name, seed=seed,
+    )
+    return res["eqs"], res["order"], res["PTS"]
 
 
 def obtener_tabla_actual(M):
@@ -842,6 +815,7 @@ def monte_carlo(M, n_sims=4000, fijos=None, modelo=None, modelo_tipo=None, seed=
     fp = hashlib.sha256()
     fp.update(str(n_sims).encode())
     fp.update(_cache_key().encode())
+    fp.update(MC_DINAMICO_VERSION.encode())
     if fijos is not None:
         fp.update(repr(sorted(fijos.items())).encode())
     cache_path = Path(__file__).resolve().parent / "simulacion_mc.pkl"
@@ -882,7 +856,7 @@ def monte_carlo(M, n_sims=4000, fijos=None, modelo=None, modelo_tipo=None, seed=
     resultados_copas = defaultdict(int)
     resultados_descenso = defaultdict(int)
     
-    eqs, order, PTS = _simular_fixture_vec(M, PREDS, fijos, n_sims)
+    eqs, order, PTS = _simular_fixture_vec(M, PREDS, fijos, n_sims, seed=seed)
     n_eq = len(eqs)
     campeon_c = np.bincount(order[0], minlength=n_eq)
     copas_c = np.bincount(order[:4].ravel(), minlength=n_eq)

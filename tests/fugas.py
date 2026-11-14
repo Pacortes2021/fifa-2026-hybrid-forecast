@@ -100,12 +100,16 @@ def test_sin_fuga_hiperparametros_en_test():
 
         violaciones.extend(_rastrear_fugas_calibracion_insample(tree, liga))
 
-        # Si el motor guarda caché de modelo en disco (.model_cache.pkl), debe incluir hash_modulos_comunes
+        # Si el motor guarda caché de modelo o simulación en disco, debe validar con hash_modulos_comunes/MC_DINAMICO_VERSION
         if (".model_cache.pkl" in src or "def _cache_key" in src) and "hash_modulos_comunes" not in src:
             violaciones.append(f"{liga}/motor.py no incorpora hash_modulos_comunes() en su clave de caché")
+        if "simulacion_mc.pkl" in src and not any(
+            tok in src for tok in ("clave_cache_liga", "clave_cache_simulacion", "MC_DINAMICO_VERSION")
+        ):
+            violaciones.append(f"{liga}/motor.py cachea simulacion_mc.pkl sin versión dinámica ni clave compartida")
 
     assert not violaciones, "Violaciones de higiene detectadas:\n  - " + "\n  - ".join(violaciones)
-    print(f"✅ [1/5] Guardia AST sin fugas de test ni stacking in-sample en {len(motores)} motores.")
+    print(f"✅ [1/6] Guardia AST sin fugas de test ni stacking in-sample en {len(motores)} motores.")
 
 
 def test_helpers_comun():
@@ -148,7 +152,7 @@ def test_helpers_comun():
     # Auto-verificación del detector AST contra patrón de fuga conocido
     codigo_con_fuga = "def f():\n    m.fit(X_full, y_full)\n    p = m.predict_proba(X_cal)\n"
     assert _rastrear_fugas_calibracion_insample(ast.parse(codigo_con_fuga), "dummy"), "El detector AST debe atrapar X_full->X_cal"
-    print("✅ [2/5] Helpers compartidos (LASSO, regularización, stacking OOF, caché) OK.")
+    print("✅ [2/6] Helpers compartidos (LASSO, regularización, stacking OOF, caché) OK.")
 
 
 def test_causalidad_backtest_nba():
@@ -192,7 +196,7 @@ def test_causalidad_backtest_nba():
         assert "ROI (-110)" not in df_jug.columns, "El escáner no debe presentar ROI sobre cuotas hipotéticas"
         niveles = set(df_jug["Magnitud"].astype(str))
         assert not any("SELLO DE ORO" in x or "+EV" in x for x in niveles), f"Etiquetas no permitidas: {niveles}"
-    print("✅ [3/5] Invariancia causal del backtest NBA y terminología honesta del escáner verificadas.")
+    print("✅ [3/6] Invariancia causal del backtest NBA y terminología honesta del escáner verificadas.")
 
 
 def test_registro_inmutable():
@@ -275,7 +279,7 @@ def test_registro_inmutable():
                 assert not df_eval.empty and set(df_eval["modelo"]) == {"stacking", "elo"}
                 row_stk = df_eval[df_eval["modelo"] == "stacking"].iloc[0]
                 assert pd.notna(row_stk["delta_elo_logloss"]), "Falta delta_elo_logloss pareado en evaluar_registro"
-    print("✅ [4/5] Registro inmutable de predicciones pre-partido (append-only) OK.")
+    print("✅ [4/6] Registro inmutable de predicciones pre-partido (append-only) OK.")
 
 
 def test_corte_mundial_y_ucl():
@@ -285,7 +289,14 @@ def test_corte_mundial_y_ucl():
     assert 'assert (df["fecha"] < "2026-06-11").all()' in src_lab, "Falta assert pre-Mundial en lab/motor.py"
     src_ucl = (REPO / "ucl" / "motor.py").read_text()
     assert "return 2027" not in src_ucl, "_temporada_actual() sigue fija en 2027 en ucl/motor.py"
-    print("✅ [5/5] Corte pre-Mundial en lab/motor.py y temporada dinámica en ucl/motor.py OK.")
+    print("✅ [5/6] Corte pre-Mundial en lab/motor.py y temporada dinámica en ucl/motor.py OK.")
+
+
+def test_monte_carlo_dinamico():
+    """Verifica invariantes científicas y propagación causal de comun/monte_carlo.py."""
+    from tests.mc_dinamico import run_all
+    run_all()
+    print("✅ [6/6] Invariantes científicas de Monte Carlo dinámico OK.")
 
 
 def main():
@@ -294,6 +305,7 @@ def main():
     test_causalidad_backtest_nba()
     test_registro_inmutable()
     test_corte_mundial_y_ucl()
+    test_monte_carlo_dinamico()
     print("\n🎉 Todas las pruebas de integridad científica y anti-fugas pasaron exitosamente.")
 
 
