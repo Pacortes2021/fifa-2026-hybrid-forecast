@@ -23,7 +23,7 @@ from pathlib import Path as _Path
 _ROOT = str(_Path(__file__).resolve().parent.parent)
 if _ROOT not in _sys.path:
     _sys.path.insert(0, _ROOT)
-from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas
+from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas, entrenar_stacking_oof
 from comun.motor_comun import hash_modulos_comunes
 
 DATA = Path(__file__).resolve().parent / "data"
@@ -781,44 +781,10 @@ def cargar(force_retrain=False):
     X_full = df_dataset.loc[train_mask | cal_mask, cols_features].fillna(0.0)
     y_full = df_dataset.loc[train_mask | cal_mask, "resultado"]
 
-    pipe_lasso = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
-    pipe_lasso.fit(X_full, y_full)
-
-    # 2. Random Forest
-    pipe_rf = Pipeline([("sc", StandardScaler()), ("rf", RandomForestClassifier(n_estimators=200, max_depth=5, min_samples_split=15, random_state=42, n_jobs=-1))])
-    pipe_rf.fit(X_full, y_full)
-
-    # 3. XGBoost
-    pipe_xgb = Pipeline([("sc", StandardScaler()), ("xgb", XGBClassifier(n_estimators=100, max_depth=3, learning_rate=0.05, eval_metric="mlogloss", random_state=42, n_jobs=-1))])
-    pipe_xgb.fit(X_full, y_full)
-
-    # 4. Stacking Óptimo sin fuga de datos (modelos base en X_train calibrados sobre X_cal)
-    p_l_base = Pipeline([("sc", StandardScaler()), ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=2500, random_state=42))]).fit(X_train, y_train)
-    p_r_base = Pipeline([("sc", StandardScaler()), ("rf", RandomForestClassifier(n_estimators=200, max_depth=5, min_samples_split=15, random_state=42, n_jobs=-1))]).fit(X_train, y_train)
-    p_x_base = Pipeline([("sc", StandardScaler()), ("xgb", XGBClassifier(n_estimators=100, max_depth=3, learning_rate=0.05, eval_metric="mlogloss", random_state=42, n_jobs=-1))]).fit(X_train, y_train)
-
-    p_l_cal = p_l_base.predict_proba(X_cal if len(X_cal) >= 10 else X_train)
-    p_r_cal = p_r_base.predict_proba(X_cal if len(X_cal) >= 10 else X_train)
-    p_x_cal = p_x_base.predict_proba(X_cal if len(X_cal) >= 10 else X_train)
-    y_cal_eval = y_cal if len(X_cal) >= 10 else y_train
-
-    def _simplex_loss(weights):
-        w = np.array(weights)
-        w = np.maximum(w, 0.0)
-        s = w.sum()
-        if s > 0:
-            w = w / s
-        else:
-            w = np.array([0.34, 0.33, 0.33])
-        blend = w[0] * p_l_cal + w[1] * p_r_cal + w[2] * p_x_cal
-        blend = blend / blend.sum(axis=1, keepdims=True)
-        blend = np.clip(blend, 1e-7, 1.0 - 1e-7)
-        return log_loss(y_cal_eval, blend, labels=[0, 1, 2])
-
-    res_opt = minimize(_simplex_loss, [0.4, 0.4, 0.2], method="Nelder-Mead", bounds=[(0, 1), (0, 1), (0, 1)])
-    w_opt = res_opt.x
-    w_opt = np.maximum(w_opt, 0.0)
-    w_opt = w_opt / w_opt.sum()
+    # 1-4. Modelos base regularizados y Stacking Out-Of-Fold temporal sin fuga
+    pipe_lasso, pipe_rf, pipe_xgb, w_opt = entrenar_stacking_oof(
+        X_full, y_full, best_c, binario=False, n_splits=4, reg_l2=0.03
+    )
 
     # Métricas
     def _met(proba, y):

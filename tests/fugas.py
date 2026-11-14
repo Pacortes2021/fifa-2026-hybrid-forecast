@@ -22,15 +22,64 @@ if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 
 from comun.motor_comun import (
+    entrenar_stacking_oof,
     excluir_variables_estimadas,
     hash_modulos_comunes,
+    modelos_base_regularizados,
+    optimizar_pesos_simplex,
     seleccionar_c_lasso,
 )
 from comun.registro_predicciones import cargar_registro, registrar_predicciones
 
 
+def _rastrear_fugas_calibracion_insample(tree, liga):
+    """Detecta pipelines ajustados con X_full/X_train_full y luego evaluados sobre X_cal."""
+    errores = []
+    vars_full = {"X_full", "X_train_full"}
+
+    def _nombres(nodo):
+        return {sub.id for sub in ast.walk(nodo) if isinstance(sub, ast.Name)}
+
+    for fn in ast.walk(tree):
+        if not isinstance(fn, ast.FunctionDef):
+            continue
+        ajustados_full = set()
+        # Recorrer en orden aproximado de línea dentro de la función
+        nodos_ordenados = sorted(
+            [n for n in ast.walk(fn) if hasattr(n, "lineno")],
+            key=lambda n: (n.lineno, getattr(n, "col_offset", 0)),
+        )
+        for nodo in nodos_ordenados:
+            if isinstance(nodo, ast.Assign):
+                if isinstance(nodo.value, ast.Call) and isinstance(nodo.value.func, ast.Attribute):
+                    if nodo.value.func.attr == "fit" and nodo.value.args:
+                        if _nombres(nodo.value.args[0]) & vars_full:
+                            for t in nodo.targets:
+                                if isinstance(t, ast.Name):
+                                    ajustados_full.add(t.id)
+                        elif isinstance(nodo.value.func.value, ast.Call) or isinstance(nodo.value.func.value, ast.Name):
+                            for t in nodo.targets:
+                                if isinstance(t, ast.Name):
+                                    ajustados_full.discard(t.id)
+            elif isinstance(nodo, ast.Call) and isinstance(nodo.func, ast.Attribute):
+                obj = nodo.func.value
+                if not isinstance(obj, ast.Name):
+                    continue
+                if nodo.func.attr == "fit" and nodo.args:
+                    if _nombres(nodo.args[0]) & vars_full:
+                        ajustados_full.add(obj.id)
+                    else:
+                        ajustados_full.discard(obj.id)
+                elif nodo.func.attr == "predict_proba" and obj.id in ajustados_full and nodo.args:
+                    if "X_cal" in _nombres(nodo.args[0]):
+                        errores.append(
+                            f"{liga}/motor.py:{nodo.lineno} evalúa {obj.id}.predict_proba(X_cal) después de entrenarlo con X_full"
+                        )
+    return errores
+
+
 def test_sin_fuga_hiperparametros_en_test():
-    """Ningún motor puede usar X_test o y_test dentro de un bucle de selección de hiperparámetros."""
+    """Ningún motor puede usar X_test/y_test al elegir hiperparámetros ni evaluar X_cal in-sample."""
     motores = sorted(REPO.glob("*/motor.py"))
     assert len(motores) >= 20, f"Se esperaban >=20 motores, encontrados {len(motores)}"
 
@@ -43,22 +92,24 @@ def test_sin_fuga_hiperparametros_en_test():
             if isinstance(node, ast.For) and isinstance(node.target, ast.Name):
                 if node.target.id in ("C", "C_cand", "c_val", "alpha"):
                     nombres_en_bucle = {
-                         sub.id for sub in ast.walk(node) if isinstance(sub, ast.Name)
+                        sub.id for sub in ast.walk(node) if isinstance(sub, ast.Name)
                     }
                     fugas = nombres_en_bucle.intersection({"X_test", "y_test", "X_te", "y_te"})
                     if fugas:
                         violaciones.append(f"{liga}/motor.py:{node.lineno} usa {sorted(fugas)} al elegir {node.target.id}")
+
+        violaciones.extend(_rastrear_fugas_calibracion_insample(tree, liga))
 
         # Si el motor guarda caché de modelo en disco (.model_cache.pkl), debe incluir hash_modulos_comunes
         if (".model_cache.pkl" in src or "def _cache_key" in src) and "hash_modulos_comunes" not in src:
             violaciones.append(f"{liga}/motor.py no incorpora hash_modulos_comunes() en su clave de caché")
 
     assert not violaciones, "Violaciones de higiene detectadas:\n  - " + "\n  - ".join(violaciones)
-    print(f"✅ [1/5] Guardia AST sin fugas de test en {len(motores)} motores y claves de caché verificadas.")
+    print(f"✅ [1/5] Guardia AST sin fugas de test ni stacking in-sample en {len(motores)} motores.")
 
 
 def test_helpers_comun():
-    """Verifica seleccionar_c_lasso y excluir_variables_estimadas."""
+    """Verifica seleccionar_c_lasso, excluir_variables_estimadas y helpers de stacking OOF."""
     cols = [
         "elo_diff", "form_diff", "squad_value_diff", "squad_value_home_log",
         "avg_age_diff", "pct_foreigners_diff", "avg_attendance_home",
@@ -74,7 +125,30 @@ def test_helpers_comun():
     c2, l2 = seleccionar_c_lasso(X, y, grid=(0.02, 0.1))
     assert c1 == c2 and np.isclose(l1, l2), "seleccionar_c_lasso debe ser determinista"
     assert len(hash_modulos_comunes()) == 64
-    print("✅ [2/5] Helpers compartidos (seleccionar_c_lasso, excluir_variables_estimadas, hash_modulos_comunes) OK.")
+
+    # Verificar regularización de modelos base y stacking OOF determinista (1X2 y binario)
+    _, _, xgb_chica = modelos_base_regularizados(0.05, n_samples=600, binario=False)
+    xgb_step = xgb_chica.named_steps["xgb"]
+    assert xgb_step.min_child_weight >= 15 and xgb_step.subsample < 1.0 and xgb_step.reg_lambda >= 5.0
+
+    pl, pr, px, w3 = entrenar_stacking_oof(X, y, best_c=0.05, binario=False, n_splits=3, reg_l2=0.03)
+    assert list(pl.feature_names_in_) == ["a", "b", "c", "d"]
+    assert len(w3) == 3 and (w3 >= 0).all() and np.isclose(w3.sum(), 1.0)
+    assert pl.predict_proba(X.iloc[:5]).shape == (5, 3)
+
+    y_bin = pd.Series(rng.integers(0, 2, size=240))
+    pl_b, pr_b, px_b, wb = entrenar_stacking_oof(X, y_bin, best_c=0.05, binario=True, n_splits=3, reg_l2=0.03)
+    assert len(wb) == 3 and (wb >= 0).all() and np.isclose(wb.sum(), 1.0)
+    assert px_b.predict_proba(X.iloc[:5]).shape == (5, 2)
+
+    p_sim = [rng.dirichlet([2, 2, 2], size=60) for _ in range(3)]
+    w_s = optimizar_pesos_simplex(p_sim, y.iloc[:60], labels=(0, 1, 2), reg_l2=0.03)
+    assert (w_s >= 0).all() and np.isclose(w_s.sum(), 1.0)
+
+    # Auto-verificación del detector AST contra patrón de fuga conocido
+    codigo_con_fuga = "def f():\n    m.fit(X_full, y_full)\n    p = m.predict_proba(X_cal)\n"
+    assert _rastrear_fugas_calibracion_insample(ast.parse(codigo_con_fuga), "dummy"), "El detector AST debe atrapar X_full->X_cal"
+    print("✅ [2/5] Helpers compartidos (LASSO, regularización, stacking OOF, caché) OK.")
 
 
 def test_causalidad_backtest_nba():

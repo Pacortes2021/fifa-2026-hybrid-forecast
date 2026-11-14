@@ -32,7 +32,7 @@ from pathlib import Path as _Path
 _ROOT = str(_Path(__file__).resolve().parent.parent)
 if _ROOT not in _sys.path:
     _sys.path.insert(0, _ROOT)
-from comun.motor_comun import hash_modulos_comunes
+from comun.motor_comun import hash_modulos_comunes, seleccionar_c_lasso, entrenar_stacking_oof
 
 DATA = Path(__file__).resolve().parent / "data"
 EQUIPOS_PATH = DATA / "equipos.csv"
@@ -472,65 +472,21 @@ def entrenar_modelos():
 
     print(f"Particiones temporales: Train={len(X_train)}, Calibración={len(X_cal)}, Test={len(X_test)}")
 
-    # 1. LASSO Logistic Regression (L1) con optimización de regularización
-    best_c = 0.1
-    best_score = float("inf")
-    for c_val in [0.01, 0.05, 0.1, 0.2, 0.5, 1.0]:
-        pipe = Pipeline([
-            ("sc", StandardScaler()),
-            ("lr", LogisticRegression(penalty="l1", solver="saga", C=c_val, max_iter=2000, random_state=42))
-        ])
-        pipe.fit(X_train, y_train)
-        preds_cal = np.clip(pipe.predict_proba(X_cal), 1e-6, 1.0 - 1e-6)
-        ll = log_loss(y_cal, preds_cal)
-        if ll < best_score:
-            best_score = ll
-            best_c = c_val
+    # 1. LASSO Logistic Regression (L1) con C elegido por CV temporal dentro de Train (sin reutilizar X_cal)
+    best_c, _ = seleccionar_c_lasso(
+        X_train, y_train, grid=[0.01, 0.05, 0.1, 0.2, 0.5, 1.0],
+        n_splits=4, labels=(0, 1), max_iter=2000, c_default=0.1,
+    )
 
-    # Entrenar clasificadores sobre Train + Calibración
+    # Entrenar clasificadores sobre Train + Calibración con Stacking Out-Of-Fold temporal sin fuga
     X_full = df_dataset.loc[train_mask | cal_mask, features].fillna(0.0)
     y_full = df_dataset.loc[train_mask | cal_mask, "target_win_local"]
     diff_full = df_dataset.loc[train_mask | cal_mask, "diferencial"]
     tot_full = df_dataset.loc[train_mask | cal_mask, "total_puntos"]
 
-    pipe_lasso = Pipeline([
-        ("sc", StandardScaler()),
-        ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=2500, random_state=42))
-    ])
-    pipe_lasso.fit(X_full, y_full)
-
-    # 2. Random Forest Classifier
-    pipe_rf = Pipeline([
-        ("sc", StandardScaler()),
-        ("rf", RandomForestClassifier(n_estimators=300, max_depth=6, min_samples_split=6, random_state=42, n_jobs=-1))
-    ])
-    pipe_rf.fit(X_full, y_full)
-
-    # 3. XGBoost Classifier
-    pipe_xgb = Pipeline([
-        ("sc", StandardScaler()),
-        ("xgb", XGBClassifier(
-            n_estimators=150, max_depth=3, learning_rate=0.03, subsample=0.8,
-            colsample_bytree=0.8, random_state=42, n_jobs=-1, eval_metric="logloss"
-        ))
-    ])
-    pipe_xgb.fit(X_full, y_full)
-
-    # 4. Ensamble Stacking Óptimo (minimización de Log-Loss)
-    p_lasso_cal = pipe_lasso.predict_proba(X_cal)[:, 1]
-    p_rf_cal = pipe_rf.predict_proba(X_cal)[:, 1]
-    p_xgb_cal = pipe_xgb.predict_proba(X_cal)[:, 1]
-
-    def _loss_stack(weights):
-        w = np.abs(weights)
-        w = w / w.sum()
-        p_mix = w[0] * p_lasso_cal + w[1] * p_rf_cal + w[2] * p_xgb_cal
-        p_mix = np.clip(p_mix, 1e-6, 1.0 - 1e-6)
-        return log_loss(y_cal, p_mix)
-
-    res_opt = minimize(_loss_stack, [0.35, 0.35, 0.30], method="Nelder-Mead")
-    stack_w = np.abs(res_opt.x)
-    stack_w = stack_w / stack_w.sum()
+    pipe_lasso, pipe_rf, pipe_xgb, stack_w = entrenar_stacking_oof(
+        X_full, y_full, best_c, binario=True, n_splits=4, reg_l2=0.03
+    )
 
     # 5. Baseline Solo Elo (1 variable: elo_diff)
     pipe_elo = Pipeline([

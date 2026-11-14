@@ -338,3 +338,168 @@ def predecir_elo(M, elo_model, local, visita, temporada=None, fecha=None):
     p = np.asarray(elo_model["lr"].predict_proba(np.array([[elo_diff]])), dtype=float)[0]
     p = np.clip(p, 1e-7, 1.0 - 1e-7)
     return p / p.sum()
+
+
+# --------------------------------------------------------------------------- #
+#  Stacking Out-Of-Fold (OOF) temporal y modelos base regularizados
+# --------------------------------------------------------------------------- #
+def _proba_alineada(model, X, labels):
+    """Predice probabilidades alineadas al orden exacto de `labels` y normalizadas."""
+    probs_raw = np.asarray(model.predict_proba(X), dtype=float)
+    clases = list(getattr(model, "classes_", labels))
+    out = np.full((len(X), len(labels)), 1e-7, dtype=float)
+    for j, cls in enumerate(labels):
+        if cls in clases:
+            out[:, j] = probs_raw[:, clases.index(cls)]
+    out = np.clip(out, 1e-7, 1.0 - 1e-7)
+    return out / out.sum(axis=1, keepdims=True)
+
+
+def modelos_base_regularizados(best_c, n_samples=1000, binario=False, random_state=42, max_iter_lasso=3500):
+    """Devuelve `(pipe_lasso, pipe_rf, pipe_xgb)` con regularización ajustada al tamaño muestral.
+
+    Las ligas chicas y torneos cortos (`n_samples < 1000`) reciben árboles menos profundos y
+    mayor penalización en hoja/L2 para evitar sobreajuste en muestras pequeñas.
+    """
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.pipeline import Pipeline
+    from sklearn.preprocessing import StandardScaler
+    from xgboost import XGBClassifier
+
+    eval_metric = "logloss" if binario else "mlogloss"
+    pipe_lasso = Pipeline([
+        ("sc", StandardScaler()),
+        ("lr", LogisticRegression(
+            penalty="l1", solver="saga", C=best_c, max_iter=max_iter_lasso, random_state=random_state
+        )),
+    ])
+    if n_samples < 1000:
+        rf_clf = RandomForestClassifier(
+            n_estimators=250, max_depth=4, min_samples_split=25, min_samples_leaf=12,
+            max_features="sqrt", random_state=random_state, n_jobs=-1,
+        )
+        xgb_clf = XGBClassifier(
+            n_estimators=110, max_depth=2, learning_rate=0.025,
+            subsample=0.75, colsample_bytree=0.70, min_child_weight=20,
+            reg_lambda=8.0, reg_alpha=0.8, eval_metric=eval_metric,
+            random_state=random_state, n_jobs=-1,
+        )
+    else:
+        rf_clf = RandomForestClassifier(
+            n_estimators=250, max_depth=4, min_samples_split=25, min_samples_leaf=10,
+            max_features="sqrt", random_state=random_state, n_jobs=-1,
+        )
+        xgb_clf = XGBClassifier(
+            n_estimators=120, max_depth=2, learning_rate=0.03,
+            subsample=0.80, colsample_bytree=0.75, min_child_weight=15,
+            reg_lambda=5.0, reg_alpha=0.5, eval_metric=eval_metric,
+            random_state=random_state, n_jobs=-1,
+        )
+    pipe_rf = Pipeline([("sc", StandardScaler()), ("rf", rf_clf)])
+    pipe_xgb = Pipeline([("sc", StandardScaler()), ("xgb", xgb_clf)])
+    return pipe_lasso, pipe_rf, pipe_xgb
+
+
+def optimizar_pesos_simplex(probs_list, y, labels=(0, 1, 2), reg_l2=0.03, prior=None):
+    """Minimiza `log_loss + reg_l2 * ||w - prior||^2` en el simplex mediante SLSQP."""
+    from scipy.optimize import minimize
+    from sklearn.metrics import log_loss
+
+    k = len(probs_list)
+    if prior is None:
+        prior = np.ones(k, dtype=float) / k
+    else:
+        prior = np.asarray(prior, dtype=float)
+        prior = prior / prior.sum()
+
+    y_arr = np.asarray(y)
+    if len(y_arr) < 10:
+        return prior
+
+    probs_norm = []
+    for p in probs_list:
+        arr = np.asarray(p, dtype=float)
+        if arr.ndim == 1:
+            arr = np.column_stack([1.0 - arr, arr])
+        arr = np.clip(arr, 1e-7, 1.0 - 1e-7)
+        arr = arr / arr.sum(axis=1, keepdims=True)
+        probs_norm.append(arr)
+
+    labels = list(labels)
+
+    def _obj(w):
+        w = np.clip(np.asarray(w, dtype=float), 0.0, 1.0)
+        s = float(w.sum())
+        w = w / s if s > 0 else prior
+        blend = sum(wi * pi for wi, pi in zip(w, probs_norm))
+        blend = np.clip(blend, 1e-7, 1.0 - 1e-7)
+        blend = blend / blend.sum(axis=1, keepdims=True)
+        return float(log_loss(y_arr, blend, labels=labels) + reg_l2 * np.sum((w - prior) ** 2))
+
+    res = minimize(
+        _obj,
+        prior.copy(),
+        method="SLSQP",
+        bounds=[(0.0, 1.0)] * k,
+        constraints={"type": "eq", "fun": lambda w: float(np.sum(w) - 1.0)},
+    )
+    if not res.success:
+        return prior
+    w_opt = np.clip(np.asarray(res.x, dtype=float), 0.0, 1.0)
+    s = float(w_opt.sum())
+    return (w_opt / s) if s > 0 else prior
+
+
+def entrenar_stacking_oof(X_full, y_full, best_c, binario=False, n_splits=4, reg_l2=0.03,
+                          prior=None, max_iter_lasso=3500):
+    """Entrena LASSO, RF y XGB con pesos de stacking calibrados estrictamente Out-Of-Fold.
+
+    1. Genera predicciones OOF cronológicas dentro de `X_full` (`TimeSeriesSplit`) sin que
+       ningún modelo base vea el bloque sobre el que se evalúa su peso.
+    2. Optimiza los pesos del ensamble en el simplex con SLSQP y regularización L2.
+    3. Reentrena los tres clasificadores definitivos sobre todo `(X_full, y_full)`.
+
+    Devuelve `(pipe_lasso, pipe_rf, pipe_xgb, weights_array)`.
+    """
+    from sklearn.model_selection import TimeSeriesSplit
+
+    X_df = pd.DataFrame(X_full).fillna(0.0).reset_index(drop=True)
+    y_arr = pd.Series(y_full).reset_index(drop=True).to_numpy(dtype=int)
+    labels = [0, 1] if binario else [0, 1, 2]
+    n_samples = len(X_df)
+
+    k_folds = int(max(2, min(n_splits, n_samples // 100))) if n_samples >= 200 else 2
+    tscv = TimeSeriesSplit(n_splits=k_folds)
+
+    oof_probs = [[], [], []]
+    oof_y = []
+    for tr_idx, va_idx in tscv.split(X_df):
+        if len(np.unique(y_arr[tr_idx])) < 2 or len(va_idx) < 5:
+            continue
+        m_l, m_r, m_x = modelos_base_regularizados(
+            best_c, n_samples=n_samples, binario=binario, max_iter_lasso=max_iter_lasso
+        )
+        m_l.fit(X_df.iloc[tr_idx], y_arr[tr_idx])
+        m_r.fit(X_df.iloc[tr_idx], y_arr[tr_idx])
+        m_x.fit(X_df.iloc[tr_idx], y_arr[tr_idx])
+        oof_probs[0].append(_proba_alineada(m_l, X_df.iloc[va_idx], labels))
+        oof_probs[1].append(_proba_alineada(m_r, X_df.iloc[va_idx], labels))
+        oof_probs[2].append(_proba_alineada(m_x, X_df.iloc[va_idx], labels))
+        oof_y.append(y_arr[va_idx])
+
+    if oof_y:
+        probs_cat = [np.vstack(p) for p in oof_probs]
+        y_cat = np.concatenate(oof_y)
+        weights = optimizar_pesos_simplex(probs_cat, y_cat, labels=labels, reg_l2=reg_l2, prior=prior)
+    else:
+        weights = np.array(prior if prior is not None else [1.0 / 3, 1.0 / 3, 1.0 / 3], dtype=float)
+        weights = weights / weights.sum()
+
+    pipe_lasso, pipe_rf, pipe_xgb = modelos_base_regularizados(
+        best_c, n_samples=n_samples, binario=binario, max_iter_lasso=max_iter_lasso
+    )
+    pipe_lasso.fit(X_df, y_arr)
+    pipe_rf.fit(X_df, y_arr)
+    pipe_xgb.fit(X_df, y_arr)
+    return pipe_lasso, pipe_rf, pipe_xgb, weights

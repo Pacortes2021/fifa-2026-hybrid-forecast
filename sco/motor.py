@@ -14,7 +14,7 @@ from comun.motor_comun import (
     _modelo_pre_partido,
 )
 from comun.motor_comun import hash_modulos_comunes
-from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas
+from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas, entrenar_stacking_oof
 import sys
 import math
 import pickle
@@ -384,57 +384,12 @@ def cargar():
     # C de LASSO elegido con CV temporal dentro del train (auditoría: antes se elegía con el test)
     best_c, _ = seleccionar_c_lasso(X_train, y_train, grid=[0.01, 0.02, 0.04, 0.08, 0.15, 0.3])
 
-    pipe_lasso = Pipeline([("sc", StandardScaler()),
-                           ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
-    pipe_lasso.fit(X_train, y_train)
-
-    pipe_rf = Pipeline([("sc", StandardScaler()),
-                        ("rf", RandomForestClassifier(n_estimators=200, max_depth=5, min_samples_split=15, random_state=42, n_jobs=-1))])
-    pipe_rf.fit(X_train, y_train)
-
-    pipe_xgb = Pipeline([("sc", StandardScaler()),
-                         ("xgb", XGBClassifier(n_estimators=100, max_depth=3, learning_rate=0.05,
-                                               eval_metric="mlogloss", random_state=42, n_jobs=-1))])
-    pipe_xgb.fit(X_train, y_train)
-
-    if len(X_cal) >= 10:
-        p_l_cal = pipe_lasso.predict_proba(X_cal)
-        p_r_cal = pipe_rf.predict_proba(X_cal)
-        p_x_cal = pipe_xgb.predict_proba(X_cal)
-
-        def _simplex_loss(weights):
-            w = np.array(weights, dtype=float)
-            if w.sum() > 0:
-                w = w / w.sum()
-            blend = w[0] * p_l_cal + w[1] * p_r_cal + w[2] * p_x_cal
-            blend = blend / blend.sum(axis=1, keepdims=True)
-            blend = np.clip(blend, 1e-7, 1 - 1e-7)
-            return log_loss(y_cal, blend)
-
-        res = minimize(_simplex_loss, [0.4, 0.3, 0.3], bounds=[(0, 1), (0, 1), (0, 1)],
-                       constraints={'type': 'eq', 'fun': lambda w: sum(w) - 1.0})
-        if res.success:
-            w_raw = np.array(res.x, dtype=float)
-            weights_opt = (w_raw / w_raw.sum()).tolist() if w_raw.sum() > 0 else [0.45, 0.35, 0.20]
-        else:
-            weights_opt = [0.45, 0.35, 0.20]
-    else:
-        weights_opt = [0.5, 0.3, 0.2]
-
     X_full = df_dataset.loc[train_mask | cal_mask, cols_features].fillna(0.0)
     y_full = df_dataset.loc[train_mask | cal_mask, "resultado"]
-    pipe_lasso_final = Pipeline([("sc", StandardScaler()),
-                                 ("lr", LogisticRegression(penalty="l1", solver="saga", C=best_c, max_iter=3000, random_state=42))])
-    pipe_lasso_final.fit(X_full, y_full)
-
-    pipe_rf_final = Pipeline([("sc", StandardScaler()),
-                              ("rf", RandomForestClassifier(n_estimators=200, max_depth=5, min_samples_split=15, random_state=42, n_jobs=-1))])
-    pipe_rf_final.fit(X_full, y_full)
-
-    pipe_xgb_final = Pipeline([("sc", StandardScaler()),
-                               ("xgb", XGBClassifier(n_estimators=100, max_depth=3, learning_rate=0.05,
-                                                     eval_metric="mlogloss", random_state=42, n_jobs=-1))])
-    pipe_xgb_final.fit(X_full, y_full)
+    pipe_lasso_final, pipe_rf_final, pipe_xgb_final, _w_arr = entrenar_stacking_oof(
+        X_full, y_full, best_c, binario=False, n_splits=4, reg_l2=0.03
+    )
+    weights_opt = _w_arr.tolist()
 
     def _met(proba, y):
         proba = proba / proba.sum(axis=1, keepdims=True)
