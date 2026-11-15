@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401841311,2026-11-14 18:30:00,2026,9169,7632,Mirassol,Atlético Mineiro,,,pre,False
-401841175,2026-11-14 20:30:00,2026,9318,3454,Chapecoense,Vasco da Gama,,,pre,False
 401841315,2026-11-18 19:30:00,2026,3456,2674,Coritiba,Santos,,,pre,False
 401841310,2026-11-18 20:00:00,2026,4936,9318,Remo,Chapecoense,,,pre,False
 401841313,2026-11-18 20:30:00,2026,819,3458,Flamengo,Athletico Paranaense,,,pre,False

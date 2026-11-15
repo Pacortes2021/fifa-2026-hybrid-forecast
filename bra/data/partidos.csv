@@ -2349,3 +2349,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841300,2026-11-05 19:30:00,2026,2029,4936,Palmeiras,Remo,6.0,1.0,post
 401841303,2026-11-05 21:30:00,2026,2022,9967,Cruzeiro,Bahia,3.0,2.0,post
 401841302,2026-11-06 20:00:00,2026,3457,3445,Vitória,Fluminense,0.0,3.0,post
+401841311,2026-11-14 18:30:00,2026,9169,7632,Mirassol,Atlético Mineiro,0.0,0.0,post
+401841175,2026-11-14 20:30:00,2026,9318,3454,Chapecoense,Vasco da Gama,0.0,2.0,post
