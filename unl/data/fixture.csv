@@ -1,22 +1,14 @@
 event_id,fecha,temporada,round,local,visita,local_id,visita_id,group,league,estado
-401861172,2026-11-15 15:00:00,2026,league-phase,Cyprus,Montenegro,445,6775,Group C2,C,pre
-401861171,2026-11-15 15:00:00,2026,league-phase,Latvia,Armenia,456,579,Group C2,C,pre
-401861173,2026-11-15 18:00:00,2026,league-phase,Belarus,Albania,583,585,Group C1,C,pre
-401861174,2026-11-15 18:00:00,2026,league-phase,Finland,San Marino,458,588,Group C1,C,pre
-401861176,2026-11-15 20:45:00,2026,league-phase,Belgium,Italy,459,162,Group A1,A,pre
-401861178,2026-11-15 20:45:00,2026,league-phase,Croatia,Czech Republic,477,450,Group A3,A,pre
-401861177,2026-11-15 20:45:00,2026,league-phase,France,Turkey,478,465,Group A1,A,pre
-401861175,2026-11-15 20:45:00,2026,league-phase,Spain,England,164,448,Group A3,A,pre
 401861180,2026-11-16 16:00:00,2026,league-phase,Faroe Islands,Moldova,447,483,Group C3,C,pre
 401861181,2026-11-16 16:00:00,2026,league-phase,Kazakhstan,Slovakia,2619,468,Group C3,C,pre
+401861183,2026-11-16 18:00:00,2026,league-phase,Estonia,Bulgaria,444,462,Group C4,C,pre
 401861182,2026-11-16 18:00:00,2026,league-phase,Iceland,Luxembourg,470,582,Group C4,C,pre
 401861184,2026-11-16 18:00:00,2026,league-phase,Lithuania,Liechtenstein,460,589,Group D2,D,pre
-401861183,2026-11-16 18:00:00,2026,league-phase,Estonia,Bulgaria,444,462,Group C4,C,pre
-401861185,2026-11-16 20:45:00,2026,league-phase,Germany,Netherlands,481,449,Group A2,A,pre
-401861179,2026-11-16 20:45:00,2026,league-phase,Gibraltar,Malta,16721,453,Group D1,D,pre
+401861186,2026-11-16 20:45:00,2026,league-phase,Switzerland,Scotland,475,580,Group B1,B,pre
 401861188,2026-11-16 20:45:00,2026,league-phase,Greece,Serbia,455,6757,Group A2,A,pre
 401861187,2026-11-16 20:45:00,2026,league-phase,North Macedonia,Slovenia,463,472,Group B1,B,pre
-401861186,2026-11-16 20:45:00,2026,league-phase,Switzerland,Scotland,475,580,Group B1,B,pre
+401861185,2026-11-16 20:45:00,2026,league-phase,Germany,Netherlands,481,449,Group A2,A,pre
+401861179,2026-11-16 20:45:00,2026,league-phase,Gibraltar,Malta,16721,453,Group D1,D,pre
 401861190,2026-11-17 20:45:00,2026,league-phase,Ukraine,Georgia,457,584,Group B2,B,pre
 401861196,2026-11-17 20:45:00,2026,league-phase,Bosnia and Herzegovina,Romania,452,473,Group B4,B,pre
 401861194,2026-11-17 20:45:00,2026,league-phase,Denmark,Norway,479,464,Group A4,A,pre

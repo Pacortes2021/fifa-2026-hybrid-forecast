@@ -2235,6 +2235,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882808,2026-11-07 21:00:00,2026,94,86,Valencia CF,Real Madrid,0.0,3.0,post
 401882814,2026-11-08 14:00:00,2026,3751,244,Elche CF,Real Betis,0.0,2.0,post
 401882810,2026-11-08 16:15:00,2026,89,101,Real Sociedad,Rayo Vallecano,1.0,0.0,post
-401882815,2026-11-08 18:30:00,2026,85,1538,Celta de Vigo,Levante,0.0,0.0,post
 401882807,2026-11-08 18:30:00,2026,102,2922,Villarreal CF,Getafe,2.0,0.0,post
+401882815,2026-11-08 18:30:00,2026,85,1538,Celta de Vigo,Levante,0.0,0.0,post
 401882816,2026-11-08 21:00:00,2026,1068,83,Atlético de Madrid,FC Barcelona,1.0,2.0,post
