@@ -1,19 +1,9 @@
 event_id,fecha,temporada,round,local,visita,local_id,visita_id,group,league,estado
-401861180,2026-11-16 16:00:00,2026,league-phase,Faroe Islands,Moldova,447,483,Group C3,C,pre
-401861181,2026-11-16 16:00:00,2026,league-phase,Kazakhstan,Slovakia,2619,468,Group C3,C,pre
-401861183,2026-11-16 18:00:00,2026,league-phase,Estonia,Bulgaria,444,462,Group C4,C,pre
-401861182,2026-11-16 18:00:00,2026,league-phase,Iceland,Luxembourg,470,582,Group C4,C,pre
-401861184,2026-11-16 18:00:00,2026,league-phase,Lithuania,Liechtenstein,460,589,Group D2,D,pre
-401861186,2026-11-16 20:45:00,2026,league-phase,Switzerland,Scotland,475,580,Group B1,B,pre
-401861188,2026-11-16 20:45:00,2026,league-phase,Greece,Serbia,455,6757,Group A2,A,pre
-401861187,2026-11-16 20:45:00,2026,league-phase,North Macedonia,Slovenia,463,472,Group B1,B,pre
-401861185,2026-11-16 20:45:00,2026,league-phase,Germany,Netherlands,481,449,Group A2,A,pre
-401861179,2026-11-16 20:45:00,2026,league-phase,Gibraltar,Malta,16721,453,Group D1,D,pre
-401861190,2026-11-17 20:45:00,2026,league-phase,Ukraine,Georgia,457,584,Group B2,B,pre
 401861196,2026-11-17 20:45:00,2026,league-phase,Bosnia and Herzegovina,Romania,452,473,Group B4,B,pre
 401861194,2026-11-17 20:45:00,2026,league-phase,Denmark,Norway,479,464,Group A4,A,pre
 401861191,2026-11-17 20:45:00,2026,league-phase,Hungary,Northern Ireland,480,586,Group B2,B,pre
 401861193,2026-11-17 20:45:00,2026,league-phase,Israel,Austria,461,474,Group B3,B,pre
 401861195,2026-11-17 20:45:00,2026,league-phase,Poland,Sweden,471,466,Group B4,B,pre
 401861192,2026-11-17 20:45:00,2026,league-phase,Republic of Ireland,Kosovo,476,18272,Group B3,B,pre
+401861190,2026-11-17 20:45:00,2026,league-phase,Ukraine,Georgia,457,584,Group B2,B,pre
 401861189,2026-11-17 20:45:00,2026,league-phase,Wales,Portugal,578,482,Group A4,A,pre
