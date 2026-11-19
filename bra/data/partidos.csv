@@ -2351,3 +2351,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841302,2026-11-06 20:00:00,2026,3457,3445,Vitória,Fluminense,0.0,3.0,post
 401841311,2026-11-14 18:30:00,2026,9169,7632,Mirassol,Atlético Mineiro,0.0,0.0,post
 401841175,2026-11-14 20:30:00,2026,9318,3454,Chapecoense,Vasco da Gama,0.0,2.0,post
+401841315,2026-11-18 19:30:00,2026,3456,2674,Coritiba,Santos,0.0,1.0,post
+401841310,2026-11-18 20:00:00,2026,4936,9318,Remo,Chapecoense,2.0,0.0,post
+401841313,2026-11-18 20:30:00,2026,819,3458,Flamengo,Athletico Paranaense,2.0,1.0,post
+401841314,2026-11-18 20:30:00,2026,2022,2029,Cruzeiro,Palmeiras,2.0,1.0,post
+401841316,2026-11-18 21:30:00,2026,874,6086,Corinthians,Botafogo,4.0,0.0,post
+401841312,2026-11-18 21:30:00,2026,6273,9967,Grêmio,Bahia,0.0,0.0,post
