@@ -2357,3 +2357,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841314,2026-11-18 20:30:00,2026,2022,2029,Cruzeiro,Palmeiras,2.0,1.0,post
 401841316,2026-11-18 21:30:00,2026,874,6086,Corinthians,Botafogo,4.0,0.0,post
 401841312,2026-11-18 21:30:00,2026,6273,9967,Grêmio,Bahia,0.0,0.0,post
+401841308,2026-11-19 19:30:00,2026,3454,1936,Vasco da Gama,Internacional,2.0,1.0,post
+401841317,2026-11-19 19:30:00,2026,3457,6079,Vitória,Red Bull Bragantino,2.0,1.0,post
+401841309,2026-11-19 21:30:00,2026,2026,3445,São Paulo,Fluminense,0.0,1.0,post
