@@ -14,6 +14,7 @@ from comun.motor_comun import (
     _modelo_pre_partido,
 )
 from comun.motor_comun import hash_modulos_comunes
+from comun.monte_carlo import MC_DINAMICO_VERSION, simular_fixture_dinamico
 import sys
 import math
 import pickle
@@ -770,51 +771,25 @@ def obtener_tabla_actual(M, temporada=None):
     return ordenar_tabla(pd.DataFrame(filas))
 
 
-def _simular_fixture_vec(M, PREDS, fijos, n_sims, modelo_tipo="rf"):
+def _simular_fixture_vec(M, PREDS, fijos, n_sims, modelo_tipo="rf", seed=None):
     fix_path = DATA / "fixture.csv"
     fix = pd.read_csv(fix_path)
     fix["temporada"] = pd.to_datetime(fix["fecha"]).apply(lambda x: x.year if x.month >= 7 else x.year - 1)
     temporada_sim = fix["temporada"].mode().iloc[0]
-    fix = fix[fix.temporada == temporada_sim]
+    fix = fix[fix.temporada == temporada_sim].copy()
     tabla = obtener_tabla_actual(M, temporada=temporada_sim)
-    seed = dict(zip(tabla["equipo"], zip(tabla["puntos"], tabla["goles_favor"], tabla["goles_contra"])))
-    eqs = sorted(set(seed).union(set(fix["local"])).union(set(fix["visita"])))
-    n_eq = len(eqs)
-    ix = {e: i for i, e in enumerate(eqs)}
-    PTS = np.zeros((n_eq, n_sims))
-    GF = np.zeros_like(PTS)
-    GC = np.zeros_like(PTS)
-    for e in eqs:
-        if e in seed:
-            pts, gf_, gc_ = seed[e]
-            PTS[ix[e]] = pts
-            GF[ix[e]] = gf_
-            GC[ix[e]] = gc_
-    for r in fix.itertuples(index=False):
-        local, visita = r.local, r.visita
-        if fijos and (local, visita) in fijos:
-            gl = np.full(n_sims, float(fijos[(local, visita)][0]))
-            gv = np.full(n_sims, float(fijos[(local, visita)][1]))
-        else:
-            p = PREDS.get((local, visita))
-            if p is None:
-                p = grilla_goles(M, local, visita, modelo_tipo=modelo_tipo)
-            k = np.random.choice(p.size, size=n_sims, p=p.ravel())
-            gl = (k // p.shape[1]).astype(float)
-            gv = (k % p.shape[1]).astype(float)
-        li, vi = ix[local], ix[visita]
-        win_l = gl > gv
-        draw = gl == gv
-        PTS[li] += np.where(win_l, 3.0, np.where(draw, 1.0, 0.0))
-        PTS[vi] += np.where(gv > gl, 3.0, np.where(draw, 1.0, 0.0))
-        GF[li] += gl
-        GF[vi] += gv
-        GC[li] += gv
-        GC[vi] += gl
-    DG = GF - GC
-    key = PTS * 1_000_000 + DG * 1_000 + GF + np.random.random(PTS.shape)  # el ruido < 1 solo rompe empates exactos (antes ganaba el primero en orden alfabético)
-    order = np.argsort(-key, axis=0)
-    return eqs, order
+    seed_map = dict(zip(tabla["equipo"], zip(tabla["puntos"], tabla["goles_favor"], tabla["goles_contra"])))
+    eqs = sorted(set(seed_map).union(set(fix["local"])).union(set(fix["visita"])))
+    init_pts = np.array([seed_map[e][0] if e in seed_map else 0.0 for e in eqs], dtype=np.float32)
+    init_gf = np.array([seed_map[e][1] if e in seed_map else 0.0 for e in eqs], dtype=np.float32)
+    init_gc = np.array([seed_map[e][2] if e in seed_map else 0.0 for e in eqs], dtype=np.float32)
+    res = simular_fixture_dinamico(
+        M, fix, eqs, init_pts, init_gf, init_gc, PREDS,
+        fijos=fijos, n_sims=n_sims, k_liga=K_LIGA, home_adv=HOME_ADV,
+        predecir_fallback=lambda l, v: grilla_goles(M, l, v, modelo_tipo=modelo_tipo),
+        liga=Path(__file__).resolve().parent.name, seed=seed,
+    )
+    return res["eqs"], res["order"]
 
 
 def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo=None, modelo=None, seed=42):
@@ -843,6 +818,7 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo=None, modelo=None
     fp.update(str(fix_path.stat().st_size).encode())
     fp.update(str(n_sims).encode())
     fp.update(_cache_key().encode())
+    fp.update(MC_DINAMICO_VERSION.encode())
     if fijos is not None:
         fp.update(repr(sorted(fijos.items())).encode())
     cache_path = Path(__file__).resolve().parent / "simulacion_mc.pkl"
@@ -877,7 +853,7 @@ def simular_campeonato(M, n_sims=3000, fijos=None, modelo_tipo=None, modelo=None
     counts_copas = defaultdict(int)
     counts_descenso = defaultdict(int)
     
-    eqs, order = _simular_fixture_vec(M, PREDS, fijos, n_sims, modelo_tipo=modelo_tipo)
+    eqs, order = _simular_fixture_vec(M, PREDS, fijos, n_sims, modelo_tipo=modelo_tipo, seed=seed)
     n_eq = len(eqs)
     campeon_c = np.bincount(order[0], minlength=n_eq)
     copas_c = np.bincount(order[:CUPOS_COPA].ravel(), minlength=n_eq)
