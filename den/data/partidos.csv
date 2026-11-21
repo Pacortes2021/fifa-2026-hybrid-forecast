@@ -1163,3 +1163,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874570,2026-11-08 14:00:00,2026,7853,3585,AGF,AC Horsens,2,0,post,STATUS_FULL_TIME
 401874562,2026-11-08 16:00:00,2026,3132,3101,Randers FC,FC Nordsjælland,1,6,post,STATUS_FULL_TIME
 401874556,2026-11-08 18:00:00,2026,572,8118,FC Midtjylland,Sønderjyske Fodbold,2,2,post,STATUS_FULL_TIME
+401874492,2026-11-20 19:00:00,2026,7853,7860,AGF,Lyngby Boldklub,2,1,post,STATUS_FULL_TIME

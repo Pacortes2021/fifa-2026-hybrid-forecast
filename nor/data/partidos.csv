@@ -1407,3 +1407,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401843482,2026-11-08 17:00:00,2026,510,22165,Viking FK,KFUM Oslo,5,1,post,STATUS_FULL_TIME
 401843475,2026-11-08 19:15:00,2026,3039,620,Fredrikstad,SK Brann,2,2,post,STATUS_FULL_TIME
 401843480,2026-11-09 19:00:00,2026,6672,2791,Kristiansund BK,Vålerenga,1,0,post,STATUS_FULL_TIME
+401843486,2026-11-20 19:00:00,2026,2715,2980,Molde,Bodo/Glimt,2,4,post,STATUS_FULL_TIME

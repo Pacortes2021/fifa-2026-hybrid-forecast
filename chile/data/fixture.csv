@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401850692,2026-11-20 18:00:00,2026,4133,4138,Cobresal,Audax Italiano,,,pre,False
-401850695,2026-11-20 20:30:00,2026,4422,10144,Palestino,Unión La Calera,,,pre,False
 401850699,2026-11-21 12:00:00,2026,8186,4129,Coquimbo Unido,Everton,,,pre,False
 401850696,2026-11-21 18:00:00,2026,6072,4139,O'Higgins,Universidad de Chile,,,pre,False
 401850694,2026-11-21 20:30:00,2026,5362,7427,Universidad de Concepción,Ñublense,,,pre,False

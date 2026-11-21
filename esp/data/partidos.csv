@@ -2238,3 +2238,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882807,2026-11-08 18:30:00,2026,102,2922,Villarreal CF,Getafe,2.0,0.0,post
 401882815,2026-11-08 18:30:00,2026,85,1538,Celta de Vigo,Levante,0.0,0.0,post
 401882816,2026-11-08 21:00:00,2026,1068,83,Atlético de Madrid,FC Barcelona,1.0,2.0,post
+401882805,2026-11-20 21:00:00,2026,93,88,Athletic Club,Espanyol,0.0,1.0,post

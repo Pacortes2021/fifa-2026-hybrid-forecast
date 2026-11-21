@@ -1978,3 +1978,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876409,2026-11-08 17:15:00,2026,3236,273,Le Havre,Lorient,0.0,2.0,post
 401876408,2026-11-08 17:15:00,2026,2697,174,Le Mans,Monaco,1.0,1.0,post
 401876404,2026-11-08 20:45:00,2026,175,176,Lens,Marseille,1.0,2.0,post
+401876395,2026-11-20 20:45:00,2026,170,3236,Troyes,Le Havre,3.0,1.0,post

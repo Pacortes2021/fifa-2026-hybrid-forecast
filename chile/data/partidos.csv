@@ -1529,3 +1529,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850686,2026-11-08 15:00:00,2026,4139,4133,Universidad de Chile,Cobresal,2.0,1.0,post
 401850684,2026-11-08 17:30:00,2026,10144,4134,Unión La Calera,Huachipato,1.0,0.0,post
 401850685,2026-11-08 20:00:00,2026,5362,6072,Universidad de Concepción,O'Higgins,3.0,2.0,post
+401850692,2026-11-20 18:00:00,2026,4133,4138,Cobresal,Audax Italiano,3.0,2.0,post
+401850695,2026-11-20 20:30:00,2026,4422,10144,Palestino,Unión La Calera,0.0,1.0,post

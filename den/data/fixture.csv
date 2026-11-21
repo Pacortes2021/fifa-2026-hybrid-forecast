@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401874492,2026-11-20 19:00:00,2026,7853,7860,AGF,Lyngby Boldklub,,,pre,STATUS_SCHEDULED,False
 401874575,2026-11-22 14:00:00,2026,3585,607,AC Horsens,Silkeborg IF,,,pre,STATUS_SCHEDULED,False
 401874558,2026-11-22 14:00:00,2026,3153,3132,Viborg FF,Randers FC,,,pre,STATUS_SCHEDULED,False
 401874541,2026-11-22 16:00:00,2026,8118,11550,Sønderjyske Fodbold,Odense Boldklub,,,pre,STATUS_SCHEDULED,False

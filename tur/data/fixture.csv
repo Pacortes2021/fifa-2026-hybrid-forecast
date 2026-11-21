@@ -1,7 +1,6 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401888247,2026-11-21 13:30:00,2026,996,20070,Genclerbirligi,Gaziantep FK,,,pre,STATUS_SCHEDULED,False
-401888369,2026-11-21 16:00:00,2026,132335,7656,Amed SFK,Caykur Rizespor,,,pre,STATUS_SCHEDULED,False
-401888245,2026-11-21 16:00:00,2026,432,11429,Galatasaray,Samsunspor,,,pre,STATUS_SCHEDULED,False
+401888369,2026-11-21 16:00:00,2026,132335,7656,Amed SFK,Caykur Rizespor,,,pre,STATUS_SECOND_HALF,False
+401888245,2026-11-21 16:00:00,2026,432,11429,Galatasaray,Samsunspor,,,pre,STATUS_SECOND_HALF,False
 401888244,2026-11-21 19:00:00,2026,995,436,Kocaelispor,Fenerbahce,,,pre,STATUS_SCHEDULED,False
 401888243,2026-11-22 13:30:00,2026,19267,789,Erzurum BB,Goztepe,,,pre,STATUS_SCHEDULED,False
 401888246,2026-11-22 16:00:00,2026,7648,1895,Konyaspor,Besiktas,,,pre,STATUS_SCHEDULED,False

@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401876395,2026-11-20 20:45:00,2026,170,3236,Troyes,Le Havre,,,pre,False
 401876398,2026-11-21 17:15:00,2026,2502,160,Nice,Paris Saint-Germain,,,pre,False
 401876399,2026-11-21 20:45:00,2026,174,172,Monaco,Auxerre,,,pre,False
 401876403,2026-11-21 20:45:00,2026,175,179,Lens,Toulouse,,,pre,False
