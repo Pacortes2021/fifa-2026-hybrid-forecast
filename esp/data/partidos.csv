@@ -2239,3 +2239,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882815,2026-11-08 18:30:00,2026,85,1538,Celta de Vigo,Levante,0.0,0.0,post
 401882816,2026-11-08 21:00:00,2026,1068,83,Atlético de Madrid,FC Barcelona,1.0,2.0,post
 401882805,2026-11-20 21:00:00,2026,93,88,Athletic Club,Espanyol,0.0,1.0,post
+401882806,2026-11-21 14:00:00,2026,96,90,Alavés,Deportivo,3.0,1.0,post
+401882799,2026-11-21 16:15:00,2026,101,94,Rayo Vallecano,Valencia CF,0.0,1.0,post
+401882797,2026-11-21 18:30:00,2026,243,244,Sevilla FC,Real Betis,1.0,1.0,post
+401882798,2026-11-21 21:00:00,2026,86,85,Real Madrid,Celta de Vigo,2.0,1.0,post

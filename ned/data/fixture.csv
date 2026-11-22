@@ -1,10 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401875541,2026-11-21 16:30:00,2026,147,148,NEC,PSV,,,pre,False
-401875544,2026-11-21 18:45:00,2026,153,3736,Utrecht,SC Cambuur,,,pre,False
-401875543,2026-11-21 18:45:00,2026,142,2566,Feyenoord,Excelsior,,,pre,False
-401875546,2026-11-21 21:00:00,2026,145,146,Groningen,Heerenveen,,,pre,False
-401875539,2026-11-21 21:00:00,2026,3735,2565,Telstar,PEC Zwolle,,,pre,False
-401875545,2026-11-22 12:15:00,2026,152,156,Twente,Willem II,,,pre,False
 401875540,2026-11-22 14:30:00,2026,151,140,Sparta Rotterdam,AZ Alkmaar,,,pre,False
 401875547,2026-11-22 14:30:00,2026,139,2726,Ajax,ADO Den Haag,,,pre,False
 401875542,2026-11-22 16:45:00,2026,3706,143,Go Ahead Eagles,Fortuna Sittard,,,pre,False

@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401882806,2026-11-21 14:00:00,2026,96,90,Alavés,Deportivo,,,pre,False
-401882799,2026-11-21 16:15:00,2026,101,94,Rayo Vallecano,Valencia CF,,,pre,False
-401882797,2026-11-21 18:30:00,2026,243,244,Sevilla FC,Real Betis,,,pre,False
-401882798,2026-11-21 21:00:00,2026,86,85,Real Madrid,Celta de Vigo,,,pre,False
 401882804,2026-11-22 14:00:00,2026,83,102,FC Barcelona,Villarreal CF,,,pre,False
 401882800,2026-11-22 16:15:00,2026,87,89,Racing Santander,Real Sociedad,,,pre,False
 401882801,2026-11-22 18:30:00,2026,97,99,CA Osasuna,Málaga,,,pre,False

@@ -1,9 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401875056,2026-11-21 15:00:00,2026,2572,2925,Como,Cagliari,,,pre,False
-401874981,2026-11-21 15:00:00,2026,112,113,Lazio,Lecce,,,pre,False
-401874967,2026-11-21 18:00:00,2026,115,104,Parma,AS Roma,,,pre,False
-401875067,2026-11-21 20:45:00,2026,114,239,Napoli,Torino,,,pre,False
-401875008,2026-11-22 12:30:00,2026,111,17530,Juventus,Venezia,,,pre,False
 401875047,2026-11-22 15:00:00,2026,107,118,Bologna,Udinese,,,pre,False
 401874960,2026-11-22 15:00:00,2026,3997,3263,Sassuolo,Genoa,,,pre,False
 401874989,2026-11-22 18:00:00,2026,103,4057,AC Milan,Frosinone,,,pre,False

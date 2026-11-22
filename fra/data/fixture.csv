@@ -1,9 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401876398,2026-11-21 17:15:00,2026,2502,160,Nice,Paris Saint-Germain,,,pre,False
-401876399,2026-11-21 20:45:00,2026,174,172,Monaco,Auxerre,,,pre,False
-401876403,2026-11-21 20:45:00,2026,175,179,Lens,Toulouse,,,pre,False
-401876402,2026-11-21 20:45:00,2026,166,167,Lille,Lyon,,,pre,False
-401876396,2026-11-21 20:45:00,2026,180,6997,Strasbourg,Brest,,,pre,False
 401876397,2026-11-22 15:00:00,2026,6851,7868,Paris FC,Angers,,,pre,False
 401876401,2026-11-22 17:15:00,2026,273,169,Lorient,Rennes,,,pre,False
 401876400,2026-11-22 20:45:00,2026,176,2697,Marseille,Le Mans,,,pre,False

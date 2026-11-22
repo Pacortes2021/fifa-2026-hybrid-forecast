@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401843483,2026-11-21 14:00:00,2026,5270,510,Tromso,Viking FK,,,pre,STATUS_SECOND_HALF,False
-401843489,2026-11-21 16:00:00,2026,21380,3039,Hamarkameratene,Fredrikstad,,,pre,STATUS_SCHEDULED,False
-401843485,2026-11-21 18:00:00,2026,2791,6750,Vålerenga,IK Start,,,pre,STATUS_SCHEDULED,False
 401843490,2026-11-22 17:00:00,2026,3278,438,Aalesund,Rosenborg,,,pre,STATUS_SCHEDULED,False
 401843488,2026-11-22 17:00:00,2026,22165,620,KFUM Oslo,SK Brann,,,pre,STATUS_SCHEDULED,False
 401843487,2026-11-22 17:00:00,2026,6672,3279,Kristiansund BK,Sandefjord,,,pre,STATUS_SCHEDULED,False

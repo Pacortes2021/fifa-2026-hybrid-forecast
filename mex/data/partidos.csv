@@ -2017,3 +2017,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401877054,2026-11-20 19:00:00,2026,231,15720,Puebla,Atlético San Luis,1.0,1.0,post
 401877053,2026-11-20 21:00:00,2026,17851,216,FC Juárez,Atlas,3.0,3.0,post
 401877052,2026-11-20 21:10:00,2026,10125,226,Tijuana,Atlante,1.0,0.0,post
+401877050,2026-11-21 16:50:00,2026,234,223,Pachuca,Toluca,2.0,0.0,post
+401877051,2026-11-21 17:00:00,2026,225,228,Santos Laguna,León,1.0,2.0,post
+401877049,2026-11-21 19:00:00,2026,233,220,Pumas UNAM,Monterrey,0.0,2.0,post
+401877048,2026-11-21 21:00:00,2026,232,227,Tigres UANL,América,1.0,0.0,post

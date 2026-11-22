@@ -2224,3 +2224,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878759,2026-11-08 14:00:00,2026,373,349,Ipswich Town,AFC Bournemouth,1.0,2.0,post
 401879239,2026-11-08 14:00:00,2026,366,363,Sunderland,Chelsea,1.0,0.0,post
 401879240,2026-11-08 16:30:00,2026,360,362,Manchester United,Aston Villa,4.0,4.0,post
+401879233,2026-11-21 12:30:00,2026,382,370,Manchester City,Fulham,1.0,1.0,post
+401878754,2026-11-21 15:00:00,2026,367,373,Tottenham Hotspur,Ipswich Town,2.0,0.0,post
+401879236,2026-11-21 15:00:00,2026,363,357,Chelsea,Leeds United,1.0,4.0,post
+401879235,2026-11-21 15:00:00,2026,388,384,Coventry City,Crystal Palace,3.0,2.0,post
+401878756,2026-11-21 15:00:00,2026,362,366,Aston Villa,Sunderland,0.0,0.0,post
+401879238,2026-11-21 15:00:00,2026,349,393,AFC Bournemouth,Nottingham Forest,2.0,0.0,post
+401879232,2026-11-21 17:30:00,2026,361,359,Newcastle United,Arsenal,2.0,2.0,post

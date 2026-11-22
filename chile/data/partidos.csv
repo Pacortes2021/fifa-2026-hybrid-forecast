@@ -1531,3 +1531,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850685,2026-11-08 20:00:00,2026,5362,6072,Universidad de Concepción,O'Higgins,3.0,2.0,post
 401850692,2026-11-20 18:00:00,2026,4133,4138,Cobresal,Audax Italiano,3.0,2.0,post
 401850695,2026-11-20 20:30:00,2026,4422,10144,Palestino,Unión La Calera,0.0,1.0,post
+401850699,2026-11-21 12:00:00,2026,8186,4129,Coquimbo Unido,Everton,2.0,1.0,post
+401850696,2026-11-21 18:00:00,2026,6072,4139,O'Higgins,Universidad de Chile,0.0,1.0,post
+401850694,2026-11-21 20:30:00,2026,5362,7427,Universidad de Concepción,Ñublense,2.0,3.0,post

@@ -1414,3 +1414,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401896811,2026-11-08 17:30:00,2026,2575,443,Iraklis,Panathinaikos,1,2,post,STATUS_FULL_TIME
 401896729,2026-11-08 18:30:00,2026,1010,6790,OFI Crete,Atromitos,0,0,post,STATUS_FULL_TIME
 401896730,2026-11-08 21:00:00,2026,435,605,Olympiacos,PAOK,1,1,post,STATUS_FULL_TIME
+401896810,2026-11-21 19:30:00,2026,132429,887,Kalamata,AEK Athens,0,1,post,STATUS_FULL_TIME

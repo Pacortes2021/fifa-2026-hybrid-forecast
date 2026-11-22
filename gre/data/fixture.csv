@@ -1,6 +1,5 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401896810,2026-11-21 19:30:00,2026,132429,887,Kalamata,AEK Athens,,,pre,STATUS_SCHEDULED,False
-401896727,2026-11-22 16:00:00,2026,5276,6790,Levadiakos,Atromitos,,,pre,STATUS_SCHEDULED,False
+401896727,2026-11-22 16:00:00,2026,5276,6790,Levadiakos,Atromitos,,,pre,STATUS_FIRST_HALF,False
 401896725,2026-11-22 17:00:00,2026,11431,20043,Panetolikos,Volos NFC,,,pre,STATUS_SCHEDULED,False
 401896726,2026-11-22 17:30:00,2026,443,1010,Panathinaikos,OFI Crete,,,pre,STATUS_SCHEDULED,False
 401896809,2026-11-22 19:00:00,2026,435,2575,Olympiacos,Iraklis,,,pre,STATUS_SCHEDULED,False

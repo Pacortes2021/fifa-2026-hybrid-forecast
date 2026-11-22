@@ -1,9 +1,6 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401881749,2026-11-21 17:00:00,2026,4411,6907,LASK Linz,TSV Hartberg,,,pre,STATUS_SCHEDULED,False
-401881744,2026-11-21 17:00:00,2026,18794,21540,WSG Swarovski Tirol,Austria Lustenau,,,pre,STATUS_SCHEDULED,False
-401881746,2026-11-21 19:30:00,2026,21846,519,Grazer AK,Rapid Vienna,,,pre,STATUS_SCHEDULED,False
-401881745,2026-11-22 14:30:00,2026,4405,3746,SC Rheindorf Altach,SK Sturm Graz,,,pre,STATUS_SCHEDULED,False
-401881748,2026-11-22 14:30:00,2026,13294,3759,Wolfsberger,SV Josko Ried,,,pre,STATUS_SCHEDULED,False
+401881745,2026-11-22 14:30:00,2026,4405,3746,SC Rheindorf Altach,SK Sturm Graz,,,pre,STATUS_FIRST_HALF,False
+401881748,2026-11-22 14:30:00,2026,13294,3759,Wolfsberger,SV Josko Ried,,,pre,STATUS_FIRST_HALF,False
 401881747,2026-11-22 17:00:00,2026,1382,2790,Austria Vienna,RB Salzburg,,,pre,STATUS_SCHEDULED,False
 401881739,2026-11-27 19:30:00,2026,21846,4405,Grazer AK,SC Rheindorf Altach,,,pre,STATUS_SCHEDULED,False
 401881740,2026-11-28 17:00:00,2026,1382,13294,Austria Vienna,Wolfsberger,,,pre,STATUS_SCHEDULED,False

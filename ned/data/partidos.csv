@@ -1841,3 +1841,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401875548,2026-11-08 16:45:00,2026,140,145,AZ Alkmaar,Groningen,4.0,3.0,post
 401875553,2026-11-08 16:45:00,2026,3736,148,SC Cambuur,PSV,2.0,5.0,post
 401875549,2026-11-08 20:00:00,2026,153,147,Utrecht,NEC,2.0,3.0,post
+401875541,2026-11-21 16:30:00,2026,147,148,NEC,PSV,1.0,4.0,post
+401875544,2026-11-21 18:45:00,2026,153,3736,Utrecht,SC Cambuur,2.0,3.0,post
+401875543,2026-11-21 18:45:00,2026,142,2566,Feyenoord,Excelsior,2.0,3.0,post
+401875546,2026-11-21 21:00:00,2026,145,146,Groningen,Heerenveen,1.0,3.0,post
+401875539,2026-11-21 21:00:00,2026,3735,2565,Telstar,PEC Zwolle,1.0,3.0,post
+401875545,2026-11-22 12:15:00,2026,152,156,Twente,Willem II,2.0,1.0,post
