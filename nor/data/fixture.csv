@@ -1,8 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401843490,2026-11-22 17:00:00,2026,3278,438,Aalesund,Rosenborg,,,pre,STATUS_SCHEDULED,False
-401843488,2026-11-22 17:00:00,2026,22165,620,KFUM Oslo,SK Brann,,,pre,STATUS_SCHEDULED,False
-401843487,2026-11-22 17:00:00,2026,6672,3279,Kristiansund BK,Sandefjord,,,pre,STATUS_SCHEDULED,False
-401843484,2026-11-22 19:15:00,2026,5002,987,Sarpsborg FK,Lillestrom,,,pre,STATUS_SCHEDULED,False
 401843492,2026-11-28 16:00:00,2026,2980,22165,Bodo/Glimt,KFUM Oslo,,,pre,STATUS_SCHEDULED,False
 401843497,2026-11-28 18:00:00,2026,438,2715,Rosenborg,Molde,,,pre,STATUS_SCHEDULED,False
 401843495,2026-11-29 14:30:00,2026,3039,3278,Fredrikstad,Aalesund,,,pre,STATUS_SCHEDULED,False

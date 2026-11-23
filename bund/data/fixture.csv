@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401884733,2026-11-22 15:30:00,2026,3841,2950,FC Augsburg,Mainz,,,pre,False
-401884730,2026-11-22 17:30:00,2026,137,127,Werder Bremen,Hamburg SV,,,pre,False
 401884720,2026-11-27 20:30:00,2026,137,268,Werder Bremen,Borussia Mönchengladbach,,,pre,False
 401884723,2026-11-28 15:30:00,2026,2950,598,Mainz,1. FC Union Berlin,,,pre,False
 401884719,2026-11-28 15:30:00,2026,3307,133,SC Paderborn 07,Schalke 04,,,pre,False

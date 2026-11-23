@@ -2231,3 +2231,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878756,2026-11-21 15:00:00,2026,362,366,Aston Villa,Sunderland,0.0,0.0,post
 401879238,2026-11-21 15:00:00,2026,349,393,AFC Bournemouth,Nottingham Forest,2.0,0.0,post
 401879232,2026-11-21 17:30:00,2026,361,359,Newcastle United,Arsenal,2.0,2.0,post
+401879234,2026-11-22 14:00:00,2026,306,331,Hull City,Brighton & Hove Albion,2.0,0.0,post
+401878755,2026-11-22 16:30:00,2026,364,360,Liverpool,Manchester United,4.0,0.0,post

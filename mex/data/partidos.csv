@@ -2021,3 +2021,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401877051,2026-11-21 17:00:00,2026,225,228,Santos Laguna,León,1.0,2.0,post
 401877049,2026-11-21 19:00:00,2026,233,220,Pumas UNAM,Monterrey,0.0,2.0,post
 401877048,2026-11-21 21:00:00,2026,232,227,Tigres UANL,América,1.0,0.0,post
+401877047,2026-11-22 17:07:00,2026,219,218,Guadalajara,Cruz Azul,1.0,0.0,post
+401877046,2026-11-22 19:10:00,2026,222,229,Querétaro,Necaxa,2.0,2.0,post

@@ -1,7 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401850697,2026-11-22 12:00:00,2026,4134,8110,Huachipato,Deportes Concepción,,,pre,False
-401850693,2026-11-22 18:00:00,2026,2688,885,Colo Colo,Universidad Católica,,,pre,False
-401850698,2026-11-22 20:30:00,2026,19195,4137,Deportes Limache,Deportes La Serena,,,pre,False
 401850705,2026-11-28 18:00:00,2026,8186,19195,Coquimbo Unido,Deportes Limache,,,pre,False
 401850706,2026-11-28 20:30:00,2026,2688,4137,Colo Colo,Deportes La Serena,,,pre,False
 401850704,2026-11-29 18:00:00,2026,8110,4139,Deportes Concepción,Universidad de Chile,,,pre,False

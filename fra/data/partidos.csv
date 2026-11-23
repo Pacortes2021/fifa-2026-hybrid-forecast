@@ -1984,3 +1984,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876403,2026-11-21 20:45:00,2026,175,179,Lens,Toulouse,1.0,1.0,post
 401876402,2026-11-21 20:45:00,2026,166,167,Lille,Lyon,0.0,1.0,post
 401876396,2026-11-21 20:45:00,2026,180,6997,Strasbourg,Brest,0.0,1.0,post
+401876397,2026-11-22 15:00:00,2026,6851,7868,Paris FC,Angers,4.0,0.0,post
+401876401,2026-11-22 17:15:00,2026,273,169,Lorient,Rennes,1.0,1.0,post
+401876400,2026-11-22 20:45:00,2026,176,2697,Marseille,Le Mans,2.0,3.0,post

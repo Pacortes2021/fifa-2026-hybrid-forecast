@@ -2257,3 +2257,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874967,2026-11-21 18:00:00,2026,115,104,Parma,AS Roma,1.0,5.0,post
 401875067,2026-11-21 20:45:00,2026,114,239,Napoli,Torino,1.0,0.0,post
 401875008,2026-11-22 12:30:00,2026,111,17530,Juventus,Venezia,4.0,0.0,post
+401875047,2026-11-22 15:00:00,2026,107,118,Bologna,Udinese,1.0,1.0,post
+401874960,2026-11-22 15:00:00,2026,3997,3263,Sassuolo,Genoa,0.0,2.0,post
+401874989,2026-11-22 18:00:00,2026,103,4057,AC Milan,Frosinone,5.0,1.0,post
+401875001,2026-11-22 20:45:00,2026,105,110,Atalanta,Inter,4.0,4.0,post

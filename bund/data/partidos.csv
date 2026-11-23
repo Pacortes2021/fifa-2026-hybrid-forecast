@@ -1806,3 +1806,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401884734,2026-11-21 15:30:00,2026,125,7911,Eintracht Frankfurt,TSG Hoffenheim,1.0,0.0,post
 401884728,2026-11-21 15:30:00,2026,10388,126,SV Elversberg,SC Freiburg,0.0,1.0,post
 401884729,2026-11-21 18:30:00,2026,133,134,Schalke 04,VfB Stuttgart,0.0,0.0,post
+401884733,2026-11-22 15:30:00,2026,3841,2950,FC Augsburg,Mainz,3.0,1.0,post
+401884730,2026-11-22 17:30:00,2026,137,127,Werder Bremen,Hamburg SV,4.0,0.0,post
