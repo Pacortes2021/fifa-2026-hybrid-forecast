@@ -11,6 +11,7 @@ Monte Carlo del bracket oficial) y añade lo necesario para los 4 frentes nuevos
 No toca ni app.py ni los datos: solo LEE de ../data/.
 """
 from pathlib import Path
+import sys as _sys
 from itertools import permutations
 from collections import Counter
 import numpy as np
@@ -20,6 +21,16 @@ from scipy.stats import poisson
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression, LinearRegression
+
+_ROOT = str(Path(__file__).resolve().parent.parent)
+if _ROOT not in _sys.path:
+    _sys.path.insert(0, _ROOT)
+from comun.monte_carlo import (
+    _B_ELO_FALLBACK,
+    desempate_y_orden,
+    simular_fixture_dinamico,
+    simular_partido_vec_estado,
+)
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 
@@ -529,89 +540,298 @@ def asignar_terceros(grupos_terceros):
     return asign
 
 
-def _precalcular(M, states, modelo, rng):
-    PROB, SCORE = {}, {}
-    for a, b in permutations(MUNDIALISTAS, 2):
-        if (b, a) in PROB:
-            PROB[(a, b)] = PROB[(b, a)][::-1]
-        else:
-            PROB[(a, b)] = prob_partido(M, a, b, "auto", modelo, states)
-        la, lb = lambdas(M, a, b, states)
-        grid = np.outer(poisson.pmf(np.arange(GRID_MAX + 1), la), poisson.pmf(np.arange(GRID_MAX + 1), lb))
-        grid /= grid.sum()
-        gi, gj = np.indices(grid.shape)
-        SCORE[(a, b)] = [np.cumsum((grid * mk).ravel() / (grid * mk).sum()) for mk in (gi > gj, gi == gj, gi < gj)]
-    return PROB, SCORE
+def _sensibilidad_mundial(M):
+    """Calibra sensibilidad dinámica (b_elo, b_form, b_gol) solo con partidos < CORTE_TEST."""
+    if isinstance(M, dict) and "_sens_mc_mundial" in M:
+        return M["_sens_mc_mundial"]
+
+    b_gol = float(np.clip(abs(float(M.get("gb1", 0.0012))), 0.0004, 0.0025))
+    b_elo = _B_ELO_FALLBACK.copy()
+    b_form = np.array([0.08, 0.0, -0.08], dtype=np.float64)
+
+    df = M.get("df")
+    corte = M.get("CORTE_TEST", "2025-01-01")
+    if isinstance(df, pd.DataFrame) and {"fecha", "elo_diff", "resultado"} <= set(df.columns):
+        df_pre = df[df["fecha"] < corte].dropna(subset=["elo_diff", "resultado"])
+        if len(df_pre) >= 50:
+            X = np.ascontiguousarray(df_pre[["elo_diff"]].to_numpy(dtype=np.float64)) / 100.0
+            # resultado en lab usa 0=Derrota local, 1=Empate, 2=Victoria local -> pasar a [0=L, 1=E, 2=V]
+            r_raw = df_pre["resultado"].to_numpy(dtype=int)
+            y_012 = np.where(r_raw == 2, 0, np.where(r_raw == 1, 1, 2))
+            try:
+                import warnings as _w
+                with _w.catch_warnings():
+                    _w.simplefilter("ignore", RuntimeWarning)
+                    lr = LogisticRegression(C=5.0, max_iter=1000).fit(X, y_012)
+                clases = list(lr.classes_)
+                tmp = np.zeros(3, dtype=np.float64)
+                for idx_c, cls_v in enumerate((0, 1, 2)):
+                    if cls_v in clases:
+                        tmp[idx_c] = lr.coef_[clases.index(cls_v), 0] / 100.0
+                tmp -= tmp.mean()
+                if (tmp[0] - tmp[2]) > 0.001:
+                    b_elo = tmp
+            except Exception:
+                pass
+
+    res = {
+        "b_elo": b_elo,
+        "b_form": b_form,
+        "b_gol": b_gol,
+        "b_elo_bin": float(np.log(10.0) / 400.0),
+    }
+    if isinstance(M, dict):
+        M["_sens_mc_mundial"] = res
+    return res
+
+
+def _precalcular_mundial_mats(M, st, modelo, eqs):
+    """Calcula matrices densas P0[i, j, 3], LA[i, j], LB[i, j] para el subconjunto de equipos `eqs`."""
+    n_eq = len(eqs)
+    ix = {e: i for i, e in enumerate(eqs)}
+    P0 = np.full((n_eq, n_eq, 3), np.array([0.40, 0.25, 0.35], dtype=np.float32), dtype=np.float32)
+
+    valid_eqs = [e for e in eqs if e in st.index]
+    if modelo == "two_stage":
+        for i, a in enumerate(eqs):
+            for j in range(i + 1, n_eq):
+                b = eqs[j]
+                if a not in st.index or b not in st.index:
+                    continue
+                p = prob_partido(M, a, b, "auto", modelo, st)
+                P0[i, j] = p.astype(np.float32)
+                P0[j, i] = p[::-1].astype(np.float32)
+    elif len(valid_eqs) >= 2:
+        pipe = M["pipe_base"] if modelo == "base" else M["pipe_hyb"]
+        cols = BASE_VARS if modelo == "base" else HYBRID_VARS
+        pares_ab, pares_ba, idx_pairs = [], [], []
+        h2h_map = M.get("H2H", {})
+        for i in range(n_eq):
+            a = eqs[i]
+            if a not in st.index:
+                continue
+            sa = st.loc[a]
+            for j in range(i + 1, n_eq):
+                b = eqs[j]
+                if b not in st.index:
+                    continue
+                sb = st.loc[b]
+                sv_diff = float(np.log(sa.squad_value) - np.log(sb.squad_value))
+                fa = {
+                    "elo_diff": float(sa.elo - sb.elo),
+                    "squad_value_diff": sv_diff,
+                    "h2h_diff": float(h2h_map.get((a, b), 0.0)),
+                    "goles_anotados_diff": float(sa.goles_anotados_avg - sb.goles_anotados_avg),
+                    "goles_recibidos_diff": float(sa.goles_recibidos_avg - sb.goles_recibidos_avg),
+                    "tiros_arco_diff": float(sa.tiros_arco_avg - sb.tiros_arco_avg),
+                }
+                fb = {
+                    "elo_diff": -fa["elo_diff"],
+                    "squad_value_diff": -sv_diff,
+                    "h2h_diff": float(h2h_map.get((b, a), 0.0)),
+                    "goles_anotados_diff": -fa["goles_anotados_diff"],
+                    "goles_recibidos_diff": -fa["goles_recibidos_diff"],
+                    "tiros_arco_diff": -fa["tiros_arco_diff"],
+                }
+                pares_ab.append(fa)
+                pares_ba.append(fb)
+                idx_pairs.append((i, j, a in ANFITRIONES, b in ANFITRIONES))
+
+        if idx_pairs:
+            pa_all = pipe.predict_proba(pd.DataFrame(pares_ab)[cols])
+            pb_all = pipe.predict_proba(pd.DataFrame(pares_ba)[cols])
+            for k, (i, j, a_host, b_host) in enumerate(idx_pairs):
+                pa = pa_all[k]
+                pb = pb_all[k]
+                va = np.array([pa[2], pa[1], pa[0]], dtype=np.float64)
+                vb = np.array([pb[0], pb[1], pb[2]], dtype=np.float64)
+                if a_host and not b_host:
+                    p = va
+                elif b_host and not a_host:
+                    p = vb
+                else:
+                    p = 0.5 * (va + vb)
+                p = np.clip(p, 1e-6, 1.0 - 1e-6)
+                p /= p.sum()
+                P0[i, j] = p.astype(np.float32)
+                P0[j, i] = p[::-1].astype(np.float32)
+
+    elos = np.array([float(st.loc[e, "elo"]) if e in st.index else 1500.0 for e in eqs], dtype=np.float64)
+    d_mat = elos[:, None] - elos[None, :]
+    LA = np.clip(np.exp(float(M["gb0"]) + float(M["gb1"]) * d_mat), 0.15, 5.5).astype(np.float32)
+    LB = LA.T.copy()
+    return P0, LA, LB, ix
+
+
+def _fijos_normalizados_lab(fijos):
+    if not fijos:
+        return {}
+    out = {}
+    for (a, b), (ga, gb) in fijos.items():
+        out[(a, b)] = (int(ga), int(gb))
+        out[(b, a)] = (int(gb), int(ga))
+    return out
+
+
+_TERCEROS_MEMO = {}
+
+
+def _asignar_terceros_cached(grupos_tuple):
+    if grupos_tuple not in _TERCEROS_MEMO:
+        _TERCEROS_MEMO[grupos_tuple] = asignar_terceros(set(grupos_tuple))
+    return _TERCEROS_MEMO[grupos_tuple]
 
 
 def monte_carlo(M, n_sims=10000, modelo="base", states=None, fijos=None, seed=42):
-    """Simula el Mundial n_sims veces. `fijos`: dict {(a,b): (ga,gb)} de partidos de grupo ya jugados."""
-    rng = np.random.default_rng(seed)
+    """Simula el Mundial n_sims veces con Elo y forma (DFORM) dinámicos partido a partido.
+       `fijos`: dict {(a,b): (ga,gb)} de partidos de grupo ya jugados."""
     st = M["states"] if states is None else states
-    PROB, SCORE = _precalcular(M, st, modelo, rng)
-    fijos = fijos or {}
+    fijos_map = _fijos_normalizados_lab(fijos)
+    sens = _sensibilidad_mundial(M)
+    P0, LA, LB, ix = _precalcular_mundial_mats(M, st, modelo, MUNDIALISTAS)
+    n_eq = len(MUNDIALISTAS)
 
-    def jugar_partido(a, b, elim=False):
-        if not elim and (a, b) in fijos:
-            ga, gb = fijos[(a, b)]
-            gan = a if ga > gb else (b if gb > ga else None)
-            return ga, gb, gan
-        if not elim and (b, a) in fijos:
-            gb, ga = fijos[(b, a)]
-            gan = a if ga > gb else (b if gb > ga else None)
-            return ga, gb, gan
-        p = PROB[(a, b)]
-        u = rng.random()
-        res = 0 if u < p[0] else (1 if u < p[0] + p[1] else 2)
-        ga, gb = divmod(int(np.searchsorted(SCORE[(a, b)][res], rng.random())), GRID_MAX + 1)
-        if res == 0: return ga, gb, a
-        if res == 2: return ga, gb, b
-        if elim: return ga, gb, (a if rng.random() < p[0] / (p[0] + p[2]) else b)
-        return ga, gb, None
+    # Construir los 72 partidos de grupos en orden round-robin (Jornada 1 -> Jornada 2 -> Jornada 3)
+    # Si states != None, `fijos` ya actualizó el Elo en `st` (mc_vivo), así que fijamos tabla inicial sin re-actualizar Elo.
+    rondas_rr = [((0, 1), (2, 3)), ((0, 2), (1, 3)), ((0, 3), (1, 2))]
+    init_pts = np.zeros(n_eq, dtype=np.float32)
+    init_gf = np.zeros(n_eq, dtype=np.float32)
+    init_gc = np.zeros(n_eq, dtype=np.float32)
+    pend_rows = []
+    PREDS_GRP = {}
 
-    def jugar_grupo(eqs):
-        pts = dict.fromkeys(eqs, 0); gf = dict.fromkeys(eqs, 0); gc = dict.fromkeys(eqs, 0)
-        for i in range(4):
-            for j in range(i + 1, 4):
-                a, b = eqs[i], eqs[j]
-                ga, gb, gan = jugar_partido(a, b)
-                gf[a] += ga; gc[a] += gb; gf[b] += gb; gc[b] += ga
-                if gan == a: pts[a] += 3
-                elif gan == b: pts[b] += 3
-                else: pts[a] += 1; pts[b] += 1
-        return sorted(((t, pts[t], gf[t] - gc[t], gf[t], rng.random()) for t in eqs),
-                      key=lambda x: (x[1], x[2], x[3], x[4]), reverse=True)
+    fijos_sim = None if states is not None else {}
+    for par_a, par_b in rondas_rr:
+        for i_pair in (par_a, par_b):
+            for g, eqs in GRUPOS.items():
+                a, b = eqs[i_pair[0]], eqs[i_pair[1]]
+                ia, ib = ix[a], ix[b]
+                if states is not None and (a, b) in fijos_map:
+                    ga, gb = fijos_map[(a, b)]
+                    init_gf[ia] += ga; init_gc[ia] += gb
+                    init_gf[ib] += gb; init_gc[ib] += ga
+                    if ga > gb:
+                        init_pts[ia] += 3.0
+                    elif gb > ga:
+                        init_pts[ib] += 3.0
+                    else:
+                        init_pts[ia] += 1.0; init_pts[ib] += 1.0
+                    continue
+                pend_rows.append({"local": a, "visita": b})
+                PREDS_GRP[(a, b)] = (P0[ia, ib], float(LA[ia, ib]), float(LB[ia, ib]))
+                if fijos_sim is not None and (a, b) in fijos_map:
+                    fijos_sim[(a, b)] = fijos_map[(a, b)]
 
-    cont = {t: {"campeon": 0, "final": 0, "semi": 0, "octavos": 0} for t in MUNDIALISTAS}
-    for _ in range(n_sims):
-        primeros, segundos, terceros = {}, {}, []
-        for g, eqs in GRUPOS.items():
-            tabla = jugar_grupo(eqs)
-            primeros[g], segundos[g] = tabla[0][0], tabla[1][0]
-            t = tabla[2]
-            terceros.append({"grupo": g, "equipo": t[0], "pts": t[1], "gd": t[2], "gf": t[3], "rnd": t[4]})
-        terceros.sort(key=lambda d: (d["pts"], d["gd"], d["gf"], d["rnd"]), reverse=True)
-        tg = {d["grupo"]: d["equipo"] for d in terceros[:8]}
-        asign = asignar_terceros(set(tg))
-        slot = lambda s, n: (tg[asign[n]] if isinstance(s, tuple)
-                             else (primeros[s[1]] if s[0] == "1" else segundos[s[1]]))
-        W = {}
-        for n, (sa, sb) in R32.items():
-            _, _, W[n] = jugar_partido(slot(sa, n), slot(sb, n), elim=True)
-        for ronda in (R16, QF, SF):
-            for n, (p1, p2) in ronda.items():
-                _, _, W[n] = jugar_partido(W[p1], W[p2], elim=True)
-        fin = (W[FINAL_M[0]], W[FINAL_M[1]])
-        _, _, camp = jugar_partido(*fin, elim=True)
-        cont[camp]["campeon"] += 1
-        for t in set(fin): cont[t]["final"] += 1
-        for t in set([W[p] for p in (97, 98, 99, 100)]) | set(fin): cont[t]["semi"] += 1
-        for t in set(W[n] for n in R32): cont[t]["octavos"] += 1
+    fix_grp = pd.DataFrame(pend_rows)
+    M_sim = {**M, "states": st, "_sens_mc_1x2": sens}
 
-    res = pd.DataFrame([{"Selección": t, "grupo": GRUPO_DE[t],
-                         "P_campeon": c["campeon"] / n_sims, "P_final": c["final"] / n_sims,
-                         "P_semi": c["semi"] / n_sims, "P_octavos": c["octavos"] / n_sims}
-                        for t, c in cont.items()]).sort_values("P_campeon", ascending=False).reset_index(drop=True)
+    sim_out = simular_fixture_dinamico(
+        M_sim,
+        fix_grp,
+        MUNDIALISTAS,
+        init_pts,
+        init_gf,
+        init_gc,
+        PREDS_GRP,
+        fijos=fijos_sim,
+        n_sims=n_sims,
+        k_liga=60.0,
+        home_adv=0.0,
+        mov_mode="std",
+        seed=seed,
+        track_terminal_states=True,
+    )
+
+    PTS = sim_out["PTS"]
+    GF = sim_out["GF"]
+    GC = sim_out["GC"]
+    ELO = sim_out["ELO"]
+    DFORM = sim_out["DFORM"]
+    elo0 = sim_out["elo0"]
+
+    rng = np.random.default_rng(None if seed is None else int(seed) + 17)
+    sims = np.arange(n_sims)
+    grps_orden = list(GRUPOS.keys())
+    primeros = {}
+    segundos = {}
+    third_team_by_grp = np.zeros((12, n_sims), dtype=np.int32)
+    third_pts = np.zeros((12, n_sims), dtype=np.float64)
+    third_gd = np.zeros((12, n_sims), dtype=np.float64)
+    third_gf = np.zeros((12, n_sims), dtype=np.float64)
+
+    for g_idx, g in enumerate(grps_orden):
+        g_members = np.array([ix[t] for t in GRUPOS[g]], dtype=np.int32)
+        order_g = desempate_y_orden(
+            PTS[g_members], GF[g_members], GC[g_members], rng=rng,
+            peso_pts=1e6, peso_dg=1e3, peso_gf=1.0,
+        )
+        primeros[g] = g_members[order_g[0]]
+        segundos[g] = g_members[order_g[1]]
+        t_gl = g_members[order_g[2]]
+        third_team_by_grp[g_idx] = t_gl
+        third_pts[g_idx] = PTS[t_gl, sims]
+        third_gd[g_idx] = GF[t_gl, sims] - GC[t_gl, sims]
+        third_gf[g_idx] = GF[t_gl, sims]
+
+    # Top-8 mejores terceros vectorizado y memoizado por subconjunto de grupos (máx. 495 combinaciones)
+    score3 = third_pts * 1e6 + third_gd * 1e3 + third_gf + rng.random((12, n_sims)) * 0.01
+    top8_grp_idx = np.argsort(-score3, axis=0)[:8, :]
+    masks = np.bitwise_or.reduce(1 << top8_grp_idx, axis=0)
+    uniq_masks, inv_masks = np.unique(masks, return_inverse=True)
+
+    grp_slots_r32 = [n for n, m in R32.items() if isinstance(m[1], tuple)]
+    lookup_3 = {n: np.zeros(len(uniq_masks), dtype=np.int32) for n in grp_slots_r32}
+    grp_char_to_idx = {g: i for i, g in enumerate(grps_orden)}
+    for u_i, mask in enumerate(uniq_masks):
+        gs_tupla = tuple(grps_orden[j] for j in range(12) if (int(mask) >> j) & 1)
+        asign = _asignar_terceros_cached(gs_tupla)
+        for n in grp_slots_r32:
+            lookup_3[n][u_i] = grp_char_to_idx[asign[n]]
+
+    def _slot_vec(s, match_num):
+        if isinstance(s, tuple):
+            g_arr = lookup_3[match_num][inv_masks]
+            return third_team_by_grp[g_arr, sims]
+        return primeros[s[1]] if s[0] == "1" else segundos[s[1]]
+
+    def _preds_mun(ia, ib):
+        return P0[ia, ib], LA[ia, ib], LB[ia, ib]
+
+    def _jugar_elim_vec(ia, ib):
+        _, _, w_a, w_e, _ = simular_partido_vec_estado(
+            rng, ELO, DFORM, elo0, ia, ib, _preds_mun, sens,
+            k_liga=60.0, home_adv=0.0, mov_mode="std",
+        )
+        p_tie_a = 1.0 / (1.0 + np.power(10.0, -(ELO[ia, sims] - ELO[ib, sims]) / 400.0))
+        win_tie = rng.random(n_sims) < p_tie_a
+        return np.where(w_a | (w_e & win_tie), ia, ib)
+
+    W = {}
+    for n, (sa, sb) in R32.items():
+        W[n] = _jugar_elim_vec(_slot_vec(sa, n), _slot_vec(sb, n))
+    for ronda in (R16, QF, SF):
+        for n, (p1, p2) in ronda.items():
+            W[n] = _jugar_elim_vec(W[p1], W[p2])
+
+    fin_a, fin_b = W[FINAL_M[0]], W[FINAL_M[1]]
+    camp = _jugar_elim_vec(fin_a, fin_b)
+
+    cnt_oct = np.sum([np.bincount(W[n], minlength=n_eq) for n in R32], axis=0)
+    cnt_semi = np.sum([np.bincount(W[p], minlength=n_eq) for p in (97, 98, 99, 100)], axis=0)
+    cnt_fin = np.bincount(fin_a, minlength=n_eq) + np.bincount(fin_b, minlength=n_eq)
+    cnt_camp = np.bincount(camp, minlength=n_eq)
+
+    res = pd.DataFrame([
+        {
+            "Selección": t,
+            "grupo": GRUPO_DE[t],
+            "P_campeon": float(cnt_camp[ix[t]]) / n_sims,
+            "P_final": float(cnt_fin[ix[t]]) / n_sims,
+            "P_semi": float(cnt_semi[ix[t]]) / n_sims,
+            "P_octavos": float(cnt_oct[ix[t]]) / n_sims,
+        }
+        for t in MUNDIALISTAS
+    ]).sort_values("P_campeon", ascending=False).reset_index(drop=True)
     return res
 
 
@@ -862,7 +1082,7 @@ def bracket_real(res, r32_espn):
 
 
 def simular_bracket(M, bracket, states=None, n_sims=15000, modelo="base", seed=42, fijos_ko=None):
-    """Monte Carlo de SOLO las eliminatorias, desde el cuadro real ya definido.
+    """Monte Carlo dinámico de las eliminatorias desde el cuadro real (con Elo y forma evolucionando ronda a ronda).
        `fijos_ko`: dict {frozenset({a,b}): ganador} de cruces de KO ya jugados (cualquier ronda).
        Devuelve {'tabla': DataFrame por equipo (P de llegar a cada ronda + P_campeon),
                  'reach': {(ronda, num): {equipo: prob de GANAR ese partido}}, 'n_sims'}."""
@@ -871,59 +1091,132 @@ def simular_bracket(M, bracket, states=None, n_sims=15000, modelo="base", seed=4
     R32, R16, QF, SF, FINAL = bracket["R32"], bracket["R16"], bracket["QF"], bracket["SF"], bracket["FINAL"]
     fijos_ko = fijos_ko or {}
 
-    cache = {}
-    def p_adv(a, b):
-        key = (a, b)
-        if key not in cache:
-            v = prob_eliminatoria(M, a, b, st, modelo)
-            cache[key] = v
-            cache[(b, a)] = 1.0 - v
-        return cache[key]
+    teams_raw = set()
+    for m in R32.values():
+        if m.get("home"):
+            teams_raw.add(m["home"])
+        if m.get("away"):
+            teams_raw.add(m["away"])
+    teams_all = sorted(teams_raw)
+    if not teams_all:
+        return {"tabla": pd.DataFrame(), "reach": {}, "n_sims": n_sims}
 
-    def jugar(a, b):
-        if a is None or b is None:
-            return a if b is None else b
-        fij = fijos_ko.get(frozenset({a, b}))   # ¿ya se jugó este cruce?
-        if fij is not None:
-            return fij
-        return a if rng.random() < p_adv(a, b) else b
+    sens = _sensibilidad_mundial(M)
+    P0, LA, LB, ix = _precalcular_mundial_mats(M, st, modelo, teams_all)
+    n_eq = len(teams_all)
+    elo0 = np.array([float(st.loc[t, "elo"]) if t in st.index else 1500.0 for t in teams_all], dtype=np.float32)
+    ELO = np.tile(elo0[:, None], (1, n_sims))
+    DFORM = np.zeros((n_eq, n_sims), dtype=np.float32)
 
-    win = {("R32", n): Counter() for n in R32}
+    fijos_idx = {
+        frozenset({ix[t] for t in pair if t in ix}): ix[w]
+        for pair, w in fijos_ko.items()
+        if w in ix and len(pair) == 2
+    }
+
+    def _preds_ko(ia, ib):
+        return P0[ia, ib], LA[ia, ib], LB[ia, ib]
+
+    def _jugar_ko_vec(ia, ib):
+        w_out = np.full(n_sims, -1, dtype=np.int32)
+        only_a = (ia >= 0) & (ib < 0)
+        only_b = (ib >= 0) & (ia < 0)
+        w_out[only_a] = ia[only_a]
+        w_out[only_b] = ib[only_b]
+
+        valid = (ia >= 0) & (ib >= 0)
+        fixed_mask = np.zeros(n_sims, dtype=bool)
+        if fijos_idx and valid.any():
+            for pair_set, win_i in fijos_idx.items():
+                if len(pair_set) != 2:
+                    continue
+                p_a, p_b = tuple(pair_set)
+                hit = valid & (((ia == p_a) & (ib == p_b)) | ((ia == p_b) & (ib == p_a)))
+                if hit.any():
+                    w_out[hit] = win_i
+                    fixed_mask |= hit
+
+        live = valid & (~fixed_mask)
+        if live.any():
+            if live.all():
+                live_ia, live_ib = ia, ib
+                _, _, w_a, w_e, _ = simular_partido_vec_estado(
+                    rng, ELO, DFORM, elo0, live_ia, live_ib, _preds_ko, sens,
+                    k_liga=60.0, home_adv=0.0, mov_mode="std",
+                )
+                sims_l = np.arange(n_sims)
+                p_tie = 1.0 / (1.0 + np.power(10.0, -(ELO[live_ia, sims_l] - ELO[live_ib, sims_l]) / 400.0))
+                wt = rng.random(n_sims) < p_tie
+                w_out = np.where(w_a | (w_e & wt), live_ia, live_ib)
+            else:
+                # Simulación dinámica solo sobre trayectorias aún no resueltas
+                live_idx = np.flatnonzero(live)
+                n_l = len(live_idx)
+                live_ia, live_ib = ia[live_idx], ib[live_idx]
+                ELO_sub = ELO[:, live_idx].copy()
+                DF_sub = DFORM[:, live_idx].copy()
+                _, _, w_a, w_e, _ = simular_partido_vec_estado(
+                    rng, ELO_sub, DF_sub, elo0, live_ia, live_ib, _preds_ko, sens,
+                    k_liga=60.0, home_adv=0.0, mov_mode="std",
+                )
+                ELO[:, live_idx] = ELO_sub
+                DFORM[:, live_idx] = DF_sub
+                sims_sub = np.arange(n_l)
+                p_tie = 1.0 / (1.0 + np.power(10.0, -(ELO[live_ia, live_idx] - ELO[live_ib, live_idx]) / 400.0))
+                wt = rng.random(n_l) < p_tie
+                w_out[live_idx] = np.where(w_a | (w_e & wt), live_ia, live_ib)
+        return w_out
+
+    def _bc_reach(arr):
+        valid = arr[arr >= 0]
+        if len(valid) == 0:
+            return {}
+        bc = np.bincount(valid, minlength=n_eq)
+        return {teams_all[i]: int(bc[i]) / n_sims for i in range(n_eq) if bc[i] > 0}
+
+    W = {"R32": {}, "R16": {}, "QF": {}, "SF": {}}
+    reach = {}
+
+    for n, m in R32.items():
+        ha = ix[m["home"]] if m.get("home") in ix else -1
+        hb = ix[m["away"]] if m.get("away") in ix else -1
+        w = _jugar_ko_vec(np.full(n_sims, ha, dtype=np.int32), np.full(n_sims, hb, dtype=np.int32))
+        W["R32"][n] = w
+        reach[("R32", n)] = _bc_reach(w)
+
     for rk, rd in (("R16", R16), ("QF", QF), ("SF", SF)):
-        win.update({(rk, n): Counter() for n in rd})
-    win[("FINAL", 1)] = Counter()
+        for n, m in rd.items():
+            w = _jugar_ko_vec(W[m["home"][0]][m["home"][1]], W[m["away"][0]][m["away"][1]])
+            W[rk][n] = w
+            reach[(rk, n)] = _bc_reach(w)
 
-    for _ in range(n_sims):
-        W = {"R32": {}, "R16": {}, "QF": {}, "SF": {}}
-        for n, m in R32.items():
-            w = jugar(m["home"], m["away"])
-            W["R32"][n] = w
-            win[("R32", n)][w] += 1
-        for rk, rd in (("R16", R16), ("QF", QF), ("SF", SF)):
-            for n, m in rd.items():
-                a = W[m["home"][0]][m["home"][1]]
-                b = W[m["away"][0]][m["away"][1]]
-                w = jugar(a, b)
-                W[rk][n] = w
-                win[(rk, n)][w] += 1
-        a = W[FINAL["home"][0]][FINAL["home"][1]]
-        b = W[FINAL["away"][0]][FINAL["away"][1]]
-        win[("FINAL", 1)][jugar(a, b)] += 1
+    w_fin = _jugar_ko_vec(
+        W[FINAL["home"][0]][FINAL["home"][1]],
+        W[FINAL["away"][0]][FINAL["away"][1]],
+    )
+    reach[("FINAL", 1)] = _bc_reach(w_fin)
 
-    reach = {k: {t: c / n_sims for t, c in cnt.items()} for k, cnt in win.items()}
     r32_de = {}
     for n, m in R32.items():
-        r32_de[m["home"]] = n
-        r32_de[m["away"]] = n
+        if m.get("home"):
+            r32_de[m["home"]] = n
+        if m.get("away"):
+            r32_de[m["away"]] = n
 
     def suma(rk, rd, t):
         return sum(reach[(rk, n)].get(t, 0.0) for n in rd)
 
     teams = sorted(r32_de)
-    filas = [{"Selección": t,
-              "P_R16": reach[("R32", r32_de[t])].get(t, 0.0),
-              "P_QF": suma("R16", R16, t), "P_SF": suma("QF", QF, t),
-              "P_final": suma("SF", SF, t), "P_campeon": reach[("FINAL", 1)].get(t, 0.0)}
-             for t in teams]
+    filas = [
+        {
+            "Selección": t,
+            "P_R16": reach[("R32", r32_de[t])].get(t, 0.0),
+            "P_QF": suma("R16", R16, t),
+            "P_SF": suma("QF", QF, t),
+            "P_final": suma("SF", SF, t),
+            "P_campeon": reach[("FINAL", 1)].get(t, 0.0),
+        }
+        for t in teams
+    ]
     tabla = pd.DataFrame(filas).sort_values("P_campeon", ascending=False).reset_index(drop=True)
     return {"tabla": tabla, "reach": reach, "n_sims": n_sims}

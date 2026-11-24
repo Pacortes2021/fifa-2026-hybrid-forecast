@@ -15,6 +15,7 @@ from comun.motor_comun import (
 )
 from comun.motor_comun import hash_modulos_comunes
 from comun.motor_comun import seleccionar_c_lasso, excluir_variables_estimadas, entrenar_stacking_oof
+from comun.monte_carlo import clave_cache_liga, simular_fixture_desde_tabla
 import sys
 from datetime import datetime
 import math
@@ -587,85 +588,24 @@ def obtener_tabla_actual(M):
     return df_res
 
 
-def _simular_fixture_vec(M, preds_dict, fijos, n_sims=1000):
+def _simular_fixture_vec(M, preds_dict, fijos, n_sims=1000, modelo_tipo="stacking", seed=None, return_pts=False):
     fix_path = DATA / "fixture.csv"
     fix = pd.read_csv(fix_path)
-    fix = fix[fix.temporada == _temporada_actual()]
-
-    eq_set = set(fix["local"]).union(set(fix["visita"]))
+    fix = fix[fix.temporada == _temporada_actual()].copy()
     tab_act = obtener_tabla_actual(M)
-    for e in tab_act["equipo"]:
-        eq_set.add(e)
-    eq_list = sorted(list(eq_set))
-    eq2idx = {e: i for i, e in enumerate(eq_list)}
-    n_eq = len(eq_list)
-
-    init_pts = np.zeros(n_eq, dtype=np.float32)
-    init_dg = np.zeros(n_eq, dtype=np.float32)
-    init_gf = np.zeros(n_eq, dtype=np.float32)
-
-    for _, r in tab_act.iterrows():
-        e = r["equipo"]
-        if e in eq2idx:
-            i = eq2idx[e]
-            init_pts[i] = r["puntos"]
-            init_dg[i] = r["dg"]
-            init_gf[i] = r["gf"]
-
-    n_partidos = len(fix)
-    loc_idx = np.zeros(n_partidos, dtype=np.int32)
-    vis_idx = np.zeros(n_partidos, dtype=np.int32)
-    probs = np.zeros((n_partidos, 3), dtype=np.float32)
-    mu_local = np.zeros(n_partidos, dtype=np.float32)
-    mu_vis = np.zeros(n_partidos, dtype=np.float32)
-
-    for k, (_, r) in enumerate(fix.iterrows()):
-        l, v = r["local"], r["visita"]
-        loc_idx[k] = eq2idx.get(l, 0)
-        vis_idx[k] = eq2idx.get(v, 0)
-        pair = (l, v)
-        if pair in preds_dict:
-            p, ml, mv = preds_dict[pair]
-        else:
-            p, ml, mv = predecir_match(M, l, v)
-        probs[k, :] = p
-        mu_local[k] = ml
-        mu_vis[k] = mv
-
-    pts_sims = np.tile(init_pts[:, None], (1, n_sims))
-    dg_sims = np.tile(init_dg[:, None], (1, n_sims))
-    gf_sims = np.tile(init_gf[:, None], (1, n_sims))
-
-    rands = np.random.rand(n_partidos, n_sims).astype(np.float32)
-    cum_h = probs[:, 0:1]
-    cum_d = probs[:, 0:1] + probs[:, 1:2]
-
-    res_sim = np.where(rands < cum_h, 0, np.where(rands < cum_d, 1, 2))
-
-    gh_sim = np.random.poisson(np.tile(mu_local[:, None], (1, n_sims)))
-    ga_sim = np.random.poisson(np.tile(mu_vis[:, None], (1, n_sims)))
-
-    pts_l = np.where(res_sim == 0, 3, np.where(res_sim == 1, 1, 0))
-    pts_v = np.where(res_sim == 2, 3, np.where(res_sim == 1, 1, 0))
-    dg_diff = gh_sim - ga_sim
-
-    for k in range(n_partidos):
-        li = loc_idx[k]
-        vi = vis_idx[k]
-        pts_sims[li] += pts_l[k]
-        pts_sims[vi] += pts_v[k]
-        dg_sims[li] += dg_diff[k]
-        dg_sims[vi] -= dg_diff[k]
-        gf_sims[li] += gh_sim[k]
-        gf_sims[vi] += ga_sim[k]
-
-    score = pts_sims * 1000000.0 + dg_sims * 1000.0 + gf_sims + np.random.random(pts_sims.shape)  # el ruido < 1 solo rompe empates exactos (antes ganaba el primero en orden alfabético)
-    order = np.argsort(-score, axis=0)
-
-    return eq_list, order
+    res = simular_fixture_desde_tabla(
+        M, fix, tab_act, preds_dict, fijos=fijos, n_sims=n_sims,
+        k_liga=K_LIGA, home_adv=HOME_ADV, mov_mode="std",
+        col_dg="dg", col_gf="gf",
+        predecir_fallback=lambda l, v: predecir_match(M, l, v, modelo=modelo_tipo),
+        liga=Path(__file__).resolve().parent.name, seed=seed,
+    )
+    if return_pts:
+        return res["eqs"], res["order"], res["PTS"].mean(axis=1)
+    return res["eqs"], res["order"]
 
 
-def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tipo=None):
+def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tipo=None, seed=42):
     if modelo_tipo is not None:
         modelo = modelo_tipo
     modelo_tipo = modelo or "stacking"
@@ -674,16 +614,7 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
     if not fix_path.exists():
         return obtener_tabla_actual(M)
 
-    import hashlib
-    fp = hashlib.md5()
-    fp.update(str(n_sims).encode())
-    fp.update(modelo_tipo.encode())
-    try:
-        fp.update(str(Path(fix_path).stat().st_mtime).encode())
-    except Exception:
-        pass
-    if fijos is not None:
-        fp.update(repr(sorted(fijos.items())).encode())
+    cache_key = clave_cache_liga(__file__, DATA, n_sims, modelo_tipo, fijos=fijos)
 
     cache_path = DATA.parent / "simulacion_mc.pkl"
     resultados = {}
@@ -691,7 +622,7 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
         try:
             with open(cache_path, "rb") as fh:
                 saved = pickle.load(fh)
-            if saved.get("key") == fp.hexdigest():
+            if saved.get("key") == cache_key:
                 resultados = saved.get("results", {})
                 if modelo_tipo in resultados:
                     print("Simulación Monte Carlo cargada desde cache de disco")
@@ -709,7 +640,10 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
             if l != v:
                 PREDS[(l, v)] = predecir_match(M, l, v, modelo=modelo_tipo)
 
-    eqs, order = _simular_fixture_vec(M, PREDS, fijos, n_sims)
+    eqs, order, pts_medios = _simular_fixture_vec(
+        M, PREDS, fijos, n_sims, modelo_tipo=modelo_tipo, seed=seed, return_pts=True
+    )
+    pts_esp = dict(zip(eqs, pts_medios))
     n_eq = len(eqs)
     counts_campeon = {e: 0 for e in eqs}
     counts_champ = {e: 0 for e in eqs}
@@ -726,13 +660,12 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
         for rank in range(max(0, n_eq - DESCIENDEN), n_eq):
             counts_desc[eqs[order[rank, sim]]] += 1
 
-    tab = obtener_tabla_actual(M)
     res = []
     for eq in eqs:
         res.append({
             "equipo": eq,
             "Selección": eq,
-            "Puntos esperados": round(float(tab.loc[tab.equipo == eq, "puntos"].values[0]) + (30 - int(tab.loc[tab.equipo == eq, "pj"].values[0])) * 1.35, 1) if eq in tab["equipo"].values else 40.0,
+            "Puntos esperados": round(float(pts_esp[eq]), 1),
             "P_campeon": counts_campeon[eq] / n_sims,
             "P_champions": counts_champ[eq] / n_sims,
             "P_copas": counts_copas[eq] / n_sims,
@@ -745,7 +678,7 @@ def simular_campeonato(M, n_sims=1000, fijos=None, modelo="stacking", modelo_tip
     resultados[modelo_tipo] = df_res
     try:
         with open(cache_path, "wb") as fh:
-            pickle.dump({"key": fp.hexdigest(), "results": resultados}, fh)
+            pickle.dump({"key": cache_key, "results": resultados}, fh)
         print("Simulación Monte Carlo guardada en cache de disco")
     except Exception as ex:
         print(f"No se pudo guardar el cache de simulación: {ex}")
