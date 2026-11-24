@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401842888,2026-11-23 19:00:00,2026,2495,2556,Hammarby,IFK Goteborg,,,pre,STATUS_SCHEDULED,False
-401842884,2026-11-23 19:00:00,2026,131552,3052,Orgryte IS,Kalmar FF,,,pre,STATUS_SCHEDULED,False
 401842893,2026-11-29 15:00:00,2026,2556,8547,IFK Goteborg,IK Sirius,,,pre,STATUS_SCHEDULED,False
 401842892,2026-11-29 15:00:00,2026,3052,994,Kalmar FF,AIK,,,pre,STATUS_SCHEDULED,False
 401842895,2026-11-29 15:00:00,2026,529,8222,IF Elfsborg,GAIS,,,pre,STATUS_SCHEDULED,False

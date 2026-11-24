@@ -19,21 +19,21 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876383,2026-12-06 20:45:00,2026,176,2502,Marseille,Nice,,,pre,False
 401876375,2026-12-11 20:45:00,2026,172,179,Auxerre,Toulouse,,,pre,False
 401876370,2026-12-12 17:15:00,2026,160,6851,Paris Saint-Germain,Paris FC,,,pre,False
-401876371,2026-12-12 20:45:00,2026,2502,175,Nice,Lens,,,pre,False
-401876373,2026-12-12 20:45:00,2026,3236,2697,Le Havre,Le Mans,,,pre,False
-401876374,2026-12-12 20:45:00,2026,6997,170,Brest,Troyes,,,pre,False
 401876376,2026-12-12 20:45:00,2026,7868,180,Angers,Strasbourg,,,pre,False
+401876374,2026-12-12 20:45:00,2026,6997,170,Brest,Troyes,,,pre,False
+401876373,2026-12-12 20:45:00,2026,3236,2697,Le Havre,Le Mans,,,pre,False
+401876371,2026-12-12 20:45:00,2026,2502,175,Nice,Lens,,,pre,False
 401876372,2026-12-13 15:00:00,2026,273,166,Lorient,Lille,,,pre,False
 401876369,2026-12-13 17:15:00,2026,169,174,Rennes,Monaco,,,pre,False
 401876368,2026-12-13 20:45:00,2026,167,176,Lyon,Marseille,,,pre,False
 401876367,2027-01-02 17:00:00,2026,6997,176,Brest,Marseille,,,pre,False
-401876360,2027-01-02 21:00:00,2026,170,169,Troyes,Rennes,,,pre,False
-401876362,2027-01-02 21:00:00,2026,6851,3236,Paris FC,Le Havre,,,pre,False
 401876361,2027-01-02 21:00:00,2026,179,7868,Toulouse,Angers,,,pre,False
+401876360,2027-01-02 21:00:00,2026,170,169,Troyes,Rennes,,,pre,False
 401876363,2027-01-02 21:00:00,2026,174,2502,Monaco,Nice,,,pre,False
 401876364,2027-01-02 21:00:00,2026,273,172,Lorient,Auxerre,,,pre,False
 401876366,2027-01-03 15:00:00,2026,2697,167,Le Mans,Lyon,,,pre,False
 401876365,2027-01-03 17:15:00,2026,166,180,Lille,Strasbourg,,,pre,False
+401876362,2027-01-03 17:15:00,2026,6851,3236,Paris FC,Le Havre,,,pre,False
 401876359,2027-01-03 20:45:00,2026,175,160,Lens,Paris Saint-Germain,,,pre,False
 401876355,2027-01-15 20:45:00,2026,176,166,Marseille,Lille,,,pre,False
 401876358,2027-01-16 17:15:00,2026,7868,160,Angers,Paris Saint-Germain,,,pre,False

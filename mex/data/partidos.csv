@@ -376,8 +376,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 623149,2022-02-09 19:00:00,2022,17851,219,FC Juárez,Guadalajara,1.0,3.0,post
 623144,2022-02-11 19:00:00,2022,20702,10125,Mazatlán FC,Tijuana,2.0,0.0,post
 623143,2022-02-11 21:00:00,2022,231,216,Puebla,Atlas,1.0,1.0,post
-623136,2022-02-12 17:00:00,2022,219,232,Guadalajara,Tigres UANL,1.0,3.0,post
 623142,2022-02-12 17:00:00,2022,15720,223,Atlético San Luis,Toluca,0.0,1.0,post
+623136,2022-02-12 17:00:00,2022,219,232,Guadalajara,Tigres UANL,1.0,3.0,post
 623141,2022-02-12 19:00:00,2022,218,229,Cruz Azul,Necaxa,1.0,2.0,post
 623140,2022-02-12 21:00:00,2022,225,227,Santos Laguna,América,2.0,3.0,post
 623139,2022-02-13 12:00:00,2022,233,228,Pumas UNAM,León,2.0,1.0,post
@@ -550,10 +550,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 636047,2022-07-26 19:00:00,2022,216,10125,Atlas,Tijuana,1.0,2.0,post
 636048,2022-07-26 19:00:00,2022,17851,232,FC Juárez,Tigres UANL,0.0,1.0,post
 636049,2022-07-26 19:00:00,2022,220,231,Monterrey,Puebla,1.0,0.0,post
-636050,2022-07-26 21:05:00,2022,228,223,León,Toluca,0.0,1.0,post
 636051,2022-07-26 21:05:00,2022,15720,218,Atlético San Luis,Cruz Azul,0.0,0.0,post
-636052,2022-07-27 19:00:00,2022,229,234,Necaxa,Pachuca,2.0,0.0,post
+636050,2022-07-26 21:05:00,2022,228,223,León,Toluca,0.0,1.0,post
 636053,2022-07-27 19:00:00,2022,222,219,Querétaro,Guadalajara,2.0,2.0,post
+636052,2022-07-27 19:00:00,2022,229,234,Necaxa,Pachuca,2.0,0.0,post
 636054,2022-07-27 21:05:00,2022,233,20702,Pumas UNAM,Mazatlán FC,1.0,1.0,post
 636055,2022-07-29 21:05:00,2022,17851,223,FC Juárez,Toluca,1.0,1.0,post
 636056,2022-07-30 17:00:00,2022,218,229,Cruz Azul,Necaxa,1.0,0.0,post
@@ -582,8 +582,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 636081,2022-08-13 21:05:00,2022,219,216,Guadalajara,Atlas,1.0,1.0,post
 636082,2022-08-14 17:00:00,2022,218,223,Cruz Azul,Toluca,2.0,3.0,post
 636083,2022-08-14 19:05:00,2022,232,225,Tigres UANL,Santos Laguna,2.0,0.0,post
-636085,2022-08-16 19:00:00,2022,20702,222,Mazatlán FC,Querétaro,1.0,1.0,post
 636084,2022-08-16 19:00:00,2022,216,17851,Atlas,FC Juárez,0.0,1.0,post
+636085,2022-08-16 19:00:00,2022,20702,222,Mazatlán FC,Querétaro,1.0,1.0,post
 636086,2022-08-16 21:05:00,2022,231,229,Puebla,Necaxa,2.0,2.0,post
 636087,2022-08-17 19:00:00,2022,223,220,Toluca,Monterrey,1.0,1.0,post
 636089,2022-08-17 21:05:00,2022,218,10125,Cruz Azul,Tijuana,1.0,2.0,post
@@ -629,8 +629,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 636130,2022-09-07 19:00:00,2022,231,234,Puebla,Pachuca,2.0,2.0,post
 636129,2022-09-07 19:00:00,2022,232,223,Tigres UANL,Toluca,3.0,1.0,post
 636133,2022-09-07 21:00:00,2022,20702,216,Mazatlán FC,Atlas,1.0,0.0,post
-636132,2022-09-07 21:05:00,2022,10125,219,Tijuana,Guadalajara,1.0,2.0,post
 636131,2022-09-07 21:05:00,2022,233,222,Pumas UNAM,Querétaro,4.0,1.0,post
+636132,2022-09-07 21:05:00,2022,10125,219,Tijuana,Guadalajara,1.0,2.0,post
 636135,2022-09-09 21:05:00,2022,17851,220,FC Juárez,Monterrey,0.0,1.0,post
 636136,2022-09-10 17:00:00,2022,222,225,Querétaro,Santos Laguna,3.0,3.0,post
 636134,2022-09-10 19:00:00,2022,229,227,Necaxa,América,1.0,2.0,post
@@ -693,8 +693,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 657582,2023-01-13 19:05:00,2023,15720,219,Atlético San Luis,Guadalajara,0.0,0.0,post
 657583,2023-01-13 21:05:00,2023,231,222,Puebla,Querétaro,2.0,0.0,post
 657584,2023-01-14 17:00:00,2023,218,220,Cruz Azul,Monterrey,2.0,3.0,post
-657585,2023-01-14 19:05:00,2023,223,227,Toluca,América,2.0,2.0,post
 657586,2023-01-14 19:05:00,2023,17851,10125,FC Juárez,Tijuana,3.0,0.0,post
+657585,2023-01-14 19:05:00,2023,223,227,Toluca,América,2.0,2.0,post
 657587,2023-01-14 21:05:00,2023,225,233,Santos Laguna,Pumas UNAM,3.0,0.0,post
 657588,2023-01-15 19:05:00,2023,232,234,Tigres UANL,Pachuca,4.0,1.0,post
 657589,2023-01-16 21:05:00,2023,228,229,León,Necaxa,2.0,1.0,post
@@ -711,8 +711,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 657600,2023-01-27 19:05:00,2023,231,220,Puebla,Monterrey,1.0,2.0,post
 657601,2023-01-27 21:05:00,2023,10125,233,Tijuana,Pumas UNAM,0.0,0.0,post
 657603,2023-01-28 19:05:00,2023,232,15720,Tigres UANL,Atlético San Luis,0.0,0.0,post
-657604,2023-01-28 21:05:00,2023,227,20702,América,Mazatlán FC,6.0,0.0,post
 657605,2023-01-28 21:05:00,2023,17851,219,FC Juárez,Guadalajara,1.0,2.0,post
+657604,2023-01-28 21:05:00,2023,227,20702,América,Mazatlán FC,6.0,0.0,post
 657606,2023-01-29 12:00:00,2023,223,228,Toluca,León,0.0,0.0,post
 657607,2023-01-29 19:00:00,2023,234,229,Pachuca,Necaxa,2.0,1.0,post
 657575,2023-02-01 20:05:00,2023,216,223,Atlas,Toluca,0.0,0.0,post
@@ -802,8 +802,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 657689,2023-04-07 19:05:00,2023,231,223,Puebla,Toluca,1.0,2.0,post
 657690,2023-04-07 21:10:00,2023,10125,222,Tijuana,Querétaro,1.0,2.0,post
 657692,2023-04-08 17:00:00,2023,219,229,Guadalajara,Necaxa,1.0,0.0,post
-657693,2023-04-08 19:05:00,2023,232,20702,Tigres UANL,Mazatlán FC,1.0,2.0,post
 657691,2023-04-08 19:05:00,2023,228,218,León,Cruz Azul,0.0,0.0,post
+657693,2023-04-08 19:05:00,2023,232,20702,Tigres UANL,Mazatlán FC,1.0,2.0,post
 657694,2023-04-08 21:10:00,2023,227,220,América,Monterrey,2.0,1.0,post
 657695,2023-04-09 12:00:00,2023,233,15720,Pumas UNAM,Atlético San Luis,3.0,1.0,post
 657696,2023-04-09 18:05:00,2023,225,234,Santos Laguna,Pachuca,1.0,4.0,post
@@ -818,8 +818,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 657705,2023-04-16 17:00:00,2023,222,232,Querétaro,Tigres UANL,0.0,0.0,post
 657706,2023-04-16 19:10:00,2023,220,225,Monterrey,Santos Laguna,1.0,2.0,post
 657707,2023-04-20 20:05:00,2023,232,231,Tigres UANL,Puebla,1.0,0.0,post
-657709,2023-04-21 19:05:00,2023,229,216,Necaxa,Atlas,1.0,3.0,post
 657708,2023-04-21 19:05:00,2023,20702,220,Mazatlán FC,Monterrey,0.0,2.0,post
+657709,2023-04-21 19:05:00,2023,229,216,Necaxa,Atlas,1.0,3.0,post
 657710,2023-04-21 21:05:00,2023,10125,228,Tijuana,León,0.0,0.0,post
 657711,2023-04-22 17:00:00,2023,234,15720,Pachuca,Atlético San Luis,2.0,1.0,post
 657712,2023-04-22 19:05:00,2023,219,218,Guadalajara,Cruz Azul,2.0,1.0,post
@@ -853,8 +853,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 668994,2023-05-21 20:00:00,2023,227,219,América,Guadalajara,1.0,3.0,post
 669278,2023-05-25 20:00:00,2023,232,219,Tigres UANL,Guadalajara,0.0,0.0,post
 669279,2023-05-28 19:35:00,2023,219,232,Guadalajara,Tigres UANL,2.0,3.0,post
-670648,2023-06-30 19:00:00,2023,227,17851,América,FC Juárez,1.0,2.0,post
 670650,2023-06-30 19:00:00,2023,20702,234,Mazatlán FC,Pachuca,1.0,1.0,post
+670648,2023-06-30 19:00:00,2023,227,17851,América,FC Juárez,1.0,2.0,post
 670649,2023-06-30 21:10:00,2023,10125,233,Tijuana,Pumas UNAM,2.0,3.0,post
 670498,2023-07-01 17:00:00,2023,15720,220,Atlético San Luis,Monterrey,1.0,1.0,post
 670499,2023-07-01 19:00:00,2023,232,231,Tigres UANL,Puebla,1.0,1.0,post
@@ -885,8 +885,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 670524,2023-08-18 21:10:00,2023,17851,219,FC Juárez,Guadalajara,1.0,1.0,post
 670523,2023-08-20 17:00:00,2023,218,225,Cruz Azul,Santos Laguna,2.0,2.0,post
 670530,2023-08-20 19:06:00,2023,222,234,Querétaro,Pachuca,1.0,1.0,post
-670522,2023-08-20 21:10:00,2023,227,216,América,Atlas,1.0,1.0,post
 670527,2023-08-20 21:10:00,2023,229,232,Necaxa,Tigres UANL,0.0,3.0,post
+670522,2023-08-20 21:10:00,2023,227,216,América,Atlas,1.0,1.0,post
 670534,2023-08-22 19:00:00,2023,219,10125,Guadalajara,Tijuana,1.0,0.0,post
 670535,2023-08-22 19:00:00,2023,20702,231,Mazatlán FC,Puebla,1.0,0.0,post
 670533,2023-08-22 21:06:00,2023,17851,233,FC Juárez,Pumas UNAM,4.0,1.0,post
@@ -978,10 +978,10 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 670618,2023-10-29 12:00:00,2023,223,15720,Toluca,Atlético San Luis,3.0,1.0,post
 670619,2023-10-29 19:05:00,2023,225,17851,Santos Laguna,FC Juárez,5.0,1.0,post
 670620,2023-10-29 21:06:00,2023,10125,216,Tijuana,Atlas,2.0,0.0,post
-670622,2023-10-31 19:00:00,2023,223,231,Toluca,Puebla,0.0,1.0,post
 670621,2023-10-31 19:00:00,2023,222,219,Querétaro,Guadalajara,1.0,2.0,post
-670623,2023-10-31 21:10:00,2023,228,233,León,Pumas UNAM,1.0,1.0,post
+670622,2023-10-31 19:00:00,2023,223,231,Toluca,Puebla,0.0,1.0,post
 670624,2023-10-31 21:10:00,2023,220,229,Monterrey,Necaxa,3.0,0.0,post
+670623,2023-10-31 21:10:00,2023,228,233,León,Pumas UNAM,1.0,1.0,post
 670625,2023-11-01 19:00:00,2023,216,234,Atlas,Pachuca,0.0,2.0,post
 670626,2023-11-01 19:00:00,2023,218,17851,Cruz Azul,FC Juárez,2.0,0.0,post
 670628,2023-11-01 21:00:00,2023,15720,227,Atlético San Luis,América,0.0,1.0,post
@@ -1040,13 +1040,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 692259,2024-01-20 21:10:00,2024,216,10125,Atlas,Tijuana,0.0,0.0,post
 692261,2024-01-21 18:00:00,2024,232,219,Tigres UANL,Guadalajara,1.0,0.0,post
 692262,2024-01-21 20:05:00,2024,225,220,Santos Laguna,Monterrey,0.0,2.0,post
-692264,2024-01-24 19:00:00,2024,220,222,Monterrey,Querétaro,1.0,1.0,post
 692263,2024-01-24 19:00:00,2024,15720,232,Atlético San Luis,Tigres UANL,1.0,2.0,post
+692264,2024-01-24 19:00:00,2024,220,222,Monterrey,Querétaro,1.0,1.0,post
 692265,2024-01-24 21:06:00,2024,17851,227,FC Juárez,América,0.0,2.0,post
 692266,2024-01-26 19:00:00,2024,231,223,Puebla,Toluca,1.0,1.0,post
 692267,2024-01-26 21:00:00,2024,10125,219,Tijuana,Guadalajara,1.0,1.0,post
-692269,2024-01-27 17:00:00,2024,218,20702,Cruz Azul,Mazatlán FC,2.0,1.0,post
 692268,2024-01-27 17:00:00,2024,228,225,León,Santos Laguna,3.0,2.0,post
+692269,2024-01-27 17:00:00,2024,218,20702,Cruz Azul,Mazatlán FC,2.0,1.0,post
 692270,2024-01-27 19:00:00,2024,220,15720,Monterrey,Atlético San Luis,3.0,1.0,post
 692271,2024-01-27 21:05:00,2024,229,227,Necaxa,América,0.0,0.0,post
 692273,2024-01-28 17:15:00,2024,233,234,Pumas UNAM,Pachuca,3.0,1.0,post
@@ -1103,8 +1103,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 692323,2024-02-27 19:00:00,2024,222,15720,Querétaro,Atlético San Luis,4.0,1.0,post
 692324,2024-02-28 19:00:00,2024,232,17851,Tigres UANL,FC Juárez,1.0,0.0,post
 692325,2024-02-28 21:00:00,2024,10125,220,Tijuana,Monterrey,1.0,1.0,post
-692327,2024-03-01 19:00:00,2024,222,225,Querétaro,Santos Laguna,0.0,1.0,post
 692326,2024-03-01 19:00:00,2024,15720,231,Atlético San Luis,Puebla,4.0,0.0,post
+692327,2024-03-01 19:00:00,2024,222,225,Querétaro,Santos Laguna,0.0,1.0,post
 692328,2024-03-01 21:00:00,2024,20702,229,Mazatlán FC,Necaxa,2.0,1.0,post
 692329,2024-03-02 17:00:00,2024,223,232,Toluca,Tigres UANL,2.0,1.0,post
 692331,2024-03-02 19:00:00,2024,234,17851,Pachuca,FC Juárez,3.0,2.0,post
@@ -1124,8 +1124,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 692344,2024-03-15 19:00:00,2024,222,17851,Querétaro,FC Juárez,1.0,0.0,post
 692345,2024-03-15 21:00:00,2024,10125,225,Tijuana,Santos Laguna,2.0,2.0,post
 692346,2024-03-16 17:00:00,2024,218,229,Cruz Azul,Necaxa,1.0,2.0,post
-692348,2024-03-16 19:00:00,2024,228,231,León,Puebla,2.0,1.0,post
 692350,2024-03-16 19:00:00,2024,232,20702,Tigres UANL,Mazatlán FC,5.0,1.0,post
+692348,2024-03-16 19:00:00,2024,228,231,León,Puebla,2.0,1.0,post
 692349,2024-03-16 21:05:00,2024,219,227,Guadalajara,América,0.0,0.0,post
 692351,2024-03-17 17:00:00,2024,216,220,Atlas,Monterrey,1.0,2.0,post
 692352,2024-03-17 19:00:00,2024,15720,234,Atlético San Luis,Pachuca,2.0,1.0,post
@@ -1150,13 +1150,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 692369,2024-04-07 12:00:00,2024,223,216,Toluca,Atlas,4.0,1.0,post
 692370,2024-04-08 09:30:00,2024,15720,17851,Atlético San Luis,FC Juárez,2.0,3.0,post
 692371,2024-04-12 19:06:00,2024,222,20702,Querétaro,Mazatlán FC,0.0,2.0,post
-692373,2024-04-12 21:00:00,2024,231,218,Puebla,Cruz Azul,0.0,1.0,post
 692372,2024-04-12 21:00:00,2024,229,225,Necaxa,Santos Laguna,2.0,0.0,post
+692373,2024-04-12 21:00:00,2024,231,218,Puebla,Cruz Azul,0.0,1.0,post
 692374,2024-04-13 17:00:00,2024,234,219,Pachuca,Guadalajara,0.0,1.0,post
 692375,2024-04-13 19:05:00,2024,227,223,América,Toluca,5.0,1.0,post
 692376,2024-04-13 21:10:00,2024,220,232,Monterrey,Tigres UANL,3.0,3.0,post
-692377,2024-04-14 18:00:00,2024,216,15720,Atlas,Atlético San Luis,2.0,1.0,post
 692378,2024-04-14 18:00:00,2024,233,228,Pumas UNAM,León,1.0,0.0,post
+692377,2024-04-14 18:00:00,2024,216,15720,Atlas,Atlético San Luis,2.0,1.0,post
 692379,2024-04-14 20:06:00,2024,17851,10125,FC Juárez,Tijuana,0.0,1.0,post
 692380,2024-04-19 19:00:00,2024,20702,17851,Mazatlán FC,FC Juárez,0.0,2.0,post
 692381,2024-04-19 21:00:00,2024,15720,223,Atlético San Luis,Toluca,1.0,5.0,post
@@ -1203,8 +1203,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 703528,2024-07-07 12:00:00,2024,233,228,Pumas UNAM,León,4.0,1.0,post
 703529,2024-07-07 19:06:00,2024,234,220,Pachuca,Monterrey,0.0,1.0,post
 703530,2024-07-12 19:00:00,2024,227,222,América,Querétaro,3.0,1.0,post
-703531,2024-07-12 21:00:00,2024,20702,15720,Mazatlán FC,Atlético San Luis,2.0,2.0,post
 703532,2024-07-12 21:00:00,2024,10125,219,Tijuana,Guadalajara,4.0,2.0,post
+703531,2024-07-12 21:00:00,2024,20702,15720,Mazatlán FC,Atlético San Luis,2.0,2.0,post
 703533,2024-07-12 21:05:00,2024,216,232,Atlas,Tigres UANL,1.0,1.0,post
 703534,2024-07-13 17:00:00,2024,228,234,León,Pachuca,0.0,0.0,post
 703535,2024-07-13 17:00:00,2024,229,231,Necaxa,Puebla,4.0,1.0,post
@@ -1218,8 +1218,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 703543,2024-07-16 21:05:00,2024,218,10125,Cruz Azul,Tijuana,3.0,0.0,post
 703547,2024-07-17 19:00:00,2024,229,220,Necaxa,Monterrey,0.0,1.0,post
 703544,2024-07-17 19:06:00,2024,17851,233,FC Juárez,Pumas UNAM,1.0,2.0,post
-703546,2024-07-17 21:00:00,2024,232,227,Tigres UANL,América,1.0,0.0,post
 703545,2024-07-17 21:00:00,2024,223,20702,Toluca,Mazatlán FC,3.0,0.0,post
+703546,2024-07-17 21:00:00,2024,232,227,Tigres UANL,América,1.0,0.0,post
 703548,2024-07-19 19:00:00,2024,15720,10125,Atlético San Luis,Tijuana,1.0,1.0,post
 703549,2024-07-19 21:05:00,2024,231,216,Puebla,Atlas,1.0,2.0,post
 703550,2024-07-20 17:05:00,2024,219,20702,Guadalajara,Mazatlán FC,2.0,0.0,post
@@ -1267,8 +1267,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 703589,2024-09-18 19:05:00,2024,219,228,Guadalajara,León,2.0,0.0,post
 703590,2024-09-18 20:00:00,2024,20702,229,Mazatlán FC,Necaxa,0.0,0.0,post
 703591,2024-09-18 21:00:00,2024,220,17851,Monterrey,FC Juárez,3.0,2.0,post
-703593,2024-09-20 19:00:00,2024,216,222,Atlas,Querétaro,0.0,1.0,post
 703594,2024-09-20 19:00:00,2024,231,234,Puebla,Pachuca,2.0,3.0,post
+703593,2024-09-20 19:00:00,2024,216,222,Atlas,Querétaro,0.0,1.0,post
 703595,2024-09-21 17:00:00,2024,228,15720,León,Atlético San Luis,1.0,0.0,post
 703596,2024-09-21 19:00:00,2024,220,20702,Monterrey,Mazatlán FC,0.0,0.0,post
 703597,2024-09-21 19:00:00,2024,229,227,Necaxa,América,1.0,1.0,post
@@ -1294,8 +1294,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 703615,2024-10-05 19:05:00,2024,219,216,Guadalajara,Atlas,2.0,3.0,post
 703616,2024-10-05 21:00:00,2024,228,227,León,América,1.0,1.0,post
 703619,2024-10-06 20:05:00,2024,225,17851,Santos Laguna,FC Juárez,0.0,2.0,post
-703621,2024-10-18 19:00:00,2024,222,223,Querétaro,Toluca,0.0,1.0,post
 703620,2024-10-18 19:00:00,2024,216,20702,Atlas,Mazatlán FC,0.0,0.0,post
+703621,2024-10-18 19:00:00,2024,222,223,Querétaro,Toluca,0.0,1.0,post
 703622,2024-10-18 21:00:00,2024,229,10125,Necaxa,Tijuana,1.0,2.0,post
 703623,2024-10-18 21:05:00,2024,231,218,Puebla,Cruz Azul,1.0,2.0,post
 703624,2024-10-19 17:00:00,2024,234,219,Pachuca,Guadalajara,0.0,2.0,post
@@ -1325,8 +1325,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 703649,2024-11-01 21:05:00,2024,10125,232,Tijuana,Tigres UANL,0.0,3.0,post
 703650,2024-11-02 17:00:00,2024,15720,231,Atlético San Luis,Puebla,2.0,0.0,post
 703651,2024-11-02 17:00:00,2024,223,228,Toluca,León,2.0,2.0,post
-703653,2024-11-02 19:05:00,2024,220,216,Monterrey,Atlas,4.0,0.0,post
 703652,2024-11-02 19:05:00,2024,219,233,Guadalajara,Pumas UNAM,0.0,0.0,post
+703653,2024-11-02 19:05:00,2024,220,216,Monterrey,Atlas,4.0,0.0,post
 703654,2024-11-02 21:06:00,2024,234,229,Pachuca,Necaxa,6.0,2.0,post
 703655,2024-11-02 21:10:00,2024,218,225,Cruz Azul,Santos Laguna,2.0,0.0,post
 703656,2024-11-05 19:00:00,2024,228,20702,León,Mazatlán FC,0.0,0.0,post
@@ -1340,8 +1340,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 703665,2024-11-08 19:00:00,2024,222,225,Querétaro,Santos Laguna,3.0,2.0,post
 703666,2024-11-08 21:00:00,2024,20702,233,Mazatlán FC,Pumas UNAM,0.0,1.0,post
 703667,2024-11-09 17:05:00,2024,219,15720,Guadalajara,Atlético San Luis,0.0,1.0,post
-703668,2024-11-09 19:00:00,2024,223,227,Toluca,América,4.0,0.0,post
 703669,2024-11-09 19:00:00,2024,234,17851,Pachuca,FC Juárez,0.0,1.0,post
+703668,2024-11-09 19:00:00,2024,223,227,Toluca,América,4.0,0.0,post
 703670,2024-11-09 21:05:00,2024,218,232,Cruz Azul,Tigres UANL,1.0,1.0,post
 703671,2024-11-10 17:00:00,2024,229,216,Necaxa,Atlas,0.0,0.0,post
 703672,2024-11-10 19:05:00,2024,220,228,Monterrey,León,2.0,1.0,post
@@ -1372,8 +1372,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 725050,2025-01-12 12:00:00,2025,233,229,Pumas UNAM,Necaxa,2.0,1.0,post
 725047,2025-01-12 19:00:00,2025,220,231,Monterrey,Puebla,1.0,1.0,post
 725051,2025-01-16 20:10:00,2025,227,10125,América,Tijuana,1.0,1.0,post
-725054,2025-01-17 19:00:00,2025,232,20702,Tigres UANL,Mazatlán FC,2.0,1.0,post
 725052,2025-01-17 19:00:00,2025,231,15720,Puebla,Atlético San Luis,1.0,2.0,post
+725054,2025-01-17 19:00:00,2025,232,20702,Tigres UANL,Mazatlán FC,2.0,1.0,post
 725053,2025-01-17 21:05:00,2025,229,219,Necaxa,Guadalajara,3.0,2.0,post
 725057,2025-01-18 17:00:00,2025,17851,218,FC Juárez,Cruz Azul,1.0,0.0,post
 725055,2025-01-18 19:00:00,2025,223,220,Toluca,Monterrey,1.0,1.0,post
@@ -1389,13 +1389,13 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 725067,2025-01-25 19:05:00,2025,225,227,Santos Laguna,América,1.0,4.0,post
 725065,2025-01-25 21:10:00,2025,220,234,Monterrey,Pachuca,2.0,3.0,post
 725068,2025-01-26 12:00:00,2025,233,216,Pumas UNAM,Atlas,0.0,0.0,post
-725070,2025-01-28 19:00:00,2025,231,20702,Puebla,Mazatlán FC,0.0,1.0,post
 725069,2025-01-28 19:00:00,2025,227,15720,América,Atlético San Luis,3.0,0.0,post
+725070,2025-01-28 19:00:00,2025,231,20702,Puebla,Mazatlán FC,0.0,1.0,post
 725073,2025-01-28 21:00:00,2025,228,219,León,Guadalajara,2.0,1.0,post
 725072,2025-01-28 21:00:00,2025,232,10125,Tigres UANL,Tijuana,4.0,0.0,post
 725071,2025-01-28 21:05:00,2025,229,218,Necaxa,Cruz Azul,1.0,3.0,post
-725074,2025-01-29 19:00:00,2025,216,220,Atlas,Monterrey,3.0,3.0,post
 725075,2025-01-29 19:00:00,2025,222,234,Querétaro,Pachuca,0.0,1.0,post
+725074,2025-01-29 19:00:00,2025,216,220,Atlas,Monterrey,3.0,3.0,post
 725077,2025-01-29 21:00:00,2025,17851,225,FC Juárez,Santos Laguna,1.0,0.0,post
 725076,2025-01-29 21:05:00,2025,233,223,Pumas UNAM,Toluca,1.0,1.0,post
 725078,2025-01-31 19:00:00,2025,20702,228,Mazatlán FC,León,1.0,2.0,post
@@ -1453,8 +1453,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 725130,2025-03-02 16:00:00,2025,222,231,Querétaro,Puebla,2.0,0.0,post
 725131,2025-03-02 18:00:00,2025,216,15720,Atlas,Atlético San Luis,3.0,1.0,post
 725132,2025-03-02 20:05:00,2025,220,225,Monterrey,Santos Laguna,4.0,2.0,post
-725134,2025-03-07 19:00:00,2025,232,222,Tigres UANL,Querétaro,1.0,0.0,post
 725133,2025-03-07 19:00:00,2025,15720,17851,Atlético San Luis,FC Juárez,1.0,0.0,post
+725134,2025-03-07 19:00:00,2025,232,222,Tigres UANL,Querétaro,1.0,0.0,post
 725135,2025-03-07 21:00:00,2025,231,233,Puebla,Pumas UNAM,1.0,3.0,post
 725136,2025-03-08 17:00:00,2025,223,229,Toluca,Necaxa,5.0,2.0,post
 725138,2025-03-08 19:00:00,2025,234,20702,Pachuca,Mazatlán FC,1.0,1.0,post
@@ -1536,8 +1536,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 736614,2025-07-11 19:00:00,2025,231,216,Puebla,Atlas,2.0,3.0,post
 736616,2025-07-11 21:00:00,2025,17851,227,FC Juárez,América,1.0,1.0,post
 736615,2025-07-11 21:05:00,2025,10125,222,Tijuana,Querétaro,1.0,0.0,post
-736617,2025-07-12 19:00:00,2025,225,233,Santos Laguna,Pumas UNAM,3.0,0.0,post
 736618,2025-07-12 19:00:00,2025,223,229,Toluca,Necaxa,3.0,1.0,post
+736617,2025-07-12 19:00:00,2025,225,233,Santos Laguna,Pumas UNAM,3.0,0.0,post
 736619,2025-07-12 21:05:00,2025,218,20702,Cruz Azul,Mazatlán FC,0.0,0.0,post
 736620,2025-07-13 17:00:00,2025,234,220,Pachuca,Monterrey,3.0,0.0,post
 736621,2025-07-13 19:00:00,2025,228,15720,León,Atlético San Luis,0.0,1.0,post
@@ -1546,12 +1546,12 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 736624,2025-07-18 19:00:00,2025,229,222,Necaxa,Querétaro,3.0,1.0,post
 736626,2025-07-18 21:00:00,2025,15720,220,Atlético San Luis,Monterrey,0.0,1.0,post
 736625,2025-07-18 21:05:00,2025,20702,231,Mazatlán FC,Puebla,2.0,1.0,post
-736627,2025-07-19 19:00:00,2025,232,17851,Tigres UANL,FC Juárez,1.0,0.0,post
 736628,2025-07-19 19:00:00,2025,228,219,León,Guadalajara,1.0,0.0,post
+736627,2025-07-19 19:00:00,2025,232,17851,Tigres UANL,FC Juárez,1.0,0.0,post
 736629,2025-07-19 21:05:00,2025,216,218,Atlas,Cruz Azul,3.0,3.0,post
 736630,2025-07-20 12:00:00,2025,233,234,Pumas UNAM,Pachuca,2.0,3.0,post
-736631,2025-07-25 19:00:00,2025,231,225,Puebla,Santos Laguna,1.0,0.0,post
 736632,2025-07-25 19:00:00,2025,222,233,Querétaro,Pumas UNAM,0.0,2.0,post
+736631,2025-07-25 19:00:00,2025,231,225,Puebla,Santos Laguna,1.0,0.0,post
 736633,2025-07-25 21:00:00,2025,10125,17851,Tijuana,FC Juárez,1.0,1.0,post
 736635,2025-07-26 17:00:00,2025,234,20702,Pachuca,Mazatlán FC,1.0,0.0,post
 736634,2025-07-26 17:07:00,2025,219,15720,Guadalajara,Atlético San Luis,4.0,3.0,post
@@ -1624,9 +1624,9 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 736703,2025-09-24 21:00:00,2025,15720,227,Atlético San Luis,América,0.0,1.0,post
 736702,2025-09-24 21:00:00,2025,225,10125,Santos Laguna,Tijuana,1.0,0.0,post
 736704,2025-09-26 19:00:00,2025,17851,228,FC Juárez,León,2.0,0.0,post
+736706,2025-09-27 17:00:00,2025,216,229,Atlas,Necaxa,3.0,2.0,post
 736707,2025-09-27 17:00:00,2025,234,15720,Pachuca,Atlético San Luis,2.0,1.0,post
 736705,2025-09-27 17:00:00,2025,231,219,Puebla,Guadalajara,0.0,2.0,post
-736706,2025-09-27 17:00:00,2025,216,229,Atlas,Necaxa,3.0,2.0,post
 736708,2025-09-27 19:00:00,2025,220,225,Monterrey,Santos Laguna,1.0,0.0,post
 736711,2025-09-27 19:00:00,2025,223,20702,Toluca,Mazatlán FC,3.0,1.0,post
 736709,2025-09-27 21:05:00,2025,227,233,América,Pumas UNAM,4.0,1.0,post
@@ -1642,8 +1642,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 736720,2025-10-05 19:00:00,2025,233,219,Pumas UNAM,Guadalajara,1.0,2.0,post
 736721,2025-10-05 21:05:00,2025,10125,220,Tijuana,Monterrey,2.0,2.0,post
 736722,2025-10-17 19:00:00,2025,231,10125,Puebla,Tijuana,4.0,3.0,post
-736724,2025-10-17 21:00:00,2025,232,229,Tigres UANL,Necaxa,5.0,3.0,post
 736723,2025-10-17 21:00:00,2025,15720,216,Atlético San Luis,Atlas,2.0,0.0,post
+736724,2025-10-17 21:00:00,2025,232,229,Tigres UANL,Necaxa,5.0,3.0,post
 736726,2025-10-18 17:00:00,2025,17851,234,FC Juárez,Pachuca,2.0,2.0,post
 736725,2025-10-18 17:00:00,2025,225,228,Santos Laguna,León,2.0,0.0,post
 736730,2025-10-18 17:00:00,2025,223,222,Toluca,Querétaro,4.0,0.0,post
@@ -1743,8 +1743,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401840851,2026-02-06 19:00:00,2026,232,225,Tigres UANL,Santos Laguna,5.0,1.0,post
 401840853,2026-02-06 21:06:00,2026,20702,219,Mazatlán FC,Guadalajara,1.0,2.0,post
 401840854,2026-02-06 21:06:00,2026,10125,231,Tijuana,Puebla,0.0,0.0,post
-401840855,2026-02-07 17:00:00,2026,222,228,Querétaro,León,2.0,0.0,post
 401840856,2026-02-07 17:00:00,2026,223,218,Toluca,Cruz Azul,1.0,1.0,post
+401840855,2026-02-07 17:00:00,2026,222,228,Querétaro,León,2.0,0.0,post
 401840857,2026-02-07 19:05:00,2026,216,233,Atlas,Pumas UNAM,2.0,2.0,post
 401840858,2026-02-07 19:06:00,2026,234,17851,Pachuca,FC Juárez,2.0,0.0,post
 401840859,2026-02-07 21:10:00,2026,227,220,América,Monterrey,1.0,0.0,post
@@ -1769,8 +1769,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401840879,2026-02-27 19:00:00,2026,222,225,Querétaro,Santos Laguna,2.0,2.0,post
 401840881,2026-02-27 21:00:00,2026,17851,216,FC Juárez,Atlas,3.0,1.0,post
 401840880,2026-02-27 21:06:00,2026,10125,233,Tijuana,Pumas UNAM,1.0,1.0,post
-401840883,2026-02-28 17:00:00,2026,223,219,Toluca,Guadalajara,2.0,0.0,post
 401840882,2026-02-28 17:00:00,2026,15720,231,Atlético San Luis,Puebla,0.0,1.0,post
+401840883,2026-02-28 17:00:00,2026,223,219,Toluca,Guadalajara,2.0,0.0,post
 401840885,2026-02-28 19:05:00,2026,220,218,Monterrey,Cruz Azul,0.0,2.0,post
 401840884,2026-02-28 19:06:00,2026,228,229,León,Necaxa,2.0,1.0,post
 401840886,2026-02-28 21:10:00,2026,227,232,América,Tigres UANL,1.0,4.0,post
@@ -1784,8 +1784,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401840893,2026-03-04 21:00:00,2026,216,10125,Atlas,Tijuana,2.0,1.0,post
 401840895,2026-03-06 19:00:00,2026,20702,228,Mazatlán FC,León,4.0,2.0,post
 401840896,2026-03-06 21:00:00,2026,229,233,Necaxa,Pumas UNAM,0.0,1.0,post
-401840901,2026-03-07 17:00:00,2026,222,227,Querétaro,América,1.0,2.0,post
 401840897,2026-03-07 17:00:00,2026,218,15720,Cruz Azul,Atlético San Luis,3.0,0.0,post
+401840901,2026-03-07 17:00:00,2026,222,227,Querétaro,América,1.0,2.0,post
 401840899,2026-03-07 19:05:00,2026,216,219,Atlas,Guadalajara,1.0,2.0,post
 401840898,2026-03-07 19:06:00,2026,234,231,Pachuca,Puebla,2.0,1.0,post
 401840900,2026-03-07 21:00:00,2026,232,220,Tigres UANL,Monterrey,1.0,0.0,post
@@ -1807,8 +1807,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401840918,2026-03-21 19:00:00,2026,15720,228,Atlético San Luis,León,1.0,2.0,post
 401840919,2026-03-21 19:05:00,2026,220,219,Monterrey,Guadalajara,2.0,3.0,post
 401840920,2026-03-21 21:10:00,2026,233,227,Pumas UNAM,América,1.0,0.0,post
-401840917,2026-03-22 17:00:00,2026,234,223,Pachuca,Toluca,1.0,1.0,post
 401840921,2026-03-22 17:00:00,2026,225,231,Santos Laguna,Puebla,2.0,1.0,post
+401840917,2026-03-22 17:00:00,2026,234,223,Pachuca,Toluca,1.0,1.0,post
 401840922,2026-03-22 19:06:00,2026,17851,232,FC Juárez,Tigres UANL,2.0,1.0,post
 401840923,2026-04-03 19:00:00,2026,231,17851,Puebla,FC Juárez,1.0,1.0,post
 401840924,2026-04-03 21:00:00,2026,229,20702,Necaxa,Mazatlán FC,2.0,1.0,post
@@ -1822,8 +1822,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401840876,2026-04-07 18:00:00,2026,222,17851,Querétaro,FC Juárez,1.0,1.0,post
 401840932,2026-04-10 19:00:00,2026,231,228,Puebla,León,0.0,1.0,post
 401840933,2026-04-10 21:06:00,2026,17851,10125,FC Juárez,Tijuana,1.0,2.0,post
-401840934,2026-04-11 17:00:00,2026,222,229,Querétaro,Necaxa,3.0,1.0,post
 401840935,2026-04-11 17:00:00,2026,232,219,Tigres UANL,Guadalajara,4.0,1.0,post
+401840934,2026-04-11 17:00:00,2026,222,229,Querétaro,Necaxa,3.0,1.0,post
 401840937,2026-04-11 19:00:00,2026,216,220,Atlas,Monterrey,0.0,0.0,post
 401840936,2026-04-11 19:00:00,2026,234,225,Pachuca,Santos Laguna,4.0,2.0,post
 401840938,2026-04-11 21:05:00,2026,227,218,América,Cruz Azul,1.0,1.0,post
@@ -1838,8 +1838,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401840947,2026-04-18 21:06:00,2026,228,17851,León,FC Juárez,3.0,1.0,post
 401840948,2026-04-18 21:10:00,2026,227,223,América,Toluca,2.0,1.0,post
 401840949,2026-04-19 17:00:00,2026,225,216,Santos Laguna,Atlas,0.0,1.0,post
-401840950,2026-04-21 19:00:00,2026,233,17851,Pumas UNAM,FC Juárez,4.0,2.0,post
 401840951,2026-04-21 19:00:00,2026,222,218,Querétaro,Cruz Azul,1.0,1.0,post
+401840950,2026-04-21 19:00:00,2026,233,17851,Pumas UNAM,FC Juárez,4.0,2.0,post
 401840952,2026-04-21 21:05:00,2026,220,231,Monterrey,Puebla,2.0,1.0,post
 401840953,2026-04-21 21:06:00,2026,228,227,León,América,2.0,3.0,post
 401840954,2026-04-22 19:00:00,2026,216,232,Atlas,Tigres UANL,0.0,0.0,post
@@ -1848,8 +1848,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401840957,2026-04-22 21:06:00,2026,10125,234,Tijuana,Pachuca,3.0,1.0,post
 401840958,2026-04-22 21:10:00,2026,229,219,Necaxa,Guadalajara,0.0,0.0,post
 401840959,2026-04-24 21:00:00,2026,231,222,Puebla,Querétaro,1.0,2.0,post
-401840961,2026-04-25 17:00:00,2026,232,20702,Tigres UANL,Mazatlán FC,5.0,1.0,post
 401840960,2026-04-25 17:00:00,2026,234,233,Pachuca,Pumas UNAM,0.0,2.0,post
+401840961,2026-04-25 17:00:00,2026,232,20702,Tigres UANL,Mazatlán FC,5.0,1.0,post
 401840962,2026-04-25 19:05:00,2026,223,228,Toluca,León,4.0,1.0,post
 401840963,2026-04-25 19:07:00,2026,219,10125,Guadalajara,Tijuana,0.0,0.0,post
 401840964,2026-04-25 21:00:00,2026,17851,15720,FC Juárez,Atlético San Luis,2.0,1.0,post
@@ -1884,8 +1884,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401877033,2026-07-24 21:00:00,2026,226,227,Atlante,América,1.0,1.0,post
 401877032,2026-07-24 21:00:00,2026,10125,228,Tijuana,León,1.0,0.0,post
 401877031,2026-07-25 17:07:00,2026,219,17851,Guadalajara,FC Juárez,1.0,0.0,post
-401877030,2026-07-25 21:00:00,2026,225,216,Santos Laguna,Atlas,0.0,1.0,post
 401877034,2026-07-25 21:00:00,2026,232,15720,Tigres UANL,Atlético San Luis,2.0,2.0,post
+401877030,2026-07-25 21:00:00,2026,225,216,Santos Laguna,Atlas,0.0,1.0,post
 401877029,2026-07-26 17:00:00,2026,229,220,Necaxa,Monterrey,2.0,1.0,post
 401877028,2026-07-26 19:06:00,2026,234,222,Pachuca,Querétaro,1.0,2.0,post
 401877027,2026-07-31 19:00:00,2026,231,219,Puebla,Guadalajara,1.0,1.0,post
@@ -1918,8 +1918,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876999,2026-08-28 19:00:00,2026,226,228,Atlante,León,1.0,1.0,post
 401877000,2026-08-28 19:00:00,2026,229,218,Necaxa,Cruz Azul,1.0,3.0,post
 401876998,2026-08-28 21:10:00,2026,10125,233,Tijuana,Pumas UNAM,2.0,0.0,post
-401876997,2026-08-29 17:00:00,2026,216,222,Atlas,Querétaro,1.0,3.0,post
 401876996,2026-08-29 17:00:00,2026,234,219,Pachuca,Guadalajara,1.0,1.0,post
+401876997,2026-08-29 17:00:00,2026,216,222,Atlas,Querétaro,1.0,3.0,post
 401876995,2026-08-29 19:05:00,2026,227,231,América,Puebla,2.0,0.0,post
 401876994,2026-08-29 21:10:00,2026,225,232,Santos Laguna,Tigres UANL,0.0,0.0,post
 401876993,2026-08-30 18:00:00,2026,223,17851,Toluca,FC Juárez,4.0,0.0,post
@@ -1942,8 +1942,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876991,2026-09-15 19:00:00,2026,231,223,Puebla,Toluca,0.0,1.0,post
 401876973,2026-09-18 19:00:00,2026,231,226,Puebla,Atlante,1.0,1.0,post
 401876972,2026-09-18 21:00:00,2026,17851,232,FC Juárez,Tigres UANL,2.0,0.0,post
-401876970,2026-09-19 17:00:00,2026,15720,229,Atlético San Luis,Necaxa,3.0,1.0,post
 401876971,2026-09-19 17:00:00,2026,216,233,Atlas,Pumas UNAM,1.0,1.0,post
+401876970,2026-09-19 17:00:00,2026,15720,229,Atlético San Luis,Necaxa,3.0,1.0,post
 401876969,2026-09-19 19:10:00,2026,220,218,Monterrey,Cruz Azul,1.0,0.0,post
 401876968,2026-09-19 21:15:00,2026,227,219,América,Guadalajara,2.0,2.0,post
 401876967,2026-09-20 18:00:00,2026,234,10125,Pachuca,Tijuana,2.0,2.0,post
@@ -1983,8 +1983,8 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401876932,2026-10-21 19:00:00,2026,216,227,Atlas,América,2.0,5.0,post
 401876933,2026-10-21 19:00:00,2026,231,220,Puebla,Monterrey,1.0,4.0,post
 401876931,2026-10-21 19:00:00,2026,223,10125,Toluca,Tijuana,2.0,2.0,post
-401876930,2026-10-21 21:10:00,2026,234,218,Pachuca,Cruz Azul,1.0,2.0,post
 401876929,2026-10-21 21:10:00,2026,225,233,Santos Laguna,Pumas UNAM,2.0,0.0,post
+401876930,2026-10-21 21:10:00,2026,234,218,Pachuca,Cruz Azul,1.0,2.0,post
 401876928,2026-10-23 19:00:00,2026,229,17851,Necaxa,FC Juárez,1.0,1.0,post
 401876927,2026-10-23 21:00:00,2026,226,15720,Atlante,Atlético San Luis,0.0,1.0,post
 401876926,2026-10-24 17:00:00,2026,228,223,León,Toluca,1.0,1.0,post

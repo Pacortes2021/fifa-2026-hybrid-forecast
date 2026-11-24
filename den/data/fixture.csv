@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401874538,2026-11-23 19:00:00,2026,575,572,Brøndby IF,FC Midtjylland,,,pre,STATUS_SCHEDULED,False
 401874563,2026-11-27 19:00:00,2026,8118,575,Sønderjyske Fodbold,Brøndby IF,,,pre,STATUS_SCHEDULED,False
 401874500,2026-11-29 14:00:00,2026,7860,3153,Lyngby Boldklub,Viborg FF,,,pre,STATUS_SCHEDULED,False
 401874725,2026-11-29 14:00:00,2026,3132,3585,Randers FC,AC Horsens,,,pre,STATUS_SCHEDULED,False

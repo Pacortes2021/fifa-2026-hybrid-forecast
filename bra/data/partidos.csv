@@ -2366,3 +2366,6 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401841318,2026-11-22 16:00:00,2026,3458,4936,Athletico Paranaense,Remo,4.0,2.0,post
 401841324,2026-11-22 18:30:00,2026,3445,9169,Fluminense,Mirassol,1.0,0.0,post
 401841321,2026-11-22 19:30:00,2026,6079,3454,Red Bull Bragantino,Vasco da Gama,1.0,0.0,post
+401841323,2026-11-23 19:30:00,2026,1936,3457,Internacional,Vitória,2.0,5.0,post
+401841326,2026-11-23 20:00:00,2026,6086,2026,Botafogo,São Paulo,1.0,1.0,post
+401841320,2026-11-23 21:00:00,2026,2674,6273,Santos,Grêmio,0.0,2.0,post

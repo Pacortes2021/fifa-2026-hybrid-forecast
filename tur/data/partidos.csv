@@ -2126,3 +2126,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401888246,2026-11-22 16:00:00,2026,7648,1895,Konyaspor,Besiktas,2,4,post,STATUS_FULL_TIME
 401888248,2026-11-22 16:00:00,2026,6870,9078,Kasimpasa,Alanyaspor,2,1,post,STATUS_FULL_TIME
 401888249,2026-11-22 19:00:00,2026,997,20729,Trabzonspor,Eyupspor,1,0,post,STATUS_FULL_TIME
+401888370,2026-11-23 20:00:00,2026,7914,132334,Istanbul Basaksehir,Corum FK,4,2,post,STATUS_FULL_TIME

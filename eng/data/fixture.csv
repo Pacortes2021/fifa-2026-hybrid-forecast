@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401879237,2026-11-23 20:00:00,2026,337,368,Brentford,Everton,,,pre,False
 401879225,2026-11-27 20:00:00,2026,393,363,Nottingham Forest,Chelsea,,,pre,False
 401879227,2026-11-28 15:00:00,2026,357,388,Leeds United,Coventry City,,,pre,False
 401879226,2026-11-28 15:00:00,2026,360,337,Manchester United,Brentford,,,pre,False
