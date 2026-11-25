@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401841335,2026-11-24 18:00:00,2026,9318,2029,Chapecoense,Palmeiras,,,pre,False
 401841319,2026-11-25 20:00:00,2026,7632,874,Atlético Mineiro,Corinthians,,,pre,False
 401841329,2026-11-26 20:00:00,2026,2026,4936,São Paulo,Remo,,,pre,False
 401841337,2026-11-27 20:00:00,2026,3445,2022,Fluminense,Cruzeiro,,,pre,False

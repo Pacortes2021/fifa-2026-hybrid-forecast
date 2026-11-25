@@ -21,7 +21,7 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882782,2026-12-06 18:30:00,2026,2922,94,Getafe,Valencia CF,,,pre,False
 401882784,2026-12-06 21:00:00,2026,1068,244,Atlético de Madrid,Real Betis,,,pre,False
 401882778,2026-12-07 21:00:00,2026,243,99,Sevilla FC,Málaga,,,pre,False
-401882849,2026-12-09 20:00:00,2026,101,93,Rayo Vallecano,Athletic Club,,,pre,True
+401882849,2026-12-09 20:00:00,2026,101,93,Rayo Vallecano,Athletic Club,,,pre,False
 401882773,2026-12-11 21:00:00,2026,3751,243,Elche CF,Sevilla FC,,,pre,False
 401882771,2026-12-12 14:00:00,2026,1538,96,Levante,Alavés,,,pre,False
 401882767,2026-12-12 16:15:00,2026,102,101,Villarreal CF,Rayo Vallecano,,,pre,False

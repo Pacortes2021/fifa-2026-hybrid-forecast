@@ -853,3 +853,12 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915306,2026-11-04 21:00:00,2027,league-phase,0,0,11420,382,RB Leipzig,Manchester City,2,3,post,STATUS_FULL_TIME
 401915381,2026-11-04 21:00:00,2027,league-phase,0,0,494,359,Slavia Praga,Arsenal,1,2,post,STATUS_FULL_TIME
 401915302,2026-11-04 21:00:00,2027,league-phase,0,0,510,21922,Viking FK,Sabah FK,4,1,post,STATUS_FULL_TIME
+401915380,2026-11-24 18:45:00,2027,league-phase,0,0,2980,4411,Bodo/Glimt,LASK Linz,1,0,post,STATUS_FULL_TIME
+401915300,2026-11-24 18:45:00,2027,league-phase,0,0,432,362,Galatasaray,Aston Villa,1,0,post,STATUS_FULL_TIME
+401915298,2026-11-24 21:00:00,2027,league-phase,0,0,86,148,Real Madrid,PSV,5,1,post,STATUS_FULL_TIME
+401915297,2026-11-24 21:00:00,2027,league-phase,0,0,521,244,Slovan Bratislava,Real Betis,0,2,post,STATUS_FULL_TIME
+401915379,2026-11-24 21:00:00,2027,league-phase,0,0,382,114,Manchester City,Napoli,2,2,post,STATUS_FULL_TIME
+401915299,2026-11-24 21:00:00,2027,league-phase,0,0,11420,175,RB Leipzig,Lens,3,1,post,STATUS_FULL_TIME
+401915296,2026-11-24 21:00:00,2027,league-phase,0,0,2572,887,Como,AEK Athens,1,0,post,STATUS_FULL_TIME
+401915295,2026-11-24 21:00:00,2027,league-phase,0,0,359,124,Arsenal,Borussia Dortmund,1,1,post,STATUS_FULL_TIME
+401915294,2026-11-24 21:00:00,2027,league-phase,0,0,142,437,Feyenoord,Porto,0,1,post,STATUS_FULL_TIME

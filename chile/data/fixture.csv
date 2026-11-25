@@ -7,11 +7,11 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401850703,2026-11-29 20:30:00,2026,4129,6072,Everton,O'Higgins,,,pre,False
 401850707,2026-11-29 20:30:00,2026,7427,4133,Ñublense,Cobresal,,,pre,False
 401850701,2026-11-29 20:30:00,2026,10144,5362,Unión La Calera,Universidad de Concepción,,,pre,False
-401850712,2026-12-06 17:00:00,2026,6072,8186,O'Higgins,Coquimbo Unido,,,pre,False
-401850713,2026-12-06 17:00:00,2026,4422,4129,Palestino,Everton,,,pre,False
-401850715,2026-12-06 17:00:00,2026,4137,4138,Deportes La Serena,Audax Italiano,,,pre,False
-401850714,2026-12-06 17:00:00,2026,4139,10144,Universidad de Chile,Unión La Calera,,,pre,False
-401850709,2026-12-06 17:00:00,2026,19195,8110,Deportes Limache,Deportes Concepción,,,pre,False
-401850708,2026-12-06 17:00:00,2026,4133,2688,Cobresal,Colo Colo,,,pre,False
-401850710,2026-12-06 17:00:00,2026,4134,7427,Huachipato,Ñublense,,,pre,False
-401850711,2026-12-06 17:00:00,2026,5362,885,Universidad de Concepción,Universidad Católica,,,pre,False
+401850710,2026-12-05 20:30:00,2026,4134,7427,Huachipato,Ñublense,,,pre,False
+401850713,2026-12-05 20:30:00,2026,4422,4129,Palestino,Everton,,,pre,False
+401850709,2026-12-05 20:30:00,2026,19195,8110,Deportes Limache,Deportes Concepción,,,pre,False
+401850712,2026-12-06 18:00:00,2026,6072,8186,O'Higgins,Coquimbo Unido,,,pre,False
+401850714,2026-12-06 18:00:00,2026,4139,10144,Universidad de Chile,Unión La Calera,,,pre,False
+401850708,2026-12-06 18:00:00,2026,4133,2688,Cobresal,Colo Colo,,,pre,False
+401850715,2026-12-06 18:00:00,2026,4137,4138,Deportes La Serena,Audax Italiano,,,pre,False
+401850711,2026-12-06 18:00:00,2026,5362,885,Universidad de Concepción,Universidad Católica,,,pre,False
