@@ -862,3 +862,12 @@ event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,v
 401915296,2026-11-24 21:00:00,2027,league-phase,0,0,2572,887,Como,AEK Athens,1,0,post,STATUS_FULL_TIME
 401915295,2026-11-24 21:00:00,2027,league-phase,0,0,359,124,Arsenal,Borussia Dortmund,1,1,post,STATUS_FULL_TIME
 401915294,2026-11-24 21:00:00,2027,league-phase,0,0,142,437,Feyenoord,Porto,0,1,post,STATUS_FULL_TIME
+401915378,2026-11-25 18:45:00,2027,league-phase,0,0,21922,83,Sabah FK,FC Barcelona,1,4,post,STATUS_FULL_TIME
+401915293,2026-11-25 18:45:00,2027,league-phase,0,0,494,102,Slavia Praga,Villarreal,0,1,post,STATUS_FULL_TIME
+401915291,2026-11-25 21:00:00,2027,league-phase,0,0,1068,510,Atletico Madrid,Viking FK,2,0,post,STATUS_FULL_TIME
+401915292,2026-11-25 21:00:00,2027,league-phase,0,0,570,364,Club Brugge,Liverpool,0,3,post,STATUS_FULL_TIME
+401915376,2026-11-25 21:00:00,2027,league-phase,0,0,110,134,Inter,VfB Stuttgart,2,0,post,STATUS_FULL_TIME
+401915377,2026-11-25 21:00:00,2027,league-phase,0,0,166,132,Lille,Bayern Munich,2,1,post,STATUS_FULL_TIME
+401915374,2026-11-25 21:00:00,2027,league-phase,0,0,160,104,PSG,AS Roma,2,2,post,STATUS_FULL_TIME
+401915375,2026-11-25 21:00:00,2027,league-phase,0,0,493,436,Shakhtar Donetsk,Fenerbahce,0,1,post,STATUS_FULL_TIME
+401915373,2026-11-25 21:00:00,2027,league-phase,0,0,2250,360,Sporting CP,Manchester United,2,2,post,STATUS_FULL_TIME

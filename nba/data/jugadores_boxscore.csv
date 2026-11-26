@@ -34664,73 +34664,265 @@ event_id,fecha,temporada,equipo,rival,es_local,player_id,player_name,short_name,
 401910036,2026-11-24T00:00Z,2027,Charlotte Hornets,Memphis Grizzlies,1,4576060.0,Ryan Kalkbrenner,R. Kalkbrenner,11.0,C,0,9,0,0-0,0-0,0-0,2,0,0,0,0,1,1,1,-6
 401910036,2026-11-24T00:00Z,2027,Charlotte Hornets,Memphis Grizzlies,1,5060701.0,Christian Anderson,C. Anderson,5.0,G,0,25,25,9-12,6-8,1-1,2,3,1,1,1,2,0,4,13
 401910036,2026-11-24T00:00Z,2027,Charlotte Hornets,Memphis Grizzlies,1,5239590.0,Liam McNeeley,L. McNeeley,33.0,G,0,9,3,1-4,1-4,0-0,2,0,0,0,0,1,1,1,2
-401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,3908845,John Collins,J. Collins,20,F,1,26,12,3-5,2-4,4-5,4,0,2,0,2,0,4,1,+20
-401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4066372,Kevin Huerter,K. Huerter,27,G,1,32,13,6-10,1-3,0-0,6,5,1,1,0,0,6,1,+17
-401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4395702,Isaiah Joe,I. Joe,17,G,1,30,21,8-15,5-11,0-0,4,0,2,1,0,0,4,1,+16
-401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4684742,Ausar Thompson,A. Thompson,9,G,1,31,6,3-3,0-0,0-0,10,7,2,1,4,2,8,1,+13
-401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,5107199,Daniss Jenkins,D. Jenkins,24,G,1,35,15,6-16,1-6,2-2,4,10,5,2,0,2,2,4,+16
-401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4278562,Paul Reed,P. Reed,7,F,0,22,9,3-6,0-0,3-5,6,1,2,2,0,2,4,3,-2
-401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4683771,Ronald Holland II,R. Holland II,5,F,0,17,13,5-9,2-5,1-2,3,1,0,1,0,0,3,2,+5
-401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,2596112,Javonte Green,J. Green,31,G,0,27,6,2-5,2-4,0-0,2,1,1,4,0,0,2,2,+10
-401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4397449,Elijah Harkless,E. Harkless,94,G,0,14,7,2-9,2-3,1-1,1,2,1,0,0,1,0,1,+2
-401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4700852,Chaz Lanier,C. Lanier,8,G,0,7,2,1-1,0-0,0-0,2,0,0,0,0,1,1,1,-7
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4566434,Franz Wagner,F. Wagner,22,F,1,38,20,9-20,0-5,2-2,9,6,2,0,1,1,8,3,-18
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4277847,Wendell Carter Jr.,W. Carter Jr.,34,C,1,38,9,3-10,1-3,2-2,13,2,1,3,0,2,11,4,-12
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4066320,Desmond Bane,D. Bane,3,G,1,34,21,8-13,4-7,1-1,1,5,4,1,0,0,1,6,-20
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4432165,Jalen Suggs,J. Suggs,4,G,1,33,4,2-8,0-2,0-0,3,5,3,2,0,0,3,2,-15
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4712849,Anthony Black,A. Black,0,G,1,28,5,2-8,0-2,1-3,4,2,5,0,1,2,2,1,-22
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4278572,Jamal Cain,J. Cain,8,F,0,1,0,0-0,0-0,0-0,0,0,0,0,0,0,0,0,0
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4702382,Tristan da Silva,T. da Silva,23,F,0,33,16,6-13,4-11,0-0,3,1,1,0,0,1,2,1,-1
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4348700,Goga Bitadze,G. Bitadze,35,C,0,13,2,1-3,0-0,0-0,8,1,3,0,1,4,4,4,-1
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,3133635,Jevon Carter,J. Carter,2,G,0,19,9,3-6,3-6,0-0,0,0,1,2,1,0,0,3,-1
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4593034,Alex Morales,A. Morales,30,G,0,1,0,0-2,0-0,0-0,0,0,0,0,0,0,0,0,0
-401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,5239561,Jase Richardson,J. Richardson,11,G,0,1,0,0-0,0-0,0-0,0,0,0,0,0,0,0,0,0
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4251,Paul George,P. George,13,F,1,33,28,11-20,6-9,0-0,4,9,1,1,0,0,4,5,+34
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4065648,Jayson Tatum,J. Tatum,0,F,1,37,41,13-25,6-15,9-14,6,8,3,1,2,0,6,3,-2
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4065804,Sam Hauser,S. Hauser,30,F,1,22,4,1-4,1-3,1-2,3,1,0,1,1,1,2,1,+20
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4397424,Neemias Queta,N. Queta,88,C,1,25,21,9-11,0-0,3-3,5,2,2,1,2,3,2,4,+14
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,3078576,Derrick White,D. White,9,G,1,30,6,2-10,2-6,0-0,7,5,0,1,0,0,7,0,+32
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,5142621,Chris Cenac Jr.,C. Cenac Jr.,12,F,0,6,0,0-1,0-0,0-0,2,1,0,1,0,2,0,1,-10
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4277951,Luka Garza,L. Garza,52,C,0,18,7,3-3,1-1,0-0,4,0,1,1,0,2,2,4,+4
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4066354,Payton Pritchard,P. Pritchard,11,G,0,28,14,4-14,4-11,2-2,4,2,2,1,0,0,4,2,-1
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4397251,Ron Harper Jr.,R. Harper Jr.,8,G,0,8,2,1-3,0-2,0-2,0,0,0,0,0,0,0,0,-5
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4593841,Baylor Scheierman,B. Scheierman,55,G,0,19,8,2-7,2-4,2-2,4,1,1,0,0,2,2,1,-5
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4683689,Jordan Walsh,J. Walsh,27,G,0,5,0,0-1,0-0,0-0,2,1,0,0,0,1,1,2,+2
-401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,5175647,Hugo Gonzalez,H. Gonzalez,28,G,0,9,0,0-1,0-0,0-0,5,0,0,0,1,2,3,1,-8
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,6583,Anthony Davis,A. Davis,23,F,1,37,33,12-21,1-3,8-10,13,1,2,2,1,5,8,3,-13
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5142718,AJ Dybantsa,A. Dybantsa,4,F,1,41,20,7-18,2-6,4-5,11,7,3,0,0,3,8,2,-16
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5174563,Kyshawn George,K. George,18,F,1,38,24,9-20,4-12,2-2,9,3,1,1,0,0,9,1,-11
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5160992,Alex Sarr,A. Sarr,20,C,1,24,7,3-6,1-3,0-0,2,0,0,0,1,1,1,4,-10
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,4277905,Trae Young,T. Young,3,G,1,35,17,4-9,1-2,8-9,0,12,1,2,0,0,0,3,-2
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,6609,Khris Middleton,K. Middleton,22,F,0,18,0,0-2,0-1,0-0,5,0,2,0,0,1,4,2,-11
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,4278129,Deandre Ayton,D. Ayton,8,C,0,5,0,0-1,0-0,0-0,2,0,1,0,0,1,1,1,+4
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,4432819,Tre Mann,T. Mann,1,G,0,1,0,0-0,0-0,0-0,0,1,0,0,0,0,0,0,0
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,4845374,Bub Carrington,B. Carrington,7,G,0,7,0,0-1,0-1,0-0,2,0,0,0,1,1,1,0,+7
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5104155,Bilal Coulibaly,B. Coulibaly,0,G,0,22,10,4-7,2-5,0-0,3,1,1,0,0,1,2,5,-5
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5144126,Will Riley,W. Riley,27,G,0,5,5,2-4,1-1,0-0,0,0,0,0,0,0,0,1,-3
-401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5238230,Tre Johnson,T. Johnson,12,G,0,8,0,0-3,0-2,0-0,1,0,2,0,0,1,0,1,-15
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,3138160,Caleb Martin,C. Martin,16,F,1,30,13,5-8,3-6,0-0,4,4,1,5,2,2,2,3,+15
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4278049,Daniel Gafford,D. Gafford,21,F,1,27,13,6-8,0-0,1-4,6,3,2,1,2,2,4,1,-9
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,5041939,Cooper Flagg,C. Flagg,32,F,1,31,24,8-17,1-4,7-9,6,12,1,0,0,0,6,4,+5
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,5211175,Zaccharie Risacher,Z. Risacher,10,F,1,21,12,5-8,1-2,1-2,6,1,1,1,1,3,3,2,-1
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,6442,Kyrie Irving,K. Irving,11,G,1,34,11,5-19,1-8,0-0,5,6,1,1,1,1,4,1,+21
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4278078,P.J. Washington,P.J. Washington,25,F,0,25,14,6-11,1-3,1-2,6,0,0,2,1,1,5,2,+32
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4278594,Naji Marshall,N. Marshall,3,F,0,22,14,6-13,1-5,1-1,1,2,1,1,0,0,1,0,+23
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4593125,Santi Aldama,S. Aldama,34,F,0,10,3,1-2,1-2,0-0,1,0,1,0,0,1,0,0,0
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4873153,Morez Johnson Jr.,M. Johnson Jr.,14,F,0,19,9,4-7,1-4,0-0,10,1,2,1,0,3,7,4,+22
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4701208,Moussa Cisse,M. Cisse,30,C,0,2,0,0-0,0-0,0-0,0,0,0,0,0,0,0,0,-3
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4432582,Max Christie,M. Christie,0,G,0,4,2,0-0,0-0,2-2,1,0,1,0,0,1,0,0,-7
-401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4896372,Walter Clayton Jr.,W. Clayton Jr.,1,G,0,14,5,2-5,1-3,0-0,2,2,1,1,0,0,2,0,-3
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3064290,Aaron Gordon,A. Gordon,32,F,1,24,1,0-3,0-3,1-2,3,3,0,0,1,1,2,2,-6
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3138196,Cameron Johnson,C. Johnson,23,F,1,34,17,5-15,4-11,3-4,5,3,2,0,0,2,3,3,-13
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3112335,Nikola Jokic,N. Jokic,15,C,1,33,18,6-14,1-4,5-5,11,5,5,1,0,2,9,2,-8
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3936299,Jamal Murray,J. Murray,27,G,1,36,20,6-17,2-8,6-6,2,3,2,0,2,0,2,1,-10
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4431767,Christian Braun,C. Braun,0,G,1,29,15,5-8,3-6,2-2,2,4,1,1,1,0,2,5,-11
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4065813,Alpha Diallo,A. Diallo,11,F,0,3,2,1-1,0-0,0-0,1,1,2,0,0,0,1,0,-3
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4277848,Marvin Bagley III,M. Bagley III,3,F,0,12,9,4-7,1-1,0-0,3,0,0,0,0,3,0,1,-8
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4431690,Zeke Nnaji,Z. Nnaji,22,F,0,3,1,0-3,0-0,1-2,1,0,0,1,0,1,0,1,-3
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4433607,DaRon Holmes II,D. Holmes II,14,F,0,3,0,0-1,0-1,0-0,0,0,0,1,0,0,0,1,-3
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4592427,Spencer Jones,S. Jones,21,F,0,22,7,2-4,1-3,2-2,3,1,1,1,0,0,3,1,-16
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4698719,Trevon Brazile,T. Brazile,7,F,0,12,0,0-0,0-0,0-0,3,0,1,0,1,1,2,1,-4
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3978,DeMar DeRozan,D. DeRozan,10,G,0,17,9,4-8,0-1,1-1,5,1,2,1,0,1,4,0,-1
-401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3135046,Tyus Jones,T. Jones,5,G,0,12,2,1-4,0-1,0-0,2,1,2,0,1,1,1,0,-9
+401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,3908845.0,John Collins,J. Collins,20.0,F,1,26,12,3-5,2-4,4-5,4,0,2,0,2,0,4,1,20
+401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4066372.0,Kevin Huerter,K. Huerter,27.0,G,1,32,13,6-10,1-3,0-0,6,5,1,1,0,0,6,1,17
+401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4395702.0,Isaiah Joe,I. Joe,17.0,G,1,30,21,8-15,5-11,0-0,4,0,2,1,0,0,4,1,16
+401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4684742.0,Ausar Thompson,A. Thompson,9.0,G,1,31,6,3-3,0-0,0-0,10,7,2,1,4,2,8,1,13
+401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,5107199.0,Daniss Jenkins,D. Jenkins,24.0,G,1,35,15,6-16,1-6,2-2,4,10,5,2,0,2,2,4,16
+401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4278562.0,Paul Reed,P. Reed,7.0,F,0,22,9,3-6,0-0,3-5,6,1,2,2,0,2,4,3,-2
+401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4683771.0,Ronald Holland II,R. Holland II,5.0,F,0,17,13,5-9,2-5,1-2,3,1,0,1,0,0,3,2,5
+401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,2596112.0,Javonte Green,J. Green,31.0,G,0,27,6,2-5,2-4,0-0,2,1,1,4,0,0,2,2,10
+401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4397449.0,Elijah Harkless,E. Harkless,94.0,G,0,14,7,2-9,2-3,1-1,1,2,1,0,0,1,0,1,2
+401909314,2026-11-25T00:00Z,2027,Detroit Pistons,Orlando Magic,0,4700852.0,Chaz Lanier,C. Lanier,8.0,G,0,7,2,1-1,0-0,0-0,2,0,0,0,0,1,1,1,-7
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4566434.0,Franz Wagner,F. Wagner,22.0,F,1,38,20,9-20,0-5,2-2,9,6,2,0,1,1,8,3,-18
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4277847.0,Wendell Carter Jr.,W. Carter Jr.,34.0,C,1,38,9,3-10,1-3,2-2,13,2,1,3,0,2,11,4,-12
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4066320.0,Desmond Bane,D. Bane,3.0,G,1,34,21,8-13,4-7,1-1,1,5,4,1,0,0,1,6,-20
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4432165.0,Jalen Suggs,J. Suggs,4.0,G,1,33,4,2-8,0-2,0-0,3,5,3,2,0,0,3,2,-15
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4712849.0,Anthony Black,A. Black,0.0,G,1,28,5,2-8,0-2,1-3,4,2,5,0,1,2,2,1,-22
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4278572.0,Jamal Cain,J. Cain,8.0,F,0,1,0,0-0,0-0,0-0,0,0,0,0,0,0,0,0,0
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4702382.0,Tristan da Silva,T. da Silva,23.0,F,0,33,16,6-13,4-11,0-0,3,1,1,0,0,1,2,1,-1
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4348700.0,Goga Bitadze,G. Bitadze,35.0,C,0,13,2,1-3,0-0,0-0,8,1,3,0,1,4,4,4,-1
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,3133635.0,Jevon Carter,J. Carter,2.0,G,0,19,9,3-6,3-6,0-0,0,0,1,2,1,0,0,3,-1
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,4593034.0,Alex Morales,A. Morales,30.0,G,0,1,0,0-2,0-0,0-0,0,0,0,0,0,0,0,0,0
+401909314,2026-11-25T00:00Z,2027,Orlando Magic,Detroit Pistons,1,5239561.0,Jase Richardson,J. Richardson,11.0,G,0,1,0,0-0,0-0,0-0,0,0,0,0,0,0,0,0,0
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4251.0,Paul George,P. George,13.0,F,1,33,28,11-20,6-9,0-0,4,9,1,1,0,0,4,5,34
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4065648.0,Jayson Tatum,J. Tatum,0.0,F,1,37,41,13-25,6-15,9-14,6,8,3,1,2,0,6,3,-2
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4065804.0,Sam Hauser,S. Hauser,30.0,F,1,22,4,1-4,1-3,1-2,3,1,0,1,1,1,2,1,20
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4397424.0,Neemias Queta,N. Queta,88.0,C,1,25,21,9-11,0-0,3-3,5,2,2,1,2,3,2,4,14
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,3078576.0,Derrick White,D. White,9.0,G,1,30,6,2-10,2-6,0-0,7,5,0,1,0,0,7,0,32
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,5142621.0,Chris Cenac Jr.,C. Cenac Jr.,12.0,F,0,6,0,0-1,0-0,0-0,2,1,0,1,0,2,0,1,-10
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4277951.0,Luka Garza,L. Garza,52.0,C,0,18,7,3-3,1-1,0-0,4,0,1,1,0,2,2,4,4
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4066354.0,Payton Pritchard,P. Pritchard,11.0,G,0,28,14,4-14,4-11,2-2,4,2,2,1,0,0,4,2,-1
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4397251.0,Ron Harper Jr.,R. Harper Jr.,8.0,G,0,8,2,1-3,0-2,0-2,0,0,0,0,0,0,0,0,-5
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4593841.0,Baylor Scheierman,B. Scheierman,55.0,G,0,19,8,2-7,2-4,2-2,4,1,1,0,0,2,2,1,-5
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,4683689.0,Jordan Walsh,J. Walsh,27.0,G,0,5,0,0-1,0-0,0-0,2,1,0,0,0,1,1,2,2
+401909315,2026-11-25T01:00Z,2027,Boston Celtics,Washington Wizards,0,5175647.0,Hugo Gonzalez,H. Gonzalez,28.0,G,0,9,0,0-1,0-0,0-0,5,0,0,0,1,2,3,1,-8
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,6583.0,Anthony Davis,A. Davis,23.0,F,1,37,33,12-21,1-3,8-10,13,1,2,2,1,5,8,3,-13
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5142718.0,AJ Dybantsa,A. Dybantsa,4.0,F,1,41,20,7-18,2-6,4-5,11,7,3,0,0,3,8,2,-16
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5174563.0,Kyshawn George,K. George,18.0,F,1,38,24,9-20,4-12,2-2,9,3,1,1,0,0,9,1,-11
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5160992.0,Alex Sarr,A. Sarr,20.0,C,1,24,7,3-6,1-3,0-0,2,0,0,0,1,1,1,4,-10
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,4277905.0,Trae Young,T. Young,3.0,G,1,35,17,4-9,1-2,8-9,0,12,1,2,0,0,0,3,-2
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,6609.0,Khris Middleton,K. Middleton,22.0,F,0,18,0,0-2,0-1,0-0,5,0,2,0,0,1,4,2,-11
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,4278129.0,Deandre Ayton,D. Ayton,8.0,C,0,5,0,0-1,0-0,0-0,2,0,1,0,0,1,1,1,4
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,4432819.0,Tre Mann,T. Mann,1.0,G,0,1,0,0-0,0-0,0-0,0,1,0,0,0,0,0,0,0
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,4845374.0,Bub Carrington,B. Carrington,7.0,G,0,7,0,0-1,0-1,0-0,2,0,0,0,1,1,1,0,7
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5104155.0,Bilal Coulibaly,B. Coulibaly,0.0,G,0,22,10,4-7,2-5,0-0,3,1,1,0,0,1,2,5,-5
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5144126.0,Will Riley,W. Riley,27.0,G,0,5,5,2-4,1-1,0-0,0,0,0,0,0,0,0,1,-3
+401909315,2026-11-25T01:00Z,2027,Washington Wizards,Boston Celtics,1,5238230.0,Tre Johnson,T. Johnson,12.0,G,0,8,0,0-3,0-2,0-0,1,0,2,0,0,1,0,1,-15
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,3138160.0,Caleb Martin,C. Martin,16.0,F,1,30,13,5-8,3-6,0-0,4,4,1,5,2,2,2,3,15
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4278049.0,Daniel Gafford,D. Gafford,21.0,F,1,27,13,6-8,0-0,1-4,6,3,2,1,2,2,4,1,-9
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,5041939.0,Cooper Flagg,C. Flagg,32.0,F,1,31,24,8-17,1-4,7-9,6,12,1,0,0,0,6,4,5
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,5211175.0,Zaccharie Risacher,Z. Risacher,10.0,F,1,21,12,5-8,1-2,1-2,6,1,1,1,1,3,3,2,-1
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,6442.0,Kyrie Irving,K. Irving,11.0,G,1,34,11,5-19,1-8,0-0,5,6,1,1,1,1,4,1,21
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4278078.0,P.J. Washington,P.J. Washington,25.0,F,0,25,14,6-11,1-3,1-2,6,0,0,2,1,1,5,2,32
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4278594.0,Naji Marshall,N. Marshall,3.0,F,0,22,14,6-13,1-5,1-1,1,2,1,1,0,0,1,0,23
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4593125.0,Santi Aldama,S. Aldama,34.0,F,0,10,3,1-2,1-2,0-0,1,0,1,0,0,1,0,0,0
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4873153.0,Morez Johnson Jr.,M. Johnson Jr.,14.0,F,0,19,9,4-7,1-4,0-0,10,1,2,1,0,3,7,4,22
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4701208.0,Moussa Cisse,M. Cisse,30.0,C,0,2,0,0-0,0-0,0-0,0,0,0,0,0,0,0,0,-3
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4432582.0,Max Christie,M. Christie,0.0,G,0,4,2,0-0,0-0,2-2,1,0,1,0,0,1,0,0,-7
+401909316,2026-11-25T03:00Z,2027,Dallas Mavericks,Denver Nuggets,0,4896372.0,Walter Clayton Jr.,W. Clayton Jr.,1.0,G,0,14,5,2-5,1-3,0-0,2,2,1,1,0,0,2,0,-3
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3064290.0,Aaron Gordon,A. Gordon,32.0,F,1,24,1,0-3,0-3,1-2,3,3,0,0,1,1,2,2,-6
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3138196.0,Cameron Johnson,C. Johnson,23.0,F,1,34,17,5-15,4-11,3-4,5,3,2,0,0,2,3,3,-13
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3112335.0,Nikola Jokic,N. Jokic,15.0,C,1,33,18,6-14,1-4,5-5,11,5,5,1,0,2,9,2,-8
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3936299.0,Jamal Murray,J. Murray,27.0,G,1,36,20,6-17,2-8,6-6,2,3,2,0,2,0,2,1,-10
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4431767.0,Christian Braun,C. Braun,0.0,G,1,29,15,5-8,3-6,2-2,2,4,1,1,1,0,2,5,-11
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4065813.0,Alpha Diallo,A. Diallo,11.0,F,0,3,2,1-1,0-0,0-0,1,1,2,0,0,0,1,0,-3
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4277848.0,Marvin Bagley III,M. Bagley III,3.0,F,0,12,9,4-7,1-1,0-0,3,0,0,0,0,3,0,1,-8
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4431690.0,Zeke Nnaji,Z. Nnaji,22.0,F,0,3,1,0-3,0-0,1-2,1,0,0,1,0,1,0,1,-3
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4433607.0,DaRon Holmes II,D. Holmes II,14.0,F,0,3,0,0-1,0-1,0-0,0,0,0,1,0,0,0,1,-3
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4592427.0,Spencer Jones,S. Jones,21.0,F,0,22,7,2-4,1-3,2-2,3,1,1,1,0,0,3,1,-16
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,4698719.0,Trevon Brazile,T. Brazile,7.0,F,0,12,0,0-0,0-0,0-0,3,0,1,0,1,1,2,1,-4
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3978.0,DeMar DeRozan,D. DeRozan,10.0,G,0,17,9,4-8,0-1,1-1,5,1,2,1,0,1,4,0,-1
+401909316,2026-11-25T03:00Z,2027,Denver Nuggets,Dallas Mavericks,1,3135046.0,Tyus Jones,T. Jones,5.0,G,0,12,2,1-4,0-1,0-0,2,1,2,0,1,1,1,0,-9
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,3155942,Domantas Sabonis,D. Sabonis,11,F,1,37,27,8-9,1-1,10-12,10,6,1,1,0,3,7,3,-17
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,4065732,De'Andre Hunter,D. Hunter,15,F,1,39,15,5-10,3-6,2-4,7,3,0,1,0,1,6,0,-23
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,4594327,Keegan Murray,K. Murray,13,F,1,42,18,8-19,2-6,0-0,4,2,2,1,0,3,1,1,-12
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,5106058,Emanuel Sharp,E. Sharp,34,G,1,25,9,3-6,3-6,0-0,2,3,3,1,0,0,2,6,+11
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,5142620,Darius Acuff Jr.,D. Acuff Jr.,5,G,1,37,22,9-24,3-12,1-2,4,9,5,0,0,2,2,1,-23
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,4395650,Leaky Black,L. Black,19,F,0,20,3,1-6,1-5,0-0,4,2,1,0,0,2,2,2,-15
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,4431679,Precious Achiuwa,P. Achiuwa,9,F,0,17,11,5-7,1-2,0-0,4,2,2,1,0,0,4,1,-8
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,4917149,Alex Karaban,A. Karaban,33,F,0,2,0,0-0,0-0,0-0,1,0,1,0,0,1,0,1,-10
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,4433174,Dylan Cardwell,D. Cardwell,32,C,0,9,0,0-1,0-0,0-0,3,0,2,0,2,0,3,1,+8
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,4066262,Malik Monk,M. Monk,0,G,0,13,5,2-5,0-2,1-1,0,4,1,1,0,0,0,1,-6
+401909324,2026-11-26T03:00Z,2027,Sacramento Kings,Golden State Warriors,0,4702384,Nique Clifford,N. Clifford,10,G,0,--,0,0-0,0-0,0-0,0,0,0,0,0,0,0,0,0
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,6589,Draymond Green,D. Green,23,F,1,26,6,2-5,2-5,0-0,4,11,2,0,0,1,3,1,+8
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,5175737,Yaxel Lendeborg,Y. Lendeborg,1,F,1,31,15,6-11,0-3,3-4,8,2,4,3,1,2,6,4,+8
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,4397886,Charles Bassey,C. Bassey,28,C,1,22,10,4-9,0-1,2-2,7,1,2,0,2,2,5,3,-8
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,4066436,De'Anthony Melton,D. Melton,8,G,1,27,24,8-14,8-12,0-0,4,7,4,1,1,1,3,1,+4
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,4709138,Brandin Podziemski,B. Podziemski,2,G,1,32,13,5-9,3-6,0-1,2,6,0,1,1,0,2,3,+16
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,2990969,Georges Niang,G. Niang,32,F,0,19,11,4-8,3-6,0-0,3,2,1,0,0,1,2,3,+23
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,4997536,Gui Santos,G. Santos,15,F,0,24,22,8-11,2-4,4-4,3,1,0,2,0,2,1,4,+19
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,3213,Al Horford,A. Horford,20,C,0,13,2,1-3,0-1,0-0,2,2,1,0,1,0,2,0,+7
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,3134903,Gary Payton II,G. Payton II,0,G,0,17,9,3-6,1-2,2-2,3,1,0,1,0,2,1,0,+11
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,4397040,Brandon Williams,B. Williams,12,G,0,13,14,7-14,0-2,0-1,2,3,1,0,1,0,2,2,+1
+401909324,2026-11-26T03:00Z,2027,Golden State Warriors,Sacramento Kings,1,4897262,Will Richard,W. Richard,3,G,0,17,3,1-2,1-2,0-0,2,1,0,1,0,1,1,2,+6
+401909320,2026-11-26T00:30Z,2027,Minnesota Timberwolves,Oklahoma City Thunder,0,4431671,Jaden McDaniels,J. McDaniels,3,F,1,37,32,11-15,4-5,6-6,10,5,0,1,1,2,8,4,+13
+401909320,2026-11-26T00:30Z,2027,Minnesota Timberwolves,Oklahoma City Thunder,0,4433247,Jonathan Kuminga,J. Kuminga,24,F,1,32,7,3-8,0-3,1-2,5,1,3,1,1,1,4,3,+7
+401909320,2026-11-26T00:30Z,2027,Minnesota Timberwolves,Oklahoma City Thunder,0,3032976,Rudy Gobert,R. Gobert,27,C,1,32,9,4-6,0-0,1-6,7,0,0,1,0,2,5,1,-3
+401909320,2026-11-26T00:30Z,2027,Minnesota Timberwolves,Oklahoma City Thunder,0,4397002,Ayo Dosunmu,A. Dosunmu,13,G,1,35,16,6-14,4-7,0-0,3,4,3,1,0,1,2,3,+9
+401909320,2026-11-26T00:30Z,2027,Minnesota Timberwolves,Oklahoma City Thunder,0,4432816,LaMelo Ball,L. Ball,1,G,1,29,19,7-18,5-9,0-0,7,8,3,1,0,2,5,4,-4
+401909320,2026-11-26T00:30Z,2027,Minnesota Timberwolves,Oklahoma City Thunder,0,3136196,Trey Lyles,T. Lyles,41,F,0,23,9,3-6,3-6,0-0,10,1,0,0,0,2,8,0,+2
+401909320,2026-11-26T00:30Z,2027,Minnesota Timberwolves,Oklahoma City Thunder,0,5279133,Joan Beringer,J. Beringer,19,F,0,16,4,0-1,0-0,4-6,5,1,1,0,3,2,3,2,+10
+401909320,2026-11-26T00:30Z,2027,Minnesota Timberwolves,Oklahoma City Thunder,0,4432847,Terrence Shannon Jr.,T. Shannon Jr.,4,G,0,20,8,2-10,0-4,4-4,2,3,3,0,0,0,2,1,-4
+401909320,2026-11-26T00:30Z,2027,Minnesota Timberwolves,Oklahoma City Thunder,0,4592492,Bones Hyland,B. Hyland,8,G,0,17,9,4-10,1-5,0-0,1,2,0,1,2,0,1,1,+5
+401909320,2026-11-26T00:30Z,2027,Oklahoma City Thunder,Minnesota Timberwolves,1,4222252,Isaiah Hartenstein,I. Hartenstein,55,C,1,31,8,4-7,0-0,0-0,16,6,1,2,0,4,12,3,+8
+401909320,2026-11-26T00:30Z,2027,Oklahoma City Thunder,Minnesota Timberwolves,1,4278073,Shai Gilgeous-Alexander,S. Gilgeous-Alexander,2,G,1,37,32,13-26,1-7,5-7,3,5,2,0,2,0,3,0,-15
+401909320,2026-11-26T00:30Z,2027,Oklahoma City Thunder,Minnesota Timberwolves,1,4432185,Micah Peavy,M. Peavy,16,G,1,25,2,1-3,0-1,0-0,7,0,2,0,0,4,3,1,-20
+401909320,2026-11-26T00:30Z,2027,Oklahoma City Thunder,Minnesota Timberwolves,1,4900671,Ajay Mitchell,A. Mitchell,25,G,1,31,25,11-19,2-5,1-3,3,3,2,1,0,0,3,3,+3
+401909320,2026-11-26T00:30Z,2027,Oklahoma City Thunder,Minnesota Timberwolves,1,5241364,Bennett Stirtz,B. Stirtz,14,G,1,24,6,2-6,1-4,1-2,1,2,0,1,0,0,1,5,+2
+401909320,2026-11-26T00:30Z,2027,Oklahoma City Thunder,Minnesota Timberwolves,1,2991350,Alex Caruso,A. Caruso,9,G,0,26,11,4-9,3-5,0-0,2,2,0,2,4,0,2,4,+16
+401909320,2026-11-26T00:30Z,2027,Oklahoma City Thunder,Minnesota Timberwolves,1,3133626,Kenrich Williams,K. Williams,34,G,0,25,13,4-8,3-6,2-2,5,1,1,3,0,1,4,3,-11
+401909320,2026-11-26T00:30Z,2027,Oklahoma City Thunder,Minnesota Timberwolves,1,4683778,Jared McCain,J. McCain,3,G,0,28,9,3-11,1-5,2-4,1,1,1,0,0,0,1,2,-12
+401909320,2026-11-26T00:30Z,2027,Oklahoma City Thunder,Minnesota Timberwolves,1,4702384,Nique Clifford,N. Clifford,18,G,0,12,0,0-5,0-0,0-0,2,0,0,0,0,1,1,0,-6
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,3064514,Julius Randle,J. Randle,30,F,1,39,28,10-16,2-6,6-8,9,3,4,0,0,2,7,1,+4
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,4278104,Michael Porter Jr.,M. Porter Jr.,17,F,1,34,12,4-14,2-6,2-3,11,4,1,1,0,0,11,2,-7
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,5107173,Danny Wolf,D. Wolf,2,F,1,19,5,2-8,1-4,0-0,0,1,1,0,0,0,0,3,-4
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,4432194,Day'Ron Sharpe,D. Sharpe,20,C,1,31,11,5-10,1-1,0-0,14,5,0,3,2,7,7,3,+2
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,5101761,Mikel Brown Jr.,M. Brown Jr.,0,G,1,23,6,2-9,0-5,2-2,2,2,2,1,0,0,2,3,-7
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,4702670,Grant Nelson,G. Nelson,16,F,0,13,1,0-1,0-0,1-2,6,0,1,1,0,3,3,0,+6
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,4712896,Noah Clowney,N. Clowney,21,F,0,27,17,7-13,3-7,0-0,5,1,1,1,0,1,4,0,+14
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,3150844,Moritz Wagner,M. Wagner,13,C,0,4,2,0-1,0-1,2-2,0,0,0,0,0,0,0,0,-1
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,3907823,Terance Mann,T. Mann,14,G,0,2,0,0-1,0-0,0-0,0,0,0,0,0,0,0,0,-1
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,4702177,Keon Ellis,K. Ellis,1,G,0,23,7,2-5,1-3,2-2,2,3,0,2,0,0,2,0,+14
+401909322,2026-11-26T01:00Z,2027,Brooklyn Nets,Milwaukee Bucks,0,5175643,Egor Demin,E. Demin,8,G,0,25,15,5-11,0-5,5-7,3,4,3,1,1,2,1,4,+15
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,3134907,Kyle Kuzma,K. Kuzma,18,F,1,31,13,5-11,3-7,0-2,3,2,1,0,0,0,3,1,-12
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,4432848,Jaime Jaquez Jr.,J. Jaquez Jr.,24,F,1,35,21,9-15,1-5,2-4,5,4,1,2,0,0,5,3,+5
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,3133628,Myles Turner,M. Turner,3,C,1,26,3,1-2,1-2,0-0,6,2,3,1,3,1,5,3,-1
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,4395725,Tyler Herro,T. Herro,11,G,1,37,28,10-20,3-9,5-5,2,5,5,3,0,1,1,2,0
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,4591725,Ryan Rollins,R. Rollins,13,G,1,19,2,0-7,0-4,2-2,3,3,0,1,0,0,3,0,-7
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,5164559,Nate Ament,N. Ament,15,F,0,21,8,3-6,2-5,0-0,3,0,1,0,0,1,2,4,0
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,5105623,Kel'el Ware,K. Ware,9,C,0,22,13,6-10,1-2,0-1,14,2,1,0,2,5,9,4,-6
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,2991043,Caris LeVert,C. LeVert,12,G,0,12,2,1-2,0-0,0-0,1,2,0,0,0,1,0,0,-6
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,4397475,AJ Green,A. Green,20,G,0,5,0,0-3,0-3,0-0,0,0,0,0,0,0,0,0,-6
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,5082206,Brayden Burries,B. Burries,0,G,0,22,3,1-6,0-2,1-2,3,3,2,0,0,2,1,3,-4
+401909322,2026-11-26T01:00Z,2027,Milwaukee Bucks,Brooklyn Nets,1,5214640,Kasparas Jakucionis,K. Jakucionis,25,G,0,12,4,2-7,0-5,0-0,4,3,0,0,0,2,2,1,+2
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,3913176,Brandon Ingram,B. Ingram,7,F,1,26,18,6-19,2-6,4-4,5,4,4,0,0,2,3,3,-17
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,3936099,Derrick Jones Jr.,D. Jones Jr.,5,F,1,23,4,2-6,0-3,0-0,2,1,1,0,0,0,2,0,-19
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,4066648,Rui Hachimura,R. Hachimura,28,F,1,37,14,5-13,1-5,3-5,12,5,1,0,0,3,9,3,-14
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,3448,Brook Lopez,B. Lopez,11,C,1,18,6,2-3,1-2,1-1,3,1,0,0,1,0,3,2,-21
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,4396907,Darius Garland,D. Garland,10,G,1,29,12,5-12,2-6,0-0,3,4,2,0,0,2,1,2,-22
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,4432170,Isaiah Jackson,I. Jackson,23,F,0,7,4,2-2,0-0,0-0,1,0,0,0,0,0,1,0,-6
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,5075626,Baba Miller,B. Miller,18,F,0,5,9,1-1,0-0,7-8,1,1,0,0,1,0,1,1,+4
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,5108024,Yanic Konan Niederhauser,Y. Niederhauser,14,C,0,18,4,2-4,0-0,0-0,4,0,0,0,0,0,4,0,+8
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,2991139,Kris Dunn,K. Dunn,8,G,0,22,12,5-8,0-1,2-2,6,4,2,0,1,2,4,1,-1
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,4065778,Max Strus,M. Strus,31,G,0,21,0,0-5,0-3,0-0,6,0,2,1,0,1,5,1,-14
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,4702352,Kobe Sanders,K. Sanders,4,G,0,5,0,0-2,0-1,0-0,0,0,0,0,0,0,0,1,+4
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,4845363,Cam Christie,C. Christie,24,G,0,5,0,0-2,0-1,0-0,1,0,0,0,0,1,0,0,+4
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,5106258,Gradey Dick,G. Dick,9,G,0,5,2,1-2,0-0,0-0,2,0,0,0,0,1,1,0,+4
+401909321,2026-11-26T01:00Z,2027,LA Clippers,Memphis Grizzlies,0,5254165,Keaton Wagler,K. Wagler,1,G,0,21,12,2-6,0-2,8-8,2,0,0,0,0,1,1,3,0
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4594326,Kris Murray,K. Murray,17,F,1,32,8,4-8,0-3,0-1,4,3,1,0,0,2,2,2,+25
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4903027,Cedric Coward,C. Coward,23,F,1,26,14,6-14,0-6,2-3,10,1,0,1,1,2,8,2,+18
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,5112087,Jaylen Wells,J. Wells,0,F,1,27,19,8-12,3-4,0-0,6,1,0,1,0,0,6,2,+23
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4600663,Zach Edey,Z. Edey,14,C,1,9,7,3-4,0-0,1-1,4,2,0,0,2,1,3,0,+5
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4065733,Ty Jerome,T. Jerome,2,G,1,25,17,7-16,1-8,2-2,5,7,0,4,1,1,4,1,+23
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4595400,Olivier-Maxence Prosper,O. Prosper,18,F,0,19,9,2-5,1-3,4-4,4,2,2,0,0,1,3,2,-3
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4684806,Taylor Hendricks,T. Hendricks,22,F,0,25,5,2-4,0-1,1-1,0,1,0,0,1,0,0,4,+9
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,5231919,Karim Lopez,K. Lopez,35,F,0,4,2,1-3,0-2,0-0,2,0,0,0,0,0,2,2,-4
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4432810,Isaiah Stewart,I. Stewart,28,C,0,14,10,4-6,2-3,0-0,3,1,1,1,2,1,2,1,-2
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4593016,Quinten Post,Q. Post,41,C,0,14,0,0-3,0-3,0-0,4,0,0,1,0,1,3,3,+1
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4433083,Cam Spencer,C. Spencer,24,G,0,24,16,7-10,2-4,0-0,0,4,2,0,0,0,0,3,0
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4683934,Jahmai Mashack,J. Mashack,21,G,0,4,0,0-0,0-0,0-0,0,0,0,0,0,0,0,1,-4
+401909321,2026-11-26T01:00Z,2027,Memphis Grizzlies,LA Clippers,1,4781746,Javon Small,J. Small,10,G,0,17,8,2-9,2-5,2-2,2,1,1,0,0,0,2,1,-1
+401909318,2026-11-26T00:00Z,2027,Chicago Bulls,Charlotte Hornets,0,4432822,Isaac Okoro,I. Okoro,35,F,1,31,10,4-8,1-3,1-3,3,0,0,0,1,1,2,3,-8
+401909318,2026-11-26T00:00Z,2027,Chicago Bulls,Charlotte Hornets,0,4711294,Matas Buzelis,M. Buzelis,14,F,1,34,24,8-15,0-5,8-9,5,0,0,0,0,2,3,5,+1
+401909318,2026-11-26T00:00Z,2027,Chicago Bulls,Charlotte Hornets,0,4278067,Nic Claxton,N. Claxton,9,C,1,29,10,5-7,0-0,0-0,2,0,2,1,4,0,2,1,-1
+401909318,2026-11-26T00:00Z,2027,Chicago Bulls,Charlotte Hornets,0,2990984,Buddy Hield,B. Hield,7,G,1,27,9,3-7,3-6,0-0,4,4,2,1,0,1,3,2,-2
+401909318,2026-11-26T00:00Z,2027,Chicago Bulls,Charlotte Hornets,0,4871145,Josh Giddey,J. Giddey,3,G,1,34,12,5-11,0-4,2-2,11,7,1,0,0,3,8,1,+1
+401909318,2026-11-26T00:00Z,2027,Chicago Bulls,Charlotte Hornets,0,4066650,Zach Collins,Z. Collins,12,F,0,19,6,2-5,2-3,0-0,3,2,1,0,1,0,3,3,+2
+401909318,2026-11-26T00:00Z,2027,Chicago Bulls,Charlotte Hornets,0,4431687,Patrick Williams,P. Williams,44,F,0,15,11,4-8,3-4,0-0,1,0,3,0,1,1,0,1,0
+401909318,2026-11-26T00:00Z,2027,Chicago Bulls,Charlotte Hornets,0,5242496,Noa Essengue,N. Essengue,2,F,0,11,5,2-3,1-1,0-0,0,2,0,2,0,0,0,1,+9
+401909318,2026-11-26T00:00Z,2027,Chicago Bulls,Charlotte Hornets,0,4395626,Tre Jones,T. Jones,30,G,0,20,10,3-8,0-0,4-5,4,8,1,1,0,1,3,1,+2
+401909318,2026-11-26T00:00Z,2027,Chicago Bulls,Charlotte Hornets,0,4683750,Jordan Hawkins,J. Hawkins,15,G,0,21,10,3-6,3-5,1-1,3,2,1,0,0,0,3,2,+6
+401909318,2026-11-26T00:00Z,2027,Charlotte Hornets,Chicago Bulls,1,4433249,Moussa Diabate,M. Diabate,14,F,1,38,14,5-9,0-0,4-4,14,2,2,1,0,8,6,4,+4
+401909318,2026-11-26T00:00Z,2027,Charlotte Hornets,Chicago Bulls,1,4433287,Brandon Miller,B. Miller,24,F,1,34,35,13-25,4-9,5-5,3,1,4,3,0,3,0,2,-1
+401909318,2026-11-26T00:00Z,2027,Charlotte Hornets,Chicago Bulls,1,4396971,Naz Reid,N. Reid,0,C,1,35,18,6-16,2-3,4-6,8,2,2,0,2,2,6,4,-1
+401909318,2026-11-26T00:00Z,2027,Charlotte Hornets,Chicago Bulls,1,4395651,Coby White,C. White,3,G,1,25,11,3-13,0-5,5-5,5,6,0,1,1,3,2,2,-3
+401909318,2026-11-26T00:00Z,2027,Charlotte Hornets,Chicago Bulls,1,4602025,Sion James,S. James,4,G,1,26,5,2-6,1-3,0-0,5,2,1,0,0,0,5,2,+5
+401909318,2026-11-26T00:00Z,2027,Charlotte Hornets,Chicago Bulls,1,2583632,Royce O'Neale,R. O'Neale,00,F,0,23,0,0-3,0-3,0-0,6,2,1,1,0,0,6,1,-4
+401909318,2026-11-26T00:00Z,2027,Charlotte Hornets,Chicago Bulls,1,4066218,Grant Williams,G. Williams,2,F,0,15,0,0-2,0-2,0-0,1,0,0,0,0,0,1,0,+4
+401909318,2026-11-26T00:00Z,2027,Charlotte Hornets,Chicago Bulls,1,5211176,Tidjane Salaun,T. Salaun,31,F,0,8,4,1-3,1-2,1-2,1,0,1,0,0,1,0,1,-5
+401909318,2026-11-26T00:00Z,2027,Charlotte Hornets,Chicago Bulls,1,5281370,Hannes Steinbach,H. Steinbach,22,F,0,8,3,1-1,0-0,1-2,3,1,0,0,0,1,2,1,-5
+401909318,2026-11-26T00:00Z,2027,Charlotte Hornets,Chicago Bulls,1,5060701,Christian Anderson,C. Anderson,5,G,0,28,15,5-9,3-7,2-2,1,4,0,1,0,0,1,2,-4
+401909325,2026-11-26T03:00Z,2027,San Antonio Spurs,Portland Trail Blazers,0,6578,Harrison Barnes,H. Barnes,40,F,1,15,5,2-2,1-1,0-0,0,1,0,0,0,0,0,1,+10
+401909325,2026-11-26T03:00Z,2027,San Antonio Spurs,Portland Trail Blazers,0,4592479,Julian Champagnie,J. Champagnie,30,F,1,37,11,4-12,1-7,2-3,4,1,1,1,1,1,3,3,-17
+401909325,2026-11-26T03:00Z,2027,San Antonio Spurs,Portland Trail Blazers,0,5104157,Victor Wembanyama,V. Wembanyama,1,F,1,35,44,17-30,3-9,7-10,16,3,3,1,2,2,14,1,+2
+401909325,2026-11-26T03:00Z,2027,San Antonio Spurs,Portland Trail Blazers,0,4395630,Devin Vassell,D. Vassell,24,G,1,38,18,6-16,3-6,3-4,3,1,1,2,1,0,3,3,+5
+401909325,2026-11-26T03:00Z,2027,San Antonio Spurs,Portland Trail Blazers,0,4845367,Stephon Castle,S. Castle,5,G,1,34,20,6-18,2-7,6-6,6,9,3,0,0,1,5,2,+1
+401909325,2026-11-26T03:00Z,2027,San Antonio Spurs,Portland Trail Blazers,0,4395723,Keldon Johnson,K. Johnson,3,F,0,33,3,0-3,0-2,3-4,12,2,3,1,0,5,7,4,-17
+401909325,2026-11-26T03:00Z,2027,San Antonio Spurs,Portland Trail Blazers,0,5061568,Carter Bryant,C. Bryant,11,F,0,14,2,1-3,0-2,0-0,6,1,1,0,1,1,5,3,0
+401909325,2026-11-26T03:00Z,2027,San Antonio Spurs,Portland Trail Blazers,0,3064560,Luke Kornet,L. Kornet,7,C,0,13,4,1-1,0-0,2-2,5,3,0,0,0,3,2,1,-7
+401909325,2026-11-26T03:00Z,2027,San Antonio Spurs,Portland Trail Blazers,0,3134916,Jordan McLaughlin,J. McLaughlin,0,G,0,15,4,2-3,0-1,0-0,2,0,0,0,0,0,2,2,-2
+401909325,2026-11-26T03:00Z,2027,San Antonio Spurs,Portland Trail Blazers,0,5107968,Ja'Kobi Gillespie,J. Gillespie,17,G,0,7,0,0-2,0-1,0-0,1,0,0,0,0,1,0,0,0
+401909325,2026-11-26T03:00Z,2027,Portland Trail Blazers,San Antonio Spurs,1,4431736,Toumani Camara,T. Camara,33,F,1,31,8,2-6,1-4,3-4,4,2,1,1,0,1,3,2,+12
+401909325,2026-11-26T03:00Z,2027,Portland Trail Blazers,San Antonio Spurs,1,4683021,Deni Avdija,D. Avdija,8,F,1,36,33,11-21,5-8,6-8,12,7,2,2,0,2,10,4,+2
+401909325,2026-11-26T03:00Z,2027,Portland Trail Blazers,San Antonio Spurs,1,5105565,Donovan Clingan,D. Clingan,23,C,1,21,5,2-5,0-0,1-2,8,2,0,0,1,4,4,6,+9
+401909325,2026-11-26T03:00Z,2027,Portland Trail Blazers,San Antonio Spurs,1,6606,Damian Lillard,D. Lillard,0,G,1,34,29,7-20,5-12,10-10,3,7,2,2,0,0,3,0,+13
+401909325,2026-11-26T03:00Z,2027,Portland Trail Blazers,San Antonio Spurs,1,5081727,Sidy Cissoko,S. Cissoko,91,G,1,30,16,6-14,4-10,0-0,4,2,0,2,1,1,3,2,-16
+401909325,2026-11-26T03:00Z,2027,Portland Trail Blazers,San Antonio Spurs,1,4066211,Robert Williams III,R. Williams III,35,C,0,21,4,2-2,0-0,0-1,3,0,0,1,1,0,3,2,-8
+401909325,2026-11-26T03:00Z,2027,Portland Trail Blazers,San Antonio Spurs,1,5217746,Yang Hansen,Y. Hansen,16,C,0,5,0,0-1,0-0,0-0,2,1,0,0,0,2,0,0,+2
+401909325,2026-11-26T03:00Z,2027,Portland Trail Blazers,San Antonio Spurs,1,3995,Jrue Holiday,J. Holiday,5,G,0,32,11,4-14,3-9,0-0,6,7,2,0,0,3,3,1,+13
+401909325,2026-11-26T03:00Z,2027,Portland Trail Blazers,San Antonio Spurs,1,4683678,Scoot Henderson,S. Henderson,00,G,0,23,10,3-9,1-5,3-4,5,1,1,0,0,0,5,2,+2
+401909325,2026-11-26T03:00Z,2027,Portland Trail Blazers,San Antonio Spurs,1,4703889,Jayson Kent,J. Kent,29,G,0,6,0,0-2,0-2,0-2,3,0,0,0,0,1,2,0,-4
+401909323,2026-11-26T01:30Z,2027,Phoenix Suns,Houston Rockets,0,3155526,Dillon Brooks,D. Brooks,3,F,1,31,12,5-13,0-3,2-2,6,4,1,1,0,2,4,5,-16
+401909323,2026-11-26T01:30Z,2027,Phoenix Suns,Houston Rockets,0,4066383,Miles Bridges,M. Bridges,22,F,1,25,2,1-8,0-6,0-0,8,4,0,0,0,2,6,3,-20
+401909323,2026-11-26T01:30Z,2027,Phoenix Suns,Houston Rockets,0,4601023,Oso Ighodaro,O. Ighodaro,11,F,1,20,13,6-8,0-0,1-3,2,2,0,1,1,0,2,6,-5
+401909323,2026-11-26T01:30Z,2027,Phoenix Suns,Houston Rockets,0,3136193,Devin Booker,D. Booker,15,G,1,36,25,6-18,2-9,11-12,0,5,3,1,0,0,0,4,-14
+401909323,2026-11-26T01:30Z,2027,Phoenix Suns,Houston Rockets,0,4437244,Jalen Green,J. Green,4,G,1,35,16,8-21,0-4,0-0,4,5,1,1,1,0,4,1,-16
+401909323,2026-11-26T01:30Z,2027,Phoenix Suns,Houston Rockets,0,4888725,Ryan Dunn,R. Dunn,0,F,0,10,0,0-0,0-0,0-0,2,1,0,0,0,2,0,0,+7
+401909323,2026-11-26T01:30Z,2027,Phoenix Suns,Houston Rockets,0,5203685,Khaman Maluach,K. Maluach,10,C,0,25,12,4-4,0-0,4-6,6,0,3,1,1,1,5,3,+2
+401909323,2026-11-26T01:30Z,2027,Phoenix Suns,Houston Rockets,0,3913174,Luke Kennard,L. Kennard,8,G,0,19,8,3-5,1-2,1-1,1,2,0,1,0,1,0,1,-6
+401909323,2026-11-26T01:30Z,2027,Phoenix Suns,Houston Rockets,0,4278402,Jordan Goodwin,J. Goodwin,23,G,0,17,11,3-7,2-4,3-3,5,0,0,0,0,2,3,0,+5
+401909323,2026-11-26T01:30Z,2027,Phoenix Suns,Houston Rockets,0,4278585,Collin Gillespie,C. Gillespie,12,G,0,22,5,2-7,0-4,1-1,4,2,0,2,0,3,1,0,+3
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,3202,Kevin Durant,K. Durant,7,F,1,33,20,7-15,1-7,5-6,10,2,1,1,0,0,10,2,+24
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,4432639,Jabari Smith Jr.,J. Smith Jr.,10,F,1,32,13,4-9,2-4,3-5,4,1,1,1,2,2,2,3,+11
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,4871144,Alperen Sengun,A. Sengun,28,C,1,32,23,9-17,3-5,2-6,11,11,3,0,0,7,4,2,+11
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,2991230,Fred VanVleet,F. VanVleet,5,G,1,34,13,5-12,3-9,0-0,3,6,0,1,1,0,3,3,+24
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,4684740,Amen Thompson,A. Thompson,1,G,1,36,18,7-14,0-0,4-9,10,4,1,0,2,4,6,2,+14
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,4433192,Tari Eason,T. Eason,17,F,0,15,7,3-3,1-1,0-0,2,0,3,1,0,0,2,1,-8
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,4592857,Isaiah Crawford,I. Crawford,27,F,0,0,0,0-0,0-0,0-0,0,0,0,0,0,0,0,0,0
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,2991235,Steven Adams,S. Adams,12,C,0,16,6,2-4,0-0,2-4,7,1,0,2,1,6,1,1,+1
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,2990992,Marcus Smart,M. Smart,36,G,0,18,4,2-6,0-4,0-0,3,3,1,0,0,1,2,4,-1
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,3037789,Bogdan Bogdanovic,B. Bogdanovic,31,G,0,10,5,2-4,1-2,0-0,0,1,1,0,1,0,0,3,-4
+401909323,2026-11-26T01:30Z,2027,Houston Rockets,Phoenix Suns,1,4711272,Reed Sheppard,R. Sheppard,15,G,0,15,7,3-6,1-4,0-0,1,1,1,0,0,0,1,2,-12
+401909317,2026-11-25T22:00Z,2027,Miami Heat,Philadelphia 76ers,0,3032977,Giannis Antetokounmpo,G. Antetokounmpo,7,F,1,36,32,11-18,0-1,10-13,14,4,5,2,1,1,13,3,+4
+401909317,2026-11-25T22:00Z,2027,Miami Heat,Philadelphia 76ers,0,4066261,Bam Adebayo,B. Adebayo,13,C,1,35,17,6-16,1-3,4-5,11,3,2,1,0,4,7,2,-4
+401909317,2026-11-25T22:00Z,2027,Miami Heat,Philadelphia 76ers,0,6475,Klay Thompson,K. Thompson,11,G,1,31,7,3-12,1-7,0-0,0,1,0,1,1,0,0,1,+5
+401909317,2026-11-25T22:00Z,2027,Miami Heat,Philadelphia 76ers,0,4278053,Davion Mitchell,D. Mitchell,2,G,1,40,20,7-14,3-5,3-6,4,10,3,0,0,1,3,0,-3
+401909317,2026-11-25T22:00Z,2027,Miami Heat,Philadelphia 76ers,0,4601025,Pelle Larsson,P. Larsson,9,G,1,28,8,3-7,1-4,1-2,4,1,0,0,0,2,2,3,+6
+401909317,2026-11-25T22:00Z,2027,Miami Heat,Philadelphia 76ers,0,3059319,Andrew Wiggins,A. Wiggins,22,F,0,24,8,4-6,0-2,0-0,2,2,0,0,0,1,1,2,-12
+401909317,2026-11-25T22:00Z,2027,Miami Heat,Philadelphia 76ers,0,3064482,Bobby Portis,B. Portis,95,F,0,15,5,2-4,1-3,0-0,5,1,0,0,1,0,5,1,-4
+401909317,2026-11-25T22:00Z,2027,Miami Heat,Philadelphia 76ers,0,3899664,Simone Fontecchio,S. Fontecchio,0,F,0,6,0,0-2,0-2,0-0,1,1,0,0,0,0,1,1,-10
+401909317,2026-11-25T22:00Z,2027,Miami Heat,Philadelphia 76ers,0,4431772,Myron Gardner,M. Gardner,15,F,0,5,0,0-0,0-0,0-0,2,0,1,0,0,2,0,0,-11
+401909317,2026-11-25T22:00Z,2027,Miami Heat,Philadelphia 76ers,0,5107157,Ryan Conwell,R. Conwell,4,G,0,18,7,3-7,1-4,0-0,1,1,2,0,0,1,0,1,-6
+401909317,2026-11-25T22:00Z,2027,Philadelphia 76ers,Miami Heat,1,1966,LeBron James,L. James,23,F,1,35,25,9-15,4-6,3-3,10,12,3,1,0,1,9,0,+14
+401909317,2026-11-25T22:00Z,2027,Philadelphia 76ers,Miami Heat,1,4432446,Jabari Walker,J. Walker,33,F,1,17,7,3-3,1-1,0-0,2,1,0,1,0,0,2,2,+2
+401909317,2026-11-25T22:00Z,2027,Philadelphia 76ers,Miami Heat,1,3917376,Jaylen Brown,J. Brown,7,G,1,17,6,2-8,0-1,2-2,1,1,0,0,0,0,1,1,+6
+401909317,2026-11-25T22:00Z,2027,Philadelphia 76ers,Miami Heat,1,4431678,Tyrese Maxey,T. Maxey,0,G,1,37,30,12-21,3-5,3-4,4,6,5,1,0,1,3,3,-6
+401909317,2026-11-25T22:00Z,2027,Philadelphia 76ers,Miami Heat,1,5124612,VJ Edgecombe,V. Edgecombe,77,G,1,36,18,6-13,2-7,4-4,6,5,1,2,0,1,5,4,+9
+401909317,2026-11-25T22:00Z,2027,Philadelphia 76ers,Miami Heat,1,3912848,Dean Wade,D. Wade,45,F,0,26,5,2-6,1-4,0-2,4,0,0,1,1,1,3,1,+5
+401909317,2026-11-25T22:00Z,2027,Philadelphia 76ers,Miami Heat,1,4870562,Dominick Barlow,D. Barlow,25,F,0,16,9,4-8,0-0,1-2,8,0,0,0,1,5,3,2,-4
+401909317,2026-11-25T22:00Z,2027,Philadelphia 76ers,Miami Heat,1,5105637,Adem Bona,A. Bona,30,C,0,13,0,0-3,0-1,0-0,6,0,0,0,2,2,4,5,+6
+401909317,2026-11-25T22:00Z,2027,Philadelphia 76ers,Miami Heat,1,2581018,Kentavious Caldwell-Pope,K. Caldwell-Pope,1,G,0,28,5,2-6,1-4,0-0,1,3,1,2,0,0,1,1,-7
+401909317,2026-11-25T22:00Z,2027,Philadelphia 76ers,Miami Heat,1,4351851,Anfernee Simons,A. Simons,5,G,0,15,6,2-6,2-6,0-0,1,1,0,1,0,1,0,1,+10
+401909319,2026-11-26T00:30Z,2027,Cleveland Cavaliers,New York Knicks,0,4066328,Jarrett Allen,J. Allen,31,C,1,32,10,5-7,0-0,0-0,5,1,1,2,0,3,2,3,-32
+401909319,2026-11-26T00:30Z,2027,Cleveland Cavaliers,New York Knicks,0,3992,James Harden,J. Harden,1,G,1,36,28,7-19,1-8,13-14,1,5,4,0,1,0,1,2,-6
+401909319,2026-11-26T00:30Z,2027,Cleveland Cavaliers,New York Knicks,0,3908809,Donovan Mitchell,D. Mitchell,45,G,1,34,30,12-24,1-7,5-8,4,4,2,4,2,0,4,0,-17
+401909319,2026-11-26T00:30Z,2027,Cleveland Cavaliers,New York Knicks,0,4066757,Sam Merrill,S. Merrill,5,G,1,24,5,2-8,1-7,0-0,1,0,2,0,0,0,1,3,-21
+401909319,2026-11-26T00:30Z,2027,Cleveland Cavaliers,New York Knicks,0,4576087,Peyton Watson,P. Watson,8,G,1,27,8,2-4,2-3,2-4,5,2,1,2,2,0,5,4,-4
+401909319,2026-11-26T00:30Z,2027,Cleveland Cavaliers,New York Knicks,0,2995706,Mario Hezonja,M. Hezonja,33,F,0,10,0,0-1,0-0,0-0,3,0,0,0,0,2,1,2,-14
+401909319,2026-11-26T00:30Z,2027,Cleveland Cavaliers,New York Knicks,0,3934723,Thomas Bryant,T. Bryant,3,C,0,16,5,1-2,1-2,2-2,8,1,0,0,1,1,7,0,+13
+401909319,2026-11-26T00:30Z,2027,Cleveland Cavaliers,New York Knicks,0,4683747,Jaylon Tyson,J. Tyson,20,G,0,29,6,2-8,2-6,0-0,6,4,4,0,0,2,4,3,-1
+401909319,2026-11-26T00:30Z,2027,Cleveland Cavaliers,New York Knicks,0,5023693,Tyrese Proctor,T. Proctor,24,G,0,16,2,1-6,0-2,0-0,3,1,0,0,0,1,2,2,-3
+401909319,2026-11-26T00:30Z,2027,Cleveland Cavaliers,New York Knicks,0,5041951,Meleek Thomas,M. Thomas,15,G,0,16,8,3-6,2-3,0-0,3,1,0,0,0,2,1,0,-10
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,3136195,Karl-Anthony Towns,K. Towns,32,C,1,33,12,4-8,1-2,3-4,10,7,2,1,3,2,8,3,+21
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,3062679,Josh Hart,J. Hart,3,G,1,36,15,6-14,1-5,2-3,7,11,3,3,1,1,6,2,+3
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,3147657,Mikal Bridges,M. Bridges,25,G,1,37,19,9-15,1-4,0-0,8,2,1,0,1,2,6,1,+33
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,3914044,Landry Shamet,L. Shamet,44,G,1,30,11,3-3,3-3,2-2,2,0,0,0,0,0,2,2,+7
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,3934672,Jalen Brunson,J. Brunson,11,G,1,36,19,6-22,2-8,5-6,3,5,2,0,0,1,2,2,+5
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,4838721,Tyler Nickel,T. Nickel,55,F,0,9,5,2-3,1-2,0-0,0,0,0,0,0,0,0,4,+8
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,5211983,Pacome Dadiet,P. Dadiet,4,F,0,14,7,3-7,1-3,0-0,1,2,0,1,1,1,0,3,-4
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,5289900,Mohamed Diawara,M. Diawara,51,F,0,4,3,1-1,1-1,0-0,1,1,0,0,0,0,1,0,+8
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,6585,Andre Drummond,A. Drummond,0,C,0,9,3,1-1,1-1,0-0,2,0,0,0,0,1,1,2,-5
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,4432808,James Wiseman,J. Wiseman,35,C,0,6,6,3-5,0-0,0-0,7,0,2,0,0,6,1,1,+3
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,4277869,Jose Alvarado,J. Alvarado,5,G,0,19,21,8-10,5-7,0-0,1,3,1,2,0,0,1,2,+15
+401909319,2026-11-26T00:30Z,2027,New York Knicks,Cleveland Cavaliers,1,4433225,Tyler Kolek,T. Kolek,13,G,0,7,0,0-1,0-1,0-0,1,2,1,0,0,0,1,1,+1

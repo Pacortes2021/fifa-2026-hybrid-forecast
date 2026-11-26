@@ -1,6 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401931986,2026-11-25 19:00:00,2026,223,216,Toluca,Atlas,,,pre,False
-401931998,2026-11-25 21:10:00,2026,220,227,Monterrey,América,,,pre,False
 401931982,2026-11-26 19:00:00,2026,234,219,Pachuca,Guadalajara,,,pre,False
 401931995,2026-11-26 21:10:00,2026,228,218,León,Cruz Azul,,,pre,False
 401931997,2026-11-28 19:00:00,2026,216,223,Atlas,Toluca,,,pre,False

@@ -1,13 +1,4 @@
 event_id,fecha,temporada,stage,is_knockout,is_neutral,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401915378,2026-11-25 18:45:00,2027,league-phase,0,0,21922,83,Sabah FK,FC Barcelona,,,pre,STATUS_SCHEDULED,False
-401915293,2026-11-25 18:45:00,2027,league-phase,0,0,494,102,Slavia Praga,Villarreal,,,pre,STATUS_SCHEDULED,False
-401915291,2026-11-25 21:00:00,2027,league-phase,0,0,1068,510,Atletico Madrid,Viking FK,,,pre,STATUS_SCHEDULED,False
-401915292,2026-11-25 21:00:00,2027,league-phase,0,0,570,364,Club Brugge,Liverpool,,,pre,STATUS_SCHEDULED,False
-401915376,2026-11-25 21:00:00,2027,league-phase,0,0,110,134,Inter,VfB Stuttgart,,,pre,STATUS_SCHEDULED,False
-401915377,2026-11-25 21:00:00,2027,league-phase,0,0,166,132,Lille,Bayern Munich,,,pre,STATUS_SCHEDULED,False
-401915374,2026-11-25 21:00:00,2027,league-phase,0,0,160,104,PSG,AS Roma,,,pre,STATUS_SCHEDULED,False
-401915375,2026-11-25 21:00:00,2027,league-phase,0,0,493,436,Shakhtar Donetsk,Fenerbahce,,,pre,STATUS_SCHEDULED,False
-401915373,2026-11-25 21:00:00,2027,league-phase,0,0,2250,360,Sporting CP,Manchester United,,,pre,STATUS_SCHEDULED,False
 401915372,2026-12-08 18:45:00,2027,league-phase,0,0,102,21922,Villarreal,Sabah FK,,,pre,STATUS_SCHEDULED,False
 401915290,2026-12-08 18:45:00,2027,league-phase,0,0,510,142,Viking FK,Feyenoord,,,pre,STATUS_SCHEDULED,False
 401915289,2026-12-08 21:00:00,2027,league-phase,0,0,887,432,AEK Athens,Galatasaray,,,pre,STATUS_SCHEDULED,False
