@@ -2025,3 +2025,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401877046,2026-11-22 19:10:00,2026,222,229,Querétaro,Necaxa,2.0,2.0,post
 401931986,2026-11-25 19:00:00,2026,223,216,Toluca,Atlas,2.0,0.0,post
 401931998,2026-11-25 21:10:00,2026,220,227,Monterrey,América,0.0,0.0,post
+401931982,2026-11-26 19:00:00,2026,234,219,Pachuca,Guadalajara,2.0,1.0,post
+401931995,2026-11-26 21:10:00,2026,228,218,León,Cruz Azul,0.0,4.0,post
