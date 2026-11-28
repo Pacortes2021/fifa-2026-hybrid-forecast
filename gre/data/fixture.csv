@@ -1,6 +1,6 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401896807,2026-11-28 17:00:00,2026,2575,11431,Iraklis,Panetolikos,,,pre,STATUS_SCHEDULED,False
-401896723,2026-11-28 17:00:00,2026,20043,8354,Volos NFC,Asteras Tripoli,,,pre,STATUS_SCHEDULED,False
+401896807,2026-11-28 17:00:00,2026,2575,11431,Iraklis,Panetolikos,,,pre,STATUS_FIRST_HALF,False
+401896723,2026-11-28 17:00:00,2026,20043,8354,Volos NFC,Asteras Tripoli,,,pre,STATUS_FIRST_HALF,False
 401896808,2026-11-28 20:00:00,2026,21969,132429,Kifisia,Kalamata,,,pre,STATUS_SCHEDULED,False
 401896719,2026-11-29 17:00:00,2026,6790,443,Atromitos,Panathinaikos,,,pre,STATUS_SCHEDULED,False
 401896722,2026-11-29 17:30:00,2026,1010,5276,OFI Crete,Levadiakos,,,pre,STATUS_SCHEDULED,False

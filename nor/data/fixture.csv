@@ -1,5 +1,5 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401843492,2026-11-28 16:00:00,2026,2980,22165,Bodo/Glimt,KFUM Oslo,,,pre,STATUS_SCHEDULED,False
+401843492,2026-11-28 16:00:00,2026,2980,22165,Bodo/Glimt,KFUM Oslo,,,pre,STATUS_FIRST_HALF,False
 401843497,2026-11-28 18:00:00,2026,438,2715,Rosenborg,Molde,,,pre,STATUS_SCHEDULED,False
 401843495,2026-11-29 14:30:00,2026,3039,3278,Fredrikstad,Aalesund,,,pre,STATUS_SCHEDULED,False
 401843498,2026-11-29 17:00:00,2026,3279,5270,Sandefjord,Tromso,,,pre,STATUS_SCHEDULED,False

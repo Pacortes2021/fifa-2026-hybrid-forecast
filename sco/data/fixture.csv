@@ -1,8 +1,8 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401878328,2026-11-28 15:00:00,2026,257,254,Rangers,Falkirk,,,pre,STATUS_SCHEDULED,False
-401878327,2026-11-28 15:00:00,2026,250,260,St Mirren,Kilmarnock,,,pre,STATUS_SCHEDULED,False
-401878332,2026-11-28 15:00:00,2026,263,261,Aberdeen,Dundee,,,pre,STATUS_SCHEDULED,False
-401878331,2026-11-28 15:00:00,2026,264,267,Dundee United,St Johnstone,,,pre,STATUS_SCHEDULED,False
+401878328,2026-11-28 15:00:00,2026,257,254,Rangers,Falkirk,,,pre,STATUS_FIRST_HALF,False
+401878327,2026-11-28 15:00:00,2026,250,260,St Mirren,Kilmarnock,,,pre,STATUS_FIRST_HALF,False
+401878332,2026-11-28 15:00:00,2026,263,261,Aberdeen,Dundee,,,pre,STATUS_FIRST_HALF,False
+401878331,2026-11-28 15:00:00,2026,264,267,Dundee United,St Johnstone,,,pre,STATUS_FIRST_HALF,False
 401878329,2026-11-28 17:45:00,2026,266,258,Motherwell,Hibernian,,,pre,STATUS_SCHEDULED,False
 401878330,2026-11-29 15:00:00,2026,262,256,Heart of Midlothian,Celtic,,,pre,STATUS_SCHEDULED,False
 401878326,2026-12-02 19:45:00,2026,261,256,Dundee,Celtic,,,pre,STATUS_SCHEDULED,False

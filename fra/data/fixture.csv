@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401876392,2026-11-27 20:45:00,2026,6997,6851,Brest,Paris FC,,,pre,False
 401876394,2026-11-28 17:15:00,2026,7868,175,Angers,Lens,,,pre,False
 401876391,2026-11-28 20:45:00,2026,3236,180,Le Havre,Strasbourg,,,pre,False
 401876390,2026-11-28 20:45:00,2026,2697,166,Le Mans,Lille,,,pre,False

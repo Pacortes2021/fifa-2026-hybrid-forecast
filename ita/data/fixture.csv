@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401875004,2026-11-27 20:45:00,2026,17530,107,Venezia,Bologna,,,pre,False
 401875081,2026-11-28 15:00:00,2026,4057,115,Frosinone,Parma,,,pre,False
 401874826,2026-11-28 18:00:00,2026,239,112,Torino,Lazio,,,pre,False
 401874977,2026-11-28 20:45:00,2026,110,3263,Inter,Genoa,,,pre,False

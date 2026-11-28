@@ -2248,3 +2248,5 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401882801,2026-11-22 18:30:00,2026,97,99,CA Osasuna,Málaga,1.0,0.0,post
 401882803,2026-11-22 21:00:00,2026,2922,1068,Getafe,Atlético de Madrid,0.0,3.0,post
 401882802,2026-11-23 21:00:00,2026,1538,3751,Levante,Elche CF,1.0,1.0,post
+401882791,2026-11-27 21:00:00,2026,1538,87,Levante,Racing Santander,1.0,3.0,post
+401882796,2026-11-28 14:00:00,2026,244,101,Real Betis,Rayo Vallecano,0.0,1.0,post

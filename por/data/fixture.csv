@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,aplazado
-401885389,2026-11-27 20:15:00,2026,552,3472,Maritimo,Nacional,,,pre,False
 401885392,2026-11-28 15:30:00,2026,15784,3822,Arouca,Rio Ave,,,pre,False
 401885388,2026-11-28 15:30:00,2026,3696,12215,Moreirense,Santa Clara,,,pre,False
 401885393,2026-11-28 18:00:00,2026,21607,21613,Académico de Viseu,Alverca,,,pre,False

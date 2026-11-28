@@ -1169,3 +1169,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874541,2026-11-22 16:00:00,2026,8118,11550,Sønderjyske Fodbold,Odense Boldklub,1,2,post,STATUS_FULL_TIME
 401874493,2026-11-22 18:00:00,2026,3101,909,FC Nordsjælland,F.C. København,5,0,post,STATUS_FULL_TIME
 401874538,2026-11-23 19:00:00,2026,575,572,Brøndby IF,FC Midtjylland,0,2,post,STATUS_FULL_TIME
+401874563,2026-11-27 19:00:00,2026,8118,575,Sønderjyske Fodbold,Brøndby IF,1,1,post,STATUS_FULL_TIME

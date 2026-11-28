@@ -1,5 +1,4 @@
 event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visita,estado,status_name,aplazado
-401881739,2026-11-27 19:30:00,2026,21846,4405,Grazer AK,SC Rheindorf Altach,,,pre,STATUS_SCHEDULED,False
 401881740,2026-11-28 17:00:00,2026,1382,13294,Austria Vienna,Wolfsberger,,,pre,STATUS_SCHEDULED,False
 401881738,2026-11-28 19:30:00,2026,21540,519,Austria Lustenau,Rapid Vienna,,,pre,STATUS_SCHEDULED,False
 401881743,2026-11-29 14:30:00,2026,3746,18794,SK Sturm Graz,WSG Swarovski Tirol,,,pre,STATUS_SCHEDULED,False

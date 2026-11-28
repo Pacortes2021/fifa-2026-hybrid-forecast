@@ -1808,3 +1808,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401884729,2026-11-21 18:30:00,2026,133,134,Schalke 04,VfB Stuttgart,0.0,0.0,post
 401884733,2026-11-22 15:30:00,2026,3841,2950,FC Augsburg,Mainz,3.0,1.0,post
 401884730,2026-11-22 17:30:00,2026,137,127,Werder Bremen,Hamburg SV,4.0,0.0,post
+401884720,2026-11-27 20:30:00,2026,137,268,Werder Bremen,Borussia Mönchengladbach,3.0,3.0,post

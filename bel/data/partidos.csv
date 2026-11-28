@@ -1867,3 +1867,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401878936,2026-11-22 16:00:00,2026,5786,5807,KV Kortrijk,Union Saint-Gilloise,0.0,1.0,post
 401878941,2026-11-22 18:30:00,2026,441,5579,Anderlecht,OH Leuven,1.0,0.0,post
 401878934,2026-11-22 19:15:00,2026,22269,559,Lommel SK,Standard Liège,1.0,2.0,post
+401878930,2026-11-27 20:45:00,2026,5579,5786,OH Leuven,KV Kortrijk,2.0,2.0,post

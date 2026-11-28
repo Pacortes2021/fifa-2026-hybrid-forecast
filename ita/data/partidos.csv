@@ -2262,3 +2262,4 @@ event_id,fecha,temporada,local_id,visita_id,local,visita,goles_local,goles_visit
 401874989,2026-11-22 18:00:00,2026,103,4057,AC Milan,Frosinone,5.0,1.0,post
 401875001,2026-11-22 20:45:00,2026,105,110,Atalanta,Inter,4.0,4.0,post
 401875009,2026-11-23 20:45:00,2026,4007,109,Monza,Fiorentina,3.0,0.0,post
+401875004,2026-11-27 20:45:00,2026,17530,107,Venezia,Bologna,0.0,0.0,post
